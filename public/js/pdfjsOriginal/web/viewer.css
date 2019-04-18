@@ -961,7 +961,7 @@ html[dir='rtl'] .findbar * {
 }
 
 html[dir='ltr'] .splitToolbarButton {
-  margin: 3px 2px 4px 0;
+  margin: 3px 2px 2px 0;
   display: inline-block;
 }
 html[dir='rtl'] .splitToolbarButton {
@@ -1207,7 +1207,7 @@ html[dir='ltr'] .splitToolbarButton:first-child,
 html[dir='ltr'] .toolbarButton:first-child,
 html[dir='rtl'] .splitToolbarButton:last-child,
 html[dir='rtl'] .toolbarButton:last-child {
-  margin-left: 4px;
+  margin-left: 90px;
 }
 html[dir='ltr'] .splitToolbarButton:last-child,
 html[dir='ltr'] .toolbarButton:last-child,
@@ -1501,7 +1501,7 @@ html[dir='rtl'] .verticalToolbarSeparator {
   border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
   box-shadow: 0 1px 0 hsla(0,0%,0%,.05) inset,
               0 1px 0 hsla(0,0%,100%,.05);
-  color: hsl(0,0%,95%);
+  color: hsl(0,0%,0%);
   font-size: 12px;
   line-height: 14px;
   outline-style: none;
@@ -1550,7 +1550,7 @@ html[dir='rtl'] .verticalToolbarSeparator {
   margin: 4px 2px 4px 0;
   border: 1px solid transparent;
   border-radius: 2px;
-  color: hsl(0,0%,85%);
+  color: hsl(0,0%,0%);
   font-size: 12px;
   line-height: 14px;
   text-align: left;
