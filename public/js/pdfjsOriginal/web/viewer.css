@@ -397,6 +397,7 @@
 }
 
 * {
+  background-color: #f7f8f9;
   padding: 0;
   margin: 0;
 }
@@ -715,6 +716,7 @@ html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
 
 #toolbarViewer {
   height: 32px;
+  background-color: #f7f8f9;
 }
 
 #loadingBar {

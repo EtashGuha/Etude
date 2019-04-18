@@ -25,7 +25,7 @@ html, body {
 }
 div.viewer {
   width: 100%;
-  height: calc(100% - 40px);
+  height: calc(100% - 85px);
   position: relative !important;
 /*  margin-top: 20px;*/
 }
@@ -58,8 +58,8 @@ div.summarizer {
   align-items: center;
   position:absolute !important;
   font-family: Poppins;
-  top: 880px;
-  left: 20px;
+  top: 88%;
+  left: 4%;
 }
 div.summarizer_loading {
   /* width: 50%;
