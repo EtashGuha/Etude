@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="public/css/library.css">
+        <script src="./public/js/jquery.js"></script>
+
+    </head>
+    <header class="library-nav">
+        <div class="topnav">
+                <a class="active" href="https://www.jadetechnologiesllc.com">Etude</a>
+                <a id = "help" href="#">Help</a>
+
+        </div>
+    </header>
+    <body>
+        <!-- <a href="pdfview.html" id = "navigatePage">profile</a> -->
+        <input type="file" id="file-to-upload" accept="application/pdf" />
+        <div id = "container" class = "plus row">
+                <div>
+                        <div class="book_section col-md-2">
+                                <div>
+<!--                                   <center> -->
+                                    <canvas class="pdf-canvas-first"></canvas>
+                                    <img class = "plusImage" src="public/images/plus_small.png" id = "myButton"/>
+<!--                                     <p style="width: 250px; word-break: break-all;">the great ldddddddddddddd  dfdfeader</p> -->
+<!--                                   </center> -->
+                                </div>
+                        </div>
+                </div>
+        </div> 
+
+        <div class="help_popup">
+      <span class="helper"></span>
+      <div>
+          <h3>Welcome to ​Étude! Here are some quick instructions to get you started with  using Étude to its fullest potential. </h3>
+          <h1>Library Page</h1>
+          <img src="./public/images/library.png" style = "width: 80%;">
+          <h3>This is the Library page. If you want to add a PDF, simply click the plus sign and it will  take you to your file finder. Then, select the PDF you wish to upload. Once loaded, you  can access your PDF simply by clicking on it.  </h3>
+          <h1>Main Reading Page</h1>
+          <img src="./public/images/summaring.png" style = "width: 80%;">
+          <h3>This is the reading page! From here, you can scroll through the PDF and read as you  would with any normal PDF viewer like Adobe. The black toolbar at the top of the page  provides you with a host of functionalities. When you’re done, simply press the library  button to go back!  </h3>
+          <h1>Bookmark</h1>
+          <img src="./public/images/bookmarkshow.png" style = "width: 50%;">
+          <h3>To bookmark the page, you can click this button. It will save the page and put  it into your bookmarks page. To access them, click the bookmarks button at  the top of the page.  </h3>
+          <h1>Summarize</h1>
+          <img src="./public/images/summarizing.png" style = "width: 50%;">
+          <h3>In order to summarize a section of the PDF, click this button. A pop-up will then  come up where you can specify what pages you want to be summarized. For  example, if you want pages 10 to 16 summarized, enter 10 as the starting page  and 16 as the ending page. Etude will then popup with the summary!  </h3>
+          <h1>Smart Search</h1>
+          <img src="./public/images/search.png" style = "width: 60%;">
+          <h3>Looking for specific information within the document? Type your questions or  keywords into the search bar on the top right of the screen. Etude will then  display what parts of the document best answer or match your questions.  Simply click on one of the answers and it will take you to that portion of the file!  </h3>
+          <br>
+          <h1>For more information, contact us at:  </h1>
+          <h3>Email: ​contact@jadetechnologiesllc.com  Phone Number: 336-529-0307  Etude is a copyrighted product of Jade Technologies LLC.  </h3>
+      </div>
+  </div>
+    </body>
+    
+    <script src="./public/js/jquery.js"></script>
+    <script src="pdf.js"></script>
+    <script src="pdf.worker.js"></script>
+    <script>
+        function openFile(){
+                
+                $("#file-to-upload").trigger('click');
+        }
+    </script>
+    <script> 
+       require('./public/js/library.js');
+    </script>
+    <script src="./public/js/jquery.js"></script>
+
+    <script type="text/javascript">
+        $("#help").click(function(){
+        $('.help_popup').show();
+        $('.help_popup').click(function(){
+        $('.help_popup').hide();
+  });
+  // $('.popupCloseButton').click(function(){
+  //   $('.hover_bkgr_fricc').hide();
+  // });
+})
+    </script>
+
+</html>

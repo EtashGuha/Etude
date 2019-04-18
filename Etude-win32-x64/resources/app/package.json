@@ -1,0 +1,32 @@
+{
+  "name": "Etude",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . Etude"
+  },
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^4.0.1",
+    "electron-installer-dmg": "^2.0.0",
+    "electron-packager": "^13.1.0"
+  },
+  "build": {
+    "extraResources": [
+      "./public1/**"
+    ]
+  },
+  "dependencies": {
+    "electron-store": "^2.0.0"
+  }
+}
