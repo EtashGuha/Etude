@@ -271,6 +271,18 @@ function getSeletedPageTextForSummarization(fpage,tpage)
         console.log("eorror");
     });
 }
+
+function processSummarizationResult(t){
+  console.log("succeeded");
+  console.log(typeof(t))
+  $("#summarizingResult").empty().append(t);
+  //here you can remove the loading button
+  $('.summarizer_loading').hide();
+  $('.hover_bkgr_fricc').show();
+  iPagesum = 0;
+  iEndPagesum = 0;
+  textDsum = 0;
+};
 function getTextByPageForSummarization(instance){
   getPageText(iPagesum , instance).then(function(textPage){
     if(iPagesum != 0)
@@ -279,30 +291,10 @@ function getTextByPageForSummarization(instance){
       iPagesum++;
       getTextByPageForSummarization(instance)
     }else{
-      //post text.
-      console.log(textDsum);
-      $.ajax({
-        url:"http://54.183.6.45:5000/resoomer",
-        data: {
-          pdfData: textDsum
-        },
-        method: "POST",
-        // dataType: "json"
-      }).done(function(t){
-        console.log("succeeded");
-        console.log(t);
-        $("#summarizingResult").empty().append(t);
-        //here you can remove the loading button
-        $('.summarizer_loading').hide();
-        $('.hover_bkgr_fricc').show();
-        iPagesum = 0;
-        iEndPagesum = 0;
-        textDsum = 0;
-      })
-      // .fail(function(err) {
-      //   console.log("you failed so try again I know you are great so you can be best all the time, fighting!");
-      // });
-     
+      deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
+      deepai.callStandardApi("summarization", {
+        text: textDsum}).then((resp) => processSummarizationResult(resp));
+      
       return;
     }
   });
