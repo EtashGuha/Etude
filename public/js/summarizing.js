@@ -1,9 +1,6 @@
 const { dialog } = require('electron').remote;
 const path = require('path');
-// const Storebookmark = require('electron-store');
-// var bookmarkStore = new Storebookmark();
-// bookmarkStore.clear();
-// var i = bookmarkStore.size;
+
 var textData = null;
 var bookmarkArray = [];
 
@@ -162,10 +159,6 @@ function getPageText(pageNum, PDFDocumentInstance) {
 }
 
 
-// function setTotalNum(num){
-//     $('#cuPage').empty().append(num);
-// }
-//help page show
 $("#help").click(function(){
   // close the bookmark page
   $("#bookmark_item").attr("data","true");
@@ -175,9 +168,6 @@ $("#help").click(function(){
 	$('.help_popup').click(function(){
     $('.help_popup').hide();
   });
-  // $('.popupCloseButton').click(function(){
-  //   $('.hover_bkgr_fricc').hide();
-  // });
 })
 
 //get text function
@@ -235,27 +225,19 @@ function getTextByPage(instance){
   });
 }
 
-
-
-// document.body.onclick = function(e){
-//   document.getElementById("myDropdown").classList.toggle("show");
-// };
-
-// here is the part of bookmark
-
 //summarization function
 $('#summarizingButton').click(function(){
   console.log("summarizingButtonClicked");
   $('.su_popup').hide();
   getSeletedPageTextForSummarization($('#pageRange').val(),$('#topageRange').val());
    
-  // $('.hover_bkgr_fricc').show();
   // here you can add the loading button
   $('.summarizer_loading').show();
   $('.hover_bkgr_fricc').click(function(){
         $('.hover_bkgr_fricc').hide();
     });    
 })
+
 var textDsum = "";
 var iPagesum = 0;
 var iEndPagesum = 0;
@@ -285,6 +267,7 @@ function processSummarizationResult(t){
   iEndPagesum = 0;
   textDsum = 0;
 };
+
 function getTextByPageForSummarization(instance){
   getPageText(iPagesum , instance).then(function(textPage){
     if(iPagesum != 0)
@@ -294,27 +277,15 @@ function getTextByPageForSummarization(instance){
       getTextByPageForSummarization(instance)
     }else{
       deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
+      console.log(textDsum);
       deepai.callStandardApi("summarization", {
         text: textDsum}).then((resp) => processSummarizationResult(resp));
-      
       return;
     }
   });
 }
 
 $('#getRangeButton').click(function(){
-  // if(btnClicked == false){
-  //   $('#getRangeButton').hide();
-  //   $('.su_popup').show();
-  //   btnClicked = true;
-  // }
-  // else{
-  //    $('.su_popup').hide();
-  //    btnClicked = false;
-  // }
-  // $('.su_popup').click(function(){
-  //   $('.su_popup').hide();
-  // });
   //close the bookmark page
   $("#bookmark_item").attr("data","true");
   $("#bookmark_item").click();
@@ -322,46 +293,3 @@ $('#getRangeButton').click(function(){
   $('#getRangeButton').hide();
   $('.su_popup').show();
 })
-
-
-// function queueRenderPage(num) {
-//   if (pageRendering) {
-//     pageNumPending = num;
-//   } else {
-//     renderPage(num);
-//   }
-// }
-
-// function onNextPage() {
-//   // if (pageNum >= pdfDoc.numPages) {
-//   //   return;
-//   // }
-//   // pageNum++;
-//   queueRenderPage(3);
-// }
-// document.getElementById('next').addEventListener('click', onNextPage);
-
-//bookmark open and close
-// $('#bookmark_item').click(function(){
-
-//   if(bookmarkOpened == false)
-//   {
-//     document.getElementById("bookmark_page").style.display = "block";
-//     $('.bookmark-canvas').show();
-//     $('.deleteImage').show();
-//     bookmarkOpened = true;
-//   }
-//   if (bookmarkOpened == true)
-//   {
-//     document.getElementById("bookmark_page").style.height = "0";
-//     $('.bookmark-canvas').hide();
-//     $('.deleteImage').hide();
-//     bookmarkOpened = false;
-//   }
-
-// })
-
-
-
-
-  
