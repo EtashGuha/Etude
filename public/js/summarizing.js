@@ -274,8 +274,10 @@ function getSeletedPageTextForSummarization(fpage,tpage)
 
 function processSummarizationResult(t){
   console.log("succeeded");
-  console.log(typeof(t))
-  $("#summarizingResult").empty().append(t);
+  console.log(t);
+  console.log(typeof(t));
+  console.log(t["output"])
+  $("#summarizingResult").empty().append(t["output"]);
   //here you can remove the loading button
   $('.summarizer_loading').hide();
   $('.hover_bkgr_fricc').show();
