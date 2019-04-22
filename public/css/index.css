@@ -71,8 +71,8 @@ div.summarizer_loading {
   justify-content: center;
   align-items: center;
   position:absolute !important;
-  top: 500px;
-  left: 250px;
+  top: 50%;
+  left: 50%;
   display: none;
 }
 div.viewer iframe {
