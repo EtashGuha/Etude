@@ -365,8 +365,24 @@ function callGROBID(options, file, callback) {
                 // I/O error
                 if (err)
                     return cb(err);
-
+                console.log(body);
                 // first write the TEI reponse
+
+                let lessthan = body.indexOf('<p');
+                while (lessthan !== -1) {
+                  body = body.slice(0,lessthan) + "!br!" + body.slice(body.indexOf('>',lessthan) + 1);
+                  lessthan = body.indexOf('<p');
+                }
+                lessthan = body.indexOf('<');
+                while (lessthan !== -1) {
+                  body = body.slice(0,lessthan) + " " + body.slice(body.indexOf('>',lessthan) + 1);
+                  lessthan = body.indexOf('<');
+                }
+                String.prototype.replaceAll = function(search, replacement) {
+                  var target = this;
+                  return target.replace(new RegExp(search, 'g'), replacement);
+                }
+                body = body.replaceAll("!br!","<br>");
                 deepai.callStandardApi("summarization", {
                   text: body}).then((resp) => processSummarizationResult(resp));
             });
