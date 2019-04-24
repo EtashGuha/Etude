@@ -81,7 +81,6 @@ case "`uname`" in
 esac
 
 CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
-
 JAVACMD="./Contents/Home/bin/java"
 
 # Increase the maximum file descriptors if we can.
