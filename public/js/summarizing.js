@@ -1,5 +1,9 @@
 const { dialog } = require('electron').remote;
 const path = require('path');
+
+// java.classpath.push("Kernel.jar");
+// java.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
+// var kernel = java.newInstanceSync('p1.Kernel');
 // const Storebookmark = require('electron-store');
 // var bookmarkStore = new Storebookmark();
 // bookmarkStore.clear();
@@ -28,7 +32,11 @@ var PDF_URL  = filepath;
 var capeClicked = false;
 var btnClicked = false;
 var bookmarkOpened = false;
-
+var java = require('java');
+java.classpath.push("Kernel.jar");
+java.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
+var kernel = java.newInstanceSync('p1.Kernel');
+console.log("HELLO")
 // for (var j = 0; j < i; j++){
 //         // var j = 0;
 //   show_nextItem(bookmarkStore.get(j.toString()), j.toString());
@@ -207,29 +215,17 @@ function getTextByPage(instance){
       iPage++;
       getTextByPage(instance)
     }else{
+      console.log("BANANA");
+      console.log("succeeded");
+      $("#capeResult").empty().append(kernel.findTextAnswerSync(textD, $("#questionVal").val()));
+      // $('.hover_bkgr_fricc').show();
+      document.getElementById("myDropdown").classList.toggle("show");
+       //init for search
+      iPage = 0;
+      iEndPage = 0;
+      textD = 0;
+      capeClicked = true;
       //post text.
-      console.log(textD);
-      $.ajax({
-        url:"http://54.183.6.45:5000/cape",
-        data: {
-          pdfData: textD,
-          question: $("#questionVal").val()
-        },
-        method: "POST",
-        // dataType: "json"
-      }).done(function(t){
-        console.log("succeeded");
-        console.log(t);
-        $("#capeResult").empty().append(t);
-        // $('.hover_bkgr_fricc').show();
-        document.getElementById("myDropdown").classList.toggle("show");
-         //init for search
-        iPage = 0;
-        iEndPage = 0;
-        textD = 0;
-        capeClicked = true;
-      })
-     
       return;
     }
   });
