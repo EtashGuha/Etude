@@ -1,0 +1,63 @@
+#  Licensed to the Apache Software Foundation (ASF) under one or more
+#  contributor license agreements.  See the NOTICE file distributed with
+#  this work for additional information regarding copyright ownership.
+#  The ASF licenses this file to You under the Apache License, Version 2.0
+#  (the "License"); you may not use this file except in compliance with
+#  the License.  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+shadedwipo.org.apache.lucene.analysis.ar.ArabicLetterTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.cjk.CJKTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.cn.ChineseTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.core.KeywordTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.core.LetterTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.core.LowerCaseTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.core.WhitespaceTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.ngram.EdgeNGramTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.ngram.NGramTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.path.PathHierarchyTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.pattern.PatternTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.ru.RussianLetterTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.standard.ClassicTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.standard.StandardTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.standard.UAX29URLEmailTokenizerFactory
+shadedwipo.org.apache.lucene.analysis.wikipedia.WikipediaTokenizerFactory
+#  Licensed to the Apache Software Foundation (ASF) under one or more
+#  contributor license agreements.  See the NOTICE file distributed with
+#  this work for additional information regarding copyright ownership.
+#  The ASF licenses this file to You under the Apache License, Version 2.0
+#  (the "License"); you may not use this file except in compliance with
+#  the License.  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+shadedwipo.org.apache.lucene.analysis.ja.JapaneseTokenizerFactory
+#  Licensed to the Apache Software Foundation (ASF) under one or more
+#  contributor license agreements.  See the NOTICE file distributed with
+#  this work for additional information regarding copyright ownership.
+#  The ASF licenses this file to You under the Apache License, Version 2.0
+#  (the "License"); you may not use this file except in compliance with
+#  the License.  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+shadedwipo.org.apache.lucene.analysis.cn.smart.SmartChineseSentenceTokenizerFactory

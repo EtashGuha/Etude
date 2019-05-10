@@ -27,6 +27,8 @@
     ]
   },
   "dependencies": {
-    "electron-store": "^2.0.0"
+    "electron-rebuild": "^1.8.4",
+    "electron-store": "^2.0.0",
+    "java": "^0.11.0"
   }
 }
