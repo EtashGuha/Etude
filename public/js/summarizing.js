@@ -36,7 +36,7 @@ var java = require('java');
 java.classpath.push("Kernel.jar");
 java.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
 var kernel = java.newInstanceSync('p1.Kernel');
-console.log("HELLO")
+
 // for (var j = 0; j < i; j++){
 //         // var j = 0;
 //   show_nextItem(bookmarkStore.get(j.toString()), j.toString());
@@ -325,7 +325,8 @@ $('#getRangeButton').click(function(){
   $('.su_popup').show();
 })
 
-
+kernel.findTextAnswerSync('foo','bar');
+console.log('hello');
 // function queueRenderPage(num) {
 //   if (pageRendering) {
 //     pageNumPending = num;
