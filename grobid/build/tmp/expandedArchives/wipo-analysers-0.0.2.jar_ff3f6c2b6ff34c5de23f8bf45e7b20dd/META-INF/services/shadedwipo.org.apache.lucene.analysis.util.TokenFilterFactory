@@ -1,0 +1,133 @@
+#  Licensed to the Apache Software Foundation (ASF) under one or more
+#  contributor license agreements.  See the NOTICE file distributed with
+#  this work for additional information regarding copyright ownership.
+#  The ASF licenses this file to You under the Apache License, Version 2.0
+#  (the "License"); you may not use this file except in compliance with
+#  the License.  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+shadedwipo.org.apache.lucene.analysis.ar.ArabicNormalizationFilterFactory
+shadedwipo.org.apache.lucene.analysis.ar.ArabicStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.bg.BulgarianStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.br.BrazilianStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.cjk.CJKBigramFilterFactory
+shadedwipo.org.apache.lucene.analysis.cjk.CJKWidthFilterFactory
+shadedwipo.org.apache.lucene.analysis.cn.ChineseFilterFactory
+shadedwipo.org.apache.lucene.analysis.commongrams.CommonGramsFilterFactory
+shadedwipo.org.apache.lucene.analysis.commongrams.CommonGramsQueryFilterFactory
+shadedwipo.org.apache.lucene.analysis.compound.DictionaryCompoundWordTokenFilterFactory
+shadedwipo.org.apache.lucene.analysis.compound.HyphenationCompoundWordTokenFilterFactory
+shadedwipo.org.apache.lucene.analysis.core.LowerCaseFilterFactory
+shadedwipo.org.apache.lucene.analysis.core.StopFilterFactory
+shadedwipo.org.apache.lucene.analysis.core.TypeTokenFilterFactory
+shadedwipo.org.apache.lucene.analysis.cz.CzechStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.de.GermanLightStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.de.GermanMinimalStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.de.GermanNormalizationFilterFactory
+shadedwipo.org.apache.lucene.analysis.de.GermanStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.el.GreekLowerCaseFilterFactory
+shadedwipo.org.apache.lucene.analysis.el.GreekStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.en.EnglishMinimalStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.en.EnglishPossessiveFilterFactory
+shadedwipo.org.apache.lucene.analysis.en.KStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.en.PorterStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.es.SpanishLightStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.fa.PersianNormalizationFilterFactory
+shadedwipo.org.apache.lucene.analysis.fi.FinnishLightStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.fr.FrenchLightStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.fr.FrenchMinimalStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.ga.IrishLowerCaseFilterFactory
+shadedwipo.org.apache.lucene.analysis.gl.GalicianMinimalStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.gl.GalicianStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.hi.HindiNormalizationFilterFactory
+shadedwipo.org.apache.lucene.analysis.hi.HindiStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.hu.HungarianLightStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.hunspell.HunspellStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.id.IndonesianStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.in.IndicNormalizationFilterFactory
+shadedwipo.org.apache.lucene.analysis.it.ItalianLightStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.lv.LatvianStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.ASCIIFoldingFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.CapitalizationFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.CodepointCountFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.HyphenatedWordsFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.KeepWordFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.KeywordMarkerFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.KeywordRepeatFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.LengthFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.LimitTokenCountFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.LimitTokenPositionFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.RemoveDuplicatesTokenFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.StemmerOverrideFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.TrimFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.WordDelimiterFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.ScandinavianFoldingFilterFactory
+shadedwipo.org.apache.lucene.analysis.miscellaneous.ScandinavianNormalizationFilterFactory
+shadedwipo.org.apache.lucene.analysis.ngram.EdgeNGramFilterFactory
+shadedwipo.org.apache.lucene.analysis.ngram.NGramFilterFactory
+shadedwipo.org.apache.lucene.analysis.no.NorwegianLightStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.no.NorwegianMinimalStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.pattern.PatternReplaceFilterFactory
+shadedwipo.org.apache.lucene.analysis.pattern.PatternCaptureGroupFilterFactory
+shadedwipo.org.apache.lucene.analysis.payloads.DelimitedPayloadTokenFilterFactory
+shadedwipo.org.apache.lucene.analysis.payloads.NumericPayloadTokenFilterFactory
+shadedwipo.org.apache.lucene.analysis.payloads.TokenOffsetPayloadTokenFilterFactory
+shadedwipo.org.apache.lucene.analysis.payloads.TypeAsPayloadTokenFilterFactory
+shadedwipo.org.apache.lucene.analysis.position.PositionFilterFactory
+shadedwipo.org.apache.lucene.analysis.pt.PortugueseLightStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.pt.PortugueseMinimalStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.pt.PortugueseStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.reverse.ReverseStringFilterFactory
+shadedwipo.org.apache.lucene.analysis.ru.RussianLightStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.shingle.ShingleFilterFactory
+shadedwipo.org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory
+shadedwipo.org.apache.lucene.analysis.standard.ClassicFilterFactory
+shadedwipo.org.apache.lucene.analysis.standard.StandardFilterFactory
+shadedwipo.org.apache.lucene.analysis.sv.SwedishLightStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.synonym.SynonymFilterFactory
+shadedwipo.org.apache.lucene.analysis.th.ThaiWordFilterFactory
+shadedwipo.org.apache.lucene.analysis.tr.TurkishLowerCaseFilterFactory
+shadedwipo.org.apache.lucene.analysis.util.ElisionFilterFactory
+shadedwipo.org.apache.lucene.collation.CollationKeyFilterFactory
+#  Licensed to the Apache Software Foundation (ASF) under one or more
+#  contributor license agreements.  See the NOTICE file distributed with
+#  this work for additional information regarding copyright ownership.
+#  The ASF licenses this file to You under the Apache License, Version 2.0
+#  (the "License"); you may not use this file except in compliance with
+#  the License.  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+shadedwipo.org.apache.lucene.analysis.ja.JapaneseBaseFormFilterFactory
+shadedwipo.org.apache.lucene.analysis.ja.JapaneseKatakanaStemFilterFactory
+shadedwipo.org.apache.lucene.analysis.ja.JapanesePartOfSpeechStopFilterFactory
+shadedwipo.org.apache.lucene.analysis.ja.JapaneseReadingFormFilterFactory
+#  Licensed to the Apache Software Foundation (ASF) under one or more
+#  contributor license agreements.  See the NOTICE file distributed with
+#  this work for additional information regarding copyright ownership.
+#  The ASF licenses this file to You under the Apache License, Version 2.0
+#  (the "License"); you may not use this file except in compliance with
+#  the License.  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+shadedwipo.org.apache.lucene.analysis.cn.smart.SmartChineseWordTokenFilterFactory
