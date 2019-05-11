@@ -1,5 +1,6 @@
 # Don't track content of these folders
-.DS_STORE
+.DS_Store
+
 
 
 # Compiled source #
