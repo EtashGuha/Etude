@@ -25,14 +25,14 @@ function createWindow () {
     width: width,
     minWidth: 600,
     minHeight: 200,
-    backgroundColor: '#ffffff', 
+    backgroundColor: '#ffffff',
     webPreferences: {
       nodeIntegration: true
     },
     icon: 'assets/images/logo.jpg',})
 
   // and load the index.html of the app.
-  mainWindow.setMenu(null)
+  ///////////////////////////////////////mainWindow.setMenu(null)
   mainWindow.loadFile('library.html')
 
   // Open the DevTools.
