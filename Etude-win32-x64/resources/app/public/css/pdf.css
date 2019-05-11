@@ -1,8 +1,0 @@
-.Button.Icon {
-  color: red;
-}
-
-.Panel.open {
-  transition: all ease 0.5s;
-  background-color: red;
-}
