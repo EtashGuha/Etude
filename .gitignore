@@ -1,6 +1,6 @@
 # Don't track content of these folders
 jre-10.0.2.jre/
-.DS_Store
+*.DS_Store
 
 
 # Compiled source #
