@@ -14,36 +14,17 @@ viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
 iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}`);
 
-  // console.log(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('pageNumber').value);
-
-  // document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[pange_number].click()
-
-
-// Add the iframe to our UI.
-// console.log($('#pageNumber').val());
-// console.log("pagenumber is printed ddddddd");
 viewerEle.appendChild(iframe);
 
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
-   //get text from pdf to send to flask backends
+//get text from pdf to send to flask backends
 var PDF_URL  = filepath;
 console.log(PDF_URL);
 var capeClicked = false;
 var btnClicked = false;
 var bookmarkOpened = false;
 
-// for (var j = 0; j < i; j++){
-//         // var j = 0;
-//   show_nextItem(bookmarkStore.get(j.toString()), j.toString());
-//   console.log(bookmarkStore.get(j.toString()));
-//   showPDF(filepath,bookmarkStore.get(j.toString()));
-
-// }
-
 $("#bookmark_icon").click(function(){
-
-  // document.getElementById("bookmark_icon").src="./assets/images/bookmarkselected.png";
-  // var whichpagetobookmark = $("#bookmark_select_page").val();
   //get the page number
   var whichpagetobookmark = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('pageNumber').value;
   console.log(bookmarkArray.length);
@@ -53,9 +34,7 @@ $("#bookmark_icon").click(function(){
   }
   show_nextItem(whichpagetobookmark,null);
   //store the page number in the database
-  // bookmarkStore.set(i.toString(),whichpagetobookmark);
   bookmarkArray.push(whichpagetobookmark);
-  console.log("kan kan below");
   showPDF(filepath,parseInt(whichpagetobookmark));
 })
 
