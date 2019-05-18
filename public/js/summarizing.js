@@ -17,12 +17,28 @@ iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${req
 viewerEle.appendChild(iframe);
 
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
+
+deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
 //get text from pdf to send to flask backends
 var PDF_URL  = filepath;
 console.log(PDF_URL);
 var capeClicked = false;
 var btnClicked = false;
 var bookmarkOpened = false;
+
+///HTMLLLINNNGGGG
+pdfAllToHTML(PDF_URL);
+// let thedir = "";
+// thedir += nameOfFileDir;
+// let nameofFile = thedir.substring(thedir.lastIndexOf("\\") + 1, thedir.lastIndexOf("."));
+// console.log(thedir);
+// thedir = thedir.substring(0, thedir.lastIndexOf("\\") + 1);
+// console.log(thedir);
+//
+// let inputfile = thedir + nameofFile + ".pdf";
+// console.log(inputfile);
+// let outputfile = thedir + nameofFile + ".html";
+// let imagedir = thedir;
 
 $("#bookmark_icon").click(function(){
   //get the page number
@@ -255,27 +271,27 @@ function processSummarizationResult(t){
   textDsum = 0;
 };
 
-function getTextByPageForSummarization(instance){
-  getPageText(iPagesum , instance).then(function(textPage){
-    if(iPagesum != 0)
-      textDsum += textPage
-    if(iPagesum < iEndPagesum){
-      iPagesum++;
-      getTextByPageForSummarization(instance)
-    }else{
-      deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
-      console.log(textDsum);
-
-      var start;
-      var options = init();
-      start = new Date()
-      processGROBID(options);
-
-
-      return;
-    }
-  });
-}
+// function getTextByPageForSummarization(instance){
+//   getPageText(iPagesum , instance).then(function(textPage){
+//     if(iPagesum != 0)
+//       textDsum += textPage
+//     if(iPagesum < iEndPagesum){
+//       iPagesum++;
+//       getTextByPageForSummarization(instance)
+//     }else{
+//       deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
+//       console.log(textDsum);
+//
+//       var start;
+//       var options = init();
+//       start = new Date()
+//       //processGROBID(options);
+//
+//
+//       return;
+//     }
+//   });
+// }
 
 //
 // /* Module Require */
@@ -394,16 +410,24 @@ function getTextByPageForSummarization(instance){
 //     q.push("/LaTeX_template_for_preparing_supplementary_material_for_submission_to_Optica.pdf");
 // }
 
-function pdfAllToHTML(nameOfFile) {
+function pdfAllToHTML(nameOfFileDir) {
   var exec = require('child_process').exec, child;
   //update the directory to the correct one for PDF and HTML Files
-  thedir = "C:/Users/alimi/Downloads/EtudeXML/";
-  inputfile = thedir + nameofFile + ".pdf";
-  outputfile = thedir + nameofFile + ".html";
-  imagedir = thedir;
+  let thedir = "";
+  thedir += nameOfFileDir;
+  let nameofFile = thedir.substring(thedir.lastIndexOf("\\") + 1, thedir.lastIndexOf("."));
+  console.log(thedir);
+  thedir = thedir.substring(0, thedir.lastIndexOf("\\") + 1);
+  console.log(thedir);
+
+  let inputfile = thedir + nameofFile + ".pdf";
+  console.log(inputfile);
+  let outputfile = thedir + nameofFile + ".html";
+  let imagedir = thedir;
 
   //update directory to JAR file
-  let executionstring = 'java -jar C:/Users/alimi/Downloads/EtudeXML/PDFToHTML.jar ' + inputfile + ' ' + outputfile + ' -idir=' + imagedir;
+  let executionstring = 'java -jar C:/Users/alimi/Downloads/EtudeXML/PDFToHTML.jar ' + inputfile + ' ' + outputfile;
+  //+ ' -idir=' + imagedir
   console.log(executionstring);
   child = exec(executionstring,
       function (error, stdout, stderr) {
@@ -416,20 +440,33 @@ function pdfAllToHTML(nameOfFile) {
 }
 
 function summaryButtonPressed(firstpage, lastpage) {
-  htmlWholeFileToPartialPlainText(firstpage, lastpage).then((result) => {
-    deepai.callStandardApi("summarization", {
-                       text: result}).then((resp) => processSummarizationResult(resp));
-                     }
-  }).catch((err) => console.log(err));
+  htmlWholeFileToPartialPlainText(firstpage, lastpage);
 }
 
 //TO BE ADDED AFTER JAR FILE CALL TO TAKE PLAIN TEXT OUT OF HTML FILE WHEN SUMMARY OR QUESTION
 function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
+
+  //repeatedcode but needed
+  let thedir = "";
+  thedir += PDF_URL;
+  let nameofFile = thedir.substring(thedir.lastIndexOf("\\") + 1, thedir.lastIndexOf("."));
+  console.log(thedir);
+  thedir = thedir.substring(0, thedir.lastIndexOf("\\") + 1);
+  console.log(thedir);
+
+  let inputfile = thedir + nameofFile + ".pdf";
+  console.log(inputfile);
+  let outputfile = thedir + nameofFile + ".html";
+  let imagedir = thedir;
+
+
+
+
   const htmlToJson = require('html-to-json');
   let bigarray = [];
   let bigarrayback = [];
   //the correct html file directory within our project
-  fs.readFile('C:/Users/alimi/Downloads/isthisit.html', "utf8",function(err, data) {
+  fs.readFile(outputfile, "utf8", function(err, data) {
 
     let datadata = data.split("<div class=\"page\"");
     let newstring = "";
@@ -439,6 +476,7 @@ function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
         newstring += datadata[i];
       }
     }
+    //console.log(newstring);
     let newdata = newstring.split("<div class=\"p\"");
     newdata.shift();
     newdata.forEach(function(item) {
@@ -465,13 +503,14 @@ function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
         max = thing.length;
       }
     });
-
+    console.log(bigarray[maxindex]);
     //make sure to make it utf8 afterwards!!
-    return bigarray[maxindex];
     // //where to put the
     // fs.writeFile('C:/Users/alimi/Downloads/EtudeXML/compartoo.txt',bigarray[maxindex], 'utf8', function(err) {
     //   console.log(err);
     // })
+    deepai.callStandardApi("summarization", {
+                       text: bigarray[maxindex]}).then((resp) => processSummarizationResult(resp));
   });
 
 }
@@ -480,52 +519,52 @@ function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
 /**
  * Init the main object with paths passed with the command line
  */
-function init() {
-    var options = new Object();
-
-    // start with the config file
-    const config = require('./config.json');
-    options.grobid_host = config.grobid_host;
-    options.grobid_port = config.grobid_port;
-    options.sleep_time = config.sleep_time;
-
-    // default service is full text processing
-    options.action = "processFulltextDocument";
-    options.concurrency = 10; // number of concurrent call to GROBID, default is 10
-    var attribute; // name of the passed parameter
-    options.inPath = "C:/Users/alimi/Downloads"
-    options.outPath = "C:/Users/alimi/Downloads"
-
-    console.log("\nGROBID service: ", red, options.action+"\n", reset);
-
-    if (!options.inPath) {
-        console.log("Input path is not defines");
-        return;
-    }
-
-    // check the input path
-    fs.lstat(options.inPath, (err, stats) => {
-        if (err)
-            console.log(err);
-        if (stats.isFile())
-            console.log("Input path must be a directory, not a file");
-        if (!stats.isDirectory())
-            console.log("Input path is not a valid directory");
-    });
-
-    // check the output path
-    if (options.outPath) {
-        fs.lstat(options.outPath, (err, stats) => {
-            if (err)
-                console.log(err);
-            if (stats.isFile())
-                console.log("Output path must be a directory, not a file");
-            if (!stats.isDirectory())
-                console.log("Output path is not a valid directory");
-        });
-    }
-    return options;
-}
+// function init() {
+//     var options = new Object();
+//
+//     // start with the config file
+//     const config = require('./config.json');
+//     // options.grobid_host = config.grobid_host;
+//     // options.grobid_port = config.grobid_port;
+//     // options.sleep_time = config.sleep_time;
+//
+//     // default service is full text processing
+//     // options.action = "processFulltextDocument";
+//     // options.concurrency = 10; // number of concurrent call to GROBID, default is 10
+//     var attribute; // name of the passed parameter
+//     // options.inPath = "C:/Users/alimi/Downloads"
+//     // options.outPath = "C:/Users/alimi/Downloads"
+//     //
+//     // console.log("\nGROBID service: ", red, options.action+"\n", reset);
+//     //
+//     // if (!options.inPath) {
+//     //     console.log("Input path is not defines");
+//     //     return;
+//     // }
+//
+//     // check the input path
+//     fs.lstat(options.inPath, (err, stats) => {
+//         if (err)
+//             console.log(err);
+//         if (stats.isFile())
+//             console.log("Input path must be a directory, not a file");
+//         if (!stats.isDirectory())
+//             console.log("Input path is not a valid directory");
+//     });
+//
+//     // check the output path
+//     if (options.outPath) {
+//         fs.lstat(options.outPath, (err, stats) => {
+//             if (err)
+//                 console.log(err);
+//             if (stats.isFile())
+//                 console.log("Output path must be a directory, not a file");
+//             if (!stats.isDirectory())
+//                 console.log("Output path is not a valid directory");
+//         });
+//     }
+//     return options;
+// }
 
 function end() {
     console.info('Execution time')
