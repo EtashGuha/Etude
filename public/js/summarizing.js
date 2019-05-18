@@ -125,6 +125,7 @@ function getPageText(pageNum, PDFDocumentInstance) {
   return new Promise(function (resolve, reject) {
       PDFDocumentInstance.getPage(pageNum).then(function (pdfPage) {
           // The main trick to obtain the text of the PDF page, use the getTextContent method
+          console.log(pdfPage);
           pdfPage.getTextContent().then(function (textContent) {
               var textItems = textContent.items;
               var finalString = "";
@@ -213,9 +214,10 @@ function getTextByPage(instance){
 //summarization function
 $('#summarizingButton').click(function(){
   console.log("summarizingButtonClicked");
+  console.log($('#topageRange').val());
   $('.su_popup').hide();
-  getSeletedPageTextForSummarization($('#pageRange').val(),$('#topageRange').val());
-
+  summaryButtonPressed($('#pageRange').val(),$('#topageRange').val());
+  ////////////////////////////getSeletedPageTextForSummarization($('#pageRange').val(),$('#topageRange').val());
   // here you can add the loading button
   $('.summarizer_loading').show();
   $('.hover_bkgr_fricc').click(function(){
@@ -275,122 +277,205 @@ function getTextByPageForSummarization(instance){
   });
 }
 
+//
+// /* Module Require */
+//
+// // the URL of the GROBID service (to be changed if necessary)
+// //const GROBID_URL = "http://localhost:8070/api/";
+//
+// // for making console output less boring
+// const green = '\x1b[32m';
+// const red = '\x1b[31m';
+// const orange = '\x1b[33m';
+// const white = '\x1b[37m';
+// const blue = `\x1b[34m`;
+// const score = '\x1b[7m';
+// const bright = "\x1b[1m";
+// const reset = '\x1b[0m';
+//
+// /**
+//  * List all the PDF files in a directory in a synchronous fashion,
+//  * @return the list of file names
+//  */
+//
+// function callGROBID(options, file, callback) {
+//     console.log("---\nProcessing: " + PDF_URL);
+//
+//     var form = new FormData();
+//     form.append("input", fs.createReadStream(PDF_URL));
+//     form.append("consolidateHeader", "1");
+//     form.append("consolidateCitations", "0");
+//     console.log(typeof fs.createReadStream(options.inPath+"/"+file));
+//     var grobid_url = "http://" + options.grobid_host;
+//     if (options.grobid_port)
+//         grobid_url += ':' + options.grobid_port
+//     grobid_url += '/api/';
+//     form.submit(grobid_url+options.action, function(err, res, body) {
+//         if (err) {
+//             console.log(err);
+//             return false;
+//         }
+//
+//         if (!res) {
+//             console.log("GROBID service appears unavailable");
+//             //return false;
+//         } else {
+//            res.setEncoding('utf8');
+//         }
+//
+//         if (res.statusCode == 503) {
+//             // service unavailable, normally it means all the threads for GROBID on the server are currently used
+//             // so we sleep a bit before retrying the process
+//             sleep.sleep(options.sleep_time);
+//             return callGROBID(options, file, callback);
+//         } else if (res.statusCode == 204) {
+//             // success but no content, no need to read further the response and write an empty file
+//             return true;
+//         } else if (res.statusCode != 200) {
+//             console.log("Call to GROBID service failed with error " + res.statusCode);
+//             return false;
+//         }
+//
+//         var body = "";
+//         res.on("data", function (chunk) {
+//             body += chunk;
+//         });
+//
+//         res.on("end", function () {
+//             mkdirp(options.outPath, function(err, made) {
+//                 // I/O error
+//                 if (err)
+//                     return cb(err);
+//                 console.log(body);
+//                 // first write the TEI reponse
+//
+//                 let lessthan = body.indexOf('<p');
+//                 while (lessthan !== -1) {
+//                   body = body.slice(0,lessthan) + "!br!" + body.slice(body.indexOf('>',lessthan) + 1);
+//                   lessthan = body.indexOf('<p');
+//                 }
+//                 lessthan = body.indexOf('<');
+//                 while (lessthan !== -1) {
+//                   body = body.slice(0,lessthan) + " " + body.slice(body.indexOf('>',lessthan) + 1);
+//                   lessthan = body.indexOf('<');
+//                 }
+//                 String.prototype.replaceAll = function(search, replacement) {
+//                   var target = this;
+//                   return target.replace(new RegExp(search, 'g'), replacement);
+//                 }
+//                 body = body.replaceAll("!br!","<br>");
+//                 deepai.callStandardApi("summarization", {
+//                   text: body}).then((resp) => processSummarizationResult(resp));
+//             });
+//         });
+//     });
+// }
+//
+// /**
+//  * Process a PDF file by calling the entity-fishing service and enrich with the resulting
+//  * JSON
+//  * @param {object} options object containing all the information necessary to manage the paths:
+//  *  - {object} inPath input directory where to find the PDF files
+//  *  - {object} outPath output directory where to write the results
+//  *  - {string} profile the profile indicating which filter to use with the entity-fishing service, e.g. "species"
+//  * @return {undefined} Return undefined
+//  */
+// function processGROBID(options) {
+//     // get the PDF paths
+//
+//     var q = async.queue(function (file, callback) {
+//         callGROBID(options, file, callback);
+//     }, options.concurrency);
+//
+//     q.drain = function() {
+//         console.log(red, "\nall tasks completed!", reset);
+//         end();
+//     }
+//     q.push("/LaTeX_template_for_preparing_supplementary_material_for_submission_to_Optica.pdf");
+// }
 
-/* Module Require */
+function pdfAllToHTML(nameOfFile) {
+  var exec = require('child_process').exec, child;
+  //update the directory to the correct one for PDF and HTML Files
+  thedir = "C:/Users/alimi/Downloads/EtudeXML/";
+  inputfile = thedir + nameofFile + ".pdf";
+  outputfile = thedir + nameofFile + ".html";
+  imagedir = thedir;
 
-// the URL of the GROBID service (to be changed if necessary)
-//const GROBID_URL = "http://localhost:8070/api/";
-
-// for making console output less boring
-const green = '\x1b[32m';
-const red = '\x1b[31m';
-const orange = '\x1b[33m';
-const white = '\x1b[37m';
-const blue = `\x1b[34m`;
-const score = '\x1b[7m';
-const bright = "\x1b[1m";
-const reset = '\x1b[0m';
-
-/**
- * List all the PDF files in a directory in a synchronous fashion,
- * @return the list of file names
- */
-
-function callGROBID(options, file, callback) {
-    console.log("---\nProcessing: " + PDF_URL);
-
-    var form = new FormData();
-    form.append("input", fs.createReadStream(PDF_URL));
-    form.append("consolidateHeader", "1");
-    form.append("consolidateCitations", "0");
-    console.log(typeof fs.createReadStream(options.inPath+"/"+file));
-    var grobid_url = "http://" + options.grobid_host;
-    if (options.grobid_port)
-        grobid_url += ':' + options.grobid_port
-    grobid_url += '/api/';
-    form.submit(grobid_url+options.action, function(err, res, body) {
-        if (err) {
-            console.log(err);
-            return false;
-        }
-
-        if (!res) {
-            console.log("GROBID service appears unavailable");
-            //return false;
-        } else {
-           res.setEncoding('utf8');
-        }
-
-        if (res.statusCode == 503) {
-            // service unavailable, normally it means all the threads for GROBID on the server are currently used
-            // so we sleep a bit before retrying the process
-            sleep.sleep(options.sleep_time);
-            return callGROBID(options, file, callback);
-        } else if (res.statusCode == 204) {
-            // success but no content, no need to read further the response and write an empty file
-            return true;
-        } else if (res.statusCode != 200) {
-            console.log("Call to GROBID service failed with error " + res.statusCode);
-            return false;
-        }
-
-        var body = "";
-        res.on("data", function (chunk) {
-            body += chunk;
-        });
-
-        res.on("end", function () {
-            mkdirp(options.outPath, function(err, made) {
-                // I/O error
-                if (err)
-                    return cb(err);
-                console.log(body);
-                // first write the TEI reponse
-
-                let lessthan = body.indexOf('<p');
-                while (lessthan !== -1) {
-                  body = body.slice(0,lessthan) + "!br!" + body.slice(body.indexOf('>',lessthan) + 1);
-                  lessthan = body.indexOf('<p');
-                }
-                lessthan = body.indexOf('<');
-                while (lessthan !== -1) {
-                  body = body.slice(0,lessthan) + " " + body.slice(body.indexOf('>',lessthan) + 1);
-                  lessthan = body.indexOf('<');
-                }
-                String.prototype.replaceAll = function(search, replacement) {
-                  var target = this;
-                  return target.replace(new RegExp(search, 'g'), replacement);
-                }
-                body = body.replaceAll("!br!","<br>");
-                deepai.callStandardApi("summarization", {
-                  text: body}).then((resp) => processSummarizationResult(resp));
-            });
-        });
-    });
+  //update directory to JAR file
+  let executionstring = 'java -jar C:/Users/alimi/Downloads/EtudeXML/PDFToHTML.jar ' + inputfile + ' ' + outputfile + ' -idir=' + imagedir;
+  console.log(executionstring);
+  child = exec(executionstring,
+      function (error, stdout, stderr) {
+          console.log('stdout: ' + stdout);
+          console.log('stderr: ' + stderr);
+          if (error !== null) {
+               console.log('exec error: ' + error);
+          }
+      });
 }
 
-/**
- * Process a PDF file by calling the entity-fishing service and enrich with the resulting
- * JSON
- * @param {object} options object containing all the information necessary to manage the paths:
- *  - {object} inPath input directory where to find the PDF files
- *  - {object} outPath output directory where to write the results
- *  - {string} profile the profile indicating which filter to use with the entity-fishing service, e.g. "species"
- * @return {undefined} Return undefined
- */
-function processGROBID(options) {
-    // get the PDF paths
+function summaryButtonPressed(firstpage, lastpage) {
+  htmlWholeFileToPartialPlainText(firstpage, lastpage).then((result) => {
+    deepai.callStandardApi("summarization", {
+                       text: result}).then((resp) => processSummarizationResult(resp));
+                     }
+  }).catch((err) => console.log(err));
+}
 
-    var q = async.queue(function (file, callback) {
-        callGROBID(options, file, callback);
-    }, options.concurrency);
+//TO BE ADDED AFTER JAR FILE CALL TO TAKE PLAIN TEXT OUT OF HTML FILE WHEN SUMMARY OR QUESTION
+function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
+  const htmlToJson = require('html-to-json');
+  let bigarray = [];
+  let bigarrayback = [];
+  //the correct html file directory within our project
+  fs.readFile('C:/Users/alimi/Downloads/isthisit.html', "utf8",function(err, data) {
 
-    q.drain = function() {
-        console.log(red, "\nall tasks completed!", reset);
-        end();
+    let datadata = data.split("<div class=\"page\"");
+    let newstring = "";
+    console.log(datadata.length);
+    for (let i = firstpage; i <= lastpage; i++) {
+      if (i <= datadata.length) {
+        newstring += datadata[i];
+      }
     }
-    q.push("/LaTeX_template_for_preparing_supplementary_material_for_submission_to_Optica.pdf");
+    let newdata = newstring.split("<div class=\"p\"");
+    newdata.shift();
+    newdata.forEach(function(item) {
+      item = item.substring(10 + item.search("font-size"));
+      let valued = item.substring(item.search(">") + 1, item.search("<"));
+      let index = (item.substring(0,item.search("pt")));
+      function checkSize(age) {
+        return age == index;
+      }
+      if(bigarrayback.findIndex(checkSize) == -1) {
+        bigarrayback.push(index);
+        valued += " ";
+        bigarray.push(valued);
+      } else {
+        valued += " ";
+        bigarray[bigarrayback.findIndex(checkSize)] += valued;
+      }
+    });
+    let maxindex = -1;
+    let max = 0;
+    bigarray.forEach(function(thing, index) {
+      if (thing.length > max) {
+        maxindex = index;
+        max = thing.length;
+      }
+    });
+
+    //make sure to make it utf8 afterwards!!
+    return bigarray[maxindex];
+    // //where to put the
+    // fs.writeFile('C:/Users/alimi/Downloads/EtudeXML/compartoo.txt',bigarray[maxindex], 'utf8', function(err) {
+    //   console.log(err);
+    // })
+  });
+
 }
+
 
 /**
  * Init the main object with paths passed with the command line
