@@ -26,19 +26,7 @@ var capeClicked = false;
 var btnClicked = false;
 var bookmarkOpened = false;
 
-///HTMLLLINNNGGGG
 pdfAllToHTML(PDF_URL);
-// let thedir = "";
-// thedir += nameOfFileDir;
-// let nameofFile = thedir.substring(thedir.lastIndexOf("\\") + 1, thedir.lastIndexOf("."));
-// console.log(thedir);
-// thedir = thedir.substring(0, thedir.lastIndexOf("\\") + 1);
-// console.log(thedir);
-//
-// let inputfile = thedir + nameofFile + ".pdf";
-// console.log(inputfile);
-// let outputfile = thedir + nameofFile + ".html";
-// let imagedir = thedir;
 
 $("#bookmark_icon").click(function(){
   //get the page number
@@ -273,21 +261,12 @@ function processSummarizationResult(t){
 
 function pdfAllToHTML(nameOfFileDir) {
   var exec = require('child_process').exec, child;
-  //update the directory to the correct one for PDF and HTML Files
-  let thedir = "";
-  thedir += nameOfFileDir;
-  let nameofFile = thedir.substring(thedir.lastIndexOf("\\") + 1, thedir.lastIndexOf("."));
-  console.log(thedir);
-  thedir = thedir.substring(0, thedir.lastIndexOf("\\") + 1);
-  console.log(thedir);
 
-  let inputfile = thedir + nameofFile + ".pdf";
-  console.log(inputfile);
-  let outputfile = thedir + nameofFile + ".html";
-  let imagedir = thedir;
-
+  var filenamewithextension = path.parse(nameOfFileDir).base;
+  var filenameasd = filenamewithextension.split('.')[0];
+  console.log(filenameasd)
   //update directory to JAR file
-  let executionstring = 'java -jar PDFToHTML.jar ' + inputfile + ' ' + outputfile;
+  let executionstring = 'java -jar PDFToHTML.jar \'' + nameOfFileDir + '\' \'./tmp/' + filenameasd + '.html\' -idir=./tmp';
   //+ ' -idir=' + imagedir
   console.log(executionstring);
   child = exec(executionstring,
@@ -306,23 +285,10 @@ function summaryButtonPressed(firstpage, lastpage) {
 
 //TO BE ADDED AFTER JAR FILE CALL TO TAKE PLAIN TEXT OUT OF HTML FILE WHEN SUMMARY OR QUESTION
 function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
-
-  //repeatedcode but needed
-  let thedir = "";
-  thedir += PDF_URL;
-  let nameofFile = thedir.substring(thedir.lastIndexOf("\\") + 1, thedir.lastIndexOf("."));
-  console.log(thedir);
-  thedir = thedir.substring(0, thedir.lastIndexOf("\\") + 1);
-  console.log(thedir);
-
-  let inputfile = thedir + nameofFile + ".pdf";
-  console.log(inputfile);
-  let outputfile = thedir + nameofFile + ".html";
-  let imagedir = thedir;
-
-
-
-
+  var filenamewithextension = path.parse(PDF_URL).base;
+  var filenameasd = filenamewithextension.split('.')[0];
+  var outputfile = './tmp/' + filenameasd + '.html';
+  console.log(outputfile)
   const htmlToJson = require('html-to-json');
   let bigarray = [];
   let bigarrayback = [];
