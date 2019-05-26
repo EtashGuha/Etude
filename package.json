@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "deepai": "^1.0.0",
-    "electron-store": "^2.0.0"
+    "electron-store": "^2.0.0",
+    "html-to-json": "^0.6.0"
   }
 }
