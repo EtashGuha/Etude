@@ -263,10 +263,19 @@ function pdfAllToHTML(nameOfFileDir) {
   var exec = require('child_process').exec, child;
 
   var filenamewithextension = path.parse(nameOfFileDir).base;
-  var filenameasd = filenamewithextension.split('.')[0];
-  console.log(filenameasd)
+  filenamewithextension = filenamewithextension.split('.')[0];
+  console.log(filenamewithextension)
   //update directory to JAR file
-  let executionstring = 'java -jar PDFToHTML.jar \'' + nameOfFileDir + '\' \'./tmp/' + filenameasd + '.html\' -idir=./tmp';
+  var pathOfFile = './tmp/' + filenamewithextension + '.html'
+  try {
+    if (fs.existsSync(pathOfFile)) {
+      console.log("html exists already")
+      return;
+    }
+  } catch(err) {
+    console.error(err)
+  }
+  let executionstring = 'java -jar PDFToHTML.jar \'' + nameOfFileDir + '\' \'./tmp/' + filenamewithextension + '.html\' -idir=./tmp';
   //+ ' -idir=' + imagedir
   console.log(executionstring);
   child = exec(executionstring,
@@ -286,8 +295,8 @@ function summaryButtonPressed(firstpage, lastpage) {
 //TO BE ADDED AFTER JAR FILE CALL TO TAKE PLAIN TEXT OUT OF HTML FILE WHEN SUMMARY OR QUESTION
 function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
   var filenamewithextension = path.parse(PDF_URL).base;
-  var filenameasd = filenamewithextension.split('.')[0];
-  var outputfile = './tmp/' + filenameasd + '.html';
+  filenamewithextension = filenamewithextension.split('.')[0];
+  var outputfile = './tmp/' + filenamewithextension + '.html';
   console.log(outputfile)
   const htmlToJson = require('html-to-json');
   let bigarray = [];
@@ -331,11 +340,6 @@ function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
       }
     });
     console.log(bigarray[maxindex]);
-    //make sure to make it utf8 afterwards!!
-    // //where to put the
-    // fs.writeFile('C:/Users/alimi/Downloads/EtudeXML/compartoo.txt',bigarray[maxindex], 'utf8', function(err) {
-    //   console.log(err);
-    // })
     deepai.callStandardApi("summarization", {
                        text: bigarray[maxindex]}).then((resp) => processSummarizationResult(resp));
   });
