@@ -4,9 +4,10 @@ const path = require('path');
 // var bookmarkStore = new Storebookmark();
 // bookmarkStore.clear();
 // var i = bookmarkStore.size;
-var textData = null;
-var bookmarkArray = [];
 
+var bookmarkArray = [];
+var Tokenizer = require('sentence-tokenizer');
+var tokenizer = new Tokenizer('Chuck');
 const viewerEle = document.getElementById('viewer');
 viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
@@ -293,10 +294,18 @@ function getTextByPageForSummarization(instance){
       iPagesum++;
       getTextByPageForSummarization(instance)
     }else{
+      // viewerEle.innerHTML = "";
+      // iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${'/Users/etashguha/Downloads/Sparrow2.pdf'}`);
+      // viewerEle.appendChild(iframe);
       deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
       deepai.callStandardApi("summarization", {
-        text: textDsum}).then((resp) => processSummarizationResult(resp));
-      
+        text: textDsum}).then((resp) => {
+          processSummarizationResult(resp)
+          noLineBreakText = resp["output"].replace(/(\r\n|\n|\r)/gm, " ");
+
+          tokenizer.setEntry(noLineBreakText);
+          console.log(tokenizer.getSentences());
+        });
       return;
     }
   });
