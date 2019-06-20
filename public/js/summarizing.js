@@ -33,7 +33,7 @@ var capeClicked = false;
 var btnClicked = false;
 var bookmarkOpened = false;
 var java = require('java');
-java.classpath.push("Kernel.jar");
+java.classpath.push("./Kernel.jar");
 java.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
 var kernel = java.newInstanceSync('p1.Kernel');
 
@@ -217,7 +217,7 @@ function getTextByPage(instance){
     }else{
       console.log("BANANA");
       console.log("succeeded");
-      $("#capeResult").empty().append(kernel.findTextAnswerSync(textD, $("#questionVal").val()));
+      $("#capeResult").empty().append(kernel.findTextAnswerSync(textD, $("#questionVal").val(), 2, "Sentence"));
       // $('.hover_bkgr_fricc').show();
       document.getElementById("myDropdown").classList.toggle("show");
        //init for search
@@ -325,7 +325,7 @@ $('#getRangeButton').click(function(){
   $('.su_popup').show();
 })
 
-kernel.findTextAnswerSync('foo','bar');
+kernel.findTextAnswerSync('foo','bar', 1, "Sentence");
 console.log('hello');
 // function queueRenderPage(num) {
 //   if (pageRendering) {
