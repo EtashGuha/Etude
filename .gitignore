@@ -1,4 +1,5 @@
 # Don't track content of these folders
+
 .DS_Store
 node_modules/
 jre-10.0.2.jre/
@@ -26,3 +27,4 @@ jre-10.0.2.jre/
 *.rar
 *.tar
 *.zip
+

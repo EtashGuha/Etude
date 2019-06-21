@@ -1,13 +1,13 @@
 const { dialog } = require('electron').remote;
 const path = require('path');
 
-// java.classpath.push("Kernel.jar");
-// java.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
-// var kernel = java.newInstanceSync('p1.Kernel');
-// const Storebookmark = require('electron-store');
-// var bookmarkStore = new Storebookmark();
-// bookmarkStore.clear();
-// var i = bookmarkStore.size;
+const fs = require('fs');
+var mkdirp = require('mkdirp'),
+  request = require('request'),
+  FormData = require('form-data'),
+  async = require('async');
+
+
 var textData = null;
 var bookmarkArray = [];
 
@@ -16,19 +16,12 @@ viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
 iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}`);
 
-  // console.log(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('pageNumber').value);
-
-  // document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[pange_number].click()
-
-
-// Add the iframe to our UI.
-// console.log($('#pageNumber').val());
-// console.log("pagenumber is printed ddddddd");
 viewerEle.appendChild(iframe);
 
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
-   //get text from pdf to send to flask backends
+//get text from pdf to send to flask backends
 var PDF_URL  = filepath;
+console.log(PDF_URL);
 var capeClicked = false;
 var btnClicked = false;
 var bookmarkOpened = false;
@@ -37,18 +30,7 @@ java.classpath.push("./Kernel.jar");
 java.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
 var kernel = java.newInstanceSync('p1.Kernel');
 
-// for (var j = 0; j < i; j++){
-//         // var j = 0;
-//   show_nextItem(bookmarkStore.get(j.toString()), j.toString());
-//   console.log(bookmarkStore.get(j.toString()));
-//   showPDF(filepath,bookmarkStore.get(j.toString()));
-
-// }
-
 $("#bookmark_icon").click(function(){
-
-  // document.getElementById("bookmark_icon").src="./assets/images/bookmarkselected.png";
-  // var whichpagetobookmark = $("#bookmark_select_page").val();
   //get the page number
   var whichpagetobookmark = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('pageNumber').value;
   console.log(bookmarkArray.length);
@@ -58,9 +40,7 @@ $("#bookmark_icon").click(function(){
   }
   show_nextItem(whichpagetobookmark,null);
   //store the page number in the database
-  // bookmarkStore.set(i.toString(),whichpagetobookmark);
   bookmarkArray.push(whichpagetobookmark);
-  console.log("kan kan below");
   showPDF(filepath,parseInt(whichpagetobookmark));
 })
 
@@ -71,7 +51,7 @@ function showPDF(pdf_url,bookmark_page) {
                   // Show the first page
                   showPage(bookmark_page);
                   // store.set(i.toString(),pdf_url);
-                  // i++; 
+                  // i++;
     }).catch(function(error) {
                   alert(error.message);
     });
@@ -80,7 +60,7 @@ function showPDF(pdf_url,bookmark_page) {
  function showPage(page_no) {
                 __PAGE_RENDERING_IN_PROGRESS = 1;
                 __CURRENT_PAGE = page_no;
-                
+
                 // Fetch the page
           __PDF_DOC.getPage(page_no).then(function(page) {
                         var __CANVAS = $('.bookmark-canvas').get($(".bookmark-canvas").length-1),
@@ -99,14 +79,14 @@ function showPDF(pdf_url,bookmark_page) {
                                 canvasContext: __CANVAS_CTX,
                                 viewport: viewport
                         };
-    
+
                         // Render the page contents in the canvas
                         page.render(renderContext).then(function() {
                                 __PAGE_RENDERING_IN_PROGRESS = 0;
 
                                 $(".bookmark-canvas").show();
                                 $(".deleteImage_").show();
-                                       
+
                         });
           });
   }
@@ -129,7 +109,7 @@ $(document).on("click",".bookmark-canvas", function(){
   console.log("above you clicked sth");
   document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[$(this).attr("data") - 1].click()
 });
-    
+
 
 $("#cape_btn").click(function(){
   //get the text and question
@@ -143,7 +123,7 @@ $("#cape_btn").click(function(){
     getSeletedPageText($('#pageRange').val(),$('#topageRange').val());
     capeClicked = true;
   }
-  
+
 })
 
 function getPageText(pageNum, PDFDocumentInstance) {
@@ -170,10 +150,6 @@ function getPageText(pageNum, PDFDocumentInstance) {
 }
 
 
-// function setTotalNum(num){
-//     $('#cuPage').empty().append(num);
-// }
-//help page show
 $("#help").click(function(){
   // close the bookmark page
   $("#bookmark_item").attr("data","true");
@@ -183,9 +159,6 @@ $("#help").click(function(){
 	$('.help_popup').click(function(){
     $('.help_popup').hide();
   });
-  // $('.popupCloseButton').click(function(){
-  //   $('.hover_bkgr_fricc').hide();
-  // });
 })
 
 //get text function
@@ -231,27 +204,19 @@ function getTextByPage(instance){
   });
 }
 
-
-
-// document.body.onclick = function(e){
-//   document.getElementById("myDropdown").classList.toggle("show");
-// };
-
-// here is the part of bookmark
-
 //summarization function
 $('#summarizingButton').click(function(){
   console.log("summarizingButtonClicked");
   $('.su_popup').hide();
   getSeletedPageTextForSummarization($('#pageRange').val(),$('#topageRange').val());
-   
-  // $('.hover_bkgr_fricc').show();
+
   // here you can add the loading button
   $('.summarizer_loading').show();
   $('.hover_bkgr_fricc').click(function(){
         $('.hover_bkgr_fricc').hide();
-    });    
+    });
 })
+
 var textDsum = "";
 var iPagesum = 0;
 var iEndPagesum = 0;
@@ -267,6 +232,21 @@ function getSeletedPageTextForSummarization(fpage,tpage)
         console.log("eorror");
     });
 }
+
+function processSummarizationResult(t){
+  console.log("succeeded");
+  console.log(t);
+  console.log(typeof(t));
+  console.log(t["output"])
+  $("#summarizingResult").empty().append(t["output"]);
+  //here you can remove the loading button
+  $('.summarizer_loading').hide();
+  $('.hover_bkgr_fricc').show();
+  iPagesum = 0;
+  iEndPagesum = 0;
+  textDsum = 0;
+};
+
 function getTextByPageForSummarization(instance){
   getPageText(iPagesum , instance).then(function(textPage){
     if(iPagesum != 0)
@@ -275,48 +255,20 @@ function getTextByPageForSummarization(instance){
       iPagesum++;
       getTextByPageForSummarization(instance)
     }else{
-      //post text.
+      deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
+      deepai.callStandardApi("summarization", {
+        text: textDsum}).then((resp) => processSummarizationResult(resp));
       console.log(textDsum);
-      $.ajax({
-        url:"http://54.183.6.45:5000/resoomer",
-        data: {
-          pdfData: textDsum
-        },
-        method: "POST",
-        // dataType: "json"
-      }).done(function(t){
-        console.log("succeeded");
-        console.log(t);
-        $("#summarizingResult").empty().append(t);
-        //here you can remove the loading button
-        $('.summarizer_loading').hide();
-        $('.hover_bkgr_fricc').show();
-        iPagesum = 0;
-        iEndPagesum = 0;
-        textDsum = 0;
-      })
-      // .fail(function(err) {
-      //   console.log("you failed so try again I know you are great so you can be best all the time, fighting!");
-      // });
-     
       return;
     }
   });
 }
 
+function end() {
+    console.info('Execution time')
+}
+
 $('#getRangeButton').click(function(){
-  // if(btnClicked == false){
-  //   $('#getRangeButton').hide();
-  //   $('.su_popup').show();
-  //   btnClicked = true;
-  // }
-  // else{
-  //    $('.su_popup').hide();
-  //    btnClicked = false;
-  // }
-  // $('.su_popup').click(function(){
-  //   $('.su_popup').hide();
-  // });
   //close the bookmark page
   $("#bookmark_item").attr("data","true");
   $("#bookmark_item").click();
@@ -325,46 +277,6 @@ $('#getRangeButton').click(function(){
   $('.su_popup').show();
 })
 
+
 kernel.findTextAnswerSync('foo','bar', 1, "Sentence");
 console.log('hello');
-// function queueRenderPage(num) {
-//   if (pageRendering) {
-//     pageNumPending = num;
-//   } else {
-//     renderPage(num);
-//   }
-// }
-
-// function onNextPage() {
-//   // if (pageNum >= pdfDoc.numPages) {
-//   //   return;
-//   // }
-//   // pageNum++;
-//   queueRenderPage(3);
-// }
-// document.getElementById('next').addEventListener('click', onNextPage);
-
-//bookmark open and close
-// $('#bookmark_item').click(function(){
-
-//   if(bookmarkOpened == false)
-//   {
-//     document.getElementById("bookmark_page").style.display = "block";
-//     $('.bookmark-canvas').show();
-//     $('.deleteImage').show();
-//     bookmarkOpened = true;
-//   }
-//   if (bookmarkOpened == true)
-//   {
-//     document.getElementById("bookmark_page").style.height = "0";
-//     $('.bookmark-canvas').hide();
-//     $('.deleteImage').hide();
-//     bookmarkOpened = false;
-//   }
-
-// })
-
-
-
-
-  
