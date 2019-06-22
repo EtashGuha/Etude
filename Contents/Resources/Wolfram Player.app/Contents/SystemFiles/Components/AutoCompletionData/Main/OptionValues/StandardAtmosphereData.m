@@ -1,2 +1,0 @@
-{Method -> {"\"USStandardAtmosphere\"", 
-   "\"InternationalStandardAtmosphere\"", "\"Jacchia\""}}

@@ -1,1 +1,0 @@
-{"Norm", "Sum", "Sqrt", "Cos"}

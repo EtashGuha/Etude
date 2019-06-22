@@ -1,1 +1,0 @@
-{"HaarWavelet", "BattleLemarieWavelet"}

@@ -1,1 +1,0 @@
-{Method -> {"\"CDF\"", "\"PDF\"", "\"Quantile\""}}

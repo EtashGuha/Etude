@@ -1,1 +1,0 @@
-{"Quantity", "None", "StringReplace", "ExampleData"}

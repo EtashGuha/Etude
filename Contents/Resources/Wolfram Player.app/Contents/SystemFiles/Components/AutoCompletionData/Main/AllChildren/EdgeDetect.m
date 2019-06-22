@@ -1,1 +1,0 @@
-{"Switch", "Method", "ImageDifference", "Binarize"}

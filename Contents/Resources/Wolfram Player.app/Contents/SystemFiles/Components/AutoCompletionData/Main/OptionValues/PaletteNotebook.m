@@ -1,1 +1,0 @@
-{WindowElements -> {"{\"VerticalScrollBar\"}"}}

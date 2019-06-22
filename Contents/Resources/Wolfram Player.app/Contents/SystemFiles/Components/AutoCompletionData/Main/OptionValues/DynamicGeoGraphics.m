@@ -1,3 +1,0 @@
-{
-   GeoProjection -> {"\"Equirectangular\"", "\"Mercator\"", "Automatic"}
-}

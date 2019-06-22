@@ -1,3 +1,0 @@
-PacletManager`Package`getPacletWithProgress["ServiceConnection_FederalReserveEconomicData"]
-
-Get["FederalReserveEconomicDataLoad`"]

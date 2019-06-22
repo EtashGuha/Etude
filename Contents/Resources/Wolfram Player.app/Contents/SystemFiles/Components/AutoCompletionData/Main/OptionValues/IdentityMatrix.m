@@ -1,1 +1,0 @@
-{WorkingPrecision -> {"MachinePrecision"}}

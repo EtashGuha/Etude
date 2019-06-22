@@ -1,1 +1,0 @@
-{"I", "Quantity", "None"}

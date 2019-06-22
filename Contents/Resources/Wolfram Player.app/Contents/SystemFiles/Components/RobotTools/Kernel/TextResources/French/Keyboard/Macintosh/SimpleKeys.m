@@ -1,7 +1,0 @@
-(* ::Package:: *)
-
-{
-"\[CommandKey]",
-
-"\[OptionKey]"
-}

@@ -1,1 +1,0 @@
-{"Plot", "Sphere", "Cylinder", "Arrow"}

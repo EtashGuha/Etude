@@ -1,1 +1,0 @@
-{PerformanceGoal -> {"\"Speed\"", "\"Size\"", "Automatic"}}

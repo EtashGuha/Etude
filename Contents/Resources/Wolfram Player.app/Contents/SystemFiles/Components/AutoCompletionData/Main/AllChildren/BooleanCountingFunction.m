@@ -1,1 +1,0 @@
-{"StringJoin", "Sin", "Pi", "E"}

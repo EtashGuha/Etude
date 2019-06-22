@@ -1,1 +1,0 @@
-{"E", "Pi", "I", "EllipticNomeQ"}

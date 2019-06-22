@@ -1,1 +1,0 @@
-{Method -> {"Automatic", "\"Ackermann\"", "\"KNVD\""}}

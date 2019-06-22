@@ -1,1 +1,0 @@
-{CalendarType -> {"\"Islamic\"", "\"Jewish\"", "\"Julian\""}}

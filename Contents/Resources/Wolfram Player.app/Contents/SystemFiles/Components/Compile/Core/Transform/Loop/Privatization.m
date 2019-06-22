@@ -1,1 +1,0 @@
-(* https://engineering.purdue.edu/Cetus/Documentation/manual/ch07s04.html *)

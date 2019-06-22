@@ -1,1 +1,0 @@
-{Masking -> {"Graphics[{Disk[]}]"}}

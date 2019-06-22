@@ -1,1 +1,0 @@
-{PlotLayout -> {"\"Percentile\"", "\"Stacked\""}}

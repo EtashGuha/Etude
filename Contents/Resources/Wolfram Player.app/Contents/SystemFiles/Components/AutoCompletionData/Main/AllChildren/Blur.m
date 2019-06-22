@@ -1,1 +1,0 @@
-{"Null", "If", "EdgeDetect", "ColorNegate"}

@@ -1,1 +1,0 @@
-{"Degree", "E", "Sin", "Cos"}

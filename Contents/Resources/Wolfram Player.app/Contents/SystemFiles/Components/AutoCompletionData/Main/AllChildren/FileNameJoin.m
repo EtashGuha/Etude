@@ -1,1 +1,0 @@
-{"$SystemID", "$InstallationDirectory", "Which", "Drop"}

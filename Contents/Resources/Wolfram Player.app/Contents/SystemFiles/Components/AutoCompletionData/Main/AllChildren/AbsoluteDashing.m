@@ -1,1 +1,0 @@
-{"Dot", "Sequence", "NumericQ"}

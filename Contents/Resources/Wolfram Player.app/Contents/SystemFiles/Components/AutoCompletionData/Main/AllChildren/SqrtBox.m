@@ -1,1 +1,0 @@
-{"StyleBox", "RowBox", "FractionBox"}

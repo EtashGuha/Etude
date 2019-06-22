@@ -1,1 +1,0 @@
-{Appearance -> {"\"Pressed\"", "\"FramedPalette\""}}

@@ -1,1 +1,0 @@
-{"ImageDimensions", "ExampleData"}

@@ -1,1 +1,0 @@
-{"Style", "Plus", "Infinity", "ToExpression"}

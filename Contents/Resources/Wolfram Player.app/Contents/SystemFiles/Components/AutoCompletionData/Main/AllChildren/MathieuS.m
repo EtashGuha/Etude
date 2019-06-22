@@ -1,1 +1,0 @@
-{"MathieuCharacteristicB", "Pi", "MathieuCharacteristicA", "MemberQ"}

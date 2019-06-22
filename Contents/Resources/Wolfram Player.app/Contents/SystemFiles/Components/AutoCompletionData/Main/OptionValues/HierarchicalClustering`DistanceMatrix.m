@@ -1,1 +1,0 @@
-{DistanceFunction -> {"ManhattanDistance", "HammingDistance"}}
