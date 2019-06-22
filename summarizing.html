@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./public/css/style.css">
     <link rel="stylesheet" href="./public/fontawesome-free-5.6.3-web/css/all.css">
     <script src='./public/js/jquery.js'></script>
-
+    <script> require('electron-react-devtools').install() </script>
   </head>
   <header class="library-nav">
     <div class="topnav">
@@ -39,7 +39,7 @@
                         </div>
                 </div>
             </div> -->
-        </div> 
+        </div>
     </div>
     <img id = "bookmark_icon" src = "./public/images/bookmarkplus.png"></img>
 <!--     <input type="number" placeholder="1" id = "bookmark_select_page" style="background:#1486E7;width:30px;" value="1"> -->
@@ -78,7 +78,7 @@
               <h5>to</h5>
               <input type="number" placeholder="1" id = "topageRange" style="background:#1486E7;width:130px;" value="1">
           </div>
-              
+
           <button id='summarizingButton' class = "button" style="margin-top: 30px;">Summarize</button>
         </div>
     </div>
@@ -108,14 +108,15 @@
       </div>
   </div>
 
-      
 
-      
+
+
     <script src='./public/js/jquery.js'></script>
     <script src='./public/WebViewer/lib/webviewer.min.js'></script>
     <script src='./public/js/jquery.js'></script>
     <script src="./pdf.js"></script>
-    
+    <script src="https://cdnjs.deepai.org/deepai.min.js"></script>
+
 
     <script>
      // var opened = false;
@@ -129,7 +130,7 @@
           {
             console.log("hrerrrrrrrrr");
             document.getElementById("bookmark_page").style.display = "block";
-           
+
             //opened = true;
             $("#bookmark_item").attr("data","true");
             $('.bookmark-canvas').show();
@@ -144,7 +145,7 @@
             $('.deleteImage').hide();
           }
         }
-        
+
         function closeNav() {
           document.getElementById("bookmark_page").style.height = "0";
         }
@@ -152,6 +153,6 @@
     <script>
       require('./public/js/summarizing.js');
     </script>
-    
+
   </body>
 </html>

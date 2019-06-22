@@ -1,7 +1,14 @@
 # Don't track content of these folders
+<<<<<<< HEAD
 .DS_Store
 node_modules/
 jre-10.0.2.jre/
+=======
+jre-10.0.2.jre/
+.DS_Store
+node_modules/
+
+>>>>>>> master
 
 # Compiled source #
 ###################
@@ -25,4 +32,8 @@ jre-10.0.2.jre/
 *.jar
 *.rar
 *.tar
+<<<<<<< HEAD
 *.zip
+=======
+*.zip
+>>>>>>> master
