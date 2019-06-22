@@ -1,0 +1,670 @@
+@|
+@| *****************************************************************************************
+@|
+@| Note: The resources defined in this file do not need to be translated.
+@|
+@| *****************************************************************************************
+@|
+@|
+@@resource PredictiveInterfaceExpressions
+{
+
+"PredictiveInterfaceBackground" -> 
+{"Default" -> Image[CompressedData["
+1:eJztmN9LwlAUx2/Otc25TNTXILD+j/oHAgt6DIX2GlgQPvkcJP1hRiD2Ij71
+7Fv0oDG9naPnxm1tbpNNJ3jgKzp2vvezc6/3x44bdzU7wxi71+GjVn88azbr
+rcss/DhvPdw2FPhyAqqC8GKMweO1C4y9GBQXQ4akkLIRJHKExypsModoXwXt
+gzSQ7iHD57pGearEF4VL3Cc49sk3BzJBeZAFOgghi+43KV8nP8EVxCSzqPRs
+OfItgIqgEqgMqoRQme4vUr5Ffhr5BzHJLDo9V8G27aPRaPQ0Ho9fOecOjxYO
+5mE++hCXSf4yEwZ3sWSolhrlHHa73QvHcT4iMniDgQ/6oS/5a9SeGE9uHoX6
+F2taGAwGN3FwuAN9qU45ak/x4BG1wTpa7Xa7OpvNvpLgQV/0p/GkSzXiUm0y
+1J/z2kB/vyTBIgL9pRqpHjyir7Bfi5PJ5D1JHvSn/50p9ZmbB8cXzhclqOl3
+kjzT6fSTLeaCPLXr5vkdO6Bykiwi2GJ+kseQFw/Oq5U18VSovR3P9vJwicfY
+EI+R4vrseLabJy3z85/1C9eXJFlwz8GWr19pW9/TtP9hzLU/7HQ6p0nuD9Gf
++e8P3X02r9FwOGwkwYO+LHj/7Hm+6PV6V3GeL/r9/jULd76Qa+R1/nqGMfi2
+CgfmYX7E85dco3WeT0Vt/CJN53c3U9j3G4akuN9v+HFt8v3PMrZNvR/ja9C/
++AE4mICH
+      "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+
+
+"SuggestionsBarBackground" -> 
+{"Default" -> Image[CompressedData["
+1:eJzVlkEKwjAQRYO68A6C4FH0CPUELehWqIL0mHVTaPdKQYpSbJqkEGOnFRdd
+KPxZOLyEHwiPEEKYRbDztiMhxH7qJs8/LsPQj9YTt1hFh00wdmHmxtyNV7bW
+CoaybZ2StCWLkzTu8jDxRxjanL0zHTi/3uCQubiXcOhOyoeEQ2ZZazhkrrWB
+Q2ZlGjidWTdwerOB879mvrfBaFYGTm/WcLjNUmk47Ga2v66SCk5/ZgWH21zV
+Cg41Bkz37MznSw6HOpnfup/vymmfF3gHSw==
+      "], "Byte", ColorSpace -> "RGB", ImageSize -> All, Interleaving -> True]},
+
+
+"SuggestionsBarBackgroundPressed" ->
+{"Default" -> Image[CompressedData["
+1:eJzt1t1qwjAUB/DiduE7DAZ7lO0R3BMo6O3ADYaPqTcDn2Bqk56k6cddPeY0
+bdQ2Bok3YvglnIb2nxRKydvkazQbRFH0PcRhNP59n8/Hi89nvPhY/EwnT1i8
+YH/Ffqgr3aKgrTJt+bdurLy5H6HdbuLE7X/XunQzENo8F2lwlCxULi1CA4vo
+Ip0oOc1KS4FUrbyaSS665b2UGdXZvFYn16+QkUL2LeTDLEHJIDNIT4kjuYuy
+ClWQ5ttIasqXRBm01AlKZiAdOKSa5G3d4+yri7mIE5vswwy77kTJOw6aCIiS
+twyCwO01RdhkGyVf/CNtEdMjFUxPMhfP5Cs8kh/Jd5aMB4NbJDeHGd/Tj1+j
+zD0Sd8oZ
+      "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+
+
+"SuggestionsBarBackgroundWithAssumptions" ->
+{"Default" -> Image[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkCENxHJADGL///+f
+gQbgPxj8+PWb6gjiYFqYDHH5qMn0Mfnn7z9UR1CTf/2lOoKZ/JvqaOiaPBRT
+3Y+fv6mOYCb/ojqitcnff/6iOqK5yT9+Ux3BTP5JdTR0Tf724yfVEdTk7z+p
+jiBNjmfPXz59/vIZEnqKwcalAE0cjF4BEaQlQ2y7hxQANBYA3NEWpQ==
+      "], "Byte", ColorSpace -> 
+      "RGB", Interleaving -> True]},
+
+
+"SuggestionsBarBackgroundWithAssumptionsPressed" ->
+{"Default" -> Image[CompressedData["
+1:eJztlktKA0EQhgd14R0EwaPEI8QTJKBbIREkRzbOpN+vuIg1+dPtGIchaM1C
+sfi6qSqKr3tZN/PH6cNZVVXLS7qms+fJYjFb3V1Qcbt6up+fU3JF55pOm+/2
+UbHGLkfcvrGD345hxud/pTlxm9PB7GMiQtoOEPvK2OFoHmYXogvJxZb2lZDw
+1hCDM2SD2froiMCGDRFmbb12LcaFDzzueEj2HZv5lGPYhzKpXYBZGiuNIxSw
+hP8mxkMCs9CWHZgbaTZAsQFzLVRGd2m6yL6k8KWE+XWjCnVB/IhslhnFBczr
+RrIzurkW66bQHTjqiD5JfxPml1qw82/+A2ZaDMYwl2Xm1O3ntIDzHdPU6j0=
+
+      "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+
+
+"SuggestionsBarAssumptionsBackground" ->
+{"Default" -> Image[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkCENxHJADGL///+f
+gQbgPxhcvH4TiC5dv3UJRALRHTD79iWw+AUwiV/BJXQFtyAOfvH6w8s371++
+gZDIDCgiQgFI8AWQAZX6AHH5u4+fMdAXbIIEFLyFkiApiMk/fv2mOhrCJv/+
+/eP3H+oiiMk/f//5+fsvddFQNpnKxiJM/vX3568/1EVD2WQqG0sXk3/T0mQq
+o1GTh4fJNKpTgA0DWpgMackQ2+4hBQCNBQCZkhEa
+      "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+
+
+"SuggestionsBarBottomBackground" ->
+{"Default" -> Image[CompressedData["
+1:eJzt1ksKwjAUheGgDlyDA8Gl6BLqClrQqVAF6YaVah95x47i1VvBBZwMBC9f
+QjL5yTCr4pDtJ0KI45y2LD+vyzKvtjO6bKrTrpjSYUFrSet1jjGKBBPfUzc9
+XLoyP/tf/i7fWgnH5Xsn4bjc9AruU9ZwXG6lgeNypwzcWNYWjstSW7ixbBwc
+l5VxcFzW1sOlLhsX4Lhs/QOOyy4McD9apvFhgOM3X641HP8KEv1knv4ax7Y=
+
+      "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+
+
+"GrayButtonNinePatchAppearance" -> 
+{"Default" -> Image[CompressedData["
+1:eJytkk0KwjAQRoMKegg3nkR05bqeoAXdClWQXqTJlXKHQP/SppueIc5X2lkU
+N4UMvEy+vDCrOSWv6LkRQrwPdETx95KmcXbfUbhmn0eypcuR2BN4XJRfPuR5
+fpZSasKjI8+OsjPGeBQ68jwD/4dh8H3fjx15cuPdOceEcl3XMaFc27bMGmet
+Zda4pmmYUK6ua2aNq6qKCeXKsmQCOOyZ1Vr7oig8OvLslFI37OS0uw75z77z
+LNQP52LchQ==
+      "], "Byte", ColorSpace -> "RGB", Interleaving -> True], "Hover" -> 
+    Image[CompressedData["
+1:eJytkj0KwkAQRoMKeggbTyJaWccTJKCtEAXJRZJcyW4PkFIIm99NAmnX+UIy
+RbBZ2IG3s9++Zao5+A/3vnIc57mjw/XepyDwwuuGwjl83fw1XfbElsDjovTy
+IYqiYxzHH0KjI8+OcpamqUahI88z8H8YBt33/diRJzfeu65jbLm2bRkTp5Ri
+TFzTNIyJq+uaseWqqmJMXFmWjIkrioIxcXmeMxYc9uwrhNBSSo2OPLskSS7Y
+yWl3M+Q/+86zUD+KqeTp
+      "], "Byte", ColorSpace -> "RGB", Interleaving -> True], "Pressed" -> 
+    Image[CompressedData["
+1:eJyVkjsKwkAQhoMKeggbTyJaWccTJBBbIQqSiyS5UbDL+10KOcY6f8gOstjM
+wJfZf75lm8zBvdu3lWVZjx19bOd18n0nuG4onIOn567psCe2BIZGKXMQhuEx
+iqI3odCRtaM8jeOoUOjI+g3c7/tepWk6d+TFzWfMNabLsoyRuDzPGYkrioKR
+uLIsGdNVVcVIXF3XjOmapmEkrm1bxnRd1zESh3+qkbhhGBiJw35pfhz27JMk
+yTxHR9YujuMLdnLZ3Qn5z77zW6gvPY/Rww==
+      "], "Byte", ColorSpace -> "RGB", Interleaving -> 
+      True]},
+
+
+"OrangeButtonNinePatchAppearance" -> 
+{"Default" -> Image[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkCEDxOxADBJEA//R
+BVbZstivtmM9CcT/QTSID5Nbbcf2/FF/yv//O6f+B9EgPswMkPp/E8P//2tz
+A9MgPlQOzP7X4grHGHLNznCMLve3yRGOMeQa7OEYQ67OBo7R5f7UWsExhly1
+BRyjy/2uNIVjDLlyIzhGl/tVagDH6HI/i3XhGEOuUAuO0eV+5GvAMYZcrioc
+o8t9z1GCYwy5LAU4Rpf7liEHxxhyadJwjCGXKgnH6HJfk8XhGEMuSRSOkeSA
+6Yzlyb0w/v9fE0X+g2gQHya3yoHFA5QmIWmX7TmIjyW9w80CAQBj42Bn
+      "], "Byte", ColorSpace -> 
+      "RGB", Interleaving -> True], "Hover" -> Image[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkCEDxOxADBJEA//R
+BVbZstivtmM9CcT/QTSID5Nbbcf2/NG0/P//jyz7D6JBfJgZIPX/Fxb+/z8j
+GUyD+FA5MPvf9EQ4xpCbFg/HGHJTYuEYQ25SFByjy/2dEA7HGHJ9oXCMIdcT
+BMfocn+6/OEYQ67DB47R5X63ecIxhlyLKxxjyDU5wTG63K96ezjGkKu1gWN0
+uZ/VlnCMIVdpBscYcuXGcIwu96PUEI4x5Er04BhDrkgHjjHkCrTgGEkOmM5Y
+njxIkP3/PV/jP4gG8WFyqxxYPEBpEpJ22Z6D+FjSO9wsEAAAh91r+Q==
+      "], "Byte", ColorSpace -> 
+      "RGB", Interleaving -> True], "Pressed" -> Image[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkCEDxOxADBJEA//R
+BVbZstivtmM9CcT/QTSID5Nbbcf2/Eatz//3cwv/g2gQH2YGSP3zNKX/T8N5
+wDSID5UDs59F8MExhlwkPxyjyz2PFoRjdLkXMcJwjC73Mk4UjtHlXiWIwzG6
+3OskSThGl3uTLAPH6HJvU+XgGF3uXboiHKPLvc9UhmN0uY/ZqnCMLvcpVwOO
+0eU+52vBMbrcl0IdOEaX+1qsD8foct9KDOEYXe57mTEco8v9qDCFYwy5SnM4
+Rpf7WW0Bx0hywHTG8uRRptb/XzVW/0E0iA+TW+XA4gFKk5C0y/YcxMeS3uFm
+gQAABP5XhA==
+      "], "Byte", ColorSpace -> "RGB", Interleaving -> True]}
+
+}
+@|
+@|
+@@resource PredictiveInterfaceBitmaps
+{
+
+"PruneIcon" ->
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJytk81LAkEYxqU6dOnYH9CfUl29ZLcOgUIRFAhrIB6DiIioex4CSWH9LPxg
+VdA2l9x1EeqQ6cFA8bBqtOAljeppZtkNE/owfeE37zw7M8/Osu87Z7Nb1idM
+JpNjmgwWq3OeYayu5SkiFlzba7ZJMpkhzBLow/9Eo9GALMvgOA6BQAB+As1e
+rxfVahXD+tEz4XAYPp8PmUwGkiShUCho5PN5KIoylGetVtP8YrEY6vU6Op3O
+0HcaDJ7nEQyG0G4//urVA9BPV8fQLwSFDJGsAPH+QdODe+jc8HOf58Ac++HQ
+YXQcfZmyuX+GVecRNnZPv+w18o47CsP2wMNhccU+Mktbe9r9qafZbDZd8Dcw
+iOZuwaZlHHoSOIlcoX/tJ+g56vVdPL++IytcI5W5RO8NI/9bI8rlMliWRemu
+NDbPXq8LkdRziNROgfSM0myOzbtYLGp1nojHkUwmNVKpFNIkp3VtQHuh1frb
+u1VVRaVS+ew/URQ1JFHSvkWSqJYgCALUJxUf+pe6nA==
+    "], {{0, 13}, {21, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{21, 13},
+  PlotRange->{{0, 21}, {0, 13}}],
+
+"PruneIconHot" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJytk89LAkEUx6U6dOnYHxDdg4j+gPoT7NBZoQ5BBBaEh/oXunTqUCAomD+6
+aK1raMKSu4qHDvmDcEFZZdVqw0uau32bGXfFPFRWDz7z3hve+87M7sycc8e+
+OWGz2XanyWB37K+4XA732hRJVt17G85JEswQZgl08jemKAqy2Sw4jkMgEMA5
+gXqv14tyuYxx9WhPOByGz+dDIpGAJEnIZDKMdDoNVVXH0qxUKkwvEomgWq2i
+3W6PvadRS6VSCAZDaLUev9XqAhimY2LlbwSVDBdJAWJBZvloDY0tvV6rBv3k
+AMZZH93EGPLwHKJ97ELBvY6no+1PtcyTfp3zDDSNYg6YtwELIyyaDOfLI3MW
+tH9rie3f0tUVGb2aDL0uw1AreHm4w7XvFPnkFZtj1Mwas06vl/sxhfaT8371
+fV/1dySFW/CJG3QN/PnfWlYsFuH3+5G/z/+bZrfbgUjuc4jcnQx5M2qj8W/a
+uVyO3fPLaBSxWIzB8zzixMfN3IK+hWbzZ2trmoZSqTR4f6IoMiRRYmeRJJpL
+EAQB2rOGDz7cyXs=
+    "], {{0, 13}, {21, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{21, 13},
+  PlotRange->{{0, 21}, {0, 13}}],
+
+"PruneIconDisabled" ->
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJytU01qwmAQDW0X3XTZA/Qo7RHsCRTabcEWiiuPETyAghoFwYAJMRIIxiji
+Qipx4UJxEfEv6EY08Jr5IBJFbFM78DI/TN73kpnvIfYWeb3iOO791ntEop+P
+8Xg08XzjJU+Jj5fYtRfcebj3QMW/2Hg8RqvVQqVSQT6fRy6XYz6dTmMwGCAs
+H71TLBaRyWSgqipM00Sz2WQwDAO2bYfiHA6HjK9cLmM0GmG1WoXWdGyapkEQ
+BEyn0x+5XNdFELvdjiFYW6/XkCQJ3W73ZA/FPt9yuYSiKKhWqwwU+7nva7Ua
+SqUSeJ5HoVA46PV9p9PZc9IMk8nkxUilUkyvzzubzUCYz+cg3TQL0lOv11nN
+R7Dv2DuOc/Yfb7db0Dzou4JnX2qWZSGbzaL31fs3zs1mg0ajwXaH9jnsLp+z
+drvN9lwURbZLQciyfJDTXZhMJr86m+bW7/f394/0n4Ku61gsFvgG/XrRFg==
+
+    "], {{0, 13}, {21, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{21, 13},
+  PlotRange->{{0, 21}, {0, 13}}],
+
+"RollupIcon" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJyNU1lLW1EQDrYPPvWh/6A/pf4AH7SLVBAMKBW0CTGpOxKJUdG6tBoVqSKN
+S2krBiGCayrUaDRVYhQSm9xi0iQaq7hdk9T4ec5QLiauB74755yZ+WbOzNwn
+ckVGfopMJitOZZ+M3JKnKlVuWeZDdkgrU+fJH7DNI4bHDPzy8joWI+DS6wvC
+6RbgcHlJCux8WX/bOo3GyH7YPIeiGgPSC7QSlLouDI/Nwh8Kg9vdxHFyDmwK
+frxt6iW/l5pWaFo/o6ZjECUNPXj+ppbudYYh4hKZ/ZU8zs4RCO9LHNoPRlgd
+vyjuWTxOcsK6BnVdF+kbP44gJorgfgk8zPbrlI1sKlv6cbS3iwiAKEfsH8Xm
+563gLnKqupGl0MPj3yF9cl00LNYLRS2W1lyIxgGn5w9+rLqJJ/KfJ4o4xeFv
+tG94rrxL8G9DXvoOr6vacHRySvqK5n48K9LhC8uTx+GYXNygu0LWgyCrQzKP
+1xeSeA6ORdJbbE6Km8n8Spv6CHyfr/8Ei911bb94DkpdJ16p6mF3bko2Dvdv
+VL83IktZR5za9kHY1oVb+949ZKY6N/eOJNjwuQvvH2L77wHuM4OerQDyyluI
+q63vGwJsRu7yuWlNzC1SnThXQXU7jKYZmKYXYJqyEkYnrdI+Gb7gTkLcn6zv
+esMAstWNCf/FXZiZX7k2fz5HZovtXhj/vkx1uADiWA45
+    "], {{0, 14}, {18, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{18, 14},
+  PlotRange->{{0, 18}, {0, 14}}],
+
+"RollupIconHot" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJyFk01IVFEUxx/VokCGsEVtW7UIhAqRIgZyYZFhYNFCWuRAErSops/pYxUt
+hDZREIVUYC36WgT2AYnVomiRiwilKEMLddJZmMy83nvz7v1177k2zaijF/7v
+3HvPOf97vt7a1JHWjiWe5x1fbj6t7ae3pdPtmT3LzKExc+JgaqnZJAxqDexl
++coHIVb6Yz/whwbwv31yMjtKuX6hlS8qguxP1P0rkNoEWz2o95w83Ej05DaF
+3CTWrhpHQUM08hXSTbDe+LWshvMtcHGfk9sT7v5CG1FuHN/Yz+b4E2vCyV//
+Oc7tJf7QS+T7RBHE+QLq7VM4ugPqjP5Sh+isXwWPUi4XY6OP7SLK/yYAQgP7
+roU9x+PD6P0bYcsq9OB70ZfzFANf/Klfif74hlAh8egXdyiagIIZnhDl7BoS
+op+dl9SlbZ28ZWOxd5zaCZtr4NFVyUtye3gNkjXSAz02NIcn/j5Y4ilO5RxP
+3wNX2+QKONnkYPcWPTfm7ZeanpK+klyDGnhXstH9r+HMbmiudZym/sLvT1ft
+u7qecb24fKjCxr6hsiNSY7uv5l96e/gLHKiTudM3z6InRhf1qRqTnRFTJ4nL
+ct7tRD+/hX7WJbB1+bevQE+XxFzB9blfcpN53jDzXzQsAmvz6vG88ds5orcb
+XnY7uRD67kkd/gK+9BWf
+    "], {{0, 14}, {18, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{18, 14},
+  PlotRange->{{0, 18}, {0, 14}}],
+
+"RollupIconDisabled" ->
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJyNU8tqwkAUlbaLrrroH/RT2k+wX6BQtwVbKH6PEGJcicSF+EBc6C4bCb4I
+JARJiOBbjA9ucy4kjOJr4GRm7j33zJ17J2/J73jqIRaL/TwHn3ji7z2dTmQ+
+n4LNR+b3K/kYLF4CvAaAURy+7xPm2WxG4/E4wnw+J9F/bWy3W+Z3u10qlUqU
+zWYjlMtl6vf7tFwuCbxLGrvdjqbTKfMRl8/nqV6vU7PZ5FmWZbZjDy3wz2ms
+ViuqVqvMbTQaNBqN+NzD4UC4i2VZkb/VarHtVAt7XdeZA+5ms6H9fs8a8GEN
+4M6qqpKiKOR5HvtP61Kr1Th35IEYzMPh8EgHcSLv9F6oS6FQ4LOQC2zIS5Ik
+rjnOAbCGDbywf+KYTCaRznq9Zr9pmnwu4iqVCoW6QK/XO9sv1Ax9Qo9c1404
+juNwzXO5HMdjDf1rfdc0jevcbrePODhjsVgw7nmDeL/FYpG1oIk3civm0rBt
+m+sELWh2Oh3u2WAw4LccIrSJQL6iFv4l3A21Ev+LW0DdzuWGehuGcTfQ53/y
+qktt
+    "], {{0, 14}, {18, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{18, 14},
+  PlotRange->{{0, 18}, {0, 14}}],
+
+"AskAlphaIcon" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkCEAxSBBfKBl7tb/
+IExAGRz0L9sNV7twy7H/vun1YIxLDToILer97xyV/z+0sAeMQWyX6IL/IHEQ
+H8bGpx+kBqYPRsPYYLPx6A/O74Srg2FkvSAMUoOsp3LKuv8RZRP/u8WVgNUm
+Ni34n9q66H9a22IwDcMgPkgdyAyQWhAbpHfq6v3gMILZM2v9IZzuq5+5Ce4f
+n9RasF6QOIj2SauDhx3IbASeBKcDc9rAakBqYXqR9YPDFxr2YAwKd2jYg7B/
+VjNEP7rdQD4sfIhxP7IZyOEHEk8Chl86MKyw4ajKqWD9yOGHLf7Q4x45DtHj
+D1/6QdYHY4PCgZB+jPQLZIcUdBNMv+h5g9T8gw6Iyb8AG3VrLg==
+    "], {{0, 16}, {16, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{16, 16},
+  PlotRange->{{0, 16}, {0, 16}}],
+
+"AskAlphaIconHot" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkCEAxSBBfOD/1X3/
+QZiAMoT6Zzfgav+DQJIyGONSg6G/wuX//0Cg1hL7///LnSDsAMb/YHGQWCCQ
+Xe2CWz9QDqweps+fAaIHxA5ggOAKPPoLrSB6wPqg6mHmBEDFgGpQ9Oxb+v9/
+rff//6HcELVTcv//n1v+//+8KggNwwuA/HofiFkgtSA2SO+np5Bwgrnx9yfc
+7juxGeo/II6XA+sFi4PMiFeC6AeFG8hsGK7zg9ANQDrLGKIGpBaqF1U/IyLs
+QRgU7iAM42fqQPWj2y2HCF9C7g+Cxg9Iz5dn///vWQxxHzj8gOLTC///X1SH
+HTeHQfyOFH4Y8RcIjXN/BkRYwcLWHzP+UPSD0x9S+kFON0GM8PDFqz8IKQwD
+oG4BsYtsCadftLxBav7BMI+I/AsAiseqSQ==
+    "], {{0, 16}, {16, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{16, 16},
+  PlotRange->{{0, 16}, {0, 16}}],
+
+"AskAlphaIconDisabled" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJyVU0tqhEAQlSSLLHOFHCU5wuQEM5BsByaBMLdRcOcHRPADimtF8QRuRFy7
+cePCjq9JNU3jODMFzy6L97qrq6pfD8fd14Omad/Py2e3/307nfbnj6fl5/38
+83l4XJyXfyC4ZX3fM+AKTdgwDII7zzNzHIfjEke1OI6ZrussDENGvmEY3EeM
+/C09OKSTgRiwpQ+CQPAIshYAR9Y0TcOSJGGmaXJunuesLEtWVRVfCfgHDxxw
+4UM7jiOzbVucM03TxfzathX3sSyLaxHHijrT/bA3IU1TAd/3OQdc0sp67BtF
+Ed9jDZ7ncT3ylc9GLlSfrfy7rhM8yh81QG6oCeJFUbC6rleRZZmoHzTQrvVP
+7b3cQ7V/1+ZHnYNb5o9qeO/8qm/Ddd273o9qt7zfP1LN69A=
+    "], {{0, 16}, {16, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{16, 16},
+  PlotRange->{{0, 16}, {0, 16}}],
+
+"PredictionsFeedbackIcon" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkCEAxEJADBJcvnbz
+/+C0yv8+iaVkYZBekBkwflFDz/+GrikkYZAeZDPTylr/kwtAemlpjnN0AVGY
+Xu6hh78Gwj2UmBOZXft/1vwlJJsB0gPSC0vH6Gl9wZLlJOUVkBnALMbQO3UO
+OJ3DzIaZkVPdQTBvgPQyoAGQOLod5ACQ2ZSaAQIz5y0G+4UcvQBeCOa3
+    "], {{0, 16}, {18, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{18, 16},
+  PlotRange->{{0, 18}, {0, 16}}],
+
+"PredictionsFeedbackIconHot" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkCEAxEJADBL8tXfN
+/08xBv8/BiqRhUF6QWbA+N8ml/7/sXIiSRikB9nMr7WR/8kFIL00NceGgThM
+L/fQw18D4R4KzPmcZvf/z+UTJJsB0gPSC0vH6Gn9z71rJOUVkBkM0Dz2Y8UE
+uNkwM752pIPF8WGQXgY0ABJHt4McAMu3lJgBAr+B4QbyCzl6ATsMFu0=
+    "], {{0, 16}, {18, 0}}, {0,
+     255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{18, 16},
+  PlotRange->{{0, 18}, {0, 16}}],
+
+"PredictionsFeedbackIconDisabled" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkCEAxEJADBK8e/fu
+/9WrV/9funQpWRikF2QGjH/8+PH/ly5dIgmD9CCbuWfPnv/kApBeWpozb948
+ojC93EMPfw2EeygxZ+PGjf9fvnxJshkgPSC9sHSMntbfvXtHUl4BmcEAzWOg
+dA4zG2bGwYMHCeYNkF4GNAASR7eDHADLt5SYAQIvXrwA+4UcvQC0gVOl
+    "], {{0, 16}, {18, 0}}, {0,
+     255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{18, 16},
+  PlotRange->{{0, 18}, {0, 16}}],
+
+
+"PredictiveInterfaceClose" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJx90T9LxDAYBvBynqCgi9/gNjcHP4HCjS7nJ7gDBUEQTkEOvVFwdRX8CPYP
+XTq5SKWIWKTdhEIrLdJCR6fa1+etyRGCGPiVN+nTJE0Gk5PRYc8wjNMVPEbj
+853pdDzb76OzOzs7mCyhWBN40DRN1SbMzd/mwBVsaxnpAr6ANN9wA30le/lH
+TncrslvQWJZFeZ5TFEWLTBAElGUZ2bYtx4ZwzTXn+R23MAzJ9/2urqpKzd/D
+s7pukiRdrm1bKoqCHMdR9/QB72qe9yBbHMf6P1Rwp2d5XrkOf8N7FZlH2JP5
+uq6pLMvFftM0paZpyHVdmT+CHrjc53Flro7nebJ+hVVxphvw8M/Zv8FAu99l
+OIYn+IQSXsS9r8vcDxjbq50=
+    "], {{0, 12}, {12, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{12, 12},
+  PlotRange->{{0, 12}, {0, 12}}],
+
+
+"PredictiveInterfaceCloseHover" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEDxSDB/6XGyFgD
+iGuBeB0QbwTiViA2RlMDw9VA/A2I/6Phv0A8EYhZkNTWYFGHjmdB1eoD8Z//
+Zab//5/b9P//+iaEmrkZ//+fWvn/f7k5TMwViDvAbJB6kBwIrKj4/39GIoR9
+6xCy+rVAfArF3kPzIer+/vn//8KW//+rLJHd9BiIb6OoB7kBBja0ovvhNRDP
+xVALMhdmD0gPyK0QNYeB2Beu/t7p//+vH0C49/jy//9/fvv/v8YGpj4TiJmA
+eDOYDxJHmAXBzW4w9jkg5oSGqRAQ78MT9heBWBEtflmBOAeIjwHxCyB+BcRn
+oPHOC1MHAHwBejY=
+    "], {{0, 12}, {12, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{12, 12},
+  PlotRange->{{0, 12}, {0, 12}}],
+
+
+"PredictiveInterfaceExpand" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJx90T9Lw0AYBvDYduigUz+Bn8PFOgoutYPg1IKuQhWkH0Opbjp0EodEFwXd
+AoH82SQBM8TQBCEdknyBJK/PG1I5DuvBL1zunnvvuNsenw1OW4qinHfxGYwu
++5PJaHrYwc/e9OJk3EZns8GDqqqK9uEBFvANz3AEG1KuC3OgNV6gJ+TvxHnT
+NMkwDHnNG3RgV64XBAFx43XS3DHc/HUGXlMUBVmWJY6/g8d9z/MojmOKouhX
+WZZUVRU5jrPKL+FD0zQKw5DyPK9lWUZpmtZZbr7vr/IJXK07D+dd1xXHX2FH
+zPFeSZLUdW3blusMm/u8FvNcU9d1OfsErSbP9zr7570eYUt6Y9aHW/iEL7iH
+AzHzA9uhrMM=
+    "], {{0, 12}, {12, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{12, 12},
+  PlotRange->{{0, 12}, {0, 12}}],
+
+
+"PredictiveInterfaceExpandHover" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEDxSDB/6XGyNgL
+iFcA8UMgfgrEG4E4AogZ0dRxAPEiIP6PA28DYmEk9XNR5Odm/P8/IxFdzy4g
+ZgFiBwzzDsz5DwYgfahy0UA8FasbQHp+fvv/f34WsvhuIL4KZm9u////9Jr/
+/0+tROA/P/////vn//+F+TD1L4H40v8y0///jyz8///BOQi+d/r//7snIGpB
+YNdEmPoXQDwRp3tA6je0IotvB2JrFHUgu67sgpi7IBfdnBBoeE5CUQ8yc3I0
+utoNQMwEVQ8K1yl44msVEPOixTEIOwLxNCC+AcT3gHgeEPsiqwEAiZJ7kg==
+
+    "], {{0, 12}, {12, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{12, 12},
+  PlotRange->{{0, 12}, {0, 12}}],
+
+
+"PredictiveInterfaceDropdown" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJydks0KwjAQhEP9i3/3XD3au3ryUB+hvkC3oDkKVZA+fdyFWQylQszAF3aH
+mUuSXfuo74Ux5mn5qOlddR311ykvl/51ayc8bIGYkKwlcwRVhHolcqINc2Yc
+ZqGIUM8hJ/Mee4oc8gfGJnYs8sIst+O9JyaMQIOO3MlcjBDCWI/Eh5bme48L
+7aDXIN+oB61+dbQX74POSTsJWiOf8z45/0D013/7ANMCVOk=
+    "], {{0, 13}, {13, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  BaselinePosition -> (Scaled[0.4] -> Center),
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{13, 13},
+  PlotRange->{{0, 13}, {0, 13}}],
+  
+"PredictiveInterfaceDropdownHot" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMELxSBBKABxtYDY
+DIodkTBMTAuqDgR4gNgWiCWgbBBmQsIwMQmoOhBbE8onBkhA1ZsCMcf///8Z
+CGGQOqh6EGYlV8/HQKVEIP6PBSei6QGFCRvMLCz6EpHs4UQKR3ZkNwDVJUDV
+J6C5jQuXHpg+LP6B6THHpgdHGHBD1ZMTP+SkAxAgKb0BAN8gwHA=
+    "], {{0, 13}, {13, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  BaselinePosition -> (Scaled[0.4] -> Center),
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{13, 13},
+  PlotRange->{{0, 13}, {0, 13}}],
+  
+
+"PredictiveInterfaceDropdownSuffix" -> 
+ GraphicsBox[
+  TagBox[RasterBox[{{{103, 103, 103, 97}, {103, 103, 103, 255}, {103, 103, 103, 255}, {103, 
+    103, 103, 255}, {103, 103, 103, 255}, {103, 103, 103, 255}, {103, 103, 103, 97}}, {{103, 
+    103, 103, 0}, {103, 103, 103, 97}, {103, 103, 103, 255}, {103, 103, 103, 255}, {103, 103, 
+    103, 255}, {103, 103, 103, 97}, {103, 103, 103, 0}}, {{103, 103, 103, 0}, {103, 103, 103, 
+    0}, {103, 103, 103, 96}, {103, 103, 103, 255}, {103, 103, 103, 96}, {103, 103, 103, 0}, {
+    103, 103, 103, 0}}, {{255, 255, 255, 0}, {103, 103, 103, 0}, {103, 103, 103, 0}, {103, 
+    103, 103, 96}, {103, 103, 103, 0}, {103, 103, 103, 0}, {103, 103, 103, 0}}}, {{0, 4}, {7, 
+    0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  BaselinePosition -> (Scaled[0.2] -> Center),
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{7, 4},
+  PlotRange->{{0, 7}, {0, 4}}],
+
+"PredictiveInterfaceDropdownSuffixHot" -> 
+ GraphicsBox[
+  TagBox[RasterBox[{{{241, 81, 34, 97}, {241, 81, 34, 255}, {241, 81, 34, 255}, {241, 81, 34, 
+    255}, {241, 81, 34, 255}, {241, 81, 34, 255}, {241, 81, 34, 97}}, {{255, 255, 255, 0}, {
+    241, 81, 34, 97}, {241, 81, 34, 255}, {241, 81, 34, 255}, {241, 81, 34, 255}, {241, 81, 
+    34, 97}, {255, 255, 255, 0}}, {{255, 255, 255, 0}, {255, 255, 255, 0}, {241, 81, 34, 
+    96}, {241, 81, 34, 255}, {241, 81, 34, 96}, {255, 255, 255, 0}, {255, 255, 255, 0}}, {{
+    255, 255, 255, 0}, {255, 255, 255, 0}, {255, 255, 255, 0}, {241, 81, 34, 96}, {255, 255, 
+    255, 0}, {255, 255, 255, 0}, {255, 255, 255, 0}}}, {{0, 4}, {7, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  BaselinePosition -> (Scaled[0.2] -> Center),
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{7, 4},
+  PlotRange->{{0, 7}, {0, 4}}],
+
+
+"BigUpArrow" -> 
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJzNmk2II2kZx7t3V111VRSRVXAdFZVVxJt4cvFj8TL4sQoiHpZZcC8eVlYX
+mcuuIMocPInisgcRDyKzB2HYPYwIoydBepJOUp1UVVJJpZLUR1JfqXRmkGEo
+///nrUpnZhqdcbqr5oFnquqtmtSv/s/H+1Y6H33uhWeef2hnZ+fHj+KfZ879
+9Esvvnju/LcfwcGXz//kB889jJ1vwJ+Ec/B+TNfNVxqNqx3XdS/c50edig2H
+9kvNRjO/enUv17ROHsfxK7CH6uYqbTIZv9BqtfP9/Wbe7rTzRrORW8NBPp/P
+P1k3G812nJdbbcV1cKCJt9vkbeS2bb9at5aBN/tZG3FtNMCnaYixJnHWOh0w
+7ucdbF3P/Ssu3a0BbzdL05e73W7ehH5aRxOebaeWV/f28l6vl8dh+GbVgKvV
+6unJZAKtWsLS7hT6aYpPKzipbaPZzHu67oxGo0er4mN+je3xr/ZRI61WC/l3
+IN7Rtjg1lZddjLfByusGg4Hhed47K0Dc9X3/j7xno8i3bvdgk4uKS5PjbleN
+kbOFa/l/giBooCe95zQBcY83tLJGwKJRv4622SdTqaEaK1xTNdTr6bnv+J89
+JbzdKIou6XpPakT0Eq2UhgdgkJhv9gtGib0GNvCjbzbRP62BFSHmHzhJuL29
+vbckSfLnrq7n+62m4iIDYtntdeVYK3KScS2PuX/QVc6xHnoAn2EfNeRMnPwk
+OdMwfNrqm3mb9aGVLF3JO8XbVWyi3RYrvXiGA2yFVWoL+QlNvdnUPQk+9gv0
+mEvsL5L/xT3ZF6kLt0csd3qpoWyRJz1cR+fzom8uJr7/hfvhY4zjKGxqGuui
+vWE7csYPrnfvYCzZ7uAuruPz8blHw2G+XC7/b85lmtqGYahejJwvNeC8obwr
+taD29a3xnmI5ZnzbD6QPdPLZbMa1xwfvlc9xtPf1+/3rLRWTXEe99DaxOv6e
+x5+7/ZmOjg1DR26qHoCc+ua98AXB6HHMCTe41iJX2UcOGEPZghn66tv3xjPo
+htKsi3NG+TzGEa8631U11VXn+RmsNdM08sVi8f27ZRzbo0jmj0K/UkPG3TBM
+cb3g0DduFOd1xdvbPld+hiFbXsPr5fPByj7L+X0wtPIkCc/dDSPW+TcsXG8h
+nx3HwfzlL314tIiQoun16XQqWpQ6mBs2Q7QyuW+UbIZ4mZeIae663nXHGS+H
+oyHncImP9CTU5TzwWnerJWAuYG1zGUzf3R5nL1osWOuacJGvb5pKGx4jZn2M
+meinBvZNOWeo5wEzaiPHfPUZflaWpX/gPZZJcjlJ4svF+u1E1pnj8fhDzCFD
+V0x0Q/Kxd+uxnNeFs6w7xIi95tTfH3C/M/2BKfnY70M3aNbH/akf98u8JB+3
+HKPezOmxM67kHQfz7BlomZtkNAtGs3DyyLYv+4OBGuuD1UBecp6ughH59GHk
+/Zq6sD4GBQ/1I9+AbBiTuAu/ij9rfIhaRM1V8q7oT6df14t6sQZ9xTnoi348
+LsfMYtyyBpv6mlpWJYzQ4qxZ1jH6h+IAF9nII/E2VKwLdtYM9Z5Oq2Gce97Z
+oWXlhuTcQJx1NAQfWTd69ovYC7chz1AVY5Zl33I9T/KNMWUsyWmVjrwbbo8N
+B+pa7lcU6x15dwh/OyhqgrUwHCqevnAc7Zec/aKf+3F8Wu8zdxh68WuMNzlH
+mNe4FuSxVeTkEMcWz2N/hGdgnFlDURTfxLvbY1UwrrE2hX4BezV1tITL2jjZ
+BttjEvt+HmA+rIqRhvXpP6iXckvykJpKrEfFcXFOzg/ku7RKGZN02eLaiFzj
+sa1iPlJMtq3G6LY9UuOIvYc5u0pGrH/einXWTfY927Zv4Sy5ym3JPp1OuOZ7
+e1WMsF0P68mBacrakHEtWbBWzu2RnQ+h50g4R1I7DuZ61NsnKmTcwbrvPO/L
+nKRm9ngkW647yDm2x7LeUTlho44sMKb5ToXfSV65cuURz/ekTsbgcxxb+Ea2
+reJv2xtmjrG20ySplBG1/Q7WKns1crPQD1xjxcqtPVY6cpzvLWlaLSPfH5Ik
+cYXHLnkKHxfMG7elH8VRWCkjDfP3k77vF3VsKz1LxkJTpbEt9bSogRHvxu/C
+2vcvqieSzZHYls7vpdlzJCdR37g+r5KvtCgIvjYFC98HuFXuCBudnHRqO4fm
+62x9T99NnIQh3t8JoY89LnQrfAJO4Z6RVek6m03zbJn6VTPSUDu/Y95NbtHP
+ET3JNUO/Jze3uPZfdTBCyz/NoNdE+AqeUlOOkXM2yyfQMgzntTAeHh5+LgpD
+4SELOamZ685ER8U4lRpHT62FkZam6cfJRD7Xc+W7CeWz3MPxzFU6LuaLf9bF
+SJsHvmjGnuljnvQ8T/h83805b84mUzDOV9euXfteTYi7mI877kzFl2wln2gJ
+TRn/APxY/7xaEyP/1vTYPJhLXiodFSf5vCL+1Ba9/Od1MXItlETRL/0NzxGX
+aIottZzPg78hf99bFyfu/bEQNb6Jt6viTV3pM2gMxhy94Nm6GHfU3+9eYl76
+ni/5x1pSdeQLN+om5/cJNTLuxPP5U2BLAuim/IiR8WaNo75Y3x+pkxN18Wtq
+Ng+CjZbKg9ydufIuy55aJ2OWppeomfD5ik0cbK6L3FT79/w3pJM01i383543
+43u15KD4IgCfL6x4jt+zF9TJyTVwGIXrUr/Sudbldyus/4rfuY81rDHev0Cv
+CaBdEMzF52D0UPOey7Hg8boZTdN8WxxHrzPO82DBNUXONTGPQ7Avs6yW94fb
+Db3w03Eco3Y88DHW1DJUW9+/ub6PvxOflLEusuzwN1jfSi6G4UK2XHMyV1dZ
+5tTNWNhuEoZvLsBEtrBgJGsSx+ua58aNrVarHyI3pZ6jSHkYKd5lkvyibr7S
+VuvVj6KCMQFvHMVgDDnnXKzyd1//y1A/z0p9w+NIccZxwrXv2brZSuPvz9Ll
+UvIRuSiMEeooTZd/Rx68u26+0tCPviixhn78zi+OUDtJTC0/VTfbtiEHvxqL
+jlGhZUTeGxcvXny4brZtS5LkK4jzmpyMOx3sn6+b63ZbrbKSTbbLNH0g5sdt
+g5ZnVqvDTf0gR2+C9/m6uW63OL72RJYtr6OXs5+Lpg/K3LNtfHfIlss1Y03H
+8Ws79fw2+r8af78CTtGRNb9cri7UvVY/zpifh6sV/1bLvp57q9WJ/v70pAwa
+PrE6XEuPRy298aD1zNL4e+84y56K4zRADrz+H6bnfZY=
+    "], {{0, 79}, {41, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{41, 79},
+  PlotRange->{{0, 41}, {0, 79}}],
+
+
+"FirstUseClose" -> 
+ GraphicsBox[
+  TagBox[RasterBox[{{{0, 0, 0, 0}, {177, 177, 177, 112}, {175, 175, 175, 48}, {0, 0, 0, 0}, {0,
+     0, 0, 0}, {0, 0, 0, 0}, {178, 178, 178, 80}, {178, 178, 178, 80}, {0, 0, 0, 0}}, {{177, 
+    177, 177, 96}, {179, 179, 179, 255}, {178, 178, 178, 239}, {175, 175, 175, 48}, {0, 0, 0, 
+    0}, {177, 177, 177, 96}, {179, 179, 179, 255}, {179, 179, 179, 255}, {175, 175, 175, 
+    48}}, {{0, 0, 0, 0}, {178, 178, 178, 207}, {179, 179, 179, 255}, {178, 178, 178, 239}, {
+    178, 178, 178, 127}, {179, 179, 179, 255}, {179, 179, 179, 255}, {178, 178, 178, 159}, {0, 
+    0, 0, 0}}, {{0, 0, 0, 0}, {175, 175, 175, 16}, {178, 178, 178, 207}, {179, 179, 179, 
+    255}, {179, 179, 179, 255}, {179, 179, 179, 255}, {178, 178, 178, 159}, {0, 0, 0, 0}, {0, 
+    0, 0, 0}}, {{0, 0, 0, 0}, {0, 0, 0, 0}, {177, 177, 177, 112}, {179, 179, 179, 255}, {179, 
+    179, 179, 255}, {179, 179, 179, 255}, {175, 175, 175, 48}, {0, 0, 0, 0}, {0, 0, 0, 0}}, {{
+    0, 0, 0, 0}, {177, 177, 177, 96}, {179, 179, 179, 255}, {179, 179, 179, 255}, {178, 178, 
+    178, 239}, {179, 179, 179, 255}, {178, 178, 178, 239}, {175, 175, 175, 48}, {0, 0, 0, 
+    0}}, {{175, 175, 175, 48}, {179, 179, 179, 255}, {179, 179, 179, 255}, {178, 178, 178, 
+    159}, {175, 175, 175, 16}, {178, 178, 178, 207}, {179, 179, 179, 255}, {178, 178, 178, 
+    239}, {175, 175, 175, 32}}, {{175, 175, 175, 48}, {178, 178, 178, 239}, {178, 178, 178, 
+    159}, {0, 0, 0, 0}, {0, 0, 0, 0}, {175, 175, 175, 16}, {178, 178, 178, 207}, {178, 178, 
+    178, 207}, {175, 175, 175, 16}}}, {{0, 8}, {9, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{9, 8},
+  PlotRange->{{0, 9}, {0, 8}}],
+
+
+"FirstUseCloseHot" -> 
+ GraphicsBox[
+  TagBox[RasterBox[{{{0, 0, 0, 0}, {243, 127, 72, 112}, {239, 127, 74, 48}, {0, 0, 0, 0}, {0, 
+    0, 0, 0}, {0, 0, 0, 0}, {242, 127, 73, 80}, {242, 127, 73, 80}, {0, 0, 0, 0}}, {{241, 127, 
+    74, 96}, {244, 129, 75, 255}, {243, 128, 74, 239}, {239, 127, 74, 48}, {0, 0, 0, 0}, {241, 
+    127, 74, 96}, {244, 129, 75, 255}, {244, 129, 75, 255}, {239, 127, 74, 48}}, {{0, 0, 0, 
+    0}, {243, 128, 73, 207}, {244, 129, 75, 255}, {243, 128, 74, 239}, {242, 128, 74, 127}, {
+    244, 129, 75, 255}, {244, 129, 75, 255}, {243, 128, 73, 159}, {0, 0, 0, 0}}, {{0, 0, 0, 
+    0}, {239, 127, 63, 16}, {243, 128, 73, 207}, {244, 129, 75, 255}, {244, 129, 75, 255}, {
+    244, 129, 75, 255}, {243, 128, 73, 159}, {0, 0, 0, 0}, {0, 0, 0, 0}}, {{0, 0, 0, 0}, {0, 0,
+     0, 0}, {243, 127, 72, 112}, {244, 129, 75, 255}, {244, 129, 75, 255}, {244, 129, 75, 
+    255}, {239, 127, 74, 48}, {0, 0, 0, 0}, {0, 0, 0, 0}}, {{0, 0, 0, 0}, {241, 127, 74, 96}, {
+    244, 129, 75, 255}, {244, 129, 75, 255}, {243, 128, 74, 239}, {244, 129, 75, 255}, {243, 
+    128, 74, 239}, {239, 127, 74, 48}, {0, 0, 0, 0}}, {{239, 127, 74, 48}, {244, 129, 75, 
+    255}, {244, 129, 75, 255}, {243, 128, 73, 159}, {239, 127, 63, 16}, {243, 128, 73, 207}, {
+    244, 129, 75, 255}, {243, 128, 74, 239}, {239, 127, 71, 32}}, {{239, 127, 74, 48}, {243, 
+    128, 74, 239}, {243, 128, 73, 159}, {0, 0, 0, 0}, {0, 0, 0, 0}, {239, 127, 63, 16}, {243, 
+    128, 73, 207}, {243, 128, 73, 207}, {239, 127, 63, 16}}}, {{0, 8}, {9, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Magnification[1],
+  ImageSizeRaw->{9, 8},
+  PlotRange->{{0, 9}, {0, 8}}]
+
+}
+@|

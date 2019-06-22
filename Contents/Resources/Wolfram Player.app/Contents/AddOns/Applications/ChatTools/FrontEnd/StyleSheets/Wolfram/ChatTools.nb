@@ -1,0 +1,757 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     34788,        749]
+NotebookOptionsPosition[     23031,        623]
+NotebookOutlinePosition[     24125,        653]
+CellTagsIndexPosition[     24082,        650]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[StyleData[StyleDefinitions -> "Default.nb"],ExpressionUUID->"5e4beae5-5530-4443-bf55-e5e285d732a0"],
+
+Cell[CellGroupData[{
+
+Cell["Notebook Options", "Section",
+ CellChangeTimes->{{3.724449907134404*^9, 
+  3.724449910221726*^9}},ExpressionUUID->"50d7755d-761a-4f76-b015-\
+6f3c6890f86c"],
+
+Cell[StyleData["Notebook"],
+ CellInsertionPointCell->Cell[
+   BoxData[
+    PaneBox[
+     TooltipBox[
+      ActionMenuBox[
+       DynamicBox[
+        FEPrivate`ImportImage[
+         FrontEnd`FileName[{"Misc"}, "CellInsertionPointBitmap.png"]]], {
+       "Text" :> FrontEndTokenExecute[
+          EvaluationNotebook[], "Style", "Text"], "Input" :> 
+        FrontEndTokenExecute[
+          EvaluationNotebook[], "Style", "Input"]}, Appearance -> None], 
+      StyleBox["Choose what to enter", FontWeight -> "Bold"]], 
+     BaselinePosition -> (Top -> Baseline)]], 
+   CellMargins -> {{17, 0}, {0, 0}}, Magnification -> 1],
+ WindowSize->{600, Automatic},
+ ShowCellBracket->Automatic,
+ CreateCellID->True,
+ ShowCellLabel->False,
+ CellLabelAutoDelete->False,
+ DefaultNewCellStyle->Dynamic[
+   CurrentValue[
+    EvaluationNotebook[], {TaggingRules, "NewCellStyle"}, "Text"]],
+ ShowPredictiveInterface->False,
+ ShowSyntaxStyles:>Dynamic[
+   FEPrivate`If[
+    FEPrivate`Less[FrontEnd`$NotebookVersionNumber, 12], False, 
+    True]],ExpressionUUID->"dba8929c-3df7-4e3e-a9e2-578215ddf228"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Chat Colors", "Section",
+ CellChangeTimes->{{3.724449918789527*^9, 
+  3.7244499237175455`*^9}},ExpressionUUID->"19bb9365-b94d-417e-9de4-\
+3a8967de4752"],
+
+Cell[StyleData["Originator"],
+ Editable->False,
+ ShowCellBracket->False,
+ CellMargins->{{Inherited, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ Evaluatable->False,
+ Background->RGBColor[
+  1., 0.92, 0.75],ExpressionUUID->"6b748e5a-2668-4a54-8042-805e18793dc8"],
+
+Cell[StyleData["Responder"],
+ Editable->False,
+ ShowCellBracket->False,
+ CellMargins->{{Inherited, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ Evaluatable->False,
+ Background->RGBColor[
+  0.95, 0.92, 0.95],ExpressionUUID->"0835efce-6d57-40fb-a122-4706abe18603"],
+
+Cell[StyleData["Turquoise"],
+ Editable->False,
+ Deletable->False,
+ CellFrame->{{0, 0}, {0, 0}},
+ ShowCellBracket:>Dynamic[
+   FEPrivate`If[
+    FEPrivate`Less[FrontEnd`$NotebookVersionNumber, 12], False, Inherited]],
+ CellMargins->Dynamic[
+   FEPrivate`Switch[
+    CurrentValue[
+     FrontEnd`EvaluationNotebook[], ShowCellLabel], True, {{64, -1}, {0, 0}}, 
+    Blank[], {{-1, -1}, {0, 0}}]],
+ CellBracketOptions->{"Color"->GrayLevel[0],
+ "OverlapContent"->True},
+ Evaluatable->Dynamic[
+   FEPrivate`If[
+    FEPrivate`Less[FrontEnd`$NotebookVersionNumber, 12], False, Inherited]],
+ CellEvaluationFunction->Dynamic[
+   FEPrivate`If[
+    FEPrivate`Less[FrontEnd`$NotebookVersionNumber, 12], Identity, (
+    MessageDialog["To evaluate this input, copy it into a new cell."]; 
+    Null)& ]],
+ CellFrameMargins->Dynamic[
+   FEPrivate`Switch[
+    CurrentValue[
+     FrontEnd`EvaluationNotebook[], ShowCellLabel], 
+    True, {{6, 18}, {Inherited, Inherited}}, 
+    Blank[], {{20, 18}, {Inherited, Inherited}}]],
+ CellFrameColor->GrayLevel[0.8],
+ ShowAutoSpellCheck->False,
+ Background->GrayLevel[
+  0.95, 0.8],ExpressionUUID->"19636bb3-0447-48a1-9961-7db28144db1e"],
+
+Cell[StyleData["TurquoiseTop", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"e082dcb3-a9bc-48b9-877c-7c5695d382b6"],
+
+Cell[StyleData["OffGreen", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"512f872f-2463-4c9c-9c63-83ef1e092c08"],
+
+Cell[StyleData["OffGreenTop", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"e6fc7027-5ccc-43ec-a5f7-a31521e62ee7"],
+
+Cell[StyleData["Orange", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"b6315f2f-2a05-40ab-aa2a-6d13e8a0ba9b"],
+
+Cell[StyleData["OrangeTop", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"52f1fd61-216b-48f2-a0c3-1b4383ed26bb"],
+
+Cell[StyleData["OffBlue", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"6c6c3bed-7202-4d66-94c2-3a2ec89b4445"],
+
+Cell[StyleData["OffBlueTop", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"447aa63b-d98c-4649-afe5-c637515307e8"],
+
+Cell[StyleData["Green", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"30f68718-61e1-44d3-a3d8-1acfffabcb98"],
+
+Cell[StyleData["GreenTop", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"4e837a0b-c811-4269-a962-a8af121adf95"],
+
+Cell[StyleData["Purple", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"6e2a1c30-4e96-48e6-8a6e-d8ddf55018f9"],
+
+Cell[StyleData["PurpleTop", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"47767b19-4f28-4fdf-b596-846850732c73"],
+
+Cell[StyleData["GrayLight", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"6920a29c-3af1-4aa1-8512-4ee12aca0eb5"],
+
+Cell[StyleData["GrayLightTurquoiseTop", StyleDefinitions -> StyleData[
+ "Turquoise"]],ExpressionUUID->"3851956d-0dc7-451a-89e2-65a9ed11b81f"],
+
+Cell[StyleData["GrayLightOffGreenTop", StyleDefinitions -> StyleData[
+ "Turquoise"]],ExpressionUUID->"dfc9e86b-bd49-4161-a600-0b35160cebbf"],
+
+Cell[StyleData["GrayLightOrangeTop", StyleDefinitions -> StyleData[
+ "Turquoise"]],ExpressionUUID->"82a83f79-1040-4bed-90cb-c465df2a597a"],
+
+Cell[StyleData["GrayLightOffBlueTop", StyleDefinitions -> StyleData[
+ "Turquoise"]],ExpressionUUID->"ad6bf67b-b9ac-486f-87ea-8515bb0b9ebb"],
+
+Cell[StyleData["GrayLightGreenTop", StyleDefinitions -> StyleData["Turquoise"]
+ ],ExpressionUUID->"bbb9715e-9297-400c-ade3-70a580251841"],
+
+Cell[StyleData["GrayLightPurpleTop", StyleDefinitions -> StyleData[
+ "Turquoise"]],ExpressionUUID->"cbae5f8e-0ecf-48f0-b243-b8e2738d1c60"],
+
+Cell[StyleData["ChatLightBlue", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"f917e8d8-1cf8-482b-97c3-0963d991e56e"],
+
+Cell[StyleData["ChatLightBlueTop", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"47b73eac-3a80-4217-bf9a-1844fc3c25c9"],
+
+Cell[StyleData["ChatLightOrange", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"88a86cb0-e6d6-488a-b25d-0dae8c866aad"],
+
+Cell[StyleData["ChatLightOrangeTop", StyleDefinitions -> StyleData[
+ "Turquoise"]],ExpressionUUID->"22e37477-0342-4e0c-b0c7-9e39069b03da"],
+
+Cell[StyleData["ChatLightRed", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"f860aca2-0327-4c4e-aed9-84b384afff79"],
+
+Cell[StyleData["ChatLightRedTop", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"29eb4da7-b398-4d19-b7b0-1b10ecc8921f"],
+
+Cell[StyleData["ChatLightGreen", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"6c155422-ade9-4e16-bdac-f057e2c209f0"],
+
+Cell[StyleData["ChatLightGreenTop", StyleDefinitions -> StyleData["Turquoise"]
+ ],ExpressionUUID->"80f39c6f-b4f3-42ce-a964-75b1a3a4cd69"],
+
+Cell[StyleData["ChatLightMagenta", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"225efef2-c2cb-465f-b00f-d5323cb04283"],
+
+Cell[StyleData["ChatLightMagentaTop", StyleDefinitions -> StyleData[
+ "Turquoise"]],ExpressionUUID->"6ee091ac-85b7-4b4e-ace2-6ae8c7105a9a"],
+
+Cell[StyleData["ChatLightBrown", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"84994579-e357-4ef9-a64d-f6224ab6b03d"],
+
+Cell[StyleData["ChatLightBrownTop", StyleDefinitions -> StyleData["Turquoise"]
+ ],ExpressionUUID->"02b16460-27f6-4135-b801-e9f5dc4966c0"],
+
+Cell[StyleData["ChatLightCyan", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"9f415f00-e3f2-4d9b-90a5-10e759776a1a"],
+
+Cell[StyleData["ChatLightCyanTop", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"628235c1-3b25-4c5a-88a3-e190cbe0616e"],
+
+Cell[StyleData["ChatLightPink", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"b117d212-320d-4e75-b7b3-92546d3634c7"],
+
+Cell[StyleData["ChatLightPinkTop", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"1685817a-0abd-4aef-9523-7739b37c786c"],
+
+Cell[StyleData["ChatLightPurple", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"f028ac7a-0532-47a0-8e6e-a757e0c02989"],
+
+Cell[StyleData["ChatLightPurpleTop", StyleDefinitions -> StyleData[
+ "Turquoise"]],ExpressionUUID->"51865a38-e021-4d78-b313-ce77e6292d52"],
+
+Cell[StyleData["ChatLightGray", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"c7946856-fed2-4f0c-a25e-74a8f5d8b326"],
+
+Cell[StyleData["ChatLightGrayTop", StyleDefinitions -> StyleData["Turquoise"]],ExpressionUUID->"c629bc04-e5c5-4ddc-864f-5e9e9cb5bb15"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Input/Output", "Section",
+ CellChangeTimes->{{3.7244500128601847`*^9, 
+  3.7244500146510468`*^9}},ExpressionUUID->"5b9f3b05-ef4f-40a0-ae1e-\
+05ee8540ae4f"],
+
+Cell[StyleData["Input"],
+ ShowCellBracket->True,
+ CellMargins->Dynamic[
+   FEPrivate`Switch[
+    CurrentValue[
+     EvaluationNotebook[], ShowCellLabel], True, {{54, 18}, {0, 0}}, 
+    Blank[], {{54, 18}, {0, 0}}]],
+ CellFrameMargins->{{2, Inherited}, {Inherited, 10}},
+ Background->GrayLevel[
+  0.999],ExpressionUUID->"58a30284-6e8e-4e1a-b34f-c301c7fecd6c"],
+
+Cell[StyleData["Output"],
+ ShowCellBracket->True,
+ CellMargins->Dynamic[
+   FEPrivate`Switch[
+    CurrentValue[
+     FrontEnd`EvaluationNotebook[], ShowCellLabel], True, {{54, 18}, {0, 0}}, 
+    Blank[], {{54, 18}, {0, 0}}]],
+ CellFrameMargins->{{2, Inherited}, {10, 0}},
+ Background->GrayLevel[
+  0.999],ExpressionUUID->"1ffebd75-66c4-4495-bfd2-a6064752a2f5"],
+
+Cell[StyleData["Message"],
+ ShowCellBracket->True,
+ CellMargins->{{64, 18}, {0, 0}},
+ CellFrameMargins->{{Inherited, Inherited}, {Inherited, 0}},
+ Background->GrayLevel[
+  0.999],ExpressionUUID->"d25fc792-b123-4487-9d99-8fe06ecd0d0e"],
+
+Cell[StyleData["CellLabel"],
+ ShowCellBracket->
+  False,ExpressionUUID->"943ee317-dfb7-4d40-bf09-cfb72fc9e8ef"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Text", "Section",
+ CellChangeTimes->{{3.724450018068076*^9, 
+  3.724450018532044*^9}},ExpressionUUID->"9f203e7a-3655-47e4-a8ff-\
+8cb9c314f790"],
+
+Cell[StyleData["Text"],
+ CellMargins->Dynamic[
+   FEPrivate`Switch[
+    CurrentValue[
+     FrontEnd`EvaluationNotebook[], ShowCellLabel], True, {{54, 26}, {0, 0}}, 
+    Blank[], {{20, 26}, {0, 0}}]],
+ ShowCellLabel->False,
+ Background->GrayLevel[
+  0.999],ExpressionUUID->"f2a79bc0-9918-4451-ba62-32a68e080643"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Buttons and Controls", "Section",
+ CellChangeTimes->{{3.7244500457638893`*^9, 
+  3.7244500477093177`*^9}},ExpressionUUID->"890bc2c1-0b8a-41db-8c02-\
+b1f2c3c8b9ab"],
+
+Cell[StyleData["Stem", StyleDefinitions -> StyleData["Text"]],
+ Editable->False,
+ Selectable->False,
+ Deletable->False,
+ CellFrame->{{0, 0}, {1, 1}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {14, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ CellFrameMargins->0,
+ CellFrameColor->GrayLevel[0.85],
+ CellSize->{Automatic, 32},
+ Background->GrayLevel[0.898039],
+ GridBoxOptions->{FrameStyle->GrayLevel[0.92],
+ GridBoxAlignment->{"Columns" -> {{Left, Left}, Right}, "Rows" -> {{Center}}},
+ GridBoxDividers->{
+  "Columns" -> {True, {False}, True}, "ColumnsIndexed" -> {}, 
+   "Rows" -> {True, {False}, True}, "RowsIndexed" -> {}},
+ GridBoxSpacings->{
+  "ColumnsIndexed" -> {
+    2 -> 0}}},ExpressionUUID->"bcbba234-fcad-4b47-b882-a14c2b887377"],
+
+Cell[StyleData["StemText"],
+ FontFamily->"Source Sans Pro",
+ FontSize->13,
+ FontColor->GrayLevel[
+  0.2],ExpressionUUID->"3d935a08-ce04-4b0f-8bbf-c5c59c39169c"],
+
+Cell[StyleData["StemButtonText"],
+ FontFamily->"Source Sans Pro",
+ FontSize->13,
+ FontColor->GrayLevel[
+  0.35],ExpressionUUID->"3e8c296d-9450-4047-8ba4-317210656408"],
+
+Cell[StyleData["StemButtonAdornment"],
+ FontFamily->"Source Sans Pro Light",
+ FontSize->12,
+ FontColor->GrayLevel[
+  0.333],ExpressionUUID->"b55fa9be-4149-48ca-ac49-08d850412729"],
+
+Cell[StyleData["StemButton"],
+ ButtonBoxOptions->{Appearance->{"Default" -> Dynamic[
+     FEPrivate`Switch[
+      CurrentValue[
+       EvaluationNotebook[], {TaggingRules, "NewCellStyle"}, "Text"], "Text", 
+      FrontEnd`ToFileName[{"Toolbars", "ChatTools"}, 
+       "DockedCellButton-left-DefaultOn.9.png"], 
+      Blank[], 
+      FrontEnd`ToFileName[{"Toolbars", "ChatTools"}, 
+       "DockedCellButton-left-DefaultOff.9.png"]]], "Hover" -> 
+   FrontEnd`ToFileName[{"Toolbars", "ChatTools"}, 
+     "DockedCellButton-left-Hover.9.png"], "Pressed" -> 
+   FrontEnd`ToFileName[{"Toolbars", "ChatTools"}, 
+     "DockedCellButton-left-Pressed.9.png"]},
+ ButtonFunction:>((CurrentValue[
+     ButtonNotebook[], {TaggingRules, "NewCellStyle"}] = "Text"; 
+  ChatTools`MoveCursorAfterCellPosition[
+    ButtonNotebook[]]; NotebookWrite[
+    ButtonNotebook[], 
+    Cell["XXXX", #2], All, AutoScroll -> Not[
+      CurrentValue[
+       ButtonNotebook[], {TaggingRules, "ScrollLock"}, False]]]; SelectionMove[
+    ButtonNotebook[], All, CellContents, AutoScroll -> Not[
+      CurrentValue[
+       ButtonNotebook[], {TaggingRules, "ScrollLock"}, False]]])& ),
+ Evaluator->"ChatServices",
+ FrameMargins->{{5, 5}, {0, 0}},
+ ImageSize->{
+  Automatic, 22}},ExpressionUUID->"351ca491-6968-4a0f-b698-6a4eaaeed125"],
+
+Cell[StyleData["StemButton2"],
+ ButtonBoxOptions->{Appearance->{"Default" -> Dynamic[
+     FEPrivate`Switch[
+      CurrentValue[
+       EvaluationNotebook[], {TaggingRules, "NewCellStyle"}, "Text"], "Input", 
+      FrontEnd`ToFileName[{"Toolbars", "ChatTools"}, 
+       "DockedCellButton-right-DefaultOn.9.png"], 
+      Blank[], 
+      FrontEnd`ToFileName[{"Toolbars", "ChatTools"}, 
+       "DockedCellButton-right-DefaultOff.9.png"]]], "Hover" -> 
+   FrontEnd`ToFileName[{"Toolbars", "ChatTools"}, 
+     "DockedCellButton-right-Hover.9.png"], "Pressed" -> 
+   FrontEnd`ToFileName[{"Toolbars", "ChatTools"}, 
+     "DockedCellButton-right-Pressed.9.png"]},
+ ButtonFunction:>((CurrentValue[
+     ButtonNotebook[], {TaggingRules, "NewCellStyle"}] = "Input"; 
+  ChatTools`MoveCursorAfterCellPosition[
+    ButtonNotebook[]]; NotebookWrite[
+    ButtonNotebook[], 
+    Cell[
+     BoxData["XXXX"], #2], All, AutoScroll -> Not[
+      CurrentValue[
+       ButtonNotebook[], {TaggingRules, "ScrollLock"}, False]]]; SelectionMove[
+    ButtonNotebook[], All, CellContents, AutoScroll -> Not[
+      CurrentValue[
+       ButtonNotebook[], {TaggingRules, "ScrollLock"}, False]]])& ),
+ Evaluator->"ChatServices",
+ FrameMargins->{{5, 5}, {0, 0}},
+ ImageSize->{
+  Automatic, 22}},ExpressionUUID->"78b18c71-2860-49e9-a797-aebf3e719d8d"],
+
+Cell[StyleData["SendButtonText"],
+ FontFamily->"Source Sans Pro",
+ FontSize->13,
+ FontWeight->"Bold",
+ FontColor->GrayLevel[
+  1],ExpressionUUID->"844d6726-a0a4-40bc-a6f0-56ac88e9a18a"],
+
+Cell[StyleData["SendButton"],
+ ButtonBoxOptions->{
+ Appearance->{
+  "ButtonType" -> "Default", "Default" -> 
+   FrontEnd`ToFileName[{"Toolbars", "ChatTools"}, "SendButton-Default.9.png"],
+    "Hover" -> FrontEnd`ToFileName[{"Toolbars", "ChatTools"}, 
+     "SendButton-Hover.9.png"]},
+ Evaluator->"ChatServices",
+ ImageSize->{65, 22},
+ Method->"Queued"},ExpressionUUID->"beec0b42-76af-42b6-9782-7d24c9bef89c"],
+
+Cell[StyleData["SendTooltipStyle"],
+ CellFrameMargins->10,
+ CellFrameColor->GrayLevel[0.8],
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize->11,
+ FontColor->GrayLevel[0.2],
+ Background->GrayLevel[
+  0.9675],ExpressionUUID->"23f5f925-628b-40aa-ae47-b95aa3970b46"],
+
+Cell[StyleData["Key1"],
+ TemplateBoxOptions->{DisplayFunction->(FrameBox[
+   TagBox[
+    GridBox[{{
+       ItemBox[
+        TemplateBox[{"\[ThickSpace]", #, "\[ThickSpace]"}, "RowDefault"], 
+        Background -> GrayLevel[0.9333333333333333], StripOnInput -> False], 
+       ItemBox[
+        TemplateBox[{"\[ThickSpace]", #2, "\[ThickSpace]"}, "RowDefault"], 
+        Background -> GrayLevel[1], StripOnInput -> False]}}, 
+     GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Baseline}}}, 
+     AutoDelete -> False, 
+     GridBoxDividers -> {
+      "ColumnsIndexed" -> {2 -> GrayLevel[0.8352941176470589]}, 
+       "Rows" -> {{None}}}, 
+     GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{1.45}}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     BaselinePosition -> {{1, 1}, Baseline}], "Grid"], RoundingRadius -> 4, 
+   Background -> GrayLevel[0.9333333333333333], 
+   FrameMargins -> {{0, 0}, {-1, -1}}, FrameStyle -> {
+     GrayLevel[0.8352941176470589], 
+     AbsoluteThickness[1]}, BaselinePosition -> Baseline, StripOnInput -> 
+   False]& )},ExpressionUUID->"5a731e2e-5bc1-4488-aa93-10a6c59d0eb5"],
+
+Cell[StyleData["More"],
+ Editable->False,
+ Deletable->False,
+ ShowCellBracket->False,
+ CellMargins->Dynamic[
+   FEPrivate`Switch[
+    CurrentValue[
+     FrontEnd`EvaluationNotebook[], ShowCellLabel], True, {{64, -1}, {0, 0}}, 
+    Blank[], {{-1, -1}, {0, 0}}]],
+ TextAlignment->Center,
+ Background->GrayLevel[
+  0.95, 0.8],ExpressionUUID->"3d3730f3-61ce-4498-9916-919d091d5122"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Other Chat Notebook Styles", "Section",
+ CellChangeTimes->{{3.7244499738121223`*^9, 
+  3.7244499796525173`*^9}},ExpressionUUID->"946ae568-c533-43da-a900-\
+cf5ba5a1dee7"],
+
+Cell[StyleData["ChatColorSwatch"],
+ TemplateBoxOptions->{DisplayFunction:>(AdjustmentBox[
+   GraphicsBox[{#, 
+     RectangleBox[{0, 0}, RoundingRadius -> 0.3]}, ImageSize -> 13], 
+   BoxBaselineShift -> -0.2]& \
+)},ExpressionUUID->"f911ec84-fdee-49c3-a748-6590c3c001d8"],
+
+Cell[StyleData["InlineCellEditing"],
+ StyleMenuListing->None,
+ Background->GrayLevel[
+  1],ExpressionUUID->"79fdba95-7b39-47b9-b5bf-7c24090e70b8"],
+
+Cell[StyleData["CellLabelText", StyleDefinitions -> StyleData["Text"]],
+ AutoSpacing->False,
+ AutoMultiplicationSymbol->False,
+ FontFamily->"Source Sans Pro Semibold",
+ FontSize->12,
+ FontWeight->"Semibold",
+ FontColor->GrayLevel[0.2],
+ Background->GrayLevel[
+  0.960784],ExpressionUUID->"5a138a0c-5170-461d-b6bb-2b249b88d8d0"],
+
+Cell[StyleData["TimestampText", StyleDefinitions -> StyleData["Text"]],
+ AutoSpacing->False,
+ AutoMultiplicationSymbol->False,
+ FontFamily->"Source Sans Pro",
+ FontSize->11,
+ FontColor->GrayLevel[
+  0.5],ExpressionUUID->"f4b543fd-c02e-4954-bc3f-a3c5e3d4040e"],
+
+Cell[StyleData["CellLabelOptions"],
+ CellFrame->{{0, 1}, {0, 1}},
+ ShowCellBracket->False,
+ CellMargins->Dynamic[
+   FEPrivate`Switch[
+    CurrentValue[
+     FrontEnd`EvaluationNotebook[], ShowCellLabel], True, {{64, -1}, {0, 0}}, 
+    Blank[], {{-1, -1}, {0, 0}}]],
+ Deployed->True,
+ CellFrameMargins->Dynamic[
+   FEPrivate`Switch[
+    CurrentValue[
+     FrontEnd`EvaluationNotebook[], ShowCellLabel], True, {{6, 25}, {6, 6}}, 
+    Blank[], {{20, 25}, {6, 6}}]],
+ CellFrameColor->GrayLevel[0.819608],
+ Background->GrayLevel[
+  0.960784],ExpressionUUID->"709084b4-2575-4b4f-ae1f-f45886e6b67e"],
+
+Cell[StyleData["CellUserLabelText", StyleDefinitions -> StyleData["Text"]],
+ AutoSpacing->False,
+ AutoMultiplicationSymbol->False,
+ FontFamily->"Source Sans Pro Semibold",
+ FontSize->12,
+ FontWeight->"Semibold",
+ FontColor->GrayLevel[
+  0.2],ExpressionUUID->"6b33b782-2b51-4d51-9414-00932d97ce08"],
+
+Cell[StyleData["CellUserLabelOptions"],
+ CellFrame->{{0, 1}, {0, 1}},
+ ShowCellBracket->False,
+ CellMargins->Dynamic[
+   FEPrivate`Switch[
+    CurrentValue[
+     FrontEnd`EvaluationNotebook[], ShowCellLabel], True, {{64, -1}, {0, 0}}, 
+    Blank[], {{-1, -1}, {0, 0}}]],
+ Deployed->True,
+ CellFrameMargins->Dynamic[
+   FEPrivate`Switch[
+    CurrentValue[
+     FrontEnd`EvaluationNotebook[], ShowCellLabel], True, {{0, 26}, {0, -1}}, 
+    Blank[], {{20, 26}, {0, -1}}]],
+ CellFrameColor->GrayLevel[0.819608],
+ Background->GrayLevel[
+  0.960784],ExpressionUUID->"1d213b11-8c48-47fb-84eb-777bcd8d543d"],
+
+Cell[StyleData["HelpText", StyleDefinitions -> StyleData["Text"]],
+ Editable->False,
+ Deletable->False,
+ ShowCellBracket->False,
+ CellMargins->{{64, 18}, {0, 0}},
+ ShowCellLabel->False,
+ ShowAutoSpellCheck->False,
+ Background->GrayLevel[
+  0.999],ExpressionUUID->"ed7c0cee-15fb-4aa7-9933-007d9b04a498"],
+
+Cell[StyleData["ChatFooter"],
+ Editable->False,
+ Selectable->False,
+ Deletable->False,
+ ShowCellBracket->False,
+ CellMargins->{{Inherited, Inherited}, {0, 30}},
+ CellBracketOptions->{"OverlapContent"->True},
+ CellFrameMargins->0,
+ CellSize->{Automatic, 32},
+ Background->GrayLevel[
+  0.92],ExpressionUUID->"e86bea81-8d14-474a-aaed-ed36560edce8"],
+
+Cell[StyleData["Banner"],
+ CellFrame->{{0, 0}, {0, 0}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ ShowCellLabel->False,
+ CellFrameMargins->{{36, 24}, {Inherited, Inherited}},
+ LineBreakWithin->Automatic,
+ Background->GrayLevel[
+  0.9675],ExpressionUUID->"296c6c46-04ea-42da-8e63-8830e116e3e9"],
+
+Cell[StyleData["ChatBannerDockedCell", StyleDefinitions -> StyleData["Banner"]
+ ],
+ Background->GrayLevel[
+  0.945098],ExpressionUUID->"1aa470c0-cfdf-4cbb-abc7-d1d3505902b2"],
+
+Cell[StyleData["ChatDockedCell", StyleDefinitions -> StyleData["DockedCell"]],
+ CellFrameMargins->{{0, 0}, {5, 5}},
+ CellFrameColor->GrayLevel[0.74902],
+ Background->GrayLevel[
+  0.898039],ExpressionUUID->"90525246-9ec6-4e44-9c37-d10a10f4d10d"],
+
+Cell[StyleData["ChatDockedTitle"],
+ Editable->False,
+ Selectable->False,
+ FontFamily->"Source Sans Pro Semibold",
+ FontSize->16,ExpressionUUID->"557a8916-2ebf-465f-b095-9012ee61593b"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Chat Dialog Styles", "Section",
+ CellChangeTimes->{{3.7244499374151506`*^9, 
+  3.724449942589514*^9}},ExpressionUUID->"bf0395f8-71a1-4f37-9add-\
+9554c9fd56ce"],
+
+Cell[StyleData["ChatDialogDelimiter"],
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {0.5, 0}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellFrameColor->GrayLevel[0.75],
+ CellSize->{Automatic, 1},
+ ShowStringCharacters->
+  False,ExpressionUUID->"46dd4453-51fd-4872-844f-60733deb83e2"],
+
+Cell[StyleData["ChatDialogParenthetical"],
+ ShowCellBracket->False,
+ FontFamily->"Source Sans Pro",
+ FontSize->14,
+ FontColor->GrayLevel[
+  0.65],ExpressionUUID->"c621a14f-47b8-48b9-8311-cca253be5c47"],
+
+Cell[StyleData["ChatDialogHeader"],
+ Editable->False,
+ Selectable->False,
+ ShowCellBracket->False,
+ CellMargins->{{30, 30}, {5, 20}},
+ ShowAutoSpellCheck->False,
+ FontFamily->"Source Sans Pro",
+ FontSize->16,
+ FontColor->GrayLevel[
+  0.2],ExpressionUUID->"030bdb44-4400-46c8-b2b3-8aa13c9e0ab5"],
+
+Cell[StyleData["ChatDialogTitle"],
+ Editable->False,
+ Selectable->False,
+ ShowCellBracket->False,
+ CellMargins->{{30, 30}, {7, 28}},
+ FontFamily->"Source Sans Pro",
+ FontSize->20,
+ FontColor->GrayLevel[
+  0.2],ExpressionUUID->"838e0a97-bec4-4635-bf38-0199243e1ad6"],
+
+Cell[StyleData["ChatDialogControls"],
+ Editable->False,
+ Selectable->False,
+ ShowCellBracket->False,
+ CellMargins->{{30, 30}, {0, 
+  0}},ExpressionUUID->"d06e6fed-7e81-4571-8e2a-82c99853aac7"]
+}, Closed]]
+},
+WindowSize->{945, 844},
+WindowMargins->Automatic,
+TaggingRules->{
+ "DocuToolsSettingsInternal" -> {
+   "$PacletVersion" -> "0.9.2072", "$MVersion" -> "11.3", "$FlaggedVersion" -> 
+    11.2, "$ApplicationName" -> "Pubs", "$LinkBase" -> "Pubs", 
+    "$ApplicationDirectory" -> "C:\\Workspace\\Pubs\\", 
+    "$DocumentationDirectory" -> 
+    "C:\\Workspace\\Pubs\\Documentation\\English\\", "$UseNewPageDialog" -> 
+    ""}, "ChatTools" -> {
+   "AvailableToReceiveChatInvitations" -> True, "ChatListenActivated" -> True,
+     "ScreenName" -> "Brian Van Vertloo", "SaveDirectory" -> 
+    "\\\\wrisync02.wri.wolfram.com\\backup$\\brianv\\My Documents\\Wolfram \
+Mathematica\\", 
+    "Contacts" -> {
+     "bradym@wolfram.com", "chatframework@wolfram.com", 
+      "documentation@wolfram.com"}}, "NewCellStyle" -> "Text"},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->"StyleSheetFormatting.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 104, 0, 40, 49, 0, "StyleData", "StyleDefinitions", "",ExpressionUUID->"5e4beae5-5530-4443-bf55-e5e285d732a0"],
+Cell[CellGroupData[{
+Cell[687, 24, 161, 3, 51, "Section",ExpressionUUID->"50d7755d-761a-4f76-b015-6f3c6890f86c"],
+Cell[851, 29, 1078, 28, 70, 27, 0, "StyleData", "Notebook", "All",ExpressionUUID->"dba8929c-3df7-4e3e-a9e2-578215ddf228"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1966, 62, 158, 3, 35, "Section",ExpressionUUID->"19bb9365-b94d-417e-9de4-3a8967de4752"],
+Cell[2127, 67, 277, 7, 70, 29, 0, "StyleData", "Originator", "All",ExpressionUUID->"6b748e5a-2668-4a54-8042-805e18793dc8"],
+Cell[2407, 76, 278, 7, 70, 28, 0, "StyleData", "Responder", "All",ExpressionUUID->"0835efce-6d57-40fb-a122-4706abe18603"],
+Cell[2688, 85, 1158, 31, 70, 28, 0, "StyleData", "Turquoise", "All",ExpressionUUID->"19636bb3-0447-48a1-9961-7db28144db1e"],
+Cell[3849, 118, 130, 0, 70, 75, 0, "StyleData", "TurquoiseTop", "All",ExpressionUUID->"e082dcb3-a9bc-48b9-877c-7c5695d382b6"],
+Cell[3982, 120, 126, 0, 70, 71, 0, "StyleData", "OffGreen", "All",ExpressionUUID->"512f872f-2463-4c9c-9c63-83ef1e092c08"],
+Cell[4111, 122, 129, 0, 70, 74, 0, "StyleData", "OffGreenTop", "All",ExpressionUUID->"e6fc7027-5ccc-43ec-a5f7-a31521e62ee7"],
+Cell[4243, 124, 124, 0, 70, 69, 0, "StyleData", "Orange", "All",ExpressionUUID->"b6315f2f-2a05-40ab-aa2a-6d13e8a0ba9b"],
+Cell[4370, 126, 127, 0, 70, 72, 0, "StyleData", "OrangeTop", "All",ExpressionUUID->"52f1fd61-216b-48f2-a0c3-1b4383ed26bb"],
+Cell[4500, 128, 125, 0, 70, 70, 0, "StyleData", "OffBlue", "All",ExpressionUUID->"6c6c3bed-7202-4d66-94c2-3a2ec89b4445"],
+Cell[4628, 130, 128, 0, 70, 73, 0, "StyleData", "OffBlueTop", "All",ExpressionUUID->"447aa63b-d98c-4649-afe5-c637515307e8"],
+Cell[4759, 132, 123, 0, 70, 68, 0, "StyleData", "Green", "All",ExpressionUUID->"30f68718-61e1-44d3-a3d8-1acfffabcb98"],
+Cell[4885, 134, 126, 0, 70, 71, 0, "StyleData", "GreenTop", "All",ExpressionUUID->"4e837a0b-c811-4269-a962-a8af121adf95"],
+Cell[5014, 136, 124, 0, 70, 69, 0, "StyleData", "Purple", "All",ExpressionUUID->"6e2a1c30-4e96-48e6-8a6e-d8ddf55018f9"],
+Cell[5141, 138, 127, 0, 70, 72, 0, "StyleData", "PurpleTop", "All",ExpressionUUID->"47767b19-4f28-4fdf-b596-846850732c73"],
+Cell[5271, 140, 127, 0, 70, 72, 0, "StyleData", "GrayLight", "All",ExpressionUUID->"6920a29c-3af1-4aa1-8512-4ee12aca0eb5"],
+Cell[5401, 142, 141, 1, 70, 86, 1, "StyleData", "GrayLightTurquoiseTop", "All",ExpressionUUID->"3851956d-0dc7-451a-89e2-65a9ed11b81f"],
+Cell[5545, 145, 140, 1, 70, 85, 1, "StyleData", "GrayLightOffGreenTop", "All",ExpressionUUID->"dfc9e86b-bd49-4161-a600-0b35160cebbf"],
+Cell[5688, 148, 138, 1, 70, 83, 1, "StyleData", "GrayLightOrangeTop", "All",ExpressionUUID->"82a83f79-1040-4bed-90cb-c465df2a597a"],
+Cell[5829, 151, 139, 1, 70, 84, 1, "StyleData", "GrayLightOffBlueTop", "All",ExpressionUUID->"ad6bf67b-b9ac-486f-87ea-8515bb0b9ebb"],
+Cell[5971, 154, 137, 1, 70, 82, 1, "StyleData", "GrayLightGreenTop", "All",ExpressionUUID->"bbb9715e-9297-400c-ade3-70a580251841"],
+Cell[6111, 157, 138, 1, 70, 83, 1, "StyleData", "GrayLightPurpleTop", "All",ExpressionUUID->"cbae5f8e-0ecf-48f0-b243-b8e2738d1c60"],
+Cell[6252, 160, 131, 0, 70, 76, 0, "StyleData", "ChatLightBlue", "All",ExpressionUUID->"f917e8d8-1cf8-482b-97c3-0963d991e56e"],
+Cell[6386, 162, 134, 0, 70, 79, 0, "StyleData", "ChatLightBlueTop", "All",ExpressionUUID->"47b73eac-3a80-4217-bf9a-1844fc3c25c9"],
+Cell[6523, 164, 133, 0, 70, 78, 0, "StyleData", "ChatLightOrange", "All",ExpressionUUID->"88a86cb0-e6d6-488a-b25d-0dae8c866aad"],
+Cell[6659, 166, 138, 1, 70, 83, 1, "StyleData", "ChatLightOrangeTop", "All",ExpressionUUID->"22e37477-0342-4e0c-b0c7-9e39069b03da"],
+Cell[6800, 169, 130, 0, 70, 75, 0, "StyleData", "ChatLightRed", "All",ExpressionUUID->"f860aca2-0327-4c4e-aed9-84b384afff79"],
+Cell[6933, 171, 133, 0, 70, 78, 0, "StyleData", "ChatLightRedTop", "All",ExpressionUUID->"29eb4da7-b398-4d19-b7b0-1b10ecc8921f"],
+Cell[7069, 173, 132, 0, 70, 77, 0, "StyleData", "ChatLightGreen", "All",ExpressionUUID->"6c155422-ade9-4e16-bdac-f057e2c209f0"],
+Cell[7204, 175, 137, 1, 70, 82, 1, "StyleData", "ChatLightGreenTop", "All",ExpressionUUID->"80f39c6f-b4f3-42ce-a964-75b1a3a4cd69"],
+Cell[7344, 178, 134, 0, 70, 79, 0, "StyleData", "ChatLightMagenta", "All",ExpressionUUID->"225efef2-c2cb-465f-b00f-d5323cb04283"],
+Cell[7481, 180, 139, 1, 70, 84, 1, "StyleData", "ChatLightMagentaTop", "All",ExpressionUUID->"6ee091ac-85b7-4b4e-ace2-6ae8c7105a9a"],
+Cell[7623, 183, 132, 0, 70, 77, 0, "StyleData", "ChatLightBrown", "All",ExpressionUUID->"84994579-e357-4ef9-a64d-f6224ab6b03d"],
+Cell[7758, 185, 137, 1, 70, 82, 1, "StyleData", "ChatLightBrownTop", "All",ExpressionUUID->"02b16460-27f6-4135-b801-e9f5dc4966c0"],
+Cell[7898, 188, 131, 0, 70, 76, 0, "StyleData", "ChatLightCyan", "All",ExpressionUUID->"9f415f00-e3f2-4d9b-90a5-10e759776a1a"],
+Cell[8032, 190, 134, 0, 70, 79, 0, "StyleData", "ChatLightCyanTop", "All",ExpressionUUID->"628235c1-3b25-4c5a-88a3-e190cbe0616e"],
+Cell[8169, 192, 131, 0, 70, 76, 0, "StyleData", "ChatLightPink", "All",ExpressionUUID->"b117d212-320d-4e75-b7b3-92546d3634c7"],
+Cell[8303, 194, 134, 0, 70, 79, 0, "StyleData", "ChatLightPinkTop", "All",ExpressionUUID->"1685817a-0abd-4aef-9523-7739b37c786c"],
+Cell[8440, 196, 133, 0, 70, 78, 0, "StyleData", "ChatLightPurple", "All",ExpressionUUID->"f028ac7a-0532-47a0-8e6e-a757e0c02989"],
+Cell[8576, 198, 138, 1, 70, 83, 1, "StyleData", "ChatLightPurpleTop", "All",ExpressionUUID->"51865a38-e021-4d78-b313-ce77e6292d52"],
+Cell[8717, 201, 131, 0, 70, 76, 0, "StyleData", "ChatLightGray", "All",ExpressionUUID->"c7946856-fed2-4f0c-a25e-74a8f5d8b326"],
+Cell[8851, 203, 134, 0, 70, 79, 0, "StyleData", "ChatLightGrayTop", "All",ExpressionUUID->"c629bc04-e5c5-4ddc-864f-5e9e9cb5bb15"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9022, 208, 161, 3, 35, "Section",ExpressionUUID->"5b9f3b05-ef4f-40a0-ae1e-05ee8540ae4f"],
+Cell[9186, 213, 358, 9, 70, 24, 0, "StyleData", "Input", "All",ExpressionUUID->"58a30284-6e8e-4e1a-b34f-c301c7fecd6c"],
+Cell[9547, 224, 360, 9, 70, 25, 0, "StyleData", "Output", "All",ExpressionUUID->"1ffebd75-66c4-4495-bfd2-a6064752a2f5"],
+Cell[9910, 235, 234, 5, 70, 26, 0, "StyleData", "Message", "All",ExpressionUUID->"d25fc792-b123-4487-9d99-8fe06ecd0d0e"],
+Cell[10147, 242, 111, 2, 70, 28, 0, "StyleData", "CellLabel", "All",ExpressionUUID->"943ee317-dfb7-4d40-bf09-cfb72fc9e8ef"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10295, 249, 149, 3, 35, "Section",ExpressionUUID->"9f203e7a-3655-47e4-a8ff-8cb9c314f790"],
+Cell[10447, 254, 311, 8, 70, 23, 0, "StyleData", "Text", "All",ExpressionUUID->"f2a79bc0-9918-4451-ba62-32a68e080643"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10795, 267, 169, 3, 35, "Section",ExpressionUUID->"890bc2c1-0b8a-41db-8c02-b1f2c3c8b9ab"],
+Cell[10967, 272, 753, 19, 70, 62, 0, "StyleData", "Stem", "All",ExpressionUUID->"bcbba234-fcad-4b47-b882-a14c2b887377"],
+Cell[11723, 293, 160, 4, 70, 27, 0, "StyleData", "StemText", "All",ExpressionUUID->"3d935a08-ce04-4b0f-8bbf-c5c59c39169c"],
+Cell[11886, 299, 167, 4, 70, 33, 0, "StyleData", "StemButtonText", "All",ExpressionUUID->"3e8c296d-9450-4047-8ba4-317210656408"],
+Cell[12056, 305, 179, 4, 70, 38, 0, "StyleData", "StemButtonAdornment", "All",ExpressionUUID->"b55fa9be-4149-48ca-ac49-08d850412729"],
+Cell[12238, 311, 1294, 28, 70, 29, 0, "StyleData", "StemButton", "All",ExpressionUUID->"351ca491-6968-4a0f-b698-6a4eaaeed125"],
+Cell[13535, 341, 1316, 29, 70, 30, 0, "StyleData", "StemButton2", "All",ExpressionUUID->"78b18c71-2860-49e9-a797-aebf3e719d8d"],
+Cell[14854, 372, 185, 5, 70, 33, 0, "StyleData", "SendButtonText", "All",ExpressionUUID->"844d6726-a0a4-40bc-a6f0-56ac88e9a18a"],
+Cell[15042, 379, 408, 9, 70, 29, 0, "StyleData", "SendButton", "All",ExpressionUUID->"beec0b42-76af-42b6-9782-7d24c9bef89c"],
+Cell[15453, 390, 270, 7, 70, 35, 0, "StyleData", "SendTooltipStyle", "All",ExpressionUUID->"23f5f925-628b-40aa-ae47-b95aa3970b46"],
+Cell[15726, 399, 1126, 22, 70, 23, 0, "StyleData", "Key1", "All",ExpressionUUID->"5a731e2e-5bc1-4488-aa93-10a6c59d0eb5"],
+Cell[16855, 423, 378, 11, 70, 23, 0, "StyleData", "More", "All",ExpressionUUID->"3d3730f3-61ce-4498-9916-919d091d5122"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[17270, 439, 175, 3, 35, "Section",ExpressionUUID->"946ae568-c533-43da-a900-cf5ba5a1dee7"],
+Cell[17448, 444, 270, 5, 40, 34, 0, "StyleData", "ChatColorSwatch", "All",ExpressionUUID->"f911ec84-fdee-49c3-a748-6590c3c001d8"],
+Cell[17721, 451, 146, 3, 56, 36, 0, "StyleData", "InlineCellEditing", "All",ExpressionUUID->"79fdba95-7b39-47b9-b5bf-7c24090e70b8",
+ StyleMenuListing->None],
+Cell[17870, 456, 327, 8, 48, 71, 0, "StyleData", "CellLabelText", "All",ExpressionUUID->"5a138a0c-5170-461d-b6bb-2b249b88d8d0"],
+Cell[18200, 466, 259, 6, 47, 71, 0, "StyleData", "TimestampText", "All",ExpressionUUID->"f4b543fd-c02e-4954-bc3f-a3c5e3d4040e"],
+Cell[18462, 474, 593, 16, 45, 35, 0, "StyleData", "CellLabelOptions", "All",ExpressionUUID->"709084b4-2575-4b4f-ae1f-f45886e6b67e"],
+Cell[19058, 492, 297, 7, 48, 75, 0, "StyleData", "CellUserLabelText", "All",ExpressionUUID->"6b33b782-2b51-4d51-9414-00932d97ce08"],
+Cell[19358, 501, 599, 16, 32, 39, 0, "StyleData", "CellUserLabelOptions", "All",ExpressionUUID->"1d213b11-8c48-47fb-84eb-777bcd8d543d"],
+Cell[19960, 519, 302, 8, 52, 66, 0, "StyleData", "HelpText", "All",ExpressionUUID->"ed7c0cee-15fb-4aa7-9933-007d9b04a498"],
+Cell[20265, 529, 345, 10, 62, 29, 0, "StyleData", "ChatFooter", "All",ExpressionUUID->"e86bea81-8d14-474a-aaed-ed36560edce8"],
+Cell[20613, 541, 309, 8, 48, 25, 0, "StyleData", "Banner", "All",ExpressionUUID->"296c6c46-04ea-42da-8e63-8830e116e3e9"],
+Cell[20925, 551, 174, 3, 48, 82, 1, "StyleData", "ChatBannerDockedCell", "All",ExpressionUUID->"1aa470c0-cfdf-4cbb-abc7-d1d3505902b2"],
+Cell[21102, 556, 244, 4, 44, 78, 0, "StyleData", "ChatDockedCell", "All",ExpressionUUID->"90525246-9ec6-4e44-9c37-d10a10f4d10d"],
+Cell[21349, 562, 183, 4, 45, 34, 0, "StyleData", "ChatDockedTitle", "All",ExpressionUUID->"557a8916-2ebf-465f-b095-9012ee61593b"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[21569, 571, 165, 3, 35, "Section",ExpressionUUID->"bf0395f8-71a1-4f37-9add-9554c9fd56ce"],
+Cell[21737, 576, 314, 9, 21, 38, 0, "StyleData", "ChatDialogDelimiter", "All",ExpressionUUID->"46dd4453-51fd-4872-844f-60733deb83e2"],
+Cell[22054, 587, 201, 5, 43, 42, 0, "StyleData", "ChatDialogParenthetical", "All",ExpressionUUID->"c621a14f-47b8-48b9-8311-cca253be5c47"],
+Cell[22258, 594, 294, 9, 62, 35, 0, "StyleData", "ChatDialogHeader", "All",ExpressionUUID->"030bdb44-4400-46c8-b2b3-8aa13c9e0ab5"],
+Cell[22555, 605, 265, 8, 77, 34, 0, "StyleData", "ChatDialogTitle", "All",ExpressionUUID->"838e0a97-bec4-4635-bf38-0199243e1ad6"],
+Cell[22823, 615, 192, 5, 32, 37, 0, "StyleData", "ChatDialogControls", "All",ExpressionUUID->"d06e6fed-7e81-4571-8e2a-82c99853aac7"]
+}, Closed]]
+}
+]
+*)
+

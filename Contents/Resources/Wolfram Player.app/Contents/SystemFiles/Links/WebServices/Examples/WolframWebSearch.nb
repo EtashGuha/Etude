@@ -1,0 +1,435 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     13712,        426]
+NotebookOptionsPosition[     11714,        357]
+NotebookOutlinePosition[     12274,        377]
+CellTagsIndexPosition[     12231,        374]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Wolfram Search Web Service", "Title"],
+
+Cell[TextData[{
+ "This example demonstrates the Wolfram Search web service.  The Wolfram \
+Search web service provides an interface to functionality that searches the \
+Wolfram Research websites. With this web service, a user can query the web \
+documents directly from any application that supports web services. The \
+service is similar to the functionality provided by ",
+ StyleBox["http://search.wolfram.com",
+  FontVariations->{"Underline"->True},
+  FontColor->RGBColor[0, 0, 1]],
+ "."
+}], "Text"],
+
+Cell[TextData[{
+ "To try this example, evaluate all the initialization cells (you can do this \
+with the menu command ",
+ StyleBox[ButtonBox["Evaluation",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/EvaluationMenu"], "MenuName"],
+ StyleBox[" ", "MenuName"],
+ StyleBox["\[FilledRightTriangle] ", "MenuPointer"],
+ StyleBox[ButtonBox["Evaluate Initialization Cells",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/menuitem/EvaluateInitializationCells"], 
+  "MenuName"],
+ "). Then go to the Example section."
+}], "Text",
+ CellChangeTimes->{{3.38219775040296*^9, 3.3821977586237307`*^9}, {
+  3.382197823183403*^9, 3.382197870863613*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Code", "Section",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<WebServices`\>\"", "]"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InstallService", "[", 
+   RowBox[{
+   "\"\<http://webservices.wolfram.com/services/SearchServices/WolframSearch2.\
+wsdl\>\"", ",", 
+    RowBox[{"AllowShortContext", "\[Rule]", "False"}]}], "]"}], 
+  ";"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Options", "[", "WolframWebSearch", "]"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"MaxHits", " ", "\[Rule]", "10"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Method", "\[Rule]", "And"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"IncludeURL", " ", "\[Rule]", " ", "True"}]}], 
+    "\[IndentingNewLine]", "}"}]}], ";"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$backgrounds", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.960784", ",", "0.878431", ",", "0.666667"}], "]"}], ",", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.964706", ",", "0.929412", ",", "0.839216"}], "]"}]}], 
+    "}"}]}], ";"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"WolframWebSearch", "::", "nomatch"}], "=", 
+   "\"\<No page containing `1` found.\>\""}], ";"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"WolframWebSearch", "[", 
+   RowBox[{"str_String", ",", "opts___"}], "]"}], ":=", "\[IndentingNewLine]",
+   
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"lis", ",", "matches", ",", "multi", ",", "urlQ"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"matches", ",", "multi", ",", "urlQ"}], "}"}], "=", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"MaxHits", ",", "Method", ",", "IncludeURL"}], "}"}], " ", "/.",
+        " ", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"{", 
+         RowBox[{"opts", ",", 
+          RowBox[{"Options", " ", "@", " ", "WolframWebSearch"}]}], "}"}], 
+        "]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"lis", " ", "=", " ", 
+      RowBox[{"WolframSearchService`WolframSearchPort`WolframSearch", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\"\<Query\>\"", "\[Rule]", "str"}], ",", " ", 
+         RowBox[{"\"\<Limit\>\"", "\[Rule]", "matches"}], ",", 
+         RowBox[{"\"\<ReturnTypes\>\"", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<Title\>\"", ",", " ", "\"\<URL\>\"", ",", "\"\<Score\>\""}], 
+           "}"}]}]}], "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"lis", " ", "=", " ", 
+      RowBox[{"\"\<Matches\>\"", "/.", "lis"}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"lis", "===", 
+         RowBox[{"{", "}"}]}], "||", 
+        RowBox[{"lis", "===", "Null"}], " ", "||", " ", 
+        RowBox[{"lis", " ", "===", "\"\<Matches\>\""}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Message", "[", 
+        RowBox[{
+         RowBox[{"WolframWebSearch", "::", "nomatch"}], ",", " ", "str"}], 
+        "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"$bg", "=", "0"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Scan", "[", 
+         RowBox[{"CellPrint", ",", 
+          RowBox[{"searchResultCells", "[", 
+           RowBox[{"lis", ",", "urlQ"}], "]"}]}], "]"}]}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"searchResultCells", "[", 
+   RowBox[{"lis_", ",", "urlQ_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"cellTemplate", "[", 
+     RowBox[{"formatSingleResult", "[", 
+      RowBox[{"#", ",", "urlQ"}], "]"}], "]"}], "&"}], " ", "/@", " ", 
+   "lis"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cellTemplate", "[", "lis_", "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"Cell", "[", 
+   RowBox[{
+    RowBox[{"TextData", " ", "@", " ", 
+     RowBox[{"Flatten", " ", "@", " ", 
+      RowBox[{"{", "lis", "}"}]}]}], ",", "\"\<Print\>\"", ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"FontFamily", "->", "\"\<Times\>\""}], ",", "\[IndentingNewLine]",
+     
+    RowBox[{"CellMargins", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Inherited", ",", "Inherited"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}], ",", "\[IndentingNewLine]",
+     
+    RowBox[{"CellDingbat", "\[Rule]", 
+     RowBox[{"ToString", "[", 
+      RowBox[{"++", "$bg"}], "]"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Background", "\[Rule]", 
+     RowBox[{"Part", "[", 
+      RowBox[{"$backgrounds", ",", 
+       RowBox[{"Mod", "[", 
+        RowBox[{"$bg", ",", "2", ",", "1"}], "]"}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"formatSingleResult", "[", 
+   RowBox[{"opts_", ",", "urlQ_"}], "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"u", ",", "t", ",", "s"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"u", ",", "t", ",", "s"}], "}"}], "=", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<URL\>\"", ",", "\"\<Title\>\"", ",", "\"\<Score\>\""}], 
+        "}"}], " ", "/.", " ", "opts"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"scoreIndicator", "[", "s", "]"}], ",", "\[IndentingNewLine]", 
+       "\"\< \>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"webLink", "[", 
+        RowBox[{
+         RowBox[{"StyleBox", "[", 
+          RowBox[{
+           RowBox[{"formatTitle", " ", "@", " ", "t"}], ",", 
+           RowBox[{"FontWeight", "->", "\"\<Bold\>\""}]}], "]"}], ",", "u"}], 
+        "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{"urlQ", ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<\\n\>\"", ",", 
+           RowBox[{"webLink", "[", 
+            RowBox[{
+             RowBox[{"StyleBox", "[", 
+              RowBox[{"u", ",", "\"\<SmallText\>\"", ",", 
+               RowBox[{"FontColor", "\[Rule]", 
+                RowBox[{"GrayLevel", "[", "0.4", "]"}]}]}], "]"}], ",", "u"}],
+             "]"}]}], "}"}], ",", 
+         RowBox[{"{", "}"}]}], "]"}]}], "\[IndentingNewLine]", "}"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"scoreIndicator", "[", "r_", "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"StyleBox", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"StringJoin", " ", "@", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{"\"\<|\>\"", ",", 
+       RowBox[{"{", "r", "}"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"FontColor", "->", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.269993", ",", "0.308507", ",", "0.6"}], "]"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"FontWeight", "->", "\"\<Bold\>\""}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"webLink", "[", 
+   RowBox[{"content_", ",", "url_"}], "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"ButtonBox", "[", 
+   RowBox[{"content", ",", "\[IndentingNewLine]", 
+    RowBox[{"ButtonData", "\[RuleDelayed]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"URL", "[", "url", "]"}], ",", "None"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"ButtonStyle", "->", "\"\<Hyperlink\>\""}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"formatTitle", "[", "str_String", "]"}], ":=", 
+  RowBox[{"translateAllEntities", "[", "str", "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"decodeString", "[", "str_", "]"}], ":=", 
+  RowBox[{"StringReplace", "[", 
+   RowBox[{"str", ",", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<&lt;\>\"", "->", "\"\<<\>\""}], ",", "\[IndentingNewLine]",
+       
+      RowBox[{"\"\<&gt;\>\"", "->", "\"\<>\>\""}], ",", "\[IndentingNewLine]",
+       
+      RowBox[{"\"\<&amp;\>\"", "->", "\"\<&\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<&quot;\>\"", "->", "\"\<\\\"\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<\\\\\>\"", "->", "\"\<\\\\[Backslash]\>\""}]}], 
+     "\[IndentingNewLine]", "}"}]}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"translateAllEntities", "[", "str_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"StringReplace", "[", 
+    RowBox[{"str", ",", 
+     RowBox[{
+     "Reverse", " ", "/@", " ", 
+      "System`Convert`MLStringDataDump`$UnicodeToHTML4Entities"}]}], "]"}], "//",
+    "decodeString"}]}]], "Input",
+ InitializationCell->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Find the top 10 wolfram.com web pages containing all the given strings.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"WolframWebSearch", "[", "\"\<premier service\>\"", "]"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Using google syntax, search for pages containing ",
+ StyleBox["any",
+  FontSlant->"Italic"],
+ " of the given strings, and return only the top two results."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"WolframWebSearch", "[", 
+  RowBox[{"\"\<FuzzyLogic OR ControlSystems\>\"", ",", 
+   RowBox[{"MaxHits", "\[Rule]", "2"}]}], "]"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Display less verbose results.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"WolframWebSearch", "[", 
+  RowBox[{"\"\<velodrome\>\"", ",", 
+   RowBox[{"IncludeURL", "\[Rule]", "False"}]}], "]"}]], "Input"]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{642, 740},
+WindowMargins->{{315, Automatic}, {-7, Automatic}},
+DockedCells->(FrontEndExecute[{
+   FrontEnd`NotebookApply[
+    FrontEnd`InputNotebook[], #, Placeholder]}]& ),
+FrontEndVersion->"6.0 for Mac OS X PowerPC (32-bit) (February 27, 2007)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "TutorialPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 43, 0, 104, "Title"],
+Cell[636, 25, 502, 10, 69, "Text"],
+Cell[1141, 37, 637, 15, 37, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1815, 57, 50, 1, 41, "Section",
+ InitializationCell->True],
+Cell[1868, 60, 104, 2, 30, "Input",
+ InitializationCell->True],
+Cell[1975, 64, 277, 8, 70, "Input",
+ InitializationCell->True],
+Cell[2255, 74, 437, 10, 110, "Input",
+ InitializationCell->True],
+Cell[2695, 86, 351, 10, 50, "Input",
+ InitializationCell->True],
+Cell[3049, 98, 180, 5, 30, "Input",
+ InitializationCell->True],
+Cell[3232, 105, 2182, 56, 270, "Input",
+ InitializationCell->True],
+Cell[5417, 163, 330, 10, 50, "Input",
+ InitializationCell->True],
+Cell[5750, 175, 1059, 28, 150, "Input",
+ InitializationCell->True],
+Cell[6812, 205, 1609, 40, 250, "Input",
+ InitializationCell->True],
+Cell[8424, 247, 625, 15, 130, "Input",
+ InitializationCell->True],
+Cell[9052, 264, 514, 13, 110, "Input",
+ InitializationCell->True],
+Cell[9569, 279, 173, 4, 30, "Input",
+ InitializationCell->True],
+Cell[9745, 285, 693, 17, 150, "Input",
+ InitializationCell->True],
+Cell[10441, 304, 344, 10, 90, "Input",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10822, 319, 26, 0, 41, "Section"],
+Cell[CellGroupData[{
+Cell[10873, 323, 95, 2, 21, "Text"],
+Cell[10971, 327, 91, 1, 23, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11099, 333, 185, 5, 21, "Text"],
+Cell[11287, 340, 163, 3, 23, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11487, 348, 45, 0, 21, "Text"],
+Cell[11535, 350, 151, 3, 23, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,1 @@
+{"None", "List", "Automatic"}

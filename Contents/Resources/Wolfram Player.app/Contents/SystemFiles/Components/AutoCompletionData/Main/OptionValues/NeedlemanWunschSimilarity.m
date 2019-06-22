@@ -1,0 +1,1 @@
+{GapPenalty -> {"1"}}

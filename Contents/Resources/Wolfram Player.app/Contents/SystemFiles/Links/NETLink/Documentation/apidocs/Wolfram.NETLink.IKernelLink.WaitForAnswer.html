@@ -1,0 +1,84 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IKernelLink.WaitForAnswer Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IKernelLink.WaitForAnswer.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IKernelLink.WaitForAnswer Method </h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Reads and discards all packets that arrive up until the packet that contains the result of the computation. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Function WaitForAnswer() As <a href="Wolfram.NETLink.PacketType.html">PacketType</a></div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />
+        <a href="Wolfram.NETLink.PacketType.html">PacketType</a> WaitForAnswer();</div>
+      <h4 class="dtH4">Return Value</h4>
+      <p>The packet type that held the answer, typically PacketType.Return.</p>
+      <h4 class="dtH4">Remarks</h4>
+      <p> After this method returns, it is your responsibility to read the contents of the packet that holds the result. If you are not interested in examining the result of the evaluation, use <a href="Wolfram.NETLink.IKernelLink.WaitAndDiscardAnswer.html">WaitAndDiscardAnswer</a> instead. <p> Use this method after sending an expression to evaluate with <a href="Wolfram.NETLink.IKernelLink.Evaluate_overload_1.html">Evaluate</a> or a manual sequence of Put methods. </p>
+            <example>
+            <pre class="code">ml.Evaluate("2+2");
+ml.WaitForAnwser();
+int result = ml.GetInteger();
+// It is not strictly necessary to call newPacket, since we have read the entire packet contents, but it is good style.
+ml.NewPacket();
+</pre>
+            </example> Examples of packets that arrive before the result and are discarded are PacketType.Text, PacketType.Message, PacketType.Display, etc. If you want to examine or operate on the incoming packets that are discarded by this method, use the <a href="Wolfram.NETLink.IKernelLink.PacketArrived.html">PacketArrived</a> event. <p> It returns the packet type that held the result of the computation. Typically, this will be PacketType.Return. However, in the unlikely event that you are manually sending evaluations inside an EnterTextPacket or EnterExpressionPacket, the packet will be different, and there are some further issues that you need to understand; consult the .NET/Link User Guide for details. </p>
+            </p>
+      <h4 class="dtH4">Exceptions</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Exception Type</th>
+            <th width="50%">Condition</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MathLinkException.html">MathLinkException</a>
+            </td>
+            <td width="50%">On any MathLink error.</td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IKernelLink.html">IKernelLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.IKernelLink.WaitAndDiscardAnswer.html">WaitAndDiscardAnswer</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="WaitForAnswer method">
+        </param>
+        <param name="Keyword" value="WaitForAnswer method, IKernelLink interface">
+        </param>
+        <param name="Keyword" value="IKernelLink.WaitForAnswer method">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

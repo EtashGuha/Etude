@@ -1,0 +1,539 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     18675,        530]
+NotebookOptionsPosition[     16529,        457]
+NotebookOutlinePosition[     17046,        476]
+CellTagsIndexPosition[     17003,        473]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[".NET/Link Example : WindowSpy (Using the Win32 API)", "Title",
+ CellID->863347166],
+
+Cell[TextData[{
+ "This example demonstrates calling \"unmanaged\" Windows DLLs (that is, an \
+old C-style DLLs, not .NET assemblies) from ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " using ",
+ Cell[BoxData[
+  ButtonBox["DefineDLLFunction",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineDLLFunction"]], "InlineFormula"],
+ ". The DLL used is one from the Win32 API, the set of functions that Windows \
+programs written in C or C++ call directly. Although most of the capabilities \
+programmers need for programming on Windows are available via classes in the \
+.NET Framework, there are some things that can only be done by getting right \
+down to the level of the raw Win32 API. If you need to do it, it's nice to \
+know that it is very simple."
+}], "Text",
+ CellChangeTimes->{{3.41304278536895*^9, 3.41304279655287*^9}},
+ CellID->185768294],
+
+Cell[TextData[{
+ "Although it might seem far-fetched, this example demonstrates that ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " can realistically be used as a systems programming language for Windows. \
+In fact, using ",
+ Cell[BoxData[
+  ButtonBox["DefineDLLFunction",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineDLLFunction"]], "InlineFormula"],
+ " to import Windows API functions into ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", you could write an entire native Win32 application in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "!"
+}], "Text",
+ CellChangeTimes->{{3.4130428114699697`*^9, 3.4130428560338297`*^9}},
+ CellID->143927140],
+
+Cell[TextData[{
+ "This example presents a function called ",
+ Cell[BoxData["WindowSpy"], "InlineFormula"],
+ ", which will remind users of the \"Find Window\" functionality in the Spy++ \
+utility program that has long been bundled with Microsoft's Visual C++ \
+compiler. The ",
+ Cell[BoxData["WindowSpy"], "InlineFormula"],
+ " program lets you move the mouse around the screen as it prints out \
+information on the windows that it enters. These windows can belong to any \
+program."
+}], "Text",
+ CellChangeTimes->{{3.41304286142273*^9, 3.41304287640231*^9}, 
+   3.413151015771476*^9},
+ CellID->399498808],
+
+Cell[TextData[{
+ "To try this example, evaluate all the initialization cells (you can do this \
+using the menu item ",
+ StyleBox[ButtonBox["Evaluation",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/EvaluationMenu"], "MenuName"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter"],
+ StyleBox[ButtonBox["Evaluate Initialization Cells",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/menuitem/EvaluateInitializationCells"], "MenuName"],
+ ") and then go to the Example section."
+}], "Text",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707597948962*^9}, {
+  3.412707959534474*^9, 3.412707967363954*^9}, {3.412708138927157*^9, 
+  3.412708173015101*^9}, {3.412708230174596*^9, 3.412708252892912*^9}},
+ CellID->1738407360],
+
+Cell[CellGroupData[{
+
+Cell["Code and Explanation", "Section"],
+
+Cell["Needs[\"NETLink`\"]", "Input",
+ PageWidth->Infinity,
+ InitializationCell->True,
+ ShowSpecialCharacters->False],
+
+Cell[CellGroupData[{
+
+Cell["Declaring the Windows API Functions", "Subsection"],
+
+Cell[TextData[{
+ "Here are the C-language prototypes for the functions we need, straight out \
+of the Microsoft documentation. All these functions are found in ",
+ Cell[BoxData[
+  RowBox[{"user32", ".", "dll"}]], "InlineFormula"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.4131510215975122`*^9, 3.4131510293134956`*^9}}],
+
+Cell["\<\
+BOOL GetWindowRect( HWND hWnd, LPRECT lpRect );
+int GetWindowText( HWND hWnd, LPTSTR lpString, int nMaxCount );
+int GetClassName( HWND hWnd, LPTSTR lpClassName, int nMaxCount );
+HWND WindowFromPoint( POINT point );
+BOOL GetCursorPos( LPPOINT lpPoint );
+SHORT GetKeyState( int nVirtKey );\
+\>", "Program"],
+
+Cell[TextData[{
+ "Before we work through the explanations of what type names to use in ",
+ Cell[BoxData[
+  ButtonBox["DefineDLLFunction",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineDLLFunction"]], "InlineFormula"],
+ " to call these functions from ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", note that the easiest thing to do is to search on the internet for sample \
+code in VB. NET or C# that shows declarations for the external functions, and \
+just copy the type names. In Visual Basic .NET, external functions are \
+declared using ",
+ Cell[BoxData[
+  RowBox[{"Declare", " ", "Function"}]], "InlineFormula"],
+ ", and in C# they use the ",
+ Cell[BoxData["extern"], "InlineFormula"],
+ " modifier along with the ",
+ Cell[BoxData["DLLImport"], "InlineFormula"],
+ " attribute. You can use those terms, along with the DLL function name, as \
+keywords in your search."
+}], "Text",
+ CellChangeTimes->{{3.4130630732092795`*^9, 3.413063076547658*^9}}],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["DefineDLLFunction",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineDLLFunction"]], "InlineFormula"],
+ " understands common Windows types like HWND, BOOL, DWORD, SHORT, etc., so \
+we can use those names directly. The simplest function is ",
+ Cell[BoxData["GetKeyState"], "InlineFormula"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.4130630732092795`*^9, 3.4130631197125816`*^9}},
+ CellID->182299316],
+
+Cell["\<\
+GetKeyState = DefineDLLFunction[\"GetKeyState\", \"user32.dll\", \"SHORT\", {\
+\"int\"}];\
+\>", "Input",
+ InitializationCell->True],
+
+Cell[TextData[{
+ "Of course, there are many other ways to specify the type names for all of \
+these functions. Here are some examples for ",
+ Cell[BoxData["GetKeyState"], "InlineFormula"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.413063123706156*^9, 3.4130631409128456`*^9}}],
+
+Cell["\<\
+(* C- or C#-style type names. *)
+   GetKeyState = DefineDLLFunction[\"GetKeyState\", \"user32.dll\", \
+\"short\", {\"int\"}];
+(* .NET Framework type names. *)
+   GetKeyState = DefineDLLFunction[\"GetKeyState\", \"user32.dll\", \
+\"Int16\", {\"Int32\"}];
+(* Visual Basic type names. *)
+   GetKeyState = DefineDLLFunction[\"GetKeyState\", \"user32.dll\", \
+\"Short\", {\"ByVal key As Integer\"}];\
+\>", "Input",
+ Evaluatable->False],
+
+Cell[TextData[{
+ Cell[BoxData["WindowFromPoint"], "InlineFormula"],
+ " takes a ",
+ Cell[BoxData["POINT"], "InlineFormula"],
+ " structure. How does this map to .NET? Luckily there is a .NET ",
+ Cell[BoxData["POINT"], "InlineFormula"],
+ " struct that has the same memory layout as the Windows ",
+ Cell[BoxData["POINT"], "InlineFormula"],
+ " struct. This lets us use the .NET type directly. The return value is an ",
+ Cell[BoxData["HWND"], "InlineFormula"],
+ ", and ",
+ Cell[BoxData[
+  ButtonBox["DefineDLLFunction",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineDLLFunction"]], "InlineFormula"],
+ " understands this type name, so you can use it directly (it is mapped to ",
+ Cell[BoxData["IntPtr"], "InlineFormula"],
+ ", the .NET class for a generic pointer). Note that because the type \
+System.Drawing.Point is from an assembly that is probably not yet loaded, you \
+use the ",
+ Cell[BoxData[
+  ButtonBox["ReferencedAssemblies",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/ReferencedAssemblies"]], "InlineFormula"],
+ " option to specify what assembly the type is found in. Alternatively, you \
+can just call ",
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["LoadNETAssembly",
+    BaseStyle->"Link"], "[", "\<\"System.Drawing\"\>", "]"}]], 
+  "InlineFormula"],
+ " in advance to load the needed assembly."
+}], "Text",
+ CellChangeTimes->{{3.4130632712656097`*^9, 3.413063377319152*^9}, {
+  3.4131510553041773`*^9, 3.413151097585923*^9}}],
+
+Cell["\<\
+WindowFromPoint = DefineDLLFunction[\"WindowFromPoint\", \"user32.dll\", \
+\"HWND\", {\"System.Drawing.Point\"}, ReferencedAssemblies->{\"System.Drawing\
+\"}];\
+\>", "Input",
+ InitializationCell->True],
+
+Cell[TextData[{
+ "The previous line causes the System.Drawing assembly to be loaded, so we \
+could leave out the ",
+ Cell[BoxData[
+  ButtonBox["ReferencedAssemblies",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/ReferencedAssemblies"]], "InlineFormula"],
+ " option in subsequent declarations that also use the System.Drawing \
+assembly, although we leave it in for completeness."
+}], "Text",
+ CellChangeTimes->{{3.413063389324222*^9, 3.413063406084547*^9}}],
+
+Cell[TextData[{
+ Cell[BoxData["GetCursorPos"], "InlineFormula"],
+ " takes an ",
+ Cell[BoxData["LPPOINT"], "InlineFormula"],
+ ", which is a pointer to a ",
+ Cell[BoxData["POINT"], "InlineFormula"],
+ ", because it needs to fill in the coordinates. In .NET terms, this maps to \
+a ",
+ Cell[BoxData["Point"], "InlineFormula"],
+ " passed by reference. In general, making a parameter ",
+ Cell[BoxData["out"], "InlineFormula"],
+ " or ",
+ Cell[BoxData["ref"], "InlineFormula"],
+ " (",
+ Cell[BoxData["ByRef"], "InlineFormula"],
+ " in VB notation) is equivalent to adding one level of indirection. This \
+means that a pointer to a ",
+ Cell[BoxData["POINT"], "InlineFormula"],
+ " is a ",
+ Cell[BoxData["Point"], "InlineFormula"],
+ " passed by reference. A \"by reference\" type in the .NET framework is \
+designated with an & at the end:"
+}], "Text",
+ CellChangeTimes->{{3.413063421504046*^9, 3.413063429081272*^9}, {
+  3.4131511111438227`*^9, 3.4131511593149776`*^9}}],
+
+Cell["\<\
+GetCursorPos = DefineDLLFunction[\"GetCursorPos\", \"user32.dll\", \"BOOL\", \
+{\"System.Drawing.Point&\"}, ReferencedAssemblies->{\"System.Drawing\"}];\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["Here are some alternative ways to write that declaration:", "Text"],
+
+Cell["\<\
+(* C# syntax *)
+GetCursorPos = DefineDLLFunction[\"GetCursorPos\", \"user32.dll\", \"bool\", \
+{\"ref System.Drawing.Point\"}, ReferencedAssemblies->{\"System.Drawing\"}];
+(* VB syntax *)
+GetCursorPos = DefineDLLFunction[\"GetCursorPos\", \"user32.dll\", \
+\"Boolean\", {\"ByRef pt As System.Drawing.Point\"}, \
+ReferencedAssemblies->{\"System.Drawing\"}];\
+\>", "Input",
+ Evaluatable->False],
+
+Cell[TextData[{
+ Cell[BoxData["GetClassName"], "InlineFormula"],
+ " and ",
+ Cell[BoxData["GetWindowText"], "InlineFormula"],
+ " both take an ",
+ Cell[BoxData["LPTSTR"], "InlineFormula"],
+ ", which is basically a string. However, these functions treat this \
+parameter not as an \"in\" value, but as an \"out\" value--they write into \
+the string as a means of supplying the desired result. In the typical case \
+where a DLL function takes a string as an \"in\" argument, you can use any of \
+the type names ",
+ Cell[BoxData[
+  RowBox[{"char", "*"}]], "InlineFormula"],
+ ", ",
+ Cell[BoxData["string"], "InlineFormula"],
+ ", or ",
+ Cell[BoxData[
+  RowBox[{"ByValue", " ", "s", " ", "As", " ", "String"}]], "InlineFormula"],
+ ", but these won't work to propagate a value back out of the call, as \
+required here. Instead, you use the .NET class ",
+ Cell[BoxData[
+  RowBox[{"System", ".", "Text", ".", "StringBuilder"}]], "InlineFormula"],
+ ". This is a standard .NET trick that is documented anywhere you find \
+examples of passing strings to DLL functions."
+}], "Text",
+ CellChangeTimes->{{3.413063458953628*^9, 3.413063471644702*^9}, {
+  3.4131511644850984`*^9, 3.413151235882571*^9}}],
+
+Cell["\<\
+GetWindowText = DefineDLLFunction[\"GetWindowText\", \"user32.dll\", \"int\", \
+{\"HWND\", \"System.Text.StringBuilder\", \"int\"}];
+GetClassName = DefineDLLFunction[\"GetClassName\", \"user32.dll\", \"int\", {\
+\"HWND\", \"System.Text.StringBuilder\", \"int\"}];\
+\>", "Input",
+ InitializationCell->True],
+
+Cell[TextData[{
+ "The last function we need is ",
+ Cell[BoxData["GetWindowsRect"], "InlineFormula"],
+ ". Like ",
+ Cell[BoxData["GetCursorPos"], "InlineFormula"],
+ ", it takes a pointer to a struct (",
+ Cell[BoxData["LPRECT"], "InlineFormula"],
+ "). .NET has a ",
+ Cell[BoxData[
+  ButtonBox["Rectangle",
+   BaseStyle->"Link"]], "InlineFormula"],
+ " struct that is the same number of bytes as the Windows ",
+ Cell[BoxData["RECT"], "InlineFormula"],
+ " struct, but unfortunately it doesn't have the same layout of fields. A ",
+ Cell[BoxData["RECT"], "InlineFormula"],
+ " is stored as 4 ints: (left, top, right, bottom), whereas a ",
+ Cell[BoxData[
+  ButtonBox["Rectangle",
+   BaseStyle->"Link"]], "InlineFormula"],
+ " is stored as (left, top, width, height). Because the structures are the \
+same size in memory we can use the .NET ",
+ Cell[BoxData[
+  ButtonBox["Rectangle",
+   BaseStyle->"Link"]], "InlineFormula"],
+ " as the type, but we must to do a little translating of the fields when we \
+actually need to use their values, as can be seen later on."
+}], "Text",
+ CellChangeTimes->{{3.4130637194689364`*^9, 3.4130637684922485`*^9}, {
+  3.4131512398070316`*^9, 3.4131512719532084`*^9}}],
+
+Cell["\<\
+GetWindowRect = DefineDLLFunction[\"GetWindowRect\", \"user32.dll\", \
+\"BOOL\", {\"HWND\", \"System.Drawing.Rectangle&\"}, \
+ReferencedAssemblies->{\"System.Drawing\"}];\
+\>", "Input",
+ InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The WindowSpy Function", "Subsection"],
+
+Cell[TextData[{
+ "Now we  are ready to write the main ",
+ StyleBox["WindowSpy", "Input"],
+ " function."
+}], "Text"],
+
+Cell["\<\
+WindowSpy[] :=
+\tNETBlock[
+\t\tModule[{rect, pt, sb1, sb2, dummyForm, lastWnd, curWnd},
+\t\t\t(* This is the Rectangle we need to pass in to GetWindowRect. It is \
+passed by reference and its fields
+\t\t\t   are filled in by the function call.
+\t\t\t*)
+\t\t\trect = NETNew[\"System.Drawing.Rectangle\",0,0,0,0];
+\t\t\t(* This is the Point we need to pass in to GetCursorPos. It is passed \
+by reference and its fields
+\t\t\t   are filled in by the function call.
+\t\t\t*)
+\t\t\tpt = NETNew[\"System.Drawing.Point\"];
+\t\t\t(* We need two StringBuilders to pass in to the two calls that return \
+text in an out parameter.
+\t\t\t   We create them to hold 100 chars and then pass 100 as the max string \
+length to the functions.
+\t\t\t*)
+\t\t\tsb1 = NETNew[\"System.Text.StringBuilder\", 100];
+\t\t\tsb2 = NETNew[\"System.Text.StringBuilder\", 100];
+\t\t\t(* It seems that for proper detection of the mouse click that \
+terminates the function, we need
+\t\t\t   to have a form visible. Therefore we create one and position it \
+offscreen.
+\t\t\t*)
+\t\t\tdummyForm = NETNew[\"System.Windows.Forms.Form\"];
+\t\t\tdummyForm@Location = NETNew[\"System.Drawing.Point\", -1000, -1000];
+\t\t\t(* Need to use FormStartPosition->Manual to force the form to respect \
+the Location we just set. *)
+\t\t\tShowNETWindow[dummyForm, FormStartPosition->Manual];
+\t\t\t
+\t\t\tWhile[True,
+\t\t\t\t(* This means \"if left mouse button was clicked, break out of the \
+loop.\" *)
+\t\t\t\tIf[GetKeyState[1] < 0, Break[]];
+\t\t\t\tGetCursorPos[pt];
+\t\t\t\tcurWnd = WindowFromPoint[pt];
+\t\t\t\t(* The HWND is returned by WindowFromPoint is an IntPtr, but for \
+comparing one IntPtr
+\t\t\t\t   to another it is easiest to simply convert them to ints.
+\t\t\t\t*)
+\t\t\t\tIf[curWnd@ToInt32[] =!= lastWnd@ToInt32[],
+\t\t\t\t\tGetClassName[curWnd, sb1, 100];
+\t\t\t\t\tGetWindowText[curWnd, sb2, 100];
+\t\t\t\t\tGetWindowRect[curWnd, rect];
+\t\t\t\t\tPrint[StringForm[\"HWND: `1`     ClassName: `2`       Text: `3`     \
+  Top: `4`  Left: `5`  Width: `6`  Height: `7`\",
+\t\t\t\t\t\t\t\tcurWnd@ToInt32[], sb1@ToString[], sb2@ToString[],
+\t\t\t\t\t\t\t\trect@X, rect@Y, rect@Width - rect@X, rect@Height - rect@Y]];
+\t\t\t\t\tlastWnd = curWnd
+\t\t\t\t]
+\t\t\t];
+\t\t\tdummyForm@Dispose[]
+\t\t]
+\t]\
+\>", "Input",
+ PageWidth->Infinity,
+ InitializationCell->True,
+ ShowSpecialCharacters->False]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Section"],
+
+Cell["WindowSpy[]", "Input"],
+
+Cell[TextData[{
+ StyleBox["Without clicking the mouse",
+  FontSlant->"Italic"],
+ ", move the mouse around the screen to see information printed about each of \
+the windows it enters. If you are not familiar with Windows programming, \
+you'll be interested to see how literally everything on the screen, even \
+scroll bars and menu bars, is a window. To exit the program, click the mouse."
+}], "Text"]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{699, 664},
+WindowMargins->{{Automatic, 278}, {Automatic, 103}},
+DockedCells->(None& ),
+PrivateNotebookOptions->{"NotebookAuthor"->""},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (August 15, 2010)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 88, 1, 77, "Title",
+ CellID->863347166],
+Cell[658, 25, 860, 18, 152, "Text",
+ CellID->185768294],
+Cell[1521, 45, 679, 19, 92, "Text",
+ CellID->143927140],
+Cell[2203, 66, 603, 13, 114, "Text",
+ CellID->399498808],
+Cell[2809, 81, 729, 15, 50, "Text",
+ CellID->1738407360],
+Cell[CellGroupData[{
+Cell[3563, 100, 39, 0, 51, "Section"],
+Cell[3605, 102, 116, 3, 28, "Input",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[3746, 109, 57, 0, 51, "Subsection"],
+Cell[3806, 111, 317, 7, 52, "Text"],
+Cell[4126, 120, 314, 7, 138, "Program"],
+Cell[4443, 129, 969, 22, 102, "Text"],
+Cell[5415, 153, 447, 11, 40, "Text",
+ CellID->182299316],
+Cell[5865, 166, 141, 4, 27, "Input",
+ InitializationCell->True],
+Cell[6009, 172, 273, 6, 38, "Text"],
+Cell[6285, 180, 440, 11, 112, "Input",
+ Evaluatable->False],
+Cell[6728, 193, 1443, 34, 123, "Text"],
+Cell[8174, 229, 211, 5, 27, "Input",
+ InitializationCell->True],
+Cell[8388, 236, 462, 10, 53, "Text"],
+Cell[8853, 248, 958, 24, 89, "Text"],
+Cell[9814, 274, 204, 4, 27, "Input",
+ InitializationCell->True],
+Cell[10021, 280, 73, 0, 21, "Text"],
+Cell[10097, 282, 402, 9, 78, "Input",
+ Evaluatable->False],
+Cell[10502, 293, 1184, 26, 117, "Text"],
+Cell[11689, 321, 315, 6, 44, "Input",
+ InitializationCell->True],
+Cell[12007, 329, 1188, 28, 106, "Text"],
+Cell[13198, 359, 222, 5, 27, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13457, 369, 44, 0, 38, "Subsection"],
+Cell[13504, 371, 115, 4, 34, "Text"],
+Cell[13622, 377, 2370, 59, 822, "Input",
+ InitializationCell->True]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16041, 442, 26, 0, 40, "Section"],
+Cell[16070, 444, 28, 0, 27, "Input"],
+Cell[16101, 446, 400, 7, 66, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

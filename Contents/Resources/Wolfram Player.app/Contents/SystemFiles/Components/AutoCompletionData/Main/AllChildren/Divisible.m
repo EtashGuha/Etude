@@ -1,0 +1,11 @@
+{"Sum", "Table", "Prime", "Range", "Fibonacci", "Automatic", "None", 
+ "NextPrime", "Sqrt", "Binomial", "Quantity", "LucasL", "Divisors", 
+ "BaseForm", "DateDifference", "Total", "Pi", "LCM", "Factor", "Numerator", 
+ "Ceiling", "Plus", "E", "BernoulliB", "GCD", "Floor", "EvenQ", "EulerPhi", 
+ "Product", "Mod", "Log", "IntegerLength", "Infinity", "Degree", "BitAnd", 
+ "Permutations", "Integrate", "I", "Divisible", "Derivative", "Cos", 
+ "ArcCos", "RamanujanTau", "PrimePi", "NMaxValue", "HarmonicNumber", "Round", 
+ "PolyGamma", "PartitionsP", "N", "Exp", "EulerGamma", "CarmichaelLambda", 
+ "And", "Abs", "Tan", "Subscript", "StringTake", "RandomInteger", "PrimeQ", 
+ "PowerMod", "MatrixQ", "Log10", "Limit", "If", "DivisorSigma", "Det", 
+ "DawsonF", "Count", "CharacteristicFunction", "BitOr"}

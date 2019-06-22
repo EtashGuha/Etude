@@ -1,0 +1,1 @@
+{"Rule", "Positive", "Integer", "Automatic"}

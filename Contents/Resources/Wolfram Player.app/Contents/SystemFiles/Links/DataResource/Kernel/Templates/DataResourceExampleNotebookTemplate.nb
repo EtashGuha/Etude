@@ -1,0 +1,136 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4235,        128]
+NotebookOptionsPosition[      2530,         80]
+NotebookOutlinePosition[      3415,        109]
+CellTagsIndexPosition[      3331,        104]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["", "DataResourceWhiteSection",
+ CellFrameMargins->0,
+ CellTags->
+  "DataResourceExampleArea",ExpressionUUID->"a91d9900-bcef-4aaf-907d-\
+7dbb860b16ce"],
+
+Cell[CellGroupData[{
+
+Cell["Basic Examples", "Subsection",
+ CellFrame->False,
+ ShowCellBracket->True,
+ CellMargins->0,
+ CellFrameMargins->{{66, 8}, {8, 8}},
+ CellFrameColor->GrayLevel[1],
+ CellFrameLabelMargins->6,
+ CellSize->{
+  Automatic, 
+   Automatic},ExpressionUUID->"43dca573-e230-4c7c-8917-9391c765d2bd"],
+
+Cell["Retrieve the resource:", "Text",
+ CellGroupingRules->"NormalGrouping",
+ CellChangeTimes->{{3.696186645510051*^9, 3.6961866545240507`*^9}, 
+   3.696187841532233*^9},ExpressionUUID->"e3f1cbe0-4938-4525-bfea-\
+4da11e5cbfca"],
+
+Cell[BoxData[
+ RowBox[{"ResourceObject", "[", Cell[BoxData[
+   FormBox[
+    TemplateBox[{"\"UUID\"","\"...\"","Named",BoxData},
+     "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+   "48e38425-e76b-4166-8d60-d45d8f8a0ab9"], "]"}]], "Input",
+ CellChangeTimes->{{3.6804517731799183`*^9, 3.6804517885604563`*^9}, {
+  3.6804527318597765`*^9, 
+  3.6804527390684977`*^9}},ExpressionUUID->"8a340db6-e834-43f2-9c85-\
+81a9558cdd18"],
+
+Cell["Retrieve the default content:", "Text",
+ CellChangeTimes->{{3.696186645510051*^9, 3.6961866545240507`*^9}, {
+  3.696187841532233*^9, 
+  3.696187852829363*^9}},ExpressionUUID->"029a57a3-c3bc-4dd9-8f5d-\
+be1342a884fa"],
+
+Cell[BoxData[
+ RowBox[{"ResourceData", "[", Cell[BoxData[
+   FormBox[
+    TemplateBox[{"\"Resource\"","\"Resource\"","Named",BoxData},
+     "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+   "3a170fd0-3b03-4d38-87a6-231d95030932"], "]"}]], "Input",
+ CellChangeTimes->{{3.6804518239459944`*^9, 
+  3.680451854651065*^9}},ExpressionUUID->"9d9bdcc6-cfb0-4ed2-a55e-\
+2ff6a44939b3"]
+}, Open  ]],
+
+Cell["Visualization", "Subsection",ExpressionUUID->"7663e689-80b5-40fb-9313-f8b25c780c73"],
+
+Cell["Analysis", "Subsection",ExpressionUUID->"567edb6c-0496-40c9-9bd1-9687954bd5d1"]
+}, Open  ]]
+},
+WindowSize->{775, 852},
+WindowMargins->{{462, Automatic}, {Automatic, 21}},
+DockedCells->FEPrivate`FrontEndResource[
+ "NotebookTemplatingExpressions", "AuthoringDockedCell"],
+TaggingRules->{"NotebookTemplateVersion" -> 1., "NotebookTemplate" -> True},
+CellContext->Notebook,
+ShowCellTags->True,
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 24, 2017)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, 
+  "DataResourceDefinitionStyles.nb", CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "DataResourceExampleArea"->{
+  Cell[580, 22, 156, 4, 
+  5, "DataResourceWhiteSection", "ExpressionUUID" -> "a91d9900-
+   bcef-4aaf-907d-7dbb860b16ce",
+   CellTags->"DataResourceExampleArea"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"DataResourceExampleArea", 3144, 96}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 156, 4, 5, "DataResourceWhiteSection", "ExpressionUUID" -> \
+"a91d9900-bcef-4aaf-907d-7dbb860b16ce",
+ CellTags->"DataResourceExampleArea"],
+Cell[CellGroupData[{
+Cell[761, 30, 289, 9, 39, "Subsection", "ExpressionUUID" -> \
+"43dca573-e230-4c7c-8917-9391c765d2bd"],
+Cell[1053, 41, 227, 4, 40, "Text", "ExpressionUUID" -> \
+"e3f1cbe0-4938-4525-bfea-4da11e5cbfca",
+ CellGroupingRules->"NormalGrouping"],
+Cell[1283, 47, 429, 9, 49, "Input", "ExpressionUUID" -> \
+"8a340db6-e834-43f2-9c85-81a9558cdd18"],
+Cell[1715, 58, 222, 4, 40, "Text", "ExpressionUUID" -> \
+"029a57a3-c3bc-4dd9-8f5d-be1342a884fa"],
+Cell[1940, 64, 381, 8, 49, "Input", "ExpressionUUID" -> \
+"9d9bdcc6-cfb0-4ed2-a55e-2ff6a44939b3"]
+}, Open  ]],
+Cell[2336, 75, 90, 0, 47, "Subsection", "ExpressionUUID" -> \
+"7663e689-80b5-40fb-9313-f8b25c780c73"],
+Cell[2429, 77, 85, 0, 47, "Subsection", "ExpressionUUID" -> \
+"567edb6c-0496-40c9-9bd1-9687954bd5d1"]
+}, Open  ]]
+}
+]
+*)
+

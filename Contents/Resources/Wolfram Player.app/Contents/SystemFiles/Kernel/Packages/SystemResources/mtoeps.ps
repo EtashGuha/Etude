@@ -1,0 +1,318 @@
+%!PS-Adobe-3.0 Resource-ProcSet
+%%BeginResource: procset WRI-MathToEPS 1.0 0
+
+userdict begin /_ToEPS true def end
+/WRI-PSConvert /ProcSet findresource begin
+/WRI-MathToEPS currentdict /ProcSet defineresource pop 
+
+/_pathops [
+  (m)				% moveto
+  (L)				% lineto
+  (C)				% curveto
+  (gsave)			% gsave
+  (grestore)			% grestore
+  (clip newpath)		% clip newpath
+  (closepath clip newpath)	% closepath clip newpath
+] def
+
+/_setcolor {	% <bool is_fill> _setcolor
+  pop			% ignore is_fill
+  currentcmykcolor pop
+  add add 0 eq
+  {
+    currentgray _prnum
+    (g) _prop
+  } {
+    [ currentrgbcolor ] { _prnum } forall
+    (r) _prop
+  } ifelse
+} def
+
+/_setline [
+  { _prnum (w) _prop }			% width
+  { _prnum (setlinecap) _prop }		% cap
+  { _prnum (setlinejoin) _prop }	% join
+  { _prnum (setmiterlimit) _prop }	% miterlimit
+] def
+
+_initfont
+
+/_encodinglist [
+  /StandardEncoding
+  /ISOLatin1Encoding
+  /WindowsANSIEncoding
+  /MacintoshRomanEncoding
+] def
+
+/_doreencode {	% fontname encodingname
+  exch
+  (/) _print
+  _str cvs _print
+  ( findfont) _printnl
+  (dup length dict begin) _printnl
+  ({1 index /FID ne {def} {pop pop} ifelse} forall) _printnl
+  (/Encoding ) _print
+  _str cvs _print
+  ( def) _printnl
+  (currentdict end) _printnl
+  (/F) _print _fid _fidnumber _prnum
+  (dup 3 -1 roll definefont def) _printnl
+} def
+
+% KLUDGE this needs to work with unlisted encodings...
+/_reencodefont {	% FontName Encoding
+  _encodinglist {
+    dup load 2 index eq
+    { 2 index exch _doreencode pop pop exit } { pop } ifelse
+  } forall
+} def
+
+/_newfont {
+  % Encoding stuff
+  _fid _fiduntouched
+  { 
+    (%%IncludeResource: font ) _print _fontname _str cvs _printnl
+    _fid _isreencoded
+    { _fontname _fid _fidencoding
+      _reencodefont
+    }
+    { (/F) _print _fid _fidnumber _prnum
+       (/) _print _fontname _str cvs _print
+       ( findfont def) _printnl
+    } ifelse
+    _fid _fidsettouched
+  } if
+  (F) _print _fid _fidnumber _prnum	% def'ed font name
+
+  _fontmatrix _fontsizecheck {
+    _fontsize _prnum (scalefont ) _print
+  } {
+    ([ ) _print
+     _fontmatrix 0 4 getinterval { _prnum } forall
+    (0 0 ] makefont ) _print
+  } ifelse
+  (setfont) _printnl
+} def
+
+/show {
+  true _docolor
+  _gsave
+  _deftm setmatrix
+  currentpoint
+  exch _prnum _prnum
+  _grestore
+  _pathops 0 get _prop
+  _dofont
+  (\() _print		% Do the string
+  dup
+  _prstring
+  (\) show) _prop
+  /show _opexec
+} def
+
+% Image stuff
+
+/_imagebegin {
+  (/idata ) _print
+  _idata /ByteWidth get
+  _prnum
+  (string def) _prop
+  _idata /Width get _prnum
+  _idata /Height get _prnum
+  _idata /BitsPerComponent get _prnum
+  ([) _print
+  _tm0 currentmatrix
+  _tm1 defaultmatrix
+  _tm2 invertmatrix
+  _tm1 concatmatrix
+  _tm0 invertmatrix
+  _idata /ImageMatrix get
+  _tm1 concatmatrix
+  {_prnum} forall
+  (]) _printnl
+  ({ currentfile idata readhexstring pop }) _printnl
+  _idata /Decode get length 2 idiv dup 1 gt
+  { (false ) _print _prnum () _printnl (colorimage) _prop }
+  { pop (image) _prop }
+  ifelse
+} def
+
+/_imageend {
+  () _printnl
+} def
+
+% begin-end stuff
+
+/_begin_doc {
+
+  /_deftm matrix defaultmatrix def
+
+  (%!PS-Adobe-3.0 EPSF-3.0) _printnl
+  (%%Creator: Mathematica-PSRender) _printnl
+  _mathscaleflag {
+    _bbox_hook
+  } {
+    (%%BoundingBox: 0 0 612 792) _printnl
+  } ifelse
+  (%%Pages: \(atend\)) _printnl
+  (%%DocumentNeededResources: \(atend\)) _printnl
+  (%%EndComments) _printnl
+  (%%BeginProlog) _printnl
+  (/setrgbcolor dup where) _printnl
+  ({ pop pop }) _printnl 
+  ({ { .114 mul exch .587 mul add exch .299 mul add setgray } bind def })
+  _printnl
+  (ifelse) _printnl
+  (/C /curveto load def) _printnl
+  (/f /fill load def) _printnl
+  (/F { closepath fill } bind def) _printnl
+  (/L /lineto load def) _printnl
+  (/S /stroke load def) _printnl
+  (/s { closepath stroke } bind def) _printnl
+  (/d /setdash load def) _printnl
+  (/g /setgray load def) _printnl
+  (/m /moveto load def) _printnl
+  (/r /setrgbcolor load def) _printnl
+  (/w /setlinewidth load def) _printnl
+  (/b { gsave gsave F grestore 0 g S grestore newpath } bind def) _printnl
+  (/dot { newpath 0 360 arc fill } bind def) _printnl
+  (/WindowsANSIEncoding [) _printnl
+  (/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef) _printnl
+  (/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef) _printnl
+  (/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef) _printnl
+  (/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef) _printnl
+  (/space/exclam/quotedbl/numbersign/dollar/percent/ampersand/quotesingle) _printnl
+  (/parenleft/parenright/asterisk/plus/comma/hyphen/period/slash) _printnl
+  (/zero/one/two/three/four/five/six/seven) _printnl
+  (/eight/nine/colon/semicolon/less/equal/greater/question) _printnl
+  (/at/A/B/C/D/E/F/G) _printnl
+  (/H/I/J/K/L/M/N/O) _printnl
+  (/P/Q/R/S/T/U/V/W) _printnl
+  (/X/Y/Z/bracketleft/backslash/bracketright/asciicircum/underscore) _printnl
+  (/grave/a/b/c/d/e/f/g) _printnl
+  (/h/i/j/k/l/m/n/o) _printnl
+  (/p/q/r/s/t/u/v/w) _printnl
+  (/x/y/z/braceleft/bar/braceright/asciitilde/.notdef) _printnl
+  (/.notdef/.notdef/quotesinglbase/florin/quotedblbase/ellipsis/dagger/daggerdbl) _printnl
+  (/circumflex/perthousand/Scaron/guilsinglleft/OE/.notdef/Zcaron/.notdef) _printnl
+  (/.notdef/quoteleft/quoteright/quotedblleft/quotedblright/bullet/endash/emdash) _printnl
+  (/tilde/trademark/scaron/guilsinglright/oe/.notdef/zcaron/Ydieresis) _printnl
+  (/.notdef/exclamdown/cent/sterling/currency/yen/brokenbar/section) _printnl
+  (/dieresis/copyright/ordfeminine/guillemotleft/logicalnot/hyphen/registered/macron) _printnl
+  (/degree/plusminus/twosuperior/threesuperior/acute/.notdef/paragraph/dotaccent) _printnl
+  (/ogonek/onesuperior/ring/guillemotright/onequarter/onehalf/threequarters/questiondown) _printnl
+  (/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla) _printnl
+  (/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis) _printnl
+  (/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply) _printnl
+  (/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls) _printnl
+  (/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla) _printnl
+  (/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis) _printnl
+  (/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide) _printnl
+  (/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis) _printnl
+  (] def) _printnl
+  (/MacintoshRomanEncoding [) _printnl
+  (/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef) _printnl
+  (/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef) _printnl
+  (/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef) _printnl
+  (/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef) _printnl
+  (/space/exclam/quotedbl/numbersign/dollar/percent/ampersand/quotesingle) _printnl
+  (/parenleft/parenright/asterisk/plus/comma/hyphen/period/slash) _printnl
+  (/zero/one/two/three/four/five/six/seven) _printnl
+  (/eight/nine/colon/semicolon/less/equal/greater/question) _printnl
+  (/at/A/B/C/D/E/F/G) _printnl
+  (/H/I/J/K/L/M/N/O) _printnl
+  (/P/Q/R/S/T/U/V/W) _printnl
+  (/X/Y/Z/bracketleft/backslash/bracketright/asciicircum/underscore) _printnl
+  (/grave/a/b/c/d/e/f/g) _printnl
+  (/h/i/j/k/l/m/n/o) _printnl
+  (/p/q/r/s/t/u/v/w) _printnl
+  (/x/y/z/braceleft/bar/braceright/asciitilde/.notdef) _printnl
+  (/Adieresis/Aring/Ccedilla/Eacute/Ntilde/Odieresis/Udieresis/aacute) _printnl
+  (/agrave/acircumflex/adieresis/atilde/aring/ccedilla/eacute/egrave) _printnl
+  (/ecircumflex/edieresis/iacute/igrave/icircumflex/idieresis/ntilde/oacute) _printnl
+  (/ograve/ocircumflex/odieresis/otilde/uacute/ugrave/ucircumflex/udieresis) _printnl
+  (/dagger/degree/cent/sterling/section/bullet/paragraph/germandbls) _printnl
+  (/registered/copyright/trademark/acute/dieresis/.notdef/AE/Oslash) _printnl
+  (/.notdef/plusminus/.notdef/.notdef/yen/.notdef/.notdef/.notdef) _printnl
+  (/.notdef/.notdef/.notdef/ordfeminine/ring/.notdef/ae/oslash) _printnl
+  (/questiondown/exclamdown/logicalnot/.notdef/florin/.notdef/.notdef/guillemotleft) _printnl
+  (/guillemotright/ellipsis/.notdef/Agrave/Atilde/Otilde/OE/oe) _printnl
+  (/endash/emdash/quotedblleft/quotedblright/quoteleft/quoteright/divide/.notdef) _printnl
+  (/ydieresis/Ydieresis/.notdef/currency/guilsinglleft/guilsinglright/.notdef/.notdef) _printnl
+  (/daggerdbl/dotaccent/quotesinglbase/quotedblbase/perthousand/Acircumflex/Ecircumflex/Aacute) _printnl
+  (/Edieresis/Egrave/Iacute/Icircumflex/Idieresis/Igrave/Oacute/Ocircumflex) _printnl
+  (/.notdef/Ograve/Uacute/Ucircumflex/Ugrave/dotlessi/circumflex/tilde) _printnl
+  (/macron/.notdef/.notdef/.notdef/ogonek/.notdef/.notdef/.notdef) _printnl
+  (] def) _printnl
+  (%%EndProlog) _printnl
+} def
+
+/_begin_page {
+  (%%Page: ) _print _pagenum dup _prnum _prnum () _printnl
+} def
+
+/_end_page {
+  (showpage) _printnl
+  (%%PageTrailer) _printnl
+} def
+
+/_end_doc {
+  (%%Trailer) _printnl
+  (%%Pages: ) _print _pagenum _prnum () _printnl
+  true
+  _fonts {
+    exch pop exch
+    { (%%DocumentNeededResources: font ) } { (%%+ font ) } ifelse
+    _print
+    1 get _str cvs _printnl
+    false
+  } forall
+  pop
+  (%%EOF) _printnl
+} def
+
+% Special setup for Mathematica ProcSet operators
+
+_setup_math_ops
+
+/WRI-Mathematica-prolog /ProcSet findresource begin 
+
+/Mdot {
+  moveto
+  true _docolor
+  _gsave
+  _deftm setmatrix
+  currentpoint
+  exch _prnum _prnum
+  _grestore
+  currentlinewidth _fixwidth 2 div _prnum
+  (dot) _printnl
+} def
+
+/_MFill /MFill load def
+
+/MFill {
+  /_write load /_first_write load eq {
+    /_mathscaleflag true _cdef
+    /_bbox_hook { 
+      (%%BoundingBox: ) _print
+      _gsave
+      _deftm setmatrix
+      0 0 moveto
+      currentpoint exch _prround _prround
+      Mwidth Mheight moveto
+      currentpoint exch _prround _prround
+      _grestore
+      () _printnl
+    } _cdef
+    () _print
+    /_mathscaleflag false _cdef
+  } if
+  _MFill
+} def
+
+end
+
+end
+
+%%EndResource

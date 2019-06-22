@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<widget class="com.wolfram.guikit.swing.GUIKitJDialog">
+	<args ref="##"/>
+	<property name="iconImage">
+		<widget ref="bsf_engine_DefaultFrameImage"/>
+	</property>
+</widget>

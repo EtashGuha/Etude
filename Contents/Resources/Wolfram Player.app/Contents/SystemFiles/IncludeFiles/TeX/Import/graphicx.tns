@@ -1,0 +1,24 @@
+%% graphicx.tns, the TeXImport implementation of the LaTeX graphicx package.
+\input graphics.tns
+
+\makeatletter
+
+%%
+%% This current implementation of the graphicx package for TeXImport
+%% calls the graphics package and redefines \Gin@i and \Gin@ii to
+%% identify any optional arguments. For now those optional arguments are
+%% thrown away, but later we will add code to do something intelligent
+%% with the optional arguments.
+%%
+
+\def\Gin@i{%
+    \@ifnextchar[%]
+    \Gin@ii
+    {\Gin@ii[]}}
+\def\Gin@ii[#1]#2{%
+    \Ginclude@graphics{#2}
+}
+
+\makeatother
+%% end graphicx.tns
+

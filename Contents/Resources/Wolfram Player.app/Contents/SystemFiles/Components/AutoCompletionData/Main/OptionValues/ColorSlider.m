@@ -1,0 +1,1 @@
+{AppearanceElements -> {"\"Swatch\"", "\"Spectrum\"", "\"SwatchSpectrum\""}}

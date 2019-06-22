@@ -1,0 +1,736 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     29517,        726]
+NotebookOptionsPosition[     28721,        701]
+NotebookOutlinePosition[     29504,        726]
+CellTagsIndexPosition[     29461,        723]
+MenuPosition->1050
+WindowTitle->Classic Slide Show
+WindowFrame->Palette*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      TooltipBox[
+       ButtonBox[
+        PaneSelectorBox[{False->
+         DynamicBox[FEPrivate`FrontEndResource[
+          "FEStrings", "slideshowStartLabel"],
+          ImageSizeCache->{92., {1., 9.}}], True->
+         DynamicBox[FEPrivate`FrontEndResource[
+          "FEStrings", "slideshowEndLabel"],
+          ImageSizeCache->{88., {1., 9.}}]}, Dynamic[CurrentValue[
+            FEPrivate`LastActiveUserNotebook[], ScreenStyleEnvironment] === 
+          "SlideShow"]],
+        Appearance->Automatic,
+        ButtonFunction:>Which[
+          And[
+           MemberQ[{Full, {Full}, {Full, Full}}, 
+            CurrentValue[
+             FEPrivate`LastActiveUserNotebook[], WindowSize]], CurrentValue[
+             FEPrivate`LastActiveUserNotebook[], ScreenStyleEnvironment] === 
+           "SlideShow"], FE`Evaluate[
+            FEPrivate`NotebookToggleFullScreen[
+             FEPrivate`LastActiveUserNotebook[]]]; CurrentValue[
+             FEPrivate`LastActiveUserNotebook[], ScreenStyleEnvironment] = 
+           Inherited, 
+          And[
+           Not[
+            MemberQ[{Full, {Full}, {Full, Full}}, 
+             CurrentValue[
+              FEPrivate`LastActiveUserNotebook[], WindowSize]]], CurrentValue[
+             FEPrivate`LastActiveUserNotebook[], ScreenStyleEnvironment] =!= 
+           "SlideShow", 
+           MemberQ[
+            Notebooks[], 
+            FE`Evaluate[
+             FEPrivate`LastActiveUserNotebook[]]]], CurrentValue[
+             FEPrivate`LastActiveUserNotebook[], ScreenStyleEnvironment] = 
+           "SlideShow"; FE`Evaluate[
+            FEPrivate`NotebookToggleFullScreen[
+             FEPrivate`LastActiveUserNotebook[]]], 
+          And[
+           MemberQ[{Full, {Full}, {Full, Full}}, 
+            CurrentValue[
+             FEPrivate`LastActiveUserNotebook[], WindowSize]], CurrentValue[
+             FEPrivate`LastActiveUserNotebook[], ScreenStyleEnvironment] =!= 
+           "SlideShow" MemberQ[
+              Notebooks[], 
+              FE`Evaluate[
+               FEPrivate`LastActiveUserNotebook[]]]], CurrentValue[
+            FEPrivate`LastActiveUserNotebook[], ScreenStyleEnvironment] = 
+          "SlideShow", 
+          And[
+           Not[
+            MemberQ[{Full, {Full}, {Full, Full}}, 
+             CurrentValue[
+              FEPrivate`LastActiveUserNotebook[], WindowSize]]], CurrentValue[
+             FEPrivate`LastActiveUserNotebook[], ScreenStyleEnvironment] === 
+           "SlideShow"], CurrentValue[
+            FEPrivate`LastActiveUserNotebook[], ScreenStyleEnvironment] = 
+          Inherited],
+        Enabled->Dynamic[
+          And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]],
+        Evaluator->"System",
+        Method->"Preemptive"],
+       DynamicBox[
+        FEPrivate`FrontEndResource[
+        "FEStrings", "slideshowStartLabelTooltip"]]],
+      Annotation[#, 
+       Dynamic[
+        RawBoxes[
+         FEPrivate`FrontEndResource[
+         "FEStrings", "slideshowStartLabelTooltip"]]], "Tooltip"]& ]},
+    {
+     StyleBox[
+      DynamicBox[FEPrivate`FrontEndResource["FEStrings", "slideshowNewLabel"],
+       ImageSizeCache->{37., {0., 9.}}],
+      StripOnInput->False,
+      FontWeight->Bold]},
+    {
+     TagBox[
+      TooltipBox[
+       ButtonBox[
+        DynamicBox[FEPrivate`FrontEndResource[
+         "FEStrings", "slideshowTemplateLabel"],
+         ImageSizeCache->{131., {1., 9.}}],
+        Appearance->Automatic,
+        ButtonFunction:>FrontEndExecute[{
+           FrontEnd`NotebookOpen[
+            FrontEnd`FindFileOnPath["SlideShowChooser.nb", "PalettePath"]]}],
+        Evaluator->None,
+        Method->"Preemptive"],
+       DynamicBox[
+        FEPrivate`FrontEndResource["FEStrings", "slideshowTemplateTooltip"]]],
+      Annotation[#, 
+       Dynamic[
+        RawBoxes[
+         FEPrivate`FrontEndResource[
+         "FEStrings", "slideshowTemplateTooltip"]]], "Tooltip"]& ]},
+    {
+     TagBox[
+      TooltipBox[
+       ButtonBox[
+        DynamicBox[FEPrivate`FrontEndResource[
+         "FEStrings", "slideshowConvertLabel"],
+         ImageSizeCache->{184., {1., 9.}}],
+        Appearance->Automatic,
+        ButtonFunction:>With[{$CellContext`nb$ = NotebookGet[
+             InputNotebook[]]}, 
+          CreatePalette[
+           ExpressionCell[
+            
+            DynamicModule[{$CellContext`x = {}, $CellContext`i = 
+              1, $CellContext`list}, 
+             Column[{
+               Dynamic[
+                RawBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "slideshowConvertStylesLabel"]]], Null, 
+               Grid[{{
+                  Framed[
+                   Pane[
+                    Grid[
+                    MapIndexed[{
+                    EventHandler[
+                    Pane[
+                    Row[{
+                    Function[{$CellContext`y}, 
+                    Checkbox[
+                    Dynamic[
+                    MemberQ[$CellContext`x, $CellContext`y], 
+                    BoxForm`TogglerBarFunction[$CellContext`x, \
+$CellContext`y]& ], ImageMargins -> {{5, 5}, {0, 0}}]][#], #}, StripOnInput -> 
+                    True], ImageSize -> {Full, Automatic}], 
+                    "MouseClicked" :> ($CellContext`i = First[#2]), 
+                    PassEventsDown -> True]}& , $CellContext`list = Flatten[
+                    Through[
+                    {Complement, Intersection}[
+                    Union[
+                    Cases[
+                    First[$CellContext`nb$], Cell[
+                    Blank[], 
+                    Pattern[$CellContext`x, 
+                    Blank[]], 
+                    BlankNullSequence[]] :> $CellContext`x, Infinity]], {
+                    "Text", "Code", "Input", "InputOnly", "Output"}]]]], 
+                    ItemSize -> Fit, 
+                    Background -> {
+                    None, {{{None, LightGray}}, Dynamic[$CellContext`i] -> 
+                    LightBlue}}], {200, 200}, Scrollbars -> {False, True}], 
+                   FrameMargins -> 0, FrameStyle -> Gray, ImageMargins -> 0], 
+                  Null, 
+                  Column[{
+                    Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "customStylesPreviewLabel"]], 
+                    Framed[
+                    (Pane[
+                    Dynamic[
+                    Rasterize[
+                    Notebook[{
+                    Cell["", "SlideShowNavigationBar"], 
+                    Cell[
+                    Part[$CellContext`list, $CellContext`i], 
+                    Part[$CellContext`list, $CellContext`i], PageWidth -> 
+                    Infinity], 
+                    Cell[""]}, WindowSize -> 300, #]]], {Automatic, 150}]& )[
+                    Options[$CellContext`nb$, StyleDefinitions]], Background -> 
+                    White, FrameMargins -> 10, FrameStyle -> Gray, 
+                    ImageMargins -> 0, RoundingRadius -> 10]}]}}, Alignment -> 
+                Top], 
+               Item[
+                ChoiceButtons[{
+                  Dynamic[
+                   RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "slideshowInsertLabel"]]], 
+                  Dynamic[
+                   RawBoxes[
+                    FEPrivate`FrontEndResourceString["cancelButtonText"]]]}, {
+                 NotebookPut[
+                    ReplaceAll[$CellContext`nb$, 
+                    (Pattern[$CellContext`c, 
+                    Cell[
+                    Blank[], #, 
+                    BlankNullSequence[]]] :> Sequence[#2, $CellContext`c]& )[
+                    Apply[Alternatives, $CellContext`x], 
+                    FrontEndResource[
+                    "FEExpressions", "SlideshowNavigationCell"]]]]; 
+                  NotebookClose[
+                    ButtonNotebook[]], 
+                  NotebookClose[
+                   ButtonNotebook[]]}, {{
+                  Method -> "Queued", Enabled -> 
+                   Dynamic[$CellContext`x =!= {}]}, {
+                  Method -> "Preemptive"}}], Alignment -> Right]}]], 
+            CellMargins -> 8], CellContext -> Notebook, DynamicUpdating -> 
+           True, WindowTitle -> 
+           FEPrivate`FrontEndResource["FEStrings", "slideshowConvertTitle"]]],
+        Enabled->Dynamic[
+          And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[], 
+           FEPrivate`Greater[
+            FrontEnd`CurrentValue[
+             FrontEnd`InputNotebook[], {"CellCount", False}], 0]]],
+        Evaluator->"System",
+        Method->"Queued"],
+       DynamicBox[
+        FEPrivate`FrontEndResource["FEStrings", "slideshowConvertTooltip"]]],
+      Annotation[#, 
+       Dynamic[
+        RawBoxes[
+         FEPrivate`FrontEndResource["FEStrings", "slideshowConvertTooltip"]]],
+        "Tooltip"]& ]},
+    {
+     TagBox[
+      TooltipBox[
+       ButtonBox[
+        DynamicBox[FEPrivate`FrontEndResource[
+         "FEStrings", "slideshowTOCLabel"],
+         ImageSizeCache->{92., {1., 9.}}],
+        Appearance->Automatic,
+        ButtonFunction:>
+         Module[{$CellContext`palettenb$}, $CellContext`palettenb$ = 
+           CreatePalette[
+             Flatten[
+              Map[Cell[
+                BoxData[#], "SlideTOC", CellMargins -> 3, 
+                ButtonBoxOptions -> {
+                 Evaluator -> "System", 
+                  ButtonFunction :> ((Apply[FrontEndExecute[{
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], Before, Notebook, AutoScroll -> 
+                    False], 
+                    SlotSequence[1], 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Cell, AutoScroll -> 
+                    False], 
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell["", Deletable -> True, ShowCellBracket -> False], 
+                    All], 
+                    FrontEnd`NotebookDelete[
+                    FrontEnd`InputNotebook[]]}]& , 
+                    Flatten[
+                    MapThread[Table[
+                    FrontEnd`NotebookFind[
+                    FrontEnd`InputNotebook[], #, Next, CellStyle, AutoScroll -> 
+                    False], {#2}]& , {
+                    Take[{"SlideShowNavigationBar", "Section"}, 
+                    Length[#2]], #2}]]]; SelectionMove[
+                    InputNotebook[], Previous, 
+                    If[Length[#2] == 1, Cell, CellContents]])& )}]& , 
+               MapIndexed[If[Length[#2] == 1, 
+                 RowBox[
+                  Riffle[{
+                    ButtonBox[
+                    RowBox[{
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "SlideshowSlideText"]], " ", 
+                    Apply[ToString, #2]}], ButtonData -> #2, Appearance -> 
+                    None, Evaluator -> "System"], 
+                    Apply[Sequence, #]}, "\n\t"]], 
+                 
+                 ButtonBox[#, ButtonData -> #2, Appearance -> None, Evaluator -> 
+                  "System"]]& , 
+                ReplaceAll[
+                 Split[
+                  Cases[
+                   First[
+                    NotebookGet[
+                    InputNotebook[]]], 
+                   Cell[
+                    Blank[], 
+                    Alternatives["SlideShowNavigationBar", "Section"], 
+                    BlankNullSequence[]], Infinity], Not[
+                   MatchQ[#2, 
+                    Cell[
+                    Blank[], "SlideShowNavigationBar", 
+                    BlankNullSequence[]]]]& ], {Cell[
+                    TextData[
+                    Pattern[$CellContext`c, 
+                    Blank[]]], "Section", 
+                    BlankNullSequence[]] :> RowBox[
+                    If[
+                    ListQ[$CellContext`c], $CellContext`c, {$CellContext`c}]],
+                   Cell[
+                    Pattern[$CellContext`c, 
+                    Blank[]], "Section", 
+                    BlankNullSequence[]] :> $CellContext`c, Blank[Cell] :> 
+                  Sequence[]}], {1, 2}]]], DockedCells -> {
+               Cell[
+                BoxData[
+                 GridBox[{{
+                    ButtonBox[
+                    StyleBox["\[FirstPage]", "SR"], 
+                    ButtonFunction :> (FrontEndExecute[{
+                    FrontEndToken[
+                    FrontEnd`InputNotebook[], "ScrollPageFirst"]}]& ), 
+                    BaseStyle -> "SlideHyperlink", Evaluator -> "System"], 
+                    ButtonBox[
+                    StyleBox["\[LeftPointer]", "SR"], 
+                    ButtonFunction :> (FrontEndExecute[{
+                    FrontEndToken[
+                    FrontEnd`InputNotebook[], "ScrollPagePrevious"]}]& ), 
+                    BaseStyle -> "SlideHyperlink", Evaluator -> "System"], 
+                    ButtonBox[
+                    StyleBox["\[RightPointer]", "SR"], 
+                    ButtonFunction :> (FrontEndExecute[{
+                    FrontEndToken[
+                    FrontEnd`InputNotebook[], "ScrollPageNext"]}]& ), 
+                    BaseStyle -> "SlideHyperlink", Evaluator -> "System"], 
+                    ButtonBox[
+                    StyleBox["\[LastPage]", "SR"], 
+                    ButtonFunction :> (FrontEndExecute[{
+                    FrontEndToken[
+                    FrontEnd`InputNotebook[], "ScrollPageLast"]}]& ), 
+                    BaseStyle -> "SlideHyperlink", Evaluator -> "System"]}}, 
+                  ColumnSpacings -> 0, ColumnWidths -> 2.95]], "Text", 
+                CellMargins -> 0]}, 
+             ScrollingOptions -> {"PagewiseScrolling" -> False}, 
+             WindowElements -> {"VerticalScrollBar"}, 
+             WindowFrameElements -> {"CloseBox", "ResizeArea"}, WindowTitle -> 
+             Dynamic[
+               FEPrivate`FrontEndResource[
+               "FEStrings", "slideshowTOCContentsLabel"]], 
+             WindowSize -> {250, All}, CellContext -> Notebook, 
+             DynamicUpdating -> True, 
+             WindowMargins -> {{Automatic, 265}, {Automatic, 2}}, Background -> 
+             GrayLevel[0.85098], Saveable -> False, "ParentNotebookObject" -> 
+             InputNotebook[]]; MathLink`CallFrontEnd[
+            FrontEnd`SetNotebookInList[$CellContext`palettenb$, False]]],
+        Enabled->Dynamic[
+          And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]],
+        Evaluator->Automatic,
+        Method->"Preemptive"],
+       DynamicBox[
+        FEPrivate`FrontEndResource["FEStrings", "slideshowTOCTooltip"]]],
+      Annotation[#, 
+       Dynamic[
+        RawBoxes[
+         FEPrivate`FrontEndResource["FEStrings", "slideshowTOCTooltip"]]], 
+       "Tooltip"]& ]},
+    {
+     StyleBox[
+      DynamicBox[FEPrivate`FrontEndResource[
+       "FEStrings", "slideshowInsertLabel"],
+       ImageSizeCache->{33., {0., 9.}}],
+      StripOnInput->False,
+      FontWeight->Bold]},
+    {
+     TagBox[
+      TooltipBox[
+       ButtonBox[
+        DynamicBox[FEPrivate`FrontEndResource[
+         "FEStrings", "slideshowSlideLabel"],
+         ImageSizeCache->{103., {3., 9.}}],
+        Appearance->Automatic,
+        ButtonFunction:>FrontEndExecute[{
+           FrontEnd`NotebookWrite[
+            FrontEnd`InputNotebook[], 
+            FEPrivate`FrontEndResource["FEExpressions", "SlideshowNewSlide"], 
+            After]}],
+        Enabled->Dynamic[
+          And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]],
+        Evaluator->None,
+        Method->"Preemptive"],
+       DynamicBox[
+        FEPrivate`FrontEndResource["FEStrings", "slideshowSlideTooltip"]]],
+      Annotation[#, 
+       Dynamic[
+        RawBoxes[
+         FEPrivate`FrontEndResource["FEStrings", "slideshowSlideTooltip"]]], 
+       "Tooltip"]& ]},
+    {
+     TagBox[
+      TooltipBox[
+       ButtonBox[
+        DynamicBox[FEPrivate`FrontEndResource[
+         "FEStrings", "slideshowBreakLabel"],
+         ImageSizeCache->{56., {1., 9.}}],
+        Appearance->Automatic,
+        ButtonFunction:>FrontEndExecute[{
+           FrontEnd`NotebookWrite[
+            FrontEnd`InputNotebook[], 
+            FEPrivate`FrontEndResource[
+            "FEExpressions", "SlideshowNavigationCell"]]}],
+        Enabled->Dynamic[
+          And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]],
+        Evaluator->None,
+        Method->"Preemptive"],
+       DynamicBox[
+        FEPrivate`FrontEndResource["FEStrings", "slideshowBreakTooltip"]]],
+      Annotation[#, 
+       Dynamic[
+        RawBoxes[
+         FEPrivate`FrontEndResource["FEStrings", "slideshowBreakTooltip"]]], 
+       "Tooltip"]& ]},
+    {
+     StyleBox[
+      DynamicBox[FEPrivate`FrontEndResource[
+       "FEStrings", "slideshowSettingsLabel"],
+       ImageSizeCache->{46., {3., 9.}}],
+      StripOnInput->False,
+      FontWeight->Bold]},
+    {
+     TagBox[GridBox[{
+        {
+         DynamicModuleBox[{$CellContext`lis$$ = {}}, 
+          TagBox[
+           DynamicBox[ToBoxes[
+             PopupMenu[
+              Dynamic[
+               CurrentValue[
+                InputNotebook[], ScreenStyleEnvironment]], $CellContext`lis$$,
+               None, 
+              ActionMenu[
+               PaneSelector[{
+                 Dynamic[
+                  RawBoxes[
+                   FEPrivate`FrontEndResource[
+                   "FEStrings", "slideshowEnvLabel"]]], 
+                 Dynamic[
+                  RawBoxes[
+                   FEPrivate`FrontEndResource[
+                   "FEStrings", "slideshowSizeLabel"]]], 
+                 Dynamic[
+                  RawBoxes[
+                   FEPrivate`FrontEndResource[
+                   "FEStrings", "slideshowMagLabel"]]], 
+                 Dynamic[
+                  RawBoxes[
+                   FEPrivate`FrontEndResource[
+                   "FEStrings", "slideshowTransLabel"]]]}, 1], {}, Enabled -> 
+               Dynamic[
+                 And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]],
+                Evaluator -> "System"], Enabled -> Dynamic[
+                And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]]],
+              StandardForm],
+            Evaluator->"System",
+            ImageSizeCache->{139., {10., 19.}}],
+           EventHandlerTag[{"MouseDown" :> ($CellContext`lis$$ = Rest[
+                FE`Evaluate[
+                 FEPrivate`GetPopupList["MenuListScreenStyleEnvironments"]]]),
+              PassEventsDown -> True, Method -> "Preemptive", PassEventsUp -> 
+             True}]],
+          DynamicModuleValues:>{}]},
+        {
+         PopupMenuBox[Dynamic[
+           CurrentValue[
+            InputNotebook[], WindowSize], Evaluator -> "System"], {Full->
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEStrings", "slideshowFullScreenLabel"],
+           ImageSizeCache->{56., {1., 9.}}], {800, 
+          600}->"\<\"800 x 600\"\>", {1024, 768}->"\<\"1024 x 768\"\>", {1280,
+           960}->"\<\"1280 x 960\"\>"}, "None", 
+          ActionMenuBox[
+           PaneSelectorBox[{1->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEStrings", "slideshowEnvLabel"],
+             ImageSizeCache->{95., {1., 9.}}], 2->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEStrings", "slideshowSizeLabel"],
+             ImageSizeCache->{88., {1., 9.}}], 3->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEStrings", "slideshowMagLabel"],
+             ImageSizeCache->{74., {3., 9.}}], 4->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEStrings", "slideshowTransLabel"],
+             ImageSizeCache->{85., {1., 9.}}]}, 2], {},
+           Enabled->Dynamic[
+             And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]],
+           Evaluator->"System"],
+          Enabled->Dynamic[
+            And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]]]},
+        {
+         PopupMenuBox[Dynamic[
+           CurrentValue[
+            InputNotebook[], Magnification], Evaluator -> "System"], {
+          0.75->"\<\"75%\"\>", 1->"\<\"100%\"\>", 1.25->"\<\"125%\"\>", 
+          1.5->"\<\"150%\"\>"}, "None", 
+          ActionMenuBox[
+           PaneSelectorBox[{1->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEStrings", "slideshowEnvLabel"],
+             ImageSizeCache->{95., {1., 9.}}], 2->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEStrings", "slideshowSizeLabel"],
+             ImageSizeCache->{88., {1., 9.}}], 3->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEStrings", "slideshowMagLabel"],
+             ImageSizeCache->{74., {3., 9.}}], 4->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEStrings", "slideshowTransLabel"],
+             ImageSizeCache->{85., {1., 9.}}]}, 3], {},
+           Enabled->Dynamic[
+             And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]],
+           Evaluator->"System"],
+          Enabled->Dynamic[
+            And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]]]},
+        {
+         PopupMenuBox[Dynamic[
+           CurrentValue[
+            InputNotebook[], TransitionEffect], Evaluator -> "System"], {
+          Automatic->
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEStrings", "slideshowTransNoneLabel"],
+           ImageSizeCache->{29., {0., 9.}}], "CrossFade"->
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEStrings", "slideshowTransCrossLabel"],
+           ImageSizeCache->{52., {0., 9.}}]}, "None", 
+          ActionMenuBox[
+           PaneSelectorBox[{1->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEStrings", "slideshowEnvLabel"],
+             ImageSizeCache->{95., {1., 9.}}], 2->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEStrings", "slideshowSizeLabel"],
+             ImageSizeCache->{88., {1., 9.}}], 3->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEStrings", "slideshowMagLabel"],
+             ImageSizeCache->{74., {3., 9.}}], 4->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEStrings", "slideshowTransLabel"],
+             ImageSizeCache->{85., {1., 9.}}]}, 4], {},
+           Enabled->Dynamic[
+             And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]],
+           Evaluator->"System"],
+          Enabled->Dynamic[
+            And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]]]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"]},
+    {
+     TagBox[GridBox[{
+        {
+         StyleBox[
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEStrings", "slideshowWinElemLabel"],
+           ImageSizeCache->{99., {1., 9.}}],
+          StripOnInput->False,
+          FontWeight->Bold], "\[SpanFromLeft]", "\[SpanFromLeft]"},
+        {"", 
+         DynamicBox[ToBoxes[
+           Checkbox[
+            Dynamic[
+             CurrentValue[
+              FEPrivate`LastActiveUserNotebook[], {
+              TaggingRules, "SlideshowSettings", "Toolbar"}, True]], Enabled -> 
+            Dynamic[
+              And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]]], 
+           StandardForm],
+          ImageSizeCache->{13., {2., 12.}}], 
+         DynamicBox[FEPrivate`FrontEndResource[
+          "FEStrings", "slideShowNavBarLabel"],
+          ImageSizeCache->{101., {3., 9.}}]},
+        {"", 
+         CheckboxBox[Dynamic[
+           (If[Head[#] =!= List, True, 
+            MemberQ[#, "VerticalScrollBar"]]& )[
+            CurrentValue[
+             InputNotebook[], {
+             TaggingRules, "SlideshowSettings", "WindowElements"}]], 
+           BoxForm`TogglerBarFunction[
+            CurrentValue[
+             InputNotebook[], {
+             TaggingRules, "SlideshowSettings", "WindowElements"}, {
+             "HorizontalScrollBar", "MagnificationPopUp", "StatusArea", 
+              "VerticalScrollBar"}], "VerticalScrollBar"]& ],
+          Enabled->Dynamic[
+            And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]]], 
+         DynamicBox[FEPrivate`FrontEndResource[
+          "FEStrings", "slideShowVerticalScrollBarLabel"],
+          ImageSizeCache->{87., {1., 9.}}]},
+        {"", 
+         CheckboxBox[Dynamic[
+           (If[Head[#] =!= List, True, 
+            MemberQ[#, "HorizontalScrollBar"]]& )[
+            CurrentValue[
+             InputNotebook[], {
+             TaggingRules, "SlideshowSettings", "WindowElements"}]], 
+           BoxForm`TogglerBarFunction[
+            CurrentValue[
+             InputNotebook[], {
+             TaggingRules, "SlideshowSettings", "WindowElements"}, {
+             "HorizontalScrollBar", "MagnificationPopUp", "StatusArea", 
+              "VerticalScrollBar"}], "HorizontalScrollBar"]& ],
+          Enabled->Dynamic[
+            And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]]], 
+         DynamicBox[FEPrivate`FrontEndResource[
+          "FEStrings", "slideShowHorizontalScrollBarLabel"],
+          ImageSizeCache->{103., {1., 9.}}]},
+        {"", 
+         CheckboxBox[Dynamic[
+           (If[Head[#] =!= List, True, 
+            MemberQ[#, "MagnificationPopUp"]]& )[
+            CurrentValue[
+             InputNotebook[], {
+             TaggingRules, "SlideshowSettings", "WindowElements"}]], 
+           BoxForm`TogglerBarFunction[
+            CurrentValue[
+             InputNotebook[], {
+             TaggingRules, "SlideshowSettings", "WindowElements"}, {
+             "HorizontalScrollBar", "MagnificationPopUp", "StatusArea", 
+              "VerticalScrollBar"}], "MagnificationPopUp"]& ],
+          Enabled->Dynamic[
+            And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]]], 
+         DynamicBox[FEPrivate`FrontEndResource[
+          "FEStrings", "slideShowMagnificationPopUpLabel"],
+          ImageSizeCache->{111., {3., 9.}}]},
+        {"", 
+         CheckboxBox[Dynamic[
+           (If[Head[#] =!= List, True, 
+            MemberQ[#, "StatusArea"]]& )[
+            CurrentValue[
+             InputNotebook[], {
+             TaggingRules, "SlideshowSettings", "WindowElements"}]], 
+           BoxForm`TogglerBarFunction[
+            CurrentValue[
+             InputNotebook[], {
+             TaggingRules, "SlideshowSettings", "WindowElements"}, {
+             "HorizontalScrollBar", "MagnificationPopUp", "StatusArea", 
+              "VerticalScrollBar"}], "StatusArea"]& ],
+          Enabled->Dynamic[
+            And[FEPrivate`LastActiveUserNotebook[] === InputNotebook[]]]], 
+         DynamicBox[FEPrivate`FrontEndResource[
+          "FEStrings", "slideShowStatusAreaLabel"],
+          ImageSizeCache->{58., {1., 9.}}]}
+       },
+       AutoDelete->False,
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       GridBoxSpacings->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+         "RowsIndexed" -> {2 -> 1}}],
+      "Grid"]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxDividers->{
+    "Columns" -> {{None}}, "RowsIndexed" -> {2 -> GrayLevel[0.5]}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{
+    "Columns" -> {{Automatic}}, 
+     "RowsIndexed" -> {6 -> 2, 9 -> 2, 11 -> 2, 2 -> 3}}],
+  "Column"]],
+ CellMargins->8,
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue[
+  "PanelFontSize"],ExpressionUUID->"f07c8bd9-4f24-4c00-90c4-90364b39ef86"]
+},
+WindowSize->{All, All},
+WindowMargins->{{Automatic, 20}, {Automatic, 120}},
+WindowElements->{"StatusArea", "VerticalScrollBar", "MagnificationPopUp"},
+WindowTitle->Dynamic[
+  FEPrivate`FrontEndResource["FEStrings", "slideshowTitle"]],
+ScrollingOptions->{"VerticalScrollRange"->Fit},
+CellContext->Notebook,
+DynamicUpdating->True,
+MenuSortingValue->1050,
+PaneSelectorBoxOptions->{ImageMargins->{{0, 5}, {0, 0}}},
+TooltipBoxOptions->{TooltipDelay->Automatic},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (March 17, 2019)",
+StyleDefinitions->"SystemPalette.nb",
+ScrollingOptions -> {"PagewiseScrolling" -> False}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[610, 22, 28107, 677, 594, InheritFromParent,ExpressionUUID->"f07c8bd9-4f24-4c00-90c4-90364b39ef86",
+ PageBreakAbove->True,
+ PageBreakWithin->False]
+}
+]
+*)
+
+(* End of internal cache information *)
+

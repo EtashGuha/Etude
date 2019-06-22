@@ -1,0 +1,37 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IKernelLink.AbandonEvaluation Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IKernelLink.AbandonEvaluation.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IKernelLink.AbandonEvaluation Method </h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Causes any method that is blocking waiting for output from the kernel to return immediately and throw a MathLinkException. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Sub AbandonEvaluation()</div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />
+        <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> AbandonEvaluation();</div>
+      <h4 class="dtH4">Remarks</h4> This is a "last-ditch" method when you absolutely need to break out of any methods that are waiting for a result from the kernel. You should should always close the link after you call this. <p> This method is typically called from a different thread than the one that is performing the computation. That "computation" thread is typically blocking in WaitForAnswer or some other method that is waiting for the result to arrive from <i>Mathematica</i>. If you want to force that method to return immediately (it will throw a MathLinkException), call AbandonEvaluation in a different thread. </p> The code in the catch handler for the MathLinkException will find that ClearError returns false, indicating that the link is irrevocably damaged. You should then call <a href="Wolfram.NETLink.IKernelLink.TerminateKernel.html">TerminateKernel</a> followed by <a href="Wolfram.NETLink.IMathLink.Close.html">Close</a>. <h4 class="dtH4">See Also</h4><p><a href="Wolfram.NETLink.IKernelLink.html">IKernelLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.IKernelLink.AbortEvaluation.html">AbortEvaluation</a> | <a href="Wolfram.NETLink.IKernelLink.InterruptEvaluation.html">InterruptEvaluation</a> | <a href="Wolfram.NETLink.IKernelLink.TerminateKernel.html">TerminateKernel</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;"><param name="Keyword" value="AbandonEvaluation method"></param><param name="Keyword" value="AbandonEvaluation method, IKernelLink interface"></param><param name="Keyword" value="IKernelLink.AbandonEvaluation method"></param></object><hr /><div id="footer"><p><a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a></p><p></p></div></div>
+  </body>
+</html>

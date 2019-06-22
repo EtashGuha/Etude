@@ -1,0 +1,647 @@
+@| *****************************************************************************************
+@|
+@| Option Inspector category heading strings.
+@|
+@| *****************************************************************************************
+@|
+@@resource FirstOptionsCategory
+\:7b2c\:4e00\:8a2d\:5b9a\:30ab\:30c6\:30b4\:30ea
+@|
+@@resource GlobalOptionsCategory
+\:30b0\:30ed\:30fc\:30d0\:30eb\:8a2d\:5b9a
+@|
+@@resource FileLocationsCategory
+\:30d5\:30a1\:30a4\:30eb\:306e\:4fdd\:7ba1\:5834\:6240
+@|
+@@resource ImportExportOptionsCategory
+\:30c7\:30fc\:30bf\:306e\:30a4\:30f3\:30dd\:30fc\:30c8\:30fb\:30a8\:30ad\:30b9\:30dd\:30fc\:30c8\:8a2d\:5b9a
+@|
+@@resource InternationalOptionsCategory
+\:8a00\:8a9e\:8a2d\:5b9a
+@|
+@@resource SystemConfigurationOptionsCategory
+\:30b7\:30b9\:30c6\:30e0\:8a2d\:5b9a
+@|
+@@resource MenuSettingsCategory
+\:30e1\:30cb\:30e5\:30fc\:8a2d\:5b9a
+@|
+@@resource DialogSettingsCategory
+\:30c0\:30a4\:30a2\:30ed\:30b0\:8a2d\:5b9a
+@|
+@@resource NotebookOptionsCategory
+\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:8a2d\:5b9a
+@|
+@@resource NotebookFileOptionsCategory
+\:30d5\:30a1\:30a4\:30eb\:8a2d\:5b9a
+@|
+@@resource NotebookDisplayOptionsCategory
+\:8868\:793a\:8a2d\:5b9a
+@|
+@@resource NotebookEvaluationOptionsCategory
+\:8a55\:4fa1\:8a2d\:5b9a
+@|
+@@resource NotebookPropertiesCategory
+\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:30d7\:30ed\:30d1\:30c6\:30a3
+@|
+@@resource WindowPropertiesCategory
+\:30a6\:30a3\:30f3\:30c9\:30a6\:306e\:30d7\:30ed\:30d1\:30c6\:30a3
+@|
+@@resource PrintingCategory
+\:5370\:5237\:8a2d\:5b9a
+@|
+@@resource CellOptionsCategory
+\:30bb\:30eb\:8a2d\:5b9a
+@|
+@@resource CellDisplayOptionsCategory
+\:8868\:793a\:8a2d\:5b9a
+@|
+@@resource CellPropertiesCategory
+\:4e00\:822c\:8a2d\:5b9a
+@|
+@@resource CellPageBreakingCategory
+\:6539\:30da\:30fc\:30b8
+@|
+@@resource CellEvaluationOptionsCategory
+\:8a55\:4fa1\:8a2d\:5b9a
+@|
+@@resource CellLabelCategory
+\:30bb\:30eb\:30e9\:30d9\:30eb
+@|
+@@resource CellFrameOptionsCategory
+\:30bb\:30eb\:30d5\:30ec\:30fc\:30e0\:8a2d\:5b9a
+@|
+@@resource CellTagsCategory
+\:30bb\:30eb\:30bf\:30b0
+@|
+@@resource InlineCellOptionsCategory
+\:30a4\:30f3\:30e9\:30a4\:30f3\:30bb\:30eb\:8a2d\:5b9a
+@|
+@@resource NewCellDefaultsCategory
+\:65b0\:898f\:30bb\:30eb\:6a19\:6e96\:8a2d\:5b9a
+@|
+@@resource EditingOptionsCategory
+\:7de8\:96c6\:8a2d\:5b9a
+@|
+@@resource PrivateEditingOptionsCategory
+\:30d7\:30e9\:30a4\:30d9\:30fc\:30c8\:30a8\:30c7\:30a3\:30c3\:30c8\:8a2d\:5b9a
+@|
+@@resource FormattingOptionsCategory
+\:66f8\:5f0f\:8a2d\:5b9a
+@|
+@@resource FontOptionsCategory
+\:30d5\:30a9\:30f3\:30c8\:8a2d\:5b9a
+@|
+@@resource TextLayoutOptionsCategory
+\:30c6\:30ad\:30b9\:30c8\:8a2d\:5b9a
+@|
+@@resource TextContentOptionsCategory
+\:30c6\:30ad\:30b9\:30c8\:5185\:5bb9\:8a2d\:5b9a
+@|
+@@resource ExpressionFormattingCategory
+\:5f0f\:306e\:66f8\:5f0f
+@|
+@@resource ExpressionFormattingDisplayCategory
+\:8868\:793a\:8a2d\:5b9a
+@|
+@@resource ExpressionFormattingTraditionalCategory
+TraditionalForm\:ff08\:6163\:7528\:5f62\:ff09\:306e\:8a2d\:5b9a
+@|
+@@resource ControlsOptionsCategory
+\:30b3\:30f3\:30c8\:30ed\:30fc\:30eb\:8a2d\:5b9a
+@|
+@@resource GraphicsRelatedBoxOptionsCategory
+\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9\:30dc\:30c3\:30af\:30b9\:8a2d\:5b9a
+@|
+@@resource Graphics3DRelatedBoxOptionsCategory
+Graphics3D\:30dc\:30c3\:30af\:30b9\:306e\:8a2d\:5b9a	
+@|
+@@resource OtherBoxOptionsCategory
+\:7279\:5b9a\:30dc\:30c3\:30af\:30b9\:306e\:8a2d\:5b9a
+@|
+@@resource SpanningCharacterOptionsCategory
+\:4f38\:5f35\:6587\:5b57\:8a2d\:5b9a
+@|
+@@resource LinebreakingOptionsCategory
+\:884c\:6298\:308a\:8fd4\:3057\:306e\:8a2d\:5b9a
+@|
+@@resource AutomaticNumberingCategory
+\:81ea\:52d5\:756a\:53f7\:4ed8\:3051\:8a2d\:5b9a
+@|
+@@resource CounterControlCategory
+\:30ab\:30a6\:30f3\:30bf\:306e\:521d\:671f\:5024\:3068\:523b\:307f\:5024\:306e\:8a2d\:5b9a
+@|
+@@resource CounterBoxCategory
+\:30ab\:30a6\:30f3\:30bf\:306e\:8868\:793a\:8a2d\:5b9a
+@|
+@| @@resource ValueBoxCategory
+@| \:8a2d\:5b9a\:5024\:306e\:8868\:793a\:8a2d\:5b9a
+@|
+@@resource GraphicsOptionsCategory
+\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9\:8a2d\:5b9a
+@|
+@@resource AnimationCategory
+\:30a2\:30cb\:30e1\:30fc\:30b7\:30e7\:30f3
+@|
+@@resource BoundingBoxCategory
+\:30b0\:30e9\:30d5\:306e\:5883\:754c\:30dc\:30c3\:30af\:30b9
+@|
+@@resource NewGraphicsCategory
+\:65b0\:898f\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9
+@|
+@@resource AlphabeticalOnlyOptionsCategory
+\:30a2\:30eb\:30d5\:30a1\:30d9\:30c3\:30c8\:9806\:306e\:307f
+@|
+@@resource InvisibleOptionsCategory
+\:96a0\:3059
+@|
+@@resource UndocumentedOptionsCategory
+\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8\:306a\:3057
+@|
+@@resource UndocumentedGraphicsAttributesCategory
+\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9\:306e\:5c5e\:6027
+@|
+@@resource UndocumentedRenderingOptionsCategory
+\:63cf\:753b\:8a2d\:5b9a
+@|
+@@resource UndocumentedDynamicTrafficOptionsCategory
+\:30c0\:30a4\:30ca\:30df\:30c3\:30af\:30c8\:30e9\:30d5\:30a3\:30c3\:30af\:8a2d\:5b9a
+@|
+@@resource UndocumentedEventOptionsCategory
+\:30a4\:30d9\:30f3\:30c8\:8a2d\:5b9a
+@|
+@@resource UndocumentedExperimentalOptionsCategory
+\:5b9f\:9a13\:7684\:8a2d\:5b9a
+@|
+@@resource UndocumentedObsoleteOptionsCategory
+\:5ec3\:6b62\:3055\:308c\:305f\:8a2d\:5b9a
+@|
+@@resource LastOptionsCategory
+\:524d\:56de\:306e\:30c8\:30d4\:30c3\:30af
+@|
+@|
+@|
+@|
+@|
+@|
+@|
+@|
+@|
+@|
+@|
+@|
+@| *****************************************************************************************
+@|
+@| Following are tables that define the pop-up menus that appear in the Option Inspector.
+@| Each table may be used for several different options: The tables are for particular
+@| classes of rhs types.
+@|
+@| Each table is a list of strings or string pairs, as in:
+@|     {"foo", "bar"}
+@| or
+@|     {{"foo", "foob"}, {"bar", "barb"}}
+@|
+@| If an entry is a string, then that string is used as the pop-up menu item label.  If the
+@| entry is a pair of strings, then the first element is used as the pop-up menu item label,
+@| but when the item is chosen from the menu, the second element is used instead.  This is 
+@| intended primarily for localization, with a typical example being:
+@|
+@|     {{"foo (translation)", "foo"}, {"bar (translation)", "bar"}}
+@|
+@| If the second element of a pair is the symbol None, then nothing is done when the
+@| item is selected.  (The STRING "None" is different from the SYMBOL None.)
+@|
+@| If an entry is the symbol Delimiter, a dashed line is placed in the menu.
+@|
+@| *****************************************************************************************
+@|
+@@resource readingTypeStringTable
+{
+	{"\:6a19\:6e96", "\"Normal\""}, 
+	{"{"\:30d5\:30a1\:30a4\:30eb \:30a2\:30a6\:30c8\:30e9\:30a4\:30f3 \:30ad\:30e3\:30c3\:30b7\:30e5\:3092\:7121\:8996", "\"IgnoreFileOutlineCache\""}, 
+	{"\:3059\:3079\:3066\:3092\:5358\:4e00\:306e\:30bb\:30eb\:5185\:306b", "\"AllInOneCell\""}, 
+	{"\:5404\:884c\:3054\:3068\:306b\:65b0\:898f\:30bb\:30eb", "\"NewCellAtEveryLine\""}, 
+	{"\:5404\:7a7a\:767d\:884c\:3054\:3068\:306b\:65b0\:898f\:30bb\:30eb", "\"NewCellAtEveryBlankLine\""},
+	{"\:ff12\:7a7a\:767d\:884c\:3054\:3068\:306b\:65b0\:898f\:30bb\:30eb", "\"NewCellAtEveryTwoBlankLines\""}, 
+	{"\:30ea\:30bd\:30fc\:30b9\:306e\:62bd\:51fa", "\"ExtractResources\""}
+}
+@|
+@|
+@@resource animationCountStringTable
+{
+"Infinity",
+Delimiter,
+{"\:56de\:6570\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource noneAutomaticNumberStringTable
+{
+"Automatic",
+"None",
+Delimiter,
+{"\:756a\:53f7\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource counterFunctionStringTable
+{
+{"\:5c0f\:6570", "Identity"},
+{"\:30ed\:30fc\:30de\:6570\:5b57", "RomanNumeral"},
+{"\:5927\:6587\:5b57\:30ed\:30fc\:30de\:6570\:5b57", "CapitalRomanNumeral"},
+{"abc...", "(Part[CharacterRange[\"a\", \"z\"], #]&)"},
+{"ABC...", "(Part[CharacterRange[\"A\", \"Z\"], #]&)"},
+{"\:30ae\:30ea\:30b7\:30e3\:5c0f\:6587\:5b57", "(Part[CharacterRange[\"\\[Alpha]\", \"\\[Omega]\"], #]&)"},
+{"\:30ae\:30ea\:30b7\:30e3\:5927\:6587\:5b57", 
+	"(Part[CharacterRange[\"\\[CapitalAlpha]\", \"\\[CapitalOmega]\"], #]&)"},
+{"\:5186\:6570\:5b57\:ff08\:767d\:ff09", "(Part[CharacterRange[\"\\:2460\", \"\\:2469\"], #]&)"},
+{"\:5186\:6570\:5b57\:ff08\:9ed2\:ff09", "(Part[CharacterRange[\"\\:2776\", \"\\:277F\"], #]&)"},
+{"\:5186\:6570\:5b57\:ff08\:30b5\:30f3\:30bb\:30ea\:30d5\:9ed2\:ff09", 
+	"(Part[CharacterRange[\"\\:278A\", \"\\:2793\"], #]&)"},
+{"\:66dc\:65e5", "(Part[{\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \
+\"Friday\", \"Saturday\", \"Sunday\"}, #]&)"},
+{"\:ff11\:6708,\:ff12\:6708,\:ff13\:6708...", "(Part[{\"January\", \"February\", \"March\", \"April\", \"May\", \"June\", \
+\"July\", \"August\", \"September\", \"October\", \"November\", \"December\"}, #]&)"},
+Delimiter,
+{"\:305d\:306e\:4ed6\:306eMathematica\:95a2\:6570", None}
+}
+@|
+@|
+@@resource spanMinStringTable
+{
+"Automatic",
+Delimiter,
+{"\:5e45\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource spanMaxStringTable
+{
+"Automatic",
+"Infinity",
+Delimiter,
+{"\:5e45\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource dingbatCellStyleStringTable
+{
+"None",
+Delimiter,
+{"\:6b63\:65b9\:5f62\:ff08\:9ed2\:ff09", "\"\\[FilledSquare]\""},
+{"\:6b63\:65b9\:5f62\:ff08\:7070\:ff09", "\"\\[GraySquare]\""},
+{"\:6b63\:65b9\:5f62\:ff08\:767d\:ff09", "\"\\[EmptySquare]\""},
+{"\:6b63\:65b9\:5f62\:ff08\:7db2\:70b9\:ff09", "\"\\[DottedSquare]\""},
+{"\:5c0f\:6b63\:65b9\:5f62\:ff08\:9ed2\:ff09", "\"\\[FilledSmallSquare]\""},
+{"\:5c0f\:6b63\:65b9\:5f62\:ff08\:767d\:ff09", "\"\\[EmptySmallSquare]\""},
+Delimiter,
+{"\:5186\:ff08\:9ed2\:ff09", "\"\\[FilledCircle]\""},
+{"\:5186\:ff08\:7070\:ff09", "\"\\[GrayCircle]\""},
+{"\:5186\:ff08\:767d\:ff09", "\"\\[EmptyCircle]\""},
+{"\:5c0f\:5186\:ff08\:9ed2\:ff09", "\"\\[FilledSmallCircle]\""},
+{"\:5c0f\:5186\:ff08\:767d\:ff09", "\"\\[EmptySmallCircle]\""},
+Delimiter,
+{"\:83f1\:5f62\:ff08\:9ed2\:ff09", "\"\\[FilledDiamond]\""},
+{"\:83f1\:5f62\:ff08\:767d\:ff09", "\"\\[EmptyDiamond]\""},
+{"\:4e0a\:5411\:304d\:4e09\:89d2\:5f62\:ff08\:9ed2\:ff09", "\"\\[FilledUpTriangle]\""},
+{"\:4e0a\:5411\:304d\:4e09\:89d2\:5f62\:ff08\:767d\:ff09", "\"\\[EmptyUpTriangle]\""},
+{"\:4e0b\:5411\:304d\:4e09\:89d2\:5f62\:ff08\:9ed2\:ff09", "\"\\[FilledDownTriangle]\""},
+{"\:4e0b\:5411\:304d\:4e09\:89d2\:5f62\:ff08\:767d\:ff09", "\"\\[EmptyDownTriangle]\""},
+Delimiter,
+{"\:6642\:8a08", "\"\\[WatchIcon]\""},
+{"\:661f\:ff08\:9ed2\:ff09", "\"\\[FivePointedStar]\""},
+{"\:30b9\:30de\:30a4\:30eb", "\"\\[HappySmiley]\""},
+{"\:666e\:901a\:306e\:9854", "\"\\[NeutralSmiley]\""},
+{"\:60b2\:3057\:3044\:9854", "\"\\[SadSmiley]\""},
+{"\:96fb\:7403", "\"\\[LightBulb]\""},
+{"\:72fc", "\"\\[Wolf]\""},
+Delimiter,
+{"\:30af\:30e9\:30d6", "\"\\[ClubSuit]\""},
+{"\:30c0\:30a4\:30e4", "\"\\[DiamondSuit]\""},
+{"\:30cf\:30fc\:30c8", "\"\\[HeartSuit]\""},
+{"\:30b9\:30da\:30fc\:30c9", "\"\\[SpadeSuit]\""},
+Delimiter,
+{"\:305d\:306e\:4ed6\:306e\:6587\:5b57\:5217", None}
+}
+@|
+@|
+@@resource rulerUnitsStringTable
+{{"\"\:30a4\:30f3\:30c1\"", 
+  "\"Inches\""}, {"\"\:30c7\:30b7\:30de\:30eb\:30a4\:30f3\:30c1\"", 
+  "\"DecimalInches\""}, {"\"\:30dd\:30a4\:30f3\:30c8\"", 
+  "\"Points\""}, {"\"\:30d1\:30a4\:30ab\"", 
+  "\"Picas\""}, {"\"\:30bb\:30f3\:30c1\:30e1\:30fc\:30c8\:30eb\"", 
+  "\"Centimeters\""}, {"\"\:30df\:30ea\:30e1\:30fc\:30c8\:30eb\"", 
+  "\"Millimeters\""}}
+@|
+@|
+@@resource inspectorScopeInDialogStringTable
+{
+"\:30b0\:30ed\:30fc\:30d0\:30eb",
+"\:30ce\:30fc\:30c8\:30d6\:30c3\:30af",
+"\:9078\:629e\:7bc4\:56f2"
+}
+@|
+@|
+@@resource inspectorViewAsInDialogStringTable
+{
+"\:30ab\:30c6\:30b4\:30ea\:3067",
+"\:30a2\:30eb\:30d5\:30a1\:30d9\:30c3\:30c8\:9806\:306b",
+"\:30c6\:30ad\:30b9\:30c8\:3067"
+}
+@|
+@|
+@@resource inspectorGlobalScopeTitleString
+(\:30b0\:30ed\:30fc\:30d0\:30eb)
+@|
+@|
+@@resource spellCheckerScopeInDialogStringTable
+{
+"\:6c38\:4e45\:306b",
+"\:3053\:306e\:30bb\:30c3\:30b7\:30e7\:30f3\:306e\:307f",
+"\:3053\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:307f",
+"\:3053\:306e\:30bb\:30eb\:306e\:307f"
+}
+@|
+@|
+@@resource linebreakSemicolonWeightStringTable
+{
+"\"Normal\"",
+"\"PreferentiallyBreak\"",
+"\"AlwaysBreak\"",
+Delimiter,
+{"\:91cd\:307f\:4ed8\:3051", None}
+}
+@|
+@|
+@@resource magnificationStringTable
+{
+"0.5",
+"0.75",
+"1.0",
+"1.25",
+"1.5",
+"2",
+"3",
+Delimiter,
+{"\:30ba\:30fc\:30e0\:7387\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource pageWidthStringTable
+{
+"Infinity",
+"PaperWidth",
+"WindowWidth",
+Delimiter,
+{"\:30dd\:30a4\:30f3\:30c8\:5358\:4f4d\:3067\:5e45\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource fixCoordOrAutomaticStringTable
+{
+"Automatic",
+Delimiter,
+{"\:6570\:5024\:3067\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource fixCoordOrAutomaticOrFitStringTable
+{
+"Automatic",
+"Fit",
+"FitAll",
+Delimiter,
+{"\:30dd\:30a4\:30f3\:30c8\:5358\:4f4d\:3067\:5e45\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource allAutomaticFitStringTable
+{
+"All",
+"Automatic",
+"Fit",
+"FitAll",
+Delimiter,
+{"\:30dd\:30a4\:30f3\:30c8\:5358\:4f4d\:3067\:5e45\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource fixCoordOrAutomaticAngleStringTable
+{
+"Automatic",
+Delimiter,
+{"\[Degree]\:5358\:4f4d\:3067\:89d2\:5ea6\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource windowSizeStringTable
+{
+"Automatic",
+"All",
+"Full",
+Delimiter,
+"Tiny",
+"Small",
+"Medium",
+"Large",
+Delimiter,
+{"\:5927\:304d\:3055\:3092\:30dd\:30a4\:30f3\:30c8\:3067\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource scrollPositionStringTable
+{
+"Beginning",
+"End",
+"PageForwards",
+"PageBackwards",
+"LineForwards",
+"LineBackwards",
+"PointForwards",
+"PointBackwards",
+Delimiter,
+{"\:30dd\:30a4\:30f3\:30c8\:5358\:4f4d\:3067\:4f4d\:7f6e\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource weightNoteFontStringTable
+{
+"\"UltraLight\"",
+"\"Thin\"",
+"\"ExtraLight\"",
+"\"Light\"",
+"\"Book\"",
+"\"Plain\"",
+"\"Normal\"",
+"\"Regular\"",
+"\"Roman\"",
+"\"Medium\"",
+"\"Demi\"",
+"\"DemiBold\"",
+"\"SemiBold\"",
+"\"Bold\"",
+"\"ExtraBold\"",
+"\"Heavy\"",
+"\"HeavyFace\"",
+"\"Black\"",
+"\"Ultra\"",
+"\"UltraBlack\"",
+"\"Fat\"",
+"\"ExtraBlack\"",
+"\"Obese\"",
+Delimiter,
+{"\:30a6\:30a7\:30a4\:30c8\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource slantNoteFontStringTable
+{
+"\"Plain\"",
+"\"Italic\"",
+"\"Oblique\"",
+Delimiter,
+{"\:659c\:4f53\:5f62\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource trackingNoteFontStringTable
+{
+"\"Narrow\"",
+"\"Compressed\"",
+"\"Condensed\"",
+"\"SemiCondensed\"",
+"\"Plain\"",
+"\"Extended\"",
+"\"Wide\"",
+Delimiter,
+{"\:6587\:5b57\:9593\:9694\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource sizeNoteFontStringTable
+{
+"6",
+"9",
+"10",
+"12",
+"18",
+"24",
+"36",
+Delimiter,
+{"\:30dd\:30a4\:30f3\:30c8\:5358\:4f4d\:3067\:30b5\:30a4\:30ba\:3092\:6307\:5b9a", None}
+Delimiter,
+Tiny,
+Small,
+Medium,
+Large,
+Delimiter,
+Larger,
+Smaller
+}
+@|
+@|
+@@resource defaultFormatTypeStringTable
+{
+"\"DefaultTextFormatType\"",
+"\"DefaultInputFormatType\"",
+"\"DefaultOutputFormatType\"",
+Delimiter,
+{"\:8868\:8a18\:6cd5\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource DefaultInlineFormatTypeStringTable
+{
+"\"DefaultTextInlineFormatType\"",
+"\"DefaultInputInlineFormatType\"",
+"\"DefaultOutputInlineFormatType\"",
+Delimiter,
+{"\:8868\:8a18\:6cd5\:3092\:6307\:5b9a", None}
+}
+@@resource actionNoteStringTable
+{
+"None",
+"ButtonData",
+Delimiter,
+{"\:811a\:6ce8\:306e\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource illustratorColorsStringTable
+{
+"\"DirectComplement\"",
+"\"StandardBlackGeneration\"",
+Delimiter,
+{"Mathematica\:898f\:5247\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource windowTitleStringTable
+{
+"None",
+"Automatic",
+"\"ShortFileName\"",
+"\"FullFileName\"",
+Delimiter,
+{"\:6587\:5b57\:5217\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource spellingOptionsLanguageStringTable
+{
+"Automatic",
+"\"Afrikaans\"",
+"\"Arabic\"",
+"\"Aragonese\"",
+"\"Belarusian\"",
+"\"Bosnian\"",
+"\"BrazilianPortuguese\"",
+"\"Breton\"",
+"\"BritishEnglish\"",
+"\"CanadianEnglish\"",
+"\"Catalan\"",
+"\"Croatian\"",
+"\"Danish\"",
+"\"Dutch\"",
+"\"English\"",
+"\"Estonian\"",
+"\"French\"",
+"\"German\"",
+"\"Greek\"",
+"\"Hebrew\"",
+"\"Hungarian\"",
+"\"Icelandic\"",
+"\"Italian\"",
+"\"Korean\"",
+"\"Kurdish\"",
+"\"Lao\"",
+"\"Latvian\"",
+"\"Nepali\"",
+"\"Polish\"",
+"\"Portuguese\"",
+"\"Romanian\"",
+"\"Russian\"",
+"\"Serbian\"",
+"\"Slovak\"",
+"\"Slovenian\"",
+"\"SouthAfricanEnglish\"",
+"\"Spanish\"",
+"\"Swahili\"",
+"\"Swedish\"",
+"\"Telugu\"",
+"\"Thai\"",
+"\"Ukrainian\"",
+Delimiter,
+{"\:8a00\:8a9e\:3092\:6307\:5b9a", None}
+}
+@|
+@|
+@@resource rasterizationResolutionStringTable
+{	
+	"\"Automatic\"",	
+	"\"TargetDevice\"",	
+	"\"Screen\"",	
+	Delimiter,	
+	{"\:89e3\:50cf\:5ea6(dpi)", None}	
+}	
+

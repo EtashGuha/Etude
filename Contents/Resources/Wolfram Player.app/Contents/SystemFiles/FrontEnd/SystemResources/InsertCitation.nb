@@ -1,0 +1,666 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     26786,        656]
+NotebookOptionsPosition[     25802,        626]
+NotebookOutlinePosition[     26828,        656]
+CellTagsIndexPosition[     26785,        653]
+WindowTitle->Insert Citation
+WindowFrame->ModelessDialog*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`data$$ = Null}, 
+  DynamicModuleBox[{$CellContext`format$$, $CellContext`refs$$ = {}, \
+$CellContext`searchstring$$ = ""}, 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        TagBox[GridBox[{
+           {
+            TagBox[
+             InputFieldBox[Dynamic[$CellContext`searchstring$$], String,
+              BoxID -> "inputfield"],
+             
+             EventHandlerTag[{
+              "ReturnKeyDown" :> {}, PassEventsDown -> True, PassEventsUp -> 
+               False, Method -> "Preemptive"}]], 
+            ButtonBox[
+             
+             DynamicBox[FEPrivate`FrontEndResource[
+              "InsertCitationDialog", "FindLabel"],
+              ImageSizeCache->{23., {0., 9.}}],
+             Appearance->Automatic,
+             ButtonFunction:>Null,
+             Evaluator->Automatic,
+             Method->"Preemptive"], 
+            ButtonBox[
+             
+             DynamicBox[FEPrivate`FrontEndResource[
+              "InsertCitationDialog", "ClearLabel"],
+              ImageSizeCache->{27., {0., 9.}}],
+             Appearance->Automatic,
+             ButtonFunction:>($CellContext`searchstring$$ = ""),
+             Enabled->Dynamic[$CellContext`searchstring$$ =!= ""],
+             Evaluator->Automatic,
+             Method->"Preemptive"], 
+            ItemBox["\<\"\"\>",
+             ItemSize->FEPrivate`If[
+               FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"], 15, 4],
+             StripOnInput->False], 
+            ButtonBox[
+             PaneSelectorBox[{False->
+              DynamicBox[FEPrivate`FrontEndResource["FEBitmaps", "RevertIcon"],
+               ImageSizeCache->{26., {10., 15.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "RevertIconHot"]]}, Dynamic[
+               CurrentValue["MouseOver"]],
+              FrameMargins->0,
+              ImageSize->Automatic],
+             Appearance->None,
+             ButtonFunction:>($CellContext`refs$$ = {}; $CellContext`data$$ = 
+               Null; Pause[0.5]; $CellContext`data$$ = Replace[
+                 FE`Evaluate[
+                  FEPrivate`CurrentCitations[True, 
+                   
+                   CurrentValue[$FrontEnd, {
+                    PrivateFrontEndOptions, "DialogSettings", 
+                    "InsertCitation", "Database"}, ""]]], Except[
+                   Blank[List]] :> (Pause[2]; {})]),
+             Evaluator->Automatic,
+             ImageSize->All,
+             Method->"Queued"]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ButtonBoxOptions -> {
+             ImageSize -> FrontEnd`CurrentValue["DefaultButtonSize"]}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+         "Grid"]},
+       {
+        ItemBox[
+         FrameBox[
+          TagBox[GridBox[{
+             {
+              PaneBox[
+               TagBox[GridBox[{
+                  {
+                   OverlayBox[{
+                    PaneSelectorBox[{False->
+                    StyleBox[
+                    TagBox[GridBox[{
+                    {
+                    ActionMenuBox["\<\"\[FilledDownTriangle] \"\>", {},
+                    Appearance->None]}
+                    },
+                    AutoDelete->False,
+                    GridBoxAlignment->{"Columns" -> {{Right}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Fit}}, "Rows" -> {{Fit}}}],
+                    "Grid"],
+                    StripOnInput->False,
+                    ShowContents->False], True->
+                    TagBox[GridBox[{
+                    {
+                    ActionMenuBox[
+                    StyleBox["\<\"\[FilledDownTriangle] \"\>",
+                    StripOnInput->False,
+                    LineColor->GrayLevel[0.6],
+                    FrontFaceColor->GrayLevel[0.6],
+                    BackFaceColor->GrayLevel[0.6],
+                    GraphicsColor->GrayLevel[0.6],
+                    FontColor->GrayLevel[0.6]], {
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "InsertCitationDialog", 
+                    "Sort1Label"]]:>($CellContext`data$$ = 
+                    SortBy[$CellContext`data$$, Replace["AuthorID", #]& ]), 
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "InsertCitationDialog", 
+                    "Sort2Label"]]:>($CellContext`data$$ = Reverse[
+                    SortBy[$CellContext`data$$, Replace["AuthorID", #]& ]])},
+                    Appearance->None]}
+                    },
+                    AutoDelete->False,
+                    GridBoxAlignment->{"Columns" -> {{Right}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Fit}}, "Rows" -> {{Fit}}}],
+                    "Grid"]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic], 
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "InsertCitationDialog", "AuthorID"],
+                    ImageSizeCache->{39., {0., 9.}}], "ControlStyle",
+                    StripOnInput->False,
+                    FontWeight->Bold]}, {1, 2}, 1,
+                    Alignment->Center], 
+                   OverlayBox[{
+                    PaneSelectorBox[{False->
+                    StyleBox[
+                    TagBox[GridBox[{
+                    {
+                    ActionMenuBox["\<\"\[FilledDownTriangle] \"\>", {},
+                    Appearance->None]}
+                    },
+                    AutoDelete->False,
+                    GridBoxAlignment->{"Columns" -> {{Right}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Fit}}, "Rows" -> {{Fit}}}],
+                    "Grid"],
+                    StripOnInput->False,
+                    ShowContents->False], True->
+                    TagBox[GridBox[{
+                    {
+                    ActionMenuBox[
+                    StyleBox["\<\"\[FilledDownTriangle] \"\>",
+                    StripOnInput->False,
+                    LineColor->GrayLevel[0.6],
+                    FrontFaceColor->GrayLevel[0.6],
+                    BackFaceColor->GrayLevel[0.6],
+                    GraphicsColor->GrayLevel[0.6],
+                    FontColor->GrayLevel[0.6]], {
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "InsertCitationDialog", 
+                    "Sort1Label"]]:>($CellContext`data$$ = 
+                    SortBy[$CellContext`data$$, Replace["YearID", #]& ]), 
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "InsertCitationDialog", 
+                    "Sort2Label"]]:>($CellContext`data$$ = Reverse[
+                    SortBy[$CellContext`data$$, Replace["YearID", #]& ]])},
+                    Appearance->None]}
+                    },
+                    AutoDelete->False,
+                    GridBoxAlignment->{"Columns" -> {{Right}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Fit}}, "Rows" -> {{Fit}}}],
+                    "Grid"]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic], 
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "InsertCitationDialog", "YearID"],
+                    ImageSizeCache->{32., {1., 9.}}], "ControlStyle",
+                    StripOnInput->False,
+                    FontWeight->Bold]}, {1, 2}, 1,
+                    Alignment->Center], 
+                   OverlayBox[{
+                    PaneSelectorBox[{False->
+                    StyleBox[
+                    TagBox[GridBox[{
+                    {
+                    ActionMenuBox["\<\"\[FilledDownTriangle] \"\>", {},
+                    Appearance->None]}
+                    },
+                    AutoDelete->False,
+                    GridBoxAlignment->{"Columns" -> {{Right}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Fit}}, "Rows" -> {{Fit}}}],
+                    "Grid"],
+                    StripOnInput->False,
+                    ShowContents->False], True->
+                    TagBox[GridBox[{
+                    {
+                    ActionMenuBox[
+                    StyleBox["\<\"\[FilledDownTriangle] \"\>",
+                    StripOnInput->False,
+                    LineColor->GrayLevel[0.6],
+                    FrontFaceColor->GrayLevel[0.6],
+                    BackFaceColor->GrayLevel[0.6],
+                    GraphicsColor->GrayLevel[0.6],
+                    FontColor->GrayLevel[0.6]], {
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "InsertCitationDialog", 
+                    "Sort1Label"]]:>($CellContext`data$$ = 
+                    SortBy[$CellContext`data$$, Replace["TitleID", #]& ]), 
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "InsertCitationDialog", 
+                    "Sort2Label"]]:>($CellContext`data$$ = Reverse[
+                    SortBy[$CellContext`data$$, Replace["TitleID", #]& ]])},
+                    Appearance->None]}
+                    },
+                    AutoDelete->False,
+                    GridBoxAlignment->{"Columns" -> {{Right}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Fit}}, "Rows" -> {{Fit}}}],
+                    "Grid"]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic], 
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "InsertCitationDialog", "TitleID"],
+                    ImageSizeCache->{25., {0., 9.}}], "ControlStyle",
+                    StripOnInput->False,
+                    FontWeight->Bold]}, {1, 2}, 1,
+                    Alignment->Center]}
+                 },
+                 AutoDelete->False,
+                 BaseStyle->"TextStyleInputField",
+                 FrameStyle->GrayLevel[0.5],
+                 
+                 GridBoxDividers->{
+                  "Columns" -> {False, True, True, False}, 
+                   "Rows" -> {False, True}},
+                 GridBoxItemSize->{"Columns" -> {
+                    Scaled[0.35], 
+                    Scaled[0.15], 
+                    Scaled[0.5]}, "Rows" -> {{Automatic}}},
+                 GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}],
+                "Grid"],
+               AppearanceElements->{},
+               ImageSize->{500, All},
+               Scrollbars->{False, True}]},
+             {
+              PaneSelectorBox[{True->
+               PaneBox[
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "FEExpressions", "InfiniteProgress"],
+                 ImageSizeCache->{157., {13.5, 18.5}}],
+                Alignment->{Center, Center},
+                AppearanceElements->{},
+                ImageSize->{500, 240},
+                Scrollbars->{False, True}], False->
+               PaneBox[
+                DynamicBox[ToBoxes[
+                  Grid[
+                   Replace[
+                    
+                    Apply[$CellContext`format$$[{$CellContext`refs$$, \
+$CellContext`searchstring$$}, 
+                    SlotSequence[1]]& , 
+                    ReplaceAll[{"RefID", "AuthorID", "YearID", "TitleID"}, 
+                    If[
+                    Or[
+                    
+                    MemberQ[{
+                    Null, ""}, $CellContext`searchstring$$], \
+$CellContext`data$$ === {}], $CellContext`data$$, 
+                    Pick[$CellContext`data$$, 
+                    Apply[And, 
+                    Map[
+                    StringFreeQ[#, $CellContext`searchstring$$, IgnoreCase -> 
+                    True]& , 
+                    ReplaceAll[{"AuthorID", "YearID", "TitleID"}, 
+                    If[$CellContext`data$$ === 
+                    Null, {}, $CellContext`data$$]]], {1}], False]]], {1}], {
+                    "RefID", 
+                    BlankSequence[]} -> {{"", "", "", ""}}], 
+                   Sequence[
+                   Spacings -> {0, 0}, BaseStyle -> "TextStyleInputField", 
+                    ItemSize -> {{
+                    Scaled[0.35], 
+                    Scaled[0.15], 
+                    Scaled[0.5]}, Automatic}], 
+                   Background -> {White, {Automatic, 
+                    Dynamic[
+                    Thread[Flatten[
+                    Position[
+                    ReplaceAll["RefID", 
+                    If[
+                    Or[
+                    
+                    MemberQ[{Null, 
+                    ""}, $CellContext`searchstring$$], $CellContext`data$$ === \
+{}], $CellContext`data$$, 
+                    Pick[$CellContext`data$$, 
+                    Apply[And, 
+                    Map[
+                    StringFreeQ[#, $CellContext`searchstring$$, IgnoreCase -> 
+                    True]& , 
+                    ReplaceAll[{"AuthorID", "YearID", "TitleID"}, 
+                    
+                    If[$CellContext`data$$ === 
+                    Null, {}, $CellContext`data$$]]], {1}], False]]], 
+                    Apply[Alternatives, $CellContext`refs$$]]] -> 
+                    LightBlue]]}}], StandardForm],
+                 ImageSizeCache->{1812., {54., 15.}}],
+                AppearanceElements->{},
+                ImageSize->{500, 240},
+                Scrollbars->{False, True}]}, Dynamic[If[
+                  Or[
+                   
+                   MemberQ[{
+                    Null, ""}, $CellContext`searchstring$$], \
+$CellContext`data$$ === {}], $CellContext`data$$, 
+                  Pick[$CellContext`data$$, 
+                   Apply[And, 
+                    Map[
+                    StringFreeQ[#, $CellContext`searchstring$$, IgnoreCase -> 
+                    True]& , 
+                    ReplaceAll[{"AuthorID", "YearID", "TitleID"}, 
+                    
+                    If[$CellContext`data$$ === 
+                    Null, {}, $CellContext`data$$]]], {1}], False]] === Null]]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}],
+           "Column"],
+          Background->GrayLevel[1],
+          FrameMargins->0,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False],
+         Alignment->Center,
+         StripOnInput->False]},
+       {
+        ItemBox[
+         FrameBox[
+          PaneBox[
+           DynamicBox[GridBox[
+             If[$CellContext`refs$$ === {}, {{""}}, 
+              Replace[
+               Map[{
+                 FE`Evaluate[
+                  
+                  FEPrivate`GetReferenceDescription[#]]}& , \
+$CellContext`refs$$], Cell[
+                 TextData[
+                  Pattern[$CellContext`x, 
+                   BlankSequence[]]], 
+                 BlankSequence[]] :> FormBox[
+                 RowBox[
+                  Flatten[{$CellContext`x}]], TextForm], {2}]], BaseStyle -> 
+             "TextStyleInputField", FrameStyle -> GrayLevel[0.5], 
+             GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+             GridBoxDividers -> {
+              "Columns" -> {False, {True}, False}, 
+               "Rows" -> {False, {True}, False}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+            ImageSizeCache->{4., {0., 0.}},
+            SynchronousUpdating->False],
+           AppearanceElements->{},
+           ImageSize->{500, {60, 240}},
+           Scrollbars->{False, True}],
+          Background->GrayLevel[1],
+          FrameMargins->0,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False],
+         Alignment->Center,
+         StripOnInput->False]},
+       {
+        PaneBox[
+         TagBox[GridBox[{
+            {
+             StyleBox["\<\"Database:\"\>", "ControlStyle",
+              StripOnInput->False], 
+             ActionMenuBox[
+              DynamicBox[ToBoxes[
+                If[
+                CurrentValue[$FrontEnd, {
+                   PrivateFrontEndOptions, "DialogSettings", "InsertCitation",
+                     "Database"}, ""] === "", "EndNote", 
+                 Tooltip[
+                  FileNameTake[
+                   
+                   CurrentValue[$FrontEnd, {
+                    PrivateFrontEndOptions, "DialogSettings", 
+                    "InsertCitation", "Database"}, ""], -1], 
+                  
+                  CurrentValue[$FrontEnd, {
+                   PrivateFrontEndOptions, "DialogSettings", "InsertCitation",
+                     "Database"}, ""], TooltipDelay -> Automatic]], 
+                StandardForm],
+               ImageSizeCache->{46., {0., 9.}}], {"\<\"EndNote\"\>":>If[
+              CurrentValue[$FrontEnd, {
+                 PrivateFrontEndOptions, "DialogSettings", "InsertCitation", 
+                  "Database"}, ""] =!= "", $CellContext`data$$ = Null; 
+               CurrentValue[$FrontEnd, {
+                  PrivateFrontEndOptions, "DialogSettings", "InsertCitation", 
+                   "Database"}, ""] = ""; $CellContext`data$$ = FE`Evaluate[
+                  FEPrivate`CurrentCitations[True]]], 
+              StyleBox[
+               RowBox[{"BibT", "\[InvisibleSpace]", 
+                AdjustmentBox["E",
+                 BoxBaselineShift->0.5], "\[InvisibleSpace]", "X", 
+                "\[InvisibleSpace]", "..."}],
+               FontVariations->{"CapsType"->"SmallCaps"}]:>(If[
+               FreeQ[{$Canceled, 
+                 
+                 CurrentValue[$FrontEnd, {
+                  PrivateFrontEndOptions, "DialogSettings", "InsertCitation", 
+                   "Database"}, ""]}, #], $CellContext`data$$ = Null; 
+               CurrentValue[$FrontEnd, {
+                  PrivateFrontEndOptions, "DialogSettings", "InsertCitation", 
+                   "Database"}, ""] = #; $CellContext`data$$ = FE`Evaluate[
+                  FEPrivate`CurrentCitations[True, #]]]& )[
+               SystemDialogInput["FileOpen", {
+                 
+                 CurrentValue[$FrontEnd, {
+                  PrivateFrontEndOptions, "DialogSettings", "InsertCitation", 
+                   "Database"}, ""], {
+                 "BibTeX Files (*.bib)" -> {"*.bib"}, "All files" -> {"*"}}}, 
+                WindowTitle -> "Select database file"]]},
+              Method->"Queued"], "", 
+             PaneBox[
+              ButtonBox[
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "InsertCitationDialog", "InsertLabel"],
+                ImageSizeCache->{29., {0., 9.}}],
+               Appearance->"DefaultButton",
+               ButtonFunction:>If[$CellContext`refs$$ =!= {}, 
+                 (FE`Evaluate[
+                  FEPrivate`InsertCitation[#]]& )[$CellContext`refs$$]],
+               Enabled->Dynamic[$CellContext`refs$$ =!= {}],
+               Evaluator->Automatic,
+               ImageSize->FrontEnd`CurrentValue["DefaultButtonSize"],
+               Method->"Preemptive"],
+              ImageMargins->10]}
+           },
+           AutoDelete->False,
+           
+           GridBoxItemSize->{
+            "Columns" -> {{All}}, "ColumnsIndexed" -> {3 -> Fit}}],
+          "Grid"],
+         ImageSize->500]}
+      },
+      DefaultBaseStyle->"Column",
+      GridBoxAlignment->{"Columns" -> {{Left}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+      GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+     "Column"],
+    EventHandlerTag[{
+     "UpArrowKeyDown" :> $CellContext`format$$[{$CellContext`data$$, \
+$CellContext`refs$$, $CellContext`searchstring$$}, -1], 
+      "DownArrowKeyDown" :> $CellContext`format$$[{$CellContext`data$$, \
+$CellContext`refs$$, $CellContext`searchstring$$}, 1], PassEventsDown -> 
+      False, PassEventsUp -> False, Method -> "Preemptive"}]],
+   Deinitialization:>(
+    CurrentValue[$FrontEnd, {
+      PrivateFrontEndOptions, "DialogSettings", "InsertCitation", 
+       WindowMargins}] = CurrentValue[
+      EvaluationNotebook[], WindowMargins]),
+   DynamicModuleValues:>{},
+   Initialization:>(
+    CurrentValue[$FrontEnd, {
+       PrivateFrontEndOptions, "DialogSettings", "InsertCitation", 
+        WindowSize}] = Inherited; 
+    SetAttributes[$CellContext`format$$, HoldFirst]; $CellContext`format$$[{
+        Pattern[$CellContext`ref$, 
+         Blank[]], 
+        Pattern[$CellContext`str$, 
+         Blank[]]}, 
+       Pattern[$CellContext`a$, 
+        Blank[]], 
+       Pattern[$CellContext`b$, 
+        BlankNullSequence[]], 
+       Pattern[$CellContext`c$, 
+        Except[
+         Blank[Symbol]]]] := Thread[
+       $CellContext`format$$[$CellContext`ref$, $CellContext`a$, 
+        (If[
+         FreeQ[{Null, ""}, $CellContext`str$], 
+         StringReplace[#, $CellContext`str$ :> ToString[
+            Style[$CellContext`str$, Background -> Yellow], StandardForm], 
+          IgnoreCase -> True], #]& )[{$CellContext`b$, $CellContext`c$}], {
+        Left, Center, Left}]]; $CellContext`format$$[
+       Pattern[$CellContext`ref, 
+        Blank[Symbol]], 
+       Pattern[$CellContext`a, 
+        Blank[String]], 
+       Pattern[$CellContext`b, 
+        Blank[]], 
+       Pattern[$CellContext`c, 
+        Blank[Symbol]]] := EventHandler[
+       Pane[
+        If[
+         StringQ[$CellContext`b], $CellContext`b, 
+         RawBoxes[$CellContext`b]], Alignment -> {$CellContext`c, Top}, 
+        ImageSize -> Full, FrameMargins -> 5], "MouseDown" :> 
+       If[CurrentValue["MouseClickCount"] == 2, 
+         FE`Evaluate[
+          FEPrivate`InsertCitation[$CellContext`a]], $CellContext`ref = If[
+           If[$OperatingSystem === "MacOSX", 
+            CurrentValue["CommandKey"], 
+            CurrentValue["ControlKey"]], 
+           If[
+            MemberQ[$CellContext`ref, $CellContext`a], 
+            DeleteCases[$CellContext`ref, $CellContext`a], 
+            
+            Flatten[{$CellContext`ref, $CellContext`a}]], {$CellContext`a}]]]; \
+$CellContext`format$$[{
+        Pattern[$CellContext`var, 
+         Blank[]], 
+        Pattern[$CellContext`ref, 
+         Blank[]], 
+        Pattern[$CellContext`ss, 
+         Blank[]]}, 
+       Pattern[$CellContext`x, 
+        Blank[Integer]]] := With[{$CellContext`list = If[
+          Or[
+           
+           MemberQ[{
+            Null, ""}, $CellContext`ss], $CellContext`var === {}], \
+$CellContext`var, 
+          Pick[$CellContext`var, 
+           Apply[And, 
+            Map[StringFreeQ[#, $CellContext`ss, IgnoreCase -> True]& , 
+             
+             ReplaceAll[{
+              "AuthorID", "YearID", "TitleID"}, $CellContext`var]], {1}], 
+           False]]}, $CellContext`ref = Part[
+         ReplaceAll["RefID", $CellContext`list], 
+         Function[{$CellContext`lis}, 
+          If[
+           CurrentValue["ShiftKey"], 
+           Switch[
+            Union[
+             Differences[
+              Sort[$CellContext`lis]]], {}, 
+            Union[
+             Join[$CellContext`lis, 
+              Clip[$CellContext`lis + $CellContext`x, {1, Infinity}]]], {1}, 
+            MapAt[Apply[Sequence, 
+              Union[{
+                Clip[# + $CellContext`x, {1, Infinity}], #}]]& , 
+             Sort[$CellContext`lis], -$CellContext`x], 
+            Blank[], 
+            Through[
+             {Apply[Sequence, 
+               Union[{#, 
+                 Clip[# + $CellContext`x, {1, Infinity}]}]]& , Identity}[
+              Last[$CellContext`lis]]]], {
+            Clip[Last[$CellContext`lis] + $CellContext`x, {1, Infinity}]}]][
+          Replace[
+           Flatten[
+            Position[
+             ReplaceAll["RefID", $CellContext`list], 
+             Apply[
+             Alternatives, $CellContext`ref]]], {} -> {-$CellContext`x}]]]]),
+   UnsavedVariables:>{$CellContext`data$$, $CellContext`format$$},
+   UntrackedVariables:>{$CellContext`format$$}],
+  DynamicModuleValues:>{},
+  Initialization:>($CellContext`data$$ = Replace[
+     FE`Evaluate[
+      FEPrivate`CurrentCitations[False]], $Failed :> (Pause[2]; {})]),
+  SynchronousInitialization->False]],
+ CellMargins->{{8, 8}, {8, 8}},
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue["PanelFontSize"]]
+},
+NotebookEventActions->{"ReturnKeyDown" :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {"MenuCommand", "EvaluateCells"} :> 
+  FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {
+   "MenuCommand", "HandleShiftReturn"} :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {
+   "MenuCommand", "EvaluateNextCell"} :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], "EscapeKeyDown" :> DialogReturn[]},
+WindowSize->All,
+WindowMargins->FrontEnd`CurrentValue[
+ FrontEnd`$FrontEnd, {
+  PrivateFrontEndOptions, "DialogSettings", "InsertCitation", WindowMargins}, 
+  Automatic],
+WindowFrame->"ModelessDialog",
+WindowTitle->Dynamic[
+  FEPrivate`FrontEndResource["InsertCitationDialog", "WindowTitle"]],
+CellContext->"Global`",
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (September 6, 2016)",
+StyleDefinitions->"SystemDialog.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[595, 21, 25203, 603, 451, InheritFromParent,
+ PageBreakAbove->True,
+ PageBreakWithin->False]
+}
+]
+*)
+
+(* End of internal cache information *)
+

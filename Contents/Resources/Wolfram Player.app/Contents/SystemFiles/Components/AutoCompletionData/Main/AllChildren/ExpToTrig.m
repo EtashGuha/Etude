@@ -1,0 +1,11 @@
+{"I", "E", "Exp", "Sqrt", "Pi", "Sin", "Cos", "Quantity", "Integrate", "Log", 
+ "Derivative", "Sum", "Subscript", "None", "Conjugate", "Re", 
+ "InverseLaplaceTransform", "Abs", "Tan", "ComplexExpand", "Sinh", "DSolve", 
+ "Cot", "MatrixExp", "D", "Csc", "HeavisideTheta", "ArcTanh", "Infinity", 
+ "Degree", "Cosh", "Arg", "TrigToExp", "FourierSeries", "BesselI", "Limit", 
+ "Sec", "FresnelC", "Expand", "UnitStep", "Sign", "FourierTransform", 
+ "Floor", "Beta", "BesselJ", "Together", "Tanh", "StruveH", "PlusMinus", 
+ "Im", "Gamma", "Eigenvectors", "DiracDelta", "BaseForm", "ArcTan", "ArcSin", 
+ "ArcCos", "Root", "Range", "PolyLog", "Plus", "MatrixPower", "JacobiP", 
+ "InverseZTransform", "InverseFunction", "InverseFourierTransform", 
+ "Inverse", "Exponent", "Erf", "EllipticE", "Eigenvalues", "ArcSec"}

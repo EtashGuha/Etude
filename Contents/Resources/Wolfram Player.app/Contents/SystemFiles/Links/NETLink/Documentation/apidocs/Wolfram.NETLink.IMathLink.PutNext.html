@@ -1,0 +1,99 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IMathLink.PutNext Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IMathLink.PutNext.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IMathLink.PutNext Method </h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Identifies the type of data element that is to be sent next. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Sub PutNext( _<br />   ByVal <i>type</i> As <a href="Wolfram.NETLink.ExpressionType.html">ExpressionType</a> _<br />)</div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />
+        <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> PutNext(<br />   <a href="Wolfram.NETLink.ExpressionType.html">ExpressionType</a> <i>type</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>type</i>
+        </dt>
+        <dd>The type of expression you will be sending.</dd>
+      </dl>
+      <h4 class="dtH4">Remarks</h4>
+      <p> PutNext is rarely needed. The two most likely uses are to put expressions whose heads are not mere symbols (e.g., Derivative[2][f]), or to put data in so-called "textual" form. Calls to PutNext must be followed by <a href="Wolfram.NETLink.IMathLink.PutSize.html">PutSize</a> and <a href="Wolfram.NETLink.IMathLink.PutData.html">PutData</a>, or by <a href="Wolfram.NETLink.IMathLink.PutArgCount.html">PutArgCount</a> for the ExpressionType.Function type. <p> Here is how you could send Derivative[2][f]: </p>
+            <example>
+            <pre class="code">ml.PutNext(ExpressionType.Function);  // The func we are putting has head Derivative[2], arg f
+ml.PutArgCount(1);                    // this 1 is for the 'f'
+ml.PutNext(ExpressionType.Function);  // The func we are putting has head Derivative, arg 2
+ml.PutArgCount(1);                    // this 1 is for the '2'
+ml.PutSymbol("Derivative");
+ml.Put(2);
+ml.PutSymbol("f");
+</pre>
+            </example>
+            <p> Here is an example of sending an integer in "textual" form. This would be useful if you happened to have the digits of the integer in the form of an array of bytes rather than an int type: </p>
+            <example>
+            <pre class="code">byte[] digits = {(byte)'1', (byte)'2', (byte)'3'};
+ml.PutNext(ExpressionType.Integer);
+ml.PutSize(digits.Length);
+ml.PutData(digits);
+</pre>
+            </example>
+            </p>
+      <h4 class="dtH4">Exceptions</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Exception Type</th>
+            <th width="50%">Condition</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MathLinkException.html">MathLinkException</a>
+            </td>
+            <td width="50%">On any MathLink error.</td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IMathLink.html">IMathLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.IMathLink.PutSize.html">PutSize</a> | <a href="Wolfram.NETLink.IMathLink.PutData.html">PutData</a> | <a href="Wolfram.NETLink.IMathLink.PutArgCount.html">PutArgCount</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="PutNext method">
+        </param>
+        <param name="Keyword" value="PutNext method, IMathLink interface">
+        </param>
+        <param name="Keyword" value="IMathLink.PutNext method">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

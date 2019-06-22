@@ -1,0 +1,67 @@
+@@resource DefaultConnectionRecordName
+New Kernel
+@|
+@|
+@@resource DefaultConnectionRecordName Japanese
+\:65b0\:3057\:3044\:30ab\:30fc\:30cd\:30eb
+@|
+@|
+@@resource DefaultConnectionRecordName ChineseSimplified
+\:65b0\:5185\:6838
+@|
+@|
+@@resource DefaultLocalKernelExecutableName Macintosh
+WolframKernel
+@|
+@@resource DefaultLocalKernelExecutableName X
+wolfram
+@|
+@@resource DefaultLocalKernelExecutableName Windows
+WolframKernel
+@|
+@|
+@@resource DefaultRemoteKernelExecutableName
+wolfram
+@|
+@|
+@@resource DefaultRemoteAccessString Macintosh
+hostname
+@|
+@@resource DefaultRemoteAccessString X
+hostname
+@|
+@@resource DefaultRemoteAccessString Windows
+
+@|
+@|
+@@resource DefaultRemoteLoginString
+username
+@|
+@|
+@@resource LocalKernelMLOpenArgumentsTemplate Macintosh
+-LinkMode Launch -LinkProtocol SharedMemory -LinkName "'`executable`' -wstp" -LinkOptions 3
+@|
+@|
+@@resource LocalKernelMLOpenArgumentsTemplate X
+-LinkMode Launch -LinkProtocol SharedMemory -LinkName "'`executable`' -wstp"
+@|
+@|
+@@resource LocalKernelMLOpenArgumentsTemplate Windows
+-LinkMode Launch -LinkName "`executable` -wstp -noicon"
+@|
+@@resource RemoteKernelMLOpenArgumentsTemplate
+-LinkMode Listen -LinkProtocol TCPIP -LinkOptions MLDontInteract
+@|
+@@resource LocalKernelLoginCommandTemplate
+
+@|
+@|
+@@resource RemoteSSHKernelLoginCommandTemplate Windows
+"`java`" -jar "`wolframssh`" `username`@`host` `executable` -wstp -LinkMode Connect -LinkProtocol TCPIP -LinkName "`linkname`" -LinkHost `ipaddress`
+@|
+@@resource RemoteSSHKernelLoginCommandTemplate Macintosh
+`java` -jar "`wolframssh`" `username`@`host` `executable` -wstp -LinkMode Connect -LinkProtocol TCPIP -LinkName "`linkname`" -LinkHost `ipaddress`
+@|
+@@resource RemoteSSHKernelLoginCommandTemplate X
+`java` -jar `wolframssh` `username`@`host` `executable` -wstp -LinkMode Connect -LinkProtocol TCPIP -LinkName "`linkname`" -LinkHost `ipaddress`
+@|

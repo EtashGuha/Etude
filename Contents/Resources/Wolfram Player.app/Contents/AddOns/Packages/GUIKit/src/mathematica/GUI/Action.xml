@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<widget class="com.wolfram.guikit.event.GUIKitAction">
+	<args ref="##"/>
+</widget>

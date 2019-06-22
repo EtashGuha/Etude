@@ -1,0 +1,350 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     11550,        341]
+NotebookOptionsPosition[     10399,        298]
+NotebookOutlinePosition[     10917,        317]
+CellTagsIndexPosition[     10874,        314]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox[".NET/Link",
+  FontSlant->"Italic"],
+ " Example: Circumcircle"
+}], "Title",
+ CellChangeTimes->{3.412707566063933*^9}],
+
+Cell["\<\
+This example demonstrates some techniques for creating interactive user \
+interfaces with Mathematica code. It shows:\
+\>", "Text",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707589320827*^9}},
+ CellID->264848361],
+
+Cell[TextData[{
+ "drawing into a ",
+ Cell[BoxData["PictureBox"], "InlineFormula"],
+ " with ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code"
+}], "BulletedText",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707619009431*^9}, {
+   3.4127078940129128`*^9, 3.412707894126223*^9}, 3.41270793928232*^9},
+ CellID->1720286743],
+
+Cell[TextData[{
+ "the ",
+ Cell[BoxData[
+  ButtonBox["DoNETModal",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NETLink/ref/DoNETModal"]], "InlineFormula"],
+ " function"
+}], "BulletedText",
+ CellChangeTimes->{{3.412707566063933*^9, 3.4127076216538563`*^9}, {
+  3.412707723849133*^9, 3.4127077763559847`*^9}, {3.412707828669354*^9, 
+  3.412707836740633*^9}},
+ CellID->2073734189],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "the use of ",
+ Cell[BoxData[
+  ButtonBox["AddEventHandler",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NETLink/ref/AddEventHandler"]], "InlineFormula"],
+ " to wire up some simple ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " functions for event callbacks"
+}], "BulletedText",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707624685728*^9}, {
+   3.4127078958961763`*^9, 3.412707896008031*^9}, 3.419876683545248*^9},
+ CellID->1529779993],
+
+Cell[TextData[{
+ "The program allows you to click three points to define the vertices of a \
+triangle, and then it draws the circumcircle (the circle that passes through \
+all three vertices) and demonstrates that the perpendicular bisectors of the \
+sides of the triangle intersect at the circumcenter, the center of the \
+circumcircle. For more information on the circumcircle and related concepts, \
+see the ",
+ StyleBox[ButtonBox["MathWorld",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://mathworld.wolfram.com/Circumcircle.html"], None}],
+  FontSlant->"Italic"],
+ ButtonBox[" page for Circumcircle",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://mathworld.wolfram.com/Circumcircle.html"], None}],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707597948962*^9}, {
+   3.412707959534474*^9, 3.4127079651582813`*^9}, 3.41270800528644*^9},
+ CellID->1286950040],
+
+Cell[TextData[{
+ "To try this example, evaluate all the initialization cells (you can do this \
+using the menu item ",
+ StyleBox[ButtonBox["Evaluation",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/EvaluationMenu"], "MenuName"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter"],
+ StyleBox[ButtonBox["Evaluate Initialization Cells",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/menuitem/EvaluateInitializationCells"], "MenuName"],
+ ") and then go to the Example section."
+}], "Text",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707597948962*^9}, {
+  3.412707959534474*^9, 3.412707967363954*^9}, {3.412708138927157*^9, 
+  3.412708173015101*^9}, {3.412708230174596*^9, 3.412708252892912*^9}},
+ CellID->1738407360]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Code", "Section"],
+
+Cell["\<\
+Needs[\"NETLink`\"]
+
+(* Determines the circumcircle of a triangle. Code from Eric Weisstein's \
+PlaneGeometry.m, available on MathWorld. *)
+Circumcircle[{{x1_,y1_}, {x2_,y2_}, {x3_,y3_}}] :=
+\tModule[{a, d, f, g},
+\t\ta = Det[{{x1,y1,1}, {x2,y2,1}, {x3,y3,1}}];
+\t\td = -1/2 Det[{{x1^2+y1^2,y1,1}, {x2^2+y2^2,y2,1}, {x3^2+y3^2,y3,1}}];
+\t\tf = 1/2 Det[{{x1^2+y1^2,x1,1}, {x2^2+y2^2,x2,1}, {x3^2+y3^2,x3,1}}];
+\t\tg = -Det[{{x1^2+y1^2,x1,y1}, {x2^2+y2^2,x2,y2}, {x3^2+y3^2,x3,y3}}];
+\t\tCircle[{-d/a,-f/a}, Sqrt[(f^2+d^2)/a^2-g/a]]
+\t]
+
+
+(* This is the function that is called to update the Image that the \
+PictureBox holds. Although it creates
+   temporary .NET objects, there is no need to wrap it in NETBlock because it \
+is only called from event callback
+   functions (onMouseMove and onMouseDown), which are always implicitly \
+wrapped in NETBlock by the internals
+   of .NET/Link.
+*)
+updateImage[pictureBox_?NETObjectQ, vertices_List, {blackPen_, redPen_, \
+bluePen_, blackBrush_}] :=
+\tModule[{offScreenBmp, g, circumCenter, circumRadius, midPoints},
+\t\t(* Create an offscreen bitmap and obtain a Graphics object from it that \
+we can use to draw
+\t\t   into the bitmap.
+\t\t*)
+\t\toffScreenBmp = NETNew[\"System.Drawing.Bitmap\", pictureBox@Width, \
+pictureBox@Height]; 
+\t\tg = Graphics`FromImage[offScreenBmp];
+\t\t
+\t\t(* Draw the various lines, points, and circle. For some reason, \
+FillEllipse alone doesn't create a nice small
+\t\t   filled circle, so we also call DrawEllipse to fill in some points on \
+the boundary.
+\t\t*)
+\t\tg@FillEllipse[blackBrush, #1, #2, 6, 6]& @@@ (vertices - 3); 
+\t\tg@DrawEllipse[blackPen, #1, #2, 6, 6]& @@@ (vertices - 3);
+\t\tg@DrawLine[blackPen, #1[[1]], #1[[2]], #2[[1]], #2[[2]]]& @@@ \
+Partition[vertices ~Append~ First[vertices], 2, 1];
+\t\tIf[Length[vertices] == 3,
+\t\t\t{circumCenter, circumRadius} = Round[List @@ Circumcircle[vertices]];
+\t\t\tg@DrawEllipse[redPen, #1, #2, 6, 6]& @@ (circumCenter - 3);  (* 3 is \
+the radius of the points for vertices. *)
+\t\t\tg@DrawEllipse[bluePen, #1, #2, 2 circumRadius, 2 circumRadius]& @@ \
+(circumCenter - circumRadius);
+\t\t\tmidpoints = Round[(#1 + #2)/2 & @@@ Partition[vertices ~Append~ \
+First[vertices], 2, 1]];
+\t\t\tg@DrawLine[redPen, #1, #2, circumCenter[[1]], circumCenter[[2]]]& @@@ \
+midpoints;
+\t\t];
+\t\t
+\t\t(* Set the pictureBox's Image to be the bitmap we have just created and \
+drawn into. Call Refresh() to
+\t\t   force an immediate redraw, which improves smoothness of the animation \
+while dragging.
+\t\t*)
+\t\tpictureBox@Image = offScreenBmp;
+\t\tpictureBox@Refresh[]
+\t]
+\t
+\t
+CircumcircleInteractive[] :=
+\tNETBlock[
+\t\tModule[{form, pictureBox, vertices, draggingVertex, onMouseMove, \
+onMouseDown, lastX, lastY,
+\t\t\t\t\tblackBrush, redPen, bluePen, blackPen},
+\t\t\tInstallNET[];
+\t\t\t
+\t\t\t(* First load some classes from which we need to call static members. \
+No assemblies need to be loaded
+\t\t\t   because the System.Windows.Forms and System.Drawing assemblies are \
+preloaded by .NET/Link.
+\t\t\t*)
+\t\t\tLoadNETType[\"System.Drawing.Color\"];
+\t\t\tLoadNETType[\"System.Windows.Forms.DockStyle\"];
+\t\t\tLoadNETType[\"System.Windows.Forms.Cursors\"];
+\t\t\tLoadNETType[\"System.Drawing.Graphics\"];
+\t\t\t
+\t\t\t(* Now create the main form and picturebox, and set the desired \
+properties. *)
+\t\t\tform = NETNew[\"System.Windows.Forms.Form\"];
+\t\t\tform@Text = \"Circumcircle\";
+\t\t\tform@Width = 350;
+\t\t\tform@Height = 350;
+\t\t\tpictureBox = NETNew[\"System.Windows.Forms.PictureBox\"];
+\t\t\tpictureBox@Parent = form;
+\t\t\tpictureBox@Dock = DockStyle`Fill;
+\t\t\tpictureBox@BackColor = Color`LightGray;
+\t\t\t
+\t\t\t(* Create these drawing resources just once and reuse them in every \
+call to updateImage[]. *)
+\t\t\tblackBrush = NETNew[\"System.Drawing.SolidBrush\", Color`Black];
+\t\t\tredPen = NETNew[\"System.Drawing.Pen\", Color`Red];
+\t\t\tbluePen = NETNew[\"System.Drawing.Pen\", Color`Blue];
+\t\t\tblackPen = NETNew[\"System.Drawing.Pen\", Color`Black];
+\t\t\t
+\t\t\t(* Wire up the event callbacks. *)
+\t\t\tAddEventHandler[pictureBox@MouseDown, onMouseDown];
+\t\t\tAddEventHandler[pictureBox@MouseMove, onMouseMove];
+\t\t\tAddEventHandler[pictureBox@MouseUp, Clear[draggingVertex]&];
+\t\t\t
+\t\t\t(* Define the event callback functions. *)
+\t\t\tonMouseDown[sender_, mouseEvtArgs_] :=
+\t\t\t\tModule[{xPos, yPos},
+\t\t\t\t\t{xPos, yPos} = {mouseEvtArgs@X, mouseEvtArgs@Y};
+\t\t\t\t\tIf[Length[vertices] < 3,
+\t\t\t\t\t\tAppendTo[vertices, {xPos, yPos}];
+\t\t\t\t\t\tupdateImage[sender, vertices, {blackPen, redPen, bluePen, \
+blackBrush}],
+\t\t\t\t\t(* else *)
+\t\t\t\t\t\tdraggingVertex = 
+\t\t\t\t\t\t\tScan[
+\t\t\t\t\t\t\t\tIf[Sqrt[(#[[1,1]] - xPos)^2 + (#[[1,2]] - yPos)^2] < 6,
+\t\t\t\t\t\t\t\t\tReturn[#[[2]]]
+\t\t\t\t\t\t\t\t]&,
+\t\t\t\t\t\t\t\tThread[{vertices, {1,2,3}}]
+\t\t\t\t\t\t\t];
+\t\t\t\t\t\tIf[IntegerQ[draggingVertex],
+\t\t\t\t\t\t\t{lastX, lastY} = {xPos, yPos};
+\t\t\t\t\t\t]
+\t\t\t\t\t]
+\t\t\t\t];
+\t\t\tonMouseMove[sender_, mouseEvtArgs_] :=
+\t\t\t\tModule[{xPos, yPos, isCloseToAnyVertex},
+\t\t\t\t\t{xPos, yPos} = {mouseEvtArgs@X, mouseEvtArgs@Y};
+\t\t\t\t\tWhich[
+\t\t\t\t\t\tIntegerQ[draggingVertex],
+\t\t\t\t\t\t\t(* Do the drag *)
+\t\t\t\t\t\t\tvertices[[draggingVertex]] += {xPos - lastX, yPos - lastY};
+\t\t\t\t\t\t\t{lastX, lastY} = {xPos, yPos};
+\t\t\t\t\t\t\tupdateImage[sender, vertices, {blackPen, redPen, bluePen, \
+blackBrush}],
+\t\t\t\t\t\tLength[vertices] == 3,
+\t\t\t\t\t\t\t(* Set the Hand cursor if close to any of the vertices. *)
+\t\t\t\t\t\t\tisCloseToAnyVertex = Scan[If[Sqrt[(#[[1]] - xPos)^2 + (#[[2]] - \
+yPos)^2] < 6, Return[True]]&, vertices];
+\t\t\t\t\t\t\tsender@Cursor = If[TrueQ[isCloseToAnyVertex], Cursors`Hand, \
+Cursors`Arrow]
+\t\t\t\t\t];
+\t\t\t\t];
+\t\t\t\t
+\t\t\t(* Initialize and run modally. *)
+\t\t\tvertices = {};
+\t\t\tDoNETModal[form]
+\t\t]
+\t]\
+\>", "Input",
+ PageWidth->Infinity,
+ CellContext->Notebook,
+ InitializationCell->True,
+ ShowSpecialCharacters->False,
+ CellLabel->"In[12]:="]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Section"],
+
+Cell["CircumcircleInteractive[]", "Input",
+ CellContext->Notebook,
+ CellLabel->"In[23]:="],
+
+Cell["\<\
+Click the mouse three times to define the vertices of a triangle. You can \
+then drag any of the vertices and watch the figure change. The blue circle is \
+the circumcircle and the red lines are the perpendicular bisectors of the \
+sides of the triangle. Note that the three bisectors intersect at the \
+circumcenter.\
+\>", "Text"]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{707, 803},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->(None& ),
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "WindowsANSI"],
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 143, 5, 47, "Title"],
+Cell[713, 29, 227, 5, 48, "Text",
+ CellID->264848361],
+Cell[943, 36, 331, 10, 24, "BulletedText",
+ CellID->1720286743],
+Cell[1277, 48, 377, 11, 24, "BulletedText",
+ CellID->2073734189],
+Cell[CellGroupData[{
+Cell[1679, 63, 465, 13, 39, "BulletedText",
+ CellID->1529779993],
+Cell[2147, 78, 902, 20, 102, "Text",
+ CellID->1286950040],
+Cell[3052, 100, 729, 15, 48, "Text",
+ CellID->1738407360]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3818, 120, 23, 0, 62, "Section"],
+Cell[3844, 122, 6027, 155, 2119, "Input",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9908, 282, 26, 0, 42, "Section"],
+Cell[9937, 284, 90, 2, 28, "Input"],
+Cell[10030, 288, 341, 6, 84, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

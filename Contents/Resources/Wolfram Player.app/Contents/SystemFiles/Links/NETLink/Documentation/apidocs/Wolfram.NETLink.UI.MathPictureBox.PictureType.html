@@ -1,0 +1,65 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>PictureType Property</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.UI.MathPictureBox.PictureType.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">MathPictureBox.PictureType Property</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Sets the type of picture that the box should display. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Public Property PictureType As <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemStringClassTopic.htm">String</a></div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />public <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemStringClassTopic.htm">string</a> PictureType {get; set;}</div>
+      <p>
+      </p>
+      <h4 class="dtH4">Remarks</h4>
+      <p> The legal values are "Automatic", "GIF", "JPEG", "Metafile", "StandardForm", and "TraditionalForm". The values "Automatic", "GIF", "JPEG", and "Metafile" specify a graphics format. If you use one of these, then the <a href="Wolfram.NETLink.UI.MathPictureBox.MathCommand.html">MathCommand</a> property should be something that evaluates to a Graphics expression (or Graphics3D, SurfaceGraphics, etc.) It must <bold>evaluate</bold> to a Graphics expression, not merely produce a plot as a side effect. A common error is to end the code with a semicolon, which causes the expression to evaluate to Null, not the intended Graphics: <pre class="code">// BAD
+myMathPictureBox.MathCommand = "Plot[x, {x,0,1}];";
+    
+// GOOD
+myMathPictureBox.MathCommand = "Plot[x, {x,0,1}]";
+</pre> The "Automatic" setting is the default, which assumes you are trying to display graphics, not typeset expressions, and it will automatically select the best graphics format. If you want the graphic to dynamically resize as the MathPictureBox is being resized, you should use the "Metafile" format. <p> The values "StandardForm" or "TraditionalForm" indicate that you want the result of the MathCommand to be typeset in that format and displayed. These settings are not used if you want a <i>Mathematica</i> plot or other graphic. </p>
+            </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.UI.MathPictureBox.html">MathPictureBox Class</a> | <a href="Wolfram.NETLink.UI.html">Wolfram.NETLink.UI Namespace</a> | <a href="Wolfram.NETLink.UI.MathPictureBox.MathCommand.html">MathCommand</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="PictureType property">
+        </param>
+        <param name="Keyword" value="PictureType property, MathPictureBox class">
+        </param>
+        <param name="Keyword" value="MathPictureBox.PictureType property">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1542 @@
+@| Mathematica notebook dialogs
+@|
+@|
+@|
+@@resource ActivationDialog
+{
+"AboutCDFPlayerPro" -> "Aprenda m\[AAcute]s acerca de Wolfram Player Pro",
+"ActivateButtonLabel" -> "Activar",
+"ActivateMethodLabel" -> "Otros modos de activaci\[OAcute]n",
+"ActKeyLabel" -> "Clave de activaci\[OAcute]n",
+"FinishLabel" -> "Finalizar",
+"LicenseSubtitle" -> "Activar",
+"LicenseText" -> "Ingrese la informaci\[OAcute]n a continuaci\[OAcute]n.",
+"ManualActivateText1" -> RawBoxes[StyleBox[RowBox[{"\"Contacte a \"", 
+   TagBox[ButtonBox[
+    PaneSelectorBox[{False -> 
+       StyleBox["\"Wolfram Research\"", "Chevron"], 
+      True -> StyleBox["\"Wolfram Research\"", "HyperlinkActive"]}, 
+     Dynamic[CurrentValue["MouseOver"]]], BaseStyle -> {"Hyperlink", Bold}, 
+    Evaluator -> Automatic, 
+    ButtonFunction :> (CurrentValue[
+        ButtonNotebook[], {TaggingRules, "ActivationState"}] = 
+       "Contact")], MouseAppearanceTag["LinkHand"]], "\" para solicitar una contrase\[NTilde]a o para utilizar el \"", 
+   TagBox[ButtonBox[
+    PaneSelectorBox[{False -> 
+       StyleBox["\"generador de contrase\[NTilde]as en l\[IAcute]nea\"", "Chevron"], 
+      True -> StyleBox["\"generador de contrase\[NTilde]as en l\[IAcute]nea\"", 
+        "HyperlinkActive"]}, Dynamic[CurrentValue["MouseOver"]]], 
+    BaseStyle -> {"Hyperlink", Bold}, Evaluator -> Automatic, 
+    ButtonFunction :> 
+     FE`hyperlinkCoded[
+      "http://user.wolfram.com/portal/passwordrequest.html", 
+      "mathid=" <> FE`Evaluate[FEPrivate`$MachineID]]], MouseAppearanceTag["LinkHand"]], 
+      StyleBox["\".\"", FontWeight -> Bold],"\" Importante: Deber\[AAcute] proporcionar su clave de activaci\[OAcute]n y el MathID generados para su equipo.\""
+   }],  AutoSpacing -> False]],
+"ManualActivateNote" -> "Importante: Deber\[AAcute] proporcionar su clave de activaci\[OAcute]n y el MathID generados para su equipo.",
+"ManualActivateText2" -> "Ingrese su clave de activaci\[OAcute]n y contrase\[NTilde]a a continuaci\[OAcute]n y haga clic en el bot\[OAcute]n de Activar.",
+"ManualActivateStep1" -> "Paso 1:",
+"ManualActivateStep2" -> "Paso 2:",
+"ManualActivateSubtitle" -> "Activar manualmente",
+"MathIDLabel" -> "MathID:",
+"ContactTitle" -> "Contactar a Wolfram Research para activar su producto manualmente",
+"ContactSubtitle" -> "Si no puede activar su producto en l\[IAcute]nea, y no puede acceder al formulario del \ngenerador de contrase\[NTilde]as en el Portal de Usuarios Wolfram; por favor, cont\[AAcute]ctenos.",
+"ContactWithText" -> "Usted deber\[AAcute] proporcionar:",
+"ContactKeyLabel" -> "\[Bullet] Su clave de activaci\[OAcute]n: ",
+"ContactIDLabel" -> "\[Bullet] MathID: ",
+"ContactNameInc" -> "Wolfram Research, Inc.",
+"ContactNameLtd" -> "Wolfram Research Europe Ltd.",
+"ContactAddrInc" -> "1-217-398-0700 or\n1-800-WOLFRAM (965-3726; EE. UU. y Canad\[AAcute] solamente)\nLunes\[Dash]viernes, 9\[Dash]17\nEE.UU. Zona Centro\n\ninfo@wolfram.com\nfacs\[IAcute]mil: 1-217-398-0747",
+"ContactAddrLtd" -> "+44-(0)1993-883400\nLunes\[Dash]viernes, 8[Dash]17\nGMT (Greenwich Mean Time)\n\ninfo@wolfram.co.uk\nfacs\[IAcute]mil: +44-(0)1993-883800",
+"BackLabel" -> "Volver",
+"MethodManualLabel" -> "Activaci\[OAcute]n manual",
+"MethodManualText" -> "Use este m\[EAcute]todo si tiene problemas con la activaci\[OAcute]n en l\[IAcute]nea.",
+"MethodNetworkLabel" -> "Con\[EAcute]ctese al servidor de licencias en red",
+"MethodNetworkText" -> "Use este m\[EAcute]todo si est\[AAcute] en una red con MathLM, el servidor de licencias en red del Sistema Wolfram.",
+"MethodOnlineLabel" -> "Activaci\[OAcute]n en l\[IAcute]nea (Recomendada)",
+"MethodOnlineText" -> "Su equipo debe estar conectado a internet.",
+"MethodSubtitle" -> "Seleccione un m\[EAcute]todo para activar",
+"NameLabel" -> "Nombre",
+"NetworkSubtitle" -> "Con\[EAcute]ctese al servidor de licencias en red",
+"NetworkText" -> "Ingrese el nombre o direcci\[OAcute]n IP del equipo que est\[AAcute] ejecutando el servidor de licencias MathLM.",
+"OrganizationLabel" -> "Organizaci\[OAcute]n",
+"OnlineActivateText" -> "Escriba su clave de activaci\[OAcute]n a continuaci\[OAcute]n y haga clic en el bot\[OAcute]n de Activar.",
+"OnlineActivateLink" -> "\[DownQuestion]En qu\[EAcute] consiste la activaci\[OAcute]n en l\[IAcute]nea?",
+"OnlineActivateSubtitle" -> "Active en l\[IAcute]nea",
+"PasswordLabel" -> "Contrase\[NTilde]a",
+"PrivacyPolicyLink" -> "Pol\[IAcute]tica de privacidad de Wolfram",
+"ProgressSubtitle" -> "Activaci\[OAcute]n en proceso...",
+"ProgressText" -> "Intentando activar en este momento.",
+"ServerLabel" -> "Nombre del servidor",
+"SuccessText" -> "\[DownExclamation]La activaci\[OAcute]n fue un \[EAcute]xito!",
+"WindowTitle" -> "Activaci\[OAcute]n de su producto Wolfram",
+"ContactActivationLink" -> RawBoxes[ButtonBox[
+    "\<\"Contacte a Wolfram Research \[RightGuillemet]\"\>",
+    BaseStyle -> "ContactActivationLinkUnbold"]],
+
+"ExpiredBuyText" -> "Quiero adquirir el Sistema Wolfram",
+"ExpiredContactText" -> "\[DownQuestion]Necesita m\[AAcute]s informaci\[OAcute]n o asistencia? ",
+"ExpiredExtendText" -> "Quiero una nueva clave de activaci\[OAcute]n",
+"ExpiredRequestText" -> "Quiero solicitar una extensi\[OAcute]n para mi clave de activaci\[OAcute]n",
+"ExpiredSubtitle" -> "Su licencia ha expirado",
+"ExpiredBuyButton" -> "\[DownQuestion]C\[OAcute]mo comprar?",
+"ExpiredExtendButton" -> "Ingrese su clave de activaci\[OAcute]n",
+"ExpiredRequestButton" -> "Solicite una extensi\[OAcute]n",
+
+"LicenseAgreementSubtitle" -> "Lea el Acuerdo de Licencia del Sistema Wolfram",
+"LicenseAgreementSubtext" -> "Para usar este producto usted debe leer y aceptar los t\[EAcute]rminos del siguiente acuerdo:",
+"LicenseAgreementLabel" -> "Acepto los t\[EAcute]rminos de este acuerdo",
+"LicenseAgreementPrintLabel" -> "Imprimir",
+"LicenseAgreementLoading" -> "Carga de traducci\[OAcute]n en proceso...",
+"LicenseAgreementWindowTitle" -> "Acuerdo de Licencia del Sistema Wolfram",
+
+"RegistrationDownload" -> "Acceda a sus \ndescargas de software",
+"RegistrationNow" -> "Reg\[IAcute]strese ahora",
+"RegistrationLater" -> "Reg\[IAcute]strese m\[AAcute]s tarde",
+"RegistrationManage" -> RawBoxes[RowBox[{"Administre sus beneficios de ", StyleBox["Premier Service", FontSlant->"Italic"], ""}]],
+"RegistrationMore" -> "Y m\[AAcute]s...",
+"RegistrationNever" -> "No preguntar de nuevo",
+"RegistrationNotification" -> "Obtener notificaciones sobre\nactualizaciones y \ndescuentos especiales",
+"RegistrationSubtitle" -> "Registre su producto en el Portal de Usuario Wolfram para:",
+"RegistrationTitle" -> "Acceda a sus beneficios. \[DownExclamation]Reg\[IAcute]strese ahora!",
+"RegistrationView" -> "Vea la informaci\[OAcute]n de sus\n productos",
+"RegistrationWindowTitle" -> "Registro de productos Wolfram",
+
+"CancelButtonText" -> "Salir",
+"ForgottenPWText" -> "\[DownQuestion]Olvid\[OAcute] su contrase\[NTilde]a?",
+"RememberMeText" -> "Recu\[EAcute]rdeme",
+"SignInTitle" -> "Inicie sesi\[OAcute]n usando su Wolfram ID",
+"SignInButtonText" -> "Inicie sesi\[OAcute]n",
+"SignInPendingText" -> "En proceso\[Ellipsis]",
+"UserIDFieldHint" -> "Wolfram ID",
+"UserPWFieldHint" -> "Contrase\[NTilde]a"
+
+}
+@|
+@@resource CommonFrontEndInitDialogs
+{
+"AllFilesLabel"-> "Todos los archivos",
+"WolframFilesLabel" -> "Archivos Wolfram (*.nb, *.cdf, *.nbp, *.wl, *.wls, *.m, *.ma)",
+"PictureFilesLabel" -> "Archivos de imagen",
+"RichTextFormatLabel" -> "Formato de texto enriquecido (*.rtf)",
+"TextFilesLabel" -> "Archivos de texto",
+"EPSLabel" -> "EPS",
+"GIFLabel" -> "GIF",
+"JPEGLabel" -> "JPEG",
+"PDFLabel" -> "PDF",
+"PNGLabel" -> "PNG",
+"TIFFLabel" -> "TIFF",
+"HTMLLabel" -> "HTML",
+"BMPLabel" -> "BMP",
+"PXRLabel" -> "PXR",
+"SVGLabel" -> "SVG",
+"RawLabel" -> "Raw",
+"NBLabel" -> "Cuaderno Wolfram (*.nb)",
+"MXLabel" -> "Archivo .mx (*.mx)",
+"WSTPLabel" -> "Programa WSTP (*.exe)",
+"CDFLabel" -> "Documento computable (*.cdf)",
+"WLLabel" -> "Paquete Wolfram Language (*.wl)",
+"MLabel" -> "Paquete Wolfram Mathematica (*.m)",
+"WLSLabel" -> "Secuencia de comandos de Wolfram Language (*.wls)",
+"PlainTextLabel" -> "Texto sin formato (*.txt)",
+"LatexLabel" -> "Documento LaTeX (*.tex)",
+"PostScriptLabel" -> "Documento PostScript (*.ps)",
+"PDFDocLabel" -> "PDF Document (*.pdf)",
+"WebPageLabel" -> "P\[AAcute]gina web (*.html)",
+"XMLLabel" -> "XML -- XHTML+MathML (*.xml)"
+}
+@|
+@@resource DeployCDFDialog
+{
+"Browse" -> "NAVEGAR",
+"Cancel" -> "CANCELAR",
+"Close" -> "CERRAR",
+"CodeSubtitle" -> "\!\(\*\nStyleBox[\"Note:\",\nFontWeight->\"Bold\"]\) Este script autom\[AAcute]ticamente notifica a usuarios sin el complemento de CDF para que lo descarguen.",
+"CodeTitle" -> "Copie el c\[OAcute]digo a continuaci\[OAcute]n y p\[EAcute]guelo en la ubicaci\[OAcute]n deseada dentro de su p\[AAcute]gina HTML.",
+"Continue" -> "CONTINUAR",
+"FileSaved" -> "\[DownExclamation]Su archivo ha sido implementado con \[EAcute]xito!",
+"IntroSubtitle" -> StyleBox[RowBox[{"\"La creaci\[OAcute]n de archivos CDF est\[AAcute] sujeta a los t\[EAcute]rminos de uso de \"",
+    TagBox[ButtonBox[
+    PaneSelectorBox[{False -> "\"FreeCDF\"",
+      True -> StyleBox[
+	    "\"FreeCDF\"", {"HyperlinkActive"}]},
+     Dynamic[CurrentValue["MouseOver"],
+      ImageSizeCache -> {36.`, {1.`, 8.`}}],
+     BaselinePosition -> Baseline, BaseStyle -> {"Hyperlink"},
+     FrameMargins -> 0, ImageSize -> Automatic],
+    BaseStyle -> "Hyperlink",
+    ButtonData -> {URL[
+   	 	"http://www.wolfram.com/cdf/adopting-cdf/licensing-options.\
+html"], None}], MouseAppearanceTag["LinkHand"]],
+"\" t\[EAcute]rminos de uso .\""}], LineIndent -> -0.05],
+"IntroText" -> StyleBox[RowBox[{"\"Bajo estos t\[EAcute]rminos, su documento CDF lleva\"",
+    TagBox[ButtonBox[
+    PaneSelectorBox[{False -> "\"la licencia Attribution-ShareAlike\"", 
+      True -> StyleBox[
+        "\"la licencia Attribution-ShareAlike\"", {"HyperlinkActive"}]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], 
+     BaselinePosition -> Baseline, BaseStyle -> {"Hyperlink"}, 
+     FrameMargins -> 0, ImageSize -> Automatic], 
+    BaseStyle -> "Hyperlink", 
+    ButtonData -> {URL[
+       "http://creativecommons.org/licenses/by-sa/3.0/"], None}], MouseAppearanceTag["LinkHand"]],
+"\" (CC BY-SA).\""}], LineIndent -> -0.05],
+"IntroText1" -> "Cobrar a otros por usar sus CDF",
+"IntroText2" -> "Evitar que otros publiquen o distribuyan CDF que les d\[EAcute] usted",
+"IntroText3" -> "Eliminar nuestro logo u otra marca a la vista",
+"IntroContactText" -> StyleBox[RowBox[{"\"Para desarrollos empresariales y comerciales, por favor \"",
+    TagBox[ButtonBox[
+    PaneSelectorBox[{False -> "\"cont\[AAcute]ctenos\"", 
+      True -> StyleBox[
+        "\"cont\[AAcute]ctenos\"", {"HyperlinkActive"}]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], 
+     BaselinePosition -> Baseline, BaseStyle -> {"Hyperlink"}, 
+     FrameMargins -> 0, ImageSize -> Automatic], 
+    BaseStyle -> "Hyperlink", 
+    ButtonData -> {URL[
+       "http://www.wolfram.com/cdf/contact-us/"], None}], MouseAppearanceTag["LinkHand"]],
+"\".\""}], LineIndent -> -0.05],
+"IntroTitle" -> "Este asistente lo ayudar\[AAcute] a implementar contenido de CDF aut\[OAcute]nomo.",
+"IntroTitleWeb" -> "Este asistente lo ayudar\[AAcute] a implementar contenido de CDF insertado en p\[AAcute]ginas web HTML.",
+"OpenDirectory" -> "Abrir folder de contenidos",
+"OpenFile" -> "Abrir archivos",
+"Preview" -> "Vista previa",
+"Previous" -> "ANTERIOR",
+"SaveAll" -> "Documento completo",
+"SaveError" -> "\[DownExclamation]no se puede crear un CDF en el lugar especificado!",
+"SaveFormat" -> "Documento computable (*.cdf)",
+"SaveLocation" -> "\[DownQuestion]En d\[OAcute]nde desea guardar su archivo?",
+"SaveSelection" -> "Selecci\[OAcute]n actual",
+"SaveSubtitle" -> "\[DownQuestion]Qu\[EAcute] desea publicar?",
+"SaveTitle" -> "Primero, guarde el archivo en su computadora.",
+"Steps3Header" -> GridBox[{{"\"Paso 1\"", "\"Paso 2\"", "\"Paso 3\""}, {"\"Introducci\[OAcute]n\"", "\"Guardar como CDF\"", "\"Conclusi\[OAcute]n\""}}, GridBoxItemSize -> {"Rows" -> {{Automatic}}, "Columns" -> {{Scaled[0.33]}}}, GridBoxItemStyle -> {"Columns" -> {{Automatic}}, "Rows" -> {Plain, Bold}}],
+"Steps4Header" -> GridBox[{{"\"Paso 1\"", "\"Paso 2\"", "\"Paso 3\"", "\"Paso 4\""}, {"\"Introducci\[OAcute]n\"", "\"Guardar localmente\"", "\"Subir al servidor\"", "\"C\[OAcute]digo de inserci\[OAcute]n\""}}, GridBoxItemSize -> {"Rows" -> {{Automatic}}, "Columns" -> {{Scaled[0.25]}}}, GridBoxItemStyle -> {"Columns" -> {{Automatic}}, "Rows" -> {Plain, Bold}}],
+"UploadDifferent" -> "Los archivos est\[AAcute]n en un directorio diferente...",
+"UploadSame" -> "El archivo y la pagina web est\[AAcute]n en el mismo directorio.",
+"UploadSelectionTitle" -> "\[DownQuestion]D\[OAcute]nde est\[AAcute]n los archivos con respecto a la p\[AAcute]gina donde se van a insertar?",
+"UploadSubtitle" -> "Cargue los archivos a su servidor.",
+"UploadTitle" -> "Se han creado los siguientes archivos:",
+"WindowTitleEmbed" -> "Asistente de implementaci\[OAcute]n de CDF en la web",
+"WindowTitleAlone" -> "Asistente de implementaci\[OAcute]n aut\[OAcute]noma de CDF",
+"IntroEnterpriseQuery" -> "\[DownQuestion]Cu\[AAcute]l licencia le gustar\[IAcute]a utilizar?",
+"IntroEnterpriseHeaderChoice1" -> "Implementaci\[OAcute]n empresarial de CDF",
+"IntroEnterpriseTextChoice1" -> StyleBox[RowBox[{"\"Los archivos de CDF implementados con esta opci\[OAcute]n ofrecen \"",
+    TagBox[ButtonBox[
+    PaneSelectorBox[{False -> "\"capacidades mejoradas\"", 
+      True -> StyleBox[
+        "\"capacidades mejoradas\"", {"HyperlinkActive"}]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], 
+     BaselinePosition -> Baseline, BaseStyle -> {"Hyperlink"}, 
+     FrameMargins -> 0, ImageSize -> Automatic], 
+    BaseStyle -> "Hyperlink", 
+    ButtonData -> {URL[
+       "http://www.wolfram.com/cdf/adopting-cdf/enterprise-deployment.html"], None}], MouseAppearanceTag["LinkHand"]],
+"\". Por favor consulte su licencia de software sobre sus t\[EAcute]rminos de uso.\""}], LineIndent -> -0.05],
+"IntroEnterpriseHeaderChoice2" -> "FreeCDF",
+"CDFDimensions" -> "Dimensiones de CDF"
+}
+@|
+@@resource PreferencesDialog
+{
+"AutoSpellCheckText" -> "Revisar la ortograf\[IAcute]a mientras escribe",
+"WindowTitleLabel" -> "Preferencias",
+"SystemInformationTitleLabel" -> "Informaci\[OAcute]n sobre el Sistema Wolfram",
+"InterfaceLabel" -> "Interfaz",
+"EvaluationLabel" -> "Evaluaci\[OAcute]n",
+"MessagesLabel" -> "Mensajes",
+"AppearanceLabel" -> "Apariencia",
+"ServicesLabel" -> "Servicios",
+"SecurityLabel" -> "Seguridad",
+"SystemSecurityText" -> "Seguridad del sistema",
+"SystemSecurityLeadInText" -> "Funciones de canal externo:",
+"ExternalChannelEnabled" -> StyleBox["\tHabilitar", FontSlant -> Italic],
+"ExternalChannelDisabled" -> StyleBox["\tDeshabilitar", FontSlant -> Italic],
+"ExternalChannelButtonEnable" -> "Habilitar",
+"ExternalChannelButtonDisable" -> "Deshabilitar",
+"InternetConnectivityLabel" -> "Internet y correo electr\[OAcute]nico",
+"AdvancedLabel" -> "Avanzado",
+"ParallelLabel" -> "Paralelo",
+"SyntaxColoringLabel" -> "Coloraci\[OAcute]n de sintaxis",
+"DebuggerLabel" -> "Depurador",
+"NumbersLabel" -> "N\[UAcute]meros",
+"GraphicsLabel" -> "Gr\[AAcute]ficos",
+"InheritedLanguageLabel" -> "Igual que el lenguaje de interfaz del usuario",
+"EnglishLabel" -> "Ingl\[EAcute]s",
+"ChineseSimplifiedWord" -> "Chinese, Simplified",
+"ChineseSimplifiedTranslation" -> "\:7b80\:4f53\:4e2d\:6587",
+"ChineseTraditionalWord" -> "Chinese, Traditional",
+"ChineseTraditionalTranslation" -> "\:7e41\:9ad4\:4e2d\:6587",
+"FrenchWord" -> "French",
+"FrenchTranslation" -> "Fran\[CCedilla]ais",
+"GermanWord" -> "German",
+"GermanTranslation" -> "Deutsch",
+"GreekWord" -> "Greek",
+"GreekTranslation" -> "\[CapitalEpsilon]\[Lambda]\[Lambda]\[Eta]\[Nu]\[Iota]\[Kappa]\!\(\*OverscriptBox[\"\[Eta]\", \"'\"]\)",
+"ItalianWord" -> "Italian",
+"ItalianTranslation" -> "Italiano",
+"JapaneseWord" -> "Japanese",
+"JapaneseTranslation" -> "\:65e5\:672c\:8a9e",
+"KoreanWord" -> "Korean",
+"KoreanTranslation" -> "\:d55c\:ad6d\:c5b4",
+"LithuanianWord" -> "Lithuanian",
+"LithuanianTranslation" -> "Lietuvi\[SHacek]kai",
+"PolishWord" -> "Polish",
+"PolishTranslation" -> "Polski",
+"PortugueseWord" -> "Portuguese",
+"PortugueseTranslation" -> "Portugu\[EHat]s",
+"RussianWord" -> "Russian",
+"RussianTranslation" -> "\:0420\:0443\:0441\:0441\:043a\:0438\:0439",
+"SpanishWord" -> "Spanish",
+"SpanishTranslation" -> "Espa\[NTilde]ol",
+"UkrainianWord" -> "Ukrainian",
+"UkrainianTranslation" -> "\:0423\:043a\:0440\:0430\:0457\:043d\:0441\:044c\:043a\:0430",
+"VietnameseWord" -> "Vietnamese",
+"VietnameseTranslation" -> "Ti\:1ebfng Vi\:1ec7t",
+"LanguageText" -> "Lenguaje:",
+"UserInterfaceText" -> "Configuraci\[OAcute]n de interfaz de usuario",
+"OtherLangText" -> StyleBox["(Traducciones para la interfaz de usuario puede que no est\[EAcute]n disponibles en algunos lenguajes.)", FontSlant -> Italic],
+"ShowCodeTransText" -> RowBox[{"Mostrar traducciones de c\[OAcute]digo ", StyleBox["(s\[OAcute]lo para lenguas distintas del ingl\[EAcute]s)", FontSlant -> Italic]}],
+"CodeCaptionLanguageText" -> "Mostrar traducciones:",
+"GroupIconText" -> "Mostrar los \[IAcute]conos de apertura de grupo de celda:",
+"CursorTrackerText" -> "Mostrar cursor cuando el punto de inserci\[OAcute]n se mueva inesperadamente",
+"SmartQuotesText" -> {"Habilitar comillas tipogr\[AAcute]ficas para ", "edici\[OAcute]n normal de texto y  ", "al pegar"},
+"DragDropText" -> "Activar edici\[OAcute]n de texto con arrastrar y soltar",
+"BlinkText" -> "Activar punto de inserci\[OAcute]n de celda centelleante",
+"AutoRescaleText" -> "Reajustar autom\[AAcute]ticamente gr\[AAcute]ficos 3D despu\[EAcute]s de una rotaci\[OAcute]n",
+"CompletionCaseText" -> "Coincidir may\[UAcute]sculas al completar el comando",
+"FunctionTemplatesText" -> "Habilitar destacado din\[AAcute]mico",
+"AutoConvertEnableText" -> "Habilitar detecci\[OAcute]n de lenguaje natural",
+"CodeAssistPopupText" -> {"Habilitar finalizaci\[OAcute]n autom\[AAcute]tica con ventana emergente con retraso de ", " segundos"},
+"FloatingElementText" -> {"Habilitar elementos flotantes con ventana emergente con retraso de ", " segundos"},
+"PredictiveInterfaceText" -> "Mostrar la barra de sugerencias despu\[EAcute]s de la \[UAcute]ltima salida",
+"DefaultStylingText" -> "Preguntar si desea actualizar el estilo predeterminado al abrir cuadernos de versiones anteriores",
+"IgnoreText" -> "Ignorar",
+"BeepText" -> "Pitido",
+"Print3DHeader" -> "Imprimir vista previa en 3D",
+"Print3DLeadInText" -> "Aplicaci\[OAcute]n de vista previa para impresi\[OAcute]n en 3D:",
+"PrintInputText" -> "Imprimir en cuaderno de entrada",
+"PrintConsoleText" -> "Imprimir en consola",
+"PutUpDialogText" -> "Mostrar un cuadro de di\[AAcute]logo",
+"BeepInputText" -> "Emitir pitido e imprimir en cuaderno de entrada",
+"BeepConsoleText" -> "Emitir pitido e imprimir en consola",
+"BeepDialogText" -> "Emitir pitido y mostrar cuadro de di\[AAcute]logo",
+"SystemSettingsText" -> "Configuraci\[OAcute]n del sistema",
+"VersionedPrefsText" -> "Crear y mantener preferencias de interfaz de usuario espec\[IAcute]ficas de la versi\[OAcute]n espec\[IAcute]fica",
+"ShowAtStartupText" -> "Mostrar al inicio: ",
+"ShowWelcomeAtStartup" -> "Pantalla de Bienvenida",
+"ShowNewAtStartup" -> "Documento nuevo",
+"ShowBothAtStartup" -> "Pantalla de Bienvenida y documento nuevo",
+"MathExtrasText" -> "Instalar Extras de Wolfram",
+"NotInstalledText" -> StyleBox["\tNo est\[AAcute] instalado", FontSlant -> Italic, FontColor -> RGBColor[{1, 0, 0}]],
+"NotApplicableText" -> StyleBox["\tNo aplica", FontSlant -> Italic],
+"NeedsUpdatingText" -> StyleBox["\tRequire de actualizaci\[OAcute]n", FontSlant -> Italic, FontColor -> RGBColor[{1, 0, 0}]],
+"InstalledText" -> StyleBox["\tInstalado", FontSlant -> Italic],
+"RulerText" -> "Unidades de regla:",
+"RulerUnits" -> {"Pulgadas", "DecimalInches", "Puntos", "Picas", "Cent\[IAcute]metros", "Mil\[IAcute]metros"},
+"HistoryText" -> "Longitud de historial de archivos abiertos recientemente:",
+"WarningsText" -> "Advertencias leves sobre la interfaz de usuario:",
+"ErrorsText" -> "Errores graves de la interfaz de usuario:",
+"MessagesText" -> "Mensajes de registro de interfaz de usuario:",
+"FormattingErrorsText" -> "Indicaciones de error de formateo:",
+"HighlightAndTooltipText" -> "Elementos destacados y ayuda contextual",
+"HighlightText" -> "Elementos destacados",
+"TooltipText" -> "Ayuda contextual",
+"InputOutputText" -> "Entrada y salida",
+"NewStylesText" -> "Estilo de celdas escritas recientemente:",
+"NewInputText" -> "Formato de nuevas celdas de entrada:",
+"NewOutputText" -> "Formato de nuevas celdas de salida:",
+"MaxOutputText" -> "Tama\[NTilde]o m\[AAcute]ximo de salida antes de truncamiento:",
+"RawInputFormText" -> "Forma de entrada en bruto",
+"BytesText" -> " Bytes",
+"OnlyTextualText" -> "Solamente usar cuadros de texto cuando convierta a formas tipogr\[AAcute]ficas",
+"OnlyTextualInputText" -> "Solamente usar cuadros de texto cuando convierta entradas a formas tipogr\[AAcute]ficas",
+"OnlyTextualOutputText" -> "Solamente usar cuadros de texto cuando convierta salidas a formas tipogr\[AAcute]ficas",
+"ShowCellLabelText" -> "Mostrar/ocultar nombres",
+"ActionsText" -> "Mensajes y advertencias",
+"KernelMessagesText" -> "Mensajes de kernel:",
+"PrintOutputText" -> "Salida de comando Print[]:",
+"NotebookSecurityText" -> "Seguridad de cuaderno",
+"TrustNotebooksText" -> "Aceptar cuadernos autom\[AAcute]ticamente",
+"TrustByDefaultText" -> "Cuadernos en directorios que no han sido aceptados ni rechazados: ",
+"TrustByDefaultAutomaticText" -> "Aceptar s\[OAcute]lo contenido seguro",
+"TrustByDefaultTrueText" -> "Aceptar siempre",
+"TrustByDefaultFalseText" -> "Rechazar siempre",
+"EditTrustedText" -> "Editar directorios confiables...",
+"EditTrustedTooltipText" -> "Los cuadernos dentro de directorios confiables son siempre confiables",
+"EditUntrustedText" -> "Editar directorios no confiables...",
+"EditUntrustedTooltipText" -> "Los cuadernos dentro de directorios no confiables nunca son confiables",
+"BrowserPluginText" -> "Wolfram System Browser Plug\[Hyphen]in",
+"SpotlightIndexerText" -> "Notebook Indexer para Spotlight",
+"WindowsIndexerText" -> "Notebook Indexer para Windows",
+"GoogleIndexerText" -> "Notebook Indexer para el buscador de escritorio de Google",
+"CopernicIndexerText" -> "Notebook Indexer para el buscador de escritorio de Copernic",
+"LocalVariablesText" -> "Las variables locales de Module y With",
+"FunctionArgs1Text" -> "Argumentos de funciones y nombres de patrones (Tambi\[EAcute]n hacer",
+"FunctionArgs2Text" -> "cursiva)",
+"UseInArgumentsText" -> "Variables convertidas en especiales por su uso en argumentos",
+"ResetDefaultsText" -> "Volver a valores predeterminados",
+"SyntaxErrorsText" -> "Errores de sintaxis",
+"Emphasized1Text" -> RowBox[List["Errores de sintaxis destacados (Tambi\[EAcute]n", "\[IndentingNewLine]"]],
+"Emphasized2Text" -> "Mayor",
+"Emphasized3Text" -> "Fondo amarillo)",
+"MissingText" -> "Argumentos faltantes",
+"ExcessText" -> "Argumentos sobrantes",
+"UnwantedText" -> "Asignaciones no deseadas posibles",
+"UnrecognizedText" -> "Nombres de opciones no reconocidas",
+"LocalScopeText" -> "Conflictos de alcance local",
+"OutOfScopeText" -> "Variables que estar\[AAcute]n fuera del alcance antes de ser usadas",
+"ShadowingText" -> "Sombreado en contextos m\[UAcute]ltiples",
+"CommentsText" -> "Comentarios",
+"StringsText" -> "Secuencias",
+"CommentsString" -> StyleBox[RowBox[{"(*"," ",RowBox[{"A comment"," ","explaining"," ","something"}]," ","*)"}],ShowStringCharacters->True],
+"SampleString" -> "Una secuencia de caracteres",
+"GlobalSymbolsText" -> "S\[IAcute]mbolos globales que no tienen un valor asignado",
+"HeadHighlightText" -> "Destacado de cabecera de la funci\[OAcute]n actual",
+"MatchHighlightText" -> "Destacado de operador correspondiente",
+"AutomaticSyntaxText" -> "Activar coloraci\[OAcute]n de sintaxis autom\[AAcute]tica    ",
+"LocalVarsText" -> "Variables locales",
+"ErrsAndWarningsText" -> "Errores y advertencias",
+"OtherText" -> "Otros",
+"ColorSpectraText" -> "Mostrar espectro de color",
+"EnableDebuggerText" -> "Activar depurador    ",
+"TextText" -> "Texto",
+"BackgroundText" -> "Fondo",
+"DefaultText" -> "Configuraci\[OAcute]n original",
+"BreakpointsText" -> "Destacar puntos de ruptura",
+"StackFramesText" -> "Destacar marcos de pila",
+"EvaluatorPosText" -> "Destacar posici\[OAcute]n de evaluador",
+"AutomaticNumText" -> "Activar formateo autom\[AAcute]tico de n\[UAcute]meros",
+"BlockSeparatorText" -> "Separador de bloques de d\[IAcute]gitos:",
+"DecimalPointText" -> "Car\[AAcute]cter de punto decimal:",
+"SeparatorText" -> "Caracteres separadores",
+"NoneText" -> "Ninguno",
+"ThinText" -> "Espacio fino",
+"VeryThinText" -> "Espacio muy fino",
+"ThinCommaText" -> "Coma fina",
+"CommaText" -> "Coma",
+"PeriodText" -> "Punto",
+"DigitText" -> "Bloques de d\[IAcute]gitos",
+"LeftOfText" -> "Izquierda del\ndecimal",
+"RightOfText" -> "Derecha del\ndecimal",
+"BlockSizeText" -> "Tama\[NTilde]o del bloque de d\[IAcute]gitos:",
+"MinText" -> "M\[IAcute]n. antes de separar en bloques:",
+"PrecisionText" -> "Precisi\[OAcute]n visible",
+"NumDigitsText" -> "N\[UAcute]mero de d\[IAcute]gitos visibles en la salida:",
+"SamplesText" -> "Muestras",
+"4Text" -> "Entero de 4 d\[IAcute]gitos:",
+"10Text" -> "Entero de 10 d\[IAcute]gitos:",
+"5Text" -> "Decimales de 5 d\[IAcute]gitos:",
+"14Text" -> "Decimales de 14 d\[IAcute]gitos:",
+"InAListText" -> "N\[UAcute]meros en una lista:",
+"MultSymText" -> "Mostrar s\[IAcute]mbolo de multiplicaci\[OAcute]n autom\[AAcute]ticamente entre n\[UAcute]meros multiplicados",
+"UseSymbolText" -> "Usar s\[IAcute]mbolo:",
+"SpaceText" -> "Espacio",
+"CenterDotText" -> "Punto central",
+"2NumsText" -> "Dos n\[UAcute]meros multiplicados:",
+"SeveralNumsText" -> "Varios n\[UAcute]meros multiplicados:",
+"WithExpText" -> "N\[UAcute]mero con exponente:",
+"FormattingText" -> "Formateo",
+"MultiplicationText" -> "Multiplicaci\[OAcute]n",
+"SystemInformationText" -> "System Information\[Ellipsis]",
+"WolframAlphaLabel" -> "Opciones de Wolfram|Alpha",
+"WolframAlphaServer" -> "Servidor de Wolfram|Alpha",
+"WolframAlphaAsynchronous" -> "As\[IAcute]ncrono",
+"WolframAlphaInteractive" -> "Interactivo",
+"WolframAlphaReinterpret" -> "Reinterpretar",
+"WolframAlphaRecalculate" -> "Recalcular",
+"WolframAlphaTypeset" -> "Componer tipogr\[AAcute]ficamente formas de Wolfram Language",
+"WolframAlphaClickingInExtrusion" -> "Seleccionar un resultado diferente",
+"WolframAlphaClickClose" -> "oculta todos los resultados",
+"WolframAlphaClickEvaluate" -> "eval\[UAcute]a la celda",
+"WolframAlphaClickTip" -> "Cambia lo que pasa despu\[EAcute]s de mostrar todos los resultados en una entrada de forma libre",
+"WolframAlphaInfo" -> "Informaci\[OAcute]n de sesi\[OAcute]n del Sistema Wolfram",
+"WolframAlphaInfoAlways" -> "Enviar siempre",
+"WolframAlphaInfoNever" -> "Nunca enviar",
+"WolframAlphaInfoSessionYes" -> "Enviar para esta sesi\[OAcute]n",
+"WolframAlphaInfoSessionNo" -> "No enviar para esta sesi\[OAcute]n",
+"WolframAlphaInfoAsk" -> "Preguntar antes de enviar",
+"ConnectivityText1" -> "Wolfram Language accede a internet para funciones tales como:\n\[Bullet] ofrecer datos computables en tiempo real o a petici\[OAcute]n\n\[Bullet] importar datos desde la web\n\[Bullet] actualizaci\[OAcute]n autom\[AAcute]tica de documentaci\[OAcute]n\n\[Bullet] llamar servicios externos de la web",
+"ConnectivityText2" -> "Cierta funcionalidad documentada no estar\[AAcute] disponible a menos que Wolfram Language tenga acceso a una conexi\[OAcute]n a internet. ",
+"ConnectivityTextMore" -> "M\[AAcute]s informaci\[OAcute]n\[RightGuillemet]",
+"TestConnectivityButtonText" -> "Controlar conectividad a internet",
+"TroubleshootButtonText" -> "Soluci\[OAcute]n de problemas",
+"CheckInternetText" -> "Permita que el Sistema Wolfram acceda a una conexi\[OAcute]n a internet",
+"ProxyLabel" -> "Configuraci\[OAcute]n de proxy",
+"DirectProxyText" -> "Conexi\[OAcute]n directa a internet",
+"BrowserProxyText" -> "Usar configuraci\[OAcute]n de proxy desde mi sistema o navegador",
+"CustomProxyText" -> "Usar las siguientes configuraciones:",
+"AllowWPADText" -> "Permita el uso del Protocolo de Descubrimiento Autom\[AAcute]tico de Proxy Web (WPAD)",
+"HostText" -> " Unidad maestra:",
+"ProxyText" -> " Proxy:",
+"PortText" -> "Puerto:",
+"ServerText" -> "Servidor",
+"PortNumText" -> "Puerto",
+"EncryptProtoText" -> "Protocolo de cifrado",
+"UsernameText" ->  "Username",
+"FromAddrText" -> "Desde direcci\[OAcute]n",
+"FullNameText" -> "Desde nombre",
+"ReplyToText" -> "Responder a",
+"AutoBccText" -> "Auto Bcc",
+"AutoCcText" -> "Auto Cc",
+"SignatureText" -> "Firma",
+"AutoUpdateLabel" -> "Actualizaciones autom\[AAcute]ticas",
+"MailLabel" -> "Opciones de correo",
+"IncomingMailLabel" -> "Entrante",
+"IncomingMailDescription" -> StyleBox[FormBox[RowBox[{"Configuraci\[OAcute]n predeterminada para ", 
+   FormBox[TagBox[ButtonBox["MailServerConnect", BaseStyle -> "Link", 
+  ButtonData -> "paclet:ref/MailServerConnect"], 
+ MouseAppearanceTag["LinkHand"]], StandardForm], 
+   " funci\[OAcute]n:"}], TextForm], AutoSpacing -> False],
+"OutgoingMailLabel" -> "Saliente",
+"OutgoingMailDescription" -> StyleBox[FormBox[RowBox[{"Configuraci\[OAcute]n predeterminada para ", 
+   FormBox[TagBox[ButtonBox["SendMail", BaseStyle -> "Link", 
+  ButtonData -> "paclet:ref/SendMail"], 
+ MouseAppearanceTag["LinkHand"]], StandardForm], 
+   " funci\[OAcute]n:"}], TextForm], AutoSpacing -> False],
+"PasswordText" -> "Contrase\[NTilde]a",
+"MailFolderText" -> "Carpeta",
+"CheckDocsText" -> "Comprobar actualizaci\[OAcute]n de documentaci\[OAcute]n autom\[AAcute]ticamente ",
+"CheckDataText" -> "Comprobar actualizaci\[OAcute]n de datos autom\[AAcute]ticamente",
+"UpdateLocalIndexButtonText" -> "Actualizar \[IAcute]ndices locales del servidor de Wolfram Research",
+"AboutConnectButtonText" -> "About Internet Connectivity\[Ellipsis]",
+"NotebookHistoryText" -> "Historial de cuaderno",
+"DisableHistoryText" -> "Activar rastreador de historial de cuaderno",
+"HistoryMergeIntervalText" -> "Intervalo de tiempo (en segundos) para fusionar historial de correcci\[OAcute]n subsiguiente:",
+"NotebookCompatibilityText" -> "Compatibilidad de cuaderno",
+"DisableCompatibilityText" -> "Activar exploraci\[OAcute]n de cuadernos de versiones anteriores para anticipar problemas posibles",
+"DefaultControlPlacementText" -> RowBox[{"Colocaci\[OAcute]n de control predeterminado en", StyleBox["Manipulate", "Input", FontFamily -> "Courier"], "output:"}],
+"AntialiasingText" -> "Calidad de alisado",
+"AntialiasingOnscreenText" -> "(Para gr\[AAcute]ficos 3D y gr\[AAcute]ficos 2D con relleno degradado en pantalla)",
+"AntialiasingNoneText" -> "No alisar bordes",
+"AntialiasingFullText" -> "Calidad m\[AAcute]s alta",
+"OtherOptionsText" -> "Para todas las otras configuraciones de opciones:",
+"OpenOIText" -> "Abrir el Inspector de Opciones",
+"KernelNameText" -> "Nombre de kernel principal: ",
+"KernelStoppedText" -> "Este kernel no se encuentra en ejecuci\[OAcute]n.\nTiene que estar en ejecuci\[OAcute]n para ser configurado.",
+"KernelStartText" -> "Iniciar kernel",
+"KernelStartingText" -> "El kernel est\[AAcute] iniciando...\n",
+"TrustedPathWarning1" -> "Advertencia: Todas estas ubicaciones se consideran como fuentes confiables para abrir cuadernos.",
+"TrustedPathWarning2" -> "Advertencia: Esta ubicaci\[OAcute]n ser\[AAcute] considerada como fuente confiable para abrir cuadernos.",
+"TrustedPathText" -> "Una alerta nunca aparecer\[AAcute] cuando un cuaderno confiable es abierto, y el cuaderno puede realizar autom\[AAcute]ticamente evaluaciones din\[AAcute]micas. Si cambia o agrega una ubicaci\[OAcute]n, aseg\[UAcute]rese de que la ubicaci\[OAcute]n es segura.",
+"TrustedPathWindowTitle" -> "Directorios confiables",
+"UntrustedPathWarning1" -> "Advertencia: Todas estas ubicaciones se consideran fuentes no confiables para abrir cuadernos.",
+"UntrustedPathWarning2" -> "Advertencia: Esta ubicaci\[OAcute]n ser\[AAcute] considerada como una fuente no confiable para abrir cuadernos.",
+"UntrustedPathText" -> "Una alerta siempre aparecer\[AAcute] cuando un cuaderno no confiable es abierto e intenta realizar evaluaciones din\[AAcute]micas.",
+"UntrustedPathWindowTitle" -> "Directorios no confiables",
+"PathDialogAddText" -> "A\[NTilde]adir",
+"PathDialogModText" -> "Modificar",
+"PathDialogDelText" -> "Eliminar",
+"PathDialogDirsText" -> "Directorios",
+"PathDialogDirText" -> "Directorio:",
+"ClosingDialogToggleText" -> "Abrir di\[AAcute]logo de clausura luego de cerrar la \[UAcute]ltima ventana",
+"SystemFileAssociationsText" -> "Asociaci\[OAcute]n de archivo de sistema:",
+"EditFileAssociationsText" -> "Edit\[Ellipsis]",
+"ChatServicesHeader" -> "Servicio de chat",
+"AutoStartChatServicesText" -> "Active los servicios de chat"}
+@|
+@@resource ImportDialogs
+{
+"DefaultsButtonLabel" -> "Usar configuraciones como opciones predeterminadas",
+"RestoreButtonLabel" -> "Restaurar a opciones predeterminadas",
+"TextLabel" -> "Opciones de importaci\[OAcute]n de texto",
+"TextFileReadingMethod" -> "M\[EAcute]todo para leer archivo:",
+"TextOneCell" -> "Leer archivo completo en una celda",
+"TextOneCellPerLine" -> "Crear una nueva celda en cada l\[IAcute]nea",
+"TextOneCellPerBlankLine" -> "Crear una nueva celda en cada l\[IAcute]nea en blanco",
+"TextOneCellPerTwoBlankLines" -> "Crear una nueva celda en dos l\[IAcute]neas en blanco",
+"TextCharacterEncoding" -> "Codificado de caracteres: ",
+"NotebookLabel" -> "Opciones de cuaderno",
+"NotebookModern" -> "Archivos de Wolfram Language",
+"Notebooks" -> "Cuadernos de Wolfram Language",
+"Packages" -> "Paquetes de Wolfram Language",
+"PackagesLine1" -> "Crear una nueva celda despu\[EAcute]s de ",
+"PackagesLine2" -> " l\[IAcute]neas en blanco consecutivas",
+"NotebookOld" -> "Cuadernos versi\[OAcute]n 2",
+"NotebookParseEntire" -> "Analizar y cargar cuaderno completo en la memoria al abrir",
+"NotebookVersionAdvisory" -> "Abrir cuadernos de versi\[OAcute]n 5 con la barra de herramientas de Asesor de versi\[OAcute]n",
+"NotebookExplanationText1" -> "Un cuaderno de versi\[OAcute]n 2 (un archivo con una extensi\[OAcute]n .ma) debe convertirse al formato de archivo actual antes de abrirse. El nuevo archivo tendr\[AAcute] un nombre terminado en .nb.",
+"NotebookExplanationText2" -> "Usted puede decidir convertir autom\[AAcute]ticamente todas las celdas de entrada o de salida a StandardForm, la forma 2D que puede editarse autom\[AAcute]ticamente en esta versi\[OAcute]n.",
+"NotebookConvertInput" -> "Convertir celdas de entrada a StandardForm",
+"NotebookConvertOutput" -> "Convertir celdas de salida a StandardForm",
+"NotebookExplanationText3" -> "Esta versi\[OAcute]n es compatible con hojas de estilo m\[AAcute]s sofisticadas. Seleccione la opci\[OAcute]n que se encuentra abajo s\[OAcute]lo si ha cambiado las definiciones de estilo en este cuaderno.",
+"NotebookPreserveStylesheet" -> "Preservar hoja de estilo personalizada",
+"NotebookExplanationText4" -> "Los cach\[EAcute]s de mapas de bits para celdas PostScript no pueden ser convertidos. Seleccione la opci\[OAcute]n que se encuentra abajo para regenerarlos autom\[AAcute]ticamente (la operaci\[OAcute]n puede ser muy lenta).",
+"NotebookGenerateCaches" -> "Generar cach\[EAcute]s de mapas de bits para todas las celdas de gr\[AAcute]ficos",
+"GIFLabel" -> "Opciones GIF",
+"GIFIndex" -> "\[CapitalIAcute]ndice de imagen que se importar\[AAcute]:",
+"JPEGLabel" -> "Opciones JPEG",
+"JPEGColorReduction" -> "Reducci\[OAcute]n de color:",
+"JPEGDithering" -> "Esfumado para reducci\[OAcute]n de color:",
+"TIFFLabel" -> "Opciones TIFF",
+"TIFFIndex" -> "\[CapitalIAcute]ndice de imagen que se importar\[AAcute]:",
+"PDFLabel" -> "Opciones PDF",
+"PDFPages" -> "P\[AAcute]ginas a importar:",
+"PDFEditable" -> "Puede ser editado",
+"PDFTooltip1" -> "Si se selecciona Puede ser editado, el PDF se convertir\[AAcute] a una expresi\[OAcute]n Graphics[...]. Si no se selecciona Puede ser editado, el PDF se mostrar\[AAcute] en forma est\[AAcute]tica. (no funciona en todos los sistemas)."
+}
+@|
+@@resource ExportDialogs
+{
+"Automatic" -> "Autom\[AAcute]tico", 
+"Printer" -> "Printer", 
+"Screen" -> "Pantalla",
+"Custom" -> "Personalizado",
+"PackageLabel" -> "Opciones de paquete",
+"PackageLines" -> "N\[UAcute]mero de l\[IAcute]neas en blanco para insertar entre celdas: ",
+"PackageWindow" -> "Guardar tama\[NTilde]o y posici\[OAcute]n de ventana",
+"PackageCode" -> "Guardar \[UAcute]nicamente celdas de c\[OAcute]digo",
+"EPSLabel" -> "Opciones EPS",
+"EPSIncludePreview" -> "Incluir vista preliminar de TIFF",
+"EPSIncludeFonts" -> "Incluir tipos de letra del Sistema Wolfram",
+"PDFAttachSource" -> "Adjuntar cuaderno original",
+"GIFLabel" -> "Opciones GIF",
+"GIFInterlaced" -> "Crear imagen entrelazada",
+"GIFDithering" -> "Usar esfumado",
+"GIFTransparency" -> "Usar este color para transparencia:",
+"GIFBackground" -> "Usar este color para fondo:",
+"JPEGLabel" -> "Opciones JPEG",
+"JPEGColorSpace" -> "Espacio de color del gr\[AAcute]fico exportado:",
+"JPEGCompressionLevel" -> "Nivel de compresi\[OAcute]n (0.0 - 1.0):",
+"JPEGSmoothingFactor" -> "Factor de suavizado (0.0 - 1.0):",
+"JPEGProgressiveFile" -> "Crear archivo progresivo",
+"TIFFLabel" -> "Opciones TIFF",
+"TIFFCompressionLabel" -> "Compresi\[OAcute]n",
+"TIFFAdvancedLabel" -> "Avanzado",
+"TIFFImageEncoding" -> "Codificaci\[OAcute]n de imagen:",
+"TIFFDiffPredictor" -> "Predictor diferencial:",
+"TIFFDiffPredictorNone" -> "Ninguno",
+"TIFFDiffPredictorHorizontal" -> "Horizontal",
+"TIFFByteOrdering" -> "Ordenamiento de bytes:",
+"TIFFByteorderingBE" -> "Byte m\[AAcute]s importante primero",
+"TIFFByteOrderingLE" -> "Byte menos importante primero",
+"TIFFResolution" -> "Resoluci\[OAcute]n de imagen:",
+"TIFFResolutionTooltip" -> {{"Valid options are:"}, {"Autom\[AAcute]tico"}, {"Any integer greater than 0"}},
+"TIFFPixelCompFormat" -> "Formato de componente de p\[IAcute]xel:",
+"TIFFPixelCompChunky" -> "Grueso",
+"TIFFPixelCompPlanar" -> "Plana",
+"TIFFIncludingMaxMin" -> "Incluir valores de componentes m\[AAcute]ximos y m\[IAcute]nimos",
+"VectorLabel" -> "Opciones de gr\[AAcute]ficos de vectores",
+"VectorGraphicsContainingTransparency" -> "Gr\[AAcute]ficos con transparencias:",
+"VectorGraphicsContainingSmoothShading" -> "Gr\[AAcute]ficos con sombreado suave:",
+"VectorAutomaticRendering" -> "Seleccionar autom\[AAcute]ticamente la mejor representaci\[OAcute]n",
+"VectorRasterizeFeatures" -> "Usar representaci\[OAcute]n de mapa de bits",
+"VectorRenderFeatures" -> "Usar representaci\[OAcute]n de vectores de la m\[AAcute]s alta calidad",
+"VectorApproximateFeatures" -> "Usar representaci\[OAcute]n de vectores m\[AAcute]s compatible",
+"VectorRasterResolution" -> "Resoluci\[OAcute]n de rasterizaci\[OAcute]n:",
+"XHTMLLabel" -> "Opciones XHTML",
+"XHTMLConvertLinkedNotebooks" -> "Incluir cuadernos vinculados",
+"XHTMLContent" -> "Incluir elementos de contenido MathML",
+"XHTMLMathOutput" -> "Formato de expresiones en composici\[OAcute]n tipogr\[AAcute]fica:",
+"XHTMLExportCellGroup" -> "Exportaci\[OAcute]n de grupos de celda:",
+"XHTMLForwardClosed" -> "Siguiente-cerrado",
+"XHTMLReverseClosed" -> "Anterior-cerrado",
+"XHTMLConvertClosedFalse" -> "Incluir la primera celda del grupo de celdas",
+"XHTMLConvertClosedTrue" -> "Incluir todas las celdas del grupo de celdas",
+"XHTMLConvertClosedLinkedPage" -> "Incluir grupo de celdas como v\[IAcute]nculo",
+"XHTMLCSS" -> "Incluir CSS",
+"XHTMLMathMLLabel" -> "Opciones XHTML+MathML",
+"TeXLabel" -> "Opciones LaTeX",
+"TeXDocumentClass" -> "Clase de documentos:",
+"TeXMathOutput" -> "Formato de expresiones en composici\[OAcute]n tipogr\[AAcute]fica:",
+"BMPLabel" -> "Opciones BMP",
+"JPEG2000Label" -> "Opciones JPEG2000",
+"JPEG2000Lossless" -> "Sin p\[EAcute]rdidas ",
+"PNMLabel" -> "Opciones PNM",
+"RasterImageTopOrientation" -> "Orientaci\[OAcute]n de imagen (como est\[AAcute] guardada en el archivo):",
+"RasterBitDepth" -> "Profundidad de bits:",
+"RasterImageCompression" -> "Algoritmo de compresi\[OAcute]n de imagen:",
+"RasterCompressionLevel" -> "Par\[AAcute]metro de compresi\[OAcute]n de codificaci\[OAcute]n:",
+"RasterCompressionLevelTooltip" -> {{"Valid options are:"}, {"Automatic"}, {"A real number between 0.0 and 1.0"}},
+"RasterTileSize" -> "Dimensiones de p\[IAcute]xel de azulejos de im\[AAcute]genes:",
+"RasterTileSizeTooltip" -> {{"Valid options are:"}, {"Automatic"}, {"a value of the form {2^m,2^n}"}},
+"RasterImageEncoding" -> "Algoritmo de codificaci\[OAcute]n de imagen:",
+"RasterTileDimensions" -> "Dimensiones de arreglos de azulejos:",
+"RasterTileDimensionsTooltip" -> {{"Opci\[OAcute]n v\[AAcute]lida es un valor de la forma {x,y}"}}
+}
+@|
+@@resource HistoryOverviewDialog
+{
+"WindowTitleText" -> "Resumen de historial de modificaci\[OAcute]n de cuaderno",
+"SelectionOnlyLabel" -> "Historial para: ",
+"AllCellsText" -> "Todas las celdas",
+"SelectedCellsText" -> "Celdas seleccionadas",
+"TrackHistoryText" -> "Rastrear historial de cuaderno",
+"CopyDataLabel" -> "Copiar datos en crudo",
+"CopyImageLabel" -> "Copiar imagen",
+"ClearHistoryLabel" -> "Borrar historial",
+"ClearHistoryWarning1Text" -> "\[DownQuestion]Est\[AAcute] seguro de borrar el historial de estas celdas? ",
+"ClearHistoryWarning2Text" -> "\[DownQuestion]Est\[AAcute] seguro de borrar el historial de todas las celdas? ",
+"GraphicsText" -> "Secuencia de modificaci\[OAcute]n",
+"UnavailableText" -> "No disponible",
+"FirstEditLabel" -> "Primer elemento editado",
+"LastEditLabel" -> "\[CapitalUAcute]ltimo elemento editado",
+"TotalByteLabel" -> "Bytes totales",
+"ContentByteLabel" -> "Bytes de contenido",
+"CellNumberLabel" -> "N\[UAcute]mero de celdas",
+"EditNumberLabel" -> "N\[UAcute]mero de correcciones",
+"MergeIntervalLabel" -> "Fusionar intervalos",
+"OutOfText" -> " fuera de ",
+"SecondsText" -> "  segundos",
+"SummaryText" ->  "Estad\[IAcute]sticas de celda",
+"BlockZoomText" -> "Hacer clic para ampliar este bloque de tiempo",
+"ResetZoomText" -> "Hacer clic para volver a visi\[OAcute]n normal",
+"UndoZoomText" -> "Hacer clic para deshacer la \[UAcute]ltima ampliaci\[OAcute]n",
+"ZoomDragText" -> "Arrastrar para ampliar",
+"PanDragText" -> "Arrastrar para desplazar",
+"ZoomText" -> "Ampliaci\[OAcute]n: ",
+"LargeCellText" -> StyleBox["\[DownExclamation]Celda muy grande para ser mostrada!", FontSize -> CurrentValue[{"ControlsFontSize",Large}]],
+"DisplayWarning1Text" -> "No hay informaci\[OAcute]n disponible de historial de celda",
+"DisplayWarning2Text" -> "No hay cuaderno v\[AAcute]lido",
+"DisplayWarning3Text" ->  "Se ha detectado informaci\[OAcute]n inv\[AAcute]lida de historial"
+}
+@|
+@@resource GraphicsInspectorDialog
+{
+"ToolsLabel" -> "Herramientas",
+"OperationsLabel" -> "Operaciones",
+"LockTooltip" -> "Cerrar",
+"UnlockTooltip" -> "Abrir",
+"GroupTooltip" -> "Agrupar",
+"UngroupTooltip" -> "Separar",
+"MoveToBackTooltip" -> "Mover al fondo",
+"MoveToFrontTooltip" -> "Mover al frente",
+"MoveBackwardTooltip"-> "Mover hacia atr\[AAcute]s",
+"MoveForwardTooltip" -> "Mover hacia delante",
+"AlignLeftSidesTooltip" -> "Alinear costados a la izquierda",
+"AlignCentersVerticallyTooltip" -> "Alinear partes centrales verticalmente",
+"AlignRightSidesTooltip" -> "Alinear costados a la derecha",
+"AlignBottomsTooltip" -> "Alinear partes inferiores",
+"AlignCentersHorizontallyTooltip" -> "Alinear partes centrales horizontalmente",
+"AlignTopsTooltip" -> "Alinear partes superiores",
+"DistributeLeftSidesTooltip" -> "Distribuir costados a la izquierda",
+"DistributeCentersHorizontallyTooltip" -> "Distribuir costados horizontalmente",
+"DistributeRightSidesTooltip" -> "Distribuir costados a la derecha",
+"DistributeSpaceHorizontallyTooltip" -> "Distribuir espacio horizontalmente",
+"DistributeTopsTooltip" -> "Distribuir partes superiores",
+"DistributeCentersVerticallyTooltip" -> "Distribuir partes centrales verticalmente",
+"DistributeBottomsTooltip" -> "Distribuir partes de inferiores",
+"DistributeSpaceVerticallyTooltip" -> "Distribuir espacio verticalmente",
+"AlignmentGuidesEnabledTooltip" -> "Cambiar gu\[IAcute]as de alineaci\[OAcute]n",
+"OverrideLockEnabledTooltip" -> "Activar/Desactivar cerradura de gr\[AAcute]fico",
+"ResetToDefaultsTooltip" -> "Volver a presentaci\[OAcute]n predeterminada",
+"SettingsLabel" -> "Opciones",
+"FillLabel" -> "Llenar",
+"FillText" -> "Agregar relleno",
+"OpacityLabel" -> "Opacidad",
+"StrokeLabel" -> "Trazar",
+"StrokeText" -> "Dibujar bordes",
+"ThicknessLabel" -> "Grosor",
+"PointsText" -> "Puntos",
+"ScaledText" -> "Escalado",
+"UserText" -> "Usuario",
+"DashingLabel" -> "Guiones",
+"CapLabel" -> "May\[UAcute]sculas",
+"JoinLabel" -> "Uniones",
+"MiterLabel" -> "L\[IAcute]mite de la mitra",
+"Automatic" -> "Autom\[AAcute]tico",
+"Bevel" -> "Biselado",
+"Butt" -> "Colilla",
+"Miter" -> "Mitra",
+"Round" -> "Redondo",
+"Square" -> "Cuadrado",
+"PointSizeLabel" -> "Size",
+"RectanglesLabel" -> "Rect\[AAcute]ngulos",
+"RoundingRadiusLabel" -> "Radio de redondeo",
+"TextLabel" -> "Texto",
+"StyleText" -> "Estilo",
+"FontLabel" -> "Tipo de letra",
+"FontPanelTooltip" -> "Mostrar panel de tipos de letras",
+"AlignmentLabel" -> "Alineaci\[OAcute]n",
+"ForegroundLabel" -> "Primer plano",
+"BackgroundLabel" -> "Fondo",
+"BackgroundText" -> "Trazar fondo",
+"ClearFormatText" -> "Borrar formateo",
+"ArrowsLabel" -> "Puntas de flecha",
+"ArrowLabel" -> "Punta de flecha",
+"ArrowDoubleText" -> "Flecha de dos puntas",
+"ArrowReverseText" -> "Reverso",
+"CustomText" -> "Personalizado",
+"ArrowSizeText" -> "Tama\[NTilde]o de cabecera",
+"ArrowPositionText" -> "Posici\[OAcute]n",
+"WindowTitleText" -> "Herramientas de trazado",
+"NewLabel"->"Nuevo",
+"LockLabel"->"Cerrar",
+"GroupLabel"->"Agrupar",
+"ArrangeLabel"->"Ordenar",
+"AlignLabel"->"Alinear",
+"DistributeLabel"->"Distribuir",
+"SystemColorDialogLabel" -> "M\[AAcute]s colores \[RightGuillemet]"
+}
+@|
+@@resource HeadersFootersDialog
+{
+"CapsRomanNumberLabel" -> "N\[UAcute]meros romanos",
+"CenterLabel" -> "Centro",
+"DashedNumberLabel" -> "N\[UAcute]meros con guiones",
+"DateFormatCounterLabel" -> "\[LeftGuillemet]Date\[RightGuillemet]",
+"DateFormatLabel" -> "Fecha",
+"DateFormatWindowTitle" -> "Elegir formato para fechas...",
+"DecimalNumberLabel" -> "N\[UAcute]meros decimales",
+"DefaultLabel" -> "Revertir a opci\[OAcute]n predeterminada",
+"EditorsTooltip" -> "Hacer clic para editar",
+"FacingLabel" -> "P\[AAcute]ginas enfrentadas con la primera p\[AAcute]gina a la",
+"FileNameLabel" -> "Nombre de archivo",
+"FirstLabel" -> "Primera",
+"FirstPageText" -> "Incluir en la primera p\[AAcute]gina",
+"FooterLabel" -> "Pie de p\[AAcute]gina",
+"FormatCodeLabel" -> "C\[OAcute]digo de formato",
+"HeaderLabel" -> "Encabezado",
+"LastLabel" -> "\[UAcute]ltima",
+"LeftLabel" -> "Izquierda",
+"LeftLabelSmall" -> "izquierda",
+"LeftPageLabel" -> "P\[AAcute]gina a la izquierda",
+"OptionsLabel" -> "Opciones",
+"PageLineText" -> "Incluir l\[IAcute]nea",
+"PageNumberCounterLabel" -> "\[LeftGuillemet]Page\[RightGuillemet]",
+"PageNumberLabel" -> "N\[UAcute]mero de p\[AAcute]gina",
+"PageTotalCounterLabel" -> "\[LeftGuillemet]Total Pages\[RightGuillemet]",
+"PageTotalLabel" -> "Total de p\[AAcute]ginas",
+"PageNumberWindowTitle" -> "Elegir formato de n\[UAcute]mero de p\[AAcute]ginas...",
+"PreviewCodeLabel" -> "Vista previa",
+"ResetLabel" -> "Volver a original",
+"RightLabel" -> "Derecha",
+"RightLabelSmall" -> "derecha",
+"RightPageLabel" -> "P\[AAcute]gina a la derecha",
+"RomanNumberLabel" -> "n\[UAcute]meros romanos en min\[UAcute]sculas",
+"RunningTextCellStyle" -> "Mostrar contenidos de estilo de celda",
+"RunningTextDefault" -> "Texto predeterminado",
+"RunningTextEntireCell" -> "celda entera",
+"RunningTextExcluded" -> GridBox[{{"Excluir palabras"}, {"(separadas por comas"}, {"y sin distinci\[OAcute]n de may\[UAcute]sculas o min\[UAcute]sculas)"}}, GridBoxAlignment -> {"Columns" -> {{Right}}}],
+"RunningTextFirstCell" -> "Posici\[OAcute]n de celda en cada p\[AAcute]gina",
+"RunningTextCounterLabel" -> "\[LeftGuillemet]Running Text\[RightGuillemet]",
+"RunningTextNumWords" -> "Mostrar",
+"RunningTextNumWords2" -> (Grid[{{"Primera", #1, "words"}}] &),
+"RunningTextOffset" -> "Desplazamiento de p\[AAcute]gina",
+"RunningTextPopup" -> "Ejecutando texto...",
+"RunningTextWindowTitle" -> "Ejecutando di\[AAcute]logo de texto",
+"SelectPageTooltip" -> "Haga clic para seleccionar esta p\[AAcute]gina",
+"SelectTooltip" -> "Haga clic para seleccionar",
+"SetAsDefaultLabel" -> "Establecer como opci\[OAcute]n predeterminada",
+"SinglePageLabel" -> "P\[AAcute]gina \[UAcute]nica",
+"StartPageLabel" -> "Iniciando n\[UAcute]mero de p\[AAcute]gina",
+"WavyNumberLabel" -> "N\[UAcute]meros con virgulilla",
+"WindowTitle" -> "Encabezados y pies de p\[AAcute]gina - ",
+"RunningTextPreviewText" -> "Un r\[AAcute]pido zorro marr\[OAcute]n salta sobre el perro holgaz\[AAcute]n. 
+El r\[AAcute]pido zorro marr\[OAcute]n salta sobre el perro holgaz\[AAcute]n. El r\[AAcute]pido zorro salta sobre el perro holgaz\[AAcute]n marr\[OAcute]n. El \
+r\[AAcute]pido zorro marr\[OAcute]n salt\[OAcute] sobre el perro holgaz\[AAcute]n. El r\[AAcute]pido zorro marr\[OAcute]n salt\[OAcute] \
+sobre los perros holgazanes."
+}
+@|
+@@resource InsertCitationDialog
+{
+"FindLabel" -> "Buscar",
+"ClearLabel" -> "Borrar",
+"InsertLabel" -> "Insertar",
+"AuthorID" -> "Autor",
+"YearID" -> " A\[NTilde]o ",
+"TitleID" -> "T\[IAcute]tulo",
+"Sort1Label" -> "Clasificar",
+"Sort2Label" -> "Revertir clasificaci\[OAcute]n",
+"WindowTitle" -> "Insertar cita",
+"StyleLabel" -> "Estilo",
+"WindowTitle2" -> "Estilos de cita",
+"WindowTitle3" -> "Insertar nota",
+"WindowTitle4" -> "Estilos de notas"
+}
+@|
+@@resource FindReplaceDialog Macintosh
+{
+"FindNextLabel" -> "Siguiente",
+"FindPrevLabel" -> "Anterior",
+"FindWhatLabel" -> "Buscar:",
+"IgnoreCaseLabel" -> "Ignorar may\[UAcute]sculas",
+"ReplaceAllLabel" -> "Reemplazar todo",
+"ReplaceFindLabel" -> "Reemplazar y buscar",
+"ReplaceLabel" -> "Reemplazar",
+"ReplaceWithLabel" -> "Reemplazar con:",
+"StatusLabel" -> "Estado:",
+"WholeWordLabel" -> "Palabra completa",
+"WindowTitle" -> "Buscar",
+"WraparoundLabel" -> "Volver al comienzo",
+"ReplaceAllWarning1" -> "\[DownQuestion]Realmente desea reemplazar todas las instancias de `1` con `2`?",
+"ReplaceAllWarning2" -> "Esta acci\[OAcute]n no se puede deshacer."
+}
+@|
+@@resource FindReplaceDialog
+{
+"FindNextLabel" -> "Siguiente",
+"FindPrevLabel" -> "Anterior",
+"FindWhatLabel" -> "Buscar:",
+"IgnoreCaseLabel" -> "Ignorar may\[UAcute]sculas",
+"ReplaceAllLabel" -> "Reemplazar todo",
+"ReplaceFindLabel" -> "Reemplazar y buscar siguiente",
+"ReplaceLabel" -> "Reemplazar",
+"ReplaceWithLabel" -> "Reemplazar con:",
+"StatusLabel" -> "Estado:",
+"WholeWordLabel" -> "Palabra completa",
+"WindowTitle" -> "Buscar y reemplazar",
+"WraparoundLabel" -> "Volver al comienzo",
+"ReplaceAllWarning1" -> "\[DownQuestion]Realmente desea reemplazar todas las instancias de `1` con `2`?",
+"ReplaceAllWarning2" -> "Esta acci\[OAcute]n no se puede deshacer."
+}
+@|
+@@resource DrawingToolsDialog Macintosh
+{
+"WindowTitleText" -> "Trazado en 2D",
+"SelectToolText" -> "Seleccionar/Mover/Cambiar tama\[NTilde]o (o)",
+"GetCoordinatesToolText" -> "Obtener coordenadas (.)",
+"DrawPointToolText" -> "Punto (p)",
+"DrawLineToolText" -> "L\[IAcute]nea (l)",
+"DrawPolylineToolText" -> "Segmentos de l\[IAcute]nea (s)",
+"DrawArrowToolText" -> "Flecha (a)",
+"DrawPolygonToolText" -> "Pol\[IAcute]gono (g)",
+"DrawCircleToolText" -> "C\[IAcute]rculo (c)",
+"DrawDiskToolText" -> "Disco (d)",
+"DrawRectangleToolText" -> "Rect\[AAcute]ngulo (r)",
+"DrawBoxToolText" -> "Cuadro (b)",
+"DrawFreehandToolText" -> "L\[IAcute]nea a mano (f)",
+"PlaceMathToolText" -> "Texto en forma matem\[AAcute]tica (m)",
+"PlaceTextToolText" -> "Texto (t)",
+"SampleStyleToolText" -> "Estilo de muestra (e)",
+"NewGraphicButtonText" -> "Nuevo gr\[AAcute]fico/Inserci\[OAcute]n (CTRL\[Hyphen]1)",
+"GraphicsInspectorButtonText" -> "Inspector de gr\[AAcute]fico (CTRL\[Hyphen]i)",
+"DoubleClickToKeepText" -> "(Haga doble clic para guardar.)",
+"DoubleClickToKeepShiftDragToConstrainText" -> "(Haga doble clic para guardar. SHIFT\[Hyphen]arrastrar para restringir.)",
+"GetCoordinatesTooltipText" -> "(Haga clic para marcar coordenadas. CMD-clic para borrar marcador.)\n(Arrastre para marcar ruta de coordenadas. OPT-arrastrar para marcar \[AAcute]rea.)\n(CMD-c para copiar coordenadas marcadas para portapapeles.)",
+"SampleStyleTooltipText" -> "(Haga clic en SHIFT para probar color solamente.)\n(OPT para aplicar herramienta de estilo. CMD para seleccionar herramienta.)",
+"ApplyStyleTooltipText"  -> "(SHIFT\[Hyphen]clic para aplicar color solamente.)\n(OPT para probar herramienta de estilo. CMD para seleccionar herramienta.)"
+}
+@|
+@@resource DrawingToolsDialog X
+{
+"WindowTitleText" -> "Trazado en 2D",
+"SelectToolText" -> "Seleccionar/Mover/Cambiar tama\[NTilde]o (o)",
+"GetCoordinatesToolText" -> "Obtener coordenadas (.)",
+"DrawPointToolText" -> "Punto (p)",
+"DrawLineToolText" -> "L\[IAcute]nea (l)",
+"DrawPolylineToolText" -> "Segmentos de l\[IAcute]nea (s)",
+"DrawArrowToolText" -> "Flecha (a)",
+"DrawPolygonToolText" -> "Pol\[IAcute]gono (g)",
+"DrawCircleToolText" -> "C\[IAcute]rculo (c)",
+"DrawDiskToolText" -> "Disco (d)",
+"DrawRectangleToolText" -> "Rect\[AAcute]ngulo (r)",
+"DrawBoxToolText" -> "Cuadro (b)",
+"DrawFreehandToolText" -> "L\[IAcute]nea a mano (f)",
+"PlaceMathToolText" -> "Texto en forma matem\[AAcute]tica (m)",
+"PlaceTextToolText" -> "Texto (t)",
+"SampleStyleToolText" -> "Estilo de muestra (e)",
+"NewGraphicButtonText" -> "Nuevo gr\[AAcute]fico/Inserci\[OAcute]n (CTRL\[Hyphen]1)",
+"GraphicsInspectorButtonText" -> "Inspector de gr\[AAcute]fico (CTRL\[Hyphen]g)",
+"DoubleClickToKeepText" -> "(Haga doble clic para guardar.)",
+"DoubleClickToKeepShiftDragToConstrainText" -> "(Double\[Hyphen]click to keep. SHIFT\[Hyphen]drag to constrain.)",
+"GetCoordinatesTooltipText" -> "(Haga doble clic para guardar. SHIFT-arrastrar para restringir.)",
+"SampleStyleTooltipText" -> "(Haga clic en SHIFT para probar color solamente.)\n(OPT para aplicar herramienta de estilo. CMD para seleccionar herramienta.)",
+"ApplyStyleTooltipText"  -> "(Haga clic en SHIFT para probar color solamente.)\n(ALT para aplicar herramienta de muestra de estilo.)\n(CTRL para seleccionar herramienta.)"
+}
+@|
+@@resource DrawingToolsDialog Windows
+{
+"WindowTitleText" -> "Trazado en 2D",
+"SelectToolText" -> "Seleccionar/Mover/Cambiar tama\[NTilde]o (o)",
+"GetCoordinatesToolText" -> "Obtener coordenadas (.)",
+"DrawPointToolText" -> "Punto (p)",
+"DrawLineToolText" -> "L\[IAcute]nea (l)",
+"DrawPolylineToolText" -> "Segmentos de l\[IAcute]nea (s)",
+"DrawArrowToolText" -> "Flecha (a)",
+"DrawPolygonToolText" -> "Pol\[IAcute]gono (g)",
+"DrawCircleToolText" -> "C\[IAcute]rculo (c)",
+"DrawDiskToolText" -> "Disco (d)",
+"DrawRectangleToolText" -> "Rect\[AAcute]ngulo (r)",
+"DrawBoxToolText" -> "Cuadro (b)",
+"DrawFreehandToolText" -> "L\[IAcute]nea a mano (f)",
+"PlaceMathToolText" -> "Texto en forma matem\[AAcute]tica (m)",
+"PlaceTextToolText" -> "Texto (t)",
+"SampleStyleToolText" -> "Estilo de muestra (e)",
+"NewGraphicButtonText" -> "Nuevo gr\[AAcute]fico/Inserci\[OAcute]n (CTRL\[Hyphen]1)",
+"GraphicsInspectorButtonText" -> "Inspector de gr\[AAcute]fico (CTRL\[Hyphen]g)",
+"DoubleClickToKeepText" -> "(Haga doble clic para guardar.)",
+"DoubleClickToKeepShiftDragToConstrainText" -> "(Double\[Hyphen]click to keep. SHIFT\[Hyphen]drag to constrain.)",
+"GetCoordinatesTooltipText" -> "(Haga doble clic para guardar. SHIFT-arrastrar para restringir.)",
+"SampleStyleTooltipText" -> "(Haga clic en SHIFT para probar color solamente.)\n(OPT para aplicar herramienta de estilo. CMD para seleccionar herramienta.)",
+"ApplyStyleTooltipText"  -> "(Haga clic en SHIFT para probar color solamente.)\n(ALT para herramienta de estilo de muestra.)\n(CTRL para seleccionar herramienta.)"
+}
+@|
+@@resource StyleDialogDockedCell
+{
+}
+@|
+@@resource SystemInformationDialog
+{
+"WindowTitleText" -> "Informaci\[OAcute]n sobre el Sistema Wolfram",
+"KernelTabLabel" -> "kernel",
+"FrontEndTabLabel" -> "Interfaz de usuario",
+"LinksTabLabel" -> "Enlaces",
+"ParallelTabLabel" -> "Paralelo",
+"DevicesTabLabel" -> "Dispositivos",
+"NetworkTabLabel" -> "Red",
+"MachineTabLabel" -> "M\[AAcute]quina",
+"OtherTabLabel" -> "Otros",
+"CopyButtonText" -> " Copiar ",
+"BenchmarkButtonText" -> RowBox[{"\"Benchmark with \"", StyleBox["WolframMark", FontSlant -> Italic], "\[Ellipsis]"}],
+"OtherKernelsText" -> "Other Kernels\[Ellipsis]",
+"AdvancedText" -> "Avanzado",
+"NotebookSecurityText" -> "Seguridad de cuaderno",
+"DirectoriesSmallText" -> " directorios",
+"FilesSmallText" -> " archivos",
+"PackagesSmallText" -> " paquetes",
+"AddOnsSmallText" -> " add\[Hyphen]ons",
+"StreamsSmallText" -> " flujos",
+"ConnectionsSmallText" -> " conexiones",
+"ProgramsSmallText" -> " programas",
+"ExtensionsSmallText" -> " extensiones",
+"LibrariesSmallText" -> " bibliotecas",
+"ControlsSmallText" -> " controles",
+"ServersSmallText" -> " servidores",
+"NotLoadedSmallText" -> "no cargado",
+"ItemsSmallText" -> " \[IAcute]tems",
+"OpenPreferencesButtonText" -> "Open Preferences\[Ellipsis]",
+"OpenOptionInspectorButtonText" -> "Open Option Inspector\[Ellipsis]",
+"ScreenInformationText" -> "Informaci\[OAcute]n de pantalla",
+"GraphicsSubsystemText" -> "Subsistema de gr\[AAcute]ficos",
+"ControllerDeviceText" -> "Dispositivo de control",
+"NoControllersDetectedText" -> "No se han detectado dispositivos de control.",
+"TestConnectivityButtonText" -> "Verificar conectividad\[Ellipsis]",
+"UpdateLocalIndexButtonText" -> "Actualizar \[IAcute]ndice local\[Ellipsis]"
+}
+@|
+@@resource LicenseFailureDialog
+{
+"ProcessLimitTitleText" -> "El proceso de licencia ha alcanzado el l\[IAcute]mite",
+"GeneralLicenseTitleText" -> "La licencia ha alcanzado el l\[IAcute]mite",
+"ProcessLimitDialogText" -> RowBox[{"\" El kernel de Wolfram Language no pudo iniciar porque usted intent\
+\[OAcute] ejecutar m\[AAcute]s k\[EAcute]rneles de los permitidos. \
+Para extender su l\[IAcute]mite de proceso, por favor \"", 
+  ButtonBox[
+   PaneSelectorBox[{True -> 
+      StyleBox["\" contacte Wolfram Research \"", "HyperlinkActive"], 
+     False -> StyleBox["\" contacte Wolfram Research \"", "Hyperlink"]}, 
+    Dynamic[CurrentValue["MouseOver"]]], 
+   ButtonData -> "http://www.wolfram.com/mathematica/contact-us"], "."}],
+"GeneralLicenseDialogText" -> RowBox[{"\" El kernel de Wolfram Language no pudo iniciar porque su licencia ha alcanzado el l\[IAcute]mite. Es posible que necesite concluir las sesiones existentes de kernel o expandir su licencia. \"", 
+  ButtonBox[
+   PaneSelectorBox[{True -> 
+      StyleBox["\" Aprenda m\[AAcute]s.\"", "HyperlinkActive"], 
+     False -> StyleBox["\" Aprenda m\[AAcute]s.\"", "Hyperlink"]}, 
+    Dynamic[CurrentValue["MouseOver"]]], 
+   ButtonData -> "http://support.wolfram.com/kb/36360"]}]
+}
+@|
+@@resource EditCellTagsDialog
+{
+"WindowTitle" -> "Editar etiquetas de celda para", 
+"CellTag" -> "Etiqueta de celda:", 
+"Add" -> "Agregar", 
+"Remove" -> "Eliminar", 
+"NotebookTags" -> "Todas las etiquetas de celda en el cuaderno:", 
+"SelectionTags" -> "Etiquetas de la(s) celda(s) actual(es) seleccionada(s):", 
+"RemoveTag" -> "Hacer doble clic para eliminar la etiqueta de la(s) celda(s) actual(es) seleccionada(s).", 
+"AddTag" -> "Hacer doble clic para agregar la etiqueta a la(s) celda(s) actual(es) seleccionada(s).", 
+"Close" -> "Cerrar", 
+"Help" -> "Ayuda"
+}
+@|
+@@resource KernelPropertiesDialog
+{
+"WindowTitle" -> "Configuraci\[OAcute]n de kernel", 
+"KernelName" -> "Nombre de kernel:", 
+"AppendNameCheck" -> "Adjuntar nombre a mensajes de entrada/salida", 
+"LaunchOnCheck" -> "Lanzar autom\[AAcute]ticamente la interfaz de inicio", 
+"BasicOptions" -> "Opciones b\[AAcute]sicas", 
+"LaunchOnText" -> "Lanzar en:", 
+"LocalRadioButton" -> "M\[AAcute]quina local", 
+"RemoteRadioButton" -> "M\[AAcute]quina remota", 
+"MachineName" -> "Nombre de m\[AAcute]quina:", 
+"UserName" -> "Nombre de usuario:", 
+"KernelProgram" -> "Programa de kernel:", 
+"AdvancedOptions" -> "Opciones avanzadas", 
+"WSScript" -> "Argumentos para WSOpen:", 
+"LaunchScript" -> "Comando de lanzamiento:", 
+"HelpButton" -> "Ayuda", 
+"OKButton" -> "Ok", 
+"CancelButton" -> "Cancelar"
+}
+@|
+@@resource DebuggerDialogs
+{
+"LocalVariables" -> "\"Variables locales\"",
+"HighlightStackFrames" -> "\"Destacar marcos de pila en fuente\"",
+"RenderGraphics" -> "\"Mostrar elementos gr\[AAcute]ficos en la pila\""
+}
+@|
+@@resource WelcomeScreen
+{
+"NewDocumentLabel" -> "Nuevo documento",
+"OpenRecent" -> "ARCHIVOS RECIENTES",
+"NotebookLabel" -> "Opciones de cuaderno",
+"SlideShowLabel" -> "Cuaderno de presentaci\[OAcute]n\[Ellipsis]",
+"TemplateNotebookLabel" -> "Plantilla de cuaderno",
+"TestingNotebookLabel" -> "Cuaderno de prueba",
+"DataResourceLabel"  -> "Elemento del repositorio de datos",
+"FunctionResourceLabel" -> "Elemento del repositorio de funciones",
+"NewNotebookTooltip" -> "Press \[SystemEnterKey] to open a new notebook",
+"DemonstrationLabel" -> "Cuaderno del Proyecto de Demostraciones",
+"PackageLabel" -> "Paquete de Wolfram Language (.wl)",
+"ScriptLabel" -> "Archivo de comandos de WolframScript (.wls)",
+"StyledNotebookLabel" -> "Cuaderno con estilo\[Ellipsis]",
+"TextFileLabel" -> "Archivo de texto (.txt)",
+"ActivatePlayerProLabel" -> RowBox[{"Activate Wolfram Player ", StyleBox["\[VerticalLine]", FontColor -> RGBColor[0.576471, 0.584314, 0.596078]], " PRO ", StyleBox["\[RightGuillemet]", FontColor -> RGBColor[0.882353, 0.211765, 0.196078]]}],
+"OpenDialogText" -> "Abrir\[Ellipsis]",
+"CloudOpenDialogText" -> "Abrir desde la nube\[Ellipsis]",
+"VersionNumberLabel" -> "Versi\[OAcute]n",
+"WindowTitle" -> "Bienvenido a Wolfram Mathematica",
+"WindowTitlePlayer" -> "Bienvenido a Wolfram Player",
+"WindowTitlePlayerPro" -> "Bienvenido a Wolfram Player | PRO",
+"WindowTitleWD" -> "Bienvenido a Wolfram Desktop",
+"WindowTitleWFP" -> "Bienvenido a Wolfram Finance Platform",
+"EnterActKey" -> "Ingrese su clave de activaci\[OAcute]n \[RightGuillemet]",
+"NewsEventsLabel" -> "Noticias y eventos:",
+"DisplayAtStartupText" -> "Mostrar al inicio",
+"ObsoleteNewsText" -> "For the latest Wolfram news, events, and training options, visit wolfram.com \[RightGuillemet]",
+"GraduationNewsText" -> "Contin\[UAcute]e usando el Sistema Wolfram despu\[EAcute]s de graduarse. Actual\[IAcute]cese a la versi\[OAcute]n profesional del Sistema Wolfram.",
+"ExpiringMessageDefault" -> "Su licencia expirar\[AAcute] el: \!\(\*ValueBox[\"$ExpirationString\"]\).",
+"ExpiringMessageSite" -> "Su licencia expirar\[AAcute] el: \!\(\*ValueBox[\"$ExpirationString\"]\). Cuando la licencia de su organizaci\[OAcute]n sea renovada, su licencia puede que sea extendida de forma autom\[AAcute]tica. Para m\[AAcute]s informaci\[OAcute]n, \!\(\*TagBox[ButtonBox[\"contacte a Wolfram Research\",BaseStyle->\"ContactLink\"], MouseAppearanceTag[\"LinkHand\"]]\).",
+"ExpiringMessageStudent" -> "Your license will expire on: \!\(\*ValueBox[\"$ExpirationString\"]\). \!\(\*TagBox[ButtonBox[\"Compre ahora \[RightGuillemet]\", ButtonData -> \"http://www.wolfram.com/mathematica/how-to-buy\", BaseStyle -> \"ContactLink\"], MouseAppearanceTag[\"LinkHand\"]]\)",
+"ExpiringMessageStudentSite" -> "Su licencia expirar\[AAcute] el: \!\(\*ValueBox[\"$ExpirationString\"]\). Cuando la licencia de su organizaci\[OAcute]n sea renovada, su licencia puede que sea extendida de forma autom\[AAcute]tica. Para m\[AAcute]s informaci\[OAcute]n, \!\(\*TagBox[ButtonBox[\"contacte a Wolfram Research\",BaseStyle->\"ContactLink\"], MouseAppearanceTag[\"LinkHand\"]]\)..",
+"ExpiringMessageStudentGrace" -> "Su licencia expirar\[AAcute] en \!\(\*ValueBox[\\$DaysUntilExpiration\"]\) d\[IAcute]as a menos que su condici\[OAcute]n de estudiante sea renovada. Si a\[UAcute]n no nos ha enviado su prueba de condici\[OAcute]n de estudiante, \!\(\*TagBox[ButtonBox[\"contacte a Wolfram Research\",BaseStyle->\"ContactLink\"], MouseAppearanceTag[\"LinkHand\"]]\)..",
+"ExpiringMessageHome" -> "Su licencia expirar\[AAcute] el: \!\(\*ValueBox[\"$ExpirationString\"]\).",
+"ExpiringMessageEnterprise" -> "Su licencia expirar\[AAcute] el: \!\(\*ValueBox[\"$ExpirationString\"]\).",
+"PrereleaseGuidePageLink" -> FileNameJoin[{$InstallationDirectory, "Documentation", "English", 
+  "System", "Guides", "SummaryOfNewFeaturesIn100.nb"}],
+"CloudLoginButtonText" -> StyleBox[RowBox[{StyleBox["Inicie sesi\[OAcute]n", FontWeight -> Bold], 
+	" para acceder a sus servicios de Wolfram Cloud\[Ellipsis]"}], 
+	FontFamily -> Dynamic[CurrentValue["ControlsFontFamily"]],
+	FontSize -> 11,
+	AutoSpacing -> False,
+	LanguageCategory -> "NaturalLanguage",
+	LineIndent -> 0,
+	LineSpacing -> {1, -1}],
+"AccountSettings" -> "Configuraci\[OAcute]n de cuenta",
+"SignOut" -> "Desconectarse",
+"BuyNow" -> "Compre ahora",
+"ContactUs" -> "Cont\[AAcute]ctenos",
+"CloudTooltipDisabled" -> "Primero inicie sesi\[OAcute]n para acceder a sus archivos de la nube."
+}
+@|
+@@resource CloudLoginDialog
+{
+"WolframIDLabel1" -> "Wolfram ID",
+"WolframIDLabel2" -> "(su correo electr\[OAcute]nico)",
+"PasswordLabel" -> FEPrivate`FrontEndResource["ActivationDialog", "PasswordLabel"],
+"ForgotPasswordLabel" -> "\[DownQuestion]Olvid\[OAcute] su contrase\[NTilde]a?",
+"CloudAccountQuery" -> "\[DownQuestion]A\[UAcute]n no tiene una cuenta de Wolfram Cloud?",
+"SignInButtonLabel" -> "Inicie sesi\[OAcute]n",
+"JoinNowButtonLabel" -> "Cree una cuenta",
+"CancelButtonLabel" -> "Cancelar",
+"RemeberMeLabel" -> "Recordarme",
+"WindowTitle" -> "Ingresar sus credenciales de inicio de sesi\[OAcute]n."
+}
+@|
+@@resource CloudDialogs
+{
+"OpenTitle" -> "Abrir desde Wolfram Cloud",
+"SaveTitle" -> "Guardar en Wolfram Cloud",
+"CloudFiles" -> "Archivos de la nube",
+"Home" -> "P\[AAcute]gina de inicio",
+"Cancel" -> "Cancelar",
+"Open" -> "Abrir",
+"Save" -> "Guardar",
+"Replace" -> "Reemplazar",
+"NewFolder" -> "Crear un nuevo folder",
+"Create" -> "Crear",
+"OK" -> "OK",
+"SaveAsPrompt" -> "Guardar como: ",
+
+(* tooltips *)
+"Type" -> "Tipo: ",
+"Size" -> "Tama\[NTilde]o: ",
+"Modified" -> "Last modified: ",
+"Owner" -> "Propietario: ",
+"Permissions" -> "Permisos: ",
+"Refresh" -> "Refrescar listado de archivos",
+
+(* loading page *)
+"Initializing" -> "Initializing\[Ellipsis]",
+"Loading" -> "Loading\[Ellipsis]",
+"InternetOff" -> "No se encontr\[OAcute] conexi\[OAcute]n a internet",
+"InternetBlocked" -> "No se permite internet",
+"NotConnected" -> "No est\[AAcute] conectado a Wolfram Cloud",
+"NotDirectory" -> "Lo sentimos. Encontramos un problema y no podemos procesar su solicitud.",
+"TryAgain" -> "Intente de nuevo",
+"EmptyDirectory" -> "-vac\[IAcute]o-",
+
+(* confirmation dialogs *)
+"ReplaceText" -> "The file \"`1`\" already exists. Do you want to replace it?",
+"ReplaceCaption" -> "A file with the same name already exists. Replacing it will overwrite its current contents.",
+
+"InvalidNameText" -> "La cadena de caracteres \"`1`\" no es un nombre v\[AAcute]lido de CloudObject.", 
+"InvalidNameCaption" -> "Los nombres de CloudObject solo pueden contener letras, n\[UAcute]meros, espacios y los siguientes s\[IAcute]mbolos: - . _ ! $ ( ) + , @ ~",
+
+"NewFolderTitle" -> "Folder nuevo",
+"NewFolderPrompt" -> "Nombre de folder nuevo:",
+"NewFolderConflict" -> "Este nombre ya est\[AAcute] tomado.",
+
+(* internet blocked dialog *)
+"InternetBlockedText" -> "El Sistema Wolfram actualmente no est\[AAcute] autorizado para acceder a internet. Cambie la configuraci\[OAcute]n de la secci\[OAcute]n de Conectividad a Internet en la ventana de di\[AAcute]lofo de Preferencias.",
+"InternetBlockedButton" -> "Abrir Conectividad a Internet",
+"InternetBlockedClose" -> "Cerrar",
+
+(* status messages *)
+"statusContent" -> "Descargando contenido...",
+"statusContentPrefix" -> "Descargando contenido: ",
+"statusDirectoryInfo" -> "Descargando informaci\[OAcute]n de directorio: ",
+"statusCheckingDirectoryInfo" -> "Comprobando la informaci\[OAcute]n del directorio...",
+"statusSaving" -> "Guardando: ",
+"statusStarting" -> "Iniciando",
+"statusReading" -> "Leyendo datos del sistema de archivos locales",
+"statusConnecting" -> "Conect\[AAcute]ndose a Wolfram Cloud",
+
+(* activity dialog *)
+"ActivityTitle" -> "Actividad de Wolfram Cloud",
+"ActivityCancelAll" -> "Cancelar todo",
+"ActivityCancelAllQuit" -> "Cancelar todo y Salir",
+"ActivityCancelAllSignOut" -> "Cancelar todo y Desconectarse",
+"ActivityNone" -> "No hay actividad",
+"ActivityOpening" -> "Abriendo",
+"ActivitySaving" -> "Guardando",
+"ActivityWaiting" -> "Waiting\[Ellipsis]",
+"ActivityCancelPending" -> "Cancelar",
+"ActivityCancelQueued" -> "Eliminar de la cola",
+"ActivityCancelFailed" -> "Cancelar",
+
+(* activity errors *)
+"ActivityError409" -> "Hay una versi\[OAcute]n de este archivo en conflicto en Wolfram Cloud. \[DownQuestion]Le gustar\[IAcute]a remplazarla?",
+"ActivityError409Cancel" -> "No, Cancelar",
+"ActivityError409Replace" -> "S\[IAcute], Remplazar",
+"ActivityError1600Open" -> "El archivo no se pudo abrir: No se pudo conectar a Wolfram Cloud",
+"ActivityError1600Save" -> "El archivo no se pudo guardar: Co se pudo conectar a Wolfram Cloud",
+"ActivityError1601Open" -> "El archivo no se pudo abrir: Internet no est\[AAcute] permitido",
+"ActivityError1601Save" -> "El archivo no se pudo guardar: Internet no est\[AAcute] permitido",
+"ActivityError1602Open" -> "El archivo no se pudo abrir: No se encontr\[OAcute] conexi\[OAcute]n a internet",
+"ActivityError1602Save" -> "El archivo no se pudo guardar: No se encontr\[OAcute] conexi\[OAcute]n a internet",
+"ActivityError1603" -> "Por favor inicie su sesi\[OAcute]n para acceder a este archivo desde Wolfram Cloud",
+"ActivityError1700Save" -> "No se pudo guardar el archivo en Wolfram Cloud. Ha alcanzado su l\[IAcute]mite de suscripci\[OAcute]n.",
+"ActivityGenericOpenError" -> "El archivo no se pudo abrir: error ",
+"ActivityGenericSaveError" -> "El archivo no se pudo guardar: error ",
+"ActivityErrorAccountSettings" -> "Configuraci\[OAcute]n de cuenta",
+"ActivityErrorTryAgain" -> "Intente de nuevo",
+"ActivityErrorLogin" -> "Inicie sesi\[OAcute]n",
+
+(* notifications: attached cells / toolbars *)
+"notifySaving" -> "Guardando en Wolfram Cloud\[Ellipsis]",
+"notifyViewActivity" -> "Ver actividad de Wolfram Cloud",
+"notifyFailed" -> "No se pudo guardar el archivo en Wolfram Cloud.",
+"notifyMoreInfo" -> "para m\[AAcute]s informaci\[OAcute]n",
+"notifyOffline" -> "No se pudo conectar a Wolfram Cloud. Los cambios no fueron guardados.",
+
+(* cloud publish *)
+"CancelButtonLabel" -> "Cancelar",
+"CloseButtonLabel" -> "Cerrar",
+"LoginButtonLabel" -> "Hacer clic para iniciar sesi\[OAcute]n",
+"PublishButtonLabel" ->"Publicar",
+"RetryButtonLabel" -> "Intentar de nuevo",
+"WindowTitle" ->"Publicar en la nube",
+
+
+(* cloud publish: form panel *)
+"FormDefaultPublishDirectory" -> "Publicado",
+"FormNamedFileDirectory" -> "Especificar un nombre",
+"FormOpenerTitle" -> "Advanzado",
+"FormBadFilenameError" -> "El nombre solo puede contener letras en ingl\[EAcute]s, n\[UAcute]meros, espacios y los siguientes s\[IAcute]mbolos:-._",
+"FormPasswordFieldFooter" -> "Cualquier secuencia de caracteres es permitida",
+"FormPasswordFieldTitle" -> "Especificar una contrase\[NTilde]a",
+"FormPasswordMissingError" -> "Por favor especifique una contrase\[NTilde]a",
+"FormAddNameLabel" -> "Especificar un nombre",
+"FormAutoGenerateNameLabel" -> "Asignar autom\[AAcute]ticamente un URL",
+"FormNoPasswordLabel" -> "Permitir que cualquier persona tenga acceso",
+"FormPasswordLabel" -> "Proteger con contrase\[NTilde]a",
+"FormSubtitle" -> "Crear una copia accesible al p\[UAcute]blico de su cuaderno",
+"FormTitle" -> "Publicar en la nube",
+
+
+(* cloud publish: completed panel *)
+"CompletedURLLabel" -> "URL",
+"CompletedEmbedCode" -> "C\[OAcute]digo incrustado",
+"CompletedLinkLabel" -> "Ver \[RightGuillemet]",
+"CompletedSubtitle" -> "Su cuaderno ha sido publicado.",
+"CompletedTitle" -> "Publicado",
+"CopyToClipboard" -> "Copiar en la papelera",
+"Copied" -> "\[DownExclamation]Copiado!",
+
+(* cloud publish: other panels *)
+"FailedPublishTitle" -> "No se puede publicar",
+"DownloadDisabledTitle" -> "El acceso a internet no est\[AAcute] disponible",
+"NoInternetTitle" -> "Internet desconectado",
+"NotLoggedInTitle" -> "Wolfram Cloud desconectado",
+"DownloadDisabledMessage" -> "El acceso a internet ha sido deshabilitado en el panel de preferencias.",
+"InitializationFailedMessage" -> "No se puede inicializar. intent\[AAcute]lo de nuevo.",
+"NoInternetMessage" -> "Por favor revise su conexi\[OAcute]n a internet e intente de nuevo.",
+"NotLoggedInMessage" -> "No est\[AAcute] conectado a Wolfram Cloud.",
+"PublishFailedMessage" -> "Su cuaderno no pudo ser publicado en este momento. Por favor intente de nuevo. Si el problema persiste, por favor \!\(\*ButtonBox[TagBox[TemplateBox[{\"cont\[AAcute]ctenos.\", StyleBox[\"contact us.\", \"HyperlinkActive\"], BaseStyle -> \"Hyperlink\"}, \"MouseoverTemplate\"], MouseAppearanceTag[\"LinkHand\"]], BaseStyle -> \"Hyperlink\", ButtonFunction :> Function[FE`hyperlinkCoded[\"http://www.wolfram.com/support/contact/email\", \"source=cloudpublishdialog\", \"topic=feedback\"]], Evaluator -> \"System\"]\)",
+"DownloadDisabledButtonLabel" -> "Abrir conectividad a internet"
+}    
+@|
+@@resource MathematicaClosingDialog
+{
+"NewNotebook" -> "Nuevo cuaderno",
+"ToggleText" -> "Always exit after closing last window"
+}
+@|
+@@resource ChooseFileDialogs
+{
+"OptionsButtonText" -> "Opciones...",
+"ChooseButtonText" -> "Elegir",
+"OpenFileFilterLabelText" -> "Habilitar:",
+"SaveFileFilterLabelText" -> "Formato:"
+}
+@|
+@@resource MiscellaneousDialogs
+{
+"ReindexingDialogObsoleteIndexDetected" -> "Se detectaron \[IAcute]ndices de paquetes externos obsoletos",
+"ReindexingDialogShowDetails" -> "Mostrar detalles \[RightGuillemet]",
+"ReindexingDialogHideDetails" -> "Ocultar detalles \[LeftGuillemet]",
+"ReindexingDialogCreatingNewIndices" -> "Creaci\[OAcute]n de nuevos \[IAcute]ndices\[Ellipsis]",
+"ReindexingDialogExternalPackagesToReindex" -> " Paquetes externos para reindexar",
+"ReindexingDialogPackageListPreamble" -> "Usted tiene los siguientes paquetes de Wolfram Language con \[IAcute]ndices \nde documentaci\[OAcute]n vieja:",
+"ReindexingDialogMayTakeAWhile" -> "Esto puede tomar un tiempo, pero ocurrir\[AAcute] solo una vez.",
+"ReindexingDialogWindowTitle" -> "Se requiere reindexar el paquete externo"
+}
+@|
+@|
+@|
+@| dialog button texts
+@|
+@|
+@@resource okButtonText
+Aceptar
+@|
+@@resource okButtonTextWithMnemonic
+&Aceptar
+@|
+@@resource cancelButtonText
+Cancelar
+@|
+@@resource cancelButtonTextWithMnemonic
+&Cancelar
+@|
+@@resource closeButtonText
+Cerrar
+@|
+@@resource yesButtonText
+S\[IAcute]
+@|
+@@resource yesButtonTextWithMnemonic
+S\[IAcute]
+@|
+@@resource noButtonText
+No
+@|
+@@resource noButtonTextWithMnemonic
+&No
+@|
+@@resource alwaysButtonText
+Siempre
+@|
+@@resource alwaysButtonTextWithMnemonic
+&Siempre
+@|
+@@resource continueButtonText
+Continuar
+@|
+@@resource continueButtonTextWithMnemonic
+Co&ntinuar
+@|
+@@resource saveButtonText
+Guardar
+@|
+@@resource saveButtonTextWithMnemonic
+&Guardar
+@|
+@@resource dontSaveButtonText
+No guardar
+@|
+@@resource dontSaveButtonTextWithMnemonic
+&No guardar
+@|
+@@resource quitButtonText
+Salir
+@|
+@@resource quitButtonTextWithMnemonic
+&Salir
+@|
+@@resource reviewButtonText
+Revisar documento sin guardar...
+@|
+@@resource dontSaveAnyButtonText
+No guardar ninguno
+@|
+@@resource pasteLiteralButtonText
+Pegar literal
+@|
+@@resource continueWaitingButtonText
+Continuar en espera
+@|
+@@resource abortButtonText
+Abortar
+@|
+@@resource disableDynamicUpdatingButtonText
+Desactivar la actualizaci\[OAcute]n din\[AAcute]mica
+@|
+@@resource learnMoreButtonText
+Aprenda m\[AAcute]s
+@|
+@|
+@@resource purchaseLicenseButtonText
+Comprar
+@|
+@|
+@| dialog main & sub texts
+@|
+@|
+@@resource reviewUnsavedDocsQuittingDialogMainText
+\[DownQuestion]Desea revisar sus documentos no guardados antes de salir?
+@|
+@@resource reviewUnsavedDocsClosingDialogMainText
+\[DownQuestion]Desea revisar sus documentos no guardados antes de cerrar?
+@|
+@@resource reviewUnsavedDocsLoggingOutDialogMainText
+"\[DownQuestion]Desea revisar sus documentos no guardados antes de desconectarse?"
+@|
+@@resource reviewUnsavedDocsDialogSubText
+Si no revisa sus documentos, todos sus cambios se perder\[AAcute]n.
+@|
+@@resource quitKernelDialogMainText
+\[DownQuestion]Est\[AAcute] seguro de que quiere dejar el kernel?
+@|
+@@resource getCoordinatesExplanationDialogMainText
+Para obtener coordenadas en un gr\[AAcute]fico en 2D,mantenga presionada la tecla Command y mueva el cursor por el \[AAcute]rea del gr\[AAcute]fico.Los valores de las coordenadas de la posici\[OAcute]n del cursor se mostrar\[AAcute]n en el \[AAcute]rea de estado de la ventana.
+@|
+@@resource getCoordinatesExplanationDialogSubText
+Si hace clic y se presiona la tecla Command simult\[AAcute]neamente, se seleccionar\[AAcute]n las coordenadas. Puede entonces copiar y pegar las coordenadas en una celda de entrada.
+@|
+@@resource removeOptionsWarningMainText
+\[DownQuestion]Est\[AAcute] seguro de que quiere eliminar todas las opciones actuales seleccionadas?
+@|
+@@resource removeOptionsWarningSubText
+Elija Recursivo para eliminar opciones de todos los subelementos tambi\[EAcute]n.
+@|
+@@resource saveCompanionPackageMainText
+\[DownQuestion]Desea envolver la expresi\[OAcute]n en TraditionalForm pegada en una FormBox?
+@|
+@@resource saveCompanionPackageSubText
+\[DownQuestion]Desea crear un Paquete de Autoguardado?
+@|
+@@resource pastingTraditionalFormWarningMainText
+\[DownQuestion]Desea envolver la expresi\[OAcute]n en TraditionalForm pegada en una FormBox?
+@|
+@@resource pastingTraditionalFormWarningSubText
+Est\[AAcute] tratando de pegar una expresi\[OAcute]n TraditionalForm en una celda StandardForm. Si quiere asegurarse de que se preserve el significado de la expresi\[OAcute]n, debe convertirla primero a StandardForm.
+@|
+@@resource prefsFileModifiedMainText
+El archivo de preferencia %s ha sido modificado fuera de esta sesi\[OAcute]n de la interfaz de usuario. \[DownQuestion]Desea reemplazar el archivo?
+@|
+@@resource prefsFileModifiedSubText
+El archivo de preferencia %s ha sido modificado fuera de esta sesi\[OAcute]n de la interfaz de usuario. \[DownQuestion]Desea reemplazar el archivo?
+@|
+@@resource evaluationTraditionalFormMainText
+Est\[AAcute] solicitando que Wolfram Language interprete una entrada TraditionalForm. Solamente InputForm y StandardForm ofrecen especificaciones completas y precisas de entrada de Wolfram Language. \[DownQuestion]Desea evaluar la entrada?
+@|
+@@resource evaluationNonStandardFormMainText
+Est\[AAcute] dando una entrada que no es Wolfram Language InputForm ni StandardForm. \[DownQuestion]Desea evaluar la entrada?
+@|
+@@resource evaluationNonStandardFormSubText
+Wolfram Language tiene reglas para tratar de convertir entradas de otras formas, pero algunas ambig\[UDoubleDot]edades pueden surgir. Para ver c\[OAcute]mo Wolfram Language convertir\[AAcute] su expresi\[OAcute]n, elija \[IAcute]tems del submen\[UAcute] "Convertir a" del men\[UAcute] "Celda".
+@|
+@@resource syntaxErrorInFileMainText
+Hay un error de sintaxis en el archivo que se leer\[AAcute]. \[DownQuestion]Desea abrirlo como un texto simple?
+@|
+@@resource syntaxErrorInFileSubText
+Un error de sintaxis indica que el archivo se ha corrompido o que ha sido generado incorrectamente. Si selecciona S\[IAcute], el archivo se abrir\[AAcute] como un archivo de texto simple, con la posici\[OAcute]n del error de sintaxis seleccionada.  Si puede corregir el error guarde el archivo y \[AAcute]bralo de nuevo.
+@|
+@@resource reallyDeleteAllOutputMainText
+\[DownQuestion]Est\[AAcute] seguro de que quiere borrar todas las celdas de salida del cuaderno?
+@|
+@@resource reallyDeleteAllOutputSubText
+Esta operaci\.f3n no puede deshacerse.
+@|
+@@resource stylesDialogMainText
+Este cuaderno est\[AAcute] usando una hoja de estilo compartida. \[DownQuestion]Desea modificar una copia privada de la hoja de estilo o la copia compartida?
+@|
+@@resource pasteAsMathMLMainText
+El texto que est\[AAcute] pegando parece ser una expresi\[OAcute]n MathML. Puede pegar el texto literal o bien puede tratar de pegar la expresi\[OAcute]n tipogr\[AAcute]fica correspondiente. \[DownQuestion]Desea pegar la expresi\[OAcute]n tipogr\[AAcute]fica?
+@|
+@@resource pasteAsTeXMainText
+El texto que est\[AAcute] pegando parece ser una expresi\[OAcute]n TeX o LaTeX. Puede pegar el texto literal o bien puede tratar de pegar la expresi\[OAcute]n tipogr\[AAcute]fica correspondiente. \[DownQuestion]Desea pegar la expresi\[OAcute]n tipogr\[AAcute]fica?
+@|
+@@resource wrappedToBeginningText
+Volver al comienzo del cuaderno.
+@|
+@@resource wrappedToEndText
+Ir hasta el final del cuaderno.
+@|
+@@resource changingTrustedPathMainText
+NotebookSecurityOptions tales como TrustedPath, UntrustedPath y TrustByDefault controlan si los cuadernos pueden ejecutar programas de Wolfram Language autom\[AAcute]ticamente. \[DownQuestion]Est\[AAcute] seguro de que quiere cambiar el valor de una de estas opciones?
+@|
+@@resource changingTrustedPathSubText
+No agregue un directorio a TrustedPath ni elimine un directorio de UntrustedPath a menos que conf\[IAcute]e en la fuente de los cuadernos en ese directorio. Si no est\[AAcute] seguro de por qu\[EAcute] aparece este cuadro de di\[AAcute]logo, elija No.
+@|
+@@resource pasteDynamicMainText
+El contenido que est\[AAcute] insertando puede ejecutar programas de Mathematica autom\[AAcute]ticamente. \[DownQuestion]Est\[AAcute] seguro de que quiere insertar este contenido?
+@|
+@@resource savePackageMainText
+Este documento contiene celdas TraditionalForm. \[DownQuestion]Est\[AAcute] seguro de que quiere continuar?
+@|
+@@resource savePackageSubText
+Guardar este documento convertir\[AAcute] todas las celdas TraditionalForm a StandardForm.
+@|
+@@resource askIfRenderClipboardData
+Hay una gran cantidad de datos en el portapapeles de Mathematica. \[DownQuestion]Le gustar\[IAcute]a procesarlo para hacerlo disponible a otras aplicaciones cuando Mathematica ya no est\[EAcute] en ejecuci\[OAcute]n?
+@|
+@@resource askIfConvertToNotebook
+Usted est\[AAcute] intentando para modificar un documento que se ejecuta en Player. \[DownQuestion]Le gustar\[IAcute]a convertir esto en un documento primero, de manera que puedan hacerse los cambios?
+@|
+@@resource askIfAbortCloudTasks
+A\[UAcute]n hay datos siendo descargados en Wolfram Cloud.  \[DownQuestion]Desea seguir esperando a que los datos sean enviados?
+@|
+@@resource formattingNotebookContents
+Formatear contenidos de cuaderno
+@| 
+@@resource HandwritingInputTitle
+Entrada matem\[AAcute]tica a mano
+@| 
+@@resource changingExternalChannelFunctionsMainText
+ADVERTENCIA: La comunicaci\[OAcute]n en los canales de usuario, ya sea para escuchar o enviar un mensaje, puede involucrar la ejecuci\[OAcute]n de c\[OAcute]digo personalizado de Wolfram Language en su equipo. \[DownQuestion]Desea habilitar las funciones de canal externo?
+@|
+@@resource changingExternalChannelFunctionsSubText
+El c\[OAcute]digo personalizado fue creado por el autor del canal y generalmente no ha sido aprobado o apoyado por Wolfram Research. La ejecuci\[OAcute]n de c\[OAcute]digo personalizado de usuario puede destruir sus datos, da\[NTilde]ar su equipo y difundir su informaci\[OAcute]n personal. Nunca se comunique en un canal en cuyo autor usted no conf\[IAcute]a. 
+@|
+@|
+@@resource abortDynamicDialogMainText
+El kernel no est\[AAcute] respondiendo a la evaluaci\[OAcute]n din\[AAcute]mica.
+@|
+@@resource abortDynamicDialogSubText
+Usted puede elegir entre detener y reiniciar el kernel o continuar la espera.La actualizaci\[OAcute]n din\[AAcute]mica se puede volver a habilitar usando el comando Habilitar Actualizaci\[OAcute]n Din\[AAcute]mica en el men\[UAcute] de Evaluaci\[OAcute]n.
+@|
+@@resource disableDynamicDialogMainText
+Uno o m\[AAcute]s objetos din\[AAcute]micos est\[AAcute]n tomando tiempo excesivo en completar la evaluaci\[OAcute]n.
+@|
+@@resource disableDynamicDialogSubText
+Usted puede deshabilitar las evaluaciones din\[AAcute]micas o continuar la espera.La actualizaci\[OAcute]n din\[AAcute]mica se puede volver a habilitar usando el comando Habilitar Actualizaci\[OAcute]n Din\[AAcute]mica en el men\[UAcute] de Evaluaci\[OAcute]n.
+@|
+@@resource progressDialogCancelText
+Presione Comando-punto para cancelar.
+@|
+@@resource obsoleteCDFFormatWarningMainText
+Usted puede usar cuadernos (.nb) de forma interactiva en Wolfram Player.A pesar de que usted a\[UAcute]n puede guardar sus cuadernos como CDF, ya no es necesario hacerlo.
+@|
+@@resource obsoleteCDFFormatWarningSubText
+La interactividad extendida en Wolfram Player requiere guardar como .cdf, y es compatible solo con los productos Wolfram Enterprise.
+@|
+

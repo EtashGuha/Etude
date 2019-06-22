@@ -1,0 +1,12 @@
+{"Sin", "Cos", "Pi", "Tan", "Sec", "Cot", "Csc", "I", "Sqrt", "E", "Exp", 
+ "ArcTan", "Sinh", "Subscript", "Quantity", "D", "ArcSin", "Degree", "Cosh", 
+ "Log", "ArcCos", "Integrate", "DSolve", "None", "Derivative", 
+ "InverseLaplaceTransform", "Tanh", "Abs", "TrigExpand", "RotationMatrix", 
+ "Sum", "Sign", "Sech", "ExpToTrig", "Re", "Pochhammer", "Plus", 
+ "EulerGamma", "Conjugate", "Beta", "Zeta", "Inverse", "Interval", 
+ "HarmonicNumber", "Gamma", "DiracDelta", "Arg", "ArcSinh", "ArcCot", 
+ "MatrixForm", "HeavisideTheta", "GoldenRatio", "BaseForm", "TrigFactor", 
+ "Simplify", "Rational", "Product", "PrimeQ", "PrimePi", "PolyGamma", 
+ "Limit", "LegendreP", "InverseZTransform", "Infinity", "Im", 
+ "FourierTransform", "Expand", "Dt", "Det", "DawsonF", "Coth", 
+ "ComplexExpand", "BesselI", "BarnesG", "Assumptions"}

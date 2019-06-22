@@ -1,0 +1,66 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>DoubleBufferedPanel.OnPaint Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.UI.DoubleBufferedPanel.OnPaint.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">DoubleBufferedPanel.OnPaint Method </h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p>
+      </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Overrides Protected Sub OnPaint( _<br />   ByVal <i>e</i> As <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemWindowsFormsPaintEventArgsClassTopic.htm">PaintEventArgs</a> _<br />)</div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />protected override <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> OnPaint(<br />   <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemWindowsFormsPaintEventArgsClassTopic.htm">PaintEventArgs</a> <i>e</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>e</i>
+        </dt>
+        <dd>
+        </dd>
+      </dl>
+      <h4 class="dtH4">Remarks</h4>
+      <p> Catches and discards any MathematicaNotReadyException thrown during painting. Exceptions thrown during painting seem to be treated specially by .NET: Once one is thrown, the component paints itself with a red X and then never enters the OnPaint() method again. But MathematicaNotReadyExceptions are easy to generate in components that have a Paint event handler written in <i>Mathematica</i>. For example, the component is brought to the foreground and needs repainting but the kernel is busy with another computation. We don't want such exceptions to prevent the component from ever being drawn correctly again. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.UI.DoubleBufferedPanel.html">DoubleBufferedPanel Class</a> | <a href="Wolfram.NETLink.UI.html">Wolfram.NETLink.UI Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="OnPaint method">
+        </param>
+        <param name="Keyword" value="OnPaint method, DoubleBufferedPanel class">
+        </param>
+        <param name="Keyword" value="DoubleBufferedPanel.OnPaint method">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

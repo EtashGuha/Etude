@@ -1,0 +1,57 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>GetArray Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IMathLink.GetArray_overloads.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IMathLink.GetArray Method</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Reads an array of the specified type and depth. </p>
+      <h4 class="dtH4">Overload List</h4>
+      <p> Reads an array and discards information about the heads at each level. </p>
+      <blockquote class="dtBlock">
+        <a href="Wolfram.NETLink.IMathLink.GetArray_overload_1.html">Array GetArray(Type,int);</a>
+      </blockquote>
+      <p> Reads an array and records information about the heads at each level. </p>
+      <blockquote class="dtBlock">
+        <a href="Wolfram.NETLink.IMathLink.GetArray_overload_2.html">Array GetArray(Type,int,out string[]);</a>
+      </blockquote>
+      <h4 class="dtH4">Remarks</h4>
+      <p> Use this method when you want to read a 2-dimensional or deeper array. You will typically cast the result of this method to the desired array type, as in: <pre class="code">// C#
+int[,,] result = (int[,,]) ml.GetArray(typeof(int), 3);
+   
+// VB
+Dim result(,,) as Integer = CType(ml.GetArray(GetType(Integer), 3), GetType(Integer(,,)))
+</pre> The expression does not need to have head List. It can have any heads, at any depth, and the heads do not have to agree at each depth, meaning that you could read the expression {foo[1, 2], bar[3, 4]} as an int[,]. <p> This method only works for arrays that are rectangular, not jagged. In other words, you can read a <i>Mathematica</i> list like this: {{1,2,3},{4,5,6}} but not like this: {{1,2,3},{4,5}}. </p> For reading one-dimensional arrays, there are convenience functions for all the simple types, such as <a href="Wolfram.NETLink.IMathLink.GetInt32Array.html">GetInt32Array</a>, <a href="Wolfram.NETLink.IMathLink.GetBooleanArray.html">GetBooleanArray</a>, <a href="Wolfram.NETLink.IMathLink.GetStringArray.html">GetStringArray</a>, and so on. These methods are typed to return the specified type of array, so no casting is required. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IMathLink.html">IMathLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a></p>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

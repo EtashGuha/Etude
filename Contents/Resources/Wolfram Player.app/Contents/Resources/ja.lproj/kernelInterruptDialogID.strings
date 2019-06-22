@@ -1,0 +1,27 @@
+
+/* Class = "NSWindow"; title = "Local Kernel Interrupt"; ObjectID = "CFh-Py-O7v"; */
+"CFh-Py-O7v.title" = "ローカルカーネルの中止";
+
+/* Class = "NSButtonCell"; title = "Kill Program"; ObjectID = "DXy-kh-kPu"; */
+"DXy-kh-kPu.title" = "プログラムの停止";
+
+/* Class = "NSButtonCell"; title = "Abort"; ObjectID = "QeK-nE-81i"; */
+"QeK-nE-81i.title" = "放棄";
+
+/* Class = "NSButtonCell"; title = "Abort"; ObjectID = "Svz-st-AXp"; */
+"Svz-st-AXp.title" = "放棄";
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "V9t-Ab-M97"; */
+"V9t-Ab-M97.title" = "続行";
+
+/* Class = "NSButtonCell"; title = "Enter Subsession"; ObjectID = "htY-J0-Smd"; */
+"htY-J0-Smd.title" = "サブセッションを使用";
+
+/* Class = "NSTextFieldCell"; title = "Current running evaluation:"; ObjectID = "lD2-Hi-p0f"; */
+"lD2-Hi-p0f.title" = "現在評価中：";
+
+/* Class = "NSButtonCell"; title = "Interrupt"; ObjectID = "lW1-Eh-mQ1"; */
+"lW1-Eh-mQ1.title" = "中断";
+
+/* Class = "NSTextFieldCell"; title = "MathLink control of linked program:"; ObjectID = "qXL-u6-3fM"; */
+"qXL-u6-3fM.title" = "リンクされたプログラムのMathLink制御：";

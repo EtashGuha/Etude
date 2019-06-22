@@ -1,0 +1,10 @@
+{"StreamPoints", "Thickness", "StreamStyle", "StreamScale", 
+ "PerformanceGoal", "Automatic", "Style", "MaxRecursion", "Full", "Chop", 
+ "True", "Ticks", "Thick", "StreamColorFunctionScaling", 
+ "StreamColorFunction", "RGBColor", "RegionFunction", "Red", "Point", 
+ "PlotRange", "Orange", "Normalize", "Norm", "None", "Medium", "Map", 
+ "Large", "LabelStyle", "Join", "Inset", "ImageSize", "If", "Hue", 
+ "GrayLevel", "Gray", "Function", "FrameLabel", "Frame", "Forward", "False", 
+ "Epilog", "Directive", "Cos", "ControlActive", "ColorData", "Black", 
+ "AxesStyle", "AxesOrigin", "AxesLabel", "Axes", "AspectRatio", "Arrowheads", 
+ "Apply"}

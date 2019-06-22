@@ -1,0 +1,2812 @@
+(* ::Package:: *)
+
+(* ::Section::Closed:: *)
+(*Package Header*)
+
+
+FrontEnd`Private`$KernelInitializationComplete = False;
+Internal`$FEInitializationQ = True;
+
+
+(* ::Section::Closed:: *)
+(*FE <-> Kernel Initialization*)
+
+
+MathLink`LinkSetPrintFullSymbols[$ParentLink, True];
+
+
+General::oldversion =
+"Connections to kernels older than Version 2.2 are not supported. This kernel is version `1`.";
+
+
+If[$VersionNumber < 2.2,
+	Message[General::oldversion, $VersionNumber];
+	Exit[]
+];
+
+
+Attributes[FE`SetGraphicsFormatType] = {HoldFirst};
+FE`SetGraphicsFormatType[FE`Private`var_, FE`Private`value_] := (FE`Private`var = FE`Private`value);
+
+
+(* Backwards compatibility function, send automatically according to the LegacyGraphicsCompatibility option *)
+FE`SetLegacyGraphicsCompatibility[True] := Get["Version5`Graphics`"];
+FE`SetLegacyGraphicsCompatibility[False] := Get["Version6`Graphics`"];
+
+
+(* Controlled call to force Autoloading of Notebook.m *)
+Notebooks;
+
+
+(* Controlled temporary call to force BoxID to be in the System` context *)
+System`BoxID;
+FrontEnd`AddBoxIDs;
+FrontEnd`SetBoxIDs;
+FrontEnd`GetBoxIDs;
+FrontEnd`RemoveBoxIDs;
+
+
+FrontEnd`BoxReferenceExists;
+FrontEnd`BoxReferenceFind;
+FrontEnd`BoxReferenceRead;
+FrontEnd`BoxReferenceReplace;
+FrontEnd`BoxReferenceSetOptions;
+FrontEnd`BoxReferenceGetOptions;
+FE`BoxReference;
+FE`Segments;
+FE`BoxOffset;
+FE`BoxParent;
+FE`BoxAbsoluteSibling;
+FE`BoxRightSibling;
+FE`BoxLeftSibling;
+FE`BoxChild;
+FE`SearchStart;
+FE`SearchStop;
+FE`SearchDirection;
+
+
+(* Define $FrontEnd and $Notebooks *)
+FE`saveProtected = Unprotect[System`$FrontEnd, System`$Notebooks];
+System`$FrontEnd = FrontEndObject[$ParentLink];
+System`$Notebooks = True;
+Protect @@ FE`saveProtected;
+
+
+If[ NameQ["System`SystemOptions"],
+	{FE`systemOptions, FE`setSystemOptions} = ToExpression["{System`SystemOptions, System`SetSystemOptions}"],
+	{FE`systemOptions, FE`setSystemOptions} = {Developer`SystemOptions, Developer`SetSystemOptions}
+];
+
+
+(* Keep current evalaution locations up to date *)
+FE`SetEvaluationNotebookFileName[
+		FE`file : FrontEnd`FileName[{FE`dir___}, FE`name_String, FE`opts___]] := (
+	FE`$EvaluationNotebookFileName = FE`file;
+	FE`$EvaluationNotebookDirectory = FrontEnd`FileName[{FE`dir}, FE`opts]);
+
+FE`SetEvaluationNotebookFileName[___] := (
+	FE`$EvaluationNotebookFileName = FE`$EvaluationNotebookDirectory = None )
+
+
+If[$VersionNumber >= 3.0,
+	SetOptions[ $Output, CharacterEncoding -> "Unicode"];
+	Off[Get::noopen];
+	If[ DumpGet[ StringJoin[ System`Private`$SystemFileDir, 
+			ContextToFileName[ "FEKernelInit`"], "x"]] =!= Null,
+	    FE`$FrontEndPackageVersion = -1;
+	];
+	On[Get::noopen];
+	System`Private`$SystemPrintInput = (True&);
+];
+
+
+Attributes[System`ConsoleMessage] = {HoldAll};
+System`ConsoleMessage[FE`e___] := (
+	MathLink`CallFrontEnd[ FrontEnd`ConsoleMessagePacket[]];
+	MathLink`CallFrontEnd[ System`TextPacket[
+		ToString[HoldForm[FE`e], FilterRules[Options["stdout"], Options[ToString]]]
+	]];
+);
+
+
+(* clean FE` context out, if necessary *)
+FE`saveProtected = Unprotect[$ContextPath, $Packages];
+$ContextPath = DeleteCases[$ContextPath, "FE`"];
+$Packages = DeleteCases[$Packages, "FE`"];
+Protect @@ FE`saveProtected;
+
+
+Off[Interrupt::dgbgn];
+Off[Interrupt::dgend];
+
+
+If[$VersionNumber >= 3.0,
+	(* Tell the front end the list value of $BoxForms. *)
+	MathLink`CallFrontEnd[ FrontEnd`SetBoxFormNamesPacket[$BoxForms]];
+	(* If FE and kernel FEKernelInit are not synchronized, then
+       declared symbols may be out of sync; try to get them from FE *)
+	If[FE`$FrontEndPackageVersion =!= 10.40,
+		MathLink`CallFrontEnd[ FrontEnd`NeedCurrentFrontEndPackagePacket[$VersionNumber]];
+	   ];
+, (* else *)
+	MathLink`CallFrontEnd[ FrontEnd`NeedCurrentFrontEndPackagePacket[$VersionNumber]];
+];
+
+
+
+If[$VersionNumber >= 11.0 && NameQ["Internal`MessageMenuFormatter"],
+	Internal`$MessageFormatter = Symbol["Internal`MessageMenuFormatter"]];
+
+
+(* ::Section::Closed:: *)
+(*FrontEnd`Private`*)
+
+
+(* ::Subsection::Closed:: *)
+(*Begin[]*)
+
+
+FrontEnd`Private`wasContext = $Context;
+FrontEnd`Private`wasContextPath = $ContextPath;
+
+
+BeginPackage["GetFEKernelInit`"];
+Begin["FrontEnd`Private`"];
+
+
+(* ::Subsection::Closed:: *)
+(*Syntax coloring and other syntax information*)
+
+
+(* Functions for syntax coloring of global symbols *)
+
+
+FrontEnd`Private`$UserKernelQ = !(FrontEnd`Private`$KernelName === "Sandbox" ||
+	FrontEnd`Private`$KernelName === "System" || FrontEnd`Private`$KernelName === "Player");
+
+
+FrontEnd`Private`haveInternalSymbolList = (Length[Names["Internal`SymbolList"]] != 0);
+If[ !FrontEnd`Private`haveInternalSymbolList,
+	FrontEnd`Private`haveInternalSymbolList = (Length[Names["Internal`SymbolList1"]] != 0);
+	Unprotect[Internal`SymbolList];
+	Internal`SymbolList = Internal`SymbolList1;
+];
+
+
+FrontEnd`Private`ResolvedContextPath[] := If[MemberQ[$ContextPath, $Context], $ContextPath, Append[$ContextPath, $Context]];
+
+
+System`DeclareKnownSymbols[l_] := MathLink`CallFrontEnd[ FrontEnd`UpdateKernelSymbolContexts[
+  	 $Context, FrontEnd`Private`ResolvedContextPath[], {{$Context, {}, {}, l, {}}}]]
+
+
+FrontEnd`Private`GetCurrentSymbolsContexts[]:=Module[{},
+  
+  MathLink`CallFrontEnd[ FrontEnd`SetKernelSymbolContexts[
+		$Context,
+		FrontEnd`Private`ResolvedContextPath[],
+  		Map[Block[{$ContextPath={#}, $Context=#}, {#, {}, {}, Names["*"], {}}]&, 
+			Union[Join[DeleteCases[$ContextPath, "Global`"], {
+				"FrontEnd`", "Developer`", "Experimental`", "MathLink`", "MathLink`Information`",
+				"Internal`", "JLink`", "JLink`Information`", "NETLink`", "NETLink`Information`",
+				"DatabaseLink`", "DatabaseLink`Information`"}]]]]];
+  
+  MathLink`CallFrontEnd[ FrontEnd`UpdateKernelSymbolContexts[
+    $Context,
+  	FrontEnd`Private`ResolvedContextPath[], {
+  	{"System`", {}, {}, {"\[Pi]", "\[Infinity]", "\[ExponentialE]", "\[ImaginaryI]", "\[ImaginaryJ]", 
+  		"\[DifferentialD]", "\[SkeletonIndicator]", "\[Degree]"}, {}}
+  }]];
+  
+  MathLink`CallFrontEnd[ FrontEnd`UpdateKernelSymbolContexts[
+    $Context,
+  	FrontEnd`Private`ResolvedContextPath[], Block[{$ContextPath = {"Global`"}, $Context = "Global`"}, {
+  	{"Global`", Names["*"], {}, Select[Names["*"], FrontEnd`Private`symbolHasValueQ], {}}
+  }]]];
+  
+];
+  
+
+FrontEnd`Private`symbolHasValueQ[FrontEnd`Private`name_String] := Or[
+  {} =!= ToExpression[FrontEnd`Private`name, InputForm, OwnValues],
+  {} =!= ToExpression[FrontEnd`Private`name, InputForm, DownValues],
+  {} =!= ToExpression[FrontEnd`Private`name, InputForm, UpValues],
+  {} =!= ToExpression[FrontEnd`Private`name, InputForm, DefaultValues],
+  {} =!= ToExpression[FrontEnd`Private`name, InputForm, SubValues],
+  {} =!= ToExpression[FrontEnd`Private`name, InputForm, NValues],
+  {} =!= ToExpression[FrontEnd`Private`name, InputForm, FormatValues],
+  {} =!= ToExpression[FrontEnd`Private`name, InputForm, Messages]
+];
+
+
+If[FrontEnd`Private`$UserKernelQ,
+  If[FrontEnd`Private`haveInternalSymbolList,
+	FrontEnd`Private`GetUpdatedSymbolContexts[]:= Module[{context, path, info},
+		
+	   {context, path, info} = Internal`SymbolList[];
+	   MathLink`CallFrontEnd[ FrontEnd`UpdateKernelSymbolContexts[
+	   		 $Context,
+			 Prepend[DeleteCases[path, context], context],
+	   		info]];
+	   
+	   FrontEnd`Private`changes = Internal`GetTrackChanges[];
+	   Internal`UpdateSyntaxInformation[];
+	   If[Length[FrontEnd`Private`changes] =!= 0,
+	 	  MathLink`CallFrontEnd[ FrontEnd`UpdateDynamicObjects[
+	   			FrontEnd`Private`changes]]];
+	];
+	Internal`SymbolList[True];
+  ,
+	FrontEnd`Private`GetUpdatedSymbolContexts[]:= (
+	   FrontEnd`Private`changes = Internal`GetTrackChanges[];
+	   Internal`UpdateSyntaxInformation[];
+	   If[Length[FrontEnd`Private`changes] =!= 0,
+	 	  MathLink`CallFrontEnd[ FrontEnd`UpdateDynamicObjects[
+	   			FrontEnd`Private`changes]]];
+	 );
+  ];
+];
+
+
+If[FrontEnd`Private`$UserKernelQ,
+	Block[{$Context = wasContext, $ContextPath = wasContextPath},
+		FrontEnd`Private`GetCurrentSymbolsContexts[]
+	]];
+
+
+If[FrontEnd`Private`$UserKernelQ,
+  MathLink`CallFrontEnd[ FrontEnd`AddUsedToGenerateSideEffectGraphicsFunctions[{
+	{"System`", {
+		(* From System*)
+		"ArrayPlot", "ContourPlot", "ContourPlot3D", "DensityPlot", 
+		"ListContourPlot", "ListContourPlot3D", "ListDensityPlot", "ListLinePlot", "ListPlay",
+		"ListPlot", "ListPlot3D", "ListSurfacePlot3D", "ParametricPlot", 
+		"ParametricPlot3D", "Play", "Plot", "Plot3D", "RegionPlot", "RegionPlot3D", "Show"
+		}},
+
+	(* From packages *)
+	{"Graphics`ComplexMap`", {
+		"CartesianMap", "PolarMap"
+		}},
+		
+	{"Graphics`ImplicitPlot`", {
+		"ImplicitPlot"
+		}},
+	
+	{"Graphics`FilledPlot`", {
+		"FilledListPlot", "FilledPlot"
+		}},
+		
+	{"Graphics`InequalityGraphics`", {
+		"ComplexInequalityPlot", "InequalityPlot", "InequalityPlot3D"
+		}},
+	
+	{"Graphics`MultipleListPlot`", {
+		"MultipleListPlot"
+		}},
+		
+	{"Graphics`Graphics`", {
+		"ErrorListPlot", "LabeledListPlot", "LinearLogListPlot", 
+		"LinearLogPlot", "LogLinearListPlot", "LogLinearPlot", "LogListPlot", 
+		"LogLogListPlot", "LogLogPlot", "LogPlot", "PolarListPlot", "PolarPlot",
+		"ScaledListPlot", "ScaledPlot", "TextListPlot", "Histogram"
+		}},
+	
+	{"Graphics`PlotField3D`", {
+		"ListPlotVectorField3D", "PlotGradientField3D", "PlotVectorField3D"
+		}},
+	
+	{"Graphics`PlotField`", {
+		"ListPlotVectorField", "PlotGradientField", "PlotHamiltonianField",
+		"PlotVectorField", "PlotPolyaField"
+		}},
+	
+	{"Graphics`ParametricPlot3D`", {
+		"PointParametricPlot3D"
+		}},
+		
+	{"Graphics`Graphics3D`", {
+		"ListShadowPlot3D", "ListSurfacePlot3D", "CylindricalPlot3D",
+		"ScatterPlot3D", "ShadowPlot3D",  "SphericalPlot3D", "Histogram3D",
+		"BarChart3D"
+		}},
+		
+	{"Graphics`SurfaceOfRevolution`", {
+		"SurfaceOfRevolution"
+		}}
+}]]];
+
+
+(* 
+   Add syntax information to built-in functions.
+ *)
+If[FrontEnd`Private`$UserKernelQ,
+	informationFile = ToFileName[{$InstallationDirectory, "SystemFiles", "Kernel", "TextResources",
+		CurrentValue["Language"]}, "FunctionInformation.m"];
+	If[FileType[informationFile] === None,
+		informationFile = ToFileName[{$InstallationDirectory, "SystemFiles", "Kernel",
+			"TextResources", "English"}, "FunctionInformation.m"]];
+	If[FileType[informationFile]===File,
+		MathLink`CallFrontEnd[
+			FrontEnd`SetFunctionInformation[Get[informationFile], Contexts[]]]]
+]
+
+
+(* ::Subsection::Closed:: *)
+(*Front end convenience functions*)
+
+
+(* ::Subsubsection::Closed:: *)
+(*FE`Evaluate[]*)
+
+
+(*    FE`Evaluate   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  *)
+
+
+SetAttributes[FE`Evaluate, HoldFirst]
+
+
+FE`Evaluate[e_] := MathLink`CallFrontEndHeld[FrontEnd`Value[e]];
+
+
+FE`Evaluate[e_, h_] := With[{fe = $ParentLink},
+	LinkWriteHeld[fe, Hold[FrontEnd`Value[e]]]; LinkRead[fe, h]]
+
+
+
+(* ::Subsubsection::Closed:: *)
+(*Cell contents utility functions*)
+
+
+(* ::Text:: *)
+(*Use : Dynamic[RawBoxes[FrontEnd`ObjectContents[FrontEnd`IndexedCell[NotebookObject,n,selectionOnly],dynamicUpdate,size]]]*)
+(*e.g., in tooltips to display cell contents.*)
+(*If the cell is too big (>size), you' ll get Cell[number, ...].*)
+
+
+FrontEnd`IndexedCell[e___] := 
+    MathLink`CallFrontEnd[FrontEnd`Value[FEPrivate`IndexedCell[e]]];
+
+
+FrontEnd`ObjectContents[e___]:=MathLink`CallFrontEnd[FrontEnd`Value[FEPrivate`ObjectContents[e]]];
+
+
+(* ::Subsection::Closed:: *)
+(*Misc Dynamic support*)
+
+
+(* ::Subsubsection::Closed:: *)
+(*CurrentValue support*)
+
+
+(* Supporting callbacks from the front end evaluator. *)
+
+
+FrontEnd`Private`SetCurrentValue[ target_, option_, value_ ] := 
+  (MathLink`CallFrontEndHeld[FrontEnd`SetValue[FEPrivate`Set[CurrentValue[target, option], value]]];)
+
+
+(* ::Subsubsection::Closed:: *)
+(*InputFieldBox support*)
+
+
+(*
+	The following functions are used in the internals of the C++ code of the FE when calling back to
+	the kernel for functionality. Normally this something to do with converting boxes to
+	expxressions or vis-versa with small little deviations from this.
+*)
+
+
+QuietToExpression[boxes_, form_, head_] := Quiet @ ToExpression[boxes, form, head];
+
+
+(* Called by InputFieldBox[expr, Expression] to turn boxes into an expression safely *)
+InputFieldBoxToExpression[boxes_, format_] := Module[{expr},
+	expr = QuietToExpression[boxes, format, Identity];
+	If[expr === $Failed,
+		RawBoxes[boxes],
+		expr
+	]
+];
+
+
+InputFieldBoxToHeldExpression[boxes_, format_] := Module[{expr},
+	expr = QuietToExpression[boxes, format, Hold];
+	If[expr === $Failed,
+		RawBoxes[boxes],
+		expr
+	]
+];
+
+
+ValidNumberRegex = RegularExpression["(\\+|-)?((\\d*(\\.)?\\d+)|(\\d+(\\.)?\\d*))(`\\d*)?"];
+InputFieldBoxToNumberExpression[boxes_, format_] := StringToNumberExpression @ BoxToSimpleString @ boxes;
+
+
+StringToNumberExpression @ str_String := QuietToExpression[str, StandardForm, Identity] /; StringMatchQ[str, ValidNumberRegex];
+StringToNumberExpression @ "-" := -1;
+StringToNumberExpression @ "." := 0.;
+StringToNumberExpression @ str_String := Null /; (StringLength[str] == 0);
+StringToNumberExpression @ other_ := $Failed;
+
+
+(*
+	This is used internally in the C++ code to convert the input boxes of an InputField of type
+	"string" into a simple string: That is BoxToSimpleString is a simple function to basically do
+	the following. :
+	BoxToSimpleString @ RowBox[{"a","+",RowBox[{"b","[","t","]"}]}] --> "a+b[t]"
+*)
+
+
+BoxToSimpleString @ RowBox @ args_ := MyStringJoin @@ BoxToSimpleString /@ args;
+BoxToSimpleString @ StyleBox @ arg_ := BoxToSimpleString @ arg;
+BoxToSimpleString @ a_String := a
+BoxToSimpleString @ other_ := $Failed
+MyStringJoin @ args___String := StringJoin @ args
+MyStringJoin @ other___ := $Failed
+
+
+(*
+	This is used internally in the C++ code case to convert a value of an InputField of type
+	Hold[Expression] into the corresponding boxes for the InputField. The input field boxes have to
+	appear without the surronding Hold which is present in the underlying value / expression.
+*)
+ToBoxesStrippingHold[value_, fmt_] := StripHoldWrapperBoxes[ToBoxes[value, fmt], fmt];
+StripHoldWrapperBoxes[ RowBox @ {"Hold", "[", boxes_, "]"}, _] := boxes;
+StripHoldWrapperBoxes[ RowBox @ {"Hold", "(", boxes_, ")"}, TraditionalForm] := boxes;
+StripHoldWrapperBoxes[ boxes_, _] := boxes;
+
+
+ToSimpleNumberBoxes [ value_?NumberQ, fmt_] := ToString @ NumberForm[value, Infinity, ExponentFunction -> (Null &)];
+ToSimpleNumberBoxes [ Null ] := "";
+ToSimpleNumberBoxes @ other___ := $Failed
+
+
+(*
+    This is used internally in the C++ code case to convert a value of a TableView of type 
+    Expression into the corresponding list of lists of boxes for the TableView.
+*)
+ToBoxesPreserveListOfLists [ value: {__List}, fmt_ ] := Map[ToBoxes[#, fmt]&, value, {2}]
+ToBoxesPreserveListOfLists @ other___ := $Failed
+
+
+SiftExprQ[symbol_] :=
+	(FreeQ[
+		Hold /@ Uncompress[
+(* compressed list of allowable symbols *)
+"1:eJyFWMt72zYMz9akzaPvbt1lO+y8y5L/ILbzaOK4tuV+WXKjZcRiQ5EuKTlN/\
+vqBACVTtvr1JOBHgA8ABED9PTXju39+\
+2dpy21tbW33pCrePxHGalnmpRAHuuWelfTyW7qAmh1bmwJLE34I1tWRnJdlZk+\
+yw5DPP6hlr6DnYC7frycUClDo9ZNymXePci5rMVnCxgosV7NIadmkNJ1DDSK5gqWtY6hqe\
+iBpGMnN/EC2LLIdCpmdg8GtlegUoR4d0zqRSFNKwXkdYDe7MvWe6UFAU50Lra6ln5sG9ju\
+AA7XgIj93hQbDaFSB1RzjJp++Ac6A+\
+RfQFLR1oMuhq7DKibyK5G5LbJr4Q7k0gxjBHN1v5BDP3m8eUSO9zoc+\
+FtdKFLf4eDQzKohBKxecJIwF66SGTrQHJQkkNfCi/\
+TlfYmdRCNQZe0QBO75fJp2BJtyvKNHsMk3m7djORL9BO5kFDkNsnGKaPLoPlpMl+\
+cXuelTZV0DMc38wNVenIRMxOfKTyCkZ/LecY/\
+ROLfl4YB7wTo9G5YSfPCHBkUorOl4H4pAuYW6EqAI8XVA4YqAV4iiJMgZHsY6GLbnI8hAG\
+9zd+M7ke3nMLYhOjviQdn9ClN2oMZ3OMaJ+jZfeKtXGJQLoEm6kHBYvLuDizoFI+\
+5R7wVeIXyKYUDcjLNMDLDbp8TtpSzMAmu65VOlJILvAsnNGXNfV+\
+4t02eb36sctrgLhsT9M2c/F/xA7xpIzpMhQxlQ2CS+Th+v47wqt6QJ9/\
+KYOMTe0eGxG9aEZKMeGIx1uadiO66D57+LtJiLbCfE+4zJE+\
+KJ37J38qhJ7zBCJB0Q05xMmOlUEPzgMG6Q5DCoPLip5hlJ2YRLXJq7LFS5PFTC06D6sZMQ\
+hOciTwXZHKi4nv8mkAMbVnv3Vv6DOagp6IE26XznlnACOc7Fmg2GQHlDCyeXeMctM1zXEX\
+qeZhvlxB9D+r8MGaO3Dtm9NDghTbV+vsBjdIGZpjcaHQ03+\
+A9gpZI4X2heDwHsZQOw68v8ulM0BlqDIOBlsVNygLOyavnRs1Ys7QPsnjqg02zYcbVKGC3\
+Pmho+UdMIXeVY3jbHppXKf5frEN/tqGxqTfVDlvVDn+\
+mdtSqdvQzteHpqEUN0VjtzYbAFwqATznmXkwF3jmfNHjfy+\
+KRh7T3BLiPK7qtWoShzTtbDeDFO2iwKVXUwG9E7odoLA7Atyu8GSMBvBCpmcpurwUbtGDJ\
+JtbrtmAtur0W3UGL7qBlL4MW3aRFN2nRTQaxca5B4qewwrkhybLQsXdogYaju1EbJWIGMZ\
+NETK8bM7FYLxYbxGKDeGo83IuaGUYDSaySxCp4pv2aua2y+\
+aWQDiw3LVEHwXAAfLK4BLXENglkg7MRd9kYu8Qxb6pLhd0V2hFDTujigpLBpTUa0nuwPVA\
+FZ9UaGlozK1OufX0xx/RpoU8psS90+mRctKe+T7EzC8MGN6Iz19mIGm08XpBxjrNu3X/\
+74uKr4T5/q45yl1nO+wfM1J2ELxv9MhWuT164Ehb7d173ShSZhLJLd7liMoGVHxM+\
+rifT4x8PddxfPxrCMocW0gWZopLg6hstm8TDyaolQMTK776GHtQcV0dvB2qv6SAgv4I940\
+nQD5goompwVapCapP7BI5PmK0BKQ8Eviy8wgCWUmFb59uC7gbS20AGG0hCzhgY3hV+\
+8wDwqZu98K+IfObq/vkB9ISieYgmmxol0+4j9rmY0noUzQg/QVUN/dzUinqPD02aYX+\
+boyVeERuX0T1C1CMHwYvA+WDZIfohtMJkZ3+\
+jOBBHncpKfnBUtyMUNiOezG92tFlcvJlH0Z72ma+\
+24CvSqDSFxEAYQy7oiHTCscDkXX4VeoKdyKs1oE+\
+KMcLd3LrcLYXSWIIvBGPaY2ASiZdLsdbrdfiWTDouFTeCifBlyTvOvwW3+ZsFgN8D+\
+MWrLx6xBhGMj8Nt/qYVwQ2+J+\
+pbd8BAzfu8kSwyvCApvmzCU60FvKHj12DdSLWhR3TqCOWu6YbqL8FGznyniblmKVQJVGBX\
+AxdGauzb2Od8hHpsmKyWDADf0KbYaF1sFMQ+\
+NtCxmGFMtS6UHK7NkBy2LZQcrYsdsRi54Jvlh09S2HKJLd+K7vM85XTVz+\
+0yUPiExeqlZd/6F/42f/nBxc8+ogxeZ7rHE64jq+cfaVi0rvf5pLyH6kHqd/\
+GFm6dAy6JjvtOOPD3xZWaOkciDjmJxh2kMPn8DrwEb4BOyZlTYz4W6G6LTzczRAzwaqquX\
+o2Ua3cC7NYAN+LaJJnKe8z+ACKQKfECYSrOocb/OJOY5LIVXTfaa7Pkfettb+\
+xZf5PIexmQqmms3EP7Pw/8CSH5B"]
+, Hold[symbol]] && 
+	Context[symbol] === "System`");
+SetAttributes[SiftExprQ, HoldAll];
+
+
+SiftBoxExpr[boxes_, formatType_] :=
+	Module[{expr = QuietToExpression[boxes, formatType, HoldComplete]}, 
+		If[Cases[expr, f_Symbol[___] :> True /; SiftExprQ[f], Infinity] === {}, 
+			boxes, $Failed]];
+
+
+(* ::Subsubsection::Closed:: *)
+(*EventHandler[] support*)
+
+
+FrontEnd`CurrentEventQueue = Null;
+FrontEnd`CurrentEvaluationMode = "Preemptive";
+
+FrontEnd`ProcessCurrentEventQueue[] := FrontEnd`Private`ExecuteNestedEventFunctionsNest[FrontEnd`CurrentEventQueue];
+
+FrontEnd`Private`ExecuteNestedEventFunctionsNest[{{test_, func_, mode_}, rest_}] := 
+	Module[{returnValue, testValue},
+		FrontEnd`CurrentEventQueue = rest;
+		returnValue = If[FrontEnd`CurrentEvaluationMode === mode, ReleaseHold[func], True];
+		testValue = If[FrontEnd`CurrentEvaluationMode === mode, ReleaseHold[test], True];
+		If[TrueQ[testValue] || ((testValue===Automatic) && (returnValue =!= False)), 
+			FrontEnd`ProcessCurrentEventQueue[]
+		];
+	];
+
+FrontEnd`Private`ExecuteNestedEventFunctions[expr_, evalMode_] := 
+	Block[{FrontEnd`CurrentEventQueue = expr, FrontEnd`CurrentEvaluationMode = evalMode},
+		FrontEnd`ProcessCurrentEventQueue[];
+	];
+
+
+
+(* ::Subsubsection::Closed:: *)
+(*UpdateDynamicObjects[], UpdateDynamicObjectsSynchronous[]*)
+
+
+System`UpdateDynamicObjects;
+System`UpdateDynamicObjectsSynchronous;
+
+
+(*    UpdateDynamicObjects   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  *)
+
+
+UpdateDynamicObjects[] := (
+	   FrontEnd`Private`changes = Internal`GetTrackChanges[];
+	   If[Length[FrontEnd`Private`changes] =!= 0,
+	 	  MathLink`CallFrontEnd[FrontEnd`UpdateDynamicObjectsSynchronous[
+	   			FrontEnd`Private`changes]]];
+	   )
+
+
+(*    UpdateDynamicObjectsSynchronous    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  *)
+
+
+(* Has to call every time in case someone else has already flushed the tracking IDs *)
+UpdateDynamicObjectsSynchronous[] := 
+	 	  MathLink`CallFrontEnd[FrontEnd`UpdateDynamicObjectsSynchronous[
+	   			Internal`GetTrackChanges[]]];
+
+
+SetAttributes[{UpdateDynamicObjects, UpdateDynamicObjectsSynchronous}, {Protected, ReadProtected}];
+
+
+(* ::Subsubsection::Closed:: *)
+(*FE`ExecuteInDynamicModule[]*)
+
+
+(*    ExecuteInDynamicModule    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  *)
+
+
+newvalues[names_List, before_List, after_List] := MapThread[newvalue, {Table[i,{i,Length[names]}], names, before, after}];
+newvalues[sym_, _, _] := (Message[FE`ExecuteInDynamicModule::noval, HoldForm[sym]]; {}); (* 65097 *)
+newvalue[n_, _, a_, a_] := {n, FE`noChange};
+newvalue[n_, a_, _, a_] := {n, FE`noValue};
+newvalue[n_, _, _, Hold[after_]] := {n, after};
+
+
+inittouch[Hold[var_]] := Internal`SetValueTrackExtra[var, False]
+
+
+settouch[Hold[var_], val_] := Internal`SetValueTrackExtra[var, val]
+
+
+touchedQ[Hold[var_]] := Internal`GetValueTrackExtra[var]
+
+
+(*
+	The contents of vars and body are localized by the front end's
+	choice of variable names, so there's no need to use an actual
+	Module in ExecuteInDynamicModule.
+*)
+
+
+FE`ExecuteInDynamicModule::noval = "Symbol `1` does not have a value."
+
+
+SetAttributes[{FE`ExecuteInDynamicModule}, HoldAll];
+
+
+FE`ExecuteInDynamicModule[init_, serialno_, body_] :=
+	Block[{names, before, result, after, touchedbefore, touchedafter},
+		ValueTrack`SetTrackingState[ 
+			names = Symbol[ "FE`DynamicModuleVariableList$" <> ToString[serialno] ];
+			touchedbefore = touchedQ /@ names;
+			inittouch /@ names;
+			init; (* this will typically be a list of var = val *)
+			before = Hold /@ ReleaseHold[names];
+			ValueTrack`SetTrackingState[
+				result = Hold[#]& @ body,
+				True];
+			after = Hold /@ ReleaseHold[names];
+			touchedafter = touchedQ /@ names;
+			MapThread[settouch, {names, touchedbefore}];
+			,
+			False];
+		(* return the new body, the index/value pairs of any changed variables, and 
+             the index numbers of variables that were touched by this evaluation *)
+		{
+			result, 
+			DeleteCases[ newvalues[names, before, after], {_, FE`noChange}], 
+			First /@ Position[touchedafter, True, {1}]
+		} ]
+
+
+heldAllValues[ Hold[sym_], Hold[{___, sym_, ___}]] := {}
+
+
+heldAllValues[ Hold[sym_], _]:=
+	Module[{ toheldset},
+		toheldset = Function[{a, b}, If[b === {}, {}, Hold[a = b]], HoldFirst];
+		Thread[Flatten @ {
+			toheldset[DefaultValues[sym], DefaultValues[sym]],
+			toheldset[DownValues[sym], DownValues[sym]],
+			toheldset[FormatValues[sym], FormatValues[sym]],
+			toheldset[NValues[sym], NValues[sym]],
+			toheldset[SubValues[sym], SubValues[sym]],
+			toheldset[UpValues[sym], UpValues[sym]],
+			toheldset[Options[sym], Options[Unevaluated[sym]]],
+			toheldset[Attributes[sym], DeleteCases[Attributes[sym], Temporary]] }, Hold] ]
+
+
+heldAllValues[ heldvars_List, unsavedVariables_] :=
+	Module[{lis},
+		lis = Flatten[heldAllValues[#, unsavedVariables]& /@ heldvars];
+		If[lis === {}, Hold[{}], Thread[lis, Hold]] ]
+
+
+SetAttributes[FE`DynamicModuleInitializers, HoldRest]
+FE`DynamicModuleInitializers[serialno_, unsavedVariables_] :=
+	heldAllValues[ Symbol[ "FE`DynamicModuleVariableList$" <> ToString[serialno]], Hold[unsavedVariables] ]
+
+
+
+(* ::Subsubsection::Closed:: *)
+(*SelectionDebuggerTag[]*)
+
+
+System`SelectionDebuggerTag[] := MathLink`CallFrontEnd[FrontEnd`Value[FrontEnd`SelectionDebuggerTag[], FrontEnd`$TrackingEnabled]];
+
+
+(* ::Subsubsection::Closed:: *)
+(*FinishDynamic[]*)
+
+
+System`FinishDynamic[] := MathLink`CallFrontEnd[UpdateDynamicObjectsSynchronous[Internal`GetTrackChanges[]]];
+
+
+SetAttributes[{FinishDynamic}, {Protected, ReadProtected}];
+
+
+(* ::Subsubsection::Closed:: *)
+(*FrontEnd`ReleasedDynamic[]*)
+
+
+(* Used by the front end to replace Dynamic[] objects inside an expression being 
+evaluated for use as an option value, graphics coordinate, or other non-box position. *)
+
+
+FrontEnd`ReleasedDynamic[e_,___] := e;
+
+
+(* ::Subsubsection::Closed:: *)
+(*$Previewing / ControlActive[]*)
+
+
+System`NotebookInterfaceObject;
+FrontEnd`Self[] := MathLink`CallFrontEnd[FrontEnd`Value[FEPrivate`Self[], FrontEnd`$TrackingEnabled]];
+FrontEnd`ParentDynamicModule[] := MathLink`CallFrontEnd[FrontEnd`Value[FEPrivate`ParentDynamicModule[], FrontEnd`$TrackingEnabled]];
+FrontEnd`SelectionBoxParents[] := MathLink`CallFrontEnd[FrontEnd`Value[FEPrivate`SelectionBoxParents[], FrontEnd`$TrackingEnabled]];
+
+
+FrontEnd`$DynamicEvaluation = False;
+Internal`SetValueNoTrack[FrontEnd`$DynamicEvaluation, True];
+
+
+FrontEnd`$SynchronousEvaluation = False;
+Internal`SetValueNoTrack[FrontEnd`$SynchronousEvaluation, True];
+
+
+FrontEnd`$TrackingEnabled = True;
+Internal`SetValueNoTrack[FrontEnd`$TrackingEnabled, True];
+
+
+If[$VersionNumber < 11.1,
+	System`$DynamicEvaluation := FrontEnd`$DynamicEvaluation;
+	Internal`SetValueNoTrack[System`$DynamicEvaluation, True];
+	System`$SynchronousEvaluation := FrontEnd`$SynchronousEvaluation;
+	Internal`SetValueNoTrack[System`$SynchronousEvaluation, True];
+	SetAttributes[{System`$DynamicEvaluation, System`$SynchronousEvaluation}, ReadProtected];
+]
+
+
+
+Attributes[FrontEnd`SynchronousDynamicEvaluate] = {HoldAll};
+FrontEnd`SynchronousDynamicEvaluate[expr_,id_, args___] := 
+	Block[{FrontEnd`$DynamicEvaluation = True, FrontEnd`$SynchronousEvaluation = True, FrontEnd`$TrackingEnabled = (id =!= 0)}, 
+		Internal`DynamicEvaluate[expr, id, args]];
+
+
+Attributes[FrontEnd`AsynchronousDynamicEvaluate] = {HoldAll};
+FrontEnd`AsynchronousDynamicEvaluate[expr_, id_] := 
+	Block[{FrontEnd`$DynamicEvaluation = True, FrontEnd`$TrackingEnabled = (id =!= 0)}, 
+		MathLink`CallFrontEnd[FrontEnd`ReturnDynamicOutput[FrontEnd`NotebookInterfaceObject[id], expr]]];
+
+
+(* ::Subsection::Closed:: *)
+(*DisplayWith support*)
+
+
+System`DisplayWith
+System`AllowKernelInitialization
+System`DisplayWithVariable
+System`RefBox
+System`DisplayWithRef
+
+SetAttributes[DisplayWith, HoldAllComplete]
+SetAttributes[RefBox, HoldFirst]
+SetAttributes[DisplayWithRef, HoldFirst]
+
+
+(* ::Subsubsection::Closed:: *)
+(*Evaluation*)
+
+
+SetAttributes[eDisplayWith, HoldAllComplete]
+
+
+eDisplayWith[vars:{__Set}, body_, opts___] :=
+	Block[{$eDisplayWith = True}, DisplayWith[vars, body, opts]]
+
+
+DisplayWith[{}, body_, opts___] := body
+
+
+DisplayWith[vars_, body_, opts___] /; (checkDisplayWithVars[vars] && $eDisplayWith =!= True) :=
+Block[{names, vals, result, initializers},
+
+	(* Rebuild the initializers, but allow the RHS values to evaluate *)
+	names = Function[{var, val}, Hold[var], HoldAllComplete] @@@ Unevaluated[vars];
+	vals = Function[{var, val}, Hold[Evaluate[val]], HoldAllComplete] @@@ Unevaluated[vars];
+	initializers = Thread[Apply[Set, MapThread[Thread[{##}, Hold]&, {names, vals}], {2}], Hold];
+
+	(* Allow the body to evaluate with localized variables, but without the user's values. *)
+	names = Thread[names, Hold];
+	result = evalDisplayWith[names, Hold[body], Hold[opts]];
+
+	(* Construct a new DisplayWith expression with the evaluated bits in place *)
+	ReleaseHold[eDisplayWith @@@ Thread[{initializers, result}, Hold]]
+]
+
+
+evalDisplayWith[Hold[names:{__}], Hold[body_], Hold[opts___]] :=
+Block[{localvars, evalbody},
+	{localvars, evalbody} = Module[names, {names, body}];
+	With[{evalbody = evalbody}, Hold[evalbody] //. Thread[localvars :> names]]
+]
+
+
+
+SetAttributes[checkDisplayWithVars, HoldAllComplete];
+
+checkDisplayWithVars[lis:{___, var_Symbol = _, ___, var_Symbol = val_, ___}] :=
+	( Message[DisplayWith::dup, HoldForm[var], HoldForm[lis]]; False )
+
+checkDisplayWithVars[{(_Symbol = _)...}] := True
+
+checkDisplayWithVars[lis:{___, var_Symbol, ___}] :=
+	( Message[DisplayWith::lvdws, HoldForm[var], HoldForm[lis]]; False )
+
+checkDisplayWithVars[lis:{___, (var:Except[_Symbol]) = val_, ___}] :=
+	( Message[DisplayWith::lvset, HoldForm[lis], HoldForm[var = val], HoldForm[var]]; False )
+
+checkDisplayWithVars[lis:{___, other:Except[_Symbol = _], ___}] :=
+	( Message[DisplayWith::lvdw, HoldForm[lis], HoldForm[other]]; False )
+
+checkDisplayWithVars[else_] := 
+	( Message[DisplayWith::lvlist, HoldForm[else]]; False )
+
+
+
+DisplayWith::dup = "Duplicate local variable `1` found in local variable specification `2`.";
+DisplayWith::lvdws = "Variable `1` in local variable specification `2` requires a value.";
+DisplayWith::lvdw = "Local variable specification `1` contains `2` which is not an assignment to a symbol.";
+DisplayWith::lvset = "Local variable specification `1` contains `2`, which is an assignment to `3`; only assignments to symbols are allowed.";
+DisplayWith::lvlist = "Local variable specification `1` is not a List.";
+
+
+(* ::Subsubsection::Closed:: *)
+(*Typesetting*)
+
+
+DisplayWithRef /: MakeBoxes[d:DisplayWithRef[var_], fmt_] :=
+	If[TrueQ[BoxForm`UseTextFormattingQ], BoxForm`MakeRowBoxes[d, fmt], RefBox[var]]
+
+
+Typeset`MakeBoxes[DisplayWithRef[var_], fmt_, head_] := RefBox[var]
+
+
+(* 
+Dynamic[var] might be typeset as:
+
+- Dynamic[var] 
+	eg: Graphics[Point[Dynamic[x]]]
+
+- DynamicBox[ToBoxes[var, fmt]]
+	eg: Dynamic[x]
+
+- DynamicBox[Typeset`ToBoxes[var, fmt, head]]
+	eg: Graphics[Dynamic[Point[x]]]
+*)
+
+
+SetAttributes[dwvar, HoldAllComplete]
+
+
+DisplayWith /: MakeBoxes[DisplayWith[vars_, body_, opts___], fmt_] /; Quiet[checkDisplayWithVars[vars]] :=
+	typesetDisplayWith[DisplayWith[vars, body, opts], Function[{x}, MakeBoxes[x, fmt], HoldAllComplete]]
+
+
+Typeset`MakeBoxes[DisplayWith[vars_, body_, opts___], fmt_, head_] /; Quiet[checkDisplayWithVars[vars]] :=
+	typesetDisplayWith[DisplayWith[vars, body, opts], Function[{x}, Typeset`MakeBoxes[x, fmt, head], HoldAllComplete]]
+
+
+
+SetAttributes[typesetDisplayWith, HoldAllComplete]
+
+typesetDisplayWith[DisplayWith[vars:{__Set}, body_, opts___], typesetBodyFunc_] :=
+Block[{names, initializers, bodyboxes, dynamics, new, oldvars},
+	names = Function[{var, val}, Hold[var], HoldAllComplete] @@@ Unevaluated[vars];
+
+	(*
+	Replace each instance of local variable x with Dynamic[dwvar[x]] in the body. Typesetting
+	will turn each into one of the idiomatic forms above, which will in turn determine what kind
+	of values (if any) need to be stored for the local variables.
+	*)
+	initializers = Thread[names /. Hold[var_] :> Hold[var = Dynamic[dwvar[var]]], Hold];
+	bodyboxes = With[{localizedBody = ReleaseHold[With @@@ Thread[{initializers, Hold[body]}, Hold]]}, typesetBodyFunc[localizedBody]];
+	
+	(* Replace the dwvar-Dynamics with new Dynamics, and build the new initializer list *)
+	dynamics = Union[Cases[{bodyboxes}, DynamicBox[_[_dwvar, __]] | Dynamic[_dwvar], \[Infinity]]];	
+	new = getInitializerAndNewDynamic[#, Hold[vars]]& /@ dynamics;
+	bodyboxes = bodyboxes //. new[[All, 3]];
+	initializers = If[ new === {}, Hold[{}], Thread[new[[All, 2]], Hold] ];
+	oldvars = If[new === {}, Hold[{}], Thread[new[[All, 1]]//Union, Hold] ];
+
+	buildDisplayWithBox[oldvars, initializers, bodyboxes]
+]
+
+
+buildDisplayWithBox[Hold[{oldvars___}], Hold[{newvars___Set}], bodyboxes_] := DynamicModuleBox[{oldvars, newvars}, bodyboxes, AllowKernelInitialization -> False]
+
+
+getInitializerAndNewDynamic[d:DynamicBox[ToBoxes[dwvar[var_], fmt_]], Hold[{___, HoldPattern[Set][var_, val_], ___}]] :=
+	getInitializerAndNewDynamic[d,
+		ToExpression[SymbolName[Unevaluated[var]] <> variableSuffix[fmt], InputForm, Hold],
+		ToBoxes[val, fmt]
+	]
+
+getInitializerAndNewDynamic[d:DynamicBox[ToBoxes[dwvar[var_], fmt_]], Hold[newvar_], val_] :=
+	{Hold[var], Hold[newvar = val], d -> RefBox[var]}
+
+
+getInitializerAndNewDynamic[d:DynamicBox[Typeset`ToBoxes[dwvar[var_], fmt_, head_]], Hold[{___, HoldPattern[Set][var_, val_], ___}]] :=
+	getInitializerAndNewDynamic[d,
+		ToExpression[SymbolName[Unevaluated[var]] <> variableSuffix[fmt, head], InputForm, Hold],
+		Typeset`ToBoxes[val, fmt, head]
+	]
+
+getInitializerAndNewDynamic[d:DynamicBox[Typeset`ToBoxes[dwvar[var_], fmt_, head_]], Hold[newvar_], val_] :=
+	{Hold[var], Hold[newvar = val], d -> RefBox[var]}
+
+
+getInitializerAndNewDynamic[d:Dynamic[dwvar[var_]], Hold[{___, HoldPattern[Set][var_, val_], ___}]] :=
+	getInitializerAndNewDynamic[d,
+		ToExpression[SymbolName[Unevaluated[var]] <> variableSuffix[], InputForm, Hold],
+		val
+	]
+
+getInitializerAndNewDynamic[d:Dynamic[dwvar[var_]], Hold[newvar_], val_] :=
+	{Hold[var], Hold[newvar = val], d -> DisplayWithRef[var]}
+
+
+getInitializerAndNewDynamic[else__] := Sequence[]
+
+
+(* These suffixes need to be kept in sync with the front end's internals. *)
+
+variableSuffix[] := "$e"
+
+variableSuffix[StandardForm] := "$s"
+
+variableSuffix[TraditionalForm] := "$t"
+
+variableSuffix[other_] := "$b$" <> ToString[other]
+
+variableSuffix[StandardForm, Graphics] := "$s2d"
+
+variableSuffix[StandardForm, Graphics3D] := "$s3d"
+
+variableSuffix[TraditionalForm, Graphics] := "$t2d"
+
+variableSuffix[TraditionalForm, Graphics3D] := "$t3d"
+
+variableSuffix[other_, Graphics] := "$b2d$" <> ToString[other]
+
+variableSuffix[other_, Graphics3D] := "$b3d$" <> ToString[other]
+
+
+
+(* ::Subsubsection::Closed:: *)
+(*Interpretation*)
+
+
+RefBox/: MakeExpression[RefBox[var_], fmt_] := HoldComplete[DisplayWithRef[var]]
+
+
+(* ::Subsection::Closed:: *)
+(*Misc front end support*)
+
+
+(* ::Subsubsection::Closed:: *)
+(*FE`Numericalize*)
+
+
+(* routine for numericalization of data that should be numericalized
+   without affecting integers and other things that shouldn't *)
+
+Unprotect[FE`Numericalize]
+
+FE`Numericalize[a_Integer] := a
+FE`Numericalize[a: Complex[_Integer, _Integer]] := a
+FE`Numericalize[a_?NumericQ] := N[a]
+FE`Numericalize[a_] := a
+
+Protect[FE`Numericalize]
+
+
+(* ::Subsubsection::Closed:: *)
+(*Iconize support*)
+
+
+FE`iconizeSelectionToggle[] := 
+	Module[{info, style, fmt, boxes, expr},
+		(* if the insertion point isn't within a single BoxData cell, do nothing *)
+		If[!MatchQ[
+			info = MathLink`CallFrontEnd[FrontEnd`CellInformation[FrontEnd`InputNotebook[]]],
+			{ KeyValuePattern[{"CursorPosition" -> Except["CellBracket"], "ContentData" -> BoxData}] }],
+			Return @ Beep[]
+		];
+		style = Lookup[First[info], "Style", "Output"];
+		fmt = Lookup[First[info], "ContentDataForm", StandardForm];
+		(* A cell resulting from Cell > Convert To > InputForm is still a BoxData cell, 
+		although it will report InputForm for its data form. Override that here: *)
+		If[fmt === InputForm, fmt = StandardForm];
+		(* if there's no selection, do nothing *)
+		boxes = NotebookRead[FrontEnd`InputNotebook[], CellContext -> Automatic, "WrapBoxesWithBoxData" -> True];
+		If[MatchQ[boxes, {} | $Failed], Return @ Beep[]];
+		(* if multiple complete input expressions are selected, do nothing *)
+		If[MatchQ[boxes, BoxData[_List]], Return @ Beep[]];
+		(* otherwise, try to do something *)
+		boxes = Replace[StripBoxes[boxes], (BoxData[FormBox[x_, _]] | BoxData[x_]) :> x];
+		If[MatchQ[boxes, InterpretationBox[DynamicModuleBox[_, TemplateBox[_, "IconizedObject", ___], ___], __]],
+			FE`uniconizeBoxes[boxes, fmt, style],
+			FE`iconizeBoxes[boxes, fmt]
+		]
+	];
+
+
+SetAttributes[makeUniconizeBoxes, HoldAllComplete]
+makeUniconizeBoxes[expr_, fmt_, "Input" | "Code"] :=
+	BoxForm`MakeBoxesWithTextFormatting[expr, fmt] /; BoxForm`$UseTextFormattingWhenConvertingInput
+makeUniconizeBoxes[expr_, fmt_, "Output"] :=
+	BoxForm`MakeBoxesWithTextFormatting[expr, fmt] /; BoxForm`$UseTextFormattingWhenConvertingOutput
+makeUniconizeBoxes[expr_, fmt_, _] :=
+	MakeBoxes[expr, fmt]
+
+
+FE`uniconizeBoxes[InterpretationBox[_, interp_Sequence, ___], fmt_, style_] := 
+	NotebookWrite[FrontEnd`InputNotebook[],
+		Replace[makeUniconizeBoxes[interp, fmt, style], RowBox[{"Sequence", "[", boxes_, "]"}] :> boxes], All]
+
+FE`uniconizeBoxes[InterpretationBox[_, interp_, ___], fmt_, style_] := 
+	NotebookWrite[FrontEnd`InputNotebook[], makeUniconizeBoxes[interp, fmt, style], All];
+
+FE`iconizeBoxes[RowBox[{"," | "\[InvisibleComma]", ___} | {___, "," | "\[InvisibleComma]"}] | ",", fmt_] := Beep[]
+
+FE`iconizeBoxes[boxes_, fmt_] := 
+	Module[{expr},
+		expr = Quiet @ MakeExpression[#, fmt]& @ RowBox[{"IconizedObject", "[", RowBox[{
+			boxes, ",", "Automatic"}], "]"}];
+		(* if that failed, see if it's a valid Sequence *)
+		If[Head[expr] =!= HoldComplete,
+			expr = Quiet @ MakeExpression[#, fmt]& @ RowBox[{"IconizedObject", "[", RowBox[{
+				RowBox[{"Sequence", "[", boxes, "]"}], ",", "Automatic"}], "]"}] ];
+		(* if that still failed, the selection is not an expression *)
+		Replace[expr, {
+			HoldComplete[e_] :> NotebookWrite[FrontEnd`InputNotebook[], MakeBoxes[e, fmt], All],
+			_ :> Beep[]
+		}]
+	]
+
+FE`uniconizeButtonFunction[nbobj_, boxobj_] := 
+	If[SelectionMove[boxobj, All, Expression] =!= $Failed, FE`iconizeSelectionToggle[], Beep[]]
+
+
+
+(* ::Subsubsection::Closed:: *)
+(*Un/Comment selection*)
+
+
+whitespaceQ[x_String] := Or[StringMatchQ[x, Whitespace], (*newline*) ToCharacterCode[x] === {62371}]
+
+
+comment[x_, action_: FrontEnd`NotebookWrite] := FrontEndExecute[action[FrontEnd`InputNotebook[], x, All]]
+
+
+FE`toggleComment[] := 
+  Switch[CurrentValue[InputNotebook[], "CellCount"],
+	0, Return[],
+	1, FE`toggleComment[Cell],
+	_, FE`toggleComment[{Cell}]
+  ]
+
+
+FE`toggleComment[Cell] := If[CurrentValue[FrontEnd`SelectionObject, Evaluatable], FE`toggleComment[NotebookRead[InputNotebook[]]]]
+
+
+FE`toggleComment[{Cell}] :=
+ With[{tag = StringJoin["comment", ToString[IntegerPart[AbsoluteTime[]]], "-", ToString[RandomInteger[{100000, 999999}]]], 
+	nb = InputNotebook[], cnt = CurrentValue["CellCount"]},
+  CheckAbort[
+	FrontEndExecute[{FrontEnd`SelectionAddCellTags[nb, {tag}], 
+		FrontEnd`SelectionMove[nb, Before, Notebook, AutoScroll -> False],
+		FrontEnd`NotebookFind[nb, tag, Next, CellTags, AutoScroll -> False]}];
+	Do[FE`toggleComment[Cell]; NotebookFind[nb, tag, Next, CellTags, AutoScroll -> False], {cnt}];
+	FrontEndExecute[{FrontEnd`NotebookFind[nb, tag, All, CellTags, AutoScroll -> False], 
+		FrontEnd`SelectionRemoveCellTags[nb, {tag}]}],
+	FrontEndExecute[{FrontEnd`NotebookFind[nb, tag, All, CellTags, AutoScroll -> False], 
+		FrontEnd`SelectionRemoveCellTags[nb, {tag}]}]
+   ]
+ ]
+
+
+(* ::Text:: *)
+(*no selection case:*)
+
+
+FE`toggleComment[$Failed] := comment[RowBox[{"(*", "*)"}]]
+
+
+FE`toggleComment[{}] := ((FrontEndTokenExecute[#, "Balance"]; 
+     If[MatchQ[NotebookRead[#], _[{"[", ___, "]"}] | $Failed | {}], 
+      FrontEndTokenExecute[#, "ExpandSelection"]]; 
+     FE`toggleComment[NotebookRead[#]]) & )[
+   InputNotebook[]]
+
+
+(* ::Text:: *)
+(*uncomment selection at cell bracket level:*)
+
+
+FE`toggleComment[Cell[BoxData[RowBox[{"(*", x___, "*)"}]], s___]] := comment[Cell[BoxData[RowBox[Flatten[{x}]]], s]]
+
+
+FE`toggleComment[Cell[BoxData[RowBox[{nl1___String?whitespaceQ, RowBox[{"(*", x___, "*)"}], nl2___String?whitespaceQ}]], s___]] := 
+ comment[Cell[BoxData[RowBox[{nl1, RowBox[Flatten[{x}]], nl2}]], s]]
+
+
+FE`toggleComment[Cell[x_String /; StringMatchQ[x, RegularExpression["\\s*\\(\\*(?s).*\\*\\)\\s*"]], s___]] := 
+ comment[Cell[StringReplace[x, StringExpression[nl1___, "(*", Longest[c___], "*)", nl2___] :> StringJoin[nl1, c, nl2]], s]]
+
+
+(* ::Text:: *)
+(*comment selection at cell bracket level:*)
+
+
+FE`toggleComment[Cell[BoxData[x_], s___]] := comment[Cell[BoxData[RowBox[Flatten[{"(*", x, "*)"}]]], s]]
+
+
+FE`toggleComment[Cell[x_String, s___]] := comment[Cell[StringJoin["(*", x, "*)"], s]]
+
+
+(* ::Text:: *)
+(*comment selection at cell content level:*)
+
+
+FE`toggleComment[__] := comment[RowBox[{"(*", "\[SelectionPlaceholder]", "*)"}], FrontEnd`NotebookApply] 
+
+
+(* ::Text:: *)
+(*uncomment selection:*)
+
+
+FE`toggleComment[RowBox[{"(*", "*)"}]] := FrontEndExecute[FrontEndToken[FrontEnd`InputNotebook[], "Clear"]]
+
+
+FE`toggleComment[RowBox[{"(*", x__, "*)"}]] := comment[RowBox[{x}]]
+
+
+FE`toggleComment[x_String /; StringMatchQ[x, "(\\**\\*)"]] := comment[StringTake[x, {3, -3}]]
+
+
+(* ::Subsubsection::Closed:: *)
+(*Inactive and TemplateBox handling*)
+
+
+(*The generic MakeExpression case and TemplateBoxToInterpretationBoxes[] moved to Source/Output/untagbox.mc, see 92826*)
+(*
+protected = Unprotect[TemplateBox]
+
+TemplateBox /: MakeExpression[ t_TemplateBox, fmt_] :=
+ MakeExpression[ TemplateBoxToInterpretationBoxes[t], fmt]
+
+Protect @@ protected
+*)
+
+
+(* ::Text:: *)
+(*Add some basic support for Inactive operators.*)
+
+
+protected = Unprotect[TemplateBox]
+
+TemplateBox /: MakeExpression[ TemplateBox[{args__},tag_,___,Inactive->True,___], fmt_] :=
+ MakeExpression[ RowBox[{
+  RowBox[{"Inactive", "[", tag, "]"}], "[", 
+  RowBox @ Riffle[{args},","], "]"}], fmt]
+
+Protect @@ protected
+
+
+(* ::Subsubsection::Closed:: *)
+(*PDF import support*)
+
+
+ImportPDFPage[nb_, file_String, page_Integer] := Module[{g},
+	g = Import[file, {"Pages", page}];
+	If[g =!= $Failed, 
+		SelectionMove[nb, After,Cell];
+		NotebookWrite[nb, Cell[BoxData[ToBoxes[g]], "Output", CellGroupingRules->{GroupTogetherGrouping, 999.}]];
+		SelectionMove[nb, After,Cell];
+	];
+];
+
+
+ImportPDF[notebook_, file_String] := Module[{nb = notebook, pages, allPages},
+	If[Head[notebook] =!= NotebookObject, nb = NotebookCreate[]];
+	allPages = Import[file, {"Pages", "Elements"}];
+	pages = CurrentValue[{ConversionOptions, "ImportOptions", "PDF", "Pages"}];
+	If[pages == Inherited, pages = All];
+	If[pages == All, pages = allPages];
+	If[Head[pages] =!= List, pages = {pages}];
+	pages = Cases[pages, x_ /; MemberQ[allPages, x]];
+	If[Length[pages] == 0, pages = {1}];
+	ImportPDFPage[nb, file, #] & /@ pages;
+];
+
+
+(* ::Subsubsection::Closed:: *)
+(*Graphics support*)
+
+
+(* Service function used to resolve value of Ticks option in graphics *)
+
+
+System`FrontEndValueCache;
+SetAttributes[FrontEndValueCache, NHoldFirst];
+
+
+FEPrivate`ResolveTicks[ticks_, dimensions_, {xmin_, xmax_}, {ymin_, ymax_}, {zmin_, zmax_}, {wmin_, wmax_}] := Module[
+		{i, ranges = {{xmin, xmax}, {ymin, ymax}, {zmin, zmax}, {wmin, wmax}}, fmt = System`Dump`TicksToBoxes[#, StandardForm, Graphics]&}, 
+		FrontEndValueCache[ticks, Switch[ticks,
+			All | Automatic | None | True,
+			ticks,
+			_List,
+			Table[Which[
+					i > dimensions || MatchQ[ticks[[i]], All | Automatic | None | True | False], ticks[[i]],
+					MatchQ[ticks[[i]], {_, _}] && (i === 1 || i === 2),
+						{
+							If[ MatchQ[ticks[[i,1]], All | Automatic | None | True | False | _List], ticks[[i,1]],
+								fmt @ ticks[[i,1]][ ranges[[3-i, 1]], ranges[[3-i, 2]] ] ],
+							If[ MatchQ[ticks[[i,2]], All | Automatic | None | True | False | _List], ticks[[i,2]],
+								fmt @ ticks[[i,2]][ ranges[[5-i, 1]], ranges[[5-i, 2]] ] ]
+						},
+					MatchQ[ticks[[i]], _List], ticks[[i]],
+					True, fmt @ ticks[[i]][ ranges[[i, 1]], ranges[[i, 2]] ] ],
+				{i, Length[ticks]}],
+			else_,
+			Switch[dimensions,
+				2, fmt /@ {ticks[xmin, xmax], ticks[ymin, ymax]},
+				3, fmt /@ {ticks[xmin, xmax], ticks[ymin, ymax], ticks[zmin, zmax]},
+				4, fmt /@ {ticks[xmin, xmax], ticks[ymin, ymax], ticks[zmin, zmax], ticks[wmin, wmax]},
+				_, ticks]
+		]]
+	]
+
+
+(* Service function used to resolve value of GridLines option in graphics *)
+
+
+FEPrivate`ResolveGridLines[lines_, dimensions_, {xmin_, xmax_}, {ymin_, ymax_}] := Module[
+		{i, ranges = {{xmin, xmax}, {ymin, ymax}}, fmt = Typeset`ToBoxes[#, StandardForm, Graphics]&}, 
+		FrontEndValueCache[lines, Switch[lines,
+			Automatic | None | True | False,
+			lines,
+			_List,
+			Table[
+				If[i > dimensions || MatchQ[lines[[i]], Automatic | None | True | False | _List], lines[[i]],
+					fmt @ lines[[i]][ ranges[[i, 1]], ranges[[i, 2]] ] ], {i, Length[lines]}],
+			else_,
+			Switch[dimensions,
+				2, fmt /@ {lines[xmin, xmax], lines[ymin, ymax]},
+				_, lines]
+		]]
+	]
+
+
+(* Service function used to display the row/column values from image raster *)
+
+
+pixelValueGrid[v_, {n_Integer}] := {Style[Row[{imageText["imagePixelVal"], " ", n, ":"}, StripOnInput->True], Gray], v}
+
+
+pixelValueGrid[v_, n_] := Item[Image[{{v, v, v, v}}, ImageSize -> {120, 30}, ColorSpace -> n], Alignment -> Left]
+
+
+pixelValueGrid[v_] := Join[MapIndexed[pixelValueGrid, Flatten[{v}]], {{pixelValueGrid[v, ImageColorSpace[FrontEnd`$SelectedImage]], SpanFromLeft}}]
+
+
+FEPrivate`ImageIndicesDisplayFunction[pt_] := pt
+
+FEPrivate`ImageIndicesValueFunction[pt_] := pt
+
+FEPrivate`PixelDisplayFunction[pt_] := 
+	Grid[{
+			{Style[imageText["imagePixelRow"], Gray], Ceiling[Last@CurrentValue["GraphicsBoxOptionsImageSizeRaw"] - Last[pt]]},
+			{Style[imageText["imagePixelCol"], Gray], Ceiling[First[pt]]},
+			Sequence @@ pixelValueGrid[PixelValue[FrontEnd`$SelectedImage, pt + 0.5]]
+		}, Alignment -> {{Right, Left}, Center}]
+
+FEPrivate`CopiedIndicesValueFunction[pt_] :=
+	Ceiling[{Last@CurrentValue["GraphicsBoxOptionsImageSizeRaw"],0}+{-1,1}Reverse[pt]]
+
+FEPrivate`CopiedPixelValueFunction[pt_] :=
+	PixelValue[FrontEnd`$SelectedImage, pt + 0.5]
+	
+
+
+(* ::Text:: *)
+(*Declare symbols related to primitive styles/attributes in System` context.*)
+(*The graphics inspector and other graphics dependent dynamics rely on this.*)
+
+
+Scan[ToExpression[StringJoin["System`", #1]] & , 
+   {"Absolute", "DrawEdges", "DrawFrontFaces", 
+    "EdgeCapForm", "EdgeColor", "EdgeDashing", 
+    "EdgeJoinForm", "EdgeOpacity", "EdgeThickness", 
+    "FrontFaceColor", "FrontFaceOpacity", 
+	"GraphicsColor", "GraphicsHighlightColor", 
+    "LineColor", "LineOpacity", 
+	"NewPrimitiveStyle", "StrokeForm", "RectangleBoxOptions"}]; 
+
+
+(* ::Subsubsection::Closed:: *)
+(*Context gymnastics*)
+
+
+(* Switch Default Context *)
+
+
+Attributes[FrontEnd`Private`SwitchCellContextB] = {HoldAll};
+FrontEnd`Private`SwitchCellContextB[old_, oldi_, new_, newi_, reassignInputName_] := 
+	Module[{
+		aIn = Attributes[In], 
+		aInString = Attributes[InString], 
+		aOut = Attributes[Out],
+		aMessageList = Attributes[MessageList]},
+		
+		Unprotect[In];
+		Unprotect[InString];
+		Unprotect[Out];
+		Unprotect[MessageList];
+		
+		If[Head[newi["$Context"]] =!= String,
+			newi["$Context"] = new;
+			newi["$ContextPath"] = {new, "System`"};
+			newi["$Line"] = 1;
+			newi["In"] = {};
+			newi["InString"] = {};
+			newi["Out"] = {};
+			newi["MessageList"] = {}];
+		
+		oldi["$Context"] = $Context;
+		oldi["$ContextPath"] = $ContextPath;
+		oldi["$Line"] = $Line;
+		oldi["In"] = DownValues[In];
+		oldi["InString"] = DownValues[InString];
+		oldi["Out"] = DownValues[Out];
+		oldi["MessageList"] = DownValues[MessageList];
+		
+		Quiet[$Context = newi["$Context"], {LinkObject::linkv}];
+		$ContextPath = newi["$ContextPath"];
+		$Line = newi["$Line"];
+		DownValues[In] = newi["In"];
+		DownValues[InString] = newi["InString"];
+		DownValues[Out] = newi["Out"];
+		DownValues[MessageList] = newi["MessageList"];
+		
+		Attributes[In] = aIn;
+		Attributes[InString] = aInString;
+		Attributes[Out] = aOut;
+		Attributes[MessageList] = aMessageList;
+		
+		If [oldi["$Line"] =!= newi["$Line"] && reassignInputName,
+			MathLink`CallFrontEnd[FrontEnd`ReassignInputNamePacket["In["<>ToString[$Line]<>"]:="]]
+		];
+];
+
+
+FrontEnd`Private`$PreemptiveLinkContext="Global`";
+FrontEnd`Private`$MainLinkContext="Global`";
+FrontEnd`Private`$InsidePreemptivePrePost=False;
+(* This version of SwitchCellContext is called exclusively by the FE *)
+FrontEnd`Private`SwitchCellContext[newContext_, link:("Main"|"Preemptive"|"Service")]:=
+	PreemptProtect[
+		Module[{oldContext, resolvedLink = If[FrontEnd`Private`$InsidePreemptivePrePost, "Preemptive", "Main"]},
+			oldContext = If[resolvedLink === "Main", FrontEnd`Private`$MainLinkContext, FrontEnd`Private`$PreemptiveLinkContext];
+			If[resolvedLink === "Main", FrontEnd`Private`$MainLinkContext = newContext, FrontEnd`Private`$PreemptiveLinkContext = newContext];
+			FrontEnd`Private`SwitchCellContext[oldContext, newContext, link === "Main"];
+			oldContext (* return old value so we can double-check that FE and kernel are in sync *)
+		]];
+
+
+FrontEnd`Private`SwitchCellContext[oldcontext_, newcontext_, reassignInputName_] := 
+(
+	PreemptProtect[
+		If[newcontext =!= None && newcontext =!= oldcontext,
+			ToExpression[StringReplace[
+				"FrontEnd`Private`SwitchCellContextB[\"AAA\", BBB, \"CCC\", DDD, EEE]",
+					{"AAA" -> oldcontext, "BBB" -> (oldcontext <> "Private`SavedContextInfo"),
+						"CCC" -> newcontext, "DDD" -> (newcontext <> "Private`SavedContextInfo"),
+						"EEE" -> ToString[reassignInputName] }
+			]]]];
+)
+
+
+FrontEnd`Private`PreContextSwitchIn[link_, isPreemptive_] :=
+	Module[{resultPart1, resultPart2=FrontEnd`Private`$MainLinkContext},
+		resultPart1 = MathLink`SetFrontEnd[link];
+		FrontEnd`Private`SwitchCellContext[FrontEnd`Private`$MainLinkContext, FrontEnd`Private`$PreemptiveLinkContext, False];
+		FrontEnd`Private`$InsidePreemptivePrePost=True;
+		{resultPart1, resultPart2}
+	]
+
+FrontEnd`Private`PreContextSwitchOut[linkSwitchPreResult_] :=
+(
+	MathLink`RestoreFrontEnd[First[linkSwitchPreResult]];
+	FrontEnd`Private`$InsidePreemptivePrePost=False;
+	FrontEnd`Private`SwitchCellContext[FrontEnd`Private`$PreemptiveLinkContext, Last[linkSwitchPreResult], False]
+)
+
+
+(* This utility is used by the the predictive interface *)
+SetAttributes[FrontEnd`Private`SwitchCellContextEvaluate, HoldRest];
+FrontEnd`Private`SwitchCellContextEvaluate[newcontext_, expr_] :=
+	Module[{result, oldcontext},
+		PreemptProtect[
+			oldcontext = FrontEnd`Private`$MainLinkContext;
+			FrontEnd`Private`SwitchCellContext[newcontext, "Main"];
+			result = expr;
+			FrontEnd`Private`SwitchCellContext[oldcontext, "Main"];
+		];
+		result
+	]
+
+
+
+(* ::Subsubsection::Closed:: *)
+(*Output Size Limit support*)
+
+
+(* See Kernel/Common/StartUp/OutputSizeLimit.m for more information *)
+
+
+OutputSizeLimit`PrePrint[0] (* controlled autoloading *)
+
+
+Unprotect[$OutputSizeLimit]
+
+
+FE`SetOutputSizeLimit[limit_] := ($OutputSizeLimit = limit);
+
+
+FE`SetUseTextFormattingWhenConvertingInput[value_] := (BoxForm`$UseTextFormattingWhenConvertingInput = value);
+FE`SetUseTextFormattingWhenConvertingOutput[value_] := (BoxForm`$UseTextFormattingWhenConvertingOutput = value);
+
+
+(* Note that System`Private`$SystemPrint and OutputSizeLimit`PrePrint are both HoldAlComplete.*)
+
+
+SetAttributes[{System`Private`$SystemPrint}, HoldAllComplete]
+
+
+(* This If[] wrapper can be removed when the kernel and front end builds sync. *) 
+If[MemberQ[Attributes[OutputSizeLimit`PrePrint], HoldAllComplete],
+	System`Private`$SystemPrint = OutputSizeLimit`PrePrint]
+
+
+(* ::Subsubsection::Closed:: *)
+(*LocatorPane support*)
+
+
+(* Function used with Automatic in the fourth argument of LocatorPane *)
+
+
+FrontEnd`AutomaticLocatorPaneClickFunction[Dynamic[var_, ___], pt_, index_, locatorAutoCreate_] :=
+ Module[{requireCommand = (locatorAutoCreate =!= All), minmax = locatorAutoCreate, min = 0, max = Infinity},
+ 
+    If[(Head[locatorAutoCreate] === List) && (Length[locatorAutoCreate] > 1),
+		requireCommand = (locatorAutoCreate[[1]] =!= All);
+		If[(Length[locatorAutoCreate] >= 2) && !NumberQ[locatorAutoCreate[[1]]], minmax = locatorAutoCreate[[2]]]];
+ 
+    If[NumberQ[minmax],
+		min = Round[minmax],
+		If[(Head[minmax] === List) && (Length[minmax] === 2) && NumberQ[minmax[[1]]],
+			{min, max} = Round[minmax]
+		]
+	];
+	
+	If[CurrentValue[{"ModifierKeys", "Command"}], 
+		If[index === None, 
+			If[Length[var] < max, AppendTo[var, pt]], 
+			If[Length[var] > min, var = Drop[var, {index}]]], 
+		
+		If[index === None, 
+			If[ !requireCommand, 
+				If[Length[var] < max, AppendTo[var, pt]]]]]
+ ];
+
+
+(* ::Subsubsection::Closed:: *)
+(*Demonstrations page support*)
+
+
+PutDemonstrationsTemplate[]:=Module[{nbStr, nb, strm},
+	Quiet[
+		nbStr=URLFetch["http://demonstrations.wolfram.com/DemonstrationsTemplate.nb?mathid=" <> $MachineID <> "&?license=" <> $LicenseID];
+		If[nbStr=!=$Failed,
+			strm = StringToStream[nbStr];			
+			nb = Select[ReadList[strm, Expression], Head[#] === Notebook &];			
+			Close[strm]
+		];
+		nb = If[nbStr === $Failed || nb==={}, 
+				Get[
+					ToFileName[{$InstallationDirectory, "AddOns", "Applications", "DemonstrationsTools", "FrontEnd", "TextResources"},
+						"DemonstrationsTemplate.nb"]],
+				First[nb]
+		];
+		NotebookPut[nb]
+	]
+] /; $VersionNumber < 12
+
+
+(* DemonstrationsTools is a paclet starting in v12 *)
+PutDemonstrationsTemplate[]:=Module[{nb},
+	Quiet[Needs["DemonstrationsTools`"];
+		nb = Get[ToFileName[{DemonstrationsTools`$DemonstrationsToolsDir, "FrontEnd", "TextResources"}, "DemonstrationsTemplate.nb"]];
+		If[Head@nb === Notebook, NotebookPut[nb], Beep[]; $Failed]
+	]
+]	
+
+
+(* ::Subsubsection::Closed:: *)
+(*Speech*)
+
+
+FrontEnd`Speak[] := FrontEnd`Speak[NotebookRead[EvaluationNotebook[], FrontEnd`WrapBoxesWithBoxData -> True]];
+FrontEnd`Speak[content_List] := FrontEnd`Speak/@content;
+FrontEnd`Speak[Cell[content_,___]] := FrontEnd`Speak[content];
+FrontEnd`Speak[content_BoxData] := Module[{expr},
+	expr=MakeExpression[content,StandardForm];
+	Switch[expr,
+		HoldComplete[_String], Speak[ First @ expr ],
+		_HoldComplete, Function[x, Speak[Unevaluated[HoldForm[x]]], HoldAllComplete] @@ expr,
+		_, Speak["Incomplete expression"] ] ];
+FrontEnd`Speak[TextData[content_List]] := FrontEnd`Speak[content];
+FrontEnd`Speak[content_String] := Speak[content];
+FrontEnd`Speak[_[content_,___]] := FrontEnd`Speak[content];
+FrontEnd`Speak[_] := Null;
+
+
+(* ::Subsubsection::Closed:: *)
+(*open dialog, move cursor*)
+
+
+(*for backward compatibility*)
+FrontEnd`DialogOpen[title_, True] := FrontEnd`DialogOpen[title, "FocusAtBoxID" -> "inputfield"]
+
+
+Options[FrontEnd`DialogOpen] = {"FocusAtBoxID" -> None, "ShowInNotebooks" -> False}
+
+
+FrontEnd`DialogOpen[title_, OptionsPattern[]] := 
+ (SetOptions[#, WindowMargins -> AbsoluteCurrentValue[#, WindowMargins]]; 
+  FrontEnd`MoveCursorToInputField[#, OptionValue["FocusAtBoxID"]]; 
+  MathLink`CallFrontEnd[FrontEnd`SetNotebookInList[#, OptionValue["ShowInNotebooks"]]]; #)&[
+	FrontEndExecute[FrontEnd`NotebookOpenReturnObject[
+     FrontEnd`FindFileOnPath[title, "PrivatePathsSystemResources"]]]]
+
+
+FrontEnd`MoveCursorToInputField[nb_, None] := Null
+
+
+FrontEnd`MoveCursorToInputField[nb_, boxid_: "inputfield"] := 
+ MathLink`CallFrontEnd[FrontEnd`BoxReferenceFind[
+  FE`BoxReference[nb, {{boxid}}, 
+	FE`BoxOffset -> {FE`BoxChild[1]}], 
+	FE`SearchStart -> "StartFromBeginning", FE`SearchStop -> "StopAtEnd"]]
+
+
+(* ::Input:: *)
+(*InputField[expr,type,BoxID->"inputfield"]*)
+
+
+(* ::Subsubsection::Closed:: *)
+(*Open coded hyperlinks*)
+
+
+(* ::Text:: *)
+(*Opens the argument URL in the web browser coded with buildid:*)
+
+
+SetAttributes[FE`hyperlinkCoded, HoldRest];
+FE`hyperlinkCoded[url_String /; StringMatchQ[url, "http*"], cat___] :=
+  NotebookLocate[{URL[
+    StringJoin[url,
+     "?actkey=", FE`Evaluate[FEPrivate`$ActivationKey],
+     "&product_name=", ToLowerCase[FE`Evaluate[FEPrivate`$ProductIDName]],
+     "&version=", FE`Evaluate[FEPrivate`$ProductVersion], 
+	 "&os=", FE`Evaluate[FEPrivate`$SystemID],
+     "&buildid=", With[{buildid = FE`Evaluate[FEPrivate`$LayoutCreationID]},
+       If[IntegerQ[buildid], ToString[buildid, InputForm], StringCases[
+          ReadList[ToFileName[{$InstallationDirectory}, ".CreationID"], Character],
+          DigitCharacter]]], Riffle[{"", cat}, "&"]]], None}]
+
+
+(* ::Subsubsection::Closed:: *)
+(*Sandbox evaluation mode*)
+
+
+(* This is supposed to invoke webMathematica-based sandbox evaluation mode. *)
+FEPrivate`SecureEvaluate[e_] := e;
+
+
+(* ::Subsubsection::Closed:: *)
+(*Code folding routines*)
+
+
+FE`FunctionFoldExpr[head_, body__] :=
+	RowBox[{head, "[",
+		ButtonBox["..",
+			ImageSize->{24,Automatic},
+			ButtonFunction :> FE`UnFoldFunction[],
+			Evaluator->Automatic,
+			Method->"Preemptive",
+			Tooltip->PaneBox[body,ImageSize->{{0,640},{0,480}}]
+		], "]"}];
+
+FE`FunctionFoldTemplate[RowBox[{head_, "[", body__, "]"}]] := 
+ With[{display = FE`FunctionFoldExpr["1", "2"] /. {"1" -> #1, "2" -> #2}}, 
+  TemplateBox[{head, body}, "collapseFunction", 
+   DisplayFunction -> (display &), 
+   InterpretationFunction -> (RowBox[{#1, "[", TemplateSlotSequence[2], "]"}] &), 
+   Editable -> True, BoxID -> "Folded"]];
+
+FE`RuleFoldExpr[lhs_, rhs_] :=
+	RowBox[{lhs, "\[Rule]",
+		ButtonBox["..",
+			ImageSize->{24,Automatic},
+			ButtonFunction :> FE`UnFoldFunction[],
+			Evaluator->Automatic,
+			Method->"Preemptive",
+			Tooltip->PaneBox[body,ImageSize->{{0,640},{0,480}}]
+		]}];
+
+FE`RuleFoldTemplate[RowBox[{lhs_, "\[Rule]", rhs_}]] := 
+ With[{display = FE`RuleFoldExpr["1", "2"] /. {"1" -> #1, "2" -> #2}}, 
+  TemplateBox[{lhs, rhs}, "collapseRule", 
+   DisplayFunction -> (display &), 
+   InterpretationFunction -> (RowBox[{#1, "\[Rule]", #2}] &), 
+   Editable -> True, BoxID -> "Folded"]];
+
+FE`ListFoldExpr[body_] := 
+	RowBox[{"{",
+		ButtonBox["..",
+			ImageSize->{24,Automatic},
+			ButtonFunction :> FE`UnFoldFunction[],
+			Evaluator->Automatic,
+			Method->"Preemptive",
+			Tooltip->PaneBox[body,ImageSize->{{0,640},{0,480}}]
+		], "}"}];
+
+FE`ListFoldTemplate[RowBox[{"{", body_, "}"}]] := 
+ With[{display = FE`ListFoldExpr["1"] /. {"1" -> #1}}, 
+  TemplateBox[{body}, "collapseList", 
+   DisplayFunction -> (display &), 
+   InterpretationFunction -> (RowBox[{"{", #1, "}"}] &), 
+   Editable -> True, BoxID -> "Folded"]];
+
+Unprotect[FE`FoldSelection]
+
+FE`FoldSelection[nb_NotebookObject] := 
+  Module[{boxes = NotebookRead[nb]}, 
+   If[MatchQ[boxes, RowBox[{_, "[", __, "]"}]], NotebookWrite[nb, FE`FunctionFoldTemplate[boxes]]];
+   If[MatchQ[boxes, RowBox[{_, "\[Rule]", _}]], NotebookWrite[nb, FE`RuleFoldTemplate[boxes]]];
+   If[MatchQ[boxes, RowBox[{"{", _, "}"}]], NotebookWrite[nb, FE`ListFoldTemplate[boxes]]]
+  ];
+
+Protect[FE`FoldSelection]
+
+FE`FunctionUnFoldTemplate[TemplateBox[{head_, body__}, "collapseFunction", ___]] := RowBox[{head, "[", body, "]"}];
+FE`RuleUnFoldTemplate[TemplateBox[{lhs_, rhs_}, "collapseRule", ___]] := RowBox[{lhs, "\[Rule]", rhs}];
+FE`ListUnFoldTemplate[TemplateBox[{body_}, "collapseList", ___]] := RowBox[{"{", body, "}"}];
+
+Unprotect[FE`UnFoldBoxes]
+
+FE`UnFoldBoxes[boxes_] :=
+	Switch[boxes,
+		TemplateBox[{_, __}, "collapseFunction", ___], FE`FunctionUnFoldTemplate[boxes],
+		TemplateBox[{_, _}, "collapseRule", ___], FE`RuleUnFoldTemplate[boxes],
+		TemplateBox[{_}, "collapseList", ___], FE`ListUnFoldTemplate[boxes]
+	]
+
+Protect[FE`UnFoldBoxes]
+
+Unprotect[FE`UnFoldFunction] 
+
+FE`UnFoldFunction[] := 
+Module[{ref, boxes},
+	ref = FE`BoxReference[MathLink`CallFrontEnd[FrontEnd`Value[FEPrivate`Self[]]], {FE`Parent["Folded"]}];
+	boxes = MathLink`CallFrontEnd[FrontEnd`BoxReferenceRead[ref, AutoScroll->True]];
+	boxes = FE`UnFoldBoxes[boxes];
+	MathLink`CallFrontEnd[FrontEnd`BoxReferenceReplace[ref, boxes]]
+]
+
+Protect[FE`UnFoldFunction] 
+
+Unprotect[FE`UnFoldSelection]
+
+FE`UnFoldSelection[nb_NotebookObject] := 
+  Module[{boxes = NotebookRead[nb]}, 
+   If[MatchQ[boxes, TemplateBox[{_, __}, "collapseFunction", ___]], NotebookWrite[nb, FE`FunctionUnFoldTemplate[boxes]]];
+   If[MatchQ[boxes, TemplateBox[{_, _}, "collapseRule", ___]], NotebookWrite[nb, FE`RuleUnFoldTemplate[boxes]]];
+   If[MatchQ[boxes, TemplateBox[{_}, "collapseList", ___]], NotebookWrite[nb, FE`ListUnFoldTemplate[boxes]]]
+  ];
+
+Protect[FE`UnFoldSelection]
+
+
+(* ::Subsubsection::Closed:: *)
+(*NL Utilities*)
+
+
+FE`NotebookWriteIntoControlEqual[nb_NotebookObject, str_String] := (
+	Quiet[WolframAlpha[(* trigger autoloading *)]];
+        NotebookWrite[nb, ToBoxes[AlphaIntegration`LinguisticAssistant["", {}, Automatic]], After];
+        FrontEndTokenExecute[nb, "MovePrevious"];
+        NotebookWrite[nb, str]
+);
+
+
+(* ::Subsection::Closed:: *)
+(*Headers and footers dialog support*)
+
+
+(* ::Text:: *)
+(*restore to factory defaults:*)
+
+
+FE`headersFootersDialog[dialog_NotebookObject] := 
+ FE`headersFootersDialog[dialog, Inherited &, None]
+
+
+(* ::Text:: *)
+(*copy values from nb:*)
+
+
+FE`headersFootersDialog[dialog_, nb_NotebookObject, asCells_Symbol : False] := 
+ FE`headersFootersDialog[dialog, AbsoluteCurrentValue[nb, #] &, asCells]
+
+
+(* ::Text:: *)
+(*update all values:*)
+
+
+FE`headersFootersDialog[dialog_, _[func_], asCells_Symbol] := 
+ (Scan[(CurrentValue[dialog, #1] = func) &, 
+   Join[{PageHeaderLines, PageFooterLines, PrintingStartingPageNumber}, 
+    Thread[{PrintingOptions, {"FacingPages", "FirstPageFace", "FirstPageHeader", "FirstPageFooter"}}]]]; 
+  FE`headersFootersDialog[Dynamic[{CurrentValue[dialog, #], func}]& /@ {PageHeaders, PageFooters}, asCells])
+
+
+(* ::Text:: *)
+(*apply the appropriate conversion and save the header/footer values:*)
+
+
+FE`headersFootersDialog[{Dynamic[{h1_, h2_}], Dynamic[{f1_, f2_}]}, asCells_] := 
+ (h1 = #1; f1 = #2) & @@ MapIndexed[FE`headersFootersDialog[asCells], {h2, f2}, {3}]
+
+
+(* ::Text:: *)
+(*convert boxes to cells for notebook option:*)
+
+
+FE`headersFootersDialog[True] := 
+  (Replace[
+       Replace[MathLink`CallFrontEnd[FrontEnd`ReparseBoxStructurePacket[#]] //. RowBox[{a___, RowBox[{r___}], b___}] :> RowBox[{a, r, b}],
+     	{Null | "" -> None, RowBox[lis_List] | lis_ :> 
+       		Replace[lis, c : Except[_Cell | _String | _StyleBox | _ValueBox | _CounterBox] :> Cell[BoxData[c]], {If[ListQ[lis], 1, 0]}]}],
+       lis : Except[None | Cell[_TextData, ___]] :> Cell[TextData[lis], If[First[#2] == 1, "Header", "Footer"], 
+                If[Last[#2] == 2, Unevaluated[Sequence[]], CellMargins -> {If[Last[#2] == 1, Identity, Reverse][{0, Inherited}], {Inherited, Inherited}}]]] &)
+
+
+(* ::Input:: *)
+(*(*threads the main style throughout the cell contents rather than using it as cell style*)*)
+(*FE`headersFootersDialog[True] := *)
+(* (Replace[*)
+(*   Replace[MathLink`CallFrontEnd[FrontEnd`ReparseBoxStructurePacket[#]],*)
+(*	{Null | "" -> None, RowBox[lis_List] | lis_ :> *)
+(*		Replace[lis, {StyleBox[c_, s_String] :> Cell[TextData[{c}], s],*)
+(*			c : _String?(!StringMatchQ[#, Whitespace]&) | _ValueBox | _CounterBox :> Cell[TextData[{c}], If[First[#2] == 1, "Header", "Footer"]],*)
+(*			c : Except[_Cell | _String | _StyleBox | _ValueBox | _CounterBox] :> Cell[BoxData[c]]}, {If[ListQ[lis], 1, 0]}]}],*)
+(*   lis : Except[None] :> Cell[TextData[lis], *)
+(*          If[Last[#2] == 2, Unevaluated[Sequence[]], CellMargins -> {If[Last[#2] == 1, Identity, Reverse][{0, Inherited}], {Inherited, Inherited}}]]]&)*)
+
+
+(* ::Text:: *)
+(*convert cells to flat boxes for display in dialog:*)
+
+
+FE`headersFootersDialog[False] := 
+ (MathLink`CallFrontEnd[FrontEnd`ReparseBoxStructurePacket[
+	Replace[#1, {None -> ""}] //. 
+	  {Cell[" ", "Header", CellFrame -> {{x_, _}, {0, 0}}, CellFrameMargins -> 4] :> If[x == 0, " |", "| "], 
+	   Cell[lis_String|TextData[lis_], s_String | ___] :> 
+          StyleBox[RowBox[If[ListQ[lis], lis, {lis}]], s], 
+       Cell[BoxData[lis_], ___] :> lis}]]&)
+
+
+(* ::Text:: *)
+(*no conversion needed when resetting:*)
+
+
+FE`headersFootersDialog[None] := (#1 &)
+
+
+(* ::Text:: *)
+(*menu access:*)
+
+
+FE`headersFootersDialog[] := 
+ Module[{dialog, list = headersFootersCache[], nb = InputNotebook[]},
+  (*silently exit if nb is a hf dialog*) If[MemberQ[Part[list, All, 2], Part[nb, 2]], Return[]];
+  dialog = Select[list, (Part[CurrentValue[#, {TaggingRules, "InputNotebook"}], 2] === Part[nb, 2])&, 1];
+  If[dialog =!= {}, (*use an existing dialog if one has already been created*) dialog = First[dialog],
+	dialog = FrontEndExecute[FrontEnd`FindFileOnPath["HeadersFootersDialog.nb", "PrivatePathsSystemResources"]];
+	dialog = NotebookOpen[dialog, Visible -> False, WindowTitle -> None];
+	MathLink`CallFrontEnd[FrontEnd`SetNotebookInList[dialog, False]];
+
+	dialog = NotebookPut[NotebookGet[dialog]];
+    AppendTo[CurrentValue[$FrontEnd, {PrivateFrontEndOptions, "DialogSettings", "HeadersFooters", "Dialogs"}], dialog];
+    FE`headersFootersDialog[dialog, nb];
+    MathLink`CallFrontEnd[FrontEnd`SetNotebookInList[dialog, False]]; 
+  ];
+  SetOptions[dialog, Visible -> True, TaggingRules -> {"InputNotebook" -> nb},
+	WindowMargins -> (AbsoluteCurrentValue[nb, WindowMargins] + {{30, 0}, {0, 30}}),
+	WindowTitle -> FrontEndResource["HeadersFootersDialog", "WindowTitle"] <> AbsoluteCurrentValue[nb, "WindowTitle"]];
+  SetSelectedNotebook[dialog]]
+
+
+headersFootersCache[] := headersFootersCache[{PrivateFrontEndOptions, "DialogSettings", "HeadersFooters", "Dialogs"}]
+headersFootersCache[cache_] := headersFootersCache[Dynamic[CurrentValue[$FrontEnd, cache]], Select[CurrentValue[$FrontEnd, cache, {}], ListQ[NotebookInformation[#]]&]]
+headersFootersCache[Dynamic[cache_], val_] := (cache = val; val)
+
+
+
+(* ::Text:: *)
+(*context menu functions:*)
+
+
+FE`headersFootersDialogMenu[
+  "Cut"] := (MathLink`CallFrontEnd[
+   FrontEnd`CopyToClipboard[
+    Cell[BoxData[
+      CurrentValue[InputNotebook[], 
+       Part[CurrentValue[InputNotebook[], FrontEnd`RightClickData], 1,
+         2]]]]]]; 
+  Set[CurrentValue[InputNotebook[], 
+    Part[CurrentValue[InputNotebook[], FrontEnd`RightClickData], 1, 
+     2]], ""])
+
+FE`headersFootersDialogMenu["Copy"] := 
+ MathLink`CallFrontEnd[
+  FrontEnd`CopyToClipboard[
+   Cell[BoxData[
+     CurrentValue[InputNotebook[], 
+      Part[CurrentValue[InputNotebook[], FrontEnd`RightClickData], 1, 
+       2]]]]]]
+
+FE`headersFootersDialogMenu["Paste"] := 
+ Set[CurrentValue[InputNotebook[], 
+   Part[CurrentValue[InputNotebook[], FrontEnd`RightClickData], 1, 
+    2]], Quiet[Check[Part[
+   FrontEndExecute[{FrontEnd`NotebookGet[
+      FrontEnd`ClipboardNotebook[]]}], 1, 1, 1, 1], ""]]]
+
+FE`headersFootersDialogMenu["Clear"] := 
+ Set[CurrentValue[InputNotebook[], 
+   Part[CurrentValue[InputNotebook[], FrontEnd`RightClickData], 1, 
+    2]], ""]
+
+FE`headersFootersDialogMenu["Reset"] := 
+ Set[CurrentValue[InputNotebook[], 
+   Part[CurrentValue[InputNotebook[], FrontEnd`RightClickData], 1, 
+    2]], FE`headersFootersDialog[False][
+   CurrentValue[
+    CurrentValue[InputNotebook[], {TaggingRules, "InputNotebook"}], 
+    Part[CurrentValue[InputNotebook[], FrontEnd`RightClickData], 1, 
+     2]]]]
+
+
+(* ::Subsection::Closed:: *)
+(*Preferences dialog support*)
+
+
+prefsTR[id_String] := Dynamic[FEPrivate`FrontEndResource["PreferencesDialog", id]]
+
+
+Options[pathmanager] = {WindowTitle -> None, "MessageText" -> None}; 
+
+
+(* ::Text:: *)
+(*dialog maker:*)
+
+
+pathmanager[Dynamic[lisvar_], {Dynamic[index_], Dynamic[length_]}, opts : OptionsPattern[]] :=
+ CreateDialog[pathmanager[Dynamic[{lisvar, index, length}], opts], 
+	Modal -> True, WindowTitle -> OptionValue[WindowTitle],
+	TaggingRules -> {"index" -> 0, "length" -> 0},
+	ButtonBoxOptions -> {ImageSize -> FrontEnd`CurrentValue["DefaultButtonSize"]},
+	NotebookEventActions -> {
+		"ReturnKeyDown" :> (FE`Evaluate[FEPrivate`FindAndClickDefaultButton[]]; DialogReturn[$Failed]),
+		"EscapeKeyDown" :> (FE`Evaluate[FEPrivate`FindAndClickCancelButton[]]; DialogReturn[$Failed]),
+		"WindowClose" :> (FE`Evaluate[FEPrivate`FindAndClickCancelButton[]]; DialogReturn[$Failed]),
+		"DownArrowKeyDown" :> If[index < length, index++], 
+		"UpArrowKeyDown" :> If[index - 1 > 0, index--]}]
+
+
+(* ::Text:: *)
+(*main dialog content:*)
+
+
+pathmanager[Dynamic[{lisvar_, index_, length_}], opts : OptionsPattern[]] := 
+ DynamicModule[{data, size = {450, {100, 300}}},
+  With[{modify = pathmanager[prefsTR["PathDialogModText"], Dynamic[data], False, opts]},
+   Grid[{
+	  Replace[OptionValue["MessageText"], {None -> Sequence[], 
+			x_ :> {Pane[Style[x, LineIndent -> 0, LinebreakAdjustments -> {1, 100, 0, 0, 100}, AutoItalicWords -> {"Mathematica"}], Dynamic[First[size] + 100]], SpanFromLeft}}],
+	  {Column[{Pane[prefsTR["PathDialogDirsText"], ImageMargins -> 5],
+			Pane[Dynamic[Grid[Transpose[{MapIndexed[EventHandler[Pane[#1, Alignment -> Left, ImageSize -> Full, FrameMargins -> 3],
+				 "MouseDown" :> If[CurrentValue["MouseClickCount"] == 2, modify[[2]], index = #2[[1]]]] & , data]}], 
+			  Alignment -> Left, Background -> {White, {Automatic, Thread[index -> LightBlue]}}, Spacings -> {Automatic, 0}]], 
+			 Dynamic[size], 
+			 Scrollbars -> Automatic, AppearanceElements -> {}]}, 
+		  Dividers -> All, Spacings -> {0, 0.3}, Background -> {{None, White}}], 
+	   Column[{pathmanager[prefsTR["PathDialogAddText"], Dynamic[data], opts], modify, 
+			Button[prefsTR["PathDialogDelText"], data = Delete[data, index]; length--, 
+				Enabled -> Dynamic[0 < index < length + 1]]}]},
+	  {Pane[Grid[{{Button[prefsTR["ResetDefaultsText"], data = ReleaseHold[Replace[HoldComplete[lisvar], HoldPattern[_[CurrentValue[$FrontEnd, {opt_, subopt_} | opt_]]] :> 
+			(If[{subopt} === {}, #, Replace[subopt, #]]&[FullOptions[$DefaultFrontEnd, opt]])]]], 
+		Item[ChoiceButtons[{DialogReturn[If[lisvar =!= data, lisvar = data]]}, {Method -> "Queued", {}}], Alignment -> Right]}}, 
+		ItemSize -> {{Automatic, Fit}}, Alignment -> {{Left, Right}}], Dynamic[{First[size] + 100, Automatic}]], SpanFromLeft}},
+	Alignment -> {Left, Top}, Spacings -> {Automatic, {0, 2, 0}}, BaseStyle -> "ControlStyle"]],
+  Initialization :> (length = Length[data = lisvar])]
+
+
+(* ::Text:: *)
+(*Add/Modify path buttons:*)
+
+
+pathmanager[lbl_, Dynamic[data_], addQ_Symbol: True, OptionsPattern[]] := 
+ Button[lbl, CreateDialog[DynamicModule[{nb = ButtonNotebook[], 
+     new = If[addQ, "", Part[data, CurrentValue[ButtonNotebook[], {TaggingRules, "index"}]]]}, 
+    Column[{prefsTR["PathDialogDirText"], 
+      Grid[{{InputField[Dynamic[If[StringQ[new], new, ToString[new]], 
+				(new = If[StringMatchQ[#, "FrontEnd`FileName[*]"], ToExpression[#], #])& ], 
+		    String, BaseStyle -> "ControlStyle", FieldSize -> {{35, 35}, {1, Infinity}}], 
+          FileNameSetter[Dynamic[new], "Directory", ImageSize -> FrontEnd`CurrentValue["DefaultButtonSize"]]}}], 
+      Item[ChoiceButtons[{If[new =!= "", If[addQ, 
+			  AppendTo[data, new]; CurrentValue[nb, {TaggingRules, "length"}]++,
+              data[[CurrentValue[nb, {TaggingRules, "index"}]]] = new]]; DialogReturn[]}], 
+       Alignment -> Right]}], InheritScope -> True], WindowTitle -> None, Modal -> True], 
+  Enabled -> If[addQ, True, 
+	Dynamic[0 < CurrentValue[EvaluationNotebook[], {TaggingRules, "index"}] < CurrentValue[EvaluationNotebook[], {TaggingRules, "length"}] + 1]]]
+
+
+pathmanager[Dynamic[lisvar_], opts : OptionsPattern[]] :=
+ pathmanager[Dynamic[lisvar], 
+	Dynamic[CurrentValue[EvaluationNotebook[], 
+		{TaggingRules, #}]]& /@ {"index", "length"}, opts]
+
+
+pathmanager[str : "TrustedPath"|"UntrustedPath"] := pathmanager[
+	Dynamic[CurrentValue[$FrontEnd, {"NotebookSecurityOptions", str}]], WindowTitle -> prefsTR[str<>"WindowTitle"], 
+	"MessageText" -> Column[Thread[prefsTR[{str<>"Warning1", str<>"Text"}]]]]
+
+
+FrontEnd`TrustedPathDialog[] := pathmanager["TrustedPath"]
+
+
+FrontEnd`UntrustedPathDialog[] := pathmanager["UntrustedPath"]
+
+
+SetAttributes[{FrontEnd`TrustedPathDialog, FrontEnd`UntrustedPathDialog, pathmanager}, {Protected, ReadProtected}];
+
+
+(* ::Subsection::Closed:: *)
+(*Chat Services support*)
+
+
+Which[
+	FrontEnd`Private`$KernelName === "ChatServices",
+		Needs["ChatTools`"];
+		FrontEnd`Private`NewChatWindow[]:=ChatTools`Chat[];
+		FrontEnd`Private`OpenChatServicesMonitor[]:=ChatTools`StartChatChannelListener[];,
+	FrontEnd`Private`$KernelName === "System",
+		Needs["ChatTools`"];
+		FrontEnd`Private`NewChatWindow[]:=ChatTools`ChatServicesEnableDialog["NewChat"];
+		FrontEnd`Private`OpenChatServicesMonitor[]:=ChatTools`ChatServicesEnableDialog["ChatServicesMonitor"];
+];
+
+
+
+
+
+
+(* ::Subsection::Closed:: *)
+(*Wolfram Cloud support*)
+
+
+SetAttributes[FrontEnd`Private`SwitchEvaluationCloudObject, HoldAll];
+FrontEnd`Private`SwitchEvaluationCloudObject[obj_] := ($EvaluationCloudObject = obj);
+
+
+If[FrontEnd`Private`$KernelName === "System",
+
+	CloudCopyFile[nbobj_, filename_, cloudobject_] :=
+	Block[{$MessageList = {}, result},
+		result = CopyFile[filename, cloudobject];
+		If[result === $Failed,
+			MathLink`CallFrontEnd @ FrontEnd`WolframCloud`UploadFailed[nbobj,
+				Switch[$MessageList,
+					{___, HoldForm[MessageName[_, "invhttp"]], ___}, 1600,
+					{___, HoldForm[MessageName[_, "offline"]], ___}, 1601,
+					{___, HoldForm[MessageName[_, "subslimit"]], ___}, 1700,
+					{___, HoldForm[MessageName[_, "notauth"]], ___}, 401,
+					_, 1000 ]]];
+		result
+	];
+	
+	SetAttributes[CloudCopyFileQuiet, HoldAll];
+	CloudCopyFileQuiet[expr_] := If[$CloudCopyFileQuiet === False, expr, Quiet[expr]];
+	
+	CloudNotebookSave[nb_, info_List]:=
+	Module[{filename, cloudobject, filebytecount, lastmodified, overrideverification, cloudObjInfo, errorCode=-1},
+		{filename, cloudobject, filebytecount, lastmodified, overrideverification} = 
+			{"FileName", "CloudObject", "FileByteCount", "LastModified", "OverrideVerification"} /. info;
+		filename = ToFileName[filename];
+		
+		MathLink`CallFrontEnd @ FrontEnd`WolframCloud`UploadInitiated[nb];
+		If[!overrideverification && filebytecount =!= Null && lastmodified =!= Null,
+			cloudObjInfo = First @ CloudObjectInformation[cloudobject];
+			If[filebytecount =!= cloudObjInfo[["FileByteCount"]] || AbsoluteTime[lastmodified] =!= AbsoluteTime[cloudObjInfo[["LastModified"]]],
+				(* replace with confliction resolution dialog *)
+				MathLink`CallFrontEnd @ FrontEnd`WolframCloud`UploadFailed[nb, 409 (* HTTP error code:409 Conflict" *)];
+				Return[$Failed]
+			]
+		];
+		If[CloudCopyFileQuiet[CloudCopyFile[nb, filename, cloudobject]] === $Failed, Return[$Failed]];
+		(* otherwise, success *)
+		cloudObjInfo = First @ CloudObjectInformation[cloudobject];
+		MathLink`CallFrontEnd @ FrontEnd`WolframCloud`UploadComplete[nb,
+			cloudObjInfo[["FileByteCount"]], cloudObjInfo[["LastModified"]] ]
+		nb
+	];
+		
+]
+
+
+FrontEnd`Private`SaveToWolframCloudDialog[nbObj_NotebookObject, filename_String, ext_String, token_String] := (
+	FrontEnd`Private`$SaveToWolframCloudTaskObject = Null;
+	FrontEnd`Private`$SaveToWolframCloudNotebookObject = nbObj;
+	FrontEnd`Private`$SaveToWolframCloudFileName = filename;
+	FrontEnd`Private`$SaveToWolframCloudFileExtension = ext;
+	FrontEnd`Private`$SaveToWolframCloudContinuationToken = token;
+	FrontEndExecute[{FrontEnd`NotebookOpen[
+		FrontEnd`FindFileOnPath["WolframCloudSaveDialog.nb", "PrivatePathsSystemResources"]]}]
+)
+
+
+
+(* ::Subsection::Closed:: *)
+(*Wolfram|Alpha support*)
+
+
+FrontEnd`Private`EvaluationModeEvaluate[boxes_, fmt_, "WolframAlphaShort"] := AlphaIntegration`ExtrusionEvaluate[boxes, fmt]
+
+FrontEnd`Private`EvaluationModeEvaluate[boxes_, fmt_, "WolframAlphaLong"] := AlphaIntegration`AlphaQuery[boxes, fmt]
+
+FrontEnd`Private`PrimeControlEqualPump[] := Quiet[
+	WolframAlpha[];
+	ToBoxes[Entity["City", {"Champaign", "Illinois", "UnitedStates"}]];
+	(*TimeConstrained[ToBoxes[AlphaIntegration`LinguisticAssistant["priming", {}, Automatic]], 6];*)
+	ClearAll[FrontEnd`Private`PrimeControlEqualPump]];
+
+If[FrontEnd`Private`$UserKernelQ &&
+	TrueQ[CurrentValue[$FrontEnd, {PrivateFrontEndOptions, "WolframAlphaSettings", "Autoload"}, True]],
+	RunScheduledTask[PreemptProtect[
+		(* If a queued evaluation is already running, we've missed the priming window. *)
+		If[Not @ StringQ @ InString @ $Line, FrontEnd`Private`PrimeControlEqualPump[]];
+		RemoveScheduledTask[$ScheduledTask]], {1.0}]];
+
+
+(* ::Subsection::Closed:: *)
+(*ExternalEvaluate support*)
+
+
+FrontEnd`Private`ExternalLanguageCellEvaluationFunction[input_, fmt_] := 
+	If[NameQ["ExternalEvaluate`FE`ExternalCellEvaluate"],
+		Symbol["ExternalEvaluate`FE`ExternalCellEvaluate"][
+			CurrentValue[EvaluationCell[], System`CellEvaluationLanguage], input],
+		Beep[] (* FIXME: Is there some standard kernel message we can give here? *)
+	]
+
+
+(* ::Subsection::Closed:: *)
+(*Palette support*)
+
+
+(* Assistant palettes help lookups *)
+Unprotect[TreeBrowse`DocsNavigatorLookup];
+TreeBrowse`DocsNavigatorLookup[nb_NotebookObject, tag_?(StringMatchQ[#, "paclet:*"] &)] := 
+	FrontEndExecute[FrontEndToken["OpenHelpLink", {tag, Automatic}]]
+SetAttributes[TreeBrowse`DocsNavigatorLookup, {Protected, ReadProtected}]
+
+
+(* ::Subsection::Closed:: *)
+(*Image context menu items*)
+
+
+imageText[id_] := FrontEndResource["FEStrings", id]
+
+
+imageSelectedQ[] := CurrentValue[SelectedNotebook[], "GraphicsSelectionType"] === {"Image"}
+
+
+image3DSelectedQ[] := CurrentValue[SelectedNotebook[], "GraphicsSelectionType"] === {"Image3D"}
+
+
+FrontEnd`CreateMask[] :=
+  Module[{temp},
+	temp = DeleteCases[CurrentValue["SelectionData"], _[BaseStyle | DefaultBaseStyle, "ImageGraphics"] | _TagBox, 3];
+	If[MatchQ[temp, _[_Rule..]], MessageDialog[imageText["graphicsInfoMessage"]]; Return[]];
+	temp = ReplaceAll[temp, {_GrayLevel -> GrayLevel[1.], _RGBColor -> GrayLevel[1.], _CMYKColor -> GrayLevel[1.], _Hue -> GrayLevel[1.], _Opacity -> Opacity[1.0], _Dashing -> Dashing[{}]}];
+	temp = Append[Append[temp, BaseStyle -> White], Background -> Black];
+	SelectionMove[EvaluationNotebook[], After, Cell];
+	NotebookWrite[EvaluationNotebook[], temp, All];
+]
+
+
+FrontEnd`ExtractGraphics[] :=
+  Module[{temp},
+	temp = DeleteCases[CurrentValue["SelectionData"], _[BaseStyle | DefaultBaseStyle, "ImageGraphics"] | _TagBox, 3];
+	If[MatchQ[temp, _[_Rule..]], MessageDialog[imageText["graphicsInfoMessage"]]; Return[]];
+	SelectionMove[EvaluationNotebook[], After, Cell];
+	NotebookWrite[EvaluationNotebook[], temp, All];
+]
+
+
+FrontEnd`GetImageInformation[] := MessageDialog[
+  Module[{img, opts, opts2, fmtopt},
+	
+	img = NotebookRead[SelectedNotebook[]];
+	img = img /. {___, t : _[_, _BoxForm`ImageTag, ___], ___} :> t;
+	img = ToExpression[img];
+	
+	opts2 = FilterRules[opts = Options[img], Options[Image]];
+	opts2 = FilterRules[opts2, Except[ColorSpace| Interleaving]];
+	
+	fmtopt[rules : {__Rule}] := Column[fmtopt /@ rules, BaselinePosition -> {1,1}];
+	fmtopt[opt_ -> val : {__Rule}] := OpenerView[{opt, fmtopt[val]}, False];
+	fmtopt[opt_ -> val_Association] := fmtopt[opt -> Normal[val]];
+	fmtopt[opt_ -> val_] := opt -> Style[val, ShowStringCharacters -> True];
+	fmtopt[other_] := other;
+	
+	Grid[{
+			{imageText["imageInfoDimsLabel"], ImageDimensions[img]},
+			{imageText["imageInfoColorLabel"], ImageColorSpace[img]},
+			{imageText["imageInfoChannelsLabel"], ImageChannels[img]},
+			{imageText["imageInfoInterleaveLabel"], Interleaving /. opts},
+			{imageText["imageInfoHistogramLabel"], ImageHistogram[img]},
+			{imageText["imageInfoOptionsLabel"], fmtopt[opts2]}
+		},
+		ItemStyle -> {{"RibbonBold", Directive["RibbonText", ShowStringCharacters -> True]}},
+		Alignment -> {{Right, Left}}
+	]
+  ],
+  WindowElements -> {"HorizontalScrollBar", "VerticalScrollBar"},
+  WindowFrameElements -> {"CloseBox", "ResizeArea"}
+]
+
+
+FrontEnd`SafeImageModify[imgh_, func_] := Module[{img = ReleaseHold[imgh]}, 
+	If[Head[img] =!= Image && Head[img] =!= Image3D && Head[img] =!= Graphics, 
+		Beep[]; Null, 
+		img = func[img]; 
+		If[Head[img] =!= Image && Head[img] =!= Image3D, 
+			Beep[]; Null, 
+			img
+		]
+	]
+];
+
+
+(* ::Subsubsection::Closed:: *)
+(*adjust image palette*)
+
+
+SetAttributes[editImageControls, HoldAll];
+SetAttributes[editImage3DControls, HoldAll];
+
+
+(* ::Text:: *)
+(*image parameters controls:*)
+
+
+editImageControls[adjust_] := 
+ Grid[
+   {
+	{Null, Null},
+	{imageText["imageEditBrightness"], Slider[Dynamic[adjust[[1]]], {-1, 1}]},
+    {imageText["imageEditContrast"], Slider[Dynamic[adjust[[2]]], {-1, 1}]},
+    {imageText["imageEditGamma"], Slider[Dynamic[adjust[[3]]], {$MinMachineNumber, 2}]}
+   }, 
+  Alignment -> {{Right, Left}},
+  Spacings -> {1, 1.5}]
+
+editImage3DControls[adjust_] := 
+ Grid[
+   {
+	{Null, Null},
+	{imageText["imageEditBrightness"], Slider[Dynamic[adjust[[1]]], {-1, 1}]},
+    {imageText["imageEditContrast"], Slider[Dynamic[adjust[[2]]], {-1, 1}]},
+    {imageText["imageEditGamma"], Slider[Dynamic[adjust[[3]]], {$MinMachineNumber, 2}]}
+   }, 
+  Alignment -> {{Right, Left}},
+  Spacings -> {1, 1.5}]
+
+
+(* ::Text:: *)
+(*dialog buttons:*)
+
+
+editImageControls[imgSelQ_, thumb_, {newImage_, resetParams_}] := 
+ Item[Pane[ChoiceButtons[
+	{imageText["imageEditApply"], imageText["imageEditReset"]}, 
+	{If[imgSelQ,
+		FrontEnd`$SelectedImage = newImage[FrontEnd`$SelectedImage];
+		FrontEndExecute[
+		   FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], 
+		    FrontEnd`EditImage[ToBoxes[FrontEnd`$SelectedImage]], All]]], 
+	 resetParams[]}, 
+    {{ButtonMargins -> If[$OperatingSystem === "Windows", 0, 3], 
+		Enabled -> Dynamic[imgSelQ]}, {Enabled -> True}}], 
+   ImageMargins -> {{0, 5}, {0, 0}}], Alignment -> {Right, Bottom}]
+
+
+
+editImage3DControls[imgSelQ_, thumb_, {newImage_, resetParams_}] := 
+ Item[Pane[ChoiceButtons[
+	{imageText["imageEditApply"], imageText["imageEditReset"]}, 
+	{If[imgSelQ,
+		FrontEnd`$SelectedImage = newImage[FrontEnd`$SelectedImage];
+		FrontEndExecute[
+		   FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], 
+		    FrontEnd`EditImage3D[ToBoxes[FrontEnd`$SelectedImage]], All]]], 
+	 resetParams[]}, 
+    {{ButtonMargins -> If[$OperatingSystem === "Windows", 0, 3], 
+		Enabled -> Dynamic[imgSelQ]}, {Enabled -> True}}], 
+   ImageMargins -> {{0, 5}, {0, 0}}], Alignment -> {Right, Bottom}]
+
+
+(* ::Text:: *)
+(*preview area:*)
+
+
+editImageControls[imgSelQ_, newImage_[thumb_]] := 
+ With[{size = 120}, 
+  Pane[Grid[List@{
+	editImageControls[size, Identity[thumb], imageText["imageEditBefore"]],
+	DynamicWrapper[
+	 editImageControls[size, newImage[thumb], imageText["imageEditAfter"]], 
+	 If[(imgSelQ = imageSelectedQ[]) && !$ControlActiveSetting, 
+	   FrontEnd`$SelectedImageAnnotations=.;
+	   FrontEnd`$SelectedImage = Image[ToExpression[Replace[NotebookRead[InputNotebook[]], 
+			{x___, t : _[_, _BoxForm`ImageTag, ___], y___} :> 
+				(FrontEnd`$SelectedImageAnnotations = {{x}, {y}}; t), {1}]]]
+	   ];
+	 thumb = If[imgSelQ && ImageQ[FrontEnd`$SelectedImage], Thumbnail[FrontEnd`$SelectedImage, size]], 
+   SynchronousUpdating -> False]}], ImageSize -> {2*size + 20, size + 10}]
+ ]
+
+
+editImageControls[size_Integer, f_[thumb_], str_] := 
+ Dynamic@If[ImageQ[thumb], f[thumb],
+  Framed[Pane[str, {size, size}], FrameMargins -> 0]]
+
+
+editImage3DControls[imgSelQ_, newImage_[thumb_]] := 
+ With[{size = 120}, 
+  Pane[Grid[List@{
+	editImage3DControls[size, Identity[thumb], imageText["imageEditBefore"]],
+	DynamicWrapper[
+	 editImage3DControls[size, newImage[thumb], imageText["imageEditAfter"]], 
+	 If[(imgSelQ = image3DSelectedQ[]) && !$ControlActiveSetting, 
+	   FrontEnd`$SelectedImageAnnotations=.;
+	   FrontEnd`$SelectedImage = Image3D[ToExpression[Replace[NotebookRead[InputNotebook[]], 
+			{x___, t : _[_, _BoxForm`ImageTag, ___], y___} :> 
+				(FrontEnd`$SelectedImageAnnotations = {{x}, {y}}; t), {1}]]]
+	   ];
+	 thumb = If[imgSelQ && ImageQ[FrontEnd`$SelectedImage], Image3D[FrontEnd`$SelectedImage,
+ ImageSize -> size]], 
+   SynchronousUpdating -> False]}], ImageSize -> 2*size]
+ ]
+
+
+editImage3DControls[size_Integer, f_[thumb_], str_] := 
+ Dynamic@If[ImageQ[thumb], f[thumb],
+  Framed[Pane[str, {size, size}], FrameMargins -> 0]]
+
+
+(* ::Text:: *)
+(*main function:*)
+
+
+FrontEnd`EditImage[] := 
+ FrontEnd`EditImage[
+  Select[Notebooks[], 
+	TrueQ[CurrentValue[#, {TaggingRules, "ImageEditor"}]]&]]
+
+
+FrontEnd`EditImage[{nb_}] := SetOptions[nb, WindowMargins -> Automatic]
+
+
+FrontEnd`EditImage[img : GraphicsBox[t_, o___]] := 
+ If[Head[FrontEnd`$SelectedImageAnnotations] === Symbol, img, 
+	GraphicsBox[#, o]&[Flatten[Riffle[FrontEnd`$SelectedImageAnnotations, t]]]]
+
+
+FrontEnd`EditImage[{}] := 
+ CreatePalette[
+  DynamicModule[{imgSelQ = False, thumb = Null, 
+		newImage, resetParams, adjust},    
+   Grid[{
+    {
+	 editImageControls[imgSelQ, newImage[thumb]], 
+	 editImageControls[adjust], 
+	 Item["", ItemSize -> 3]
+	},
+    {
+	 SpanFromAbove, 
+	 editImageControls[imgSelQ, thumb, {newImage, resetParams}], 
+	 SpanFromLeft
+	}},
+    Alignment -> {Left, Center}], 
+ Initialization :> 
+	(
+	 Clear[FrontEnd`$SelectedImage, FrontEnd`$SelectedImageAnnotations];
+	 resetParams[] := (adjust = {0, 0, 1});
+	 newImage[img_Image] := ImageAdjust[img, adjust];
+	 resetParams[]
+	),
+ Deinitialization :> (Clear[FrontEnd`$SelectedImage, FrontEnd`$SelectedImageAnnotations])], 
+ PaneBoxOptions -> {Alignment -> Center, FrameMargins -> 0}, 
+ TaggingRules -> {"ImageEditor" -> True}, 
+ WindowTitle -> imageText["imageEditTitle"], 
+ SliderBoxOptions -> {ImageSize -> {Medium, Tiny}},
+ Saveable -> False, WindowMargins -> Automatic]
+
+
+
+
+FrontEnd`EditImage3D[] := 
+ FrontEnd`EditImage3D[
+  Select[Notebooks[], 
+	TrueQ[CurrentValue[#, {TaggingRules, "Image3DEditor"}]]&]]
+
+
+FrontEnd`EditImage3D[{nb_}] := SetOptions[nb, WindowMargins -> Automatic]
+
+
+FrontEnd`EditImage3D[img : Graphics3DBox[t_, o___]] := 
+ If[Head[FrontEnd`$SelectedImageAnnotations] === Symbol, img, 
+	Graphics3DBox[#, o]&[Flatten[Riffle[FrontEnd`$SelectedImageAnnotations, t]]]]
+
+
+FrontEnd`EditImage3D[{}] := 
+ CreatePalette[
+  DynamicModule[{imgSelQ = False, thumb = Null, 
+		newImage, resetParams, adjust},    
+   Grid[{
+    {
+	 editImage3DControls[imgSelQ, newImage[thumb]], 
+	 editImage3DControls[adjust], 
+	 Item["", ItemSize -> 3]
+	},
+    {
+	 SpanFromAbove, 
+	 editImage3DControls[imgSelQ, thumb, {newImage, resetParams}], 
+	 SpanFromLeft
+	}},
+    Alignment -> {Left, Center}], 
+ Initialization :> 
+	(
+	 Clear[FrontEnd`$SelectedImage, FrontEnd`$SelectedImageAnnotations];
+	 resetParams[] := (adjust = {0, 0, 1});
+	 newImage[img_Image3D] := ImageAdjust[img, adjust];
+	 resetParams[]
+	),
+ Deinitialization :> (Clear[FrontEnd`$SelectedImage, FrontEnd`$SelectedImageAnnotations])], 
+ PaneBoxOptions -> {Alignment -> Center, FrameMargins -> 0}, 
+ TaggingRules -> {"Image3DEditor" -> True}, 
+ WindowTitle -> imageText["imageEditTitle"], 
+ SliderBoxOptions -> {ImageSize -> {Medium, Tiny}},
+ Saveable -> False, WindowMargins -> Automatic]
+
+
+(* ::Subsection::Closed:: *)
+(*Image 2D Assistant support*)
+
+
+FrontEnd`Private`ImageEditingReplaceImage[nbobj_, image_, tab_:False, func_:Null]:=
+(
+	CheckAll[
+		MathLink`CallFrontEnd[FrontEnd`NotebookSuspendScreenUpdates[nbobj]];
+			func;
+			MathLink`CallFrontEnd[FrontEnd`SelectionMove[FrontEnd`AttachedCellParent[], All, Graphics, AutoScroll -> False]];
+			Paste[image, AutoScroll -> False, PlaceholderReplace -> False];
+			FrontEnd`Private`$ImageEditorDefaultImage = image;
+			If[tab =!= False, FrontEnd`Private`$RibbonDefaultPage = tab];
+			MathLink`CallFrontEnd[FrontEnd`Value[FEPrivate`WrapImageWithEditCell[]]];
+			If[ !ImageQ[image], SelectionMove[nbobj, After, Word, AutoScroll -> False]];
+		MathLink`CallFrontEnd[FrontEnd`NotebookResumeScreenUpdates[nbobj]];
+		,
+		(* be sure to resume screen updates after an abort *)
+		MathLink`CallFrontEnd[FrontEnd`NotebookResumeScreenUpdates[nbobj]]
+	]
+)
+
+
+
+FrontEnd`Private`ImageEditingGetRecentActionsMenu[] :=
+	Menu["Recent Actions", 
+		DeleteDuplicates[Flatten[{
+			Replace[
+				CurrentValue[$FrontEnd, {PrivateFrontEndOptions, "InterfaceSettings", "ImageEditingToolbar", "QueryHistory"}, {}],
+				{
+					{time_, input_} :> MenuItem[input],
+					{time_, input_, label_} :> MenuItem[label, input],
+					_ :> Sequence[]
+				},
+				{1}
+			]
+		}]]
+	]
+
+
+FrontEnd`Private`ImageEditingAddToRecentActionsMenu[input_String] :=
+	FrontEnd`Private`ImageEditingAddToRecentActionsMenu[{input, input}]
+
+FrontEnd`Private`ImageEditingAddToRecentActionsMenu[{input_String, label_String}] := (
+	CurrentValue[$FrontEnd, {PrivateFrontEndOptions, "InterfaceSettings", "ImageEditingToolbar", "QueryHistory"}] = 
+ 		Prepend[
+ 			CurrentValue[$FrontEnd, {PrivateFrontEndOptions, "InterfaceSettings", "ImageEditingToolbar", "QueryHistory"}, {}],
+ 			{ToString[Round[AbsoluteTime[]]], input, label}
+ 		]
+)
+
+
+FrontEnd`Private`ImageEditingRemoveFromRecentActionsMenu[input: (_String | {__String})] := (
+	CurrentValue[$FrontEnd, {PrivateFrontEndOptions, "InterfaceSettings", "ImageEditingToolbar", "QueryHistory"}] = 
+ 		DeleteCases[
+ 			CurrentValue[$FrontEnd, {PrivateFrontEndOptions, "InterfaceSettings", "ImageEditingToolbar", "QueryHistory"}],
+ 			{_, Alternatives @@ Flatten[{input}], _}
+ 		]
+)
+
+
+FrontEnd`Private`ImageEditingRemoveFromRecentActionsMenu[All] := (
+	CurrentValue[$FrontEnd, {PrivateFrontEndOptions, "InterfaceSettings", "ImageEditingToolbar", "QueryHistory"}] = {}
+)
+
+
+FrontEnd`Private`ImageEditingCopyMarkers[img_, feRange_ : Automatic, feImgSel_ : Automatic] := 
+Block[{result = $Failed, imgTake, imgSel, range, alpha, obj},
+	If[ImageQ[img],
+		obj = If[TrueQ[FrontEnd`Private`$RibbonCopyMenu],
+			MathLink`CallFrontEnd[FrontEnd`AttachedCellParent[]],
+			MathLink`CallFrontEnd[FrontEnd`EvaluationBox[]]
+		];
+		range = Replace[feRange, Automatic :> MathLink`CallFrontEnd[FrontEnd`Value[FEPrivate`GetEnclosingImageMarkersIndices[obj]]]];
+		imgSel = Replace[feImgSel, Automatic :> MathLink`CallFrontEnd[FrontEnd`Value[FEPrivate`GetEnclosingImageMarkerGraphics[obj]]]];
+		If[MatchQ[range, {{_, _}, {_, _}}],
+			imgTake = ImageTake[img, range[[1]], range[[2]]];
+			alpha = ToExpression[imgSel];
+			result = If[ (* 251901, 265764 *)
+			 	ImageColorSpace[imgTake] === Automatic ||
+				 	(ImageMeasurements[imgTake, "Transparency"] && ImageMeasurements[AlphaChannel[imgTake], "Min"] < 1),
+				ImageApply[1 &, imgTake, Masking -> ColorNegate[alpha]],
+				SetAlphaChannel[imgTake, alpha]
+			]
+		]
+	];
+	If[TrueQ[FrontEnd`Private`$RibbonCopyMenu],
+		CopyToClipboard[ExpressionCell[If[result === $Failed, img, result], "Input"]],
+		If[result === $Failed, result, ToBoxes[result]]
+	]
+]
+
+
+(* ::Subsection::Closed:: *)
+(*Image 3D Assistant support*)
+
+
+(* can we consolidate this and the 2d paste function? *)
+FrontEnd`Private`Image3DEditingReplaceImage[nbobj_, image_, tab_:False, func_:Null] := 
+(
+	CheckAll[
+		MathLink`CallFrontEnd[FrontEnd`NotebookSuspendScreenUpdates[nbobj]];
+			func;
+			MathLink`CallFrontEnd[FrontEnd`SelectionMove[FrontEnd`AttachedCellParent[], All, Graphics3D, AutoScroll -> False]];
+			Paste[image, AutoScroll -> False, PlaceholderReplace -> False];
+			FrontEnd`Private`$Image3DEditorDefaultImage = image;
+			If[tab =!= False, FrontEnd`Private`$RibbonDefaultPage = tab];
+			MathLink`CallFrontEnd[FrontEnd`Value[FEPrivate`WrapImageWithEditCell[]]];
+			If[ !ImageQ[image], SelectionMove[nbobj, After, Word, AutoScroll -> False]];
+		MathLink`CallFrontEnd[FrontEnd`NotebookResumeScreenUpdates[nbobj]];
+		,
+		(* be sure to resume screen updates after an abort *)
+		MathLink`CallFrontEnd[FrontEnd`NotebookResumeScreenUpdates[nbobj]]
+	]
+)
+
+
+FrontEnd`Private`Image3DEditingSetOption[nbobj_, Dynamic[image_], {opts__Rule}, func_:Null] :=
+(
+	CheckAll[
+		MathLink`CallFrontEnd[FrontEnd`NotebookSuspendScreenUpdates[nbobj]];
+			func;
+			(* set the option on the image in the notebook *)
+			MathLink`CallFrontEndHeld[FrontEnd`SetValue[
+				FEPrivate`Set[FrontEnd`CurrentValue[FrontEnd`AttachedCellParent[], {"Graphics3DBoxOptions", #1}], #2]
+			]]& @@@ {opts};
+			(* and also set the option for the image remembered by this interface *)
+			image[] = Image3D[image[], opts];
+			If[ !ImageQ[image[]], SelectionMove[nbobj, After, Word, AutoScroll -> False]];
+		MathLink`CallFrontEnd[FrontEnd`NotebookResumeScreenUpdates[nbobj]];
+		,
+		(* be sure to resume screen updates after an abort *)
+		MathLink`CallFrontEnd[FrontEnd`NotebookResumeScreenUpdates[nbobj]]
+	]
+)
+
+
+
+(* ::Subsection::Closed:: *)
+(*3D controller navigation*)
+
+
+(* Support for 3D controller navigation *)
+FrontEnd`Execute3DControllerNavigationFunction[opts_,data_]:=
+Module[{state,vec,buttons,saved,method,deflection,vp,vc,vv,vc2d,vvlen,phi,theta,newv},
+state=ControllerState[{"X1","Y1","B1","B2","B3","B4"},ControllerPath->(ControllerPath/.opts[[2]])];
+vec=Take[state,2];
+buttons=TrueQ/@Drop[state,2];
+
+method=Flatten[{Method/.opts[[2]]}];
+saved="ControllerNavigationState"/.Cases[method, _Rule | _RuleDelayed];
+
+vp=ViewPoint/.opts[[2]];
+vv=ViewVertical/.opts[[2]];
+
+If[Or@@buttons,
+	If[saved==="ControllerNavigationState",
+		method=Append[method,"ControllerNavigationState"->{ViewPoint->vp,ViewVertical->vv}];
+		If[buttons[[4]], vp={0,0,2};vv={0,1,0}];
+		If[buttons[[1]], vp={2,0,0};vv={0,0,1}];
+		If[buttons[[3]], vp={0,2,0};vv={0,0,1}];
+	],
+(*Else*)
+	If[saved=!="ControllerNavigationState",
+		vp=ViewPoint/.saved;
+		vv=ViewVertical/.saved;
+	];
+	method=DeleteCases[method,"ControllerNavigationState"->_];
+];
+
+deflection=Norm[vec];
+If[deflection>0.1,
+	{True,
+		vc=ViewCenter/.opts[[2]];
+		vc2d=Last[vc];
+		vc=First[vc];
+		vp=vp-2*(vc-0.5);
+		vvlen=Norm[vp];
+		vp=vp/vvlen;
+		If[vp[[1]]==0&&vp[[2]]==0,
+			phi=3Pi/2,
+		(*Else*)		
+			phi=ArcTan[vp[[1]],vp[[2]]]
+		];
+		theta=ArcCos[vp[[3]]];
+		newv={0.0,0.0,1.0};
+		
+		If[vv[[3]]<0.0,newv[[3]]=-1];
+
+		phi-=vec[[1]]*newv[[3]]*0.25;
+		theta+=vec[[2]]*newv[[3]]*0.25;
+
+		If[theta>Pi,
+			theta=2 Pi-theta;
+			phi+=Pi;
+			newv[[3]]=-newv[[3]],
+		(*Else*)
+			If[theta<0.0,
+				theta=-theta;
+				phi+=Pi;
+				newv[[3]]=-newv[[3]]
+			]
+		];
+
+		theta=Max[0.000001,Min[Pi-0.000001,theta]];
+		
+		vp={Cos[phi] Sin[theta],Sin[phi] Sin[theta],Cos[theta]};
+		
+		{Graphics3DBoxOptions->{
+			ViewVector->Automatic,
+			ViewPoint->vvlen*(vp+2*(vc-0.5)),
+			ViewCenter->If[vc2d=={0.5,0.5},vc,{vc,vc2d}],
+			ViewVertical->newv,
+			Method->method}}
+		},
+(*Else*)
+	If[Or@@buttons,
+		{True,
+			{Graphics3DBoxOptions->{
+				ViewVector->Automatic,
+				ViewPoint->vp,
+				ViewVertical->vv,
+				Method->method		
+			}}
+		},
+	(*Else*)
+		{False,{Graphics3DBoxOptions->{
+				ViewVector->Automatic,
+				ViewPoint->vp,
+				ViewVertical->vv,
+				Method->method	
+			}}
+		}
+	]
+]
+
+];
+
+
+(* ::Subsection::Closed:: *)
+(*Paclet-related code*)
+
+
+`backgroundPacletUpdate[pacletName_String, delay_:15]:=
+    Quiet @ Module[{oldPaclet, availablePaclets, downloadTask, shortKernelVersion},
+        availablePaclets = PacletManager`PacletCheckUpdate[pacletName];
+        If[MatchQ[availablePaclets, {__PacletManager`Paclet}],
+            shortKernelVersion = StringJoin[If[StringMatchQ[#, "*."], # <> "0", #]& [ToString[$VersionNumber]], ".", ToString[$ReleaseNumber]];
+            oldPaclet = PacletManager`PacletFind[pacletName, "MathematicaVersion" -> shortKernelVersion, "Internal" -> All];
+            downloadTask = PacletManager`PacletInstallQueued[First[availablePaclets]];
+            If[Head[downloadTask] === AsynchronousTaskObject,
+                 With[{downloadTask = downloadTask, oldPaclet = oldPaclet},
+                    RunScheduledTask[
+                        Quiet[
+                            (* Do a one-time check to see if the download is finished (test that it has disappeared
+                               from the list of running tasks), and if so, install it. That is a blocking operation
+                               that should not take long. If the task isn't finished, the install attempt will simply be
+                               abandoned.
+                            *)
+                            If[!MemberQ[AsynchronousTasks[], downloadTask],
+                                If[Head[PacletManager`PacletInstall[downloadTask]] === PacletManager`Paclet && MatchQ[oldPaclet, {__PacletManager`Paclet}],
+                                    PacletManager`PacletUninstall[First[oldPaclet]]
+                                ]
+                            ];
+                            RemoveScheduledTask[$ScheduledTask]
+                        ],
+                        {delay}
+                    ]
+                ]
+            ]
+        ]
+    ]
+
+
+`CheckForSystemUpdate[] := 
+    Module[{systemUpdateNotebookPath, autoOpenPaclets, resPath, pacletNames, mFile},
+        Function[heldPath,
+            systemUpdateNotebookPath = ReleaseHold[heldPath];
+            If[StringQ[systemUpdateNotebookPath],
+				autoOpenPaclets = CurrentValue[$FrontEnd, FrontEnd`AutoOpenPaclets];
+				If[!MemberQ[autoOpenPaclets, heldPath], 
+					CurrentValue[$FrontEnd, FrontEnd`AutoOpenPaclets] = Append[autoOpenPaclets, heldPath]
+				];
+            ]
+        ] @ Hold[Quiet[PacletManager`PacletResource["SystemUpdateAvailable", "SystemUpdateAvailable.nb"]]];
+        backgroundPacletUpdate["SystemUpdateAvailable"];
+        (* This is an attempt at generalization of the concept behind SystemUpdateAvailable. A WolframNotifications
+           paclet can be created that contains a PacletNames.m file containing names of paclets that should have
+           their Notify.m files loaded at startup, and the paclets will be auto-updated. This 
+        *)
+        Quiet[ (* No reason not to be completely quiet through all this. *)
+            resPath = PacletManager`PacletResource["WolframNotifications", "PacletNames.m"];
+            If[StringQ[resPath],
+                pacletNames = Get[resPath];
+                If[ListQ[pacletNames],
+                    Scan[
+                        Function[{pacletName},
+                            mFile = PacletManager`PacletResource[pacletName, "Notify.m"];
+                            If[StringQ[mFile], Get[mFile]];
+                            backgroundPacletUpdate[pacletName]
+                        ],
+                        pacletNames
+                    ]
+                ]
+            ];
+            backgroundPacletUpdate["WolframNotifications"]
+        ]
+    ]
+
+(* Function to establish the current AutoCompletion data locations *)
+`LocateAutoCompletionData[] :=
+Module[{paclets, baseLocation, resources, privatePaths={},locationPattern = (_String | _FrontEnd`FileName)},
+	paclets = PacletManager`PacletFind["AutoCompletionData"];
+	If[MatchQ[paclets, {_PacletManager`Paclet, ___}] && 
+		MatchQ[baseLocation = First[paclets]["Location"], locationPattern],
+		privatePaths = Append[privatePaths, Rule["AutoCompletionDataBase", baseLocation]];
+	];
+	resources = PacletManager`PacletResources["AutoCompletionData"];
+	If[MatchQ[resources, {{_, {locationPattern, ___}}...}],
+		privatePaths = Append[privatePaths, Rule["AutoCompletionData", resources[[All, 2, 1]]]];
+	];
+
+	If[privatePaths != {},
+		SetOptions[$FrontEndSession, PrivatePaths -> privatePaths]
+	];
+
+	{paclets, resources}	
+]
+
+(* Function to establish the current Spelling data locations *)
+`LocateSpellingData[] :=
+Module[{resources, resourcesSortedByVersionNumber, paths},
+	(* resources will look like this: {{_Paclet, {"/path/to/SpellingDictionary/dir"..}}...} *)
+	resources = PacletManager`PacletResources["SpellingDictionary"];
+	(* Sort in order of decreasing version number across all paclets regardless of name. *)
+	resourcesSortedByVersionNumber = Sort[resources, !PacletManager`PacletNewerQ[First[#1], First[#2]] &];
+	(* Extract just the paths and convert to FrontEnd`FileName expressions. *)
+	paths = Flatten[Last /@ resourcesSortedByVersionNumber] /. loc_String:>FrontEnd`FileName[{loc}];
+	CurrentValue[$FrontEndSession, "SpellingDictionariesPath"] = Join[CurrentValue[$FrontEndSession, "SpellingDictionariesPath"], paths]
+]
+
+
+
+(* ::Subsection::Closed:: *)
+(*Temporary support for Import/Export*)
+
+
+(* ::Text:: *)
+(*FrontEnd`SaveAs is a kernel startup function as of v8. The following declaration is for graceful handling when an older kernel is being used.*)
+
+
+If[Attributes[FrontEnd`SaveAs] === {},
+  FrontEnd`SaveAs[x__] := Export[x]
+];
+
+
+(* ::Subsection::Closed:: *)
+(*Misc  iOS Support*)
+
+
+If[$OperatingSystem == "iOS",
+	(* Controlled temporary call to force NBLite's FrameBox CalloutPoint and DropShadow option to be in the System` context *)
+	Symbol["System`CalloutPoint"];
+	Symbol["System`DropShadow"];
+	
+	Manipulate`Dump`$TouchscreenControlPlacement = False;
+	Manipulate`Dump`$TouchscreenControlGroupBoxes = True;
+	Manipulate`Dump`ControlGroupContentsBox := System`ControlGroupContentsBox;
+	
+	(* Correct for spurious GridBoxes which are not stripped to their first argument. See Kernel/Common/StartUp/Manipulate.m: 1.999 *)
+	Manipulate`Dump`ControlGroupContentsBox[content_, l_GridBox, r_, b_, t_, opts___] := Manipulate`Dump`ControlGroupContentsBox[content, First[l], r, b, t, opts]; 
+	Manipulate`Dump`ControlGroupContentsBox[content_, l_, r_GridBox, b_, t_, opts___] := Manipulate`Dump`ControlGroupContentsBox[content, l, First[r], b, t, opts];
+	Manipulate`Dump`ControlGroupContentsBox[content_, l_, r_, b_GridBox, t_, opts___] := Manipulate`Dump`ControlGroupContentsBox[content, l, r, First[b], t, opts];
+	Manipulate`Dump`ControlGroupContentsBox[content_, l_, r_, b_, t_GridBox, opts___] := Manipulate`Dump`ControlGroupContentsBox[content, l, r, b, First[t], opts];
+
+	(* Temporarily remove the AppearanceElements from Manipulates on the IOS devices *)
+	Quiet[Manipulate[]]; (* force autoloading *)
+	SetOptions[Manipulate, AppearanceElements -> {}];
+	Manipulate`Dump`$allPossibleAppearanceElements = {};
+	(* use the following to add appearance elements back in *)
+	(* Manipulate`Dump`$allPossibleAppearanceElements = DeleteCases[
+    Manipulate`Dump`$allPossibleAppearanceElements, "ResetButton"] *)
+
+	(* Attempt to increase the performance of Manipulates *)
+	ToBoxes[Graphics[{}]]; (* controlled autoloading *)
+
+	System`Dump`GraphicsBoxesQ = True;
+	BoxForm`UseTextFormattingQ = False;
+	BoxForm`$PacketSafeNotebooks = False;
+	System`Dump`$CacheSymbolicGraphicsDefault = False;
+	System`Dump`$CacheSymbolicGraphicsDynamicDefault = False;
+	
+	ClearAll[System`Dump`vizGraphicsQ];
+	System`Dump`vizGraphicsQ = Function[Null, False, HoldAllComplete];
+];
+
+
+(* ::Subsection::Closed:: *)
+(*End[]*)
+
+
+End[] (* "FrontEnd`Private`" *)
+EndPackage[]; (* "GetFEKernelInit`" *)
+
+
+If[!MemberQ[{"Player", "Player Pro"}, $LicenseType] && FrontEnd`Private`$KernelName === "Local",
+	Needs["DocumentationSearch`"];
+	DocumentationSearch`InitializeDocumentationSearch[];
+];
+
+
+$Context = FrontEnd`Private`wasContext;
+$ContextPath = FrontEnd`Private`wasContextPath;
+
+
+(* ::Section::Closed:: *)
+(*Package Footer*)
+
+
+(* ------------------------------------------------------------------------------------------------------------------ *)
+
+Internal`$FEInitializationQ = False;

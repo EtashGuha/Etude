@@ -1,0 +1,76 @@
+div.Commentary {
+	font-family: Helvetica, sans-serif;
+	color: #000066;
+	font-size: 10px;
+	margin-left: 60px;
+	margin-right: 20px;
+	margin-bottom: 2px;
+	margin-top: 8px;
+}
+div.Author {
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 4px;
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+div.Code {
+	font-weight: bold;
+	background: #ebebeb;
+	margin-left: 66px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-top: 10px;
+}
+div.Input {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	background: #ffb366;
+	margin-left: 60px;
+	margin-right: 20px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	border-color: #993300;
+	border-width: 0px;
+	border-style: solid;
+	border-left-width: 3px;
+}
+div.InlineInput {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+}
+div.Output {
+	font-family: Courier, monospaced;
+	background: #ffe6e6;
+	margin-left: 60px;
+	margin-right: 20px;
+	margin-bottom: 15px;
+	margin-top: 0px;
+	border-color: #008099;
+	border-width: 0px;
+	border-style: solid;
+	border-left-width: 3px;
+}
+div.DisplayText {
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	font-style: plain;
+	background: #ffffcc;
+	margin-left: 60px;
+	margin-right: 20px;
+	margin-bottom: 15px;
+	margin-top: 5px;
+}
+div.PictureGroup {
+	background: #ffe6e6;
+	margin-left: 60px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	border-color: #009999;
+	border-width: 0px;
+	border-style: solid;
+	border-left-width: 3px;
+}

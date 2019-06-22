@@ -1,0 +1,250 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      9579,        241]
+NotebookOptionsPosition[      8378,        194]
+NotebookOutlinePosition[      8893,        213]
+CellTagsIndexPosition[      8850,        210]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[".NET/Link Example: PackageHelper", "Title",
+ CellID->96256118],
+
+Cell["\<\
+This example demonstrates creating and running a \"modal\" dialog box. It \
+shows:\
+\>", "Text",
+ CellID->471004887],
+
+Cell[TextData[{
+ "a modal dialog using the ",
+ Cell[BoxData[
+  ButtonBox["DoNETModal",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NETLink/ref/DoNETModal"]], "InlineFormula"],
+ " function"
+}], "BulletedText",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707624685728*^9}, {
+  3.4127078958961763`*^9, 3.412707896008031*^9}, {3.4129588954181514`*^9, 
+  3.41295892565457*^9}},
+ CellID->14524072],
+
+Cell["returning a result from a modal dialog", "BulletedText",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707624685728*^9}, {
+  3.4127078958961763`*^9, 3.412707896008031*^9}, {3.4129589361559143`*^9, 
+  3.4129589431724367`*^9}},
+ CellID->335001500],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "the use of ",
+ Cell[BoxData[
+  ButtonBox["AddEventHandler",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NETLink/ref/AddEventHandler"]], "InlineFormula"],
+ " to wire up some simple ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " functions for event callbacks"
+}], "BulletedText",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707624685728*^9}, {
+   3.4127078958961763`*^9, 3.412707896008031*^9}, 3.419876773706003*^9},
+ CellID->1529779993],
+
+Cell[TextData[{
+ "The program displays a dialog box showing a list of all the standard add-on \
+packages that ship with ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ". The ones that are currently loaded are shown with a check mark. You can \
+select additional packages by clicking them so that they have a check mark as \
+well. The packages you selected are loaded if you click the Load button to \
+dismiss the dialog. If you click Cancel, nothing happens. The function \
+returns the current value of ",
+ Cell[BoxData[
+  ButtonBox["$Packages",
+   BaseStyle->"Link"]], "InlineFormula"],
+ ", unless it was cancelled, in which case it returns ",
+ Cell[BoxData[
+  ButtonBox["Null",
+   BaseStyle->"Link"]], "InlineFormula"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.412959187797495*^9, 3.412959207956325*^9}, {
+  3.419876808399769*^9, 3.419876809566163*^9}},
+ CellID->510331668],
+
+Cell[TextData[{
+ "To try this example, evaluate all the initialization cells (you can do this \
+using the menu item ",
+ StyleBox[ButtonBox["Evaluation",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/EvaluationMenu"], "MenuName"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter"],
+ StyleBox[ButtonBox["Evaluate Initialization Cells",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/menuitem/EvaluateInitializationCells"], "MenuName"],
+ ") and then go to the Example section."
+}], "Text",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707597948962*^9}, {
+  3.412707959534474*^9, 3.412707967363954*^9}, {3.412708138927157*^9, 
+  3.412708173015101*^9}, {3.412708230174596*^9, 3.412708252892912*^9}},
+ CellID->1738407360]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Code", "Section",
+ CellID->127046902],
+
+Cell[TextData[{
+ "Needs[\"NETLink`\"];\nNeeds[\"Utilities`Package`\"];\n\nPackageHelper[] :=\n\
+\tNETBlock[\n\t\tModule[{packages, form, listBox, loadButton, cancelButton, \
+getCheckedItems, selectedContexts},\n\t\t\n\t\t\t(* This gets the list of all \
+contexts for the standard add-on packages. *)\n\t\t\tpackages = \
+FindPackages[ToFileName[{$TopDirectory, \"AddOns\", \"StandardPackages\"}]];\n\
+\t\t\t\n\t\t\tInstallNET[];\n\t\t\t\n\t\t\t(* Load some classes from which we \
+need to call static members. *)\n\t\t\t\
+LoadNETType[\"System.Windows.Forms.DialogResult\"];\n\t\t\t\
+LoadNETType[\"System.Windows.Forms.FormStartPosition\"];\n\t\t\t\
+LoadNETType[\"System.Windows.Forms.FormBorderStyle\"];\n\t\t\t\n\t\t\t(* \
+Create the main form and populate it with components. *)\n\t\t\tform = \
+NETNew[\"System.Windows.Forms.Form\"];\n\t\t\tform@Text = \"Standard Packages\
+\";\n\t\t\tform@Width = 300;\n\t\t\tform@Height = 500;\n\t\t\t\
+form@StartPosition = FormStartPosition`CenterScreen;\n\t\t\t\
+form@FormBorderStyle = FormBorderStyle`FixedDialog;\n\t\t\tform@MaximizeBox = \
+False;\n\t\t\tlistBox = NETNew[\"System.Windows.Forms.CheckedListBox\"];\n\t\t\
+\tlistBox@Parent = form;\n\t\t\tlistBox@Bounds = \
+NETNew[\"System.Drawing.Rectangle\", 6, 10, 280, 420];\n\t\t\t\
+listBox@CheckOnClick = True;\n\t\t\tloadButton = \
+NETNew[\"System.Windows.Forms.Button\"];\n\t\t\tcancelButton = \
+NETNew[\"System.Windows.Forms.Button\"];\n\t\t\tloadButton@Parent = form;\n\t\
+\t\tcancelButton@Parent = form;\n\t\t\tloadButton@Text = \"Load\";\n\t\t\t\
+cancelButton@Text = \"Cancel\";\n\t\t\t\n\t\t\t(* These lines populate the \
+list box with the package contexts and set their checked/unchecked state. *)\n\
+\t\t\tlistBox@Items@AddRange[packages];\n\t\t\t\
+MapIndexed[listBox@SetItemChecked[First[#2]-1, MemberQ[$Packages, #1]]&, \
+packages];\n",
+ StyleBox["\n",
+  FontWeight->"Plain"],
+ "\t\t\t(* Setting the DialogResult property of these buttons causes them to \
+set the parent form's\n\t\t\t   DialogResult property to these values when \
+they are clicked. When the dialog closes we\n\t\t\t   can inspect the form's \
+DialogResult property to determine which button was clicked to\n\t\t\t   \
+close the dialog.\n\t\t\t*)\n\t\t\tloadButton@DialogResult = DialogResult`OK;\
+\n\t\t\tcancelButton@DialogResult = DialogResult`Cancel;\n\t\t\t\
+loadButton@Location = NETNew[\"System.Drawing.Point\", 20, listBox@Bottom + \
+6];\n\t\t\tcancelButton@Location = NETNew[\"System.Drawing.Point\", 195, \
+listBox@Bottom + 6];\n\t\t\t\n\t\t\t(* Setting these properties cause the \
+buttons to respond to the Return and Esc key, respectively. *)\n\t\t\t\
+form@AcceptButton = loadButton;\n\t\t\tform@CancelButton = cancelButton;\n\t\t\
+\n\t\t\t(* We still need to wire up handlers to cause the dialog to close \
+when the buttons are clicked.\n\t\t\t   That would happen automatically if we \
+were to use the ShowDialog() method to run the modal\n\t\t\t   dialog, which \
+is the standard .NET technique for modal dialogs. We don't use ShowDialog()\n\
+\t\t\t   because it is not guaranteed to make the dialog visible in front of \
+the notebook window.\n\t\t\t*)\n\t\t\tAddEventHandler[loadButton@Click, \
+form@Close[]&];\n\t\t\tAddEventHandler[cancelButton@Click, form@Close[]&];\n\t\
+\t\t\n\t\t\t(* This is the function called when the dialog box is closed to \
+get the list of checked contexts.\n\t\t\t   It checks the form's DialogResult \
+property to determine whether the form was closed by\n\t\t\t   clicking the \
+Load (equivalent to OK) or Cancel button.\n\t\t\t*)\n\t\t\t\
+getCheckedItems[f_] := If[f@DialogResult === DialogResult`OK, \
+listBox@CheckedItems, Null];\n\t\t\t\n\t\t\t(* Run the dialog modally. The \
+second argument to DoNETModal is code that will be called\n\t\t\t   just \
+before the form is destroyed, and what it returns will be the return value of \
+DoNETModal.\n\t\t\t   DoNETModal will not return until the dialog is \
+dismissed.\n\t\t\t*)\n\t\t\tselectedContexts = DoNETModal[form, \
+getCheckedItems[form]];\n\t\t\t\n\t\t\tIf[selectedContexts =!= Null,\n\t\t\t\t\
+(* selectedContexts is the object returned by the CheckedItems property of \
+the list box\n\t\t\t\t   (see the getCheckedItems function defined above). \
+This is an object that implements\n\t\t\t\t   the ICollection interface. The \
+NETObjectToExpression converts all ICollection\n\t\t\t\t   objects to \
+Mathematica lists.\n\t\t\t\t*)\n\t\t\t\tNeeds /@ \
+NETObjectToExpression[selectedContexts];\n\t\t\t\t$Packages,\n\t\t\t(* else \
+*)\n\t\t\t\tNull\n\t\t\t]\n\t\t]\n\t]"
+}], "Input",
+ InitializationCell->True,
+ CellID->324058112]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Section",
+ CellID->271883493],
+
+Cell["PackageHelper[]", "Input",
+ CellID->223763622]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{674, 625},
+WindowMargins->{{Automatic, 13}, {95, Automatic}},
+DockedCells->(None& ),
+PrivateNotebookOptions->{"NotebookAuthor"->""},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (August 15, 2010)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 68, 1, 51, "Title",
+ CellID->96256118],
+Cell[638, 25, 126, 4, 30, "Text",
+ CellID->471004887],
+Cell[767, 31, 395, 11, 24, "BulletedText",
+ CellID->14524072],
+Cell[1165, 44, 252, 4, 22, "BulletedText",
+ CellID->335001500],
+Cell[CellGroupData[{
+Cell[1442, 52, 465, 13, 39, "BulletedText",
+ CellID->1529779993],
+Cell[1910, 67, 879, 21, 132, "Text",
+ CellID->510331668],
+Cell[2792, 90, 729, 15, 50, "Text",
+ CellID->1738407360]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3558, 110, 43, 1, 51, "Section",
+ CellID->127046902],
+Cell[3604, 113, 4608, 68, 1488, "Input",
+ InitializationCell->True,
+ CellID->324058112]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8249, 186, 46, 1, 31, "Section",
+ CellID->271883493],
+Cell[8298, 189, 52, 1, 28, "Input",
+ CellID->223763622]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,783 @@
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`colorVal$$ = GrayLevel[
+  0.5], $CellContext`alpha$$ = 1., $CellContext`vspace$$ = 
+  1., $CellContext`hspace$$ = 
+  5., $CellContext`btnInsertXpr$$, $CellContext`commaSepColorVals$$, \
+$CellContext`$ColorList$$ = {
+  "Gray"}, $CellContext`$ColorSelectorTextResource$$ = 
+  "GrayLevelValueSelectorStrings", \
+$CellContext`$ColorListLenWithAlpha$$ = {
+  1 + "Gray"}, $CellContext`$PartColorList$$ = {
+  1 -> "Gray"}, $CellContext`colorincrementer$$, \
+$CellContext`gimages$$, $CellContext`framedGradient$$, \
+$CellContext`showSlider$$ = False, $CellContext`sliderGradients$$}, 
+  PanelBox[
+   PaneBox[
+    DynamicModuleBox[{$CellContext`sliderGradients$$ = Framed[
+      Column[{
+        Pane[
+         Column[{
+           Pane[
+            Grid[{{
+               Pane["", Full], 
+               Pane["", Full]}}, Dividers -> {{{
+                 Directive[
+                  RGBColor[0.8, 0.8, 0.8]]}}, None}, ItemSize -> {{
+                Scaled[0.49], 
+                Scaled[0.5]}, Automatic}], {Full, 6}, 
+            Alignment -> {Center, Bottom}], 
+           Panel[
+            Graphics[
+             Raster[CompressedData["
+1:eJxTTMoPSmVmYGBgBGJRIAaxcYFZM0FgpT12eicGbWIMAocxaIj8SQwaYssF
+DBqi7zIGnZ4GAtcwaIh5NzHos2dA4A4GDbHnAQYN0fcQg4bY/xiDhpj3BIOG
+uOsZBg2x5wUGDbHnJQYNsec1Bg2x5w0GDbHnHQYNsecDBg0AoCnTWg==
+             
+               "], {{0, 0}, {1, 0.05}}], AspectRatio -> Full, 
+             ImageSize -> {Full, 16}, PlotRangePadding -> 0, 
+             ImagePadding -> 0], 
+            Appearance -> {
+             "Default" -> 
+              FrontEnd`FileName[{"Choosers", "Color"}, 
+                "GradientSlider_bg.9.png", CharacterEncoding -> 
+                "UTF-8"]}]}, Spacings -> 0, 
+          Alignment -> {Automatic, Bottom}], ImageMargins -> 0, 
+         FrameMargins -> {{5, 6}, {0, 0}}]}, ItemSize -> Automatic, 
+       Spacings -> 1.55], FrameStyle -> None]}, 
+     TagBox[GridBox[{
+        {
+         DynamicWrapperBox[
+          FrameBox[
+           TagBox[GridBox[{
+              {
+               TagBox[GridBox[{
+                  {
+                   OverlayBox[{
+                    FrameBox[
+                    DynamicBox[ToBoxes[
+                    Part[$CellContext`sliderGradients$$, 1, 1, 1], 
+                    StandardForm],
+                    ImageSizeCache->{198., {14., 20.}}],
+                    FrameMargins->{{0, 0}, {0, 4}},
+                    FrameStyle->None,
+                    StripOnInput->False], 
+                    TagBox[GridBox[{
+                    {
+                    StyleBox[
+                    StyleBox[
+                    TemplateBox[{DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "GrayLevelValueSelectorStrings", "Gray"]],
+                    StyleBox[
+                    "\"lg\"", ShowContents -> False, StripOnInput -> 
+                    False]},
+                    "RowDefault"],
+                    StripOnInput->False,
+                    FontSize->11],
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.27, 0.27, 0.27],
+                    FrontFaceColor->RGBColor[0.27, 0.27, 0.27],
+                    BackFaceColor->RGBColor[0.27, 0.27, 0.27],
+                    GraphicsColor->RGBColor[0.27, 0.27, 0.27],
+                    FontColor->RGBColor[0.27, 0.27, 0.27]]},
+                    {
+                    
+                    DynamicModuleBox[{$CellContext`panelSz$$ = {
+                    200, Automatic}, $CellContext`minVal$$ = 
+                    0, $CellContext`maxVal$$ = 
+                    1, $CellContext`colorArg$$, \
+$CellContext`newVal$$}, 
+                    
+                    DynamicModuleBox[{$CellContext`sliderThumbPos$$ = \
+{0.5, 0.5}, $CellContext`verticalThumbPos$$ = 
+                    0.5, $CellContext`posToColorVal$$, \
+$CellContext`colorValToPos$$, $CellContext`colorUpdate$$}, 
+                    
+                    LocatorPaneBox[
+                    Dynamic[$CellContext`sliderThumbPos$$, \
+($CellContext`sliderThumbPos$$ = #; $CellContext`colorVal$$ = \
+$CellContext`colorUpdate$$[$CellContext`colorVal$$, 1, #, 0, 1])& ], 
+                    GraphicsBox[
+                    {Opacity[0], RectangleBox[{0, 0}], InsetBox[
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Choosers", "Color"}, 
+                    "GradientSliderThumb.png"]],
+                    ImageSizeCache->{20., {0., 21.}}], 
+                    Dynamic[$CellContext`colorValToPos$$[$CellContext`\
+colorVal$$, 1, 0, 1]], {Center, Top}]},
+                    AspectRatio->Full,
+                    ImagePadding->{{5, 5}, {20, 0}},
+                    ImageSize->{
+                    Scaled[1], 19},
+                    PlotRangePadding->{0.02, 0.02}],
+                    Appearance->None,
+                    FrameMargins->0],
+                    DynamicModuleValues:>{},
+                    Initialization:>($CellContext`posToColorVal$$[
+                    Pattern[$CellContext`thumPos, 
+                    Blank[]], 
+                    Pattern[$CellContext`min, 
+                    Blank[]], 
+                    Pattern[$CellContext`max, 
+                    Blank[]]] := 
+                    Module[{$CellContext`valRange = $CellContext`max - \
+$CellContext`min, $CellContext`value}, $CellContext`value = 
+                    Round[$CellContext`min + $CellContext`valRange 
+                    Part[$CellContext`thumPos, 1], 
+                    0.01]; $CellContext`value = 
+                    Which[$CellContext`value <= $CellContext`min, \
+$CellContext`min, $CellContext`value >= $CellContext`max, \
+$CellContext`max, 
+                    True, $CellContext`value]]; \
+$CellContext`colorValToPos$$[
+                    Pattern[$CellContext`mycolorVal$, 
+                    Blank[]], 
+                    Pattern[$CellContext`mypart$, 
+                    Blank[]], 
+                    Pattern[$CellContext`minColorVal$, 
+                    Blank[]], 
+                    Pattern[$CellContext`maxColorVal$, 
+                    Blank[]]] := 
+                    Module[{$CellContext`colorvalRange$ = \
+$CellContext`maxColorVal$ - $CellContext`minColorVal$, \
+$CellContext`value$, $CellContext`maxSliderPos$ = 
+                    1}, $CellContext`value$ = \
+$CellContext`maxSliderPos$ - Round[
+                    N[($CellContext`maxColorVal$ - 
+                    Part[$CellContext`mycolorVal$, 
+                    1])/$CellContext`colorvalRange$], 
+                    0.01]; {$CellContext`value$, \
+$CellContext`verticalThumbPos$$}]; $CellContext`colorUpdate$$[
+                    Pattern[$CellContext`mycolorVal$, 
+                    Blank[]], 
+                    Pattern[$CellContext`mypart$, 
+                    Blank[]], 
+                    Pattern[$CellContext`newVal$, 
+                    Blank[]], 
+                    Pattern[$CellContext`min$, 
+                    Blank[]], 
+                    Pattern[$CellContext`max$, 
+                    Blank[]]] := 
+                    MapAt[$CellContext`posToColorVal$$[$CellContext`\
+newVal$, $CellContext`min$, $CellContext`max$]& , \
+$CellContext`mycolorVal$, $CellContext`mypart$]; \
+$CellContext`verticalThumbPos$$ = 
+                    0.5; $CellContext`sliderThumbPos$$ = \
+$CellContext`colorValToPos$$[$CellContext`colorVal$$, 1, 0, 1])],
+                    DynamicModuleValues:>{}]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{0.8}}}],
+                    "Column"]}, Full, 2,
+                    Alignment->Left,
+                    ImageSize->200], 
+                   FrameBox[
+                    FrameBox[
+                    PaneBox[
+                    StyleBox[
+                    DynamicBox[ToBoxes[
+                    NumberForm[
+                    N[
+                    Part[$CellContext`colorVal$$, 1]], {3, 2}], 
+                    StandardForm],
+                    ImageSizeCache->{20., {0., 7.}}],
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.27, 0.27, 0.27],
+                    FrontFaceColor->RGBColor[0.27, 0.27, 0.27],
+                    BackFaceColor->RGBColor[0.27, 0.27, 0.27],
+                    GraphicsColor->RGBColor[0.27, 0.27, 0.27],
+                    FontSize->9,
+                    FontColor->RGBColor[0.27, 0.27, 0.27]],
+                    Alignment->{Center, Center},
+                    ImageSize->{36, 16}],
+                    Background->RGBColor[0.96, 0.96, 0.96],
+                    FrameMargins->0,
+                    FrameStyle->RGBColor[0.8, 0.8, 0.8],
+                    StripOnInput->False],
+                    FrameMargins->{{0, 0}, {0, 9}},
+                    FrameStyle->None,
+                    StripOnInput->False]}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {{Left}}},
+                 
+                 GridBoxItemSize->{
+                  "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                 
+                 GridBoxSpacings->{
+                  "Columns" -> {{0.7}}, "Rows" -> {{0.5}}}],
+                "Grid"]},
+              {
+               TagBox[GridBox[{
+                  {
+                   
+                   DynamicModuleBox[{$CellContext`sliderThumbPadding$$\
+ = 0.01, $CellContext`minVal$$ = 0, $CellContext`maxVal$$ = 1}, 
+                    PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    StyleBox[
+                    StyleBox[
+                    TemplateBox[{DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "GrayLevelValueSelectorStrings", "Opacity"]],
+                    StyleBox["\"lg\"", ShowContents -> False, 
+                    StripOnInput -> False]},
+                    "RowDefault"],
+                    StripOnInput->False,
+                    FontSize->11],
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.27, 0.27, 0.27],
+                    FrontFaceColor->RGBColor[0.27, 0.27, 0.27],
+                    BackFaceColor->RGBColor[0.27, 0.27, 0.27],
+                    GraphicsColor->RGBColor[0.27, 0.27, 0.27],
+                    FontColor->RGBColor[0.27, 0.27, 0.27]]},
+                    {
+                    OverlayBox[{
+                    PaneBox[
+                    PanelBox["\<\"\"\>",
+                    
+                    Appearance->{
+                    "Default" -> FrontEnd`FileName[{
+                    "Choosers", "Color"}, "OpacitySlider_bg.9.png", 
+                    CharacterEncoding -> "UTF-8"]},
+                    ImageSize->Full],
+                    FrameMargins->{{5, 6}, {0, 0}},
+                    ImageSize->{Full, Automatic}], 
+                    
+                    DynamicModuleBox[{$CellContext`sliderThumbPos$$ = \
+{1., 0.5}, $CellContext`verticalThumbPos$$ = 
+                    0.5, $CellContext`posToAlphaVal$$, \
+$CellContext`alphaValToPos$$}, 
+                    
+                    LocatorPaneBox[
+                    Dynamic[$CellContext`sliderThumbPos$$, \
+($CellContext`sliderThumbPos$$ = #; $CellContext`alpha$$ = \
+$CellContext`posToAlphaVal$$[#, 0, 1])& ], 
+                    GraphicsBox[
+                    {Opacity[0], RectangleBox[{0, 0}], InsetBox[
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Choosers", "Color"}, 
+                    "OpacityThumb.png"]],
+                    ImageSizeCache->{18., {0., 18.}}], 
+                    Dynamic[$CellContext`alphaValToPos$$[$CellContext`\
+alpha$$, 0, 1]]]},
+                    AspectRatio->Full,
+                    ImageSize->{Full, 19}],
+                    Appearance->None],
+                    DynamicModuleValues:>{},
+                    Initialization:>($CellContext`posToAlphaVal$$[
+                    Pattern[$CellContext`thumPos, 
+                    Blank[]], 
+                    Pattern[$CellContext`min, 
+                    Blank[]], 
+                    Pattern[$CellContext`max, 
+                    Blank[]]] := 
+                    Module[{$CellContext`valRange = $CellContext`max - \
+$CellContext`min, $CellContext`value}, $CellContext`value = 
+                    Round[$CellContext`min + $CellContext`valRange 
+                    Part[$CellContext`thumPos, 1], 
+                    0.01]; $CellContext`value = 
+                    
+                    Which[$CellContext`value <= $CellContext`min, \
+$CellContext`min, $CellContext`value >= $CellContext`max, \
+$CellContext`max, 
+                    True, $CellContext`value]]; \
+$CellContext`alphaValToPos$$[
+                    Pattern[$CellContext`myalphaVal$, 
+                    Blank[]], 
+                    Pattern[$CellContext`minAlphaVal$, 
+                    Blank[]], 
+                    Pattern[$CellContext`maxAlphaVal$, 
+                    Blank[]]] := 
+                    Module[{$CellContext`alphavalRange$ = \
+$CellContext`maxAlphaVal$ - $CellContext`minAlphaVal$, \
+$CellContext`value$, $CellContext`maxSliderPos$ = 
+                    1}, $CellContext`value$ = 
+                    Round[$CellContext`maxSliderPos$ - 
+                    N[($CellContext`maxAlphaVal$ - \
+$CellContext`myalphaVal$)/$CellContext`alphavalRange$], 
+                    0.01]; {$CellContext`value$, \
+$CellContext`verticalThumbPos$$}]; $CellContext`verticalThumbPos$$ = 
+                    0.5; $CellContext`sliderThumbPos$$ = \
+$CellContext`alphaValToPos$$[$CellContext`alpha$$, 0, 1])]}, Full, 2,
+                    Alignment->{Center, Center}]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
+                    "Column"],
+                    ImageSize->200],
+                    DynamicModuleValues:>{}], 
+                   FrameBox[
+                    FrameBox[
+                    PaneBox[
+                    StyleBox[
+                    DynamicBox[ToBoxes[
+                    NumberForm[
+                    N[$CellContext`alpha$$], {3, 2}], StandardForm],
+                    ImageSizeCache->{18., {0., 7.}}],
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.27, 0.27, 0.27],
+                    FrontFaceColor->RGBColor[0.27, 0.27, 0.27],
+                    BackFaceColor->RGBColor[0.27, 0.27, 0.27],
+                    GraphicsColor->RGBColor[0.27, 0.27, 0.27],
+                    FontSize->9,
+                    FontColor->RGBColor[0.27, 0.27, 0.27]],
+                    Alignment->{Center, Center},
+                    ImageSize->{36, 16}],
+                    Background->RGBColor[0.96, 0.96, 0.96],
+                    FrameMargins->0,
+                    FrameStyle->RGBColor[0.8, 0.8, 0.8],
+                    StripOnInput->False],
+                    FrameMargins->{{0, 0}, {0, 8}},
+                    FrameStyle->None,
+                    StripOnInput->False]}
+                 },
+                 AutoDelete->False,
+                 
+                 GridBoxItemSize->{
+                  "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                 
+                 GridBoxSpacings->{
+                  "Columns" -> {{0.7}}, "Rows" -> {{0.5}}}],
+                "Grid"]}
+             },
+             AutoDelete->False,
+             GridBoxAlignment->{"Rows" -> {{Top}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Grid"],
+           FrameMargins->{{5, 5}, {0, 0}},
+           FrameStyle->None,
+           
+           StripOnInput->
+            False], $CellContext`sliderGradients$$ = \
+$CellContext`gimages$$[$CellContext`colorVal$$, {0}, {1}],
+          ImageSizeCache->{259., {41., 46.}},
+          
+          TrackedSymbols:>{$CellContext`colorVal$$, \
+$CellContext`alpha$$}]},
+        {
+         PanelBox[
+          FrameBox[
+           TagBox[GridBox[{
+              {
+               FrameBox[
+                FrameBox[
+                 GraphicsBox[{InsetBox[
+                    FormBox[
+                    GraphicsBox[
+                    TagBox[RasterBox[CompressedData["
+1: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
+K/8BVquSqA==
+                    "], {{0, 465}, {465, 0}}, {0, 255},
+                    ColorFunction->RGBColor],
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True],
+                    Selectable->False],
+                    DefaultBaseStyle->"ImageGraphics",
+                    ImageSizeRaw->{465, 465},
+                    PlotRange->{{0, 465}, {0, 465}}],
+                    TraditionalForm], {Center, Center}], InsetBox[
+                    DynamicBox[ToBoxes[
+                    Graphics[{
+                    
+                    Append[$CellContext`colorVal$$, \
+$CellContext`alpha$$], 
+                    Rectangle[]}], TraditionalForm],
+                    ImageSizeCache->{180., {0., 179.}}], {
+                    Center, Center}]},
+                  FrameLabel->{None, None},
+                  FrameTicks->{{None, None}, {None, None}},
+                  ImageMargins->0,
+                  ImagePadding->None,
+                  ImageSize->{25.2, 25.2},
+                  PlotRangeClipping->True,
+                  PlotRangePadding->0],
+                 FrameMargins->0,
+                 FrameStyle->GrayLevel[1],
+                 StripOnInput->False],
+                FrameMargins->0,
+                FrameStyle->RGBColor[0.8, 0.8, 0.8],
+                StripOnInput->False], 
+               FrameBox[
+                TagBox[GridBox[{
+                   {
+                    ButtonBox[
+                    PaneBox[
+                    StyleBox[
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "GrayLevelValueSelectorStrings", 
+                    "cancelButtonText"],
+                    ImageSizeCache->{36., {1., 8.}}],
+                    StripOnInput->False,
+                    FontSize->11],
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.27, 0.27, 0.27],
+                    FrontFaceColor->RGBColor[0.27, 0.27, 0.27],
+                    BackFaceColor->RGBColor[0.27, 0.27, 0.27],
+                    GraphicsColor->RGBColor[0.27, 0.27, 0.27],
+                    FontColor->RGBColor[0.27, 0.27, 0.27]],
+                    Alignment->{Center, Center},
+                    ImageSize->{Full, Full}],
+                    
+                    Appearance->FEPrivate`FrontEndResource[
+                    "FEExpressions", "GrayButtonNinePatchAppearance"],
+                    
+                    ButtonFunction:>NotebookDelete[
+                    EvaluationCell[]],
+                    Evaluator->Automatic,
+                    ImageSize->{70, 26},
+                    Method->"Preemptive"], 
+                    ButtonBox[
+                    PaneBox[
+                    StyleBox[
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "GrayLevelValueSelectorStrings", "okButtonText"],
+                    ImageSizeCache->{16., {1., 8.}}],
+                    StripOnInput->False,
+                    FontSize->11],
+                    StripOnInput->False,
+                    LineColor->GrayLevel[1],
+                    FrontFaceColor->GrayLevel[1],
+                    BackFaceColor->GrayLevel[1],
+                    GraphicsColor->GrayLevel[1],
+                    FontColor->GrayLevel[1]],
+                    Alignment->{Center, Center},
+                    ImageSize->{Full, Full}],
+                    
+                    Appearance->FEPrivate`FrontEndResource[
+                    "FEExpressions", 
+                    "OrangeButtonNinePatchAppearance"],
+                    ButtonFunction:>(FrontEndExecute[{
+                    FrontEnd`NotebookApply[
+                    FrontEnd`InputNotebook[], 
+                    If[$CellContext`alpha$$ == 1., 
+                    $CellContext`btnInsertXpr$$[$CellContext`colorVal$\
+$], 
+                    $CellContext`btnInsertXpr$$[$CellContext`colorVal$\
+$, $CellContext`alpha$$]], Placeholder]}]; NotebookDelete[
+                    EvaluationCell[]]),
+                    Evaluator->Automatic,
+                    ImageSize->{70, 26},
+                    Method->"Preemptive"]}
+                  },
+                  AutoDelete->False,
+                  
+                  GridBoxAlignment->{
+                   "Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+                  
+                  GridBoxItemSize->{
+                   "Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}},
+                  
+                  GridBoxSpacings->{
+                   "Columns" -> {{0.7}}, "Rows" -> {{Automatic}}}],
+                 "Grid"],
+                Alignment->{Right, Center},
+                FrameMargins->0,
+                FrameStyle->None,
+                ImageSize->Full,
+                StripOnInput->False]}
+             },
+             AutoDelete->False,
+             
+             GridBoxAlignment->{
+              "Columns" -> {{Right}}, "Rows" -> {{Center}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+             GridBoxSpacings->{"Columns" -> {{0}}}],
+            "Grid"],
+           FrameMargins->{{5, 5}, {0, 0}},
+           FrameStyle->None,
+           StripOnInput->False],
+          Alignment->{Automatic, Center},
+          
+          Appearance->{
+           "Default" -> 
+            FrontEnd`FileName[{"Choosers", "Color"}, 
+              "ColorPickerFooter_bg.9.png", CharacterEncoding -> 
+              "UTF-8"]},
+          ImageSize->All]}
+       },
+       BaseStyle->"DialogStyle",
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxBackground->{"Columns" -> {{None}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       GridBoxSpacings->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+         "RowsIndexed" -> {2 -> 2, -2 -> 1, -3 -> 2, -4 -> 2}}],
+      "Column"],
+     DynamicModuleValues:>{}],
+    ImageSize->Dynamic[
+      FEPrivate`If[$CellContext`showSlider$$, 520, 260]]],
+   Appearance->{
+    "Default" -> 
+     FrontEnd`FileName[{"Choosers", "Color"}, "ColorPicker_bg.9.png", 
+       CharacterEncoding -> "UTF-8"]},
+   FrameMargins->{{0, 0}, {0, 5}}],
+  DynamicModuleValues:>{},
+  Initialization:>(If[
+     TrueQ[
+     0 <= FrontEnd`Private`$ColorSelectorInitialAlpha <= 
+      1], $CellContext`alpha$$ = 
+      FrontEnd`Private`$ColorSelectorInitialAlpha; 
+     ClearAll[
+      FrontEnd`Private`$ColorSelectorInitialAlpha], \
+$CellContext`alpha$$ = 1.]; 
+   If[Head[FrontEnd`Private`$ColorSelectorInitialColor] === 
+     GrayLevel, $CellContext`colorVal$$ = 
+      FrontEnd`Private`$ColorSelectorInitialColor; 
+     ClearAll[
+      FrontEnd`Private`$ColorSelectorInitialColor], \
+$CellContext`colorVal$$ = Apply[GrayLevel, 
+       Table[0.5, {
+         Length[{"Gray"}]}]]]; $CellContext`showSlider$$ = False; If[
+     TrueQ[
+     FrontEnd`Private`$ColorSelectorUseMakeBoxes], \
+$CellContext`btnInsertXpr$$[
+        Pattern[$CellContext`head, 
+         Blank[]][
+         Pattern[$CellContext`args, 
+          BlankNullSequence[]]]] := MakeBoxes[
+        $CellContext`head[$CellContext`args]]; \
+$CellContext`btnInsertXpr$$[
+        Pattern[$CellContext`head, 
+         Blank[]][
+         Pattern[$CellContext`args, 
+          BlankNullSequence[]]], 
+        Pattern[$CellContext`alpha, 
+         Blank[]]] := MakeBoxes[
+        $CellContext`head[$CellContext`args, $CellContext`alpha]]; 
+     ClearAll[
+      FrontEnd`Private`$ColorSelectorUseMakeBoxes], \
+$CellContext`btnInsertXpr$$[
+        Pattern[$CellContext`colorHD, 
+         Blank[String]], 
+        Pattern[$CellContext`formattedColorVals, 
+         Blank[]]] := BoxData[
+        RowBox[{$CellContext`colorHD, "[", 
+          RowBox[$CellContext`formattedColorVals], 
+          "]"}]]; $CellContext`btnInsertXpr$$[
+        Pattern[$CellContext`mycolorVal$, 
+         Blank[]]] := $CellContext`btnInsertXpr$$[
+        ToString[
+         Head[$CellContext`mycolorVal$]], 
+        $CellContext`commaSepColorVals$$[$CellContext`mycolorVal$]]; \
+$CellContext`btnInsertXpr$$[
+        Pattern[$CellContext`mycolorVal$, 
+         Blank[]], 
+        Pattern[$CellContext`alpha$, 
+         Blank[]]] := $CellContext`btnInsertXpr$$[
+        ToString[
+         Head[$CellContext`mycolorVal$]], 
+        $CellContext`commaSepColorVals$$[$CellContext`mycolorVal$, \
+$CellContext`alpha$]]]; $CellContext`commaSepColorVals$$[
+      Pattern[$CellContext`mycolorVal, 
+       Blank[]]] := Riffle[
+      Table[
+       ToString[
+        Part[$CellContext`mycolorVal, $CellContext`i]], \
+{$CellContext`i, 
+        Length[$CellContext`mycolorVal]}], 
+      ","]; $CellContext`commaSepColorVals$$[
+      Pattern[$CellContext`mycolorVal$, 
+       Blank[]], 
+      Pattern[$CellContext`alpha$, 
+       Blank[]]] := Join[
+      $CellContext`commaSepColorVals$$[$CellContext`mycolorVal$], {
+      ",", 
+       ToString[$CellContext`alpha$]}]; \
+$CellContext`colorincrementer$$[
+      Pattern[$CellContext`mycolorVal, 
+       RGBColor[
+        BlankSequence[]]], 
+      Pattern[$CellContext`newColorVal, 
+       Blank[]], 
+      Pattern[$CellContext`gpart, 
+       Blank[Integer]]] := 
+    MapAt[$CellContext`newColorVal& , $CellContext`mycolorVal, \
+$CellContext`gpart]; $CellContext`colorincrementer$$[
+      Pattern[$CellContext`mycolorVal, 
+       Blank[][
+        BlankSequence[]]], 
+      Pattern[$CellContext`newColorVal, 
+       Blank[]], 
+      Pattern[$CellContext`gpart, 
+       Blank[Integer]]] := ColorConvert[
+      MapAt[$CellContext`newColorVal& , $CellContext`mycolorVal, \
+$CellContext`gpart], "RGB"]; $CellContext`framedGradient$$[
+      Pattern[$CellContext`gradImg$, 
+       Blank[]]] := 
+    Panel[$CellContext`gradImg$, 
+      Appearance -> {
+       "Default" -> 
+        FrontEnd`FileName[{"Choosers", "Color"}, 
+          "GradientSlider_bg.9.png", CharacterEncoding -> 
+          "UTF-8"]}]; $CellContext`framedGradient$$[
+      Pattern[$CellContext`gradImg$, 
+       Blank[]], "ticks"] := Pane[
+      Column[{
+        Pane[
+         Grid[{{
+            Pane["", Full], 
+            Pane["", Full]}}, Dividers -> {{{
+              Directive[
+               RGBColor[0.8, 0.8, 0.8]]}}, None}, ItemSize -> {{
+             Scaled[0.49], 
+             Scaled[0.5]}, Automatic}], {Full, 6}, 
+         Alignment -> {Center, Bottom}], 
+        $CellContext`framedGradient$$[$CellContext`gradImg$]}, 
+       Spacings -> 0, Alignment -> {Automatic, Bottom}], ImageMargins -> 
+      0, FrameMargins -> {{5, 6}, {0, 0}}]; $CellContext`gimages$$[
+      Pattern[$CellContext`mycolorVal$, 
+       Blank[][
+        BlankSequence[]]], 
+      Pattern[$CellContext`gminVals$, 
+       Blank[]], 
+      Pattern[$CellContext`gmaxVals$, 
+       Blank[]], 
+      Pattern[$CellContext`imgHt$, 
+       Blank[]]] := With[{$CellContext`stepSz$ = 0.05}, 
+      Framed[
+       Column[
+        Map[$CellContext`framedGradient$$[#, "ticks"]& , 
+         Table[
+          Graphics[
+           Raster[
+            Developer`ToPackedArray[{
+              ReplaceAll[
+               Table[
+                $CellContext`colorincrementer$$[$CellContext`\
+mycolorVal$, $CellContext`x, $CellContext`i], {$CellContext`x, 
+                 Part[$CellContext`gminVals$, $CellContext`i], 
+                 
+                 Part[$CellContext`gmaxVals$, $CellContext`i], \
+$CellContext`stepSz$}], RGBColor -> List]}], {{0, 0}, {
+             1, $CellContext`stepSz$}}], AspectRatio -> Full, 
+           ImageSize -> {Full, $CellContext`imgHt$}, PlotRangePadding -> 
+           0, ImagePadding -> 0], {$CellContext`i, 
+           Length[$CellContext`gminVals$]}]], ItemSize -> Automatic, 
+        Spacings -> 1.55], FrameStyle -> 
+       None]]; $CellContext`gimages$$[
+      Pattern[$CellContext`mycolorVal$, 
+       PatternTest[
+        Blank[][
+         BlankSequence[]], Length[#] < 4& ]], 
+      Pattern[$CellContext`gminVals$, 
+       Blank[]], 
+      Pattern[$CellContext`gmaxVals$, 
+       Blank[]]] := $CellContext`gimages$$[$CellContext`mycolorVal$, \
+$CellContext`gminVals$, $CellContext`gmaxVals$, 
+      16]; $CellContext`gimages$$[
+      Pattern[$CellContext`mycolorVal$, 
+       PatternTest[
+        Blank[][
+         BlankSequence[]], Length[#] >= 4& ]], 
+      Pattern[$CellContext`gminVals$, 
+       Blank[]], 
+      Pattern[$CellContext`gmaxVals$, 
+       Blank[]]] := $CellContext`gimages$$[$CellContext`mycolorVal$, \
+$CellContext`gminVals$, $CellContext`gmaxVals$, 17]; Null)]],
+ Editable->False,
+ Selectable->False,
+ CellContext->Cell,
+ Magnification->1.,
+ CellTags->"CodeAssistAttachedCell"]
+

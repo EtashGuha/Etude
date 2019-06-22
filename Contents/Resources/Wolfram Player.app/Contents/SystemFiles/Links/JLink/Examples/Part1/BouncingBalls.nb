@@ -1,0 +1,240 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      6941,        230]
+NotebookOptionsPosition[      6312,        203]
+NotebookOutlinePosition[      6705,        220]
+CellTagsIndexPosition[      6662,        217]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "J/Link Example: Bouncing Balls\n\n",
+ StyleBox["This example demonstrates the use of the ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["ServiceJava",
+  FontSize->12,
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[" function to manually service calls into ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["Mathematica",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontSlant->"Italic",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[" that originate from the Java user interface, while the kernel is \
+busy running a computation. It also demonstrates drawing into a ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["MathGraphicsJPanel",
+  FontSize->12,
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[" directly from ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["Mathematica",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontSlant->"Italic",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[" code using the Java Graphics API.\n\nTo try this example, \
+evaluate all the initialization cells (you can do this with the menu command \
+Kernel/Evaluation/Evaluate Initialization). Then go to the Example section.",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}]
+}], "Title"],
+
+Cell[CellGroupData[{
+
+Cell["Code", "Subsection"],
+
+Cell["\<\
+(* We put the code into its own package just to avoid conflicts over \
+definitions of
+   commonly-named (for me, at least) functions like \"mousePressedFunc\".
+*)
+BeginPackage[\"BouncingBalls`\", \"JLink`\"];
+
+BouncingBalls;
+
+Begin[\"`Private`\"];
+
+BouncingBalls[] :=
+\tJavaBlock[
+\t\tBlock[{frame, insets, mathPanel, bkgndColor, g, offscreen, mml, mwl, \
+balls, keepOn},
+\t\t\tInstallJava[];
+\t\t\tframe = JavaNew[\"com.wolfram.jlink.MathJFrame\", \"Bouncing Balls\"];
+\t\t\tmathPanel = JavaNew[\"com.wolfram.jlink.MathGraphicsJPanel\"];
+\t\t\tframe@getContentPane[]@add[mathPanel];
+\t\t\tmathPanel@setPreferredSize[JavaNew[\"java.awt.Dimension\", 300, 300]];
+\t\t\tframe@pack[];
+\t\t\tJavaShow[frame];
+\t\t\t
+\t\t\tLoadJavaClass[\"java.awt.Color\"];
+\t\t\tbkgndColor = Color`lightGray;
+\t\t\toffscreen = mathPanel@createImage[300, 300];
+\t\t\tg = offscreen@getGraphics[];
+\t\t\t
+\t\t\tmml = JavaNew[\"com.wolfram.jlink.MathMouseListener\"];
+\t\t\tmml@setHandler[\"mousePressed\", \
+\"BouncingBalls`Private`mousePressedFunc\"];
+\t\t\tmathPanel@addMouseListener[mml];
+\t\t\tmwl = JavaNew[\"com.wolfram.jlink.MathWindowListener\"];
+\t\t\t(* This is what shuts down the program's computation loop when the \
+window is closed: *)
+\t\t\tmwl@setHandler[\"windowClosing\", \"(BouncingBalls`Private`keepOn = \
+False)&\"];
+\t\t\tframe@addWindowListener[mwl];
+\t\t\t
+\t\t\tballs = {};
+\t\t\tkeepOn = True;
+\t\t\t(* This loop draws the balls, computes their new positions, and then \
+services a call
+\t\t\t   originating in Java, if one is waiting. The calls from Java are from \
+mouse clicks,
+\t\t\t   which cause a new ball to appear. Another call from Java occurs when \
+the window is
+\t\t\t   closed, and this call sets keepOn = False, causing the loop to \
+terminate.
+\t\t\t*)
+\t\t\tWhile[keepOn,
+\t\t\t\tg@setColor[bkgndColor];
+\t\t\t\tg@fillRect[0, 0, 300, 300];
+\t\t\t\tdrawBall[g, #]& /@ balls;
+\t\t\t\tmathPanel@setImage[offscreen];
+\t\t\t\tballs = recomputePosition /@ balls;
+\t\t\t\tServiceJava[];
+\t\t\t];
+\t\t\t(* Remember that as soon as you stop servicing Java, events that \
+trigger callbacks
+\t\t\t   from any MathListeners you are using will hang the user interface \
+thread, because
+\t\t\t   Java will call Mathematica but Mathematica will not respond. We \
+don't need to worry
+\t\t\t   about this here because the ServiceJava loop above won't end until \
+the window has
+\t\t\t   closed (thus no more mouse clicks in the window will be occurring). \
+In general,
+\t\t\t   though, you might need to remove any MathListeners once you're done \
+with calling
+\t\t\t   ServiceJava. We will do that here for good form.
+\t\t\t*)
+\t\t\tmathPanel@removeMouseListener[mml];
+\t\t\tframe@removeWindowListener[mwl];
+\t\t]
+\t]
+\t\t
+mousePressedFunc[e_, x_, y_, _] :=
+\t(
+\t\tAppendTo[balls,
+\t\t\t\tball[x, y, Random[Integer, {-8,8}], Random[Integer, {-8,8}],
+\t\t\t\t\t\t\tJavaNew[\"java.awt.Color\", Random[], Random[], Random[]]
+\t\t\t\t]
+\t\t];
+\t\t(* ReleaseJavaObject is not necessary here, since the whole BouncingBalls \
+program is wrapped
+\t\t   in JavaBlock, but it is a good habit to get into calling ReleaseObject \
+on the event argument
+\t\t   in your event handler functions.
+\t\t*)
+\t\tReleaseJavaObject[e]
+\t)
+
+$ballDiameter = 20;
+
+drawBall[g_, b_ball] := 
+\t(
+\t\tg@setColor[b[[5]]];
+\t\tg@fillOval[b[[1]] - $ballDiameter/2, b[[2]] - $ballDiameter/2, \
+$ballDiameter, $ballDiameter]
+\t)
+
+recomputePosition[b_ball] := 
+\tModule[{xPos = b[[1]], yPos = b[[2]], xSpeed = b[[3]], ySpeed = b[[4]]},
+\t\t(* Move the ball according to its velocity, then handle bounces off any \
+walls. *)
+\t\t{xPos, yPos} += {xSpeed, ySpeed};
+\t\tIf[xPos < 0, xPos = -xPos; xSpeed = -xSpeed];
+\t\tIf[yPos < 0, yPos = -yPos; ySpeed = -ySpeed];
+\t\tIf[xPos > 300, xPos = 300 - (xPos - 300); xSpeed = -xSpeed];
+\t\tIf[yPos > 300, yPos = 300 - (yPos - 300); ySpeed = -ySpeed];
+\t\tball[xPos, yPos, xSpeed, ySpeed, Last[b]]
+\t]
+\t
+End[];
+EndPackage[];\
+\>", "Input",
+ InitializationCell->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Subsection"],
+
+Cell["\<\
+Click in the window to make new balls appear. Close the window when you are \
+done.\
+\>", "Text"],
+
+Cell["BouncingBalls[]", "Input"]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{822, 534},
+WindowMargins->{{4, Automatic}, {Automatic, 0}},
+DockedCells->(None& ),
+FrontEndVersion->"6.0 for Mac OS X PowerPC (32-bit) (February 21, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 1443, 41, 261, "Title"],
+Cell[CellGroupData[{
+Cell[2058, 68, 26, 0, 34, "Subsection"],
+Cell[2087, 70, 3986, 117, 1758, "Input",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6110, 192, 29, 0, 26, "Subsection"],
+Cell[6142, 194, 107, 3, 26, "Text"],
+Cell[6252, 199, 32, 0, 24, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

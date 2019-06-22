@@ -1,0 +1,1025 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     43583,       1015]
+NotebookOptionsPosition[     42363,        976]
+NotebookOutlinePosition[     43570,       1015]
+CellTagsIndexPosition[     43527,       1012]
+WindowTitle->Notebook Modification History Overview
+WindowFrame->Palette*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`selectionOnly$$ = 
+  False, $CellContext`open1$$ = True, $CellContext`open2$$ = 
+  False, $CellContext`p1$$ = 0.02, $CellContext`p2$$ = 
+  0.98, $CellContext`midp$$ = 0.5, $CellContext`oldp$$ = {0.02, 0.5, 
+  0.98}, $CellContext`sourceNotebook$$, $CellContext`byteCount$$, \
+$CellContext`date$$, $CellContext`copyToClipboard$$, $CellContext`rawtr$$, \
+$CellContext`tr$$, $CellContext`zoomControl$$, $CellContext`addMouseEvents$$, \
+$CellContext`mouseClickEvent$$, $CellContext`cellHighlight$$ = {}, \
+$CellContext`timeAxisBlocks$$, $CellContext`intervalsTimeAxisBlocks$$, \
+$CellContext`paramsTimeAxisBlocks$$, $CellContext`ticksTimeAxisBlocks$$, \
+$CellContext`rawHistory$$, $CellContext`historyData$$, \
+$CellContext`historyGraphics$$, $CellContext`lenHistory$$, \
+$CellContext`maxHistory$$, $CellContext`minHistory$$, \
+$CellContext`extremaHistory$$, $CellContext`getHistory$$, \
+$CellContext`updateHistoryParams$$, $CellContext`createHistoryLines$$, \
+$CellContext`createHistoryPoints$$, $CellContext`overviewHistory$$, \
+$CellContext`cellContentTooltip$$, $CellContext`pointColor$$ = RGBColor[
+  0.00392156862745098, 0, 0.5019607843137255], $CellContext`lineColor$$ = 
+  RGBColor[0.181216144045167, 0.683253223468376, 
+   0.417807278553445], $CellContext`tickColor$$ = RGBColor[
+  0.9607843137254902, 0.6549019607843137, 
+   0.23137254901960785`], $CellContext`locColor$$ = RGBColor[
+  0.16926275747779382`, 0.27534543735703493`, 
+   0.8264831086689232], $CellContext`highlightColor$$ = RGBColor[
+  0.17338826581216144`, 0.8749980926222629, 1.]}, 
+  PaneBox[
+   TagBox[GridBox[{
+      {
+       TemplateBox[{DynamicBox[
+          ToBoxes[
+           ActionMenu[
+            FullOptions[$CellContext`sourceNotebook$$, WindowTitle], 
+            Flatten[
+             Map[ReplaceAll[
+               If[
+                And[WindowFrame == "Normal", WindowClickSelect], 
+                WindowTitle :> (SetOptions[#, Visible -> True]; 
+                 SetSelectedNotebook[#]), {}], 
+               
+               AbsoluteOptions[#, {
+                WindowFrame, WindowTitle, WindowClickSelect}]]& , 
+              Notebooks[]]], Appearance -> "PopupMenu", 
+            DefaultBaseStyle -> {
+             FontSize :> CurrentValue["PanelFontSize"], FontFamily :> 
+              CurrentValue["PanelFontFamily"]}], StandardForm]],
+         TemplateBox[{15}, "Spacer1"],TemplateBox[{
+           CheckboxBox[
+            Dynamic[
+             
+             CurrentValue[$CellContext`sourceNotebook$$, 
+              "TrackCellChangeTimes"]], Appearance -> Small], 
+           TemplateBox[{5}, "Spacer1"], 
+           TogglerBox[
+            Dynamic[
+             
+             CurrentValue[$CellContext`sourceNotebook$$, 
+              "TrackCellChangeTimes"]], {True -> DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource[
+                "HistoryOverviewDialog", "TrackHistoryText"], StandardForm]], 
+             False -> DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource[
+                "HistoryOverviewDialog", "TrackHistoryText"], StandardForm]]}, 
+            DynamicBox[
+             ToBoxes[
+              
+              CurrentValue[$CellContext`sourceNotebook$$, 
+               "TrackCellChangeTimes"], StandardForm]], Appearance -> Small]},
+           "RowDefault"]},
+        "RowDefault"], "\[SpanFromLeft]"},
+      {
+       TemplateBox[{DynamicBox[
+          ToBoxes[
+           $CellContext`tr$$["SelectionOnlyLabel"], StandardForm]],
+         InterpretationBox[
+          StyleBox[
+           RowBox[{
+             GridBox[{{
+                RadioButtonBox[
+                 Dynamic[$CellContext`selectionOnly$$], {False}, 
+                 DefaultBaseStyle -> "RadioButtonBar", BaselinePosition -> 
+                 Baseline], 
+                StyleBox[
+                 SetterBox[
+                  Dynamic[$CellContext`selectionOnly$$], {False}, 
+                  DynamicBox[
+                   ToBoxes[
+                    $CellContext`tr$$["AllCellsText"], StandardForm]], 
+                  Appearance -> None, BaselinePosition -> Baseline], 
+                 "RadioButtonBarLabel", StripOnInput -> False]}}, AutoDelete -> 
+              False, GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+              ColumnAlignments -> Left, ColumnSpacings -> 0.3], "  ", 
+             GridBox[{{
+                RadioButtonBox[
+                 Dynamic[$CellContext`selectionOnly$$], {True}, 
+                 DefaultBaseStyle -> "RadioButtonBar", BaselinePosition -> 
+                 Baseline], 
+                StyleBox[
+                 SetterBox[
+                  Dynamic[$CellContext`selectionOnly$$], {True}, 
+                  DynamicBox[
+                   ToBoxes[
+                    $CellContext`tr$$["SelectedCellsText"], StandardForm]], 
+                  Appearance -> None, BaselinePosition -> Baseline], 
+                 "RadioButtonBarLabel", StripOnInput -> False]}}, AutoDelete -> 
+              False, GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+              ColumnAlignments -> Left, ColumnSpacings -> 0.3]}], "Deploy"], 
+          RadioButtonBar[
+           Dynamic[$CellContext`selectionOnly$$], {False -> Setter[
+              Dynamic[$CellContext`selectionOnly$$], False, 
+              Dynamic[
+               $CellContext`tr$$["AllCellsText"]], Appearance -> None, 
+              BaselinePosition -> Baseline], True -> Setter[
+              Dynamic[$CellContext`selectionOnly$$], True, 
+              Dynamic[
+               $CellContext`tr$$["SelectedCellsText"]], Appearance -> None, 
+              BaselinePosition -> Baseline]}, BaselinePosition -> Baseline]]},
+        
+        "RowDefault"], 
+       ItemBox[
+        ButtonBox[
+         DynamicBox[ToBoxes[
+           FEPrivate`FrontEndResource[
+           "HistoryOverviewDialog", "ClearHistoryLabel"], StandardForm],
+          ImageSizeCache->{62., {2., 8.}}],
+         Appearance->Automatic,
+         ButtonFunction:>(SelectionMove[$CellContext`sourceNotebook$$, All, 
+            If[$CellContext`selectionOnly$$, Cell, Notebook]]; CreateDialog[{
+             TextCell[
+              Column[{
+                Style[
+                 FrontEndResource["HistoryOverviewDialog", 
+                  
+                  If[$CellContext`selectionOnly$$, "ClearHistoryWarning1Text",
+                    "ClearHistoryWarning2Text"]], FontSize -> 
+                 If[$OperatingSystem === "MacOSX", 
+                   CurrentValue[{"ControlsFontSize", Medium}], Inherited], 
+                 FontWeight -> 
+                 If[$OperatingSystem === "MacOSX", Bold, Plain]], 
+                FrontEndResourceString["reallyDeleteAllOutputSubText"], 
+                Item[
+                 ChoiceButtons[{
+                   FrontEndResourceString["yesButtonText"], 
+                   FrontEndResourceString["noButtonText"]}, {
+                  DialogReturn[]; FrontEndExecute[{
+                    FrontEnd`RemoveOptions[
+                    FrontEnd`SelectionObject, "CellChangeTimes"]}], 
+                   DialogReturn[]}], Alignment -> Right]}], NotebookDefault, 
+              "DialogStyle", "ControlStyle"]}, WindowTitle -> None, Modal -> 
+            True]),
+         Enabled->Dynamic[
+           NumericQ[
+            Mean[
+             Flatten[$CellContext`rawHistory$$]]]],
+         Evaluator->Automatic,
+         ImageSize->All,
+         Method->"Preemptive"],
+        Alignment->Center,
+        ItemSize->Small,
+        StripOnInput->False]},
+      {
+       TagBox[GridBox[{
+          {
+           TemplateBox[{OpenerBox[
+              Dynamic[$CellContext`open1$$, ($CellContext`open1$$ = #)& ], 
+              BaselinePosition -> (Center -> Center)],TogglerBox[
+              Dynamic[$CellContext`open1$$, ($CellContext`open1$$ = #)& ], {
+              True -> DynamicBox[
+                 ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "HistoryOverviewDialog", "GraphicsText"], StandardForm]], 
+               False -> DynamicBox[
+                 ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "HistoryOverviewDialog", "GraphicsText"], StandardForm]]}, 
+              DynamicBox[
+               
+               ToBoxes[$CellContext`open1$$, 
+                StandardForm], ($CellContext`open1$$ = #)& ], 
+              BaselinePosition -> (Center -> Center)]},
+            "RowDefault"], 
+           TemplateBox[{35},
+            "Spacer1"], 
+           ButtonBox[
+            DynamicBox[ToBoxes[
+              FEPrivate`FrontEndResource[
+              "HistoryOverviewDialog", "CopyDataLabel"], StandardForm],
+             ImageSizeCache->{73., {2., 8.}}],
+            Appearance->Automatic,
+            ButtonFunction:>$CellContext`copyToClipboard$$[
+              Cell[
+               BoxData[
+                ToString[
+                CurrentValue[$CellContext`sourceNotebook$$, {
+                   "CellChangeTimesList", $CellContext`selectionOnly$$}] + 
+                 3600 $TimeZone, InputForm]], "Input"]],
+            ButtonMinHeight->0,
+            Enabled->Dynamic[
+              NumericQ[
+               Mean[
+                Flatten[$CellContext`rawHistory$$]]]],
+            Evaluator->Automatic,
+            FrameMargins->{{1, 1}, {0, 0}},
+            Method->"Preemptive"], 
+           ButtonBox[
+            DynamicBox[ToBoxes[
+              FEPrivate`FrontEndResource[
+              "HistoryOverviewDialog", "CopyImageLabel"], StandardForm],
+             ImageSizeCache->{57., {2., 8.}}],
+            Appearance->Automatic,
+            ButtonFunction:>$CellContext`copyToClipboard$$[
+              $CellContext`historyGraphics$$["copy"]],
+            ButtonMinHeight->0,
+            Enabled->Dynamic[
+              NumericQ[
+               Mean[
+                Flatten[$CellContext`rawHistory$$]]]],
+            Evaluator->Automatic,
+            FrameMargins->{{1, 1}, {0, 0}},
+            Method->"Preemptive"]}
+         },
+         AutoDelete->False,
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+        "Grid"], "\[SpanFromLeft]"},
+      {
+       ItemBox[
+        PaneSelectorBox[{True->
+         TagBox[GridBox[{
+            {
+             DynamicBox[ToBoxes[
+               Style[
+                $CellContext`historyGraphics$$[], CacheGraphics -> False], 
+               StandardForm]]},
+            {
+             TemplateBox[{DynamicBox[
+                ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "HistoryOverviewDialog", "ZoomText"], StandardForm]],
+               InterpretationBox[
+                StyleBox[
+                 GridBox[{{
+                    SetterBox[
+                    Dynamic[
+                    0, If[# > 
+                    0, $CellContext`oldp$$ = {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$}; {$CellContext`p1$$, \
+$CellContext`p2$$} = Rescale[
+                    AbsoluteTime[] - {#, 0}, $CellContext`extremaHistory$$, {
+                    0, 1}]; $CellContext`midp$$ = ($CellContext`p1$$ + \
+$CellContext`p2$$)/
+                    2, $CellContext`oldp$$ = {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$}; {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$} = {0.02, 0.5, 0.98}]& ], {3600}, 
+                    "\" 1h \"", Appearance -> None, DefaultBaseStyle -> 
+                    "Hyperlink", BaselinePosition -> Baseline], 
+                    SetterBox[
+                    Dynamic[
+                    0, If[# > 
+                    0, $CellContext`oldp$$ = {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$}; {$CellContext`p1$$, \
+$CellContext`p2$$} = Rescale[
+                    AbsoluteTime[] - {#, 0}, $CellContext`extremaHistory$$, {
+                    0, 1}]; $CellContext`midp$$ = ($CellContext`p1$$ + \
+$CellContext`p2$$)/
+                    2, $CellContext`oldp$$ = {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$}; {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$} = {0.02, 0.5, 0.98}]& ], {86400}, 
+                    "\" 1d \"", Appearance -> None, DefaultBaseStyle -> 
+                    "Hyperlink", BaselinePosition -> Baseline], 
+                    SetterBox[
+                    Dynamic[
+                    0, If[# > 
+                    0, $CellContext`oldp$$ = {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$}; {$CellContext`p1$$, \
+$CellContext`p2$$} = Rescale[
+                    AbsoluteTime[] - {#, 0}, $CellContext`extremaHistory$$, {
+                    0, 
+                    1}]; $CellContext`midp$$ = ($CellContext`p1$$ + \
+$CellContext`p2$$)/
+                    2, $CellContext`oldp$$ = {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$}; {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$} = {0.02, 0.5, 0.98}]& ], {604800}, 
+                    "\" 1w \"", Appearance -> None, DefaultBaseStyle -> 
+                    "Hyperlink", BaselinePosition -> Baseline], 
+                    SetterBox[
+                    Dynamic[
+                    0, If[# > 
+                    0, $CellContext`oldp$$ = {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$}; {$CellContext`p1$$, \
+$CellContext`p2$$} = Rescale[
+                    AbsoluteTime[] - {#, 0}, $CellContext`extremaHistory$$, {
+                    0, 1}]; $CellContext`midp$$ = ($CellContext`p1$$ + \
+$CellContext`p2$$)/
+                    2, $CellContext`oldp$$ = {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$}; {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$} = {0.02, 0.5, 0.98}]& ], {2592000}, 
+                    "\" 1m \"", Appearance -> None, DefaultBaseStyle -> 
+                    "Hyperlink", BaselinePosition -> Baseline], 
+                    SetterBox[
+                    Dynamic[
+                    0, If[# > 
+                    0, $CellContext`oldp$$ = {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$}; {$CellContext`p1$$, \
+$CellContext`p2$$} = Rescale[
+                    AbsoluteTime[] - {#, 0}, $CellContext`extremaHistory$$, {
+                    0, 1}]; $CellContext`midp$$ = ($CellContext`p1$$ + \
+$CellContext`p2$$)/
+                    2, $CellContext`oldp$$ = {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$}; {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$} = {0.02, 0.5, 0.98}]& ], {31536000}, 
+                    "\" 1y \"", Appearance -> None, DefaultBaseStyle -> 
+                    "Hyperlink", BaselinePosition -> Baseline], 
+                    SetterBox[
+                    Dynamic[
+                    0, If[# > 
+                    0, $CellContext`oldp$$ = {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$}; {$CellContext`p1$$, \
+$CellContext`p2$$} = Rescale[
+                    AbsoluteTime[] - {#, 0}, $CellContext`extremaHistory$$, {
+                    0, 1}]; $CellContext`midp$$ = ($CellContext`p1$$ + \
+$CellContext`p2$$)/
+                    2, $CellContext`oldp$$ = {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$}; {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$} = {0.02, 0.5, 0.98}]& ], {-1}, 
+                    "\" All \"", Appearance -> None, DefaultBaseStyle -> 
+                    "Hyperlink", BaselinePosition -> Baseline]}}, 
+                  ColumnSpacings -> 0, BaselinePosition -> {1, 1}], Deployed -> 
+                 True], 
+                SetterBar[
+                 Dynamic[
+                 0, If[# > 
+                   0, $CellContext`oldp$$ = {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$}; {$CellContext`p1$$, \
+$CellContext`p2$$} = Rescale[
+                    AbsoluteTime[] - {#, 0}, $CellContext`extremaHistory$$, {
+                    0, 1}]; $CellContext`midp$$ = ($CellContext`p1$$ + \
+$CellContext`p2$$)/
+                    2, $CellContext`oldp$$ = {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$}; {$CellContext`p1$$, \
+$CellContext`midp$$, $CellContext`p2$$} = {0.02, 0.5, 0.98}]& ], {
+                 3600 -> " 1h ", 86400 -> " 1d ", 604800 -> " 1w ", 2592000 -> 
+                  " 1m ", 31536000 -> " 1y ", -1 -> " All "}, Appearance -> 
+                 None, DefaultBaseStyle -> "Hyperlink", BaselinePosition -> 
+                 Baseline]]},
+              "RowDefault"]}
+           },
+           DefaultBaseStyle->"Column",
+           GridBoxAlignment->{"Columns" -> {{Left}}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Column"], False->"\<\"\"\>"}, Dynamic[$CellContext`open1$$],
+         ImageSize->{310, Automatic}],
+        Alignment->Center,
+        StripOnInput->False], "\[SpanFromLeft]"},
+      {
+       TemplateBox[{OpenerBox[
+          Dynamic[$CellContext`open2$$, ($CellContext`open2$$ = #)& ], 
+          BaselinePosition -> (Center -> Center)],TogglerBox[
+          Dynamic[$CellContext`open2$$, ($CellContext`open2$$ = #)& ], {
+          True -> DynamicBox[
+             ToBoxes[
+              FEPrivate`FrontEndResource[
+              "HistoryOverviewDialog", "SummaryText"], StandardForm]], False -> 
+           DynamicBox[
+             ToBoxes[
+              FEPrivate`FrontEndResource[
+              "HistoryOverviewDialog", "SummaryText"], StandardForm]]}, 
+          DynamicBox[
+           
+           ToBoxes[$CellContext`open2$$, 
+            StandardForm], ($CellContext`open2$$ = #)& ], 
+          BaselinePosition -> (Center -> Center)]},
+        "RowDefault"], 
+       DynamicBox[ToBoxes[$CellContext`getHistory$$[]; "", StandardForm]]},
+      {
+       ItemBox[
+        PaneSelectorBox[{True->
+         DynamicBox[ToBoxes[{$CellContext`byteCount$$ = Replace[
+               
+               CurrentValue[$CellContext`sourceNotebook$$, {
+                "ByteCount", $CellContext`selectionOnly$$}], $Failed -> {0, 
+                0}], $CellContext`date$$ = If[
+               NumericQ[#], 
+               DateString[#], 
+               $CellContext`tr$$["UnavailableText"]]& }; Grid[{{
+               $CellContext`tr$$["FirstEditLabel"], 
+               $CellContext`date$$[
+                Min[$CellContext`historyData$$]]}, {
+               $CellContext`tr$$["LastEditLabel"], 
+               $CellContext`date$$[
+                Max[$CellContext`historyData$$]]}, {
+               $CellContext`tr$$["TotalByteLabel"], 
+               Part[$CellContext`byteCount$$, 1]}, {
+               $CellContext`tr$$["ContentByteLabel"], 
+               Part[$CellContext`byteCount$$, 2]}, {
+               $CellContext`tr$$["CellNumberLabel"], 
+               Row[{
+                 If[$CellContext`selectionOnly$$, 
+                  Row[{
+                    Length[$CellContext`rawHistory$$], 
+                    $CellContext`tr$$["OutOfText"]}], ""], 
+                 Replace[
+                  
+                  CurrentValue[$CellContext`sourceNotebook$$, {
+                   "CellCount", False}], $Failed -> "0"]}]}, {
+               $CellContext`tr$$["EditNumberLabel"], 
+               Length[
+                Flatten[$CellContext`historyData$$]]}, {
+               $CellContext`tr$$["MergeIntervalLabel"], 
+               Row[{
+                 Replace[
+                  
+                  CurrentValue[$CellContext`sourceNotebook$$, 
+                   "CellChangeTimeMergeInterval"], $Failed -> "0"], 
+                 $CellContext`tr$$["SecondsText"]}]}}, Dividers -> 
+             GrayLevel[0.6], Alignment -> {{Right, Left}, Axis}, 
+             ItemStyle -> {{Plain, Bold}}], StandardForm]], 
+         False->"\<\"\"\>"}, Dynamic[$CellContext`open2$$],
+         ImageSize->Automatic],
+        Alignment->{Center, Top},
+        StripOnInput->False], "\[SpanFromLeft]"}
+     },
+     AutoDelete->False,
+     GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+     GridBoxDividers->{"Columns" -> {{None}}, "Rows" -> {{None}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{
+      "Columns" -> {{Automatic}}, 
+       "RowsIndexed" -> {1 -> 0, 2 -> 0.5, 3 -> 0.5}}],
+    "Grid"],
+   ImageMargins->5],
+  Deinitialization:>(ClearAll["Palettes`NotebookHistory`*"]; 
+   Remove["Palettes`NotebookHistory`*"]),
+  DynamicModuleValues:>{},
+  Initialization:>({$CellContext`tr$$[
+       Pattern[$CellContext`ID, 
+        Blank[]]] := Dynamic[
+       FEPrivate`FrontEndResource[
+       "HistoryOverviewDialog", $CellContext`ID]], $TimeZone = -5.}; \
+{$CellContext`rawHistory$$ = {}; $CellContext`historyData$$ = {}; \
+$CellContext`sourceNotebook$$ = 
+      InputNotebook[]; $CellContext`cellHighlight$$ = {}, $CellContext`tr$$[
+        Pattern[$CellContext`id, 
+         Blank[]]] := 
+      FrontEndResource["HistoryOverviewDialog", $CellContext`id]; 
+     Null, $CellContext`rawtr$$[
+        Pattern[$CellContext`id, 
+         Blank[]]] := 
+      FEPrivate`FrontEndResource["HistoryOverviewDialog", $CellContext`id]; 
+     Null, $CellContext`getHistory$$[] := If[FullOptions[
+         InputNotebook[], {WindowFrame, WindowClickSelect}] === {
+        "Normal", 
+         True}, $CellContext`cellHighlight$$ = {}; $CellContext`rawHistory$$ = 
+        CurrentValue[$CellContext`sourceNotebook$$ = InputNotebook[], {
+          
+          "CellChangeTimesList", $CellContext`selectionOnly$$}], \
+$CellContext`cellHighlight$$ = {}; $CellContext`sourceNotebook$$ = First[
+          Select[
+           Notebooks[], 
+           FullOptions[#, {WindowFrame, WindowClickSelect}] === {
+            "Normal", True}& , 1]]], $CellContext`copyToClipboard$$[
+       Pattern[$CellContext`expr, 
+        Blank[]]] := 
+     Module[{$CellContext`nb}, $CellContext`nb = 
+        CreateDocument[$CellContext`expr, Visible -> False]; 
+       SelectionMove[$CellContext`nb, All, Notebook]; 
+       FrontEndTokenExecute[$CellContext`nb, "Copy"]; 
+       NotebookClose[$CellContext`nb]; Null], $CellContext`timeAxisBlocks$$[
+       Optional[
+        Pattern[$CellContext`ymin$, 
+         Blank[]], 0.155]] := 
+     Block[{$CellContext`min = $CellContext`minHistory$$, $CellContext`max = \
+$CellContext`maxHistory$$, $CellContext`tooltip = 
+        If[$CellContext`ymin$ == 0, Identity, Tooltip[#, 
+           RawBoxes[
+            $CellContext`rawtr$$[
+            "BlockZoomText"]]]& ]}, {$CellContext`min, $CellContext`max} = 
+        Rescale[
+          Sort[{$CellContext`p1$$, $CellContext`p2$$}], {
+          1./22, 21./
+           22}, {$CellContext`minHistory$$, $CellContext`maxHistory$$}]; 
+       Join[{{
+           FaceForm[{$CellContext`tickColor$$, 
+             Opacity[0.2]}], 
+           EdgeForm[
+            Opacity[1]], 
+           $CellContext`tooltip[
+            Rectangle[
+             Scaled[{0, $CellContext`ymin$}], 
+             Scaled[{1, $CellContext`ymin$ + 0.035}]]]}}, 
+         Apply[
+          Function[{$CellContext`t$, $CellContext`n$}, 
+           Map[{
+             Text[
+              DateString[
+               Part[#, 1], $CellContext`n$], 
+              Offset[{4, 0}, 
+               Scaled[{
+                 Rescale[
+                  Part[#, 1], {$CellContext`min, $CellContext`max}], 
+                 0.0175 + $CellContext`ymin$}]], {-1, 0}], 
+             Opacity[0], 
+             EdgeForm[
+              Opacity[1]], 
+             $CellContext`tooltip[
+              Rectangle[
+               Scaled[{
+                 Rescale[
+                  
+                  Part[#, 
+                   1], {$CellContext`min, $CellContext`max}], \
+$CellContext`ymin$}], 
+               Scaled[{
+                 Rescale[
+                  
+                  Part[#, 
+                   2], {$CellContext`min, $CellContext`max}], \
+$CellContext`ymin$ + 0.035}]]]}& , $CellContext`intervalsTimeAxisBlocks$$ = 
+            Partition[
+              $CellContext`ticksTimeAxisBlocks$$[$CellContext`t$], 2, 1]]], 
+          $CellContext`paramsTimeAxisBlocks$$[
+           
+           Divide[$CellContext`max - $CellContext`min, {
+            365 24 3600, 30 24 3600, 24 3600, 60 60, 
+             60}]]]]], $CellContext`paramsTimeAxisBlocks$$[
+       Pattern[$CellContext`t, 
+        Blank[]]] := Which[Part[$CellContext`t, 1] > 1.5, {
+        If[Part[$CellContext`t, 1] > 3, "Year1", "Year2"], {"Year"}}, 
+       Part[$CellContext`t, 2] > 1.5, {
+        If[Part[$CellContext`t, 2] > 5, "Month1", "Month2"], 
+        If[Part[
+           DateList[$CellContext`min], 1] < Part[
+           DateList[$CellContext`max], 1], {"MonthNameShort", " ", "Year"}, {
+         "MonthName"}]}, Part[$CellContext`t, 3] > 1.5, {
+        If[Part[$CellContext`t, 3] > 3, 24 3600, "Day"], {
+        "MonthNameShort", " ", "DayShort"}}, Part[$CellContext`t, 4] > 1, {
+       3600, {"Hour12Short", 
+         Apply[Sequence, 
+          If[Part[$CellContext`t, 4] > 3, {}, {":", "Minute"}]], " ", 
+         "AMPM"}}, Part[$CellContext`t, 5] > 1.5, {
+       60, {"Hour12Short", ":", "Minute", 
+         Apply[Sequence, 
+          If[Part[$CellContext`t, 5] > 3, {}, {":", "Second"}]], " ", 
+         "AMPM"}}, True, {
+       1, {"Hour12Short", ":", "Minute", ":", "Second", " ", 
+         "AMPM"}}], $CellContext`ticksTimeAxisBlocks$$[
+       Pattern[$CellContext`t, 
+        Alternatives["Year1", "Year2"]]] := 
+     Map[AbsoluteTime[{#, 1, 1, 0, 0, 0}]& , 
+       If[$CellContext`t == "Year1", 
+        FindDivisions[{Part[
+            DateList[$CellContext`min], 1] - 1, Part[
+            DateList[$CellContext`max], 1] + 1}, 6], Part[
+          DateList[$CellContext`min], 1] + 
+        Range[-2, 3]]], $CellContext`ticksTimeAxisBlocks$$[
+       Pattern[$CellContext`t, 
+        Alternatives["Month1", "Month2"]]] := Flatten[
+       Outer[AbsoluteTime[{
+          SlotSequence[1], 1, 0, 0, 0}]& , 
+        Range[
+         Part[
+          DateList[$CellContext`min], 1], Part[
+           DateList[$CellContext`max], 1] + 1], 
+        If[$CellContext`t == "Month1", {1, 4, 7, 10}, 
+         Range[12]]]], $CellContext`ticksTimeAxisBlocks$$["Day"] := Union[
+       Clip[
+        Flatten[
+         Outer[AbsoluteTime[{
+            SlotSequence[1], 0, 0, 0}]& , 
+          Range[
+           Part[
+            DateList[$CellContext`min], 1], Part[
+             DateList[$CellContext`max], 1] + 1], 
+          Range[12], 
+          Range[31]]], {$CellContext`min - 
+         0.1 ($CellContext`max - $CellContext`min), $CellContext`max + 
+         0.1 ($CellContext`max - $CellContext`min)}]], \
+$CellContext`ticksTimeAxisBlocks$$[
+       Pattern[$CellContext`t, 
+        Blank[Integer]]] := Join[
+       Cases[
+        FindDivisions[{$CellContext`min - 
+          0.08 ($CellContext`max - $CellContext`min), $CellContext`max, \
+$CellContext`t}, 6], 
+        Blank[
+        Integer]], {$CellContext`max + $CellContext`t}], \
+$CellContext`zoomControl$$[] := With[{$CellContext`ypos$ = 0.025}, {{
+         EdgeForm[Orange], 
+         FaceForm[
+          Opacity[0]], 
+         Tooltip[
+          Rectangle[
+           Scaled[{0, 0.045}], 
+           Scaled[{1, 0.145}]], 
+          $CellContext`tr$$["ResetZoomText"]]}, {
+         Opacity[0.3], Gray, 
+         Tooltip[
+          Dynamic[
+           Rectangle[
+            Scaled[{$CellContext`p1$$, 0.045}], 
+            Scaled[{$CellContext`p2$$, 0.145}]]], 
+          Dynamic[
+           If[$CellContext`oldp$$ == {0.02, 0.5, 0.98}, 
+            $CellContext`tr$$["ResetZoomText"], 
+            $CellContext`tr$$["UndoZoomText"]]]]}, 
+        Dynamic[
+         Line[{{
+            Scaled[{$CellContext`p1$$, 0.045}], 
+            Scaled[{$CellContext`p1$$, 0.145}]}, {
+            Scaled[{$CellContext`p2$$, 0.045}], 
+            Scaled[{$CellContext`p2$$, 0.145}]}}]], 
+        Tooltip[
+         Locator[
+          Dynamic[
+           
+           ImageScaled[{$CellContext`p1$$, $CellContext`ypos$}], \
+{($CellContext`oldp$$ = {$CellContext`p1$$, $CellContext`midp$$, \
+$CellContext`p2$$})& , ($CellContext`p1$$ = Clip[
+               Part[#, 1, 1], {0, 
+               1}]; $CellContext`midp$$ = ($CellContext`p1$$ + \
+$CellContext`p2$$)/2)& , None}], 
+          Graphics[{$CellContext`locColor$$, 
+            Polygon[{{0, 0}, {1, 0}, {0.5, 1}}]}, ImageSize -> 15]], 
+         $CellContext`tr$$["ZoomDragText"]], 
+        Tooltip[
+         Locator[
+          Dynamic[
+           
+           ImageScaled[{$CellContext`p2$$, $CellContext`ypos$}], \
+{($CellContext`oldp$$ = {$CellContext`p1$$, $CellContext`midp$$, \
+$CellContext`p2$$})& , ($CellContext`p2$$ = Clip[
+               Part[#, 1, 1], {0, 
+               1}]; $CellContext`midp$$ = ($CellContext`p1$$ + \
+$CellContext`p2$$)/2)& , None}], 
+          Graphics[{$CellContext`locColor$$, 
+            Polygon[{{0, 0}, {1, 0}, {0.5, 1}}]}, ImageSize -> 15]], 
+         $CellContext`tr$$["ZoomDragText"]], 
+        Tooltip[
+         Locator[
+          Dynamic[
+           
+           ImageScaled[{$CellContext`midp$$, $CellContext`ypos$}], \
+{($CellContext`oldp$$ = {$CellContext`p1$$, $CellContext`midp$$, \
+$CellContext`p2$$})& , 
+            With[{$CellContext`halflen$ = 
+              Abs[$CellContext`p2$$ - $CellContext`p1$$]/
+               2}, $CellContext`midp$$ = Clip[
+                
+                Part[#, 1, 1], {$CellContext`halflen$, 
+                 1 - $CellContext`halflen$}]; $CellContext`p1$$ = \
+$CellContext`midp$$ - $CellContext`halflen$; $CellContext`p2$$ = \
+$CellContext`midp$$ + $CellContext`halflen$]& , None}], 
+          Graphics[{$CellContext`locColor$$, 
+            Polygon[{{0, 0}, {2, 3}, {4, 0}, {2, -3}}]}, ImageSize -> 10]], 
+         $CellContext`tr$$["PanDragText"]]}], $CellContext`addMouseEvents$$[
+       Pattern[$CellContext`n$, 
+        Blank[Graphics]]] := 
+     EventHandler[$CellContext`n$, {
+       "MouseClicked" :> $CellContext`mouseClickEvent$$[], PassEventsDown -> 
+        Part[
+           MousePosition["GraphicsScaled", {0, 0}], 2] < 
+         0.045}], $CellContext`mouseClickEvent$$[] := Which[Abs[Part[
+           MousePosition["GraphicsScaled", {0, 0}], 2] - 0.095] < 0.05, 
+       With[{$CellContext`n$ = {$CellContext`p1$$, $CellContext`midp$$, \
+$CellContext`p2$$}}, {$CellContext`p1$$, $CellContext`midp$$, \
+$CellContext`p2$$} = If[
+           IntervalMemberQ[
+            Interval[{$CellContext`p1$$, $CellContext`p2$$}], 
+            Part[
+             MousePosition["GraphicsScaled", {0, 0}], 
+             1]], $CellContext`oldp$$, {0.02, 0.5, 
+           0.98}]; $CellContext`oldp$$ = $CellContext`n$], 
+       And[Abs[Part[
+            MousePosition["GraphicsScaled", {0, 0}], 2] - 0.1725] < 
+        0.0175, $CellContext`lenHistory$$ > 0, 
+        Length[$CellContext`intervalsTimeAxisBlocks$$] > 
+        1], $CellContext`oldp$$ = {$CellContext`p1$$, $CellContext`midp$$, \
+$CellContext`p2$$}; {{$CellContext`p1$$, $CellContext`p2$$}, \
+$CellContext`midp$$} = Rescale[
+          ({#, 
+           Mean[#]}& )[
+           First[
+            Select[{{
+               First[$CellContext`extremaHistory$$], 
+               Part[$CellContext`intervalsTimeAxisBlocks$$, 1, 1]}, 
+              Apply[Sequence, 
+               Union[
+                
+                Clip[$CellContext`intervalsTimeAxisBlocks$$, \
+$CellContext`extremaHistory$$]]], {
+               Part[$CellContext`intervalsTimeAxisBlocks$$, -2, -1], 
+               Last[$CellContext`extremaHistory$$]}}, IntervalMemberQ[
+              Interval[#], 
+              Part[
+               MousePosition["Graphics", {0, 0}], 
+               1]]& ]]], $CellContext`extremaHistory$$, {0, 1}], 
+       And[
+        Not[$CellContext`selectionOnly$$], 
+        Inequality[0.5, Less, 
+         Part[
+          MousePosition["Graphics", {0, 0}], 2], 
+         LessEqual, $CellContext`lenHistory$$ + 1], $CellContext`lenHistory$$ > 
+        0], 
+       With[{$CellContext`ypos$ = Clip[
+           Round[
+            Part[
+             MousePosition["Graphics", {0, 0}], 2]], {
+           1, $CellContext`lenHistory$$}]}, $CellContext`cellHighlight$$ = {
+           FaceForm[{$CellContext`highlightColor$$, 
+             Opacity[0.2]}], 
+           Rectangle[{
+             First[$CellContext`extremaHistory$$], $CellContext`ypos$ - 0.4}, {
+             Last[$CellContext`extremaHistory$$], $CellContext`ypos$ + 0.4}]}; 
+        SelectionMove[$CellContext`sourceNotebook$$, Before, Notebook, 
+          AutoScroll -> False]; 
+        SelectionMove[$CellContext`sourceNotebook$$, Next, 
+          Cell, $CellContext`lenHistory$$ + 1 - $CellContext`ypos$]; 
+        FrontEndExecute[
+          
+          FrontEndToken[$CellContext`sourceNotebook$$, 
+           "OpenSelectionParents"]]]], $CellContext`historyGraphics$$[] := \
+($CellContext`historyData$$ = {}; Which[$CellContext`rawHistory$$ === $Failed, 
+        $CellContext`historyGraphics$$[2], 
+        NumericQ[
+         Mean[
+          
+          Flatten[$CellContext`rawHistory$$]]], \
+$CellContext`updateHistoryParams$$[]; $CellContext`historyGraphics$$[
+         "graph"], $CellContext`rawHistory$$ === {}, 
+        $CellContext`historyGraphics$$[1], 
+        VectorQ[$CellContext`rawHistory$$, # === {}& ], 
+        $CellContext`historyGraphics$$[1], True, 
+        $CellContext`historyGraphics$$[
+        3]]), $CellContext`updateHistoryParams$$[] := \
+($CellContext`historyData$$ = 
+       Reverse[$CellContext`rawHistory$$] + 
+        3600 $TimeZone; $CellContext`lenHistory$$ = 
+       Length[$CellContext`historyData$$]; {$CellContext`minHistory$$, \
+$CellContext`maxHistory$$} = Through[
+          {Min, Max}[$CellContext`historyData$$]] + {-1, 1} If[Length[
+             Union[
+              Flatten[$CellContext`historyData$$]]] == 1, 1, 
+           0]; $CellContext`extremaHistory$$ = {$CellContext`minHistory$$ - 
+         0.05 ($CellContext`maxHistory$$ - $CellContext`minHistory$$), \
+$CellContext`maxHistory$$ + 
+         0.05 ($CellContext`maxHistory$$ - $CellContext`minHistory$$)}), \
+$CellContext`historyGraphics$$[
+       Pattern[$CellContext`n$, 
+        Blank[Integer]]] := Graphics[{{
+         Style[
+          Text[
+           $CellContext`tr$$[
+            ToString[
+             StringForm["DisplayWarning`1`Text", $CellContext`n$], 
+             OutputForm]], {0, -3}], 
+          CurrentValue[{"ControlsFontSize", Large}], Italic], 
+         Line[{
+           Scaled[{0, 0.19}], 
+           Scaled[{0, 1}], 
+           Scaled[{1, 1}], 
+           Scaled[{1, 0.19}]}], {
+          FaceForm[{$CellContext`tickColor$$, 
+            Opacity[0.2]}], 
+          EdgeForm[
+           Opacity[1]], 
+          Rectangle[
+           Scaled[{0, 0.155}], 
+           Scaled[{1, 0.155 + 0.035}]]}}, 
+        $CellContext`zoomControl$$[]}, AspectRatio -> 0.8, 
+       ImageSize -> {310, Automatic}, ContentSelectable -> False, 
+       PlotRange -> {{-1, 1}, {-9.3, 0.8}}, PlotLabel -> 
+       DateString[]], $CellContext`historyGraphics$$[
+      "graph"] := $CellContext`addMouseEvents$$[
+       Graphics[{
+         Dynamic[$CellContext`cellHighlight$$], 
+         $CellContext`cellContentTooltip$$[], {
+          $CellContext`createHistoryLines$$[], 
+          $CellContext`createHistoryPoints$$[]}, {
+          Line[{
+            Scaled[{0, 0.19}], 
+            Scaled[{0, 1}], 
+            Scaled[{1, 1}], 
+            Scaled[{1, 0.19}]}], 
+          Dynamic[
+           $CellContext`timeAxisBlocks$$[]]}, 
+         $CellContext`zoomControl$$[], 
+         $CellContext`overviewHistory$$[]}, AspectRatio -> 0.8, 
+        ImageSize -> {310, Automatic}, ContentSelectable -> False, PlotLabel -> 
+        Dynamic[
+          Apply[StringJoin[#, " - ", #2]& , 
+           Map[DateString, 
+            Rescale[
+             Sort[{$CellContext`p1$$, $CellContext`p2$$}], {0, 
+             1}, $CellContext`extremaHistory$$]]]], PlotRange -> {
+          Dynamic[
+           Rescale[
+            Sort[{$CellContext`p1$$, $CellContext`p2$$}], {0, 
+            1}, $CellContext`extremaHistory$$]], 
+          
+          If[$CellContext`lenHistory$$ < 10, {
+           Clip[$CellContext`lenHistory$$, {1, 8}] - 
+            10.3, $CellContext`lenHistory$$ + 
+            0.8}, {(-0.25) $CellContext`lenHistory$$, 0.87 + 
+            1.02 $CellContext`lenHistory$$}]}, GridLines -> {None, 
+          If[0 < $CellContext`lenHistory$$ < 51, 
+           Thread[{
+             Range[0.5, $CellContext`lenHistory$$ + 0.5], 
+             Opacity[0.2]}], None]}]], $CellContext`cellContentTooltip$$[] := {
+       Opacity[0], 
+       Dynamic[
+        Tooltip[
+         Point[
+          Apply[{#, 
+            Clip[
+             Round[#2], {1, $CellContext`lenHistory$$}]}& , 
+           MousePosition["Graphics", {0, 0}]]], 
+         RawBoxes[
+          Replace[
+           FrontEnd`ObjectContents[
+            
+            FrontEnd`IndexedCell[$CellContext`sourceNotebook$$, \
+$CellContext`lenHistory$$ + 1 - Clip[
+              Round[
+               Part[
+                MousePosition["Graphics", {0, 0}], 2]], {
+              1, $CellContext`lenHistory$$}], $CellContext`selectionOnly$$], 
+            True, 1000000], {Cell[
+              Blank[Integer], 
+              BlankNullSequence[]] :> $CellContext`rawtr$$[
+             "LargeCellText"]}]], TooltipDelay -> 
+         0.5]]}, $CellContext`createHistoryLines$$[] := Sequence[
+       AbsoluteThickness[
+       4/$CellContext`lenHistory$$^(1/4)], $CellContext`lineColor$$, 
+       Tooltip[
+        Dynamic[
+         Line[
+          Apply[Join, 
+           MapIndexed[If[
+             And[
+              ListQ[#], 
+              Apply[
+               Function[{$CellContext`n, $CellContext`t}, 
+                Nor[
+                 Apply[And, 
+                  Thread[# < $CellContext`n]], 
+                 Apply[And, 
+                  Thread[$CellContext`t < #]]]], 
+               Rescale[
+                Sort[{$CellContext`p1$$, $CellContext`p2$$}], {0, 
+                1}, $CellContext`extremaHistory$$]]], 
+             Thread[{#, 
+               Part[#2, 1]}], {}]& , $CellContext`historyData$$, {2}]]]], 
+        Dynamic[
+         Row[{
+           SetPrecision[
+            Abs[
+             Apply[Subtract, 
+              Apply[Nearest[
+                Flatten[
+                 Cases[
+                  Part[$CellContext`historyData$$, 
+                   Round[#2]], 
+                  Blank[List]]], #, 2]& , 
+               MousePosition["Graphics"]]]], 3], " seconds"}]], TooltipDelay -> 
+        0.1]], $CellContext`createHistoryPoints$$[] := Sequence[
+       AbsolutePointSize[
+       8/$CellContext`lenHistory$$^(1/4)], $CellContext`pointColor$$, 
+       Tooltip[
+        Dynamic[
+         Point[
+          MapIndexed[Apply[Sequence, 
+            Thread[{
+              Flatten[#], 
+              Part[#2, 1]}]]& , 
+           (DeleteCases[
+            Clip[$CellContext`historyData$$, #], 
+            Apply[Alternatives, #], {-1}]& )[
+            Rescale[
+             Sort[{$CellContext`p1$$, $CellContext`p2$$}], {
+             1./22, 21./
+              22}, {$CellContext`minHistory$$, \
+$CellContext`maxHistory$$}]]]]], 
+        Dynamic[
+         Apply[DateString, 
+          Nearest[
+           Flatten[$CellContext`historyData$$], 
+           First[
+            MousePosition["Graphics"]]]]], TooltipDelay -> 
+        0.1]], $CellContext`overviewHistory$$[] := 
+     With[{$CellContext`scaled$ = 
+        Rescale[$CellContext`historyData$$, {$CellContext`minHistory$$, \
+$CellContext`maxHistory$$}, {1./22, 21./22}]}, {Red, 
+        Point[
+         MapIndexed[Apply[Sequence, 
+           Map[Scaled, 
+            Thread[{
+              Flatten[#], (Part[#2, 1]/$CellContext`lenHistory$$) 0.08 + 
+              0.05}]]]& , $CellContext`scaled$]], 
+        Line[
+         Partition[
+          Flatten[
+           MapIndexed[If[
+             ListQ[#], 
+             Map[Scaled, 
+              
+              Thread[{#, (Part[#2, 1]/$CellContext`lenHistory$$) 0.08 + 
+                0.05}]], {}]& , $CellContext`scaled$, {2}]], 
+          2]]}], $CellContext`historyGraphics$$["copy"] := Graphics[{
+        ReplaceAll[{
+          $CellContext`createHistoryLines$$[], 
+          $CellContext`createHistoryPoints$$[]}, Pattern[$CellContext`n, 
+           Dynamic[
+            Alternatives[Point, Line][
+             BlankSequence[]]]] :> First[$CellContext`n]], 
+        $CellContext`timeAxisBlocks$$[0]}, AspectRatio -> 0.8, 
+       ContentSelectable -> False, 
+       Apply[PlotLabel -> StringJoin[#, " - ", #2]& , 
+        Map[DateString, 
+         Rescale[
+          Sort[{$CellContext`p1$$, $CellContext`p2$$}], {0, 
+          1}, $CellContext`extremaHistory$$]]], PlotRange -> {
+         Rescale[
+          Sort[{$CellContext`p1$$, $CellContext`p2$$}], {0, 
+          1}, $CellContext`extremaHistory$$], 
+         If[$CellContext`lenHistory$$ < 10, {
+          Clip[$CellContext`lenHistory$$, {1, 8}] - 
+           8, $CellContext`lenHistory$$ + 
+           0.8}, {(-0.055) $CellContext`lenHistory$$, 0.87 + 
+           1.02 $CellContext`lenHistory$$}]}, GridLines -> {None, 
+         If[0 < $CellContext`lenHistory$$ < 51, 
+          Thread[{
+            Range[0.5, $CellContext`lenHistory$$ + 0.5], 
+            Opacity[0.2]}], None]}, Frame -> True, FrameTicks -> None]}),
+  UnsavedVariables:>{$CellContext`rawHistory$$, $CellContext`historyData$$, \
+$CellContext`intervalsTimeAxisBlocks$$, $CellContext`sourceNotebook$$}]],
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue[
+  "PanelFontSize"],ExpressionUUID->"e8d1600b-3458-4a39-a8f2-bd35145509af"]
+},
+Evaluator->"System",
+WindowSize->Fit,
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+WindowElements->{},
+WindowTitle->Dynamic[
+  FEPrivate`FrontEndResource["HistoryOverviewDialog", "WindowTitleText"]],
+CellContext->"Palettes`NotebookHistory`",
+DynamicUpdating->Automatic,
+FontFamily:>CurrentValue["ControlsFontFamily"],
+FontSize:>CurrentValue[{"ControlsFontSize", Small}],
+Background->Automatic,
+ButtonBoxOptions->{BaseStyle->{
+ FontSize :> CurrentValue["PanelFontSize"], FontFamily :> 
+  CurrentValue["PanelFontFamily"]}},
+RadioButtonBoxOptions->{ImageMargins->{{0, 4}, {0, 0}},
+ImageSize->Tiny},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "SystemPalette.nb"]], 
+   Cell[
+    StyleData["Graphics"], ContextMenu -> None], 
+   Cell[
+    StyleData["Hyperlink"], ContextMenu -> None]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[611, 21, 41748, 953, 180, InheritFromParent,ExpressionUUID->"e8d1600b-3458-4a39-a8f2-bd35145509af",
+ PageBreakAbove->True,
+ PageBreakWithin->False]
+}
+]
+*)
+
+(* End of internal cache information *)
+

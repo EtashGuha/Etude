@@ -1,0 +1,26 @@
+BeginPackage["PlotLegends`"]
+
+If[!ValueQ[LegendBackground::usage], LegendBackground::usage = "LegendBackground is an option for Legend, which specifies the style of background to use with a legend. "];
+If[!ValueQ[LegendBorder::usage], LegendBorder::usage = "LegendBorder is an option for Legend, which specifies the style of the line surrounding key boxes and text in a legend."];
+If[!ValueQ[LegendBorderSpace::usage], LegendBorderSpace::usage = "LegendBorderSpace is an option for Legend which sets the space around the entire set of key boxes and text in the legend."];
+If[!ValueQ[LegendLabel::usage], LegendLabel::usage = "LegendLabel is an option for Legend, which specifies the text to be used as the label for the legend box. "];
+If[!ValueQ[LegendLabelSpace::usage], LegendLabelSpace::usage = "LegendLabelSpace is an option for Legend, which specifies the space for LegendLabel. "];
+If[!ValueQ[Legend::usage], Legend::usage = "\!\(\*RowBox[{\"Legend\", \"[\", RowBox[{RowBox[{\"{\", RowBox[{RowBox[{\"{\", RowBox[{SubscriptBox[StyleBox[\"box\", \"TI\"], StyleBox[\"1\", \"TR\"]], \",\", SubscriptBox[StyleBox[\"text\", \"TI\"], StyleBox[\"1\", \"TR\"]]}], \"}\"}], \",\", StyleBox[\"\[Ellipsis]\", \"TR\"]}], \"}\"}], \",\", StyleBox[\"options\", \"TI\"]}], \"]\"}]\) generates a legend with the specified boxes and text.\n\!\(\*RowBox[{\"Legend\", \"[\", RowBox[{StyleBox[\"func\", \"TI\"], \",\", StyleBox[\"num\", \"TI\"], \",\", StyleBox[\"options\", \"TI\"]}], \"]\"}]\) generates a legend by applying \!\(\*StyleBox[\"func\", \"TI\"]\) to numbers between 0 and 1, incremented by the number of boxes \!\(\*RowBox[{StyleBox[\"num\", \"TI\"], \"-\", \"1\"}]\).\n\!\(\*RowBox[{\"Legend\", \"[\", RowBox[{StyleBox[\"func\", \"TI\"], \",\", StyleBox[\"num\", \"TI\"], \",\", StyleBox[\"mintext\", \"TI\"], \",\", StyleBox[\"maxtext\", \"TI\"], \",\", StyleBox[\"options\", \"TI\"]}], \"]\"}]\) labels the first and last boxes with \!\(\*StyleBox[\"mintext\", \"TI\"]\) and \!\(\*StyleBox[\"maxtext\", \"TI\"]\) respectively."];
+If[!ValueQ[LegendOrientation::usage], LegendOrientation::usage = "LegendOrientation is an option for Legend, which specifies the direction in which key boxes are laid out. "];
+If[!ValueQ[LegendPosition::usage], LegendPosition::usage = "LegendPosition is an option for Legend, which specifies the location of the lower\[Dash]left corner of a legend box. "];
+If[!ValueQ[LegendShadow::usage], LegendShadow::usage = "LegendShadow is an option for Legend which specifies the shadowing drawn around the legend."];
+If[!ValueQ[LegendSize::usage], LegendSize::usage = "LegendSize is an option for Legend which specifies the size of a legend box."];
+If[!ValueQ[LegendSpacing::usage], LegendSpacing::usage = "LegendSpacing is an option for Legend which specifies the amount of space around each key box on a scale where the box is 1."];
+If[!ValueQ[LegendTextDirection::usage], LegendTextDirection::usage = "LegendTextDirection is an option for Legend, which specifies the direction of text next to the key box. "];
+If[!ValueQ[LegendTextOffset::usage], LegendTextOffset::usage = "LegendTextOffset is an option for Legend, which specifies the offset of text next to the key box."];
+If[!ValueQ[LegendTextSpace::usage], LegendTextSpace::usage = "LegendTextSpace is an option for Legend, which specifies the space in the legend box for text."];
+If[!ValueQ[PlotLegend::usage], PlotLegend::usage = "PlotLegend is an option for Plot, which assigns text to lines in a 2D plot to create a legend for that plot. "];
+If[!ValueQ[ShadowBackground::usage], ShadowBackground::usage = "ShadowBackground is an option for ShadowBox or Legend, which specifies the style for a drop shadow. "];
+If[!ValueQ[ShadowBorder::usage], ShadowBorder::usage = "ShadowBorder is an option for ShadowBox, which specifies the style of the border around the rectangle above a shadow. "];
+If[!ValueQ[ShadowBox::usage], ShadowBox::usage = "\!\(\*RowBox[{ShadowBox, \"[\", RowBox[{RowBox[{\"{\", RowBox[{StyleBox[\"x\", \"TI\"], \",\", StyleBox[\"y\", \"TI\"]}], \"}\"}], \",\", RowBox[{\"{\", RowBox[{StyleBox[\"xlength\", \"TI\"], \",\", StyleBox[\"ylength\", \"TI\"]}], \"}\"}], \",\", StyleBox[\"options\", \"TI\"]}], \"]\"}]\) generates a box with a drop shadow."];
+If[!ValueQ[ShadowForeground::usage], ShadowForeground::usage = "ShadowForeground is an option for ShadowBox, which specifies a style for the foreground of a shadow box. "];
+If[!ValueQ[ShadowOffset::usage], ShadowOffset::usage = "ShadowOffset is an option for ShadowBox, which sets the offset of a shadow from the rest of the box. "];
+If[!ValueQ[ShowLegend::usage], ShowLegend::usage = "\!\(\*RowBox[{\"ShowLegend\", \"[\", RowBox[{StyleBox[\"graphics\", \"TI\"], \",\", SubscriptBox[StyleBox[\"legend\", \"TI\"], StyleBox[\"1\", \"TR\"]], \",\", SubscriptBox[StyleBox[\"legend\", \"TI\"], StyleBox[\"2\", \"TR\"]], \",\", StyleBox[\"\[Ellipsis]\", \"TR\"]}], \"]\"}]\) places the \!\(\*RowBox[{SubscriptBox[StyleBox[\"legend\", \"TI\"], StyleBox[\"1\", \"TR\"]], \",\", SubscriptBox[StyleBox[\"legend\", \"TI\"], StyleBox[\"2\", \"TR\"]], \",\", StyleBox[\"\[Ellipsis]\", \"TR\"]}]\), in the given graphic \!\(\*StyleBox[\"graphics\", \"TI\"]\)."];
+
+
+EndPackage[]

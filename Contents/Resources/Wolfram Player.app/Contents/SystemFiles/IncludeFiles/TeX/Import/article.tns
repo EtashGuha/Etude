@@ -1,0 +1,61 @@
+\message{FILE: This is article.txs}
+
+\makeatletter
+
+%% Article Class definitions go here
+
+\special{TnbSetOption:^Notebook:StyleDefinitions->"Article/LaTeX-Article.nb"}
+
+\input frontmatter.tnc
+\input sectioning.tnc
+\input stdenvironments.tnc
+\input backmatter.tnc
+\input tabular.tnc
+
+\makeatletter
+
+\let\abstract\@abstract
+\let\endabstract\end@abstract
+
+\newcounter{part}
+\newcounter{section}
+\newcounter{subsection}[section]
+\newcounter{subsubsection}[subsection]
+\newcounter{paragraph}[subsubsection]
+\newcounter{subparagraph}[paragraph]
+
+\renewcommand{\thepart}{\Roman{part}}
+\renewcommand{\thesection}{\thepart.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\renewcommand{\theparagraph}{\thesubsubsection.\arabic{paragraph}}
+\renewcommand{\thesubparagraph}{\theparagraph.\arabic{subparagraph}}
+
+\newcommand{\partname}{Part}
+
+\def\part{\@ifstar{\@part}{\@part}}
+\def\section{\@ifstar{\@section}{\@section}}
+\def\subsection{\@ifstar{\@subsection}{\@subsection}}
+\def\subsubsection{\@ifstar{\@subsubsection}{\@subsubsection}}
+\def\paragraph{\@ifstar{\@paragraph}{\@paragraph}}
+\def\subparagraph{\@ifstar{\@subparagraph}{\@subparagraph}}
+
+\let\thebibliography\@thearticlebibliography
+\let\endthebibliography\end@thebibliography
+
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% To Do:
+%%
+%%       * Fix the index environment.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Notes:
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

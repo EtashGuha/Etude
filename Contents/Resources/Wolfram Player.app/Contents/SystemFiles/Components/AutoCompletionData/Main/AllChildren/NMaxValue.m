@@ -1,0 +1,12 @@
+{"Sin", "Sqrt", "Cos", "E", "Pi", "Erf", "Exp", "Abs", "Log", 
+ "BetaRegularized", "D", "Integrate", "Tan", "I", "Range", "Infinity", "Sum", 
+ "Quantity", "PolyGamma", "Gamma", "Rational", "PolyLog", "LessEqual", 
+ "None", "Log10", "Less", "Degree", "Binomial", "Piecewise", "Cot", 
+ "Automatic", "ArcTan", "Sinh", "Length", "Divisors", "Plus", "Norm", 
+ "Limit", "Sec", "Round", "Max", "InverseLaplaceTransform", "Greater", "Csc", 
+ "BitShiftLeft", "ArcSinh", "Subscript", "Re", "Derivative", "Union", 
+ "SinIntegral", "Ratios", "NIntegrate", "Log2", "HeavisideTheta", "Floor", 
+ "EulerPhi", "DateDifference", "Cosh", "BitAnd", "Beta", "BesselJ", 
+ "ArcTanh", "UnitStep", "Tanh", "SquareWave", "Sech", "PrimePi", "NMinValue", 
+ "GreaterEqual", "Expand", "Erfc", "BitShiftRight", "BesselJZero", 
+ "Assumptions"}

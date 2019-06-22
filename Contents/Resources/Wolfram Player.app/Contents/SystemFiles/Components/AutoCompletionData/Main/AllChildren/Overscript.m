@@ -1,0 +1,1 @@
+{"Style", "Degree", "SequenceForm", "First"}

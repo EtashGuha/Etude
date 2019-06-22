@@ -1,0 +1,53 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IMathLink.CreateMark Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IMathLink.CreateMark.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IMathLink.CreateMark Method </h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Creates a mark at the current point in the incoming MathLink data stream. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Function CreateMark() As <a href="Wolfram.NETLink.ILinkMark.html">ILinkMark</a></div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />
+        <a href="Wolfram.NETLink.ILinkMark.html">ILinkMark</a> CreateMark();</div>
+      <h4 class="dtH4">Remarks</h4> Marks can returned to later, to re-read data. A common use is to create a mark, call some method for reading data, and if a MathLinkException is thrown, seek back to the mark and try a different method of reading the data. <p> If you create a mark, be sure to call DestroyMark to destroy it, or you will create a memory leak. </p>
+             <example> One common reason to use a mark is if you want to examine an incoming expression and branch to different code depending on some property of the expression. You want the code that actually handles the expression to see the entire expression, but you will need to read at least a little bit of the expression to decide how it must be handled (perhaps just calling GetFunction to see the head). Here is a code fragment demonstrating this technique: <pre class="code">string head = null;
+ILinkMark mark = ml.CreateMark();
+try {
+    int argc;
+    head = ml.GetFunction(out argc);
+    ml.SeekMark(mark);
+} finally {
+    ml.DestroyMark(mark);
+}
+if (head == "foo")
+    readAndHandleFoo(ml);
+else if (head == "bar")
+    readAndHandleBar(ml);
+</pre> Note that we use try/finally to ensure that the mark is destroyed even if an exception is thrown. </example>
+             <p> Some of the usefulness of marks in the C-language MathLink API is obviated by .NET/Link's Expr class. </p>
+             <h4 class="dtH4">Exceptions</h4><div class="tablediv"><table class="dtTABLE" cellspacing="0"><tr valign="top"><th width="50%">Exception Type</th><th width="50%">Condition</th></tr><tr valign="top"><td width="50%"><a href="Wolfram.NETLink.MathLinkException.html">MathLinkException</a></td><td width="50%">On any MathLink error.</td></tr></table></div><h4 class="dtH4">See Also</h4><p><a href="Wolfram.NETLink.IMathLink.html">IMathLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.IMathLink.SeekMark.html">SeekMark</a> | <a href="Wolfram.NETLink.IMathLink.DestroyMark.html">DestroyMark</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;"><param name="Keyword" value="CreateMark method"></param><param name="Keyword" value="CreateMark method, IMathLink interface"></param><param name="Keyword" value="IMathLink.CreateMark method"></param></object><hr /><div id="footer"><p><a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a></p><p></p></div></div>
+  </body>
+</html>

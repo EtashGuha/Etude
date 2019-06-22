@@ -1,0 +1,52 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>EvaluateToInputForm Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IKernelLink.EvaluateToInputForm_overloads.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IKernelLink.EvaluateToInputForm Method</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Sends code for evaluation and returns the result as a string formatted in <i>Mathematica</i> InputForm. </p>
+      <h4 class="dtH4">Overload List</h4>
+      <p> Sends the code to evaluate as a string. </p>
+      <blockquote class="dtBlock">
+        <a href="Wolfram.NETLink.IKernelLink.EvaluateToInputForm_overload_1.html">string EvaluateToInputForm(string,int);</a>
+      </blockquote>
+      <p> Sends the code to evaluate as an <a href="Wolfram.NETLink.Expr.html">Expr</a>. </p>
+      <blockquote class="dtBlock">
+        <a href="Wolfram.NETLink.IKernelLink.EvaluateToInputForm_overload_2.html">string EvaluateToInputForm(Expr,int);</a>
+      </blockquote>
+      <h4 class="dtH4">Remarks</h4>
+      <p> This method sends the evaluation and waits for the result to come back as a string. It discards any packets other than the result (for example, <i>Mathematica</i> messages or Print output). <p> The string will have newlines in the Windows CR/LF format. </p> It does not throw a MathLinkException. Instead it returns null if there was an error. You can use the <a href="Wolfram.NETLink.IKernelLink.LastError.html">LastError</a> property to see the MathLinkException that was generated. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IKernelLink.html">IKernelLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.IKernelLink.LastError.html">LastError</a></p>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

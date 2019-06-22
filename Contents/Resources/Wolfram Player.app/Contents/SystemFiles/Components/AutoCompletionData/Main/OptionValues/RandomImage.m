@@ -1,0 +1,1 @@
+{ColorSpace -> {"\"RGB\"", "\"CMYK\"", "\"HSB\""}}

@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "IdP-nv-PsE"; */
+"IdP-nv-PsE.title" = "テーブルビューセル";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "fgG-WW-KGE"; */
+"fgG-WW-KGE.title" = "キャンセル";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "pXN-1p-Iqk"; */
+"pXN-1p-Iqk.title" = "テキストセル";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "xca-9L-hKb"; */
+"xca-9L-hKb.title" = "OK";

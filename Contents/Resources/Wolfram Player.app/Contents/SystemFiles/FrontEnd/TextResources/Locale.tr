@@ -1,0 +1,33 @@
+@@resource DateFormat
+{ Month, "/", Day, "/", ShortYear }
+@|
+@|
+@@resource LongDateFormat
+{DayName, ", ", MonthName, " ", Day, ", ", Year }
+@|
+@|
+@@resource ExpirationDateFormat
+{ MonthName, " ", Day, ", ", Year }
+@|
+@|
+@@resource messageTimeStampFormat
+{Month, "/", Day, "/", ShortYear, " ", Hour, ":", Minute, ":", Second, " "}
+@|
+@|
+@@resource MonthNames
+{ "January", "February", "March", "April", "May", 
+	"June", "July", "August", "September", "October", "November", "December" }
+@|
+@|
+@@resource ShortMonthNames
+{ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
+@|
+@|
+@@resource DayNames
+{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
+@|
+@|
+@@resource ShortDayNames
+{"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}
+@|
+@|

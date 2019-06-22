@@ -1,0 +1,49 @@
+%%
+%% File: bm.tnb
+%% Author: David Rogers
+%% Purpose: Define the user macros from the bm package of LaTeX for
+%%          TeXImport.
+%%
+%% Macros Defined: \bm
+%%                 \bmdefine
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Definintion for \bm
+%%
+%% Description: In the LaTeX package bm.sty, the purpose of \bm is to
+%% set the contents of its argument in an appropriate bold math font
+%% face. If it can't find the appropriate glyph in the loaded fonts it
+%% will approximate it by typesetting the normal glyph several times
+%% slightly offsetin a sort of poor mans bold.
+%%
+%% For the TeXImport version of this macro I will have \bm set its
+%% content in a Stylebox which sets its content appropriately.
+%%
+
+\newcommand{\bm}[1]{\mathbf{#1}}
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Definition for \bmdefine
+%%
+
+%% Description: In the LaTeX package bm.sty, the purpose of \bmdefine
+%% is to define a macro name which sets a symbol or expression with
+%% \bm. For example, \bmdefine\bpi{\pi} would define a macro, \bpi, to
+%% set the equivalent of \bm{\pi} wherever it is called. In LaTeX this
+%% helps save on resources as each time \bm is called another hidden
+%% symbol is created using more resources while \bmdefine creates this
+%% hidden symbol once and associates it with the macroname saving on
+%% resources.
+%%
+%% For the TeXImport version we do not need to be concerned with the
+%% resource problem so I will simply have it define the macro name as
+%% \bm{arg1}.
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,57 @@
+@|
+@|
+@@resource PredictiveInterfaceStrings
+{
+
+"predictionsFirstTime" -> "\:8be5\:5efa\:8bae\:680f\:662f Wolfram \:9884\:6d4b\:754c\:9762\:7684\:4e00\:90e8\:5206\:3002\n\:70b9\:51fb\:6309\:94ae\:6267\:884c\:5efa\:8bae\:7684\:64cd\:4f5c\:3002\!\(\*ButtonBox[PaneSelectorBox[{False -> StyleBox[\"\\\"\:4e86\:89e3\:66f4\:591a\[RightGuillemet]\\\"\", Rule[FontColor, RGBColor[0.176471`, 0.290196`, 0.380392`]], Rule[StripOnInput, False]], Rule[True, StyleBox[\"\\\"\:4e86\:89e3\:66f4\:591a\[RightGuillemet]\\\"\", Rule[FontColor, RGBColor[0.956863`, 0.372549`, 0.0666667`]], Rule[StripOnInput, False]]]}, Dynamic[CurrentValue[\"MouseOver\"]], Rule[ImageSize, All], Rule[ImageSize, Automatic], Rule[FrameMargins, 0]], Rule[BaseStyle, \"Link\"], Rule[ButtonData, \"paclet:guide/WolframPredictiveInterface\"]]\)",
+"predictionsNoPredictions" -> "\:6ca1\:6709\:9884\:6d4b",
+"predictionsTimedOut" -> "\:9884\:6d4b\:8d85\:65f6",
+"predictionsMore" -> "\:66f4\:591a\[Ellipsis]",
+"predictionsWolframAlpha" -> "\:53d1\:9001\:81f3 Wolfram|Alpha",
+"predictionsSendFeedback" -> "\:5efa\:8bae\:680f\:610f\:89c1\:53cd\:9988",
+"predictionsFeedbackSubject" -> "Wolfram \:9884\:6d4b\:754c\:9762\:ff1a\:53cd\:9988",
+"predictionsFeedbackHeader" -> "\:5728\:5efa\:8bae\:680f\:9884\:6d4b\:754c\:9762\:4e2d\:63d0\:4f9b\:610f\:89c1\:53cd\:9988\:3002\n\n\:5bf9\:4e8e\:4e00\:822c\:7684\
+\:4ea7\:54c1\:652f\:6301\:ff0c\:8bf7\:901a\:8fc7 http://www.wolfram.com/support/contact/\:8054\:7cfb\:6280\:672f\:652f\:6301\:ff08\:8bf7\:5305\:542b\:60a8\:7684\:6fc0\:6d3b\:5bc6\:94a5\:ff09\:3002",
+"predictionsFeedbackInput" -> "\:8f93\:5165\:ff1a",
+"predictionsFeedbackOutput" -> "\:8f93\:51fa\:ff1a",
+"predictionsFeedbackPredictions" -> "\:9884\:6d4b\:ff1a",
+"predictionsFeedbackBody" -> "** \:5efa\:8bae\:5176\:4ed6\:9884\:6d4b\:ff1a\n\n\n\n** \:5efa\:8bae\:53bb\:9664\:9884\:6d4b\:ff1a\n\n\n\n** \:4e00\:822c\:5efa\:8bae/\:4fe1\:606f\:ff1a\n\n\n\n------\n\n\:8c22\:8c22\:60a8\:7684\:53cd\:9988\:610f\:89c1\:ff01",
+"webpredictionsFeedbackBody" -> "** \:5efa\:8bae\:5176\:4ed6\:9884\:6d4b\:ff1a\n\n\n\n** \:5efa\:8bae\:53bb\:9664\:9884\:6d4b\:ff1a\n\n\n\n** \:4e00\:822c\:5efa\:8bae/\:4fe1\:606f\:ff1a\n\n\n\n------\n\n",
+"predictionsMinimize" -> "\:6700\:5c0f\:5316\:5efa\:8bae\:680f",
+"predictionsUnminimize" -> "\:663e\:793a\:5efa\:8bae\:680f",
+
+"predictionsAssuming" -> "\:5047\:8bbe",
+"predictionsAssumingWrapper" -> (Row[{#1, " ", #2}]&),
+"predictionsUseAs" -> "\:6216\:7528\:4f5c",
+"predictionsOr" -> "\:6216",
+"predictionsInstead" -> " ",
+
+"predictionsRollupCode" -> "\:7ed1\:5b9a\:8f93\:5165",
+"predictionsRollupCodeImmediately" -> "\:7ed1\:5b9a\:8f93\:5165",
+"predictionsRollupCodeDelayed" -> "\:7ed1\:5b9a\:524d\:68c0\:67e5\:8f93\:5165",
+"predictionsRollupCodePreview" -> "\:9884\:89c8\:5e76\:7ed1\:5b9a\[Ellipsis]",
+"predictionsRollupCombineThese" -> "\:5408\:5e76\:8fd9\:4e9b\:8f93\:5165\:5355\:5143\:ff1a",
+"predictionsRollupToMakeThis" -> "\:521b\:5efa\:4e00\:4e2a\:65b0\:7684\:8f93\:5165\:66ff\:4ee3\:5355\:5143\:ff1a",
+"predictionsRollupButton" -> "\:7ed1\:5b9a",
+"predictionsRollupCancel" -> "\:53d6\:6d88",
+
+"predictionsPruneCode" -> "\:4fee\:526a\:8f93\:5165",
+"predictionsPruneCodeImmediately" -> "\:4fee\:526a\:8f93\:5165",
+"predictionsPruneCodeDelayed" -> "\:4fee\:526a\:524d\:68c0\:67e5\:8f93\:5165",
+"predictionsPruneCodePreview" -> "\:9884\:89c8\:5e76\:4fee\:526a\[Ellipsis]",
+"predictionsPruneRemoveThese" -> "\:5220\:9664\:6307\:5b9a\:7684\:8f93\:5165\:ff1a",
+"predictionsPruneButton" -> "\:4fee\:526a",
+"predictionsPruneCancel" -> "\:53d6\:6d88",
+
+"predictionsEditArgumentsCancel" -> "\:53d6\:6d88",
+"predictionsEditArgumentsDone" -> "\:5b8c\:6210",
+"predictionsCancel" -> "\:53d6\:6d88",
+"predictionsOK" -> "\:786e\:5b9a"
+
+}
+@|
+@|
+@@resource PredictiveInterfaceLocalizableBitmaps
+{
+}
+@|

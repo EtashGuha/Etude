@@ -1,0 +1,143 @@
+@@resource MenuSetup
+Menu["Mathematica", 
+{
+	Menu["\.14", 
+	{
+		MenuItem["Wolfram Player\:306b\:3064\:3044\:3066...", "AboutBoxDialog"],
+		Delimiter
+	}],
+	Menu["\:30d5\:30a1\:30a4\:30eb", 
+	{
+		MenuItem["\:958b\:304f...", "MenuListOpenItems", MenuAnchor->True],
+		Menu["\:6700\:8fd1\:958b\:3044\:305f\:30d5\:30a1\:30a4\:30eb",
+		{
+			MenuItem["First Favorite File", "MenuListNotebooksMenu", MenuAnchor->True]
+		}],
+		AlternateItems[{
+			MenuItem["\:9589\:3058\:308b", "Close", MenuKey["w", Modifiers->{"Command"}]],
+			MenuItem["\:3059\:3079\:3066\:9589\:3058\:308b", "CloseAll", MenuKey["w", Modifiers->{"Command","Option"}]]
+		}],
+		Delimiter,
+		MenuItem["\:4fdd\:5b58", "MenuListSaveItems", MenuAnchor->True, RemoveMask->{"Player"}],
+		MenuItem["\:9078\:629e\:7bc4\:56f2\:306e\:5f62\:5f0f\:4fdd\:5b58...", "SelectionSaveSpecial", RemoveMask->{"Player"}],
+		MenuItem["\:4fdd\:5b58\:3057\:3066\:3042\:308b\:72b6\:614b\:306b\:623b\:3059...", "Revert"],
+		Delimiter,
+		Menu["\:5370\:5237\:8a2d\:5b9a",
+		{
+			MenuItem["\:7528\:7d19\:8a2d\:5b9a...", "SystemPrintOptionsDialog"],
+			MenuItem["\:5370\:5237\:30aa\:30d7\:30b7\:30e7\:30f3...", "PrintOptionsDialog"]
+		}],
+		MenuItem["\:5370\:5237...", "PrintDialog", MenuKey["p", Modifiers->{"Command"}]],
+		MenuItem["\:9078\:629e\:7bc4\:56f2\:306e\:5370\:5237...", "PrintSelectionDialog", MenuKey["P", Modifiers->{"Command", "Shift"}]]
+	}],
+	Menu["\:7de8\:96c6", 
+	{
+		MenuItem["\:53d6\:6d88\:3057", "Undo", MenuKey["z", Modifiers->{"Command"}]],
+		MenuItem["\:3084\:308a\:76f4\:3057", "Redo", MenuKey["z", Modifiers->{"Command", "Shift"}]],
+		Delimiter,
+		MenuItem["\:30ab\:30c3\:30c8", "Cut", MenuKey["x", Modifiers->{"Command"}]],
+		MenuItem["\:30b3\:30d4\:30fc", "Copy", MenuKey["c", Modifiers->{"Command"}]],
+		Menu["\:5f62\:5f0f\:3092\:9078\:629e\:3057\:3066\:30b3\:30d4\:30fc",
+		{
+			MenuItem["\:30c6\:30ad\:30b9\:30c8", FrontEnd`CopySpecial["PlainText"], MenuKey["C", Modifiers->{"Command", "Shift"}]],
+			MenuItem["\:5165\:529b\:30c6\:30ad\:30b9\:30c8", FrontEnd`CopySpecial["InputText"]],
+			MenuItem["LaTeX",
+				KernelExecute[ToExpression["FrontEnd`CopyAsTeX[]"]],
+				MenuEvaluator -> "System"],
+			MenuItem["MathML", 
+				KernelExecute[ToExpression["FrontEnd`CopyAsMathML[]"]],
+				MenuEvaluator -> "System"],
+			Delimiter,
+			MenuItem["\:30bb\:30eb\:5f0f", FrontEnd`CopySpecial["CellExpression"]],
+			MenuItem["\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:5f0f", FrontEnd`CopySpecial["NotebookExpression"]],
+			Delimiter,
+			MenuItem["PDF", FrontEnd`CopySpecial["PDF"]],
+			MenuItem["\:30d3\:30c3\:30c8\:30de\:30c3\:30d7", FrontEnd`CopySpecial["PNG"]]
+		}],
+		MenuItem["\:30da\:30fc\:30b9\:30c8", FrontEnd`Paste[Automatic], MenuKey["v", Modifiers->{"Command"}]],
+		Delimiter,
+		MenuItem["\:9078\:629e\:7bc4\:56f2\:306e\:62e1\:5f35", "ExpandSelection", MenuKey[".", Modifiers->{"Control"}]],
+		MenuItem["\:3059\:3079\:3066\:3092\:9078\:629e", "SelectAll", MenuKey["a", Modifiers->{"Command"}]],
+		Delimiter,
+		Menu["\:691c\:7d22",
+		{
+			MenuItem["\:691c\:7d22...", KernelExecute[If[CurrentValue["PluginEnabled"], FrontEndTokenExecute[InputNotebook[], "FindExpression"], FrontEnd`DialogOpen["Find.nb", True]]], MenuEvaluator -> "System", MenuKey["f", Modifiers->{"Command"}]],
+			MenuItem["\:6b21\:3092\:691c\:7d22", "FindNextMatch", MenuKey["g", Modifiers->{"Command"}]],
+			MenuItem["\:524d\:3092\:691c\:7d22", "FindPreviousMatch", MenuKey["G", Modifiers->{"Command", "Shift"}]],
+			MenuItem["\:9078\:629e\:9805\:76ee\:3092\:691c\:7d22", "SelectionSetFind", MenuKey["e", Modifiers->{"Command"}]]
+		}],
+		Delimiter,
+		MenuItem["\:30b0\:30eb\:30fc\:30d7\:306e\:958b\:3051\:9589\:3081", "OpenCloseGroup", MenuKey["'", Modifiers->{"Command"}]]
+	}],
+	Menu["\:8a55\:4fa1",
+	{
+		MenuItem["\:30bb\:30eb\:3092\:8a55\:4fa1", "HandleShiftReturn", MenuKey["Return", Modifiers->{"Shift"}]],
+		MenuItem["\:73fe\:5728\:4f4d\:7f6e\:3067\:8a55\:4fa1", FrontEnd`Evaluate[All], MenuKey["Return", Modifiers->{"Command"}]],
+		MenuItem["\:30b5\:30d6\:30bb\:30c3\:30b7\:30e7\:30f3\:3067\:8a55\:4fa1", "SubsessionEvaluateCells", MenuKey["Return", Modifiers->{"Shift", "Option"}]],
+		Delimiter,
+		MenuItem["\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:8a55\:4fa1", "EvaluateNotebook"],
+		MenuItem["\:521d\:671f\:5316\:30bb\:30eb\:3092\:8a55\:4fa1", "EvaluateInitialization"],
+		Delimiter,
+		MenuItem["\:52d5\:7684\:66f4\:65b0\:306e\:5b9f\:884c", "ToggleDynamicUpdating"],
+		Delimiter,
+		MenuItem["\:8a55\:4fa1\:3092\:653e\:68c4", FrontEnd`EvaluatorAbort[Automatic], MenuKey[".", Modifiers->{"Command"}]],
+		MenuItem["\:8a55\:4fa1\:30ad\:30e5\:30fc\:304b\:3089\:9664\:53bb", "RemoveFromEvaluationQueue", MenuKey[".", Modifiers->{"Command", "Shift"}]],
+		MenuItem["\:73fe\:5728\:8a55\:4fa1\:4e2d\:306e\:30bb\:30eb\:306e\:691c\:7d22", "FindEvaluatingCell"],
+		MenuItem["\:30ab\:30fc\:30cd\:30eb\:3092\:7d42\:4e86", FrontEndExecute[FrontEndToken["EvaluatorQuit"]]]
+	}, RemoveMask->{"Player"}],
+	Menu["\:30a6\:30a3\:30f3\:30c9\:30a6", 
+	{
+		MenuItem["\:30a6\:30a3\:30f3\:30c9\:30a6\:3092\:3057\:307e\:3046", "WindowMiniaturize", MenuKey["m", Modifiers->{"Command"}]],
+		MenuItem["\:30a6\:30a3\:30f3\:30c9\:30a6\:3092\:30ba\:30fc\:30e0", "ZoomWindow", MenuKey["/", Modifiers->{"Command", "Option"}]],
+		Delimiter,
+		Menu["\:30ba\:30fc\:30e0", 
+		{
+			MenuItem["50%", Magnification->0.50, Scope->NotebookDefault],
+			MenuItem["75%", Magnification->0.75, Scope->NotebookDefault],
+			MenuItem["100%", Magnification->1.00, Scope->NotebookDefault],
+			MenuItem["125%", Magnification->1.25, Scope->NotebookDefault],
+			MenuItem["150%", Magnification->1.50, Scope->NotebookDefault],
+			MenuItem["200%", Magnification->2.00, Scope->NotebookDefault],
+			MenuItem["300%", Magnification->3.00, Scope->NotebookDefault]
+		}],
+		Delimiter,
+		MenuItem["Wolfram Cloud \:30a2\:30af\:30c6\:30a3\:30d3\:30c6\:30a3\:30e2\:30cb\:30bf\:30fc", "WolframCloudActivityMonitor"],
+		Delimiter,
+		MenuItem["\:91cd\:306d\:3066\:8868\:793a", "StackWindows"],
+		MenuItem["\:4e0a\:4e0b\:306b\:4e26\:3079\:308b", "TileWindowsWide"],
+		MenuItem["\:5de6\:53f3\:306b\:4e26\:3079\:308b", "TileWindowsTall"],
+		MenuItem["\:5168\:753b\:9762\:8868\:793a",
+                 FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]],
+                 MenuKey["f", Modifiers -> {"Command", "Control"}]],
+		Delimiter,
+		MenuItem["\:3059\:3079\:3066\:3092\:624b\:524d\:306b\:79fb\:52d5", "AllWindowsFront"],
+		Delimiter,
+		MenuItem["Start Windows Listing", "MenuListWindows", MenuAnchor->True]
+	}],
+	HelpMenu["\:30d8\:30eb\:30d7", 
+	{
+		MenuItem["\:30a6\:30a7\:30eb\:30ab\:30e0\:30b9\:30af\:30ea\:30fc\:30f3", "WelcomeDialog"],
+		MenuItem["Wolfram Player Web\:30b5\:30a4\:30c8", FrontEndExecute[{
+			FrontEnd`NotebookLocate[{URL["http://www.wolfram.com/cdf-player"], None}]}]],
+		MenuItem["\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3\:30ad\:30fc\:3092\:5165\:529b...", KernelExecute[SetOptions[
+		    FrontEnd`DialogOpen["ActivationDialog.nb"], TaggingRules -> {
+		      "ActivationState" -> "Online", "ErrorMessage" -> None, "Unsecured" -> False, "Reactivate" -> True}]], MenuEvaluator -> "System"],
+		Delimiter,
+		MenuItem["Wolfram \:30a2\:30ab\:30a6\:30f3\:30c8\:8a2d\:5b9a...", "WolframCloudAccountSettings"],
+		MenuItem["Wolfram Cloud \:30a2\:30ab\:30a6\:30f3\:30c8\:7ba1\:7406", "MenuListWolframCloudAccountMenu", MenuAnchor->True],
+		Delimiter,
+		MenuItem["Demonstrations Project", FrontEndExecute[{
+			FrontEnd`NotebookLocate[{URL["http://demonstrations.wolfram.com"], None}]}]],
+		MenuItem["Wolfram|Alpha", FrontEndExecute[{
+			FrontEnd`NotebookLocate[{URL["http://www.wolframalpha.com"], None}]}]],
+		MenuItem["Wolfram Mathematica", FrontEndExecute[{
+			FrontEnd`NotebookLocate[{URL["http://www.wolfram.com/mathematica"], None}]}]],
+		Delimiter,
+		MenuItem["\:30b7\:30b9\:30c6\:30e0\:60c5\:5831", FrontEndExecute[FrontEnd`NotebookOpen[FrontEnd`FindFileOnPath["SystemInformation.nbp", "PrivatePathsTextResources"]]]],
+		MenuItem["\:30d5\:30a3\:30fc\:30c9\:30d0\:30c3\:30af", FrontEndExecute[{
+			FrontEnd`NotebookLocate[{URL["http://www.wolfram.com/support/contact/email/?source=cdfmenubar&topic=feedback"], None}]}]],
+		MenuItem["\:30a2\:30c3\:30d7\:30c7\:30fc\:30c8\:3092\:30c1\:30a7\:30c3\:30af", FrontEndExecute[{
+			FrontEnd`NotebookLocate[{URL["http://www.wolfram.com/cdf-player"], None}]}]]
+	}]
+}]
+@|

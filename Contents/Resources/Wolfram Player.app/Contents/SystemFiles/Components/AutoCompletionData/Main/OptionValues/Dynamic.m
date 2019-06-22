@@ -1,0 +1,1 @@
+{ShrinkingDelay -> {"2"}}

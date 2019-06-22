@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<widget class="javax.swing.Timer">
+	<args>
+		<integer value='1000'/>
+	  <null class="java.awt.event.ActionListener"/>
+	</args>
+</widget>

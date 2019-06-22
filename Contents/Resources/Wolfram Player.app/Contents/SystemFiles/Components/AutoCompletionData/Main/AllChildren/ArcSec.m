@@ -1,0 +1,10 @@
+{"Sqrt", "Pi", "Sec", "E", "Cos", "Log", "Sin", "Tan", "Abs", "Root", 
+ "ArcTan", "Csc", "I", "ArcSec", "Quantity", "Degree", "None", "ArcSin", 
+ "Cosh", "ArcCos", "ArcCosh", "Infinity", "ArcCot", "Cot", "ArcCsc", 
+ "Rational", "Exp", "Derivative", "D", "Sech", "Plus", 
+ "InverseLaplaceTransform", "BaseForm", "InverseFunction", "Tanh", "Sinh", 
+ "Sign", "Sort", "Re", "Range", "Quotient", "Log2", "Erf", "Zeta", 
+ "LogIntegral", "Integrate", "IdentityMatrix", "Identity", "Gamma", "Csch", 
+ "BitOr", "Symbol", "Subscript", "RiemannSiegelZ", "Ratios", "Rationalize", 
+ "PrimePi", "PlusMinus", "LaplaceTransform", "Im", "GoldenRatio", "Glaisher", 
+ "EulerGamma", "DawsonF", "Curl", "BitAnd", "Apart"}

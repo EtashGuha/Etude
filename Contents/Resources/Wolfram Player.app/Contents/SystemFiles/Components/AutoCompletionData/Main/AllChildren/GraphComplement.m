@@ -1,0 +1,1 @@
+{"ImageSize", "Graph"}

@@ -1,0 +1,451 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 6.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible
+applications, contact Wolfram Research: http://www.wolfram.com
+
+Notebook reader applications are available free of charge from
+Wolfram Research.
+*******************************************************************)
+
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[      1419,         36]
+NotebookDataLength[     13359,        410]
+NotebookOptionsPosition[     12075,        371]
+NotebookOutlinePosition[     12420,        386]
+CellTagsIndexPosition[     12377,        383]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["DiffReport Styles", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["DiffReport"],
+ Editable->False,
+ Deletable->False,
+ ShowCellBracket->False,
+ ShowGroupOpener->True,
+ CellMargins->{{23, 16}, {3, 5}},
+ CellGroupingRules->{"SectionGrouping", -20},
+ PageBreakBelow->False,
+ CellFrameMargins->False,
+ ShowAutoStyles->False,
+ ShowSyntaxStyles->False,
+ LanguageCategory->None,
+ AutoMultiplicationSymbol->False,
+ CounterIncrements->"Diff",
+ StyleMenuListing->None,
+ FontFamily->"Helvetica",
+ FontSize->12,
+ Background->GrayLevel[1],
+ ButtonBoxOptions->{ImageSize->Automatic},
+ GridBoxOptions->{
+ GridBoxAlignment->{
+  "Columns" -> {Left, {Right}}, "ColumnsIndexed" -> {}, 
+   "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+ GridBoxItemSize->{"Columns" -> {{
+      Scaled[0.99]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[StyleData["DiffReport", "SideBySide"],
+ ShowGroupOpener->False,
+ CellMargins->{{23, 16}, {0, 0}},
+ FontSize->11,
+ ButtonBoxOptions->{Active->True,
+ Evaluator->Automatic,
+ ImageSize->Automatic},
+ GridBoxOptions->{
+ GridBoxAlignment->{
+  "Columns" -> {Left, Right, {Left}}, "ColumnsIndexed" -> {}, 
+   "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+ GridBoxItemSize->{"Columns" -> {
+     Scaled[0.4], {
+      Scaled[0.1]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}}]
+}, Open  ]],
+
+Cell[StyleData["PositionMiddle"],
+ Editable->False,
+ Deletable->False,
+ CellFrame->{{0, 0}, {0, 1}},
+ ShowCellBracket->False,
+ CellMargins->{{12, 10}, {6, 6}},
+ CellGroupingRules->{"SectionGrouping", -10},
+ Hyphenation->True,
+ LineSpacing->{1, 3},
+ LanguageCategory->None,
+ StyleMenuListing->None,
+ FontFamily->"Helvetica",
+ FontSize->9],
+
+Cell[StyleData["SideBySide"],
+ ShowCellBracket->False,
+ CellMargins->{{10, 10}, {7, 7}},
+ InputAutoReplacements->{"TeX" -> StyleBox[
+     RowBox[{"T", 
+       AdjustmentBox[
+       "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, BoxBaselineShift -> 
+        0.5], "X"}]], "LaTeX" -> StyleBox[
+     RowBox[{"L", 
+       StyleBox[
+        AdjustmentBox[
+        "A", BoxMargins -> {{-0.36, -0.1}, {0, 0}}, BoxBaselineShift -> -0.2],
+         FontSize -> Smaller], "T", 
+       AdjustmentBox[
+       "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, BoxBaselineShift -> 
+        0.5], "X"}]], "mma" -> "Mathematica", "Mma" -> "Mathematica", "MMA" -> 
+   "Mathematica", "webMathematica" -> FormBox[
+     RowBox[{"web", 
+       AdjustmentBox[
+        StyleBox["Mathematica", FontSlant -> "Italic"], 
+        BoxMargins -> {{-0.175, 0}, {0, 0}}]}], TextForm], Inherited},
+ Hyphenation->True,
+ LineSpacing->{1, 3},
+ LanguageCategory->None,
+ FontFamily->"Helvetica",
+ GridBoxOptions->{
+ GridBoxDividers->{
+  "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+   "RowsIndexed" -> {}},
+ GridBoxItemSize->{"Columns" -> {
+     Scaled[0.51], {
+      Scaled[0.49]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[StyleData["Controls"],
+ Editable->False,
+ Deletable->False,
+ ShowCellBracket->False,
+ CellMargins->{{23, 16}, {7, 7}},
+ Hyphenation->True,
+ LineSpacing->{1, 3},
+ LanguageCategory->None,
+ StyleMenuListing->None,
+ FontFamily->"Helvetica",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.255], 
+     Scaled[0.25], 
+     Scaled[0.25], {
+      Scaled[0.24]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[StyleData["ViewCellDiff"],
+ Editable->False,
+ Deletable->False,
+ ShowCellBracket->False,
+ CellMargins->{{12, 10}, {7, 7}},
+ Hyphenation->True,
+ LineSpacing->{1, 3},
+ StyleMenuListing->None,
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {{
+      Scaled[0.25]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[StyleData["NoDifference"],
+ ShowCellBracket->False,
+ CellMargins->{{10, 10}, {6, 6}},
+ CellGroupingRules->{"SectionGrouping", -20},
+ Hyphenation->True,
+ LineSpacing->{1, 3},
+ LanguageCategory->None,
+ StyleMenuListing->None,
+ FontFamily->"Helvetica",
+ FontSize->9],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["ReportName"],
+ CellDingbat->None,
+ CellMargins->{{25, Inherited}, {8, 24}},
+ CellGroupingRules->{"SectionGrouping", 30},
+ PageBreakBelow->False,
+ DefaultNewInlineCellStyle->"None",
+ InputAutoReplacements->{"TeX" -> StyleBox[
+     RowBox[{"T", 
+       AdjustmentBox[
+       "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, BoxBaselineShift -> 
+        0.5], "X"}]], "LaTeX" -> StyleBox[
+     RowBox[{"L", 
+       StyleBox[
+        AdjustmentBox[
+        "A", BoxMargins -> {{-0.36, -0.1}, {0, 0}}, BoxBaselineShift -> -0.2],
+         FontSize -> Smaller], "T", 
+       AdjustmentBox[
+       "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, BoxBaselineShift -> 
+        0.5], "X"}]], "mma" -> "Mathematica", "Mma" -> "Mathematica", "MMA" -> 
+   "Mathematica", "webMathematica" -> FormBox[
+     RowBox[{"web", 
+       AdjustmentBox[
+        StyleBox["Mathematica", FontSlant -> "Italic"], 
+        BoxMargins -> {{-0.175, 0}, {0, 0}}]}], TextForm], Inherited},
+ LineSpacing->{1, 7},
+ LanguageCategory->"NaturalLanguage",
+ CounterIncrements->"Section",
+ CounterAssignments->{{"Subsection", 0}, {"Subsubsection", 0}},
+ FontFamily->"Helvetica",
+ FontSize->16,
+ FontWeight->"Bold"],
+
+Cell[StyleData["ReportName", "SideBySide"],
+ CellDingbat->None,
+ CellMargins->{{25, Inherited}, {4, 4}},
+ CellGroupingRules->{"SectionGrouping", 30},
+ PageBreakBelow->False,
+ DefaultNewInlineCellStyle->"None",
+ InputAutoReplacements->{"TeX" -> StyleBox[
+     RowBox[{"T", 
+       AdjustmentBox[
+       "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, BoxBaselineShift -> 
+        0.5], "X"}]], "LaTeX" -> StyleBox[
+     RowBox[{"L", 
+       StyleBox[
+        AdjustmentBox[
+        "A", BoxMargins -> {{-0.36, -0.1}, {0, 0}}, BoxBaselineShift -> -0.2],
+         FontSize -> Smaller], "T", 
+       AdjustmentBox[
+       "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, BoxBaselineShift -> 
+        0.5], "X"}]], "mma" -> "Mathematica", "Mma" -> "Mathematica", "MMA" -> 
+   "Mathematica", "webMathematica" -> FormBox[
+     RowBox[{"web", 
+       AdjustmentBox[
+        StyleBox["Mathematica", FontSlant -> "Italic"], 
+        BoxMargins -> {{-0.175, 0}, {0, 0}}]}], TextForm], Inherited},
+ LineSpacing->{1, 7},
+ LanguageCategory->"NaturalLanguage",
+ CounterIncrements->"Section",
+ CounterAssignments->{{"Subsection", 0}, {"Subsubsection", 0}},
+ FontFamily->"Helvetica",
+ FontSize->12,
+ FontWeight->"Bold"]
+}, Closed]],
+
+Cell[StyleData["FileSection"],
+ ShowCellBracket->False,
+ ShowGroupOpener->True,
+ CellMargins->{{25, Inherited}, {8, 24}},
+ CellGroupingRules->{"SectionGrouping", 30},
+ PageBreakBelow->False,
+ DefaultNewInlineCellStyle->"None",
+ InputAutoReplacements->{"TeX" -> StyleBox[
+     RowBox[{"T", 
+       AdjustmentBox[
+       "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, BoxBaselineShift -> 
+        0.5], "X"}]], "LaTeX" -> StyleBox[
+     RowBox[{"L", 
+       StyleBox[
+        AdjustmentBox[
+        "A", BoxMargins -> {{-0.36, -0.1}, {0, 0}}, BoxBaselineShift -> -0.2],
+         FontSize -> Smaller], "T", 
+       AdjustmentBox[
+       "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, BoxBaselineShift -> 
+        0.5], "X"}]], "mma" -> "Mathematica", "Mma" -> "Mathematica", "MMA" -> 
+   "Mathematica", "webMathematica" -> FormBox[
+     RowBox[{"web", 
+       AdjustmentBox[
+        StyleBox["Mathematica", FontSlant -> "Italic"], 
+        BoxMargins -> {{-0.175, 0}, {0, 0}}]}], TextForm], Inherited},
+ LineSpacing->{1, 7},
+ LanguageCategory->"NaturalLanguage",
+ CounterAssignments->{{"Diff", 0}},
+ FontFamily->"Helvetica",
+ FontSize->16,
+ FontWeight->"Bold"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["DiffReportButton"],
+ StyleMenuListing->None,
+ ButtonStyleMenuListing->None,
+ FontColor->RGBColor[0.269993, 0.308507, 0.6],
+ ButtonBoxOptions->{Active->True,
+ Appearance->{Automatic, None},
+ ButtonFunction:>((Needs["AuthorTools`NotebookDiff`"]; 
+  AuthorTools`NotebookDiff`Private`selectDiff[#, "Working"])& ),
+ ButtonNote->"Highlight difference",
+ Evaluator->Automatic}],
+
+Cell[StyleData["DiffReportButton", "SideBySide"],
+ ButtonBoxOptions->{Active->True,
+ Appearance->{Automatic, None},
+ ButtonFunction:>((Needs["AuthorTools`NotebookDiff`"]; 
+  AuthorTools`NotebookDiff`Private`selectDiff[#, "SideBySide"])& ),
+ ButtonNote->"Highlight difference",
+ Evaluator->Automatic}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["View"],
+ StyleMenuListing->None,
+ ButtonStyleMenuListing->None,
+ ButtonBoxOptions->{Active->True,
+ ButtonFunction:>(Needs["AuthorTools`NotebookDiff`"]; 
+  AuthorTools`NotebookDiff`Private`viewdiff["SideBySide"]),
+ ButtonNote->"View with notebooks",
+ Evaluator->Automatic}],
+
+Cell[StyleData["View", "SideBySide"],
+ ButtonBoxOptions->{
+ ButtonFunction:>(Needs["AuthorTools`NotebookDiff`"]; 
+  AuthorTools`NotebookDiff`Private`viewdiff["Working"]),
+ ButtonNote->"View alone"}]
+}, Closed]],
+
+Cell[StyleData["Update"],
+ StyleMenuListing->None,
+ ButtonStyleMenuListing->None,
+ ButtonBoxOptions->{Active->True,
+ ButtonFunction:>((Needs["AuthorTools`NotebookDiff`"]; 
+  AuthorTools`NotebookDiff`Private`updatediff[#])& ),
+ ButtonNote->"Refresh differences",
+ Evaluator->Automatic}],
+
+Cell[StyleData["Close"],
+ StyleMenuListing->None,
+ ButtonStyleMenuListing->None,
+ ButtonBoxOptions->{Active->True,
+ ButtonFunction:>(Needs["AuthorTools`NotebookDiff`"]; 
+  AuthorTools`NotebookDiff`Private`closediff[]),
+ ButtonNote->"Save all notebooks and close",
+ Evaluator->Automatic}],
+
+Cell[StyleData["Help"],
+ StyleMenuListing->None,
+ ButtonStyleMenuListing->None,
+ ButtonBoxOptions->{Active->True,
+ ButtonFunction:>FrontEndExecute[{
+    FrontEnd`HelpBrowserLookup["AddOns", "NotebookDiff"]}],
+ ButtonNote->"Open HelpBrowser"}],
+
+Cell[StyleData["CellDiff"],
+ StyleMenuListing->None,
+ ButtonStyleMenuListing->None,
+ FontFamily->"Helvetica",
+ ButtonBoxOptions->{Active->True,
+ ButtonFunction:>(Needs["AuthorTools`NotebookDiff`"]; 
+  AuthorTools`NotebookDiff`Private`CellDiffButtonFunction[]),
+ ButtonNote->"View differences",
+ Evaluator->Automatic}],
+
+Cell[StyleData["ChangeDiff"],
+ StyleMenuListing->None,
+ ButtonStyleMenuListing->None,
+ ButtonBoxOptions->{Active->True,
+ ButtonFunction:>((Needs["AuthorTools`NotebookDiff`"]; #)& ),
+ ButtonNote->"Apply differences",
+ Evaluator->Automatic}]
+}, Open  ]]
+},
+WindowSize->{508, 532},
+WindowMargins->{{221, Automatic}, {Automatic, 0}},
+FrontEndVersion->"7.0 for Microsoft Windows (64-bit) (November 10, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[1841, 51, 36, 0, 71, "Section"],
+Cell[CellGroupData[{
+Cell[1902, 55, 790, 25, 40, 29, 0, "StyleData", "DiffReport", "All",
+ CounterIncrements->"Diff",
+ StyleMenuListing->None],
+Cell[2695, 82, 494, 14, 31, 43, 0, "StyleData", "DiffReport", "SideBySide"]
+}, Open  ]],
+Cell[3204, 99, 337, 12, 50, 33, 0, "StyleData", "PositionMiddle", "All",
+ StyleMenuListing->None],
+Cell[3544, 113, 1234, 32, 43, 29, 0, "StyleData", "SideBySide", "All"],
+Cell[4781, 147, 445, 15, 46, 27, 0, "StyleData", "Controls", "All",
+ StyleMenuListing->None],
+Cell[5229, 164, 337, 10, 46, 31, 0, "StyleData", "ViewCellDiff", "All",
+ StyleMenuListing->None],
+Cell[5569, 176, 268, 9, 41, 31, 0, "StyleData", "NoDifference", "All",
+ StyleMenuListing->None],
+Cell[CellGroupData[{
+Cell[5862, 189, 1186, 30, 48, 29, 0, "StyleData", "ReportName", "All",
+ CounterIncrements->"Section",
+ CounterAssignments->{{"Subsection", 0}, {"Subsubsection", 0}}],
+Cell[7051, 221, 1199, 30, 36, 43, 0, "StyleData", "ReportName", "SideBySide",
+ CounterIncrements->"Section",
+ CounterAssignments->{{"Subsection", 0}, {"Subsubsection", 0}}]
+}, Closed]],
+Cell[8265, 254, 1157, 30, 48, 30, 0, "StyleData", "FileSection", "All",
+ CounterAssignments->{{"Diff", 0}}],
+Cell[CellGroupData[{
+Cell[9447, 288, 386, 9, 40, 35, 0, "StyleData", "DiffReportButton", "All",
+ StyleMenuListing->None,
+ ButtonStyleMenuListing->None],
+Cell[9836, 299, 300, 6, 36, 49, 0, "StyleData", "DiffReportButton", \
+"SideBySide"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10173, 310, 288, 7, 40, 23, 0, "StyleData", "View", "All",
+ StyleMenuListing->None,
+ ButtonStyleMenuListing->None],
+Cell[10464, 319, 198, 4, 36, 37, 0, "StyleData", "View", "SideBySide"]
+}, Closed]],
+Cell[10677, 326, 285, 7, 40, 25, 0, "StyleData", "Update", "All",
+ StyleMenuListing->None,
+ ButtonStyleMenuListing->None],
+Cell[10965, 335, 287, 7, 40, 24, 0, "StyleData", "Close", "All",
+ StyleMenuListing->None,
+ ButtonStyleMenuListing->None],
+Cell[11255, 344, 242, 6, 40, 23, 0, "StyleData", "Help", "All",
+ StyleMenuListing->None,
+ ButtonStyleMenuListing->None],
+Cell[11500, 352, 317, 8, 40, 27, 0, "StyleData", "CellDiff", "All",
+ StyleMenuListing->None,
+ ButtonStyleMenuListing->None],
+Cell[11820, 362, 239, 6, 40, 29, 0, "StyleData", "ChangeDiff", "All",
+ StyleMenuListing->None,
+ ButtonStyleMenuListing->None]
+}, Open  ]]
+}
+]
+*)
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

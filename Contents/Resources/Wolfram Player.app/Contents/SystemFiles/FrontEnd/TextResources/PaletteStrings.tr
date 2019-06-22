@@ -1,0 +1,39 @@
+@| Mathematica palettes
+@|
+@|
+@|
+@@resource BasicMathAssistantPalette
+{
+
+}
+@|
+@@resource ClassroomAssistantPalette
+{
+	
+}
+@|
+@@resource WritingAssistantPalette
+{
+	
+}
+@|
+@@resource SlideShowPalette
+{
+	
+}
+@|
+@@resource ChartElementSchemesPalette
+{
+	
+}
+@|
+@@resource ColorSchemesPalette
+{
+	
+}
+@|
+@@resource SpecialCharactersPalette
+{
+	
+}
+@|

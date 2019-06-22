@@ -1,0 +1,16 @@
+<h1>Fragment</h1>
+For normal evaluation data is rendered as: <wolfram:slot id="data">data</wolfram:slot>
+
+<wolfram:template inserter='Function[obj, ExportString[obj, "JSON", "Compact" -> True]]'>
+    But here the output is json: <wolfram:slot id="data"/>
+</wolfram:template>
+
+Or you can change the combiner function so now:
+
+<script>
+   var template = <wolfram:template combiner='Function[body, ExportString[StringTrim[StringJoin[body]], "JSON", "Compact"->True]]'>
+        This is my mustache <strong>HTML template</strong>.
+        Everything is properly <p id="foo">escaped</p> and exported to string here.
+
+   </wolfram:template>
+</script>

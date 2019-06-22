@@ -1,0 +1,1 @@
+{"OutputForm", "FormatType", "PageWidth", "Infinity"}

@@ -1,0 +1,45 @@
+
+/* Class = "NSTextFieldCell"; title = "Monospaced:"; ObjectID = "7NI-mx-ZV4"; */
+"7NI-mx-ZV4.title" = "等幅：";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "AKY-UP-fTR"; */
+"AKY-UP-fTR.title" = "OK";
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "G2W-au-ts4"; */
+"G2W-au-ts4.title" = "アイテム 3";
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "H7k-4E-bT7"; */
+"H7k-4E-bT7.title" = "アイテム 3";
+
+/* Class = "NSTextFieldCell"; title = "Serifed:"; ObjectID = "QAs-KP-mOg"; */
+"QAs-KP-mOg.title" = "セリフ体：";
+
+/* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "Qj6-yW-PxK"; */
+"Qj6-yW-PxK.title" = "アイテム 2";
+
+/* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "RP8-x3-LCi"; */
+"RP8-x3-LCi.title" = "アイテム 1";
+
+/* Class = "NSTextFieldCell"; title = "Encoding:"; ObjectID = "UX0-MK-xuA"; */
+"UX0-MK-xuA.title" = "エンコーディング：";
+
+/* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "VRa-e7-JSl"; */
+"VRa-e7-JSl.title" = "アイテム 1";
+
+/* Class = "NSTextFieldCell"; title = "Font name:"; ObjectID = "XHO-vs-kso"; */
+"XHO-vs-kso.title" = "フォント名：";
+
+/* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "gV5-rz-5dK"; */
+"gV5-rz-5dK.title" = "アイテム 2";
+
+/* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "iHy-if-nrL"; */
+"iHy-if-nrL.title" = "アイテム 2";
+
+/* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "pFP-U9-YBO"; */
+"pFP-U9-YBO.title" = "アイテム 1";
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "xXd-AK-znV"; */
+"xXd-AK-znV.title" = "アイテム 3";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "zeK-Iu-FiI"; */
+"zeK-Iu-FiI.title" = "キャンセル";

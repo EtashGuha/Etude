@@ -1,0 +1,1 @@
+{"Abs", "Sin", "Cos", "WorkingPrecision"}

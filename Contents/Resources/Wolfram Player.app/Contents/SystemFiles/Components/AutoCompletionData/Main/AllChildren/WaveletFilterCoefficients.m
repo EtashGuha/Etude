@@ -1,0 +1,2 @@
+{"WorkingPrecision", "Infinity", "BiorthogonalSplineWavelet", 
+ "BattleLemarieWavelet"}

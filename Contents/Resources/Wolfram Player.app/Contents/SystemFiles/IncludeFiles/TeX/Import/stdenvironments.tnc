@@ -1,0 +1,231 @@
+\message{FILE: This is stdenvironments.tnc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Filename: stdenvironments.tnc
+%%
+%%
+%% Purpose: This file takesthe sectioning commands common to the
+%%          article, book, and report classes and defines them in one
+%%          place so that global changes can be made in one location
+%%          instead of three or more.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Define the verse, quote, quotation and description
+%% environments. The verse, quote and quotation environments are lists
+%% that set a kind of inset paragraph for each item or paragraph to set
+%% off the verse or quote from the surrounding text. The description
+%% environment sets a label followed by a description for each item. In
+%% these implementations I will set it as a Text Cell but with an
+%% appropriate cell name so that a stylesheet definition can handle the
+%% visual presentation.
+%%
+%% To Do: Overhaul how list environments are handled in latex2e.tnb,
+%%        then come back here and redefine these four list
+%%        environments appropriately.
+%%
+%% \newenvironment{verse}
+%%
+
+\def\verse{%
+  \def\@listname{verse}
+  \@itemizetrue
+  \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{"Tex Macro Name"->"\@listname"}}%
+  \@ListLikeEnvironment
+}
+\def\endverse{%
+  \@endListLikeEnvironment
+  \@itemizefalse
+%  \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{}}%
+}
+
+%%
+%% \newenvironment{quotation}
+%%
+
+\def\quotation{%
+  \def\@listname{quotation}
+  \@itemizetrue
+  \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{"Tex Macro Name"->"\@listname"}}%
+  \@ListLikeEnvironment
+}
+\def\endquotation{%
+  \@endListLikeEnvironment
+  \@itemizefalse
+}
+
+%%
+%% \newenvironment{quote}
+%%
+
+\def\quote{%
+  \def\@listname{quote}
+  \@itemizetrue
+  \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{"Tex Macro Name"->"\@listname"}}%
+  \@ListLikeEnvironment
+}
+\def\endquote{%
+  \@endListLikeEnvironment
+  \@itemizefalse
+}
+
+%%
+%% \descriptionlabel
+%% \newenvironment{description}
+%%
+
+\def\description{%
+  \def\@listname{description}
+  \@itemizetrue
+  \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{"Tex Macro Name"->"\@listname"}}%
+  \@ListLikeEnvironment
+}
+\def\enddescription{%
+  \@endListLikeEnvironment
+  \@itemizefalse
+}
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Define table environment
+%%
+%% \newenvironment{table}
+%%
+
+\def\tablename{Table}
+\newcounter{table}
+\setcounter{table}{0}
+
+%%book.tns%%\newcounter{table}[chapter]
+
+\def\@table[#1]{%
+    \stepcounter{table}
+    \begingroup%
+        \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{"Tex Macro Name"->"table"}}%
+        \def\caption##1{%
+            \@PendingCellStyle{TableCaption}
+            \tablename\ %
+            \CounterBoxOne{TableCaption}%
+            \ ##1%
+        }%
+}
+
+\def\table{%
+    \@ifnextchar[%]
+    {\@table}
+    {\@table[t]}
+}
+
+\def\endtable{%
+    \endgroup%
+    \relax%
+}
+
+%%
+%%\newenvironment{table*}
+%%
+\def\@tablestar[#1]{%
+    \stepcounter{table}
+    \begingroup%
+        \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{"Tex Macro Name"->"table"}}%
+        \def\caption##1{%
+            \@PendingCellStyle{TableCaption}%
+            \tablename\ %
+            \CounterBoxOne{TableCaption}%
+            \ ##1%
+        }%
+}
+
+\@namedef{table*}{%
+    \@ifnextchar[%]
+    {\@tablestar}
+    {\@tablestar[t]}
+}
+
+\@namedef{endtable*}{%
+    \endgroup%
+    \relax%
+}
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Define figure and figure* environments
+%%
+%% Defined and working in latex2e.tnb, but gives errors
+%% when transplanted here. Will come back to this one.
+%%
+
+\newcounter{figure}
+\setcounter{figure}{0}
+\def\figurename{Figure}
+
+%%book.tns%%\newcounter{figure}[chapter]
+
+%%
+%%\newenvironment{figure}
+%%
+\def\@figure[#1]{%
+    \stepcounter{figure}
+    \begingroup%
+        \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{"Tex Macro Name"->"figure"}}%
+        \def\caption##1{%
+            \@PendingCellStyle{FigureCaption}%
+            \figurename\ %
+            \CounterBoxOne{FigureCaption}%
+            \ ##1%
+        }%
+}
+
+\def\figure{%
+    \@ifnextchar[%]
+    {\@figure}
+    {\@figure[t]}
+}
+
+\def\endfigure{%
+    \endgroup%
+    \relax%
+}
+
+%%
+%%\newenvironment{figure*}
+%%
+\def\@figurestar[#1]{%
+    \begingroup
+        \stepcounter{figure}
+        \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{"Tex Macro Name"->"figure*"}}%
+        \def\caption##1{%
+            \@PendingCellStyle{FigureCaption}%
+            \figurename\ %
+            \CounterBoxOne{FigureCaption}%
+            \ ##1%
+        }%
+}
+
+\@namedef{figure*}{%
+    \@ifnextchar[%]
+    {\@figurestar}
+    {\@figurestar[t]}
+}
+
+\@namedef{endfigure*}{%
+    \endgroup
+    \relax
+}
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatother
+

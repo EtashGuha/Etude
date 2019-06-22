@@ -1,0 +1,3810 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    195305,       3802]
+NotebookOptionsPosition[    189671,       3677]
+NotebookOutlinePosition[    190068,       3694]
+CellTagsIndexPosition[    190025,       3691]
+MenuPosition->0
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[StyleData[StyleDefinitions -> "Default.nb"],ExpressionUUID->"96650fd2-8b31-4f36-9094-a819631d6839"],
+
+Cell[CellGroupData[{
+
+Cell["Notebook Options Settings", "Section",
+ CellChangeTimes->{{3.706023376163559*^9, 3.706023376547505*^9}, {
+  3.706023934096628*^9, 3.7060239343036203`*^9}, {3.706024481029111*^9, 
+  3.706024481289977*^9}},ExpressionUUID->"c33f6426-0da1-4240-bc9a-\
+20e94fdabd2e"],
+
+Cell[StyleData["Notebook"],
+ TrackCellChangeTimes->
+  False,ExpressionUUID->"5bf2c33f-ef5b-49e3-8ac3-e3290afcd427"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Style Environment Names", "Section",ExpressionUUID->"2ed2d655-fb09-4958-9c73-258b3e62b79b"],
+
+Cell[StyleData[All, "Working"],
+ CellInsertionPointCell->FEPrivate`FrontEndResource[
+  "FEExpressions", "CellInsertionMenu"],
+ DockedCells->{
+   Cell[
+    BoxData[
+     TagBox[
+      GridBox[{{
+         ItemBox[
+          StyleBox[
+          "\"S L I D E   C O N T E N T\"", FontColor -> GrayLevel[0], 
+           FontSize -> 9, FontWeight -> "Plain", FontFamily -> "Arial", 
+           StripOnInput -> False], Alignment -> {Left, Top}, StripOnInput -> 
+          False], 
+         ItemBox[
+          StyleBox[
+          "\"C E L L   C O N T E N T\"", FontColor -> GrayLevel[0], FontSize -> 
+           9, FontWeight -> "Plain", FontFamily -> "Arial", StripOnInput -> 
+           False], Alignment -> {Left, Top}, StripOnInput -> False], 
+         ItemBox[
+          StyleBox[
+          "\"W I N D O W   S E T T I N G S\"", FontColor -> GrayLevel[0], 
+           FontSize -> 9, FontWeight -> "Plain", FontFamily -> "Arial", 
+           StripOnInput -> False], Alignment -> {Left, Top}, StripOnInput -> 
+          False], "\" \"", 
+         ItemBox[
+          TagBox[
+           TagBox[
+            TooltipBox[
+             ButtonBox[
+              StyleBox[
+              "\"\[Times]\"", FontColor -> GrayLevel[0.5], FontSize -> 20, 
+               FontWeight -> "Plain", StripOnInput -> False], 
+              ButtonFunction :> (CurrentValue[
+                  EvaluationNotebook[], {
+                  TaggingRules, "SlideShowSettings", "WindowSize"}] = 
+                AbsoluteCurrentValue[
+                  EvaluationNotebook[], WindowSize]; SetOptions[
+                 EvaluationNotebook[], {
+                 ScreenStyleEnvironment -> "SlideShowPresentation", 
+                  WindowFrame -> "Frameless", WindowElements -> {}, 
+                  WindowFrameElements -> {}, WindowStatusArea -> None, 
+                  DockedCells -> {
+                    Cell[
+                    BoxData[
+                    ActionMenuBox[
+                    PaneBox[
+                    StyleBox[" ", StripOnInput -> False, FontSize -> 0.1]], {
+                    "Toolbar" :> (SetOptions[
+                    EvaluationNotebook[], {
+                    DockedCells -> Inherited, WindowFrame -> "Normal", 
+                    WindowElements -> Inherited, WindowFrameElements -> 
+                    Inherited, WindowStatusArea -> None, 
+                    ScreenStyleEnvironment -> "SlideShow", WindowSize -> {
+                    First[
+                    CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}]], 
+                    Last[
+                    CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}]]}}]; 
+                    Null), Delimiter, "Enter Full Screen" :> (CurrentValue[
+                    EvaluationNotebook[], WindowSize] = Full; Null), 
+                    "Exit Full Screen" :> (FrontEndExecute[
+                    FrontEnd`Value[
+                    FEPrivate`NotebookToggleFullScreen[]]]; SetOptions[
+                    EvaluationNotebook[], {
+                    DockedCells -> Inherited, ScreenStyleEnvironment -> 
+                    "SlideShow"}]; Null), Delimiter, "Close" :> (NotebookClose[
+                    EvaluationNotebook[], Interactive -> True]; Quiet[
+                    DeviceClose["Camera"]])}, Appearance -> "Frameless", 
+                    AutoAction -> False, Background -> GrayLevel[0.9], 
+                    ImageSize -> {Full, 10}]], 
+                    CellMargins -> {{0, 0}, {0, 0}}, 
+                    CellFrame -> {{0, 0}, {0, 3}}, CellFrameColor -> 
+                    GrayLevel[0.75], CellFrameMargins -> {{0, 0}, {2, 2}}, 
+                    FontSize -> 1, 
+                    CellElementSpacings -> {"CellMinHeight" -> 1}, Background -> 
+                    GrayLevel[0.94]]}, WindowSize -> {
+                    First[
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}]], Last[
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}]] - 
+                    172}}]), Appearance -> None, FrameMargins -> 0, 
+              ContentPadding -> False, Evaluator -> Automatic, Method -> 
+              "Preemptive"], "\"Hide Toolbar\"", TooltipDelay -> 0.25, 
+             LabelStyle -> "TextStyling"], 
+            Annotation[#, "Hide Toolbar", "Tooltip"]& ], 
+           MouseAppearanceTag["LinkHand"]], Alignment -> {Right, Top}, Frame -> 
+          False, ItemSize -> 1, Spacings -> {0, 0}, StripOnInput -> False]}, {
+        
+         TagBox[
+          GridBox[{{
+             FrameBox[
+              TagBox[
+               GridBox[{{
+                  TagBox[
+                   GridBox[{{
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAEiAOAGMRuGAWjYBSMglEwCmCgZ9WZbz9fbJ840O6gC+hZdf7Pfwh4s3m4
+exnJs1AvD+NYxvAsBLwfll6euB6rZ4enl6dtvozTr1Dwac+ctoF2JtXA0gPn
+b1+/jAdcv339yKrhFcejYBSMglEwCkYBbgAAVLCzWQ==
+                    "], {{0, 
+                    20}, {80, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {80, 20}, 
+                    PlotRange -> {{0, 80}, {0, 20}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetVerticalCellMargin["NudgeUp", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]]]]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {80, 20}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Center}, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    "\"Nudge Up\"", TooltipDelay -> 0.25, LabelStyle -> 
+                    "TextStyling"], Annotation[#, "Nudge Up", "Tooltip"]& ], 
+                    "\[SpanFromLeft]"}, {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFACiDWAGMRuGAWjYBSgg7aJPW10tnLh5hMvfv7/82gPXW389h8Cvt3bTgcb
+52w+8uLbn/9IgNb2zlmPbiMd7F145BGmjXQK54lLz9x7MwD24rCdTvZi2E5X
+e2G2n3/06dNtuts7CkbBKBggAAATLPPt
+                    "], {{0, 24}, {40, 0}}, {
+                    0, 255}, ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {40, 24}, 
+                    PlotRange -> {{0, 40}, {0, 24}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetHorizontalCellMargin["NudgeLeft", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}], 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], {TextAlignment}]]]]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {40, 24}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Center}, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    "\"Nudge Left\"", TooltipDelay -> 0.25, LabelStyle -> 
+                    "TextStyling"], Annotation[#, "Nudge Left", "Tooltip"]& ], 
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFACiNWBGMRuGAWjYISAtp42utu5+d7P//8/XT6wip5Wb7796T8E/HlPN6sR
+lkLAz/fn99DcanRL6WI1dkvB4M2ZVfS09NOL6+vn9NDIRkxLaW0dmqX0sQ4C
+1l9+8/PNbbpZNwpGwSgYQAAAgr/RTg==
+                    "], {{0, 24}, {39, 0}}, {
+                    0, 255}, ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {39, 24}, 
+                    PlotRange -> {{0, 39}, {0, 24}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetHorizontalCellMargin["NudgeRight", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}], 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], {TextAlignment}]]]]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {39, 24}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Center}, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    "\"Nudge Right\"", TooltipDelay -> 0.25, LabelStyle -> 
+                    "TextStyling"], 
+                    Annotation[#, "Nudge Right", "Tooltip"]& ]}, {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAEiAOAGMRuGAWjYBSMglEwgsHm6+////n5DTf4+f/PvQNzBtqZ1AM965/+
++Y8H/HlzftpAu5HKoG0VLi8DPTtxoF1HEwD08s8R41kIaFuK7OVh7lkIgHn5
+z4szPQPtFjqBnqXnLx8Z/jE7CkbBKBgFo2AU4AAApayy3Q==
+                    "], {{0, 
+                    20}, {80, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {80, 20}, 
+                    PlotRange -> {{0, 80}, {0, 20}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetVerticalCellMargin["NudgeDown", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]]]]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {80, 20}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Center}, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    "\"Nudge Down\"", TooltipDelay -> 0.25, LabelStyle -> 
+                    "TextStyling"], Annotation[#, "Nudge Down", "Tooltip"]& ],
+                     "\[SpanFromLeft]"}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.1}}, "Rows" -> {{0.15}}}], "Grid"], 
+                  TagBox[
+                   GridBox[{{
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAEiG2AGMRuGAWjgMZg8/X3///8/IYb/Pz/596BOQPtTFTQs/7pn/94wJ83
+56cNtBuxgLZVuJwNdPDEgXYdTgB09s8h5WAIaFuK7Owh4GAIgDn7z4szPQPt
+FhJAz9Lzl48MjRCGgZ5VZ779fLF96Di6Z9V5WPnxZvNQcDaSg6HOHuShjeFg
+CHg/aJ09cT1WBw9eZ0/bfBlfzQ0Cn/bMaRtoZ6KApQfO375+GQ+4fvv6kVWD
+L6xHwfACAMi1oLo=
+                    "], {{0, 20}, {60, 0}}, {0, 255}, 
+                    ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {60, 20}, 
+                    PlotRange -> {{0, 60}, {0, 20}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], {CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetVerticalCellMargin["Reset", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]]]}]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {60, 20}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Center}, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    "\"Center Vertically\"", TooltipDelay -> 0.25, LabelStyle -> 
+                    "TextStyling"], 
+                    Annotation[#, "Center Vertically", "Tooltip"]& ]}, {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAEiG2AGMRuGAWjYBQAwcQ5S+f0kKu5Z+nSadR0DHFg4vZ7////f3PvzNKJ
+JOlrW3Xg8qc/QK336O/oiZtv/4cB4lwOdy0YfLtNml+pAZDdTMjlQNeef/8H
+VfXPQeFmqMtvn1iIcA021w4+N0PA+9sH2hYe+YZHxSBz87c39/YAi4W2OUcu
+P8UaxoPKzT/f3NuOlqbb5hzA6vJB4Oaf74Fhi9sVmC4fUDeDXUtcWYvs8p+3
+B6J8vv7z2yNiXYsMgC6//uLnp+v0D+dRMApGAVUAAJ22x4Q=
+                    "], {{0, 
+                    20}, {60, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {60, 20}, 
+                    PlotRange -> {{0, 60}, {0, 20}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], {
+                    TextAlignment -> Inherited, CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetHorizontalCellMargin["Reset", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}], 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], {TextAlignment}]]]}]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {60, 24}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Center}, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    "\"Center Horizontally\"", TooltipDelay -> 0.25, 
+                    LabelStyle -> "TextStyling"], 
+                    Annotation[#, "Center Horizontally", "Tooltip"]& ]}, {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAEiG2AGMRuGAWjYBSMgoEEE69/+48d/Lw9caAdhwOMupk+YNTN9AGjbqYP
+mHgbt5unDbTjcICJlz/hcPOn64M1nEfBKBgFJAMAOOKLmg==
+                    "], {{0, 
+                    20}, {60, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {60, 20}, 
+                    PlotRange -> {{0, 60}, {0, 20}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], {
+                    CellMargins -> Inherited, TextAlignment -> Inherited}]], 
+                    Background -> GrayLevel[0.5], ImageSize -> {60, 20}, 
+                    Appearance -> "Frameless", 
+                    BaseStyle -> {Alignment -> Center}, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], "\"Center / Reset\"", 
+                    TooltipDelay -> 0.25, LabelStyle -> "TextStyling"], 
+                    Annotation[#, "Center / Reset", "Tooltip"]& ]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.1}}, "Rows" -> {{0.15}}}], "Grid"], 
+                  TagBox[
+                   GridBox[{{
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAEiAOAGMRuGAWjYBSQDtp68IC2gXYdlUHP+uv/8YE/eyYOtBOpDHrmLFy4
+cA5WABSfNtwieBSMJNCz6sy3ny+2D7c8ix30rDr/B1pMvdk83L2M5Fmol4dx
+LGN4FgLeD0svT1yP1bPD08vTNl/G294Agk975gyfSnjpgfO3r1/GA67fvn5k
+1fCK41EwCkbBKKAMAABrzcfg
+                    "], {{0, 20}, {80, 0}}, {0, 255},
+                     ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {80, 20}, 
+                    PlotRange -> {{0, 80}, {0, 20}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetVerticalCellMargin["FullUp", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]]]]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {80, 20}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Center}, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    "\"Full Up\"", TooltipDelay -> 0.25, LabelStyle -> 
+                    "TextStyling"], Annotation[#, "Full Up", "Tooltip"]& ], 
+                    "\[SpanFromLeft]"}, {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFACiNWBGMRuGAWjgF5g1bS2OZv30NnSFwem7Xn6h6CyNhDuoZalT/dM2/7o
+G37rLh9Y9f//p833ftLBUqh1f97/B4PNtz/R1FKgdef3rPr/E2odrS3Fah2t
+LX1zZhWmdXQI3vVzej69uE5nS3FZTQdLMa2mm6Vwq3++ub3+8ht6Wkp1MCCW
+3ts+cfu993S2dBSMAoIAAMzT6SY=
+                    "], {{0, 24}, {39, 0}}, {0, 
+                    255}, ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {39, 24}, 
+                    PlotRange -> {{0, 39}, {0, 24}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], TextAlignment -> Left]], 
+                    Background -> GrayLevel[0.5], ImageSize -> {40, 24}, 
+                    Appearance -> "Frameless", 
+                    BaseStyle -> {Alignment -> Center}, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], "\"Full Left\"", 
+                    TooltipDelay -> 0.25, LabelStyle -> "TextStyling"], 
+                    Annotation[#, "Full Left", "Tooltip"]& ], 
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFACiNWBGMRuGAWjYJCBOZv3rJrWRjXj2nqIMWvP0z8vDkyjlp2b7/38///T
+5QOr8Fu9/dG3p3uoZ+ntT/8h4M97PFbTylII+Pn+/B4sVtPWUhxW08NSMHhz
+ZhU9Lf304vr6OT3IymhqKaZ1NLUUl3W0sHT95Tc/39zGYx0tLCUSjCBL772/
+t30inS0dBSMZAADNoukm
+                    "], {{0, 24}, {39, 0}}, {0, 255}, 
+                    ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {39, 24}, 
+                    PlotRange -> {{0, 39}, {0, 24}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], TextAlignment -> Right]], 
+                    Background -> GrayLevel[0.5], ImageSize -> {39, 24}, 
+                    Appearance -> "Frameless", 
+                    BaseStyle -> {Alignment -> Center}, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], "\"Full Right\"", 
+                    TooltipDelay -> 0.25, LabelStyle -> "TextStyling"], 
+                    Annotation[#, "Full Right", "Tooltip"]& ]}, {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAEiAOAGMRuGAWjYBSMglEAA0dWTbx++/pl3AAoufTA+YF2JtXAnjlt//9/
++o8XTNt8eaCdSU2wfWLD///vsfr0z///E9cPn8iFA6xeBnq2Z9Uw9CwEgL38
+ZoR4FgI2w7w8EjwLAcBY/vbzRc+qMwPtkFEwCsgEbQ0NC+dMmzNn4RwMABJa
+uLChoWeg3UhNsAdUTP3B097oWX99oN1IZdDT09aDAwAlBtp1o2AUDEkAAJp3
+x+A=
+                    "], {{0, 20}, {80, 0}}, {0, 255}, ColorFunction -> 
+                    RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {80, 20}, 
+                    PlotRange -> {{0, 80}, {0, 20}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetVerticalCellMargin["FullDown", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]]]]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {80, 20}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Top}, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], "\"Full Down\"", 
+                    TooltipDelay -> 0.25, LabelStyle -> "TextStyling"], 
+                    Annotation[#, "Full Down", "Tooltip"]& ], 
+                    "\[SpanFromLeft]"}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.1}}, "Rows" -> {{0.15}}}], "Grid"]}}, 
+                AutoDelete -> False, 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                GridBoxSpacings -> {"Columns" -> {{0.1}}, "Rows" -> {{0.2}}}],
+                "Grid"], FrameMargins -> 0, FrameStyle -> RGBColor[1, 1, 1], 
+              StripOnInput -> False], "\[SpanFromLeft]"}, {
+             ItemBox[
+              TagBox[
+               TooltipBox[
+                FrameBox[
+                 ActionMenuBox[
+                  
+                  TemplateBox[{
+                   "\[ThickSpace]\[ThickSpace]", 
+                    "\"\[ThickSpace]\[ThickSpace]\"", 
+                    StyleBox[
+                    "\"TOOLS\"", FontColor -> GrayLevel[1], FontSize -> 11, 
+                    FontWeight -> "Plain", FontFamily -> "Arial", 
+                    StripOnInput -> False], 
+                    StyleBox[
+                    "\"\[FilledDownTriangle]\"", FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Plain", StripOnInput -> 
+                    False]}, "RowWithSeparators"], {
+                  "\"Insert New Slide\"" :> 
+                   Block[{SlideShowAuthoring`Private`cellInfo}, 
+                    SlideShowAuthoring`Private`cellInfo = 
+                    Developer`CellInformation[
+                    FrontEnd`InputNotebook[]]; 
+                    If[SlideShowAuthoring`Private`cellInfo =!= $Failed, 
+                    SelectionMove[
+                    FrontEnd`InputNotebook[], After, Cell]; Null]; 
+                    FrontEndExecute[{
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell[
+                    CellGroupData[{
+                    Cell[
+                    "", "SlideShowNavigationBar", CellTags -> 
+                    "SlideShowHeader"], 
+                    Cell[
+                    TextData[{"Slide ", 
+                    CounterBox["SlideShowNavigationBar"], " Title"}], 
+                    "Title"]}, Open]], After]}]; NotebookFind[
+                    FrontEnd`InputNotebook[], "Title", Previous, CellStyle]; 
+                    SelectionMove[
+                    FrontEnd`InputNotebook[], All, CellContents]], 
+                   "\"Delete Current Slide\"" :> (SelectionMove[
+                    EvaluationNotebook[], All, Notebook]; SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], Editable -> True, Deletable -> 
+                    True]; NotebookDelete[
+                    EvaluationNotebook[]]; Null), Delimiter, 
+                   "\"Export presentation without toolbar\"" :> (
+                    SlideShowAuthoring`SaveNotebookWithOutToolbar[
+                    EvaluationNotebook[]]; Null)}, ImageSize -> {82, 30}, 
+                  Appearance -> None, Background -> GrayLevel[0.5], Method -> 
+                  "Queued"], FrameMargins -> 0, FrameStyle -> 
+                 RGBColor[1, 1, 1], StripOnInput -> False], 
+                "\"Content will be inserted at the cursor location.\"", 
+                TooltipDelay -> 0.25, LabelStyle -> "TextStyling"], 
+               Annotation[#, 
+                "Content will be inserted at the cursor location.", 
+                "Tooltip"]& ], Alignment -> {Left, Top}, StripOnInput -> 
+              False], 
+             ItemBox[
+              TagBox[
+               TooltipBox[
+                FrameBox[
+                 ActionMenuBox[
+                  
+                  TemplateBox[{
+                   "\[ThickSpace]\[ThickSpace]", 
+                    "\"\[ThickSpace]\[ThickSpace]\"", 
+                    StyleBox[
+                    "\"INSERT CELL\"", FontColor -> GrayLevel[1], FontSize -> 
+                    11, FontWeight -> "Plain", FontFamily -> "Arial", 
+                    StripOnInput -> False], 
+                    StyleBox[
+                    "\"\[FilledDownTriangle]\"", FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Plain", StripOnInput -> 
+                    False]}, "RowWithSeparators"], {
+                  "\"Title Cell\"" :> (FrontEndExecute[{
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell["XXXX", "Title"], After]}]; NotebookFind[
+                    FrontEnd`InputNotebook[], "Title", Previous, CellStyle]; 
+                    SelectionMove[
+                    FrontEnd`InputNotebook[], All, CellContents]), 
+                   "\"Subtitle Cell\"" :> (FrontEndExecute[{
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell["XXXX", "Subtitle"], After]}]; NotebookFind[
+                    FrontEnd`InputNotebook[], "Subtitle", Previous, 
+                    CellStyle]; SelectionMove[
+                    FrontEnd`InputNotebook[], All, CellContents]), 
+                   "\"Section Cell\"" :> (FrontEndExecute[{
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell["XXXX", "Section"], After]}]; NotebookFind[
+                    FrontEnd`InputNotebook[], "Section", Previous, CellStyle]; 
+                    SelectionMove[
+                    FrontEnd`InputNotebook[], All, CellContents]), 
+                   "\"Subsection Cell\"" :> (FrontEndExecute[{
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell["XXXX", "Subsection"], After]}]; NotebookFind[
+                    FrontEnd`InputNotebook[], "Subsection", Previous, 
+                    CellStyle]; SelectionMove[
+                    FrontEnd`InputNotebook[], All, CellContents]), 
+                   "\"Text Cell\"" :> (FrontEndExecute[{
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell["XXXX", "Text"], After]}]; NotebookFind[
+                    FrontEnd`InputNotebook[], "Text", Previous, CellStyle]; 
+                    SelectionMove[
+                    FrontEnd`InputNotebook[], All, CellContents]), 
+                   "\"Input Cell\"" :> (FrontEndExecute[{
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell[
+                    BoxData["XXXX"], "Input"], After]}]; NotebookFind[
+                    FrontEnd`InputNotebook[], "Input", Previous, CellStyle]; 
+                    SelectionMove[
+                    FrontEnd`InputNotebook[], All, CellContents])}, 
+                  ImageSize -> {130, 30}, Appearance -> None, Background -> 
+                  GrayLevel[0.5]], FrameMargins -> 0, FrameStyle -> 
+                 RGBColor[1, 1, 1], StripOnInput -> False], 
+                "\"Content will be inserted at the cursor location.\"", 
+                TooltipDelay -> 0.25, LabelStyle -> "TextStyling"], 
+               Annotation[#, 
+                "Content will be inserted at the cursor location.", 
+                "Tooltip"]& ], Alignment -> {Left, Top}, StripOnInput -> 
+              False]}}, AutoDelete -> False, 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+         TagBox[
+          GridBox[{{
+             TagBox[
+              GridBox[{{
+                 StyleBox[
+                 "\"FONT SIZE\"", FontColor -> GrayLevel[1], FontSize -> 11, 
+                  FontWeight -> "Plain", FontFamily -> "Arial", StripOnInput -> 
+                  False], 
+                 TagBox[
+                  TooltipBox[
+                   ButtonBox[
+                    PaneSelectorBox[{False -> StyleBox[
+                    PaneBox[
+                    "\"+\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", Background -> GrayLevel[0.6], StripOnInput -> 
+                    False], True -> StyleBox[
+                    PaneBox[
+                    "\"+\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[0], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], Background -> GrayLevel[0.7], 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    ButtonFunction :> SlideShowAuthoring`FontSizeIncrease[
+                    ButtonNotebook[], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]], Appearance -> None, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                   "\"Increase font size\"", TooltipDelay -> 0.2, LabelStyle -> 
+                   "TextStyling"], 
+                  Annotation[#, "Increase font size", "Tooltip"]& ], 
+                 TagBox[
+                  TooltipBox[
+                   ButtonBox[
+                    PaneSelectorBox[{False -> StyleBox[
+                    PaneBox[
+                    "\"-\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", Background -> GrayLevel[0.6], StripOnInput -> 
+                    False], True -> StyleBox[
+                    PaneBox[
+                    "\"-\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[0], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], Background -> GrayLevel[0.7], 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    ButtonFunction :> SlideShowAuthoring`FontSizeDecrease[
+                    ButtonNotebook[], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]], Appearance -> None, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                   "\"Decrease font size\"", TooltipDelay -> 0.2, LabelStyle -> 
+                   "TextStyling"], 
+                  Annotation[#, "Decrease font size", "Tooltip"]& ], 
+                 TagBox[
+                  TooltipBox[
+                   ButtonBox[
+                    PaneSelectorBox[{False -> StyleBox[
+                    PaneBox[
+                    "\"\[FilledSquare]\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[1], 
+                    FontSize -> 13, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", Background -> GrayLevel[0.6], StripOnInput -> 
+                    False], True -> StyleBox[
+                    PaneBox[
+                    "\"\[FilledSquare]\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[0], 
+                    FontSize -> 13, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], Background -> GrayLevel[0.7], 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    ButtonFunction :> SlideShowAuthoring`FontSizeReset[
+                    ButtonNotebook[], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]], Appearance -> None, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                   "\"Reset font size\"", TooltipDelay -> 0.2, LabelStyle -> 
+                   "TextStyling"], 
+                  Annotation[#, "Reset font size", "Tooltip"]& ]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxBackground -> {"Columns" -> {
+                   GrayLevel[0.5], 
+                   GrayLevel[0.6], 
+                   GrayLevel[0.6], 
+                   GrayLevel[0.6]}, "Rows" -> {{None}}}, 
+               GridBoxFrame -> {
+                "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}}, 
+               GridBoxItemSize -> {"Columns" -> {6, 2}}, FrameStyle -> 
+               Directive[
+                 GrayLevel[1], 10]], "Grid"]}, {
+             TagBox[
+              GridBox[{{
+                 StyleBox[
+                 "\"ALIGN TEXT\"", FontColor -> GrayLevel[1], FontSize -> 11, 
+                  FontWeight -> "Plain", FontFamily -> "Arial", StripOnInput -> 
+                  False], 
+                 TagBox[
+                  TooltipBox[
+                   ButtonBox[
+                    PaneSelectorBox[{False -> StyleBox[
+                    PaneBox[
+                    "\"<\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", Background -> GrayLevel[0.6], StripOnInput -> 
+                    False], True -> StyleBox[
+                    PaneBox[
+                    "\"<\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[0], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], Background -> GrayLevel[0.7], 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    ButtonFunction :> SlideShowAuthoring`SetTextAlignment[
+                    ButtonNotebook[], "Left"], Appearance -> None, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], "\"Align Text Left\"",
+                    TooltipDelay -> 0.2, LabelStyle -> "TextStyling"], 
+                  Annotation[#, "Align Text Left", "Tooltip"]& ], 
+                 TagBox[
+                  TooltipBox[
+                   ButtonBox[
+                    PaneSelectorBox[{False -> StyleBox[
+                    PaneBox[
+                    "\"><\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", Background -> GrayLevel[0.6], StripOnInput -> 
+                    False], True -> StyleBox[
+                    PaneBox[
+                    "\"><\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[0], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], Background -> GrayLevel[0.7], 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    ButtonFunction :> SlideShowAuthoring`SetTextAlignment[
+                    ButtonNotebook[], "Center"], Appearance -> None, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                   "\"Align Text Center\"", TooltipDelay -> 0.2, LabelStyle -> 
+                   "TextStyling"], 
+                  Annotation[#, "Align Text Center", "Tooltip"]& ], 
+                 TagBox[
+                  TooltipBox[
+                   ButtonBox[
+                    PaneSelectorBox[{False -> StyleBox[
+                    PaneBox[
+                    "\">\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", Background -> GrayLevel[0.6], StripOnInput -> 
+                    False], True -> StyleBox[
+                    PaneBox[
+                    "\">\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[0], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], Background -> GrayLevel[0.7], 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    ButtonFunction :> SlideShowAuthoring`SetTextAlignment[
+                    ButtonNotebook[], "Right"], Appearance -> None, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                   "\"Align Text Right\"", TooltipDelay -> 0.2, LabelStyle -> 
+                   "TextStyling"], 
+                  Annotation[#, "Align Text Right", "Tooltip"]& ]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxBackground -> {"Columns" -> {
+                   GrayLevel[0.5], 
+                   GrayLevel[0.6], 
+                   GrayLevel[0.6], 
+                   GrayLevel[0.6]}, "Rows" -> {{None}}}, 
+               GridBoxFrame -> {
+                "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}}, 
+               GridBoxItemSize -> {"Columns" -> {6, 2}}, FrameStyle -> 
+               Directive[
+                 GrayLevel[1], 10]], "Grid"]}, {
+             TagBox[
+              GridBox[{{
+                 StyleBox[
+                 "\"TEXT COLOR\"", FontColor -> GrayLevel[1], FontSize -> 11, 
+                  FontWeight -> "Plain", FontFamily -> "Arial", StripOnInput -> 
+                  False], 
+                 TagBox[
+                  TooltipBox[
+                   ColorSetterBox[
+                    Dynamic[SlideShowAuthoring`TextFontColor], "Swatch", 
+                    ImageSize -> {25, 25}], "\"Text color\"", TooltipDelay -> 
+                   0.2, LabelStyle -> "TextStyling"], 
+                  Annotation[#, "Text color", "Tooltip"]& ], 
+                 TagBox[
+                  TooltipBox[
+                   ButtonBox[
+                    PaneSelectorBox[{False -> StyleBox[
+                    PaneBox[
+                    "\"Apply\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {40, 24}], FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", Background -> GrayLevel[0.6], StripOnInput -> 
+                    False], True -> StyleBox[
+                    PaneBox[
+                    "\"Apply\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {40, 24}], FontColor -> GrayLevel[0], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], Background -> GrayLevel[0.7], 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    ButtonFunction :> SlideShowAuthoring`SetFontColor[
+                    ButtonNotebook[]], Appearance -> None, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                   "\"Apply color to selection\"", TooltipDelay -> 0.2, 
+                   LabelStyle -> "TextStyling"], 
+                  Annotation[#, "Apply color to selection", "Tooltip"]& ]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxBackground -> {"Columns" -> {
+                   GrayLevel[0.5], 
+                   GrayLevel[0.6], 
+                   GrayLevel[0.6], 
+                   GrayLevel[0.6]}, "Rows" -> {{None}}}, 
+               GridBoxFrame -> {
+                "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}}, 
+               GridBoxItemSize -> {"Columns" -> {6, 2.35, 3}}, FrameStyle -> 
+               Directive[
+                 GrayLevel[1], 10]], "Grid"]}}, 
+           GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Bottom}}}, 
+           AutoDelete -> False, 
+           GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{3}}}], 
+          "Grid"], 
+         TagBox[
+          GridBox[{{
+             DynamicModuleBox[{SlideShowAuthoring`Private`sel$$}, 
+              PopupMenuBox[
+               Dynamic[
+               SlideShowAuthoring`Private`sel$$, (
+                Switch[#, "800 * 600", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {800, 600 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    800, 600 + 172}; Null, "1024 * 768", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {1024, 768 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    1024, 768 + 172}; Null, "1280 * 960", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {1280, 960 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    1280, 960 + 172}; Null, "1366 * 768", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {1366, 768 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    1366, 768 + 172}; Null, "1400 * 1050", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {1400, 1050 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    1400, 1050 + 172}; Null, "1600 * 900", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {1600, 900 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    1600, 900 + 172}; Null, "1680 * 1050", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {1680, 1050 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    1680, 1050 + 172}; Null, "1920 * 1080", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {1920, 1080 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    1920, 1080 + 172}; Null, "2560 * 1440", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {2560, 1440 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    2560, 1440 + 172}; Null, "Full Screen", 
+                  SetOptions[
+                   EvaluationNotebook[], {DockedCells -> {
+                    Cell[
+                    BoxData[
+                    ActionMenuBox[
+                    PaneBox[
+                    StyleBox[" ", StripOnInput -> False, FontSize -> 0.1]], {
+                    "Toolbar" :> (SetOptions[
+                    EvaluationNotebook[], {
+                    DockedCells -> Inherited, WindowFrame -> "Normal", 
+                    WindowElements -> Inherited, WindowFrameElements -> 
+                    Inherited, WindowStatusArea -> None, 
+                    ScreenStyleEnvironment -> "SlideShow", WindowSize -> {
+                    First[
+                    CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}]], 
+                    Last[
+                    CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}]]}}]; 
+                    Null), Delimiter, "Enter Full Screen" :> (CurrentValue[
+                    EvaluationNotebook[], WindowSize] = Full; Null), 
+                    "Exit Full Screen" :> (FrontEndExecute[
+                    FrontEnd`Value[
+                    FEPrivate`NotebookToggleFullScreen[]]]; SetOptions[
+                    EvaluationNotebook[], {
+                    DockedCells -> Inherited, ScreenStyleEnvironment -> 
+                    "SlideShow"}]; Null), Delimiter, "Close" :> (NotebookClose[
+                    EvaluationNotebook[], Interactive -> True]; Quiet[
+                    DeviceClose["Camera"]])}, Appearance -> "Frameless", 
+                    AutoAction -> False, Background -> GrayLevel[0.9], 
+                    ImageSize -> {Full, 10}]], 
+                    CellMargins -> {{0, 0}, {0, 0}}, 
+                    CellFrame -> {{0, 0}, {0, 3}}, CellFrameColor -> 
+                    GrayLevel[0.75], CellFrameMargins -> {{0, 0}, {2, 2}}, 
+                    FontSize -> 1, 
+                    CellElementSpacings -> {"CellMinHeight" -> 1}, Background -> 
+                    GrayLevel[0.94]]}, WindowSize -> Full, 
+                    ScreenStyleEnvironment -> "SlideShowPresentation"}], 
+                  Blank[], 
+                  Message[
+                   MessageName[
+                   SlideShowAuthoring`Private`SlideShowAuthoring, "args"]]]; 
+                SlideShowAuthoring`Private`sel$$ = #; CurrentValue[
+                   EvaluationNotebook[], WindowMargins] = Inherited; 
+                Null)& ], {
+               " " -> "\" \"", "800 * 600" -> "\"800 * 600\"", "1024 * 768" -> 
+                "\"1024 * 768\"", "1280 * 960" -> "\"1280 * 960\"", 
+                "1366 * 768" -> "\"1366 * 768\"", "1400 * 1050" -> 
+                "\"1400 * 1050\"", "1600 * 900" -> "\"1600 * 900\"", 
+                "1680 * 1050" -> "\"1680 * 1050\"", "1920 * 1080" -> 
+                "\"1920 * 1080\"", "2560 * 1440" -> "\"2560 * 1440\"", 
+                Delimiter, "Full Screen" -> "\"Full Screen\""}, "1", 
+               FrameBox[
+                PaneBox[
+                 
+                 TemplateBox[{
+                  "\[ThickSpace]\[ThickSpace]", 
+                   "\"\[ThickSpace]\[ThickSpace]\"", 
+                   StyleBox[
+                   "\"WINDOW RESOLUTION\"", FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Plain", FontFamily -> 
+                    "Arial", StripOnInput -> False], 
+                   StyleBox[
+                   "\"\[FilledDownTriangle]\"", FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Plain", StripOnInput -> 
+                    False]}, "RowWithSeparators"], 
+                 Alignment -> {Center, Center}, ImageSize -> {140, 15}], 
+                FrameMargins -> {{22, 22}, {8, 4}}, FrameStyle -> 
+                RGBColor[1, 1, 1], Background -> GrayLevel[0.5], StripOnInput -> 
+                False], Appearance -> "ActionMenu", AutoAction -> False], 
+              DynamicModuleValues :> {}]}, {
+             
+             DynamicModuleBox[{
+              SlideShowAuthoring`Private`list$$ = {
+                "StatusArea", "MemoryMonitor", "MagnificationPopUp", 
+                 "HorizontalScrollBar", "VerticalScrollBar", "MenuBar"}, 
+               SlideShowAuthoring`Private`choices$$ = {
+                "StatusArea", "MemoryMonitor", "MagnificationPopUp", 
+                 "HorizontalScrollBar", "VerticalScrollBar", "MenuBar"}}, 
+              ActionMenuBox[
+               FrameBox[
+                PaneBox[
+                 
+                 TemplateBox[{
+                  "\[ThickSpace]\[ThickSpace]", 
+                   "\"\[ThickSpace]\[ThickSpace]\"", 
+                   StyleBox[
+                   "\"WINDOW ELEMENTS\"", FontColor -> GrayLevel[1], FontSize -> 
+                    11, FontWeight -> "Plain", FontFamily -> "Arial", 
+                    StripOnInput -> False], 
+                   StyleBox[
+                   "\"\[FilledDownTriangle]\"", FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Plain", StripOnInput -> 
+                    False]}, "RowWithSeparators"], 
+                 Alignment -> {Center, Center}, ImageSize -> {140, 15}], 
+                FrameMargins -> {{22, 22}, {8, 4}}, FrameStyle -> 
+                RGBColor[1, 1, 1], Background -> GrayLevel[0.5], StripOnInput -> 
+                False], {"\"All On\"" :> (CurrentValue[
+                   EvaluationNotebook[], WindowElements] = Inherited), 
+                "\"All Off\"" :> (CurrentValue[
+                   EvaluationNotebook[], WindowElements] = {}), Delimiter, 
+                TemplateBox[{
+                   StyleBox["\"+ \"", ShowContents -> Dynamic[
+                    MemberQ[SlideShowAuthoring`Private`list$$, "StatusArea"]],
+                     StripOnInput -> False], "\"StatusArea\""}, 
+                  "RowDefault"] :> (If[
+                   MemberQ[SlideShowAuthoring`Private`list$$, "StatusArea"], 
+                   SlideShowAuthoring`Private`list$$ = 
+                   DeleteCases[
+                    SlideShowAuthoring`Private`list$$, "StatusArea"], 
+                   AppendTo[SlideShowAuthoring`Private`list$$, "StatusArea"]]; 
+                 CurrentValue[
+                    EvaluationNotebook[], WindowElements] = 
+                  SlideShowAuthoring`Private`list$$), TemplateBox[{
+                   StyleBox["\"+ \"", ShowContents -> Dynamic[
+                    MemberQ[
+                    SlideShowAuthoring`Private`list$$, "MemoryMonitor"]], 
+                    StripOnInput -> False], "\"MemoryMonitor\""}, 
+                  "RowDefault"] :> (If[
+                   MemberQ[
+                   SlideShowAuthoring`Private`list$$, "MemoryMonitor"], 
+                   SlideShowAuthoring`Private`list$$ = 
+                   DeleteCases[
+                    SlideShowAuthoring`Private`list$$, "MemoryMonitor"], 
+                   AppendTo[
+                   SlideShowAuthoring`Private`list$$, "MemoryMonitor"]]; 
+                 CurrentValue[
+                    EvaluationNotebook[], WindowElements] = 
+                  SlideShowAuthoring`Private`list$$), TemplateBox[{
+                   StyleBox["\"+ \"", ShowContents -> Dynamic[
+                    MemberQ[
+                    SlideShowAuthoring`Private`list$$, "MagnificationPopUp"]],
+                     StripOnInput -> False], "\"MagnificationPopUp\""}, 
+                  "RowDefault"] :> (If[
+                   MemberQ[
+                   SlideShowAuthoring`Private`list$$, "MagnificationPopUp"], 
+                   SlideShowAuthoring`Private`list$$ = 
+                   DeleteCases[
+                    SlideShowAuthoring`Private`list$$, "MagnificationPopUp"], 
+                   
+                   AppendTo[
+                   SlideShowAuthoring`Private`list$$, "MagnificationPopUp"]]; 
+                 CurrentValue[
+                    EvaluationNotebook[], WindowElements] = 
+                  SlideShowAuthoring`Private`list$$), TemplateBox[{
+                   StyleBox["\"+ \"", ShowContents -> Dynamic[
+                    MemberQ[
+                    SlideShowAuthoring`Private`list$$, 
+                    "HorizontalScrollBar"]], StripOnInput -> False], 
+                   "\"HorizontalScrollBar\""}, "RowDefault"] :> (If[
+                   MemberQ[
+                   SlideShowAuthoring`Private`list$$, "HorizontalScrollBar"], 
+                   SlideShowAuthoring`Private`list$$ = 
+                   DeleteCases[
+                    SlideShowAuthoring`Private`list$$, "HorizontalScrollBar"], 
+                   AppendTo[
+                   SlideShowAuthoring`Private`list$$, "HorizontalScrollBar"]]; 
+                 CurrentValue[
+                    EvaluationNotebook[], WindowElements] = 
+                  SlideShowAuthoring`Private`list$$), TemplateBox[{
+                   StyleBox["\"+ \"", ShowContents -> Dynamic[
+                    MemberQ[
+                    SlideShowAuthoring`Private`list$$, "VerticalScrollBar"]], 
+                    StripOnInput -> False], "\"VerticalScrollBar\""}, 
+                  "RowDefault"] :> (If[
+                   MemberQ[
+                   SlideShowAuthoring`Private`list$$, "VerticalScrollBar"], 
+                   SlideShowAuthoring`Private`list$$ = 
+                   DeleteCases[
+                    SlideShowAuthoring`Private`list$$, "VerticalScrollBar"], 
+                   AppendTo[
+                   SlideShowAuthoring`Private`list$$, "VerticalScrollBar"]]; 
+                 CurrentValue[
+                    EvaluationNotebook[], WindowElements] = 
+                  SlideShowAuthoring`Private`list$$), TemplateBox[{
+                   StyleBox["\"+ \"", ShowContents -> Dynamic[
+                    MemberQ[SlideShowAuthoring`Private`list$$, "MenuBar"]], 
+                    StripOnInput -> False], "\"MenuBar\""}, "RowDefault"] :> (
+                 If[
+                   MemberQ[SlideShowAuthoring`Private`list$$, "MenuBar"], 
+                   SlideShowAuthoring`Private`list$$ = 
+                   DeleteCases[SlideShowAuthoring`Private`list$$, "MenuBar"], 
+                   
+                   AppendTo[SlideShowAuthoring`Private`list$$, "MenuBar"]]; 
+                 CurrentValue[
+                    EvaluationNotebook[], WindowElements] = 
+                  SlideShowAuthoring`Private`list$$)}, Appearance -> None], 
+              DynamicModuleValues :> {}]}}, 
+           GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Bottom}}}, 
+           AutoDelete -> False, 
+           GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{3}}}], 
+          "Grid"], 
+         ItemBox["\"\"", ItemSize -> Fit, StripOnInput -> False], 
+         "\[SpanFromAbove]"}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+       AutoDelete -> False, 
+       GridBoxFrame -> {"Columns" -> None, "Rows" -> None}, 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+       GridBoxSpacings -> {"Columns" -> {{1.5}}, "Rows" -> {{0}}}], "Grid"]], 
+    "DockedCell", CellElementSpacings -> {"CellMinHeight" -> 1}, CellFrame -> 
+    0, CellFrameMargins -> {{20, 20}, {8, 10}}, 
+    CellMargins -> {{0, 0}, {0, 0}}, Background -> GrayLevel[0.75]], 
+   Cell[
+    BoxData[
+     DynamicModuleBox[{}, "x", DynamicModuleValues :> {}, 
+      Initialization :> (SlideShowAuthoring`Private`slideShowDockHeight = 172; 
+       SlideShowAuthoring`SetVerticalCellMargin[
+          Pattern[SlideShowAuthoring`Private`directive, 
+           Blank[String]], {{
+            Pattern[SlideShowAuthoring`Private`l, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`r, 
+             Blank[]]}, {
+            Pattern[SlideShowAuthoring`Private`b, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`t, 
+             Blank[]]}}, 
+          Pattern[SlideShowAuthoring`Private`windowsize, 
+           Blank[List]]] := 
+        Module[{SlideShowAuthoring`Private`height, 
+           SlideShowAuthoring`Private`width, 
+           SlideShowAuthoring`Private`percentage, 
+           SlideShowAuthoring`Private`n = 
+           0.4}, {SlideShowAuthoring`Private`width, 
+             SlideShowAuthoring`Private`height} = 
+           SlideShowAuthoring`Private`windowsize; 
+          SlideShowAuthoring`Private`percentage = 
+           N[SlideShowAuthoring`Private`t/SlideShowAuthoring`Private`height, 
+             4]; SlideShowAuthoring`Private`n = 
+           Switch[SlideShowAuthoring`Private`directive, "FullUp", 0.01, 
+             "MediumUp", 0.2, "NudgeUp", 
+             SlideShowAuthoring`Private`percentage - 0.025, "Center", 0.35, 
+             "NudgeDown", SlideShowAuthoring`Private`percentage + 0.025, 
+             "MediumDown", 0.55, "FullDown", 0.75, 
+             Blank[], 0.35]; 
+          SlideShowAuthoring`Private`n = N[SlideShowAuthoring`Private`n, 4]; 
+          SlideShowAuthoring`Private`n = 
+           If[0 <= SlideShowAuthoring`Private`n <= 0.76, 
+             SlideShowAuthoring`Private`n, 
+             SlideShowAuthoring`Private`percentage]; 
+          With[{SlideShowAuthoring`Private`scale = 
+             SlideShowAuthoring`Private`n}, 
+            
+            Hold[{{N[
+                SlideShowAuthoring`Private`l/SlideShowAuthoring`Private`width,
+                  4] FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 
+               N[SlideShowAuthoring`Private`r/
+                 SlideShowAuthoring`Private`width, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+              N[SlideShowAuthoring`Private`b/
+                 SlideShowAuthoring`Private`height, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 
+               SlideShowAuthoring`Private`scale 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}}]]]; 
+       SlideShowAuthoring`SetVerticalCellMargin["Reset", {{
+            Pattern[SlideShowAuthoring`Private`l, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`r, 
+             Blank[]]}, {
+            Pattern[SlideShowAuthoring`Private`b, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`t, 
+             Blank[]]}}, 
+          BlankSequence[]] := {{
+          SlideShowAuthoring`Private`l, SlideShowAuthoring`Private`r}, {
+          Inherited, Inherited}}; 
+       SlideShowAuthoring`SetHorizontalCellMargin["NudgeLeft", {{
+            Pattern[SlideShowAuthoring`Private`l, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`r, 
+             Blank[]]}, {
+            Pattern[SlideShowAuthoring`Private`b, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`t, 
+             Blank[]]}}, 
+          Pattern[SlideShowAuthoring`Private`windowsize, 
+           Blank[List]], 
+          Pattern[SlideShowAuthoring`Private`alignment, 
+           Blank[]]] := 
+        Module[{SlideShowAuthoring`Private`height, 
+           SlideShowAuthoring`Private`width, 
+           SlideShowAuthoring`Private`leftPercentage, 
+           SlideShowAuthoring`Private`rightPercentage, 
+           SlideShowAuthoring`Private`textAlignment, 
+           SlideShowAuthoring`Private`nudge = 
+           0.05}, {SlideShowAuthoring`Private`width, 
+             SlideShowAuthoring`Private`height} = 
+           SlideShowAuthoring`Private`windowsize; If[
+            Not[
+             NumberQ[SlideShowAuthoring`Private`alignment]], 
+            SlideShowAuthoring`Private`textAlignment = 
+            Switch[SlideShowAuthoring`Private`alignment, Left, -1, Right, 1, 
+              Center, 0, 
+              Blank[], SlideShowAuthoring`Private`alignment]]; 
+          Which[SlideShowAuthoring`Private`textAlignment < 0, 
+            SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`l/SlideShowAuthoring`Private`width, 
+               3]; SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`leftPercentage - 
+               SlideShowAuthoring`Private`nudge, 4]; 
+            SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`r/SlideShowAuthoring`Private`width, 
+               4]; SlideShowAuthoring`Private`leftPercentage = 
+             If[0 <= SlideShowAuthoring`Private`leftPercentage <= 0.76, 
+               SlideShowAuthoring`Private`leftPercentage, 0]; Null, 
+            SlideShowAuthoring`Private`textAlignment > 0, 
+            SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`l/SlideShowAuthoring`Private`width, 
+               3]; SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`r/SlideShowAuthoring`Private`width, 
+               4]; SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`rightPercentage + 
+               SlideShowAuthoring`Private`nudge, 4]; 
+            SlideShowAuthoring`Private`rightPercentage = 
+             If[0 <= SlideShowAuthoring`Private`rightPercentage <= 0.76, 
+               SlideShowAuthoring`Private`rightPercentage, 0]; Null, True, 
+            SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`l/SlideShowAuthoring`Private`width, 
+               3]; SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`r/SlideShowAuthoring`Private`width, 
+               4]; SlideShowAuthoring`Private`leftPercentage = 0; 
+            SlideShowAuthoring`Private`rightPercentage = 
+             SlideShowAuthoring`Private`rightPercentage + 
+              SlideShowAuthoring`Private`nudge; Null]; 
+          With[{
+            SlideShowAuthoring`Private`left = 
+             SlideShowAuthoring`Private`leftPercentage, 
+             SlideShowAuthoring`Private`right = 
+             SlideShowAuthoring`Private`rightPercentage}, 
+            
+            Hold[{{SlideShowAuthoring`Private`left 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 
+               SlideShowAuthoring`Private`right 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+              N[SlideShowAuthoring`Private`b/
+                 SlideShowAuthoring`Private`height, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 
+               N[SlideShowAuthoring`Private`t/
+                 SlideShowAuthoring`Private`height, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}}]]]; 
+       SlideShowAuthoring`SetHorizontalCellMargin["NudgeRight", {{
+            Pattern[SlideShowAuthoring`Private`l, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`r, 
+             Blank[]]}, {
+            Pattern[SlideShowAuthoring`Private`b, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`t, 
+             Blank[]]}}, 
+          Pattern[SlideShowAuthoring`Private`windowsize, 
+           Blank[List]], 
+          Pattern[SlideShowAuthoring`Private`alignment, 
+           Blank[]]] := 
+        Module[{SlideShowAuthoring`Private`height, 
+           SlideShowAuthoring`Private`width, 
+           SlideShowAuthoring`Private`leftPercentage, 
+           SlideShowAuthoring`Private`rightPercentage, 
+           SlideShowAuthoring`Private`textAlignment, 
+           SlideShowAuthoring`Private`nudge = 
+           0.05}, {SlideShowAuthoring`Private`width, 
+             SlideShowAuthoring`Private`height} = 
+           SlideShowAuthoring`Private`windowsize; If[
+            Not[
+             NumberQ[SlideShowAuthoring`Private`alignment]], 
+            SlideShowAuthoring`Private`textAlignment = 
+            Switch[SlideShowAuthoring`Private`alignment, Left, -1, Right, 1, 
+              Center, 0, 
+              Blank[], SlideShowAuthoring`Private`alignment]]; 
+          Which[SlideShowAuthoring`Private`textAlignment < 0, 
+            SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`l/SlideShowAuthoring`Private`width, 
+               3]; 
+            SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`leftPercentage + 
+               SlideShowAuthoring`Private`nudge, 4]; 
+            SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`r/SlideShowAuthoring`Private`width, 
+               4]; SlideShowAuthoring`Private`leftPercentage = 
+             If[0 <= SlideShowAuthoring`Private`leftPercentage <= 0.76, 
+               SlideShowAuthoring`Private`leftPercentage, 0]; Null, 
+            SlideShowAuthoring`Private`textAlignment > 0, 
+            SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`l/SlideShowAuthoring`Private`width, 
+               3]; SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`r/SlideShowAuthoring`Private`width, 
+               4]; SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`rightPercentage - 
+               SlideShowAuthoring`Private`nudge, 4]; 
+            SlideShowAuthoring`Private`rightPercentage = 
+             If[0 <= SlideShowAuthoring`Private`rightPercentage <= 0.76, 
+               SlideShowAuthoring`Private`rightPercentage, 0]; Null, True, 
+            SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`l/SlideShowAuthoring`Private`width, 
+               3]; SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`r/SlideShowAuthoring`Private`width, 
+               4]; SlideShowAuthoring`Private`rightPercentage = 0; 
+            SlideShowAuthoring`Private`leftPercentage = 
+             SlideShowAuthoring`Private`leftPercentage + 
+              SlideShowAuthoring`Private`nudge; Null]; 
+          With[{SlideShowAuthoring`Private`left = 
+             SlideShowAuthoring`Private`leftPercentage, 
+             SlideShowAuthoring`Private`right = 
+             SlideShowAuthoring`Private`rightPercentage}, 
+            
+            Hold[{{SlideShowAuthoring`Private`left 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 
+               SlideShowAuthoring`Private`right 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+              N[SlideShowAuthoring`Private`b/
+                 SlideShowAuthoring`Private`height, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 
+               N[SlideShowAuthoring`Private`t/
+                 SlideShowAuthoring`Private`height, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}}]]]; 
+       SlideShowAuthoring`SetHorizontalCellMargin["Reset", {{
+            Pattern[SlideShowAuthoring`Private`l, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`r, 
+             Blank[]]}, {
+            Pattern[SlideShowAuthoring`Private`b, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`t, 
+             Blank[]]}}, 
+          Pattern[SlideShowAuthoring`Private`windowsize, 
+           Blank[List]], 
+          Pattern[SlideShowAuthoring`Private`textAlignment, 
+           Blank[]]] := 
+        Module[{SlideShowAuthoring`Private`height, 
+           SlideShowAuthoring`Private`width}, {
+            SlideShowAuthoring`Private`width, 
+             SlideShowAuthoring`Private`height} = 
+           SlideShowAuthoring`Private`windowsize; With[{}, 
+            
+            Hold[{{Inherited, Inherited}, {
+              N[SlideShowAuthoring`Private`b/
+                 SlideShowAuthoring`Private`height, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 
+               N[SlideShowAuthoring`Private`t/
+                 SlideShowAuthoring`Private`height, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}}]]]; 
+       SlideShowAuthoring`SetHorizontalCellMargin[
+          Pattern[SlideShowAuthoring`Private`a, 
+           BlankNullSequence[]]] := Message[
+          MessageName[SlideShowAuthoring`SetHorizontalMargin, "args"], 
+          ToString[{SlideShowAuthoring`Private`a}]]; 
+       Hold[{{Inherited, Inherited}, {Inherited, Inherited}}]; 
+       SlideShowAuthoring`Private`SelectCellIfCursorWithinCell[
+          Pattern[SlideShowAuthoring`Private`nbObj, 
+           Blank[NotebookObject]]] := 
+        Module[{SlideShowAuthoring`Private`linkRead}, 
+          While[(LinkWrite[$ParentLink, 
+              FrontEnd`CellInformation[SlideShowAuthoring`Private`nbObj]]; 
+            SlideShowAuthoring`Private`linkRead = LinkRead[$ParentLink]); 
+           And[SlideShowAuthoring`Private`linkRead =!= $Failed, 
+             Not[
+              MemberQ[
+               ReplaceAll[
+               "CursorPosition", SlideShowAuthoring`Private`linkRead], 
+               "CellBracket"]]], 
+           FrontEndExecute[
+            FrontEnd`SelectionMove[
+            SlideShowAuthoring`Private`nbObj, All, Cell, AutoScroll -> 
+             False]]]]; SlideShowAuthoring`GetSelection[
+          Pattern[SlideShowAuthoring`Private`nbObj, 
+           Blank[NotebookObject]]] := 
+        Module[{SlideShowAuthoring`Private`cellInfo}, 
+          SlideShowAuthoring`Private`SelectCellIfCursorWithinCell[
+           SlideShowAuthoring`Private`nbObj]; 
+          SlideShowAuthoring`Private`cellInfo = 
+           Developer`CellInformation[SlideShowAuthoring`Private`nbObj]; 
+          If[SlideShowAuthoring`Private`cellInfo == $Failed, FrontEndExecute[
+              FrontEndToken[SlideShowAuthoring`Private`nbObj, "SelectAll"]]; 
+            SelectionMove[SlideShowAuthoring`Private`nbObj, Before, Cell]; 
+            SelectionMove[SlideShowAuthoring`Private`nbObj, Next, Cell]; 
+            SelectionMove[SlideShowAuthoring`Private`nbObj, Next, Cell]; Null, 
+            If[
+             And[
+              Not[
+               MatchQ[
+               SlideShowAuthoring`Private`cellInfo, {{
+                 "Style" -> "SlideShowNavigationBar", 
+                  BlankSequence[]}}]], 
+              MatchQ[SlideShowAuthoring`Private`cellInfo, {{
+                 BlankSequence[], "CursorPosition" -> "CellBracket", 
+                 BlankSequence[]}}]], 
+             SelectionMove[
+             SlideShowAuthoring`Private`nbObj, Next, Cell], $Failed]]]; 
+       SlideShowAuthoring`FontSizeDecrease[
+          Pattern[SlideShowAuthoring`Private`nbObj, 
+           Blank[NotebookObject]], 
+          Pattern[SlideShowAuthoring`Private`windowsize, 
+           Blank[List]]] := 
+        Module[{SlideShowAuthoring`Private`cellInfo, 
+           SlideShowAuthoring`Private`width, 
+           SlideShowAuthoring`Private`height, 
+           SlideShowAuthoring`Private`currentSize, 
+           SlideShowAuthoring`Private`smidge = 
+           0.005}, {
+            SlideShowAuthoring`Private`width, 
+             SlideShowAuthoring`Private`height} = 
+           SlideShowAuthoring`Private`windowsize; 
+          SlideShowAuthoring`Private`cellInfo = 
+           Developer`CellInformation[SlideShowAuthoring`Private`nbObj]; If[
+            TrueQ[SlideShowAuthoring`Private`cellInfo == $Failed], 
+            MessageDialog["Please select a cell.", WindowSize -> {530, All}], 
+            
+            If[
+             MatchQ[SlideShowAuthoring`Private`cellInfo, {{
+                BlankSequence[], "CursorPosition" -> "CellBracket", 
+                BlankSequence[]}}], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width - 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontSize -> 
+               SlideShowAuthoring`Private`percent 
+                FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width - 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontSize -> 
+               SlideShowAuthoring`Private`percent 
+                FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]]]; 
+       SlideShowAuthoring`FontSizeDecrease[
+          Pattern[SlideShowAuthoring`Private`a, 
+           BlankNullSequence[]]] := Block[{}, Message[
+            MessageName[SlideShowAuthoring`SetHorizontalMargin, "args"], 
+            ToString[{SlideShowAuthoring`Private`a}]]; 
+          With[{SlideShowAuthoring`Private`info = 
+             SlideShowAuthoring`Private`a}, 
+            MessageDialog[
+             ToString[SlideShowAuthoring`Private`info], 
+             WindowSize -> {530, All}]]; Null]; 
+       SlideShowAuthoring`FontSizeIncrease[
+          Pattern[SlideShowAuthoring`Private`nbObj, 
+           Blank[NotebookObject]], 
+          Pattern[SlideShowAuthoring`Private`windowsize, 
+           Blank[List]]] := 
+        Module[{SlideShowAuthoring`Private`cellInfo, 
+           SlideShowAuthoring`Private`width, 
+           SlideShowAuthoring`Private`height, 
+           SlideShowAuthoring`Private`currentSize, 
+           SlideShowAuthoring`Private`smidge = 
+           0.005}, {
+            SlideShowAuthoring`Private`width, 
+             SlideShowAuthoring`Private`height} = 
+           SlideShowAuthoring`Private`windowsize; 
+          SlideShowAuthoring`Private`cellInfo = 
+           Developer`CellInformation[SlideShowAuthoring`Private`nbObj]; If[
+            TrueQ[SlideShowAuthoring`Private`cellInfo == $Failed], 
+            MessageDialog["Please select a cell.", WindowSize -> {530, All}], 
+            
+            If[
+             MatchQ[SlideShowAuthoring`Private`cellInfo, {{
+                BlankSequence[], "CursorPosition" -> "CellBracket", 
+                BlankSequence[]}}], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width + 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontSize -> 
+               SlideShowAuthoring`Private`percent 
+                FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width + 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontSize -> 
+               SlideShowAuthoring`Private`percent 
+                FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]]]; 
+       SlideShowAuthoring`SetFontColor[
+          Pattern[SlideShowAuthoring`Private`nbObj, 
+           Blank[NotebookObject]]] := 
+        Module[{SlideShowAuthoring`Private`cellInfo}, 
+          SlideShowAuthoring`Private`cellInfo = 
+           Developer`CellInformation[SlideShowAuthoring`Private`nbObj]; If[
+            TrueQ[SlideShowAuthoring`Private`cellInfo == $Failed], 
+            MessageDialog["Please select a cell.", WindowSize -> {530, All}], 
+            
+            If[
+             MatchQ[SlideShowAuthoring`Private`cellInfo, {{
+                BlankSequence[], "CursorPosition" -> "CellBracket", 
+                BlankSequence[]}}], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width - 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontColor -> 
+               SlideShowAuthoring`TextFontColor], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width - 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontColor -> 
+               SlideShowAuthoring`TextFontColor]]]]; 
+       SlideShowAuthoring`SetFontColor[
+          Pattern[SlideShowAuthoring`Private`a, 
+           BlankNullSequence[]]] := Block[{}, Message[
+            MessageName[SlideShowAuthoring`SetFontColor, "args"], 
+            ToString[{SlideShowAuthoring`Private`a}]]; 
+          With[{SlideShowAuthoring`Private`info = 
+             SlideShowAuthoring`Private`a}, 
+            MessageDialog[
+             ToString[SlideShowAuthoring`Private`info], 
+             WindowSize -> {530, All}]]; Null]; 
+       SlideShowAuthoring`SetTextAlignment[
+          Pattern[SlideShowAuthoring`Private`nbObj, 
+           Blank[NotebookObject]], 
+          Pattern[SlideShowAuthoring`Private`align, 
+           Blank[String]]] := 
+        Module[{SlideShowAuthoring`Private`cellInfo, 
+           SlideShowAuthoring`Private`textAlignment}, 
+          SlideShowAuthoring`Private`SelectCellIfCursorWithinCell[
+           SlideShowAuthoring`Private`nbObj]; 
+          SlideShowAuthoring`Private`cellInfo = 
+           Developer`CellInformation[SlideShowAuthoring`Private`nbObj]; 
+          Which[SlideShowAuthoring`Private`align == "Left", 
+            SlideShowAuthoring`Private`textAlignment = Left, 
+            SlideShowAuthoring`Private`align == "Right", 
+            SlideShowAuthoring`Private`textAlignment = Right, True, 
+            SlideShowAuthoring`Private`textAlignment = Center]; If[
+            TrueQ[SlideShowAuthoring`Private`cellInfo == $Failed], 
+            MessageDialog["Please select a cell.", WindowSize -> {530, All}], 
+            
+            If[
+             MatchQ[SlideShowAuthoring`Private`cellInfo, {{
+                BlankSequence[], "CursorPosition" -> "CellBracket", 
+                BlankSequence[]}}], 
+             SetOptions[
+              NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+              TextAlignment -> SlideShowAuthoring`Private`textAlignment], 
+             SetOptions[
+              NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+              TextAlignment -> SlideShowAuthoring`Private`textAlignment]]]]; 
+       SlideShowAuthoring`FontSizeReset[
+          Pattern[SlideShowAuthoring`Private`nbObj, 
+           Blank[NotebookObject]], 
+          Pattern[SlideShowAuthoring`Private`windowsize, 
+           Blank[List]]] := 
+        Module[{SlideShowAuthoring`Private`cellInfo, 
+           SlideShowAuthoring`Private`width, 
+           SlideShowAuthoring`Private`height, 
+           SlideShowAuthoring`Private`currentSize}, {
+            SlideShowAuthoring`Private`width, 
+             SlideShowAuthoring`Private`height} = 
+           SlideShowAuthoring`Private`windowsize; 
+          SlideShowAuthoring`Private`cellInfo = 
+           Developer`CellInformation[SlideShowAuthoring`Private`nbObj]; If[
+            TrueQ[SlideShowAuthoring`Private`cellInfo == $Failed], 
+            MessageDialog["Please select a cell.", WindowSize -> {530, All}], 
+            
+            If[
+             MatchQ[SlideShowAuthoring`Private`cellInfo, {{
+                BlankSequence[], "CursorPosition" -> "CellBracket", 
+                BlankSequence[]}}], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width + 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontSize -> 
+               Inherited], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width + 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontSize -> 
+               Inherited]]]]; SlideShowAuthoring`SaveNotebookWithOutToolbar[
+          Pattern[SlideShowAuthoring`Private`nb, 
+           Blank[NotebookObject]]] := 
+        Module[{SlideShowAuthoring`Private`expr, 
+           SlideShowAuthoring`Private`ssExpr, 
+           SlideShowAuthoring`Private`ssPath}, 
+          (If[
+           TrueQ[
+            And[# =!= Null, # =!= $Canceled]], 
+           SlideShowAuthoring`Private`ssPath = 
+            FileNameJoin[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+               "StyleSheets", "Utility", "SlideDeck.nb"}]; If[
+             TrueQ[FileType[SlideShowAuthoring`Private`ssPath] == File], 
+             SlideShowAuthoring`Private`ssExpr = 
+              Import[SlideShowAuthoring`Private`ssPath]; 
+             SlideShowAuthoring`Private`expr = 
+              NotebookGet[SlideShowAuthoring`Private`nb]; If[
+               TrueQ[Head[SlideShowAuthoring`Private`ssExpr] == Notebook], 
+               With[{SlideShowAuthoring`Private`stylesheet = 
+                  SlideShowAuthoring`Private`ssExpr}, 
+                 SlideShowAuthoring`Private`expr = 
+                  ReplaceAll[SlideShowAuthoring`Private`expr, Notebook[
+                    Pattern[SlideShowAuthoring`Private`c, 
+                    Blank[]], 
+                    Pattern[SlideShowAuthoring`Private`opts, 
+                    BlankNullSequence[]]] :> 
+                    Notebook[
+                    SlideShowAuthoring`Private`c, StyleDefinitions -> 
+                    SlideShowAuthoring`Private`stylesheet, DockedCells -> {
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SlideshowToolbar"]}, 
+                    Apply[Sequence, 
+                    
+                    DeleteCases[{SlideShowAuthoring`Private`opts}, 
+                    StyleDefinitions -> Blank[]]]]]; Null]; 
+               Export[#, SlideShowAuthoring`Private`expr, "NB"]]], 
+           Abort[]]& )[
+           SystemDialogInput[
+           "FileSave", {$UserDocumentsDirectory, {
+             "Notebook (*.nb)" -> {"*.nb"}}}]]]; Null)]], FontSize -> 1, 
+    CellElementSpacings -> {"CellMinHeight" -> 1}, CellFrame -> 0, 
+    CellFrameMargins -> {{0, 0}, {0, 0}}, CellMargins -> {{0, 0}, {0, 0}}, 
+    Background -> 
+    GrayLevel[0.75]]},ExpressionUUID->"990a7d52-4432-4fac-a5c9-c4a0b06b9932"],
+
+Cell[StyleData[All, "Presentation"],
+ MenuSortingValue->
+  None,ExpressionUUID->"27e1df97-b532-4dd3-a1d3-4de7e45fa246"],
+
+Cell[StyleData[All, "SlideShow", StyleDefinitions -> StyleData[
+ All, "Presentation"]],
+ PageWidth->WindowWidth,
+ DockedCells->{
+   FEPrivate`FrontEndResource["FEExpressions", "SlideshowToolbar"], 
+   Cell[
+    BoxData[
+     TagBox[
+      GridBox[{{
+         ItemBox[
+          StyleBox[
+          "\"S L I D E   C O N T E N T\"", FontColor -> GrayLevel[0], 
+           FontSize -> 9, FontWeight -> "Plain", FontFamily -> "Arial", 
+           StripOnInput -> False], Alignment -> {Left, Top}, StripOnInput -> 
+          False], 
+         ItemBox[
+          StyleBox[
+          "\"C E L L   C O N T E N T\"", FontColor -> GrayLevel[0], FontSize -> 
+           9, FontWeight -> "Plain", FontFamily -> "Arial", StripOnInput -> 
+           False], Alignment -> {Left, Top}, StripOnInput -> False], 
+         ItemBox[
+          StyleBox[
+          "\"W I N D O W   S E T T I N G S\"", FontColor -> GrayLevel[0], 
+           FontSize -> 9, FontWeight -> "Plain", FontFamily -> "Arial", 
+           StripOnInput -> False], Alignment -> {Left, Top}, StripOnInput -> 
+          False], "\" \"", 
+         ItemBox[
+          TagBox[
+           TagBox[
+            TooltipBox[
+             ButtonBox[
+              StyleBox[
+              "\"\[Times]\"", FontColor -> GrayLevel[0.5], FontSize -> 20, 
+               FontWeight -> "Plain", StripOnInput -> False], 
+              ButtonFunction :> (CurrentValue[
+                  EvaluationNotebook[], {
+                  TaggingRules, "SlideShowSettings", "WindowSize"}] = 
+                AbsoluteCurrentValue[
+                  EvaluationNotebook[], WindowSize]; SetOptions[
+                 EvaluationNotebook[], {
+                 ScreenStyleEnvironment -> "SlideShowPresentation", 
+                  WindowFrame -> "Frameless", WindowElements -> {}, 
+                  WindowFrameElements -> {}, WindowStatusArea -> None, 
+                  DockedCells -> {
+                    Cell[
+                    BoxData[
+                    ActionMenuBox[
+                    PaneBox[
+                    StyleBox[" ", StripOnInput -> False, FontSize -> 0.1]], {
+                    "Toolbar" :> (SetOptions[
+                    EvaluationNotebook[], {
+                    DockedCells -> Inherited, WindowFrame -> "Normal", 
+                    WindowElements -> Inherited, WindowFrameElements -> 
+                    Inherited, WindowStatusArea -> None, 
+                    ScreenStyleEnvironment -> "SlideShow", WindowSize -> {
+                    First[
+                    CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}]], 
+                    Last[
+                    CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}]]}}]; 
+                    Null), Delimiter, "Enter Full Screen" :> (CurrentValue[
+                    EvaluationNotebook[], WindowSize] = Full; Null), 
+                    "Exit Full Screen" :> (FrontEndExecute[
+                    FrontEnd`Value[
+                    FEPrivate`NotebookToggleFullScreen[]]]; SetOptions[
+                    EvaluationNotebook[], {
+                    DockedCells -> Inherited, ScreenStyleEnvironment -> 
+                    "SlideShow"}]; Null), Delimiter, "Close" :> (NotebookClose[
+                    EvaluationNotebook[], Interactive -> True]; Quiet[
+                    DeviceClose["Camera"]])}, Appearance -> "Frameless", 
+                    AutoAction -> False, Background -> GrayLevel[0.9], 
+                    ImageSize -> {Full, 10}]], 
+                    CellMargins -> {{0, 0}, {0, 0}}, 
+                    CellFrame -> {{0, 0}, {0, 3}}, CellFrameColor -> 
+                    GrayLevel[0.75], CellFrameMargins -> {{0, 0}, {2, 2}}, 
+                    FontSize -> 1, 
+                    CellElementSpacings -> {"CellMinHeight" -> 1}, Background -> 
+                    GrayLevel[0.94]]}, WindowSize -> {
+                    First[
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}]], Last[
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}]] - 
+                    172}}]), Appearance -> None, FrameMargins -> 0, 
+              ContentPadding -> False, Evaluator -> Automatic, Method -> 
+              "Preemptive"], "\"Hide Toolbar\"", TooltipDelay -> 0.25, 
+             LabelStyle -> "TextStyling"], 
+            Annotation[#, "Hide Toolbar", "Tooltip"]& ], 
+           MouseAppearanceTag["LinkHand"]], Alignment -> {Right, Top}, Frame -> 
+          False, ItemSize -> 1, Spacings -> {0, 0}, StripOnInput -> False]}, {
+        
+         TagBox[
+          GridBox[{{
+             FrameBox[
+              TagBox[
+               GridBox[{{
+                  TagBox[
+                   GridBox[{{
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAEiAOAGMRuGAWjYBSMglEwCmCgZ9WZbz9fbJ840O6gC+hZdf7Pfwh4s3m4
+exnJs1AvD+NYxvAsBLwfll6euB6rZ4enl6dtvozTr1Dwac+ctoF2JtXA0gPn
+b1+/jAdcv339yKrhFcejYBSMglEwCkYBbgAAVLCzWQ==
+                    "], {{0, 
+                    20}, {80, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {80, 20}, 
+                    PlotRange -> {{0, 80}, {0, 20}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetVerticalCellMargin["NudgeUp", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]]]]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {80, 20}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Center}, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    "\"Nudge Up\"", TooltipDelay -> 0.25, LabelStyle -> 
+                    "TextStyling"], Annotation[#, "Nudge Up", "Tooltip"]& ], 
+                    "\[SpanFromLeft]"}, {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFACiDWAGMRuGAWjYBSgg7aJPW10tnLh5hMvfv7/82gPXW389h8Cvt3bTgcb
+52w+8uLbn/9IgNb2zlmPbiMd7F145BGmjXQK54lLz9x7MwD24rCdTvZi2E5X
+e2G2n3/06dNtuts7CkbBKBggAAATLPPt
+                    "], {{0, 24}, {40, 0}}, {
+                    0, 255}, ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {40, 24}, 
+                    PlotRange -> {{0, 40}, {0, 24}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetHorizontalCellMargin["NudgeLeft", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}], 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], {TextAlignment}]]]]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {40, 24}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Center}, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    "\"Nudge Left\"", TooltipDelay -> 0.25, LabelStyle -> 
+                    "TextStyling"], Annotation[#, "Nudge Left", "Tooltip"]& ], 
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFACiNWBGMRuGAWjYISAtp42utu5+d7P//8/XT6wip5Wb7796T8E/HlPN6sR
+lkLAz/fn99DcanRL6WI1dkvB4M2ZVfS09NOL6+vn9NDIRkxLaW0dmqX0sQ4C
+1l9+8/PNbbpZNwpGwSgYQAAAgr/RTg==
+                    "], {{0, 24}, {39, 0}}, {
+                    0, 255}, ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {39, 24}, 
+                    PlotRange -> {{0, 39}, {0, 24}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetHorizontalCellMargin["NudgeRight", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}], 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], {TextAlignment}]]]]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {39, 24}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Center}, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    "\"Nudge Right\"", TooltipDelay -> 0.25, LabelStyle -> 
+                    "TextStyling"], 
+                    Annotation[#, "Nudge Right", "Tooltip"]& ]}, {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAEiAOAGMRuGAWjYBSMglEwgsHm6+////n5DTf4+f/PvQNzBtqZ1AM965/+
++Y8H/HlzftpAu5HKoG0VLi8DPTtxoF1HEwD08s8R41kIaFuK7OVh7lkIgHn5
+z4szPQPtFjqBnqXnLx8Z/jE7CkbBKBgFo2AU4AAApayy3Q==
+                    "], {{0, 
+                    20}, {80, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {80, 20}, 
+                    PlotRange -> {{0, 80}, {0, 20}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetVerticalCellMargin["NudgeDown", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]]]]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {80, 20}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Center}, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    "\"Nudge Down\"", TooltipDelay -> 0.25, LabelStyle -> 
+                    "TextStyling"], Annotation[#, "Nudge Down", "Tooltip"]& ],
+                     "\[SpanFromLeft]"}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.1}}, "Rows" -> {{0.15}}}], "Grid"], 
+                  TagBox[
+                   GridBox[{{
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAEiG2AGMRuGAWjgMZg8/X3///8/IYb/Pz/596BOQPtTFTQs/7pn/94wJ83
+56cNtBuxgLZVuJwNdPDEgXYdTgB09s8h5WAIaFuK7Owh4GAIgDn7z4szPQPt
+FhJAz9Lzl48MjRCGgZ5VZ779fLF96Di6Z9V5WPnxZvNQcDaSg6HOHuShjeFg
+CHg/aJ09cT1WBw9eZ0/bfBlfzQ0Cn/bMaRtoZ6KApQfO375+GQ+4fvv6kVWD
+L6xHwfACAMi1oLo=
+                    "], {{0, 20}, {60, 0}}, {0, 255}, 
+                    ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {60, 20}, 
+                    PlotRange -> {{0, 60}, {0, 20}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], {CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetVerticalCellMargin["Reset", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]]]}]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {60, 20}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Center}, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    "\"Center Vertically\"", TooltipDelay -> 0.25, LabelStyle -> 
+                    "TextStyling"], 
+                    Annotation[#, "Center Vertically", "Tooltip"]& ]}, {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAEiG2AGMRuGAWjYBQAwcQ5S+f0kKu5Z+nSadR0DHFg4vZ7////f3PvzNKJ
+JOlrW3Xg8qc/QK336O/oiZtv/4cB4lwOdy0YfLtNml+pAZDdTMjlQNeef/8H
+VfXPQeFmqMtvn1iIcA021w4+N0PA+9sH2hYe+YZHxSBz87c39/YAi4W2OUcu
+P8UaxoPKzT/f3NuOlqbb5hzA6vJB4Oaf74Fhi9sVmC4fUDeDXUtcWYvs8p+3
+B6J8vv7z2yNiXYsMgC6//uLnp+v0D+dRMApGAVUAAJ22x4Q=
+                    "], {{0, 
+                    20}, {60, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {60, 20}, 
+                    PlotRange -> {{0, 60}, {0, 20}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], {
+                    TextAlignment -> Inherited, CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetHorizontalCellMargin["Reset", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}], 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], {TextAlignment}]]]}]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {60, 24}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Center}, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    "\"Center Horizontally\"", TooltipDelay -> 0.25, 
+                    LabelStyle -> "TextStyling"], 
+                    Annotation[#, "Center Horizontally", "Tooltip"]& ]}, {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAEiG2AGMRuGAWjYBSMgoEEE69/+48d/Lw9caAdhwOMupk+YNTN9AGjbqYP
+mHgbt5unDbTjcICJlz/hcPOn64M1nEfBKBgFJAMAOOKLmg==
+                    "], {{0, 
+                    20}, {60, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {60, 20}, 
+                    PlotRange -> {{0, 60}, {0, 20}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], {
+                    CellMargins -> Inherited, TextAlignment -> Inherited}]], 
+                    Background -> GrayLevel[0.5], ImageSize -> {60, 20}, 
+                    Appearance -> "Frameless", 
+                    BaseStyle -> {Alignment -> Center}, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], "\"Center / Reset\"", 
+                    TooltipDelay -> 0.25, LabelStyle -> "TextStyling"], 
+                    Annotation[#, "Center / Reset", "Tooltip"]& ]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.1}}, "Rows" -> {{0.15}}}], "Grid"], 
+                  TagBox[
+                   GridBox[{{
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAEiAOAGMRuGAWjYBSQDtp68IC2gXYdlUHP+uv/8YE/eyYOtBOpDHrmLFy4
+cA5WABSfNtwieBSMJNCz6sy3ny+2D7c8ix30rDr/B1pMvdk83L2M5Fmol4dx
+LGN4FgLeD0svT1yP1bPD08vTNl/G294Agk975gyfSnjpgfO3r1/GA67fvn5k
+1fCK41EwCkbBKKAMAABrzcfg
+                    "], {{0, 20}, {80, 0}}, {0, 255},
+                     ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {80, 20}, 
+                    PlotRange -> {{0, 80}, {0, 20}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetVerticalCellMargin["FullUp", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]]]]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {80, 20}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Center}, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    "\"Full Up\"", TooltipDelay -> 0.25, LabelStyle -> 
+                    "TextStyling"], Annotation[#, "Full Up", "Tooltip"]& ], 
+                    "\[SpanFromLeft]"}, {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFACiNWBGMRuGAWjgF5g1bS2OZv30NnSFwem7Xn6h6CyNhDuoZalT/dM2/7o
+G37rLh9Y9f//p833ftLBUqh1f97/B4PNtz/R1FKgdef3rPr/E2odrS3Fah2t
+LX1zZhWmdXQI3vVzej69uE5nS3FZTQdLMa2mm6Vwq3++ub3+8ht6Wkp1MCCW
+3ts+cfu993S2dBSMAoIAAMzT6SY=
+                    "], {{0, 24}, {39, 0}}, {0, 
+                    255}, ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {39, 24}, 
+                    PlotRange -> {{0, 39}, {0, 24}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], TextAlignment -> Left]], 
+                    Background -> GrayLevel[0.5], ImageSize -> {40, 24}, 
+                    Appearance -> "Frameless", 
+                    BaseStyle -> {Alignment -> Center}, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], "\"Full Left\"", 
+                    TooltipDelay -> 0.25, LabelStyle -> "TextStyling"], 
+                    Annotation[#, "Full Left", "Tooltip"]& ], 
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFACiNWBGMRuGAWjYJCBOZv3rJrWRjXj2nqIMWvP0z8vDkyjlp2b7/38///T
+5QOr8Fu9/dG3p3uoZ+ntT/8h4M97PFbTylII+Pn+/B4sVtPWUhxW08NSMHhz
+ZhU9Lf304vr6OT3IymhqKaZ1NLUUl3W0sHT95Tc/39zGYx0tLCUSjCBL772/
+t30inS0dBSMZAADNoukm
+                    "], {{0, 24}, {39, 0}}, {0, 255}, 
+                    ColorFunction -> RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {39, 24}, 
+                    PlotRange -> {{0, 39}, {0, 24}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], TextAlignment -> Right]], 
+                    Background -> GrayLevel[0.5], ImageSize -> {39, 24}, 
+                    Appearance -> "Frameless", 
+                    BaseStyle -> {Alignment -> Center}, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], "\"Full Right\"", 
+                    TooltipDelay -> 0.25, LabelStyle -> "TextStyling"], 
+                    Annotation[#, "Full Right", "Tooltip"]& ]}, {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    GraphicsBox[
+                    TagBox[
+                    RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAEiAOAGMRuGAWjYBSMglEAA0dWTbx++/pl3AAoufTA+YF2JtXAnjlt//9/
++o8XTNt8eaCdSU2wfWLD///vsfr0z///E9cPn8iFA6xeBnq2Z9Uw9CwEgL38
+ZoR4FgI2w7w8EjwLAcBY/vbzRc+qMwPtkFEwCsgEbQ0NC+dMmzNn4RwMABJa
+uLChoWeg3UhNsAdUTP3B097oWX99oN1IZdDT09aDAwAlBtp1o2AUDEkAAJp3
+x+A=
+                    "], {{0, 20}, {80, 0}}, {0, 255}, ColorFunction -> 
+                    RGBColor], 
+                    BoxForm`ImageTag[
+                    "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                    Selectable -> False], BaseStyle -> "ImageGraphics", 
+                    ImageSizeRaw -> {80, 20}, 
+                    PlotRange -> {{0, 80}, {0, 20}}], ButtonFunction :> 
+                    If[SlideShowAuthoring`GetSelection[
+                    EvaluationNotebook[]] =!= $Failed, 
+                    SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins -> ReleaseHold[
+                    SlideShowAuthoring`SetVerticalCellMargin["FullDown", 
+                    AbsoluteCurrentValue[
+                    NotebookSelection[
+                    EvaluationNotebook[]], CellMargins], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]]]]], Background -> 
+                    GrayLevel[0.5], ImageSize -> {80, 20}, Appearance -> 
+                    "Frameless", BaseStyle -> {Alignment -> Top}, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], "\"Full Down\"", 
+                    TooltipDelay -> 0.25, LabelStyle -> "TextStyling"], 
+                    Annotation[#, "Full Down", "Tooltip"]& ], 
+                    "\[SpanFromLeft]"}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.1}}, "Rows" -> {{0.15}}}], "Grid"]}}, 
+                AutoDelete -> False, 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                GridBoxSpacings -> {"Columns" -> {{0.1}}, "Rows" -> {{0.2}}}],
+                "Grid"], FrameMargins -> 0, FrameStyle -> RGBColor[1, 1, 1], 
+              StripOnInput -> False], "\[SpanFromLeft]"}, {
+             ItemBox[
+              TagBox[
+               TooltipBox[
+                FrameBox[
+                 ActionMenuBox[
+                  
+                  TemplateBox[{
+                   "\[ThickSpace]\[ThickSpace]", 
+                    "\"\[ThickSpace]\[ThickSpace]\"", 
+                    StyleBox[
+                    "\"TOOLS\"", FontColor -> GrayLevel[1], FontSize -> 11, 
+                    FontWeight -> "Plain", FontFamily -> "Arial", 
+                    StripOnInput -> False], 
+                    StyleBox[
+                    "\"\[FilledDownTriangle]\"", FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Plain", StripOnInput -> 
+                    False]}, "RowWithSeparators"], {
+                  "\"Insert New Slide\"" :> 
+                   Block[{SlideShowAuthoring`Private`cellInfo}, 
+                    SlideShowAuthoring`Private`cellInfo = 
+                    Developer`CellInformation[
+                    FrontEnd`InputNotebook[]]; 
+                    If[SlideShowAuthoring`Private`cellInfo =!= $Failed, 
+                    SelectionMove[
+                    FrontEnd`InputNotebook[], After, Cell]; Null]; 
+                    FrontEndExecute[{
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell[
+                    CellGroupData[{
+                    Cell[
+                    "", "SlideShowNavigationBar", CellTags -> 
+                    "SlideShowHeader"], 
+                    Cell[
+                    TextData[{"Slide ", 
+                    CounterBox["SlideShowNavigationBar"], " Title"}], 
+                    "Title"]}, Open]], After]}]; NotebookFind[
+                    FrontEnd`InputNotebook[], "Title", Previous, CellStyle]; 
+                    SelectionMove[
+                    FrontEnd`InputNotebook[], All, CellContents]], 
+                   "\"Delete Current Slide\"" :> (SelectionMove[
+                    EvaluationNotebook[], All, Notebook]; SetOptions[
+                    NotebookSelection[
+                    EvaluationNotebook[]], Editable -> True, Deletable -> 
+                    True]; NotebookDelete[
+                    EvaluationNotebook[]]; Null), Delimiter, 
+                   "\"Export presentation without toolbar\"" :> (
+                    SlideShowAuthoring`SaveNotebookWithOutToolbar[
+                    EvaluationNotebook[]]; Null)}, ImageSize -> {82, 30}, 
+                  Appearance -> None, Background -> GrayLevel[0.5], Method -> 
+                  "Queued"], FrameMargins -> 0, FrameStyle -> 
+                 RGBColor[1, 1, 1], StripOnInput -> False], 
+                "\"Content will be inserted at the cursor location.\"", 
+                TooltipDelay -> 0.25, LabelStyle -> "TextStyling"], 
+               Annotation[#, 
+                "Content will be inserted at the cursor location.", 
+                "Tooltip"]& ], Alignment -> {Left, Top}, StripOnInput -> 
+              False], 
+             ItemBox[
+              TagBox[
+               TooltipBox[
+                FrameBox[
+                 ActionMenuBox[
+                  
+                  TemplateBox[{
+                   "\[ThickSpace]\[ThickSpace]", 
+                    "\"\[ThickSpace]\[ThickSpace]\"", 
+                    StyleBox[
+                    "\"INSERT CELL\"", FontColor -> GrayLevel[1], FontSize -> 
+                    11, FontWeight -> "Plain", FontFamily -> "Arial", 
+                    StripOnInput -> False], 
+                    StyleBox[
+                    "\"\[FilledDownTriangle]\"", FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Plain", StripOnInput -> 
+                    False]}, "RowWithSeparators"], {
+                  "\"Title Cell\"" :> (FrontEndExecute[{
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell["XXXX", "Title"], After]}]; NotebookFind[
+                    FrontEnd`InputNotebook[], "Title", Previous, CellStyle]; 
+                    SelectionMove[
+                    FrontEnd`InputNotebook[], All, CellContents]), 
+                   "\"Subtitle Cell\"" :> (FrontEndExecute[{
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell["XXXX", "Subtitle"], After]}]; NotebookFind[
+                    FrontEnd`InputNotebook[], "Subtitle", Previous, 
+                    CellStyle]; SelectionMove[
+                    FrontEnd`InputNotebook[], All, CellContents]), 
+                   "\"Section Cell\"" :> (FrontEndExecute[{
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell["XXXX", "Section"], After]}]; NotebookFind[
+                    FrontEnd`InputNotebook[], "Section", Previous, CellStyle]; 
+                    SelectionMove[
+                    FrontEnd`InputNotebook[], All, CellContents]), 
+                   "\"Subsection Cell\"" :> (FrontEndExecute[{
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell["XXXX", "Subsection"], After]}]; NotebookFind[
+                    FrontEnd`InputNotebook[], "Subsection", Previous, 
+                    CellStyle]; SelectionMove[
+                    FrontEnd`InputNotebook[], All, CellContents]), 
+                   "\"Text Cell\"" :> (FrontEndExecute[{
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell["XXXX", "Text"], After]}]; NotebookFind[
+                    FrontEnd`InputNotebook[], "Text", Previous, CellStyle]; 
+                    SelectionMove[
+                    FrontEnd`InputNotebook[], All, CellContents]), 
+                   "\"Input Cell\"" :> (FrontEndExecute[{
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    Cell[
+                    BoxData["XXXX"], "Input"], After]}]; NotebookFind[
+                    FrontEnd`InputNotebook[], "Input", Previous, CellStyle]; 
+                    SelectionMove[
+                    FrontEnd`InputNotebook[], All, CellContents])}, 
+                  ImageSize -> {130, 30}, Appearance -> None, Background -> 
+                  GrayLevel[0.5]], FrameMargins -> 0, FrameStyle -> 
+                 RGBColor[1, 1, 1], StripOnInput -> False], 
+                "\"Content will be inserted at the cursor location.\"", 
+                TooltipDelay -> 0.25, LabelStyle -> "TextStyling"], 
+               Annotation[#, 
+                "Content will be inserted at the cursor location.", 
+                "Tooltip"]& ], Alignment -> {Left, Top}, StripOnInput -> 
+              False]}}, AutoDelete -> False, 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+         TagBox[
+          GridBox[{{
+             TagBox[
+              GridBox[{{
+                 StyleBox[
+                 "\"FONT SIZE\"", FontColor -> GrayLevel[1], FontSize -> 11, 
+                  FontWeight -> "Plain", FontFamily -> "Arial", StripOnInput -> 
+                  False], 
+                 TagBox[
+                  TooltipBox[
+                   ButtonBox[
+                    PaneSelectorBox[{False -> StyleBox[
+                    PaneBox[
+                    "\"+\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", Background -> GrayLevel[0.6], StripOnInput -> 
+                    False], True -> StyleBox[
+                    PaneBox[
+                    "\"+\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[0], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], Background -> GrayLevel[0.7], 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    ButtonFunction :> SlideShowAuthoring`FontSizeIncrease[
+                    ButtonNotebook[], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]], Appearance -> None, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                   "\"Increase font size\"", TooltipDelay -> 0.2, LabelStyle -> 
+                   "TextStyling"], 
+                  Annotation[#, "Increase font size", "Tooltip"]& ], 
+                 TagBox[
+                  TooltipBox[
+                   ButtonBox[
+                    PaneSelectorBox[{False -> StyleBox[
+                    PaneBox[
+                    "\"-\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", Background -> GrayLevel[0.6], StripOnInput -> 
+                    False], True -> StyleBox[
+                    PaneBox[
+                    "\"-\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[0], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], Background -> GrayLevel[0.7], 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    ButtonFunction :> SlideShowAuthoring`FontSizeDecrease[
+                    ButtonNotebook[], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]], Appearance -> None, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                   "\"Decrease font size\"", TooltipDelay -> 0.2, LabelStyle -> 
+                   "TextStyling"], 
+                  Annotation[#, "Decrease font size", "Tooltip"]& ], 
+                 TagBox[
+                  TooltipBox[
+                   ButtonBox[
+                    PaneSelectorBox[{False -> StyleBox[
+                    PaneBox[
+                    "\"\[FilledSquare]\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[1], 
+                    FontSize -> 13, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", Background -> GrayLevel[0.6], StripOnInput -> 
+                    False], True -> StyleBox[
+                    PaneBox[
+                    "\"\[FilledSquare]\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[0], 
+                    FontSize -> 13, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], Background -> GrayLevel[0.7], 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    ButtonFunction :> SlideShowAuthoring`FontSizeReset[
+                    ButtonNotebook[], 
+                    AbsoluteCurrentValue[
+                    EvaluationNotebook[], {WindowSize}]], Appearance -> None, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                   "\"Reset font size\"", TooltipDelay -> 0.2, LabelStyle -> 
+                   "TextStyling"], 
+                  Annotation[#, "Reset font size", "Tooltip"]& ]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxBackground -> {"Columns" -> {
+                   GrayLevel[0.5], 
+                   GrayLevel[0.6], 
+                   GrayLevel[0.6], 
+                   GrayLevel[0.6]}, "Rows" -> {{None}}}, 
+               GridBoxFrame -> {
+                "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}}, 
+               GridBoxItemSize -> {"Columns" -> {6, 2}}, FrameStyle -> 
+               Directive[
+                 GrayLevel[1], 10]], "Grid"]}, {
+             TagBox[
+              GridBox[{{
+                 StyleBox[
+                 "\"ALIGN TEXT\"", FontColor -> GrayLevel[1], FontSize -> 11, 
+                  FontWeight -> "Plain", FontFamily -> "Arial", StripOnInput -> 
+                  False], 
+                 TagBox[
+                  TooltipBox[
+                   ButtonBox[
+                    PaneSelectorBox[{False -> StyleBox[
+                    PaneBox[
+                    "\"<\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", Background -> GrayLevel[0.6], StripOnInput -> 
+                    False], True -> StyleBox[
+                    PaneBox[
+                    "\"<\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[0], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], Background -> GrayLevel[0.7], 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    ButtonFunction :> SlideShowAuthoring`SetTextAlignment[
+                    ButtonNotebook[], "Left"], Appearance -> None, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], "\"Align Text Left\"",
+                    TooltipDelay -> 0.2, LabelStyle -> "TextStyling"], 
+                  Annotation[#, "Align Text Left", "Tooltip"]& ], 
+                 TagBox[
+                  TooltipBox[
+                   ButtonBox[
+                    PaneSelectorBox[{False -> StyleBox[
+                    PaneBox[
+                    "\"><\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", Background -> GrayLevel[0.6], StripOnInput -> 
+                    False], True -> StyleBox[
+                    PaneBox[
+                    "\"><\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[0], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], Background -> GrayLevel[0.7], 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    ButtonFunction :> SlideShowAuthoring`SetTextAlignment[
+                    ButtonNotebook[], "Center"], Appearance -> None, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                   "\"Align Text Center\"", TooltipDelay -> 0.2, LabelStyle -> 
+                   "TextStyling"], 
+                  Annotation[#, "Align Text Center", "Tooltip"]& ], 
+                 TagBox[
+                  TooltipBox[
+                   ButtonBox[
+                    PaneSelectorBox[{False -> StyleBox[
+                    PaneBox[
+                    "\">\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", Background -> GrayLevel[0.6], StripOnInput -> 
+                    False], True -> StyleBox[
+                    PaneBox[
+                    "\">\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {18, 24}], FontColor -> GrayLevel[0], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], Background -> GrayLevel[0.7], 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    ButtonFunction :> SlideShowAuthoring`SetTextAlignment[
+                    ButtonNotebook[], "Right"], Appearance -> None, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                   "\"Align Text Right\"", TooltipDelay -> 0.2, LabelStyle -> 
+                   "TextStyling"], 
+                  Annotation[#, "Align Text Right", "Tooltip"]& ]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxBackground -> {"Columns" -> {
+                   GrayLevel[0.5], 
+                   GrayLevel[0.6], 
+                   GrayLevel[0.6], 
+                   GrayLevel[0.6]}, "Rows" -> {{None}}}, 
+               GridBoxFrame -> {
+                "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}}, 
+               GridBoxItemSize -> {"Columns" -> {6, 2}}, FrameStyle -> 
+               Directive[
+                 GrayLevel[1], 10]], "Grid"]}, {
+             TagBox[
+              GridBox[{{
+                 StyleBox[
+                 "\"TEXT COLOR\"", FontColor -> GrayLevel[1], FontSize -> 11, 
+                  FontWeight -> "Plain", FontFamily -> "Arial", StripOnInput -> 
+                  False], 
+                 TagBox[
+                  TooltipBox[
+                   ColorSetterBox[
+                    Dynamic[SlideShowAuthoring`TextFontColor], "Swatch", 
+                    ImageSize -> {25, 25}], "\"Text color\"", TooltipDelay -> 
+                   0.2, LabelStyle -> "TextStyling"], 
+                  Annotation[#, "Text color", "Tooltip"]& ], 
+                 TagBox[
+                  TooltipBox[
+                   ButtonBox[
+                    PaneSelectorBox[{False -> StyleBox[
+                    PaneBox[
+                    "\"Apply\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {40, 24}], FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", Background -> GrayLevel[0.6], StripOnInput -> 
+                    False], True -> StyleBox[
+                    PaneBox[
+                    "\"Apply\"", Alignment -> {Center, Center}, 
+                    ImageSize -> {40, 24}], FontColor -> GrayLevel[0], 
+                    FontSize -> 11, FontWeight -> "Bold", FontFamily -> 
+                    "Arial", StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], Background -> GrayLevel[0.7], 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    ButtonFunction :> SlideShowAuthoring`SetFontColor[
+                    ButtonNotebook[]], Appearance -> None, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                   "\"Apply color to selection\"", TooltipDelay -> 0.2, 
+                   LabelStyle -> "TextStyling"], 
+                  Annotation[#, "Apply color to selection", "Tooltip"]& ]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxBackground -> {"Columns" -> {
+                   GrayLevel[0.5], 
+                   GrayLevel[0.6], 
+                   GrayLevel[0.6], 
+                   GrayLevel[0.6]}, "Rows" -> {{None}}}, 
+               GridBoxFrame -> {
+                "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}}, 
+               GridBoxItemSize -> {"Columns" -> {6, 2.35, 3}}, FrameStyle -> 
+               Directive[
+                 GrayLevel[1], 10]], "Grid"]}}, 
+           GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Bottom}}}, 
+           AutoDelete -> False, 
+           GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{3}}}], 
+          "Grid"], 
+         TagBox[
+          GridBox[{{
+             DynamicModuleBox[{SlideShowAuthoring`Private`sel$$}, 
+              PopupMenuBox[
+               Dynamic[
+               SlideShowAuthoring`Private`sel$$, (
+                Switch[#, "800 * 600", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {800, 600 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    800, 600 + 172}; Null, "1024 * 768", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {1024, 768 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    1024, 768 + 172}; Null, "1280 * 960", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {1280, 960 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    1280, 960 + 172}; Null, "1366 * 768", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {1366, 768 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    1366, 768 + 172}; Null, "1400 * 1050", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {1400, 1050 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    1400, 1050 + 172}; Null, "1600 * 900", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {1600, 900 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    1600, 900 + 172}; Null, "1680 * 1050", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {1680, 1050 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    1680, 1050 + 172}; Null, "1920 * 1080", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {1920, 1080 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    1920, 1080 + 172}; Null, "2560 * 1440", CurrentValue[
+                    EvaluationNotebook[], WindowSize] = {2560, 1440 + 172}; 
+                  CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}] = {
+                    2560, 1440 + 172}; Null, "Full Screen", 
+                  SetOptions[
+                   EvaluationNotebook[], {DockedCells -> {
+                    Cell[
+                    BoxData[
+                    ActionMenuBox[
+                    PaneBox[
+                    StyleBox[" ", StripOnInput -> False, FontSize -> 0.1]], {
+                    "Toolbar" :> (SetOptions[
+                    EvaluationNotebook[], {
+                    DockedCells -> Inherited, WindowFrame -> "Normal", 
+                    WindowElements -> Inherited, WindowFrameElements -> 
+                    Inherited, WindowStatusArea -> None, 
+                    ScreenStyleEnvironment -> "SlideShow", WindowSize -> {
+                    First[
+                    CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}]], 
+                    Last[
+                    CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "SlideShowSettings", "WindowSize"}]]}}]; 
+                    Null), Delimiter, "Enter Full Screen" :> (CurrentValue[
+                    EvaluationNotebook[], WindowSize] = Full; Null), 
+                    "Exit Full Screen" :> (FrontEndExecute[
+                    FrontEnd`Value[
+                    FEPrivate`NotebookToggleFullScreen[]]]; SetOptions[
+                    EvaluationNotebook[], {
+                    DockedCells -> Inherited, ScreenStyleEnvironment -> 
+                    "SlideShow"}]; Null), Delimiter, "Close" :> (NotebookClose[
+                    EvaluationNotebook[], Interactive -> True]; Quiet[
+                    DeviceClose["Camera"]])}, Appearance -> "Frameless", 
+                    AutoAction -> False, Background -> GrayLevel[0.9], 
+                    ImageSize -> {Full, 10}]], 
+                    CellMargins -> {{0, 0}, {0, 0}}, 
+                    CellFrame -> {{0, 0}, {0, 3}}, CellFrameColor -> 
+                    GrayLevel[0.75], CellFrameMargins -> {{0, 0}, {2, 2}}, 
+                    FontSize -> 1, 
+                    CellElementSpacings -> {"CellMinHeight" -> 1}, Background -> 
+                    GrayLevel[0.94]]}, WindowSize -> Full, 
+                    ScreenStyleEnvironment -> "SlideShowPresentation"}], 
+                  Blank[], 
+                  Message[
+                   MessageName[
+                   SlideShowAuthoring`Private`SlideShowAuthoring, "args"]]]; 
+                SlideShowAuthoring`Private`sel$$ = #; CurrentValue[
+                   EvaluationNotebook[], WindowMargins] = Inherited; 
+                Null)& ], {
+               " " -> "\" \"", "800 * 600" -> "\"800 * 600\"", "1024 * 768" -> 
+                "\"1024 * 768\"", "1280 * 960" -> "\"1280 * 960\"", 
+                "1366 * 768" -> "\"1366 * 768\"", "1400 * 1050" -> 
+                "\"1400 * 1050\"", "1600 * 900" -> "\"1600 * 900\"", 
+                "1680 * 1050" -> "\"1680 * 1050\"", "1920 * 1080" -> 
+                "\"1920 * 1080\"", "2560 * 1440" -> "\"2560 * 1440\"", 
+                Delimiter, "Full Screen" -> "\"Full Screen\""}, "1", 
+               FrameBox[
+                PaneBox[
+                 
+                 TemplateBox[{
+                  "\[ThickSpace]\[ThickSpace]", 
+                   "\"\[ThickSpace]\[ThickSpace]\"", 
+                   StyleBox[
+                   "\"WINDOW RESOLUTION\"", FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Plain", FontFamily -> 
+                    "Arial", StripOnInput -> False], 
+                   StyleBox[
+                   "\"\[FilledDownTriangle]\"", FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Plain", StripOnInput -> 
+                    False]}, "RowWithSeparators"], 
+                 Alignment -> {Center, Center}, ImageSize -> {140, 15}], 
+                FrameMargins -> {{22, 22}, {8, 4}}, FrameStyle -> 
+                RGBColor[1, 1, 1], Background -> GrayLevel[0.5], StripOnInput -> 
+                False], Appearance -> "ActionMenu", AutoAction -> False], 
+              DynamicModuleValues :> {}]}, {
+             
+             DynamicModuleBox[{
+              SlideShowAuthoring`Private`list$$ = {
+                "StatusArea", "MemoryMonitor", "MagnificationPopUp", 
+                 "HorizontalScrollBar", "VerticalScrollBar", "MenuBar"}, 
+               SlideShowAuthoring`Private`choices$$ = {
+                "StatusArea", "MemoryMonitor", "MagnificationPopUp", 
+                 "HorizontalScrollBar", "VerticalScrollBar", "MenuBar"}}, 
+              ActionMenuBox[
+               FrameBox[
+                PaneBox[
+                 
+                 TemplateBox[{
+                  "\[ThickSpace]\[ThickSpace]", 
+                   "\"\[ThickSpace]\[ThickSpace]\"", 
+                   StyleBox[
+                   "\"WINDOW ELEMENTS\"", FontColor -> GrayLevel[1], FontSize -> 
+                    11, FontWeight -> "Plain", FontFamily -> "Arial", 
+                    StripOnInput -> False], 
+                   StyleBox[
+                   "\"\[FilledDownTriangle]\"", FontColor -> GrayLevel[1], 
+                    FontSize -> 11, FontWeight -> "Plain", StripOnInput -> 
+                    False]}, "RowWithSeparators"], 
+                 Alignment -> {Center, Center}, ImageSize -> {140, 15}], 
+                FrameMargins -> {{22, 22}, {8, 4}}, FrameStyle -> 
+                RGBColor[1, 1, 1], Background -> GrayLevel[0.5], StripOnInput -> 
+                False], {"\"All On\"" :> (CurrentValue[
+                   EvaluationNotebook[], WindowElements] = Inherited), 
+                "\"All Off\"" :> (CurrentValue[
+                   EvaluationNotebook[], WindowElements] = {}), Delimiter, 
+                TemplateBox[{
+                   StyleBox["\"+ \"", ShowContents -> Dynamic[
+                    MemberQ[SlideShowAuthoring`Private`list$$, "StatusArea"]],
+                     StripOnInput -> False], "\"StatusArea\""}, 
+                  "RowDefault"] :> (If[
+                   MemberQ[SlideShowAuthoring`Private`list$$, "StatusArea"], 
+                   SlideShowAuthoring`Private`list$$ = 
+                   DeleteCases[
+                    SlideShowAuthoring`Private`list$$, "StatusArea"], 
+                   AppendTo[SlideShowAuthoring`Private`list$$, "StatusArea"]]; 
+                 CurrentValue[
+                    EvaluationNotebook[], WindowElements] = 
+                  SlideShowAuthoring`Private`list$$), TemplateBox[{
+                   StyleBox["\"+ \"", ShowContents -> Dynamic[
+                    MemberQ[
+                    SlideShowAuthoring`Private`list$$, "MemoryMonitor"]], 
+                    StripOnInput -> False], "\"MemoryMonitor\""}, 
+                  "RowDefault"] :> (If[
+                   MemberQ[
+                   SlideShowAuthoring`Private`list$$, "MemoryMonitor"], 
+                   SlideShowAuthoring`Private`list$$ = 
+                   DeleteCases[
+                    SlideShowAuthoring`Private`list$$, "MemoryMonitor"], 
+                   AppendTo[
+                   SlideShowAuthoring`Private`list$$, "MemoryMonitor"]]; 
+                 CurrentValue[
+                    EvaluationNotebook[], WindowElements] = 
+                  SlideShowAuthoring`Private`list$$), TemplateBox[{
+                   StyleBox["\"+ \"", ShowContents -> Dynamic[
+                    MemberQ[
+                    SlideShowAuthoring`Private`list$$, "MagnificationPopUp"]],
+                     StripOnInput -> False], "\"MagnificationPopUp\""}, 
+                  "RowDefault"] :> (If[
+                   MemberQ[
+                   SlideShowAuthoring`Private`list$$, "MagnificationPopUp"], 
+                   SlideShowAuthoring`Private`list$$ = 
+                   DeleteCases[
+                    SlideShowAuthoring`Private`list$$, "MagnificationPopUp"], 
+                   
+                   AppendTo[
+                   SlideShowAuthoring`Private`list$$, "MagnificationPopUp"]]; 
+                 CurrentValue[
+                    EvaluationNotebook[], WindowElements] = 
+                  SlideShowAuthoring`Private`list$$), TemplateBox[{
+                   StyleBox["\"+ \"", ShowContents -> Dynamic[
+                    MemberQ[
+                    SlideShowAuthoring`Private`list$$, 
+                    "HorizontalScrollBar"]], StripOnInput -> False], 
+                   "\"HorizontalScrollBar\""}, "RowDefault"] :> (If[
+                   MemberQ[
+                   SlideShowAuthoring`Private`list$$, "HorizontalScrollBar"], 
+                   SlideShowAuthoring`Private`list$$ = 
+                   DeleteCases[
+                    SlideShowAuthoring`Private`list$$, "HorizontalScrollBar"], 
+                   AppendTo[
+                   SlideShowAuthoring`Private`list$$, "HorizontalScrollBar"]]; 
+                 CurrentValue[
+                    EvaluationNotebook[], WindowElements] = 
+                  SlideShowAuthoring`Private`list$$), TemplateBox[{
+                   StyleBox["\"+ \"", ShowContents -> Dynamic[
+                    MemberQ[
+                    SlideShowAuthoring`Private`list$$, "VerticalScrollBar"]], 
+                    StripOnInput -> False], "\"VerticalScrollBar\""}, 
+                  "RowDefault"] :> (If[
+                   MemberQ[
+                   SlideShowAuthoring`Private`list$$, "VerticalScrollBar"], 
+                   SlideShowAuthoring`Private`list$$ = 
+                   DeleteCases[
+                    SlideShowAuthoring`Private`list$$, "VerticalScrollBar"], 
+                   AppendTo[
+                   SlideShowAuthoring`Private`list$$, "VerticalScrollBar"]]; 
+                 CurrentValue[
+                    EvaluationNotebook[], WindowElements] = 
+                  SlideShowAuthoring`Private`list$$), TemplateBox[{
+                   StyleBox["\"+ \"", ShowContents -> Dynamic[
+                    MemberQ[SlideShowAuthoring`Private`list$$, "MenuBar"]], 
+                    StripOnInput -> False], "\"MenuBar\""}, "RowDefault"] :> (
+                 If[
+                   MemberQ[SlideShowAuthoring`Private`list$$, "MenuBar"], 
+                   SlideShowAuthoring`Private`list$$ = 
+                   DeleteCases[SlideShowAuthoring`Private`list$$, "MenuBar"], 
+                   
+                   AppendTo[SlideShowAuthoring`Private`list$$, "MenuBar"]]; 
+                 CurrentValue[
+                    EvaluationNotebook[], WindowElements] = 
+                  SlideShowAuthoring`Private`list$$)}, Appearance -> None], 
+              DynamicModuleValues :> {}]}}, 
+           GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Bottom}}}, 
+           AutoDelete -> False, 
+           GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{3}}}], 
+          "Grid"], 
+         ItemBox["\"\"", ItemSize -> Fit, StripOnInput -> False], 
+         "\[SpanFromAbove]"}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+       AutoDelete -> False, 
+       GridBoxFrame -> {"Columns" -> None, "Rows" -> None}, 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+       GridBoxSpacings -> {"Columns" -> {{1.5}}, "Rows" -> {{0}}}], "Grid"]], 
+    "DockedCell", CellElementSpacings -> {"CellMinHeight" -> 1}, CellFrame -> 
+    0, CellFrameMargins -> {{20, 20}, {8, 10}}, 
+    CellMargins -> {{0, 0}, {0, 0}}, Background -> GrayLevel[0.75]], 
+   Cell[
+    BoxData[
+     DynamicModuleBox[{}, "x", DynamicModuleValues :> {}, 
+      Initialization :> (SlideShowAuthoring`Private`slideShowDockHeight = 172; 
+       SlideShowAuthoring`SetVerticalCellMargin[
+          Pattern[SlideShowAuthoring`Private`directive, 
+           Blank[String]], {{
+            Pattern[SlideShowAuthoring`Private`l, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`r, 
+             Blank[]]}, {
+            Pattern[SlideShowAuthoring`Private`b, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`t, 
+             Blank[]]}}, 
+          Pattern[SlideShowAuthoring`Private`windowsize, 
+           Blank[List]]] := 
+        Module[{SlideShowAuthoring`Private`height, 
+           SlideShowAuthoring`Private`width, 
+           SlideShowAuthoring`Private`percentage, 
+           SlideShowAuthoring`Private`n = 
+           0.4}, {SlideShowAuthoring`Private`width, 
+             SlideShowAuthoring`Private`height} = 
+           SlideShowAuthoring`Private`windowsize; 
+          SlideShowAuthoring`Private`percentage = 
+           N[SlideShowAuthoring`Private`t/SlideShowAuthoring`Private`height, 
+             4]; SlideShowAuthoring`Private`n = 
+           Switch[SlideShowAuthoring`Private`directive, "FullUp", 0.01, 
+             "MediumUp", 0.2, "NudgeUp", 
+             SlideShowAuthoring`Private`percentage - 0.025, "Center", 0.35, 
+             "NudgeDown", SlideShowAuthoring`Private`percentage + 0.025, 
+             "MediumDown", 0.55, "FullDown", 0.75, 
+             Blank[], 0.35]; 
+          SlideShowAuthoring`Private`n = N[SlideShowAuthoring`Private`n, 4]; 
+          SlideShowAuthoring`Private`n = 
+           If[0 <= SlideShowAuthoring`Private`n <= 0.76, 
+             SlideShowAuthoring`Private`n, 
+             SlideShowAuthoring`Private`percentage]; 
+          With[{SlideShowAuthoring`Private`scale = 
+             SlideShowAuthoring`Private`n}, 
+            
+            Hold[{{N[
+                SlideShowAuthoring`Private`l/SlideShowAuthoring`Private`width,
+                  4] FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 
+               N[SlideShowAuthoring`Private`r/
+                 SlideShowAuthoring`Private`width, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+              N[SlideShowAuthoring`Private`b/
+                 SlideShowAuthoring`Private`height, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 
+               SlideShowAuthoring`Private`scale 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}}]]]; 
+       SlideShowAuthoring`SetVerticalCellMargin["Reset", {{
+            Pattern[SlideShowAuthoring`Private`l, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`r, 
+             Blank[]]}, {
+            Pattern[SlideShowAuthoring`Private`b, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`t, 
+             Blank[]]}}, 
+          BlankSequence[]] := {{
+          SlideShowAuthoring`Private`l, SlideShowAuthoring`Private`r}, {
+          Inherited, Inherited}}; 
+       SlideShowAuthoring`SetHorizontalCellMargin["NudgeLeft", {{
+            Pattern[SlideShowAuthoring`Private`l, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`r, 
+             Blank[]]}, {
+            Pattern[SlideShowAuthoring`Private`b, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`t, 
+             Blank[]]}}, 
+          Pattern[SlideShowAuthoring`Private`windowsize, 
+           Blank[List]], 
+          Pattern[SlideShowAuthoring`Private`alignment, 
+           Blank[]]] := 
+        Module[{SlideShowAuthoring`Private`height, 
+           SlideShowAuthoring`Private`width, 
+           SlideShowAuthoring`Private`leftPercentage, 
+           SlideShowAuthoring`Private`rightPercentage, 
+           SlideShowAuthoring`Private`textAlignment, 
+           SlideShowAuthoring`Private`nudge = 
+           0.05}, {SlideShowAuthoring`Private`width, 
+             SlideShowAuthoring`Private`height} = 
+           SlideShowAuthoring`Private`windowsize; If[
+            Not[
+             NumberQ[SlideShowAuthoring`Private`alignment]], 
+            SlideShowAuthoring`Private`textAlignment = 
+            Switch[SlideShowAuthoring`Private`alignment, Left, -1, Right, 1, 
+              Center, 0, 
+              Blank[], SlideShowAuthoring`Private`alignment]]; 
+          Which[SlideShowAuthoring`Private`textAlignment < 0, 
+            SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`l/SlideShowAuthoring`Private`width, 
+               3]; SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`leftPercentage - 
+               SlideShowAuthoring`Private`nudge, 4]; 
+            SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`r/SlideShowAuthoring`Private`width, 
+               4]; SlideShowAuthoring`Private`leftPercentage = 
+             If[0 <= SlideShowAuthoring`Private`leftPercentage <= 0.76, 
+               SlideShowAuthoring`Private`leftPercentage, 0]; Null, 
+            SlideShowAuthoring`Private`textAlignment > 0, 
+            SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`l/SlideShowAuthoring`Private`width, 
+               3]; SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`r/SlideShowAuthoring`Private`width, 
+               4]; SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`rightPercentage + 
+               SlideShowAuthoring`Private`nudge, 4]; 
+            SlideShowAuthoring`Private`rightPercentage = 
+             If[0 <= SlideShowAuthoring`Private`rightPercentage <= 0.76, 
+               SlideShowAuthoring`Private`rightPercentage, 0]; Null, True, 
+            SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`l/SlideShowAuthoring`Private`width, 
+               3]; SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`r/SlideShowAuthoring`Private`width, 
+               4]; SlideShowAuthoring`Private`leftPercentage = 0; 
+            SlideShowAuthoring`Private`rightPercentage = 
+             SlideShowAuthoring`Private`rightPercentage + 
+              SlideShowAuthoring`Private`nudge; Null]; 
+          With[{
+            SlideShowAuthoring`Private`left = 
+             SlideShowAuthoring`Private`leftPercentage, 
+             SlideShowAuthoring`Private`right = 
+             SlideShowAuthoring`Private`rightPercentage}, 
+            
+            Hold[{{SlideShowAuthoring`Private`left 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 
+               SlideShowAuthoring`Private`right 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+              N[SlideShowAuthoring`Private`b/
+                 SlideShowAuthoring`Private`height, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 
+               N[SlideShowAuthoring`Private`t/
+                 SlideShowAuthoring`Private`height, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}}]]]; 
+       SlideShowAuthoring`SetHorizontalCellMargin["NudgeRight", {{
+            Pattern[SlideShowAuthoring`Private`l, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`r, 
+             Blank[]]}, {
+            Pattern[SlideShowAuthoring`Private`b, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`t, 
+             Blank[]]}}, 
+          Pattern[SlideShowAuthoring`Private`windowsize, 
+           Blank[List]], 
+          Pattern[SlideShowAuthoring`Private`alignment, 
+           Blank[]]] := 
+        Module[{SlideShowAuthoring`Private`height, 
+           SlideShowAuthoring`Private`width, 
+           SlideShowAuthoring`Private`leftPercentage, 
+           SlideShowAuthoring`Private`rightPercentage, 
+           SlideShowAuthoring`Private`textAlignment, 
+           SlideShowAuthoring`Private`nudge = 
+           0.05}, {SlideShowAuthoring`Private`width, 
+             SlideShowAuthoring`Private`height} = 
+           SlideShowAuthoring`Private`windowsize; If[
+            Not[
+             NumberQ[SlideShowAuthoring`Private`alignment]], 
+            SlideShowAuthoring`Private`textAlignment = 
+            Switch[SlideShowAuthoring`Private`alignment, Left, -1, Right, 1, 
+              Center, 0, 
+              Blank[], SlideShowAuthoring`Private`alignment]]; 
+          Which[SlideShowAuthoring`Private`textAlignment < 0, 
+            SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`l/SlideShowAuthoring`Private`width, 
+               3]; 
+            SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`leftPercentage + 
+               SlideShowAuthoring`Private`nudge, 4]; 
+            SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`r/SlideShowAuthoring`Private`width, 
+               4]; SlideShowAuthoring`Private`leftPercentage = 
+             If[0 <= SlideShowAuthoring`Private`leftPercentage <= 0.76, 
+               SlideShowAuthoring`Private`leftPercentage, 0]; Null, 
+            SlideShowAuthoring`Private`textAlignment > 0, 
+            SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`l/SlideShowAuthoring`Private`width, 
+               3]; SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`r/SlideShowAuthoring`Private`width, 
+               4]; SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`rightPercentage - 
+               SlideShowAuthoring`Private`nudge, 4]; 
+            SlideShowAuthoring`Private`rightPercentage = 
+             If[0 <= SlideShowAuthoring`Private`rightPercentage <= 0.76, 
+               SlideShowAuthoring`Private`rightPercentage, 0]; Null, True, 
+            SlideShowAuthoring`Private`leftPercentage = 
+             N[SlideShowAuthoring`Private`l/SlideShowAuthoring`Private`width, 
+               3]; SlideShowAuthoring`Private`rightPercentage = 
+             N[SlideShowAuthoring`Private`r/SlideShowAuthoring`Private`width, 
+               4]; SlideShowAuthoring`Private`rightPercentage = 0; 
+            SlideShowAuthoring`Private`leftPercentage = 
+             SlideShowAuthoring`Private`leftPercentage + 
+              SlideShowAuthoring`Private`nudge; Null]; 
+          With[{SlideShowAuthoring`Private`left = 
+             SlideShowAuthoring`Private`leftPercentage, 
+             SlideShowAuthoring`Private`right = 
+             SlideShowAuthoring`Private`rightPercentage}, 
+            
+            Hold[{{SlideShowAuthoring`Private`left 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 
+               SlideShowAuthoring`Private`right 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+              N[SlideShowAuthoring`Private`b/
+                 SlideShowAuthoring`Private`height, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 
+               N[SlideShowAuthoring`Private`t/
+                 SlideShowAuthoring`Private`height, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}}]]]; 
+       SlideShowAuthoring`SetHorizontalCellMargin["Reset", {{
+            Pattern[SlideShowAuthoring`Private`l, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`r, 
+             Blank[]]}, {
+            Pattern[SlideShowAuthoring`Private`b, 
+             Blank[]], 
+            Pattern[SlideShowAuthoring`Private`t, 
+             Blank[]]}}, 
+          Pattern[SlideShowAuthoring`Private`windowsize, 
+           Blank[List]], 
+          Pattern[SlideShowAuthoring`Private`textAlignment, 
+           Blank[]]] := 
+        Module[{SlideShowAuthoring`Private`height, 
+           SlideShowAuthoring`Private`width}, {
+            SlideShowAuthoring`Private`width, 
+             SlideShowAuthoring`Private`height} = 
+           SlideShowAuthoring`Private`windowsize; With[{}, 
+            
+            Hold[{{Inherited, Inherited}, {
+              N[SlideShowAuthoring`Private`b/
+                 SlideShowAuthoring`Private`height, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 
+               N[SlideShowAuthoring`Private`t/
+                 SlideShowAuthoring`Private`height, 4] 
+               FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}}]]]; 
+       SlideShowAuthoring`SetHorizontalCellMargin[
+          Pattern[SlideShowAuthoring`Private`a, 
+           BlankNullSequence[]]] := Message[
+          MessageName[SlideShowAuthoring`SetHorizontalMargin, "args"], 
+          ToString[{SlideShowAuthoring`Private`a}]]; 
+       Hold[{{Inherited, Inherited}, {Inherited, Inherited}}]; 
+       SlideShowAuthoring`Private`SelectCellIfCursorWithinCell[
+          Pattern[SlideShowAuthoring`Private`nbObj, 
+           Blank[NotebookObject]]] := 
+        Module[{SlideShowAuthoring`Private`linkRead}, 
+          While[(LinkWrite[$ParentLink, 
+              FrontEnd`CellInformation[SlideShowAuthoring`Private`nbObj]]; 
+            SlideShowAuthoring`Private`linkRead = LinkRead[$ParentLink]); 
+           And[SlideShowAuthoring`Private`linkRead =!= $Failed, 
+             Not[
+              MemberQ[
+               ReplaceAll[
+               "CursorPosition", SlideShowAuthoring`Private`linkRead], 
+               "CellBracket"]]], 
+           FrontEndExecute[
+            FrontEnd`SelectionMove[
+            SlideShowAuthoring`Private`nbObj, All, Cell, AutoScroll -> 
+             False]]]]; SlideShowAuthoring`GetSelection[
+          Pattern[SlideShowAuthoring`Private`nbObj, 
+           Blank[NotebookObject]]] := 
+        Module[{SlideShowAuthoring`Private`cellInfo}, 
+          SlideShowAuthoring`Private`SelectCellIfCursorWithinCell[
+           SlideShowAuthoring`Private`nbObj]; 
+          SlideShowAuthoring`Private`cellInfo = 
+           Developer`CellInformation[SlideShowAuthoring`Private`nbObj]; 
+          If[SlideShowAuthoring`Private`cellInfo == $Failed, FrontEndExecute[
+              FrontEndToken[SlideShowAuthoring`Private`nbObj, "SelectAll"]]; 
+            SelectionMove[SlideShowAuthoring`Private`nbObj, Before, Cell]; 
+            SelectionMove[SlideShowAuthoring`Private`nbObj, Next, Cell]; 
+            SelectionMove[SlideShowAuthoring`Private`nbObj, Next, Cell]; Null, 
+            If[
+             And[
+              Not[
+               MatchQ[
+               SlideShowAuthoring`Private`cellInfo, {{
+                 "Style" -> "SlideShowNavigationBar", 
+                  BlankSequence[]}}]], 
+              MatchQ[SlideShowAuthoring`Private`cellInfo, {{
+                 BlankSequence[], "CursorPosition" -> "CellBracket", 
+                 BlankSequence[]}}]], 
+             SelectionMove[
+             SlideShowAuthoring`Private`nbObj, Next, Cell], $Failed]]]; 
+       SlideShowAuthoring`FontSizeDecrease[
+          Pattern[SlideShowAuthoring`Private`nbObj, 
+           Blank[NotebookObject]], 
+          Pattern[SlideShowAuthoring`Private`windowsize, 
+           Blank[List]]] := 
+        Module[{SlideShowAuthoring`Private`cellInfo, 
+           SlideShowAuthoring`Private`width, 
+           SlideShowAuthoring`Private`height, 
+           SlideShowAuthoring`Private`currentSize, 
+           SlideShowAuthoring`Private`smidge = 
+           0.005}, {
+            SlideShowAuthoring`Private`width, 
+             SlideShowAuthoring`Private`height} = 
+           SlideShowAuthoring`Private`windowsize; 
+          SlideShowAuthoring`Private`cellInfo = 
+           Developer`CellInformation[SlideShowAuthoring`Private`nbObj]; If[
+            TrueQ[SlideShowAuthoring`Private`cellInfo == $Failed], 
+            MessageDialog["Please select a cell.", WindowSize -> {530, All}], 
+            
+            If[
+             MatchQ[SlideShowAuthoring`Private`cellInfo, {{
+                BlankSequence[], "CursorPosition" -> "CellBracket", 
+                BlankSequence[]}}], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width - 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontSize -> 
+               SlideShowAuthoring`Private`percent 
+                FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width - 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontSize -> 
+               SlideShowAuthoring`Private`percent 
+                FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]]]; 
+       SlideShowAuthoring`FontSizeDecrease[
+          Pattern[SlideShowAuthoring`Private`a, 
+           BlankNullSequence[]]] := Block[{}, Message[
+            MessageName[SlideShowAuthoring`SetHorizontalMargin, "args"], 
+            ToString[{SlideShowAuthoring`Private`a}]]; 
+          With[{SlideShowAuthoring`Private`info = 
+             SlideShowAuthoring`Private`a}, 
+            MessageDialog[
+             ToString[SlideShowAuthoring`Private`info], 
+             WindowSize -> {530, All}]]; Null]; 
+       SlideShowAuthoring`FontSizeIncrease[
+          Pattern[SlideShowAuthoring`Private`nbObj, 
+           Blank[NotebookObject]], 
+          Pattern[SlideShowAuthoring`Private`windowsize, 
+           Blank[List]]] := 
+        Module[{SlideShowAuthoring`Private`cellInfo, 
+           SlideShowAuthoring`Private`width, 
+           SlideShowAuthoring`Private`height, 
+           SlideShowAuthoring`Private`currentSize, 
+           SlideShowAuthoring`Private`smidge = 
+           0.005}, {
+            SlideShowAuthoring`Private`width, 
+             SlideShowAuthoring`Private`height} = 
+           SlideShowAuthoring`Private`windowsize; 
+          SlideShowAuthoring`Private`cellInfo = 
+           Developer`CellInformation[SlideShowAuthoring`Private`nbObj]; If[
+            TrueQ[SlideShowAuthoring`Private`cellInfo == $Failed], 
+            MessageDialog["Please select a cell.", WindowSize -> {530, All}], 
+            
+            If[
+             MatchQ[SlideShowAuthoring`Private`cellInfo, {{
+                BlankSequence[], "CursorPosition" -> "CellBracket", 
+                BlankSequence[]}}], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width + 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontSize -> 
+               SlideShowAuthoring`Private`percent 
+                FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width + 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontSize -> 
+               SlideShowAuthoring`Private`percent 
+                FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]]]; 
+       SlideShowAuthoring`SetFontColor[
+          Pattern[SlideShowAuthoring`Private`nbObj, 
+           Blank[NotebookObject]]] := 
+        Module[{SlideShowAuthoring`Private`cellInfo}, 
+          SlideShowAuthoring`Private`cellInfo = 
+           Developer`CellInformation[SlideShowAuthoring`Private`nbObj]; If[
+            TrueQ[SlideShowAuthoring`Private`cellInfo == $Failed], 
+            MessageDialog["Please select a cell.", WindowSize -> {530, All}], 
+            
+            If[
+             MatchQ[SlideShowAuthoring`Private`cellInfo, {{
+                BlankSequence[], "CursorPosition" -> "CellBracket", 
+                BlankSequence[]}}], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width - 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontColor -> 
+               SlideShowAuthoring`TextFontColor], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width - 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontColor -> 
+               SlideShowAuthoring`TextFontColor]]]]; 
+       SlideShowAuthoring`SetFontColor[
+          Pattern[SlideShowAuthoring`Private`a, 
+           BlankNullSequence[]]] := Block[{}, Message[
+            MessageName[SlideShowAuthoring`SetFontColor, "args"], 
+            ToString[{SlideShowAuthoring`Private`a}]]; 
+          With[{SlideShowAuthoring`Private`info = 
+             SlideShowAuthoring`Private`a}, 
+            MessageDialog[
+             ToString[SlideShowAuthoring`Private`info], 
+             WindowSize -> {530, All}]]; Null]; 
+       SlideShowAuthoring`SetTextAlignment[
+          Pattern[SlideShowAuthoring`Private`nbObj, 
+           Blank[NotebookObject]], 
+          Pattern[SlideShowAuthoring`Private`align, 
+           Blank[String]]] := 
+        Module[{SlideShowAuthoring`Private`cellInfo, 
+           SlideShowAuthoring`Private`textAlignment}, 
+          SlideShowAuthoring`Private`SelectCellIfCursorWithinCell[
+           SlideShowAuthoring`Private`nbObj]; 
+          SlideShowAuthoring`Private`cellInfo = 
+           Developer`CellInformation[SlideShowAuthoring`Private`nbObj]; 
+          Which[SlideShowAuthoring`Private`align == "Left", 
+            SlideShowAuthoring`Private`textAlignment = Left, 
+            SlideShowAuthoring`Private`align == "Right", 
+            SlideShowAuthoring`Private`textAlignment = Right, True, 
+            SlideShowAuthoring`Private`textAlignment = Center]; If[
+            TrueQ[SlideShowAuthoring`Private`cellInfo == $Failed], 
+            MessageDialog["Please select a cell.", WindowSize -> {530, All}], 
+            
+            If[
+             MatchQ[SlideShowAuthoring`Private`cellInfo, {{
+                BlankSequence[], "CursorPosition" -> "CellBracket", 
+                BlankSequence[]}}], 
+             SetOptions[
+              NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+              TextAlignment -> SlideShowAuthoring`Private`textAlignment], 
+             SetOptions[
+              NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+              TextAlignment -> SlideShowAuthoring`Private`textAlignment]]]]; 
+       SlideShowAuthoring`FontSizeReset[
+          Pattern[SlideShowAuthoring`Private`nbObj, 
+           Blank[NotebookObject]], 
+          Pattern[SlideShowAuthoring`Private`windowsize, 
+           Blank[List]]] := 
+        Module[{SlideShowAuthoring`Private`cellInfo, 
+           SlideShowAuthoring`Private`width, 
+           SlideShowAuthoring`Private`height, 
+           SlideShowAuthoring`Private`currentSize}, {
+            SlideShowAuthoring`Private`width, 
+             SlideShowAuthoring`Private`height} = 
+           SlideShowAuthoring`Private`windowsize; 
+          SlideShowAuthoring`Private`cellInfo = 
+           Developer`CellInformation[SlideShowAuthoring`Private`nbObj]; If[
+            TrueQ[SlideShowAuthoring`Private`cellInfo == $Failed], 
+            MessageDialog["Please select a cell.", WindowSize -> {530, All}], 
+            
+            If[
+             MatchQ[SlideShowAuthoring`Private`cellInfo, {{
+                BlankSequence[], "CursorPosition" -> "CellBracket", 
+                BlankSequence[]}}], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width + 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontSize -> 
+               Inherited], 
+             SlideShowAuthoring`Private`currentSize = AbsoluteCurrentValue[
+                NotebookSelection[SlideShowAuthoring`Private`nbObj], 
+                FontSize]; 
+             SlideShowAuthoring`Private`percent = 
+              N[SlideShowAuthoring`Private`currentSize/
+                 SlideShowAuthoring`Private`width + 
+                SlideShowAuthoring`Private`smidge, 4]; SetOptions[
+               NotebookSelection[SlideShowAuthoring`Private`nbObj], FontSize -> 
+               Inherited]]]]; SlideShowAuthoring`SaveNotebookWithOutToolbar[
+          Pattern[SlideShowAuthoring`Private`nb, 
+           Blank[NotebookObject]]] := 
+        Module[{SlideShowAuthoring`Private`expr, 
+           SlideShowAuthoring`Private`ssExpr, 
+           SlideShowAuthoring`Private`ssPath}, 
+          (If[
+           TrueQ[
+            And[# =!= Null, # =!= $Canceled]], 
+           SlideShowAuthoring`Private`ssPath = 
+            FileNameJoin[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+               "StyleSheets", "Utility", "SlideDeck.nb"}]; If[
+             TrueQ[FileType[SlideShowAuthoring`Private`ssPath] == File], 
+             SlideShowAuthoring`Private`ssExpr = 
+              Import[SlideShowAuthoring`Private`ssPath]; 
+             SlideShowAuthoring`Private`expr = 
+              NotebookGet[SlideShowAuthoring`Private`nb]; If[
+               TrueQ[Head[SlideShowAuthoring`Private`ssExpr] == Notebook], 
+               With[{SlideShowAuthoring`Private`stylesheet = 
+                  SlideShowAuthoring`Private`ssExpr}, 
+                 SlideShowAuthoring`Private`expr = 
+                  ReplaceAll[SlideShowAuthoring`Private`expr, Notebook[
+                    Pattern[SlideShowAuthoring`Private`c, 
+                    Blank[]], 
+                    Pattern[SlideShowAuthoring`Private`opts, 
+                    BlankNullSequence[]]] :> 
+                    Notebook[
+                    SlideShowAuthoring`Private`c, StyleDefinitions -> 
+                    SlideShowAuthoring`Private`stylesheet, DockedCells -> {
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SlideshowToolbar"]}, 
+                    Apply[Sequence, 
+                    
+                    DeleteCases[{SlideShowAuthoring`Private`opts}, 
+                    StyleDefinitions -> Blank[]]]]]; Null]; 
+               Export[#, SlideShowAuthoring`Private`expr, "NB"]]], 
+           Abort[]]& )[
+           SystemDialogInput[
+           "FileSave", {$UserDocumentsDirectory, {
+             "Notebook (*.nb)" -> {"*.nb"}}}]]]; Null)]], FontSize -> 1, 
+    CellElementSpacings -> {"CellMinHeight" -> 1}, CellFrame -> 0, 
+    CellFrameMargins -> {{0, 0}, {0, 0}}, CellMargins -> {{0, 0}, {0, 0}}, 
+    Background -> GrayLevel[0.75]]},
+ ScrollingOptions->{"PagewiseDisplay"->True,
+ "VerticalScrollRange"->Fit},
+ ShowGroupOpener->False,
+ PrivateCellOptions->{"EvaluationUnmatchedStyle"->{}},
+ MenuSortingValue->
+  1300,ExpressionUUID->"c9b010a4-799c-4027-92fb-154f68597256"],
+
+Cell[StyleData[All, "SlideShowPresentation", StyleDefinitions -> StyleData[
+ All, "SlideShow"]],
+ NotebookEventActions->{"RightArrowKeyDown" :> FrontEndTokenExecute[
+     InputNotebook[], "ScrollPageNext"], "LeftArrowKeyDown" :> 
+   FrontEndTokenExecute[
+     InputNotebook[], "ScrollPagePrevious"]},
+ PageWidth->WindowWidth,
+ DockedCells->{
+   Cell[
+    BoxData[
+     ActionMenuBox[
+      PaneBox[
+       StyleBox[" ", StripOnInput -> False, FontSize -> 0.1]], {
+      "Toolbar" :> (SetOptions[
+          EvaluationNotebook[], {
+          DockedCells -> Inherited, WindowFrame -> "Normal", WindowElements -> 
+           Inherited, WindowFrameElements -> Inherited, WindowStatusArea -> 
+           None, ScreenStyleEnvironment -> "SlideShow", WindowSize -> {
+             First[
+              CurrentValue[
+               EvaluationNotebook[], {
+               TaggingRules, "SlideShowSettings", "WindowSize"}]], 
+             Last[
+              CurrentValue[
+               EvaluationNotebook[], {
+               TaggingRules, "SlideShowSettings", "WindowSize"}]]}}]; Null), 
+       Delimiter, "Enter Full Screen" :> (CurrentValue[
+           EvaluationNotebook[], WindowSize] = Full; Null), 
+       "Exit Full Screen" :> (FrontEndExecute[
+          FrontEnd`Value[
+           FEPrivate`NotebookToggleFullScreen[]]]; SetOptions[
+          EvaluationNotebook[], {
+          DockedCells -> Inherited, ScreenStyleEnvironment -> "SlideShow"}]; 
+        Null), Delimiter, "Close" :> (NotebookClose[
+          EvaluationNotebook[], Interactive -> True]; Quiet[
+          DeviceClose["Camera"]])}, Appearance -> "Frameless", AutoAction -> 
+      False, Background -> GrayLevel[0.9], ImageSize -> {Full, 10}]], 
+    CellMargins -> {{0, 0}, {0, 0}}, CellFrame -> {{0, 0}, {0, 3}}, 
+    CellFrameColor -> GrayLevel[0.75], CellFrameMargins -> {{0, 0}, {2, 2}}, 
+    FontSize -> 1, CellElementSpacings -> {"CellMinHeight" -> 1}, Background -> 
+    GrayLevel[0.94]]},
+ ScrollingOptions->{"PagewiseDisplay"->True,
+ "VerticalScrollRange"->Fit},
+ ShowGroupOpener->False,
+ PrivateCellOptions->{"EvaluationUnmatchedStyle"->{}},
+ MenuSortingValue->
+  1300,ExpressionUUID->"f9b80eb0-aaef-48b8-bd59-88d020b16783"],
+
+Cell[StyleData[All, "Condensed"],
+ MenuSortingValue->
+  None,ExpressionUUID->"cced1beb-cc04-4ec1-9881-46ab6ac8c244"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Styles for Title and Section Cells", "Section",
+ CellChangeTimes->{{3.649696053940879*^9, 3.649696054001931*^9}, {
+  3.649718921055696*^9, 
+  3.6497189211802588`*^9}},ExpressionUUID->"f12f99b4-9e54-4d8b-bf5f-\
+ca47623bbf72"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Title"],
+ CellMargins->{{
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.01 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+   0.025 FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 0.33 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}},
+ StyleKeyMapping->{},
+ TextAlignment->Center,
+ TabSpacings->{1},ExpressionUUID->"544e0353-fc51-4ae9-86cf-9a036ddbf126"],
+
+Cell[StyleData["Title", "SlideShow", StyleDefinitions -> StyleData["Title"]],
+ FontSize->0.1 
+  FrontEnd`AbsoluteCurrentValue[{
+    WindowSize, 1}],ExpressionUUID->"060d88d3-2386-44af-afa6-4349f956e784"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Subtitle"],
+ CellMargins->{{
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.01 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+   0.05 FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 0.01 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}},
+ TextAlignment->Center,
+ TabSpacings->{1},
+ FontSize->36,
+ FontColor->GrayLevel[
+  0.5],ExpressionUUID->"4130891b-f228-405f-a09a-39d08ab5d311"],
+
+Cell[StyleData["Subtitle", "SlideShow", StyleDefinitions -> StyleData[
+ "Subtitle"]],
+ FontSize->0.068 
+  FrontEnd`AbsoluteCurrentValue[{
+    WindowSize, 1}],ExpressionUUID->"3593d889-3928-4d94-b5ec-85b396046602"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Chapter"],
+ CellMargins->{{
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.01 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+   0.05 FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 0.01 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}},
+ TextAlignment->Center,
+ TabSpacings->{1},
+ FontSize->36,
+ FontColor->GrayLevel[
+  0.5],ExpressionUUID->"efc1124f-2dd0-462b-bc60-88d8a1a94f00"],
+
+Cell[StyleData["Chapter", "SlideShow", StyleDefinitions -> StyleData[
+ "Chapter"]],
+ FontSize->0.068 
+  FrontEnd`AbsoluteCurrentValue[{
+    WindowSize, 1}],ExpressionUUID->"dc83ee5c-e43a-4063-98e8-d36179aa9ded"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Subchapter"],
+ CellFrame->False,
+ CellDingbat->None,
+ CellMargins->{{
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.01 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+   0.03 FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 0.03 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}},
+ TextAlignment->Center,
+ TabSpacings->{1},
+ FontColor->GrayLevel[
+  0.5],ExpressionUUID->"dc247f2d-8025-4878-a22d-68a3c455267a"],
+
+Cell[StyleData["Subchapter", "SlideShow", StyleDefinitions -> StyleData[
+ "Subchapter"]],
+ FontSize->0.06 
+  FrontEnd`AbsoluteCurrentValue[{
+    WindowSize, 1}],ExpressionUUID->"5709e68c-afcc-432c-bae4-d084c719c532"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Section"],
+ CellFrame->False,
+ CellMargins->{{
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.01 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+   0.03 FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 0.03 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}},
+ TextAlignment->Center,
+ TabSpacings->{1},ExpressionUUID->"6bd0291a-d375-4b73-b2a7-d92286dd8979"],
+
+Cell[StyleData["Section", "SlideShow", StyleDefinitions -> StyleData[
+ "Section"]],
+ FontSize->0.055 
+  FrontEnd`AbsoluteCurrentValue[{
+    WindowSize, 1}],ExpressionUUID->"d270326c-398c-4034-8322-8b2b9f3071ad"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Subsection"],
+ CellFrame->False,
+ CellDingbat->None,
+ CellMargins->{{
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.01 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 0.02 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}},
+ TextAlignment->Center,
+ TabSpacings->{1},ExpressionUUID->"afa6db66-a06a-430b-bedd-c1efbf743f53"],
+
+Cell[StyleData["Subsection", "SlideShow", StyleDefinitions -> StyleData[
+ "Subsection"]],
+ FontSize->0.04 
+  FrontEnd`AbsoluteCurrentValue[{
+    WindowSize, 1}],ExpressionUUID->"476b7aee-f81c-4e95-bc21-f0eec137821e"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Subsubsection"],
+ CellFrame->False,
+ CellDingbat->None,
+ CellMargins->{{
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.01 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 0.02 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}},
+ TextAlignment->Center,
+ TabSpacings->{1},ExpressionUUID->"47ceb524-a92f-48c3-84bd-4ebcc432e225"],
+
+Cell[StyleData["Subsubsection", "SlideShow", StyleDefinitions -> StyleData[
+ "Subsubsection"]],
+ FontSize->0.035 
+  FrontEnd`AbsoluteCurrentValue[{
+    WindowSize, 1}],ExpressionUUID->"8c747758-65d9-40d9-afbc-4d896b8faffc"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Text"],
+ CellFrame->False,
+ CellDingbat->None,
+ CellMargins->{{
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.01 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 0.02 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}},
+ TextAlignment->Center,
+ TabSpacings->{1},ExpressionUUID->"71cf6f9e-7949-4512-865c-bb7485784d73"],
+
+Cell[StyleData["Text", "SlideShow", StyleDefinitions -> StyleData["Text"]],
+ FontSize->0.03 
+  FrontEnd`AbsoluteCurrentValue[{
+    WindowSize, 1}],ExpressionUUID->"c7092e0e-5aaf-4e91-8a0c-a18c85fef0bd"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Item"],
+ CellFrame->False,
+ CellMargins->{{
+   0.035 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.01 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 0.02 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}},
+ TextAlignment->Left,
+ TabSpacings->{1},ExpressionUUID->"955cc96b-89b4-4cde-a5d5-6abdb2677b22"],
+
+Cell[StyleData["Item", "SlideShow", StyleDefinitions -> StyleData["Item"]],
+ FontSize->0.03 
+  FrontEnd`AbsoluteCurrentValue[{
+    WindowSize, 1}],ExpressionUUID->"fef29388-a621-4e91-b93e-27416c763aff"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Annotation", StyleDefinitions -> StyleData["Item"]],
+ MenuSortingValue->10000,
+ MenuCommandKey->"8",
+ FontColor->GrayLevel[
+  0.2],ExpressionUUID->"081956d5-62f8-45c2-a9c8-4b7bd6147698"],
+
+Cell[StyleData["Annotation", "SlideShow"],
+ CellMargins->0,
+ CellElementSpacings->{"ClosedCellHeight"->1},
+ CellOpen->False,ExpressionUUID->"e83d129b-a188-473c-96a1-a67745952b6b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Code"],
+ CellMargins->{{
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.01 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+   0.008 FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 0.016 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}},
+ TextAlignment->Center,
+ LinebreakAdjustments->{0.95, 2, 10, 0, 1},
+ FontSize->20,ExpressionUUID->"ef418253-c435-4355-a23b-27b6eb09789a"],
+
+Cell[StyleData["Code", "SlideShow", StyleDefinitions -> StyleData["Code"]],ExpressionUUID->"909b343f-50e6-4187-b45f-74fda22cf961"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Input"],
+ CellMargins->{{
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.01 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+   0.008 FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 0.016 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}},
+ TextAlignment->Center,
+ LinebreakAdjustments->{0.95, 2, 10, 0, 1},
+ FontSize->20,ExpressionUUID->"9c951976-89e5-4f1b-acbe-0ea981325e38"],
+
+Cell[StyleData["Input", "SlideShow", StyleDefinitions -> StyleData["Input"]],ExpressionUUID->"dc0e358c-f587-4ff3-8086-5fa138c3d9db"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Output"],
+ CellMargins->{{
+   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.01 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+   0.016 FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 0.008 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}},
+ TextAlignment->Center,
+ LinebreakAdjustments->{0.95, 2, 10, 0, 1},
+ FontSize->20,ExpressionUUID->"b598dd7f-cb59-4753-a63b-158b1b3517de"],
+
+Cell[StyleData["Output", "SlideShow", StyleDefinitions -> StyleData["Output"]],ExpressionUUID->"63b85645-12fc-4933-8f57-6c34fa275870"]
+}, Closed]]
+}, Closed]]
+},
+WindowSize->{808, 756},
+WindowMargins->{{Automatic, 43}, {44, Automatic}},
+MenuSortingValue->None,
+FrontEndVersion->"11.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 6, \
+2017)",
+StyleDefinitions->"PrivateStylesheetFormatting.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[574, 21, 104, 0, 36, 49, 0, "StyleData", "StyleDefinitions", "", \
+ExpressionUUID -> "96650fd2-8b31-4f36-9094-a819631d6839"],
+Cell[CellGroupData[{
+Cell[703, 25, 267, 4, 49, "Section", ExpressionUUID -> \
+"c33f6426-0da1-4240-bc9a-20e94fdabd2e"],
+Cell[973, 31, 115, 2, 36, 27, 0, "StyleData", "Notebook", "All", \
+ExpressionUUID -> "5bf2c33f-ef5b-49e3-8ac3-e3290afcd427"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1125, 38, 97, 0, 33, "Section", ExpressionUUID -> \
+"2ed2d655-fb09-4958-9c73-258b3e62b79b"],
+Cell[1225, 40, 88671, 1662, 70, 31, 0, "StyleData", "All", "Working", \
+ExpressionUUID -> "990a7d52-4432-4fac-a5c9-c4a0b06b9932"],
+Cell[89899, 1704, 119, 2, 70, 36, 0, "StyleData", "All", "Presentation", \
+ExpressionUUID -> "27e1df97-b532-4dd3-a1d3-4de7e45fa246",
+ MenuSortingValue->None],
+Cell[90021, 1708, 88905, 1668, 70, 87, 1, "StyleData", "All", "SlideShow", \
+ExpressionUUID -> "c9b010a4-799c-4027-92fb-154f68597256",
+ MenuSortingValue->1300],
+Cell[178929, 3378, 2194, 46, 70, 96, 1, "StyleData", "All", \
+"SlideShowPresentation", ExpressionUUID -> \
+"f9b80eb0-aaef-48b8-bd59-88d020b16783",
+ MenuSortingValue->1300],
+Cell[181126, 3426, 116, 2, 70, 33, 0, "StyleData", "All", "Condensed", \
+ExpressionUUID -> "cced1beb-cc04-4ec1-9881-46ab6ac8c244",
+ MenuSortingValue->None]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[181279, 3433, 230, 4, 33, "Section", ExpressionUUID -> \
+"f12f99b4-9e54-4d8b-bf5f-ca47623bbf72"],
+Cell[CellGroupData[{
+Cell[181534, 3441, 395, 8, 70, 24, 0, "StyleData", "Title", "All", \
+ExpressionUUID -> "544e0353-fc51-4ae9-86cf-9a036ddbf126"],
+Cell[181932, 3451, 203, 3, 70, 77, 0, "StyleData", "Title", "SlideShow", \
+ExpressionUUID -> "060d88d3-2386-44af-afa6-4349f956e784"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[182172, 3459, 421, 10, 70, 27, 0, "StyleData", "Subtitle", "All", \
+ExpressionUUID -> "4130891b-f228-405f-a09a-39d08ab5d311"],
+Cell[182596, 3471, 213, 4, 70, 85, 1, "StyleData", "Subtitle", "SlideShow", \
+ExpressionUUID -> "3593d889-3928-4d94-b5ec-85b396046602"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[182846, 3480, 420, 10, 70, 26, 0, "StyleData", "Chapter", "All", \
+ExpressionUUID -> "efc1124f-2dd0-462b-bc60-88d8a1a94f00"],
+Cell[183269, 3492, 211, 4, 70, 83, 1, "StyleData", "Chapter", "SlideShow", \
+ExpressionUUID -> "dc83ee5c-e43a-4063-98e8-d36179aa9ded"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[183517, 3501, 447, 11, 70, 29, 0, "StyleData", "Subchapter", "All", \
+ExpressionUUID -> "dc247f2d-8025-4878-a22d-68a3c455267a"],
+Cell[183967, 3514, 216, 4, 70, 89, 1, "StyleData", "Subchapter", "SlideShow", \
+ExpressionUUID -> "5709e68c-afcc-432c-bae4-d084c719c532"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[184220, 3523, 393, 8, 70, 26, 0, "StyleData", "Section", "All", \
+ExpressionUUID -> "6bd0291a-d375-4b73-b2a7-d92286dd8979"],
+Cell[184616, 3533, 211, 4, 70, 83, 1, "StyleData", "Section", "SlideShow", \
+ExpressionUUID -> "d270326c-398c-4034-8322-8b2b9f3071ad"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[184864, 3542, 416, 9, 70, 29, 0, "StyleData", "Subsection", "All", \
+ExpressionUUID -> "afa6db66-a06a-430b-bedd-c1efbf743f53"],
+Cell[185283, 3553, 216, 4, 70, 89, 1, "StyleData", "Subsection", "SlideShow", \
+ExpressionUUID -> "476b7aee-f81c-4e95-bc21-f0eec137821e"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[185536, 3562, 419, 9, 70, 32, 0, "StyleData", "Subsubsection", "All", \
+ExpressionUUID -> "47ceb524-a92f-48c3-84bd-4ebcc432e225"],
+Cell[185958, 3573, 223, 4, 70, 95, 1, "StyleData", "Subsubsection", \
+"SlideShow", ExpressionUUID -> "8c747758-65d9-40d9-afbc-4d896b8faffc"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[186218, 3582, 410, 9, 70, 23, 0, "StyleData", "Text", "All", \
+ExpressionUUID -> "71cf6f9e-7949-4512-865c-bb7485784d73"],
+Cell[186631, 3593, 202, 3, 70, 75, 0, "StyleData", "Text", "SlideShow", \
+ExpressionUUID -> "c7092e0e-5aaf-4e91-8a0c-a18c85fef0bd"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[186870, 3601, 389, 8, 70, 23, 0, "StyleData", "Item", "All", \
+ExpressionUUID -> "955cc96b-89b4-4cde-a5d5-6abdb2677b22"],
+Cell[187262, 3611, 202, 3, 70, 75, 0, "StyleData", "Item", "SlideShow", \
+ExpressionUUID -> "fef29388-a621-4e91-b93e-27416c763aff"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[187501, 3619, 202, 4, 70, 68, 0, "StyleData", "Annotation", "All", \
+ExpressionUUID -> "081956d5-62f8-45c2-a9c8-4b7bd6147698",
+ MenuSortingValue->10000,
+ MenuCommandKey->"8"],
+Cell[187706, 3625, 179, 3, 70, 42, 0, "StyleData", "Annotation", "SlideShow", \
+ExpressionUUID -> "e83d129b-a188-473c-96a1-a67745952b6b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[187922, 3633, 413, 8, 70, 23, 0, "StyleData", "Code", "All", \
+ExpressionUUID -> "ef418253-c435-4355-a23b-27b6eb09789a"],
+Cell[188338, 3643, 130, 0, 70, 75, 0, "StyleData", "Code", "SlideShow", \
+ExpressionUUID -> "909b343f-50e6-4187-b45f-74fda22cf961"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[188505, 3648, 414, 8, 70, 24, 0, "StyleData", "Input", "All", \
+ExpressionUUID -> "9c951976-89e5-4f1b-acbe-0ea981325e38"],
+Cell[188922, 3658, 132, 0, 70, 77, 0, "StyleData", "Input", "SlideShow", \
+ExpressionUUID -> "dc0e358c-f587-4ff3-8086-5fa138c3d9db"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[189091, 3663, 415, 8, 70, 25, 0, "StyleData", "Output", "All", \
+ExpressionUUID -> "b598dd7f-cb59-4753-a63b-158b1b3517de"],
+Cell[189509, 3673, 134, 0, 70, 79, 0, "StyleData", "Output", "SlideShow", \
+ExpressionUUID -> "63b85645-12fc-4933-8f57-6c34fa275870"]
+}, Closed]]
+}, Closed]]
+}
+]
+*)
+

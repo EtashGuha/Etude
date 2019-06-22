@@ -1,0 +1,7 @@
+(* ::Package:: *)
+
+{
+"\[AltKey]",
+
+"\\[WindowsKey]"
+}

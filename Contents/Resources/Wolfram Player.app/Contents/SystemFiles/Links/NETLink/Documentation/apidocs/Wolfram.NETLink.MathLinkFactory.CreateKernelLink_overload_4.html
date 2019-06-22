@@ -1,0 +1,46 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>MathLinkFactory.CreateKernelLink Method (IMathLink)</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.MathLinkFactory.CreateKernelLink_overload_4.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">MathLinkFactory.CreateKernelLink Method (IMathLink)</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Creates an IKernelLink from an <a href="Wolfram.NETLink.IMathLink.html">IMathLink</a>. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Overloads Public Shared Function CreateKernelLink( _<br />   ByVal <i>ml</i> As <a href="Wolfram.NETLink.IMathLink.html">IMathLink</a> _<br />) As <a href="Wolfram.NETLink.IKernelLink.html">IKernelLink</a></div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />public static <a href="Wolfram.NETLink.IKernelLink.html">IKernelLink</a> CreateKernelLink(<br />   <a href="Wolfram.NETLink.IMathLink.html">IMathLink</a> <i>ml</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>ml</i>
+        </dt>
+        <dd>The IMathLink to "wrap".</dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p>The created link.</p>
+      <h4 class="dtH4">Remarks</h4> You can think of IKernelLink as a "decorator" for IMathLink. It builds on top of IMathLink by providing extra capabilities. If you have an IMathLink object, you can use this method to construct an IKernelLink implementation out of it. <p> Very few programmers will ever use this method. It is intended mainly for developers who are creating their own IKernelLink implementations. They only need to write the functionality of an IMathLink, and then they can use this method to get the extra features of an IKernelLink for free. </p>
+            <h4 class="dtH4">Exceptions</h4><div class="tablediv"><table class="dtTABLE" cellspacing="0"><tr valign="top"><th width="50%">Exception Type</th><th width="50%">Condition</th></tr><tr valign="top"><td width="50%"><a href="Wolfram.NETLink.MathLinkException.html">MathLinkException</a></td><td width="50%">If the opening of the link fails.</td></tr></table></div><h4 class="dtH4">See Also</h4><p><a href="Wolfram.NETLink.MathLinkFactory.html">MathLinkFactory Class</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.MathLinkFactory.CreateKernelLink_overloads.html">MathLinkFactory.CreateKernelLink Overload List</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;"><param name="Keyword" value="CreateKernelLink method"></param><param name="Keyword" value="CreateKernelLink method, MathLinkFactory class"></param><param name="Keyword" value="MathLinkFactory.CreateKernelLink method"></param></object><hr /><div id="footer"><p><a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a></p><p></p></div></div>
+  </body>
+</html>

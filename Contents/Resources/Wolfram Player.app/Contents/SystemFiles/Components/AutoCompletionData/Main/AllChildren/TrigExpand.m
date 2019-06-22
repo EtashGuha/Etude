@@ -1,0 +1,10 @@
+{"Sin", "Cos", "Pi", "I", "Tan", "Sec", "Sinh", "Cosh", "Cot", "Csc", "Exp", 
+ "Sqrt", "ArcTan", "Subscript", "ArcCos", "Log", "E", "Quantity", "ArcSin", 
+ "Integrate", "D", "Sum", "Tanh", "Beta", "InverseLaplaceTransform", 
+ "ArcTanh", "None", "Derivative", "ArcSinh", "Abs", "PlusMinus", "Limit", 
+ "Sinc", "Sech", "Degree", "TrigExpand", "ExpToTrig", "EllipticNomeQ", 
+ "Csch", "ArcCot", "MatrixForm", "EulerGamma", "DSolve", "Assuming", 
+ "ArcCosh", "Zeta", "UnitStep", "TrigReduce", "SphericalBesselJ", "Sign", 
+ "Plus", "Norm", "Mod", "InverseFunction", "Infinity", "Gamma", 
+ "FourierSeries", "Expand", "EllipticK", "EllipticE", "ComplexExpand", 
+ "ChebyshevT", "ArcCsch", "ArcCoth", "Apart"}

@@ -1,0 +1,76 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      1759,         67]
+NotebookOptionsPosition[      1355,         47]
+NotebookOutlinePosition[      1814,         68]
+CellTagsIndexPosition[      1771,         65]
+WindowFrame->Palette*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+This is a placeholder for material that is \[LineSeparator]currently in \
+development.\
+\>", "Text",
+ CellFrame->True,
+ CellMargins->{{100, 100}, {10, 100}},
+ CellChangeTimes->{{3.432918676712751*^9, 3.432918712151228*^9}, 
+   3.4329188155623007`*^9},
+ TextAlignment->Center,
+ FontFamily->"Verdana",
+ FontSize->14,
+ FontColor->RGBColor[0.6, 0.4, 0.2]],
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox["\<\"Close\"\>",
+  Appearance->Automatic,
+  ButtonFunction:>FrontEnd`FrontEndExecute[
+    NotebookClose[
+     InputNotebook[]]],
+  Evaluator->Automatic,
+  Method->"Preemptive"]],
+ CellChangeTimes->{{3.432919638195818*^9, 3.432919658184862*^9}, 
+   3.432919831150709*^9}]], "Text",
+ CellMargins->{{0, 0}, {7, 7}},
+ CellChangeTimes->{{3.432919840137331*^9, 3.432919842349741*^9}},
+ TextAlignment->Center]
+},
+Selectable->False,
+WindowSize->{600, 400},
+WindowMargins->Automatic,
+WindowFrame->"Palette",
+WindowElements->{},
+WindowTitle->"Guided Examples",
+ShowCellBracket->False,
+Background->GrayLevel[1],
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (October 10, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[546, 20, 361, 11, 163, "Text"],
+Cell[910, 33, 441, 12, 42, "Text"]
+}
+]
+*)
+
+(* End of internal cache information *)

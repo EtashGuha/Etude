@@ -1,0 +1,270 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8160,        261]
+NotebookOptionsPosition[      6118,        192]
+NotebookOutlinePosition[      6556,        209]
+CellTagsIndexPosition[      6513,        206]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+", "Title"],
+
+Cell["\:30b5\:30d6\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\:306b\:5165\:529b\
+\:3059\:308b", "Subtitle"],
+
+Cell["\:30b5\:30d6\:30b5\:30d6\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\:306b\
+\:5165\:529b\:3059\:308b", "Subsubtitle"],
+
+Cell["\:8457\:8005\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b", "Author"],
+
+Cell["\:90e8\:7f72\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b", \
+"Department"],
+
+Cell["\:65e5\:4ed8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b", "Date"],
+
+Cell[CellGroupData[{
+
+Cell["\:30bb\:30af\:30b7\:30e7\:30f3\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["\:30b5\:30d6\:30bb\:30af\:30b7\:30e7\:30f3\:30bf\:30a4\:30c8\:30eb\:3092\
+\:3053\:3053\:306b\:5165\:529b\:3059\:308b", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell["\:30b5\:30d6\:30b5\:30d6\:30bb\:30af\:30b7\:30e7\:30f3\:30bf\:30a4\:30c8\
+\:30eb\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b", "Subsubsection"],
+
+Cell["\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e\:8a55\:4fa1\:3059\:308b\:5165\:529b\:5f0f\:306f\:ff0c\:4e0b\:306e\:5225\
+\:306e\:30bb\:30eb\:306b\:5165\:529b\:3059\:308b\:ff0e ", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Integral]", 
+   RowBox[{"x", 
+    RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+  SqrtBox["z"]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   SuperscriptBox["x", "2"], "2"], "+", 
+  SqrtBox["z"]}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:9ed2\:4e38\:4ed8\:304d\:306e\:9805\:76ee\:306e\:30c6\:30ad\:30b9\:30c8\
+\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "Item"],
+
+Cell["\:9805\:76ee\:306e\:6bb5\:843d\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b\:ff0e", "ItemParagraph"],
+
+Cell[CellGroupData[{
+
+Cell["\:30b5\:30d6\:9805\:76ee\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b\:ff0e", "Subitem"],
+
+Cell["\:9805\:76ee\:306e\:6bb5\:843d\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b\:ff0e", "SubitemParagraph"],
+
+Cell[CellGroupData[{
+
+Cell["\:30b5\:30d6\:9805\:76ee\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b\:ff0e", "Subsubitem"],
+
+Cell["\:9805\:76ee\:306e\:6bb5\:843d\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b\:ff0e", "SubsubitemParagraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e\:8868\:793a\:3059\:308b\:5f0f\:3092\:4e0b\:306e\:5225\:306e\:30bb\:30eb\
+\:306b\:5165\:529b\:3059\:308b\:ff0e", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Integral]", 
+   RowBox[{"x", 
+    RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+  SqrtBox["z"]}]], "DisplayFormula"],
+
+Cell[TextData[{
+ "\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e ",
+ "\:30a4\:30f3\:30e9\:30a4\:30f3\:5f0f\:306f\:300c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2", "+", "2"}], TraditionalForm]]],
+ "\:300d\:306e\:3088\:3046\:306b\:5165\:529b\:3059\:308b\:ff0e"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell["\:756a\:53f7\:4ed8\:304d\:306e\:9805\:76ee\:306e\:30c6\:30ad\:30b9\:30c8\
+\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e ", "ItemNumbered"],
+
+Cell["\:9805\:76ee\:306e\:6bb5\:843d\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b\:ff0e", "ItemParagraph"],
+
+Cell[CellGroupData[{
+
+Cell["\:756a\:53f7\:4ed8\:304d\:306e\:30b5\:30d6\:9805\:76ee\:306e\:30c6\:30ad\
+\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e ", \
+"SubitemNumbered"],
+
+Cell["\:9805\:76ee\:306e\:6bb5\:843d\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b\:ff0e", "SubitemParagraph"],
+
+Cell[CellGroupData[{
+
+Cell["\:30b5\:30d6\:9805\:76ee\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b\:ff0e", "SubsubitemNumbered"],
+
+Cell["\:9805\:76ee\:306e\:6bb5\:843d\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b\:ff0e", "SubsubitemParagraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e\:756a\:53f7\:4ed8\:304d\:3067\:8868\:793a\:3059\:308b\:5f0f\:3092\:4e0b\
+\:306e\:5225\:306e\:30bb\:30eb\:306b\:5165\:529b\:3059\:308b\:ff0e", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Integral]", 
+   RowBox[{"x", 
+    RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+  SqrtBox["z"]}]], "DisplayFormulaNumbered"],
+
+Cell["\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e\:4e0b\:306bWolfram\:8a00\:8a9e\:30d7\:30ed\:30b0\:30e9\:30e0\:30b3\
+\:30fc\:30c9\:3092\:5165\:529b\:3059\:308b\:ff0e", "Text",
+ CellChangeTimes->{{3.608309320414301*^9, 3.608309335099221*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fun", "[", "x_", "]"}], ":=", "1"}]], "Code"],
+
+Cell["\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e\:4e0b\:306bWolfram\:8a00\:8a9e\:3067\:306f\:306a\:3044\:30d7\:30ed\
+\:30b0\:30e9\:30e0\:306e\:30b3\:30fc\:30c9\:3092\:5165\:529b\:3059\:308b\:ff0e\
+", "Text",
+ CellChangeTimes->{3.608309350079089*^9}],
+
+Cell["\<\
+DLLEXPORT int fun(WolframLibraryData libData, mreal A1, mreal *Res)
+{
+ mreal R0_0;
+ mreal R0_1;
+ R0_0 = A1;
+ R0_1 = R0_0 * R0_0;
+ *Res = R0_1;
+ funStructCompile->WolframLibraryData_cleanUp(libData, 1);
+ return 0;
+}\
+\>", "Program"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{775, 697},
+WindowMargins->{{4, Automatic}, {Automatic, 1}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (2014\:5e745\
+\:67083\:65e5)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "ConfidentialReport.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 91, 1, 82, "Title"],
+Cell[673, 25, 106, 1, 31, "Subtitle"],
+Cell[782, 28, 121, 1, 29, "Subsubtitle"],
+Cell[906, 31, 78, 0, 41, "Author"],
+Cell[987, 33, 84, 1, 17, "Department"],
+Cell[1074, 36, 76, 0, 43, "Date"],
+Cell[CellGroupData[{
+Cell[1175, 40, 123, 1, 64, "Section"],
+Cell[CellGroupData[{
+Cell[1323, 45, 138, 1, 44, "Subsection"],
+Cell[CellGroupData[{
+Cell[1486, 50, 153, 1, 35, "Subsubsection"],
+Cell[1642, 53, 225, 2, 30, "Text"],
+Cell[CellGroupData[{
+Cell[1892, 59, 143, 5, 39, "Input"],
+Cell[2038, 66, 108, 4, 41, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2183, 75, 144, 1, 24, "Item"],
+Cell[2330, 78, 135, 1, 21, "ItemParagraph"],
+Cell[CellGroupData[{
+Cell[2490, 83, 129, 1, 26, "Subitem"],
+Cell[2622, 86, 138, 1, 21, "SubitemParagraph"],
+Cell[CellGroupData[{
+Cell[2785, 91, 132, 1, 23, "Subsubitem"],
+Cell[2920, 94, 141, 1, 20, "SubsubitemParagraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[3100, 100, 206, 2, 30, "Text"],
+Cell[3309, 104, 152, 5, 41, "DisplayFormula"],
+Cell[3464, 111, 304, 8, 31, "Text"],
+Cell[CellGroupData[{
+Cell[3793, 123, 153, 1, 26, "ItemNumbered"],
+Cell[3949, 126, 135, 1, 21, "ItemParagraph"],
+Cell[CellGroupData[{
+Cell[4109, 131, 170, 2, 24, "SubitemNumbered"],
+Cell[4282, 135, 138, 1, 21, "SubitemParagraph"],
+Cell[CellGroupData[{
+Cell[4445, 140, 140, 1, 23, "SubsubitemNumbered"],
+Cell[4588, 143, 141, 1, 20, "SubsubitemParagraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[4768, 149, 236, 2, 30, "Text"],
+Cell[5007, 153, 160, 5, 41, "DisplayFormulaNumbered"],
+Cell[5170, 160, 279, 3, 30, "Text"],
+Cell[5452, 165, 80, 2, 45, "Code"],
+Cell[5535, 169, 287, 4, 30, "Text"],
+Cell[5825, 175, 241, 11, 164, "Program"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,275 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      7593,        266]
+NotebookOptionsPosition[      4356,        191]
+NotebookOutlinePosition[      4779,        209]
+CellTagsIndexPosition[      4736,        206]
+MenuPosition->0
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["InlineModifier style definitions", "Title"],
+
+Cell["\<\
+In order to make changes to this style sheet, use the below interface to \
+generate the style cell you want to modify, then make the changes directly to \
+it.  These changes will only be reflected by the private stylesheet.  To see \
+or make changes to the parent stylesheet, click the hyperlink in the first \
+style cell below.\
+\>", "Text"],
+
+Cell[StyleData[StyleDefinitions -> "StyleMenuClear.nb"]],
+
+Cell[CellGroupData[{
+
+Cell["Styles for Inline Formatting", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Modifier Styles", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell["Font Color", "Subsubsection"],
+
+Cell[StyleData["TextBlack"],
+ FontColor->GrayLevel[0]],
+
+Cell[StyleData["TextGray"],
+ FontColor->GrayLevel[0.5]],
+
+Cell[StyleData["TextWhite"],
+ FontColor->GrayLevel[1]],
+
+Cell["", "Text",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {0, 2}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {1, 1}},
+ CellElementSpacings->{"CellMinHeight"->1},
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[0, 0, 1],
+ CellSize->{Automatic, 5.125}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["FontSize", "Subsubsection"],
+
+Cell[StyleData["FontIncrease"],
+ FontSize->Inherited + 1],
+
+Cell[StyleData["FontDecrease"],
+ FontSize->Inherited - 1]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Background Color", "Subsubsection"],
+
+Cell[StyleData["BackgroundBlack"],
+ Background->GrayLevel[0]],
+
+Cell[StyleData["BackgroundGray"],
+ Background->GrayLevel[0.5]],
+
+Cell[StyleData["BackgroundWhite"],
+ Background->GrayLevel[1]],
+
+Cell["", "Text",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {0, 2}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {1, 1}},
+ CellElementSpacings->{"CellMinHeight"->1},
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[0, 0, 1],
+ CellSize->{Automatic, 5.125}],
+
+Cell[StyleData["BackgroundBlue"],
+ Background->RGBColor[0, 0, 1]],
+
+Cell[StyleData["BackgroundBrown"],
+ Background->RGBColor[0.6, 0.4, 0.2]],
+
+Cell[StyleData["BackgroundCyan"],
+ Background->RGBColor[0, 1, 1]],
+
+Cell[StyleData["BackgroundGreen"],
+ Background->RGBColor[0, 1, 0]],
+
+Cell[StyleData["BackgroundMagenta"],
+ Background->RGBColor[1, 0, 1]],
+
+Cell[StyleData["BackgroundOrange"],
+ Background->RGBColor[1, 0.5, 0]],
+
+Cell[StyleData["BackgroundPink"],
+ Background->RGBColor[1, 0.5, 0.5]],
+
+Cell[StyleData["BackgroundPurple"],
+ Background->RGBColor[0.5, 0, 0.5]],
+
+Cell[StyleData["BackgroundRed"],
+ Background->RGBColor[1, 0, 0]],
+
+Cell[StyleData["BackgroundYellow"],
+ Background->RGBColor[1, 1, 0]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Dingbats", "Subsubsection"],
+
+Cell[StyleData["DingbatNone"],
+ CellDingbat->None],
+
+Cell[StyleData["DingbatSquare"],
+ CellDingbat->"\[FilledSquare]"],
+
+Cell[StyleData["DingbatEmptySquare"],
+ CellDingbat->"\[EmptySquare]"],
+
+Cell[StyleData["DingbatSmallSquare"],
+ CellDingbat->"\[FilledSmallSquare]"],
+
+Cell[StyleData["DingbatEmptySmallSquare"],
+ CellDingbat->"\[EmptySmallSquare]"],
+
+Cell["", "Text",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {0, 2}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {1, 1}},
+ CellElementSpacings->{"CellMinHeight"->1},
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[0, 0, 1],
+ CellSize->{Inherited, 4}],
+
+Cell[StyleData["DingbatCircle"],
+ CellDingbat->"\[FilledCircle]"],
+
+Cell[StyleData["DingbatEmptyCircle"],
+ CellDingbat->"\[EmptyCircle]"],
+
+Cell[StyleData["DingbatSmallCircle"],
+ CellDingbat->"\[FilledSmallCircle]"],
+
+Cell[StyleData["DingbatEmptySmallCircle"],
+ CellDingbat->"\[EmptySmallCircle]"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["CellFrames", "Subsubsection"],
+
+Cell[StyleData["CellFrame"],
+ CellFrame->True],
+
+Cell[StyleData["CellFrameNone"],
+ CellFrame->False]
+}, Closed]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{640, 585},
+WindowMargins->{{192, Automatic}, {Automatic, 50}},
+TrackCellChangeTimes->False,
+MenuSortingValue->None,
+FrontEndVersion->"8.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 23, \
+2011)",
+StyleDefinitions->"StylesheetFormatting.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[583, 23, 49, 0, 66, "Title"],
+Cell[635, 25, 352, 6, 72, "Text"],
+Cell[990, 33, 56, 0, 35, 56, 0, "StyleData", "StyleDefinitions", ""],
+Cell[CellGroupData[{
+Cell[1071, 37, 47, 0, 48, "Section"],
+Cell[CellGroupData[{
+Cell[1143, 41, 37, 0, 44, "Subsection"],
+Cell[CellGroupData[{
+Cell[1205, 45, 35, 0, 43, "Subsubsection"],
+Cell[1243, 47, 54, 1, 70, 28, 0, "StyleData", "TextBlack", "All"],
+Cell[1300, 50, 55, 1, 70, 27, 0, "StyleData", "TextGray", "All"],
+Cell[1358, 53, 54, 1, 70, 28, 0, "StyleData", "TextWhite", "All"],
+Cell[1415, 56, 274, 9, 70, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1726, 70, 33, 0, 27, "Subsubsection"],
+Cell[1762, 72, 57, 1, 70, 31, 0, "StyleData", "FontIncrease", "All"],
+Cell[1822, 75, 57, 1, 70, 31, 0, "StyleData", "FontDecrease", "All"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1916, 81, 41, 0, 27, "Subsubsection"],
+Cell[1960, 83, 61, 1, 70, 34, 0, "StyleData", "BackgroundBlack", "All"],
+Cell[2024, 86, 62, 1, 70, 33, 0, "StyleData", "BackgroundGray", "All"],
+Cell[2089, 89, 61, 1, 70, 34, 0, "StyleData", "BackgroundWhite", "All"],
+Cell[2153, 92, 274, 9, 70, "Text"],
+Cell[2430, 103, 65, 1, 70, 33, 0, "StyleData", "BackgroundBlue", "All"],
+Cell[2498, 106, 72, 1, 70, 34, 0, "StyleData", "BackgroundBrown", "All"],
+Cell[2573, 109, 65, 1, 70, 33, 0, "StyleData", "BackgroundCyan", "All"],
+Cell[2641, 112, 66, 1, 70, 34, 0, "StyleData", "BackgroundGreen", "All"],
+Cell[2710, 115, 68, 1, 70, 36, 0, "StyleData", "BackgroundMagenta", "All"],
+Cell[2781, 118, 69, 1, 70, 35, 0, "StyleData", "BackgroundOrange", "All"],
+Cell[2853, 121, 69, 1, 70, 33, 0, "StyleData", "BackgroundPink", "All"],
+Cell[2925, 124, 71, 1, 70, 35, 0, "StyleData", "BackgroundPurple", "All"],
+Cell[2999, 127, 64, 1, 70, 32, 0, "StyleData", "BackgroundRed", "All"],
+Cell[3066, 130, 67, 1, 70, 35, 0, "StyleData", "BackgroundYellow", "All"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3170, 136, 33, 0, 27, "Subsubsection"],
+Cell[3206, 138, 50, 1, 70, 30, 0, "StyleData", "DingbatNone", "All"],
+Cell[3259, 141, 65, 1, 70, 32, 0, "StyleData", "DingbatSquare", "All"],
+Cell[3327, 144, 69, 1, 70, 37, 0, "StyleData", "DingbatEmptySquare", "All"],
+Cell[3399, 147, 75, 1, 70, 37, 0, "StyleData", "DingbatSmallSquare", "All"],
+Cell[3477, 150, 79, 1, 70, 42, 0, "StyleData", "DingbatEmptySmallSquare", \
+"All"],
+Cell[3559, 153, 270, 9, 70, "Text"],
+Cell[3832, 164, 65, 1, 70, 32, 0, "StyleData", "DingbatCircle", "All"],
+Cell[3900, 167, 69, 1, 70, 37, 0, "StyleData", "DingbatEmptyCircle", "All"],
+Cell[3972, 170, 75, 1, 70, 37, 0, "StyleData", "DingbatSmallCircle", "All"],
+Cell[4050, 173, 79, 1, 70, 42, 0, "StyleData", "DingbatEmptySmallCircle", \
+"All"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[4166, 179, 35, 0, 27, "Subsubsection"],
+Cell[4204, 181, 46, 1, 70, 28, 0, "StyleData", "CellFrame", "All"],
+Cell[4253, 184, 51, 1, 70, 32, 0, "StyleData", "CellFrameNone", "All"]
+}, Closed]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,721 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     27671,        711]
+NotebookOptionsPosition[     25880,        664]
+NotebookOutlinePosition[     27200,        702]
+CellTagsIndexPosition[     27157,        699]
+WindowTitle->Wolfram Mathematica 11.3
+WindowFrame->ModelessDialog*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ PaneBox["\<\"\"\>",
+  ImageSize->{Full, 9}]],
+ CellMargins->0,
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellElementSpacings->{"CellMinHeight"->1},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ CellLabelMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabelMargins->0,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize->1,
+ Background->RGBColor[
+  0.8980392156862745, 0.09803921568627451, 
+   0.10980392156862745`],ExpressionUUID->"8e4b49f4-4396-4355-b53a-\
+dae6a40d89c1"],
+
+Cell[BoxData[
+ PaneBox[
+  DynamicBox[FEPrivate`ImportImage[
+    FrontEnd`ToFileName[{"Dialogs", "Closing"}, "TitleBanner.png"]],
+   ImageSizeCache->{409., {13., 13.}}],
+  Alignment->Center,
+  ImageMargins->{{0, 0}, {0, 20}},
+  ImageSize->Full]],
+ CellMargins->0,
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellElementSpacings->{"CellMinHeight"->1},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ CellLabelMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabelMargins->0,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize->1,ExpressionUUID->"7c17cb9c-4f80-48a8-984c-7ec9a0077ad8"],
+
+Cell[BoxData[
+ PaneBox[
+  TagBox[GridBox[{
+     {
+      TagBox[
+       PaneSelectorBox[{"Default"->
+        TagBox[GridBox[{
+           {
+            DynamicBox[FEPrivate`ImportImage[
+              FrontEnd`ToFileName[{"Dialogs", "Closing"}, "File.png"]],
+             ImageSizeCache->{38., {18., 23.}}]},
+           {
+            StyleBox[
+             StyleBox[
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "MathematicaClosingDialog", "NewNotebook"],
+               ImageSizeCache->{89., {1., 10.}}],
+              StripOnInput->False,
+              
+              LineColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`],
+              
+              FrontFaceColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`],
+              
+              BackFaceColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`],
+              
+              GraphicsColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`],
+              FontFamily->"Helvetica",
+              FontSize:>FrontEnd`CurrentValue["ControlsFontSize"],
+              
+              FontColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`]],
+             StripOnInput->False,
+             FontWeight->Bold]}
+          },
+          AutoDelete->False,
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+         "Grid"], "Hover"->
+        TagBox[GridBox[{
+           {
+            DynamicBox[FEPrivate`ImportImage[
+              FrontEnd`ToFileName[{"Dialogs", "Closing"}, "File-Hover.png"]],
+             ImageSizeCache->{38., {18., 23.}}]},
+           {
+            StyleBox[
+             StyleBox[
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "MathematicaClosingDialog", "NewNotebook"],
+               ImageSizeCache->{89., {1., 10.}}],
+              StripOnInput->False,
+              LineColor->RGBColor[0.996078431372549, 0., 0.],
+              FrontFaceColor->RGBColor[0.996078431372549, 0., 0.],
+              BackFaceColor->RGBColor[0.996078431372549, 0., 0.],
+              GraphicsColor->RGBColor[0.996078431372549, 0., 0.],
+              FontFamily->"Helvetica",
+              FontSize:>FrontEnd`CurrentValue["ControlsFontSize"],
+              FontColor->RGBColor[0.996078431372549, 0., 0.]],
+             StripOnInput->False,
+             FontWeight->Bold]}
+          },
+          AutoDelete->False,
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+         "Grid"]}, FEPrivate`If[
+         FrontEnd`CurrentValue["MouseOver"], "Hover", "Default"]],
+       EventHandlerTag[{"MouseClicked" :> DialogReturn[
+           FrontEndTokenExecute["New"]], Method -> "Preemptive", 
+         PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+      TagBox[
+       PaneSelectorBox[{"Default"->
+        TagBox[GridBox[{
+           {
+            DynamicBox[FEPrivate`ImportImage[
+              FrontEnd`ToFileName[{"Dialogs", "Closing"}, "Open.png"]],
+             ImageSizeCache->{43., {16., 21.}}]},
+           {
+            StyleBox[
+             StyleBox[
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "WelcomeScreen", "OpenDialogText"],
+               ImageSizeCache->{46., {3., 10.}}],
+              StripOnInput->False,
+              
+              LineColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`],
+              
+              FrontFaceColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`],
+              
+              BackFaceColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`],
+              
+              GraphicsColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`],
+              FontFamily->"Helvetica",
+              FontSize:>FrontEnd`CurrentValue["ControlsFontSize"],
+              
+              FontColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`]],
+             StripOnInput->False,
+             FontWeight->Bold]}
+          },
+          AutoDelete->False,
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+         "Grid"], "Hover"->
+        TagBox[GridBox[{
+           {
+            DynamicBox[FEPrivate`ImportImage[
+              FrontEnd`ToFileName[{"Dialogs", "Closing"}, "Open-Hover.png"]],
+             ImageSizeCache->{43., {16., 21.}}]},
+           {
+            StyleBox[
+             StyleBox[
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "WelcomeScreen", "OpenDialogText"],
+               ImageSizeCache->{46., {3., 10.}}],
+              StripOnInput->False,
+              LineColor->RGBColor[0.996078431372549, 0., 0.],
+              FrontFaceColor->RGBColor[0.996078431372549, 0., 0.],
+              BackFaceColor->RGBColor[0.996078431372549, 0., 0.],
+              GraphicsColor->RGBColor[0.996078431372549, 0., 0.],
+              FontFamily->"Helvetica",
+              FontSize:>FrontEnd`CurrentValue["ControlsFontSize"],
+              FontColor->RGBColor[0.996078431372549, 0., 0.]],
+             StripOnInput->False,
+             FontWeight->Bold]}
+          },
+          AutoDelete->False,
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+         "Grid"]}, FEPrivate`If[
+         FrontEnd`CurrentValue["MouseOver"], "Hover", "Default"]],
+       EventHandlerTag[{"MouseClicked" :> If[
+           CurrentValue["LocalFileSystemAccessAllowed"], 
+           FrontEndTokenExecute["Open"], 
+           FrontEndTokenExecute["OpenCloudObject"]], Method -> "Preemptive", 
+         PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+      TagBox[
+       PaneSelectorBox[{"Default"->
+        TagBox[GridBox[{
+           {
+            DynamicBox[FEPrivate`ImportImage[
+              FrontEnd`ToFileName[{"Dialogs", "Closing"}, "Quit.png"]],
+             ImageSizeCache->{39., {17., 22.}}]},
+           {
+            StyleBox[
+             StyleBox[
+              DynamicBox[FEPrivate`FrontEndResourceString["quitButtonText"],
+               ImageSizeCache->{26., {1., 10.}}],
+              StripOnInput->False,
+              
+              LineColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`],
+              
+              FrontFaceColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`],
+              
+              BackFaceColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`],
+              
+              GraphicsColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`],
+              FontFamily->"Helvetica",
+              FontSize:>FrontEnd`CurrentValue["ControlsFontSize"],
+              
+              FontColor->RGBColor[
+               0.43137254901960786`, 0.42745098039215684`, 
+                0.42745098039215684`]],
+             StripOnInput->False,
+             FontWeight->Bold]}
+          },
+          AutoDelete->False,
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+         "Grid"], "Hover"->
+        TagBox[GridBox[{
+           {
+            DynamicBox[FEPrivate`ImportImage[
+              FrontEnd`ToFileName[{"Dialogs", "Closing"}, "Quit-Hover.png"]],
+             ImageSizeCache->{39., {17., 22.}}]},
+           {
+            StyleBox[
+             StyleBox[
+              DynamicBox[FEPrivate`FrontEndResourceString["quitButtonText"],
+               ImageSizeCache->{26., {1., 10.}}],
+              StripOnInput->False,
+              LineColor->RGBColor[0.996078431372549, 0., 0.],
+              FrontFaceColor->RGBColor[0.996078431372549, 0., 0.],
+              BackFaceColor->RGBColor[0.996078431372549, 0., 0.],
+              GraphicsColor->RGBColor[0.996078431372549, 0., 0.],
+              FontFamily->"Helvetica",
+              FontSize:>FrontEnd`CurrentValue["ControlsFontSize"],
+              FontColor->RGBColor[0.996078431372549, 0., 0.]],
+             StripOnInput->False,
+             FontWeight->Bold]}
+          },
+          AutoDelete->False,
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+         "Grid"]}, FEPrivate`If[
+         FrontEnd`CurrentValue["MouseOver"], "Hover", "Default"]],
+       EventHandlerTag[{"MouseClicked" :> DialogReturn[
+           FrontEndTokenExecute["FrontEndQuit"]], Method -> "Preemptive", 
+         PassEventsDown -> Automatic, PassEventsUp -> True}]]}
+    },
+    AutoDelete->False,
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxItemSize->{"Columns" -> {{
+         Scaled[0.33]}}}],
+   "Grid"],
+  Alignment->{Center, Center},
+  ImageMargins->{{20, 20}, {30, 20}}]],
+ ShowCellBracket->False,
+ CellMargins->0,
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue[
+  "PanelFontSize"],ExpressionUUID->"f240d450-db19-4893-923e-28720a03de4d"],
+
+Cell[BoxData[
+ PaneBox[
+  PaneSelectorBox[{True->
+   PaneSelectorBox[{"Default"->
+    TagBox[GridBox[{
+       {
+        TagBox[
+         DynamicBox[FEPrivate`ImportImage[
+           FrontEnd`ToFileName[{"Dialogs", "Closing"}, "CheckboxOff.png"]],
+          ImageSizeCache->{14., {5., 9.}}],
+         EventHandlerTag[{"MouseClicked" :> FEPrivate`Set[
+             FrontEnd`CurrentValue[
+             FrontEnd`$FrontEnd, {
+              PrivateNotebookOptions, "FinalWindowPrompt"}], 
+             FEPrivate`Not[
+              FrontEnd`CurrentValue[
+              FrontEnd`$FrontEnd, {
+               PrivateNotebookOptions, "FinalWindowPrompt"}]]], Method -> 
+           "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+        TagBox[
+         StyleBox[
+          StyleBox[
+           
+           DynamicBox[FEPrivate`FrontEndResource[
+            "MathematicaClosingDialog", "ToggleText"],
+            ImageSizeCache->{169., {2., 8.}}], "DialogStyle",
+           StripOnInput->False,
+           
+           FontColor->RGBColor[
+            0.12941176470588234`, 0.12941176470588234`, 0.12941176470588234`]],
+          
+          StripOnInput->False,
+          LineSpacing->{1, 0},
+          LineIndent->0],
+         EventHandlerTag[{"MouseClicked" :> FEPrivate`Set[
+             FrontEnd`CurrentValue[
+             FrontEnd`$FrontEnd, {
+              PrivateNotebookOptions, "FinalWindowPrompt"}], 
+             FEPrivate`Not[
+              FrontEnd`CurrentValue[
+              FrontEnd`$FrontEnd, {
+               PrivateNotebookOptions, "FinalWindowPrompt"}]]], Method -> 
+           "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+           True}]]}
+      },
+      AutoDelete->False,
+      GridBoxAlignment->{"Rows" -> {{Bottom}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+      GridBoxSpacings->{"Columns" -> {{0.5}}}],
+     "Grid"], "Hover"->
+    DynamicModuleBox[{$CellContext`pressedQ$$ = False}, 
+     TagBox[
+      PaneSelectorBox[{False->
+       TagBox[GridBox[{
+          {
+           TagBox[
+            DynamicBox[FEPrivate`ImportImage[
+              FrontEnd`ToFileName[{"Dialogs", "Closing"}, "CheckboxOff.png"]],
+             
+             ImageSizeCache->{14., {5., 9.}}],
+            EventHandlerTag[{"MouseClicked" :> FEPrivate`Set[
+                FrontEnd`CurrentValue[
+                FrontEnd`$FrontEnd, {
+                 PrivateNotebookOptions, "FinalWindowPrompt"}], 
+                FEPrivate`Not[
+                 FrontEnd`CurrentValue[
+                 FrontEnd`$FrontEnd, {
+                  PrivateNotebookOptions, "FinalWindowPrompt"}]]], Method -> 
+              "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+              True}]], 
+           TagBox[
+            StyleBox[
+             StyleBox[
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "MathematicaClosingDialog", "ToggleText"],
+               ImageSizeCache->{169., {2., 8.}}], "DialogStyle",
+              StripOnInput->False,
+              
+              FontColor->RGBColor[
+               0.12941176470588234`, 0.12941176470588234`, 
+                0.12941176470588234`]],
+             StripOnInput->False,
+             LineSpacing->{1, 0},
+             LineIndent->0],
+            EventHandlerTag[{"MouseClicked" :> FEPrivate`Set[
+                FrontEnd`CurrentValue[
+                FrontEnd`$FrontEnd, {
+                 PrivateNotebookOptions, "FinalWindowPrompt"}], 
+                FEPrivate`Not[
+                 FrontEnd`CurrentValue[
+                 FrontEnd`$FrontEnd, {
+                  PrivateNotebookOptions, "FinalWindowPrompt"}]]], Method -> 
+              "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+              True}]]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Rows" -> {{Bottom}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{0.5}}}],
+        "Grid"], True->
+       TagBox[GridBox[{
+          {
+           TagBox[
+            DynamicBox[FEPrivate`ImportImage[
+              FrontEnd`ToFileName[{"Dialogs", "Closing"}, "CheckboxOff.png"]],
+             
+             ImageSizeCache->{14., {5., 9.}}],
+            EventHandlerTag[{"MouseClicked" :> FEPrivate`Set[
+                FrontEnd`CurrentValue[
+                FrontEnd`$FrontEnd, {
+                 PrivateNotebookOptions, "FinalWindowPrompt"}], 
+                FEPrivate`Not[
+                 FrontEnd`CurrentValue[
+                 FrontEnd`$FrontEnd, {
+                  PrivateNotebookOptions, "FinalWindowPrompt"}]]], Method -> 
+              "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+              True}]], 
+           TagBox[
+            StyleBox[
+             StyleBox[
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "MathematicaClosingDialog", "ToggleText"],
+               ImageSizeCache->{169., {2., 8.}}], "DialogStyle",
+              StripOnInput->False,
+              
+              FontColor->RGBColor[
+               0.12941176470588234`, 0.12941176470588234`, 
+                0.12941176470588234`]],
+             StripOnInput->False,
+             LineSpacing->{1, 0},
+             LineIndent->0],
+            EventHandlerTag[{"MouseClicked" :> FEPrivate`Set[
+                FrontEnd`CurrentValue[
+                FrontEnd`$FrontEnd, {
+                 PrivateNotebookOptions, "FinalWindowPrompt"}], 
+                FEPrivate`Not[
+                 FrontEnd`CurrentValue[
+                 FrontEnd`$FrontEnd, {
+                  PrivateNotebookOptions, "FinalWindowPrompt"}]]], Method -> 
+              "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+              True}]]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Rows" -> {{Bottom}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{0.5}}}],
+        "Grid"]}, Dynamic[$CellContext`pressedQ$$]],
+      EventHandlerTag[{
+       "MouseUp" :> ($CellContext`pressedQ$$ = False), 
+        "MouseDown" :> ($CellContext`pressedQ$$ = True), PassEventsUp -> True,
+         Method -> "Preemptive", PassEventsDown -> Automatic}]],
+     DynamicModuleValues:>{}]}, FEPrivate`If[
+     FrontEnd`CurrentValue["MouseOver"], "Hover", "Default"]], False->
+   PaneSelectorBox[{"Default"->
+    TagBox[GridBox[{
+       {
+        TagBox[
+         DynamicBox[FEPrivate`ImportImage[
+           FrontEnd`ToFileName[{"Dialogs", "Closing"}, "CheckboxOn.png"]],
+          ImageSizeCache->{14., {5., 9.}}],
+         EventHandlerTag[{"MouseClicked" :> FEPrivate`Set[
+             FrontEnd`CurrentValue[
+             FrontEnd`$FrontEnd, {
+              PrivateNotebookOptions, "FinalWindowPrompt"}], 
+             FEPrivate`Not[
+              FrontEnd`CurrentValue[
+              FrontEnd`$FrontEnd, {
+               PrivateNotebookOptions, "FinalWindowPrompt"}]]], Method -> 
+           "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+        TagBox[
+         StyleBox[
+          StyleBox[
+           
+           DynamicBox[FEPrivate`FrontEndResource[
+            "MathematicaClosingDialog", "ToggleText"],
+            ImageSizeCache->{169., {2., 8.}}], "DialogStyle",
+           StripOnInput->False,
+           
+           FontColor->RGBColor[
+            0.12941176470588234`, 0.12941176470588234`, 0.12941176470588234`]],
+          
+          StripOnInput->False,
+          LineSpacing->{1, 0},
+          LineIndent->0],
+         EventHandlerTag[{"MouseClicked" :> FEPrivate`Set[
+             FrontEnd`CurrentValue[
+             FrontEnd`$FrontEnd, {
+              PrivateNotebookOptions, "FinalWindowPrompt"}], 
+             FEPrivate`Not[
+              FrontEnd`CurrentValue[
+              FrontEnd`$FrontEnd, {
+               PrivateNotebookOptions, "FinalWindowPrompt"}]]], Method -> 
+           "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+           True}]]}
+      },
+      AutoDelete->False,
+      GridBoxAlignment->{"Rows" -> {{Bottom}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+      GridBoxSpacings->{"Columns" -> {{0.5}}}],
+     "Grid"], "Hover"->
+    DynamicModuleBox[{$CellContext`pressedQ$$ = False}, 
+     TagBox[
+      PaneSelectorBox[{False->
+       TagBox[GridBox[{
+          {
+           TagBox[
+            DynamicBox[FEPrivate`ImportImage[
+              FrontEnd`ToFileName[{"Dialogs", "Closing"}, "CheckboxOn.png"]],
+             ImageSizeCache->{14., {5., 9.}}],
+            EventHandlerTag[{"MouseClicked" :> FEPrivate`Set[
+                FrontEnd`CurrentValue[
+                FrontEnd`$FrontEnd, {
+                 PrivateNotebookOptions, "FinalWindowPrompt"}], 
+                FEPrivate`Not[
+                 FrontEnd`CurrentValue[
+                 FrontEnd`$FrontEnd, {
+                  PrivateNotebookOptions, "FinalWindowPrompt"}]]], Method -> 
+              "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+              True}]], 
+           TagBox[
+            StyleBox[
+             StyleBox[
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "MathematicaClosingDialog", "ToggleText"],
+               ImageSizeCache->{169., {2., 8.}}], "DialogStyle",
+              StripOnInput->False,
+              
+              FontColor->RGBColor[
+               0.12941176470588234`, 0.12941176470588234`, 
+                0.12941176470588234`]],
+             StripOnInput->False,
+             LineSpacing->{1, 0},
+             LineIndent->0],
+            EventHandlerTag[{"MouseClicked" :> FEPrivate`Set[
+                FrontEnd`CurrentValue[
+                FrontEnd`$FrontEnd, {
+                 PrivateNotebookOptions, "FinalWindowPrompt"}], 
+                FEPrivate`Not[
+                 FrontEnd`CurrentValue[
+                 FrontEnd`$FrontEnd, {
+                  PrivateNotebookOptions, "FinalWindowPrompt"}]]], Method -> 
+              "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+              True}]]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Rows" -> {{Bottom}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{0.5}}}],
+        "Grid"], True->
+       TagBox[GridBox[{
+          {
+           TagBox[
+            DynamicBox[FEPrivate`ImportImage[
+              FrontEnd`ToFileName[{"Dialogs", "Closing"}, "CheckboxOn.png"]],
+             ImageSizeCache->{14., {5., 9.}}],
+            EventHandlerTag[{"MouseClicked" :> FEPrivate`Set[
+                FrontEnd`CurrentValue[
+                FrontEnd`$FrontEnd, {
+                 PrivateNotebookOptions, "FinalWindowPrompt"}], 
+                FEPrivate`Not[
+                 FrontEnd`CurrentValue[
+                 FrontEnd`$FrontEnd, {
+                  PrivateNotebookOptions, "FinalWindowPrompt"}]]], Method -> 
+              "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+              True}]], 
+           TagBox[
+            StyleBox[
+             StyleBox[
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "MathematicaClosingDialog", "ToggleText"],
+               ImageSizeCache->{169., {2., 8.}}], "DialogStyle",
+              StripOnInput->False,
+              
+              FontColor->RGBColor[
+               0.12941176470588234`, 0.12941176470588234`, 
+                0.12941176470588234`]],
+             StripOnInput->False,
+             LineSpacing->{1, 0},
+             LineIndent->0],
+            EventHandlerTag[{"MouseClicked" :> FEPrivate`Set[
+                FrontEnd`CurrentValue[
+                FrontEnd`$FrontEnd, {
+                 PrivateNotebookOptions, "FinalWindowPrompt"}], 
+                FEPrivate`Not[
+                 FrontEnd`CurrentValue[
+                 FrontEnd`$FrontEnd, {
+                  PrivateNotebookOptions, "FinalWindowPrompt"}]]], Method -> 
+              "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+              True}]]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Rows" -> {{Bottom}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{0.5}}}],
+        "Grid"]}, Dynamic[$CellContext`pressedQ$$]],
+      EventHandlerTag[{
+       "MouseUp" :> ($CellContext`pressedQ$$ = False), 
+        "MouseDown" :> ($CellContext`pressedQ$$ = True), PassEventsUp -> True,
+         Method -> "Preemptive", PassEventsDown -> Automatic}]],
+     DynamicModuleValues:>{}]}, FEPrivate`If[
+     FrontEnd`CurrentValue["MouseOver"], "Hover", "Default"]]}, Dynamic[
+    FrontEnd`CurrentValue[
+    FrontEnd`$FrontEnd, {PrivateNotebookOptions, "FinalWindowPrompt"}]],
+   ImageSize->All],
+  Alignment->{Right, Center},
+  ImageMargins->0,
+  ImageSize->{Full, 30}]],
+ CellMargins->0,
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ CellFrameMargins->{{0, 10}, {0, 0}},
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue["PanelFontSize"],
+ Background->RGBColor[
+  0.8980392156862745, 0.8980392156862745, 
+   0.8980392156862745],ExpressionUUID->"f8fba0cc-d128-444c-a89b-7c3acabe9494"]
+},
+NotebookEventActions->{"ReturnKeyDown" :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {"MenuCommand", "EvaluateCells"} :> 
+  FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {
+   "MenuCommand", "HandleShiftReturn"} :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {
+   "MenuCommand", "EvaluateNextCell"} :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], "EscapeKeyDown" :> (FE`Evaluate[
+     FEPrivate`FindAndClickCancelButton[]]; DialogReturn[$Canceled]), 
+  "WindowClose" :> (FE`Evaluate[
+     FEPrivate`FindAndClickCancelButton[]]; DialogReturn[$Canceled])},
+WindowSize->{500, All},
+WindowMargins->Automatic,
+WindowFrame->"ModelessDialog",
+WindowElements->{"MenuBar"},
+WindowFrameElements->{"CloseBox", "MinimizeBox"},
+WindowTitle->FEPrivate`$ProductFrontEndName,
+ScrollingOptions->{"VerticalScrollRange"->0},
+PrivateNotebookOptions->{"ExcludeFromShutdown"->False,
+"FileOutlineCache"->True,
+"FinalWindowPrompt"->False},
+CellContext->Notebook,
+CacheGraphics->False,
+Background->GrayLevel[1],
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"SystemDialog.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[604, 21, 668, 22, 11, InheritFromParent,ExpressionUUID->"8e4b49f4-4396-4355-b53a-dae6a40d89c1",
+ PageBreakAbove->True,
+ PageBreakWithin->False],
+Cell[1275, 45, 758, 23, 48, InheritFromParent,ExpressionUUID->"7c17cb9c-4f80-48a8-984c-7ec9a0077ad8",
+ PageBreakAbove->True,
+ PageBreakWithin->False],
+Cell[2036, 70, 10327, 260, 117, InheritFromParent,ExpressionUUID->"f240d450-db19-4893-923e-28720a03de4d",
+ PageBreakAbove->True,
+ PageBreakWithin->False],
+Cell[12366, 332, 13510, 330, 32, InheritFromParent,ExpressionUUID->"f8fba0cc-d128-444c-a89b-7c3acabe9494",
+ PageBreakAbove->True,
+ PageBreakWithin->False]
+}
+]
+*)
+
+(* End of internal cache information *)
+

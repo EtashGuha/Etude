@@ -1,0 +1,101 @@
+\message{FILE: This is sectioning.tnc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Filename: sectioning.tnc
+%%
+%%
+%% Purpose: This file takes the sectioning commands common to the
+%%          article, book, and report classes and defines them in one
+%%          place so that global changes can be made in one location
+%%          instead of three or more.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Define \sectionmark and \subsectionmark to do nothing. In LaTeX
+%% these are used to change running heads without effecting changes in
+%% the head itself or the table of contents.
+%%
+
+\def\sectionmark#1{}
+\def\subsectionmark#1{}
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%
+%% Underlying code for sectioning commands. The actual commands,
+%% \part, \chapter, \section, and so on, are defined in the class files
+%% to use these underlying definitions.
+%%
+
+\def\@part#1{%
+    \TnbPopCell
+    \refstepcounter{part}%
+    \message{Part \thepart}%
+    \@PendingCellStyle{Part}
+    \partname\ \thepart\ #1
+}
+
+\def\@chapter#1{%
+    \TnbPopCell
+    \refstepcounter{chapter}%
+    \message{Chapter \thechapter}%
+    \@PendingCellStyle{Chapter}
+    \chaptername\ \thechapter\ #1
+}
+
+\def\@section#1{%
+    \TnbPopCell
+    \refstepcounter{section}%
+    \begingroup
+    \@secprotect
+    \endgroup
+    \message{Section \thesection}%
+    \@PendingCellStyle{Section}
+    #1
+}
+
+\def\@subsection#1{%
+    \TnbPopCell
+    \refstepcounter{subsection}%
+    \begingroup
+    \@secprotect
+    \endgroup
+    \message{Subsection \thesubsection}%
+    \@PendingCellStyle{Subsection}
+    #1
+}
+
+\def\@subsubsection#1{%
+    \TnbPopCell
+    \stepcounter{subsubsection}%
+    \begingroup
+    \@secprotect
+    \endgroup
+    \@PendingCellStyle{Subsubsection}
+    #1
+}
+
+\def\@paragraph#1{%
+    \TnbPopCell
+    \stepcounter{paragraph}%
+    \@PendingCellStyle{Paragraph}
+    #1
+}
+
+\def\@subparagraph#1{%
+    \TnbPopCell
+    \stepcounter{subparagraph}%
+    \@PendingCellStyle{Subparagraph}
+    #1
+}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatother
+

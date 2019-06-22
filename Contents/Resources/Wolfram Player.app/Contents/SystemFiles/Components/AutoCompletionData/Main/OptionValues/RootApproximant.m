@@ -1,0 +1,1 @@
+{Method -> {"{\"DegreeCost\" -> #1}"}}

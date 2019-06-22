@@ -1,0 +1,270 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      8357,        260]
+NotebookOptionsPosition[      7468,        226]
+NotebookOutlinePosition[      7861,        243]
+CellTagsIndexPosition[      7818,        240]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "J/Link Example: A \"RealTimeAlgebra\" Dialog\n\n",
+ StyleBox["Code for the RealTimeAlgebra dialog from section 1.3 of the J/Link \
+User Guide.\n\nThis example demonstrates many basic features of creating \
+interactive user interface elements from ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["Mathematica",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontSlant->"Italic",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[" code. It can be run in a modal way, using ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["DoModal",
+  FontSize->12,
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[", or modeless, using ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["ShareKernel",
+  FontSize->12,
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[" or ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["ShareFrontEnd",
+  FontSize->12,
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[".\n\nTo try this example, evaluate all the initialization cells \
+(you can do this with the menu command Kernel/Evaluation/Evaluate \
+Initialization). Then go to the Examples section.",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}]
+}], "Title"],
+
+Cell[CellGroupData[{
+
+Cell["Code", "Subsection"],
+
+Cell["\<\
+Needs[\"JLink`\"]
+
+createWindow[] :=
+\tModule[{frame, slider, listener},
+\t\tInstallJava[];
+\t\t(* inText and outText are globals, because we need to refer to them by
+\t\t   name in the scrollFunc. This also means we must create them outside
+\t\t   the JavaBlock below.
+\t\t*)
+\t\tinText = JavaNew[\"java.awt.TextArea\", \"Expand[(x+1)^a]\", 8, 40];
+\t\toutText = JavaNew[\"java.awt.TextArea\", 8, 40];
+\t\t(* This frame could be created inside the JavaBlock, because it is \
+returned
+\t\t   from the JavaBlock and therefore will not be released, but it makes
+\t\t   our intentions more clear to create it outside.
+\t\t*)
+\t\tframe = JavaNew[\"com.wolfram.jlink.MathFrame\", \"RealTimeAlgebra\"];
+\t\tJavaBlock[
+\t\t\tframe@setLayout[JavaNew[\"java.awt.BorderLayout\"]];
+\t\t\t(* Load the ScrollBar class for the static Scrollbar`HORIZONTAL \
+constant. *)
+\t\t\tLoadJavaClass[\"java.awt.Scrollbar\"];
+\t\t\tslider = JavaNew[\"java.awt.Scrollbar\", Scrollbar`HORIZONTAL, 0, 1, 0, \
+20];
+\t\t\t(* On JDK 1.4 and later, we want to set the Focusable property
+\t\t\t   to avoid flashing the scroll thumb.
+\t\t\t*)
+\t\t\tLoadJavaClass[\"java.lang.System\"];
+\t\t\tIf[ToExpression[System`getProperty[\"java.specification.version\"]] >= \
+1.4,
+\t\t\t\tslider@setFocusable[False]\t\t\t
+\t\t\t];
+\t\t\tframe@add[slider, ReturnAsJavaObject[BorderLayout`NORTH]];
+\t\t\tframe@add[outText, ReturnAsJavaObject[BorderLayout`CENTER]];
+\t\t\tframe@add[inText, ReturnAsJavaObject[BorderLayout`SOUTH]];
+\t\t\tframe@pack[];
+\t\t\t(* Use a fixed-width font for the output window to preserve
+\t\t\t   formatting of multi-line expressions. *)
+\t\t\t(* Load the Font class for the static Font`PLAIN constant. *)
+\t\t\tLoadJavaClass[\"java.awt.Font\"];
+\t\t\toutText@setFont[JavaNew[\"java.awt.Font\", \"Courier\", Font`PLAIN, \
+12]];
+\t\t\tlistener = JavaNew[\"com.wolfram.jlink.MathAdjustmentListener\"];
+\t\t\tlistener@setHandler[\"adjustmentValueChanged\", \"sliderFunc\"];
+\t\t\tslider@addAdjustmentListener[listener];
+\t\t\tframe@setLocation[200, 200];
+\t\t\tJavaShow[frame]
+\t\t];
+\t\tframe
+\t]
+
+(* This is what will be called in response to moving the slider position: *)
+
+sliderFunc[evt_, type_, scrollPos_] :=
+\tJavaBlock[
+\t\toutText@setText[
+\t\t\tBlock[{a = scrollPos}, ToString[ToExpression[inText@getText[]]]]
+\t\t];
+\t\tReleaseJavaObject[evt]
+\t]
+
+
+RealTimeAlgebraModal[] :=
+\tJavaBlock[
+\t\t(* In the modal case, we can wrap the whole thing in JavaBlock and be \
+sure that all the objects
+\t\t   will get released, including the inTExt and outText ones needed during \
+event handling.
+\t\t*)
+\t\tModule[{frm},
+\t\t\tfrm = createWindow[];
+\t\t\tfrm@setModal[];
+\t\t\tDoModal[];
+\t\t]
+\t]
+
+RealTimeAlgebraModeless[] :=
+\tModule[{frm, token},
+\t\tfrm = createWindow[];
+\t\ttoken = ShareKernel[];
+\t\t(* We use the MathFrame onClose method to specify code to be executed \
+when the frame
+\t\t   is closed. The use here is typical--we clean up the object references \
+that
+\t\t   need to persist throughout the lifetime of the window (otherwise we \
+would leak
+\t\t   these references), and we call UnshareKernel to unregister this \
+application's
+\t\t   request for kernel sharing.
+\t\t*)
+\t\tfrm@onClose[\"ReleaseJavaObject[inText, outText]; UnshareKernel[\" <> \
+ToString[token] <> \"];\"];
+\t\tReleaseJavaObject[frm];
+\t]\
+\>", "Input",
+ PageWidth->Infinity,
+ InitializationCell->True,
+ ShowSpecialCharacters->False]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Examples", "Subsection"],
+
+Cell["\<\
+You should have called InstallJava prior to running these examples.\
+\>", "Text"],
+
+Cell["This runs the dialog in a modal way:", "Text"],
+
+Cell["RealTimeAlgebraModal[]", "Input"],
+
+Cell["\<\
+Try entering Print[a] or Plot[Sin[a x],{x,0,2Pi}] in the bottom panel and \
+drag the slider. Notice how the output appears in the notebook. Close the \
+window to end the program.
+
+For comparison, next run the dialog in a modeless way:\
+\>", "Text"],
+
+Cell["RealTimeAlgebraModeless[];", "Input"],
+
+Cell["\<\
+Note how you can continue to use the front end for computations while the \
+RealTimeAlgebra window is up.
+
+Try Print[a] in the lower panel now. Note that the Print output does not \
+appear in the front end. When using ShareKernel, which is how modeless \
+interfaces are implemented, the Java link is the kernel's $ParentLink while \
+the slider is being dragged, so all side-effect output gets sent to Java, \
+where it is discarded by the internal code of the MathListener class. You can \
+get the output to appear in the front end by using ShareFrontEnd. Without \
+closing the dialog, try this:\
+\>", "Text"],
+
+Cell["token = ShareFrontEnd[];", "Input"],
+
+Cell["\<\
+ShareFrontEnd returns a token we can pass to UnshareFrontEnd, below, to \
+unregieter our interest in front end sharing.
+
+Now try Print[a] or Plot[Sin[a x],{x,0,2Pi}] in the lower panel. Note how the \
+output appears in the notebook. ShareFrontEnd is an extension to ShareKernel \
+that causes certain kinds of output and some special commands (like \
+notebook-manipulation functions) to be directed to the front end.
+
+After you are finished with the modeless version, close its window and then \
+execute the following to turn off front end sharing. This will have the \
+effect of shutting down both front end and kernel sharing, as it unregisters \
+the last remaining request for sharing.\
+\>", "Text"],
+
+Cell["UnshareFrontEnd[token]", "Input"]
+}, Closed]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{824, 517},
+WindowMargins->{{1, Automatic}, {Automatic, 2}},
+DockedCells->(None& ),
+FrontEndVersion->"6.0 for Mac OS X PowerPC (32-bit) (February 21, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 1394, 40, 331, "Title"],
+Cell[CellGroupData[{
+Cell[2009, 67, 26, 0, 34, "Subsection"],
+Cell[2038, 69, 3416, 98, 1488, "Input",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5491, 172, 30, 0, 26, "Subsection"],
+Cell[5524, 174, 91, 2, 33, "Text"],
+Cell[5618, 178, 52, 0, 33, "Text"],
+Cell[5673, 180, 39, 0, 30, "Input"],
+Cell[5715, 182, 258, 6, 90, "Text"],
+Cell[5976, 190, 43, 0, 30, "Input"],
+Cell[6022, 192, 618, 11, 128, "Text"],
+Cell[6643, 205, 41, 0, 30, "Input"],
+Cell[6687, 207, 711, 13, 147, "Text"],
+Cell[7401, 222, 39, 0, 30, "Input"]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

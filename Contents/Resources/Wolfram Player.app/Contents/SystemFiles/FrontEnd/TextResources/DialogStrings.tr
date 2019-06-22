@@ -1,0 +1,1543 @@
+@| Mathematica notebook dialogs
+@|
+@|
+@|
+@@resource ActivationDialog
+{
+"AboutCDFPlayerPro" -> "Learn more about Wolfram Player Pro",
+"ActivateButtonLabel" -> "Activate",
+"ActivateMethodLabel" -> "Other ways to activate",
+"ActKeyLabel" -> "Activation Key",
+"FinishLabel" -> "Finish",
+"LicenseSubtitle" -> "Activate",
+"LicenseText" -> "Enter the required information below.",
+"ManualActivateText1" -> RawBoxes[StyleBox[RowBox[{"\"Contact \"", 
+   TagBox[ButtonBox[
+    PaneSelectorBox[{False -> 
+       StyleBox["\"Wolfram Research\"", "Chevron"], 
+      True -> StyleBox["\"Wolfram Research\"", "HyperlinkActive"]}, 
+     Dynamic[CurrentValue["MouseOver"]]], BaseStyle -> {"Hyperlink", Bold}, 
+    Evaluator -> Automatic, 
+    ButtonFunction :> (CurrentValue[
+        ButtonNotebook[], {TaggingRules, "ActivationState"}] = 
+       "Contact")], MouseAppearanceTag["LinkHand"]], "\" to request a password or use the \"", 
+   TagBox[ButtonBox[
+    PaneSelectorBox[{False -> 
+       StyleBox["\"online password generator\"", "Chevron"], 
+      True -> StyleBox["\"online password generator\"", 
+        "HyperlinkActive"]}, Dynamic[CurrentValue["MouseOver"]]], 
+    BaseStyle -> {"Hyperlink", Bold}, Evaluator -> Automatic, 
+    ButtonFunction :> 
+     FE`hyperlinkCoded[
+      "http://user.wolfram.com/portal/passwordrequest.html", 
+      "mathid=" <> FE`Evaluate[FEPrivate`$MachineID]]], MouseAppearanceTag["LinkHand"]], 
+   StyleBox["\".\"", FontWeight -> Bold],"\" Note: You will need to provide your activation key and the MathID generated for your machine.\""
+   }],  AutoSpacing -> False]],
+"ManualActivateNote" -> "Note: You will need to provide your activation key and the MathID generated for your machine.",
+"ManualActivateText2" -> "Enter your Activation Key and password below and click the Activate button.",
+"ManualActivateStep1" -> "Step 1:",
+"ManualActivateStep2" -> "Step 2:",
+"ManualActivateSubtitle" -> "Activate manually",
+"MathIDLabel" -> "MathID:",
+"ContactTitle" -> "Contact Wolfram Research to manually activate your product",
+"ContactSubtitle" -> "If you are not able to activate your product online, and cannot access the password\ngenerator form in the Wolfram User Portal, please contact us.",
+"ContactWithText" -> "You will need to provide:",
+"ContactKeyLabel" -> "\[Bullet] Your Activation Key: ",
+"ContactIDLabel" -> "\[Bullet] MathID: ",
+"ContactNameInc" -> "Wolfram Research, Inc.",
+"ContactNameLtd" -> "Wolfram Research Europe Ltd.",
+"ContactAddrInc" -> "1-217-398-0700 or\n1-800-WOLFRAM (965-3726; U.S. and Canada only)\nMonday\[Dash]Friday, 8am\[Dash]5pm\nU.S. Central Time\n\ninfo@wolfram.com\nfax: 1-217-398-0747",
+"ContactAddrLtd" -> "+44-(0)1993-883400\nMonday\[Dash]Friday, 9am\[Dash]5pm\nGMT (Greenwich Mean Time)\n\ninfo@wolfram.co.uk\nfax: +44-(0)1993-883800",
+"BackLabel" -> "Back",
+"MethodManualLabel" -> "Manual Activation",
+"MethodManualText" -> "Use this method if you are having trouble with online activation.",
+"MethodNetworkLabel" -> "Connect to a network license server",
+"MethodNetworkText" -> "Use this method if you are on a network with MathLM, the network license server for your product.",
+"MethodOnlineLabel" -> "Online Activation (Recommended)",
+"MethodOnlineText" -> "Your computer needs to be connected to the internet.",
+"MethodSubtitle" -> "Select a method to activate",
+"NameLabel" -> "Name",
+"NetworkSubtitle" -> "Connect to a Network License Server",
+"NetworkText" -> "Enter the name or IP address of the computer running the MathLM license server.",
+"OrganizationLabel" -> "Organization",
+"OnlineActivateText" -> "Type your Activation Key below and click the Activate button.",
+"OnlineActivateLink" -> "What is online activation?",
+"OnlineActivateSubtitle" -> "Activate online",
+"PasswordLabel" -> "Password",
+"PrivacyPolicyLink" -> "Wolfram Privacy Policy",
+"ProgressSubtitle" -> "Activating...",
+"ProgressText" -> "Now trying to activate.",
+"ServerLabel" -> "Server name",
+"SuccessText" -> "Activation was successful!",
+"WindowTitle" -> "Wolfram Product Activation",
+"ContactActivationLink" -> RawBoxes[ButtonBox[
+    "\<\"Contact Wolfram Research \[RightGuillemet]\"\>",
+    BaseStyle -> "ContactActivationLinkUnbold"]],
+
+"ExpiredBuyText" -> "I want to buy the Wolfram System",
+"ExpiredContactText" -> "Need more information or assistance? ",
+"ExpiredExtendText" -> "I have a new Activation Key",
+"ExpiredRequestText" -> "I want to request an extended Activation Key",
+"ExpiredSubtitle" -> "Your license has expired",
+"ExpiredBuyButton" -> "How to buy",
+"ExpiredExtendButton" -> "Enter Activation Key",
+"ExpiredRequestButton" -> "Request extension",
+
+"LicenseAgreementSubtitle" -> "Read the License Agreement",
+"LicenseAgreementSubtext" -> "To use this product you must read and accept the terms of the following agreement:",
+"LicenseAgreementLabel" -> "I accept the terms of this agreement",
+"LicenseAgreementPrintLabel" -> "Print",
+"LicenseAgreementLoading" -> "Loading translation...",
+"LicenseAgreementWindowTitle" -> "License Agreement",
+
+"RegistrationDownload" -> "Access your\nsoftware downloads",
+"RegistrationNow" -> "Register now",
+"RegistrationLater" -> "Register later",
+"RegistrationManage" -> RawBoxes[RowBox[{"Manage your ", StyleBox["Premier Service", FontSlant->"Italic"], "\nbenefits"}]],
+"RegistrationMore" -> "And more...",
+"RegistrationNever" -> "Don't ask again",
+"RegistrationNotification" -> "Get notifications about\nupgrades and special\ndiscounts",
+"RegistrationSubtitle" -> "Register your product in the Wolfram User Portal to:",
+"RegistrationTitle" -> "Get access to your benefits. Register now!",
+"RegistrationView" -> "View your\nproduct details",
+"RegistrationWindowTitle" -> "Wolfram Product Registration",
+
+"CancelButtonText" -> "Quit",
+"ForgottenPWText" -> "Forgot your password?",
+"RememberMeText" -> "Remember me",
+"SignInTitle" -> "Sign in using your Wolfram ID",
+"SignInButtonText" -> "Sign In",
+"SignInPendingText" -> "In progress\[Ellipsis]",
+"UserIDFieldHint" -> "Wolfram ID",
+"UserPWFieldHint" -> "Password"
+
+}
+@|
+@@resource CommonFrontEndInitDialogs
+{
+"AllFilesLabel"-> "All Files",
+"WolframFilesLabel" -> "Wolfram Files (*.nb, *.cdf, *.nbp, *.wl, *.wls, *.m, *.ma)",
+"PictureFilesLabel" -> "Picture Files",
+"RichTextFormatLabel" -> "Rich Text Format (*.rtf)",
+"TextFilesLabel" -> "Text Files",
+"EPSLabel" -> "EPS",
+"GIFLabel" -> "GIF",
+"JPEGLabel" -> "JPEG",
+"PDFLabel" -> "PDF",
+"PNGLabel" -> "PNG",
+"TIFFLabel" -> "TIFF",
+"HTMLLabel" -> "HTML",
+"BMPLabel" -> "BMP",
+"PXRLabel" -> "PXR",
+"SVGLabel" -> "SVG",
+"RawLabel" -> "Raw",
+"NBLabel" -> "Wolfram Notebook (*.nb)",
+"MXLabel" -> ".mx File (*.mx)",
+"WSTPLabel" -> "WSTP Program (*.exe)",
+"CDFLabel" -> "Computable Document (*.cdf)",
+"WLLabel" -> "Wolfram Language Package (*.wl)",
+"MLabel" -> "Wolfram Mathematica Package (*.m)",
+"WLSLabel" -> "Wolfram Language Script (*.wls)",
+"PlainTextLabel" -> "Plain Text (*.txt)",
+"LatexLabel" -> "LaTeX Document (*.tex)",
+"PostScriptLabel" -> "PostScript Document (*.ps)",
+"PDFDocLabel" -> "PDF Document (*.pdf)",
+"WebPageLabel" -> "Web Page (*.html)",
+"XMLLabel" -> "XML -- XHTML+MathML (*.xml)"
+}
+@|
+@@resource DeployCDFDialog
+{
+"Browse" -> "BROWSE",
+"Cancel" -> "CANCEL",
+"Close" -> "CLOSE",
+"CodeSubtitle" -> "\!\(\*\nStyleBox[\"Note:\",\nFontWeight->\"Bold\"]\) This script will automatically prompt users without the CDF plugin to download it.",
+"CodeTitle" -> "Copy and paste the code below into the HTML of your web page where you want it to appear.",
+"Continue" -> "CONTINUE",
+"FileSaved" -> "Your file has been deployed successfully!",
+"IntroSubtitle" -> StyleBox[RowBox[{"\"Creation of CDF files is subject to the \"",
+    TagBox[ButtonBox[
+    PaneSelectorBox[{False -> "\"FreeCDF\"", 
+      True -> StyleBox[
+        "\"FreeCDF\"", {"HyperlinkActive"}]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], 
+     BaselinePosition -> Baseline, BaseStyle -> {"Hyperlink"}, 
+     FrameMargins -> 0, ImageSize -> Automatic], 
+    BaseStyle -> "Hyperlink", 
+    ButtonData -> {URL[
+       "http://www.wolfram.com/cdf/adopting-cdf/licensing-options.\
+html"], None}], MouseAppearanceTag["LinkHand"]],
+"\" terms of use.\""}], LineIndent -> -0.05],
+"IntroText" -> StyleBox[RowBox[{"\"Under these terms, your CDF carries the Creative Commons \"",
+    TagBox[ButtonBox[
+    PaneSelectorBox[{False -> "\"Attribution-ShareAlike License\"", 
+      True -> StyleBox[
+        "\"Attribution-ShareAlike License\"", {"HyperlinkActive"}]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], 
+     BaselinePosition -> Baseline, BaseStyle -> {"Hyperlink"}, 
+     FrameMargins -> 0, ImageSize -> Automatic], 
+    BaseStyle -> "Hyperlink", 
+    ButtonData -> {URL[
+       "http://creativecommons.org/licenses/by-sa/3.0/"], None}], MouseAppearanceTag["LinkHand"]],
+"\" (CC BY-SA).\""}], LineIndent -> -0.05],
+"IntroText1" -> "Charging others for using your CDFs",
+"IntroText2" -> "Preventing others from republishing or redistributing CDFs that you give them",
+"IntroText3" -> "Removing our logo or other displayed branding",
+"IntroContactText" -> StyleBox[RowBox[{"\"For enterprise or other commercial deployment options, please \"",
+    TagBox[ButtonBox[
+    PaneSelectorBox[{False -> "\"contact us\"", 
+      True -> StyleBox[
+        "\"contact us\"", {"HyperlinkActive"}]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], 
+     BaselinePosition -> Baseline, BaseStyle -> {"Hyperlink"}, 
+     FrameMargins -> 0, ImageSize -> Automatic], 
+    BaseStyle -> "Hyperlink", 
+    ButtonData -> {URL[
+       "http://www.wolfram.com/cdf/contact-us/"], None}], MouseAppearanceTag["LinkHand"]],
+"\".\""}], LineIndent -> -0.05],
+"IntroTitle" -> "This wizard will assist you in deploying standalone CDF content.",
+"IntroTitleWeb" -> "This wizard will assist you with deploying embedded CDF content into HTML web pages.",
+"OpenDirectory" -> "Open Containing Folder",
+"OpenFile" -> "Open File",
+"Preview" -> "Preview",
+"Previous" -> "PREVIOUS",
+"SaveAll" -> "Entire document",
+"SaveError" -> "Unable to create CDF at the specified location!",
+"SaveFormat" -> "Computable Document (*.cdf)",
+"SaveLocation" -> "Where would you like to save your file?",
+"SaveSelection" -> "Current selection",
+"SaveSubtitle" -> "What do you want to publish?",
+"SaveTitle" -> "First, save the file to your computer.",
+"Steps3Header" -> GridBox[{{"\"Step 1\"", "\"Step 2\"", "\"Step 3\""}, {"\"Introduction\"", "\"Save as CDF\"", "\"Conclusion\""}}, GridBoxItemSize -> {"Rows" -> {{Automatic}}, "Columns" -> {{Scaled[0.33]}}}, GridBoxItemStyle -> {"Columns" -> {{Automatic}}, "Rows" -> {Plain, Bold}}],
+"Steps4Header" -> GridBox[{{"\"Step 1\"", "\"Step 2\"", "\"Step 3\"", "\"Step 4\""}, {"\"Introduction\"", "\"Save Locally\"", "\"Upload to Server\"", "\"Get Embed Code\""}}, GridBoxItemSize -> {"Rows" -> {{Automatic}}, "Columns" -> {{Scaled[0.25]}}}, GridBoxItemStyle -> {"Columns" -> {{Automatic}}, "Rows" -> {Plain, Bold}}],
+"UploadDifferent" -> "The files are in a different directory...",
+"UploadSame" -> "The files and web page are in the same directory",
+"UploadSelectionTitle" -> "Where are the files relative to the page to embed them on?",
+"UploadSubtitle" -> "Upload these files to your web server.",
+"UploadTitle" -> "The following files have been created:",
+"WindowTitleEmbed" -> "CDF Web Deployment Wizard",
+"WindowTitleAlone" -> "CDF Standalone Deployment Wizard",
+"IntroEnterpriseQuery" -> "Which license would you like to use?",
+"IntroEnterpriseHeaderChoice1" -> "EnterpriseCDF Deployment",
+"IntroEnterpriseTextChoice1" -> StyleBox[RowBox[{"\"CDF files deployed with this option offer \"",
+    TagBox[ButtonBox[
+    PaneSelectorBox[{False -> "\"enhanced capabilities\"", 
+      True -> StyleBox[
+        "\"enhanced capabilities\"", {"HyperlinkActive"}]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], 
+     BaselinePosition -> Baseline, BaseStyle -> {"Hyperlink"}, 
+     FrameMargins -> 0, ImageSize -> Automatic], 
+    BaseStyle -> "Hyperlink", 
+    ButtonData -> {URL[
+       "http://www.wolfram.com/cdf/adopting-cdf/enterprise-deployment.html"], None}], MouseAppearanceTag["LinkHand"]],
+"\". Please consult your software license for terms of use.\""}], LineIndent -> -0.05],
+"IntroEnterpriseHeaderChoice2" -> "FreeCDF",
+"CDFDimensions" -> "CDF Dimensions"
+}
+@|
+@@resource PreferencesDialog
+{
+"AutoSpellCheckText" -> "Check spelling as you type",
+"WindowTitleLabel" -> "Preferences",
+"SystemInformationTitleLabel" -> "Wolfram System Information",
+"InterfaceLabel" -> "Interface",
+"EvaluationLabel" -> "Evaluation",
+"MessagesLabel" -> "Messages",
+"AppearanceLabel" -> "Appearance",
+"ServicesLabel" -> "Services",
+"SecurityLabel" -> "Security",
+"SystemSecurityText" -> "System Security",
+"SystemSecurityLeadInText" -> "External Channel Functions:",
+"ExternalChannelEnabled" -> StyleBox["\tEnabled", FontSlant -> Italic],
+"ExternalChannelDisabled" -> StyleBox["\tDisabled", FontSlant -> Italic],
+"ExternalChannelButtonEnable" -> "Enable",
+"ExternalChannelButtonDisable" -> "Disable",
+"InternetConnectivityLabel" -> "Internet & Mail",
+"AdvancedLabel" -> "Advanced",
+"ParallelLabel" -> "Parallel",
+"SyntaxColoringLabel" -> "Syntax Coloring",
+"DebuggerLabel" -> "Debugger",
+"NumbersLabel" -> "Numbers",
+"GraphicsLabel" -> "Graphics",
+"InheritedLanguageLabel" -> "Same as user interface language",
+"EnglishLabel" -> "English",
+"ChineseSimplifiedWord" -> "Chinese, Simplified",
+"ChineseSimplifiedTranslation" -> "\:7b80\:4f53\:4e2d\:6587",
+"ChineseTraditionalWord" -> "Chinese, Traditional",
+"ChineseTraditionalTranslation" -> "\:7e41\:9ad4\:4e2d\:6587",
+"FrenchWord" -> "French",
+"FrenchTranslation" -> "Fran\[CCedilla]ais",
+"GermanWord" -> "German",
+"GermanTranslation" -> "Deutsch",
+"GreekWord" -> "Greek",
+"GreekTranslation" -> "\[CapitalEpsilon]\[Lambda]\[Lambda]\[Eta]\[Nu]\[Iota]\[Kappa]\!\(\*OverscriptBox[\"\[Eta]\", \"'\"]\)",
+"ItalianWord" -> "Italian",
+"ItalianTranslation" -> "Italiano",
+"JapaneseWord" -> "Japanese",
+"JapaneseTranslation" -> "\:65e5\:672c\:8a9e",
+"KoreanWord" -> "Korean",
+"KoreanTranslation" -> "\:d55c\:ad6d\:c5b4",
+"LithuanianWord" -> "Lithuanian",
+"LithuanianTranslation" -> "Lietuvi\[SHacek]kai",
+"PolishWord" -> "Polish",
+"PolishTranslation" -> "Polski",
+"PortugueseWord" -> "Portuguese",
+"PortugueseTranslation" -> "Portugu\[EHat]s",
+"RussianWord" -> "Russian",
+"RussianTranslation" -> "\:0420\:0443\:0441\:0441\:043a\:0438\:0439",
+"SpanishWord" -> "Spanish",
+"SpanishTranslation" -> "Espa\[NTilde]ol",
+"UkrainianWord" -> "Ukrainian",
+"UkrainianTranslation" -> "\:0423\:043a\:0440\:0430\:0457\:043d\:0441\:044c\:043a\:0430",
+"VietnameseWord" -> "Vietnamese",
+"VietnameseTranslation" -> "Ti\:1ebfng Vi\:1ec7t",
+"LanguageText" -> "Language:",
+"UserInterfaceText" -> "User Interface Settings",
+"OtherLangText" -> StyleBox["(Translations for user interface may not be available in some languages.)", FontSlant -> Italic],
+"ShowCodeTransText" -> RowBox[{"Show code captions ", StyleBox["(non\[Hyphen]English languages only)", FontSlant -> Italic]}],
+"CodeCaptionLanguageText" -> "Code caption language:",
+"GroupIconText" -> "Show cell group opener icons:",
+"CursorTrackerText" -> "Flash cursor tracker when insertion point moves unexpectedly",
+"SmartQuotesText" -> {"Enable smart quotes for  ", "normal text editing and  ", "when pasting"},
+"DragDropText" -> "Enable drag\[Hyphen]and\[Hyphen]drop text editing",
+"BlinkText" -> "Enable blinking cell insertion point",
+"AutoRescaleText" -> "Automatically re\[Hyphen]fit 3D graphics after rotation",
+"CompletionCaseText" -> "Match case in command completion",
+"FunctionTemplatesText" -> "Enable dynamic highlighting",
+"AutoConvertEnableText" -> "Enable natural language detection",
+"CodeAssistPopupText" -> {"Enable autocompletion with a popup delay of ", " seconds"},
+"FloatingElementText" -> {"Enable floating elements with a popup delay of ", " seconds"},
+"PredictiveInterfaceText" -> "Show Suggestions Bar after last output",
+"DefaultStylingText" -> "Ask whether to update default styling when opening notebooks from previous versions",
+"IgnoreText" -> "Ignore",
+"BeepText" -> "Beep",
+"Print3DHeader" -> "Print 3D Previewer",
+"Print3DLeadInText" -> "Previewer Application for 3D printing:",
+"PrintInputText" -> "Print to Input Notebook",
+"PrintConsoleText" -> "Print to Console",
+"PutUpDialogText" -> "Put Up a Dialog Box",
+"BeepInputText" -> "Beep and Print to Input Notebook",
+"BeepConsoleText" -> "Beep and Print to Console",
+"BeepDialogText" -> "Beep and Put Up Dialog Box",
+"SystemSettingsText" -> "System Settings",
+"VersionedPrefsText" -> "Create and maintain version\[Hyphen]specific front end preferences",
+"ShowAtStartupText" -> "Show at startup: ",
+"ShowWelcomeAtStartup" -> "Welcome screen",
+"ShowNewAtStartup" -> "New document",
+"ShowBothAtStartup" -> "Welcome screen and new document",
+"MathExtrasText" -> "Install Wolfram Extras",
+"NotInstalledText" -> StyleBox["\tNot Installed", FontSlant -> Italic, FontColor -> RGBColor[{1, 0, 0}]],
+"NotApplicableText" -> StyleBox["\tNot Applicable", FontSlant -> Italic],
+"NeedsUpdatingText" -> StyleBox["\tNeeds Updating", FontSlant -> Italic, FontColor -> RGBColor[{1, 0, 0}]],
+"InstalledText" -> StyleBox["\tInstalled", FontSlant -> Italic],
+"RulerText" -> "Ruler units:",
+"RulerUnits" -> {"Inches", "DecimalInches", "Points", "Picas", "Centimeters", "Millimeters"},
+"HistoryText" -> "Recently opened files history length:",
+"WarningsText" -> "Minor user interface warnings:",
+"ErrorsText" -> "Serious user interface errors:",
+"MessagesText" -> "User interface log messages:",
+"FormattingErrorsText" -> "Formatting error indications:",
+"HighlightAndTooltipText" -> "Highlight and Tooltip",
+"HighlightText" -> "Highlight",
+"TooltipText" -> "Tooltip",
+"InputOutputText" -> "Input and Output",
+"NewStylesText" -> "Style of newly typed cells:",
+"NewInputText" -> "Format type of new input cells:",
+"NewOutputText" -> "Format type of new output cells:",
+"MaxOutputText" -> "Maximum output size before truncation:",
+"RawInputFormText" -> "Raw InputForm",
+"BytesText" -> " Bytes",
+"OnlyTextualText" -> "Use only textual boxes when converting to typeset forms",
+"OnlyTextualInputText" -> "Use only textual boxes when converting input to typeset forms",
+"OnlyTextualOutputText" -> "Use only textual boxes when converting output to typeset forms",
+"ShowCellLabelText" -> "Show In/Out names",
+"ActionsText" -> "Message and Warning Actions",
+"KernelMessagesText" -> "Kernel Messages:",
+"PrintOutputText" -> "Print[] command output:",
+"NotebookSecurityText" -> "Notebook Security",
+"TrustNotebooksText" -> "Trust Notebooks by default",
+"TrustByDefaultText" -> "Notebooks in directories which are neither trusted nor untrusted: ",
+"TrustByDefaultAutomaticText" -> "Only Trust Safe Content",
+"TrustByDefaultTrueText" -> "Always Trust",
+"TrustByDefaultFalseText" -> "Never Trust",
+"EditTrustedText" -> "Edit Trusted Directories...",
+"EditTrustedTooltipText" -> "Notebooks inside trusted directories are always trusted",
+"EditUntrustedText" -> "Edit Untrusted Directories...",
+"EditUntrustedTooltipText" -> "Notebooks inside untrusted directories are never trusted",
+"BrowserPluginText" -> "Wolfram System Browser Plug\[Hyphen]in",
+"SpotlightIndexerText" -> "Notebook Indexer for Spotlight",
+"WindowsIndexerText" -> "Notebook Indexer for Windows",
+"GoogleIndexerText" -> "Notebook Indexer for Google Desktop Search",
+"CopernicIndexerText" -> "Notebook Indexer for Copernic Desktop Search",
+"LocalVariablesText" -> "The local variables of Module and With",
+"FunctionArgs1Text" -> "Function arguments and pattern names  (Also make",
+"FunctionArgs2Text" -> "Italic)",
+"UseInArgumentsText" -> "Variables made special by use in arguments",
+"ResetDefaultsText" -> "Reset to Defaults",
+"SyntaxErrorsText" -> "Syntax Errors",
+"Emphasized1Text" -> "Emphasized Syntax Errors  (Also",
+"Emphasized2Text" -> "Larger",
+"Emphasized3Text" -> "Yellow Background)",
+"MissingText" -> "Missing arguments",
+"ExcessText" -> "Excess arguments",
+"UnwantedText" -> "Possible unwanted assignments",
+"UnrecognizedText" -> "Unrecognized option names",
+"LocalScopeText" -> "Local scope conflicts",
+"OutOfScopeText" -> "Variables that will go out of scope before being used",
+"ShadowingText" -> "Shadowing in multiple contexts",
+"CommentsText" -> "Comments",
+"StringsText" -> "Strings",
+"CommentsString" -> StyleBox[RowBox[{"(*"," ",RowBox[{"A comment"," ","explaining"," ","something"}]," ","*)"}],ShowStringCharacters->True],
+"SampleString" -> "A string of characters",
+"GlobalSymbolsText" -> "Global symbols that have no value assigned",
+"HeadHighlightText" -> "Current function head highlight",
+"MatchHighlightText" -> "Matching operator highlight",
+"AutomaticSyntaxText" -> "Enable automatic syntax coloring    ",
+"LocalVarsText" -> "Local Variables",
+"ErrsAndWarningsText" -> "Errors and Warnings",
+"OtherText" -> "Other",
+"ColorSpectraText" -> "Show color spectra",
+"EnableDebuggerText" -> "Enable debugger    ",
+"TextText" -> "Text",
+"BackgroundText" -> "Background",
+"DefaultText" -> "Default",
+"BreakpointsText" -> "Highlight breakpoints",
+"StackFramesText" -> "Highlight stack frames",
+"EvaluatorPosText" -> "Highlight evaluator position",
+"AutomaticNumText" -> "Enable automatic number formatting",
+"BlockSeparatorText" -> "Digit block separator:",
+"DecimalPointText" -> "Decimal point character:",
+"SeparatorText" -> "Separator characters",
+"NoneText" -> "None",
+"ThinText" -> "Thin Space",
+"VeryThinText" -> "Very Thin Space",
+"ThinCommaText" -> "Thin comma",
+"CommaText" -> "Comma",
+"PeriodText" -> "Period",
+"DigitText" -> "Digit blocks",
+"LeftOfText" -> "Left of the\ndecimal",
+"RightOfText" -> "Right of the\ndecimal",
+"BlockSizeText" -> "Digit block size:",
+"MinText" -> "Min before breaking into blocks:",
+"PrecisionText" -> "Displayed precision",
+"NumDigitsText" -> "Number of digits displayed in output:",
+"SamplesText" -> "Samples",
+"4Text" -> "4\[Hyphen]digit integer:",
+"10Text" -> "10\[Hyphen]digit integer:",
+"5Text" -> "5\[Hyphen]digit decimal:",
+"14Text" -> "14\[Hyphen]digit decimal:",
+"InAListText" -> "Numbers in a list:",
+"MultSymText" -> "Automatically display multiplication symbol between multiplied numbers",
+"UseSymbolText" -> "Use symbol:",
+"SpaceText" -> "Space",
+"CenterDotText" -> "Center Dot",
+"2NumsText" -> "Two numbers multiplied:",
+"SeveralNumsText" -> "Several numbers multiplied:",
+"WithExpText" -> "Number with exponent:",
+"FormattingText" -> "Formatting",
+"MultiplicationText" -> "Multiplication",
+"SystemInformationText" -> "System Information\[Ellipsis]",
+"WolframAlphaLabel" -> "Wolfram|Alpha Settings",
+"WolframAlphaServer" -> "Wolfram|Alpha server",
+"WolframAlphaAsynchronous" -> "Asynchronous",
+"WolframAlphaInteractive" -> "Interactive",
+"WolframAlphaReinterpret" -> "Reinterpret",
+"WolframAlphaRecalculate" -> "Recalculate",
+"WolframAlphaTypeset" -> "Typeset Wolfram Language forms",
+"WolframAlphaClickingInExtrusion" -> "Selecting a different result",
+"WolframAlphaClickClose" -> "hides all results",
+"WolframAlphaClickEvaluate" -> "evaluates the cell",
+"WolframAlphaClickTip" -> "Change what happens after showing all results in a free-form input",
+"WolframAlphaInfo" -> "Wolfram System Session Info",
+"WolframAlphaInfoAlways" -> "Always send",
+"WolframAlphaInfoNever" -> "Never send",
+"WolframAlphaInfoSessionYes" -> "Send for this session",
+"WolframAlphaInfoSessionNo" -> "Don't send for this session",
+"WolframAlphaInfoAsk" -> "Ask before sending",
+"ConnectivityText1" -> "The Wolfram Language accesses the internet for such functions as:\n\[Bullet] providing real\[Hyphen]time or load\[Hyphen]on\[Hyphen]demand computable data\n\[Bullet] importing data from the web\n\[Bullet] automatic updating of documentation\n\[Bullet] calling external web services",
+"ConnectivityText2" -> "Certain documented functionality will not be available unless the Wolfram Language can access the internet. ",
+"ConnectivityTextMore" -> "More information\[RightGuillemet]",
+"TestConnectivityButtonText" -> "Test Internet Connectivity",
+"TroubleshootButtonText" -> "Troubleshoot",
+"CheckInternetText" -> "Allow the Wolfram System to access the Internet",
+"ProxyLabel" -> "Proxy Settings",
+"DirectProxyText" -> "Direct connection to the Internet",
+"BrowserProxyText" -> "Use proxy settings from my system or browser",
+"CustomProxyText" -> "Use the following settings:",
+"AllowWPADText" -> "Allow use of Web Proxy Autodiscovery Protocol (WPAD)",
+"HostText" -> " Host:",
+"ProxyText" -> " Proxy:",
+"PortText" -> "Port:",
+"ServerText" -> "Server",
+"PortNumText" -> "Port Number",
+"EncryptProtoText" -> "Encryption Protocol",
+"UsernameText" ->  "Username",
+"FromAddrText" -> "From Address",
+"FullNameText" -> "From Name",
+"ReplyToText" -> "Reply To",
+"AutoBccText" -> "AutoBcc",
+"AutoCcText" -> "AutoCc",
+"SignatureText" -> "Signature",
+"AutoUpdateLabel" -> "Automatic Updates",
+"MailLabel" -> "Mail Settings",
+"IncomingMailLabel" -> "Incoming",
+"IncomingMailDescription" -> StyleBox[FormBox[RowBox[{"Default settings for ", 
+   FormBox[TagBox[ButtonBox["MailServerConnect", BaseStyle -> "Link", 
+  ButtonData -> "paclet:ref/MailServerConnect"], 
+ MouseAppearanceTag["LinkHand"]], StandardForm], 
+   " function:"}], TextForm], AutoSpacing -> False],
+"OutgoingMailLabel" -> "Outgoing",
+"OutgoingMailDescription" -> StyleBox[FormBox[RowBox[{"Default settings for ", 
+   FormBox[TagBox[ButtonBox["SendMail", BaseStyle -> "Link", 
+  ButtonData -> "paclet:ref/SendMail"], 
+ MouseAppearanceTag["LinkHand"]], StandardForm], 
+   " function:"}], TextForm], AutoSpacing -> False],
+"PasswordText" -> "Password",
+"MailFolderText" -> "Folder",
+"CheckDocsText" -> "Automatically check for documentation updates",
+"CheckDataText" -> "Automatically check for data updates",
+"UpdateLocalIndexButtonText" -> "Update Local Indices from the Wolfram Research Server",
+"AboutConnectButtonText" -> "About Internet Connectivity\[Ellipsis]",
+"NotebookHistoryText" -> "Notebook History",
+"DisableHistoryText" -> "Enable notebook history tracking",
+"HistoryMergeIntervalText" -> "Time interval (in seconds) for merging subsequent edit history:",
+"NotebookCompatibilityText" -> "Notebook Compatibility",
+"DisableCompatibilityText" -> "Enable scanning of notebooks from previous versions for potential issues",
+"DefaultControlPlacementText" -> RowBox[{"Default control placement in", StyleBox["Manipulate", "Input", FontFamily -> "Courier"], "output:"}],
+"AntialiasingText" -> "Antialiasing Quality",
+"AntialiasingOnscreenText" -> "(For on\[Hyphen]screen 3D graphics and 2D graphics with gradient filling)",
+"AntialiasingNoneText" -> "No Antialiasing",
+"AntialiasingFullText" -> "Highest Quality",
+"OtherOptionsText" -> "For all other option settings: ",
+"OpenOIText" -> "Open Option Inspector",
+"KernelNameText" -> "Master Kernel Name: ",
+"KernelStoppedText" -> "This kernel is not currently running.\nIt needs to be running to be configured.",
+"KernelStartText" -> "Start Kernel",
+"KernelStartingText" -> "Kernel is starting...\n",
+"TrustedPathWarning1" -> "Warning: All these locations are treated as trusted sources for opening notebooks.",
+"TrustedPathWarning2" -> "Warning: This location will be treated as a trusted source for opening notebooks.",
+"TrustedPathText" -> "An alert will never be displayed when a trusted notebook is opened, and the notebook can automatically perform dynamic evaluations. If you change or add a location, make sure the new location is secure.",
+"TrustedPathWindowTitle" -> "Trusted Directories",
+"UntrustedPathWarning1" -> "Warning: All these locations are treated as untrusted sources for opening notebooks.",
+"UntrustedPathWarning2" -> "Warning: This location will be treated as an untrusted source for opening notebooks.",
+"UntrustedPathText" -> "An alert will always be displayed when an untrusted notebook is opened and attempts to perform dynamic evaluations.",
+"UntrustedPathWindowTitle" -> "Untrusted Directories",
+"PathDialogAddText" -> "Add",
+"PathDialogModText" -> "Modify",
+"PathDialogDelText" -> "Remove",
+"PathDialogDirsText" -> "Directories",
+"PathDialogDirText" -> "Directory:",
+"ClosingDialogToggleText" -> "Open closing dialog after closing last window",
+"SystemFileAssociationsText" -> "System File Associations:",
+"EditFileAssociationsText" -> "Edit\[Ellipsis]",
+"ChatServicesHeader" -> "Chat Services",
+"AutoStartChatServicesText" -> "Allow Chat Services"}
+@|
+@@resource ImportDialogs
+{
+"DefaultsButtonLabel" -> "Use Settings as Defaults",
+"RestoreButtonLabel" -> "Restore to Defaults",
+"TextLabel" -> "Text Import Options",
+"TextFileReadingMethod" -> "Method for reading file:",
+"TextOneCell" -> "Read entire file into one cell",
+"TextOneCellPerLine" -> "Create new cell at every line",
+"TextOneCellPerBlankLine" -> "Create new cell at every blank line",
+"TextOneCellPerTwoBlankLines" -> "Create new cell at two blank lines",
+"TextCharacterEncoding" -> "Character encoding: ",
+"NotebookLabel" -> "Notebook Options",
+"NotebookModern" -> "Wolfram files",
+"Notebooks" -> "Wolfram notebooks",
+"Packages" -> "Wolfram Language packages",
+"PackagesLine1" -> "Create new cell after ",
+"PackagesLine2" -> " consecutive blank lines",
+"NotebookOld" -> "Version 2 notebooks",
+"NotebookParseEntire" -> "Parse and load entire notebook into memory upon opening",
+"NotebookVersionAdvisory" -> "Open version 5 notebooks with the Version Advisory toolbar",
+"NotebookExplanationText1" -> "A version 2 notebook (a file with a .ma extension) must be converted to the current file format before it can be opened. The new file will have a name ending in .nb.",
+"NotebookExplanationText2" -> "You may choose to automatically convert all input and/or output cells to StandardForm, the editable 2D form used by default in this version.",
+"NotebookConvertInput" -> "Convert Input cells to StandardForm",
+"NotebookConvertOutput" -> "Convert Output cells to StandardForm",
+"NotebookExplanationText3" -> "This version supports a more sophisticated style sheet. Check the option below only if you have changed the style definitions in this notebook.",
+"NotebookPreserveStylesheet" -> "Preserve customized stylesheet",
+"NotebookExplanationText4" -> "Bitmap caches for PostScript cells cannot be converted. Check the option below to regenerate them automatically (can be very slow).",
+"NotebookGenerateCaches" -> "Generate bitmap caches for all graphics cells",
+"GIFLabel" -> "GIF Options",
+"GIFIndex" -> "Index of image to be imported:",
+"JPEGLabel" -> "JPEG Options",
+"JPEGColorReduction" -> "Color reduction:",
+"JPEGDithering" -> "Dithering for color reduction:",
+"TIFFLabel" -> "TIFF Options",
+"TIFFIndex" -> "Index of image to be imported:",
+"PDFLabel" -> "PDF Options",
+"PDFPages" -> "Pages to import:",
+"PDFEditable" -> "Editable",
+"PDFTooltip1" -> "If Editable is selected the PDF will be converted to an editable Graphics[...] expression.  If Editable is not selected the PDF will be displayed statically (not supported on all systems)."
+}
+@|
+@@resource ExportDialogs
+{
+"Automatic" -> "Automatic", 
+"Printer" -> "Printer", 
+"Screen" -> "Screen",
+"Custom" -> "Custom",
+"PackageLabel" -> "Package Options",
+"PackageLines" -> "Number of blank lines to insert between cells: ",
+"PackageWindow" -> "Save window size and position",
+"PackageCode" -> "Only save Code cells",
+"EPSLabel" -> "EPS Options",
+"EPSIncludePreview" -> "Include TIFF preview",
+"EPSIncludeFonts" -> "Include Wolfram System fonts",
+"PDFAttachSource" -> "Attach source notebook",
+"GIFLabel" -> "GIF Options",
+"GIFInterlaced" -> "Create interlaced image",
+"GIFDithering" -> "Use dithering",
+"GIFTransparency" -> "Use this color for transparency:",
+"GIFBackground" -> "Use this color for background:",
+"JPEGLabel" -> "JPEG Options",
+"JPEGColorSpace" -> "Colorspace of exported graphic:",
+"JPEGCompressionLevel" -> "Compression level (0.0 - 1.0):",
+"JPEGSmoothingFactor" -> "Smoothing factor (0.0 - 1.0):",
+"JPEGProgressiveFile" -> "Create progressive file",
+"TIFFLabel" -> "TIFF Options",
+"TIFFCompressionLabel" -> "Compression",
+"TIFFAdvancedLabel" -> "Advanced",
+"TIFFImageEncoding" -> "Image Encoding:",
+"TIFFDiffPredictor" -> "Differencing Predictor:",
+"TIFFDiffPredictorNone" -> "None",
+"TIFFDiffPredictorHorizontal" -> "Horizontal",
+"TIFFByteOrdering" -> "Byte ordering:",
+"TIFFByteorderingBE" -> "Most significant byte first",
+"TIFFByteOrderingLE" -> "Least significant byte first",
+"TIFFResolution" -> "Image Resolution:",
+"TIFFResolutionTooltip" -> {{"Valid options are:"}, {"Automatic"}, {"Any integer greater than 0"}},
+"TIFFPixelCompFormat" -> "Pixel component format:",
+"TIFFPixelCompChunky" -> "Chunky",
+"TIFFPixelCompPlanar" -> "Planar",
+"TIFFIncludingMaxMin" -> "Include maximum and minimum component values",
+"VectorLabel" -> "Vector Graphics Options",
+"VectorGraphicsContainingTransparency" -> "Graphics Containing Transparency:",
+"VectorGraphicsContainingSmoothShading" -> "Graphics Containing Smooth Shading:",
+"VectorAutomaticRendering" -> "Automatically Choose Best Representation",
+"VectorRasterizeFeatures" -> "Use Bitmap Representation",
+"VectorRenderFeatures" -> "Use Highest Quality Vector Representation",
+"VectorApproximateFeatures" -> "Use Most Compatible Vector Representation",
+"VectorRasterResolution" -> "Rasterization Resolution:",
+"XHTMLLabel" -> "XHTML Options",
+"XHTMLConvertLinkedNotebooks" -> "Include linked notebooks",
+"XHTMLContent" -> "Include MathML content elements",
+"XHTMLMathOutput" -> "Typeset expressions format:",
+"XHTMLExportCellGroup" -> "Export of cell groups:",
+"XHTMLForwardClosed" -> "Forward-closed",
+"XHTMLReverseClosed" -> "Reverse-closed",
+"XHTMLConvertClosedFalse" -> "Include first cell of cell group",
+"XHTMLConvertClosedTrue" -> "Include all cells of cell group",
+"XHTMLConvertClosedLinkedPage" -> "Include cell group as a link",
+"XHTMLCSS" -> "Include CSS",
+"XHTMLMathMLLabel" -> "XHTML+MathML Options",
+"TeXLabel" -> "LaTeX Options",
+"TeXDocumentClass" -> "Document class:",
+"TeXMathOutput" -> "Typeset expressions format:",
+"BMPLabel" -> "BMP Options",
+"JPEG2000Label" -> "JPEG2000 Options",
+"JPEG2000Lossless" -> "Lossless ",
+"PNMLabel" -> "PNM Options",
+"RasterImageTopOrientation" -> "Image orientation (as stored in file):",
+"RasterBitDepth" -> "Bit depth:",
+"RasterImageCompression" -> "Image-compression algorithm:",
+"RasterCompressionLevel" -> "Compression parameter of encoding:",
+"RasterCompressionLevelTooltip" -> {{"Valid options are:"}, {"Automatic"}, {"A real number between 0.0 and 1.0"}},
+"RasterTileSize" -> "Image tiles pixel dimensions:",
+"RasterTileSizeTooltip" -> {{"Valid options are:"}, {"Automatic"}, {"a value of the form {2^m,2^n}"}},
+"RasterImageEncoding" -> "Image-encoding algorithm:",
+"RasterTileDimensions" -> "Tiling array dimensions:",
+"RasterTileDimensionsTooltip" -> {{"Valid option is a value of the form {x,y}"}}
+}
+@|
+@@resource HistoryOverviewDialog
+{
+"WindowTitleText" -> "Notebook Modification History Overview",
+"SelectionOnlyLabel" -> "History for: ",
+"AllCellsText" -> "All Cells",
+"SelectedCellsText" -> "Selected Cells",
+"TrackHistoryText" -> "Track notebook history",
+"CopyDataLabel" -> "Copy Raw Data",
+"CopyImageLabel" -> "Copy Image",
+"ClearHistoryLabel" -> "Clear History",
+"ClearHistoryWarning1Text" -> "Do you really want to clear the history from these cells? ",
+"ClearHistoryWarning2Text" -> "Do you really want to clear the history from all cells? ",
+"GraphicsText" -> "Modification Timeline",
+"UnavailableText" -> "Unavailable",
+"FirstEditLabel" -> "First edited",
+"LastEditLabel" -> "Last edited",
+"TotalByteLabel" -> "Total bytes",
+"ContentByteLabel" -> "Content bytes",
+"CellNumberLabel" -> "Number of cells",
+"EditNumberLabel" -> "Number of edits",
+"MergeIntervalLabel" -> "Merge interval",
+"OutOfText" -> " out of ",
+"SecondsText" -> "  seconds",
+"SummaryText" ->  "Cell Statistics",
+"BlockZoomText" -> "Click to zoom in to this block of time",
+"ResetZoomText" -> "Click to reset",
+"UndoZoomText" -> "Click to undo last zoom",
+"ZoomDragText" -> "Drag to zoom",
+"PanDragText" -> "Drag to pan",
+"ZoomText" -> "Zoom: ",
+"LargeCellText" -> StyleBox["Cell too large to display!", FontSize -> CurrentValue[{"ControlsFontSize",Large}]],
+"DisplayWarning1Text" -> "No cell history information available",
+"DisplayWarning2Text" -> "No valid notebook present",
+"DisplayWarning3Text" -> "Invalid history information detected"
+}
+@|
+@@resource GraphicsInspectorDialog
+{
+"ToolsLabel" -> "Tools",
+"OperationsLabel" -> "Operations",
+"LockTooltip" -> "Lock",
+"UnlockTooltip" -> "Unlock",
+"GroupTooltip" -> "Group",
+"UngroupTooltip" -> "Ungroup",
+"MoveToBackTooltip" -> "Move To Back",
+"MoveToFrontTooltip" -> "Move To Front",
+"MoveBackwardTooltip"-> "Move Backward",
+"MoveForwardTooltip" -> "Move Forward",
+"AlignLeftSidesTooltip" -> "Align Left Sides",
+"AlignCentersVerticallyTooltip" -> "Align Centers Vertically",
+"AlignRightSidesTooltip" -> "Align Right Sides",
+"AlignBottomsTooltip" -> "Align Bottoms",
+"AlignCentersHorizontallyTooltip" -> "Align Centers Horizontally",
+"AlignTopsTooltip" -> "Align Tops",
+"DistributeLeftSidesTooltip" -> "Distribute Left Sides",
+"DistributeCentersHorizontallyTooltip" -> "Distribute Centers Horizontally",
+"DistributeRightSidesTooltip" -> "Distribute Right Sides",
+"DistributeSpaceHorizontallyTooltip" -> "Distribute Space Horizontally",
+"DistributeTopsTooltip" -> "Distribute Tops",
+"DistributeCentersVerticallyTooltip" -> "Distribute Centers Vertically",
+"DistributeBottomsTooltip" -> "Distribute Bottoms",
+"DistributeSpaceVerticallyTooltip" -> "Distribute Space Vertically",
+"AlignmentGuidesEnabledTooltip" -> "Toggle Alignment Guides",
+"OverrideLockEnabledTooltip" -> "Toggle Override Lock",
+"ResetToDefaultsTooltip" -> "Reset to Default Appearance",
+"SettingsLabel" -> "Settings",
+"FillLabel" -> "Fill",
+"FillText" -> "Draw fill",
+"OpacityLabel" -> "Opacity",
+"StrokeLabel" -> "Stroke",
+"StrokeText" -> "Draw edges",
+"ThicknessLabel" -> "Thickness",
+"PointsText" -> "Points",
+"ScaledText" -> "Scaled",
+"UserText" -> "User",
+"DashingLabel" -> "Dashing",
+"CapLabel" -> "Caps",
+"JoinLabel" -> "Joins",
+"MiterLabel" -> "Miter limit",
+"Automatic" -> "Automatic",
+"Bevel" -> "Bevel",
+"Butt" -> "Butt",
+"Miter" -> "Miter",
+"Round" -> "Round",
+"Square" -> "Square",
+"PointSizeLabel" -> "Size",
+"RectanglesLabel" -> "Rectangles",
+"RoundingRadiusLabel" -> "Rounding radius",
+"TextLabel" -> "Text",
+"StyleText" -> "Style",
+"FontLabel" -> "Font",
+"FontPanelTooltip" -> "Show fonts panel",
+"AlignmentLabel" -> "Alignment",
+"ForegroundLabel" -> "Foreground",
+"BackgroundLabel" -> "Background",
+"BackgroundText" -> "Draw background",
+"ClearFormatText" -> "Clear Formatting",
+"ArrowsLabel" -> "Arrowheads",
+"ArrowLabel" -> "Arrowhead",
+"ArrowDoubleText" -> "Double-headed",
+"ArrowReverseText" -> "Reverse",
+"CustomText" -> "Custom",
+"ArrowSizeText" -> "Head size",
+"ArrowPositionText" -> "Position",
+"WindowTitleText" -> "Drawing Tools",
+"NewLabel"->"New",
+"LockLabel"->"Lock",
+"GroupLabel"->"Group",
+"ArrangeLabel"->"Arrange",
+"AlignLabel"->"Align",
+"DistributeLabel"->"Distribute",
+"SystemColorDialogLabel" -> "More colors \[RightGuillemet]"
+}
+@|
+@@resource HeadersFootersDialog
+{
+"CapsRomanNumberLabel" -> "Roman numerals",
+"CenterLabel" -> "Center",
+"DashedNumberLabel" -> "Dashed numbers",
+"DateFormatCounterLabel" -> "\[LeftGuillemet]Date\[RightGuillemet]",
+"DateFormatLabel" -> "Date",
+"DateFormatWindowTitle" -> "Choose a date format...",
+"DecimalNumberLabel" -> "Decimal numbers",
+"DefaultLabel" -> "Revert to Default",
+"EditorsTooltip" -> "Click to edit",
+"FacingLabel" -> "Facing pages with the first page on the",
+"FileNameLabel" -> "File Name",
+"FirstLabel" -> "first",
+"FirstPageText" -> "Include on first page",
+"FooterLabel" -> "Footer",
+"FormatCodeLabel" -> "Format code",
+"HeaderLabel" -> "Header",
+"LastLabel" -> "last",
+"LeftLabel" -> "Left",
+"LeftLabelSmall" -> "left",
+"LeftPageLabel" -> "Left Page",
+"OptionsLabel" -> "Options",
+"PageLineText" -> "Include line",
+"PageNumberCounterLabel" -> "\[LeftGuillemet]Page\[RightGuillemet]",
+"PageNumberLabel" -> "Page Number",
+"PageTotalCounterLabel" -> "\[LeftGuillemet]Total Pages\[RightGuillemet]",
+"PageTotalLabel" -> "Total Pages",
+"PageNumberWindowTitle" -> "Choose page number format...",
+"PreviewCodeLabel" -> "Preview",
+"ResetLabel" -> "Reset",
+"RightLabel" -> "Right",
+"RightLabelSmall" -> "right",
+"RightPageLabel" -> "Right Page",
+"RomanNumberLabel" -> "Lower case Roman numerals",
+"RunningTextCellStyle" -> "Show contents of cell style",
+"RunningTextDefault" -> "Default text",
+"RunningTextEntireCell" -> "entire cell",
+"RunningTextExcluded" -> GridBox[{{"Excluded words"}, {"(separated by comma"}, {"and case insensitive)"}}, GridBoxAlignment -> {"Columns" -> {{Right}}}],
+"RunningTextFirstCell" -> "Position of cell on each page",
+"RunningTextCounterLabel" -> "\[LeftGuillemet]Running Text\[RightGuillemet]",
+"RunningTextNumWords" -> "Display",
+"RunningTextNumWords2" -> (Grid[{{"first", #1, "words"}}] &),
+"RunningTextOffset" -> "Page offset",
+"RunningTextPopup" -> "Running Text...",
+"RunningTextWindowTitle" -> "Running Text Dialog",
+"SelectPageTooltip" -> "Click to select this page",
+"SelectTooltip" -> "Click to select",
+"SetAsDefaultLabel" -> "Set as Default",
+"SinglePageLabel" -> "Single Page",
+"StartPageLabel" -> "Starting Page Number",
+"WavyNumberLabel" -> "Tilde dashed numbers",
+"WindowTitle" -> "Headers and Footers - ",
+"RunningTextPreviewText" -> "A quick brown fox jumps over the lazy dog. The quick brown fox jumps \
+over a lazy dog. The quick fox jumps over the lazy brown dog. The \
+quick brown fox jumped over the lazy dog. The quick brown fox jumped \
+over the lazy dogs."
+}
+@|
+@@resource InsertCitationDialog
+{
+"FindLabel" -> "Find",
+"ClearLabel" -> "Clear",
+"InsertLabel" -> "Insert",
+"AuthorID" -> "Author",
+"YearID" -> " Year ",
+"TitleID" -> "Title",
+"Sort1Label" -> "Sort",
+"Sort2Label" -> "Reverse sort",
+"WindowTitle" -> "Insert Citation",
+"StyleLabel" -> "Style",
+"WindowTitle2" -> "Citation Styles",
+"WindowTitle3" -> "Insert Note",
+"WindowTitle4" -> "Note Styles"
+}
+@|
+@@resource FindReplaceDialog Macintosh
+{
+"FindNextLabel" -> "Next",
+"FindPrevLabel" -> "Previous",
+"FindWhatLabel" -> "Find:",
+"IgnoreCaseLabel" -> "Ignore case",
+"ReplaceAllLabel" -> "Replace All",
+"ReplaceFindLabel" -> "Replace & Find",
+"ReplaceLabel" -> "Replace",
+"ReplaceWithLabel" -> "Replace with:",
+"StatusLabel" -> "Status:",
+"WholeWordLabel" -> "Full word",
+"WindowTitle" -> "Find",
+"WraparoundLabel" -> "Wrap around",
+"ReplaceAllWarning1" -> "Do you really want to replace all occurrences of `1` with `2`?",
+"ReplaceAllWarning2" -> "This action cannot be undone."
+}
+@|
+@@resource FindReplaceDialog
+{
+"FindNextLabel" -> "Find Next",
+"FindPrevLabel" -> "Find Previous",
+"FindWhatLabel" -> "Find:",
+"IgnoreCaseLabel" -> "Match case",
+"ReplaceAllLabel" -> "Replace All",
+"ReplaceFindLabel" -> "Replace & Find Next",
+"ReplaceLabel" -> "Replace",
+"ReplaceWithLabel" -> "Replace with:",
+"StatusLabel" -> "Status:",
+"WholeWordLabel" -> "Whole words",
+"WindowTitle" -> "Find and Replace",
+"WraparoundLabel" -> "Wrap around",
+"ReplaceAllWarning1" -> "Do you really want to replace all occurrences of `1` with `2`?",
+"ReplaceAllWarning2" -> "This action cannot be undone."
+}
+@|
+@@resource DrawingToolsDialog Macintosh
+{
+"WindowTitleText" -> "2D Drawing",
+"SelectToolText" -> "Select/Move/Resize (o)",
+"GetCoordinatesToolText" -> "Get Coordinates (.)",
+"DrawPointToolText" -> "Point (p)",
+"DrawLineToolText" -> "Line (l)",
+"DrawPolylineToolText" -> "Line segments (s)",
+"DrawArrowToolText" -> "Arrow (a)",
+"DrawPolygonToolText" -> "Polygon (g)",
+"DrawCircleToolText" -> "Circle (c)",
+"DrawDiskToolText" -> "Disk (d)",
+"DrawRectangleToolText" -> "Rectangle (r)",
+"DrawBoxToolText" -> "Box (b)",
+"DrawFreehandToolText" -> "Freehand line (f)",
+"PlaceMathToolText" -> "Mathematical Text (m)",
+"PlaceTextToolText" -> "Text (t)",
+"SampleStyleToolText" -> "Sample Style (e)",
+"NewGraphicButtonText" -> "New Graphic/Inset (CTRL\[Hyphen]1)",
+"GraphicsInspectorButtonText" -> "Graphics Inspector (CTRL\[Hyphen]i)",
+"DoubleClickToKeepText" -> "(Double\[Hyphen]click to keep.)",
+"DoubleClickToKeepShiftDragToConstrainText" -> "(Double\[Hyphen]click to keep. SHIFT\[Hyphen]drag to constrain.)",
+"GetCoordinatesTooltipText" -> "(Click to mark coordinate. CMD\[Hyphen]click to delete marker.)\n(Drag to mark coordinate path. OPT\[Hyphen]drag to mark area.)\n(CMD\[Hyphen]c to copy marked coordinates to clipboard.)",
+"SampleStyleTooltipText" -> "(SHIFT\[Hyphen]click to sample color only.)\n(OPT for Apply Style tool. CMD for Select tool.)",
+"ApplyStyleTooltipText"  -> "(SHIFT\[Hyphen]click to apply color only.)\n(OPT for Sample Style tool. CMD for Select tool.)"
+}
+@|
+@@resource DrawingToolsDialog X
+{
+"WindowTitleText" -> "2D Drawing",
+"SelectToolText" -> "Select/Move/Resize (o)",
+"GetCoordinatesToolText" -> "Get Coordinates (.)",
+"DrawPointToolText" -> "Point (p)",
+"DrawLineToolText" -> "Line (l)",
+"DrawPolylineToolText" -> "Line segments (s)",
+"DrawArrowToolText" -> "Arrow (a)",
+"DrawPolygonToolText" -> "Polygon (g)",
+"DrawCircleToolText" -> "Circle (c)",
+"DrawDiskToolText" -> "Disk (d)",
+"DrawRectangleToolText" -> "Rectangle (r)",
+"DrawBoxToolText" -> "Box (b)",
+"DrawFreehandToolText" -> "Freehand line (f)",
+"PlaceMathToolText" -> "Mathematical Text (m)",
+"PlaceTextToolText" -> "Text (t)",
+"SampleStyleToolText" -> "Sample Style (e)",
+"NewGraphicButtonText" -> "New Graphic/Inset (CTRL\[Hyphen]1)",
+"GraphicsInspectorButtonText" -> "Graphics Inspector (CTRL\[Hyphen]g)",
+"DoubleClickToKeepText" -> "(Double\[Hyphen]click to keep.)",
+"DoubleClickToKeepShiftDragToConstrainText" -> "(Double\[Hyphen]click to keep. SHIFT\[Hyphen]drag to constrain.)",
+"GetCoordinatesTooltipText" -> "(Click to mark coordinate. CTRL\[Hyphen]click to delete marker.)\n(Drag to mark coordinate path. ALT\[Hyphen]drag to mark area.)\n(CTRL\[Hyphen]c to copy marked coordinates to clipboard.)",
+"SampleStyleTooltipText" -> "(SHIFT\[Hyphen]click for color only.)\n(ALT for Apply Style tool.)\n(CTRL for Select tool.)",
+"ApplyStyleTooltipText"  -> "(SHIFT\[Hyphen]click for color only.)\n(ALT for Sample Style tool.)\n(CTRL for Select tool.)"
+}
+@|
+@@resource DrawingToolsDialog Windows
+{
+"WindowTitleText" -> "2D Drawing",
+"SelectToolText" -> "Select/Move/Resize (o)",
+"GetCoordinatesToolText" -> "Get Coordinates (.)",
+"DrawPointToolText" -> "Point (p)",
+"DrawLineToolText" -> "Line (l)",
+"DrawPolylineToolText" -> "Line segments (s)",
+"DrawArrowToolText" -> "Arrow (a)",
+"DrawPolygonToolText" -> "Polygon (g)",
+"DrawCircleToolText" -> "Circle (c)",
+"DrawDiskToolText" -> "Disk (d)",
+"DrawRectangleToolText" -> "Rectangle (r)",
+"DrawBoxToolText" -> "Box (b)",
+"DrawFreehandToolText" -> "Freehand line (f)",
+"PlaceMathToolText" -> "Mathematical Text (m)",
+"PlaceTextToolText" -> "Text (t)",
+"SampleStyleToolText" -> "Sample Style (e)",
+"NewGraphicButtonText" -> "New Graphic/Inset (CTRL\[Hyphen]1)",
+"GraphicsInspectorButtonText" -> "Graphics Inspector (CTRL\[Hyphen]g)",
+"DoubleClickToKeepText" -> "(Double\[Hyphen]click to keep.)",
+"DoubleClickToKeepShiftDragToConstrainText" -> "(Double\[Hyphen]click to keep. SHIFT\[Hyphen]drag to constrain.)",
+"GetCoordinatesTooltipText" -> "(Click to mark coordinate. CTRL\[Hyphen]click to delete marker.)\n(Drag to mark coordinate path. ALT\[Hyphen]drag to mark area.)\n(CTRL\[Hyphen]c to copy marked coordinates to clipboard.)",
+"SampleStyleTooltipText" -> "(SHIFT\[Hyphen]click for color only.)\n(ALT for Apply Style tool.)\n(CTRL for Select tool.)",
+"ApplyStyleTooltipText"  -> "(SHIFT\[Hyphen]click for color only.)\n(ALT for Sample Style tool.)\n(CTRL for Select tool.)"
+}
+@|
+@@resource StyleDialogDockedCell
+{
+}
+@|
+@@resource SystemInformationDialog
+{
+"WindowTitleText" -> "Wolfram System Information",
+"KernelTabLabel" -> "Kernel",
+"FrontEndTabLabel" -> "Front End",
+"LinksTabLabel" -> "Links",
+"ParallelTabLabel" -> "Parallel",
+"DevicesTabLabel" -> "Devices",
+"NetworkTabLabel" -> "Network",
+"MachineTabLabel" -> "Machine",
+"OtherTabLabel" -> "Other",
+"CopyButtonText" -> " Copy ",
+"BenchmarkButtonText" -> "\"Benchmark with WolframMark\[Ellipsis]\"",
+"OtherKernelsText" -> "Other Kernels\[Ellipsis]",
+"AdvancedText" -> "Advanced",
+"NotebookSecurityText" -> "Notebook Security",
+"DirectoriesSmallText" -> " directories",
+"FilesSmallText" -> " files",
+"PackagesSmallText" -> " packages",
+"AddOnsSmallText" -> " add\[Hyphen]ons",
+"StreamsSmallText" -> " streams",
+"ConnectionsSmallText" -> " connections",
+"ProgramsSmallText" -> " programs",
+"ExtensionsSmallText" -> " extensions",
+"LibrariesSmallText" -> " libraries",
+"FeaturesSmallText" -> " features",
+"ControlsSmallText" -> " controls",
+"ServersSmallText" -> " servers",
+"NotLoadedSmallText" -> "not loaded",
+"ItemsSmallText" -> " items",
+"OpenPreferencesButtonText" -> "Open Preferences\[Ellipsis]",
+"OpenOptionInspectorButtonText" -> "Open Option Inspector\[Ellipsis]",
+"ScreenInformationText" -> "Screen Information",
+"GraphicsSubsystemText" -> "Graphics Subsystem",
+"ControllerDeviceText" -> "Controller Device",
+"NoControllersDetectedText" -> "No controller devices detected.",
+"TestConnectivityButtonText" -> "Test Connectivity\[Ellipsis]",
+"UpdateLocalIndexButtonText" -> "Update Local Index\[Ellipsis]"
+}
+@|
+@@resource LicenseFailureDialog
+{
+"ProcessLimitTitleText" -> "License Process Limit Reached",
+"GeneralLicenseTitleText" -> "License Limit Reached",
+"ProcessLimitDialogText" -> RowBox[{"\"The Wolfram Language kernel was not able to start because you \
+attempted to run more kernels than you have licensed. To extend your \
+processes limit, please \"", 
+  ButtonBox[
+   PaneSelectorBox[{True -> 
+      StyleBox["\"contact Wolfram Research\"", "HyperlinkActive"], 
+     False -> StyleBox["\"contact Wolfram Research\"", "Hyperlink"]}, 
+    Dynamic[CurrentValue["MouseOver"]]], 
+   ButtonData -> "http://www.wolfram.com/mathematica/contact-us"], "."}],
+"GeneralLicenseDialogText" -> RowBox[{"\"The Wolfram Language kernel was not able to start because your license limit was reached. You may need to terminate existing kernel sessions or expand your license. \"", 
+  ButtonBox[
+   PaneSelectorBox[{True -> 
+      StyleBox["\"Learn more.\"", "HyperlinkActive"], 
+     False -> StyleBox["\"Learn more.\"", "Hyperlink"]}, 
+    Dynamic[CurrentValue["MouseOver"]]], 
+   ButtonData -> "http://support.wolfram.com/kb/36360"]}]
+}
+@|
+@@resource EditCellTagsDialog
+{
+"WindowTitle" -> "Edit Cell Tags for",
+"CellTag" -> "Cell tag:",
+"Add" -> "Add",
+"Remove" -> "Remove",
+"NotebookTags" -> "All cell tags in the notebook:",
+"SelectionTags" -> "Tags of currently selected cell(s):",
+"RemoveTag" -> "Double click to remove the tag from the currently selected cell(s).",
+"AddTag" -> "Double click to add the tag to the currently selected cell(s).",
+"Close" -> "Close",
+"Help" -> "Help"
+}
+@|
+@@resource KernelPropertiesDialog
+{
+"WindowTitle" -> "Kernel Configuration",
+"KernelName" -> "Kernel name:",
+"AppendNameCheck" -> "Append name to In/Out prompts",
+"LaunchOnCheck" -> "Automatically launch on front end startup",
+"BasicOptions" -> "Basic options",
+"LaunchOnText" -> "Launch on:",
+"LocalRadioButton" -> "Local machine",
+"RemoteRadioButton" -> "Remote machine",
+"MachineName" -> "Machine name:",
+"UserName" -> "User name:",
+"KernelProgram" -> "Kernel program:",
+"AdvancedOptions" -> "Advanced options",
+"WSScript" -> "Arguments to WSOpen:",
+"LaunchScript" -> "Launch command:",
+"HelpButton" -> "Help",
+"OKButton" -> "OK",
+"CancelButton" -> "Cancel"
+}
+@|
+@@resource DebuggerDialogs
+{
+"LocalVariables" -> "\"Local Variables\"",
+"HighlightStackFrames" -> "\"Highlight stack frames in source\"",
+"RenderGraphics" -> "\"Render graphical elements in the stack\""
+}
+@|
+@@resource WelcomeScreen
+{
+"NewDocumentLabel" -> "New Document",
+"OpenRecent" -> "RECENT FILES",
+"NotebookLabel" -> "Notebook",
+"NotebookLabelANB" -> "Working Notebook",
+"SlideShowLabel" -> "Presenter Notebook...",
+"TemplateNotebookLabel" -> "Template Notebook",
+"TestingNotebookLabel" -> "Testing Notebook",
+"DataResourceLabel"  -> "Data Repository Item",
+"FunctionResourceLabel" -> "Function Repository Item",
+"NewNotebookTooltip" -> "Press \[SystemEnterKey] to open a new notebook",
+"DemonstrationLabel" -> "Demonstrations Project Notebook",
+"PackageLabel" -> "Wolfram Language Package (.wl)",
+"ScriptLabel" -> "WolframScript Script (.wls)",
+"StyledNotebookLabel" -> "Styled Notebook...",
+"TextFileLabel" -> "Text File (.txt)",
+"ActivatePlayerProLabel" -> RowBox[{"Activate Wolfram Player ", StyleBox["\[VerticalLine]", FontColor -> RGBColor[0.576471, 0.584314, 0.596078]], " PRO ", StyleBox["\[RightGuillemet]", FontColor -> RGBColor[0.882353, 0.211765, 0.196078]]}],
+"OpenDialogText" -> "Open\[Ellipsis]",
+"CloudOpenDialogText" -> "Open from Cloud\[Ellipsis]",
+"VersionNumberLabel" -> "Version",
+"WindowTitle" -> "Welcome to Wolfram Mathematica",
+"WindowTitleANB" -> "Welcome to Wolfram|Alpha Notebook Edition",
+"WindowTitlePlayer" -> "Welcome to Wolfram Player",
+"WindowTitlePlayerPro" -> "Welcome to Wolfram Player | PRO",
+"WindowTitleWD" -> "Welcome to Wolfram Desktop",
+"WindowTitleWFP" -> "Welcome to Wolfram Finance Platform",
+"EnterActKey" -> "Enter Activation Key \[RightGuillemet]",
+"NewsEventsLabel" -> "News & Events:",
+"DisplayAtStartupText" -> "Show at startup",
+"ObsoleteNewsText" -> "For the latest Wolfram news, events, and training options, visit wolfram.com \[RightGuillemet]",
+"GraduationNewsText" -> "Keep using the Wolfram System after graduation. Upgrade to the professional version of the Wolfram System.",
+"ExpiringMessageDefault" -> "Your license will expire on: \!\(\*ValueBox[\"$ExpirationString\"]\).",
+"ExpiringMessageSite" -> "Your license will expire on: \!\(\*ValueBox[\"$ExpirationString\"]\). When your organization's license is renewed, your license may be extended automatically. For more information, \!\(\*TagBox[ButtonBox[\"contact Wolfram Research\",BaseStyle->\"ContactLink\"], MouseAppearanceTag[\"LinkHand\"]]\).",
+"ExpiringMessageStudent" -> "Your license will expire on: \!\(\*ValueBox[\"$ExpirationString\"]\). \!\(\*TagBox[ButtonBox[\"Buy Now \[RightGuillemet]\", ButtonData -> \"http://www.wolfram.com/mathematica/how-to-buy\", BaseStyle -> \"ContactLink\"], MouseAppearanceTag[\"LinkHand\"]]\)",
+"ExpiringMessageStudentSite" -> "Your license will expire on: \!\(\*ValueBox[\"$ExpirationString\"]\). When your organization's license is renewed, your license may be extended automatically. For more information, \!\(\*TagBox[ButtonBox[\"contact Wolfram Research\",BaseStyle->\"ContactLink\"], MouseAppearanceTag[\"LinkHand\"]]\).",
+"ExpiringMessageStudentGrace" -> "Your license will expire in \!\(\*ValueBox[\"$DaysUntilExpiration\"]\) days unless your student status is validated. If you have not yet sent us your proof of student status, \!\(\*TagBox[ButtonBox[\"contact Wolfram Research\",BaseStyle->\"ContactLink\"], MouseAppearanceTag[\"LinkHand\"]]\).",
+"ExpiringMessageHome" -> "Your license will expire on: \!\(\*ValueBox[\"$ExpirationString\"]\).",
+"ExpiringMessageEnterprise" -> "Your license will expire on: \!\(\*ValueBox[\"$ExpirationString\"]\).",
+"PrereleaseGuidePageLink" -> FileNameJoin[{$InstallationDirectory, "Documentation", "English", 
+  "System", "Guides", "SummaryOfNewFeaturesIn100.nb"}],
+"CloudLoginButtonText" -> StyleBox[RowBox[{StyleBox["SIGN IN", FontWeight -> Bold], 
+	" to access your Wolfram Cloud services\[Ellipsis]"}], 
+	FontFamily -> Dynamic[CurrentValue["ControlsFontFamily"]],
+	FontSize -> 11,
+	AutoSpacing -> False,
+	LanguageCategory -> "NaturalLanguage",
+	LineIndent -> 0,
+	LineSpacing -> {1, -1}],
+"AccountSettings" -> "Account Settings",
+"SignOut" -> "Sign Out",
+"BuyNow" -> "Buy Now",
+"ContactUs" -> "Contact Us",
+"CloudTooltipDisabled" -> "Sign in first to access your Cloud files."
+}
+@|
+@@resource CloudLoginDialog
+{
+"WolframIDLabel1" -> "Wolfram ID",
+"WolframIDLabel2" -> "(your email address)",
+"PasswordLabel" -> FEPrivate`FrontEndResource["ActivationDialog", "PasswordLabel"],
+"ForgotPasswordLabel" -> "Forgot your password?",
+"CloudAccountQuery" -> "Don't have a Wolfram ID?",
+"SignInButtonLabel" -> "Sign In",
+"JoinNowButtonLabel" -> "Create an Account",
+"CancelButtonLabel" -> "Cancel",
+"RemeberMeLabel" -> "Remember Me",
+"WindowTitle" -> "Enter Login Credentials"
+}
+@|
+@@resource CloudDialogs
+{
+"OpenTitle" -> "Open from Wolfram Cloud",
+"SaveTitle" -> "Save to Wolfram Cloud",
+"CloudFiles" -> "Cloud Files",
+"Home" -> "Home",
+"Cancel" -> "Cancel",
+"Open" -> "Open",
+"Save" -> "Save",
+"Replace" -> "Replace",
+"NewFolder" -> "Create New Folder",
+"Create" -> "Create",
+"OK" -> "OK",
+"SaveAsPrompt" -> "Save As: ",
+
+(* tooltips *)
+"Type" -> "Type: ",
+"Size" -> "Size: ",
+"Modified" -> "Last modified: ",
+"Owner" -> "Owner: ",
+"Permissions" -> "Permissions: ",
+"Refresh" -> "Refresh file listing",
+
+(* loading page *)
+"Initializing" -> "Initializing\[Ellipsis]",
+"Loading" -> "Loading\[Ellipsis]",
+"InternetOff" -> "No internet connection found",
+"InternetBlocked" -> "Internet not allowed",
+"NotConnected" -> "Not connected to Wolfram Cloud",
+"NotDirectory" -> "We're sorry. We encountered a problem and could not process your request.",
+"TryAgain" -> "Try again",
+"EmptyDirectory" -> "-empty-",
+
+(* confirmation dialogs *)
+"ReplaceText" -> "The file \"`1`\" already exists. Do you want to replace it?",
+"ReplaceCaption" -> "A file with the same name already exists. Replacing it will overwrite its current contents.",
+
+"InvalidNameText" -> "The string \"`1`\" is not a valid CloudObject name.",
+"InvalidNameCaption" -> "CloudObject names can only contain letters, numbers, spaces and the following symbols: - . _ ! $ ( ) + , @ ~",
+
+"NewFolderTitle" -> "New Folder",
+"NewFolderPrompt" -> "New folder name:",
+"NewFolderConflict" -> "This name is already taken.",
+
+(* internet blocked dialog *)
+"InternetBlockedText" -> "The Wolfram System is currently not allowed to access the Internet. Change the setting in Internet Connectivity section of the Preferences dialog.",
+"InternetBlockedButton" -> "Open Internet Connectivity",
+"InternetBlockedClose" -> "Close",
+
+(* status messages *)
+"statusContent" -> "Downloading content...",
+"statusContentPrefix" -> "Downloading content: ",
+"statusDirectoryInfo" -> "Downloading directory info...",
+"statusCheckingDirectoryInfo" -> "Checking directory info...",
+"statusSaving" -> "Saving: ",
+"statusStarting" -> "Starting up",
+"statusReading" -> "Reading local file system data",
+"statusConnecting" -> "Connecting to Wolfram Cloud",
+
+(* activity dialog *)
+"ActivityTitle" -> "Wolfram Cloud Activity",
+"ActivityCancelAll" -> "Cancel All",
+"ActivityCancelAllQuit" -> "Cancel All and Quit",
+"ActivityCancelAllSignOut" -> "Cancel All and Sign Out",
+"ActivityNone" -> "No activity",
+"ActivityOpening" -> "Opening",
+"ActivitySaving" -> "Saving",
+"ActivityWaiting" -> "Waiting\[Ellipsis]",
+"ActivityCancelPending" -> "Cancel",
+"ActivityCancelQueued" -> "Remove from queue",
+"ActivityCancelFailed" -> "Cancel",
+
+(* activity errors *)
+"ActivityError409" -> "There is a conflicting version of this file on the Wolfram Cloud. Would you like to replace it?",
+"ActivityError409Cancel" -> "No, Cancel",
+"ActivityError409Replace" -> "Yes, Replace",
+"ActivityError1600Open" -> "File failed to open: Could not connect to the Wolfram Cloud",
+"ActivityError1600Save" -> "File failed to save: Could not connect to the Wolfram Cloud",
+"ActivityError1601Open" -> "File failed to open: Internet not allowed",
+"ActivityError1601Save" -> "File failed to save: Internet not allowed",
+"ActivityError1602Open" -> "File failed to open: No internet connection found",
+"ActivityError1602Save" -> "File failed to save: No internet connection found",
+"ActivityError1603" -> "Please sign in to access this file from the Wolfram Cloud",
+"ActivityError1700Save" -> "Could not save file to Wolfram Cloud. You have reached your subscription limit.",
+"ActivityGenericOpenError" -> "File failed to open: error ",
+"ActivityGenericSaveError" -> "File failed to save: error ",
+"ActivityErrorAccountSettings" -> "Account settings",
+"ActivityErrorTryAgain" -> "Try Again",
+"ActivityErrorLogin" -> "Sign In",
+
+(* notifications: attached cells / toolbars *)
+"notifySaving" -> "Saving to Wolfram Cloud\[Ellipsis]",
+"notifyViewActivity" -> "View Wolfram Cloud Activity",
+"notifyFailed" -> "Could not save file to Wolfram Cloud.",
+"notifyMoreInfo" -> "for more information",
+"notifyOffline" -> "Cannot connect to Wolfram Cloud. Changes cannot be saved.",
+
+(* cloud publish *)
+"CancelButtonLabel" -> "Cancel",
+"CloseButtonLabel" -> "Close",
+"LoginButtonLabel" -> "Sign In",
+"PublishButtonLabel" ->"Publish",
+"RetryButtonLabel" -> "Try Again",
+"WindowTitle" ->"Publish to Cloud",
+
+
+(* cloud publish: form panel *)
+"FormDefaultPublishDirectory" -> "Published",
+"FormNamedFileDirectory" -> "Specify a name",
+"FormOpenerTitle" -> "Advanced",
+"FormBadFilenameError" -> "Name can only contain English letters, numbers, spaces and the following symbols:-._",
+"FormPasswordFieldFooter" -> "Any sequence of characters is allowed",
+"FormPasswordFieldTitle" -> "Specify a password",
+"FormPasswordMissingError" -> "Please specify a password",
+"FormAddNameLabel" -> "Specify a name",
+"FormAutoGenerateNameLabel" -> "Automatically assign URL",
+"FormNoPasswordLabel" -> "Allow anyone to access",
+"FormPasswordLabel" -> "Password protect",
+"FormSubtitle" -> "Create a publicly accessible copy of your notebook",
+"FormTitle" -> "Publish to Cloud",
+
+
+(* cloud publish: completed panel *)
+"CompletedURLLabel" -> "URL",
+"CompletedEmbedCode" -> "Embed Code",
+"CompletedLinkLabel" -> "View \[RightGuillemet]",
+"CompletedSubtitle" -> "Your notebook was published.",
+"CompletedTitle" -> "Published",
+"CopyToClipboard" -> "Copy to clipboard",
+"Copied" -> "Copied!",
+
+(* cloud publish: other panels *)
+"FailedPublishTitle" -> "Unable to Publish",
+"DownloadDisabledTitle" -> "Internet Access Not Allowed",
+"NoInternetTitle" -> "No Internet Connection",
+"NotLoggedInTitle" -> "Wolfram Cloud Disconnected",
+"DownloadDisabledMessage" -> "The Wolfram System is currently not allowed to access the internet. Change the setting in the Internet Connectivity section of the Preferences dialog, and then try again.",
+"InitializationFailedMessage" -> "The Wolfram System was unable to initialize publishing. Please try again.",
+"NoInternetMessage" -> "Please check your internet connection and try again.",
+"NotLoggedInMessage" -> "The Wolfram System is currently disconnected from the Wolfram Cloud. Please sign in to publish.",
+"PublishFailedMessage" -> "Your notebook could not be published at this time. Please try again. If this problem persists, please \!\(\*ButtonBox[TagBox[TemplateBox[{\"contact us.\", StyleBox[\"contact us.\", \"HyperlinkActive\"], BaseStyle -> \"Hyperlink\"}, \"MouseoverTemplate\"], MouseAppearanceTag[\"LinkHand\"]], BaseStyle -> \"Hyperlink\", ButtonFunction :> Function[FE`hyperlinkCoded[\"http://www.wolfram.com/support/contact/email\", \"source=cloudpublishdialog\", \"topic=feedback\"]], Evaluator -> \"System\"]\)",
+"DownloadDisabledButtonLabel" -> "Open Internet Connectivity"
+}
+@|
+@@resource MathematicaClosingDialog
+{
+"NewNotebook" -> "New Notebook",
+"ToggleText" -> "Always exit after closing last window"
+}
+@|
+@@resource ChooseFileDialogs
+{
+"OptionsButtonText" -> "Options...",
+"ChooseButtonText" -> "Choose",
+"OpenFileFilterLabelText" -> "Enable:",
+"SaveFileFilterLabelText" -> "Format:"
+}
+@|
+@@resource MiscellaneousDialogs
+{
+"ReindexingDialogObsoleteIndexDetected" -> "Obsolete external package indices detected",
+"ReindexingDialogShowDetails" -> "Show details \[RightGuillemet]",
+"ReindexingDialogHideDetails" -> "Hide details \[LeftGuillemet]",
+"ReindexingDialogCreatingNewIndices" -> "New indices are now being created\[Ellipsis]",
+"ReindexingDialogExternalPackagesToReindex" -> " External Packages to Reindex",
+"ReindexingDialogPackageListPreamble" -> "You have the following Wolfram Language packages that only contain\nlegacy documentation indices:",
+"ReindexingDialogMayTakeAWhile" -> "This may take a while, but will happen only once.",
+"ReindexingDialogWindowTitle" -> "External Package Reindexing Required"
+}
+@|
+@|
+@|
+@| dialog button texts
+@|
+@|
+@@resource okButtonText
+OK
+@|
+@@resource okButtonTextWithMnemonic
+&OK
+@|
+@@resource cancelButtonText
+Cancel
+@|
+@@resource cancelButtonTextWithMnemonic
+&Cancel
+@|
+@@resource closeButtonText
+Close
+@|
+@@resource yesButtonText
+Yes
+@|
+@@resource yesButtonTextWithMnemonic
+&Yes
+@|
+@@resource noButtonText
+No
+@|
+@@resource noButtonTextWithMnemonic
+&No
+@|
+@@resource alwaysButtonText
+Always
+@|
+@@resource alwaysButtonTextWithMnemonic
+&Always
+@|
+@@resource continueButtonText
+Continue
+@|
+@@resource continueButtonTextWithMnemonic
+Co&ntinue
+@|
+@@resource saveButtonText
+Save
+@|
+@@resource saveButtonTextWithMnemonic
+&Save
+@|
+@@resource dontSaveButtonText
+Don't Save
+@|
+@@resource dontSaveButtonTextWithMnemonic
+&Don't Save
+@|
+@@resource quitButtonText
+Quit
+@|
+@@resource quitButtonTextWithMnemonic
+&Quit
+@|
+@@resource reviewButtonText
+Review Unsaved...
+@|
+@@resource dontSaveAnyButtonText
+Don't Save Any
+@|
+@@resource pasteLiteralButtonText
+Paste Literal
+@|
+@@resource purchaseLicenseButtonText
+Purchase
+@|
+@@resource continueWaitingButtonText
+Continue Waiting
+@|
+@@resource abortButtonText
+Abort
+@|
+@@resource disableDynamicUpdatingButtonText
+Disable Dynamic Updating
+@|
+@@resource learnMoreButtonText
+Learn More
+@|
+@|
+@|
+@| dialog main & sub texts
+@|
+@|
+@@resource reviewUnsavedDocsQuittingDialogMainText
+Do you want to review your unsaved documents before quitting?
+@|
+@@resource reviewUnsavedDocsClosingDialogMainText
+Do you want to review your unsaved documents before closing?
+@|
+@@resource reviewUnsavedDocsLoggingOutDialogMainText
+Do you want to review your unsaved documents before signing out?
+@|
+@@resource reviewUnsavedDocsDialogSubText
+If you don't review your documents, all your changes could be lost.
+@|
+@@resource quitKernelDialogMainText
+Do you really want to quit the kernel?
+@|
+@@resource getCoordinatesExplanationDialogMainText
+To get coordinates in a 2D plot, hold down the Command key and move the mouse over the area of the plot.  The coordinate values of the mouse position will be displayed in the window's status area.
+@|
+@@resource getCoordinatesExplanationDialogSubText
+When you click one or more times while holding down the Command key, the coordinates will be selected.  You can then copy and paste the coordinate values into an input cell.
+@|
+@@resource removeOptionsWarningMainText
+Do you really want to remove all the option settings from the current selection?
+@|
+@@resource removeOptionsWarningSubText
+Choose Recursive to remove options from all subelements as well.
+@|
+@@resource saveCompanionPackageMainText
+Do you want to create an Auto Save Package?
+@|
+@@resource saveCompanionPackageSubText
+The Notebook you asked to save contains Initialization cells.  If you want to be able to load this Notebook into the kernel directly using the Get or Needs functions, you need to create an Auto Save Package.  This will cause the front end to automatically maintain a package (.m) file in the same directory as the Notebook.  The package will contain all the initialization cells from the Notebook; it will be updated each time the Notebook is saved.
+@|
+@@resource pastingTraditionalFormWarningMainText
+Do you want to wrap the pasted TraditionalForm expression in a FormBox?
+@|
+@@resource pastingTraditionalFormWarningSubText
+You are attempting to paste a TraditionalForm expression into a StandardForm cell.  If you want to be sure that the meaning of the expression will be preserved, you should first convert it to StandardForm.
+@|
+@@resource prefsFileModifiedMainText
+The preference file %s has been modified outside this session of the frontend.  Do you want to overwrite the file?
+@|
+@@resource prefsFileModifiedSubText
+Answering no will make your preferences read\[Hyphen]only and not saved to disk.
+@|
+@@resource evaluationTraditionalFormMainText
+You are asking the Wolfram Language to interpret TraditionalForm input.  Only InputForm and StandardForm provide complete and precise specifications of Wolfram Language Input.  Do you want to evaluate the input?
+@|
+@@resource evaluationNonStandardFormMainText
+You are giving input that is not InputForm or StandardForm.  Do you want to evaluate the input?
+@|
+@@resource evaluationNonStandardFormSubText
+The Wolfram Language has rules for trying to convert input from other forms, but ambiguities may arise.  To see how your expression will be converted, choose items from the "Convert To" submenu of the "Cell" menu.
+@|
+@@resource syntaxErrorInFileMainText
+There was a syntax error in the file being read.  Do you want to open it as plain text?
+@|
+@@resource syntaxErrorInFileSubText
+A syntax error indicates that the file has become corrupted, or was generated incorrectly.  If you choose Yes, the file will be opened as a plain text file, with the position of the syntax error selected.  If you are able to fix the error, save the file and open it again.
+@|
+@@resource reallyDeleteAllOutputMainText
+Do you really want to delete all the output cells in the notebook?
+@|
+@@resource reallyDeleteAllOutputSubText
+This operation cannot be undone.
+@|
+@@resource stylesDialogMainText
+This notebook is using a shared style sheet.  Do you want to edit a private copy of the style sheet or the shared copy?
+@|
+@@resource pasteAsMathMLMainText
+The text you are pasting appears to be a MathML expression.  You can either paste the literal text or try to paste the corresponding typeset expression.  Do you want to paste the typeset expression?
+@|
+@@resource pasteAsTeXMainText
+The text you are pasting appears to be a TeX or LaTeX expression.  You can either paste the literal text or try to paste the corresponding typeset expression.  Do you want to paste the typeset expression?
+@|
+@@resource wrappedToBeginningText
+Wrapped around to beginning of notebook.
+@|
+@@resource wrappedToEndText
+Wrapped around to end of notebook.
+@|
+@@resource changingTrustedPathMainText
+NotebookSecurityOptions such as TrustedPath, UntrustedPath, and TrustByDefault control whether Notebooks are allowed to execute Wolfram Language programs automatically.  Are you sure you want to change the value of one of these options?
+@|
+@@resource changingTrustedPathSubText
+Do not add a directory to TrustedPath or remove a directory from UntrustedPath unless you trust the source of the Notebooks in that directory.  If you are unsure why this dialog is appearing, choose No.
+@|
+@@resource pasteDynamicMainText
+The content you are inserting may automatically execute Wolfram Language programs.  Are you sure you want to insert this content?
+@|
+@@resource savePackageMainText
+This document contains TraditionalForm cells. Are you sure you want to continue?
+@|
+@@resource savePackageSubText
+Saving this document will convert all TraditionalForm cells to StandardForm.
+@|
+@@resource askIfRenderClipboardData
+There is a large amount of data on the clipboard. Would you like to process it to make it available to other applications when the Wolfram System is no longer running?
+@|
+@@resource askIfConvertToNotebook
+You are attempting to edit a Playable document.  Would you like to convert this into a notebook first, so changes can be made?
+@|
+@@resource askIfAbortCloudTasks
+There is still data being uploaded to the Wolfram Cloud.  Do you wish to continue to wait for the data to be sent?
+@|
+@@resource formattingNotebookContents
+Formatting Notebook Contents
+@| 
+@@resource HandwritingInputTitle
+Math Handwriting Input
+@|
+@@resource changingExternalChannelFunctionsMainText
+WARNING: Communication on user channels, whether listening or sending a message, may involve executing custom Wolfram Language code on your computer.  Do you want to enable external channel functions?
+@|
+@@resource changingExternalChannelFunctionsSubText
+The custom code is created by the channel author and is not generally approved or supported by Wolfram Research. Executing custom user code can destroy your data, harm your computer, and disclose your personal information. Never communicate on a channel whose author you do not trust.
+@|
+@@resource abortDynamicDialogMainText
+The kernel is not responding to a dynamic evaluation.
+@|
+@@resource abortDynamicDialogSubText
+You may either choose to abort and restart the kernel or continue waiting.  Dynamic updating can be re-enabled using the Dynamic Updating Enabled command in the Evaluation menu.
+@|
+@@resource disableDynamicDialogMainText
+One or more dynamic objects are taking excessively long to finish evaluating.
+@|
+@@resource disableDynamicDialogSubText
+You may either disable further dynamic evaluations or continue waiting.  Dynamic updating can be re-enabled using the Dynamic Updating Enabled command in the Evaluation menu.
+@|
+@@resource progressDialogCancelText
+Press Command-period to cancel.
+@|
+@@resource obsoleteCDFFormatWarningMainText
+You can now use notebooks (.nb) interactively in Wolfram Player. Although you can still save your notebooks as CDFs, this is no longer required.
+@|
+@@resource obsoleteCDFFormatWarningSubText
+Extended interactivity in Wolfram Player requires saving as .cdf, and is supported by Wolfram Enterprise products only.
+@|

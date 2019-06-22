@@ -1,0 +1,248 @@
+<!-- Notebook ML DTD 1.0
+	
+	NotebookML is a representation of Mathematica notebooks in XML.
+	Copyright (c) 2002 Wolfram Research, Inc. All rights reserved.
+
+	The comments in this DTD are not intended to explain everything possible in a NotebookML.  Before looking at
+	this, you should be at least minimally familiar w/ Mathematica notebooks.  This does attempt to explain the
+	differences between NotebookML and Mathematica Notebook structures, as well as explaining the meaning of
+	finer points, even if they are the same as in Mathematica Notebooks
+-->
+
+
+<!--prevent recursion on NotebookML DTD.-->
+<!-- if a referenced DTD references the NotebookML DTD, infinite recursion
+	will result.  If a conditional section using the "%include-notebookml"
+	entity is used, it will be ignored, preventing recursion.-->
+<!ENTITY % include-notebookml "IGNORE">
+
+
+<!-- include MathML2 -->
+<!-- allow conditional inclusion, both to allow smaller DTD's and to
+	prevent infinite recursion -->
+<!ENTITY % include-mathml "INCLUDE">
+<![%include-mathml;[
+<!ENTITY % mathml2dtd SYSTEM "http://www.w3.org/TR/MathML2/dtd/mathml2.dtd">
+%mathml2dtd;
+]]>
+
+<!-- **************************************-->
+<!-- below are all the entity declarations-->
+
+<!-- ExpressionML content -->
+<!ENTITY % expr "( String | Symbol | Number | Function )">
+
+
+<!-- entity for all the different types of boxes.-->
+<!ENTITY % boxes "( RowBox | GridBox | SuperscriptBox | SubscriptBox 
+		| SubsuperscriptBox | OverscriptBox | UnderscriptBox | UnderoverscriptBox 
+		| FractionBox | SqrtBox | RadicalBox | StyleBox | FrameBox 
+		| AdjustmentBox | ButtonBox | FormBox | InterpretationBox | TagBox 
+		| ErrorBox | CounterBox | ValueBox | OptionValueBox)">
+
+<!--content for any box element.  it can be any other box, an inline cell, or pure text (which is put into a 'string' element)-->		
+<!ENTITY % boxcontent "( %boxes; | Cell | String )">
+
+
+
+<!--
+	ExpressionML
+-->
+<!ELEMENT Expression %expr;>
+<!ATTLIST Expression
+   xmlns CDATA #IMPLIED
+   xmlns:mathematica CDATA #IMPLIED>
+
+<!--
+	options like TaggingRules, CellFrameLabels, and ImageSoundCache
+	have non-ExpressionML data nested inside other a Function element.
+	due to a limitation of DTD's, it is necessary to allow them all
+	here.
+-->
+<!ELEMENT Function ( (%expr; | XMLData | Cell | %boxes; | GraphicsData)+ )>
+<!ATTLIST Function
+	ArgumentCount	CDATA	#IMPLIED>
+
+<!ELEMENT String (#PCDATA)>
+<!ATTLIST String
+	xml:space (preserve) #FIXED "preserve">
+
+<!ELEMENT Symbol (#PCDATA)>
+
+<!ELEMENT Number (#PCDATA)>
+<!-- note that only Precision or Accuracy should be set, not both-->
+<!ATTLIST Number
+	Precision	CDATA	#IMPLIED
+	Accuracy	CDATA	#IMPLIED>
+
+
+
+<!--************************************************-->
+<!--this section defines all the stuff for notebook, cell, and box content.-->
+<!--that is, every FrontEnd Object.-->
+
+
+<!-- the List container is used in Notebooks, in box structures, TextData, etc.-->
+<!ELEMENT List ( Cell | %boxes; | String | Number | Symbol | List | Option)*>
+<!ELEMENT Options (Option)*>
+
+<!-- wrapper for Cell & StyleBox styles.  Note that in 5.0 multiple strings will
+	be allowed.-->
+<!ELEMENT Style (String)>
+
+<!-- this List should only contain Cells -->
+<!ELEMENT Notebook ( List , Options? )>
+<!--though the "xmlns" is listed here, it can actually appear anywhere.
+	  if it was anywhere then on Notebook or Cell, validity would be
+	  broken, unless there was a corresponding listing in the
+	  internal subset-->
+<!ATTLIST Notebook
+    xmlns 				CDATA #IMPLIED
+    xmlns:mathematica	CDATA #IMPLIED
+    xmlns:xhtml			CDATA #IMPLIED
+    CreatedBy			CDATA #IMPLIED>
+
+<!-- Cells -->
+<!ELEMENT Cell ( ( String | TextData | BoxData | GraphicsData | OutputFormData | RawData | StyleData | OLEData | CellGroupData ) , Style? , Options? )>
+<!ATTLIST Cell
+	xmlns 				CDATA	#IMPLIED
+	xmlns:mathematica	CDATA	#IMPLIED
+	xmlns:xhtml			CDATA	#IMPLIED
+	CreatedBy			CDATA	#IMPLIED
+	class				CDATA	#IMPLIED>
+
+<!ELEMENT CellGroupData (List, Symbol)>
+
+<!--TextData.-->
+<!-- this List should only take Strings, StyleBoxes, Cells, CounterBoxes, ValueBoxes,
+	& OptionValueBoxes-->
+<!ELEMENT TextData ( List )>
+
+<!-- this List should contain any box content.-->
+<!ELEMENT BoxData ( ( List, xhtml:img*, math?, xhtml:img* ) | (xhtml:img*, math, xhtml:img*) | (xhtml:img+) )>
+
+<!-- this List should be contain any box content.-->
+<!ELEMENT RowBox (List)>
+
+<!-- This List should contain sub-Lists, each of which can contain any box content.  Each
+	sublist represents a row of the GridBox.
+eg:
+	<GridBox>
+	  <List>
+	    <List>
+	      <String>1</String>
+	      <String>2</String>
+	    </List>
+	    <List>
+	      <String>3</String>
+	      <String>4</String>
+	    </List>
+	  </List>
+	</GridBox>
+
+which represents something like:
+*****
+|1|2|
+*****
+|3|4|
+*****
+-->
+
+<!ELEMENT GridBox (List, Options?)>
+
+<!-- the first argument of these boxes is the base.  The second will be first script in the name, the third
+		will be the third script in the name. eg:
+		SuperscriptBox[base,superscript]
+		SubsuperscriptBox[base,subscript,superscript]
+-->
+<!ELEMENT SuperscriptBox ( %boxcontent; , %boxcontent; , Options? )>
+<!ELEMENT SubscriptBox ( %boxcontent; , %boxcontent; , Options? )>
+<!ELEMENT SubsuperscriptBox ( %boxcontent; , %boxcontent; , %boxcontent; , Options? )>
+<!ELEMENT OverscriptBox ( %boxcontent; , %boxcontent; , Options? )>
+<!ELEMENT UnderscriptBox (  %boxcontent;, %boxcontent; , Options? )>
+<!ELEMENT UnderoverscriptBox ( %boxcontent; , %boxcontent; , %boxcontent; , Options? )>
+<!ELEMENT FractionBox ( %boxcontent; , %boxcontent;, Options? )>
+<!ELEMENT SqrtBox ( %boxcontent; , Options? )>
+<!ELEMENT RadicalBox ( %boxcontent; , %boxcontent; , Options? )>
+<!ELEMENT FrameBox ( %boxcontent; , Options? )>
+
+<!--StyleBox allows you to apply an inline style, or specify extra options.  It can also exist w/ out a style
+		or options, though it has no meaning then-->
+<!ELEMENT StyleBox ( %boxcontent; , Style? , Options? )>
+<!ATTLIST StyleBox
+		class	CDATA	#IMPLIED>
+
+<!-- AdjustmentBox can be used to slightly adjust the display of its boxes.-->
+<!ELEMENT AdjustmentBox ( %boxcontent; , Options? )>
+
+<!-- ButtonBoxes create interactive buttons in Notebooks-->
+<!ELEMENT ButtonBox ( %boxcontent; , Options? )>
+
+<!-- these three boxes have arbitrary kernel expressions as their second argument.
+		The expressions are converted as though they are wrapped in Hold[], so Sin[Pi]
+		will stay as Sin[Pi].-->
+<!ELEMENT FormBox           ( %boxcontent; , Expression , Options? )>
+<!ELEMENT InterpretationBox ( %boxcontent; , Expression , Options? )>
+<!ELEMENT TagBox            ( %boxcontent; , Expression , Options? )>
+
+<!-- the first argument is only a string in 4.1 and earlier, in 5.0 it should be an %expr;.
+	If there are 2 arguments, the second argument represents the CellTag.
+	If there are 3 arguments, the second argument represents the FileName, and the
+		third represents the CellTag
+-->
+
+<!ELEMENT CounterBox     ( String , ( (String) ,  String? )? , Options?)>
+<!ELEMENT ValueBox       ( String , ( (String) ,  String? )? , Options?)>
+<!ELEMENT OptionValueBox ( String , ( (String) ,  String? )? , Options?)>
+
+<!--if an invalid Box expression is sent, Mathematica generates an ErrorBox to represent it.-->
+<!ELEMENT ErrorBox ( %boxcontent; , Options? )>
+
+<!--GraphicsData holds the data for graphics, held in an
+	 element whose name is the type of graphic-->
+<!ELEMENT GraphicsData (PostScript | Bitmap | QuickTime | PICT | Metafile | MacintoshSound | WindowsSound | xhtml:img)+>
+<!ELEMENT PostScript     (#PCDATA)>
+<!ELEMENT Bitmap         (#PCDATA)>
+<!ELEMENT QuickTime      (#PCDATA)>
+<!ELEMENT PICT           (#PCDATA)>
+<!ELEMENT Metafile       (#PCDATA)>
+<!ELEMENT MacintoshSound (#PCDATA)>
+<!ELEMENT WindowsSound   (#PCDATA)>
+<!ELEMENT xhtml:img EMPTY>
+<!-- TODO: look into adding more of the HTML attrs -->
+<!ATTLIST xhtml:img
+	src		CDATA	#IMPLIED
+	width	CDATA	#IMPLIED
+	height	CDATA	#IMPLIED
+	border	CDATA	#IMPLIED
+	align	CDATA	#IMPLIED
+	alt		CDATA	#IMPLIED>
+
+<!--OutputFormData has 2 children - one for the inputform version, one for the outputform version-->
+<!ELEMENT OutputFormData (String , String?)>
+
+<!--rawdata can only have string content.-->
+<!ELEMENT RawData (#PCDATA)>
+
+
+<!--StyleData elements are used in a Mathematica Stylesheet, to declare which style the Cell is defining.-->
+<!-- the first child defines what Style is being defined, the second (optional) defines
+			which environment its modifying.  The first can only be a Symbol if its the
+			Symbol All.-->
+<!ELEMENT StyleData ( (Symbol | String) , String? )>
+
+<!-- OLEData is basically treated as raw data -->
+<!ELEMENT OLEData (#PCDATA)>
+
+<!ELEMENT Option ( (String | Symbol),  ( Notebook | Options | %expr; | %boxes; | Cell | GraphicsData | XMLData) )>
+
+
+<!--
+	if the user dumps their own data inside the "XMLData" option to TaggingRules,
+	they can specify a more specific content model if they want by over-riding this
+	entity.  They still need to declare all of the appropriate elements in the
+	internal subset.
+-->
+
+<!ENTITY % XMLData-content-model "ANY">
+<!ELEMENT XMLData %XMLData-content-model;>

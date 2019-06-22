@@ -1,0 +1,9 @@
+@@resource progressTextColor
+RGBColor[255,255,255]
+@|
+@@resource progressTextBackColor
+RGBColor[0,0,0]
+@|
+@@resource progressTextLocation
+{251, 255}
+@|

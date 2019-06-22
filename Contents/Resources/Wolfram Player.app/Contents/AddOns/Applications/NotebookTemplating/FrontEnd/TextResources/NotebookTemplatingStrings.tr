@@ -1,0 +1,46 @@
+@|
+@|
+@@resource NotebookTemplatingStrings
+{
+
+"TemplateNotebook" -> "Template Notebook",
+"TemplateSlot" -> "Slot",
+"TemplateExpression" -> "Expression",
+"RepeatingBlock" -> "Repeating Block",
+"CellBehavior" -> " Cell Behavior",
+"Preview" -> "Generate",
+"Help" -> "Help",
+"Cancel" -> "Cancel",
+"OK" -> "OK",
+
+"Named" -> "Named",
+"Positional" -> "Positional",
+
+"RBDdescription" -> "When a document is generated from this template notebook, the selected cell group will be repeated for each element in the repetition list.",
+"RBDlist" -> "Enter an explicit repetition list to loop over:",
+"RBDvariable" -> "Give a template variable whose value will be the repetition list:",
+"RBDexpression" -> "Give a template expression whose value will be the repetition list:",
+"RBinherit" -> "Inherit outer names (variables will be passed down to this block).",
+
+"TemplateSlotTooltip" -> "Insert a template slot to be filled when the template is applied",
+"TemplateExpressionTooltip" -> "Set a template expression to be evaluated when the template is applied",
+"RepeatingBlockTooltip" -> "Make the selected cell group be repeated for each element of the repetition list",
+"EvaluatableCellsTooltip" -> "Specify features such as visibility of evaluated cells when the template is applied",
+"PreviewTooltip" -> "Generate a preview of applying the template, using default values for slots",
+"HelpTooltip" -> "Open the documentation for document generation",
+"SlotBoxTooltip" -> "Click to edit the template slot",
+"ExpBoxTooltip" -> "Click to edit the template expression",
+
+"reportInputMenuDelete"->"Evaluate and Delete",
+"reportInputMenuHide"->"Evaluate and Hide",
+"reportInputMenuUnevaluated"->"Leave Unevaluated",
+"reportInputMenuExclude"->"Exclude Cell",
+"reportInputMenuRemove"->"Remove Special Behavior",
+
+"evaluationTooltipLabelsDelete"->"Evaluate and delete input when template is applied",
+"evaluationTooltipLabelsHide"->"Evaluate and hide input when template is applied",
+"evaluationTooltipLabelsUnevaluated"->"Leave unevaluated when template is applied",
+"evaluationTooltipLabelsExclude"-> "Ignore input when template is applied"
+
+}
+@|

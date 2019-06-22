@@ -1,0 +1,5 @@
+ProductFrontEndExecutable "WolframPlayer"
+ProductFrontEndName "Wolfram Player"
+ProductIDName "WolframEngine"
+ProductKernelName "Wolfram Language"
+RequireActivation "False"

@@ -1,0 +1,117 @@
+@@resource RGBColorValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"Red"->"\:7d05",
+	"Green"->"\:7da0",
+	"Blue"->"\:85cd",
+	"Opacity"->"\:4e0d\:900f\:660e\:5ea6",
+	"Color Chooser"->"\:984f\:8272\:9078\:64c7\:5668",
+	"Color Swatch"->"\:8272\:5361",
+	"Basic" -> "\:57fa\:672c",
+	"Advanced" -> "\:9ad8\:7d1a"
+}
+@|
+@@resource GrayLevelValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"Gray"->"\:7070",
+	"Opacity"->"\:4e0d\:900f\:660e\:5ea6",
+	"Color Chooser"->"\:984f\:8272\:9078\:64c7\:5668",
+	"Color Swatch"->"\:8272\:5361",
+	"Basic" -> "\:57fa\:672c",
+	"Advanced" -> "\:9ad8\:7d1a"
+}
+@|
+@@resource CMYKColorValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"Cyan"->"\:9752",
+	"Magenta"->"\:6d0b\:7ea2",
+	"Yellow"->"\:9ec3",
+	"Black"->"\:9ed1",
+	"Opacity"->"\:4e0d\:900f\:660e\:5ea6",
+	"Color Chooser"->"\:984f\:8272\:9078\:64c7\:5668",
+	"Color Swatch"->"\:8272\:5361",
+	"Basic" -> "\:57fa\:672c",
+	"Advanced" -> "\:9ad8\:7d1a"
+}
+@|
+@@resource HueValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"Hue"->"\:8272\:8abf",
+	"Saturation"->"\:98fd\:548c\:5ea6",
+	"Brightness"->"\:4eae\:5ea6",
+	"Opacity"->"\:4e0d\:900f\:660e\:5ea6",
+	"Color Chooser"->"\:984f\:8272\:9078\:64c7\:5668",
+	"Color Swatch"->"\:8272\:5361",
+	"Basic" -> "\:57fa\:672c",
+	"Advanced" -> "\:9ad8\:7d1a"
+}
+@|
+@@resource LABColorValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"Lightness"->"\:4eae\:5ea6",
+	"A"->"A",
+	"B"->"B",
+	"Opacity"->"\:4e0d\:900f\:660e\:5ea6",
+	"Color Chooser"->"\:984f\:8272\:9078\:64c7\:5668",
+	"Color Swatch"->"\:8272\:5361",
+	"Basic" -> "\:57fa\:672c",
+	"Advanced" -> "\:9ad8\:7d1a"
+}
+@|
+@@resource LCHColorValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"Lightness"->"\:4eae\:5ea6",
+	"C"->"C",
+	"H"->"H",
+	"Opacity"->"\:4e0d\:900f\:660e\:5ea6",
+	"Color Chooser"->"\:984f\:8272\:9078\:64c7\:5668",
+	"Color Swatch"->"\:8272\:5361",
+	"Basic" -> "\:57fa\:672c",
+	"Advanced" -> "\:9ad8\:7d1a"
+}
+@|
+@@resource LUVColorValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"Lightness"->"\:4eae\:5ea6",
+	"U"->"U",
+	"V"->"V",
+	"Opacity"->"\:4e0d\:900f\:660e\:5ea6",
+	"Color Chooser"->"\:984f\:8272\:9078\:64c7\:5668",
+	"Color Swatch"->"\:8272\:5361",
+	"Basic" -> "\:57fa\:672c",
+	"Advanced" -> "\:9ad8\:7d1a"
+}
+@|
+@@resource XYZColorValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"X"->"X",
+	"Y"->"Y",
+	"Z"->"Z",
+	"Opacity"->"\:4e0d\:900f\:660e\:5ea6",
+	"Color Chooser"->"\:984f\:8272\:9078\:64c7\:5668",
+	"Color Swatch"->"\:8272\:5361",
+	"Basic" -> "\:57fa\:672c",
+	"Advanced" -> "\:9ad8\:7d1a"
+}
+@|
+@@resource ColorSchemeChooserStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"]
+}
+@|

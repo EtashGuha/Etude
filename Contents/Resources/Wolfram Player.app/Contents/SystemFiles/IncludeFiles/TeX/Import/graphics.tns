@@ -1,0 +1,41 @@
+%% graphics.tns, the TeXImport implementation of the LaTeX graphics package.
+\makeatletter
+
+%%
+%% This current implementation of the graphics package for TeXImport
+%% creates a simple macro fro importing graphics into Mathematica,
+%% \Gimclude@graphics, which takes a single argument. it also implements
+%% a series of macros to identify any optional arguments which should be
+%% of the form [#1,#2][#3,#4]. None of these do anything at this time,
+%% but it allows us to capture and dispose of them for now and also
+%% allows us to add code to do something intelligent with them at a later
+%% time. There is much more to the original package which will be added at
+%% a later time. The user macro is of course \includegraphics with or without
+%% a star which takes one argument, the filename, and optional arguments as
+%% described above.
+%%
+
+
+\def\includegraphics{%
+  \@ifstar
+    {\Gin@i}%
+    {\Gin@i}}
+\def\Gin@i{%
+  \@ifnextchar[%]
+    \Gin@ii
+    {\Ginclude@graphics}}
+\def\Gin@ii[#1]{%
+  \@ifnextchar[%]
+    {\Gin@iii[#1]}
+    {\Gin@iii[0,0][#1]}}
+\def\Gin@iii[#1,#2][#3,#4]#5{%
+  \Ginclude@graphics{#5}%
+}
+
+\def\Ginclude@graphics#1{%
+        \TNBMRun{System`Convert`TeXImportDump`texGraphicsImport["#1"]}%
+}
+
+\makeatother
+%% end graphics.tns
+

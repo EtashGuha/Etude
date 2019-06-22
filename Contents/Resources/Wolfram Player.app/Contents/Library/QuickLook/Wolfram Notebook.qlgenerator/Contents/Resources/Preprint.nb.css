@@ -1,0 +1,2880 @@
+div.AddOnsLink {
+	font-family: Courier, monospaced;
+	color: #454f99;
+}
+div.AddOnsLinkText {
+	font-family: Times, serif;
+	color: #454f99;
+}
+div.AxiomLabel {
+	font-weight: bold;
+	font-style: plain;
+}
+div.BF {
+	font-weight: bold;
+}
+div.CellExpression {
+	font-family: Courier, monospaced;
+	font-size: 12px;
+	background: #ffffff;
+	margin-left: 6px;
+}
+div.CellLabel {
+	font-family: Helvetica, sans-serif;
+	color: #454f99;
+	font-size: 9px;
+}
+div.ConjectureLabel {
+	font-weight: bold;
+	font-style: plain;
+}
+div.CopyEvaluate {
+	font-family: "Lucida Grande";
+	font-size: 13px;
+}
+div.CopyEvaluateCell {
+	font-family: "Lucida Grande";
+	font-size: 13px;
+}
+div.CorollaryLabel {
+	font-weight: bold;
+	font-style: plain;
+}
+div.DefinitionLabel {
+	font-weight: bold;
+	font-style: plain;
+}
+div.DemosLink {
+	color: #454f99;
+}
+div.DisplayFormula {
+	font-family: Courier, monospaced;
+	margin-left: 60px;
+}
+div.DisplayFormulaNumbered {
+	font-family: Courier, monospaced;
+	margin-left: 60px;
+}
+div.Evaluate {
+	font-family: "Lucida Grande";
+	font-size: 13px;
+}
+div.EvaluateCell {
+	font-family: "Lucida Grande";
+	font-size: 13px;
+}
+div.ExampleLabel {
+	font-weight: bold;
+	font-style: italic;
+}
+div.Footer {
+	font-family: "Verdana";
+	font-size: 6px;
+	font-style: italic;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.FrameLabel {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+}
+div.FunctionTemplateArgument {
+	font-style: italic;
+}
+div.FunctionTemplateHighlight {
+	font-weight: bold;
+}
+div.GettingStartedLink {
+	color: #454f99;
+}
+div.Graphics {
+	font-family: Times, serif;
+	color: #000000;
+	font-size: 10px;
+	font-weight: plain;
+	margin-left: 4px;
+}
+div.Header {
+	font-family: "Verdana";
+	font-size: 7px;
+	font-style: italic;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.HyperlinkActive {
+	color: #d27d22;
+}
+div.IT {
+	font-style: italic;
+}
+div.Inert {
+	background: #dee7f8;
+}
+div.InfoCell {
+	font-family: Helvetica, sans-serif;
+}
+div.InfoHeading {
+	color: #747474;
+	font-size: 10px;
+	font-weight: bold;
+}
+div.InformationCell {
+	background: #f6edd6;
+	margin-left: 20px;
+}
+div.InformationLink {
+	color: #454f99;
+}
+div.InformationLinkLF {
+	color: #454f99;
+}
+div.InlineCell {
+	text-align: left;
+}
+div.InlineCellEditing {
+	background: #f6edd6;
+}
+div.InlineFormula {
+	margin-left: 10px;
+	margin-right: 4px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+}
+div.InlineOutput {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	margin-left: 66px;
+	margin-right: 4px;
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+div.InputForm {
+	font-family: Courier, monospaced;
+}
+div.InputOnly {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	margin-left: 66px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Item {
+	margin-left: 75px;
+	margin-right: 10px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+	display: list-item;
+	list-style-type: circle;
+}
+div.ItemNumbered {
+	margin-left: 75px;
+	margin-right: 10px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+	display: list-item;
+	list-style-type: square;
+}
+div.ItemParagraph {
+	margin-left: 75px;
+	margin-right: 10px;
+	margin-bottom: 4px;
+	margin-top: 1px;
+}
+div.ItemizedPicture {
+	margin-left: 88px;
+	margin-right: 4px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+}
+div.Label {
+	font-family: "Verdana";
+	font-size: small;
+}
+div.Large {
+	font-size: 24px;
+}
+div.LemmaLabel {
+	font-weight: bold;
+	font-style: plain;
+}
+div.Link {
+	color: #1a1a80;
+}
+div.ListGraphic {
+	margin-left: 88px;
+	margin-right: 4px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+}
+div.MR {
+	font-family: Courier, monospaced;
+	font-weight: plain;
+	font-style: plain;
+}
+div.MSG {
+	font-family: "Lucida Grande";
+	font-size: 11px;
+}
+div.MainBookLink {
+	color: #454f99;
+}
+div.MainBookLinkMR {
+	font-family: Courier, monospaced;
+	color: #454f99;
+}
+div.MasterIndexLink {
+	color: #454f99;
+}
+div.MathCaption {
+	color: #333333;
+	margin-left: 66px;
+	margin-right: 12px;
+	margin-bottom: 2px;
+	margin-top: 24px;
+	border-color: #b3b3b3;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 1px;
+}
+div.Medium {
+	font-size: 12px;
+}
+div.Message {
+	font-family: "Lucida Grande";
+	color: #af511b;
+	font-size: 11px;
+	margin-left: 66px;
+}
+div.MessagesWindow {
+	background: #f9e4dc;
+}
+div.NotationMadeBoxesTag {
+	background: #e6e3ff;
+}
+div.NotationPatternTag {
+	background: #ffe6fa;
+}
+div.NotationTemplateTag {
+	background: #ffffd9;
+}
+div.NotebookLink {
+	font-family: Times, serif;
+	color: #454f99;
+}
+div.NotebookLinkMR {
+	font-family: Courier, monospaced;
+	color: #454f99;
+}
+div.Notes {
+	font-family: "Verdana";
+	font-size: 11px;
+	font-weight: plain;
+	margin-left: 50px;
+	margin-right: 24px;
+	margin-bottom: 9px;
+	margin-top: 7px;
+	display: list-item;
+	list-style-type: square;
+}
+div.ObjectName {
+	font-family: "Verdana";
+	font-size: 24px;
+	font-weight: bold;
+	margin-left: 24px;
+	margin-right: 22px;
+	margin-bottom: 6px;
+	margin-top: 16px;
+}
+div.OpenCloseItemizedPicture {
+	margin-left: 88px;
+	margin-right: 4px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+}
+div.OtherInformationLink {
+	color: #454f99;
+}
+div.OtherInformationLinkMR {
+	font-family: Courier, monospaced;
+	color: #454f99;
+}
+div.OutputForm {
+	font-family: Courier, monospaced;
+	text-align: left;
+}
+div.PageLink {
+	color: #0000ff;
+	font-size: 12px;
+}
+div.PageNumber {
+	font-family: "Verdana";
+	font-size: 7px;
+	font-weight: bold;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 4px;
+	margin-top: 1px;
+}
+div.Paste {
+	font-family: "Lucida Grande";
+	font-size: 13px;
+}
+div.Picture {
+	margin-left: 12px;
+	margin-bottom: 0px;
+	margin-top: 7px;
+}
+div.PictureGroup {
+	margin-left: 41px;
+	margin-right: 4px;
+	margin-bottom: 0px;
+	margin-top: 4px;
+}
+div.Placeholder {
+	font-family: "Verdana";
+	color: #7e7e7e;
+	font-size: 9px;
+	font-weight: plain;
+	font-style: italic;
+	background: #fff8cb;
+}
+div.PreviousNext {
+	font-family: Helvetica, sans-serif;
+	color: #808080;
+	font-size: 10px;
+	text-align: left;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.PrimaryPlaceholder {
+	font-style: italic;
+	background: #e9e381;
+}
+div.Print {
+	font-family: Courier, monospaced;
+	margin-left: 60px;
+}
+div.ProofLabel {
+	font-weight: bold;
+	font-style: italic;
+}
+div.PropositionLabel {
+	font-weight: bold;
+	font-style: plain;
+}
+div.RM {
+	font-weight: plain;
+	font-style: plain;
+}
+div.ReferenceMarker {
+	background: #d9d9d9;
+}
+div.RemarkLabel {
+	font-weight: bold;
+	font-style: italic;
+}
+div.RuleLabel {
+	font-weight: bold;
+	font-style: plain;
+}
+div.SR {
+	font-family: Helvetica, sans-serif;
+	font-weight: plain;
+	font-style: plain;
+}
+div.SlideHyperlink {
+	color: #666666;
+	font-size: 26px;
+}
+div.SlideShowNavigationBar {
+	background: #cccccc;
+	text-align: center;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 3px;
+	margin-top: 3px;
+	border-color: #999999;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 1px;
+}
+div.SlideShowPaletteButton {
+	font-family: Helvetica, sans-serif;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: bold;
+}
+div.SlideShowPaletteTitle {
+	font-family: Helvetica, sans-serif;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	background: #005389;
+	margin-left: 4px;
+	margin-right: 0px;
+	margin-top: 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.SlideShowSection {
+	font-family: Helvetica, sans-serif;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: plain;
+	background: #6870cc;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-top: 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 1px;
+}
+div.SlideTOC {
+	font-family: Helvetica, sans-serif;
+	margin-left: 18px;
+	display: list-item;
+	list-style-type: square;
+}
+div.SlideTOCLink {
+	font-family: Helvetica, sans-serif;
+	margin-left: 24px;
+}
+div.Small {
+	font-size: 9px;
+}
+div.SmallText {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 6px;
+	margin-top: 6px;
+}
+div.SolutionLabel {
+	font-weight: bold;
+	font-style: italic;
+}
+div.Sound {
+	margin-left: 27px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+}
+div.StandardForm {
+	font-family: Courier, monospaced;
+}
+div.Subitem {
+	margin-left: 99px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+	display: list-item;
+	list-style-type: circle;
+}
+div.SubitemNumbered {
+	margin-left: 99px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+	display: list-item;
+	list-style-type: square;
+}
+div.SubitemParagraph {
+	margin-left: 99px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 1px;
+}
+div.Subsubitem {
+	margin-left: 123px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+	display: list-item;
+	list-style-type: circle;
+}
+div.SubsubitemNumbered {
+	margin-left: 123px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+	display: list-item;
+	list-style-type: square;
+}
+div.SubsubitemParagraph {
+	margin-left: 123px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 1px;
+}
+div.Subsubsubsubsection {
+	font-family: Times, serif;
+	font-weight: bold;
+	margin-left: 75px;
+	margin-bottom: 2px;
+	margin-top: 10px;
+}
+div.Subsubtitle {
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+	margin-left: 27px;
+	margin-bottom: 8px;
+	margin-top: 2px;
+}
+div.TR {
+	font-family: Times, serif;
+	font-weight: plain;
+	font-style: plain;
+}
+div.TableViewPlaceholder {
+	color: #7e7e7e;
+	font-size: 10px;
+}
+div.TemplateLink {
+	color: #454f99;
+}
+div.TheoremLabel {
+	font-weight: bold;
+	font-style: plain;
+}
+div.TourLink {
+	color: #454f99;
+}
+div.UnmatchedBracket {
+	color: #c254cc;
+}
+div.Usage {
+	font-family: "Verdana";
+	font-size: 11px;
+	font-weight: plain;
+	background: #fffde5;
+	margin-left: 24px;
+	margin-right: 22px;
+	margin-bottom: 12px;
+	margin-top: 6px;
+}
+div.Title {
+	font-family: Helvetica, sans-serif;
+	font-size: 36px;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
+div.Subtitle {
+	font-family: Helvetica, sans-serif;
+	font-size: 24px;
+	margin-left: 27px;
+	margin-bottom: 20px;
+	margin-top: 2px;
+}
+div.Section {
+	font-family: Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-bottom: 8px;
+	margin-top: 34px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.Subsection {
+	font-family: Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 60px;
+	margin-bottom: 8px;
+	margin-top: 12px;
+	display: list-item;
+	list-style-type: square;
+}
+div.Subsubsection {
+	font-family: Times, serif;
+	font-weight: bold;
+	margin-left: 60px;
+	margin-bottom: 2px;
+	margin-top: 10px;
+	display: list-item;
+	list-style-type: square;
+}
+div.Subsubsubsection {
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	font-style: oblique;
+	margin-left: 75px;
+	margin-bottom: 2px;
+	margin-top: 10px;
+	display: list-item;
+	list-style-type: square;
+}
+div.Equation {
+	margin-left: 60px;
+}
+div.EquationNumbered {
+	margin-left: 60px;
+}
+div.Text {
+	font-size: 12px;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Code {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	background: #ebebeb;
+	margin-left: 66px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-top: 10px;
+}
+div.Input {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	margin-left: 66px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-top: 10px;
+}
+div.Output {
+	font-family: Courier, monospaced;
+	margin-left: 66px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+div.Item1 {
+	margin-left: 60px;
+}
+div.Item2 {
+	margin-left: 84px;
+}
+div.Item3 {
+	margin-left: 108px;
+}
+div.Item1Numbered {
+	margin-left: 60px;
+}
+div.Item2Numbered {
+	margin-left: 84px;
+}
+div.Item3Numbered {
+	margin-left: 108px;
+}
+div.Item1Paragraph {
+	margin-left: 82px;
+}
+div.Item2Paragraph {
+	margin-left: 106px;
+}
+div.Item3Paragraph {
+	margin-left: 130px;
+}
+div.Figure {
+	margin-left: 60px;
+}
+div.FigureCaption {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 60px;
+}
+div.Program {
+	font-family: Courier, monospaced;
+	margin-left: 60px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+	border-top-width: 1px;
+}
+div.ProgramCaption {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 60px;
+}
+div.TableTitle {
+	font-weight: plain;
+	margin-left: 60px;
+	margin-bottom: 1px;
+	margin-top: 7px;
+}
+div.Table {
+	margin-left: 60px;
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+div.TableNote {
+	color: #4d4d4d;
+	font-size: 10px;
+	margin-left: 60px;
+}
+div.Department {
+	font-family: Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-right: 12px;
+	margin-bottom: 2px;
+	margin-top: 0px;
+}
+div.Author {
+	font-family: Helvetica, sans-serif;
+	color: #000080;
+	font-weight: bold;
+	margin-left: 36px;
+	margin-right: 144px;
+	margin-bottom: 0px;
+	margin-top: 24px;
+}
+div.Institution {
+	color: #000080;
+	margin-left: 36px;
+	margin-right: 144px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.AbstractSection {
+	font-family: Helvetica, sans-serif;
+	color: #000080;
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 36px;
+	margin-right: 144px;
+	margin-bottom: 0px;
+	margin-top: 18px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.Abstract {
+	color: #000080;
+	text-align: left;
+	margin-left: 36px;
+	margin-right: 144px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+}
+div.AbstractContinuation {
+	color: #000080;
+	text-align: left;
+	margin-left: 36px;
+	margin-right: 144px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+}
+div.AbstractMath {
+	color: #000080;
+	margin-left: 36px;
+	margin-right: 144px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+div.Date {
+	font-family: Helvetica, sans-serif;
+	color: #000080;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 144px;
+	margin-bottom: 6px;
+	margin-top: 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 1px;
+}
+div.AcknowledgmentsSection {
+	font-family: Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-bottom: 8px;
+	margin-top: 34px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.Acknowledgments {
+	text-align: left;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.AppendixSection {
+	font-family: Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-bottom: 8px;
+	margin-top: 34px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.Appendix {
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.AppendixEquation {
+	margin-left: 60px;
+}
+div.EndnoteSection {
+	font-family: Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-bottom: 8px;
+	margin-top: 34px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.Endnote {
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 4px;
+}
+div.ReferenceSection {
+	font-family: Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-bottom: 8px;
+	margin-top: 34px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.Reference {
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 4px;
+}
+div.Theorem {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.TheoremContinuation {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Example {
+	font-size: 12px;
+	font-style: plain;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.ExampleContinuation {
+	font-size: 12px;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Proof {
+	font-size: 12px;
+	font-style: plain;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.ProofContinuation {
+	font-size: 12px;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.QED {
+	font-size: 14px;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Corollary {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.CorollaryContinuation {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Lemma {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.LemmaContinuation {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Definition {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.DefinitionContinuation {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Proposition {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.PropositionContinuation {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Conjecture {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.ConjectureContinuation {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Axiom {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.AxiomContinuation {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Rule {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.RuleContinuation {
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Remark {
+	font-size: 12px;
+	font-style: plain;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.RemarkContinuation {
+	font-size: 12px;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Solution {
+	font-size: 12px;
+	font-style: plain;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.SolutionContinuation {
+	font-size: 12px;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.2ColumnEvenTable {
+	margin-left: 35px;
+	margin-right: 4px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+}
+div.2ColumnTable {
+	margin-left: 35px;
+	margin-right: 4px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+}
+div.3ColumnTable {
+	margin-left: 35px;
+	margin-right: 4px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+}
+div.AbstractShort {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+}
+div.AbstractShortSection {
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 2px;
+	margin-top: 7px;
+}
+div.AbstractSubsection {
+	font-family: Helvetica, sans-serif;
+	color: #000080;
+	font-weight: bold;
+	font-style: italic;
+	margin-left: 36px;
+	margin-right: 144px;
+	margin-bottom: 0px;
+	margin-top: 3px;
+}
+div.ActionMenu {
+	font-family: "Lucida Grande";
+	font-size: 13px;
+	text-align: left;
+}
+div.AppendixGroup {
+	font-family: Helvetica, sans-serif;
+	color: #808080;
+	font-size: 9px;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 24px;
+}
+div.Assert {
+	font-family: "Lucida Grande";
+	color: #af511b;
+	font-size: 11px;
+	background: #f0baa6;
+	margin-left: 66px;
+}
+div.Attribution {
+	font-size: 10px;
+	font-style: italic;
+	margin-left: 24px;
+	margin-right: 22px;
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+div.AuthorAddress {
+	color: #333333;
+	font-size: 12px;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 0px;
+	margin-top: 3px;
+}
+div.AuthorEmail {
+	font-family: Courier, monospaced;
+	color: #0000ff;
+	margin-left: 36px;
+	margin-right: 144px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.AuthorFormCustomizationTemplate {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.AuthorTitle {
+	color: #000080;
+	margin-left: 36px;
+	margin-right: 144px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.BackmatterGroup {
+	font-family: Helvetica, sans-serif;
+	color: #808080;
+	font-size: 9px;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 24px;
+}
+div.BookChapterLabel {
+	font-family: Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: plain;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 72px;
+}
+div.BookChapterNumber {
+	font-family: Helvetica, sans-serif;
+	font-size: 19px;
+	font-weight: bold;
+}
+div.BookChapterTitle {
+	font-family: Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 24px;
+	margin-top: 4px;
+}
+div.BookPartLabel {
+	font-family: Helvetica, sans-serif;
+	font-size: 27px;
+	font-weight: bold;
+	text-align: center;
+	margin-left: 54px;
+	margin-right: 54px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.BookPartNumber {
+	font-family: Helvetica, sans-serif;
+	font-size: 27px;
+	font-weight: bold;
+	margin-left: 54px;
+	margin-right: 54px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.BookPartSubsubtitle {
+	font-family: Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: plain;
+	text-align: center;
+	margin-left: 54px;
+	margin-right: 54px;
+	margin-bottom: 12px;
+}
+div.BookPartSubtitle {
+	font-family: Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	margin-left: 54px;
+	margin-right: 54px;
+	margin-bottom: 12px;
+	margin-top: 7px;
+}
+div.BookPartText {
+	margin-left: 72px;
+	margin-right: 72px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.BookPartTextNoIndent {
+	margin-left: 72px;
+	margin-right: 72px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.BookPartTitle {
+	font-family: Helvetica, sans-serif;
+	font-size: 36px;
+	font-weight: bold;
+	text-align: center;
+	margin-left: 54px;
+	margin-right: 54px;
+	margin-bottom: 12px;
+	margin-top: 7px;
+}
+div.Button {
+	text-align: left;
+}
+div.CSSDefinitions {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Caption {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 6px;
+	margin-top: 2px;
+}
+div.CaptionLabel {
+	font-weight: bold;
+}
+div.CaptionNumber {
+	font-weight: bold;
+}
+div.CaptionText {
+	font-size: 9px;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 12px;
+	margin-top: 0px;
+}
+div.Case {
+	font-style: plain;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.CaseContinuation {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.CaseLabel {
+	font-weight: plain;
+	font-style: italic;
+}
+div.CaseSection {
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.ChemicalFormula {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Citation {
+	color: #000080;
+}
+div.CompatibilityControls {
+	font-family: "Lucida Grande";
+	font-size: 10px;
+	background: #ededed;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	margin-top: 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.CompatibilityDocked1 {
+	font-family: Helvetica, sans-serif;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: plain;
+	background: #3e7f32;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	border-color: #cccccc;
+}
+div.CompatibilityDocked2 {
+	background: #f6f6f6;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	border-color: #3e7f32;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 2px;
+}
+div.CompatibilityInput {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	background: #f0ffcf;
+	border-color: #3e7f32;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.CompatibilityInputTop {
+	font-family: Times, serif;
+	color: #808080;
+	font-size: 10px;
+	background: #f0ffcf;
+	border-color: #3e7f32;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 1px;
+}
+div.CompatibilityText {
+	font-family: Times, serif;
+	background: #ededed;
+}
+div.CompatibilityTextTop {
+	font-family: Times, serif;
+	color: #808080;
+	font-size: 10px;
+	background: #ededed;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 5px;
+	border-color: #3e7f32;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 2px;
+}
+div.ControlStyle {
+	font-family: "Lucida Grande";
+	font-size: 13px;
+}
+div.CoordinateTooltipLabel {
+	font-family: "Lucida Grande";
+	color: #000000;
+	font-size: 10px;
+	font-weight: plain;
+	font-style: plain;
+	background: #000000;
+	text-align: left;
+	border-color: #b2b2b2;
+}
+div.CopyrightBy {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.CopyrightGroup {
+	font-family: Helvetica, sans-serif;
+	color: #808080;
+	font-size: 9px;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 24px;
+}
+div.CopyrightYear {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 12px;
+}
+div.CreationDate {
+	font-family: Helvetica, sans-serif;
+	font-size: 10px;
+	text-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+}
+div.DOCTYPEFormat {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.DateAccepted {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.DatePublished {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.DateReceived {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 12px;
+}
+div.DateRevisionReceived {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.DateRevisionRequested {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.Dedication {
+	text-align: left;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 3px;
+	margin-top: 5px;
+}
+div.DialogStyle {
+	font-family: "Lucida Grande";
+	color: #000000;
+	font-size: 10px;
+	font-weight: plain;
+	font-style: plain;
+}
+div.DialogStyleSheetMisapplicationEscape {
+	text-align: center;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 2000px;
+	margin-top: 40px;
+}
+div.DialogText {
+	color: inherit;
+}
+div.DockedCell {
+	background: #f6f6f6ff;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	border-color: #cccccc;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 2px;
+}
+div.DockedTitleCell {
+	font-family: Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	background: #f6f6f6ff;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	border-color: #cccccc;
+}
+div.DoubleLine {
+	font-size: 4px;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+	border-top-width: 1px;
+}
+div.EndnoteLabel {
+	text-align: right;
+}
+div.EndnoteNumber {
+	text-align: right;
+}
+div.EndnoteReturnLink {
+	color: #000080;
+}
+div.EnunciationItem1 {
+	font-style: italic;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 2px;
+}
+div.EnunciationItem1Label {
+	font-weight: bold;
+	font-style: plain;
+	text-align: right;
+}
+div.EnunciationItem1Numbered {
+	font-style: italic;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 2px;
+}
+div.EnunciationItem1NumberedLabel {
+	font-weight: bold;
+	font-style: plain;
+	text-align: right;
+}
+div.EnunciationItem1Paragraph {
+	font-style: italic;
+	margin-left: 40px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.EnunciationItem2 {
+	font-style: italic;
+	margin-left: 36px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 2px;
+}
+div.EnunciationItem2Label {
+	font-weight: bold;
+	font-style: plain;
+	text-align: right;
+}
+div.EnunciationItem2Numbered {
+	font-style: italic;
+	margin-left: 36px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 2px;
+}
+div.EnunciationItem2NumberedLabel {
+	font-weight: bold;
+	font-style: plain;
+	text-align: right;
+}
+div.EnunciationItem2Paragraph {
+	font-style: italic;
+	margin-left: 64px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.EnunciationItem3 {
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 2px;
+}
+div.EnunciationItem3Label {
+	font-weight: bold;
+	font-style: plain;
+	text-align: right;
+}
+div.EnunciationItem3Numbered {
+	font-style: italic;
+	margin-left: 60px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 2px;
+}
+div.EnunciationItem3NumberedLabel {
+	font-weight: bold;
+	font-style: plain;
+	text-align: right;
+}
+div.EnunciationItem3Paragraph {
+	font-style: italic;
+	margin-left: 88px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.Epigraph {
+	font-style: italic;
+	margin-left: 54px;
+	margin-right: 54px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.EpigraphAuthor {
+	margin-left: 54px;
+	margin-right: 54px;
+	margin-bottom: 24px;
+	margin-top: 12px;
+}
+div.EquationGroup {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 6px;
+	margin-bottom: 0px;
+	margin-top: 2px;
+}
+div.EquationGroupAligned {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 6px;
+	margin-bottom: 0px;
+	margin-top: 2px;
+}
+div.EquationGroupAlignedNumbered {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 6px;
+	margin-bottom: 0px;
+	margin-top: 2px;
+}
+div.EquationGroupNumbered {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 6px;
+	margin-bottom: 0px;
+	margin-top: 2px;
+}
+div.EquationNumber {
+	text-align: right;
+}
+div.EquationWide {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.EquationWideNumbered {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Extract {
+	font-size: 11px;
+	margin-left: 24px;
+	margin-right: 22px;
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+div.FigureCaptionLabel {
+	font-weight: bold;
+}
+div.FigureFile {
+	background: #c6c6ec;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 2px;
+}
+div.FigureNumber {
+	font-weight: bold;
+}
+div.FigureText {
+	font-size: 9px;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 12px;
+	margin-top: 0px;
+}
+div.FirstPage {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.FrontMatterEpigraphAuthor {
+	text-align: right;
+}
+div.FrontMatterEpigraphSource {
+	text-align: right;
+}
+div.FrontmatterGroup {
+	font-family: Helvetica, sans-serif;
+	color: #808080;
+	font-size: 9px;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 24px;
+}
+div.FunctionLink {
+	color: #1a1a80;
+}
+div.GeneralizedPlaceholder {
+	background: #f6f0bd;
+}
+div.GenericButton {
+	font-family: "Lucida Grande";
+	font-size: 13px;
+}
+div.GenericLink {
+	color: #1a1a80;
+}
+div.Graphics3D {
+	font-family: Times, serif;
+	color: #000000;
+	font-size: 10px;
+	font-weight: plain;
+	margin-left: 4px;
+}
+div.GuideLink {
+	color: #1a1a80;
+}
+div.HistoryCurrentPage {
+	font-weight: bold;
+}
+div.Hyperlink {
+	color: #454f99;
+}
+div.ISSN {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.Illustration {
+	margin-left: 12px;
+	margin-bottom: 0px;
+	margin-top: 7px;
+}
+div.IllustrationCaption {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 6px;
+	margin-top: 2px;
+}
+div.IllustrationCaptionLabel {
+	font-weight: bold;
+}
+div.IllustrationNumber {
+	font-weight: bold;
+}
+div.IllustrationText {
+	font-size: 9px;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 12px;
+	margin-top: 0px;
+}
+div.IndexEntry {
+	font-size: 11px;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 2px;
+	margin-top: 0px;
+}
+div.IndexNote {
+	font-size: 11px;
+	font-style: italic;
+	text-align: left;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 2px;
+	margin-top: 0px;
+}
+div.IndexSection {
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 24px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.IndexSubentry {
+	font-size: 11px;
+	margin-left: 24px;
+	margin-right: 12px;
+	margin-bottom: 2px;
+	margin-top: 0px;
+}
+div.IndexSubsubentry {
+	font-size: 11px;
+	margin-left: 36px;
+	margin-right: 12px;
+	margin-bottom: 2px;
+	margin-top: 0px;
+}
+div.InputField {
+	text-align: left;
+}
+div.InputNumbered {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	margin-left: 72px;
+	margin-right: 6px;
+	margin-bottom: 6px;
+	margin-top: 8px;
+}
+div.Item1Label {
+	font-weight: bold;
+	text-align: right;
+}
+div.Item1NumberedLabel {
+	font-weight: bold;
+	text-align: right;
+}
+div.Item2Label {
+	font-weight: bold;
+	text-align: right;
+}
+div.Item2NumberedLabel {
+	font-weight: bold;
+	text-align: right;
+}
+div.Item3Label {
+	font-weight: bold;
+	text-align: right;
+}
+div.Item3NumberedLabel {
+	font-weight: bold;
+	text-align: right;
+}
+div.Keywords {
+	font-family: Helvetica, sans-serif;
+	color: #000080;
+	font-size: 11px;
+	text-align: left;
+	margin-left: 36px;
+	margin-right: 144px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+}
+div.LOAAbbreviation {
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+}
+div.LOADefinition {
+	font-family: Helvetica, sans-serif;
+}
+div.LOAItem {
+	font-family: Helvetica, sans-serif;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+}
+div.LOASection {
+	font-family: Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 24px;
+	margin-top: 36px;
+}
+div.LaTeXPreamble {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.LastPage {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.MB {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	font-style: plain;
+}
+div.MBO {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	font-style: italic;
+}
+div.MO {
+	font-family: Courier, monospaced;
+	font-weight: plain;
+	font-style: italic;
+}
+div.MainmatterGroup {
+	font-family: Helvetica, sans-serif;
+	color: #808080;
+	font-size: 9px;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 24px;
+}
+div.Manipulate {
+	font-weight: plain;
+}
+div.ManipulateLabel {
+	font-family: "Lucida Grande";
+	font-size: 9px;
+	font-weight: plain;
+}
+div.Manipulator {
+	font-family: "Lucida Grande";
+	font-size: 9px;
+	font-weight: plain;
+}
+div.MediumLine {
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 2px;
+	margin-top: 2px;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 2px;
+}
+div.Menu {
+	font-family: "Lucida Grande";
+}
+div.MenuViewLabel {
+	font-family: "Lucida Grande";
+	font-size: 13px;
+	text-align: left;
+}
+div.MessageLink {
+	color: #1a1a80;
+}
+div.MiscSettings {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.NoteKey {
+	color: #000080;
+}
+div.Number {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.PageBreak {
+	background: #808080;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.Panel {
+	font-family: "Lucida Grande";
+	color: #000000;
+	font-size: 10px;
+	font-weight: plain;
+	font-style: plain;
+	background: #f6f6f6;
+}
+div.PanelLabel {
+	font-family: "Lucida Grande";
+	color: #000000;
+	font-size: 10px;
+	font-weight: plain;
+	font-style: plain;
+	background: #000000;
+}
+div.PictureCaption {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 6px;
+	margin-top: 2px;
+}
+div.PictureCaptionLabel {
+	font-weight: bold;
+}
+div.PictureNumber {
+	font-weight: bold;
+}
+div.PictureText {
+	font-size: 9px;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 12px;
+	margin-top: 0px;
+}
+div.PlainGreekLin {
+	font-family: "Symbol";
+}
+div.PlainGreekMac {
+	font-family: "Symbol";
+}
+div.PluginDockedCell {
+	background: #f6f6f6ff;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	border-color: #cccccc;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 2px;
+}
+div.PopupMenu {
+	font-family: "Lucida Grande";
+	font-size: 13px;
+	text-align: left;
+}
+div.PrintTemporary {
+	font-family: Courier, monospaced;
+	margin-left: 60px;
+}
+div.PrintUsage {
+	background: #fffde5;
+	border-color: #ff9900;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 3px;
+}
+div.Problems {
+	font-style: plain;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.ProblemsContinuation {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.ProblemsLabel {
+	font-weight: plain;
+	font-style: italic;
+}
+div.ProblemsSection {
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.ProgramCaptionLabel {
+	font-weight: bold;
+}
+div.ProgramNumber {
+	font-weight: bold;
+}
+div.ProgramText {
+	font-size: 9px;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 12px;
+	margin-top: 0px;
+}
+div.ProofSection {
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Question {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.QuestionContinuation {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.QuestionLabel {
+	font-weight: bold;
+	font-style: plain;
+}
+div.Quote {
+	font-size: 11px;
+	margin-left: 24px;
+	margin-right: 22px;
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+div.RefBookTitle {
+	font-weight: plain;
+	font-style: italic;
+}
+div.RefGuideLink {
+	color: #1a1a80;
+}
+div.RefJournalTitle {
+	font-weight: plain;
+	font-style: italic;
+}
+div.RefJournalVolume {
+	font-weight: bold;
+}
+div.RefKey {
+	color: #000080;
+}
+div.RefReturnLink {
+	color: #000080;
+}
+div.RefReturnPointer {
+	font-family: "Mathematica4";
+	color: #000080;
+}
+div.RefReviewVolume {
+	font-weight: bold;
+}
+div.RefSchoolDept {
+	font-style: italic;
+}
+div.RefTitle {
+	font-weight: plain;
+	font-style: plain;
+}
+div.ReferenceLabel {
+	text-align: right;
+}
+div.ReferenceSourceLink {
+	font-family: "Mathematica4";
+	color: #ffffff;
+	font-size: 1px;
+}
+div.ReferenceTemplate {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.SB {
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	font-style: plain;
+}
+div.SBO {
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	font-style: italic;
+}
+div.SO {
+	font-family: Helvetica, sans-serif;
+	font-weight: plain;
+	font-style: italic;
+}
+div.SectionAlt {
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 24px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.SectionFirst {
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.SectionLabel {
+	text-align: left;
+}
+div.SingleLine {
+	font-size: 2px;
+	margin-left: 2px;
+	margin-right: 10px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.SlideLink {
+	color: #0000ff;
+}
+div.Source {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.Spacer {
+	margin-bottom: 4px;
+	margin-top: 4px;
+}
+div.SpanCenter {
+	font-size: 16px;
+	font-weight: plain;
+	font-style: plain;
+}
+div.SpanLeft {
+	font-size: 16px;
+	font-weight: plain;
+	font-style: plain;
+}
+div.SpanRight {
+	font-size: 16px;
+	font-weight: plain;
+	font-style: plain;
+}
+div.SubequationAlignedNumbered {
+	margin-left: 12px;
+	margin-right: 6px;
+	margin-bottom: 0px;
+	margin-top: 2px;
+}
+div.SubequationNumber {
+	text-align: right;
+}
+div.SubequationNumbered {
+	margin-left: 12px;
+	margin-right: 6px;
+	margin-bottom: 0px;
+	margin-top: 2px;
+}
+div.SubsectionAlt {
+	font-family: Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 3px;
+	margin-top: 16px;
+}
+div.SubsectionFirst {
+	font-family: Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 3px;
+	margin-top: 0px;
+}
+div.SubsectionLabel {
+	text-align: left;
+}
+div.SubsubsectionAlt {
+	font-family: Helvetica, sans-serif;
+	color: #333333;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 3px;
+	margin-top: 9px;
+}
+div.SubsubsectionFirst {
+	font-family: Helvetica, sans-serif;
+	color: #333333;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 3px;
+	margin-top: 0px;
+}
+div.SubsubsubsectionAlt {
+	color: #4d4d4d;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 3px;
+	margin-top: 6px;
+}
+div.SubsubsubsectionFirst {
+	color: #4d4d4d;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 3px;
+	margin-top: 0px;
+}
+div.Supplemental {
+	font-family: Helvetica, sans-serif;
+	font-size: 11px;
+	background: #c6c6ec;
+	text-align: center;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 2px;
+}
+div.SupplementalCaption {
+	font-family: Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 8px;
+	margin-top: 4px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.SupplementalCaptionLabel {
+	font-family: Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 1px;
+	margin-top: 7px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.SupplementalText {
+	font-family: Helvetica, sans-serif;
+	font-size: 11px;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 4px;
+}
+div.TB {
+	font-family: Times, serif;
+	font-weight: bold;
+	font-style: plain;
+}
+div.TBI {
+	font-family: Times, serif;
+	font-weight: bold;
+	font-style: italic;
+}
+div.TI {
+	font-family: Times, serif;
+	font-weight: plain;
+	font-style: italic;
+}
+div.TOCBackmatterHeading {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 36px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCBookBackmatterHeading {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 36px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCBookChapterTitle {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCBookChapterTitleLabel {
+	text-align: right;
+}
+div.TOCBookFigure {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCBookFigureLabel {
+	text-align: right;
+}
+div.TOCBookFrontBackHeading {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 36px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCBookFrontmatterHeading {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 36px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCBookHeading {
+	font-family: Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 98px;
+	margin-top: 72px;
+}
+div.TOCBookIllustration {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCBookIllustrationLabel {
+	text-align: right;
+}
+div.TOCBookIllustrations {
+	font-family: Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 98px;
+	margin-top: 72px;
+}
+div.TOCBookItem {
+	margin-left: 36px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCBookItemLabel {
+	text-align: right;
+}
+div.TOCBookItemNumber {
+	text-align: right;
+}
+div.TOCBookLeader {
+	font-size: 12px;
+	font-weight: plain;
+}
+div.TOCBookPageNumber {
+	font-weight: plain;
+	font-style: plain;
+	text-align: right;
+}
+div.TOCBookPartTitle {
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 36px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 12px;
+}
+div.TOCBookPicture {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCBookPictureLabel {
+	text-align: right;
+}
+div.TOCBookProgram {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCBookProgramLabel {
+	text-align: right;
+}
+div.TOCBookSection {
+	margin-left: 36px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCBookSectionLabel {
+	text-align: right;
+}
+div.TOCBookSpacer {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.TOCBookSubsection {
+	margin-left: 60px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCBookSubsectionLabel {
+	text-align: right;
+}
+div.TOCBookSupplemental {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCBookSupplementalLabel {
+	text-align: right;
+}
+div.TOCBookTable {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCBookTableLabel {
+	text-align: right;
+}
+div.TOCBookTables {
+	font-family: Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 98px;
+	margin-top: 72px;
+}
+div.TOCFigure {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCFigureLabel {
+	text-align: right;
+}
+div.TOCFrontBackHeading {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 36px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCFrontmatterHeading {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 36px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCHeading {
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 24px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.TOCIllustration {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCIllustrationLabel {
+	text-align: right;
+}
+div.TOCIllustrations {
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 24px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.TOCItem {
+	margin-left: 36px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCItemLabel {
+	text-align: right;
+}
+div.TOCItemNumber {
+	text-align: right;
+}
+div.TOCLeader {
+	font-size: 12px;
+	font-weight: plain;
+}
+div.TOCPageNumber {
+	font-weight: plain;
+	font-style: plain;
+	text-align: right;
+}
+div.TOCPicture {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCPictureLabel {
+	text-align: right;
+}
+div.TOCProgram {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCProgramLabel {
+	text-align: right;
+}
+div.TOCSection {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCSectionLabel {
+	text-align: right;
+}
+div.TOCSpacer {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.TOCSubsection {
+	margin-left: 36px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCSubsectionLabel {
+	text-align: right;
+}
+div.TOCSubsubsection {
+	margin-left: 60px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCSubsubsectionLabel {
+	text-align: right;
+}
+div.TOCSupplemental {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCSupplementalLabel {
+	text-align: right;
+}
+div.TOCTable {
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCTableLabel {
+	text-align: right;
+}
+div.TOCTables {
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 4px;
+	margin-top: 24px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.TabViewLabel {
+	font-family: "Lucida Grande";
+	text-align: left;
+}
+div.TableBlankElement {
+	font-size: 1px;
+}
+div.TableColumnHead {
+	font-style: italic;
+}
+div.TableLineElement {
+	font-size: 1px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.TableNoteKey {
+	color: #000080;
+}
+div.TableNoteLabel {
+	font-weight: bold;
+}
+div.TableSpanHead {
+	font-style: italic;
+	text-align: center;
+}
+div.TableSpanText {
+	text-align: left;
+}
+div.TableText {
+	text-align: left;
+}
+div.TableTitleLabel {
+	font-weight: bold;
+}
+div.TableViewGrid {
+	font-weight: plain;
+}
+div.TableViewLabel {
+	color: #8389bb;
+}
+div.TextContinuation {
+	text-align: left;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 3px;
+	margin-top: 5px;
+}
+div.TextNoIndent {
+	text-align: left;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 3px;
+	margin-top: 5px;
+}
+div.ThickLine {
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 2px;
+	margin-top: 2px;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 3px;
+}
+div.ThinLine {
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 2px;
+	margin-top: 2px;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 1px;
+}
+div.TitleGroup {
+	font-family: Helvetica, sans-serif;
+	color: #808080;
+	font-size: 9px;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 7px;
+	margin-top: 24px;
+}
+div.TooltipLabel {
+	font-family: "Lucida Grande";
+	color: #000000;
+	font-size: 10px;
+	font-weight: plain;
+	font-style: plain;
+	background: #000000;
+	text-align: left;
+	border-color: #000000;
+}
+div.TutorialLink {
+	color: #1a1a80;
+}
+div.URL {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.ValidationSetting {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Volume {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.XMLWebLink {
+	color: #0000ff;
+}
+div.XRefPaletteSettings {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}

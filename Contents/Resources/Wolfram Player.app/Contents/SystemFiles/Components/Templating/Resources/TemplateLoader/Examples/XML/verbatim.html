@@ -1,0 +1,19 @@
+This is how you do loops in XMLTemplates
+
+<wolfram:verbatim>
+    <ul>
+    <wolfram:sequence over="{1,2,3,4}">
+        <li><wolfram:slot>1</wolfram:slot></li>
+    </wolfram:sequence>
+    </ul>
+</wolfram:verbatim>
+
+Or you can use named variables
+
+<wolfram:verbatim>
+    <ul>
+    <wolfram:sequence over="{1,2,3,4}" as="object" index="counter">
+        <li><wolfram:slot>counter</wolfram:slot>: <wolfram:slot>object</wolfram:slot></li>
+    </wolfram:sequence>
+    </ul>
+</wolfram:verbatim>

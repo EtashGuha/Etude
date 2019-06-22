@@ -1,0 +1,1 @@
+@%windir%\system32\wscript.exe //Nologo "%~dp0%~n0.vbs" %*

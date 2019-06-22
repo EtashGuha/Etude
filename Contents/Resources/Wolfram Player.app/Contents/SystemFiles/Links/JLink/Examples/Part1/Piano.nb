@@ -1,0 +1,403 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     12581,        393]
+NotebookOptionsPosition[     11613,        356]
+NotebookOutlinePosition[     12007,        373]
+CellTagsIndexPosition[     11964,        370]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "J/Link Example: Piano\n\n",
+ StyleBox["Code for the Piano application from section 1.3 of the J/Link User \
+Guide.\n",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["\n",
+  FontSize->12],
+ StyleBox["This example demonstrates the versatility that J/Link brings to \
+the ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["Mathematica",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontSlant->"Italic",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[" programing environment. Before J/Link, it was unthinkable that a \
+program that displays a MIDI synthesizer keyboard and lets you play it could \
+be written entirely in ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["Mathematica",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontSlant->"Italic",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[", and that it would be completely portable.\n\nThis example uses \
+the Java Sound API, which is a standard part of Java 1.3 and later. If you \
+have an earlier version of Java (1.2.x), you can obtain the required \
+components from the Java Sound home page \
+(http://java.sun.com/products/java-media/sound/). This code requires some \
+cooperation from your sound hardware. If you get a \
+\"ClassNotFoundException\", then you do not have the Java Sound API \
+corrrectly installed. If the keyboard appears but sounds don't come out, \
+there is probably some hardware or software configuration issue that needs to \
+be resolved. \n\nTo try this example, evaluate all the initialization cells \
+(you can do this with the menu command Kernel/Evaluation/Evaluate \
+Initialization). Then go to the Example section.",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}]
+}], "Title"],
+
+Cell[CellGroupData[{
+
+Cell["Code", "Subsection"],
+
+Cell["Needs[\"JLink`\"]", "Input",
+ InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+(* This code could be simplified by using JButtons for keys instead of \
+JPanels, but that
+   doesn't work on Mac OSX, where the \"Aquafication\" of Swing makes it \
+impossible to
+   independently set button colors. On OSX if you use a Button, then the OS \
+takes
+   complete control of the look and feel of that Button.
+*)
+
+Piano[] := Piano[1]
+
+Piano[instrument_Integer] :=
+\tJavaBlock[
+\t\tModule[{frm, keyPanel, label1, label2, label3, pianoKeyListener, synth, \
+instMenu,
+\t\t\t\tinstListener, volumeSlider, volumeListener, keyMap},
+\t\t\tInstallJava[];
+\t\t\tLoadJavaClass[\"java.awt.Color\"];
+\t\t\tfrm = JavaNew[\"com.wolfram.jlink.MathJFrame\", \"Mathematica \
+Keyboard\"];
+\t\t\tfrm@setSize[2 (20 + $BorderWidth) + 15 ($WhiteKeyWidth + $KeyGap) - \
+$KeyGap, 240];
+\t\t\tfrm@getContentPane[]@setLayout[Null];
+\t\t\tkeyPanel = JavaNew[\"javax.swing.JPanel\"];
+\t\t\tkeyPanel@setBounds[20, 50,
+\t\t\t\t2 $BorderWidth + 15 ($WhiteKeyWidth + $KeyGap) - $KeyGap,
+\t\t\t\t$WhiteKeyHeight + 2 $BorderWidth];
+\t\t\tkeyPanel@setBackground[Color`black];
+\t\t\tkeyPanel@setLayout[Null];
+\t\t\tfrm@getContentPane[]@add[keyPanel];
+\t\t\tlabel1 = JavaNew[\"javax.swing.JLabel\", \"Click to play. Hold Shift \
+key down to drag from\"];
+\t\t\tlabel2 = JavaNew[\"javax.swing.JLabel\", \"key to key (shift must be \
+down before clicking).\"];
+\t\t\tlabel3 = JavaNew[\"javax.swing.JLabel\", \"Volume:\"];
+\t\t\tfrm@getContentPane[]@add[label1];
+\t\t\tfrm@getContentPane[]@add[label2];
+\t\t\tfrm@getContentPane[]@add[label3];
+\t\t\tlabel1@setBounds[20, 5, 300, 15];
+\t\t\tlabel2@setBounds[20, 20, 300, 15];
+\t\t\tlabel3@setBounds[590, 15, 60, 15];
+\t\t\tLoadJavaClass[\"javax.swing.JSlider\"];
+\t\t\tvolumeSlider = JavaNew[\"javax.swing.JSlider\", JSlider`HORIZONTAL,  0, \
+255, 127];
+\t\t\tfrm@getContentPane[]@add[volumeSlider];
+\t\t\tvolumeSlider@setBounds[650, 15, 120, 24];
+\t\t\tvolumeListener = \
+ImplementJavaInterface[\"javax.swing.event.ChangeListener\",
+\t\t\t\t\t\t\t\t{\"stateChanged\"->\"volumeChanged\"}];
+\t\t\tvolumeSlider@addChangeListener[volumeListener];
+\t\t\tpianoKeyListener = JavaNew[\"com.wolfram.jlink.MathMouseListener\"];
+\t\t\tpianoKeyListener@setHandler[\"mousePressed\", \"keyPressed\"];
+\t\t\tpianoKeyListener@setHandler[\"mouseReleased\", \"keyReleased\"];
+\t\t\tpianoKeyListener@setHandler[\"mouseEntered\", \"keyEntered\"];
+\t\t\tpianoKeyListener@setHandler[\"mouseExited\", \"keyExited\"];
+\t\t\tLoadJavaClass[\"javax.sound.midi.MidiSystem\"];
+\t\t\tsynth = MidiSystem`getSynthesizer[];
+\t\t\tsynth@open[];
+\t\t\tinstMenu = JavaNew[\"java.awt.Choice\"];
+\t\t\tMapIndexed[instMenu@add[ToString[First[#2]] <> \". \" <> \
+#1@getName[]]&,
+\t\t\t\t\t\tsynth@getAvailableInstruments[]];
+\t\t\tfrm@getContentPane[]@add[instMenu];
+\t\t\tinstMenu@setBounds[340, 15, 160, 24];
+\t\t\tinstMenu@select[instrument - 1];  (* Convert to 0-based index. *)
+\t\t\tinstListener = JavaNew[\"com.wolfram.jlink.MathItemListener\", \
+\"instChanged\"];
+\t\t\tinstMenu@addItemListener[instListener];
+\t\t\tJavaShow[frm];
+\t\t\tkeyMap =
+\t\t\t\tMap[
+\t\t\t\t\tcreateKey[keyPanel, pianoKeyListener, #]&,
+\t\t\t\t\tTranspose[{{\"C\", \"C#\", \"D\", \"D#\", \"E\", \"F\", \"F#\", \"G\
+\",
+\t\t\t\t\t\t\"G#\", \"A\", \"A#\", \"B\", \"C\", \"C#\", \"D\", \"D#\", \
+\"E\", \"F\",
+\t\t\t\t\t\t\"F#\", \"G\", \"G#\", \"A\", \"A#\", \"B\", \"C\"}, Range[60, \
+84]}]
+\t\t\t\t];
+\t\t\tkeyPanel@repaint[];
+\t\t\tfrm@setModal[];
+\t\t\tBlock[{$Channel, $IsShiftDown, $IsMouseDown = False,
+\t\t\t\t\t$KeyMap = keyMap, $KeyPanel = keyPanel},
+\t\t\t\t$Channel = First[synth@getChannels[]];
+\t\t\t\t$Channel@programChange[instrument - 1];
+\t\t\t\tDoModal[]
+\t\t\t];
+\t\t\tsynth@close[];
+\t\t]
+\t]
+
+$BorderWidth = 3;
+$KeyGap = 1;
+$WhiteKeyWidth = 50;
+$WhiteKeyHeight = 150;
+$BlackKeyWidth = 30;
+$BlackKeyHeight = 90;
+\t
+createKey[keyPanel_, listener_, {noteName_, pitch_}] :=
+\tModule[{key, lastWhiteKey, leftEdge},
+\t\tkey = JavaNew[\"javax.swing.JPanel\"];
+\t\tkey@addMouseListener[listener];
+\t\tIf[StringTake[noteName, -1] != \"#\",
+\t\t\t(* White keys *)
+\t\t\tIf[keyPanel@getComponentCount[] == 0, (* First key. *)
+\t\t\t\tleftEdge = $BorderWidth,
+\t\t\t(* else *)
+\t\t\t\tlastWhiteKey = keyPanel@getComponent[keyPanel@getComponentCount[] - \
+1];
+\t\t\t\tleftEdge = lastWhiteKey@getLocation[]@x + $KeyGap + $WhiteKeyWidth
+\t\t\t];
+\t\t\tkeyPanel@add[key];
+\t\t\tkey@setBounds[leftEdge, $BorderWidth, $WhiteKeyWidth, $WhiteKeyHeight];
+\t\t\tkey@setBackground[Color`white],
+\t\t(* else *)
+\t\t\t(* Black keys *)
+\t\t\tlastWhiteKey = keyPanel@getComponent[keyPanel@getComponentCount[] - 1];
+\t\t\tkeyPanel@add[key, 0];
+\t\t\tleftEdge = lastWhiteKey@getLocation[]@x + $WhiteKeyWidth - \
+$BlackKeyWidth/2;
+\t\t\tkey@setBounds[leftEdge, $BorderWidth, $BlackKeyWidth, $BlackKeyHeight];
+\t\t\tkey@setBackground[Color`black];
+\t\t\tkey@setForeground[Color`white]
+\t\t];
+\t\t{leftEdge, noteName, pitch}
+\t]
+\t
+restoreKeyColor[key_] :=
+\tModule[{leftEdge, noteName},
+\t\tleftEdge = key@getLocation[]@x;
+\t\tnoteName = Select[$KeyMap, #[[1]] == leftEdge &][[1, 2]];
+\t\tIf[StringTake[noteName, -1] == \"#\",
+\t\t\tkey@setBackground[Color`black],
+\t\t(* else *)
+\t\t\tkey@setBackground[Color`white]
+\t\t];
+\t\tkey@getParent[]@repaint[];
+\t]
+\t
+(**************************  Event Handlers  ***************************)
+
+keyPressed[evt_, _, _, _] := 
+\tJavaBlock[
+\t\tModule[{key, leftEdge, pitch},
+\t\t\tkey = evt@getSource[];
+\t\t\tleftEdge = key@getLocation[]@x;
+\t\t\tpitch = Select[$KeyMap, #[[1]] == leftEdge &][[1, 3]];
+\t\t\t$Channel@noteOn[pitch, 80];
+\t\t\t$IsMouseDown = True;
+\t\t\t$IsShiftDown = evt@isShiftDown[];
+\t\t\tkey@setBackground[Color`gray];
+\t\t\tkey@getParent[]@repaint[];
+\t\t\tReleaseJavaObject[evt]
+\t\t]
+\t]
+\t
+keyReleased[evt_, _, _, _] := 
+\tJavaBlock[
+\t\tModule[{pt, srcPos, mouseDownKey, mouseUpKey},
+\t\t\t$Channel@allNotesOff[];
+\t\t\t$IsMouseDown = False;
+\t\t\tmouseDownKey = evt@getSource[];
+\t\t\tsrcPos = mouseDownKey@getLocation[];
+\t\t\tpt = evt@getPoint[];
+\t\t\tpt@translate[srcPos@x, srcPos@y];
+\t\t\tmouseUpKey = $KeyPanel@getComponentAt[pt];
+\t\t\tIf[mouseUpKey =!= Null && !SameObjectQ[mouseUpKey, $KeyPanel],
+\t\t\t\trestoreKeyColor[mouseUpKey]
+\t\t\t];
+\t\t\tIf[mouseDownKey =!= mouseUpKey,
+\t\t\t\trestoreKeyColor[mouseDownKey]
+\t\t\t];
+\t\t\tReleaseJavaObject[evt]
+\t\t]
+\t]
+\t
+keyEntered[evt_, _, _, _] := 
+\tJavaBlock[
+\t\tModule[{key, leftEdge, pitch},
+\t\t\tIf[$IsMouseDown && $IsShiftDown,
+\t\t\t\t$Channel@allNotesOff[];
+\t\t\t\tkey = evt@getSource[];
+\t\t\t\tleftEdge = key@getLocation[]@x;
+\t\t\t\tpitch = Select[$KeyMap, #[[1]] == leftEdge &][[1, 3]];
+\t\t\t\t$Channel@noteOn[pitch, 80];
+\t\t\t\tkey@setBackground[Color`gray];
+\t\t\t\tkey@getParent[]@repaint[];
+\t\t\t]
+\t\t];
+\t\tReleaseJavaObject[evt]
+\t]
+\t
+keyExited[evt_, _, _, _] := 
+\tJavaBlock[
+\t\tIf[$IsMouseDown && $IsShiftDown,
+\t\t\trestoreKeyColor[evt@getSource[]]
+\t\t];
+\t\tReleaseJavaObject[evt]
+\t]
+
+instChanged[evt_, state_] :=
+\tJavaBlock[
+\t\tIf[state === ItemEvent`SELECTED,
+\t\t\t$Channel@programChange[evt@getSource[]@getSelectedIndex[]]
+\t\t];
+\t\tReleaseJavaObject[evt]
+\t]
+
+volumeChanged[evt_] :=
+\tJavaBlock[
+\t\t(* Controller 7 is the volume controller. *)
+\t\t$Channel@controlChange[7, evt@getSource[]@getValue[]];
+\t\tReleaseJavaObject[evt]
+\t]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"General", "::", "\<\"spell1\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Possible spelling error: new symbol name \\\"\\!\\(open\\)\
+\\\" is similar to existing symbol \\\"\\!\\(Open\\)\\\".\"\>"}]], "Message"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"General", "::", "\<\"spell1\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Possible spelling error: new symbol name \
+\\\"\\!\\(select\\)\\\" is similar to existing symbol \
+\\\"\\!\\(Select\\)\\\".\"\>"}]], "Message"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"General", "::", "\<\"spell1\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Possible spelling error: new symbol name \\\"\\!\\($KeyMap\
+\\)\\\" is similar to existing symbol \\\"\\!\\($KeyGap\\)\\\".\"\>"}]], \
+"Message"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"General", "::", "\<\"stop\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \\!\\(General :: \\\"spell1\\\"\\) will \
+be suppressed during this calculation.\"\>"}]], "Message"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Subsection"],
+
+Cell[TextData[{
+ "Click the keys to play notes. Hold the Shift key down to drag from note to \
+note (the Shift key must be down ",
+ StyleBox["before",
+  FontSlant->"Italic"],
+ " you click). Close the window when you are done. Change instruments via the \
+popup menu."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Piano", "[", "]"}]], "Input"],
+
+Cell["\<\
+You can also provide the number of a specific MIDI instrument you want to \
+start with (you can see the numbers next to the names in the instrument popup \
+menu). This uses the church organ sound on most systems:\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Piano", "[", "20", "]"}]], "Input"]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{871, 554},
+WindowMargins->{{1, Automatic}, {Automatic, -1}},
+DockedCells->(None& ),
+FrontEndVersion->"6.0 for Mac OS X PowerPC (32-bit) (February 21, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 1869, 45, 422, "Title"],
+Cell[CellGroupData[{
+Cell[2484, 72, 26, 0, 34, "Subsection"],
+Cell[2513, 74, 61, 1, 30, "Input",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[2599, 79, 7308, 216, 3558, "Input",
+ InitializationCell->True],
+Cell[9910, 297, 239, 5, 70, "Message"],
+Cell[10152, 304, 245, 6, 70, "Message"],
+Cell[10400, 312, 247, 6, 70, "Message"],
+Cell[10650, 320, 218, 5, 70, "Message"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10917, 331, 29, 0, 26, "Subsection"],
+Cell[10949, 333, 279, 7, 41, "Text"],
+Cell[11231, 342, 53, 1, 24, "Input"],
+Cell[11287, 345, 236, 4, 41, "Text"],
+Cell[11526, 351, 59, 1, 24, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

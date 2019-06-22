@@ -1,0 +1,60 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IsComputing Property</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.MathKernel.IsComputing.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">MathKernel.IsComputing Property</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Gets whether <i>Mathematica</i> is currently busy with a computation (that is, whether <a href="Wolfram.NETLink.MathKernel.Compute_overload_1.html">Compute</a> is currently running). </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Public ReadOnly Property IsComputing As <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemBooleanClassTopic.htm">Boolean</a></div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />public <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemBooleanClassTopic.htm">bool</a> IsComputing {get;}</div>
+      <p>
+      </p>
+      <h4 class="dtH4">Remarks</h4>
+      <p> You can use this property in an event handler method to see whether it is safe to make a call to <a href="Wolfram.NETLink.MathKernel.Compute_overload_1.html">Compute</a>. With the <a href="Wolfram.NETLink.MathKernel.HandleEvents.html">HandleEvents</a> property set to its default value of true, event handlers can fire while the Compute method is running. To prevent a reentrant call to Compute, you can check this property in an event handler to decide whether it is safe to proceed with a call to Compute. <p> If you go ahead and try to make a reentrant call to Compute, an InvalidOperationException will be thrown. </p>
+            </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.MathKernel.html">MathKernel Class</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.MathKernel.Compute_overload_1.html">Compute</a> | <a href="Wolfram.NETLink.MathKernel.HandleEvents.html">HandleEvents</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="IsComputing property">
+        </param>
+        <param name="Keyword" value="IsComputing property, MathKernel class">
+        </param>
+        <param name="Keyword" value="MathKernel.IsComputing property">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

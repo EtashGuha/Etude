@@ -1,0 +1,36 @@
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "3J6-cR-6RM"; */
+"3J6-cR-6RM.title" = "OK";
+
+/* Class = "NSTextFieldCell"; title = "Counter:"; ObjectID = "58S-GF-nzg"; */
+"58S-GF-nzg.title" = "カウンタ：";
+
+/* Class = "NSTextFieldCell"; title = "Use the counter value corresponding to the location of:"; ObjectID = "5Kg-JM-Jtj"; */
+"5Kg-JM-Jtj.title" = "以下の位置に対応するカウンタ数を使用：";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Dqm-wh-wcO"; */
+"Dqm-wh-wcO.title" = "キャンセル";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "GsA-53-Wgm"; */
+"GsA-53-Wgm.title" = "テーブルビューセル";
+
+/* Class = "NSTableColumn"; headerCell.title = "All cell tags in the notebook"; ObjectID = "J4h-fK-eiu"; */
+"J4h-fK-eiu.headerCell.title" = "ノートブック内のすべてのセルタグ";
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "LAa-qz-A5M"; */
+"LAa-qz-A5M.title" = "アイテム 3";
+
+/* Class = "NSButtonCell"; title = "The first cell with the tag:"; ObjectID = "Lse-oU-UPN"; */
+"Lse-oU-UPN.title" = "タグの付いた先頭のセルで";
+
+/* Class = "NSButtonCell"; title = "This counter object"; ObjectID = "TKt-hc-GTw"; */
+"TKt-hc-GTw.title" = "このカウンタオブジェクトで";
+
+/* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "WFH-qB-zFt"; */
+"WFH-qB-zFt.title" = "アイテム 1";
+
+/* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "gih-nR-exy"; */
+"gih-nR-exy.title" = "アイテム 2";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "nh8-RV-2nZ"; */
+"nh8-RV-2nZ.title" = "テキストセル";

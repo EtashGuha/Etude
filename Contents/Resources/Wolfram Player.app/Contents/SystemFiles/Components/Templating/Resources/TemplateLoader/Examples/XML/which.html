@@ -1,0 +1,6 @@
+<h1>Data:</h1>
+<wolfram:which>
+  <wolfram:if test='ListQ[#data]'>Data is a list.</wolfram:if>
+  <wolfram:if test='StringQ[#data]'>Data is a string.</wolfram:if>
+  <wolfram:else>Impossible to handle data.</wolfram:else>
+</wolfram:which>

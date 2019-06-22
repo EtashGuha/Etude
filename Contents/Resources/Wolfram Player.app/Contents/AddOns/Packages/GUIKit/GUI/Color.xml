@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<widget class="com.wolfram.guikit.awt.ExprAccessibleColor">
+	<args ref="##"/>
+</widget>

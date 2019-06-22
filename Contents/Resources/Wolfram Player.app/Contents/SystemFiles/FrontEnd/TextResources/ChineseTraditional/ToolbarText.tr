@@ -1,0 +1,175 @@
+@@resource SlideshowToolbarText
+{
+	"TooltipFirstSlide"->"\:7b2c\:4e00\:5f35\:6295\:5f71\:7247",
+	"TooltipPreviousSlide"->"\:4e0a\:4e00\:5f35\:6295\:5f71\:7247",
+	"TooltipNextSlide"->"\:4e0b\:4e00\:5f35\:6295\:5f71\:7247",
+	"TooltipLastSlide"->"\:6700\:5f8c\:4e00\:5f35\:6295\:5f71\:7247",
+	"TooltipToggleFullScreen"->"\:5207\:63db\:5168\:87a2\:5e55",
+	"SlideshowToolbarCounterText" -> " / ",
+	"SlideshowToolbarCounterPrefixText" -> "\:6295\:5f71\:7247",
+	"SlideshowToolbarEmptySlide" -> "(\:6295\:5f71\:7247 `1`)"
+}
+@|
+@@resource HelpToolbarText
+{
+	"TooltipForward"->"\:4e0b\:4e00\:9801",
+	"TooltipBack"->"\:4e0a\:4e00\:9801",
+	"TooltipHistory"->"\:6b77\:53f2\:9078\:55ae",
+	"TooltipGo"->"\:641c\:5c0b",
+	"TooltipHome"->"\:56de\:5230\:9996\:9801",
+	"TooltipFunction" -> "\:51fd\:6578\:5c0e\:89bd\:54e1",
+	"TooltipTutorial" -> "\:865b\:64ec\:66f8\:7c4d",
+	"TooltipTutorial2" -> "\:986f\:793a\:5728\:865b\:64ec\:66f8\:7c4d\:88e1",
+	"TooltipRefresh"->"\:91cd\:8f09\:7576\:524d\:9801\:9762",
+	"SearchString1"->"\:5728\:6240\:6709\:9801\:9762\:641c\:5c0b\:5305\:542b ",
+	"SearchString2"->".",
+	"SynonymString1"->"   |   ",
+	"SynonymString2"->" \:662f ",
+	"SynonymString3"->" \:5728 Mathematica \:88e1"
+}
+@|
+@@resource PackageToolbarText
+{
+	"ButtonRunPackage"->"\:57f7\:884c\:6240\:6709\:4ee3\:78bc",
+	"TooltipRunPackage" -> "\:8a08\:7b97\:521d\:59cb\:5316\:5132\:5b58\:683c",
+	"LabelDebug"->"\:9664\:932f",
+	"ButtonUpdate"->"\:66f4\:65b0",
+	"TooltipUpdate"->"\:66f4\:65b0\:51fd\:6578\:548c\:5340\:5217\:8868",
+	"ButtonFunctions"->"\:51fd\:6578",
+	"ButtonSections"->"\:5340"
+}
+@|
+@@resource CompatibilityToolbarText
+{
+	"Title" -> "Mathematica \:7248\:672c\:8aee\:8a62",
+	"Text1" -> "\:9019\:500b\:7b46\:8a18\:672c\:7531\:820a\:7248 Mathematica \:7522\:751f",
+	"Text2" -> "\:5927\:90e8\:5206\:7b46\:8a18\:672c\:4e0d\:7528\:6539\:8b8a\:5373\:53ef\:57f7\:884c\:3002\:9019\:500b\:5de5\:5177\:6383\:63cf\:53ef\:80fd\:5b58\:5728\:7684\:554f\:984c\:4e26\:4e14\:5efa\:8b70\:6539\:8b8a\:3002",
+	"Scan" -> "\:6383\:63cf\:53ef\:80fd\:5b58\:5728\:7684\:554f\:984c",
+	"DontScan" -> "\:4e0d\:8981\:6383\:63cf\:9019\:500b\:7b46\:8a18\:672c",
+	"NeverScan" -> "\:6c38\:4e0d\:6383\:63cf\:7b46\:8a18\:672c",
+	
+	"StatusText" -> "\:6383\:63cf\:7b46\:8a18\:672c\:6aa2\:67e5\:76f8\:5bb9\:6027\:554f\:984c...",
+	"CounterText" -> "\:5269\:9918\:7684\:5132\:5b58\:683c\:ff1a",
+	"MessageTitle" -> "Mathematica \:81ea\:52d5\:5316\:76f8\:5bb9\:6027\:5de5\:5177",
+	"MessageText" -> "\:6c92\:6709\:5075\:6e2c\:5230\:76f8\:5bb9\:6027\:554f\:984c\:3002",
+	"ApplyAll" -> "\:5957\:7528\:6240\:6709\:5efa\:8b70",
+	"DiscardAll" -> "\:4e1f\:68c4\:6240\:6709\:5efa\:8b70",
+	"FindNext" -> "\:67e5\:627e\:4e0b\:4e00\:500b\:554f\:984c",
+	"FindPrevious" -> "\:67e5\:627e\:4e0a\:4e00\:500b\:554f\:984c",
+	"IssueTag" -> "\:76f8\:5bb9\:6027\:554f\:984c",
+	"SuggestionTag" -> "\:5efa\:8b70\:7248\:672c",
+	"ApplyAllInstances" -> "\:5957\:7528\:9078\:64c7\:5230\:9019\:500b\:5efa\:8b70\:7684\:6240\:6709\:5be6\:4f8b",
+	"ReplaceSuggestion" -> "\:7528\:5efa\:8b70\:7248\:672c\:53d6\:4ee3",
+	"DiscardSuggestion" -> "\:4e1f\:68c4\:5efa\:8b70\:7248\:672c",
+	"DiscardAdvisory" -> "\:4e1f\:68c4\:7248\:672c\:8aee\:8a62\:5132\:5b58\:683c"
+}
+@|
+@@resource MainToolbarText
+{
+}
+@|
+@@resource SecurityToolbarText
+{
+"securityWarning" -> RowBox[{"\:9019\:500b\:6587\:4ef6\:5305\:542b\:6f5b\:5728\:4e0d\:5b89\:5168\:7684\:52d5\:614b\:5167\:5bb9\:3002",
+   TagBox[ButtonBox[
+    PaneSelectorBox[{False -> 
+       StyleBox["\"\:66f4\:591a\:7d30\:7bc0 \[RightGuillemet]\"", RGBColor[1, 0, 0], 
+        StripOnInput -> False], 
+      True -> StyleBox["\"\:66f4\:591a\:7d30\:7bc0 \[RightGuillemet]\"", "HyperlinkActive", 
+        StripOnInput -> False]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], ImageSize -> Automatic, 
+     FrameMargins -> 0], Appearance -> None, Evaluator -> None, 
+    ButtonFunction :> (FEPrivate`If[
+        FEPrivate`Or[FEPrivate`SameQ[FrontEnd`CurrentValue["PluginEnabled"], True],
+         FEPrivate`SameQ[FrontEnd`$NotebookLicenseType, "Player"],
+         FEPrivate`SameQ[FrontEnd`$NotebookLicenseType, "Player Pro"]], 
+        FEPrivate`FrontEndExecute[{FrontEnd`NotebookLocate[{URL[
+             "http://reference.wolfram.com/mathematica/tutorial/NotebookSecurity.html"], None}]}], 
+        FEPrivate`FrontEndExecute[
+         FrontEnd`FrontEndToken["OpenHelpLink", 
+          "tutorial/NotebookSecurity"]]] &)], 
+   MouseAppearanceTag["LinkHand"]]}],
+"enableDynamicButton" -> "\:555f\:7528\:52d5\:614b"
+}
+@|
+@@resource CodeCaptionsText
+{
+"openPreferencesButton" -> "\:958b\:555f\:504f\:597d\:8a2d\:5b9a...",
+"neverShowButton" -> "\:4e0d\:8981\:518d\:986f\:793a",
+"codeCaptionText" -> "\:9019\:500b\:7b46\:8a18\:672c\:662f\:4ee5\:7e41\:9ad4\:4e2d\:6587\:4f86\:986f\:793a\:6307\:4ee4\:8aaa\:660e\:3002
+\:53ef\:5f9e\:504f\:597d\:8a2d\:5b9a\:5c0d\:8a71\:6846\:4f86\:63a7\:5236\:6b64\:986f\:793a\:9078\:9805\:3002"
+}
+@|
+@@resource DynamicUpdatingToolbarText
+{
+"dynamicWarning" -> RowBox[{"\:5728 ", 
+  TagBox[
+   ButtonBox[PaneSelectorBox[{False -> 
+       StyleBox["\"Wolfram Desktop \:6216 Wolfram Cloud \:7522\:54c1\"", RGBColor[1, 0, 0], 
+        StripOnInput -> False], 
+      True -> StyleBox["\"Wolfram Desktop \:6216 Wolfram Cloud \:7522\:54c1\"", "HyperlinkActive", 
+        StripOnInput -> False]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], ImageSize -> Automatic, 
+     FrameMargins -> 0], 
+     Appearance -> None, Evaluator -> None,
+     ButtonFunction :> FEPrivate`FrontEndExecute[{FrontEnd`NotebookLocate[{URL[
+             "http://www.wolfram.com/products/"], None}]}]
+    ], 
+   MouseAppearanceTag["LinkHand"]], " \:4e2d\:6253\:958b\:7b46\:8a18\:672c\:ff0c\:67e5\:770b\:52d5\:614b\:5167\:5bb9"}]
+}
+@|
+@@resource MessageToolbarText
+{
+	"ButtonDeleteAll"->" \:522a\:9664\:6240\:6709\:8a0a\:606f "
+}
+@|
+@@resource StylesheetToolbarText
+{
+	"Title" -> "\:500b\:4eba\:6a23\:5f0f\:5b9a\:7fa9",
+	"BuiltInTitle" -> "\:6a23\:5f0f\:5b9a\:7fa9",
+	"NewStyle" -> "\:6216\:8f38\:5165\:4e00\:500b\:6a23\:5f0f\:540d\:7a31: ",
+	"ExistingStyle" -> "\:9078\:64c7\:4e00\:500b\:6a23\:5f0f",
+	"InstallLabel" -> "\:5b89\:88dd\:6a23\:5f0f\:8868...",
+	"InstallTooltip" -> "\:5c07\:9019\:500b\:6a23\:5f0f\:8868\:8907\:88fd\:5230\:6a23\:5f0f\:8868\:9078\:55ae"
+}
+@|
+@@resource ProductSpecificToolbarText
+{
+	"Learn" -> "\:5b78\:7fd2\:4e2d\:5fc3",
+	"Demo" -> "\:5c55\:793a",
+	"Help" -> "\:6c42\:52a9",
+	"Ask" -> "\:806f\:7e6b\:6211\:5011",
+	"Buy" -> "\:8cfc\:8cb7 Mathematica",
+	"MathWorld" -> "MathWorld",
+	"Forum" -> "Wolfram \:793e\:7fa4",
+	"FullMath" -> "Mathematica \:5b8c\:6574\:7248",
+	"DemoProj" -> "\:5c55\:793a\:9805\:76ee",
+	"FindHint" -> "\:67e5\:627e",
+	"FindPrevious" -> "\:67e5\:627e\:4e0a\:4e00\:500b",
+	"FindNext" -> "\:67e5\:627e\:4e0b\:4e00\:500b",
+	"Cut" -> "\:526a\:4e0b",
+	"Copy" -> "\:8907\:88fd",
+	"Paste" -> "\:8cbc\:4e0a",
+	"Print" -> "\:5217\:5370",
+	"SaveAs" -> "\:53e6\:5b58\:70ba",
+	"Open" -> "\:958b\:555f\:65b9\:5f0f\:ff1a",
+	"ExportCDF"  -> "\:532f\:51fa CDF",
+	"FreeCDFPreview" -> "FreeCDF \:9810\:89bd",
+	"EnterpriseCDFPreview" -> "\:4f01\:696d CDF \:9810\:89bd\:7248"	
+}
+@|
+@@resource VersionedStylesheetToolbar
+{
+	"MainText" -> "\:60a8\:7528\:820a\:7248\:9810\:8a2d\:6a23\:5f0f\:6253\:958b\:4e00\:500b\:7b46\:8a18\:672c\:3002\:5df2\:7d93\:66f4\:65b0\:7b46\:8a18\:672c\:7684\:5916\:89c0\:3002",
+	"KeepText" -> "\:7528\:66f4\:65b0\:7248\:6a23\:5f0f\:7e7c\:7e8c",
+	"RevertText" -> "\:56de\:5fa9\:5230\:820a\:7248\:6a23\:5f0f",
+	"RememberText" -> "\:5c0d\:6240\:6709\:7684\:7b46\:8a18\:672c\:4f7f\:7528\:9019\:500b\:6a23\:5f0f"
+}
+@|
+@@resource WolframCloudSyncToolbar
+{
+	"MainText" -> "\:6587\:4ef6\:540c\:6b65\:5316\:5931\:6557\:3002"
+}
+@|

@@ -1,0 +1,234 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      6810,        225]
+NotebookOptionsPosition[      5656,        181]
+NotebookOutlinePosition[      6173,        200]
+CellTagsIndexPosition[      6130,        197]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+.NET/Link Example : A \"Nice\" Function (Setting the Kernel Process Priority)\
+\>", "Title",
+ CellID->39112322],
+
+Cell[TextData[{
+ "This is a very simple example demonstrating some basic .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " programming. One nice use for .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " is to get closer to the operating system level than ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " normally allows. Here we use some .NET classes for controlling processes."
+}], "Text",
+ CellChangeTimes->{{3.412979466999606*^9, 3.412979467265809*^9}, {
+  3.413151310244058*^9, 3.413151312745706*^9}},
+ CellID->153377750],
+
+Cell[TextData[{
+ "This example presents a function called ",
+ Cell[BoxData["Nice"], "InlineFormula"],
+ ", which lowers the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " kernel process' priority during the execution of its argument. It is \
+reminiscent of the Unix command ",
+ Cell[BoxData["nice"], "InlineFormula"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.412979481875656*^9, 3.4129794903941517`*^9}, {
+  3.413151318483861*^9, 3.4131513216265564`*^9}},
+ CellID->389361197],
+
+Cell[TextData[{
+ "To try this example, evaluate all the initialization cells (you can do this \
+using the menu item ",
+ StyleBox[ButtonBox["Evaluation",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/EvaluationMenu"], "MenuName"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter"],
+ StyleBox[ButtonBox["Evaluate Initialization Cells",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/menuitem/EvaluateInitializationCells"], "MenuName"],
+ ") and then go to the Example section."
+}], "Text",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707597948962*^9}, {
+  3.412707959534474*^9, 3.412707967363954*^9}, {3.412708138927157*^9, 
+  3.412708173015101*^9}, {3.412708230174596*^9, 3.412708252892912*^9}},
+ CellID->1738407360],
+
+Cell[CellGroupData[{
+
+Cell["Code and Explanation", "Section"],
+
+Cell[TextData[{
+ "This example demonstrates a typical structure for a .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " program:"
+}], "Text",
+ CellChangeTimes->{{3.4131513257230053`*^9, 3.4131513283966417`*^9}},
+ CellID->479930523],
+
+Cell[TextData[{
+ "It does not need to return and .NET objects, so it wraps the entire \
+computation in ",
+ StyleBox["NETBlock",
+  FontWeight->"Bold"],
+ ", which allows all objects created during the running of the program to be \
+released when it ends."
+}], "BulletedText",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707619009431*^9}, {
+   3.4127078940129128`*^9, 3.412707894126223*^9}, 3.41270793928232*^9, {
+   3.4129795542934093`*^9, 3.412979607732836*^9}},
+ CellID->1720286743],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "It calls ",
+ StyleBox["InstallNET",
+  FontWeight->"Bold"],
+ " at the start to ensure that .NET is running."
+}], "BulletedText",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707619009431*^9}, {
+   3.4127078940129128`*^9, 3.412707894126223*^9}, 3.41270793928232*^9, {
+   3.4129795542934093`*^9, 3.412979629509267*^9}},
+ CellID->203461276],
+
+Cell["\<\
+Needs[\"NETLink`\"];
+
+SetAttributes[Nice, HoldFirst];
+
+Nice[expr_] :=
+\tNETBlock[
+\t\tModule[{kernelProc, origPriority, result},
+\t\t\tInstallNET[];
+\t\t\t(* We need to call a static member from this class (the GetProcessById \
+method),
+\t\t\t   so we ned to use LoadNETType to load the class.
+\t\t\t*)
+\t\t\tLoadNETType[\"System.Diagnostics.Process\"];
+\t\t\tkernelProc = Process`GetProcessById[$ProcessID];
+\t\t\t(* Here we get the PriorityClass property of the kernel's Process \
+object. *)
+\t\t\torigPriority = kernelProc@PriorityClass;
+\t\t\tCheckAbort[
+\t\t\t\t(* Set the priortiy to Idle level. Although we are accessing a static \
+member (the Idle value
+\t\t\t\t   from the ProcessPriorityClass enum), we do not need to call \
+LoadNETType on the enum class
+\t\t\t\t   because it was already loaded when we returned the \
+kernelProc@PriorityClass object above.
+\t\t\t\t*)
+\t\t\t\tkernelProc@PriorityClass = ProcessPriorityClass`Idle;
+\t\t\t\t(* Perform the computation. *)
+\t\t\t\tresult = expr;
+\t\t\t\t(* Restore the original priority. *)
+\t\t\t\tkernelProc@PriorityClass = origPriority;
+\t\t\t\tresult,
+\t\t\t(* If aborted *)
+\t\t\t\t(* We are careful to restore the original priority if aborted. *)
+\t\t\t\tkernelProc@PriorityClass = origPriority;
+\t\t\t\t$Aborted
+\t\t\t]
+\t\t]
+\t]\
+\>", "Input",
+ InitializationCell->True]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Section"],
+
+Cell[TextData[{
+ "Here is a time-consuming call that we can wrap in ",
+ Cell[BoxData["Nice"], "InlineFormula"],
+ ". The integration will eventually fail to converge after 5000000 \
+iterations. The computer's CPU meter will remain pegged while this is \
+running, but any other operations you perform on the computer will take \
+priority over the computation."
+}], "Text",
+ CellChangeTimes->{{3.4131513356983266`*^9, 3.413151339982399*^9}}],
+
+Cell["\<\
+Nice[
+\tNIntegrate[x^2/(Cos[x + y + 1] + 5), {x, 0, 5}, {y, 0, 5}, PrecisionGoal \
+\[Rule] 50, MaxPoints \[Rule] 5000000]
+]\
+\>", "Input"]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{783, 643},
+WindowMargins->{{225, Automatic}, {Automatic, 115}},
+DockedCells->(None& ),
+PrivateNotebookOptions->{"NotebookAuthor"->""},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (August 15, 2010)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 121, 3, 77, "Title",
+ CellID->39112322],
+Cell[691, 27, 537, 14, 70, "Text",
+ CellID->153377750],
+Cell[1231, 43, 480, 13, 54, "Text",
+ CellID->389361197],
+Cell[1714, 58, 729, 15, 50, "Text",
+ CellID->1738407360],
+Cell[CellGroupData[{
+Cell[2468, 77, 39, 0, 51, "Section"],
+Cell[2510, 79, 234, 7, 30, "Text",
+ CellID->479930523],
+Cell[2747, 88, 485, 11, 37, "BulletedText",
+ CellID->1720286743],
+Cell[CellGroupData[{
+Cell[3257, 103, 356, 9, 22, "BulletedText",
+ CellID->203461276],
+Cell[3616, 114, 1345, 40, 571, "Input",
+ InitializationCell->True]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5010, 160, 26, 0, 51, "Section"],
+Cell[5039, 162, 438, 8, 72, "Text"],
+Cell[5480, 172, 148, 5, 62, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

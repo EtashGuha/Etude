@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema version="1.0" xmlns="http://www.apple.com/metadata"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.apple.com/metadata
+	file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Resources/MetadataSchema.xsd">
+	
+	<note>
+		Custom attributes that this metadata importer supports.  Below
+		is an example of a multivalued string attribute.  Other types
+		are CFNumber, CFDate, CFBoolean and CFData.		      
+	</note>
+	<attributes>
+		<attribute name="com_wolfram_notebook_Evaluators" multivalued="true" type="CFString"/>
+		<attribute name="com_wolfram_notebook_GraphicCount" multivalued="false" type="CFNumber"/>
+		<attribute name="com_wolfram_notebook_Hyperlinks" multivalued="true" type="CFString"/>
+		<attribute name="com_wolfram_notebook_InitCellCount" multivalued="false" type="CFNumber"/>
+		<attribute name="com_wolfram_notebook_InputCellCount" multivalued="false" type="CFNumber"/>
+		<attribute name="com_wolfram_notebook_OtherCellCount" multivalued="false" type="CFNumber"/>
+		<attribute name="com_wolfram_notebook_OutputCellCount" multivalued="false" type="CFNumber"/>
+		<attribute name="com_wolfram_notebook_StyleSheet" multivalued="false" type="CFString"/>
+		<attribute name="com_wolfram_notebook_Type" multivalued="false" type="CFString"/>
+		<attribute name="com_wolfram_notebook_WindowFrame" multivalued="false" type="CFString"/>
+	</attributes>
+	<types>
+		<type name="com.wolfram.notebook">
+			<note>
+				The keys that this metadata importer handles.
+			</note>
+			<allattrs>
+				kMDItemTitle
+				kMDItemAuthors
+				com_wolfram_notebook_StyleSheet
+				com_wolfram_notebook_InputCellCount
+				com_wolfram_notebook_OutputCellCount
+				com_wolfram_notebook_OtherCellCount
+				com_wolfram_notebook_InitCellCount
+				com_wolfram_notebook_GraphicCount
+				com_wolfram_notebook_Evaluators
+				kMDItemVersion
+				com_wolfram_notebook_Type
+				com_wolfram_notebook_WindowFrame
+				kMDItemPixelWidth
+				kMDItemPixelHeight
+				kMDItemKeywords
+				com_wolfram_notebook_Hyperlinks
+			</allattrs>
+			<displayattrs>
+				kMDItemTitle
+				kMDItemAuthors
+				com_wolfram_notebook_StyleSheet
+				com_wolfram_notebook_InputCellCount
+				com_wolfram_notebook_OutputCellCount
+				com_wolfram_notebook_OtherCellCount
+				com_wolfram_notebook_InitCellCount
+				com_wolfram_notebook_GraphicCount
+				com_wolfram_notebook_Evaluators
+				kMDItemVersion
+				com_wolfram_notebook_Type
+				com_wolfram_notebook_WindowFrame
+				kMDItemPixelWidth
+				kMDItemPixelHeight
+				kMDItemKeywords
+			</displayattrs>
+		</type>
+	</types>
+</schema>
+

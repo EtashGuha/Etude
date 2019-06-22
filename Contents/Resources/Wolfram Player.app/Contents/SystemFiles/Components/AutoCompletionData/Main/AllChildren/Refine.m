@@ -1,0 +1,11 @@
+{"Sqrt", "Integrate", "Sin", "Pi", "D", "Infinity", "E", "Erfc", "I", "Cos", 
+ "Log", "Sum", "Assumptions", "Exp", "Abs", "DiracDelta", "Subscript", "Tan", 
+ "Gamma", "Sec", "Cross", "Derivative", "ArcTan", "Binomial", "ArcSin", 
+ "BesselJ", "Range", "FourierTransform", "DiscreteDelta", "Cot", "Quantity", 
+ "Boole", "ArcCot", "Re", "None", "BesselK", "Arg", "VectorQ", "Norm", "Mod", 
+ "Length", "Floor", "DSolve", "ArcCos", "Plus", "LegendreP", "Inverse", 
+ "ComplexExpand", "BitShiftLeft", "BesselJZero", "BaseForm", "UnitBox", 
+ "Sinh", "SingularValueDecomposition", "Residue", "Limit", "LessEqual", 
+ "Less", "LaplaceTransform", "HeavisideTheta", "ForAll", "Factor", 
+ "ExpIntegralEi", "Exists", "EulerGamma", "Cosh", "BesselI", "Assuming", 
+ "ArcTanh"}

@@ -1,0 +1,301 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     11214,        291]
+NotebookOptionsPosition[     10388,        260]
+NotebookOutlinePosition[     10948,        280]
+CellTagsIndexPosition[     10905,        277]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["XMethods Query Web Service ", "Title"],
+
+Cell[TextData[{
+ "This example demonstrates the XMethods Query Service.  XMethods.com is a \
+web site that lists web services.  This example demonstrates using the \
+XMethods Query Service to discover and use many of the web services \
+available.  This example searches the XMethods database for the web services \
+registered.  The example code then places the results in the notebook.  An ",
+ Cell[BoxData[
+  ButtonBox["InstallService",
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/InstallService"]], "InlineFormula"],
+ " function is placed in each of the Cells created for each service.  Once \
+the query is finished, a user can conveniently browse through the services \
+and install the services that may be interesting.  If GetServiceSummaries is \
+called again, the code will match service id's with cell tags.  If an id \
+exists as a cell tag no new cells will be added.  If an id does not exist the \
+appropriate cells are added for the service."
+}], "Text",
+ CellChangeTimes->{{3.382197906613118*^9, 3.382197915869144*^9}}],
+
+Cell[TextData[{
+ "To try this example, evaluate all the initialization cells (you can do this \
+with the menu command ",
+ StyleBox[ButtonBox["Evaluation",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/EvaluationMenu"], "MenuName"],
+ StyleBox[" ", "MenuName"],
+ StyleBox["\[FilledRightTriangle] ", "MenuPointer"],
+ StyleBox[ButtonBox["Evaluate Initialization Cells",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/menuitem/EvaluateInitializationCells"], 
+  "MenuName"],
+ "). Then go to the Example section."
+}], "Text",
+ CellChangeTimes->{{3.382198010332183*^9, 3.382198021492414*^9}, {
+  3.382198080533957*^9, 3.382198105448079*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Code", "Section"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"BeginPackage", "[", 
+    RowBox[{"\"\<WebServices`Examples`XMethods`\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<WebServices`\>\"", ",", "\"\<JLink`\>\""}], "}"}]}], "]"}],
+    ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GetServiceSummaries", ";"}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "InstallService", "[", "\"\<http://www.xmethods.net/wsdl/query.wsdl\>\"", 
+    "]"}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"GetServiceSummaries", "[", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "result", "}"}], ",", 
+     RowBox[{
+      RowBox[{"result", "=", 
+       RowBox[{"getAllServiceSummaries", "[", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"result", "===", "$Failed"}], ",", 
+        RowBox[{"Return", "[", "$Failed", "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"notebook", "=", 
+       RowBox[{"EvaluationNotebook", "[", "]"}]}], ";", "\[IndentingNewLine]",
+       
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"NotebookFind", "[", 
+          RowBox[{"notebook", ",", "\"\<Results\>\"", ",", "All", ",", 
+           RowBox[{"{", "CellTags", "}"}]}], "]"}], "===", "$Failed"}], ",", 
+        RowBox[{
+         RowBox[{"SelectionMove", "[", 
+          RowBox[{"notebook", ",", "After", ",", "EvaluationCell"}], "]"}], 
+         ";", "\[IndentingNewLine]", 
+         RowBox[{"NotebookWrite", "[", 
+          RowBox[{"notebook", ",", 
+           RowBox[{"Cell", "[", 
+            RowBox[{"\"\<Results\>\"", ",", "\"\<Section\>\"", ",", 
+             RowBox[{"CellTags", "\[Rule]", 
+              RowBox[{"{", "\"\<Results\>\"", "}"}]}]}], "]"}]}], "]"}], 
+         ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"printResult", "/@", "result"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"NotebookFind", "[", 
+       RowBox[{"notebook", ",", "\"\<Results\>\"", ",", "All", ",", 
+        RowBox[{"{", "CellTags", "}"}]}], "]"}], ";"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"printResult", "[", "result_List", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "name", ",", "id", ",", "shortDescription", ",", "wsdlURL", ",", 
+       "publisherID"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"name", "=", 
+       RowBox[{"\"\<name\>\"", "/.", "result"}]}], ";", "\[IndentingNewLine]",
+       
+      RowBox[{"id", "=", 
+       RowBox[{"\"\<id\>\"", "/.", "result"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"shortDescription", "=", 
+       RowBox[{"\"\<shortDescription\>\"", "/.", "result"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"wsdlURL", "=", 
+       RowBox[{"\"\<wsdlURL\>\"", "/.", "result"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"publisherID", "=", 
+       RowBox[{"\"\<publisherID\>\"", "/.", "result"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"notebook", "=", 
+       RowBox[{"EvaluationNotebook", "[", "]"}]}], ";", "\[IndentingNewLine]",
+       
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"NotebookFind", "[", 
+          RowBox[{"notebook", ",", "id", ",", "All", ",", 
+           RowBox[{"{", "CellTags", "}"}], ",", 
+           RowBox[{"AutoScroll", "\[Rule]", "False"}]}], "]"}], "===", 
+         "$Failed"}], ",", 
+        RowBox[{
+         RowBox[{"NotebookFind", "[", 
+          RowBox[{"notebook", ",", "\"\<Results\>\"", ",", "All", ",", 
+           RowBox[{"{", "CellTags", "}"}], ",", 
+           RowBox[{"AutoScroll", "\[Rule]", "False"}]}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"SelectionMove", "[", 
+          RowBox[{"notebook", ",", "After", ",", "Cell", ",", 
+           RowBox[{"AutoScroll", "\[Rule]", "False"}]}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"NotebookWrite", "[", 
+          RowBox[{"notebook", ",", 
+           RowBox[{"Cell", "[", 
+            RowBox[{"CellGroupData", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Cell", "[", 
+                 RowBox[{
+                  RowBox[{"BoxData", "[", 
+                   RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"name", ",", 
+                    RowBox[{"StyleBox", "[", 
+                    RowBox[{"\"\< from \>\"", ",", 
+                    RowBox[{"FontWeight", "\[Rule]", "\"\<Plain\>\""}]}], 
+                    "]"}], ",", 
+                    RowBox[{"StyleBox", "[", 
+                    RowBox[{"publisherID", ",", 
+                    RowBox[{"FontWeight", "\[Rule]", "\"\<Plain\>\""}], ",", 
+                    RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}]}], 
+                    "]"}], ",", 
+                    RowBox[{"ButtonBox", "[", 
+                    RowBox[{"\"\<(wsdl)\>\"", ",", 
+                    RowBox[{"ButtonData", "\[Rule]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"URL", "[", "wsdlURL", "]"}], ",", "None"}], 
+                    "}"}]}], ",", 
+                    RowBox[{"ButtonStyle", "\[Rule]", "\"\<Hyperlink\>\""}]}],
+                     "]"}]}], "}"}], "]"}], "]"}], ",", "\"\<Subsection\>\"", 
+                  ",", 
+                  RowBox[{"ShowGroupOpenCloseIcon", "\[Rule]", "True"}], ",", 
+                  
+                  RowBox[{"CellDingbat", "\[Rule]", "None"}], ",", 
+                  RowBox[{"CellTags", "\[Rule]", 
+                   RowBox[{"{", "id", "}"}]}]}], "]"}], ",", 
+                RowBox[{"Cell", "[", 
+                 RowBox[{"shortDescription", ",", "\"\<Text\>\"", ",", 
+                  RowBox[{"ShowCellBracket", "\[Rule]", "False"}], ",", 
+                  RowBox[{"CellMargins", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"55", ",", "Inherited"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"Inherited", ",", "Inherited"}], "}"}]}], "}"}]}],
+                   ",", 
+                  RowBox[{"CellFrame", "\[Rule]", "True"}], ",", 
+                  RowBox[{"Background", "\[Rule]", 
+                   RowBox[{"GrayLevel", "[", "0.850004", "]"}]}]}], "]"}], 
+                ",", 
+                RowBox[{"Cell", "[", 
+                 RowBox[{
+                  RowBox[{"BoxData", "[", 
+                   RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<InstallService[\\\"\>\"", "<>", "wsdlURL", "<>", 
+                    "\"\<\\\"]\>\""}], "}"}], "]"}], "]"}], ",", 
+                  "\"\<Input\>\"", ",", 
+                  RowBox[{"ShowCellBracket", "\[Rule]", "False"}], ",", 
+                  RowBox[{"CellFrame", "\[Rule]", "True"}], ",", 
+                  RowBox[{"CellMargins", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"55", ",", "Inherited"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"Inherited", ",", "Inherited"}], "}"}]}], "}"}]}],
+                   ",", 
+                  RowBox[{"Background", "\[Rule]", 
+                   RowBox[{"GrayLevel", "[", "0.850004", "]"}]}]}], "]"}]}], 
+               "}"}], ",", "Open"}], "]"}], "]"}]}], "]"}], ";"}]}], "]"}], 
+      ";"}]}], "]"}]}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"EndPackage", "[", "]"}], ";"}]}], "Input",
+ InitializationCell->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Section"],
+
+Cell[BoxData[
+ RowBox[{"GetServiceSummaries", "[", "]"}]], "Input"]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{647, 564},
+WindowMargins->{{128, Automatic}, {59, Automatic}},
+DockedCells->(FrontEndExecute[{
+   FrontEnd`NotebookApply[
+    FrontEnd`InputNotebook[], #, Placeholder]}]& ),
+FrontEndVersion->"6.0 for Mac OS X PowerPC (32-bit) (February 27, 2007)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "TutorialPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 44, 0, 104, "Title"],
+Cell[637, 25, 1035, 17, 133, "Text"],
+Cell[1675, 44, 636, 15, 37, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2348, 64, 23, 0, 41, "Section"],
+Cell[2374, 66, 7865, 183, 970, "Input",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10276, 254, 26, 0, 41, "Section"],
+Cell[10305, 256, 67, 1, 23, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

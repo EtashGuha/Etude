@@ -1,0 +1,61 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IMathLink.MessageArrived Event</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IMathLink.MessageArrived.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IMathLink.MessageArrived Event
+					</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Occurs when a low-level MathLink message arrives. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Event MessageArrived As <a href="Wolfram.NETLink.MessageHandler.html">MessageHandler</a></div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />event <a href="Wolfram.NETLink.MessageHandler.html">MessageHandler</a> MessageArrived;</div>
+      <p>
+      </p>
+      <h4 class="dtH4">Remarks</h4>
+      <p> Do not confuse this type of message, used mainly for communicating requests to interrupt or abort a computation, with <i>Mathematica</i> warning and error messages, which are unrelated. <p> The MessageArrived event handler is passed a single argument of type MathLinkMessage that indicates the type of message. The event handler is called on a separate thread than the application's main thread (this thread is created by MathLink and not by your program). </p> Do not attempt to use the link from within your event handler. <p> Few programmers will need to use this event. </p>
+            </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IMathLink.html">IMathLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="MessageArrived event">
+        </param>
+        <param name="Keyword" value="MessageArrived event, IMathLink class">
+        </param>
+        <param name="Keyword" value="IMathLink.MessageArrived event">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

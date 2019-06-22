@@ -1,0 +1,54 @@
+
+/* Class = "NSTextFieldCell"; title = "Launch on:"; ObjectID = "7M6-4I-mGx"; */
+"7M6-4I-mGx.title" = "啟動：";
+
+/* Class = "NSTextFieldCell"; title = "Remote user:"; ObjectID = "9SH-8i-Hhk"; */
+"9SH-8i-Hhk.title" = "遠端用戶：";
+
+/* Class = "NSWindow"; title = "Kernel Configuration"; ObjectID = "9VK-nt-Pky"; */
+"9VK-nt-Pky.title" = "核心配置";
+
+/* Class = "NSButtonCell"; title = "Advanced Options"; ObjectID = "Ab3-Y0-DtQ"; */
+"Ab3-Y0-DtQ.title" = "進階選項";
+
+/* Class = "NSButtonCell"; title = "Raw MathLink connection"; ObjectID = "BMy-Rq-ge0"; */
+"BMy-Rq-ge0.title" = "原生 MathLink 連接";
+
+/* Class = "NSButtonCell"; title = "Remote machine"; ObjectID = "CfY-wy-vfN"; */
+"CfY-wy-vfN.title" = "遠端機器";
+
+/* Class = "NSButtonCell"; title = "Translate Return into Newline"; ObjectID = "FsS-Xp-EmK"; */
+"FsS-Xp-EmK.title" = "將 Return 設定為換行記號";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "Hsf-tQ-57f"; */
+"Hsf-tQ-57f.title" = "確定";
+
+/* Class = "NSTextFieldCell"; title = "Kernel name:"; ObjectID = "K4k-pk-E51"; */
+"K4k-pk-E51.title" = "核心名稱：";
+
+/* Class = "NSTextFieldCell"; title = "Remote host:"; ObjectID = "OWc-CE-NbJ"; */
+"OWc-CE-NbJ.title" = "遠端主機：";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Vb4-BM-RE5"; */
+"Vb4-BM-RE5.title" = "取消";
+
+/* Class = "NSTextFieldCell"; title = "Arguments to MLOpen:"; ObjectID = "WVU-8g-RWW"; */
+"WVU-8g-RWW.title" = "MLOpen 的引數：";
+
+/* Class = "NSButtonCell"; title = "Basic Options"; ObjectID = "YvN-b3-57C"; */
+"YvN-b3-57C.title" = "基本選項";
+
+/* Class = "NSButtonCell"; title = "Append name to In/Out prompts"; ObjectID = "dCI-ek-Vzh"; */
+"dCI-ek-Vzh.title" = "將名稱附加至 In/Out 提示";
+
+/* Class = "NSButtonCell"; title = "Local machine"; ObjectID = "i9l-Uz-UdG"; */
+"i9l-Uz-UdG.title" = "本地機器";
+
+/* Class = "NSTextFieldCell"; title = "Launch command:"; ObjectID = "jmF-Q8-eTt"; */
+"jmF-Q8-eTt.title" = "啟動指令：";
+
+/* Class = "NSButtonCell"; title = "Automatically launch on front end startup"; ObjectID = "trU-Cu-kBj"; */
+"trU-Cu-kBj.title" = "前端起動時自動啟動";
+
+/* Class = "NSTextFieldCell"; title = "Kernel program:"; ObjectID = "vic-pp-YSt"; */
+"vic-pp-YSt.title" = "核心程式：";

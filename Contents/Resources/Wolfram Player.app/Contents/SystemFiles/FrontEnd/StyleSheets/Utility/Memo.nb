@@ -1,0 +1,263 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      6727,        254]
+NotebookOptionsPosition[      4258,        185]
+NotebookOutlinePosition[      4681,        203]
+CellTagsIndexPosition[      4638,        200]
+MenuPosition->1100
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[StyleData[StyleDefinitions -> "Default.nb"]],
+
+Cell[StyleData[StyleDefinitions -> "StyleMenuClear.nb"]],
+
+Cell[StyleData[StyleDefinitions -> "EnvironmentMenuClear.nb"]],
+
+Cell["\<\
+Modify the definitions below to change the default appearance of all cells in \
+a given style. 
+Make modifications to any definition using commands in the Format menu.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Style Environment Names", "Section"],
+
+Cell[StyleData[All, "Working"],
+ PageWidth->WindowWidth,
+ ShowAutoStyles->False,
+ ScriptMinSize->9],
+
+Cell[StyleData[All, "Presentation"],
+ PageWidth->WindowWidth,
+ ShowGroupOpener->True,
+ ShowAutoStyles->False,
+ ScriptMinSize->14],
+
+Cell[StyleData[All, "SlideShow", StyleDefinitions -> StyleData[
+ All, "Presentation"]],
+ PageWidth->WindowWidth,
+ DockedCells->FEPrivate`FrontEndResource[
+  "FEExpressions", "SlideshowToolbar"],
+ ScrollingOptions->{"PagewiseDisplay"->True,
+ "VerticalScrollRange"->Fit},
+ MenuSortingValue->1300],
+
+Cell[StyleData[All, "Printout"],
+ PageWidth->PaperWidth,
+ ShowAutoStyles->False,
+ ScriptMinSize->7,
+ FontSize->10,
+ PrivateFontOptions->{"FontType"->"Outline"}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Notebook Options", "Section"],
+
+Cell["\<\
+The options defined for the style below will be used at the Notebook level.\
+\>", "Text"],
+
+Cell[StyleData["Notebook"],
+ PageHeaders->{{
+    Cell[
+     TextData[{
+       CounterBox["Page"]}], "PageNumber"], None, 
+    Cell[
+     TextData[{
+       ValueBox[FileName], " \[Bullet]  ", 
+       ValueBox[Date]}], "Header"]}, {
+    Cell[
+     TextData[{
+       ValueBox[FileName], " \[Bullet]  ", 
+       ValueBox[Date]}], "Header"], None, 
+    Cell[
+     TextData[{
+       CounterBox["Page"]}], "PageNumber"]}},
+ DefaultNewCellStyle->"Text",
+ DefaultDuplicateCellStyle->"Text",
+ DefaultInlineFormatType->StandardForm,
+ StyleMenuListing->None]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Styles for Input/Output", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Input"],
+ MenuSortingValue->1900,
+ MenuCommandKey->"9"],
+
+Cell[StyleData["Input", "Presentation"],
+ CellMargins->{{65, 10}, {8, 15}},
+ FontSize->24],
+
+Cell[StyleData["Input", "Printout"],
+ CellMargins->{{39, 0}, {4, 6}},
+ LinebreakAdjustments->{0.85, 2, 10, 1, 1},
+ FontSize->9]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Styles for Text", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Text"],
+ CellMargins->{{24, 24}, {7, 7}},
+ LineSpacing->{1, 5},
+ LanguageCategory->"NaturalLanguage",
+ MenuSortingValue->1700,
+ MenuCommandKey->"7",
+ FontFamily->"Verdana",
+ FontSize->12,
+ FontWeight->"Plain",
+ FontSlant->"Plain"],
+
+Cell[StyleData["Text", "Presentation"],
+ CellMargins->{{24, 24}, {10, 10}},
+ FontSize->24],
+
+Cell[StyleData["Text", "Printout"],
+ CellMargins->{{2, 2}, {6, 6}},
+ Hyphenation->True,
+ FontSize->9]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Section"],
+ CellFrame->False,
+ CellDingbat->"\[FilledSmallSquare]",
+ CellMargins->{{42, 24}, {8, 24}},
+ CellGroupingRules->{"SectionGrouping", 30},
+ PageBreakBelow->False,
+ CounterIncrements->"Section",
+ MenuSortingValue->1400,
+ MenuCommandKey->"4",
+ FontFamily->"Verdana",
+ FontSize->18,
+ FontWeight->"Bold"],
+
+Cell[StyleData["Section", "Presentation"],
+ CellMargins->{{24, 24}, {12, 36}},
+ FontSize->36],
+
+Cell[StyleData["Section", "Printout"],
+ CellMargins->{{15, 0}, {7, 22}},
+ FontSize->10]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Citation Styles", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Reference"],
+ CellMargins->{{24, 24}, {3, 3}},
+ FontFamily->"Verdana"],
+
+Cell[StyleData["Reference", "Presentation"],
+ CellMargins->{{24, 24}, {5, 5}}],
+
+Cell[StyleData["Reference", "Printout"]]
+}, Closed]]
+}, Closed]]
+},
+WindowSize->{667, 581},
+WindowMargins->{{221, Automatic}, {Automatic, -9}},
+TrackCellChangeTimes->False,
+MenuSortingValue->1100,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 9, \
+2015)",
+StyleDefinitions->"StylesheetFormatting.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[564, 21, 49, 0, 36, 49, 0, "StyleData", "StyleDefinitions", ""],
+Cell[616, 23, 56, 0, 36, 56, 0, "StyleData", "StyleDefinitions", ""],
+Cell[675, 25, 62, 0, 36, 62, 0, "StyleData", "StyleDefinitions", ""],
+Cell[740, 27, 191, 4, 59, "Text"],
+Cell[CellGroupData[{
+Cell[956, 35, 42, 0, 49, "Section"],
+Cell[1001, 37, 99, 3, 36, 31, 0, "StyleData", "All", "Working"],
+Cell[1103, 42, 129, 4, 36, 36, 0, "StyleData", "All", "Presentation"],
+Cell[1235, 48, 294, 7, 36, 87, 1, "StyleData", "All", "SlideShow",
+ MenuSortingValue->1300],
+Cell[1532, 57, 160, 5, 28, 32, 0, "StyleData", "All", "Printout"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1729, 67, 35, 0, 33, "Section"],
+Cell[1767, 69, 99, 2, 42, "Text"],
+Cell[1869, 73, 546, 19, 35, 27, 0, "StyleData", "Notebook", "All",
+ StyleMenuListing->None]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2452, 97, 42, 0, 33, "Section"],
+Cell[CellGroupData[{
+Cell[2519, 101, 71, 2, 42, 24, 0, "StyleData", "Input", "All",
+ MenuSortingValue->1900,
+ MenuCommandKey->"9"],
+Cell[2593, 105, 90, 2, 62, 40, 0, "StyleData", "Input", "Presentation"],
+Cell[2686, 109, 127, 3, 35, 36, 0, "StyleData", "Input", "Printout"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2862, 118, 34, 0, 33, "Section"],
+Cell[CellGroupData[{
+Cell[2921, 122, 246, 9, 45, 23, 0, "StyleData", "Text", "All",
+ MenuSortingValue->1700,
+ MenuCommandKey->"7"],
+Cell[3170, 133, 90, 2, 59, 39, 0, "StyleData", "Text", "Presentation"],
+Cell[3263, 137, 101, 3, 37, 35, 0, "StyleData", "Text", "Printout"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3401, 145, 325, 11, 50, 26, 0, "StyleData", "Section", "All",
+ CounterIncrements->"Section",
+ MenuSortingValue->1400,
+ MenuCommandKey->"4"],
+Cell[3729, 158, 93, 2, 109, 42, 0, "StyleData", "Section", "Presentation"],
+Cell[3825, 162, 87, 2, 55, 38, 0, "StyleData", "Section", "Printout"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3961, 170, 34, 0, 33, "Section"],
+Cell[CellGroupData[{
+Cell[4020, 174, 86, 2, 37, 28, 0, "StyleData", "Reference", "All"],
+Cell[4109, 178, 78, 1, 54, 44, 0, "StyleData", "Reference", "Presentation"],
+Cell[4190, 181, 40, 0, 38, 40, 0, "StyleData", "Reference", "Printout"]
+}, Closed]]
+}, Closed]]
+}
+]
+*)
+
+(* End of internal cache information *)

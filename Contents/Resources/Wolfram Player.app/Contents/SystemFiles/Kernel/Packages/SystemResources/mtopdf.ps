@@ -1,0 +1,510 @@
+%!PS-Adobe-3.0 Resource-ProcSet
+%%BeginResource: procset WRI-MathToPDF 1.0 0
+
+/WRI-PSConvert /ProcSet findresource begin
+/WRI-MathToPDF currentdict /ProcSet defineresource pop 
+
+/_pathops [
+  (m)				% moveto
+  (l)				% lineto
+  (c)				% curveto
+  (q)				% gsave
+  (Q)				% grestore
+  (W n)				% clip newpath
+  (h W n)			% closepath clip newpath
+] def
+
+/_stackdef {
+  1 add array dup 0 0 put _cdef
+} def
+
+/_stackclear {
+  0 0 put
+} def
+
+/_stackpush {	% stack item _stackpush
+  exch
+  dup 0 get 1 add
+  2 copy 0 exch put
+  3 -1 roll put
+} def
+
+/_stackindex {
+  0 get
+} def
+
+/_stackforall {
+  exch 
+  dup 0 get
+  1 exch getinterval
+  exch forall
+} def
+
+/_kids 256 _stackdef
+/_contents 256 _stackdef
+/_xobjects 256 _stackdef
+/_xrefs 256 array def
+/_eol (\015\012) def	% (\r\n) Literal chars for portability
+
+/_pdfonts 50 _stackdef
+
+/_reset_counters {
+  /_bcnt 0 _cdef
+  /_startstream 0 _cdef
+  _xrefs 0 -1 put
+  /_obji 0 _cdef
+  _xobjects _stackclear
+  /_fontsused false _cdef
+} def
+
+_reset_counters
+
+/_writestring {
+  dup length _bcnt add /_bcnt exch _cdef writestring
+} def
+
+/_xprnum {
+  dup abs .0001 lt { pop 0 } if
+  _fp exch (        ) cvs _write    
+  _fp ( ) _write
+} def
+
+/_begobj {
+  _xrefs _obji _bcnt put
+  /_obji _obji 1 add _cdef
+  _obji _xprnum
+  (0 obj) _printnl
+} def
+
+/_typeobj {
+  _begobj
+  (<<) _printnl
+  (/Type ) _print
+  _printnl
+} def
+
+/_endobj {
+  (endobj) _printnl
+} def
+
+/_endtypeobj {
+  (>>) _printnl
+  _endobj
+} def
+
+/_prref {
+  _prnum (0 R) _printnl
+} def
+
+/_writexrefs {
+  /_startxref /_bcnt load _cdef
+  (xref) _printnl
+  0 _prnum _obji 1 add _prnum _eol _print
+  (0000000000 65535 f) _printnl
+  _xrefs {
+    dup null eq { pop exit } if
+    round cvi _str cvs
+    dup length neg 10 add
+    { (0) _print } repeat
+    _print
+    ( 00000 n) _printnl
+  } forall
+} def
+
+/_beginstream {
+  (/Length ) _print
+  _obji 1 add _prref
+  (>>) _printnl
+  (stream) _printnl
+  /_startstream /_bcnt load _cdef
+} def
+
+/_endstream {
+  _bcnt
+  (endstream) _printnl
+  _endobj
+
+  _begobj
+  _startstream sub _prnum
+  _eol _print
+  _endobj
+} def
+
+/_beginpagestream {
+  _begobj
+  _contents _obji _stackpush
+  (<<) _printnl
+  _beginstream
+} def
+
+/_endpagestream {
+  _endstream
+} def
+
+/_begin_doc {
+  _reset_counters
+  (%PDF-1.0) _printnl
+
+  % 1 ProcSet
+  _begobj
+  ([/PDF /Text]) _printnl
+  _endobj
+  
+  % 2 MediaBox
+  _begobj
+  ([0 0 612 792]) _printnl
+  _endobj
+
+  % 3 Pages
+  (/Pages) _typeobj
+  (/Count 4 0 R) _printnl
+  (/Kids 5 0 R) _printnl
+  _endtypeobj
+
+  % 4 and 5 are at end.
+  /_obji dup load 2 add store
+} def
+
+/_begin_page {
+  _beginpagestream
+} def
+
+/_end_page {
+  _endpagestream
+
+  % Write all fonts first defined on this page
+  _pdfonts {
+    dup 2 get 0 lt { _writefont } { pop } ifelse
+  } _stackforall
+
+  _begobj
+  (<<) _printnl
+  (/ProcSet 1 0 R) _printnl
+  _fontsused {
+    (/Font <<) _printnl
+    _pdfonts {
+      % Output font only if used this page
+      dup 5 get {
+        (/F) _print 
+	dup 1 get _prnum
+	dup 2 get _prref
+      } if
+      % Reset the used flag
+      5 false put
+    } _stackforall
+    (>>) _printnl
+    /_fontsused false _cdef
+  } if
+  _xobjects _stackindex 0 gt {
+    (/XObject <<) _printnl
+    0 _xobjects {
+      (/Im) _print 
+      exch dup _prnum
+      1 add exch
+      _prref
+    } _stackforall
+    pop
+    (>>) _printnl
+  } if
+  (>>) _printnl
+  _endobj
+
+  % Page contents
+  _begobj
+  ([) _printnl
+  _contents { _prref } _stackforall
+  _contents _stackclear
+  (]) _printnl
+  _endobj
+
+  (/Page) _typeobj
+  _kids _obji _stackpush
+  (/Parent 3 0 R) _printnl
+  (/Resources ) _print _obji 2 sub _prref
+  (/MediaBox ) _print 2 _prref
+  (/Contents ) _print _obji 1 sub _prref
+  _endtypeobj
+} def
+
+/_end_doc {
+  (/Outlines) _typeobj
+  (/Count 0) _printnl
+  _endtypeobj
+
+  % Save off _obji for these forward refs
+  /_obji _obji
+  /_obji 3 store
+
+  % Page count
+  _begobj
+  _kids _stackindex _prnum () _printnl
+  _endobj
+
+  % Kids
+  _begobj
+  ([) _printnl
+  _kids { _prref } _stackforall
+  (]) _printnl
+  _endobj
+
+  % Restore _obji
+  store
+
+  (/Catalog) _typeobj
+  (/Pages ) _print 3 _prref
+  (/Outlines ) _print _obji 1 sub _prref
+  _endtypeobj
+
+  _writexrefs
+
+  (trailer) _printnl
+  (<<) _printnl
+  (/Size ) _print
+  _obji 1 add _prnum _eol _print
+  (/Root ) _print _obji _prref
+  (>>) _printnl
+  (startxref) _printnl
+  _startxref _prnum
+  _eol _print
+  (%%EOF) _printnl
+} def
+
+% Font machinery
+
+/_changedfont {
+  currentfont _lastfont eq
+  { false }
+  { _fid _lastfid eq
+    { _fontmatrix _lastmtx 
+      _arrayeq not
+    }
+    { true }
+    ifelse
+  } ifelse
+} def
+
+/_newfont {
+  _fid _fiduntouched {
+    _fid _pdfonts _stackindex _fidsetuinfo
+    _pdfonts [
+      _fid			% 0 = fid
+      _pdfonts _stackindex	% 1 = font num as in /F0
+      -1			% 2 = object reference
+      _fid _isreencoded		% 3 = reencoded flag
+
+      dup {			% 4 = diffs array or font num
+        _fid dup
+	_fidname findfont /Encoding get
+	exch _fidencoding
+	_encodingdiff
+	_pdfonts {
+	  dup 4 get			% diff pdfont fontdiff
+	  dup type /arraytype eq {
+	    2 index
+	    _arrayeq
+	    { 1 get exch pop exit } { pop } ifelse
+	  } {
+	    pop pop
+	  } ifelse
+	} _stackforall
+      } { null } ifelse
+      false			% 5 = used this page
+    ]
+    _stackpush
+    _fid _fidsettouched
+  } if
+} def
+
+_initfont % KLUDGE
+
+/show {
+  true _docolor
+  (BT) _prop		% Begin text object
+  _dofont
+  _pdfonts _fid _fiduinfo 1 add get 5 true put	% Mark font used this page
+  /_fontsused true _cdef
+  (/F) _print _fid _fiduinfo _prnum
+
+  _fontsize _prnum (Tf) _prop
+  _fontsizematrix
+  _fontcurrentpoint
+  { _prnum } forall	
+
+  (Tm) _prop		% Text matrix
+  (\() _print		% Do the string
+  dup _prstring
+  (\) Tj) _prop
+  (ET) _prop		% End text object
+  /show _opexec
+} def
+
+/_basefonts  % One line because of old bug in scanner \\n parsing
+(|Courier|Courier-Bold|Courier-Oblique|Courier-BoldOblique|Helvetica|Helvetica-Bold|Helvetica-Oblique|Helvetica-BoldOblique|Symbol|Times-Roman|Times-Bold|Times-Italic|Times-BoldItalic|ZapfDingbats|)
+def
+
+/_isbasefont {
+  _fidname _str cvs _basefonts exch search
+  {
+    exch pop
+    dup length 1 sub get
+    exch 0 get exch
+    eq
+  } {
+    pop false
+  } ifelse
+} def
+
+/_writefont {
+  /_nobj 1 _cdef
+  (/Font) _typeobj
+  (/Subtype /Type1) _printnl
+  (/Name /F) _print dup 1 get _prnum () _printnl
+  (/BaseFont /) _print
+  dup 2 _obji put
+  dup 0 get _fidname _str cvs _printnl
+  % Check if font in basefonts
+  dup 0 get _isbasefont not
+  {
+    (/FirstChar ) _print 0 _prnum () _printnl
+    (/LastChar ) _print 255 _prnum () _printnl
+    (/Widths ) _print _obji _nobj add _prref
+    /_nobj _nobj 1 add _cdef
+  } if
+  dup 0 get _isreencoded {
+    (/Encoding ) _print
+    dup 4 get
+    dup type /arraytype eq {
+      pop
+      _obji _nobj add
+      /_nobj _nobj 1 add _cdef
+    } {
+      _pdfonts exch 1 add get 2 get 1 add
+    }
+    ifelse
+    _prref
+  } if
+  (/FontDescriptor ) _print _obji _nobj add _prref
+  _endtypeobj
+
+  % Write Widths if required
+  dup 0 get _isbasefont not {
+    _begobj
+    ([) _printnl
+    gsave
+    initmatrix
+    dup 0 get _fidfont setfont
+    0 1 255 {
+      _str exch 0 exch put
+      _str 0 1 getinterval stringwidth pop
+      100 mul cvi _prnum
+      () _printnl
+    } for
+    grestore
+    (]) _printnl
+    _endobj
+  } if
+
+  % Write Encoding vector if required
+  dup 0 get _isreencoded {
+    dup 4 get type /arraytype eq {
+      (/Encoding) _typeobj
+      (/Differences ) _print
+      ([) _printnl
+      dup 4 get
+      { dup type /nametype eq
+        { _prname } { _prnum } ifelse
+	() _printnl
+      } forall
+      (]) _printnl
+      _endtypeobj
+    } if
+  } if
+
+  % Write FontDescriptor 
+  (/FontDescriptor) _typeobj
+  dup 0 get _fidfont
+  (/Ascent ) _print dup /FontBBox get 3 get _prnum () _printnl
+  (/CapHeight ) _print dup /FontBBox get 3 get _prnum () _printnl
+  (/Descent ) _print dup /FontBBox get 1 get _prnum () _printnl
+  (/Flags ) _print
+    0
+    1 index /FontInfo get /isFixedPitch get { 1 add } if
+    1 index /FontName get _str cvs (Math) search
+      { pop pop pop 4 add } { pop } ifelse
+    1 index /FontName get findfont
+      /Encoding get StandardEncoding _arrayeq { 32 add } if
+    1 index /FontInfo get /ItalicAngle get 0 ne { 64 add } if
+    _prnum
+    () _printnl
+  (/FontBBox [) _print dup /FontBBox get { _prnum } forall (]) _printnl
+  (/FontName /) _print dup /FontName get _str cvs _printnl
+  (/ItalicAngle ) _print dup /FontInfo get /ItalicAngle get _prnum () _printnl
+  (/StemV ) _print 10 _prnum () _printnl
+  (/MissingWidth ) _print dup /FontBBox get dup 2 get exch 0 get sub _prnum () _printnl
+  pop
+  _endtypeobj
+
+  pop
+
+} def
+
+/_encodingdiff {
+  /_e2 exch _cdef
+  [ exch 512 exch
+  {
+    _e2 2 index 255 and get
+    eq {
+      512 or
+    } {
+      dup 512 and 0 ne {
+	512 sub dup
+      } if
+      dup _e2 exch get exch
+    } ifelse
+    1 add
+  } forall
+  pop ]
+} def
+
+% Images
+
+/_imagespaces [
+  (/DeviceGray) () (/DeviceRGB) (/DeviceCMYK)
+] def
+
+/_imagebegin {
+  (q) _prop
+  _tm0 currentmatrix
+  _tm1 defaultmatrix
+  _tm2 invertmatrix
+  _tm0 concatmatrix
+  { _prnum } forall
+  (cm) _prop
+  (/Im) _print _xobjects _stackindex _prnum (Do) _prop
+  (Q) _prop
+  _endpagestream
+  (/XObject) _typeobj
+  (/Subtype /Image) _printnl
+  (/Name /Im) _print _xobjects _stackindex _prnum () _printnl
+  _xobjects _obji _stackpush
+  (/Width ) _print _idata /Width get _prnum () _printnl
+  (/Height ) _print _idata /Height get _prnum () _printnl
+  (/BitsPerComponent ) _print _idata /BitsPerComponent get _prnum () _printnl
+  (/ColorSpace ) _print
+  _imagespaces
+    _idata /Decode get length 2 idiv 1 sub
+  get _printnl
+  (/Filter /ASCIIHexDecode) _printnl
+  _beginstream
+} def
+
+/_imageend {
+  (>) _prop
+  _endstream
+  _beginpagestream
+} def
+
+_setup_math_ops
+
+end
+%%EndResource

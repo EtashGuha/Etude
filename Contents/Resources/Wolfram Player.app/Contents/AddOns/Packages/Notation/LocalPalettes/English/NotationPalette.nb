@@ -1,0 +1,156 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      4387,        147]
+NotebookOptionsPosition[      3668,        119]
+NotebookOutlinePosition[      4363,        145]
+CellTagsIndexPosition[      4320,        142]
+WindowFrame->Palette*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"Notation", "[", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], " ", "\[DoubleLongLeftRightArrow]", " ", 
+        TemplateBox[{"\[Placeholder]"},
+         "NotationTemplateTag"]}], "]"}]],
+     "\[EscapeKey]notation\[EscapeKey]"]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"Notation", "[", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], " ", "\[DoubleLongRightArrow]", " ", 
+        TemplateBox[{"\[Placeholder]"},
+         "NotationTemplateTag"]}], "]"}]],
+     "\[EscapeKey]notation>\[EscapeKey]"]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"Notation", "[", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], " ", "\[DoubleLongLeftArrow]", " ", 
+        TemplateBox[{"\[Placeholder]"},
+         "NotationTemplateTag"]}], "]"}]],
+     "\[EscapeKey]notation<\[EscapeKey]"]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"Symbolize", "[", 
+       TemplateBox[{"\[SelectionPlaceholder]"},
+        "NotationTemplateTag"], "]"}]],
+     "\[EscapeKey]symb\[EscapeKey]"]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"InfixNotation", "[", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], ",", "\[Placeholder]"}], "]"}],
+      BaseStyle->"Paste"],
+     "\[EscapeKey]infixnotation\[EscapeKey]"]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"AddInputAlias", "[", 
+       RowBox[{"\<\"\[Placeholder]\"\>", "\[Rule]", 
+        TemplateBox[{"\[Placeholder]"},
+         "NotationTemplateTag"]}], "]"}],
+      BaseStyle->"Paste"],
+     "\[EscapeKey]addia\[EscapeKey]"]},
+   {
+    TooltipBox[
+     ButtonBox[
+      StyleBox[
+       RowBox[{"Full", " ", "Notation", " ", "Palette"}],
+       FontFamily->"Helvetica",
+       FontColor->GrayLevel[1]],
+      Background->RGBColor[0.100008, 0.100008, 0.4],
+      BaseStyle->None,
+      ButtonFunction:>(FrontEndExecute[{
+         FrontEnd`NotebookClose[
+          FrontEnd`ButtonNotebook[]], 
+         FrontEnd`NotebookOpen[
+          
+          FrontEnd`ToFileName[{$TopDirectory, "AddOns", "Packages", 
+            "Notation", "LocalPalettes", "English", 
+            "FullNotationPalette.nb"}]]}]& )],
+     "Switch to FullNotationPalette"]}
+  },
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.28], {
+       Offset[0.]}, 
+      Offset[0.28]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}},
+  GridDefaultElement:>ButtonBox["\[Placeholder]"]]], NotebookDefault,
+ Evaluatable->True,
+ CellGroupingRules->"InputGrouping",
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ GroupPageBreakWithin->False,
+ CellLabelMargins->{{23, Inherited}, {Inherited, Inherited}},
+ DefaultFormatType->DefaultInputFormatType,
+ LineSpacing->{1.25, 0},
+ ScriptMinSize->9,
+ ShowStringCharacters->True,
+ NumberMarks->True,
+ StyleMenuListing->None,
+ FontFamily->"Courier",
+ FontWeight->"Bold"]
+},
+ClosingAutoSave->False,
+ClosingSaveDialog->False,
+Editable->False,
+WindowSize->{Fit, Fit},
+WindowMargins->{{Automatic, 3}, {Automatic, 2}},
+WindowFrame->"Palette",
+WindowElements->{},
+WindowFrameElements->{"CloseBox", "MinimizeBox"},
+WindowTitle->"Notation Palette",
+InterpretationBoxOptions->{TooltipDelay->0.3},
+TagBoxOptions->{TooltipDelay->0.3},
+TemplateBoxOptions->{TooltipDelay->0.3},
+TooltipBoxOptions->{TooltipDelay->0.3},
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (October 18, 2008)",
+StyleDefinitions->"Palette.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[546, 20, 3118, 97, 216, NotebookDefault,
+ Evaluatable->True,
+ CellGroupingRules->"InputGrouping",
+ PageBreakAbove->True,
+ PageBreakWithin->False]
+}
+]
+*)
+
+(* End of internal cache information *)

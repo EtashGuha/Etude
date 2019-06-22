@@ -1,0 +1,876 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     27976,        867]
+NotebookOptionsPosition[     24379,        746]
+NotebookOutlinePosition[     24895,        765]
+CellTagsIndexPosition[     24852,        762]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[".NET/Link Example : BZip2 Compression", "Title",
+ CellID->1081491],
+
+Cell[TextData[{
+ "This example demonstrates calling an \"unmanaged\" Windows DLL (that is, an \
+old C-style DLL, not a .NET assembly) from Mathematica using ",
+ Cell[BoxData[
+  ButtonBox["DefineDLLFunction",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineDLLFunction"]], "InlineFormula"],
+ ". The DLL we use is libbz2-1.0.0.dll, which performs compression and \
+decompression using the bzip2 algorithm. The DLL is bundled with this example \
+file, so you can run the program immediately. The code for the DLL is open \
+source, and the home page, which includes documentation, can be found at \
+http://sources.redhat.com/bzip2/. "
+}], "Text",
+ CellChangeTimes->{{3.4131122707797318`*^9, 3.413112280557001*^9}},
+ CellID->583265871],
+
+Cell[TextData[{
+ "We define two Mathematica functions, ",
+ Cell[BoxData[
+  ButtonBox["Compress",
+   BaseStyle->"Link"]], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+  ButtonBox["Uncompress",
+   BaseStyle->"Link"]], "InlineFormula"],
+ ", that write and read compressed data."
+}], "Text",
+ CellChangeTimes->{{3.413112298180996*^9, 3.4131123026804085`*^9}},
+ CellID->234495938],
+
+Cell[TextData[{
+ "To try this example, evaluate all the initialization cells (you can do this \
+using the menu item ",
+ StyleBox[ButtonBox["Evaluation",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/EvaluationMenu"], "MenuName"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter"],
+ StyleBox[ButtonBox["Evaluate Initialization Cells",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/menuitem/EvaluateInitializationCells"], "MenuName"],
+ ") and then go to the Example section."
+}], "Text",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707597948962*^9}, {
+  3.412707959534474*^9, 3.412707967363954*^9}, {3.412708138927157*^9, 
+  3.412708173015101*^9}, {3.412708230174596*^9, 3.412708252892912*^9}},
+ CellID->1738407360],
+
+Cell[CellGroupData[{
+
+Cell["Code and Discussion", "Section"],
+
+Cell["Needs[\"NETLink`\"];", "Input",
+ InitializationCell->True],
+
+Cell[TextData[{
+ "If the DLL was placed in a ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " application's library directory (for example, ",
+ Cell[BoxData[
+  RowBox[{"<", 
+   RowBox[{"Mathematica", " ", "dir"}], ">", 
+   RowBox[{
+   "\\", "AddOns", "\\", "Applications", "\\", "SomeApp", "\\", "Libraries", 
+    "\\", "Windows"}]}]], "InlineFormula"],
+ "), or anywhere on the system's PATH, then we could specify just the name of \
+the dll, ",
+ Cell[BoxData[
+  RowBox[{"libbz2", "-", 
+   RowBox[{"1.0", 
+    RowBox[{".0", ".", "dll"}]}]}]], "InlineFormula"],
+ ", and it would automatically be found. Because this DLL is in a \
+non-standard location, however, we must supply the full path, which we obtain \
+by noting that the DLL is in the same directory as the current notebook:"
+}], "Text",
+ CellChangeTimes->{{3.41311235204939*^9, 3.4131124331260448`*^9}}],
+
+Cell["\<\
+fullDllPath = ToFileName[First[\"FileName\" /. \
+NotebookInformation[InputNotebook[]]], \"libbz2-1.0.0.dll\"];\
+\>", "Input",
+ InitializationCell->True],
+
+Cell[TextData[{
+ "Now we use ",
+ Cell[BoxData[
+  ButtonBox["DefineDLLFunction",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineDLLFunction"]], "InlineFormula",
+  ShowStringCharacters->False],
+ " to create ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " functions whose action is to call into the desired functions from the DLL. \
+We need functions for opening and closing files, reading and writing \
+compressed data, and checking the error state."
+}], "Text",
+ CellChangeTimes->{{3.4130234831606812`*^9, 3.4130234935669312`*^9}, 
+   3.4130235238169312`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["bzopen", "Subsection"],
+
+Cell[TextData[{
+ "Here is the C-language prototype for the ",
+ Cell[BoxData["BZ2_bzopen"], "InlineFormula"],
+ " function:"
+}], "Text",
+ CellChangeTimes->{{3.4130235413169312`*^9, 3.4130235480044312`*^9}, 
+   3.4130236193794312`*^9}],
+
+Cell["BZFILE * BZ2_bzopen  ( const char *path, const char *mode );", "Program"],
+
+Cell[TextData[{
+ "Now define the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " function that calls this DLL function. Note that pointers to arbitrary \
+structures like ",
+ Cell[BoxData[
+  RowBox[{"BZFILE", "*"}]], "InlineFormula"],
+ " are mapped to ",
+ Cell[BoxData["IntPtr"], "InlineFormula"],
+ ", the .NET class that represents a generic pointer. ",
+ Cell[BoxData[
+  ButtonBox["DefineDLLFunction",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineDLLFunction"]], "InlineFormula"],
+ " will accept syntax for type names in C, VB, or C# notation. Typically you \
+are looking at a C-language prototype for a DLL function, so that is the most \
+natural form to use:"
+}], "Text",
+ CellChangeTimes->{{3.4130236385669312`*^9, 3.4130236583169312`*^9}, {
+  3.413112474586567*^9, 3.4131124920830956`*^9}}],
+
+Cell["\<\
+bzopen = DefineDLLFunction[\"BZ2_bzopen\", fullDllPath, \"IntPtr\", {\"const \
+char*\", \"const char*\"}];\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+There are many alternative ways to define this function. Here are some \
+examples:\
+\>", "Text"],
+
+Cell["\<\
+(* Using const is unnecessary: *)
+DefineDLLFunction[\"BZ2_bzopen\", fullDllPath, \"IntPtr\", {\"char*\", \
+\"char*\"}];
+(* This uses C# syntax for string args: *)
+DefineDLLFunction[\"BZ2_bzopen\", fullDllPath, \"IntPtr\", {\"string\", \
+\"string\"}];
+(* This uses VB syntax for string args: *)
+DefineDLLFunction[\"BZ2_bzopen\", fullDllPath, \"IntPtr\", {\"ByVal path As \
+String\", \"ByVal mode As String\"}];\
+\>", "Input",
+ Evaluatable->False]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["bzwrite", "Subsection"],
+
+Cell[TextData[{
+ "Here is the C-language prototype for the ",
+ Cell[BoxData["BZ2_bzwrite"], "InlineFormula"],
+ " function:"
+}], "Text",
+ CellChangeTimes->{{3.4130236774419312`*^9, 3.4130236871294312`*^9}}],
+
+Cell["int BZ2_bzwrite ( BZFILE* b, void* buf, int len );", "Program"],
+
+Cell[TextData[{
+ "Once again we use the generic .NET ",
+ Cell[BoxData["IntPtr"], "InlineFormula"],
+ " type for the ",
+ Cell[BoxData[
+  RowBox[{"BZFILE", "*"}]], "InlineFormula"],
+ " argument. The ",
+ Cell[BoxData[
+  RowBox[{"void", "*", " ", "buf"}]], "InlineFormula"],
+ " argument is the address of a block of memory containing the data to \
+compress and write out to the file. You could think of it as a ",
+ Cell[BoxData[
+  RowBox[{"byte", "*"}]], "InlineFormula"],
+ " or, even better, as a ",
+ Cell[BoxData[
+  RowBox[{"byte", "[", "]"}]], "InlineFormula"],
+ ". .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " lets you pass a list to a pointer or array argument, and we want to pass a \
+list of bytes from ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " for this argument, so it is clearest to declare it as a ",
+ Cell[BoxData[
+  RowBox[{"byte", "[", "]"}]], "InlineFormula"],
+ ". Note that we could also use ",
+ Cell[BoxData[
+  RowBox[{"char", "[", "]"}]], "InlineFormula"],
+ " to mean the same thing. .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " lets you use C or C# syntax for these types, but it gives preference to C \
+syntax, so even though ",
+ StyleBox["char", "Output"],
+ " in C and C# are different sizes, .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " assumes you mean the C ",
+ Cell[BoxData["char"], "InlineFormula"],
+ " type (a single byte)."
+}], "Text",
+ CellChangeTimes->{{3.413023987615014*^9, 3.4130240215544496`*^9}, {
+  3.413112657097225*^9, 3.4131127453110685`*^9}, {3.413129257667529*^9, 
+  3.4131292737716656`*^9}}],
+
+Cell["\<\
+bzwrite = DefineDLLFunction[\"BZ2_bzwrite\", fullDllPath, \"int\", \
+{\"IntPtr\", \"byte[]\", \"int\"}];\
+\>", "Input",
+ InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["bzread", "Subsection"],
+
+Cell[TextData[{
+ "Here is the C-language prototype for the ",
+ Cell[BoxData["BZ2_bzread"], "InlineFormula"],
+ " function:"
+}], "Text",
+ CellChangeTimes->{{3.4131292774939947`*^9, 3.4131292879134026`*^9}}],
+
+Cell["int BZ2_bzread  ( BZFILE* b, void* buf, int len );", "Program"],
+
+Cell[TextData[{
+ "Compare this to the definition for ",
+ Cell[BoxData["bzwrite"], "InlineFormula"],
+ ". The ",
+ Cell[BoxData[
+  RowBox[{"void", "*", " ", "buf"}]], "InlineFormula"],
+ " argument represents the address of a block of memory into which data will \
+be read. You can specify ",
+ Cell[BoxData[
+  RowBox[{"void", "*"}]], "InlineFormula"],
+ " as the type and it will be automatically mapped to ",
+ Cell[BoxData["IntPtr"], "InlineFormula"],
+ ", but for our uses we want it to be typed specifically as a ",
+ Cell[BoxData[
+  RowBox[{"byte", "*"}]], "InlineFormula"],
+ " or ",
+ Cell[BoxData[
+  RowBox[{"byte", "[", "]"}]], "InlineFormula"],
+ " (either works fine)."
+}], "Text",
+ CellChangeTimes->{{3.4131292918070526`*^9, 3.413129316383771*^9}, {
+  3.4131293520807543`*^9, 3.4131293544169445`*^9}, {3.4131295401941338`*^9, 
+  3.413129569556162*^9}}],
+
+Cell["\<\
+bzread = DefineDLLFunction[\"BZ2_bzread\", fullDllPath, \"int\", {\"IntPtr\", \
+\"byte[]\", \"int\"}];\
+\>", "Input",
+ InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["bzclose", "Subsection"],
+
+Cell[TextData[{
+ "Here is the C-language prototype for the ",
+ Cell[BoxData["BZ2_bzclose"], "InlineFormula"],
+ " function:"
+}], "Text",
+ CellChangeTimes->{{3.413129644023263*^9, 3.4131296514106245`*^9}}],
+
+Cell["void BZ2_bzclose ( BZFILE* b );", "Program"],
+
+Cell["\<\
+bzclose = DefineDLLFunction[\"BZ2_bzclose\", fullDllPath, \"void\", {\"IntPtr\
+\"}];\
+\>", "Input",
+ InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["bzerror", "Subsection"],
+
+Cell[TextData[{
+ "Here is the C-language prototype for the ",
+ Cell[BoxData["BZ2_bzerror"], "InlineFormula"],
+ " function:"
+}], "Text",
+ CellChangeTimes->{{3.413129721093828*^9, 3.413129730078622*^9}}],
+
+Cell["char* BZ2_bzerror ( BZFILE* b, int* errCode );", "Program"],
+
+Cell[TextData[{
+ "The last argument is an ",
+ Cell[BoxData[
+  RowBox[{"int", "*"}]], "InlineFormula"],
+ " that gets filled in with an error code by the function. We could declare \
+this as an ",
+ Cell[BoxData[
+  RowBox[{"int", "*"}]], "InlineFormula"],
+ ", but there is a better way, for the following reasons. .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " lets you pass a literal integer, like ",
+ Cell[BoxData["42"], "InlineFormula"],
+ ", for an ",
+ Cell[BoxData[
+  RowBox[{"int", "*"}]], "InlineFormula"],
+ " parameter, but that is only suitable when the argument is \"in\" only, \
+because there is no way of communicating back out any changes made to the \
+integer. To solve this, you can pass a symbol like ",
+ Cell[BoxData["x"], "InlineFormula"],
+ " to an ",
+ Cell[BoxData[
+  RowBox[{"int", "*"}]], "InlineFormula"],
+ " slot, and ",
+ Cell[BoxData["x"], "InlineFormula"],
+ " will be assigned the value of the integer written into the ",
+ Cell[BoxData[
+  RowBox[{"int", "*"}]], "InlineFormula"],
+ " address by the function call. But .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " cannot know that this is effectively an out-only parameter, so .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " requires that a legitimate integer value be passed in. This means that \
+even though the value of the integer is not inspected by the function, you \
+need to initialize the value by setting ",
+ Cell[BoxData["x"], "InlineFormula"],
+ " to, say, ",
+ Cell[BoxData["42"], "InlineFormula"],
+ " before passing ",
+ Cell[BoxData["x"], "InlineFormula"],
+ " to the function. A slicker trick is to tell .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " that this is an out-only parameter by declaring it in C#-style syntax as ",
+ Cell[BoxData[
+  RowBox[{"out", " ", "int"}]], "InlineFormula"],
+ ". Note that the pointer asterisk is gone from this--an ",
+ Cell[BoxData[
+  RowBox[{"out", " ", "int"}]], "InlineFormula"],
+ ", like a ",
+ Cell[BoxData[
+  RowBox[{"ref", " ", "int"}]], "InlineFormula"],
+ " or ",
+ Cell[BoxData[
+  RowBox[{"ByRef", " ", "As", " ", "Integer"}]], "InlineFormula"],
+ " (in VB syntax), is effectively already the address of an int. When we \
+declare the parameter as ",
+ Cell[BoxData[
+  RowBox[{"out", " ", "int"}]], "InlineFormula"],
+ ", .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " knows to ignore its value going in to the function, but propagate a value \
+back out. This means that we can pass in an uninitialized symbol like ",
+ Cell[BoxData["x"], "InlineFormula"],
+ " to the function and then inspect the value of ",
+ Cell[BoxData["x"], "InlineFormula"],
+ " after the call to see what integer value it was assigned during the call."
+}], "Text",
+ CellChangeTimes->{{3.413024033409043*^9, 3.413024042827119*^9}, {
+  3.4131297330267572`*^9, 3.41312976575262*^9}, {3.4131298387540684`*^9, 
+  3.4131299232828817`*^9}, {3.4131300844640255`*^9, 3.4131301284479294`*^9}}],
+
+Cell["\<\
+bzerror = DefineDLLFunction[\"BZ2_bzerror\", fullDllPath, \"char*\", \
+{\"IntPtr\", \"out int\"}];\
+\>", "Input",
+ InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The Compress function", "Subsection"],
+
+Cell["\<\
+Compress::fopen = \"Failed to open file `1` for writing.\";
+Compress::bzerr = \"An error was reported by a bzip2 library routine. The \
+error code was `1` and the message was `2`.\";\
+\>", "Input",
+ InitializationCell->True],
+
+Cell[TextData[{
+ "The main argument for ",
+ Cell[BoxData[
+  ButtonBox["Compress",
+   BaseStyle->"Link"]], "InlineFormula"],
+ " is a ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " string, but we want to pass the data into the DLL as an array (",
+ Cell[BoxData[
+  ButtonBox["List",
+   BaseStyle->"Link"]], "InlineFormula"],
+ ") of bytes, so we convert strings to byte arrays. ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " strings consist of 2-byte Unicode characters, so to properly handle \
+non-ASCII characters like \[Alpha] we have to either convert every character \
+to 2 bytes before compression (not a very good idea to double the size of the \
+data before starting compression!) or encode in an efficient format like UTF8 \
+that lets ASCII characters remain as single bytes."
+}], "Text",
+ CellChangeTimes->{
+  3.4130240793436394`*^9, {3.4131301333904667`*^9, 3.413130138161496*^9}}],
+
+Cell["\<\
+Compress[file_String, data_String] := Compress[file, ToCharacterCode[data, \
+\"UTF8\"]]
+
+Compress[file_String, data:{___Integer}] :=
+\tNETBlock[
+\t\tModule[{bzPtr, numBytesWritten, errString, errCode},
+\t\t\tbzPtr = bzopen[file, \"w\"];
+\t\t\t(* bzPtr is a pointer (an instance of the IntPtr class). Here we test \
+to see if it was NULL: *)
+\t\t\tIf[bzPtr@ToInt32[] == 0,
+\t\t\t\tMessage[Compress::fopen, file];
+\t\t\t\tReturn[$Failed]
+\t\t\t];
+\t\t\tnumBytesWritten = bzwrite[bzPtr, data, Length[data]];
+\t\t\tIf[numBytesWritten == 0,
+\t\t\t\terrString = bzerror[bzPtr, errCode];
+\t\t\t\tMessage[Compress::bzerr, errCode, errString];
+\t\t\t\tnumBytesWritten = $Failed
+\t\t\t];
+\t\t\tbzclose[bzPtr];
+\t\t\tnumBytesWritten
+\t\t]
+\t]\
+\>", "Input",
+ InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The Uncompress function", "Subsection"],
+
+Cell["\<\
+Uncompress::fopen = \"Failed to open file `1` for reading.\";
+Uncompress::bzerr = \"An error was reported by a bzip2 library routine. The \
+error code was `1` and the message was `2`.\";\
+\>", "Input",
+ InitializationCell->True],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+  ButtonBox["Uncompress",
+   BaseStyle->"Link"]], "InlineFormula"],
+ " function is slightly trickier. There are two ways to do it, and we will \
+examine each in turn. The two techniques differ in how they handle the second \
+argument to ",
+ Cell[BoxData["BZ2_bzread"], "InlineFormula"],
+ ", which is the address of a buffer into which the function will write \
+uncompressed data.\n\nThe first technique is the simplest. It types the \
+second argument to ",
+ Cell[BoxData["BZ2_bzread"], "InlineFormula"],
+ " as a ",
+ Cell[BoxData[
+  RowBox[{"byte", "[", "]"}]], "InlineFormula"],
+ " (this was done earlier in the definition for ",
+ Cell[BoxData["bzread"], "InlineFormula"],
+ ") and makes use of .NET's default marshaling for arrays. When a managed \
+array of bytes is sent to a DLL function, it is marshaled as a a native \
+C-style array of bytes, which is just a contiguous block of memory, exactly \
+what the ",
+ Cell[BoxData["BZ2_bzread"], "InlineFormula"],
+ " function wants. When the DLL call returns, .NET marshals the data from the \
+block of memory back into the managed array. Therefore we can allocate an \
+array of bytes in .NET, pass this object as the second argument to ",
+ Cell[BoxData["bzread"], "InlineFormula"],
+ ", and then when the function returns we can simply read the contents of \
+that array to get the compressed data."
+}], "Text",
+ CellChangeTimes->{{3.4130241175483074`*^9, 3.413024123983624*^9}, {
+  3.413130158071969*^9, 3.4131301646672163`*^9}, {3.413130302278678*^9, 
+  3.413130363561348*^9}}],
+
+Cell["\<\
+Uncompress[file_String] :=
+\tNETBlock[
+\t\tModule[{bzPtr, bufPtr, cnt, result, managedArray, errString, errCode},
+\t\t\tbzPtr = bzopen[file, \"r\"];
+\t\t\tIf[bzPtr@ToInt32[] == 0,
+\t\t\t\tMessage[Uncompress::fopen, file];
+\t\t\t\tReturn[$Failed]
+\t\t\t];
+\t\t\t(* Here we allocate a .NET array of 20000 bytes. The actual class name \
+of the byte type
+\t\t\t   in .NET is System.Byte, so a 1-dimensional array of these is called \
+System.Byte[].
+\t\t\t   NETNew always returns an object reference, so we get back the \
+object, not a list of
+\t\t\t   20000 zeros.
+\t\t\t*)
+\t\t\tmanagedArray = NETNew[\"System.Byte[]\", 20000];
+\t\t\tresult = \"\";
+\t\t\tWhile[(cnt = bzread[bzPtr, managedArray, 20000]) > 0,
+\t\t\t\t(* NETObjectToExpression takes the array object and forces it to be \
+returned to
+\t\t\t\t   Mathematica as a list of numbers instead of an object reference. \
+We encoded
+\t\t\t\t   the data using the UTF8 format in the Compress function, so we \
+must use that
+\t\t\t\t   format when we decode from an array of bytes back into a \
+Mathematica string.
+\t\t\t\t*)
+\t\t\t\tresult = result <> \
+FromCharacterCode[Take[NETObjectToExpression[managedArray], cnt], \"UTF8\"]
+\t\t\t];
+\t\t\tIf[cnt == -1,
+\t\t\t\t(* In this call, errCode is an \"out int\" parameter. It doesn't \
+matter what value it
+\t\t\t\t   has going in, and it will be assigned an integer value during the \
+call.
+\t\t\t\t*)
+\t\t\t\terrString = bzerror[bzPtr, errCode];
+\t\t\t\tMessage[Uncompress::bzerr, errCode, errString];
+\t\t\t\tresult = $Failed
+\t\t\t];
+\t\t\tbzclose[bzPtr];
+\t\t\tresult
+\t\t]
+\t]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell[TextData[{
+ "Here is the second tehnique for dealing with the block of memory argument \
+that ",
+ Cell[BoxData["BZ2_bzread"], "InlineFormula"],
+ " requires. This time we make this argument an ",
+ Cell[BoxData["IntPtr"], "InlineFormula"],
+ " that holds the address of a block of memory. We must manually allocate and \
+later deallocate this block of memory. This technique is more complicated, \
+but it is presented because it demonstrates some useful techniques for \
+dealing directly with memory and pointers in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code. Several useful methods are found in the ",
+ Cell[BoxData[
+  RowBox[{"System", ".", "Runtime", ".", "InteropServices", ".", "Marshal"}]],
+   "InlineFormula"],
+ " class. We use the ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"Marshal", ".", "AllocHGlobal"}], 
+   RowBox[{"(", ")"}]}]], "InlineFormula"],
+ StyleBox[" ", "Output"],
+ "function to allocate a block of memory and ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"Marshal", ".", "FreeHGlobal"}], 
+   RowBox[{"(", ")"}]}]], "InlineFormula"],
+ " to free it. These names will be familiar to Windows programmers as simple \
+wrappers for the Windows API functions ",
+ Cell[BoxData["GlobalAlloc"], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"GlobalFree", ".", "Marshal", ".", "AllocHGlobal"}], 
+   RowBox[{"(", ")"}]}]], "InlineFormula"],
+ " returns an ",
+ Cell[BoxData["IntPtr"], "InlineFormula"],
+ " that points to the allocated memory. This ",
+ Cell[BoxData["IntPtr"], "InlineFormula"],
+ " is passed to ",
+ Cell[BoxData["bzread"], "InlineFormula"],
+ " which writes into it. The final step is to copy the data in that raw \
+memory block into a managed array (that is, a real .NET array) that can be \
+returned to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " as a list."
+}], "Text",
+ CellChangeTimes->{{3.413130370108728*^9, 3.4131305125945444`*^9}},
+ CellID->708180546],
+
+Cell["\<\
+(* Here is a new definition for calling the BZ2_bzread DLL function. The \
+second argument is different
+   from the one used in the bzread definition.
+*)
+bzread2 = DefineDLLFunction[\"BZ2_bzread\", fullDllPath, \"int\", \
+{\"IntPtr\", \"IntPtr\", \"int\"}];
+
+Uncompress2[file_String] :=
+\tNETBlock[
+\t\tModule[{bzPtr, bufPtr, cnt, result, managedArray, errString, errCode},
+\t\t\tLoadNETType[\"System.Runtime.InteropServices.Marshal\"];
+\t\t\tbzPtr = bzopen[file, \"r\"];
+\t\t\t(* Test if the IntPtr was NULL. *)
+\t\t\tIf[bzPtr@ToInt32[] == 0,
+\t\t\t\tMessage[Uncompress::fopen, file];
+\t\t\t\tReturn[$Failed]
+\t\t\t];
+\t\t\t(* Allocate a block of memory 20000 bytes long and get an IntPtr to it. \
+This IntPtr is what
+\t\t\t   we will pass in to bzread2.
+\t\t\t*)
+\t\t\tbufPtr = Marshal`AllocHGlobal[20000];
+\t\t\t(* To return the data to Mathematica, we need to copy the raw byte data \
+from memory into
+\t\t\t   a managed array. This array is used for that purpose.
+\t\t\t*)
+\t\t\tmanagedArray = NETNew[\"System.Byte[]\", 20000];
+\t\t\tresult = \"\";
+\t\t\tWhile[(cnt = bzread2[bzPtr, bufPtr, 20000]) > 0,
+\t\t\t\t(* Here we copy the data from the block of memory into the managed \
+array. *)
+\t\t\t\tMarshal`Copy[bufPtr, managedArray, 0, cnt];
+\t\t\t\t(* See the notes for this line in the original Uncompress function \
+above. *)
+\t\t\t\tresult = result <> \
+FromCharacterCode[Take[NETObjectToExpression[managedArray], cnt], \"UTF8\"]
+\t\t\t];
+\t\t\t(* Deallocate the block we allocated earlier. *)
+\t\t\tMarshal`FreeHGlobal[bufPtr];
+\t\t\tIf[cnt == -1,
+\t\t\t\terrString = bzerror[bzPtr, errCode];
+\t\t\t\tMessage[Uncompress::bzerr, errCode, errString];
+\t\t\t\tresult = $Failed
+\t\t\t];
+\t\t\tbzclose[bzPtr];
+\t\t\tresult
+\t\t]
+\t]\
+\>", "Input",
+ InitializationCell->True]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Section"],
+
+Cell[TextData[{
+ "Let's compress and uncompress a file from the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " distribution:"
+}], "Text",
+ CellChangeTimes->{{3.4130234716919312`*^9, 3.4130234725356812`*^9}}],
+
+Cell["\<\
+strm = OpenRead[ToFileName[{$TopDirectory, \"Documentation\", \"English\", \
+\"MainBook\"}, \"Contents.nb\"], DOSTextFormat->False];
+origFileData = Import[strm, \"Text\"];
+Close[strm];\
+\>", "Input"],
+
+Cell[CellGroupData[{
+
+Cell["StringLength[origFileData]", "Input"],
+
+Cell[BoxData["109582"], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Now we compress that data to a temporary file. Calling ",
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["Close",
+    BaseStyle->"Link"], "[", 
+   RowBox[{
+    ButtonBox["OpenTemporary",
+     BaseStyle->"Link"], "[", "]"}], "]"}]], "InlineFormula"],
+ " is just a trick for generating an unused filename in the temporary \
+directory."
+}], "Text",
+ CellChangeTimes->{{3.4130234413481812`*^9, 3.413023459488806*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+tempFileName = Close[OpenTemporary[]];
+Compress[tempFileName, origFileData]\
+\>", "Input"],
+
+Cell[BoxData["109582"], "Output"]
+}, Open  ]],
+
+Cell["Check the size of the compressed version:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["ByteCount /. FileInformation[tempFileName]", "Input"],
+
+Cell[BoxData["10711"], "Output"]
+}, Open  ]],
+
+Cell["\<\
+That's about 10:1 compression! Now check that we can uncompress and get the \
+original data back:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Uncompress[tempFileName] == origFileData", "Input"],
+
+Cell[BoxData["True"], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{687, 664},
+WindowMargins->{{Automatic, 172}, {Automatic, 77}},
+DockedCells->(None& ),
+PrivateNotebookOptions->{"NotebookAuthor"->""},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (August 15, 2010)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 72, 1, 51, "Title",
+ CellID->1081491],
+Cell[642, 25, 738, 14, 132, "Text",
+ CellID->583265871],
+Cell[1383, 41, 373, 12, 52, "Text",
+ CellID->234495938],
+Cell[1759, 55, 729, 15, 50, "Text",
+ CellID->1738407360],
+Cell[CellGroupData[{
+Cell[2513, 74, 38, 0, 51, "Section"],
+Cell[2554, 76, 64, 1, 28, "Input",
+ InitializationCell->True],
+Cell[2621, 79, 867, 21, 134, "Text"],
+Cell[3491, 102, 162, 4, 28, "Input",
+ InitializationCell->True],
+Cell[3656, 108, 574, 15, 72, "Text"],
+Cell[CellGroupData[{
+Cell[4255, 127, 28, 0, 51, "Subsection"],
+Cell[4286, 129, 232, 6, 32, "Text"],
+Cell[4521, 137, 79, 0, 43, "Program"],
+Cell[4603, 139, 812, 20, 70, "Text"],
+Cell[5418, 161, 158, 4, 27, "Input",
+ InitializationCell->True],
+Cell[5579, 167, 106, 3, 21, "Text"],
+Cell[5688, 172, 455, 11, 112, "Input",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6180, 188, 29, 0, 38, "Subsection"],
+Cell[6212, 190, 205, 5, 23, "Text"],
+Cell[6420, 197, 69, 0, 43, "Program"],
+Cell[6492, 199, 1564, 44, 134, "Text"],
+Cell[8059, 245, 156, 4, 27, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8252, 254, 28, 0, 38, "Subsection"],
+Cell[8283, 256, 204, 5, 23, "Text"],
+Cell[8490, 263, 69, 0, 43, "Program"],
+Cell[8562, 265, 853, 22, 74, "Text"],
+Cell[9418, 289, 154, 4, 27, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9609, 298, 29, 0, 38, "Subsection"],
+Cell[9641, 300, 203, 5, 23, "Text"],
+Cell[9847, 307, 50, 0, 43, "Program"],
+Cell[9900, 309, 136, 4, 27, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10073, 318, 29, 0, 38, "Subsection"],
+Cell[10105, 320, 201, 5, 23, "Text"],
+Cell[10309, 327, 65, 0, 43, "Program"],
+Cell[10377, 329, 2903, 73, 251, "Text"],
+Cell[13283, 404, 150, 4, 27, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13470, 413, 43, 0, 38, "Subsection"],
+Cell[13516, 415, 234, 5, 44, "Input",
+ InitializationCell->True],
+Cell[13753, 422, 904, 22, 100, "Text"],
+Cell[14660, 446, 783, 25, 367, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15480, 476, 45, 0, 38, "Subsection"],
+Cell[15528, 478, 238, 5, 44, "Input",
+ InitializationCell->True],
+Cell[15769, 485, 1564, 32, 223, "Text"],
+Cell[17336, 519, 1634, 47, 605, "Input",
+ InitializationCell->True],
+Cell[18973, 568, 1922, 49, 185, "Text",
+ CellID->708180546],
+Cell[20898, 619, 1790, 50, 707, "Input",
+ InitializationCell->True]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22737, 675, 26, 0, 40, "Section"],
+Cell[22766, 677, 215, 6, 21, "Text"],
+Cell[22984, 685, 209, 5, 61, "Input"],
+Cell[CellGroupData[{
+Cell[23218, 694, 43, 0, 27, "Input"],
+Cell[23264, 696, 33, 0, 25, "Output"]
+}, Open  ]],
+Cell[23312, 699, 423, 12, 38, "Text"],
+Cell[CellGroupData[{
+Cell[23760, 715, 100, 3, 44, "Input"],
+Cell[23863, 720, 33, 0, 25, "Output"]
+}, Open  ]],
+Cell[23911, 723, 57, 0, 21, "Text"],
+Cell[CellGroupData[{
+Cell[23993, 727, 59, 0, 27, "Input"],
+Cell[24055, 729, 32, 0, 25, "Output"]
+}, Open  ]],
+Cell[24102, 732, 121, 3, 21, "Text"],
+Cell[CellGroupData[{
+Cell[24248, 739, 57, 0, 27, "Input"],
+Cell[24308, 741, 31, 0, 25, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,44 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>Expr Constructor (Object)</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.ExprConstructor2.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">Expr Constructor (Object)</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Creates an Expr whose value is given by the supplied object. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Overloads Public Sub New( _<br />   ByVal <i>obj</i> As <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemObjectClassTopic.htm">Object</a> _<br />)</div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />public Expr(<br />   <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemObjectClassTopic.htm">object</a> <i>obj</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>obj</i>
+        </dt>
+        <dd>The object whose value will be used for the Expr.</dd>
+      </dl>
+      <h4 class="dtH4">Remarks</h4> The object can be a boxed primitive (e.g, Int32, Double, Boolean etc.) a String, an Expr, or an array. <p> If it is an array, it must be a 1- or 2-dimensional array of primitive types or strings. It cannot be jagged (that is, it must be typed like int[,], not int[][]). The data in the array is copied into the Expr, so future changes to the original array will not be reflected in the Expr. </p>
+             <h4 class="dtH4">Exceptions</h4><div class="tablediv"><table class="dtTABLE" cellspacing="0"><tr valign="top"><th width="50%">Exception Type</th><th width="50%">Condition</th></tr><tr valign="top"><td width="50%"><a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemArgumentExceptionClassTopic.htm">ArgumentException</a></td><td width="50%">If the object is of a type that cannot be handled.</td></tr></table></div><h4 class="dtH4">See Also</h4><p><a href="Wolfram.NETLink.Expr.html">Expr Class</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.ExprConstructor.html">Expr Constructor Overload List</a></p><hr /><div id="footer"><p><a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a></p><p></p></div></div>
+  </body>
+</html>

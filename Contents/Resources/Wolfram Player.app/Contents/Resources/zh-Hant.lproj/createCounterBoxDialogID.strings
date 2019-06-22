@@ -1,0 +1,36 @@
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "3J6-cR-6RM"; */
+"3J6-cR-6RM.title" = "確定";
+
+/* Class = "NSTextFieldCell"; title = "Counter:"; ObjectID = "58S-GF-nzg"; */
+"58S-GF-nzg.title" = "計數器：";
+
+/* Class = "NSTextFieldCell"; title = "Use the counter value corresponding to the location of:"; ObjectID = "5Kg-JM-Jtj"; */
+"5Kg-JM-Jtj.title" = "使用對應於位置的計數器值：";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Dqm-wh-wcO"; */
+"Dqm-wh-wcO.title" = "取消";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "GsA-53-Wgm"; */
+"GsA-53-Wgm.title" = "表格視圖儲存格";
+
+/* Class = "NSTableColumn"; headerCell.title = "All cell tags in the notebook"; ObjectID = "J4h-fK-eiu"; */
+"J4h-fK-eiu.headerCell.title" = "筆記本中的所有儲存格標記";
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "LAa-qz-A5M"; */
+"LAa-qz-A5M.title" = "第 3 項";
+
+/* Class = "NSButtonCell"; title = "The first cell with the tag:"; ObjectID = "Lse-oU-UPN"; */
+"Lse-oU-UPN.title" = "第一個帶有標記的儲存格：";
+
+/* Class = "NSButtonCell"; title = "This counter object"; ObjectID = "TKt-hc-GTw"; */
+"TKt-hc-GTw.title" = "此計數器物件";
+
+/* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "WFH-qB-zFt"; */
+"WFH-qB-zFt.title" = "第 1 項";
+
+/* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "gih-nR-exy"; */
+"gih-nR-exy.title" = "第 2 項";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "nh8-RV-2nZ"; */
+"nh8-RV-2nZ.title" = "文字儲存格";

@@ -1,0 +1,1264 @@
+{
+    "Global" -> {
+        MenuItem["\:8907\:88fd (&C)", "Copy"],
+        MenuItem["\:5168\:87a2\:5e55 (&F)", FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]]],
+        MenuItem["\:8907\:88fd\:7b46\:8a18\:672c\:7269\:4ef6 (&J)", FrontEnd`CopySpecial["NotebookObject"]]},
+
+    "Notebook" -> {(*
+        MenuItem["\:6c42\:52a9 (&H)", "OpenHelpLink"],
+        Delimiter,
+        MenuItem["\:8907\:88fd\:7b46\:8a18\:672c\:7269\:4ef6 (&J)", FrontEnd`CopySpecial["NotebookObject"]],
+	Delimiter,       
+		MenuItem["\:904b\:7b97\:7b46\:8a18\:672c (&E)", "EvaluateNotebook"],
+        MenuItem["\:5132\:5b58\:7b46\:8a18\:672c (&S)", "Save"],
+        MenuItem["\:5217\:5370\:7b46\:8a18\:672c (&P)...", "PrintDialog"],
+        Delimiter,       
+        MenuItem["\:958b\:95dc\:5168\:87a2\:5e55 (&F)", FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]]]*)    
+    },
+
+    "Citation" -> {
+        MenuItem["\:522a\:9664\:6587\:737b\:53c3\:8003\:76ee\:9304\:6216\:8a3b\:89e3 (&T)", "DeleteBibReference"],
+        MenuItem["\:7de8\:8f2f\:6587\:737b\:76ee\:9304\:8a3b\:89e3... (&E)", "EditBibNote"]
+    },
+
+    "Text" -> {
+        MenuItem["\:526a\:4e0b (&T)", "Cut"],
+        MenuItem["\:8907\:88fd (&C)", "Copy"],
+        MenuItem["\:8cbc\:4e0a (&P)", FrontEnd`Paste[After]],
+        Menu["\:8907\:88fd\:70ba (&Y)",
+        {
+            MenuItem["\:7d14\:6587\:5b57 (&T)", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["\:8f38\:5165\:6587\:5b57 (&I)", FrontEnd`CopySpecial["InputText"]],
+            MenuItem["LaTeX (&L)",
+                KernelExecute[ToExpression["FrontEnd`CopyAsTeX[]"]],
+                MenuEvaluator -> "System"],
+            MenuItem["MathML (&A)",
+                KernelExecute[ToExpression["FrontEnd`CopyAsMathML[]"]],
+                MenuEvaluator -> "System"],
+            Delimiter,
+            MenuItem["\:5132\:5b58\:683c\:7269\:4ef6 (&O)", FrontEnd`CopySpecial["CellObject"]],
+            MenuItem["\:5132\:5b58\:683c\:8868\:793a\:5f0f (&C)", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["\:7b46\:8a18\:672c\:8868\:793a\:5f0f (&N)", FrontEnd`CopySpecial["NotebookExpression"]]
+        }],
+        Delimiter,
+        MenuItem["\:5275\:5efa\:8d85\:93c8\:7d50... (&H)", "CreateHyperlinkDialog"],
+        MenuItem["\:5275\:5efa\:8868\:683c/\:77e9\:9663... (&M)", "CreateGridBoxDialog"],
+        MenuItem["\:62fc\:5beb\:6aa2\:67e5... (&K)", "FindNextMisspelling"],
+        Menu["\:5f15\:7528 (&N)",
+        {
+            MenuItem["\:63d2\:5165\:6587\:737b\:53c3\:8003\:76ee\:9304... (&R)", "InsertBibReference"],
+            MenuItem["\:63d2\:5165\:6587\:737b\:76ee\:9304\:8a3b\:89e3... (&N)", "InsertBibNote"],
+            Delimiter,
+            MenuItem["\:8a2d\:5b9a/\:6539\:8b8a\:5f15\:7528\:6a23\:5f0f (&S)", "SetCitationStyle"],
+            MenuItem["\:63d2\:5165\:6587\:737b\:76ee\:9304\:548c\:8a3b\:89e3 (&I)", "InsertBibAndNotes"],
+            MenuItem["\:522a\:9664\:6587\:737b\:76ee\:9304\:548c\:8a3b\:89e3 (&D)", "DeleteBibAndNotes"],
+            MenuItem["\:7de8\:8f2f\:6587\:737b\:76ee\:9304\:548c\:8a3b\:89e3 (&B)", "RebuildBibAndNotes"]
+        }],
+        Delimiter,
+        Menu["\:6a23\:5f0f (&L)",
+        {
+            MenuItem["\:555f\:52d5\:5132\:5b58\:683c\:6a23\:5f0f\:540d\:7a31", "MenuListStyles", MenuAnchor->True],
+            Delimiter,
+            MenuItem["\:5176\:4ed6... (&O)", "StyleOther"]
+        }],
+        Delimiter,
+        MenuItem["\:5275\:5efa\:5167\:5d4c\:5132\:5b58\:683c", "CreateInlineCell"],
+        MenuItem["\:5206\:5272\:5132\:5b58\:683c (&V)", "CellSplit"],
+        MenuItem["\:5728\:76ee\:524d\:4f4d\:7f6e\:4e0a\:8a08\:7b97 (&I)", Evaluate[All]],
+        Delimiter,
+        MenuItem["\:958b\:95dc\:5168\:87a2\:5e55 (&F)", FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]]]
+    },
+
+     "MisspelledText" -> {
+        MenuItem["\:555f\:52d5\:62fc\:5b57\:5efa\:8b70", "MenuListSpellingSuggestions", MenuAnchor->True],
+        Delimiter,
+        MenuItem["\:4e0d\:7406\:6703 (&G)", "IgnoreMisspelling"],
+        MenuItem["\:5168\:90e8\:4e0d\:7406\:6703 (&A)", "IgnoreAllMisspellings"],
+        MenuItem["\:6dfb\:52a0\:5230\:5b57\:5178\:4e2d (&D)", "RememberMisspelling"],
+        Delimiter,
+        MenuItem["\:526a\:4e0b (&T)", "Cut"],
+        MenuItem["\:8907\:88fd (&C)", "Copy"],
+        MenuItem["\:8cbc\:4e0a (&P)", FrontEnd`Paste[After]],
+        Menu["\:8907\:88fd\:70ba (&Y)",
+        {
+            MenuItem["\:7d14\:6587\:5b57 (&T)", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["\:8f38\:5165\:6587\:5b57 (&I)", FrontEnd`CopySpecial["InputText"]],
+            MenuItem["LaTeX (&L)",
+                KernelExecute[ToExpression["FrontEnd`CopyAsTeX[]"]],
+                MenuEvaluator -> "System"],
+            MenuItem["MathML (&A)",
+                KernelExecute[ToExpression["FrontEnd`CopyAsMathML[]"]],
+                MenuEvaluator -> "System"],
+            Delimiter,
+            MenuItem["\:5132\:5b58\:683c\:7269\:4ef6 (&O)", FrontEnd`CopySpecial["CellObject"]],
+            MenuItem["\:5132\:5b58\:683c\:8868\:793a\:5f0f (&C)", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["\:7b46\:8a18\:672c\:8868\:793a\:5f0f (&N)", FrontEnd`CopySpecial["NotebookExpression"]]
+        }],
+        Delimiter,
+        MenuItem["\:5275\:5efa\:8d85\:9023\:7d50... (&H)", "CreateHyperlinkDialog"],
+        MenuItem["\:5275\:5efa\:8868\:683c/\:77e9\:9663... (&M)", "CreateGridBoxDialog"],
+        MenuItem["\:62fc\:5beb\:6aa2\:67e5... (&K)", "FindNextMisspelling"],
+        Menu["\:5f15\:7528 (&N)",
+        {
+            MenuItem["\:63d2\:5165\:6587\:737b\:53c3\:8003\:76ee\:9304... (&R)", "InsertBibReference"],
+            MenuItem["\:63d2\:5165\:6587\:737b\:76ee\:9304\:8a3b\:89e3... (&N)", "InsertBibNote"],
+            Delimiter,
+            MenuItem["\:8a2d\:5b9a/\:6539\:8b8a\:5f15\:7528\:6a23\:5f0f... (&S)", "SetCitationStyle"],
+            MenuItem["\:63d2\:5165\:6587\:737b\:76ee\:9304\:548c\:8a3b\:89e3 (&I)", "InsertBibAndNotes"],
+            MenuItem["\:522a\:9664\:6587\:737b\:76ee\:9304\:548c\:8a3b\:89e3 (&D)", "DeleteBibAndNotes"],
+            MenuItem["\:7de8\:8f2f\:6587\:737b\:76ee\:9304\:548c\:8a3b\:89e3 (&B)", "RebuildBibAndNotes"]
+        }],
+        Delimiter,
+        Menu["\:6a23\:5f0f (&L)",
+        {
+            MenuItem["\:555f\:52d5\:5132\:5b58\:683c\:6a23\:5f0f\:540d\:7a31", "MenuListStyles", MenuAnchor->True],
+            Delimiter,
+            MenuItem["\:5176\:4ed6... (&O)", "StyleOther"]
+        }],
+        Delimiter,
+        MenuItem["\:5275\:5efa\:5167\:5d4c\:5132\:5b58\:683c", "CreateInlineCell"],
+        MenuItem["\:5206\:5272\:5132\:5b58\:683c (&V)", "CellSplit"],
+        MenuItem["\:5728\:76ee\:524d\:4f4d\:7f6e\:4e0a\:8a08\:7b97 (&I)", Evaluate[All]],
+        Delimiter,
+        MenuItem["\:958b\:95dc\:5168\:87a2\:5e55 (&F)", FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]]]
+    },
+
+    "Input" -> {
+        MenuItem["\:526a\:4e0b (&T)", "Cut"],
+        MenuItem["\:8907\:88fd (&C)", "Copy"],
+        MenuItem["\:8cbc\:4e0a (&P)", FrontEnd`Paste[After]],
+        Menu["\:8907\:88fd\:70ba (&Y)",
+        {
+            MenuItem["\:7d14\:6587\:5b57 (&T)", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["\:8f38\:5165\:6587\:5b57 (&I)", FrontEnd`CopySpecial["InputText"]],
+            MenuItem["LaTeX (&L)",
+                KernelExecute[ToExpression["FrontEnd`CopyAsTeX[]"]],
+                MenuEvaluator -> "System"],
+            MenuItem["MathML (&A)",
+                KernelExecute[ToExpression["FrontEnd`CopyAsMathML[]"]],
+                MenuEvaluator -> "System"],
+            Delimiter,
+            MenuItem["\:5132\:5b58\:683c\:7269\:4ef6 (&O)", FrontEnd`CopySpecial["CellObject"]],
+            MenuItem["\:5132\:5b58\:683c\:8868\:793a\:5f0f (&C)", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["\:7b46\:8a18\:672c\:8868\:793a\:5f0f (&N)", FrontEnd`CopySpecial["NotebookExpression"]]
+        }],
+        Delimiter,
+        MenuItem["\:8a08\:7b97\:5132\:5b58\:683c (&E)", "EvaluateCells"],
+        MenuItem["\:5728\:76ee\:524d\:4f4d\:7f6e\:4e0a\:8a08\:7b97 (&I)", Evaluate[All]],
+        MenuItem["\:8a08\:7b97\:521d\:59cb\:5316\:5132\:5b58\:683c (&Z)", "EvaluateInitialization"],
+        Menu["\:8f49\:63db\:6210 (&O)",
+        {
+            MenuItem["InputForm (&I)", "SelectionConvert"->InputForm],
+            MenuItem["\:539f\:59cb InputForm (&R)", "SelectionConvert"->RawInputForm],
+            MenuItem["OutputForm (&O)", "SelectionConvert"->OutputForm],
+            MenuItem["\:5148\:8f49\:63db\:6210 BoxForm", "MenuListConvertFormatTypes", MenuAnchor->True]
+        }],
+        Delimiter,
+        MenuItem["\:5275\:5efa\:8d85\:93c8\:7d50... (&H)", "CreateHyperlinkDialog"],
+        MenuItem["\:5275\:5efa\:8868\:683c/\:77e9\:9663... (&M)", "CreateGridBoxDialog"],
+        MenuItem["\:63d2\:5165\:7279\:6b8a\:5b57\:5143 (&S)", FrontEndExecute[{FrontEnd`NotebookOpen["SpecialCharacters.nb"]}]],
+        Delimiter,
+        MenuItem["\:62ec\:865f\:5c0d\:7a31\:6aa2\:67e5 (&B)", "Balance"],
+        MenuItem["\:5206\:5272\:5132\:5b58\:683c (&V)", "CellSplit"],
+         MenuItem["\:53d6\:6d88/\:8a3b\:89e3\:9078\:53d6 (&U)",
+            KernelExecute[ToExpression["FE`toggleComment[]"]], MenuEvaluator -> "System"],
+        MenuItem["\:53d6\:6d88/\:5716\:7b26\:5316\:9078\:53d6 (&Z)", KernelExecute[ToExpression["FE`iconizeSelectionToggle[]"]], MenuEvaluator -> Automatic],
+        Delimiter,
+        MenuItem["\:53d6\:5f97\:5e6b\:52a9 (&G)", FrontEnd`SelectionHelpDialog[True]],
+        MenuItem["\:70ba\:4ec0\:9ebc\:8457\:8272\:ff1f...", FrontEndExecute[{FrontEnd`NotebookOpen[
+                    FrontEnd`FindFileOnPath["WhyTheColoring.nb", "PrivatePathsSystemResources"]]}]],
+        MenuItem["\:8a9e\:97f3\:6558\:8ff0\:9078\:53d6\:9805\:76ee (&K)", "SelectionSpeak"],
+        Delimiter,
+        MenuItem["\:958b\:95dc\:5168\:87a2\:5e55 (&F)", FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]]]
+        },
+
+    "Output" -> {
+        MenuItem["\:526a\:4e0b (&T)", "Cut"],
+        MenuItem["\:8907\:88fd (&C)", "Copy"],
+        MenuItem["\:8cbc\:4e0a (&P)", FrontEnd`Paste[After]],
+        Menu["\:8907\:88fd\:70ba (&Y)",
+        {
+            MenuItem["\:7d14\:6587\:5b57 (&T)", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["\:8f38\:5165\:6587\:5b57 (&I)", FrontEnd`CopySpecial["InputText"]],
+            MenuItem["LaTeX (&L)",
+                KernelExecute[ToExpression["FrontEnd`CopyAsTeX[]"]],
+                MenuEvaluator -> "System"],
+            MenuItem["MathML (&A)",
+                KernelExecute[ToExpression["FrontEnd`CopyAsMathML[]"]],
+                MenuEvaluator -> "System"],
+            Delimiter,
+            MenuItem["\:5132\:5b58\:683c\:7269\:4ef6 (&O)", FrontEnd`CopySpecial["CellObject"]],
+            MenuItem["\:5132\:5b58\:683c\:8868\:793a\:5f0f (&C)", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["\:7b46\:8a18\:672c\:8868\:793a\:5f0f (&N)", FrontEnd`CopySpecial["NotebookExpression"]]
+        }],
+        Delimiter,
+        Menu["\:8f49\:63db\:6210 (&V)",
+        {
+            MenuItem["InputForm (&I)", "SelectionConvert"->InputForm],
+            MenuItem["\:539f\:59cb InputForm (&R)", "SelectionConvert"->RawInputForm],
+            MenuItem["OutputForm (&O)", "SelectionConvert"->OutputForm],
+            MenuItem["\:5148\:8f49\:63db\:6210 BoxForm", "MenuListConvertFormatTypes", MenuAnchor->True]
+        }],
+        Delimiter,
+        MenuItem["\:7522\:751f\:5de5\:5177\:9762\:677f", "GeneratePalette"],
+        MenuItem["\:53d6\:6d88/\:5716\:7b26\:5316\:9078\:53d6 (&Z)", KernelExecute[ToExpression["FE`iconizeSelectionToggle[]"]], MenuEvaluator -> Automatic],
+        Delimiter,
+        MenuItem["\:53d6\:5f97\:5e6b\:52a9 (&G)", FrontEnd`SelectionHelpDialog[True]],
+        MenuItem["\:8a9e\:97f3\:6558\:8ff0\:9078\:53d6\:9805\:76ee (&K)", "SelectionSpeak"],
+        Delimiter,
+        MenuItem["\:958b\:95dc\:5168\:87a2\:5e55 (&F)", FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]]]
+        },
+
+    "Plugin" -> {
+        MenuItem["\:526a\:4e0b (&T)", "Cut"],
+        MenuItem["\:8907\:88fd (&C)", "Copy"],
+        MenuItem["\:8cbc\:4e0a (&P)", FrontEnd`Paste[After]],
+        Menu["\:8907\:88fd\:70ba (&Y)",
+        {
+            MenuItem["\:7d14\:6587\:5b57 (&T)", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["\:8f38\:5165\:6587\:5b57 (&I)", FrontEnd`CopySpecial["InputText"]],
+            MenuItem["LaTeX (&L)",
+                KernelExecute[ToExpression["FrontEnd`CopyAsTeX[]"]],
+                MenuEvaluator -> "System"],
+            MenuItem["MathML (&A)",
+                KernelExecute[ToExpression["FrontEnd`CopyAsMathML[]"]],
+                MenuEvaluator -> "System"],
+            Delimiter,
+            MenuItem["\:5132\:5b58\:683c\:8868\:793a\:5f0f (&C)", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["\:7b46\:8a18\:672c\:8868\:793a\:5f0f (&N)", FrontEnd`CopySpecial["NotebookExpression"]]
+        }]},
+
+    "GraphicsBox" -> {
+        MenuItem["\:526a\:4e0b\:5716\:5f62 (&T)", "Cut"],
+        MenuItem["\:8907\:88fd\:5716\:5f62 (&C)", "Copy"],
+        MenuItem["\:8cbc\:4e0a (&P)", FrontEnd`Paste[After]],
+        Delimiter,
+        MenuItem["\:5c07\:5716\:5f62\:53e6\:5b58\:65b0\:6a94...", "SelectionSaveSpecial"],
+        MenuItem["\:5217\:5370\:5716\:5f62... (&R)", "PrintSelectionDialog"],
+        Delimiter,
+        MenuItem["\:7e6a\:5716\:5de5\:5177 (&D)",
+                FrontEndExecute[{FrontEnd`NotebookOpen[
+                    FrontEnd`FindFileOnPath["DrawingTools.nb", "PrivatePathsSystemResources"]]}]],
+        MenuItem["\:53d6\:5f97\:5ea7\:6a19 (&G)", FrontEndExecute[FrontEnd`Select2DTool["GetCoordinates"]]],
+        MenuItem["\:88fd\:4f5c\:6a19\:6e96\:5c3a\:5bf8 (&M)", "GraphicsOriginalSize"]},
+
+    "Graphics" -> {
+        MenuItem["\:526a\:4e0b\:9078\:5b9a\:5716\:5f62 (&T)", "Cut"],
+        MenuItem["\:8907\:88fd\:9078\:5b9a\:5716\:5f62 (&C)", "Copy"],
+        MenuItem["\:8cbc\:81f3\:5716\:5f62 (&P)", FrontEnd`Paste[After]],
+        Delimiter,
+        MenuItem["\:7e6a\:5716\:5de5\:5177 (&D)",
+                FrontEndExecute[{FrontEnd`NotebookOpen[
+                    FrontEnd`FindFileOnPath["DrawingTools.nb", "PrivatePathsSystemResources"]]}]],
+        MenuItem["\:53d6\:5f97\:5ea7\:6a19 (&G)", FrontEndExecute[FrontEnd`Select2DTool["GetCoordinates"]]],
+        Delimiter,
+        MenuItem["\:7fa4\:7d44 (&R)", "Group"],
+        MenuItem["\:53d6\:6d88\:7fa4\:7d44 (&U)", "Ungroup"],
+        Delimiter,
+        MenuItem["\:79fb\:5230\:524d\:7aef (&F)", "MoveToFront"],
+        MenuItem["\:79fb\:5230\:5f8c\:7aef (&B)",  "MoveToBack"],
+        MenuItem["\:524d\:79fb (&W)", "MoveForward"],
+        MenuItem["\:5f8c\:79fb (&K)",  "MoveBackward"]
+        },
+
+    "Image" -> {
+        MenuItem["\:526a\:4e0b\:5f71\:50cf (&T)", "Cut"],
+        MenuItem["\:8907\:88fd\:5f71\:50cf (&C)", "Copy"],
+        Delimiter,
+        MenuItem["\:53d6\:5f97\:5ea7\:6a19 (&D)", FrontEndExecute[FrontEnd`Select2DTool["GetCoordinates"]]],
+        MenuItem["\:53d6\:5f97\:7d22\:5f15 (&I)", FrontEndExecute[FrontEnd`Select2DTool["GetIndices"]]],
+        MenuItem["\:53d6\:5f97\:50cf\:7d20\:984f\:8272 (&P)", KernelExecute[(
+                FrontEnd`$SelectedImage = Image[ToExpression[CurrentValue["SelectionData"]]];
+                FrontEndExecute[FrontEnd`Select2DTool["GetPixelValues"]])], MenuEvaluator -> Automatic],
+        MenuItem["\:53d6\:5f97\:5f71\:50cf\:8cc7\:8a0a (&E)", KernelExecute[ToExpression["FrontEnd`GetImageInformation[]"]], MenuEvaluator -> "System"],
+        Delimiter,
+        MenuItem["\:81ea\:52d5\:5c3a\:5bf8 (&Z)", "GraphicsBoxOptionsImageSize"->Automatic],
+        MenuItem["\:5be6\:969b\:5c3a\:5bf8 (&A)", "GraphicsBoxOptionsImageSize"->Magnification[1]],
+        Menu["\:7e2e\:653e (&M)",
+        {
+            MenuItem["5%", "GraphicsBoxOptionsImageSize"->Magnification[0.05]],
+            MenuItem["10%", "GraphicsBoxOptionsImageSize"->Magnification[0.1]],
+            MenuItem["25%", "GraphicsBoxOptionsImageSize"->Magnification[0.25]],
+            MenuItem["50% (&5)", "GraphicsBoxOptionsImageSize"->Magnification[0.5]],
+            MenuItem["100% (&1)", "GraphicsBoxOptionsImageSize"->Magnification[1]],
+            MenuItem["200% (&2)", "GraphicsBoxOptionsImageSize"->Magnification[2]],
+            MenuItem["300% (&3)", "GraphicsBoxOptionsImageSize"->Magnification[3]],
+            MenuItem["400% (&4)", "GraphicsBoxOptionsImageSize"->Magnification[4]],
+            MenuItem["800% (&8)", "GraphicsBoxOptionsImageSize"->Magnification[8]],
+            MenuItem["1600% (&6)", "GraphicsBoxOptionsImageSize"->Magnification[16]]
+        }],
+        Delimiter,
+        MenuItem["\:8abf\:6574\:5f71\:50cf...", KernelExecute[ToExpression["FrontEnd`EditImage[]"]], MenuEvaluator -> "System"],
+        Menu["\:5f71\:50cf\:6a21\:5f0f (&O)",
+        {
+            MenuItem["\:4e8c\:9032\:4f4d\:5236 (&B)", "ImageToBinary"],
+            MenuItem["\:7070\:968e (&G)", "ImageToGrayscale"],
+            MenuItem["RGB \:984f\:8272 (&R)", "ImageToRGB"],
+            MenuItem["HSB \:984f\:8272 (&H)", "ImageToHSB"],
+            MenuItem["XYZ \:984f\:8272 (&X)", "ImageToXYZ"],
+            MenuItem["LAB \:984f\:8272 (&L)", "ImageToLAB"],
+            MenuItem["LCH \:984f\:8272", "ImageToLCH"],
+            MenuItem["LUV \:984f\:8272 (&V)", "ImageToLUV"],
+            MenuItem["CMYK \:984f\:8272 (&C)", "ImageToCMYK"],
+            MenuItem["\:81ea\:52d5 (&U)", "ImageToAutomatic"],
+            Delimiter,
+            MenuItem["Alpha \:901a\:9053 (&A)", "ImageToggleAlphaChannel"],
+            Delimiter,
+            MenuItem["1\:4f4d\:5143/\:901a\:9053 (&1)", "ImageToBit"],
+            MenuItem["8\:4f4d\:5143/\:901a\:9053 (&8)", "ImageToByte"],
+            MenuItem["16\:4f4d\:5143/\:901a\:9053 (&6)", "ImageToBit16"],
+            MenuItem["32\:4f4d\:5143/\:901a\:9053(\:5be6\:6578) (&2)", "ImageToReal32"],
+            MenuItem["64\:4f4d\:5143/\:901a\:9053(\:5be6\:6578) (&4)", "ImageToReal64"],
+            Delimiter,
+            MenuItem["\:4ea4\:53c9\:5b58\:53d6 (&I)", "ImageToggleInterleaving"]
+        }],
+        Menu["\:7de8\:8f2f\:5716\:5f62 (&G)",
+        {
+            MenuItem["\:5275\:5efa\:906e\:7f69 (&C)",  KernelExecute[ToExpression["FrontEnd`CreateMask[]"]], MenuEvaluator -> "System"],
+            MenuItem["\:53d6\:51fa\:5716\:5f62 (&E)",  KernelExecute[ToExpression["FrontEnd`ExtractGraphics[]"]], MenuEvaluator -> "System"],
+            MenuItem["\:8cbc\:81f3\:5716\:5f62 (&P)", FrontEnd`Paste[After]],
+            MenuItem["\:7e6a\:5716\:5de5\:5177 (&W)",
+                    FrontEndExecute[{FrontEnd`NotebookOpen[
+                        FrontEnd`FindFileOnPath["DrawingTools.nb", "PrivatePathsSystemResources"]]}]],
+            Delimiter,
+            MenuItem["\:79fb\:5230\:524d\:7aef (&F)", "MoveToFront"],
+            MenuItem["\:79fb\:5230\:5f8c\:7aef (&B)",  "MoveToBack"],
+            MenuItem["\:524d\:79fb (&R)", "MoveForward"],
+            MenuItem["\:5f8c\:79fb (&K)",  "MoveBackward"]
+        }],
+        Delimiter,
+        MenuItem["\:5c07\:5716\:5f62\:53e6\:5b58\:65b0\:6a94... (&S)", "SelectionSaveSpecial"],
+        MenuItem["\:5217\:5370\:5f71\:50cf... (&R)", "PrintSelectionDialog"]
+    },
+
+    "Image3D" -> {
+        MenuItem["\:526a\:4e0b\:5f71\:50cf (&T)", "Cut"],
+        MenuItem["\:8907\:88fd\:5f71\:50cf (&C)", "Copy"],
+        Delimiter,
+        MenuItem["\:53d6\:5f97\:5f71\:50cf\:8cc7\:8a0a (&E)", KernelExecute[ToExpression["FrontEnd`GetImageInformation[]"]], MenuEvaluator -> "System"],
+        Delimiter,
+        MenuItem["\:81ea\:52d5\:5c3a\:5bf8 (&Z)", "Graphics3DBoxOptionsImageSize"->Automatic],
+        MenuItem["\:5be6\:969b\:5c3a\:5bf8 (&A)", "Graphics3DBoxOptionsImageSize"->Magnification[1]],
+        Menu["\:7e2e\:653e (&M)",
+        {
+            MenuItem["5%", "Graphics3DBoxOptionsImageSize"->Magnification[0.05]],
+            MenuItem["10%", "Graphics3DBoxOptionsImageSize"->Magnification[0.1]],
+            MenuItem["25%", "Graphics3DBoxOptionsImageSize"->Magnification[0.25]],
+            MenuItem["50% (&5)", "Graphics3DBoxOptionsImageSize"->Magnification[0.5]],
+            MenuItem["100% (&1)", "Graphics3DBoxOptionsImageSize"->Magnification[1]],
+            MenuItem["200% (&2)", "Graphics3DBoxOptionsImageSize"->Magnification[2]],
+            MenuItem["300% (&3)", "Graphics3DBoxOptionsImageSize"->Magnification[3]],
+            MenuItem["400% (&4)", "Graphics3DBoxOptionsImageSize"->Magnification[4]],
+            MenuItem["800% (&8)", "Graphics3DBoxOptionsImageSize"->Magnification[8]],
+            MenuItem["1600% (&6)", "Graphics3DBoxOptionsImageSize"->Magnification[16]]
+        }],
+        Delimiter,
+        MenuItem["\:8abf\:6574\:5f71\:50cf...", KernelExecute[ToExpression["FrontEnd`EditImage3D[]"]], MenuEvaluator -> "System"],
+        MenuItem["\:7de8\:8f2f ColorFunction...", "Image3DColorFunctionEditor"],
+        Menu["\:5f71\:50cf\:6a21\:5f0f (&O)",
+        {
+            MenuItem["\:4e8c\:9032\:4f4d\:5236 (&B)", "ImageToBinary"],
+            MenuItem["\:7070\:968e (&G)", "ImageToGrayscale"],
+            MenuItem["RGB \:984f\:8272 (&R)", "ImageToRGB"],
+            MenuItem["HSB \:984f\:8272 (&H)", "ImageToHSB"],
+            MenuItem["XYZ \:984f\:8272 (&X)", "ImageToXYZ"],
+            MenuItem["LAB \:984f\:8272 (&L)", "ImageToLAB"],
+            MenuItem["LCH \:984f\:8272", "ImageToLCH"],
+            MenuItem["LUV \:984f\:8272 (&V)", "ImageToLUV"],
+            MenuItem["CMYK \:984f\:8272 (&C)", "ImageToCMYK"],
+            MenuItem["\:81ea\:52d5 (&U)", "Image3DToAutomatic"],
+            Delimiter,
+            MenuItem["Alpha \:901a\:9053 (&A)", "ImageToggleAlphaChannel"],
+            Delimiter,
+            MenuItem["1\:4f4d\:5143/\:901a\:9053 (&1)", "Image3DToBit"],
+            MenuItem["8\:4f4d\:5143/\:901a\:9053 (&8)", "Image3DToByte"],
+            MenuItem["16\:4f4d\:5143/\:901a\:9053 (&6)", "Image3DToBit16"],
+            MenuItem["32\:4f4d\:5143/\:901a\:9053(\:5be6\:6578) (&2)", "Image3DToReal32"],
+            MenuItem["64\:4f4d\:5143/\:901a\:9053(\:5be6\:6578) (&4)", "Image3DToReal64"],
+            Delimiter,
+            MenuItem["\:4ea4\:53c9\:5b58\:53d6 (&I)", "Image3DToggleInterleaving"]
+        }],
+        Delimiter,
+        MenuItem["\:5c07\:5716\:5f62\:53e6\:5b58\:65b0\:6a94... (&S)", "SelectionSaveSpecial"],
+        MenuItem["\:5217\:5370\:5f71\:50cf... (&R)", "PrintSelectionDialog"],
+        Delimiter,
+        MenuItem["\:6b63\:8996\:5716 (&F)", FrontEndExecute[FrontEndToken["Graphics3DBoxOptionsViewPoint", Front]; FrontEndToken["Graphics3DBoxOptionsViewVertical", Inherited]]],
+        MenuItem["\:4fef\:8996\:5716", FrontEndExecute[FrontEndToken["Graphics3DBoxOptionsViewPoint", Top]; FrontEndToken["Graphics3DBoxOptionsViewVertical", Inherited]]],
+        MenuItem["\:9810\:8a2d\:8996\:5716 (&D)", FrontEndExecute[FrontEndToken["Graphics3DBoxOptionsViewPoint", Inherited]; FrontEndToken["Graphics3DBoxOptionsViewVertical", Inherited]]],
+        MenuItem["\:91cd\:8a2d\:5168\:666f/\:7e2e\:653e (&P)", FrontEndExecute[FrontEndToken["Graphics3DBoxOptionsViewAngle", Inherited]; FrontEndToken["Graphics3DBoxOptionsViewCenter", Inherited]]],
+        Delimiter,
+        MenuItem["\:4fee\:6b63\:5b9a\:754c\:6846 (&B)", FrontEnd`Graphics3DBoxOptionsMethod->{"ShrinkWrap"->True}]
+    },
+
+    "MeshGraphics" -> {
+        MenuItem["\:526a\:4e0b\:7db2\:683c \:3008&T\:3009", "Cut"],
+        Menu["\:8907\:88fd\:70ba \:3008&C\:3009",
+        {
+            MenuItem["\:7db2\:683c\:8868\:793a\:5f0f", "Copy"],
+            MenuItem["\:5716\:5f62\:8868\:793a\:5f0f", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu[{"CopyAs", "Graphics"}]]]],
+            Delimiter,
+            MenuItem["\:8f38\:5165\:6587\:5b57", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu[{"CopyAs", "InputText"}]]]],
+            MenuItem["\:7d14\:6587\:5b57", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu[{"CopyAs", "PlainText"}]]]]
+        }],
+        Delimiter,
+        MenuItem["\:8f49\:63db\:6210\:5716\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu["Graphics"]]]],
+        Delimiter,
+        MenuItem["\:5132\:5b58\:7db2\:683c\:70ba... (&A)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu["SaveAs"]]]],
+        MenuItem["\:5217\:5370... (&R)", "PrintSelectionDialog"]
+    },
+
+    "MeshGraphics3D" -> {
+        MenuItem["\:526a\:4e0b\:7db2\:683c \:3008&T\:3009", "Cut"],
+        Menu["\:8907\:88fd\:70ba \:3008&C\:3009",
+        {
+            MenuItem["\:7db2\:683c\:8868\:793a\:5f0f", "Copy"],
+            MenuItem["\:5716\:5f62\:8868\:793a\:5f0f", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu[{"CopyAs", "Graphics3D"}]]]],
+            Delimiter,
+            MenuItem["\:8f38\:5165\:6587\:5b57", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu[{"CopyAs", "InputText"}]]]],
+            MenuItem["\:7d14\:6587\:5b57", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu[{"CopyAs", "PlainText"}]]]]
+        }],
+        Delimiter,
+        MenuItem["\:8f49\:63db\:6210\:5716\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu["Graphics3D"]]]],
+        Delimiter,
+        MenuItem["\:5132\:5b58\:7db2\:683c\:70ba... (&A)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu["SaveAs"]]]],
+        MenuItem["\:5217\:5370... (&R)", "PrintSelectionDialog"]
+    },
+
+    "NetworkGraphics" -> {
+        MenuItem["\:526a\:5207\:5716 (&T)", "Cut"],
+        Menu["\:8907\:88fd\:70ba (&C)",
+        {
+            MenuItem["\:5716\:8868\:793a\:5f0f", "Copy"],
+            MenuItem["\:5716\:5f62\:8868\:793a\:5f0f", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"CopyAs", "Graphics"}]]]],
+            Delimiter,
+            MenuItem["\:8f38\:5165\:6587\:5b57", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"CopyAs", "InputText"}]]]],
+            MenuItem["\:7d14\:6587\:5b57", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"CopyAs", "PlainText"}]]]]
+        }],
+        Delimiter,
+        Menu["\:5716\:6a23\:5f0f (&S)",
+        {
+            MenuItem["\:81ea\:52d5 (&A)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", Automatic}]]]],
+            Delimiter,
+            MenuItem["\:57fa\:672c\:9ed1\:8272 (&B)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BasicBlack"}]]]],
+            MenuItem["\:57fa\:672c\:85cd\:8272",	FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BasicBlue"}]]]],
+            MenuItem["\:57fa\:672c\:91d1\:8272",	FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BasicGold"}]]]],
+            MenuItem["\:57fa\:672c\:7da0\:8272", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BasicGreen"}]]]],
+            Delimiter,
+            MenuItem["\:9ed1\:8272\:80cc\:666f", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BackgroundBlack"}]]]],
+            MenuItem["\:85cd\:8272\:80cc\:666f", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BackgroundBlue"}]]]],
+            MenuItem["\:91d1\:8272\:80cc\:666f", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BackgroundGold"}]]]],
+            MenuItem["\:7da0\:8272\:80cc\:666f", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BackgroundGreen"}]]]],
+            Delimiter,
+            MenuItem["\:9ed1\:8272\:5716\:793a (&D)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "DiagramBlack"}]]]],
+            MenuItem["\:85cd\:8272\:5716\:793a", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "DiagramBlue"}]]]],
+            MenuItem["\:91d1\:8272\:5716\:793a", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "DiagramGold"}]]]],
+            MenuItem["\:7da0\:8272\:5716\:793a", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "DiagramGreen"}]]]],
+            Delimiter,
+            MenuItem["\:5927\:578b\:7db2\:8def (&L)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "LargeNetwork"}]]]],
+            MenuItem["\:5c0f\:578b\:7db2\:8def (&S)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "SmallNetwork"}]]]],
+            Delimiter,
+            MenuItem["\:52d5\:614b\:53cd\:767d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "DynamicHighlight"}]]]],
+            MenuItem["\:7c21\:55ae\:93c8\:7d50 (&I)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "SimpleLink"}]]]],
+            MenuItem["\:7c97\:908a (&T)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "ThickEdge"}]]]],
+            MenuItem["\:820a\:683c\:5f0f", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "Vintage"}]]]],
+            MenuItem["\:820a\:683c\:5f0f\:5716\:793a", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "VintageDiagram"}]]]]
+        }],
+        Menu["\:5716\:5f62\:53cd\:767d (&H)",
+        {
+            MenuItem["\:81ea\:52d5 (&A)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", Automatic}]]]],
+            Delimiter,
+            MenuItem["\:865b\:7dda (&D)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "Dashed"}]]]],
+            MenuItem["\:9ede\:7dda", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "Dotted"}]]]],
+            Delimiter,
+            MenuItem["\:7c97\:7dda (&T)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "Thick"}]]]],
+            Delimiter,
+            MenuItem["\:4e09\:89d2\:5f62\:9802\:9ede (&V)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "VertexTriangle"}]]]],
+            MenuItem["\:83f1\:5f62\:9802\:9ede", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "VertexDiamond"}]]]],
+            MenuItem["\:51f9\:83f1\:5f62\:9802\:9ede", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "VertexConcaveDiamond"}]]]],
+            Delimiter,
+            MenuItem["\:53bb\:53cd\:767d\:892a\:8272 (&F)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "DehighlightFade"}]]]],
+            MenuItem["\:53bb\:53cd\:767d\:7070\:8272 (&G)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "DehighlightGray"}]]]],
+            MenuItem["\:53bb\:53cd\:767d\:96b1\:85cf (&H)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "DehighlightHide"}]]]]
+        }],
+        Menu["\:5716\:914d\:7f6e (&L)",
+        {
+            MenuItem["\:81ea\:52d5 (&A)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", Automatic}]]]],
+            Delimiter,
+            MenuItem["\:5f91\:5411\:7e6a\:88fd (&R)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "RadialDrawing"}]]]],
+            MenuItem["\:5206\:5c64\:7e6a\:88fd (&L)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "LayeredDrawing"}]]]],
+            Delimiter,
+            MenuItem["\:5f48\:7c27\:96fb\:5d4c\:5165 (&S)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "SpringElectricalEmbedding"}]]]],
+            MenuItem["\:5f48\:7c27\:5d4c\:5165", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "SpringEmbedding"}]]]],
+            MenuItem["\:9ad8\:7dad\:5ea6\:5d4c\:5165 (&H)",  FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "HighDimensionalEmbedding"}]]]],
+            Delimiter,
+            MenuItem["\:74b0\:5f62\:5d4c\:5165 (&C)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "CircularEmbedding"}]]]],
+            MenuItem["\:87ba\:65cb\:5d4c\:5165", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "SpiralEmbedding"}]]]],
+            Delimiter,
+            MenuItem["\:6700\:5bc6\:5806\:7a4d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "ClosestPacking"}]]]],
+            MenuItem["\:6700\:5bc6\:4e2d\:5fc3\:5806\:7a4d",   FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "ClosestCenterPacking"}]]]],
+            MenuItem["\:5206\:5c64\:5806\:7a4d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "LayeredPacking"}]]]],
+            MenuItem["\:5206\:5c64\:5de6\:5806\:7a4d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "LayeredLeftPacking"}]]]],
+            MenuItem["\:5206\:5c64\:9802\:5806\:7a4d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "LayeredTopPacking"}]]]],
+            MenuItem["\:5d4c\:5957\:7db2\:683c\:5806\:7a4d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "NestedGridPacking"}]]]]
+        }],
+            Delimiter,
+        Menu["\:9802\:9ede\:5f62\:72c0",
+        {
+            MenuItem["\:81ea\:52d5 (&A)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", Automatic}]]]],
+            Delimiter,
+            MenuItem["\:5713\:5f62 (&C)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Circle"}]]]],
+            MenuItem["\:4e09\:89d2\:5f62 (&T)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Triangle"}]]]],
+            MenuItem["\:65b9\:5f62 (&S)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Square"}]]]],
+            MenuItem["\:9ede (&P)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Point"}]]]],
+            Delimiter,
+            MenuItem["\:81a0\:56ca\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Capsule"}]]]],
+            MenuItem["\:83f1\:5f62 (&D)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Diamond"}]]]],
+            MenuItem["\:5012\:68af\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "DownTrapezoid"}]]]],
+            MenuItem["\:5012\:4e94\:908a\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "FiveDown"}]]]],
+            MenuItem["\:516d\:908a\:5f62 (&H)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Hexagon"}]]]],
+            MenuItem["\:516b\:908a\:5f62 (&O)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Octagon"}]]]],
+            MenuItem["\:5e73\:884c\:56db\:908a\:5f62 (&L)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Parallelogram"}]]]],
+            MenuItem["\:4e94\:908a\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Pentagon"}]]]],
+            MenuItem["\:77e9\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Rectangle"}]]]],
+            MenuItem["\:661f\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Star"}]]]],
+            MenuItem["\:6b63\:68af\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "UpTrapezoid"}]]]],
+            Delimiter,
+            MenuItem["\:51f9\:83f1\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "ConcaveDiamond"}]]]],
+            MenuItem["\:51f9\:516d\:908a\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "ConcaveHexagon"}]]]],
+            MenuItem["\:51f9\:4e94\:908a\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "ConcavePentagon"}]]]],
+            MenuItem["\:51f9\:6b63\:65b9\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "ConcaveSquare"}]]]],
+            MenuItem["\:51f9\:4e09\:89d2\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "ConcaveTriangle"}]]]],
+            Delimiter,
+            MenuItem["\:5713\:89d2\:83f1\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedDiamond"}]]]],
+            MenuItem["\:5713\:89d2\:5012\:68af\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedDownTrapezoid"}]]]],
+            MenuItem["\:5713\:89d2\:5012\:4e94\:908a\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedFiveDown"}]]]],
+            MenuItem["\:5713\:89d2\:516d\:908a\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedHexagon"}]]]],
+            MenuItem["\:5713\:89d2\:5e73\:884c\:56db\:908a\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedParallelogram"}]]]],
+            MenuItem["\:5713\:89d2\:4e94\:908a\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedPentagon"}]]]],
+            MenuItem["\:5713\:89d2\:77e9\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedRectangle"}]]]],
+            MenuItem["\:5713\:89d2\:6b63\:65b9\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedSquare"}]]]],
+            MenuItem["\:5713\:89d2\:4e09\:89d2\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedTriangle"}]]]],
+            MenuItem["\:5713\:89d2\:6b63\:68af\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedUpTrapezoid"}]]]]
+        }],
+        Menu["\:9802\:9ede\:5927\:5c0f",
+        {
+        LinkedItems[{
+            MenuItem["\:81ea\:52d5 (&A)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", Automatic}]]]],
+            Delimiter,
+            MenuItem["\:ff08\:6700\:63a5\:8fd1\:ff09\:6975\:5c0f (&T)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Nearest", 0.05}}]]]],
+            MenuItem["\:ff08\:6700\:63a5\:8fd1\:ff09\:5c0f (&S)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Nearest", 0.1}}]]]],
+            MenuItem["\:ff08\:6700\:63a5\:8fd1\:ff09\:4e2d (&M)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Nearest", 0.2}}]]]],
+            MenuItem["\:ff08\:6700\:63a5\:8fd1\:ff09\:5927 (&L)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Nearest", 0.4}}]]]],
+            Delimiter,
+            MenuItem["\:ff08\:7e2e\:653e\:904e\:ff09\:6975\:5c0f", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Scaled", 0.005}}]]]],
+            MenuItem["\:ff08\:7e2e\:653e\:904e\:ff09\:5c0f", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Scaled", 0.01}}]]]],
+            MenuItem["\:ff08\:7e2e\:653e\:904e\:ff09\:4e2d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Scaled", 0.025}}]]]],
+            MenuItem["\:ff08\:7e2e\:653e\:904e\:ff09\:5927", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Scaled", 0.05}}]]]]
+            }]
+        }],
+        Menu["\:9802\:9ede\:6a23\:5f0f",
+        {
+        LinkedItems[{
+            MenuItem["\:81ea\:52d5 (&A)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexStyle", Automatic}]]]],
+            Delimiter,
+            MenuItem["\:9ed1\:8272 (&B)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexStyle", Black}]]]],
+            MenuItem["\:7070\:8272 (&G)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexStyle", GrayLevel[0.5]}]]]],
+            MenuItem["\:85cd\:8272 (&U)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexStyle", RGBColor[0, 0, 1]}]]]],
+            MenuItem["\:8910\:8272", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexStyle", RGBColor[0.6, 0.4, 0.2]}]]]],
+            MenuItem["\:6a59\:8272 (&O)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexStyle", RGBColor[1, 0.5, 0]}]]]],
+            MenuItem["\:81ea\:8a02\:984f\:8272 (&C)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexStyle", SystemDialogInput["Color"]}]]]]
+            }]
+        }],
+        Delimiter,
+        Menu["\:908a\:5f62\:72c0",
+        {
+            MenuItem["\:81ea\:52d5 (&A)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", Automatic}]]]],
+            Delimiter,
+            MenuItem["\:7bad\:982d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "Arrow"}]]]],
+            MenuItem["\:7dda (&L)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "Line"}]]]],
+            Delimiter,
+            MenuItem["\:5be6\:5fc3\:7bad\:982d (&F)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "FilledArrow"}]]]],
+            MenuItem["\:7a7a\:5fc3\:7bad\:982d (&U)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "UnfilledArrow"}]]]],
+            MenuItem["\:77ed\:5be6\:5fc3\:7bad\:982d (&S)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "ShortFilledArrow"}]]]],
+            MenuItem["\:77ed\:7a7a\:5fc3\:7bad\:982d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "ShortUnfilledArrow"}]]]],
+            Delimiter,
+            MenuItem["\:5be6\:5fc3\:5f27\:5f62\:7bad\:982d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "FilledArcArrow"}]]]],
+            MenuItem["\:7a7a\:5fc3\:5f27\:5f62\:7bad\:982d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "UnfilledArcArrow"}]]]],
+            MenuItem["\:77ed\:5be6\:5fc3\:5f27\:5f62\:7bad\:982d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "ShortFilledArcArrow"}]]]],
+            MenuItem["\:77ed\:7a7a\:5fc3\:5f27\:5f62\:7bad\:982d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "ShortUnfilledArcArrow"}]]]],
+            Delimiter,
+            MenuItem["\:96d5\:523b\:7bad\:982d (&C)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "CarvedArrow"}]]]],
+            MenuItem["\:77ed\:96d5\:523b\:7bad\:982d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "ShortCarvedArrow"}]]]],
+            MenuItem["\:96d5\:523b\:5f27\:5f62\:7bad\:982d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "CarvedArcArrow"}]]]],
+            MenuItem["\:77ed\:96d5\:523b\:7bad\:982d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "ShortCarvedArcArrow"}]]]],
+            Delimiter,
+            MenuItem["\:534a\:5be6\:5fc3\:7bad\:982d (&H)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "HalfFilledArrow"}]]]],
+            MenuItem["\:534a\:7a7a\:5fc3\:7bad\:982d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "HalfUnfilledArrow"}]]]],
+            MenuItem["\:534a\:5be6\:5fc3\:96d9\:7bad\:982d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "HalfFilledDoubleArrow"}]]]],
+            MenuItem["\:534a\:7a7a\:5fc3\:96d9\:7bad\:982d", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "HalfUnfilledDoubleArrow"}]]]],
+            Delimiter,
+            MenuItem["\:865b\:7dda", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "DashedLine"}]]]],
+            MenuItem["\:9ede\:7dda", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "DottedLine"}]]]],
+            Delimiter,
+            MenuItem["\:6846\:5f62\:7dda", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "BoxLine"}]]]],
+            MenuItem["\:83f1\:5f62\:7dda", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "DiamondLine"}]]]],
+            MenuItem["\:9ede\:7dda", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "DotLine"}]]]]
+        }],
+        Menu["\:908a\:6a23\:5f0f",
+        {
+        LinkedItems[{
+            MenuItem["\:81ea\:52d5 (&A)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", Automatic}]]]],
+            Delimiter,
+            MenuItem["\:9ed1\:8272 (&B)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", Black}]]]],
+            MenuItem["\:7070\:8272 (&G)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", GrayLevel[0.5]}]]]],
+            MenuItem["\:85cd\:8272", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", RGBColor[0, 0, 1]}]]]],
+            MenuItem["\:8910\:8272", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", RGBColor[0.6, 0.4, 0.2]}]]]],
+            MenuItem["\:6a59\:8272 (&O)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", RGBColor[1, 0.5, 0]}]]]],
+            MenuItem["\:81ea\:8a02\:984f\:8272 (&C)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", SystemDialogInput["Color"]}]]]]
+            }],
+            Delimiter,
+        LinkedItems[{
+            MenuItem["\:7d30\:7dda", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", AbsoluteThickness[0.5]}]]]],
+            MenuItem["\:4e2d\:578b\:7dda", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", AbsoluteThickness[1]}]]]],
+            MenuItem["\:7c97\:7dda", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", Thick}]]]]
+            }],
+            Delimiter,
+        LinkedItems[{
+            MenuItem["\:865b\:7dda (&D)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", Dashed}]]]],
+            MenuItem["\:9ede\:7dda", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", Dotted}]]]],
+            MenuItem["\:9ede\:865b\:7dda", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", DotDashed}]]]]
+            }],
+            Delimiter,
+        LinkedItems[{
+            MenuItem["\:5be6\:7dda", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", Opacity[1]}]]]],
+            MenuItem["\:900f\:660e", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", Opacity[0.7]}]]]]
+            }]
+        }],
+        Delimiter,
+        MenuItem["\:8f49\:63db\:6210\:5716\:5f62", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu["Graphics"]]]],
+        MenuItem["\:5c07\:5716\:53e6\:5b58\:65b0\:6a94... (&A)", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu["SaveAs"]]]],
+        MenuItem["\:5217\:5370... (&R)", "PrintSelectionDialog"]
+    },
+
+    "HeadersFooters" -> {
+        MenuItem["\:526a\:4e0b", KernelExecute[FE`headersFootersDialogMenu["Cut"]], MenuEvaluator -> Automatic],
+        MenuItem["\:8907\:88fd", KernelExecute[FE`headersFootersDialogMenu["Copy"]], MenuEvaluator -> Automatic],
+        MenuItem["\:8cbc\:4e0a", KernelExecute[FE`headersFootersDialogMenu["Paste"]], MenuEvaluator -> Automatic],
+        Delimiter,
+        MenuItem["\:6e05\:9664", KernelExecute[FE`headersFootersDialogMenu["Clear"]], MenuEvaluator -> Automatic],
+        MenuItem["\:91cd\:8a2d", KernelExecute[FE`headersFootersDialogMenu["Reset"]], MenuEvaluator -> Automatic]
+    },
+
+    "PacletLink" -> {
+        MenuItem["\:5728\:65b0\:8996\:7a97\:958b\:555f (&O)", FrontEndExecute[FEPrivate`FrontEndExecute[FrontEndToken["OpenHelpLink",
+                {CurrentValue[{ButtonBoxOptions, ButtonData}], Null}]]], MenuEvaluator->None],
+        Delimiter,
+        MenuItem["\:8907\:88fd\:8d85\:93c8\:7d50 (&C)", FrontEndExecute[{KernelExecute[MathLink`CallFrontEnd[FrontEnd`CopyToClipboard[
+                Cell[BoxData[CurrentValue[InputNotebook[], FrontEnd`RightClickData]]]]]]}], MenuEvaluator->"System"],
+        MenuItem["\:8907\:88fd\:4f4d\:5740 (&A)", FrontEndExecute[{FEPrivate`FrontEndExecute[FrontEnd`CopyToClipboard[
+                CurrentValue[{ButtonBoxOptions, ButtonData}]]]}], MenuEvaluator->None]},
+
+    "Hyperlink" -> {
+        MenuItem["\:8907\:88fd\:8d85\:93c8\:7d50 (&C)", FrontEndExecute[{KernelExecute[MathLink`CallFrontEnd[FrontEnd`CopyToClipboard[
+                Cell[BoxData[CurrentValue[InputNotebook[], FrontEnd`RightClickData]]]]]]}], MenuEvaluator->"System"],
+        MenuItem["\:8907\:88fd\:4f4d\:5740 (&A)", FrontEndExecute[{FEPrivate`FrontEndExecute[FrontEnd`CopyToClipboard[
+                CurrentValue[{ButtonBoxOptions, ButtonData}]]]}], MenuEvaluator->None]},
+                
+	"Entity" -> {
+        MenuItem["\:8907\:88fd (&C)",
+            KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "Boxes"]],
+            MenuEvaluator -> "System"],
+        Menu["\:8907\:88fd\:70ba",
+        {
+			MenuItem["\:8f38\:5165\:6587\:5b57 (&I)",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "InputForm"]],
+				MenuEvaluator -> "System"],
+			Delimiter,
+			MenuItem["\:4e00\:822c\:540d\:7a31 (&M)",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "CommonName"]],
+				MenuEvaluator -> "System"],
+			MenuItem["\:6a19\:6e96\:540d\:7a31 (&N)",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "CanonicalName"]],
+				MenuEvaluator -> "System"],
+			MenuItem["\:5be6\:9ad4\:985e\:578b\:540d\:7a31 (&T)",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "EntityTypeName"]],
+				MenuEvaluator -> "System"]
+		}]
+    },
+    
+    "Quantity" -> {
+        MenuItem["\:8907\:88fd (&C)",
+            KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "Boxes"]],
+            MenuEvaluator -> "System"],
+        Menu["\:8907\:88fd\:70ba",
+        {
+			MenuItem["\:8f38\:5165\:6587\:5b57 (&I)",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "InputForm"]],
+				MenuEvaluator -> "System"],
+			Delimiter,
+			MenuItem["\:6578\:91cf\:5927\:5c0f (&M)",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "QuantityMagnitude"]],
+				MenuEvaluator -> "System"],
+			MenuItem["\:6578\:91cf\:55ae\:4f4d (&U)",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "QuantityUnit"]],
+				MenuEvaluator -> "System"]
+		}]
+    },
+
+    "DateObject" -> {
+        MenuItem["\:8907\:88fd (&C)",
+            KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "Boxes"]],
+            MenuEvaluator -> "System"],
+        Menu["\:8907\:88fd\:70ba",
+        {
+			MenuItem["\:8f38\:5165\:6587\:5b57 (&I)",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "InputForm"]],
+				MenuEvaluator -> "System"],
+			Delimiter,
+			MenuItem["\:65e5\:671f\:5217\:8868 (&D)",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "DateList"]],
+				MenuEvaluator -> "System"],
+			MenuItem["\:6642\:9593\:7269\:4ef6 (&T)",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "TimeObject"]],
+				MenuEvaluator -> "System"]
+		}]
+    },
+
+    "TimeObject" -> {
+        MenuItem["\:8907\:88fd (&C)",
+            KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "Boxes"]],
+            MenuEvaluator -> "System"],
+        Menu["\:8907\:88fd\:70ba",
+        {
+			MenuItem["\:8f38\:5165\:6587\:5b57 (&I)",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "InputForm"]],
+				MenuEvaluator -> "System"],
+			Delimiter,
+			MenuItem["\:65e5\:671f\:5217\:8868 (&D)",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "DateList"]],
+				MenuEvaluator -> "System"]
+		}]
+    },
+
+    "InputField" -> {
+        MenuItem["\:526a\:4e0b (&T)", "Cut"],
+        MenuItem["\:8907\:88fd (&C)", "Copy"],
+        MenuItem["\:8cbc\:4e0a (&P)", FrontEnd`Paste[After]]},
+
+    "TextStyleInputField" -> {
+        MenuItem["\:526a\:4e0b (&T)", "Cut"],
+        MenuItem["\:8907\:88fd (&C)", "Copy"],
+        MenuItem["\:8cbc\:4e0a (&P)", FrontEnd`Paste[After]],
+        Delimiter,
+        Menu["\:5b57\:9ad4\:6548\:679c (&F)",
+        {
+            MenuItem["\:7d14\:6587\:5b57 (&P)", "PlainFont"],
+            MenuItem["\:7c97\:9ad4 (&B)", FontWeight->Toggle, MenuKey["b", Modifiers->{"Control"}]],
+            MenuItem["\:659c\:9ad4 (&I)", FontSlant->Toggle, MenuKey["i", Modifiers->{"Control"}]],
+            MenuItem["\:4e0b\:5283\:7dda (&U)", FrontEnd`FontVariationsUnderline->Toggle, MenuKey["u", Modifiers->{"Control"}]]
+        }],
+        Menu["\:5c3a\:5bf8 (&Z)",
+        {
+            MenuItem["\:653e\:5927 (&L)", FontSize->Larger, MenuKey["=", Modifiers->{"Command"}]],
+            MenuItem["\:7e2e\:5c0f (&S)", FontSize->Smaller, MenuKey["-", Modifiers->{"Command"}]],
+            Delimiter,
+            LinkedItems[{
+                MenuItem["9\:9ede (&9)", FontSize->9],
+                MenuItem["10\:9ede (&0)", FontSize->10],
+                MenuItem["12\:9ede (&1)", FontSize->12],
+                MenuItem["14\:9ede (&4)", FontSize->14],
+                MenuItem["16\:9ede (&6)", FontSize->16],
+                MenuItem["18\:9ede (&8)", FontSize->18],
+                MenuItem["24\:9ede (&2)", FontSize->24],
+                MenuItem["36\:9ede (&3)", FontSize->36],
+                MenuItem["72\:9ede (&7)", FontSize->72]
+            }]
+        }],
+        Menu["\:6587\:5b57\:984f\:8272 (&X)",
+        {
+            MenuItem["\:8abf\:8272\:677f...", "FontColorDialog"],
+            Delimiter,
+            LinkedItems[{
+                MenuItem["\:9ed1\:8272",	FontColor->GrayLevel[0]],
+                MenuItem["\:7070\:8272",	FontColor->GrayLevel[0.5]],
+                MenuItem["\:767d\:8272",	FontColor->GrayLevel[1]],
+                Delimiter,
+                MenuItem["\:85cd\:8272",	FontColor->RGBColor[0, 0, 1]],
+                MenuItem["\:8910\:8272",	FontColor->RGBColor[0.6, 0.4, 0.2]],
+                MenuItem["\:9752\:8272",	FontColor->RGBColor[0, 1, 1]],
+                MenuItem["\:7da0\:8272",	FontColor->RGBColor[0, 1, 0]],
+                MenuItem["\:6d0b\:7d05\:8272",	FontColor->RGBColor[1, 0, 1]],
+                MenuItem["\:6a59\:8272",	FontColor->RGBColor[1, 0.5, 0]],
+                MenuItem["\:7c89\:7d05\:8272",	FontColor->RGBColor[1, 0.5, 0.5]],
+                MenuItem["\:7d2b\:8272",	FontColor->RGBColor[0.5, 0, 0.5]],
+                MenuItem["\:7d05\:8272",		FontColor->RGBColor[1, 0, 0]],
+                MenuItem["\:9ec3\:8272",	FontColor->RGBColor[1, 1, 0]]
+            }]
+        }],
+        Menu["\:80cc\:666f\:984f\:8272 (&G)",
+        {
+            MenuItem["\:8abf\:8272\:677f...", "BackgroundDialog"],
+            Delimiter,
+            LinkedItems[{
+                MenuItem["\:7121",		Background->None],
+                Delimiter,
+                MenuItem["\:9ed1\:8272",		Background->GrayLevel[0]],
+                MenuItem["\:7070\:8272",		Background->GrayLevel[0.5]],
+                MenuItem["\:6de1\:7070\:8272",	Background->GrayLevel[0.85]],
+                MenuItem["\:767d\:8272",		Background->GrayLevel[1]],
+                Delimiter,
+                MenuItem["\:6de1\:85cd\:8272",	Background->RGBColor[0.87, 0.94, 1]],
+                MenuItem["\:6de1\:8910\:8272",	Background->RGBColor[0.94, 0.91, 0.88]],
+                MenuItem["\:6de1\:9752\:8272",	Background->RGBColor[0.9, 1, 1]],
+                MenuItem["\:6de1\:7da0\:8272",	Background->RGBColor[0.88, 1, 0.88]],
+                MenuItem["\:6de1\:6d0b\:7d05\:8272",Background->RGBColor[1, 0.9, 1]],
+                MenuItem["\:6de1\:6a59\:8272",Background->RGBColor[1, 0.9, 0.8]],
+                MenuItem["\:6de1\:7c89\:7d05\:8272",	Background->RGBColor[1, 0.925, 0.925]],
+                MenuItem["\:6de1\:7d2b\:8272",Background->RGBColor[0.94, 0.88, 0.94]],
+                MenuItem["\:6de1\:7d05\:8272",	Background->RGBColor[1, 0.85, 0.85]],
+                MenuItem["\:6de1\:9ec3\:8272",Background->RGBColor[1, 1, 0.85]],
+                Delimiter,
+                MenuItem["\:6a59\:8272",		Background->RGBColor[1, 0.5, 0]],
+                MenuItem["\:7c89\:7d05\:8272",		Background->RGBColor[1, 0.5, 0.5]],
+                MenuItem["\:9ec3\:8272",		Background->RGBColor[1, 1, 0]]
+            }]
+        }]
+        },
+
+    "ErrorIcon" -> {
+        (*MenuItem["Show Synta&x Errors", FrontEndExecute[{}]],
+        MenuItem["Clear &Error Highlights", FrontEndExecute[{}]]*)
+    },
+
+    "Graphics3DBox" -> {
+        MenuItem["\:526a\:4e0b\:5716\:5f62 (&T)", "Cut"],
+        MenuItem["\:8907\:88fd\:5716\:5f62 (&C)", "Copy"],
+        MenuItem["\:8cbc\:4e0a (&P)", FrontEnd`Paste[After]],
+        Delimiter,
+        MenuItem["\:5c07\:5716\:5f62\:53e6\:5b58\:65b0\:6a94...  (&A)", "SelectionSaveSpecial"],
+        MenuItem["\:5217\:5370\:5716\:5f62... (&R)", "PrintSelectionDialog"],
+        Delimiter,
+        MenuItem["\:6b63\:8996\:5716 (&F)", FrontEndExecute[SetOptions[NotebookSelection[InputNotebook[]], {Graphics3DBoxOptions->{ViewPoint->Front, ViewVertical->Inherited}}]]],
+        MenuItem["\:4fef\:8996\:5716", FrontEndExecute[SetOptions[NotebookSelection[InputNotebook[]], {Graphics3DBoxOptions->{ViewPoint->Top, ViewVertical->Inherited}}]]],
+        MenuItem["\:9810\:8a2d\:8996\:5716 (&D)", FrontEndExecute[SetOptions[NotebookSelection[InputNotebook[]], {Graphics3DBoxOptions->{ViewPoint->Inherited, ViewVertical->Inherited}}]]],
+        MenuItem["\:91cd\:8a2d\:5168\:666f/\:7e2e\:653e (&Z)", FrontEndExecute[SetOptions[NotebookSelection[InputNotebook[]], {Graphics3DBoxOptions->{ViewAngle->Inherited, ViewCenter->Inherited}}]]],
+        Delimiter,
+        MenuItem["\:4fee\:6b63\:5b9a\:754c\:6846 (&B)", FrontEnd`Graphics3DBoxOptionsMethod->{"ShrinkWrap"->True}]},
+
+    "LocatorPaneBox" -> {
+        (*MenuItem["Add &Locator", FrontEndExecute[{}]]*)},
+
+    "CellGroup" -> {
+        MenuItem["\:526a\:4e0b (&T)", "Cut"],
+        MenuItem["\:8907\:88fd (&C)", "Copy"],
+        MenuItem["\:8cbc\:4e0a (&P)", FrontEnd`Paste[After]],
+        Menu["\:8907\:88fd\:70ba (&Y)",
+        {
+            MenuItem["\:7d14\:6587\:5b57 (&T)", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["\:5132\:5b58\:683c\:7269\:4ef6 (&O)", FrontEnd`CopySpecial["CellObject"]],
+            MenuItem["\:5132\:5b58\:683c\:8868\:793a\:5f0f (&C)", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["\:7b46\:8a18\:672c\:8868\:793a\:5f0f (&N)", FrontEnd`CopySpecial["NotebookExpression"]]
+        }],
+        Delimiter,
+        MenuItem["\:5408\:4f75\:5132\:5b58\:683c (&M)", "CellMerge"],
+        MenuItem["\:53d6\:6d88\:5132\:5b58\:683c\:7fa4\:7d44 (&U)", "CellUngroup"],
+        Delimiter,
+        MenuItem["\:958b\:555f/\:95dc\:9589\:7fa4\:7d44 (&/)", "OpenCloseGroup"],
+        MenuItem["\:958b\:555f\:6240\:6709\:5b50\:7fa4\:7d44 (&O)", "SelectionOpenAllGroups"],
+        MenuItem["\:95dc\:9589\:6240\:6709\:5b50\:7fa4\:7d44 (&L)", "SelectionCloseAllGroups"],
+        Delimiter,
+        MenuItem["\:8a08\:7b97\:5132\:5b58\:683c (&E)", "EvaluateCells"],
+        MenuItem["\:5f9e\:8a08\:7b97\:4f47\:5217\:4e2d\:522a\:9664 (&R)", "RemoveFromEvaluationQueue"],
+        Delimiter,
+        MenuItem["\:6e05\:9664\:683c\:5f0f (&F)", "ClearCellOptions"],
+        Menu["\:6a23\:5f0f (&S)",
+        {
+            LinkedItems[{
+                MenuItem["\:555f\:52d5\:5132\:5b58\:683c\:6a23\:5f0f\:540d\:7a31", "MenuListStyles", MenuAnchor->True]
+            }],
+            Delimiter,
+            MenuItem["\:5176\:4ed6... (&O)", "StyleOther"]
+        }]
+        },
+
+    "CellBracket" -> {
+        MenuItem["\:526a\:4e0b (&T)", "Cut"],
+        MenuItem["\:8907\:88fd (&C)", "Copy"],
+        MenuItem["\:8cbc\:4e0a (&P)", FrontEnd`Paste[After]],
+        Menu["\:8907\:88fd\:70ba (&Y)",
+        {
+            MenuItem["\:7d14\:6587\:5b57 (&T)", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["\:8f38\:5165\:6587\:5b57 (&I)", FrontEnd`CopySpecial["InputText"]],
+            MenuItem["LaTeX (&L)",
+                KernelExecute[ToExpression["FrontEnd`CopyAsTeX[]"]],
+                MenuEvaluator -> "System"],
+            MenuItem["MathML (&A)",
+                KernelExecute[ToExpression["FrontEnd`CopyAsMathML[]"]],
+                MenuEvaluator -> "System"],
+            Delimiter,
+            MenuItem["\:5132\:5b58\:683c\:7269\:4ef6 (&O)", FrontEnd`CopySpecial["CellObject"]],
+            MenuItem["\:5132\:5b58\:683c\:8868\:793a\:5f0f (&C)", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["\:7b46\:8a18\:672c\:8868\:793a\:5f0f (&N)", FrontEnd`CopySpecial["NotebookExpression"]]
+        }],
+        Delimiter,
+        MenuItem["\:8a08\:7b97\:5132\:5b58\:683c (&E)", "EvaluateCells"],
+        MenuItem["\:5f9e\:8a08\:7b97\:4f47\:5217\:4e2d\:522a\:9664 (&R)", "RemoveFromEvaluationQueue"],
+        Delimiter,
+        Menu["\:8f49\:63db\:6210 (&V)",
+        {
+            MenuItem["InputForm (&I)", "SelectionConvert"->InputForm],
+            MenuItem["\:539f\:59cb InputForm (&R)", "SelectionConvert"->RawInputForm],
+            MenuItem["OutputForm (&O)", "SelectionConvert"->OutputForm],
+            MenuItem["\:5148\:8f49\:63db\:6210 BoxForm", "MenuListConvertFormatTypes", MenuAnchor->True]
+        }],
+        ToggleMenuItem["\:521d\:59cb\:5316\:5132\:5b58\:683c (&I)", InitializationCell->Toggle],
+        MenuItem["\:589e\:52a0/\:79fb\:9664\:5132\:5b58\:683c\:6a19\:7c64...", "CellTagsEditDialog"],
+        Delimiter,
+        Menu["\:6a23\:5f0f (&S)",
+        {
+            LinkedItems[{
+                MenuItem["\:555f\:52d5\:5132\:5b58\:683c\:6a23\:5f0f\:540d\:7a31", "MenuListStyles", MenuAnchor->True]
+            }],
+            Delimiter,
+            MenuItem["\:5176\:4ed6... (&O)", "StyleOther"]
+        }],
+        Menu["\:80cc\:666f\:984f\:8272 (&G)",
+        {
+            MenuItem["\:8abf\:8272\:677f...", "BackgroundDialog"],
+            Delimiter,
+            LinkedItems[{
+                MenuItem["\:7121",		Background->None],
+                Delimiter,
+                MenuItem["\:9ed1\:8272",		Background->GrayLevel[0]],
+                MenuItem["\:7070\:8272",		Background->GrayLevel[0.5]],
+                MenuItem["\:6de1\:7070\:8272",	Background->GrayLevel[0.85]],
+                MenuItem["\:767d\:8272",		Background->GrayLevel[1]],
+                Delimiter,
+                MenuItem["\:6de1\:85cd\:8272",	Background->RGBColor[0.87, 0.94, 1]],
+                MenuItem["\:6de1\:8910\:8272",	Background->RGBColor[0.94, 0.91, 0.88]],
+                MenuItem["\:6de1\:9752\:8272",	Background->RGBColor[0.9, 1, 1]],
+                MenuItem["\:6de1\:7da0\:8272",	Background->RGBColor[0.88, 1, 0.88]],
+                MenuItem["\:6de1\:6d0b\:7d05\:8272",Background->RGBColor[1, 0.9, 1]],
+                MenuItem["\:6de1\:6a59\:8272",Background->RGBColor[1, 0.9, 0.8]],
+                MenuItem["\:6de1\:7c89\:7d05\:8272",	Background->RGBColor[1, 0.925, 0.925]],
+                MenuItem["\:6de1\:7d2b\:8272",Background->RGBColor[0.94, 0.88, 0.94]],
+                MenuItem["\:6de1\:7d05\:8272",	Background->RGBColor[1, 0.85, 0.85]],
+                MenuItem["\:6de1\:9ec3\:8272",Background->RGBColor[1, 1, 0.85]],
+                Delimiter,
+                MenuItem["\:6a59\:8272",		Background->RGBColor[1, 0.5, 0]],
+                MenuItem["\:7c89\:7d05\:8272",		Background->RGBColor[1, 0.5, 0.5]],
+                MenuItem["\:9ec3\:8272",		Background->RGBColor[1, 1, 0]]
+            }]
+        }],
+        Menu["\:5c3a\:5bf8 (&Z)",
+        {
+            MenuItem["\:653e\:5927 (&L)", FontSize->Larger],
+            MenuItem["\:7e2e\:5c0f (&S)", FontSize->Smaller],
+            Delimiter,
+            LinkedItems[{
+                MenuItem["9\:9ede (&9)", FontSize->9],
+                MenuItem["10\:9ede (&0)", FontSize->10],
+                MenuItem["12\:9ede (&1)", FontSize->12],
+                MenuItem["14\:9ede (&4)", FontSize->14],
+                MenuItem["16\:9ede (&6)", FontSize->16],
+                MenuItem["18\:9ede (&8)", FontSize->18],
+                MenuItem["24\:9ede (&2)", FontSize->24],
+                MenuItem["36\:9ede (&3)", FontSize->36],
+                MenuItem["72\:9ede (&7)", FontSize->72]
+            }]
+        }],
+        MenuItem["\:6e05\:9664\:683c\:5f0f (&F)", "ClearCellOptions"],
+        Delimiter,
+        MenuItem["\:5c07\:9078\:53d6\:9805\:76ee\:53e6\:5b58\:65b0\:6a94... (&L)", "SelectionSaveSpecial"],
+        MenuItem["\:5217\:5370\:9078\:53d6\:9805\:76ee...", "PrintSelectionDialog"],
+        MenuItem["\:8a9e\:97f3\:6558\:8ff0\:9078\:53d6\:9805\:76ee (&K)", "SelectionSpeak"],
+        Delimiter,
+        MenuItem["\:5c6c\:6027...", "OptionsDialog", Scope->Selection]
+        },
+
+    "CellRange" -> {
+        MenuItem["\:526a\:4e0b (&T)", "Cut"],
+        MenuItem["\:8907\:88fd (&C)", "Copy"],
+        MenuItem["\:8cbc\:4e0a (&P)", FrontEnd`Paste[After]],
+        Menu["\:8907\:88fd\:70ba (&Y)",
+        {
+            MenuItem["\:7d14\:6587\:5b57 (&T)", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["\:5132\:5b58\:683c\:7269\:4ef6 (&O)", FrontEnd`CopySpecial["CellObject"]],
+            MenuItem["\:5132\:5b58\:683c\:8868\:793a\:5f0f (&C)", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["\:7b46\:8a18\:672c\:8868\:793a\:5f0f (&N)", FrontEnd`CopySpecial["NotebookExpression"]]
+        }],
+        Delimiter,
+        MenuItem["\:5408\:4f75\:5132\:5b58\:683c (&M)", "CellMerge"],
+        MenuItem["\:7fa4\:7d44\:5316\:5132\:5b58\:683c (&G)", "CellGroup"],
+        Delimiter,
+        MenuItem["\:958b\:555f\:6240\:6709\:5b50\:7fa4\:7d44 (&O)", "SelectionOpenAllGroups"],
+        MenuItem["\:95dc\:9589\:6240\:6709\:5b50\:7fa4\:7d44 (&L)", "SelectionCloseAllGroups"],
+        Delimiter,
+        MenuItem["\:8a08\:7b97\:5132\:5b58\:683c (&E)", "EvaluateCells"],
+        MenuItem["\:5f9e\:8a08\:7b97\:4f47\:5217\:4e2d\:522a\:9664 (&R)", "RemoveFromEvaluationQueue"],
+        Delimiter,
+        MenuItem["\:6e05\:9664\:683c\:5f0f (&F)", "ClearCellOptions"],
+        Menu["\:6a23\:5f0f (&S)",
+        {
+            LinkedItems[{
+                MenuItem["\:555f\:52d5\:5132\:5b58\:683c\:6a23\:5f0f\:540d\:7a31", "MenuListStyles", MenuAnchor->True]
+            }],
+            Delimiter,
+            MenuItem["\:5176\:4ed6... (&O)", "StyleOther"]
+        }]
+        },
+
+    "CellExpression" -> {
+        MenuItem["\:526a\:4e0b (&T)", "Cut"],
+        MenuItem["\:8907\:88fd (&C)", "Copy"],
+        MenuItem["\:8cbc\:4e0a (&P)", FrontEnd`Paste[After]],
+        Delimiter,
+        MenuItem["\:62ec\:865f\:5c0d\:7a31\:6aa2\:67e5 (&B)", "Balance"],
+        MenuItem["\:986f\:793a\:5132\:5b58\:683c (&H)", "ToggleShowExpression"]},
+
+    "CellInsertionPoint" -> {
+        MenuItem["\:8cbc\:4e0a (&P)", FrontEnd`Paste[After]],
+        Menu["\:63d2\:5165\:65b0\:5132\:5b58\:683c (&I)",
+        {
+            MenuItem["\:555f\:52d5\:5132\:5b58\:683c\:6a23\:5f0f\:540d\:7a31", "MenuListStyles", MenuAnchor->True],
+            Delimiter,
+            MenuItem["\:5176\:4ed6... (&O)", "StyleOther"]
+        }],
+        Menu["\:63d2\:5165\:6c34\:5e73\:7dda (&R)",
+        {
+            MenuItem["\:7d30\:7dda (&N)", FrontEndExecute[{
+                    FrontEnd`NotebookWrite[FrontEnd`InputNotebook[],
+                        Cell[" ", "Text",
+                            Editable->False,
+                            Selectable->False,
+                            CellElementSpacings->{"CellMinHeight"->1},
+                            ShowCellBracket->False,
+                            CellMargins->{{0, 0}, {1, 1}},
+                            CellSize->{Inherited, 3},
+                            CellFrame->{{0,0},{0,0.5}},
+                            CellFrameMargins->0,
+                            CellFrameColor->RGBColor[0, 0, 1]],
+                        After]
+                }]],
+            MenuItem["\:4e2d\:578b\:7dda (&M)", FrontEndExecute[{
+                    FrontEnd`NotebookWrite[FrontEnd`InputNotebook[],
+                        Cell[" ", "Text",
+                            Editable->False,
+                            Selectable->False,
+                            CellElementSpacings->{"CellMinHeight"->1},
+                            ShowCellBracket->False,
+                            CellMargins->{{0, 0}, {1, 1}},
+                            CellSize->{Inherited, 4},
+                            CellFrame->{{0,0},{0,2}},
+                            CellFrameMargins->0,
+                            CellFrameColor->RGBColor[0, 0, 1]], After]
+                }]],
+            MenuItem["\:7c97\:7dda (&T)", FrontEndExecute[{
+                    FrontEnd`NotebookWrite[FrontEnd`InputNotebook[],
+                        Cell[" ", "Text",
+                            Editable->False,
+                            Selectable->False,
+                            CellElementSpacings->{"CellMinHeight"->1},
+                            ShowCellBracket->False,
+                            CellMargins->{{0, 0}, {1, 1}},
+                            CellSize->{Inherited, 5},
+                            CellFrame->{{0,0},{0,3}},
+                            CellFrameMargins->0,
+                            CellFrameColor->RGBColor[0, 0, 1]], After]
+                }]]
+        }],
+        Delimiter,
+        MenuItem["\:63d2\:5165\:5206\:9801\:7b26 (&B)",
+            FrontEndExecute[{
+                FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[],
+                    Cell["", "PageBreak", PageBreakBelow -> True],
+                    After]}]],
+	Delimiter,
+	    MenuItem["\:8907\:88fd\:7b46\:8a18\:672c\:7269\:4ef6 (&J)", FrontEnd`CopySpecial["NotebookObject"]],
+        Delimiter,
+        MenuItem["\:958b\:95dc\:5168\:87a2\:5e55 (&F)", FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]]]
+    },
+
+    "TableView" -> {
+        MenuItem["\:6b04\:6392\:5e8f", KernelExecute[ TableView`SortData[ButtonNotebook[], "column", "Sort"]], MenuEvaluator -> Automatic],
+        MenuItem["\:6b04\:9006\:5411\:6392\:5e8f", KernelExecute[ TableView`SortData[ButtonNotebook[], "column", "Reverse sort"]], MenuEvaluator -> Automatic],
+        MenuItem["\:65b0\:589e\:6b04\:5728\:524d", KernelExecute[ TableView`NewRowColumn[ButtonNotebook[], "column", 0]], MenuEvaluator -> Automatic],
+        MenuItem["\:65b0\:589e\:6b04\:5728\:5f8c", KernelExecute[ TableView`NewRowColumn[ButtonNotebook[], "column", 1]], MenuEvaluator -> Automatic],
+        MenuItem["\:522a\:9664\:6b04", KernelExecute[ TableView`DeleteRowColumn[ButtonNotebook[], "column"]], MenuEvaluator -> Automatic],
+        MenuItem["\:7528\:6b04\:4f5c\:70ba\:5217\:6a19\:984c", KernelExecute[ TableView`DataToHeadings[ButtonNotebook[], "column"]], MenuEvaluator -> Automatic],
+        Delimiter,
+        MenuItem["\:5217\:6392\:5e8f", KernelExecute[ TableView`SortData[ButtonNotebook[], "row", "Sort"]], MenuEvaluator -> Automatic],
+        MenuItem["\:5217\:9006\:5411\:6392\:5e8f", KernelExecute[ TableView`SortData[ButtonNotebook[], "row", "Reverse sort"]], MenuEvaluator -> Automatic],
+        MenuItem["\:65b0\:589e\:5217\:5728\:524d", KernelExecute[ TableView`NewRowColumn[ButtonNotebook[], "row", 0]], MenuEvaluator -> Automatic],
+        MenuItem["\:65b0\:589e\:5217\:5728\:5f8c", KernelExecute[ TableView`NewRowColumn[ButtonNotebook[], "row", 1]], MenuEvaluator -> Automatic],
+        MenuItem["\:522a\:9664\:5217", KernelExecute[ TableView`DeleteRowColumn[ButtonNotebook[], "row"]], MenuEvaluator -> Automatic],
+        MenuItem["\:7528\:5217\:4f5c\:70ba\:6b04\:6a19\:984c", KernelExecute[ TableView`DataToHeadings[ButtonNotebook[], "row"]], MenuEvaluator -> Automatic],
+        Delimiter,
+        MenuItem["\:96b1\:85cf/\:986f\:793a\:985e\:578b", KernelExecute[ TableView`ToggleTypes[ButtonNotebook[]]], MenuEvaluator -> Automatic],
+        MenuItem["\:6539\:8b8a\:9805\:76ee\:985e\:578b", KernelExecute[ TableView`ConvertType[ButtonNotebook[]]], MenuEvaluator -> Automatic],
+        MenuItem["\:4f7f\:7528\:6a19\:984c\:70ba\:8cc7\:6599", KernelExecute[ TableView`HeadingsToData[boxid, ButtonNotebook[]]], MenuEvaluator -> Automatic],
+        Delimiter,
+        MenuItem["\:8907\:88fd\:8cc7\:6599", KernelExecute[ TableView`CopyEvent[ButtonNotebook[]]], MenuEvaluator -> Automatic],
+        MenuItem["\:8cbc\:4e0a\:8cc7\:6599", KernelExecute[ TableView`PasteData[ButtonNotebook[]]], MenuEvaluator -> Automatic]
+    },
+
+    "SystemsModelMinimal" -> {
+        MenuItem["\:5168\:756b\:9762", KernelExecute[Control`Typesetting`SystemsModelTypesetToggle[ButtonNotebook[], FE`CMObj]], MenuEvaluator -> Automatic]
+    },
+
+    "SystemsModelFull" -> {
+        MenuItem["\:6700\:5c0f\:756b\:9762", KernelExecute[Control`Typesetting`SystemsModelTypesetToggle[ButtonNotebook[], FE`CMObj]], MenuEvaluator -> Automatic]
+    },
+
+    "Palette" -> {
+        MenuItem["\:7522\:751f\:7b46\:8a18\:672c", "GenerateNotebook"],
+        Delimiter,
+        MenuItem["\:95dc\:9589", "Close", MenuKey["w", Modifiers->{"Control"}]]
+    }
+}

@@ -1,0 +1,93 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IMathLink.Put Method (Array, String[])</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IMathLink.Put_overload_7.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IMathLink.Put Method (Array, String[])</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Sends an array object. Unlike Put(object), this method lets you specify the heads you want for each dimension. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Sub Put( _<br />   ByVal <i>obj</i> As <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemArrayClassTopic.htm">Array</a>, _<br />   ByVal <i>heads</i> As <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemStringClassTopic.htm">String()</a> _<br />)</div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />
+        <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> Put(<br />   <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemArrayClassTopic.htm">Array</a> <i>obj</i>,<br />   <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemStringClassTopic.htm">string[]</a> <i>heads</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>obj</i>
+        </dt>
+        <dd>The array object to send.</dd>
+        <dt>
+          <i>heads</i>
+        </dt>
+        <dd>The heads in each dimension".</dd>
+      </dl>
+      <h4 class="dtH4">Exceptions</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Exception Type</th>
+            <th width="50%">Condition</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MathLinkException.html">MathLinkException</a>
+            </td>
+            <td width="50%">On any MathLink error.</td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="dtH4">Example</h4>
+      <p>
+            <pre class="code">int[,] a = {{1,2},{3,4}};
+// The following are equivalent, sending to <i>Mathematica</i> the matrix: {{1,2},{3,4}}
+ml.Put(a);
+ml.Put(a, null);
+ml.Put(a, new String[] {"List", "List"});
+// The following sends the expression: foo[bar[{1,2],[3,4]]
+ml.Put(a, new String[] {"foo", "bar"});
+</pre>
+            </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IMathLink.html">IMathLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.IMathLink.Put_overloads.html">IMathLink.Put Overload List</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="Put method">
+        </param>
+        <param name="Keyword" value="Put method, IMathLink interface">
+        </param>
+        <param name="Keyword" value="IMathLink.Put method">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

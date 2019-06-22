@@ -1,0 +1,553 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     18764,        545]
+NotebookOptionsPosition[     18048,        517]
+NotebookOutlinePosition[     18522,        535]
+CellTagsIndexPosition[     18479,        532]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "J/Link Example: Spirograph\n\n",
+ StyleBox["Code for the Spirograph application from section 1.3 of the J/Link \
+User Guide.\n\nYou need a 1.2 or later version of Java for this example, \
+because it uses features of the Java Graphics2D API. This means that it \
+cannot run on the Macintosh (at least until ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["Mathematica",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontSlant->"Italic",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[" and J/Link are ported to Mac OS X), and it cannot run on Windows \
+using the Microsoft Java runtime.\n\nThis is a reasonably complex application \
+coded entirely in ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["Mathematica",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontSlant->"Italic",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[". It demonstrates drawing into a ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["MathCanvas",
+  FontSize->12,
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[" using the Java Graphics2D API, along with a number of ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["MathListeners",
+  FontSize->12,
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[" to script the functionality of the user interface.\n\nTo try this \
+example, evaluate all the initialization cells (you can do this with the menu \
+command Kernel/Evaluation/Evaluate Initialization). Then go to the Example \
+section.\n\nThe curve drawn by a wheel rolling along the outside of a circle \
+is called an epitrochoid, and the curve drawn when the wheel rolls along the \
+inside of a circle is called a hypotrochoid. For more information, see ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[ButtonBox["http://mathworld.wolfram.com/Hypotrochoid.html",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://mathworld.wolfram.com/Hypotrochoid.html"], None}],
+  FontSize->12],
+ StyleBox[" and ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[ButtonBox["http://mathworld.wolfram.com/Epitrochoid.html",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://mathworld.wolfram.com/Epitrochoid.html"], None}],
+  FontSize->12],
+ StyleBox[".\n\nIt is left as an exercise for the reader to improve the user \
+interface.",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}]
+}], "Title"],
+
+Cell[CellGroupData[{
+
+Cell["Code", "Subsection"],
+
+Cell["\<\
+(* We put the code into its own package just to avoid conflicts over \
+definitions of
+   commonly-named (for me, at least) functions like \"mousePressedFunc\" and \
+\"mouseMovedFunc\".
+*)
+BeginPackage[\"Spirograph`\", \"JLink`\"];
+
+Spirograph;
+
+Begin[\"`Private`\"];
+
+(* Equations for the x and y coords of epitrochoids and hypotrochoids. The \
+angle theta
+   is the starting angle of the center of the wheel, and phi is the starting \
+angle of
+   the pen point, measured from the horizontal line that goes through the \
+center of the wheel. *)
+
+HypoX[a_, b_, h_, theta_, phi_] := (a - b) Cos[t + theta] + h Cos[(a - b)t/b \
+- phi]
+HypoY[a_, b_, h_, theta_, phi_] := (a - b) Sin[t + theta] - h Sin[(a - b)t/b \
+- phi]
+
+EpiX[a_, b_, h_, theta_, phi_] := (a + b) Cos[t + theta] + h Cos[(a + b)t/b + \
+phi]
+EpiY[a_, b_, h_, theta_, phi_] := (a + b) Sin[t + theta] + h Sin[(a + b)t/b + \
+phi]
+
+thisPkgContext = Context[];
+
+Spirograph[] :=
+\tJavaBlock[
+\t\tBlock[{frame, mathCanvas, buttonPanel, mml, mmml, wheelButtonListener,
+\t\t\t\tdefaultCursor, moveCursor, resizeCursor, crosshairCursor,
+\t\t\t\tpenColor, defaultPenColor, ringColor, wheelColor, blackColor, \
+fatStroke, thinStroke,
+\t\t\t\tringButton, wheelInnerButton, wheelOuterButton, penColorButton, \
+penButton,
+\t\t\t\tviewButton, clearButton, buttonGroup, wheelRadius, ringRadius,
+\t\t\t\toffscreen, g, imWidth, imHeight, centerX, centerY, wheelCenterX, \
+wheelCenterY,
+\t\t\t\torigWheelCenter, isEpi, mode, phi, h, oldCurves, penPt, xPts, yPts, \
+numPts, ptsUsed,
+\t\t\t\tstartTheta, lastTheta, thetaCorrection, period, periodProportion,
+\t\t\t\twheelRotations, rollovers
+\t\t\t  },
+\t\t
+\t\t\tInstallJava[];
+\t\t\t
+\t\t\tIf[LoadJavaClass[\"java.awt.Graphics2D\"] === $Failed,
+\t\t\t\tPrint[\"You must have Java 1.2 or later for this example.\"];
+\t\t\t\tReturn[$Failed]
+\t\t\t];
+\t\t\tLoadJavaClass[\"java.awt.Cursor\"];
+\t\t\tdefaultCursor = Cursor`getPredefinedCursor[Cursor`DEFAULTUCURSOR];
+\t\t\tmoveCursor = Cursor`getPredefinedCursor[Cursor`MOVEUCURSOR];
+\t\t\tresizeCursor = Cursor`getPredefinedCursor[Cursor`NWURESIZEUCURSOR];
+\t\t\tcrosshairCursor = Cursor`getPredefinedCursor[Cursor`CROSSHAIRUCURSOR];
+\t\t\t
+\t\t\tLoadJavaClass[\"java.awt.Color\"];
+\t\t\tpenColor = defaultPenColor = Color`green;
+\t\t\tblackColor = Color`black;
+\t\t\tringColor = JavaNew[\"java.awt.Color\", 1.0, 0., 0., 0.3];
+\t\t\twheelColor = JavaNew[\"java.awt.Color\", 0., 0., 1.0, 0.3];
+\t\t\t
+\t\t\tfatStroke = JavaNew[\"java.awt.BasicStroke\", 4];
+\t\t\tthinStroke = JavaNew[\"java.awt.BasicStroke\", 1];
+\t\t\t
+\t\t\tframe = JavaNew[\"com.wolfram.jlink.MathFrame\", \"Spirograph\"];
+\t\t\tframe@setResizable[False];
+\t\t\tframe@setLayout[JavaNew[\"java.awt.BorderLayout\"]];
+\t\t\tmathCanvas = JavaNew[\"com.wolfram.jlink.MathCanvas\"];
+\t\t\tframe@add[\"Center\", mathCanvas];
+\t\t\tbuttonPanel = JavaNew[\"java.awt.Panel\"];
+\t\t\tframe@add[\"West\", buttonPanel];
+\t\t\tbuttonPanel@setLayout[JavaNew[\"java.awt.GridLayout\", 7, 1]];
+\t\t\tringButton = JavaNew[\"javax.swing.JToggleButton\", \"Ring\"];
+\t\t\twheelInnerButton = JavaNew[\"javax.swing.JToggleButton\", \"Inner Wheel\
+\"];
+\t\t\twheelOuterButton = JavaNew[\"javax.swing.JToggleButton\", \"Outer Wheel\
+\"];
+\t\t\tpenButton = JavaNew[\"javax.swing.JToggleButton\", \"Pen\"];
+\t\t\tpenColorButton = JavaNew[\"javax.swing.JToggleButton\", \"Pen \
+Color...\"];
+\t\t\tviewButton = JavaNew[\"javax.swing.JToggleButton\", \"View\"];
+\t\t\tclearButton = JavaNew[\"javax.swing.JToggleButton\", \"Clear\"];
+\t\t\tbuttonPanel@add[ringButton];
+\t\t\tbuttonPanel@add[wheelInnerButton];
+\t\t\tbuttonPanel@add[wheelOuterButton];
+\t\t\tbuttonPanel@add[penButton];
+\t\t\tbuttonPanel@add[penColorButton];
+\t\t\tbuttonPanel@add[viewButton];
+\t\t\tbuttonPanel@add[clearButton];
+\t\t\t
+\t\t\t(* Note the trick of prepending Context[] to the string names of the \
+callback functions.
+\t\t\t   These functions are in the Spirograph`Private` context, so we must \
+make sure that when
+\t\t\t   they are called their full names are used.
+\t\t\t*)
+\t\t\tringButton@addActionListener[
+\t\t\t\tJavaNew[\"com.wolfram.jlink.MathActionListener\", thisPkgContext <> \
+\"ringButtonPushed\"]
+\t\t\t];
+\t\t\tpenButton@addActionListener[
+\t\t\t\tJavaNew[\"com.wolfram.jlink.MathActionListener\", thisPkgContext <> \
+\"penButtonPushed\"]
+\t\t\t];
+\t\t\tpenColorButton@addActionListener[
+\t\t\t\tJavaNew[\"com.wolfram.jlink.MathActionListener\", thisPkgContext <> \
+\"penColorButtonPushed\"]
+\t\t\t];
+\t\t\tviewButton@addActionListener[
+\t\t\t\tJavaNew[\"com.wolfram.jlink.MathActionListener\", thisPkgContext <> \
+\"viewButtonPushed\"]
+\t\t\t];
+\t\t\tclearButton@addActionListener[
+\t\t\t\tJavaNew[\"com.wolfram.jlink.MathActionListener\", thisPkgContext <> \
+\"clearButtonPushed\"]
+\t\t\t];
+\t\t\twheelButtonListener =
+\t\t\t\tJavaNew[\"com.wolfram.jlink.MathActionListener\", thisPkgContext <> \
+\"wheelButtonPushed\"];
+\t\t\twheelInnerButton@addActionListener[wheelButtonListener];
+\t\t\twheelOuterButton@addActionListener[wheelButtonListener];
+
+\t\t\tbuttonGroup = JavaNew[\"javax.swing.ButtonGroup\"];
+\t\t\tbuttonGroup@add[ringButton];
+\t\t\tbuttonGroup@add[wheelInnerButton];
+\t\t\tbuttonGroup@add[wheelOuterButton];
+\t\t\tbuttonGroup@add[penButton];
+\t\t\tbuttonGroup@add[penColorButton];
+\t\t\tbuttonGroup@add[viewButton];
+\t\t\tbuttonGroup@add[clearButton];
+
+\t\t\tmmml = JavaNew[\"com.wolfram.jlink.MathMouseMotionListener\"];
+\t\t\tmmml@setHandler[\"mouseDragged\", thisPkgContext <> \
+\"mouseDraggedFunc\"];
+\t\t\tmmml@setHandler[\"mouseMoved\", thisPkgContext <> \"mouseMovedFunc\"];
+\t\t\tmathCanvas@addMouseMotionListener[mmml];
+\t\t\tmml = JavaNew[\"com.wolfram.jlink.MathMouseListener\"];
+\t\t\tmml@setHandler[\"mousePressed\", thisPkgContext <> \"mousePressedFunc\"];
+\t\t\tmml@setHandler[\"mouseReleased\", thisPkgContext <> \"mouseReleasedFunc\
+\"];
+\t\t\tmathCanvas@addMouseListener[mml];
+
+\t\t\tframe@setSize[550, 400];
+\t\t\tframe@layout[];
+\t\t\tJavaShow[frame];
+\t\t\t
+\t\t\toffscreen = mathCanvas@createImage[
+\t\t\t\tmathCanvas@getSize[]@width, mathCanvas@getSize[]@height];
+\t\t\tg = offscreen@createGraphics[];
+\t\t\timWidth = offscreen@getWidth[];
+\t\t\timHeight = offscreen@getHeight[];
+\t\t\t{centerX, centerY} = Round[{imWidth/2, imHeight/2}];
+\t\t\t
+\t\t\toldCurves = {};
+\t\t
+\t\t\t(* Initialize into ring-resize mode. *)
+\t\t\tringButton@doClick[];
+\t\t\t
+\t\t\tframe@setModal[];
+\t\t\tDoModal[]
+\t\t]
+\t]
+
+ringButtonPushed[e_, _] :=
+\t(
+\t\tmode = \"RING\";
+\t\tIf[ValueQ[penPt], AppendTo[oldCurves, {xPts, yPts, ptsUsed, penColor}]];
+\t\tringRadius = 80;  (* Default ring radius. *)
+\t\tdrawPicture[];
+\t\tReleaseJavaObject[e]
+\t)
+\t
+wheelButtonPushed[e_, cmd_] :=
+\t(
+\t\tmode = \"WHEEL\";
+\t\tisEpi = cmd === \"Outer Wheel\";
+\t\tIf[ValueQ[penPt], AppendTo[oldCurves, {xPts, yPts, ptsUsed, penColor}]];
+\t\twheelRadius = 30;  (* Default wheel radius. *)
+\t\t{wheelCenterX, wheelCenterY} =
+\t\t\tRound[{centerX, centerY - (ringRadius + If[isEpi, 1, -1] wheelRadius)}];
+\t\tdrawPicture[];
+\t\tReleaseJavaObject[e]
+\t)
+\t
+penButtonPushed[e_, _] :=
+\t(
+\t\tmode = \"PEN\";
+\t\tReleaseJavaObject[e]
+\t)
+
+penColorButtonPushed[e_, _] :=
+\tModule[{color},
+\t\tIf[ValueQ[penPt], AppendTo[oldCurves, {xPts, yPts, ptsUsed, penColor}]];
+\t\tpenPt =.;
+\t\tLoadJavaClass[\"javax.swing.JColorChooser\"];
+\t\tcolor = JColorChooser`showDialog[mathCanvas, \"Select Pen Color:\", \
+defaultPenColor];
+\t\tIf[color =!= Null, penColor = color];
+\t\tReleaseJavaObject[e]
+\t]
+
+viewButtonPushed[e_, _] :=
+\t(
+\t\tmode = \"VIEW\";
+\t\tdrawPicture[];
+\t\tReleaseJavaObject[e]
+\t)
+
+clearButtonPushed[e_, _] :=
+\t(
+\t\tmode = \"CLEAR\";
+\t\tpenPt =.;
+\t\tpenColor = defaultPenColor;
+\t\toldCurves = {};
+\t\tdrawPicture[];
+\t\tReleaseJavaObject[e]
+\t)
+
+mousePressedFunc[e_, x_, y_, _] :=
+\tModule[{cfx, cfy, mouseAngle, theta},
+\t\t(* theta is the angle from the horizontal of the center of the wheel. *)
+\t\ttheta = computeAngle[{centerX, centerY}, {wheelCenterX, wheelCenterY}];
+\t\tmouseAngle = computeAngle[{centerX, centerY}, {x, y}];
+\t\tthetaCorrection = theta - mouseAngle;
+\t\t
+\t\tSwitch[mode,
+\t\t\t\"RING\",
+\t\t\t\tIf[SameObjectQ[mathCanvas@getCursor[], resizeCursor],
+\t\t\t\t\tmode = \"RINGRESIZE\"
+\t\t\t\t],
+\t\t\t\"WHEEL\",
+\t\t\t\tIf[SameObjectQ[mathCanvas@getCursor[], resizeCursor],
+\t\t\t\t\torigWheelCenter = {wheelCenterX, wheelCenterY};
+\t\t\t\t\tmode = \"WHEELRESIZE\"
+\t\t\t\t],
+\t\t\t\"PEN\",
+\t\t\t\tIf[ValueQ[penPt], AppendTo[oldCurves, {xPts, yPts, ptsUsed, \
+penColor}]];
+\t\t\t\tpenPt = {x, y};
+\t\t\t\th = Sqrt[(wheelCenterX - x)^2 + (wheelCenterY - y)^2];
+\t\t\t\tphi = computeAngle[{wheelCenterX, wheelCenterY}, {x, y}];
+\t\t\t\tIf[isEpi,
+\t\t\t\t\tcfx = Compile[{t}, Evaluate[centerX + EpiX[ringRadius, wheelRadius, \
+h, theta, phi]]];
+\t\t\t\t\tcfy = Compile[{t}, Evaluate[centerY - EpiY[ringRadius, wheelRadius, \
+h, theta, phi]]];
+\t\t\t\t\tperiod = 2 Pi Numerator[wheelRadius/(ringRadius + wheelRadius)];
+\t\t\t\t\t(* This is the number of rotations the wheel will make over the
+\t\t\t\t\t   full period of the curve.
+\t\t\t\t\t*)
+\t\t\t\t\twheelRotations = Denominator[wheelRadius/(ringRadius + wheelRadius)],
+\t\t\t\t(* else *)
+\t\t\t\t\tcfx = Compile[{t}, Evaluate[centerX + HypoX[ringRadius, \
+wheelRadius, h, theta, phi]]];
+\t\t\t\t\tcfy = Compile[{t}, Evaluate[centerY - HypoY[ringRadius, \
+wheelRadius, h, theta, phi]]];
+\t\t\t\t\tperiod = 2 Pi Numerator[wheelRadius/(ringRadius - wheelRadius)];
+\t\t\t\t\twheelRotations = Denominator[wheelRadius/(ringRadius - wheelRadius)]
+\t\t\t\t];
+\t\t\t\t(* 200 pts per 2Pi. *)
+\t\t\t\txPts = MakeJavaObject[Round @ Table[cfx[t], {t, 0., period, \
+2Pi/200.}]];
+\t\t\t\tyPts = MakeJavaObject[Round @ Table[cfy[t], {t, 0., period, \
+2Pi/200.}]];
+\t\t\t\tnumPts = period/(2Pi/200.) + 1;
+\t\t\t\tperiodProportion = rollovers = 0;
+\t\t\t\tstartTheta = lastTheta = theta
+\t\t];
+\t\tdrawPicture[];
+\t\tReleaseJavaObject[e]
+\t]
+
+mouseDraggedFunc[e_, x_, y_, _] :=
+\tModule[{mouseAngle, penAngle, theta},
+\t\tSwitch[mode,
+\t\t\t\"RINGRESIZE\",
+\t\t\t\tringRadius = Max[10, Round[Sqrt[(centerX - x)^2 + (centerY - y)^2]]],
+\t\t\t\"WHEELRESIZE\",
+\t\t\t\twheelRadius = Max[6, Min[If[isEpi, Infinity, ringRadius - 4],
+\t\t\t\t\t\t\t\t\tRound @ Sqrt[Plus @@ ((origWheelCenter - {x, y})^2)]]];
+\t\t\t\ttheta = computeAngle[{centerX, centerY}, {wheelCenterX, wheelCenterY}];
+\t\t\t\t{wheelCenterX, wheelCenterY} = Round[{centerX, centerY} +
+\t\t\t\t\t\t\t(ringRadius + If[isEpi, 1, -1] wheelRadius) {Cos[theta], \
+-Sin[theta]}],
+\t\t\t\"WHEEL\" | \"PEN\",
+\t\t\t\tmouseAngle = computeAngle[{centerX, centerY}, {x, y}];
+\t\t\t\ttheta = mouseAngle + thetaCorrection;
+\t\t\t\t{wheelCenterX, wheelCenterY} = Round[{centerX, centerY} + 
+\t\t\t\t\t\t\t(ringRadius + If[isEpi, 1, -1] wheelRadius) {Cos[theta], \
+-Sin[theta]}];
+\t\t\t\tIf[mode === \"PEN\",
+\t\t\t\t\tIf[Abs[theta - lastTheta] > Pi, rollovers += If[x >= centerX, 1, \
+-1]];
+\t\t\t\t\tperiodProportion = (theta + 2Pi rollovers - startTheta)/period;
+\t\t\t\t\tlastTheta = theta;
+\t\t\t\t\tpenAngle = phi + If[isEpi, 1, -1] wheelRotations periodProportion \
+2Pi;
+\t\t\t\t\tpenPt = Round[{wheelCenterX + h Cos[penAngle], wheelCenterY - h \
+Sin[penAngle]}]
+\t\t\t\t]
+\t\t];
+\t\tdrawPicture[];
+\t\tReleaseJavaObject[e]
+\t]
+
+(* This is used for changing the cursor as the mouse floats over areas of the \
+figure. *)
+mouseMovedFunc[e_, x_, y_, _] :=
+\tModule[{distToWheelCenter, distToCenter},
+\t\tSwitch[mode,
+\t\t\t\"PEN\",
+\t\t\t\tmathCanvas@setCursor[crosshairCursor],
+\t\t\t\"WHEEL\",
+\t\t\t\tdistToWheelCenter = Sqrt[(wheelCenterX - x)^2 + (wheelCenterY - y)^2];
+\t\t\t\tWhich[
+\t\t\t\t\tdistToWheelCenter < wheelRadius + 2 && distToWheelCenter > \
+wheelRadius - 6,
+\t\t\t\t\t\tmathCanvas@setCursor[resizeCursor],
+\t\t\t\t\tdistToWheelCenter <= wheelRadius - 6,
+\t\t\t\t\t\tmathCanvas@setCursor[moveCursor],
+\t\t\t\t\tTrue,
+\t\t\t\t\t\tmathCanvas@setCursor[defaultCursor]
+\t\t\t\t],
+\t\t\t\"RING\",
+\t\t\t\tdistToCenter = Sqrt[(centerX - x)^2 + (centerY - y)^2];
+\t\t\t\tIf[Abs[distToCenter - ringRadius] <= 2,
+\t\t\t\t\tmathCanvas@setCursor[resizeCursor],
+\t\t\t\t(* else *)
+\t\t\t\t\tmathCanvas@setCursor[defaultCursor]
+\t\t\t\t]
+\t\t];
+\t\tReleaseJavaObject[e]
+\t]
+
+mouseReleasedFunc[e_, _, _, _] :=
+\t(
+\t\tSwitch[mode,
+\t\t\t\"RINGRESIZE\",
+\t\t\t\tmode = \"RING\",
+\t\t\t\"WHEELRESIZE\",
+\t\t\t\tmode = \"WHEEL\"
+\t\t];
+\t\tReleaseJavaObject[e]
+\t)
+
+drawPicture[] :=
+\t(
+\t\tg@clearRect[0, 0, imWidth, imHeight];
+\t\tIf[mode =!= \"CLEAR\",
+\t\t\tg@setStroke[thinStroke];
+\t\t\t(* Draw the pre-existing curves. *)
+\t\t\t(g@setColor[#4]; g@drawPolyline[#1, #2, #3])& @@@ oldCurves;
+\t\t\tIf[ValueQ[penPt],
+\t\t\t\tptsUsed = Round[Max[0, Min[numPts, numPts periodProportion]]];
+\t\t\t\tg@setColor[penColor];
+\t\t\t\tg@drawPolyline[xPts, yPts, ptsUsed];
+\t\t\t];
+\t\t\tIf[mode =!= \"VIEW\",
+\t\t\t\t(* Draw the ring. *)
+\t\t\t\tg@setPaint[ringColor];
+\t\t\t\tg@setStroke[fatStroke];
+\t\t\t\tg@drawOval[centerX - ringRadius, centerY - ringRadius, 2 ringRadius, \
+2 ringRadius];
+\t\t\t];
+\t\t\tIf[mode === \"WHEEL\" || mode === \"WHEELRESIZE\" || mode === \"PEN\",
+\t\t\t\t(* Draw the wheel. *)
+\t\t\t\tg@setPaint[wheelColor];
+\t\t\t\tg@fillOval[wheelCenterX - wheelRadius, wheelCenterY - wheelRadius, 2 \
+wheelRadius, 2 wheelRadius];
+\t\t\t\tIf[mode === \"PEN\",
+\t\t\t\t\tg@setColor[blackColor];
+\t\t\t\t\tg@setStroke[thinStroke];
+\t\t\t\t\tg@fillOval[penPt[[1]] - 2, penPt[[2]] - 2, 5, 5];
+\t\t\t\t\tg@drawLine[wheelCenterX, wheelCenterY, penPt[[1]], penPt[[2]]];
+\t\t\t\t]
+\t\t\t]
+\t\t];
+\t\tmathCanvas@setImage[offscreen];
+\t\tmathCanvas@repaintNow[];
+\t)
+
+computeAngle[{x1_, y1_}, {x2_, y2_}] :=
+\tIf[x2 === x1,
+\t\tPi/2. Sign[y1 - y2],
+\t(* else *)
+\t\tArcTan[(y1 - y2)/(x2 - x1)] +
+\t\t\tIf[x2 < x1, N[Pi], 0.]
+\t]
+\t
+End[];
+EndPackage[];\
+\>", "Input",
+ InitializationCell->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Subsection"],
+
+Cell["\<\
+The spirograph application presents a column of buttons. Click the Ring \
+button to place a ring that the wheels will roll around. When the Ring button \
+is down, you can use the mouse to resize the ring. Click the InnerWheel or \
+Outer Wheel buttons to place a wheel. When either Wheel button is down, you \
+can use the mouse to move or resize the wheel. Click the Pen button to start \
+drawing. To draw, click the mouse inside or outside the wheel, then move the \
+mouse counter-clockwise while holding down the button. Moving clockwise \
+erases. Use the Pen Color button to adjust the color. The View button removes \
+the ring and wheel elements so you can see your picture unhindered, and the \
+Clear button resets the slate. You can add as many curves as you like, with \
+different ring diameters, wheel sizes, pen colors, etc.\
+\>", "Text"],
+
+Cell["Spirograph[]", "Input"]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{775, 872},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->(None& ),
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 15, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 2629, 67, 518, "Title"],
+Cell[CellGroupData[{
+Cell[3221, 93, 26, 0, 49, "Subsection"],
+Cell[3250, 95, 13813, 397, 5662, "Input",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[17100, 497, 29, 0, 41, "Subsection"],
+Cell[17132, 499, 856, 12, 182, "Text"],
+Cell[17991, 513, 29, 0, 30, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

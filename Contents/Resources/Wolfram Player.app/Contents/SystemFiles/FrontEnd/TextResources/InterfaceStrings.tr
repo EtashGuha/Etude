@@ -1,0 +1,117 @@
+@@resource RGBColorValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"Red"->"Red",
+	"Green"->"Green",
+	"Blue"->"Blue",
+	"Opacity"->"Opacity",
+	"Color Chooser"->"Color Chooser",
+	"Color Swatch"->"Color Swatch",
+	"Basic" -> "Basic",
+	"Advanced" -> "Advanced"
+}
+@|
+@@resource GrayLevelValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"Gray"->"Gray",
+	"Opacity"->"Opacity",
+	"Color Chooser"->"Color Chooser",
+	"Color Swatch"->"Color Swatch",
+	"Basic" -> "Basic",
+	"Advanced" -> "Advanced"
+}
+@|
+@@resource CMYKColorValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"Cyan"->"Cyan",
+	"Magenta"->"Magenta",
+	"Yellow"->"Yellow",
+	"Black"->"Black",
+	"Opacity"->"Opacity",
+	"Color Chooser"->"Color Chooser",
+	"Color Swatch"->"Color Swatch",
+	"Basic" -> "Basic",
+	"Advanced" -> "Advanced"
+}
+@|
+@@resource HueValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"Hue"->"Hue",
+	"Saturation"->"Saturation",
+	"Brightness"->"Brightness",
+	"Opacity"->"Opacity",
+	"Color Chooser"->"Color Chooser",
+	"Color Swatch"->"Color Swatch",
+	"Basic" -> "Basic",
+	"Advanced" -> "Advanced"
+}
+@|
+@@resource LABColorValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"Lightness"->"Lightness",
+	"A"->"A",
+	"B"->"B",
+	"Opacity"->"Opacity",
+	"Color Chooser"->"Color Chooser",
+	"Color Swatch"->"Color Swatch",
+	"Basic" -> "Basic",
+	"Advanced" -> "Advanced"
+}
+@|
+@@resource LCHColorValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"Lightness"->"Lightness",
+	"C"->"C",
+	"H"->"H",
+	"Opacity"->"Opacity",
+	"Color Chooser"->"Color Chooser",
+	"Color Swatch"->"Color Swatch",
+	"Basic" -> "Basic",
+	"Advanced" -> "Advanced"
+}
+@|
+@@resource LUVColorValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"Lightness"->"Lightness",
+	"U"->"U",
+	"V"->"V",
+	"Opacity"->"Opacity",
+	"Color Chooser"->"Color Chooser",
+	"Color Swatch"->"Color Swatch",
+	"Basic" -> "Basic",
+	"Advanced" -> "Advanced"
+}
+@|
+@@resource XYZColorValueSelectorStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"],
+	"X"->"X",
+	"Y"->"Y",
+	"Z"->"Z",
+	"Opacity"->"Opacity",
+	"Color Chooser"->"Color Chooser",
+	"Color Swatch"->"Color Swatch",
+	"Basic" -> "Basic",
+	"Advanced" -> "Advanced"
+}
+@|
+@@resource ColorSchemeChooserStrings
+{
+	"cancelButtonText"->FEPrivate`FrontEndResourceString["cancelButtonText"],
+	"okButtonText"->FEPrivate`FrontEndResourceString["okButtonText"]
+}
+@|

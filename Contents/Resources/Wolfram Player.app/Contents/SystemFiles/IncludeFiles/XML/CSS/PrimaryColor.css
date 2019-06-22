@@ -1,0 +1,1111 @@
+/* Wolfram Mathematica PrimaryColor stylesheet
+* CSS version
+*
+* Created by Wolfram Mathematica 6.0. */
+
+/* Notebook:*/
+html {
+  font-size: 12px;
+  padding: 8px;
+}
+img {
+  border: 0px;
+}
+
+/* Title:*/
+.Title {
+  font-size: 48px;
+  font-family: Helvetica;
+  font-weight: bold;
+  color: #EB060F;
+  text-align: left;
+  line-height: 1.33333;
+  padding: 8px;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+.TitleInline {
+  font-size: 48px;
+  font-family: Helvetica;
+  font-weight: bold;
+  color: #EB060F;
+  text-align: left;
+  line-height: 1.33333;
+}
+/* Subtitle:*/
+.Subtitle {
+  font-size: 24px;
+  font-family: Helvetica;
+  font-weight: bold;
+  color: #6B5EEE;
+  padding: 8px;
+  margin-left: 100px;
+  margin-top: 50px;
+  margin-bottom: 2px;
+}
+.SubtitleInline {
+  font-size: 24px;
+  font-family: Helvetica;
+  font-weight: bold;
+  color: #6B5EEE;
+}
+/* Subsubtitle:*/
+.Subsubtitle {
+  font-size: 14px;
+  font-family: Helvetica;
+  font-style: italic;
+  padding: 8px;
+  margin-left: 100px;
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+.SubsubtitleInline {
+  font-size: 14px;
+  font-family: Helvetica;
+  font-style: italic;
+}
+/* Section:*/
+.Section {
+  font-size: 14px;
+  font-family: Helvetica;
+  font-weight: bold;
+  color: #E95E00;
+  padding-left: 10px;
+  padding-right: 4px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-left: 25px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 4px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px;
+  border-style: solid;
+  border-color: #000000;
+}
+.SectionInline {
+  font-size: 14px;
+  font-family: Helvetica;
+  font-weight: bold;
+  color: #E95E00;
+}
+/* Subsection:*/
+.Subsection {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px;
+  margin-left: 100px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 4px;
+  display: list-item;
+  list-style-type: square;
+}
+.SubsectionInline {
+  font-size: 14px;
+  font-weight: bold;
+}
+/* Subsubsection:*/
+.Subsubsection {
+  font-style: italic;
+  font-weight: bold;
+  padding: 8px;
+  margin-left: 100px;
+  margin-top: 20px;
+  margin-bottom: 4px;
+}
+.SubsubsectionInline {
+  font-style: italic;
+  font-weight: bold;
+}
+/* Text:*/
+.Text {
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 8px;
+  margin-left: 100px;
+  margin-right: 20px;
+  margin-top: 12px;
+  margin-bottom: 7px;
+  border: 0px;
+  border-style: solid;
+  border-color: #000000;
+}
+.TextInline {
+  font-size: 14px;
+  line-height: 1.5;
+}
+/* SmallText:*/
+.SmallText {
+  font-size: 10px;
+  font-family: Helvetica;
+  line-height: 1.2;
+  padding: 8px;
+  margin-left: 100px;
+}
+.SmallTextInline {
+  font-size: 10px;
+  font-family: Helvetica;
+  line-height: 1.2;
+}
+/* Input:*/
+.Input {
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #30D02F;
+  padding: 8px;
+  margin-left: 100px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  border-left: 1px;
+  border-right: 1px;
+  border-top: 1px;
+  border-bottom: 0px;
+  border-style: solid;
+  border-color: #000000;
+}
+.InputInline {
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #30D02F;
+}
+/* InlineInput:*/
+.InlineInput {
+  font-weight: bold;
+  padding: 8px;
+}
+.InlineInputInline {
+  font-weight: bold;
+}
+/* Output:*/
+.Output {
+  font-size: 18px;
+  color: #FFFFFF;
+  background-color: #180BF4;
+  padding: 8px;
+  margin-left: 100px;
+  margin-right: 0px;
+  margin-top: 0px;
+  border-left: 1px;
+  border-right: 1px;
+  border-top: 0px;
+  border-bottom: 1px;
+  border-style: solid;
+  border-color: #000000;
+}
+.OutputInline {
+  font-size: 18px;
+  color: #FFFFFF;
+  background-color: #180BF4;
+}
+/* InputOnly:*/
+.InputOnly {
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #30D02F;
+  padding: 8px;
+  margin-left: 100px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  border: 1px;
+  border-style: solid;
+  border-color: #000000;
+}
+.InputOnlyInline {
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #30D02F;
+}
+/* Message:*/
+.Message {
+  font-size: 10px;
+  font-family: Helvetica;
+  font-style: oblique;
+  color: #000000;
+  padding: 8px;
+  margin-left: 100px;
+  display: list-item;
+  list-style-type: square;
+}
+.MessageInline {
+  font-size: 10px;
+  font-family: Helvetica;
+  font-style: oblique;
+  color: #000000;
+}
+/* Print:*/
+.Print {
+  background-color: #F7F888;
+  text-align: left;
+  padding: 8px;
+  margin-left: 100px;
+  margin-right: 20px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.PrintInline {
+  background-color: #F7F888;
+  text-align: left;
+}
+/* Graphics:*/
+.Graphics {
+  background-color: #FFFFFF;
+  padding: 8px;
+  margin-left: 100px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-left: 1px;
+  border-right: 1px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-style: solid;
+  border-color: #000000;
+}
+.GraphicsInline {
+  background-color: #FFFFFF;
+}
+/* PictureGroup:*/
+.PictureGroup {
+  background-color: #FFFFFF;
+  padding: 8px;
+  margin-left: 100px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-left: 1px;
+  border-right: 1px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-style: solid;
+  border-color: #000000;
+}
+.PictureGroupInline {
+  background-color: #FFFFFF;
+}
+/* CellLabel:*/
+.CellLabel {
+  font-size: 9px;
+  font-family: Helvetica;
+  color: #0000FF;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+/* RM:*/
+.RM {
+  font-style: normal;
+  font-weight: normal;
+  padding: 8px;
+}
+.RMInline {
+  font-style: normal;
+  font-weight: normal;
+}
+/* BF:*/
+.BF {
+  font-weight: bold;
+  padding: 8px;
+}
+.BFInline {
+  font-weight: bold;
+}
+/* IT:*/
+.IT {
+  font-style: italic;
+  padding: 8px;
+}
+.ITInline {
+  font-style: italic;
+}
+/* TR:*/
+.TR {
+  font-family: Times;
+  font-style: normal;
+  font-weight: normal;
+  padding: 8px;
+}
+.TRInline {
+  font-family: Times;
+  font-style: normal;
+  font-weight: normal;
+}
+/* TI:*/
+.TI {
+  font-family: Times;
+  font-style: italic;
+  font-weight: normal;
+  padding: 8px;
+}
+.TIInline {
+  font-family: Times;
+  font-style: italic;
+  font-weight: normal;
+}
+/* TB:*/
+.TB {
+  font-family: Times;
+  font-style: normal;
+  font-weight: bold;
+  padding: 8px;
+}
+.TBInline {
+  font-family: Times;
+  font-style: normal;
+  font-weight: bold;
+}
+/* TBI:*/
+.TBI {
+  font-family: Times;
+  font-style: italic;
+  font-weight: bold;
+  padding: 8px;
+}
+.TBIInline {
+  font-family: Times;
+  font-style: italic;
+  font-weight: bold;
+}
+/* MR:*/
+.MR {
+  font-family: Courier;
+  font-style: normal;
+  font-weight: normal;
+  padding: 8px;
+}
+.MRInline {
+  font-family: Courier;
+  font-style: normal;
+  font-weight: normal;
+}
+/* MO:*/
+.MO {
+  font-family: Courier;
+  font-style: italic;
+  font-weight: normal;
+  padding: 8px;
+}
+.MOInline {
+  font-family: Courier;
+  font-style: italic;
+  font-weight: normal;
+}
+/* MB:*/
+.MB {
+  font-family: Courier;
+  font-style: normal;
+  font-weight: bold;
+  padding: 8px;
+}
+.MBInline {
+  font-family: Courier;
+  font-style: normal;
+  font-weight: bold;
+}
+/* MBO:*/
+.MBO {
+  font-family: Courier;
+  font-style: italic;
+  font-weight: bold;
+  padding: 8px;
+}
+.MBOInline {
+  font-family: Courier;
+  font-style: italic;
+  font-weight: bold;
+}
+/* SR:*/
+.SR {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  padding: 8px;
+}
+.SRInline {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+}
+/* SO:*/
+.SO {
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: normal;
+  padding: 8px;
+}
+.SOInline {
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: normal;
+}
+/* SB:*/
+.SB {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: bold;
+  padding: 8px;
+}
+.SBInline {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: bold;
+}
+/* SBO:*/
+.SBO {
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: bold;
+  padding: 8px;
+}
+.SBOInline {
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: bold;
+}
+/* SO10:*/
+.SO10 {
+  font-size: 10px;
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: normal;
+  padding: 8px;
+}
+.SO10Inline {
+  font-size: 10px;
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: normal;
+}
+/* Inert:*/
+.Inert {
+  background-color: #DEE7F8;
+  padding: 8px;
+}
+.InertInline {
+  background-color: #DEE7F8;
+}
+/* Small:*/
+.Small {
+  font-size: 9px;
+  padding: 8px;
+}
+.SmallInline {
+  font-size: 9px;
+}
+/* Medium:*/
+.Medium {
+  font-size: 12px;
+  padding: 8px;
+}
+.MediumInline {
+  font-size: 12px;
+}
+/* Large:*/
+.Large {
+  font-size: 24px;
+  padding: 8px;
+}
+.LargeInline {
+  font-size: 24px;
+}
+/* Hyperlink:*/
+.Hyperlink {
+  color: #0000FF;
+  padding: 8px;
+}
+.HyperlinkInline {
+  color: #0000FF;
+}
+/* MainBookLink:*/
+.MainBookLink {
+  color: #0000FF;
+  padding: 8px;
+}
+.MainBookLinkInline {
+  color: #0000FF;
+}
+/* AddOnsLink:*/
+.AddOnsLink {
+  font-family: Courier;
+  color: #0000FF;
+  padding: 8px;
+}
+.AddOnsLinkInline {
+  font-family: Courier;
+  color: #0000FF;
+}
+/* RefGuideLink:*/
+.RefGuideLink {
+  font-family: Courier;
+  color: #0000FF;
+  padding: 8px;
+}
+.RefGuideLinkInline {
+  font-family: Courier;
+  color: #0000FF;
+}
+/* GettingStartedLink:*/
+.GettingStartedLink {
+  color: #0000FF;
+  padding: 8px;
+}
+.GettingStartedLinkInline {
+  color: #0000FF;
+}
+/* DemosLink:*/
+.DemosLink {
+  color: #0000FF;
+  padding: 8px;
+}
+.DemosLinkInline {
+  color: #0000FF;
+}
+/* TourLink:*/
+.TourLink {
+  color: #0000FF;
+  padding: 8px;
+}
+.TourLinkInline {
+  color: #0000FF;
+}
+/* OtherInformationLink:*/
+.OtherInformationLink {
+  color: #0000FF;
+  padding: 8px;
+}
+.OtherInformationLinkInline {
+  color: #0000FF;
+}
+/* MasterIndexLink:*/
+.MasterIndexLink {
+  color: #0000FF;
+  padding: 8px;
+}
+.MasterIndexLinkInline {
+  color: #0000FF;
+}
+/* Paste:*/
+.Paste {
+  padding: 8px;
+}
+.PasteInline {
+}
+/* Evaluate:*/
+.Evaluate {
+  padding: 8px;
+}
+.EvaluateInline {
+}
+/* EvaluateCell:*/
+.EvaluateCell {
+  padding: 8px;
+}
+.EvaluateCellInline {
+}
+/* CopyEvaluate:*/
+.CopyEvaluate {
+  padding: 8px;
+}
+.CopyEvaluateInline {
+}
+/* CopyEvaluateCell:*/
+.CopyEvaluateCell {
+  padding: 8px;
+}
+.CopyEvaluateCellInline {
+}
+/* SlideShowNavigationBar:*/
+.SlideShowNavigationBar {
+  font-size: 10px;
+  background-color: #CCCCCC;
+  text-align: center;
+  padding: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border: 1px;
+  border-style: solid;
+  border-color: #FFFFFF;
+}
+.SlideShowNavigationBarInline {
+  font-size: 10px;
+  background-color: #CCCCCC;
+  text-align: center;
+}
+/* SlideShowSection:*/
+.SlideShowSection {
+  font-size: 18px;
+  font-family: Helvetica;
+  font-weight: normal;
+  color: #FFFFFF;
+  background-color: #6870CC;
+  padding-left: 12px;
+  padding-right: 4px;
+  padding-top: 12px;
+  padding-bottom: 6px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 1px;
+  border-bottom: 0px;
+  border-style: solid;
+  border-color: #000000;
+}
+.SlideShowSectionInline {
+  font-size: 18px;
+  font-family: Helvetica;
+  font-weight: normal;
+  color: #FFFFFF;
+  background-color: #6870CC;
+}
+/* SlideHyperlink:*/
+.SlideHyperlink {
+  font-size: 26px;
+  color: #666666;
+  padding: 8px;
+}
+.SlideHyperlinkInline {
+  font-size: 26px;
+  color: #666666;
+}
+/* PreviousNext:*/
+.PreviousNext {
+  font-size: 10px;
+  font-family: Helvetica;
+  color: #808080;
+  text-align: right;
+  line-height: 1.3;
+  padding: 8px;
+  margin-left: 60px;
+  margin-right: 10px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.PreviousNextInline {
+  font-size: 10px;
+  font-family: Helvetica;
+  color: #808080;
+  text-align: right;
+  line-height: 1.3;
+}
+/* SlidePreviousNextLink:*/
+.SlidePreviousNextLink {
+  text-decoration: none;
+  padding: 8px;
+}
+.SlidePreviousNextLinkInline {
+  text-decoration: none;
+}
+/* SlideTOCLink:*/
+.SlideTOCLink {
+  font-family: Helvetica;
+  padding: 8px;
+  margin-left: 24px;
+}
+.SlideTOCLinkInline {
+  font-family: Helvetica;
+}
+/* SlideTOC:*/
+.SlideTOC {
+  font-family: Helvetica;
+  padding: 8px;
+  margin-left: 18px;
+  display: list-item;
+  list-style-type: square;
+}
+.SlideTOCInline {
+  font-family: Helvetica;
+}
+
+@media screen{
+/* All:Working*/
+html {
+  background-color: #E8EC1F;
+}
+}
+
+@media print{
+/* All:Printout*/
+html {
+}
+/* Title:Printout*/
+.Title {
+  font-size: 36pt;
+  color: #666666;
+  line-height: 1;
+  padding: 8pt;
+}
+.TitleInline {
+  font-size: 36pt;
+  color: #666666;
+  line-height: 1;
+}
+/* Subtitle:Printout*/
+.Subtitle {
+  font-size: 18pt;
+  color: #666666;
+  padding: 8pt;
+  margin-left: 50pt;
+  margin-top: 37pt;
+  margin-bottom: 0pt;
+}
+.SubtitleInline {
+  font-size: 18pt;
+  color: #666666;
+}
+/* Subsubtitle:Printout*/
+.Subsubtitle {
+  padding: 8pt;
+  margin-left: 50pt;
+  margin-top: 0pt;
+  margin-bottom: 6pt;
+}
+.SubsubtitleInline {
+}
+/* Section:Printout*/
+.Section {
+  font-size: 12pt;
+  color: #666666;
+  padding: 8pt;
+  margin-left: 20pt;
+  margin-right: 20pt;
+  margin-top: 20pt;
+  margin-bottom: 4pt;
+}
+.SectionInline {
+  font-size: 12pt;
+  color: #666666;
+}
+/* Subsection:Printout*/
+.Subsection {
+  font-size: 12pt;
+  padding: 8pt;
+  margin-left: 50pt;
+  margin-right: 20pt;
+  margin-top: 20pt;
+  margin-bottom: 4pt;
+}
+.SubsectionInline {
+  font-size: 12pt;
+}
+/* Subsubsection:Printout*/
+.Subsubsection {
+  font-size: 10pt;
+  padding: 8pt;
+  margin-left: 50pt;
+  margin-top: 20pt;
+  margin-bottom: 4pt;
+}
+.SubsubsectionInline {
+  font-size: 10pt;
+}
+/* Text:Printout*/
+.Text {
+  font-size: 10pt;
+  line-height: 1.5;
+  padding: 8pt;
+  margin-left: 50pt;
+  margin-right: 20pt;
+  margin-top: 8pt;
+  margin-bottom: 4pt;
+}
+.TextInline {
+  font-size: 10pt;
+  line-height: 1.5;
+}
+/* SmallText:Printout*/
+.SmallText {
+  font-size: 8pt;
+  padding: 8pt;
+  margin-left: 50pt;
+}
+.SmallTextInline {
+  font-size: 8pt;
+}
+/* Input:Printout*/
+.Input {
+  font-size: 16pt;
+  background-color: #999999;
+  padding: 8pt;
+  margin-left: 50pt;
+  margin-right: 0pt;
+  margin-bottom: 0pt;
+}
+.InputInline {
+  font-size: 16pt;
+  background-color: #999999;
+}
+/* Output:Printout*/
+.Output {
+  font-size: 12pt;
+  background-color: #666666;
+  padding: 8pt;
+  margin-left: 50pt;
+  margin-right: 0pt;
+  margin-top: 0pt;
+}
+.OutputInline {
+  font-size: 12pt;
+  background-color: #666666;
+}
+/* InputOnly:Printout*/
+.InputOnly {
+  font-size: 16pt;
+  background-color: #999999;
+  padding: 8pt;
+  margin-left: 50pt;
+  margin-right: 0pt;
+  margin-bottom: 0pt;
+}
+.InputOnlyInline {
+  font-size: 16pt;
+  background-color: #999999;
+}
+/* Message:Printout*/
+.Message {
+  padding: 8pt;
+  margin-left: 50pt;
+}
+.MessageInline {
+}
+/* Print:Printout*/
+.Print {
+  font-size: 10pt;
+  background-color: #E6E6E6;
+  padding: 8pt;
+  margin-left: 50pt;
+  margin-right: 20pt;
+  margin-top: 2pt;
+  margin-bottom: 2pt;
+}
+.PrintInline {
+  font-size: 10pt;
+  background-color: #E6E6E6;
+}
+/* Graphics:Printout*/
+.Graphics {
+  font-size: 10pt;
+  padding: 8pt;
+  margin-left: 50pt;
+  margin-right: 0pt;
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+}
+.GraphicsInline {
+  font-size: 10pt;
+}
+/* PictureGroup:Printout*/
+.PictureGroup {
+  font-size: 10pt;
+  padding: 8pt;
+  margin-left: 50pt;
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+}
+.PictureGroupInline {
+  font-size: 10pt;
+}
+/* CellLabel:Printout*/
+.CellLabel {
+  font-size: 8pt;
+  color: #000000;
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+}
+/* SO10:Printout*/
+.SO10 {
+  font-size: 7pt;
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: normal;
+  padding: 8pt;
+}
+.SO10Inline {
+  font-size: 7pt;
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: normal;
+}
+/* Inert:Printout*/
+.Inert {
+  background-color: #FFFFFF;
+  padding: 8pt;
+}
+.InertInline {
+  background-color: #FFFFFF;
+}
+/* Hyperlink:Printout*/
+.Hyperlink {
+  font-size: 10pt;
+  color: #000000;
+  padding: 8pt;
+}
+.HyperlinkInline {
+  font-size: 10pt;
+  color: #000000;
+}
+/* MainBookLink:Printout*/
+.MainBookLink {
+  font-size: 10pt;
+  color: #000000;
+  padding: 8pt;
+}
+.MainBookLinkInline {
+  font-size: 10pt;
+  color: #000000;
+}
+/* AddOnsLink:Printout*/
+.AddOnsLink {
+  font-size: 10pt;
+  color: #000000;
+  padding: 8pt;
+}
+.AddOnsLinkInline {
+  font-size: 10pt;
+  color: #000000;
+}
+/* RefGuideLink:Printout*/
+.RefGuideLink {
+  font-size: 10pt;
+  color: #000000;
+  padding: 8pt;
+}
+.RefGuideLinkInline {
+  font-size: 10pt;
+  color: #000000;
+}
+/* GettingStartedLink:Printout*/
+.GettingStartedLink {
+  font-size: 10pt;
+  color: #000000;
+  padding: 8pt;
+}
+.GettingStartedLinkInline {
+  font-size: 10pt;
+  color: #000000;
+}
+/* DemosLink:Printout*/
+.DemosLink {
+  color: #000000;
+  padding: 8pt;
+}
+.DemosLinkInline {
+  color: #000000;
+}
+/* TourLink:Printout*/
+.TourLink {
+  color: #000000;
+  padding: 8pt;
+}
+.TourLinkInline {
+  color: #000000;
+}
+/* OtherInformationLink:Printout*/
+.OtherInformationLink {
+  font-size: 10pt;
+  color: #000000;
+  padding: 8pt;
+}
+.OtherInformationLinkInline {
+  font-size: 10pt;
+  color: #000000;
+}
+/* MasterIndexLink:Printout*/
+.MasterIndexLink {
+  color: #000000;
+  padding: 8pt;
+}
+.MasterIndexLinkInline {
+  color: #000000;
+}
+/* SlideShowNavigationBar:Printout*/
+.SlideShowNavigationBar {
+  font-size: 10pt;
+  line-height: 1.3;
+  padding: 8pt;
+  margin-left: 18pt;
+  margin-right: 4pt;
+  margin-top: 4pt;
+  margin-bottom: 4pt;
+}
+.SlideShowNavigationBarInline {
+  font-size: 10pt;
+  line-height: 1.3;
+}
+/* SlideShowSection:Printout*/
+.SlideShowSection {
+  font-size: 14pt;
+  padding: 8pt;
+  margin-left: 18pt;
+  margin-right: 30pt;
+  margin-top: 30pt;
+  margin-bottom: 0pt;
+}
+.SlideShowSectionInline {
+  font-size: 14pt;
+}
+/* SlideHyperlink:Printout*/
+.SlideHyperlink {
+  font-size: 10pt;
+  text-decoration: none;
+  color: #000000;
+  padding: 8pt;
+}
+.SlideHyperlinkInline {
+  font-size: 10pt;
+  text-decoration: none;
+  color: #000000;
+}
+/* PreviousNext:Printout*/
+.PreviousNext {
+  font-size: 10pt;
+  padding: 8pt;
+  margin-left: 2pt;
+  margin-right: 2pt;
+  margin-top: 6pt;
+  margin-bottom: 6pt;
+}
+.PreviousNextInline {
+  font-size: 10pt;
+}
+/* SlidePreviousNextLink:Printout*/
+.SlidePreviousNextLink {
+  padding: 8pt;
+}
+.SlidePreviousNextLinkInline {
+}
+/* SlideTOCLink:Printout*/
+.SlideTOCLink {
+  text-decoration: none;
+  color: #000000;
+  padding: 8pt;
+}
+.SlideTOCLinkInline {
+  text-decoration: none;
+  color: #000000;
+}
+/* SlideTOC:Printout*/
+.SlideTOC {
+  font-size: 10pt;
+  color: #000000;
+  padding: 8pt;
+}
+.SlideTOCInline {
+  font-size: 10pt;
+  color: #000000;
+}
+}
+
+.script {font-family: Mathematica5, cursive}
+.gothic {font-family: Mathematica6, Century Gothic}
+.doublestruck {font-family: Mathematica7}

@@ -1,0 +1,1538 @@
+@| Mathematica notebook dialogs
+@|
+@|
+@|
+@@resource ActivationDialog
+{
+"AboutCDFPlayerPro" -> "Wolfram Player Pro\:306b\:3064\:3044\:3066",
+"ActivateButtonLabel" -> "\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30c8", 
+"ActivateMethodLabel" -> "\:5225\:306e\:65b9\:6cd5\:3067\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30c8",
+"ActKeyLabel" -> "\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3\:30ad\:30fc",
+"FinishLabel" -> "\:5b8c\:4e86",
+"LicenseSubtitle" -> "\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30c8",
+"LicenseText" -> "\:5fc5\:8981\:306a\:60c5\:5831\:3092\:4e0b\:306b\:3054\:8a18\:5165\:304f\:3060\:3055\:3044\:ff0e", 
+"ManualActivateText1" -> RawBoxes[StyleBox[RowBox[{
+   TagBox[ButtonBox[
+    PaneSelectorBox[{False -> 
+       StyleBox["\"Wolfram Research\"", "Chevron"], 
+      True -> StyleBox["\"Wolfram Research\"", "HyperlinkActive"]}, 
+     Dynamic[CurrentValue["MouseOver"]]], BaseStyle -> {"Hyperlink", Bold},
+    Evaluator -> Automatic, 
+    ButtonFunction :> (CurrentValue[
+        ButtonNotebook[], {TaggingRules, "ActivationState"}] = 
+       "Contact")], MouseAppearanceTag["LinkHand"]], "\"\:306b\:3054\:9023\:7d61\:306b\:306a\:308a\:30d1\:30b9\:30ef\:30fc\:30c9\:3092\:3054\:8acb\:6c42\:304f\:3060\:3055\:3044\:ff0e\:307e\:305f\:306f\"", 
+   TagBox[ButtonBox[
+    PaneSelectorBox[{False -> 
+       StyleBox["\"\:30aa\:30f3\:30e9\:30a4\:30f3\:30d1\:30b9\:30ef\:30fc\:30c9\:30b8\:30a7\:30cd\:30ec\:30fc\:30bf\"", "Chevron"], 
+      True -> StyleBox["\"\:30aa\:30f3\:30e9\:30a4\:30f3\:30d1\:30b9\:30ef\:30fc\:30c9\:30b8\:30a7\:30cd\:30ec\:30fc\:30bf\"", 
+        "HyperlinkActive"]}, Dynamic[CurrentValue["MouseOver"]]], 
+    BaseStyle -> {"Hyperlink", Bold}, Evaluator -> Automatic,
+    ButtonFunction :> 
+     FE`hyperlinkCoded[
+      "http://user.wolfram.com/portal/passwordrequest.html", 
+      "mathid=" <> FE`Evaluate[FEPrivate`$MachineID]]], MouseAppearanceTag["LinkHand"]], 
+   StyleBox["\"\:3092\:304a\:4f7f\:3044\:304f\:3060\:3055\:3044\:ff0e\"", FontWeight -> Bold],"\"\:6ce8\:ff1a\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3\:30ad\:30fc\:3068\:304a\:4f7f\:3044\:306e\:30de\:30b7\:30f3\:7528\:306b\:751f\:6210\:3055\:308c\:305fMathID\:304c\:5fc5\:8981\:3067\:3059\:ff0e\""}],  AutoSpacing -> False]],
+"ManualActivateNote" -> "\:6ce8\:ff1a\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3\:30ad\:30fc\:3068\:304a\:4f7f\:3044\:306e\:30de\:30b7\:30f3\:7528\:306b\:751f\:6210\:3055\:308c\:305fMathID\:304c\:5fc5\:8981\:3067\:3059\:ff0e",
+"ManualActivateText2" -> "\:4ee5\:4e0b\:306b\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3\:30ad\:30fc\:3068\:30d1\:30b9\:30ef\:30fc\:30c9\:3092\:5165\:529b\:3057\:ff0c\:300c\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30c8\:300d\:30dc\:30bf\:30f3\:3092\:30af\:30ea\:30c3\:30af\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e",
+"ManualActivateStep1" -> "\:30b9\:30c6\:30c3\:30d71\:ff1a",
+"ManualActivateStep2" -> "\:30b9\:30c6\:30c3\:30d72\:ff1a",
+"ManualActivateSubtitle" -> "\:624b\:52d5\:3067\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30c8\:3059\:308b",
+"MathIDLabel" -> "Math ID\:ff1a",
+"ContactTitle" -> "\:88fd\:54c1\:3092\:624b\:52d5\:3067\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30c8\:3059\:308b\:306b\:306fWolfram Research\:307e\:3067\:3054\:9023\:7d61\:304f\:3060\:3055\:3044",
+"ContactSubtitle" -> "\:88fd\:54c1\:304c\:30aa\:30f3\:30e9\:30a4\:30f3\:3067\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30c8\:3067\:304d\:305a\:ff0cWolfram User Portal\:306e\n\:30d1\:30b9\:30ef\:30fc\:30c9\:30b8\:30a7\:30cd\:30ec\:30fc\:30bf\:306b\:30a2\:30af\:30bb\:30b9\:3067\:304d\:306a\:3044\:5834\:5408\:306f\:3054\:9023\:7d61\:304f\:3060\:3055\:3044\:ff0e",
+"ContactWithText" -> "\:4ee5\:4e0b\:306e\:3082\:306e\:304c\:5fc5\:8981\:3067\:3059\:ff1a",
+"ContactKeyLabel" -> "\[Bullet] \:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3\:30ad\:30fc",
+"ContactIDLabel" -> "\[Bullet] MathID\:ff1a",
+"ContactNameInc" -> "Wolfram Research, Inc.",
+"ContactNameLtd" -> "Wolfram Research Europe Ltd.",
+"ContactAddrInc" -> "1-217-398-0700 or\n1-800-WOLFRAM (965-3726; U.S. and Canada only)\nMonday\[Dash]Friday, 8am\[Dash]5pm\nU.S. Central Time\n\ninfo@wolfram.com\nfax: 1-217-398-0747",
+"ContactAddrLtd" -> "+44-(0)1993-883400\nMonday\[Dash]Friday, 9am\[Dash]5pm\nGMT (Greenwich Mean Time)\n\ninfo@wolfram.co.uk\nfax: +44-(0)1993-883800","BackLabel" -> "\:623b\:308b",
+"MethodManualLabel" -> "\:624b\:52d5\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3",
+"MethodManualText" -> "\:30aa\:30f3\:30e9\:30a4\:30f3\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3\:306b\:554f\:984c\:304c\:3042\:308b\:5834\:5408\:306f\:3053\:306e\:65b9\:6cd5\:3092\:304a\:4f7f\:3044\:304f\:3060\:3055\:3044\:ff0e",
+"MethodNetworkLabel" -> "\:30cd\:30c3\:30c8\:30ef\:30fc\:30af\:30e9\:30a4\:30bb\:30f3\:30b9\:30b5\:30fc\:30d0\:306b\:63a5\:7d9a\:3059\:308b",
+"MethodNetworkText" -> "\:304a\:4f7f\:3044\:306e\:88fd\:54c1\:7528\:30e9\:30a4\:30bb\:30f3\:30b9\:30b5\:30fc\:30d0 MathLM \:306e\:30cd\:30c3\:30c8\:30ef\:30fc\:30af\:5185\:306e\:5834\:5408\:306f\:3053\:306e\:65b9\:6cd5\:3092\:304a\:4f7f\:3044\:304f\:3060\:3055\:3044\:ff0e",
+"MethodOnlineLabel" -> "\:30aa\:30f3\:30e9\:30a4\:30f3\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3\:ff08\:63a8\:5968\:ff09",
+"MethodOnlineText" -> "\:30b3\:30f3\:30d4\:30e5\:30fc\:30bf\:304c\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:306b\:63a5\:7d9a\:3055\:308c\:3066\:3044\:308b\:5fc5\:8981\:304c\:3042\:308a\:307e\:3059\:ff0e",
+"MethodSubtitle" -> "\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30c8\:3059\:308b\:65b9\:6cd5\:3092\:304a\:9078\:3073\:304f\:3060\:3055\:3044",
+"NameLabel" -> "\:3054\:6c0f\:540d", 
+"NetworkSubtitle" -> "\:30cd\:30c3\:30c8\:30ef\:30fc\:30af\:30e9\:30a4\:30bb\:30f3\:30b9\:30b5\:30fc\:30d0\:3078\:63a5\:7d9a", 
+"NetworkText" -> "MathLM \:30e9\:30a4\:30bb\:30f3\:30b9\:30b5\:30fc\:30d0\:3092\:8d77\:52d5\:3059\:308b\:30b3\:30f3\:30d4\:30e5\:30fc\:30bf\:306e\:540d\:524d\:307e\:305f\:306fIP\:30a2\:30c9\:30ec\:30b9\:540d\:3092\:5165\:529b\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e", 
+"OrganizationLabel" -> "\:3054\:6240\:5c5e\:5148", 
+"OnlineActivateText" -> "\:4ee5\:4e0b\:306b\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3\:30ad\:30fc\:3092\:30bf\:30a4\:30d7\:3057\:3066\:300c\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30c8\:300d\:30dc\:30bf\:30f3\:3092\:30af\:30ea\:30c3\:30af\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e",
+"OnlineActivateLink" -> "\:30aa\:30f3\:30e9\:30a4\:30f3\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3\:3068\:306f\:ff1f",
+"OnlineActivateSubtitle" -> "\:30aa\:30f3\:30e9\:30a4\:30f3\:3067\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30c8\:3059\:308b",
+"PasswordLabel" -> "\:30d1\:30b9\:30ef\:30fc\:30c9",
+"PrivacyPolicyLink" -> "Wolfram\:30d7\:30e9\:30a4\:30d0\:30b7\:30fc\:30dd\:30ea\:30b7\:30fc",
+"ProgressSubtitle" -> "\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30c8\:4e2d...",
+"ProgressText" -> "\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30c8\:3092\:8a66\:307f\:3066\:3044\:307e\:3059\:ff0e",
+"ServerLabel" -> "\:30b5\:30fc\:30d0\:540d",
+"SuccessText" -> "\:6b63\:5e38\:306b\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30c8\:3055\:308c\:307e\:3057\:305f\:ff01",
+"WindowTitle" -> "Wolfram\:88fd\:54c1\:306e\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3",
+"ContactActivationLink" -> RawBoxes[ButtonBox[
+    "\<\"Wolfram Research\:306b\:9023\:7d61\:3059\:308b \[RightGuillemet]\"\>",
+    BaseStyle -> "ContactActivationLinkUnbold"]],
+
+"ExpiredBuyText" -> "Wolfram\:30b7\:30b9\:30c6\:30e0\:3092\:8cfc\:5165\:3057\:305f\:3044",
+"ExpiredContactText" -> "\:88fd\:54c1\:60c5\:5831\:7b49\:306b\:3064\:3044\:3066\:306e\:3054\:8cea\:554f\:ff0e",
+"ExpiredExtendText" -> "\:65b0\:3057\:3044\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3\:30ad\:30fc\:3092\:6301\:3063\:3066\:3044\:308b",
+"ExpiredRequestText" -> "\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3\:30ad\:30fc\:306e\:5ef6\:9577\:3092\:30ea\:30af\:30a8\:30b9\:30c8\:3057\:305f\:3044",
+"ExpiredSubtitle" -> "\:304a\:4f7f\:3044\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:306f\:6709\:52b9\:671f\:9650\:5207\:308c\:3068\:306a\:308a\:307e\:3057\:305f",
+"ExpiredBuyButton" -> "\:3054\:8cfc\:5165\:65b9\:6cd5",
+"ExpiredExtendButton" -> "\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3\:30ad\:30fc\:306e\:5165\:529b",
+"ExpiredRequestButton" -> "\:5ef6\:9577\:306e\:3054\:8acb\:6c42",
+
+"LicenseAgreementSubtitle" -> "\:30e9\:30a4\:30bb\:30f3\:30b9\:5951\:7d04\:3092\:8aad\:3080",
+"LicenseAgreementSubtext" -> "\:3053\:306e\:88fd\:54c1\:3092\:304a\:4f7f\:3044\:306b\:306a\:308b\:306b\:306f\:ff0c\:4ee5\:4e0b\:306e\:5951\:7d04\:6761\:4ef6\:3092\:304a\:8aad\:307f\:306b\:306a\:308a\:ff0c\:540c\:610f\:3055\:308c\:306a\:3051\:308c\:3070\:306a\:308a\:307e\:305b\:3093\:ff0e",
+"LicenseAgreementLabel" -> "\:3053\:306e\:5951\:7d04\:6761\:4ef6\:306b\:540c\:610f\:3059\:308b",
+"LicenseAgreementPrintLabel" -> "\:5370\:5237",
+"LicenseAgreementLoading" -> "\:7ffb\:8a33\:3092\:30ed\:30fc\:30c9\:4e2d...",
+"LicenseAgreementWindowTitle" -> "\:30e9\:30a4\:30bb\:30f3\:30b9\:5951\:7d04",
+
+"RegistrationDownload" -> "\:30bd\:30d5\:30c8\:30a6\:30a7\:30a2\n\:30c0\:30a6\:30f3\:30ed\:30fc\:30c9\:306b\n\:30a2\:30af\:30bb\:30b9\:3059\:308b",
+"RegistrationNow" -> "\:4eca\:3059\:3050\:3054\:767b\:9332",
+"RegistrationLater" -> "\:5f8c\:3067\:767b\:9332\:3059\:308b",
+"RegistrationManage" -> RawBoxes[RowBox[{StyleBox["Premier Service", FontSlant->"Italic"], " \:7279\:5178\:3092\n\:7ba1\:7406\:3059\:308b"}]],
+"RegistrationMore" -> "\:305d\:306e\:4ed6...",
+"RegistrationNever" -> "\:4eca\:5f8c\:8868\:793a\:3057\:306a\:3044",
+"RegistrationNotification" -> "\:30a2\:30c3\:30d7\:30b0\:30ec\:30fc\:30c9\:3068\n\:7279\:5225\:5272\:5f15\:306b\:3064\:3044\:3066\:306e\n\:60c5\:5831\:3092\:53d6\:5f97",
+"RegistrationSubtitle" -> "Wolfram\:30e6\:30fc\:30b6\:30dd\:30fc\:30bf\:30eb\:3067\:88fd\:54c1\:3092\:767b\:9332\:3059\:308b\:3068\:ff1a",
+"RegistrationTitle" -> "\:7279\:5178\:306b\:30a2\:30af\:30bb\:30b9\:3067\:304d\:307e\:3059\:ff0e\:4eca\:3059\:3050\:3054\:767b\:9332\:304f\:3060\:3055\:3044\:ff01",
+"RegistrationView" -> "\:88fd\:54c1\:306e\n\:8a73\:7d30\:3092\:898b\:308b",
+"RegistrationWindowTitle" -> "Wolfram\:88fd\:54c1\:3054\:767b\:9332",
+
+"CancelButtonText" -> "\:7d42\:4e86",
+"ForgottenPWText" -> "\:30d1\:30b9\:30ef\:30fc\:30c9\:3092\:304a\:5fd8\:308c\:3067\:3059\:304b\:ff1f",
+"RememberMeText" -> "\:540d\:524d\:3092\:4fdd\:5b58",
+"SignInTitle" -> "Wolfram ID\:3092\:4f7f\:3063\:3066\:30b5\:30a4\:30f3\:30a4\:30f3",
+"SignInButtonText" -> "\:30b5\:30a4\:30f3\:30a4\:30f3",
+"SignInPendingText" -> "\:51e6\:7406\:4e2d\[Ellipsis]",
+"UserIDFieldHint" -> "Wolfram ID",
+"UserPWFieldHint" -> "\:30d1\:30b9\:30ef\:30fc\:30c9"
+
+}
+@|
+@@resource CommonFrontEndInitDialogs
+{
+"AllFilesLabel"-> "\:3059\:3079\:3066\:306e\:30d5\:30a1\:30a4\:30eb",
+"WolframFilesLabel" -> "Wolfram\:30d5\:30a1\:30a4\:30eb (*.nb, *.cdf, *.nbp, *.wl, *.wls, *.m, *.ma)",
+"PictureFilesLabel" -> "\:753b\:50cf\:30d5\:30a1\:30a4\:30eb",
+"RichTextFormatLabel" -> "\:30ea\:30c3\:30c1\:30c6\:30ad\:30b9\:30c8\:5f62\:5f0f (*.rtf)",
+"TextFilesLabel" -> "\:30c6\:30ad\:30b9\:30c8\:30d5\:30a1\:30a4\:30eb",
+"EPSLabel" -> "EPS",
+"GIFLabel" -> "GIF",
+"JPEGLabel" -> "JPEG",
+"PDFLabel" -> "PDF",
+"PNGLabel" -> "PNG",
+"TIFFLabel" -> "TIFF",
+"HTMLLabel" -> "HTML",
+"BMPLabel" -> "BMP",
+"PXRLabel" -> "PXR",
+"SVGLabel" -> "SVG",
+"RawLabel" -> "Raw",
+"NBLabel" -> "Wolfram\:30ce\:30fc\:30c8\:30d6\:30c3\:30af (*.nb)",
+"MXLabel" -> "..mx \:30d5\:30a1\:30a4\:30eb (*.mx)",
+"WSTPLabel" -> "WSTP\:30d7\:30ed\:30b0\:30e9\:30e0 (*.exe)",
+"CDFLabel" -> "CDF\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8 (*.cdf)",
+"WLLabel" -> "Wolfram\:8a00\:8a9e\:30d1\:30c3\:30b1\:30fc\:30b8 (*.wl)",
+"MLabel" -> "Wolfram Mathematica\:30d1\:30c3\:30b1\:30fc\:30b8 (*.m)",
+"WLSLabel" -> "Wolfram\:8a00\:8a9e\:30b9\:30af\:30ea\:30d7\:30c8 (*.wls)",
+"PlainTextLabel" -> "\:30c6\:30ad\:30b9\:30c8 (*.txt)",
+"LatexLabel" -> "LaTeX \:30c9\:30ad\:30e5\:30e1\:30f3\:30c8 (*.tex)",
+"PostScriptLabel" -> "PostScript \:30c9\:30ad\:30e5\:30e1\:30f3\:30c8 (*.ps)",
+"PDFDocLabel" -> "PDF \:30c9\:30ad\:30e5\:30e1\:30f3\:30c8 (*.pdf)",
+"WebPageLabel" -> "Web\:30da\:30fc\:30b8 (*.html)",
+"XMLLabel" -> "XML -- XHTML+MathML (*.xml)"
+}
+@|
+@@resource DeployCDFDialog
+{
+"Browse" -> "\:30d6\:30e9\:30a6\:30ba",
+"Cancel" -> "\:30ad\:30e3\:30f3\:30bb\:30eb",
+"Close" -> "\:9589\:3058\:308b",
+"CodeSubtitle" -> "\!\(\*\nStyleBox[\"\:6ce8\:ff1a\",\nFontWeight->\"Bold\"]\) \:3053\:306e\:30b9\:30af\:30ea\:30d7\:30c8\:306fCDF\:30d7\:30e9\:30b0\:30a4\:30f3\:3092\[InvisibleSpace]\:30a4\:30f3\:30b9\:30c8\:30fc\:30eb\[InvisibleSpace]\:3057\:3066\[InvisibleSpace]\:3044\:306a\:3044\[InvisibleSpace]\:30e6\:30fc\:30b6\:306b\[InvisibleSpace]\:81ea\:52d5\:7684\:306b\[InvisibleSpace]\:30c0\:30a6\:30f3\:30ed\:30fc\:30c9\:3092\[InvisibleSpace]\:6307\:793a\[InvisibleSpace]\:3057\:307e\:3059\:ff0e",
+"CodeTitle" -> "\:4e0b\:306e\:30b3\:30fc\:30c9\:3092\:30b3\:30d4\:30fc\:3057\:ff0c\[InvisibleSpace]Web\:30da\:30fc\:30b8\:306e\[InvisibleSpace]HTML\:3092\[InvisibleSpace]\:8868\:793a\[InvisibleSpace]\:3057\:305f\:3044\[InvisibleSpace]\:5834\:6240\:306b\[InvisibleSpace]\:30da\:30fc\:30b9\:30c8\[InvisibleSpace]\:3057\:3066\[InvisibleSpace]\:304f\:3060\:3055\:3044\:ff0e",
+"Continue" -> "\:7d9a\:884c",
+"FileSaved" -> "\:30d5\:30a1\:30a4\:30eb\:304c\:914d\:5099\:3055\:308c\:307e\:3057\:305f\:ff0e",
+"IntroSubtitle" -> StyleBox[RowBox[{"\"CDF\:30d5\:30a1\:30a4\:30eb\:306e\:4f5c\:6210\:306f\"",
+    TagBox[ButtonBox[
+    PaneSelectorBox[{False -> "\"FreeCDF\"", 
+      True -> StyleBox[
+        "\"FreeCDF\"", {"HyperlinkActive"}]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], 
+     BaselinePosition -> Baseline, BaseStyle -> {"Hyperlink"}, 
+     FrameMargins -> 0, ImageSize -> Automatic], 
+    BaseStyle -> "Hyperlink", 
+    ButtonData -> {URL[
+       "http://www.wolfram.com/cdf/adopting-cdf/licensing-options.\
+html"], None}], MouseAppearanceTag["LinkHand"]],
+"\"\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:898f\:7d04\:306b\:5f93\:3046\:3082\:306e\:3068\:3057\:307e\:3059\:ff0e\""}], LineIndent -> -0.05],
+"IntroText" -> StyleBox[RowBox[{"\"\:3053\:308c\:3089\:306e\:898f\:7d04\:3067\:306f\:ff0cCDF\:306b\:306fCreative Commons \"",
+    TagBox[ButtonBox[
+    PaneSelectorBox[{False -> "\"Attribution-ShareAlike License\"", 
+      True -> StyleBox[
+        "\"Attribution-ShareAlike License\"", {"HyperlinkActive"}]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], 
+     BaselinePosition -> Baseline, BaseStyle -> {"Hyperlink"}, 
+     FrameMargins -> 0, ImageSize -> Automatic], 
+    BaseStyle -> "Hyperlink", 
+    ButtonData -> {URL[
+       "http://creativecommons.org/licenses/by-sa/3.0/"], None}], MouseAppearanceTag["LinkHand"]],
+"\" (CC BY-SA)\:304c\:9069\:7528\:3055\:308c\:307e\:3059\:ff0e\""}], LineIndent -> -0.05],
+"IntroText1" -> "\:4f5c\:6210\:3057\:305fCDF\:3092\:4ed6\:306e\:4eba\:304c\:4f7f\:7528\:3059\:308b\:3053\:3068\:306b\:5bfe\:3057\:3066\:6599\:91d1\:3092\:8ab2\:3059",
+"IntroText2" -> "\:4ed6\:306e\:4eba\:306b\:63d0\:4f9b\:3057\:305fCDF\:304c\:518d\:51fa\:7248\:3055\:308c\:305f\:308a\:518d\:914d\:5e03\:3055\:308c\[InvisibleSpace]\:305f\:308a\[InvisibleSpace]\:3059\:308b\[InvisibleSpace]\:3053\:3068\:3092\[InvisibleSpace]\:59a8\:3052\:308b",
+"IntroText3" -> "Wolfram\:306e\:30ed\:30b4\:3084\:305d\:306e\:4ed6\:8868\:793a\:3055\:308c\:3066\:3044\:308b\:30d6\:30e9\:30f3\:30c9\[InvisibleSpace]\:30de\:30fc\:30af\:3092\[InvisibleSpace]\:524a\:9664\[InvisibleSpace]\:3059\:308b",
+"IntroContactText" -> StyleBox[RowBox[{"\"\:4f01\:696d\:304a\:3088\:3073\:305d\:306e\:4ed6\:306e\:5546\:7528\:914d\:5099\:30aa\:30d7\:30b7\:30e7\:30f3\:306b\:3064\:3044\:3066\:306f\"",
+    TagBox[ButtonBox[
+    PaneSelectorBox[{False -> "\"\:304a\:554f\:3044\:5408\:305b\:304f\:3060\:3055\:3044\[InvisibleSpace]\"", 
+      True -> StyleBox[
+        "\"\:304a\:554f\:3044\:5408\:305b\:304f\:3060\:3055\:3044\"", {"HyperlinkActive"}]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], 
+     BaselinePosition -> Baseline, BaseStyle -> {"Hyperlink"}, 
+     FrameMargins -> 0, ImageSize -> Automatic], 
+    BaseStyle -> "Hyperlink", 
+    ButtonData -> {URL[
+       "http://www.wolfram.com/cdf/contact-us/"], None}], MouseAppearanceTag["LinkHand"]],
+"\"\:ff0e\""}], LineIndent -> -0.05],
+"IntroTitle" -> "\:3053\:306e\:30a6\:30a3\:30b6\:30fc\:30c9\:3092\:4f7f\:3046\:3068\:ff0c\:30b9\:30bf\:30f3\:30c9\:30a2\:30ed\:30f3\:306e\[InvisibleSpace]CDF\:30b3\:30f3\:30c6\:30f3\:30c4\:3092\[InvisibleSpace]\:914d\:5099\:3059\:308b\:3053\:3068\:304c\[InvisibleSpace]\:3067\:304d\:307e\:3059\:ff0e",
+"IntroTitleWeb" -> "\:3053\:306e\:30a6\:30a3\:30b6\:30fc\:30c9\:3092\:4f7f\:3046\:3068\:ff0cHTML\:306eWeb\:30da\:30fc\:30b8\:306b\[InvisibleSpace]\:57cb\:8fbc\:307fCDF\:30b3\:30f3\:30c6\:30f3\:30c4\:3092\[InvisibleSpace]\:914d\:5099\:3059\:308b\:3053\:3068\:304c\[InvisibleSpace]\:3067\:304d\:307e\:3059\:ff0e",
+"OpenDirectory" -> "\:542b\:3093\:3067\:3044\:308b\:30d5\:30a9\:30eb\:30c0\:3092\:958b\:304f",
+"OpenFile" -> "\:30d5\:30a1\:30a4\:30eb\:3092\:958b\:304f",
+"Preview" -> "\:30d7\:30ec\:30d3\:30e5\:30fc",
+"Previous" -> "\:524d\:3078",
+"SaveAll" -> "\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8\:5168\:4f53",
+"SaveError" -> "\:6307\:5b9a\:306e\:5834\:6240\:3067CDF\:3092\:4f5c\:6210\:3059\:308b\:3053\:3068\:304c\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f\:ff0e",
+"SaveFormat" -> "\:8a08\:7b97\:53ef\:80fd\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8(*.cdf)",
+"SaveLocation" -> "\:30d5\:30a1\:30a4\:30eb\:3092\:3069\:3053\:306b\:4fdd\:5b58\:3057\:307e\:3059\:304b\:ff1f",
+"SaveSelection" -> "\:73fe\:5728\:306e\:9078\:629e\:7bc4\:56f2",
+"SaveSubtitle" -> "\:4f55\:3092\:516c\:958b\:3057\:307e\:3059\:304b\:ff1f",
+"SaveTitle" -> "\:307e\:305a\:30d5\:30a1\:30a4\:30eb\:3092\:30b3\:30f3\:30d4\:30e5\:30fc\:30bf\:306b\:4fdd\:5b58\:3057\:307e\:3059\:ff0e",
+"Steps3Header" -> GridBox[{{"\"\:30b9\:30c6\:30c3\:30d71\"", "\"\:30b9\:30c6\:30c3\:30d72\"", "\"\:30b9\:30c6\:30c3\:30d73\""}, {"\"\:958b\:59cb\"", "\"CDF\:3068\:3057\:3066\:4fdd\:5b58\"", "\"\:7d42\:4e86\""}}, GridBoxItemSize -> {"Rows" -> {{Automatic}}, "Columns" -> {{Scaled[0.33]}}}, GridBoxItemStyle -> {"Columns" -> {{Automatic}}, "Rows" -> {Plain, Bold}}],
+"Steps4Header" -> GridBox[{{"\"\:30b9\:30c6\:30c3\:30d71\"", "\"\:30b9\:30c6\:30c3\:30d72\"", "\"\:30b9\:30c6\:30c3\:30d73\"", "\"\:30b9\:30c6\:30c3\:30d74\""}, {"\"\:958b\:59cb\"", "\"\:30ed\:30fc\:30ab\:30eb\:3067\:4fdd\:5b58\"", "\"\:30b5\:30fc\:30d0\:306b\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\"", "\"\:57cb\:8fbc\:307f\:30b3\:30fc\:30c9\:3092\:751f\:6210\""}}, GridBoxItemSize -> {"Rows" -> {{Automatic}}, "Columns" -> {{Scaled[0.25]}}}, GridBoxItemStyle -> {"Columns" -> {{Automatic}}, "Rows" -> {Plain, Bold}}],
+"UploadDifferent" -> "\:30d5\:30a1\:30a4\:30eb\:304c\[InvisibleSpace]\:7570\:306a\:308b\[InvisibleSpace]\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:306b\[InvisibleSpace]\:3042\:308a\[InvisibleSpace]\:307e\:3059...",
+"UploadSame" -> "\:30d5\:30a1\:30a4\:30eb\:3068\[InvisibleSpace]Web\:30da\:30fc\:30b8\:304c\[InvisibleSpace]\:540c\:3058\[InvisibleSpace]\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:306b\[InvisibleSpace]\:3042\:308a\[InvisibleSpace]\:307e\:3059",
+"UploadSelectionTitle" -> "\:30d5\:30a1\:30a4\:30eb\:306f\:57cb\:8fbc\:307f\:5148\:306e\:30da\:30fc\:30b8\:306b\:5bfe\:3057\:3066\:3069\:3053\:306b\:3042\:308a\:307e\:3059\:304b\:ff1f",
+"UploadSubtitle" -> "\:3053\:308c\:3089\:306e\:30d5\:30a1\:30a4\:30eb\:3092Web\:30b5\:30fc\:30d0\:306b\[InvisibleSpace]\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\[InvisibleSpace]\:3057\:3066\[InvisibleSpace]\:304f\:3060\:3055\:3044\:ff0e",
+"UploadTitle" -> "\:4ee5\:4e0b\:306e\:30d5\:30a1\:30a4\:30eb\:304c\:4f5c\:6210\:3055\:308c\:307e\:3057\:305f\:ff1a",
+"WindowTitleEmbed" -> "CDF Web\:914d\:5099\:30a6\:30a3\:30b6\:30fc\:30c9 ",
+"WindowTitleAlone" -> "CDF\:30b9\:30bf\:30f3\:30c9\:30a2\:30ed\:30f3\:914d\:5099\:30a6\:30a3\:30b6\:30fc\:30c9",
+"IntroEnterpriseQuery" -> "\:3069\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:3092\:304a\:4f7f\:3044\:306b\:306a\:308a\:307e\:3059\:304b\:ff1f",
+"IntroEnterpriseHeaderChoice1" -> "EnterpriseCDF\:306e\:914d\:5099",
+"IntroEnterpriseTextChoice1" -> StyleBox[RowBox[{"\"\:3053\:306e\:30aa\:30d7\:30b7\:30e7\:30f3\:3067\:914d\:5099\:3055\:308c\:305fCDF\:30d5\:30a1\:30a4\:30eb\:306f \"",
+    TagBox[ButtonBox[
+    PaneSelectorBox[{False -> "\"\:3088\:308a\:5f37\:5316\:3055\:308c\:305f\:6a5f\:80fd\"", 
+      True -> StyleBox[
+        "\"\:3088\:308a\:5f37\:5316\:3055\:308c\:305f\:6a5f\:80fd\"", {"HyperlinkActive"}]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], 
+     BaselinePosition -> Baseline, BaseStyle -> {"Hyperlink"}, 
+     FrameMargins -> 0, ImageSize -> Automatic], 
+    BaseStyle -> "Hyperlink", 
+    ButtonData -> {URL[
+       "http://www.wolfram.com/cdf/adopting-cdf/enterprise-deployment.html"], None}], MouseAppearanceTag["LinkHand"]],
+"\"\:3092\:63d0\:4f9b\:3057\:307e\:3059\:ff0e\:5229\:7528\:898f\:7d04\:306b\:3064\:3044\:3066\:306f\:304a\:4f7f\:3044\:306e\:30bd\:30d5\:30c8\:30a6\:30a7\:30a2\:30e9\:30a4\:30bb\:30f3\:30b9\:3092\:3054\:53c2\:7167\:304f\:3060\:3055\:3044\:ff0e\""}], LineIndent -> -0.05],
+"IntroEnterpriseHeaderChoice2" -> "FreeCDF",
+"CDFDimensions" -> "CDF\:306e\:5927\:304d\:3055"
+}
+@|
+@@resource PreferencesDialog
+{
+"AutoSpellCheckText" -> "\:5165\:529b\:4e2d\:306b\:30b9\:30da\:30eb\:30c1\:30a7\:30c3\:30af\:3092\:884c\:3046",
+"WindowTitleLabel" -> "\:74b0\:5883\:8a2d\:5b9a",
+"SystemInformationTitleLabel" -> "Wolfram\:30b7\:30b9\:30c6\:30e0\:60c5\:5831",
+"InterfaceLabel" -> "\:30a4\:30f3\:30bf\:30fc\:30d5\:30a7\:30fc\:30b9",
+"EvaluationLabel" -> "\:8a55\:4fa1",
+"MessagesLabel" -> "\:30e1\:30c3\:30bb\:30fc\:30b8",
+"AppearanceLabel" -> "\:5916\:89b3",
+"ServicesLabel" -> "\:30b5\:30fc\:30d3\:30b9",
+"SecurityLabel" -> "\:30bb\:30ad\:30e5\:30ea\:30c6\:30a3",
+"SystemSecurityText" -> "\:30b7\:30b9\:30c6\:30e0\:30bb\:30ad\:30e5\:30ea\:30c6\:30a3",
+"SystemSecurityLeadInText" -> "\:5916\:90e8\:30c1\:30e3\:30cd\:30eb\:95a2\:6570\:ff1a",
+"ExternalChannelEnabled" -> "\:6709\:52b9",
+"ExternalChannelDisabled" -> "\:7121\:52b9",
+"ExternalChannelButtonEnable" -> "\:6709\:52b9\:306b\:3059\:308b",
+"ExternalChannelButtonDisable" -> "\:7121\:52b9\:306b\:3059\:308b",
+"InternetConnectivityLabel" -> "\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:3068\:30e1\:30fc\:30eb",
+"AdvancedLabel" -> "\:8a73\:7d30",
+"ParallelLabel" -> "\:4e26\:5217\:51e6\:7406",
+"SyntaxColoringLabel" -> "\:30b7\:30f3\:30bf\:30c3\:30af\:30b9\:30ab\:30e9\:30fc",
+"DebuggerLabel" -> "\:30c7\:30d0\:30c3\:30ac",
+"NumbersLabel" -> "\:6570",
+"GraphicsLabel" -> "\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9",
+"InheritedLanguageLabel" -> "\:30e6\:30fc\:30b6\:30a4\:30f3\:30bf\:30fc\:30d5\:30a7\:30fc\:30b9\:8a00\:8a9e\:3068\:540c\:3058",
+"EnglishLabel" -> "English",
+"ChineseSimplifiedWord" -> "Chinese, Simplified",
+"ChineseSimplifiedTranslation" -> "\:7b80\:4f53\:4e2d\:6587",
+"ChineseTraditionalWord" -> "Chinese, Traditional",
+"ChineseTraditionalTranslation" -> "\:7e41\:9ad4\:4e2d\:6587",
+"FrenchWord" -> "French",
+"FrenchTranslation" -> "Fran\[CCedilla]ais",
+"GermanWord" -> "German",
+"GermanTranslation" -> "Deutsch",
+"GreekWord" -> "Greek",
+"GreekTranslation" -> "\[CapitalEpsilon]\[Lambda]\[Lambda]\[Eta]\[Nu]\[Iota]\[Kappa]\!\(\*OverscriptBox[\"\[Eta]\", \"'\"]\)",
+"ItalianWord" -> "Italian",
+"ItalianTranslation" -> "Italiano",
+"JapaneseWord" -> "Japanese",
+"JapaneseTranslation" -> "\:65e5\:672c\:8a9e",
+"KoreanWord" -> "Korean",
+"KoreanTranslation" -> "\:d55c\:ad6d\:c5b4",
+"LithuanianWord" -> "Lithuanian",
+"LithuanianTranslation" -> "Lietuvi\[SHacek]kai",
+"PolishWord" -> "Polish",
+"PolishTranslation" -> "Polski",
+"PortugueseWord" -> "Portuguese",
+"PortugueseTranslation" -> "Portugu\[EHat]s",
+"RussianWord" -> "Russian",
+"RussianTranslation" -> "\:0420\:0443\:0441\:0441\:043a\:0438\:0439",
+"SpanishWord" -> "Spanish",
+"SpanishTranslation" -> "Espa\[NTilde]ol",
+"UkrainianWord" -> "Ukrainian",
+"UkrainianTranslation" -> "\:0423\:043a\:0440\:0430\:0457\:043d\:0441\:044c\:043a\:0430",
+"VietnameseWord" -> "Vietnamese",
+"VietnameseTranslation" -> "Ti\:1ebfng Vi\:1ec7t",
+"LanguageText" -> "\:8a00\:8a9e\:ff1a",
+"UserInterfaceText" -> "\:30e6\:30fc\:30b6\:30a4\:30f3\:30bf\:30fc\:30d5\:30a7\:30fc\:30b9\:8a2d\:5b9a",
+"OtherLangText" -> StyleBox["\:ff08\:30e6\:30fc\:30b6\:30a4\:30f3\:30bf\:30fc\:30d5\:30a7\:30fc\:30b9\:306e\:7ffb\:8a33\:306f\:3059\:3079\:3066\:306e\:8a00\:8a9e\:3067\:5229\:7528\:3067\:304d\:308b\:8a33\:3067\:306f\:3042\:308a\:307e\:305b\:3093\:ff0e\:ff09", FontSlant -> Italic],
+"ShowCodeTransText" -> RowBox[{"\:30b3\:30fc\:30c9\:30ad\:30e3\:30d7\:30b7\:30e7\:30f3\:3092\:8868\:793a\:3059\:308b ", StyleBox["\:ff08\:82f1\:8a9e\:4ee5\:5916\:306e\:8a00\:8a9e\:306e\:307f\:ff09", FontSlant -> Italic]}],
+"CodeCaptionLanguageText" -> "\:30b3\:30fc\:30c9\:30ad\:30e3\:30d7\:30b7\:30e7\:30f3\:8a00\:8a9e\:ff1a",
+"GroupIconText" -> "\:30bb\:30eb\:30b0\:30eb\:30fc\:30d7\:30aa\:30fc\:30d7\:30ca\:30a2\:30a4\:30b3\:30f3\:3092\:8868\:793a\:3059\:308b\:ff1a",
+"CursorTrackerText" -> "\:633f\:5165\:30dd\:30a4\:30f3\:30c8\:304c\:4e88\:671f\:3057\:306a\:3044\:3068\:304d\:306b\:52d5\:3044\:305f\:3089\:30ab\:30fc\:30bd\:30eb\:30c8\:30e9\:30c3\:30ab\:30fc\:3092\:70b9\:6ec5\:3055\:305b\:308b",
+"SmartQuotesText" -> {"\:30b9\:30de\:30fc\:30c8\:30af\:30a9\:30fc\:30c8\:3092\:6709\:52b9\:306b\:3059\:308b\:ff1a", 
+  "\:901a\:5e38\:306e\:30c6\:30ad\:30b9\:30c8\:7de8\:96c6\:6642  ",   "\:30da\:30fc\:30b9\:30c8\:6642"},
+"DragDropText" -> "\:30c9\:30e9\:30c3\:30b0\:30a2\:30f3\:30c9\:30c9\:30ed\:30c3\:30d7\:30c6\:30ad\:30b9\:30c8\:7de8\:96c6\:3092\:6709\:52b9\:306b\:3059\:308b",
+"BlinkText" -> "\:70b9\:6ec5\:3059\:308b\:30bb\:30eb\:306e\:633f\:5165\:70b9\:3092\:6709\:52b9\:306b\:3059\:308b",
+"AutoRescaleText" -> "3D\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9\:306e\:56de\:8ee2\:5f8c\:306b\:81ea\:52d5\:7684\:306b\:518d\:3073\:30d5\:30a3\:30c3\:30c8\:3059\:308b",
+"CompletionCaseText" -> "\:30b3\:30de\:30f3\:30c9\:306e\:88dc\:5b8c\:306b\:304a\:3044\:3066\:5927\:6587\:5b57\:30fb\:5c0f\:6587\:5b57\:3092\:533a\:5225\:3059\:308b",
+"FunctionTemplatesText" -> "\:52d5\:7684\:30cf\:30a4\:30e9\:30a4\:30c8\:3092\:6709\:52b9\:306b\:3059\:308b",
+"AutoConvertEnableText" -> "\:81ea\:7136\:8a00\:8a9e\:691c\:51fa\:3092\:6709\:52b9\:306b\:3059\:308b",
+"CodeAssistPopupText" -> {"\:30dd\:30c3\:30d7\:30a2\:30c3\:30d7\:9045\:5ef6\:3092", "\:79d2\:3068\:3057\:3066\:81ea\:52d5\:88dc\:5b8c\:3092\:6709\:52b9\:306b\:3059\:308b"},
+"FloatingElementText" -> {"\:30d5\:30ed\:30fc\:30c6\:30a3\:30f3\:30b0\:8981\:7d20\:3092\:6709\:52b9\:306b\:3059\:308b\:ff0e\:30dd\:30c3\:30d7\:30a2\:30c3\:30d7\:9045\:5ef6\:ff1a", " \:79d2"},
+"PredictiveInterfaceText" -> "\:6700\:5f8c\:306e\:51fa\:529b\:306e\:5f8c\:306b\:30b5\:30b8\:30a7\:30b9\:30c1\:30e7\:30f3\:30d0\:30fc\:3092\:8868\:793a\:3059\:308b",
+"DefaultStylingText" -> "\:4ee5\:524d\:306e\:30d0\:30fc\:30b8\:30e7\:30f3\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:958b\:304f\:3068\:304d\:306b\:30c7\:30d5\:30a9\:30eb\:30c8\:306e\:30b9\:30bf\:30a4\:30eb\:3092\:30a2\:30c3\:30d7\:30c7\:30fc\:30c8\:3059\:308b\:304b\:3069\:3046\:304b\:3092\:5c0b\:306d\:308b",
+"IgnoreText" -> "\:7121\:8996\:3059\:308b",
+"BeepText" -> "\:30d3\:30fc\:30d7\:97f3",
+"Print3DHeader" -> "3D\:30d7\:30ea\:30f3\:30c8\:7528\:30d7\:30ec\:30d3\:30e5\:30fc\:30a2",
+"Print3DLeadInText" -> "3D\:30d7\:30ea\:30f3\:30c8\:7528\:30d7\:30ec\:30d3\:30e5\:30fc\:30a2\:30a2\:30d7\:30ea\:30b1\:30fc\:30b7\:30e7\:30f3\:ff1a",
+"PrintInputText" -> "\:5165\:529b\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306b\:8868\:793a",
+"PrintConsoleText" -> "\:30b3\:30f3\:30bd\:30fc\:30eb\:306b\:8868\:793a",
+"PutUpDialogText" -> "\:30c0\:30a4\:30a2\:30ed\:30b0\:30dc\:30c3\:30af\:30b9\:3092\:8868\:793a",
+"BeepInputText" -> "\:30d3\:30fc\:30d7\:97f3\:3092\:9cf4\:3089\:3057\:3066\:5165\:529b\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306b\:8868\:793a",
+"BeepConsoleText" -> "\:30d3\:30fc\:30d7\:97f3\:3092\:9cf4\:3089\:3057\:3066\:30b3\:30f3\:30bd\:30fc\:30eb\:306b\:8868\:793a",
+"BeepDialogText" -> "\:30d3\:30fc\:30d7\:97f3\:3092\:9cf4\:3089\:3057\:3066\:30c0\:30a4\:30a2\:30ed\:30b0\:30dc\:30c3\:30af\:30b9\:3092\:8868\:793a",
+"SystemSettingsText" -> "\:30b7\:30b9\:30c6\:30e0\:8a2d\:5b9a",
+"VersionedPrefsText" -> "\:30d0\:30fc\:30b8\:30e7\:30f3\:7279\:6709\:306e\:30d5\:30ed\:30f3\:30c8\:30a8\:30f3\:30c9\:521d\:671f\:8a2d\:5b9a\:3092\:4f5c\:6210\:3057\:3066\:7dad\:6301\:3059\:308b",
+"ShowAtStartupText" -> "\:958b\:59cb\:6642\:306b\:8868\:793a\:ff1a",
+"ShowWelcomeAtStartup" -> "\:30a6\:30a7\:30eb\:30ab\:30e0\:30b9\:30af\:30ea\:30fc\:30f3",
+"ShowNewAtStartup" -> "\:65b0\:898f\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8",
+"ShowBothAtStartup" -> "\:30a6\:30a7\:30eb\:30ab\:30e0\:30b9\:30af\:30ea\:30fc\:30f3\:3068\:65b0\:898f\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8",
+"MathExtrasText" -> "Wolfram Extras\:3092\:30a4\:30f3\:30b9\:30c8\:30fc\:30eb\:3059\:308b",
+"NotInstalledText" -> StyleBox["\t\:30a4\:30f3\:30b9\:30c8\:30fc\:30eb\:3055\:308c\:3066\:3044\:307e\:305b\:3093", FontSlant -> Italic, FontColor -> RGBColor[{1, 0, 0}]],
+"NotApplicableText" -> StyleBox["\t\:8a72\:5f53\:3057\:307e\:305b\:3093", FontSlant -> Italic],
+"NeedsUpdatingText" -> StyleBox["\t\:66f4\:65b0\:304c\:5fc5\:8981\:3067\:3059", FontSlant -> Italic, FontColor -> RGBColor[{1, 0, 0}]],
+"InstalledText" -> StyleBox["\t\:30a4\:30f3\:30b9\:30c8\:30fc\:30eb\:6e08\:307f", FontSlant -> Italic],
+"RulerText" -> "\:30eb\:30fc\:30e9\:30fc\:306e\:5358\:4f4d\:ff1a",
+"RulerUnits" -> {"\:30a4\:30f3\:30c1", "\:30c7\:30b7\:30de\:30eb\:30a4\:30f3\:30c1", "\:30dd\:30a4\:30f3\:30c8", "\:30d1\:30a4\:30ab", "\:30bb\:30f3\:30c1\:30e1\:30fc\:30c8\:30eb", "\:30df\:30ea\:30e1\:30fc\:30c8\:30eb"},
+"HistoryText" -> "\:6700\:8fd1\:958b\:3044\:305f\:30d5\:30a1\:30a4\:30eb\:5c65\:6b74\:306e\:9577\:3055\:ff1a",
+"WarningsText" -> "\:91cd\:5927\:3067\:306f\:306a\:3044\:30e6\:30fc\:30b6\:30a4\:30f3\:30bf\:30fc\:30d5\:30a7\:30fc\:30b9\:8b66\:544a\:ff1a",
+"ErrorsText" -> "\:91cd\:5927\:306a\:30e6\:30fc\:30b6\:30a4\:30f3\:30bf\:30fc\:30d5\:30a7\:30fc\:30b9\:30a8\:30e9\:30fc\:ff1a",
+"MessagesText" -> "\:30e6\:30fc\:30b6\:30a4\:30f3\:30bf\:30fc\:30d5\:30a7\:30fc\:30b9\:30ed\:30b0\:30e1\:30c3\:30bb\:30fc\:30b8\:ff1a",
+"FormattingErrorsText" -> "\:30d5\:30a9\:30fc\:30de\:30c3\:30c8\:30a8\:30e9\:30fc\:306e\:6307\:793a\:ff1a",
+"HighlightAndTooltipText" -> "\:30cf\:30a4\:30e9\:30a4\:30c8\:3068\:30c4\:30fc\:30eb\:30c1\:30c3\:30d7",
+"HighlightText" -> "\:30cf\:30a4\:30e9\:30a4\:30c8",
+"TooltipText" -> "\:30c4\:30fc\:30eb\:30c1\:30c3\:30d7",
+"InputOutputText" -> "\:5165\:529b\:3068\:51fa\:529b",
+"NewStylesText" -> "\:65b0\:898f\:306b\:5165\:529b\:3059\:308b\:30bb\:30eb\:306e\:30b9\:30bf\:30a4\:30eb\:ff1a",
+"NewInputText" -> "\:65b0\:3057\:3044\:5165\:529b\:30bb\:30eb\:306e\:5f62\:5f0f\:ff1a",
+"NewOutputText" -> "\:65b0\:3057\:3044\:51fa\:529b\:30bb\:30eb\:306e\:5f62\:5f0f\:ff1a",
+"MaxOutputText" -> "\:5207\:308a\:6368\:3066\:308b\:307e\:3067\:306e\:6700\:5927\:51fa\:529b\:30b5\:30a4\:30ba\:ff1a",
+"RawInputFormText" -> "\:672a\:52a0\:5de5\:306eInputForm",
+"BytesText" -> " \:30d0\:30a4\:30c8",
+"OnlyTextualText" -> "\:30bf\:30a4\:30d7\:30bb\:30c3\:30c8\:5f62\:5f0f\:306b\:5909\:63db\:3059\:308b\:3068\:304d\:306b\:30c6\:30ad\:30b9\:30c8\:30dc\:30c3\:30af\:30b9\:306e\:307f\:3092\:4f7f\:7528\:3059\:308b",
+"OnlyTextualInputText" -> "\:5165\:529b\:3092\:30bf\:30a4\:30d7\:30bb\:30c3\:30c8\:5f62\:5f0f\:306b\:5909\:63db\:3059\:308b\:3068\:304d\:306b\:30c6\:30ad\:30b9\:30c8\:30dc\:30c3\:30af\:30b9\:306e\:307f\:4f7f\:7528\:3059\:308b",
+"OnlyTextualOutputText" -> "\:51fa\:529b\:3092\:30bf\:30a4\:30d7\:30bb\:30c3\:30c8\:5f62\:5f0f\:306b\:5909\:63db\:3059\:308b\:3068\:304d\:306b\:30c6\:30ad\:30b9\:30c8\:30dc\:30c3\:30af\:30b9\:306e\:307f\:4f7f\:7528\:3059\:308b",
+"ShowCellLabelText" -> "In/Out\:540d\:3092\:8868\:793a\:3059\:308b",
+"ActionsText" -> "\:30e1\:30c3\:30bb\:30fc\:30b8\:3068\:8b66\:544a\:306e\:30a2\:30af\:30b7\:30e7\:30f3",
+"KernelMessagesText" -> "\:30ab\:30fc\:30cd\:30eb\:30e1\:30c3\:30bb\:30fc\:30b8\:ff1a",
+"PrintOutputText" -> "Print[]\:30b3\:30de\:30f3\:30c9\:51fa\:529b\:ff1a",
+"NotebookSecurityText" -> "\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:30bb\:30ad\:30e5\:30ea\:30c6\:30a3",
+"TrustNotebooksText" -> "\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:30c7\:30d5\:30a9\:30eb\:30c8\:3067\:4fe1\:983c\:3059\:308b",
+"TrustByDefaultText" -> "\:4fe1\:983c\:3067\:304d\:308b\:ff0c\:3042\:308b\:3044\:306f\:4fe1\:983c\:3067\:304d\:306a\:3044\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:306b\:3042\:308b\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:ff1a",
+"TrustByDefaultAutomaticText" -> "\:5b89\:5168\:306a\:5185\:5bb9\:306e\:307f\:4fe1\:983c\:3059\:308b",
+"TrustByDefaultTrueText" -> "\:5e38\:306b\:4fe1\:983c\:3059\:308b",
+"TrustByDefaultFalseText" -> "\:4fe1\:983c\:3057\:306a\:3044",
+"EditTrustedText" -> "\:4fe1\:983c\:3067\:304d\:308b\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:306e\:7de8\:96c6...",
+"EditTrustedTooltipText" -> "\:4fe1\:983c\:3067\:304d\:308b\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:5185\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306f\:5e38\:306b\:4fe1\:983c\:3055\:308c\:307e\:3059",
+"EditUntrustedText" -> "\:4fe1\:983c\:3067\:304d\:306a\:3044\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:306e\:7de8\:96c6...",
+"EditUntrustedTooltipText" -> "\:4fe1\:983c\:3067\:304d\:306a\:3044\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:5185\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306f\:4fe1\:983c\:3055\:308c\:307e\:305b\:3093",
+"BrowserPluginText" -> "Wolfram\:30b7\:30b9\:30c6\:30e0\:306e\:30d6\:30e9\:30a6\:30b6\:30d7\:30e9\:30b0\:30a4\:30f3",
+"SpotlightIndexerText" -> "Spotlight\:7528Notebook Indexer",
+"WindowsIndexerText" -> "Windows\:7528Notebook Indexer",
+"GoogleIndexerText" -> "Google Desktop Search\:7528Notebook Indexer",
+"CopernicIndexerText" -> "Copernic Desktop Search\:7528Notebook Indexer",
+"LocalVariablesText" -> "Module\:3068With\:306e\:5c40\:6240\:5909\:6570",
+"FunctionArgs1Text" -> "\:95a2\:6570\:306e\:5f15\:6570\:3068\:30d1\:30bf\:30fc\:30f3\:540d\:ff08",
+"FunctionArgs2Text" -> "\:659c\:4f53\:306b\:3059\:308b\:ff09",
+"UseInArgumentsText" -> "\:5f15\:6570\:306b\:4f7f\:3046\:3053\:3068\:3067\:7279\:5225\:306a\:610f\:5473\:3092\:6301\:3064\:5909\:6570",
+"ResetDefaultsText" -> "\:30c7\:30d5\:30a9\:30eb\:30c8\:5024\:306b\:623b\:3059",
+"SyntaxErrorsText" -> "\:30b7\:30f3\:30bf\:30c3\:30af\:30b9\:30a8\:30e9\:30fc",
+"Emphasized1Text" -> "\:5f37\:8abf\:3055\:308c\:305f\:30b7\:30f3\:30bf\:30c3\:30af\:30b9\:30a8\:30e9\:30fc\:ff08",
+"Emphasized2Text" -> "\:5927\:304d\:304f\:3059\:308b ",
+"Emphasized3Text" -> "\:80cc\:666f\:8272\:3092\:9ec4\:8272\:306b\:3059\:308b\:ff09",
+"MissingText" -> "\:5f15\:6570\:306e\:4e0d\:8db3",
+"ExcessText" -> "\:5f15\:6570\:306e\:904e\:5270",
+"UnwantedText" -> "\:5fc5\:8981\:304c\:306a\:3044\:53ef\:80fd\:6027\:304c\:3042\:308b\:5272\:5f53\:3066",
+"UnrecognizedText" -> "\:8a8d\:8b58\:3067\:304d\:306a\:3044\:30aa\:30d7\:30b7\:30e7\:30f3\:540d",
+"LocalScopeText" -> "\:5c40\:6240\:30b9\:30b3\:30fc\:30d7\:306e\:885d\:7a81",
+"OutOfScopeText" -> "\:4f7f\:7528\:3059\:308b\:524d\:306b\:30b9\:30b3\:30fc\:30d7\:304b\:3089\:51fa\:308b\:5909\:6570",
+"ShadowingText" -> "\:8907\:6570\:306e\:30b3\:30f3\:30c6\:30ad\:30b9\:30c8\:3067\:306e\:96a0\:853d",
+"CommentsText" -> "\:30b3\:30e1\:30f3\:30c8\:6587",
+"StringsText" -> "\:6587\:5b57\:5217",
+"CommentsString" -> StyleBox[RowBox[{"(*"," ",RowBox[{"\:30b3\:30e1\:30f3\:30c8"}]," ","*)"}],ShowStringCharacters->True],
+"SampleString" -> "\:6587\:5b57\:306e\:5217",
+"GlobalSymbolsText" -> "\:5024\:304c\:5272\:308a\:5f53\:3066\:3089\:308c\:3066\:3044\:306a\:3044\:5927\:57df\:30b7\:30f3\:30dc\:30eb",
+"HeadHighlightText" -> "\:73fe\:5728\:306e\:95a2\:6570\:306e\:982d\:90e8\:306e\:30cf\:30a4\:30e9\:30a4\:30c8",
+"MatchHighlightText" -> "\:30de\:30c3\:30c1\:3059\:308b\:6f14\:7b97\:5b50\:306e\:30cf\:30a4\:30e9\:30a4\:30c8",
+"AutomaticSyntaxText" -> "\:81ea\:52d5\:30b7\:30f3\:30bf\:30c3\:30af\:30b9\:30ab\:30e9\:30fc\:30ea\:30f3\:30b0\:3092\:6709\:52b9\:306b\:3059\:308b    ",
+"LocalVarsText" -> "\:5c40\:6240\:5909\:6570",
+"ErrsAndWarningsText" -> "\:30a8\:30e9\:30fc\:3068\:8b66\:544a",
+"OtherText" -> "\:305d\:306e\:4ed6",
+"ColorSpectraText" -> "\:30ab\:30e9\:30fc\:30b9\:30da\:30af\:30c8\:30eb\:306e\:8868\:793a",
+"EnableDebuggerText" -> "\:30c7\:30d0\:30c3\:30ac\:3092\:6709\:52b9\:306b\:3059\:308b    ",
+"TextText" -> "\:30c6\:30ad\:30b9\:30c8",
+"BackgroundText" -> "\:80cc\:666f",
+"DefaultText" -> "\:30c7\:30d5\:30a9\:30eb\:30c8",
+"BreakpointsText" -> "\:30d6\:30ec\:30fc\:30af\:30dd\:30a4\:30f3\:30c8\:306e\:30cf\:30a4\:30e9\:30a4\:30c8",
+"StackFramesText" -> "\:30b9\:30bf\:30c3\:30af\:30d5\:30ec\:30fc\:30e0\:306e\:30cf\:30a4\:30e9\:30a4\:30c8",
+"EvaluatorPosText" -> "\:8a55\:4fa1\:4f4d\:7f6e\:306e\:30cf\:30a4\:30e9\:30a4\:30c8",
+"AutomaticNumText" -> "\:81ea\:52d5\:6570\:5024\:30d5\:30a9\:30fc\:30de\:30c3\:30c8\:3092\:6709\:52b9\:306b\:3059\:308b",
+"BlockSeparatorText" -> "\:6841\:30d6\:30ed\:30c3\:30af\:306e\:533a\:5207\:308a\:6587\:5b57\:ff1a",
+"DecimalPointText" -> "\:5c0f\:6570\:70b9\:6587\:5b57\:ff1a",
+"SeparatorText" -> "\:533a\:5207\:308a\:6587\:5b57",
+"NoneText" -> "\:306a\:3057",
+"ThinText" -> "\:7d30\:3044\:7a7a\:767d",
+"VeryThinText" -> "\:975e\:5e38\:306b\:7d30\:3044\:7a7a\:767d",
+"ThinCommaText" -> "\:7d30\:3044\:30b3\:30f3\:30de",
+"CommaText" -> "\:30b3\:30f3\:30de",
+"PeriodText" -> "\:30d4\:30ea\:30aa\:30c9",
+"DigitText" -> "\:6841\:30d6\:30ed\:30c3\:30af",
+"LeftOfText" -> "\:5c0f\:6570\:70b9\:306e\:5de6",
+"RightOfText" -> "\:5c0f\:6570\:70b9\:306e\:53f3",
+"BlockSizeText" -> "\:6841\:30d6\:30ed\:30c3\:30af\:306e\:30b5\:30a4\:30ba\:ff1a",
+"MinText" -> "\:30d6\:30ed\:30c3\:30af\:306b\:5206\:5272\:3059\:308b\:524d\:306e\:6700\:5c0f\:6841\:6570\:ff1a",
+"PrecisionText" -> "\:8868\:793a\:7cbe\:5ea6",
+"NumDigitsText" -> "\:51fa\:529b\:306b\:8868\:793a\:3059\:308b\:6841\:6570\:ff1a",
+"SamplesText" -> "\:30b5\:30f3\:30d7\:30eb",
+"4Text" -> "4\:6841\:6574\:6570\:ff1a",
+"10Text" -> "10\:6841\:6574\:6570\:ff1a",
+"5Text" -> "5\:6841\:5c0f\:6570\:ff1a",
+"14Text" -> "14\:6841\:5c0f\:6570\:ff1a",
+"InAListText" -> "\:30ea\:30b9\:30c8\:4e2d\:306e\:6570\:ff1a",
+"MultSymText" -> "\:639b\:3051\:5408\:305b\:308b\:6570\:306e\:9593\:306b\:81ea\:52d5\:7684\:306b\:4e57\:7b97\:8a18\:53f7\:3092\:8868\:793a\:3059\:308b",
+"UseSymbolText" -> "\:4f7f\:7528\:3059\:308b\:8a18\:53f7\:ff1a",
+"SpaceText" -> "\:7a7a\:767d",
+"CenterDotText" -> "\:4e2d\:4e38",
+"2NumsText" -> "2\:3064\:306e\:6570\:306e\:4e57\:7b97\:ff1a",
+"SeveralNumsText" -> "\:6570\:500b\:306e\:6570\:306e\:4e57\:7b97\:ff1a",
+"WithExpText" -> "\:6307\:6570\:3092\:4f34\:3046\:6570\:ff1a",
+"FormattingText" -> "\:30d5\:30a9\:30fc\:30de\:30c3\:30c8",
+"MultiplicationText" -> "\:4e57\:7b97",
+"SystemInformationText" -> "\:30b7\:30b9\:30c6\:30e0\:60c5\:5831\[Ellipsis]",
+"WolframAlphaLabel" -> "Wolfram|Alpha\:306e\:8a2d\:5b9a",
+"WolframAlphaServer" -> "Wolfram|Alpha\:30b5\:30fc\:30d0",
+"WolframAlphaAsynchronous" -> "\:975e\:540c\:671f",
+"WolframAlphaInteractive" -> "\:30a4\:30f3\:30bf\:30e9\:30af\:30c6\:30a3\:30d6",
+"WolframAlphaReinterpret" -> "\:518d\:89e3\:91c8",
+"WolframAlphaRecalculate" -> "\:518d\:8a08\:7b97",
+"WolframAlphaTypeset" -> "\:30bf\:30a4\:30d7\:30bb\:30c3\:30c8\:3055\:308c\:305fWolfram\:8a00\:8a9e\:5f62\:5f0f",
+"WolframAlphaClickingInExtrusion" -> "\:5225\:306e\:7d50\:679c\:3092\:9078\:629e\:3057\:305f\:3068\:304d\:306b",
+"WolframAlphaClickClose" -> "\:3059\:3079\:3066\:306e\:7d50\:679c\:3092\:96a0\:3059",
+"WolframAlphaClickEvaluate" -> "\:30bb\:30eb\:3092\:8a55\:4fa1\:3059\:308b",
+"WolframAlphaClickTip" -> "\:81ea\:7531\:5f62\:5f0f\:5165\:529b\:3067\:3059\:3079\:3066\:306e\:7d50\:679c\:3092\:793a\:3057\:305f\:5f8c\:306b\:4f55\:304c\:8d77\:3053\:308b\:304b\:3092\:5909\:66f4\:3059\:308b",
+"WolframAlphaInfo" -> "Wolfram\:30b7\:30b9\:30c6\:30e0\:30bb\:30c3\:30b7\:30e7\:30f3\:60c5\:5831",
+"WolframAlphaInfoAlways" -> "\:5e38\:306b\:9001\:4fe1\:3059\:308b",
+"WolframAlphaInfoNever" -> "\:4eca\:5f8c\:9001\:4fe1\:3057\:306a\:3044",
+"WolframAlphaInfoSessionYes" -> "\:3053\:306e\:30bb\:30c3\:30b7\:30e7\:30f3\:3067\:306f\:9001\:4fe1\:3059\:308b",
+"WolframAlphaInfoSessionNo" -> "\:3053\:306e\:30bb\:30c3\:30b7\:30e7\:30f3\:3067\:306f\:9001\:4fe1\:3057\:306a\:3044",
+"WolframAlphaInfoAsk" -> "\:9001\:4fe1\:524d\:306b\:78ba\:8a8d\:3059\:308b",
+"ConnectivityText1" -> "Wolfram\:8a00\:8a9e\:306f\:6b21\:306e\:3088\:3046\:306a\:6a5f\:80fd\:306e\:305f\:3081\:306b\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:306b\:30a2\:30af\:30bb\:30b9\:3057\:307e\:3059\:ff1a\n\[Bullet] \:30ea\:30a2\:30eb\:30bf\:30a4\:30e0\:307e\:305f\:306f\:30ed\:30fc\:30c9\:30aa\:30f3\:30c7\:30de\:30f3\:30c9\:306e\:8a08\:7b97\:53ef\:80fd\:306a\:30c7\:30fc\:30bf\:306e\:63d0\:4f9b\n\[Bullet] Web\:3088\:308a\:30c7\:30fc\:30bf\:3092\:30a4\:30f3\:30dd\:30fc\:30c8\n\[Bullet] \:30c9\:30ad\:30e5\:30e1\:30f3\:30c8\:306e\:81ea\:52d5\:30a2\:30c3\:30d7\:30c7\:30fc\:30c8\n\[Bullet] \:5916\:90e8\:306eWeb\:30b5\:30fc\:30d3\:30b9\:306e\:547c\:3073\:51fa\:3057",
+"ConnectivityText2" -> "\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8\:3055\:308c\:3066\:3044\:308b\:6a5f\:80fd\:306e\:3044\:304f\:3064\:304b\:306fWolfram\:8a00\:8a9e\:304c\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:306b\:30a2\:30af\:30bb\:30b9\:3067\:304d\:306a\:3044\:5834\:5408\:ff0c\:4f7f\:7528\:3067\:304d\:307e\:305b\:3093\:ff0e ",
+"ConnectivityTextMore" -> "\:8a73\:7d30\[RightGuillemet]",
+"TestConnectivityButtonText" -> "\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:63a5\:7d9a\:6027\:306e\:691c\:8a3c",
+"TroubleshootButtonText" -> "\:30c8\:30e9\:30d6\:30eb\:30b7\:30e5\:30fc\:30c8",
+"CheckInternetText" -> "Wolfram\:30b7\:30b9\:30c6\:30e0\:306e\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:3078\:306e\:30a2\:30af\:30bb\:30b9\:3092\:8a31\:53ef\:3059\:308b",
+"ProxyLabel" -> "\:30d7\:30ed\:30ad\:30b7\:8a2d\:5b9a",
+"DirectProxyText" -> "\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:3078\:306e\:76f4\:63a5\:63a5\:7d9a",
+"BrowserProxyText" -> "\:30b7\:30b9\:30c6\:30e0\:307e\:305f\:306f\:30d6\:30e9\:30a6\:30b6\:306e\:30d7\:30ed\:30ad\:30b7\:8a2d\:5b9a\:3092\:4f7f\:3046",
+"CustomProxyText" -> "\:6b21\:306e\:8a2d\:5b9a\:3092\:4f7f\:3046\:ff1a",
+"AllowWPADText" -> "Web\:30d7\:30ed\:30ad\:30b7\:81ea\:52d5\:691c\:51fa(WPAD)\:30d7\:30ed\:30c8\:30b3\:30eb\:306e\:4f7f\:7528\:3092\:8a31\:53ef\:3059\:308b",
+"HostText" -> " \:30db\:30b9\:30c8\:ff1a",
+"ProxyText" -> " \:30d7\:30ed\:30ad\:30b7\:ff1a",
+"PortText" -> "\:30dd\:30fc\:30c8\:ff1a",
+"ServerText" -> "\:30b5\:30fc\:30d0", 
+"PortNumText" -> "\:30dd\:30fc\:30c8\:756a\:53f7", 
+"EncryptProtoText" -> "\:6697\:53f7\:5316\:30d7\:30ed\:30c8\:30b3\:30eb", 
+"UsernameText" -> "\:30e6\:30fc\:30b6\:540d", 
+"FromAddrText" -> "\:9001\:4fe1\:30a2\:30c9\:30ec\:30b9", 
+"FullNameText" -> "\:9001\:4fe1\:8005", 
+"ReplyToText" -> "\:8fd4\:4fe1", 
+"AutoBccText" -> "\:81ea\:52d5BCC",
+"AutoCcText" -> "\:81ea\:52d5CC",
+"SignatureText" -> "\:7f72\:540d",
+"AutoUpdateLabel" -> "\:81ea\:52d5\:30a2\:30c3\:30d7\:30c7\:30fc\:30c8", 
+"MailLabel" -> "\:30e1\:30fc\:30eb\:8a2d\:5b9a",
+"IncomingMailLabel" -> "\:53d7\:4fe1",
+"IncomingMailDescription" -> StyleBox[FormBox[RowBox[{
+   FormBox[TagBox[ButtonBox["MailServerConnect", BaseStyle -> "Link", 
+  ButtonData -> "paclet:ref/MailServerConnect"], 
+ MouseAppearanceTag["LinkHand"]], StandardForm], 
+   "\:95a2\:6570\:306e\:30c7\:30d5\:30a9\:30eb\:30c8\:8a2d\:5b9a\:ff1a"}], TextForm], AutoSpacing -> False],
+"OutgoingMailLabel" -> "\:9001\:4fe1",
+"OutgoingMailDescription" -> StyleBox[FormBox[RowBox[{
+   FormBox[TagBox[ButtonBox["SendMail", BaseStyle -> "Link", 
+  ButtonData -> "paclet:ref/SendMail"], 
+ MouseAppearanceTag["LinkHand"]], StandardForm], 
+   "\:95a2\:6570\:306e\:30c7\:30d5\:30a9\:30eb\:30c8\:8a2d\:5b9a\:ff1a"}], TextForm], AutoSpacing -> False],
+"PasswordText" -> "\:30d1\:30b9\:30ef\:30fc\:30c9",
+"MailFolderText" -> "\:30d5\:30a9\:30eb\:30c0",
+"CheckDocsText" -> "\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8\:306e\:66f4\:65b0\:3092\:81ea\:52d5\:7684\:306b\:78ba\:8a8d\:3059\:308b",
+"CheckDataText" -> "\:30c7\:30fc\:30bf\:306e\:66f4\:65b0\:3092\:81ea\:52d5\:7684\:306b\:78ba\:8a8d\:3059\:308b",
+"UpdateLocalIndexButtonText" -> "Wolfram Research\:30b5\:30fc\:30d0\:304b\:3089\:30ed\:30fc\:30ab\:30ebIndex\:3092\:66f4\:65b0\:3059\:308b",
+"AboutConnectButtonText" -> "\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:306e\:63a5\:7d9a\:6027\:306b\:3064\:3044\:3066\[Ellipsis]",
+"NotebookHistoryText" -> "\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:5c65\:6b74",
+"DisableHistoryText" -> "\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:5c65\:6b74\:306e\:8ffd\:8de1\:3092\:6709\:52b9\:306b\:3059\:308b",
+"HistoryMergeIntervalText" -> "\:305d\:306e\:5f8c\:306e\:7de8\:96c6\:5c65\:6b74\:3092\:30de\:30fc\:30b8\:3059\:308b\:6642\:9593\:ff08\:79d2\:ff09\:ff1a",
+"NotebookCompatibilityText" -> "\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:4e92\:63db\:6027",
+"DisableCompatibilityText" -> "\:65e7\:30d0\:30fc\:30b8\:30e7\:30f3\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:6f5c\:5728\:7684\:306a\:554f\:984c\:306e\:30b9\:30ad\:30e3\:30f3\:3092\:6709\:52b9\:306b\:3059\:308b",
+"DefaultControlPlacementText" -> RowBox[{StyleBox["Manipulate", "Input", FontFamily -> "Courier"],
+   "\:51fa\:529b\:306e\:30c7\:30d5\:30a9\:30eb\:30c8\:30b3\:30f3\:30c8\:30ed\:30fc\:30eb\:8a2d\:5b9a\:ff1a"}],
+"AntialiasingText" -> "\:30a2\:30f3\:30c1\:30a8\:30a4\:30ea\:30a2\:30b9\:54c1\:8cea",
+"AntialiasingOnscreenText" -> "\:ff08\:30b9\:30af\:30ea\:30fc\:30f3\:4e0a\:306e3D\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9\:3068\:30b0\:30e9\:30c7\:30fc\:30b7\:30e7\:30f3\:306e\:3042\:308b\:5857\:308a\:6f70\:3057\:3092\:6301\:30642D\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9\:306b\:9069\:7528\:ff09",
+"AntialiasingNoneText" -> "\:30a2\:30f3\:30c1\:30a8\:30a4\:30ea\:30a2\:30b9\:306a\:3057",
+"AntialiasingFullText" -> "\:6700\:9ad8\:54c1\:8cea",
+"OtherOptionsText" -> "\:305d\:306e\:4ed6\:306e\:30aa\:30d7\:30b7\:30e7\:30f3\:306e\:8a2d\:5b9a\:ff1a",
+"OpenOIText" -> "\:30aa\:30d7\:30b7\:30e7\:30f3\:30a4\:30f3\:30b9\:30da\:30af\:30bf\:3092\:958b\:304f",
+"KernelNameText" -> "\:30de\:30b9\:30bf\:30fc\:30ab\:30fc\:30cd\:30eb\:540d\:ff1a",
+"KernelStoppedText" -> "\:30ab\:30fc\:30cd\:30eb\:306f\:5b9f\:884c\:3055\:308c\:3066\:3044\:307e\:305b\:3093\:ff0e \n \:8a2d\:5b9a\:3059\:308b\:306b\:306f\:5b9f\:884c\:3055\:308c\:3066\:3044\:306a\:3051\:308c\:3070\:306a\:308a\:307e\:305b\:3093\:ff0e",
+"KernelStartText" -> "\:30ab\:30fc\:30cd\:30eb\:3092\:958b\:59cb",
+"KernelStartingText" -> "\:30ab\:30fc\:30cd\:30eb\:3092\:958b\:59cb\:3057\:3066\:3044\:307e\:3059...\n",
+"TrustedPathWarning1" -> "\:6ce8\:610f\:ff1a\:3053\:308c\:3089\:306e\:3059\:3079\:3066\:306e\:30ed\:30b1\:30fc\:30b7\:30e7\:30f3\:306f\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:958b\:304f\:306e\:306b\:4fe1\:983c\:3055\:308c\:308b\:30bd\:30fc\:30b9\:3067\:3042\:308b\:3068\:6271\:308f\:308c\:307e\:3059\:ff0e",
+"TrustedPathWarning2" -> "\:3053\:306e\:30ed\:30b1\:30fc\:30b7\:30e7\:30f3\:306f\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:958b\:304f\:306e\:306b\:4fe1\:983c\:3055\:308c\:308b\:30bd\:30fc\:30b9\:3067\:3042\:308b\:3068\:6271\:308f\:308c\:307e\:3059\:ff0e",
+"TrustedPathText" -> "\:4fe1\:983c\:3067\:304d\:308b\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:958b\:304f\:3068\:ff0c\:8b66\:544a\:306f\:51fa\:529b\:3055\:308c\:305a\:ff0c\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306f\:81ea\:52d5\:7684\:306b\:52d5\:7684\:306a\:8a55\:4fa1\:3092\:884c\:3044\:307e\:3059\:ff0e\:5834\:6240\:3092\:5909\:66f4\:3057\:305f\:308a\:8ffd\:52a0\:3057\:305f\:308a\:3059\:308b\:5834\:5408\:ff0c\:65b0\:3057\:3044\:5834\:6240\:304c\:5b89\:5168\:306a\:3082\:306e\:3067\:3042\:308b\:3053\:3068\:3092\:78ba\:304b\:3081\:3066\:304f\:3060\:3055\:3044\:ff0e",
+"TrustedPathWindowTitle" -> "\:4fe1\:983c\:3067\:304d\:308b\:30c7\:30a3\:30ec\:30af\:30c8\:30ea",
+"UntrustedPathWarning1" -> "\:6ce8\:610f\:ff1a\:3053\:308c\:3089\:306e\:3059\:3079\:3066\:306e\:30ed\:30b1\:30fc\:30b7\:30e7\:30f3\:306f\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:958b\:304f\:306e\:306b\:4fe1\:983c\:3067\:304d\:306a\:3044\:30bd\:30fc\:30b9\:3067\:3042\:308b\:3068\:6271\:308f\:308c\:307e\:3059\:ff0e",
+"UntrustedPathWarning2" -> "\:6ce8\:610f\:ff1a\:3053\:306e\:30ed\:30b1\:30fc\:30b7\:30e7\:30f3\:306f\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:958b\:304f\:306e\:306b\:4fe1\:983c\:3067\:304d\:306a\:3044\:30bd\:30fc\:30b9\:3067\:3042\:308b\:3068\:6271\:308f\:308c\:307e\:3059\:ff0e",
+"UntrustedPathText" -> "\:4fe1\:983c\:3067\:304d\:306a\:3044\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:958b\:3044\:3066\:52d5\:7684\:8a55\:4fa1\:3092\:8a66\:307f\:308b\:3068\:ff0c\:8b66\:544a\:304c\:5fc5\:305a\:8868\:793a\:3055\:308c\:307e\:3059\:ff0e",
+"UntrustedPathWindowTitle" -> "\:4fe1\:983c\:3067\:304d\:306a\:3044\:30c7\:30a3\:30ec\:30af\:30c8\:30ea",
+"PathDialogAddText" -> "\:8ffd\:52a0",
+"PathDialogModText" -> "\:5909\:66f4",
+"PathDialogDelText" -> "\:524a\:9664",
+"PathDialogDirsText" -> "\:30c7\:30a3\:30ec\:30af\:30c8\:30ea",
+"PathDialogDirText" -> "\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:ff1a",
+"ClosingDialogToggleText" -> "\:6700\:5f8c\:306e\:30a6\:30a3\:30f3\:30c9\:30a6\:3092\:9589\:3058\:308b\:3068\:304d\:306b\:78ba\:8a8d\:30c0\:30a4\:30a2\:30ed\:30b0\:3092\:8868\:793a\:3059\:308b",
+"SystemFileAssociationsText" -> "\:30b7\:30b9\:30c6\:30e0\:306e\:30d5\:30a1\:30a4\:30eb\:95a2\:9023\:4ed8\:3051\:ff1a",
+"EditFileAssociationsText" -> "\:7de8\:96c6\[Ellipsis]",
+"ChatServicesHeader" -> "\:30c1\:30e3\:30c3\:30c8\:30b5\:30fc\:30d3\:30b9",
+"AutoStartChatServicesText" -> "\:30c1\:30e3\:30c3\:30c8\:30b5\:30fc\:30d3\:30b9\:3092\:8a31\:53ef"}
+@|
+@@resource ImportDialogs
+{
+"DefaultsButtonLabel" -> "\:8a2d\:5b9a\:3092\:30c7\:30d5\:30a9\:30eb\:30c8\:3068\:3057\:3066\:4f7f\:7528\:3059\:308b",
+"RestoreButtonLabel" -> "\:30c7\:30d5\:30a9\:30eb\:30c8\:306e\:72b6\:614b\:306b\:623b\:308b",
+"TextLabel" -> "\:30c6\:30ad\:30b9\:30c8\:30a4\:30f3\:30dd\:30fc\:30c8\:30aa\:30d7\:30b7\:30e7\:30f3",
+"TextFileReadingMethod" -> "\:30d5\:30a1\:30a4\:30eb\:8aad\:8fbc\:307f\:65b9\:6cd5\:ff1a",
+"TextOneCell" -> "\:30d5\:30a1\:30a4\:30eb\:5168\:4f53\:3092\:5358\:4e00\:30bb\:30eb\:5185\:306b",
+"TextOneCellPerLine" -> "\:5404\:884c\:3054\:3068\:306b\:65b0\:898f\:30bb\:30eb",
+"TextOneCellPerBlankLine" -> "\:5404\:7a7a\:767d\:884c\:3054\:3068\:306b\:65b0\:898f\:30bb\:30eb",
+"TextOneCellPerTwoBlankLines" -> "2\:7a7a\:767d\:884c\:3054\:3068\:306b\:65b0\:898f\:30bb\:30eb",
+"TextCharacterEncoding" -> "\:6587\:5b57\:30b3\:30fc\:30c9\:ff1a",
+"NotebookLabel" -> "\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:30aa\:30d7\:30b7\:30e7\:30f3",
+"NotebookModern" -> "Wolfram\:30d5\:30a1\:30a4\:30eb",
+"Notebooks" -> "Wolfram\:30ce\:30fc\:30c8\:30d6\:30c3\:30af",
+"Packages" -> "Wolfram\:8a00\:8a9e\:306e\:30d1\:30c3\:30b1\:30fc\:30b8",
+"PackagesLine1" -> "\:65b0\:898f\:30bb\:30eb\:3092",
+"PackagesLine2" -> "\:884c\:306e\:7a7a\:767d\:884c\:306e\:5f8c\:306b\:4f5c\:6210\:3059\:308b\:ff0e",
+"NotebookOld" -> "\:30d0\:30fc\:30b8\:30e7\:30f32\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af",
+"NotebookParseEntire" -> "\:958b\:304f\:3068\:304d\:306b\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:5168\:4f53\:3092\:89e3\:6790\:3057\:3066\:30e1\:30e2\:30ea\:306b\:30ed\:30fc\:30c9\:3059\:308b",
+"NotebookVersionAdvisory" -> "\:30d0\:30fc\:30b8\:30e7\:30f35\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:958b\:304f\:969b\:306b\:30d0\:30fc\:30b8\:30e7\:30f3\:901a\:77e5\:30c4\:30fc\:30eb\:30d0\:30fc\:3092\:8868\:793a\:3059\:308b",
+"NotebookExplanationText1" -> "\:30d0\:30fc\:30b8\:30e7\:30f32.2\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:ff08\:62e1\:5f35\:5b50.ma\:304c\:4ed8\:3044\:3066\:3044\:308b\:30d5\:30a1\:30a4\:30eb\:ff09\:306f\:ff0c\:958b\:304f\:524d\:306b\:73fe\:5728\:306e\:30d5\:30a1\:30a4\:30eb\:5f62\:5f0f\:306b\:5909\:63db\:3059\:308b\:5fc5\:8981\:304c\:3042\:308a\:307e\:3059\:ff0e\:65b0\:3057\:3044\:30d5\:30a1\:30a4\:30eb\:306e\:30d5\:30a1\:30a4\:30eb\:540d\:306b\:306f\:ff0c\:62e1\:5f35\:5b50.nb\:304c\:4ed8\:304d\:307e\:3059\:ff0e",
+"NotebookExplanationText2" -> "\:5165\:51fa\:529b\:30bb\:30eb\:306f\:4e00\:62ec\:3067StandardForm\:ff08\:6a19\:6e96\:5f62\:ff09\:306b\:81ea\:52d5\:5909\:63db\:3067\:304d\:307e\:3059\:ff0e\:6a19\:6e96\:5f62\:3068\:306f\:3053\:306e\:30d0\:30fc\:30b8\:30e7\:30f3\:3067\:6a19\:6e96\:8a2d\:5b9a\:3068\:3057\:3066\:4f7f\:308f\:308c\:308b\:7de8\:96c6\:53ef\:80fd\:306a\:4e8c\:6b21\:5143\:306e\:6570\:5b66\:8868\:8a18\:6cd5\:306e\:3053\:3068\:3067\:3059\:ff0e",
+"NotebookConvertInput" -> "\:5165\:529b\:30bb\:30eb\:3092StandardForm\:ff08\:6a19\:6e96\:5f62\:ff09\:306b\:5909\:63db\:3059\:308b",
+"NotebookConvertOutput" -> "\:51fa\:529b\:30bb\:30eb\:3092StandardForm\:ff08\:6a19\:6e96\:5f62\:ff09\:306b\:5909\:63db\:3059\:308b",
+"NotebookExplanationText3" -> "\:3053\:306e\:30d0\:30fc\:30b8\:30e7\:30f3\:3067\:306f\:3088\:308a\:9ad8\:5ea6\:306a\:30b9\:30bf\:30a4\:30eb\:30b7\:30fc\:30c8\:306e\:8a2d\:5b9a\:304c\:53ef\:80fd\:3067\:3059\:ff0e\:73fe\:884c\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:30b9\:30bf\:30a4\:30eb\:5b9a\:7fa9\:3092\:5909\:66f4\:3057\:305f\:5834\:5408\:306b\:306f\:ff0c\:4ee5\:4e0b\:306e\:9805\:76ee\:3092\:30c1\:30a7\:30c3\:30af\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e",
+"NotebookPreserveStylesheet" -> "\:30ab\:30b9\:30bf\:30de\:30a4\:30ba\:3057\:305f\:30b9\:30bf\:30a4\:30eb\:30b7\:30fc\:30c8\:3092\:6b8b\:3057\:3066\:304a\:304f",
+"NotebookExplanationText4" -> "PostScript\:30bb\:30eb\:306e\:30d3\:30c3\:30c8\:30de\:30c3\:30d7\:30ad\:30e3\:30c3\:30b7\:30e5\:306f\:5909\:63db\:3067\:304d\:307e\:305b\:3093\:ff0e\:30ad\:30e3\:30c3\:30b7\:30e5\:306e\:81ea\:52d5\:518d\:751f\:3092\:884c\:3046\:306b\:306f\:4ee5\:4e0b\:306e\:9805\:76ee\:3092\:30c1\:30a7\:30c3\:30af\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e\:306a\:304a\:ff0c\:51e6\:7406\:306b\:306f\:6642\:9593\:304c\:304b\:304b\:308b\:304b\:3082\:3057\:308c\:307e\:305b\:3093\:ff0e",
+"NotebookGenerateCaches" -> "\:3059\:3079\:3066\:306e\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9\:30bb\:30eb\:306b\:30d3\:30c3\:30c8\:30de\:30c3\:30d7\:30ad\:30e3\:30c3\:30b7\:30e5\:3092\:8a2d\:3051\:308b",
+"GIFLabel" -> "GIF\:30aa\:30d7\:30b7\:30e7\:30f3",
+"GIFIndex" -> "\:30a4\:30f3\:30dd\:30fc\:30c8\:3059\:308b\:753b\:50cf\:306e\:30a4\:30f3\:30c7\:30c3\:30af\:30b9\:ff1a",
+"JPEGLabel" -> "JPEG\:30aa\:30d7\:30b7\:30e7\:30f3",
+"JPEGColorReduction" -> "\:6e1b\:8272\:ff1a",
+"JPEGDithering" -> "\:6e1b\:8272\:306e\:305f\:3081\:306e\:30c7\:30a3\:30b6\:30ea\:30f3\:30b0\:ff1a",
+"TIFFLabel" -> "TIFF\:30aa\:30d7\:30b7\:30e7\:30f3",
+"TIFFIndex" -> "\:30a4\:30f3\:30dd\:30fc\:30c8\:3059\:308b\:753b\:50cf\:306e\:30a4\:30f3\:30c7\:30c3\:30af\:30b9\:ff1a",
+"PDFLabel" -> "PDF\:30aa\:30d7\:30b7\:30e7\:30f3",
+"PDFPages" -> "\:30a4\:30f3\:30dd\:30fc\:30c8\:3059\:308b\:30da\:30fc\:30b8\:ff1a",
+"PDFEditable" -> "\:7de8\:96c6\:53ef\:80fd",
+"PDFTooltip1" -> "\:300c\:7de8\:96c6\:53ef\:80fd\:300d\:304c\:9078\:629e\:3055\:308c\:3066\:3044\:308b\:5834\:5408\:ff0cPDF\:306f\:7de8\:96c6\:53ef\:80fd\:306aGraphics[...]\:5f0f\:306b\:5909\:63db\:3055\:308c\:307e\:3059\:ff0e\:300c\:7de8\:96c6\:53ef\:80fd\:300d\:304c\:9078\:629e\:3055\:308c\:3066\:3044\:306a\:3044\:5834\:5408\:ff0cPDF\:306f\:9759\:7684\:306b\:8868\:793a\:3055\:308c\:307e\:3059\:ff08\:3059\:3079\:3066\:306e\:30b7\:30b9\:30c6\:30e0\:3067\:30b5\:30dd\:30fc\:30c8\:3055\:308c\:3066\:3044\:308b\:308f\:3051\:3067\:306f\:3042\:308a\:307e\:305b\:3093\:ff09\:ff0e"
+}
+@|
+@@resource ExportDialogs
+{
+"Automatic" -> "\:81ea\:52d5",
+"Printer" -> "\:30d7\:30ea\:30f3\:30bf",
+"Screen" -> "\:30b9\:30af\:30ea\:30fc\:30f3",
+"Custom" -> "\:30ab\:30b9\:30bf\:30e0",
+"PackageLabel" -> "\:30d1\:30c3\:30b1\:30fc\:30b8\:30aa\:30d7\:30b7\:30e7\:30f3",
+"PackageLines" -> "\:30bb\:30eb\:9593\:306b\:633f\:5165\:3059\:308b\:7a7a\:767d\:884c\:6570\:ff1a",
+"PackageWindow" -> "\:30a6\:30a3\:30f3\:30c9\:30a6\:306e\:30b5\:30a4\:30ba\:3068\:4f4d\:7f6e\:3092\:4fdd\:5b58\:3059\:308b",
+"PackageCode" -> "Code\:30bb\:30eb\:306e\:307f\:4fdd\:5b58\:3059\:308b",
+"EPSLabel" -> "EPS\:30aa\:30d7\:30b7\:30e7\:30f3",
+"EPSIncludePreview" -> "TIFF\:30d7\:30ec\:30d3\:30e5\:30fc\:3092\:542b\:3080",
+"EPSIncludeFonts" -> "Wolfram\:30b7\:30b9\:30c6\:30e0\:30d5\:30a9\:30f3\:30c8\:3092\:542b\:3080",
+"PDFAttachSource" -> "\:30bd\:30fc\:30b9\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:6dfb\:4ed8\:3059\:308b",
+"GIFLabel" -> "GIF\:30aa\:30d7\:30b7\:30e7\:30f3",
+"GIFInterlaced" -> "\:30a4\:30f3\:30bf\:30fc\:30ec\:30fc\:30b9\:753b\:50cf\:3092\:4f5c\:6210\:3059\:308b",
+"GIFDithering" -> "\:30c7\:30a3\:30b6\:30ea\:30f3\:30b0\:3092\:4f7f\:3046",
+"GIFTransparency" -> "\:3053\:306e\:8272\:3092\:900f\:904e\:8272\:306b\:4f7f\:3046\:ff1a",
+"GIFBackground" -> "\:3053\:306e\:8272\:3092\:80cc\:666f\:306b\:4f7f\:3046\:ff1a",
+"JPEGLabel" -> "JPEG\:30aa\:30d7\:30b7\:30e7\:30f3",
+"JPEGColorSpace" -> "\:30a8\:30ad\:30b9\:30dd\:30fc\:30c8\:3055\:308c\:305f\:753b\:50cf\:306e\:8272\:7a7a\:9593\:ff1a",
+"JPEGCompressionLevel" -> "\:5727\:7e2e\:30ec\:30d9\:30eb(0 - 100)\:ff1a",
+"JPEGSmoothingFactor" -> "\:30b9\:30e0\:30fc\:30b8\:30f3\:30b0\:4fc2\:6570(0.0 - 1.0)\:ff1a",
+"JPEGProgressiveFile" -> "\:30d7\:30ed\:30b0\:30ec\:30c3\:30b7\:30d6\:30d5\:30a1\:30a4\:30eb\:3092\:4f5c\:6210\:3059\:308b",
+"TIFFLabel" -> "TIFF\:30aa\:30d7\:30b7\:30e7\:30f3",
+"TIFFCompressionLabel" -> "\:5727\:7e2e",
+"TIFFAdvancedLabel" -> "\:8a73\:7d30\:8a2d\:5b9a",
+"TIFFImageEncoding" -> "\:753b\:50cf\:7b26\:53f7\:5316\:ff1a",
+"TIFFDiffPredictor" -> "\:5dee\:5206\:4e88\:6e2c\:ff1a",
+"TIFFDiffPredictorNone" -> "\:306a\:3057",
+"TIFFDiffPredictorHorizontal" -> "\:6c34\:5e73\:65b9\:5411",
+"TIFFByteOrdering" -> "\:30d0\:30a4\:30c8\:9806\:5e8f\:ff1a",
+"TIFFByteorderingBE" -> "\:6700\:4e0a\:4f4d\:30d0\:30a4\:30c8\:304c\:6700\:521d",
+"TIFFByteOrderingLE" -> "\:6700\:4e0a\:4f4d\:30d0\:30a4\:30c8\:304c\:6700\:5f8c",
+"TIFFResolution" -> "\:753b\:50cf\:89e3\:50cf\:5ea6\:ff1a",
+"TIFFResolutionTooltip" -> {{"\:6b63\:5f0f\:306a\:30aa\:30d7\:30b7\:30e7\:30f3\:ff1a"}, {"Automatic"}, {"0 \:4ee5\:5916\:306e\:6574\:6570"}},
+"TIFFPixelCompFormat" -> "\:30d4\:30af\:30bb\:30eb\:69cb\:6210\:5f62\:5f0f\:ff1a",
+"TIFFPixelCompChunky" -> "\:70b9\:9806\:6b21\:5f62\:5f0f",
+"TIFFPixelCompPlanar" -> "\:9762\:9806\:6b21\:5f62\:5f0f",
+"TIFFIncludingMaxMin" -> "\:6700\:5927\:ff0f\:6700\:5c0f\:69cb\:6210\:5024\:3092\:542b\:3080",
+"VectorLabel" -> "\:30d9\:30af\:30c8\:30eb\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9\:30aa\:30d7\:30b7\:30e7\:30f3",
+"VectorGraphicsContainingTransparency" -> "\:900f\:660e\:6027\:3092\:542b\:3080\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9\:ff1a",
+"VectorGraphicsContainingSmoothShading" -> "\:30b9\:30e0\:30fc\:30ba\:30b7\:30a7\:30fc\:30c7\:30a3\:30f3\:30b0\:3092\:542b\:3080\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9\:ff1a",
+"VectorAutomaticRendering" -> "\:81ea\:52d5\:7684\:306b\:6700\:9069\:306a\:8868\:73fe\:3092\:9078\:3076",
+"VectorRasterizeFeatures" -> "\:30d3\:30c3\:30c8\:30de\:30c3\:30d7\:8868\:73fe\:3092\:4f7f\:3046",
+"VectorRenderFeatures" -> "\:6700\:9ad8\:753b\:8cea\:30d9\:30af\:30c8\:30eb\:8868\:73fe\:3092\:4f7f\:3046",
+"VectorApproximateFeatures" -> "\:6700\:3082\:9069\:5408\:3059\:308b\:30d9\:30af\:30c8\:30eb\:8868\:73fe\:3092\:4f7f\:3046",
+"VectorRasterResolution" -> "\:30e9\:30b9\:30bf\:30e9\:30a4\:30ba\:306e\:89e3\:50cf\:5ea6\:ff1a",
+"XHTMLLabel" -> "XHTML\:30aa\:30d7\:30b7\:30e7\:30f3", 
+"XHTMLConvertLinkedNotebooks" -> "\:30ea\:30f3\:30af\:3055\:308c\:305f\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:542b\:3080", 
+"XHTMLContent" -> "MathML\:30b3\:30f3\:30c6\:30f3\:30c4\:30a8\:30ec\:30e1\:30f3\:30c8\:3092\:542b\:3080", 
+"XHTMLMathOutput" -> "\:30bf\:30a4\:30d7\:30bb\:30c3\:30c8\:5f0f\:5f62\:5f0f\:ff1a", 
+"XHTMLExportCellGroup" -> "\:30bb\:30eb\:30b0\:30eb\:30fc\:30d7\:306e\:30a8\:30ad\:30b9\:30dd\:30fc\:30c8\:ff1a",
+"XHTMLForwardClosed" -> "\:6b63\:65b9\:5411\:306b\:9589\:3058\:3089\:308c\:305f\:30bb\:30eb\:30b0\:30eb\:30fc\:30d7",
+"XHTMLReverseClosed" -> "\:9006\:65b9\:5411\:306b\:9589\:3058\:3089\:308c\:305f\:30bb\:30eb\:30b0\:30eb\:30fc\:30d7",
+"XHTMLConvertClosedFalse" -> "\:30bb\:30eb\:30b0\:30eb\:30fc\:30d7\:306e\:6700\:521d\:306e\:30bb\:30eb\:3092\:542b\:3080", 
+"XHTMLConvertClosedTrue" -> "\:30bb\:30eb\:30b0\:30eb\:30fc\:30d7\:306e\:5168\:30bb\:30eb\:3092\:542b\:3080", 
+"XHTMLConvertClosedLinkedPage" -> "\:30bb\:30eb\:30b0\:30eb\:30fc\:30d7\:3092\:30ea\:30f3\:30af\:3068\:3057\:3066\:542b\:3080", 
+"XHTMLCSS" -> "CSS\:3092\:542b\:3080", 
+"XHTMLMathMLLabel" -> "XHTML+MathML\:30aa\:30d7\:30b7\:30e7\:30f3", 
+"TeXLabel" -> "LaTeX\:30aa\:30d7\:30b7\:30e7\:30f3", 
+"TeXDocumentClass" -> "\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8\:30af\:30e9\:30b9\:ff1a", 
+"TeXMathOutput" -> "\:30bf\:30a4\:30d7\:30bb\:30c3\:30c8\:5f0f\:5f62\:5f0f\:ff1a", 
+"BMPLabel" -> "BMP\:30aa\:30d7\:30b7\:30e7\:30f3", 
+"JPEG2000Label" -> "JPEG2000\:30aa\:30d7\:30b7\:30e7\:30f3", 
+"JPEG2000Lossless" -> "\:30ed\:30b9\:30ec\:30b9",
+"PNMLabel" -> "PNM\:30aa\:30d7\:30b7\:30e7\:30f3", 
+"RasterImageTopOrientation" -> "\:ff08\:30d5\:30a1\:30a4\:30eb\:306b\:4fdd\:7ba1\:3055\:308c\:3066\:3044\:308b\:ff09 \:753b\:50cf\:65b9\:5411\:ff1a", 
+"RasterBitDepth" -> "\:30d3\:30c3\:30c8\:6df1\:5ea6\:ff1a", 
+"RasterImageCompression" -> "\:753b\:50cf\:5727\:7e2e\:30a2\:30eb\:30b4\:30ea\:30ba\:30e0\:ff1a", 
+"RasterCompressionLevel" -> "\:753b\:50cf\:7b26\:53f7\:5316\:306e\:5727\:7e2e\:30d1\:30e9\:30e1\:30fc\:30bf\:ff1a", 
+"RasterCompressionLevelTooltip" -> {{"\:6b63\:3057\:3044\:30aa\:30d7\:30b7\:30e7\:30f3\:ff1a"}, {"Automatic"}, {"0.0\:30681.0\:306e\:9593\:306e\:5b9f\:6570"}}, "RasterTileSize" -> "\:753b\:50cf\:30bf\:30a4\:30eb\:306e\:753b\:7d20\:306e\:5927\:304d\:3055\:ff1a", 
+"RasterTileSizeTooltip" -> {{"\:6b63\:3057\:3044\:30aa\:30d7\:30b7\:30e7\:30f3\:ff1a"}, {"Automatic"}, {"{2^m,2^n}\:306e\:5f62\:5f0f\:306e\:5024"}}, "RasterImageEncoding" -> "\:753b\:50cf\:7b26\:53f7\:5316\:30a2\:30eb\:30b4\:30ea\:30ba\:30e0\:ff1a", 
+"RasterTileDimensions" -> "\:30bf\:30a4\:30ea\:30f3\:30b0\:30a2\:30ec\:30a4", 
+"RasterTileDimensionsTooltip" -> {{"\:6b63\:3057\:3044\:30aa\:30d7\:30b7\:30e7\:30f3\:306f{x,y}\:5f62\:5f0f\:306e\:5024\:3067\:3042\:308b"}}
+}
+@|
+@@resource HistoryOverviewDialog
+{
+"WindowTitleText" -> "\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:7de8\:96c6\:5c65\:6b74\:306e\:6982\:8981",
+"SelectionOnlyLabel" -> "\:5c65\:6b74\:ff1a",
+"AllCellsText" -> "\:5168\:30bb\:30eb\:306e",
+"SelectedCellsText" -> "\:9078\:629e\:3057\:305f\:30bb\:30eb\:306e",
+"TrackHistoryText" -> "\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:5c65\:6b74\:306e\:8ffd\:8de1",
+"CopyDataLabel" -> "\:751f\:30c7\:30fc\:30bf\:3092\:30b3\:30d4\:30fc\:3059\:308b",
+"CopyImageLabel" -> "\:753b\:50cf\:3092\:30b3\:30d4\:30fc\:3059\:308b",
+"ClearHistoryLabel" -> "\:5c65\:6b74\:3092\:30af\:30ea\:30a2\:3059\:308b",
+"ClearHistoryWarning1Text" -> "\:3053\:308c\:3089\:306e\:30bb\:30eb\:306e\:5c65\:6b74\:3092\:30af\:30ea\:30a2\:3057\:307e\:3059\:304b\:ff1f", 
+"ClearHistoryWarning2Text" -> "\:5168\:30bb\:30eb\:306e\:5c65\:6b74\:3092\:30af\:30ea\:30a2\:3057\:307e\:3059\:304b\:ff1f", 
+"GraphicsText" -> "\:5909\:66f4\:306e\:6642\:9593\:8a18\:9332",
+"UnavailableText" -> "\:5229\:7528\:3067\:304d\:307e\:305b\:3093",
+"FirstEditLabel" -> "\:521d\:56de\:7de8\:96c6",
+"LastEditLabel" -> "\:6700\:7d42\:7de8\:96c6",
+"TotalByteLabel" -> "\:5168\:30d0\:30a4\:30c8\:6570",
+"ContentByteLabel" -> "\:5185\:5bb9\:306e\:30d0\:30a4\:30c8\:6570",
+"CellNumberLabel" -> "\:30bb\:30eb\:6570\:ff1a",
+"EditNumberLabel" -> "\:7de8\:96c6\:56de\:6570",
+"MergeIntervalLabel" -> "\:30a4\:30f3\:30bf\:30fc\:30d0\:30eb\:306e\:30de\:30fc\:30b8",
+"OutOfText" -> "\:3000\:3000\:5168\:30bb\:30eb\:6570\:ff1a",
+"SecondsText" -> "  \:79d2",
+"SummaryText" ->  "\:30bb\:30eb\:30b5\:30a4\:30ba\:72b6\:6cc1",
+"BlockZoomText" -> "\:30af\:30ea\:30c3\:30af\:3059\:308b\:3068\:6642\:9593\:8ef8\:306e\:3053\:306e\:30d6\:30ed\:30c3\:30af\:304c\:62e1\:5927\:3055\:308c\:307e\:3059",
+"ResetZoomText" -> "\:30af\:30ea\:30c3\:30af\:3059\:308b\:3068\:30ea\:30bb\:30c3\:30c8\:3057\:307e\:3059",
+"UndoZoomText" -> "\:30af\:30ea\:30c3\:30af\:3059\:308b\:3068\:524d\:56de\:306e\:30ba\:30fc\:30e0\:3092\:53d6\:308a\:6d88\:3057\:307e\:3059",
+"ZoomDragText" -> "\:30ba\:30fc\:30e0\:3059\:308b\:306b\:306f\:30c9\:30e9\:30c3\:30b0\:3057\:3066\:304f\:3060\:3055\:3044",
+"PanDragText" -> "\:30d1\:30f3\:3059\:308b\:306b\:306f\:30c9\:30e9\:30c3\:30b0\:3057\:3066\:304f\:3060\:3055\:3044",
+"ZoomText" -> "\:30ba\:30fc\:30e0\:ff1a",
+"LargeCellText" -> StyleBox["\:8868\:793a\:3059\:308b\:306b\:306f\:30bb\:30eb\:304c\:5927\:304d\:3059\:304e\:307e\:3059\:ff01", FontSize -> CurrentValue[{"ControlsFontSize",Large}]],
+"DisplayWarning1Text" -> "\:30bb\:30eb\:5c65\:6b74\:60c5\:5831\:304c\:3042\:308a\:307e\:305b\:3093",
+"DisplayWarning2Text" -> "\:6709\:52b9\:306a\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304c\:5b58\:5728\:3057\:307e\:305b\:3093",
+"DisplayWarning3Text" -> "\:7121\:52b9\:306a\:5c65\:6b74\:60c5\:5831\:304c\:691c\:51fa\:3055\:308c\:307e\:3057\:305f"
+}
+@|
+@@resource GraphicsInspectorDialog
+{
+"ToolsLabel" -> "\:30c4\:30fc\:30eb",
+"OperationsLabel" -> "\:64cd\:4f5c",
+"LockTooltip" -> "\:30ed\:30c3\:30af",
+"UnlockTooltip" -> "\:30ed\:30c3\:30af\:89e3\:9664",
+"GroupTooltip" -> "\:30b0\:30eb\:30fc\:30d7\:5316",
+"UngroupTooltip" -> "\:30b0\:30eb\:30fc\:30d7\:5316\:89e3\:9664",
+"MoveToBackTooltip" -> "\:6700\:80cc\:9762\:306b\:79fb\:52d5",
+"MoveToFrontTooltip" -> "\:6700\:524d\:9762\:306b\:79fb\:52d5",
+"MoveBackwardTooltip"-> "\:80cc\:9762\:306b\:79fb\:52d5",
+"MoveForwardTooltip" -> "\:524d\:9762\:306b\:79fb\:52d5",
+"AlignLeftSidesTooltip" -> "\:6c34\:5e73\:65b9\:5411\:5de6\:306b\:6574\:5217",
+"AlignCentersVerticallyTooltip" -> "\:4e2d\:592e\:3092\:7e26\:306b\:63c3\:3048\:308b",
+"AlignRightSidesTooltip" -> "\:6c34\:5e73\:65b9\:5411\:53f3\:306b\:6574\:5217",
+"AlignBottomsTooltip" -> "\:5782\:76f4\:65b9\:5411\:4e0b\:306b\:6574\:5217",
+"AlignCentersHorizontallyTooltip" -> "\:4e2d\:592e\:3092\:6a2a\:306b\:63c3\:3048\:308b",
+"AlignTopsTooltip" -> "\:5782\:76f4\:65b9\:5411\:4e0a\:306b\:6574\:5217",
+"DistributeLeftSidesTooltip" -> "\:6c34\:5e73\:65b9\:5411\:5de6\:306b\:5206\:5e03",
+"DistributeCentersHorizontallyTooltip" -> "\:6c34\:5e73\:65b9\:5411\:4e2d\:592e\:306b\:5206\:5e03",
+"DistributeRightSidesTooltip" -> "\:6c34\:5e73\:65b9\:5411\:53f3\:306b\:5206\:5e03",
+"DistributeSpaceHorizontallyTooltip" -> "\:6c34\:5e73\:65b9\:5411\:7b49\:9593\:9694\:306b\:5206\:5e03",
+"DistributeTopsTooltip" -> "\:5782\:76f4\:65b9\:5411\:4e0a\:306b\:5206\:5e03",
+"DistributeCentersVerticallyTooltip" -> "\:5782\:76f4\:65b9\:5411\:4e2d\:592e\:306b\:5206\:5e03",
+"DistributeBottomsTooltip" -> "\:5782\:76f4\:65b9\:5411\:4e0b\:306b\:5206\:5e03",
+"DistributeSpaceVerticallyTooltip" -> "\:5782\:76f4\:65b9\:5411\:7b49\:9593\:9694\:306b\:5206\:5e03",
+"AlignmentGuidesEnabledTooltip" -> "\:30a2\:30e9\:30a4\:30f3\:30e1\:30f3\:30c8\:88dc\:52a9\:7dda\:3092\:8868\:793a",
+"OverrideLockEnabledTooltip" -> "\:30ed\:30c3\:30af\:3057\:305f\:30aa\:30d6\:30b8\:30a7\:30af\:30c8\:3092\:9078\:629e",
+"ResetToDefaultsTooltip" -> "\:30c7\:30d5\:30a9\:30eb\:30c8\:306e\:5916\:89b3\:306b\:623b\:3059",
+"SettingsLabel" -> "\:8a2d\:5b9a",
+"FillLabel" -> "\:5857\:308a\:3064\:3076\:3057\:8a2d\:5b9a",
+"FillText" -> "\:5857\:308a\:3064\:3076\:3059",
+"OpacityLabel" -> "\:4e0d\:900f\:660e\:5ea6",
+"StrokeLabel" -> "\:30b9\:30c8\:30ed\:30fc\:30af\:8a2d\:5b9a",
+"StrokeText" -> "\:8fba\:3092\:52a0\:3048\:3066\:63cf\:304f",
+"ThicknessLabel" -> "\:592a\:3055",
+"PointsText" -> "\:30dd\:30a4\:30f3\:30c8",
+"ScaledText" -> "\:62e1\:5927\:7e2e\:5c0f",
+"UserText" -> "\:30e6\:30fc\:30b6",
+"DashingLabel" -> "\:70b9\:7dda\:30fb\:7834\:7dda",
+"CapLabel" -> "\:7dda\:306e\:30ad\:30e3\:30c3\:30d7",
+"JoinLabel" -> "\:7dda\:306e\:63a5\:7d9a",
+"MiterLabel" -> "\:30de\:30a4\:30bf\:30fc\:30ea\:30df\:30c3\:30c8",
+"Automatic" -> "\:81ea\:52d5",
+"Bevel" -> "\:30d9\:30d9\:30eb",
+"Butt" -> "\:30d0\:30c3\:30c8",
+"Miter" -> "\:30de\:30a4\:30bf\:30fc",
+"Round" -> "\:30e9\:30a6\:30f3\:30c9",
+"Square" -> "\:30b9\:30af\:30a8\:30a2",
+"PointSizeLabel" -> "\:5927\:304d\:3055",
+"RectanglesLabel" -> "\:9577\:65b9\:5f62",
+"RoundingRadiusLabel" -> "\:89d2\:4e38\:306e\:534a\:5f84",
+"TextLabel" -> "\:30c6\:30ad\:30b9\:30c8",
+"StyleText" -> "\:30b9\:30bf\:30a4\:30eb",
+"FontLabel" -> "\:30d5\:30a9\:30f3\:30c8",
+"FontPanelTooltip" -> "\:30d5\:30a9\:30f3\:30c8\:30d1\:30cd\:30eb\:3092\:8868\:793a",
+"AlignmentLabel" -> "\:30a2\:30e9\:30a4\:30f3\:30e1\:30f3\:30c8",
+"ForegroundLabel" -> "\:524d\:666f",
+"BackgroundLabel" -> "\:80cc\:666f",
+"BackgroundText" -> "\:80cc\:666f\:3092\:63cf\:753b",
+"ClearFormatText" -> "\:66f8\:5f0f\:3092\:30af\:30ea\:30a2",
+"ArrowsLabel" -> "\:93c3",
+"ArrowLabel" -> "\:93c3",
+"ArrowDoubleText" -> "\:4e21\:7aef\:306b\:93c3",
+"ArrowReverseText" -> "\:9006",
+"CustomText" -> "\:30ab\:30b9\:30bf\:30e0...",
+"ArrowSizeText" -> "\:93c3\:306e\:5927\:304d\:3055",
+"ArrowPositionText" -> "\:4f4d\:7f6e",
+"WindowTitleText" -> "\:63cf\:753b\:30c4\:30fc\:30eb",
+"NewLabel" -> "\:65b0\:898f",
+"LockLabel" -> "\:30ed\:30c3\:30af",
+"GroupLabel" -> "\:30b0\:30eb\:30fc\:30d7\:5316",
+"ArrangeLabel" -> "\:30a2\:30ec\:30f3\:30b8",
+"AlignLabel" -> "\:6574\:5217",
+"DistributeLabel" -> "\:5206\:5e03",
+"SystemColorDialogLabel" -> "\:305d\:306e\:4ed6\:306e\:8272 \[RightGuillemet]"
+}
+@|
+@@resource HeadersFootersDialog
+{
+"CapsRomanNumberLabel" -> "\:30ed\:30fc\:30de\:6570\:5b57",
+"CenterLabel" -> "\:4e2d\:592e",
+"DashedNumberLabel" -> "\:30cf\:30a4\:30d5\:30f3\:4ed8\:304d\:6570\:5b57",
+"DateFormatCounterLabel" -> "\[LeftGuillemet]\:65e5\:4ed8\[RightGuillemet]",
+"DateFormatLabel" -> "\:65e5\:4ed8",
+"DateFormatWindowTitle" -> "\:65e5\:4ed8\:5f62\:5f0f\:306e\:9078\:629e...",
+"DecimalNumberLabel" -> "\:5341\:9032\:6570",
+"DefaultLabel" -> "\:30c7\:30d5\:30a9\:30eb\:30c8\:306e\:72b6\:614b\:306b\:623b\:3059",
+"EditorsTooltip" -> "\:7de8\:96c6\:3059\:308b\:306b\:306f\:30af\:30ea\:30c3\:30af\:3059\:308b",
+"FacingLabel" -> "\:30da\:30fc\:30b8\:3092\:5411\:304b\:3044\:5408\:305b\:306b\:3059\:308b\:ff0e\:6700\:521d\:306e\:30da\:30fc\:30b8\:306f",
+"FileNameLabel" -> "\:30d5\:30a1\:30a4\:30eb\:540d",
+"FirstLabel" -> "\:6700\:521d",
+"FirstPageText" -> "\:6700\:521d\:306e\:30da\:30fc\:30b8\:306b\:542b\:3080",
+"FooterLabel" -> "\:30d5\:30c3\:30bf",
+"FormatCodeLabel" -> "\:66f8\:5f0f\:30b3\:30fc\:30c9",
+"HeaderLabel" -> "\:30d8\:30c3\:30c0",
+"LastLabel" -> "\:6700\:5f8c",
+"LeftLabel" -> "\:5de6",
+"LeftLabelSmall" -> "\:5de6",
+"LeftPageLabel" -> "\:5de6\:30da\:30fc\:30b8",
+"OptionsLabel" -> "\:30aa\:30d7\:30b7\:30e7\:30f3",
+"PageLineText" -> "\:7dda\:3092\:542b\:3080",
+"PageNumberCounterLabel" -> "\[LeftGuillemet]\:30da\:30fc\:30b8\[RightGuillemet]",
+"PageNumberLabel" -> "\:30da\:30fc\:30b8\:756a\:53f7",
+"PageTotalCounterLabel" -> "\[LeftGuillemet]\:5168\:30da\:30fc\:30b8\:6570\[RightGuillemet]",
+"PageTotalLabel" -> "\:5168\:30da\:30fc\:30b8\:6570",
+"PageNumberWindowTitle" -> "\:30da\:30fc\:30b8\:756a\:53f7\:5f62\:5f0f\:306e\:9078\:629e...",
+"PreviewCodeLabel" -> "\:30d7\:30ec\:30d3\:30e5\:30fc",
+"ResetLabel" -> "\:30ea\:30bb\:30c3\:30c8",
+"RightLabel" -> "\:53f3",
+"RightLabelSmall" -> "\:53f3",
+"RightPageLabel" -> "\:53f3\:30da\:30fc\:30b8",
+"RomanNumberLabel" -> "\:5c0f\:6587\:5b57\:30ed\:30fc\:30de\:6570\:5b57",
+"RunningTextCellStyle" -> "\:62bd\:51fa\:5143\:306e\:30bb\:30eb\:306e\:30b9\:30bf\:30a4\:30eb",
+"RunningTextDefault" -> "\:30c7\:30d5\:30a9\:30eb\:30c8\:30c6\:30ad\:30b9\:30c8",
+"RunningTextEntireCell" -> "\:30bb\:30eb\:5168\:4f53",
+"RunningTextExcluded" -> GridBox[{{"\:9664\:5916\:3059\:308b\:5358\:8a9e"}, {"\:ff08\:5927\:6587\:5b57\:30fb\:5c0f\:6587\:5b57\:306f\:533a\:5225\:305b\:305a"}, {"\:30b3\:30f3\:30de\:3067\:533a\:5207\:3063\:3066\:5165\:529b\:3059\:308b\:ff09"}}, GridBoxAlignment -> {"Columns" -> {{Right}}}],
+"RunningTextFirstCell" -> "\:5404\:30da\:30fc\:30b8\:306e\:30bb\:30eb\:306e\:4f4d\:7f6e",
+"RunningTextCounterLabel" -> "\[LeftGuillemet]\:30b3\:30f3\:30c6\:30f3\:30c4\:304b\:3089\:62bd\:51fa\[RightGuillemet]",
+"RunningTextNumWords" -> "\:8868\:793a\:3059\:308b\:3082\:306e",
+"RunningTextNumWords2" -> (Grid[{{"\:6700\:521d\:306e", #1, "\:8a9e"}}] &) ,
+"RunningTextOffset" -> "\:30da\:30fc\:30b8\:30aa\:30d5\:30bb\:30c3\:30c8",
+"RunningTextPopup" -> "\:30b3\:30f3\:30c6\:30f3\:30c4\:304b\:3089\:62bd\:51fa...",
+"RunningTextWindowTitle" -> "\:300c\:30b3\:30f3\:30c6\:30f3\:30c4\:304b\:3089\:62bd\:51fa\:300d\:30c0\:30a4\:30a2\:30ed\:30b0",
+"SelectPageTooltip" -> "\:30af\:30ea\:30c3\:30af\:3057\:3066\:3053\:306e\:30da\:30fc\:30b8\:3092\:9078\:629e\:3059\:308b",
+"SelectTooltip" -> "\:30af\:30ea\:30c3\:30af\:3057\:3066\:9078\:629e\:3059\:308b",
+"SetAsDefaultLabel" -> "\:30c7\:30d5\:30a9\:30eb\:30c8\:8a2d\:5b9a\:306b\:3059\:308b",
+"SinglePageLabel" -> "\:5358\:4e00\:30da\:30fc\:30b8",
+"StartPageLabel" -> "\:958b\:59cb\:30da\:30fc\:30b8\:756a\:53f7",
+"WavyNumberLabel" -> "\:30c1\:30eb\:30c0\:4ed8\:304d\:6570\:5b57",
+"WindowTitle" -> "\:30d8\:30c3\:30c0\:3068\:30d5\:30c3\:30bf - ",
+"RunningTextPreviewText" -> "A quick brown fox jumps over the lazy dog. The quick brown fox jumps over a lazy dog. The quick fox jumps over the lazy brown dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dogs."
+}
+@|
+@@resource InsertCitationDialog
+{
+"FindLabel" -> "\:691c\:7d22",
+"ClearLabel" -> "\:30af\:30ea\:30a2",
+"InsertLabel" -> "\:633f\:5165",
+"AuthorID" -> "\:4f5c\:8005",
+"YearID" -> "\:5e74 ",
+"TitleID" -> "\:30bf\:30a4\:30c8\:30eb",
+"Sort1Label" -> "\:30bd\:30fc\:30c8",
+"Sort2Label" -> "\:30bd\:30fc\:30c8\:3092\:623b\:3059",
+"WindowTitle" -> "\:5f15\:7528\:306e\:633f\:5165",
+"StyleLabel" -> "\:30b9\:30bf\:30a4\:30eb",
+"WindowTitle2" -> "\:5f15\:7528\:5f62\:5f0f",
+"WindowTitle3" -> "\:6ce8\:91c8\:3092\:633f\:5165",
+"WindowTitle4" -> "\:6ce8\:91c8\:30b9\:30bf\:30a4\:30eb"
+}
+@|
+@@resource FindReplaceDialog Macintosh
+{
+"FindNextLabel" -> "\:6b21\:3078",
+"FindPrevLabel" -> "\:524d\:3078",
+"FindWhatLabel" -> "\:691c\:7d22\:6587\:ff1a",
+"IgnoreCaseLabel" -> "\:5927\:6587\:5b57\:3068\:5c0f\:6587\:5b57\:306e\:533a\:5225\:306a\:3057",
+"ReplaceAllLabel" -> "\:3059\:3079\:3066\:7f6e\:63db",
+"ReplaceFindLabel" -> "\:7f6e\:63db\:3057\:3066\:304b\:3089\:6b21\:3092\:691c\:7d22",
+"ReplaceLabel" -> "\:7f6e\:63db",
+"ReplaceWithLabel" -> "\:7f6e\:63db\:6587\:ff1a",
+"StatusLabel" -> "\:72b6\:614b\:ff1a",
+"WholeWordLabel" -> "\:5358\:8a9e\:306e\:5b8c\:5168\:306a\:30de\:30c3\:30c1",
+"WindowTitle" -> "\:691c\:7d22",
+"WraparoundLabel" -> "\:6587\:66f8\:5168\:4f53",
+"ReplaceAllWarning1" -> "\:3059\:3079\:3066\:306e`1`\:3092`2`\:306b\:7f6e\:63db\:3057\:307e\:3059\:304b\:ff1f",
+"ReplaceAllWarning2" -> "\:3053\:306e\:52d5\:4f5c\:306f\:53d6\:6d88\:3057\:3067\:304d\:307e\:305b\:3093\:ff0e"
+}
+@|
+@@resource FindReplaceDialog
+{
+"FindNextLabel" -> "\:6b21\:3092\:691c\:7d22",
+"FindPrevLabel" -> "\:524d\:3092\:691c\:7d22",
+"FindWhatLabel" -> "\:691c\:7d22\:6587\:ff1a",
+"IgnoreCaseLabel" -> "\:5927\:6587\:5b57\:3068\:5c0f\:6587\:5b57\:3092\:533a\:5225",
+"ReplaceAllLabel" -> "\:3059\:3079\:3066\:7f6e\:63db",
+"ReplaceFindLabel" -> "\:7f6e\:63db\:3057\:3066\:304b\:3089\:6b21\:3092\:691c\:7d22",
+"ReplaceLabel" -> "\:7f6e\:63db",
+"ReplaceWithLabel" -> "\:7f6e\:63db\:6587\:ff1a",
+"StatusLabel" -> "\:72b6\:614b\:ff1a",
+"WholeWordLabel" -> "\:5358\:8a9e\:306e\:5b8c\:5168\:306a\:30de\:30c3\:30c1",
+"WindowTitle" -> "\:691c\:7d22\:3068\:7f6e\:63db",
+"WraparoundLabel" -> "\:6587\:66f8\:5168\:4f53",
+"ReplaceAllWarning1" -> "\:3059\:3079\:3066\:306e`1`\:3092`2`\:306b\:7f6e\:63db\:3057\:307e\:3059\:304b\:ff1f",
+"ReplaceAllWarning2" -> "\:3053\:306e\:52d5\:4f5c\:306f\:53d6\:6d88\:3057\:3067\:304d\:307e\:305b\:3093\:ff0e"
+}
+@|
+@@resource DrawingToolsDialog Macintosh
+{
+"WindowTitleText" -> "2D\:306e\:63cf\:753b",
+"SelectToolText" -> "\:9078\:629e/\:79fb\:52d5/\:30b5\:30a4\:30ba\:5909\:66f4(o)",
+"GetCoordinatesToolText" -> "\:5ea7\:6a19\:306e\:53d6\:5f97(.)",
+"DrawPointToolText" -> "\:70b9(p)",
+"DrawLineToolText" -> "\:76f4\:7dda(l)",
+"DrawPolylineToolText" -> "\:7dda\:5206(s)",
+"DrawArrowToolText" -> "\:77e2\:5370(a)",
+"DrawPolygonToolText" -> "\:591a\:89d2\:5f62(g)",
+"DrawCircleToolText" -> "\:5186(c)",
+"DrawDiskToolText" -> "\:5186\:677f(d)",
+"DrawRectangleToolText" -> "\:9577\:65b9\:5f62(r)",
+"DrawBoxToolText" -> "\:30dc\:30c3\:30af\:30b9(b)",
+"DrawFreehandToolText" -> "\:30d5\:30ea\:30fc\:30cf\:30f3\:30c9(f)",
+"PlaceMathToolText" -> "\:6570\:5b66\:7684\:30c6\:30ad\:30b9\:30c8(m)",
+"PlaceTextToolText" -> "\:30c6\:30ad\:30b9\:30c8(t)",
+"SampleStyleToolText" -> "\:30b9\:30bf\:30a4\:30eb\:306e\:62bd\:51fa(e)",
+"NewGraphicButtonText" -> "\:65b0\:898f\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9/\:30a4\:30f3\:30bb\:30c3\:30c8(CTRL-1)",
+"GraphicsInspectorButtonText" -> "\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9\:30a4\:30f3\:30b9\:30da\:30af\:30bf(CTRL-i)",
+"DoubleClickToKeepText" -> "\:ff08\:7dad\:6301\:3059\:308b\:305f\:3081\:306b\:306f\:30c0\:30d6\:30eb\:30af\:30ea\:30c3\:30af\:ff0e\:ff09",
+"DoubleClickToKeepShiftDragToConstrainText" -> "\:ff08\:7dad\:6301\:3059\:308b\:306b\:306f\:30c0\:30d6\:30eb\:30af\:30ea\:30c3\:30af\:ff0e\:5f62\:72b6\:3092\:5236\:9650\:3059\:308b\:306b\:306fSHIFT-\:30c9\:30e9\:30c3\:30b0\:ff0e\:ff09",
+"GetCoordinatesTooltipText" -> "\:ff08\:5ea7\:6a19\:30de\:30fc\:30ab\:30fc\:306e\:8a2d\:7f6e\:306b\:306f\:30af\:30ea\:30c3\:30af\:ff0c\:5ea7\:6a19\:30de\:30fc\:30ab\:30fc\:306e\:524a\:9664\:306b\:306fCMD-\:30af\:30ea\:30c3\:30af\:ff0e\:ff09\n\:ff08\:5ea7\:6a19\:30d1\:30b9\:306e\:30de\:30fc\:30ab\:30fc\:8a2d\:7f6e\:306b\:306f\:30c9\:30e9\:30c3\:30b0\:ff0c\:9818\:57df\:306e\:30de\:30fc\:30ab\:30fc\:8a2d\:7f6e\:306b\:306fOPT-\:30c9\:30e9\:30c3\:30b0\:ff0e\:ff09\n\:ff08\:5ea7\:6a19\:30de\:30fc\:30ab\:30fc\:3092\:30af\:30ea\:30c3\:30d7\:30dc\:30fc\:30c9\:306b\:30b3\:30d4\:30fc\:3059\:308b\:306b\:306fCMD-c\:ff0e\:ff09",
+"SampleStyleTooltipText" -> "(SHIFT\[Hyphen]click to sample color only.)\n(OPT for Apply Style tool. CMD for Select tool.)",
+"ApplyStyleTooltipText"  -> "(SHIFT\[Hyphen]click to apply color only.)\n(OPT for Sample Style tool. CMD for Select tool.)"
+}
+@|
+@@resource DrawingToolsDialog X
+{
+"WindowTitleText" -> "2D\:306e\:63cf\:753b",
+"SelectToolText" -> "\:9078\:629e/\:79fb\:52d5/\:30b5\:30a4\:30ba\:5909\:66f4(o)",
+"GetCoordinatesToolText" -> "\:5ea7\:6a19\:306e\:53d6\:5f97(.)",
+"DrawPointToolText" -> "\:70b9(p)",
+"DrawLineToolText" -> "\:76f4\:7dda(l)",
+"DrawPolylineToolText" -> "\:7dda\:5206(s)",
+"DrawArrowToolText" -> "\:77e2\:5370(a)",
+"DrawPolygonToolText" -> "\:591a\:89d2\:5f62(g)",
+"DrawCircleToolText" -> "\:5186(c)",
+"DrawDiskToolText" -> "\:5186\:677f(d)",
+"DrawRectangleToolText" -> "\:9577\:65b9\:5f62(r)",
+"DrawBoxToolText" -> "\:30dc\:30c3\:30af\:30b9(b)",
+"DrawFreehandToolText" -> "\:30d5\:30ea\:30fc\:30cf\:30f3\:30c9(f)",
+"PlaceMathToolText" -> "\:6570\:5b66\:7684\:30c6\:30ad\:30b9\:30c8(m)",
+"PlaceTextToolText" -> "\:30c6\:30ad\:30b9\:30c8(t)",
+"SampleStyleToolText" -> "\:30b9\:30bf\:30a4\:30eb\:306e\:62bd\:51fa(e)",
+"NewGraphicButtonText" -> "\:65b0\:898f\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9/\:30a4\:30f3\:30bb\:30c3\:30c8(CTRL-1)",
+"GraphicsInspectorButtonText" -> "\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9\:30a4\:30f3\:30b9\:30da\:30af\:30bf(CTRL-g)",
+"DoubleClickToKeepText" -> "\:ff08\:7dad\:6301\:3059\:308b\:305f\:3081\:306b\:306f\:30c0\:30d6\:30eb\:30af\:30ea\:30c3\:30af\:ff0e\:ff09",
+"DoubleClickToKeepShiftDragToConstrainText" -> "\:ff08\:7dad\:6301\:3059\:308b\:306b\:306f\:30c0\:30d6\:30eb\:30af\:30ea\:30c3\:30af\:ff0e\:5f62\:72b6\:3092\:5236\:9650\:3059\:308b\:306b\:306fSHIFT-\:30c9\:30e9\:30c3\:30b0\:ff0e\:ff09",
+"GetCoordinatesTooltipText" -> "\:ff08\:5ea7\:6a19\:30de\:30fc\:30ab\:30fc\:306e\:8a2d\:7f6e\:306b\:306f\:30af\:30ea\:30c3\:30af\:ff0c\:5ea7\:6a19\:30de\:30fc\:30ab\:30fc\:306e\:524a\:9664\:306b\:306fCTRL-\:30af\:30ea\:30c3\:30af\:ff0e\:ff09\n\:ff08\:5ea7\:6a19\:30d1\:30b9\:306e\:30de\:30fc\:30ab\:30fc\:8a2d\:7f6e\:306b\:306f\:30c9\:30e9\:30c3\:30b0\:ff0c\:9818\:57df\:306e\:30de\:30fc\:30ab\:30fc\:8a2d\:7f6e\:306b\:306fALT-\:30c9\:30e9\:30c3\:30b0\:ff0e\:ff09\n\:ff08\:5ea7\:6a19\:30de\:30fc\:30ab\:30fc\:3092\:30af\:30ea\:30c3\:30d7\:30dc\:30fc\:30c9\:306b\:30b3\:30d4\:30fc\:3059\:308b\:306b\:306fCTRL-c\:ff0e\:ff09",
+"SampleStyleTooltipText" -> "(SHIFT\[Hyphen]click for color only.)\n(ALT for Apply Style tool.)\n(CTRL for Select tool.)",
+"ApplyStyleTooltipText"  -> "(SHIFT\[Hyphen]click for color only.)\n(ALT for Sample Style tool.)\n(CTRL for Select tool.)"
+}
+@|
+@@resource DrawingToolsDialog Windows
+{
+"WindowTitleText" -> "2D\:306e\:63cf\:753b",
+"SelectToolText" -> "\:9078\:629e/\:79fb\:52d5/\:30b5\:30a4\:30ba\:5909\:66f4(o)",
+"GetCoordinatesToolText" -> "\:5ea7\:6a19\:306e\:53d6\:5f97(.)",
+"DrawPointToolText" -> "\:70b9(p)",
+"DrawLineToolText" -> "\:76f4\:7dda(l)",
+"DrawPolylineToolText" -> "\:7dda\:5206(s)",
+"DrawArrowToolText" -> "\:77e2\:5370(a)",
+"DrawPolygonToolText" -> "\:591a\:89d2\:5f62(g)",
+"DrawCircleToolText" -> "\:5186(c)",
+"DrawDiskToolText" -> "\:5186\:677f(d)",
+"DrawRectangleToolText" -> "\:9577\:65b9\:5f62(r)",
+"DrawBoxToolText" -> "\:30dc\:30c3\:30af\:30b9(b)",
+"DrawFreehandToolText" -> "\:30d5\:30ea\:30fc\:30cf\:30f3\:30c9(f)",
+"PlaceMathToolText" -> "\:6570\:5b66\:7684\:30c6\:30ad\:30b9\:30c8(m)",
+"PlaceTextToolText" -> "\:30c6\:30ad\:30b9\:30c8(t)",
+"SampleStyleToolText" -> "\:30b9\:30bf\:30a4\:30eb\:306e\:62bd\:51fa(e)",
+"NewGraphicButtonText" -> "\:65b0\:898f\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9/\:30a4\:30f3\:30bb\:30c3\:30c8(CTRL-1)",
+"GraphicsInspectorButtonText" -> "\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9\:30a4\:30f3\:30b9\:30da\:30af\:30bf(CTRL-g)",
+"DoubleClickToKeepText" -> "\:ff08\:7dad\:6301\:3059\:308b\:305f\:3081\:306b\:306f\:30c0\:30d6\:30eb\:30af\:30ea\:30c3\:30af\:ff0e\:ff09",
+"DoubleClickToKeepShiftDragToConstrainText" -> "\:ff08\:7dad\:6301\:3059\:308b\:306b\:306f\:30c0\:30d6\:30eb\:30af\:30ea\:30c3\:30af\:ff0e\:5f62\:72b6\:3092\:5236\:9650\:3059\:308b\:306b\:306fSHIFT-\:30c9\:30e9\:30c3\:30b0\:ff0e\:ff09",
+"GetCoordinatesTooltipText" -> "\:ff08\:5ea7\:6a19\:30de\:30fc\:30ab\:30fc\:306e\:8a2d\:7f6e\:306b\:306f\:30af\:30ea\:30c3\:30af\:ff0c\:5ea7\:6a19\:30de\:30fc\:30ab\:30fc\:306e\:524a\:9664\:306b\:306fCTRL-\:30af\:30ea\:30c3\:30af\:ff0e\:ff09\n\:ff08\:5ea7\:6a19\:30d1\:30b9\:306e\:30de\:30fc\:30ab\:30fc\:8a2d\:7f6e\:306b\:306f\:30c9\:30e9\:30c3\:30b0\:ff0c\:9818\:57df\:306e\:30de\:30fc\:30ab\:30fc\:8a2d\:7f6e\:306b\:306fALT-\:30c9\:30e9\:30c3\:30b0\:ff0e\:ff09\n\:ff08\:5ea7\:6a19\:30de\:30fc\:30ab\:30fc\:3092\:30af\:30ea\:30c3\:30d7\:30dc\:30fc\:30c9\:306b\:30b3\:30d4\:30fc\:3059\:308b\:306b\:306fCTRL-c\:ff0e\:ff09",
+"SampleStyleTooltipText" -> "(SHIFT\[Hyphen]click for color only.)\n(ALT for Apply Style tool.)\n(CTRL for Select tool.)",
+"ApplyStyleTooltipText"  -> "(SHIFT\[Hyphen]click for color only.)\n(ALT for Sample Style tool.)\n(CTRL for Select tool.)"
+}
+@|
+@@resource StyleDialogDockedCell
+{
+}
+@|
+@@resource SystemInformationDialog
+{
+"WindowTitleText" -> "Wolfram\:30b7\:30b9\:30c6\:30e0\:60c5\:5831",
+"KernelTabLabel" -> "\:30ab\:30fc\:30cd\:30eb",
+"FrontEndTabLabel" -> "\:30d5\:30ed\:30f3\:30c8\:30a8\:30f3\:30c9",
+"LinksTabLabel" -> "\:30ea\:30f3\:30af",
+"ParallelTabLabel" -> "\:4e26\:5217\:51e6\:7406",
+"DevicesTabLabel" -> "\:30c7\:30d0\:30a4\:30b9",
+"NetworkTabLabel" -> "\:30cd\:30c3\:30c8\:30ef\:30fc\:30af",
+"MachineTabLabel" -> "\:6a5f\:68b0",
+"OtherTabLabel" -> "\:305d\:306e\:4ed6",
+"CopyButtonText" -> " \:30b3\:30d4\:30fc ",
+"BenchmarkButtonText" -> "\"WolframMark\:3067\:30d9\:30f3\:30c1\:30de\:30fc\:30af\:3092\:6e2c\:5b9a\[Ellipsis]\"",
+"OtherKernelsText" -> "\:305d\:306e\:4ed6\:306e\:30ab\:30fc\:30cd\:30eb\[Ellipsis]",
+"AdvancedText" -> "\:8a73\:7d30\:8a2d\:5b9a",
+"NotebookSecurityText" -> "\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:30bb\:30ad\:30e5\:30ea\:30c6\:30a3",
+"DirectoriesSmallText" -> " \:30c7\:30a3\:30ec\:30af\:30c8\:30ea",
+"FilesSmallText" -> " \:30d5\:30a1\:30a4\:30eb",
+"PackagesSmallText" -> " \:30d1\:30c3\:30b1\:30fc\:30b8",
+"AddOnsSmallText" -> " \:30a2\:30c9\:30aa\:30f3",
+"StreamsSmallText" -> " \:30b9\:30c8\:30ea\:30fc\:30e0",
+"ConnectionsSmallText" -> " \:63a5\:7d9a",
+"ProgramsSmallText" -> " \:30d7\:30ed\:30b0\:30e9\:30e0",
+"ExtensionsSmallText" -> " \:62e1\:5f35",
+"LibrariesSmallText" -> " \:30e9\:30a4\:30d6\:30e9\:30ea",
+"FeaturesSmallText" -> " \:6a5f\:80fd",
+"ControlsSmallText" -> " \:30b3\:30f3\:30c8\:30ed\:30fc\:30eb",
+"ServersSmallText" -> " \:30b5\:30fc\:30d0",
+"NotLoadedSmallText" -> "\:30ed\:30fc\:30c9\:3055\:308c\:3066\:3044\:307e\:305b\:3093",
+"ItemsSmallText" -> " \:9805\:76ee",
+"OpenPreferencesButtonText" -> "\:74b0\:5883\:8a2d\:5b9a\:3092\:958b\:304f\[Ellipsis]",
+"OpenOptionInspectorButtonText" -> "\:30aa\:30d7\:30b7\:30e7\:30f3\:30a4\:30f3\:30b9\:30da\:30af\:30bf\:3092\:958b\:304f\[Ellipsis]",
+"ScreenInformationText" -> "\:30b9\:30af\:30ea\:30fc\:30f3\:60c5\:5831",
+"GraphicsSubsystemText" -> "\:30b0\:30e9\:30d5\:30a3\:30c3\:30af\:30b9\:30b5\:30d6\:30b7\:30b9\:30c6\:30e0",
+"ControllerDeviceText" -> "\:30b3\:30f3\:30c8\:30ed\:30fc\:30e9\:30c7\:30d0\:30a4\:30b9",
+"NoControllersDetectedText" -> "\:30b3\:30f3\:30c8\:30ed\:30fc\:30e9\:30c7\:30d0\:30a4\:30b9\:304c\:691c\:51fa\:3055\:308c\:307e\:305b\:3093\:3067\:3057\:305f\:ff0e",
+"TestConnectivityButtonText" -> "\:63a5\:7d9a\:6027\:306e\:691c\:8a3c\[Ellipsis]",
+"UpdateLocalIndexButtonText" -> "\:30ed\:30fc\:30ab\:30eb\:30a4\:30f3\:30c7\:30c3\:30af\:30b9\:306e\:66f4\:65b0\[Ellipsis]"
+}
+@|
+@@resource LicenseFailureDialog
+{
+"ProcessLimitTitleText" -> "\:30e9\:30a4\:30bb\:30f3\:30b9\:30d7\:30ed\:30bb\:30b9\:5236\:9650\:306b\:9054\:3057\:307e\:3057\:305f",
+"GeneralLicenseTitleText" -> "\:30e9\:30a4\:30bb\:30f3\:30b9\:5236\:9650\:306b\:9054\:3057\:307e\:3057\:305f",
+"ProcessLimitDialogText" -> RowBox[{"\"\:304a\:6301\:3061\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:6570\:3088\:308a\:591a\:3044\:30ab\:30fc\:30cd\:30eb\:3092\:5b9f\:884c\:3057\:3088\:3046\:3068\:3057\:305f\:305f\:3081\:ff0cWolfram\:8a00\:8a9e\:30ab\:30fc\:30cd\:30eb\:306f\:8d77\:52d5\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f\:ff0e\:30d7\:30ed\:30bb\:30b9\:5236\:9650\:3092\:62e1\:5f35\:3059\:308b\:306b\:306f\:ff0c\"", 
+  ButtonBox[
+   PaneSelectorBox[{True -> 
+      StyleBox["\"Wolfram Research\"", "HyperlinkActive"], 
+     False -> StyleBox["\"Wolfram Research\"", "Hyperlink"]}, 
+    Dynamic[CurrentValue["MouseOver"]]], 
+   ButtonData -> "http://www.wolfram.com/mathematica/contact-us"], "\:307e\:3067\:3054\:9023\:7d61\:304f\:3060\:3055\:3044\:ff0e"}],
+"GeneralLicenseDialogText" -> RowBox[{"\"\:30e9\:30a4\:30bb\:30f3\:30b9\:306e\:5236\:9650\:306b\:3088\:308aWolfram\:8a00\:8a9e\:30ab\:30fc\:30cd\:30eb\:306f\:8d77\:52d5\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f\:ff0e\:73fe\:884c\:306e\:30ab\:30fc\:30cd\:30eb\:30bb\:30c3\:30b7\:30e7\:30f3\:3092\:7d42\:4e86\:3059\:308b\:304b\:4f7f\:7528\:3055\:308c\:3066\:3044\:308b\:30e9\:30a4\:30bb\:30f3\:30b9\:3092\:62e1\:5f35\:3059\:308b\:5fc5\:8981\:304c\:3042\:308a\:307e\:3059\:ff0e\"", 
+  ButtonBox[
+   PaneSelectorBox[{True -> 
+      StyleBox["\"\:8a73\:7d30\"", "HyperlinkActive"], 
+     False -> StyleBox["\"\:8a73\:7d30\"", "Hyperlink"]}, 
+    Dynamic[CurrentValue["MouseOver"]]], 
+   ButtonData -> "http://support.wolfram.com/kb/36360"]}]
+}
+@|
+@@resource EditCellTagsDialog
+{
+"WindowTitle" -> "\:30bb\:30eb\:30bf\:30b0\:306e\:7de8\:96c6",
+"CellTag" -> "\:30bb\:30eb\:30bf\:30b0\:ff1a",
+"Add" -> "\:8ffd\:52a0",
+"Remove" -> "\:524a\:9664",
+"NotebookTags" -> "\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306b\:3042\:308b\:3059\:3079\:3066\:306e\:30bb\:30eb\:30bf\:30b0\:ff1a",
+"SelectionTags" -> "\:9078\:629e\:3055\:308c\:3066\:3044\:308b\:30bb\:30eb\:306e\:30bf\:30b0\:ff1a",
+"RemoveTag" -> "\:30c0\:30d6\:30eb\:30af\:30ea\:30c3\:30af\:3057\:3066\:ff0c\:73fe\:5728\:9078\:629e\:3055\:308c\:3066\:3044\:308b\:30bb\:30eb\:304b\:3089\:30bf\:30b0\:3092\:524a\:9664\:ff0e",
+"AddTag" -> "\:30c0\:30d6\:30eb\:30af\:30ea\:30c3\:30af\:3057\:3066\:ff0c\:73fe\:5728\:9078\:629e\:3055\:308c\:3066\:3044\:308b\:30bb\:30eb\:306b\:30bf\:30b0\:3092\:8ffd\:52a0\:ff0e",
+"Close" -> "\:9589\:3058\:308b",
+"Help" -> "\:30d8\:30eb\:30d7"
+}
+@|
+@@resource KernelPropertiesDialog
+{
+"WindowTitle" ->  "\:30ab\:30fc\:30cd\:30eb\:74b0\:5883\:8a2d\:5b9a",
+"KernelName" ->  "\:30ab\:30fc\:30cd\:30eb\:540d\:ff1a",
+"AppendNameCheck" ->  "In/Out\:30d7\:30ed\:30f3\:30d7\:30c8\:306b\:540d\:524d\:3092\:4ed8\:3051\:8db3\:3059",
+"LaunchOnCheck" ->  "\:30d5\:30ed\:30f3\:30c8\:30a8\:30f3\:30c9\:8d77\:52d5\:6642\:306b\:30ab\:30fc\:30cd\:30eb\:3092\:540c\:6642\:306b\:8d77\:52d5\:3059\:308b",
+"BasicOptions" ->  "\:57fa\:672c\:8a2d\:5b9a",
+"LaunchOnText" ->   "\:8d77\:52d5\:5834\:6240\:ff1a",
+"LocalRadioButton" ->  "\:30ed\:30fc\:30ab\:30eb\:30de\:30b7\:30f3",
+"RemoteRadioButton" ->  "\:30ea\:30e2\:30fc\:30c8\:30de\:30b7\:30f3",
+"MachineName" ->  "\:30de\:30b7\:30f3\:540d\:ff1a",
+"UserName" ->   "\:30e6\:30fc\:30b6\:540d\:ff1a",
+"KernelProgram" ->  "\:30ab\:30fc\:30cd\:30eb\:30d7\:30ed\:30b0\:30e9\:30e0\:ff1a",
+"AdvancedOptions" ->  "\:8a73\:7d30\:8a2d\:5b9a",
+"WSScript" ->  "WSOpen\:306e\:5f15\:6570\:ff1a",
+"LaunchScript" ->   "\:8d77\:52d5\:30b3\:30de\:30f3\:30c9\:ff1a",
+"HelpButton" ->  "\:30d8\:30eb\:30d7",
+"OKButton" ->  "OK",
+"CancelButton" ->  "\:30ad\:30e3\:30f3\:30bb\:30eb"
+}
+@|
+@@resource DebuggerDialogs
+{
+"LocalVariables" -> "\"\:5c40\:6240\:5909\:6570\"",
+"HighlightStackFrames" -> "\"\:30bd\:30fc\:30b9\:4e2d\:3067\:30b9\:30bf\:30c3\:30af\:30d5\:30ec\:30fc\:30e0\:3092\:30cf\:30a4\:30e9\:30a4\:30c8\:3059\:308b\"",
+"RenderGraphics" -> "\"\:30b9\:30bf\:30c3\:30af\:306b\:753b\:50cf\:8981\:7d20\:3092\:63cf\:753b\:3059\:308b\""
+}
+@|
+@@resource WelcomeScreen
+{
+"NewDocumentLabel" -> "\:65b0\:898f\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8",
+"OpenRecent" -> "\:6700\:8fd1\:958b\:3044\:305f\:30d5\:30a1\:30a4\:30eb",
+"NotebookLabel" -> "\:30ce\:30fc\:30c8\:30d6\:30c3\:30af",
+"NotebookLabelANB" -> "\:4f5c\:696d\:7528\:30ce\:30fc\:30c8\:30d6\:30c3\:30af",
+"SlideShowLabel" -> "\:30d7\:30ec\:30bc\:30f3\:30c6\:30fc\:30b7\:30e7\:30f3\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\[Ellipsis]",
+"TemplateNotebookLabel" -> "\:30c6\:30f3\:30d7\:30ec\:30fc\:30c8\:30ce\:30fc\:30c8\:30d6\:30c3\:30af",
+"TestingNotebookLabel" -> "\:691c\:5b9a\:30ce\:30fc\:30c8\:30d6\:30c3\:30af",
+"DataResourceLabel"  -> "Data Repository\:306e\:9805\:76ee",
+"FunctionResourceLabel" -> "Function Repository\:306e\:9805\:76ee",
+"NewNotebookTooltip" -> "\[SystemEnterKey]\:3092\:62bc\:3057\:3066\:65b0\:898f\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:958b\:304f",
+"DemonstrationLabel" -> "\:30c7\:30e2\:30f3\:30b9\:30c8\:30ec\:30fc\:30b7\:30e7\:30f3\:30d7\:30ed\:30b8\:30a7\:30af\:30c8\:30ce\:30fc\:30c8\:30d6\:30c3\:30af",
+"PackageLabel" -> "Wolfram\:8a00\:8a9e\:30d1\:30c3\:30b1\:30fc\:30b8(.wl)",
+"ScriptLabel" -> "WolframScript\:30b9\:30af\:30ea\:30d7\:30c8(.wls)",
+"StyledNotebookLabel" -> "\:30b9\:30bf\:30a4\:30eb\:4ed8\:304d\:30ce\:30fc\:30c8\:30d6\:30c3\:30af...",
+"TextFileLabel" -> "\:30c6\:30ad\:30b9\:30c8\:30d5\:30a1\:30a4\:30eb(.txt)",
+"ActivatePlayerProLabel" -> RowBox[{"Wolfram Player ", StyleBox["\[VerticalLine]", FontColor -> RGBColor[0.576471, 0.584314, 0.596078]], " PRO ", StyleBox["\:3092\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30c8\:3059\:308b\[RightGuillemet]", FontColor -> RGBColor[0.882353, 0.211765, 0.196078]]}],
+"OpenDialogText" -> "\:958b\:304f\[Ellipsis]",
+"CloudOpenDialogText" -> "\:30af\:30e9\:30a6\:30c9\:304b\:3089\:958b\:304f\[Ellipsis]",
+"VersionNumberLabel" -> "\:30d0\:30fc\:30b8\:30e7\:30f3",
+"WindowTitle" -> "Wolfram Mathematica\:3078\:3088\:3046\:3053\:305d",
+"WindowTitleANB" -> "Wolfram|Alpha\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:30a8\:30c7\:30a3\:30b7\:30e7\:30f3\:3078\:3088\:3046\:3053\:305d",
+"WindowTitlePlayer" -> "Wolfram Player\:3078\:3088\:3046\:3053\:305d",
+"WindowTitlePlayerPro" -> "Wolfram Player | PRO\:3078\:3088\:3046\:3053\:305d",
+"WindowTitleWD" -> "Wolfram Desktop\:3078\:3088\:3046\:3053\:305d",
+"WindowTitleWFP" -> "Wolfram Finance Platform\:3078\:3088\:3046\:3053\:305d",
+"EnterActKey" -> "\:30a2\:30af\:30c6\:30a3\:30d9\:30fc\:30b7\:30e7\:30f3\:30ad\:30fc\:3092\:5165\:529b \[RightGuillemet]",
+"NewsEventsLabel" -> "\:30cb\:30e5\:30fc\:30b9\:3068\:30a4\:30d9\:30f3\:30c8 ",
+"DisplayAtStartupText" -> "\:958b\:59cb\:6642\:306b\:8868\:793a",
+"ObsoleteNewsText" -> "\:6700\:65b0\:306eWolfram\:30cb\:30e5\:30fc\:30b9\:ff0c\:30a4\:30d9\:30f3\:30c8\:ff0c\:30c8\:30ec\:30fc\:30cb\:30f3\:30b0\:30aa\:30d7\:30b7\:30e7\:30f3\:306b\:3064\:3044\:3066\:306fwolfram.com\:3092\:3054\:89a7\:304f\:3060\:3055\:3044 \[RightGuillemet]",
+"GraduationNewsText" -> "\:5352\:696d\:5f8c\:3082\:5f15\:304d\:7d9a\:304dWolfram\:30b7\:30b9\:30c6\:30e0\:3092\:304a\:4f7f\:3044\:304f\:3060\:3055\:3044\:ff0eWolfram\:30b7\:30b9\:30c6\:30e0\:306e\:30d7\:30ed\:30d5\:30a7\:30c3\:30b7\:30e7\:30ca\:30eb\:7248\:306b\:305c\:3072\:30a2\:30c3\:30d7\:30b0\:30ec\:30fc\:30c9\:306a\:3055\:3063\:3066\:304f\:3060\:3055\:3044\:ff0e",
+
+"ExpiringMessageDefault" -> "\:304a\:4f7f\:3044\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:306e\:6709\:52b9\:671f\:9650\:306f\!\(\*ValueBox[\"$ExpirationString\"]\)\:307e\:3067\:3067\:3059\:ff0e",
+"ExpiringMessageSite" -> "\:304a\:4f7f\:3044\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:306e\:6709\:52b9\:671f\:9650\:306f\!\(\*ValueBox[\"$ExpirationString\"]\)\:307e\:3067\:3067\:3059\:ff0e\:3054\:6240\:5c5e\:6a5f\:95a2\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:304c\:66f4\:65b0\:3055\:308c\:308b\:3068\:ff0c\:304a\:4f7f\:3044\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:3082\:81ea\:52d5\:7684\:306b\:62e1\:5f35\:3055\:308c\:308b\:5834\:5408\:304c\:3054\:3056\:3044\:307e\:3059\:ff0e\:3088\:308a\:8a73\:3057\:3044\:60c5\:5831\:306f\!\(\*TagBox[ButtonBox[\"Wolfram Research\",BaseStyle->\"ContactLink\"], MouseAppearanceTag[\"LinkHand\"]]\)\:307e\:3067\:3054\:9023\:7d61\:304f\:3060\:3055\:3044\:ff0e",
+"ExpiringMessageStudent" -> "\:304a\:4f7f\:3044\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:306e\:6709\:52b9\:671f\:9650\:306f\!\(\*ValueBox[\"$ExpirationString\"]\)\:307e\:3067\:3067\:3059\:ff0e\!\(\*TagBox[ButtonBox[\"\:4eca\:3059\:3050\:8cfc\:5165\:3059\:308b \[RightGuillemet]\", ButtonData -> \"http://www.wolfram.com/mathematica/how-to-buy\", BaseStyle -> \"ContactLink\"], MouseAppearanceTag[\"LinkHand\"]]\)",
+"ExpiringMessageStudentSite" -> "\:304a\:4f7f\:3044\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:306e\:6709\:52b9\:671f\:9650\:306f\!\(\*ValueBox[\"$ExpirationString\"]\)\:307e\:3067\:3067\:3059\:ff0e\:3054\:6240\:5c5e\:6a5f\:95a2\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:304c\:66f4\:65b0\:3055\:308c\:308b\:3068\:ff0c\:304a\:4f7f\:3044\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:3082\:81ea\:52d5\:7684\:306b\:62e1\:5f35\:3055\:308c\:308b\:5834\:5408\:304c\:3054\:3056\:3044\:307e\:3059\:ff0e\:3088\:308a\:8a73\:3057\:3044\:60c5\:5831\:306f\!\(\*TagBox[ButtonBox[\"Wolfram Research\",BaseStyle->\"ContactLink\"], MouseAppearanceTag[\"LinkHand\"]]\)\:307e\:3067\:3054\:9023\:7d61\:304f\:3060\:3055\:3044\:ff0e",
+"ExpiringMessageStudentGrace" -> "\:304a\:5ba2\:69d8\:306e\:5b66\:751f\:8a3c\:660e\:304c\:6709\:52b9\:3068\:306a\:3089\:306a\:3044\:9650\:308a\:ff0c\:304a\:4f7f\:3044\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:306e\:6709\:52b9\:671f\:9650\:306f\:3042\:3068\!\(\*ValueBox[\"$DaysUntilExpiration\"]\)\:65e5\:3067\:5207\:308c\:307e\:3059\:ff0e\:5b66\:751f\:8a3c\:660e\:3092\:307e\:3060\:304a\:9001\:308a\:3044\:305f\:3060\:3044\:3066\:3044\:306a\:3044\:5834\:5408\:306f\:ff0c\!\(\*TagBox[ButtonBox[\"Wolfram Research\",BaseStyle->\"ContactLink\"], MouseAppearanceTag[\"LinkHand\"]]\)\:307e\:3067\:3054\:9023\:7d61\:304f\:3060\:3055\:3044\:ff0e",
+"ExpiringMessageHome" -> "\:304a\:4f7f\:3044\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:306e\:6709\:52b9\:671f\:9650\:306f\!\(\*ValueBox[\"$ExpirationString\"]\)\:307e\:3067\:3067\:3059\:ff0e",
+"ExpiringMessageEnterprise" -> "\:304a\:4f7f\:3044\:306e\:30e9\:30a4\:30bb\:30f3\:30b9\:306e\:6709\:52b9\:671f\:9650\:306f\!\(\*ValueBox[\"$ExpirationString\"]\)\:307e\:3067\:3067\:3059\:ff0e",
+"PrereleaseGuidePageLink" -> FileNameJoin[{$InstallationDirectory, "Documentation", "Japanese", "System", "Guides", "SummaryOfNewFeaturesIn100.nb"}],
+"CloudLoginButtonText" -> StyleBox["\:30b5\:30a4\:30f3\:30a4\:30f3\:3057\:3066Wolfram Cloud\:306b\:30a2\:30af\:30bb\:30b9\:3059\:308b\[Ellipsis]", 
+	FontFamily -> Dynamic[CurrentValue["ControlsFontFamily"]],
+	FontSize -> 12,
+	AutoSpacing -> False,
+	LanguageCategory -> "NaturalLanguage",
+	LineIndent -> 0,
+	LineSpacing -> {1, -1}],
+"AccountSettings" -> "\:30a2\:30ab\:30a6\:30f3\:30c8\:8a2d\:5b9a",
+"SignOut" -> "\:30b5\:30a4\:30f3\:30a2\:30a6\:30c8",
+"BuyNow" -> "\:4eca\:3059\:3050\:3054\:8cfc\:5165",
+"ContactUs" -> "\:304a\:554f\:3044\:5408\:305b",
+"CloudTooltipDisabled" -> "Cloud\:30d5\:30a1\:30a4\:30eb\:306b\:30a2\:30af\:30bb\:30b9\:3059\:308b\:305f\:3081\:306b\:306f\:ff0c\:307e\:305a\:30b5\:30a4\:30f3\:30a4\:30f3\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e"
+}
+@|
+@@resource CloudLoginDialog
+{ 
+"WolframIDLabel1" -> "Wolfram ID",
+"WolframIDLabel2" -> "\:ff08\:96fb\:5b50\:30e1\:30fc\:30eb\:30a2\:30c9\:30ec\:30b9\:ff09",
+"PasswordLabel" -> FEPrivate`FrontEndResource["ActivationDialog", "PasswordLabel"],
+"ForgotPasswordLabel" -> "\:30d1\:30b9\:30ef\:30fc\:30c9\:3092\[DiscretionaryLineSeparator]\:304a\:5fd8\:308c\:306e\[DiscretionaryLineSeparator]\:5834\:5408",
+"CloudAccountQuery" -> "Wolfram Cloud ID\:3092\[DiscretionaryLineSeparator]\:304a\:6301\:3061\:3067\[DiscretionaryLineSeparator]\:306a\:3044\[DiscretionaryLineSeparator]\:5834\:5408",
+"SignInButtonLabel" -> "\:30b5\:30a4\:30f3\:30a4\:30f3",
+"JoinNowButtonLabel" -> "\:30a2\:30ab\:30a6\:30f3\:30c8\:3092\:4f5c\:6210",
+"CancelButtonLabel" -> "\:30ad\:30e3\:30f3\:30bb\:30eb",
+"RemeberMeLabel" -> "\:30ed\:30b0\:30a4\:30f3\:60c5\:5831\:3092\:4fdd\:5b58",
+"WindowTitle" -> "\:30ed\:30b0\:30a4\:30f3\:8a8d\:8a3c\:60c5\:5831\:306e\:5165\:529b"
+}
+@|
+@@resource CloudDialogs
+{
+"OpenTitle" -> "Wolfram Cloud\:304b\:3089\:958b\:304f",
+"SaveTitle" -> "Wolfram Cloud\:306b\:4fdd\:5b58\:3059\:308b",
+"CloudFiles" -> "\:30af\:30e9\:30a6\:30c9\:306e\:30d5\:30a1\:30a4\:30eb",
+"Home" -> "\:30db\:30fc\:30e0",
+"Cancel" -> "\:30ad\:30e3\:30f3\:30bb\:30eb",
+"Open" -> "\:958b\:304f",
+"Save" -> "\:4fdd\:5b58",
+"Replace" -> "\:7f6e\:63db",
+"NewFolder" -> "\:65b0\:898f\:30d5\:30a9\:30eb\:30c0\:4f5c\:6210",
+"Create" -> "\:4f5c\:6210",
+"OK" -> "OK",
+"SaveAsPrompt" -> "\:5225\:540d\:3067\:4fdd\:5b58\:ff1a",
+
+(* tooltips *)
+"Type" -> "\:7a2e\:985e\:ff1a",
+"Size" -> "\:30b5\:30a4\:30ba\:ff1a",
+"Modified" -> "\:6700\:7d42\:66f4\:65b0\:65e5\:6642\:ff1a",
+"Owner" -> "\:6240\:6709\:8005\:ff1a",
+"Permissions" -> "\:30d1\:30fc\:30df\:30c3\:30b7\:30e7\:30f3\:ff1a",
+"Refresh" -> "\:30d5\:30a1\:30a4\:30eb\:30ea\:30b9\:30c8\:306e\:66f4\:65b0",
+
+(* loading page *)
+"Initializing" -> "\:521d\:671f\:5316\:4e2d\[Ellipsis]",
+"Loading" -> "\:30ed\:30fc\:30c9\:4e2d\[Ellipsis]",
+"InternetOff" -> "\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:63a5\:7d9a\:304c\:898b\:4ed8\:304b\:308a\:307e\:305b\:3093",
+"InternetBlocked" -> "\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:304c\:8a31\:53ef\:3055\:308c\:3066\:3044\:307e\:305b\:3093",
+"NotConnected" -> "Wolfram Cloud\:306b\:63a5\:7d9a\:3055\:308c\:3066\:3044\:307e\:305b\:3093",
+"NotDirectory" -> "\:554f\:984c\:304c\:767a\:751f\:3057\:305f\:305f\:3081\:ff0c\:30ea\:30af\:30a8\:30b9\:30c8\:3092\:51e6\:7406\:3059\:308b\:3053\:3068\:304c\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f\:ff0e",
+"TryAgain" -> "\:518d\:8a66\:884c",
+"EmptyDirectory" -> "-\:7a7a\:306e\:30c7\:30a3\:30ec\:30af\:30c8\:30ea-",
+
+(* confirmation dialogs *)
+"ReplaceText" -> "\"`1`\"\:3068\:3044\:3046\:30d5\:30a1\:30a4\:30eb\:306f\:3059\:3067\:306b\:5b58\:5728\:3057\:307e\:3059\:ff0e\:7f6e\:304d\:63db\:3048\:307e\:3059\:304b\:ff1f",
+"ReplaceCaption" -> "\:540c\:3058\:540d\:524d\:306e\:30d5\:30a1\:30a4\:30eb\:304c\:3059\:3067\:306b\:5b58\:5728\:3057\:307e\:3059\:ff0e\:30d5\:30a1\:30a4\:30eb\:3092\:7f6e\:304d\:63db\:3048\:308b\:3068\:ff0c\:73fe\:5728\:306e\:5185\:5bb9\:304c\:4e0a\:66f8\:304d\:3055\:308c\:307e\:3059\:ff0e",
+
+"InvalidNameText" -> "\:6587\:5b57\:5217 \"`1`\" \:306f\:6b63\:3057\:3044CloudObject\:306e\:540d\:524d\:3067\:306f\:3042\:308a\:307e\:305b\:3093\:ff0e",
+"InvalidNameCaption" -> "CloudObject\:540d\:306b\:306f\:ff0c\:6587\:5b57\:ff0c\:7a7a\:767d\:ff0c\:8a18\:53f7- . _ ! $ ( ) + , @ ~\:306e\:307f\:304c\:4f7f\:3048\:307e\:3059\:ff0e",
+
+"NewFolderTitle" -> "\:65b0\:898f\:30d5\:30a9\:30eb\:30c0",
+"NewFolderPrompt" -> "\:65b0\:3057\:3044\:30d5\:30a9\:30eb\:30c0\:540d\:ff1a",
+"NewFolderConflict" -> "\:3053\:306e\:540d\:524d\:306f\:3059\:3067\:306b\:4f7f\:7528\:3055\:308c\:3066\:3044\:307e\:3059\:ff0e",
+
+(* internet blocked dialog *)
+"InternetBlockedText" -> "Wolfram\:30b7\:30b9\:30c6\:30e0\:306f\:73fe\:5728\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:306b\:63a5\:7d9a\:3059\:308b\:3053\:3068\:304c\:8a31\:53ef\:3055\:308c\:3066\:3044\:307e\:305b\:3093\:ff0e\:300c\:74b0\:5883\:8a2d\:5b9a\:300d\:30c0\:30a4\:30a2\:30ed\:30b0\:306e\:300c\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:3068\:30e1\:30fc\:30eb\:300d\:306e\:30bb\:30af\:30b7\:30e7\:30f3\:3067\:8a2d\:5b9a\:3092\:5909\:66f4\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e",
+"InternetBlockedButton" -> "\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:63a5\:7d9a\:6027\:3092\:958b\:304f",
+"InternetBlockedClose" -> "\:9589\:3058\:308b",
+
+(* status messages *)
+"statusContent" -> "\:30b3\:30f3\:30c6\:30f3\:30c4\:3092\:30c0\:30a6\:30f3\:30ed\:30fc\:30c9\:3057\:3066\:3044\:307e\:3059...",
+"statusContentPrefix" -> "\:30b3\:30f3\:30c6\:30f3\:30c4\:3092\:30c0\:30a6\:30f3\:30ed\:30fc\:30c9\:4e2d\:ff1a",
+"statusDirectoryInfo" -> "\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:60c5\:5831\:3092\:30c0\:30a6\:30f3\:30ed\:30fc\:30c9\:4e2d...",
+"statusCheckingDirectoryInfo" -> "\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:60c5\:5831\:3092\:30c1\:30a7\:30c3\:30af\:3057\:3066\:3044\:307e\:3059...",
+"statusSaving" -> "\:4fdd\:5b58\:4e2d\:ff1a",
+"statusStarting" -> "\:8d77\:52d5\:4e2d\:ff1a",
+"statusReading" -> "\:30ed\:30fc\:30ab\:30eb\:306e\:30d5\:30a1\:30a4\:30eb\:30b7\:30b9\:30c6\:30e0\:30c7\:30fc\:30bf\:3092\:8aad\:307f\:8fbc\:307f\:4e2d",
+"statusConnecting" -> "Wolfram Cloud\:306b\:63a5\:7d9a\:4e2d",
+
+(* activity dialog *)
+"ActivityTitle" -> "Wolfram Cloud\:30a2\:30af\:30c6\:30a3\:30d3\:30c6\:30a3",
+"ActivityCancelAll" -> "\:3059\:3079\:3066\:30ad\:30e3\:30f3\:30bb\:30eb",
+"ActivityCancelAllQuit" -> "\:3059\:3079\:3066\:30ad\:30e3\:30f3\:30bb\:30eb\:3057\:3066\:7d42\:4e86",
+"ActivityCancelAllSignOut" -> "\:3059\:3079\:3066\:30ad\:30e3\:30f3\:30bb\:30eb\:3057\:3066\:30b5\:30a4\:30f3\:30a2\:30a6\:30c8",
+"ActivityNone" -> "\:30a2\:30af\:30c6\:30a3\:30d3\:30c6\:30a3\:306f\:3042\:308a\:307e\:305b\:3093",
+"ActivityOpening" -> "\:958b\:3044\:3066\:3044\:307e\:3059",
+"ActivitySaving" -> "\:4fdd\:5b58\:3057\:3066\:3044\:307e\:3059",
+"ActivityWaiting" -> "\:5f85\:6a5f\:4e2d\[Ellipsis]",
+"ActivityCancelPending" -> "\:30ad\:30e3\:30f3\:30bb\:30eb",
+"ActivityCancelQueued" -> "\:30ad\:30e5\:30fc\:304b\:3089\:524a\:9664\:3059\:308b",
+"ActivityCancelFailed" -> "\:30ad\:30e3\:30f3\:30bb\:30eb",
+
+(* activity errors *)
+"ActivityError409" -> "Wolfram Cloud\:306b\:3053\:306e\:30d5\:30a1\:30a4\:30eb\:3068\:7af6\:5408\:3059\:308b\:30d0\:30fc\:30b8\:30e7\:30f3\:304c\:3042\:308a\:307e\:3059\:ff0e\:7f6e\:304d\:63db\:3048\:307e\:3059\:304b\:ff1f",
+"ActivityError409Cancel" -> "\:3044\:3044\:3048\:ff0c\:30ad\:30e3\:30f3\:30bb\:30eb\:3057\:307e\:3059",
+"ActivityError409Replace" -> "\:306f\:3044\:ff0c\:7f6e\:304d\:63db\:3048\:307e\:3059",
+"ActivityError1600Open" -> "\:30d5\:30a1\:30a4\:30eb\:304c\:958b\:3051\:307e\:305b\:3093\:3067\:3057\:305f\:ff1aWolfram Cloud\:306b\:63a5\:7d9a\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f",
+"ActivityError1600Save" -> "\:30d5\:30a1\:30a4\:30eb\:304c\:4fdd\:5b58\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f\:ff1aWolfram Cloud\:306b\:63a5\:7d9a\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f",
+"ActivityError1601Open" -> "\:30d5\:30a1\:30a4\:30eb\:304c\:958b\:3051\:307e\:305b\:3093\:3067\:3057\:305f\:ff1a\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:306e\:4f7f\:7528\:304c\:8a31\:53ef\:3055\:308c\:3066\:3044\:307e\:305b\:3093",
+"ActivityError1601Save" -> "\:30d5\:30a1\:30a4\:30eb\:304c\:4fdd\:5b58\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f\:ff1a\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:306e\:4f7f\:7528\:304c\:8a31\:53ef\:3055\:308c\:3066\:3044\:307e\:305b\:3093",
+"ActivityError1602Open" -> "\:30d5\:30a1\:30a4\:30eb\:304c\:958b\:3051\:307e\:305b\:3093\:3067\:3057\:305f\:ff1a\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:63a5\:7d9a\:304c\:3042\:308a\:307e\:305b\:3093",
+"ActivityError1602Save" -> "\:30d5\:30a1\:30a4\:30eb\:304c\:4fdd\:5b58\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f\:ff1a\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:63a5\:7d9a\:304c\:3042\:308a\:307e\:305b\:3093",
+"ActivityError1603" -> "Wolfram Cloud\:304b\:3089\:3053\:306e\:30d5\:30a1\:30a4\:30eb\:306b\:30a2\:30af\:30bb\:30b9\:3059\:308b\:305f\:3081\:306b\:306f\:30b5\:30a4\:30f3\:30a4\:30f3\:3057\:3066\:304f\:3060\:3055\:3044",
+"ActivityError1700Save" -> "\:30d5\:30a1\:30a4\:30eb\:304cWolfram Cloud\:306b\:4fdd\:5b58\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f\:ff0e\:30b5\:30d6\:30b9\:30af\:30ea\:30d7\:30b7\:30e7\:30f3\:306e\:4e0a\:9650\:306b\:9054\:3057\:307e\:3057\:305f\:ff0e",
+"ActivityGenericOpenError" -> "\:30d5\:30a1\:30a4\:30eb\:304c\:958b\:3051\:307e\:305b\:3093\:3067\:3057\:305f\:ff1a\:30a8\:30e9\:30fc",
+"ActivityGenericSaveError" -> "\:30d5\:30a1\:30a4\:30eb\:304c\:4fdd\:5b58\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f\:ff1a\:30a8\:30e9\:30fc",
+"ActivityErrorAccountSettings" -> "\:30a2\:30ab\:30a6\:30f3\:30c8\:8a2d\:5b9a",
+"ActivityErrorTryAgain" -> "\:518d\:8a66\:884c",
+"ActivityErrorLogin" -> "\:30b5\:30a4\:30f3\:30a4\:30f3",
+
+(* notifications: attached cells / toolbars *)
+"notifySaving" -> "Wolfram Cloud\:306b\:4fdd\:5b58\[Ellipsis]",
+"notifyViewActivity" -> "Wolfram Cloud\:30a2\:30af\:30c6\:30a3\:30d3\:30c6\:30a3\:3092\:898b\:308b",
+"notifyFailed" -> "Wolfram Cloud\:306b\:4fdd\:5b58\:3067\:304d\:307e\:305b\:3093\:ff0e",
+"notifyMoreInfo" -> "\:8a73\:7d30",
+"notifyOffline" -> "Wolfram Cloud\:306b\:7e4b\:304c\:308a\:307e\:305b\:3093\:ff0e\:5909\:66f4\:306f\:4fdd\:5b58\:3067\:304d\:307e\:305b\:3093\:ff0e",
+
+(* cloud publish *)
+"CancelButtonLabel" -> "\:30ad\:30e3\:30f3\:30bb\:30eb",
+"CloseButtonLabel" -> "\:9589\:3058\:308b",
+"CopyButtonLabel" -> "\:30b3\:30d4\:30fc",
+"LoginButtonLabel" -> "\:30b5\:30a4\:30f3\:30a4\:30f3",
+"PublishButtonLabel" ->"\:516c\:958b",
+"RetryButtonLabel" -> "\:518d\:5ea6\:8a66\:3059",
+"WindowTitle" ->"Cloud\:306b\:516c\:958b",
+
+
+(* cloud publish: form panel *)
+"FormDefaultPublishDirectory" -> "\:516c\:958b",
+"FormNamedFileDirectory" -> "\:540d\:524d\:3092\:6307\:5b9a",
+"FormOpenerTitle" -> "\:8a73\:7d30",
+"FormBadFilenameError" -> "\:540d\:524d\:306b\:306f\:ff0c\:534a\:89d2\:306e\:82f1\:6570\:5b57\:ff0c\:7a7a\:767d\:ff0c\:8a18\:53f7- . _\:306e\:307f\:304c\:4f7f\:3048\:307e\:3059\:ff0e",
+"FormPasswordFieldFooter" -> "\:6587\:5b57\:306e\:9806\:5e8f\:306f\:81ea\:7531\:3067\:3059",
+"FormPasswordFieldTitle" -> "\:30d1\:30b9\:30ef\:30fc\:30c9\:3092\:6307\:5b9a\:3057\:3066\:304f\:3060\:3055\:3044",
+"FormPasswordMissingError" -> "\:30d1\:30b9\:30ef\:30fc\:30c9\:3092\:6307\:5b9a\:3057\:3066\:304f\:3060\:3055\:3044",
+"FormAddNameLabel" -> "\:540d\:524d\:3092\:6307\:5b9a",
+"FormAutoGenerateNameLabel" -> "\:81ea\:52d5\:7684\:306bURL\:3092\:5272\:308a\:5f53\:3066\:308b",
+"FormNoPasswordLabel" -> "\:8ab0\:3067\:3082\:30a2\:30af\:30bb\:30b9\:53ef\:80fd",
+"FormPasswordLabel" -> "\:30d1\:30b9\:30ef\:30fc\:30c9\:306b\:3088\:308b\:4fdd\:8b77",
+"FormSubtitle" -> "\:3053\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:4e00\:822c\:30a2\:30af\:30bb\:30b9\:304c\:53ef\:80fd\:306a\:30b3\:30d4\:30fc\:3092\:4f5c\:6210",
+"FormTitle" -> "Cloud\:306b\:516c\:958b",
+
+
+(* cloud publish: completed panel *)
+"CompletedURLLabel" -> "URL",
+"CompletedEmbedCode" -> "\:57cb\:8fbc\:307f\:30b3\:30fc\:30c9",
+"CompletedLinkLabel" -> "\:898b\:308b \[RightGuillemet]",
+"CompletedSubtitle" -> "\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306f\:516c\:958b\:3055\:308c\:307e\:3057\:305f\:ff0e",
+"CompletedTitle" -> "\:516c\:958b\:6e08\:307f",
+"CopyToClipboard" -> "\:30af\:30ea\:30c3\:30d7\:30dc\:30fc\:30c9\:306b\:30b3\:30d4\:30fc",
+"Copied" -> "\:30b3\:30d4\:30fc\:3055\:308c\:307e\:3057\:305f",
+
+(* cloud publish: other panels *)
+"FailedPublishTitle" -> "\:516c\:958b\:3067\:304d\:307e\:305b\:3093",
+"DownloadDisabledTitle" -> "\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:306e\:30a2\:30af\:30bb\:30b9\:304c\:8a31\:53ef\:3055\:308c\:3066\:3044\:307e\:305b\:3093",
+"NoInternetTitle" -> "\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:63a5\:7d9a\:304c\:3042\:308a\:307e\:305b\:3093",
+"NotLoggedInTitle" -> "Wolfram Cloud\:3078\:306e\:63a5\:7d9a\:304c\:5207\:65ad\:3055\:308c\:307e\:3057\:305f\:ff0e",
+"DownloadDisabledMessage" -> "\:73fe\:5728Wolfram\:30b7\:30b9\:30c6\:30e0\:306e\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:3078\:306e\:30a2\:30af\:30bb\:30b9\:304c\:8a31\:53ef\:3055\:308c\:3066\:3044\:307e\:305b\:3093\:ff0e\:300c\:74b0\:5883\:8a2d\:5b9a\:300d\:306e\:300c\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:3068\:30e1\:30fc\:30eb\:300d\:306e\:8a2d\:5b9a\:3092\:5909\:66f4\:3057\:3066\:ff0c\:518d\:5ea6\:304a\:8a66\:3057\:304f\:3060\:3055\:3044\:ff0e",
+"InitializationFailedMessage" -> "Wolfram\:30b7\:30b9\:30c6\:30e0\:306f\:516c\:958b\:3092\:521d\:671f\:5316\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f\:ff0e\:518d\:5ea6\:304a\:8a66\:3057\:304f\:3060\:3055\:3044\:ff0e",
+"NoInternetMessage" -> "\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:306b\:63a5\:7d9a\:3057\:3066\:3044\:308b\:304b\:3069\:3046\:304b\:3092\:78ba\:3081\:3066\:304b\:3089\:ff0c\:518d\:5ea6\:304a\:8a66\:3057\:304f\:3060\:3055\:3044\:ff0e",
+"NotLoggedInMessage" -> "Wolfram\:30b7\:30b9\:30c6\:30e0\:304c\:73fe\:5728Wolfram Cloud\:306b\:63a5\:7d9a\:3055\:308c\:3066\:3044\:307e\:305b\:3093\:ff0e\:30b5\:30a4\:30f3\:30a4\:30f3\:3057\:3066\:516c\:958b\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e",
+"PublishFailedMessage" -> "\:3053\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306f\:516c\:958b\:3067\:304d\:307e\:305b\:3093\:ff0e\:518d\:5ea6\:304a\:8a66\:3057\:304f\:3060\:3055\:3044\:ff0e\:554f\:984c\:304c\:89e3\:6c7a\:3057\:306a\:3044\:5834\:5408\:306f \!\(\*ButtonBox[TagBox[TemplateBox[{\"\:5f0a\:793e\:307e\:3067\:ff0c\:3054\:9023\:7d61\:304f\:3060\:3055\:3044\:ff0e\", StyleBox[\"\:5f0a\:793e\:307e\:3067\:ff0c\:3054\:9023\:7d61\:304f\:3060\:3055\:3044\:ff0e\", \"HyperlinkActive\"], BaseStyle -> \"Hyperlink\"}, \"MouseoverTemplate\"], MouseAppearanceTag[\"LinkHand\"]], BaseStyle -> \"Hyperlink\", ButtonFunction :> Function[FE`hyperlinkCoded[\"http://www.wolfram.com/support/contact/email\", \"source=cloudpublishdialog\", \"topic=feedback\"]], Evaluator -> \"System\"]\)",
+"DownloadDisabledButtonLabel" -> "\:300c\:30a4\:30f3\:30bf\:30fc\:30cd\:30c3\:30c8\:3068\:30e1\:30fc\:30eb\:300d\:3092\:958b\:304f"
+}
+@|
+@@resource MathematicaClosingDialog
+{
+"NewNotebook" -> "\:65b0\:898f\:30ce\:30fc\:30c8\:30d6\:30c3\:30af",
+"ToggleText" -> "\:6700\:5f8c\:306e\:30a6\:30a3\:30f3\:30c9\:30a6\:3092\:9589\:3058\:308b\:3068\:304d\:306f\:5e38\:306b\:7d42\:4e86\:3059\:308b"
+}
+@|
+@@resource ChooseFileDialogs
+{
+"OptionsButtonText" -> "\:30aa\:30d7\:30b7\:30e7\:30f3...",
+"ChooseButtonText" -> "\:9078\:629e",
+"OpenFileFilterLabelText" -> "\:53ef\:80fd\:ff1a",
+"SaveFileFilterLabelText" -> "\:5f62\:5f0f\:ff1a"
+}
+@|
+@@resource MiscellaneousDialogs
+{
+"ReindexingDialogObsoleteIndexDetected" -> "\:73fe\:5728\:306f\:4f7f\:308f\:308c\:3066\:3044\:306a\:3044\:5916\:90e8\:30d1\:30c3\:30b1\:30fc\:30b8\:6307\:6a19\:304c\:691c\:51fa\:3055\:308c\:307e\:3057\:305f",
+"ReindexingDialogShowDetails" -> "\:8a73\:7d30\:3092\:8868\:793a\[RightGuillemet]",
+"ReindexingDialogHideDetails" -> "\:8a73\:7d30\:3092\:96a0\:3059\[LeftGuillemet]",
+"ReindexingDialogCreatingNewIndices" -> "\:65b0\:3057\:3044\:6307\:6a19\:3092\:4f5c\:6210\:4e2d\:3067\:3059...",
+"ReindexingDialogExternalPackagesToReindex" -> "\:6307\:6a19\:3092\:518d\:69cb\:7bc9\:3059\:308b\:5916\:90e8\:30d1\:30c3\:30b1\:30fc\:30b8",
+"ReindexingDialogPackageListPreamble" -> "\:30ec\:30ac\:30b7\:30fc\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8\:6307\:6a19\:3060\:3051\:3092\:6301\:3064Wolfram\:8a00\:8a9e\:30d1\:30c3\:30b1\:30fc\:30b8\:ff1a",
+"ReindexingDialogMayTakeAWhile" -> "\:6642\:9593\:3092\:8981\:3059\:308b\:3053\:3068\:304c\:3042\:308a\:307e\:3059\:304c\:ff0c\:3053\:308c\:3092\:884c\:3046\:306e\:306f\:4e00\:5ea6\:3060\:3051\:3067\:3059\:ff0e",
+"ReindexingDialogWindowTitle" -> "\:5916\:90e8\:30d1\:30c3\:30b1\:30fc\:30b8\:306e\:6307\:6a19\:518d\:69cb\:7bc9\:304c\:5fc5\:8981\:3067\:3059"
+}
+@|
+@|
+@|
+@|
+@| dialog button texts
+@|
+@|
+@@resource okButtonText
+OK
+@|
+@@resource okButtonTextWithMnemonic
+&OK
+@|
+@@resource cancelButtonText
+\:30ad\:30e3\:30f3\:30bb\:30eb
+@|
+@@resource cancelButtonTextWithMnemonic
+\:30ad\:30e3\:30f3\:30bb\:30eb(&C)
+@|
+@@resource closeButtonText
+\:9589\:3058\:308b
+@|
+@@resource yesButtonText
+\:306f\:3044
+@|
+@@resource yesButtonTextWithMnemonic
+\:306f\:3044(&Y)
+@|
+@@resource noButtonText
+\:3044\:3044\:3048
+@|
+@@resource noButtonTextWithMnemonic
+\:3044\:3044\:3048(&N)
+@|
+@@resource alwaysButtonText
+\:5e38\:306b
+@|
+@@resource alwaysButtonTextWithMnemonic
+\:5e38\:306b(&A)
+@|
+@@resource continueButtonText
+\:7d9a\:884c
+@|
+@@resource continueButtonTextWithMnemonic
+\:7d9a\:884c(&N)
+@|
+@@resource saveButtonText
+\:4fdd\:5b58
+@|
+@@resource saveButtonTextWithMnemonic
+\:4fdd\:5b58(&S)
+@|
+@@resource dontSaveButtonText
+\:4fdd\:5b58\:3057\:306a\:3044
+@|
+@@resource dontSaveButtonTextWithMnemonic
+\:4fdd\:5b58\:3057\:306a\:3044(&D)
+@|
+@@resource quitButtonText
+\:7d42\:4e86
+@|
+@@resource quitButtonTextWithMnemonic
+\:7d42\:4e86(&Q)
+@|
+@@resource reviewButtonText
+\:672a\:4fdd\:5b58\:30d5\:30a1\:30a4\:30eb\:3092\:898b\:76f4\:3059...
+@|
+@@resource dontSaveAnyButtonText
+\:3059\:3079\:3066\:4fdd\:5b58\:3057\:306a\:3044
+@|
+@@resource pasteLiteralButtonText
+\:305d\:306e\:307e\:307e\:30da\:30fc\:30b9\:30c8
+@|
+@@resource purchaseLicenseButtonText
+\:8cfc\:5165
+@|
+@@resource continueWaitingButtonText
+\:5f15\:304d\:7d9a\:304d\:5f85\:6a5f\:3059\:308b
+@|
+@@resource abortButtonText
+\:653e\:68c4
+@|
+@@resource disableDynamicUpdatingButtonText
+\:52d5\:7684\:66f4\:65b0\:3092\:7121\:52b9\:306b\:3059\:308b
+@|
+@@resource learnMoreButtonText
+\:8a73\:7d30
+@|
+@|
+@|
+@| dialog main & sub texts
+@|
+@|
+@@resource reviewUnsavedDocsQuittingDialogMainText
+\:7d42\:4e86\:524d\:306b\:672a\:4fdd\:5b58\:306e\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8\:3092\:898b\:76f4\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource reviewUnsavedDocsClosingDialogMainText
+\:9589\:3058\:308b\:524d\:306b\:672a\:4fdd\:5b58\:306e\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8\:3092\:898b\:76f4\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource reviewUnsavedDocsLoggingOutDialogMainText
+\:30b5\:30a4\:30f3\:30a2\:30a6\:30c8\:3059\:308b\:524d\:306b\:ff0c\:672a\:4fdd\:5b58\:306e\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8\:3092\:898b\:76f4\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource reviewUnsavedDocsDialogSubText
+\:300c\:3044\:3044\:3048\:300d\:306e\:5834\:5408\:ff0c\:30c9\:30ad\:30e5\:30e1\:30f3\:30c8\:306e\:5909\:66f4\:70b9\:304c\:5931\:308f\:308c\:308b\:3053\:3068\:304c\:3042\:308a\:307e\:3059\:ff0e
+@|
+@@resource quitKernelDialogMainText
+\:30ab\:30fc\:30cd\:30eb\:3092\:7d42\:4e86\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource getCoordinatesExplanationDialogMainText
+2D\:30d7\:30ed\:30c3\:30c8\:306e\:5ea7\:6a19\:3092\:8aad\:307f\:53d6\:308b\:306b\:306f\:ff0c\:307e\:305a\:30b3\:30de\:30f3\:30c9\:30ad\:30fc\:3092\:62bc\:3057\:306a\:304c\:3089\:30de\:30a6\:30b9\:30dd\:30a4\:30f3\:30bf\:3092\:30d7\:30ed\:30c3\:30c8\:306e\:7bc4\:56f2\:306b\:79fb\:52d5\:3055\:305b\:307e\:3059\:ff0e\:30dd\:30a4\:30f3\:30bf\:4f4d\:7f6e\:306e\:5ea7\:6a19\:5024\:304c\:81ea\:52d5\:7684\:306b\:30b9\:30c6\:30fc\:30bf\:30b9\:30a8\:30ea\:30a2\:306b\:8868\:793a\:3055\:308c\:307e\:3059\:ff0e
+@|
+@@resource getCoordinatesExplanationDialogSubText
+\:30b3\:30f3\:30c8\:30ed\:30fc\:30eb\:30ad\:30fc\:3092\:62bc\:3057\:306a\:304c\:3089\:30de\:30a6\:30b9\:30921\:56de\:4ee5\:4e0a\:30af\:30ea\:30c3\:30af\:3059\:308b\:3068\:5ea7\:6a19\:304c\:9078\:3070\:308c\:307e\:3059\:ff0e\:6b21\:306b\:30e1\:30cb\:30e5\:30fc\:9805\:76ee\:306e\:30b3\:30d4\:30fc\:ff0c\:30da\:30fc\:30b9\:30c8\:3092\:4f7f\:3063\:3066\:5ea7\:6a19\:5024\:3092\:5165\:529b\:30bb\:30eb\:306b\:633f\:5165\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e
+@|
+@@resource removeOptionsWarningMainText
+\:9078\:629e\:7bc4\:56f2\:306b\:3042\:308b\:3059\:3079\:3066\:306e\:30aa\:30d7\:30b7\:30e7\:30f3\:8a2d\:5b9a\:3092\:89e3\:9664\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource removeOptionsWarningSubText
+\:306a\:304a\:ff0c\:30cd\:30b9\:30c8\:6210\:5206\:306e\:8a2d\:5b9a\:3082\:89e3\:9664\:3059\:308b\:306a\:3089\:ff62\:518d\:5e30\:ff63\:3092\:30af\:30ea\:30c3\:30af\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e
+@|
+@@resource saveCompanionPackageMainText
+\:81ea\:52d5\:4fdd\:5b58\:30d1\:30c3\:30b1\:30fc\:30b8\:3092\:4f5c\:6210\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource saveCompanionPackageSubText
+\:4fdd\:5b58\:3057\:3088\:3046\:3068\:3057\:3066\:3044\:308b\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306b\:306f\:521d\:671f\:5316\:30bb\:30eb\:304c\:542b\:307e\:308c\:3066\:3044\:307e\:3059\:ff0e\:95a2\:6570Get\:307e\:305f\:306fNeeds\:3092\:4f7f\:3063\:3066\:3053\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:30ab\:30fc\:30cd\:30eb\:306b\:76f4\:63a5\:30ed\:30fc\:30c9\:3067\:304d\:308b\:3088\:3046\:306b\:3057\:305f\:3044\:5834\:5408\:306f\:ff0c\:81ea\:52d5\:4fdd\:5b58\:30d1\:30c3\:30b1\:30fc\:30b8\:3092\:4f5c\:6210\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e\:3053\:308c\:306b\:3088\:308a\:ff0c\:30d5\:30ed\:30f3\:30c8\:30a8\:30f3\:30c9\:304c\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3068\:540c\:3058\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:306b\:81ea\:52d5\:7684\:306b\:30d1\:30c3\:30b1\:30fc\:30b8\:30d5\:30a1\:30a4\:30eb\:ff08\:62e1\:5f35\:5b50.m\:ff09\:3092\:4fdd\:5b58\:3059\:308b\:3088\:3046\:306b\:306a\:308a\:307e\:3059\:ff0e\:30d1\:30c3\:30b1\:30fc\:30b8\:306b\:306f\:ff0c\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306b\:542b\:307e\:308c\:3066\:3044\:308b\:3059\:3079\:3066\:306e\:521d\:671f\:5316\:30bb\:30eb\:304c\:4fdd\:7ba1\:3055\:308c\:ff0c\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304c\:4fdd\:5b58\:3055\:308c\:308b\:305f\:3073\:306b\:66f4\:65b0\:3055\:308c\:307e\:3059\:ff0e
+@|
+@@resource pastingTraditionalFormWarningMainText
+FormBox\:3092\:9069\:7528\:5f8c\:306b\:30da\:30fc\:30b9\:30c8\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource pastingTraditionalFormWarningSubText
+TraditionalForm\:ff08\:6163\:7528\:5f62\:ff09\:306e\:5f0f\:304cStandardForm\:ff08\:6a19\:6e96\:5f62\:ff09\:306e\:30bb\:30eb\:306b\:30da\:30fc\:30b9\:30c8\:3055\:308c\:3088\:3046\:3068\:3057\:3066\:3044\:307e\:3059\:ff0e\:5f0f\:306e\:89e3\:91c8\:304c\:6b63\:78ba\:306b\:884c\:308f\:308c\:308b\:305f\:3081\:306b\:306f\:ff0c\:307e\:305a\:6a19\:6e96\:5f62\:306b\:5909\:63db\:3057\:3066\:304b\:3089\:30da\:30fc\:30b9\:30c8\:3059\:308b\:3053\:3068\:3092\:304a\:52e7\:3081\:3057\:307e\:3059\:ff0e
+@|
+@@resource prefsFileModifiedMainText
+\:521d\:671f\:8a2d\:5b9a\:30d5\:30a1\:30a4\:30eb%s\:306f\:3053\:306e\:30d5\:30ed\:30f3\:30c8\:30a8\:30f3\:30c9\:306e\:30bb\:30c3\:30b7\:30e7\:30f3\:5916\:3067\:5909\:66f4\:3055\:308c\:3066\:3044\:307e\:3059\:ff0e\:30d5\:30a1\:30a4\:30eb\:3092\:4e0a\:66f8\:304d\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource prefsFileModifiedSubText
+\:300c\:3044\:3044\:3048\:300d\:3092\:9078\:629e\:3059\:308b\:3068\:ff0c\:521d\:671f\:8a2d\:5b9a\:30d5\:30a1\:30a4\:30eb\:306f\:8aad\:307f\:53d6\:308a\:5c02\:7528\:3068\:306a\:308a\:ff0c\:30c7\:30a3\:30b9\:30af\:306b\:4fdd\:5b58\:3055\:308c\:307e\:305b\:3093\:ff0e
+@|
+@@resource evaluationTraditionalFormMainText
+TraditionalForm\:ff08\:6163\:7528\:5f62\:ff09\:3067\:306e\:5165\:529b\:306e\:89e3\:91c8\:304c\:8981\:6c42\:3055\:308c\:307e\:3057\:305f\:304c\:ff0c\:5b8c\:5168\:3067\:78ba\:5b9f\:306aWolfram\:8a00\:8a9e\:5165\:529b\:6307\:5b9a\:304c\:884c\:3048\:308b\:306e\:306fInputForm\:ff08\:5165\:529b\:5f62\:ff09\:307e\:305f\:306fStandardForm\:ff08\:6a19\:6e96\:5f62\:ff09\:306e\:307f\:3067\:3059\:ff0e\:5165\:529b\:3092\:8a55\:4fa1\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource evaluationNonStandardFormMainText
+InputForm\:ff08\:5165\:529b\:5f62\:ff09\:307e\:305f\:306fStandardForm\:ff08\:6a19\:6e96\:5f62\:ff09\:4ee5\:5916\:306e\:5f62\:5f0f\:3067\:8a18\:8ff0\:3057\:305f\:5f0f\:304c\:5165\:529b\:3055\:308c\:307e\:3057\:305f\:ff0e\:5165\:529b\:3092\:8a55\:4fa1\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource evaluationNonStandardFormSubText
+Wolfram\:8a00\:8a9e\:3067\:306f\:5225\:306e\:5f62\:5f0f\:3067\:66f8\:304b\:308c\:305f\:5f0f\:3067\:3082\:8a55\:4fa1\:53ef\:80fd\:306a\:5f62\:306b\:5909\:63db\:3067\:304d\:307e\:3059\:304c\:ff0c\:4e0d\:660e\:78ba\:306a\:70b9\:304c\:6b8b\:308b\:3053\:3068\:304c\:3042\:308a\:307e\:3059\:ff0e\:8a55\:4fa1\:3059\:308b\:524d\:306b\:ff0c\:5f0f\:304c\:3069\:306e\:3088\:3046\:306b\:5909\:63db\:3055\:308c\:308b\:304b\:78ba\:8a8d\:3057\:305f\:3044\:5834\:5408\:306f\:ff0c\:300c\:30bb\:30eb\:300d\:30e1\:30cb\:30e5\:30fc\:306e\:300c\:5f62\:5f0f\:5909\:63db\:300d\:304b\:3089\:9069\:5f53\:306a\:5909\:63db\:5148\:306e\:5f62\:5f0f\:3092\:9078\:629e\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e
+@|
+@@resource syntaxErrorInFileMainText
+\:8aad\:307f\:8fbc\:307f\:4e2d\:306e\:30d5\:30a1\:30a4\:30eb\:306b\:6587\:6cd5\:30a8\:30e9\:30fc\:3092\:691c\:51fa\:3057\:307e\:3057\:305f\:ff0e\:30c6\:30ad\:30b9\:30c8\:30d5\:30a1\:30a4\:30eb\:3068\:3057\:3066\:958b\:304d\:307e\:3059\:304b\:ff1f
+@|
+@@resource syntaxErrorInFileSubText
+\:30d5\:30a1\:30a4\:30eb\:304c\:58ca\:308c\:3066\:3044\:308b\:304b\:ff0c\:3042\:308b\:3044\:306f\:4e0d\:6b63\:306b\:69cb\:6210\:3055\:308c\:305f\:53ef\:80fd\:6027\:304c\:3042\:308a\:307e\:3059\:ff0e\:300c\:306f\:3044\:300d\:3092\:30af\:30ea\:30c3\:30af\:3059\:308b\:3068\:ff0c\:30c6\:30ad\:30b9\:30c8\:30d5\:30a1\:30a4\:30eb\:3068\:3057\:3066\:8aad\:307f\:8fbc\:307f\:3092\:7d9a\:884c\:3057\:ff0c\:30a8\:30e9\:30fc\:7b87\:6240\:3092\:63d0\:793a\:3057\:307e\:3059\:ff0e\:30a8\:30e9\:30fc\:304c\:4fee\:6b63\:3067\:304d\:305f\:5834\:5408\:306f\:ff0c\:30d5\:30a1\:30a4\:30eb\:3092\:4fdd\:5b58\:3057\:ff0c\:958b\:304d\:76f4\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e
+@|
+@@resource reallyDeleteAllOutputMainText
+\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306b\:3042\:308b\:51fa\:529b\:30bb\:30eb\:3092\:5168\:3066\:524a\:9664\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource reallyDeleteAllOutputSubText
+\:3053\:306e\:64cd\:4f5c\:306e\:53d6\:6d88\:3057\:306f\:3067\:304d\:307e\:305b\:3093\:ff0e
+@|
+@@resource stylesDialogMainText
+\:3053\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3067\:306f\:5171\:6709\:30b9\:30bf\:30a4\:30eb\:30b7\:30fc\:30c8\:304c\:4f7f\:308f\:308c\:3066\:3044\:307e\:3059\:ff0e\:30b9\:30bf\:30a4\:30eb\:30b7\:30fc\:30c8\:306e\:30d7\:30e9\:30a4\:30d9\:30fc\:30c8\:30b3\:30d4\:30fc\:307e\:305f\:306f\:5171\:6709\:30b3\:30d4\:30fc\:3092\:7de8\:96c6\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource pasteAsMathMLMainText
+\:30da\:30fc\:30b9\:30c8\:3059\:308b\:30c6\:30ad\:30b9\:30c8\:306fMathML\:5f0f\:3067\:3042\:308b\:3068\:63a8\:6e2c\:3055\:308c\:307e\:3059\:ff0e\:3053\:308c\:306f\:30c6\:30ad\:30b9\:30c8\:3068\:3057\:3066\:30da\:30fc\:30b9\:30c8\:3059\:308b\:3053\:3068\:3082\:ff0c\:5bfe\:5fdc\:3059\:308b\:30bf\:30a4\:30d7\:30bb\:30c3\:30c8\:5f0f\:3068\:3057\:3066\:306e\:30da\:30fc\:30b9\:30c8\:3092\:8a66\:307f\:308b\:3053\:3068\:3082\:3067\:304d\:307e\:3059\:ff0e\:30bf\:30a4\:30d7\:30bb\:30c3\:30c8\:5f0f\:3092\:30da\:30fc\:30b9\:30c8\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource pasteAsTeXMainText
+\:30da\:30fc\:30b9\:30c8\:3059\:308b\:30c6\:30ad\:30b9\:30c8\:306fTeX\:307e\:305f\:306fLaTeX\:5f0f\:3067\:3042\:308b\:3068\:63a8\:6e2c\:3055\:308c\:307e\:3059\:ff0e\:3053\:308c\:306f\:30c6\:30ad\:30b9\:30c8\:3068\:3057\:3066\:30da\:30fc\:30b9\:30c8\:3059\:308b\:3053\:3068\:3082\:ff0c\:5bfe\:5fdc\:3059\:308b\:30bf\:30a4\:30d7\:30bb\:30c3\:30c8\:5f0f\:3068\:3057\:3066\:306e\:30da\:30fc\:30b9\:30c8\:3092\:8a66\:307f\:308b\:3053\:3068\:3082\:3067\:304d\:307e\:3059\:ff0e\:30bf\:30a4\:30d7\:30bb\:30c3\:30c8\:5f0f\:3092\:30da\:30fc\:30b9\:30c8\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource wrappedToBeginningText
+\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:6700\:521d\:306b\:623b\:308b
+@|
+@@resource wrappedToEndText
+\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:6700\:5f8c\:306b\:623b\:308b
+@|
+@@resource changingTrustedPathMainText
+TrustedPath\:ff0cUntrustedPath\:ff0cTrustByDefault\:7b49\:306eNotebookSecurityOptions\:306f\:ff0c\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304c\:81ea\:52d5\:7684\:306bWolfram\:8a00\:8a9e\:30d7\:30ed\:30b0\:30e9\:30e0\:3092\:5b9f\:884c\:3067\:304d\:308b\:304b\:3069\:3046\:304b\:3092\:5236\:5fa1\:3057\:307e\:3059\:ff0e\:3053\:308c\:3089\:306e\:30aa\:30d7\:30b7\:30e7\:30f3\:306e\:3046\:3061\:306e1\:3064\:306e\:5024\:3092\:5909\:66f4\:3057\:307e\:3059\:304b\:ff1f
+@|	
+@@resource changingTrustedPathSubText
+\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:30bd\:30fc\:30b9\:304c\:4fe1\:983c\:3067\:304d\:306a\:3044\:9650\:308a\:ff0c\:305d\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304c\:542b\:307e\:308c\:3066\:3044\:308b\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:3092TrustedPath\:306b\:52a0\:3048\:305f\:308aUntrustedPath\:304b\:3089\:524a\:9664\:3057\:305f\:308a\:3057\:306a\:3044\:3067\:304f\:3060\:3055\:3044\:ff0e\:3053\:306e\:30c0\:30a4\:30a2\:30ed\:30b0\:30dc\:30c3\:30af\:30b9\:304c\:8868\:793a\:3055\:308c\:305f\:7406\:7531\:304c\:4e0d\:660e\:306a\:5834\:5408\:306f\:ff0c\:300c\:3044\:3044\:3048\:300d\:3092\:9078\:629e\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e
+@|	
+@@resource pasteDynamicMainText
+\:633f\:5165\:3057\:3088\:3046\:3068\:3057\:3066\:3044\:308b\:30b3\:30f3\:30c6\:30f3\:30c4\:306f\:ff0cWolfram\:8a00\:8a9e\:30d7\:30ed\:30b0\:30e9\:30e0\:3092\:81ea\:52d5\:7684\:306b\:5b9f\:884c\:3059\:308b\:3053\:3068\:304c\:3042\:308a\:307e\:3059\:ff0e\:3053\:306e\:30b3\:30f3\:30c6\:30f3\:30c4\:3092\:633f\:5165\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource savePackageMainText
+\:3053\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306b\:306fTraditionalForm\:30bb\:30eb\:304c\:542b\:307e\:308c\:3066\:3044\:307e\:3059\:ff0e\:7d9a\:884c\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource savePackageSubText
+\:3053\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:4fdd\:5b58\:3059\:308b\:3068\:ff0c\:3059\:3079\:3066\:306eTraditionalForm\:30bb\:30eb\:304cStandardForm\:306b\:5909\:63db\:3055\:308c\:307e\:3059\:ff0e
+@|
+@@resource askIfRenderClipboardData
+\:30af\:30ea\:30c3\:30d7\:30dc\:30fc\:30c9\:306b\:5927\:304d\:306a\:30c7\:30fc\:30bf\:304c\:6b8b\:3063\:3066\:3044\:307e\:3059\:ff0eWolfram\:30b7\:30b9\:30c6\:30e0\:3092\:7d42\:4e86\:3057\:305f\:5f8c\:3082\:3053\:306e\:30c7\:30fc\:30bf\:304c\:4ed6\:306e\:30a2\:30d7\:30ea\:30b1\:30fc\:30b7\:30e7\:30f3\:3067\:4f7f\:3048\:308b\:3088\:3046\:306b\:51e6\:7406\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource askIfConvertToNotebook
+\:518d\:751f\:53ef\:80fd\:30d5\:30a1\:30a4\:30eb\:3092\:7de8\:96c6\:3057\:3088\:3046\:3068\:3057\:3066\:3044\:307e\:3059\:ff0e\:3053\:308c\:3092\:307e\:305a\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306b\:5909\:63db\:3057\:3066\:5909\:66f4\:3067\:304d\:308b\:3088\:3046\:306b\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource askIfAbortCloudTasks
+Wolfram Cloud\:306b\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:4e2d\:306e\:30c7\:30fc\:30bf\:304c\:3042\:308a\:307e\:3059\:ff0e\:30c7\:30fc\:30bf\:304c\:9001\:4fe1\:3055\:308c\:308b\:306e\:3092\:5f15\:304d\:7d9a\:304d\:5f85\:3061\:307e\:3059\:304b\:ff1f
+@|
+@@resource formattingNotebookContents
+\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:30b3\:30f3\:30c6\:30f3\:30c4\:3092\:30d5\:30a9\:30fc\:30de\:30c3\:30c8\:3057\:3066\:3044\:307e\:3059
+@|
+@@resource HandwritingInputTitle
+\:6570\:5f0f\:624b\:5165\:529b
+@|
+@|
+@@resource changingExternalChannelFunctionsMainText
+\:8b66\:544a\:ff1a\:30e6\:30fc\:30b6\:306e\:30c1\:30e3\:30cd\:30eb\:306b\:304a\:3051\:308b\:901a\:4fe1\:3067\:306f\:ff0c\:30e1\:30c3\:30bb\:30fc\:30b8\:306e\:5f85\:6a5f\:30fb\:9001\:4fe1\:306b\:304b\:304b\:308f\:3089\:305a\:ff0c\:304a\:4f7f\:3044\:306e\:30b3\:30f3\:30d4\:30e5\:30fc\:30bf\:4e0a\:3067\:30ab\:30b9\:30bf\:30e0\:306eWolfram\:8a00\:8a9e\:30b3\:30fc\:30c9\:304c\:5b9f\:884c\:3055\:308c\:308b\:53ef\:80fd\:6027\:304c\:3042\:308a\:307e\:3059\:ff0e\:5916\:90e8\:30c1\:30e3\:30cd\:30eb\:95a2\:6570\:3092\:6709\:52b9\:306b\:3057\:307e\:3059\:304b\:ff1f
+@|
+@@resource changingExternalChannelFunctionsSubText
+\:30ab\:30b9\:30bf\:30e0\:30b3\:30fc\:30c9\:306f\:30c1\:30e3\:30cd\:30eb\:4f5c\:6210\:8005\:306b\:3088\:3063\:3066\:4f5c\:6210\:3055\:308c\:308b\:3082\:306e\:3067\:3042\:308a\:ff0c\:901a\:5e38Wolfram Research\:306b\:3088\:3063\:3066\:8a8d\:53ef\:307e\:305f\:306f\:30b5\:30dd\:30fc\:30c8\:3055\:308c\:3066\:3044\:308b\:3082\:306e\:3067\:306f\:3042\:308a\:307e\:305b\:3093\:ff0e\:30ab\:30b9\:30bf\:30e0\:30e6\:30fc\:30b6\:30b3\:30fc\:30c9\:3092\:5b9f\:884c\:3059\:308b\:3068\:ff0c\:30b3\:30f3\:30d4\:30e5\:30fc\:30bf\:4e0a\:306e\:30c7\:30fc\:30bf\:304c\:7834\:58ca\:3055\:308c\:305f\:308a\:ff0c\:30b3\:30f3\:30d4\:30e5\:30fc\:30bf\:304c\:640d\:5bb3\:3092\:53d7\:3051\:305f\:308a\:ff0c\:500b\:4eba\:60c5\:5831\:304c\:958b\:793a\:3055\:308c\:305f\:308a\:3059\:308b\:53ef\:80fd\:6027\:304c\:3042\:308a\:307e\:3059\:ff0e\:4f5c\:6210\:8005\:3092\:4fe1\:983c\:3057\:3066\:3044\:306a\:3044\:30c1\:30e3\:30cd\:30eb\:3067\:306e\:901a\:4fe1\:306f\:884c\:308f\:306a\:3044\:3067\:304f\:3060\:3055\:3044\:ff0e
+@|
+@@resource abortDynamicDialogMainText
+\:30ab\:30fc\:30cd\:30eb\:306f\:52d5\:7684\:66f4\:65b0\:306b\:5fdc\:7b54\:3057\:3066\:3044\:307e\:305b\:3093\:ff0e
+@|
+@@resource abortDynamicDialogSubText
+\:30ab\:30fc\:30cd\:30eb\:3092\:653e\:68c4\:3057\:3066\:518d\:8d77\:52d5\:3059\:308b\:3053\:3068\:3082\:ff0c\:5f15\:304d\:7d9a\:304d\:5f85\:6a5f\:3059\:308b\:3053\:3068\:3082\:3067\:304d\:307e\:3059\:ff0e\:52d5\:7684\:66f4\:65b0\:306f\:300c\:8a55\:4fa1\:300d\:30e1\:30cb\:30e5\:30fc\:306e\:300c\:52d5\:7684\:66f4\:65b0\:3092\:5b9f\:884c\:300d\:30b3\:30de\:30f3\:30c9\:3067\:518d\:3073\:6709\:52b9\:306b\:3059\:308b\:3053\:3068\:304c\:3067\:304d\:307e\:3059\:ff0e
+@|
+@@resource disableDynamicDialogMainText
+1\:3064\:307e\:305f\:306f\:8907\:6570\:306e\:52d5\:7684\:30aa\:30d6\:30b8\:30a7\:30af\:30c8\:306e\:8a55\:4fa1\:306b\:6642\:9593\:304c\:304b\:304b\:308a\:3059\:304e\:3066\:3044\:307e\:3059\:ff0e
+@|
+@@resource disableDynamicDialogSubText
+\:4eca\:5f8c\:306e\:52d5\:7684\:66f4\:65b0\:3092\:7121\:52b9\:306b\:3059\:308b\:3053\:3068\:3082\:ff0c\:5f15\:304d\:7d9a\:304d\:5f85\:6a5f\:3059\:308b\:3053\:3068\:3082\:3067\:304d\:307e\:3059\:ff0e\:52d5\:7684\:66f4\:65b0\:306f\:300c\:8a55\:4fa1\:300d\:30e1\:30cb\:30e5\:30fc\:306e\:300c\:52d5\:7684\:66f4\:65b0\:3092\:5b9f\:884c\:300d\:30b3\:30de\:30f3\:30c9\:3067\:518d\:3073\:6709\:52b9\:306b\:3059\:308b\:3053\:3068\:304c\:3067\:304d\:307e\:3059\:ff0e
+@|
+@@resource progressDialogCancelText
+\:30ad\:30e3\:30f3\:30bb\:30eb\:3059\:308b\:305f\:3081\:306b\:306fCommand-.\:3092\:62bc\:3057\:3066\:304f\:3060\:3055\:3044\:ff0e
+@|
+@@resource obsoleteCDFFormatWarningMainText
+\:30ce\:30fc\:30c8\:30d6\:30c3\:30af(.nb)\:304cWolfram Player\:3067\:30a4\:30f3\:30bf\:30e9\:30af\:30c6\:30a3\:30d6\:306b\:3054\:4f7f\:7528\:306b\:306a\:308c\:308b\:3088\:3046\:306b\:306a\:308a\:307e\:3057\:305f\:ff0e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092CDF\:3068\:3057\:3066\:4fdd\:5b58\:3059\:308b\:3053\:3068\:3082\:53ef\:80fd\:3067\:3059\:304c\:ff0c\:4e0d\:8981\:306b\:306a\:308a\:307e\:3057\:305f\:ff0e
+@|
+@@resource obsoleteCDFFormatWarningSubText
+Wolfram Player\:3067\:306e\:30a4\:30f3\:30bf\:30e9\:30af\:30c6\:30a3\:30d6\:6a5f\:80fd\:3092\:62e1\:5f35\:3059\:308b\:305f\:3081\:306b\:306f.cdf\:3067\:4fdd\:5b58\:3059\:308b\:3053\:3068\:304c\:5fc5\:8981\:3067\:3059\:304c\:ff0c\:3053\:308c\:306fWolfram Enterprise\:88fd\:54c1\:3067\:306e\:307f\:30b5\:30dd\:30fc\:30c8\:3055\:308c\:3066\:3044\:307e\:3059\:ff0e
+@|

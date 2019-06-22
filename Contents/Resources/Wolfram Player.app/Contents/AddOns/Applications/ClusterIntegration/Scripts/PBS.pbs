@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Cluster Integration Package for gridMathematica
+#
+# Copyright (c) 2006 - 2007 Wolfram Research, Inc. All rights reserved.
+#
+# Package version: 1.3
+#
+# gridMathematica version: 2.2
+#
+# Summary: PBS Pro script for remote kernels.
+
+
+# PBS options
+
+#PBS -N gridMKernel
+#PBS -e /dev/null
+#PBS -o /dev/null
+#PBS -c n
+
+# Commands
+
+${MATH_KERNEL} ${MATH_OPTIONS}

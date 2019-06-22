@@ -1,0 +1,2931 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    142502,       2920]
+NotebookOptionsPosition[    138511,       2821]
+NotebookOutlinePosition[    142336,       2917]
+CellTagsIndexPosition[    142293,       2914]
+WindowTitle->Welcome to Wolfram Player | PRO
+WindowFrame->ModelessDialog*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ PaneSelectorBox[{True->
+  PanelBox[
+   TagBox[GridBox[{
+      {"\<\"\"\>", 
+       FrameBox[
+        PaneBox[
+         DynamicBox[FEPrivate`ImportImage[
+           FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, "ErrorIcon.png"]]],
+         
+         Alignment->Center,
+         ImageSize->{Automatic, 50}],
+        FrameMargins->0,
+        FrameStyle->None,
+        StripOnInput->False], 
+       PaneBox[
+        StyleBox[
+         DynamicBox[FEPrivate`FrontEndResource["WelcomeScreen", 
+           FEPrivate`StringJoin["ExpiringMessage", "Default"]]], 
+         "ExpirationMessage",
+         StripOnInput->False],
+        ImageSize->Full]}
+     },
+     AutoDelete->False,
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"],
+   Appearance->{
+    "Default" -> 
+     FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+       "ErrorBackground.9.png"]}]}, Dynamic[
+   FEPrivate`SameQ[
+    FEPrivate`LessEqual[FEPrivate`$DaysUntilExpiration, 15], True]],
+  ImageMargins->0,
+  ImageSize->Automatic]],
+ CellMargins->FEPrivate`If[
+   FEPrivate`SameQ[
+    FEPrivate`LessEqual[FEPrivate`$DaysUntilExpiration, 15], True], {{
+   0, -3}, {0, 0}}, {{0, -5}, {0, -14}}],
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue[
+  "PanelFontSize"],ExpressionUUID->"6c872a76-f141-4a6f-924d-1951ead34392"],
+
+Cell[BoxData[
+ DynamicModuleBox[{}, 
+  TagBox[GridBox[{
+     {
+      OverlayBox[{
+       PaneSelectorBox[{True->
+        DynamicBox[FEPrivate`ImportImage[
+          FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, "Background.png"]],
+         ImageSizeCache->{825., {208., 212.}}], False->
+        DynamicBox[FEPrivate`ImportImage[
+          
+          FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+           "Background-PlayerPro.png"]],
+         ImageSizeCache->{825., {208., 212.}}]}, FEPrivate`SameQ[
+         FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"],
+        Alignment->{Left, Top},
+        ImageSize->{All, All}], 
+       PaneBox[
+        TagBox[GridBox[{
+           {
+            StyleBox[
+             GraphicsBox[{},
+              ImageSize->{Full, 8}],
+             StripOnInput->False,
+             CacheGraphics->False], "\[SpanFromLeft]", "\[SpanFromLeft]"},
+           {
+            TagBox[GridBox[{
+               {
+                PaneBox[
+                 
+                 DynamicModuleBox[{$CellContext`filelist$$, \
+$CellContext`rawlist$$, $CellContext`length$$, $CellContext`format$$, \
+$CellContext`fileIconSelector$$, $CellContext`fileTextSelector$$, \
+$CellContext`i$$}, 
+                  DynamicWrapperBox[
+                   PaneSelectorBox[{True->
+                    TagBox[GridBox[{
+                    {
+                    PaneBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WelcomeScreen", "OpenRecent"],
+                    ImageSizeCache->{85., {1., 9.}}],
+                    FrameMargins->{{10, 0}, {10, 11}}]},
+                    {
+                    DynamicBox[GridBox[
+                    FEPrivate`Take[{{
+                    PaneBox[
+                    TagBox[
+                    PanelBox[
+                    OverlayBox[{
+                    
+                    PaneSelectorBox[{
+                    True -> PanelBox["\"\"", 
+                    Appearance -> {"Default" -> 
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "Item-Selected.9.png"]}, ImageSize -> {Full, Full}]}, 
+                    Dynamic[
+                    CurrentValue["SelectionOver"]], BoxID -> 1], 
+                    TagBox[
+                    TagBox[
+                    PaneBox[
+                    PaneSelectorBox[{False -> RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 1, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{1, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 1, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"1", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 1, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"1", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 1, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"1", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 1, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"1", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 1, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 1, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], True -> StyleBox[
+                    RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 1, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{1, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 1, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"1", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 1, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"1", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 1, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"1", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 1, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"1", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 1, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 1, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], "HyperlinkActive", 
+                    StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    Alignment -> {Left, Center}, ImageSize -> {Full, Full}, 
+                    FrameMargins -> {{10, 0}, {0, 3}}], 
+                    
+                    EventHandlerTag[{
+                    "LeftMouseClicked" :> $CellContext`numberKeyFunction[1], 
+                    Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]], 
+                    MouseAppearanceTag["LinkHand"]]}, All, 2, 
+                    ImageSize -> {Automatic, Automatic}, 
+                    Alignment -> {Left, Center}], ImageSize -> {Full, Full}, 
+                    Appearance -> {"Default" -> None}, 
+                    BaseStyle -> (Background -> None), 
+                    FrameMargins -> {{0, 0}, {0, 0}}, 
+                    Alignment -> {Left, Center}], 
+                    
+                    EventHandlerTag[{
+                    "KeyDown" :> Null, 
+                    "ReturnKeyDown" :> $CellContext`numberKeyFunction[1], 
+                    "MouseEntered" :> $CellContext`arrowKeyFunction[
+                    FE`BoxReference[
+                    EvaluationNotebook[], {1 + 0}], 0], Method -> 
+                    "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+                    True}]], ImageSize -> {Automatic, 34}, BaseStyle -> {
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    PrivateFrontEndOptions, "DialogSettings", "WelcomeScreen",
+                     "ShowRecentFilesContextMenu"}, False], {ContextMenu -> {
+                    MenuItem["Open parent directory", 
+                    KernelExecute[
+                    SystemOpen[
+                    DirectoryName[
+                    ToFileName[
+                    Part[$CellContext`filelist$$, 1, 2]]]]], MenuEvaluator -> 
+                    Automatic], 
+                    MenuItem["Remove from this list", 
+                    KernelExecute[
+                    CurrentValue[$FrontEnd, NotebooksMenu] = Delete[
+                    CurrentValue[$FrontEnd, NotebooksMenu], -1]], 
+                    MenuEvaluator -> Automatic]}}, None]}]}, {
+                    PaneBox[
+                    TagBox[
+                    PanelBox[
+                    OverlayBox[{
+                    
+                    PaneSelectorBox[{
+                    True -> PanelBox["\"\"", 
+                    Appearance -> {"Default" -> 
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "Item-Selected.9.png"]}, ImageSize -> {Full, Full}]}, 
+                    Dynamic[
+                    CurrentValue["SelectionOver"]], BoxID -> 2], 
+                    TagBox[
+                    TagBox[
+                    PaneBox[
+                    PaneSelectorBox[{False -> RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 2, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{2, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 2, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"2", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 2, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"2", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 2, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"2", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 2, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"2", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 2, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 2, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], True -> StyleBox[
+                    RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 2, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{2, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 2, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"2", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 2, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"2", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 2, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"2", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 2, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"2", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 2, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 2, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], "HyperlinkActive", 
+                    StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    Alignment -> {Left, Center}, ImageSize -> {Full, Full}, 
+                    FrameMargins -> {{10, 0}, {0, 3}}], 
+                    EventHandlerTag[{
+                    "LeftMouseClicked" :> $CellContext`numberKeyFunction[2], 
+                    Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]], 
+                    MouseAppearanceTag["LinkHand"]]}, All, 2, 
+                    ImageSize -> {Automatic, Automatic}, 
+                    Alignment -> {Left, Center}], ImageSize -> {Full, Full}, 
+                    Appearance -> {"Default" -> None}, 
+                    BaseStyle -> (Background -> None), 
+                    FrameMargins -> {{0, 0}, {0, 0}}, 
+                    Alignment -> {Left, Center}], 
+                    
+                    EventHandlerTag[{
+                    "KeyDown" :> Null, 
+                    "ReturnKeyDown" :> $CellContext`numberKeyFunction[2], 
+                    "MouseEntered" :> $CellContext`arrowKeyFunction[
+                    FE`BoxReference[
+                    EvaluationNotebook[], {2 + 0}], 0], Method -> 
+                    "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+                    True}]], ImageSize -> {Automatic, 34}, BaseStyle -> {
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    PrivateFrontEndOptions, "DialogSettings", "WelcomeScreen",
+                     "ShowRecentFilesContextMenu"}, False], {ContextMenu -> {
+                    MenuItem["Open parent directory", 
+                    KernelExecute[
+                    SystemOpen[
+                    DirectoryName[
+                    ToFileName[
+                    Part[$CellContext`filelist$$, 2, 2]]]]], MenuEvaluator -> 
+                    Automatic], 
+                    MenuItem["Remove from this list", 
+                    KernelExecute[
+                    CurrentValue[$FrontEnd, NotebooksMenu] = Delete[
+                    CurrentValue[$FrontEnd, NotebooksMenu], -2]], 
+                    MenuEvaluator -> Automatic]}}, None]}]}, {
+                    PaneBox[
+                    TagBox[
+                    PanelBox[
+                    OverlayBox[{
+                    
+                    PaneSelectorBox[{
+                    True -> PanelBox["\"\"", 
+                    Appearance -> {"Default" -> 
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "Item-Selected.9.png"]}, ImageSize -> {Full, Full}]}, 
+                    Dynamic[
+                    CurrentValue["SelectionOver"]], BoxID -> 3], 
+                    TagBox[
+                    TagBox[
+                    PaneBox[
+                    PaneSelectorBox[{False -> RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 3, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{3, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 3, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"3", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 3, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"3", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 3, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"3", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 3, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"3", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 3, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 3, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], True -> StyleBox[
+                    RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 3, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{3, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 3, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"3", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 3, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"3", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 3, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"3", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 3, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"3", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 3, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 3, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], "HyperlinkActive", 
+                    StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    Alignment -> {Left, Center}, ImageSize -> {Full, Full}, 
+                    FrameMargins -> {{10, 0}, {0, 3}}], 
+                    
+                    EventHandlerTag[{
+                    "LeftMouseClicked" :> $CellContext`numberKeyFunction[3], 
+                    Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]], 
+                    MouseAppearanceTag["LinkHand"]]}, All, 2, 
+                    ImageSize -> {Automatic, Automatic}, 
+                    Alignment -> {Left, Center}], ImageSize -> {Full, Full}, 
+                    Appearance -> {"Default" -> None}, 
+                    BaseStyle -> (Background -> None), 
+                    FrameMargins -> {{0, 0}, {0, 0}}, 
+                    Alignment -> {Left, Center}], 
+                    
+                    EventHandlerTag[{
+                    "KeyDown" :> Null, 
+                    "ReturnKeyDown" :> $CellContext`numberKeyFunction[3], 
+                    "MouseEntered" :> $CellContext`arrowKeyFunction[
+                    FE`BoxReference[
+                    EvaluationNotebook[], {3 + 0}], 0], Method -> 
+                    "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+                    True}]], ImageSize -> {Automatic, 34}, BaseStyle -> {
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    PrivateFrontEndOptions, "DialogSettings", "WelcomeScreen",
+                     "ShowRecentFilesContextMenu"}, False], {ContextMenu -> {
+                    MenuItem["Open parent directory", 
+                    KernelExecute[
+                    SystemOpen[
+                    DirectoryName[
+                    ToFileName[
+                    Part[$CellContext`filelist$$, 3, 2]]]]], MenuEvaluator -> 
+                    Automatic], 
+                    MenuItem["Remove from this list", 
+                    KernelExecute[
+                    CurrentValue[$FrontEnd, NotebooksMenu] = Delete[
+                    CurrentValue[$FrontEnd, NotebooksMenu], -3]], 
+                    MenuEvaluator -> Automatic]}}, None]}]}, {
+                    PaneBox[
+                    TagBox[
+                    PanelBox[
+                    OverlayBox[{
+                    
+                    PaneSelectorBox[{
+                    True -> PanelBox["\"\"", 
+                    Appearance -> {"Default" -> 
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "Item-Selected.9.png"]}, ImageSize -> {Full, Full}]}, 
+                    Dynamic[
+                    CurrentValue["SelectionOver"]], BoxID -> 4], 
+                    TagBox[
+                    TagBox[
+                    PaneBox[
+                    PaneSelectorBox[{False -> RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 4, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{4, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 4, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"4", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 4, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"4", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 4, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"4", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 4, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"4", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 4, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 4, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], True -> StyleBox[
+                    RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 4, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{4, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 4, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"4", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 4, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"4", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 4, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"4", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 4, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"4", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 4, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 4, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], "HyperlinkActive", 
+                    StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    Alignment -> {Left, Center}, ImageSize -> {Full, Full}, 
+                    FrameMargins -> {{10, 0}, {0, 3}}], 
+                    EventHandlerTag[{
+                    "LeftMouseClicked" :> $CellContext`numberKeyFunction[4], 
+                    Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]], 
+                    MouseAppearanceTag["LinkHand"]]}, All, 2, 
+                    ImageSize -> {Automatic, Automatic}, 
+                    Alignment -> {Left, Center}], ImageSize -> {Full, Full}, 
+                    Appearance -> {"Default" -> None}, 
+                    BaseStyle -> (Background -> None), 
+                    FrameMargins -> {{0, 0}, {0, 0}}, 
+                    Alignment -> {Left, Center}], 
+                    
+                    EventHandlerTag[{
+                    "KeyDown" :> Null, 
+                    "ReturnKeyDown" :> $CellContext`numberKeyFunction[4], 
+                    "MouseEntered" :> $CellContext`arrowKeyFunction[
+                    FE`BoxReference[
+                    EvaluationNotebook[], {4 + 0}], 0], Method -> 
+                    "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+                    True}]], ImageSize -> {Automatic, 34}, BaseStyle -> {
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    PrivateFrontEndOptions, "DialogSettings", "WelcomeScreen",
+                     "ShowRecentFilesContextMenu"}, False], {ContextMenu -> {
+                    MenuItem["Open parent directory", 
+                    KernelExecute[
+                    SystemOpen[
+                    DirectoryName[
+                    ToFileName[
+                    Part[$CellContext`filelist$$, 4, 2]]]]], MenuEvaluator -> 
+                    Automatic], 
+                    MenuItem["Remove from this list", 
+                    KernelExecute[
+                    CurrentValue[$FrontEnd, NotebooksMenu] = Delete[
+                    CurrentValue[$FrontEnd, NotebooksMenu], -4]], 
+                    MenuEvaluator -> Automatic]}}, None]}]}, {
+                    PaneBox[
+                    TagBox[
+                    PanelBox[
+                    OverlayBox[{
+                    
+                    PaneSelectorBox[{
+                    True -> PanelBox["\"\"", 
+                    Appearance -> {"Default" -> 
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "Item-Selected.9.png"]}, ImageSize -> {Full, Full}]}, 
+                    Dynamic[
+                    CurrentValue["SelectionOver"]], BoxID -> 5], 
+                    TagBox[
+                    TagBox[
+                    PaneBox[
+                    PaneSelectorBox[{False -> RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 5, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{5, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 5, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"5", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 5, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"5", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 5, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"5", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 5, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"5", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 5, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 5, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], True -> StyleBox[
+                    RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 5, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{5, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 5, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"5", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 5, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"5", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 5, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"5", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 5, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"5", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 5, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 5, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], "HyperlinkActive", 
+                    StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    Alignment -> {Left, Center}, ImageSize -> {Full, Full}, 
+                    FrameMargins -> {{10, 0}, {0, 3}}], 
+                    
+                    EventHandlerTag[{
+                    "LeftMouseClicked" :> $CellContext`numberKeyFunction[5], 
+                    Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]], 
+                    MouseAppearanceTag["LinkHand"]]}, All, 2, 
+                    ImageSize -> {Automatic, Automatic}, 
+                    Alignment -> {Left, Center}], ImageSize -> {Full, Full}, 
+                    Appearance -> {"Default" -> None}, 
+                    BaseStyle -> (Background -> None), 
+                    FrameMargins -> {{0, 0}, {0, 0}}, 
+                    Alignment -> {Left, Center}], 
+                    
+                    EventHandlerTag[{
+                    "KeyDown" :> Null, 
+                    "ReturnKeyDown" :> $CellContext`numberKeyFunction[5], 
+                    "MouseEntered" :> $CellContext`arrowKeyFunction[
+                    FE`BoxReference[
+                    EvaluationNotebook[], {5 + 0}], 0], Method -> 
+                    "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+                    True}]], ImageSize -> {Automatic, 34}, BaseStyle -> {
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    PrivateFrontEndOptions, "DialogSettings", "WelcomeScreen",
+                     "ShowRecentFilesContextMenu"}, False], {ContextMenu -> {
+                    MenuItem["Open parent directory", 
+                    KernelExecute[
+                    SystemOpen[
+                    DirectoryName[
+                    ToFileName[
+                    Part[$CellContext`filelist$$, 5, 2]]]]], MenuEvaluator -> 
+                    Automatic], 
+                    MenuItem["Remove from this list", 
+                    KernelExecute[
+                    CurrentValue[$FrontEnd, NotebooksMenu] = Delete[
+                    CurrentValue[$FrontEnd, NotebooksMenu], -5]], 
+                    MenuEvaluator -> Automatic]}}, None]}]}, {
+                    PaneBox[
+                    TagBox[
+                    PanelBox[
+                    OverlayBox[{
+                    
+                    PaneSelectorBox[{
+                    True -> PanelBox["\"\"", 
+                    Appearance -> {"Default" -> 
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "Item-Selected.9.png"]}, ImageSize -> {Full, Full}]}, 
+                    Dynamic[
+                    CurrentValue["SelectionOver"]], BoxID -> 6], 
+                    TagBox[
+                    TagBox[
+                    PaneBox[
+                    PaneSelectorBox[{False -> RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 6, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{6, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 6, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"6", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 6, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"6", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 6, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"6", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 6, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"6", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 6, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 6, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], True -> StyleBox[
+                    RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 6, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{6, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 6, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"6", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 6, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"6", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 6, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"6", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 6, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"6", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 6, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 6, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], "HyperlinkActive", 
+                    StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    Alignment -> {Left, Center}, ImageSize -> {Full, Full}, 
+                    FrameMargins -> {{10, 0}, {0, 3}}], 
+                    EventHandlerTag[{
+                    "LeftMouseClicked" :> $CellContext`numberKeyFunction[6], 
+                    Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]], 
+                    MouseAppearanceTag["LinkHand"]]}, All, 2, 
+                    ImageSize -> {Automatic, Automatic}, 
+                    Alignment -> {Left, Center}], ImageSize -> {Full, Full}, 
+                    Appearance -> {"Default" -> None}, 
+                    BaseStyle -> (Background -> None), 
+                    FrameMargins -> {{0, 0}, {0, 0}}, 
+                    Alignment -> {Left, Center}], 
+                    
+                    EventHandlerTag[{
+                    "KeyDown" :> Null, 
+                    "ReturnKeyDown" :> $CellContext`numberKeyFunction[6], 
+                    "MouseEntered" :> $CellContext`arrowKeyFunction[
+                    FE`BoxReference[
+                    EvaluationNotebook[], {6 + 0}], 0], Method -> 
+                    "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+                    True}]], ImageSize -> {Automatic, 34}, BaseStyle -> {
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    PrivateFrontEndOptions, "DialogSettings", "WelcomeScreen",
+                     "ShowRecentFilesContextMenu"}, False], {ContextMenu -> {
+                    MenuItem["Open parent directory", 
+                    KernelExecute[
+                    SystemOpen[
+                    DirectoryName[
+                    ToFileName[
+                    Part[$CellContext`filelist$$, 6, 2]]]]], MenuEvaluator -> 
+                    Automatic], 
+                    MenuItem["Remove from this list", 
+                    KernelExecute[
+                    CurrentValue[$FrontEnd, NotebooksMenu] = Delete[
+                    CurrentValue[$FrontEnd, NotebooksMenu], -6]], 
+                    MenuEvaluator -> Automatic]}}, None]}]}, {
+                    PaneBox[
+                    TagBox[
+                    PanelBox[
+                    OverlayBox[{
+                    
+                    PaneSelectorBox[{
+                    True -> PanelBox["\"\"", 
+                    Appearance -> {"Default" -> 
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "Item-Selected.9.png"]}, ImageSize -> {Full, Full}]}, 
+                    Dynamic[
+                    CurrentValue["SelectionOver"]], BoxID -> 7], 
+                    TagBox[
+                    TagBox[
+                    PaneBox[
+                    PaneSelectorBox[{False -> RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 7, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{7, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 7, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"7", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 7, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"7", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 7, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"7", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 7, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"7", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 7, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 7, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], True -> StyleBox[
+                    RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 7, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{7, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 7, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"7", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 7, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"7", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 7, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"7", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 7, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"7", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 7, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 7, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], "HyperlinkActive", 
+                    StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    Alignment -> {Left, Center}, ImageSize -> {Full, Full}, 
+                    FrameMargins -> {{10, 0}, {0, 3}}], 
+                    
+                    EventHandlerTag[{
+                    "LeftMouseClicked" :> $CellContext`numberKeyFunction[7], 
+                    Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]], 
+                    MouseAppearanceTag["LinkHand"]]}, All, 2, 
+                    ImageSize -> {Automatic, Automatic}, 
+                    Alignment -> {Left, Center}], ImageSize -> {Full, Full}, 
+                    Appearance -> {"Default" -> None}, 
+                    BaseStyle -> (Background -> None), 
+                    FrameMargins -> {{0, 0}, {0, 0}}, 
+                    Alignment -> {Left, Center}], 
+                    
+                    EventHandlerTag[{
+                    "KeyDown" :> Null, 
+                    "ReturnKeyDown" :> $CellContext`numberKeyFunction[7], 
+                    "MouseEntered" :> $CellContext`arrowKeyFunction[
+                    FE`BoxReference[
+                    EvaluationNotebook[], {7 + 0}], 0], Method -> 
+                    "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+                    True}]], ImageSize -> {Automatic, 34}, BaseStyle -> {
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    PrivateFrontEndOptions, "DialogSettings", "WelcomeScreen",
+                     "ShowRecentFilesContextMenu"}, False], {ContextMenu -> {
+                    MenuItem["Open parent directory", 
+                    KernelExecute[
+                    SystemOpen[
+                    DirectoryName[
+                    ToFileName[
+                    Part[$CellContext`filelist$$, 7, 2]]]]], MenuEvaluator -> 
+                    Automatic], 
+                    MenuItem["Remove from this list", 
+                    KernelExecute[
+                    CurrentValue[$FrontEnd, NotebooksMenu] = Delete[
+                    CurrentValue[$FrontEnd, NotebooksMenu], -7]], 
+                    MenuEvaluator -> Automatic]}}, None]}]}, {
+                    PaneBox[
+                    TagBox[
+                    PanelBox[
+                    OverlayBox[{
+                    
+                    PaneSelectorBox[{
+                    True -> PanelBox["\"\"", 
+                    Appearance -> {"Default" -> 
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "Item-Selected.9.png"]}, ImageSize -> {Full, Full}]}, 
+                    Dynamic[
+                    CurrentValue["SelectionOver"]], BoxID -> 8], 
+                    TagBox[
+                    TagBox[
+                    PaneBox[
+                    PaneSelectorBox[{False -> RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 8, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{8, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 8, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"8", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 8, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"8", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 8, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"8", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 8, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"8", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 8, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 8, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], True -> StyleBox[
+                    RowBox[{
+                    PaneSelectorBox[{True -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "NotebookIcon-Disabled.png"]]]}, 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]], Alignment -> Center, ImageSize -> 21], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 8, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]], 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}], "\[InvisibleSpace]", 
+                    DynamicModuleBox[{$CellContext`text$$ = Row[{8, ". ", 
+                    Dynamic[
+                    Part[$CellContext`filelist$$, 8, 1]]}]}, 
+                    PaneSelectorBox[{True -> PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"8", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 8, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"8", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 8, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True], ImageSize -> {All, All}, 
+                    Alignment -> {Left, Center}], False -> 
+                    PaneSelectorBox[{True -> StyleBox[
+                    TemplateBox[{"8", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 8, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0], StripOnInput -> 
+                    False], False -> StyleBox[
+                    TemplateBox[{"8", "\". \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    Part[$CellContext`filelist$$, 8, 1], StandardForm]]}, 
+                    "RowDefault"], FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False]}, 
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    ImageSize -> {All, All}, Alignment -> {Left, Center}]}, 
+                    Dynamic[Head[
+                    Part[$CellContext`filelist$$, 8, 2]] === 
+                    Unevaluated[FrontEnd`CloudObject]]], 
+                    DynamicModuleValues :> {}]}], "HyperlinkActive", 
+                    StripOnInput -> False]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+                    ImageSize -> Automatic, FrameMargins -> 0], 
+                    Alignment -> {Left, Center}, ImageSize -> {Full, Full}, 
+                    FrameMargins -> {{10, 0}, {0, 3}}], 
+                    EventHandlerTag[{
+                    "LeftMouseClicked" :> $CellContext`numberKeyFunction[8], 
+                    Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]], 
+                    MouseAppearanceTag["LinkHand"]]}, All, 2, 
+                    ImageSize -> {Automatic, Automatic}, 
+                    Alignment -> {Left, Center}], ImageSize -> {Full, Full}, 
+                    Appearance -> {"Default" -> None}, 
+                    BaseStyle -> (Background -> None), 
+                    FrameMargins -> {{0, 0}, {0, 0}}, 
+                    Alignment -> {Left, Center}], 
+                    
+                    EventHandlerTag[{
+                    "KeyDown" :> Null, 
+                    "ReturnKeyDown" :> $CellContext`numberKeyFunction[8], 
+                    "MouseEntered" :> $CellContext`arrowKeyFunction[
+                    FE`BoxReference[
+                    EvaluationNotebook[], {8 + 0}], 0], Method -> 
+                    "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+                    True}]], ImageSize -> {Automatic, 34}, BaseStyle -> {
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    PrivateFrontEndOptions, "DialogSettings", "WelcomeScreen",
+                     "ShowRecentFilesContextMenu"}, False], {ContextMenu -> {
+                    MenuItem["Open parent directory", 
+                    KernelExecute[
+                    SystemOpen[
+                    DirectoryName[
+                    ToFileName[
+                    Part[$CellContext`filelist$$, 8, 2]]]]], MenuEvaluator -> 
+                    Automatic], 
+                    MenuItem["Remove from this list", 
+                    KernelExecute[
+                    CurrentValue[$FrontEnd, NotebooksMenu] = Delete[
+                    CurrentValue[$FrontEnd, NotebooksMenu], -8]], 
+                    MenuEvaluator -> Automatic]}}, 
+                    None]}]}}, $CellContext`length$$], 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}, "Rows" -> {{0}}}],
+                    
+                    ImageSizeCache->{218., {133., 140.}}]},
+                    {
+                    PanelBox[
+                    TagBox[GridBox[{
+                    {
+                    TagBox[
+                    OverlayBox[{
+                    PaneSelectorBox[{True->
+                    PanelBox["\<\"\"\>",
+                    
+                    Appearance->{"Default" -> 
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "Item-Selected.9.png"]},
+                    ImageSize->{Full, Full}]}, Dynamic[
+                    CurrentValue["SelectionOver"]],
+                    BoxID -> "Open"], 
+                    TagBox[
+                    PaneBox[
+                    ButtonBox[
+                    PaneBox[
+                    StyleBox[
+                    TagBox[GridBox[{
+                    {
+                    PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True->
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "FolderIcon.png"]],
+                    ImageSizeCache->{16., {5., 10.}}], False->
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "FolderIcon-Disabled.png"]],
+                    ImageSizeCache->{16., {5., 10.}}]}, FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]],
+                    Alignment->Left,
+                    ImageSize->21],
+                    ImageMargins->{{2, 0}, {0, 0}}], 
+                    PaneSelectorBox[{True->
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WelcomeScreen", "OpenDialogText"],
+                    ImageSizeCache->{41., {3., 9.}}],
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0]], False->
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WelcomeScreen", "OpenDialogText"],
+                    ImageSizeCache->{41., {3., 9.}}],
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0.5]]}, FrontEnd`CurrentValue[
+                    "LocalFileSystemAccessAllowed"],
+                    Alignment->{Left, Center},
+                    ImageSize->{All, All}]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{"Columns" -> {{Left}}, 
+                    "Rows" -> {{Bottom}}},
+                    
+                    GridBoxItemSize->{"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}],
+                    "Grid"], "ControlStyle",
+                    StripOnInput->False],
+                    ImageSize->{Full, Full}],
+                    Appearance->{"Default" -> None, "Pressed" -> None},
+                    ButtonFunction:>$CellContext`returnKeyFunction["FileOpen"],
+                    Evaluator->Automatic,
+                    Method->"Queued"],
+                    ImageMargins->{{10, 10}, {0, 0}}],
+                    MouseAppearanceTag["LinkHand"]]}, All, 2,
+                    Alignment->{Left, Center},
+                    ImageSize->{Automatic, 28}],
+                    
+                    EventHandlerTag[{
+                    "KeyDown" :> Null, 
+                    "ReturnKeyDown" :> $CellContext`returnKeyFunction[
+                    "FileOpen"], Method -> "Preemptive", PassEventsDown -> 
+                    Automatic, PassEventsUp -> True}]]},
+                    {
+                    TagBox[
+                    OverlayBox[{
+                    PaneSelectorBox[{True->
+                    PanelBox["\<\"\"\>",
+                    
+                    Appearance->{"Default" -> 
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "Item-Selected.9.png"]},
+                    ImageSize->{Full, Full}]}, Dynamic[
+                    CurrentValue["SelectionOver"]],
+                    BoxID -> "CloudOpen"], 
+                    TagBox[
+                    PaneBox[
+                    ButtonBox[
+                    PaneBox[
+                    StyleBox[
+                    TagBox[GridBox[{
+                    {
+                    PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True->
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudFolderIcon.png"]],
+                    ImageSizeCache->{20., {5., 11.}}], False->
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudFolderIcon-Disabled.png"]],
+                    ImageSizeCache->{20., {5., 11.}}]}, FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]],
+                    Alignment->Left,
+                    ImageSize->21],
+                    ImageMargins->{{2, 0}, {0, 0}}], 
+                    PaneSelectorBox[{True->
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WelcomeScreen", "CloudOpenDialogText"],
+                    ImageSizeCache->{102., {3., 9.}}],
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0]], False->
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WelcomeScreen", "CloudOpenDialogText"],
+                    ImageSizeCache->{102., {3., 9.}}],
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0.5]]}, FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True],
+                    Alignment->{Left, Center},
+                    ImageSize->{All, All}]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{"Columns" -> {{Left}}, 
+                    "Rows" -> {{Bottom}}},
+                    
+                    GridBoxItemSize->{"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}],
+                    "Grid"], "ControlStyle",
+                    StripOnInput->False],
+                    ImageSize->{Full, Full}],
+                    Appearance->{"Default" -> None, "Pressed" -> None},
+                    
+                    ButtonFunction:>$CellContext`returnKeyFunction[
+                    "CloudFileOpen"],
+                    Evaluator->Automatic,
+                    Method->"Queued"],
+                    ImageMargins->{{10, 10}, {0, 0}}],
+                    MouseAppearanceTag["LinkHand"]]}, All, 2,
+                    Alignment->{Left, Center},
+                    ImageSize->{Automatic, 28}],
+                    
+                    EventHandlerTag[{
+                    "KeyDown" :> Null, 
+                    "ReturnKeyDown" :> $CellContext`returnKeyFunction[
+                    "CloudFileOpen"], Method -> "Preemptive", PassEventsDown -> 
+                    Automatic, PassEventsUp -> True}]]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
+                    "Column"],
+                    Alignment->{Left, Center},
+                    
+                    Appearance->{
+                    "Default" -> 
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "Divider.9.png"]},
+                    BaseStyle->(Background -> None)]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}],
+                    "Column"], False->
+                    TagBox[GridBox[{
+                    {
+                    TagBox[
+                    OverlayBox[{
+                    PaneSelectorBox[{True->
+                    PanelBox["\<\"\"\>",
+                    
+                    Appearance->{
+                    "Default" -> FrontEnd`FileName[{
+                    "Dialogs", "WelcomeScreen"}, "Item-Selected.9.png"]},
+                    ImageSize->{Full, Full}]}, Dynamic[
+                    CurrentValue["SelectionOver"]],
+                    BoxID -> "Open"], 
+                    TagBox[
+                    PaneBox[
+                    ButtonBox[
+                    PaneBox[
+                    StyleBox[
+                    TagBox[GridBox[{
+                    {
+                    PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True->
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "FolderIcon.png"]],
+                    ImageSizeCache->{16., {5., 10.}}], False->
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "FolderIcon-Disabled.png"]],
+                    ImageSizeCache->{16., {5., 10.}}]}, FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["LocalFileSystemAccessAllowed"], 
+                    True]],
+                    Alignment->Left,
+                    ImageSize->21],
+                    ImageMargins->{{2, 0}, {0, 0}}], 
+                    PaneSelectorBox[{True->
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WelcomeScreen", "OpenDialogText"],
+                    ImageSizeCache->{41., {3., 9.}}],
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0]], False->
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WelcomeScreen", "OpenDialogText"],
+                    ImageSizeCache->{41., {3., 9.}}],
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0.5]]}, FrontEnd`CurrentValue[
+                    "LocalFileSystemAccessAllowed"],
+                    Alignment->{Left, Center},
+                    ImageSize->{All, All}]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Bottom}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                    "Grid"], "ControlStyle",
+                    StripOnInput->False],
+                    FrameMargins->{{10, 0}, {0, 0}},
+                    ImageSize->{Full, Full}],
+                    Appearance->{"Default" -> None, "Pressed" -> None},
+                    ButtonFunction:>$CellContext`returnKeyFunction["FileOpen"],
+                    Evaluator->Automatic,
+                    Method->"Queued"],
+                    ImageMargins->{{10, 10}, {0, 0}}],
+                    MouseAppearanceTag["LinkHand"]]}, All, 2,
+                    Alignment->{Left, Center},
+                    ImageSize->{Automatic, 28}],
+                    
+                    EventHandlerTag[{
+                    "KeyDown" :> Null, 
+                    "ReturnKeyDown" :> $CellContext`returnKeyFunction[
+                    "FileOpen"], Method -> "Preemptive", PassEventsDown -> 
+                    Automatic, PassEventsUp -> True}]]},
+                    {
+                    TagBox[
+                    OverlayBox[{
+                    PaneSelectorBox[{True->
+                    PanelBox["\<\"\"\>",
+                    
+                    Appearance->{
+                    "Default" -> FrontEnd`FileName[{
+                    "Dialogs", "WelcomeScreen"}, "Item-Selected.9.png"]},
+                    ImageSize->{Full, Full}]}, Dynamic[
+                    CurrentValue["SelectionOver"]],
+                    BoxID -> "CloudOpen"], 
+                    TagBox[
+                    PaneBox[
+                    ButtonBox[
+                    PaneBox[
+                    StyleBox[
+                    TagBox[GridBox[{
+                    {
+                    PaneBox[
+                    PaneBox[
+                    PaneSelectorBox[{True->
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudFolderIcon.png"]],
+                    ImageSizeCache->{20., {5., 11.}}], False->
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CloudFolderIcon-Disabled.png"]],
+                    ImageSizeCache->{20., {5., 11.}}]}, FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]],
+                    Alignment->Left,
+                    ImageSize->21],
+                    ImageMargins->{{2, 0}, {0, 0}}], 
+                    PaneSelectorBox[{True->
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WelcomeScreen", "CloudOpenDialogText"],
+                    ImageSizeCache->{102., {3., 9.}}],
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0]], False->
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WelcomeScreen", "CloudOpenDialogText"],
+                    ImageSizeCache->{102., {3., 9.}}],
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0.5]]}, FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True],
+                    Alignment->{Left, Center},
+                    ImageSize->{All, All}]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Left}}, "Rows" -> {{Bottom}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                    "Grid"], "ControlStyle",
+                    StripOnInput->False],
+                    FrameMargins->{{10, 0}, {0, 0}},
+                    ImageSize->{Full, Full}],
+                    Appearance->{"Default" -> None, "Pressed" -> None},
+                    
+                    ButtonFunction:>$CellContext`returnKeyFunction[
+                    "CloudFileOpen"],
+                    Evaluator->Automatic,
+                    Method->"Queued"],
+                    ImageMargins->{{10, 10}, {0, 0}}],
+                    MouseAppearanceTag["LinkHand"]]}, All, 2,
+                    Alignment->{Left, Center},
+                    ImageSize->{Automatic, 28}],
+                    
+                    EventHandlerTag[{
+                    "KeyDown" :> Null, 
+                    "ReturnKeyDown" :> $CellContext`returnKeyFunction[
+                    "CloudFileOpen"], Method -> "Preemptive", PassEventsDown -> 
+                    Automatic, PassEventsUp -> True}]]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
+                    "Column"]}, Dynamic[$CellContext`length$$ > 0],
+                    Alignment->{Left, Top},
+                    BaseStyle->"ControlStyle"], 
+                   If[$CellContext`rawlist$$ =!= 
+                    CurrentValue[$FrontEnd, 
+                    NotebooksMenu], $CellContext`rawlist$$ = 
+                    CurrentValue[$FrontEnd, 
+                    NotebooksMenu]; $CellContext`length$$ = Min[
+                    Length[$CellContext`rawlist$$], 
+                    8]; $CellContext`filelist$$ = 
+                    If[$CellContext`length$$ <= 0, {}, 
+                    $CellContext`format$$[
+                    Reverse[
+                    Take[$CellContext`rawlist$$, -$CellContext`length$$]], 
+                    "Player"]]],
+                   ImageSizeCache->{218., {180., 186.}},
+                   TrackedSymbols:>{}],
+                  
+                  DynamicModuleValues:>{{
+                    DownValues[$CellContext`format$$] = {HoldPattern[
+                    $CellContext`format$$[
+                    Pattern[$CellContext`name, 
+                    Blank[]], 1]] :> FE`Evaluate[
+                    
+                    FEPrivate`TruncateStringToWidth[$CellContext`name, 
+                    "ControlStyle", 126]], HoldPattern[
+                    $CellContext`format$$[
+                    Pattern[$CellContext`file, 
+                    Blank[FrontEnd`FileName]], 2]] :> Pane[
+                    ToFileName[$CellContext`file], 
+                    ImageSize -> {{1, 500}, Automatic}], HoldPattern[
+                    $CellContext`format$$[
+                    Pattern[$CellContext`file, 
+                    Blank[FrontEnd`CloudObject]], 2]] :> 
+                    Pane["CloudObject", ImageSize -> {{1, 500}, Automatic}], 
+                    HoldPattern[
+                    $CellContext`format$$[Pattern[$CellContext`name$, 
+                    Blank[]] -> {
+                    Pattern[$CellContext`file$, 
+                    Blank[FrontEnd`FileName]], 
+                    BlankSequence[]}, 
+                    Pattern[$CellContext`prod$, 
+                    Blank[]]]] :> {
+                    Tooltip[
+                    $CellContext`format$$[$CellContext`name$, 1], 
+                    $CellContext`format$$[$CellContext`file$, 
+                    2]], $CellContext`file$}, HoldPattern[
+                    $CellContext`format$$[Pattern[$CellContext`name$, 
+                    Blank[]] -> {
+                    Pattern[$CellContext`file$, 
+                    Blank[FrontEnd`CloudObject]], 
+                    BlankSequence[]}, 
+                    Pattern[$CellContext`prod$, 
+                    Blank[String]]]] :> {
+                    Tooltip[
+                    $CellContext`format$$[$CellContext`name$, 1], 
+                    PaneSelector[{True -> $CellContext`name$, False -> Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "WelcomeScreen", "CloudTooltipDisabled"]]]}, 
+                    FEPrivate`SameQ[
+                    FEPrivate`Or[
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], 
+                    "Player Pro"], 
+                    FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+                    FEPrivate`SameQ[
+                    FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+                    True]]], $CellContext`file$}}, 
+                    Attributes[$CellContext`format$$] = {Listable}}, {
+                    DownValues[$CellContext`fileIconSelector$$] = {HoldPattern[
+                    $CellContext`fileIconSelector$$[
+                    Pattern[$CellContext`test, 
+                    Dynamic[
+                    Pattern[$CellContext`isCloudObject, 
+                    Blank[]]]]]] :> PaneSelector[{True -> Pane[
+                    $CellContext`WelcomeScreenImage["CloudNotebook"], 
+                    FrameMargins -> {{0, 0}, {3, 0}}], False -> Pane[
+                    $CellContext`WelcomeScreenImage["Notebook"], 
+                    FrameMargins -> {{0, 0}, {4, 0}}]}, $CellContext`test, 
+                    ImageSize -> {All, Automatic}, 
+                    Alignment -> {Left, Bottom}, 
+                    ImageMargins -> {{0, 6}, {0, 0}}]}}, {
+                    DownValues[$CellContext`fileTextSelector$$] = {HoldPattern[
+                    $CellContext`fileTextSelector$$[
+                    Pattern[$CellContext`number, 
+                    Blank[]], 
+                    Pattern[$CellContext`file, 
+                    Dynamic[
+                    Pattern[$CellContext`filename, 
+                    Blank[]]]], 
+                    Pattern[$CellContext`test, 
+                    Dynamic[
+                    Pattern[$CellContext`isCloudObject, 
+                    Blank[]]]]]] :> 
+                    DynamicModule[{$CellContext`text = 
+                    Row[{$CellContext`number, ". ", $CellContext`file}]}, 
+                    
+                    PaneSelector[{
+                    True -> $CellContext`styledtext[$CellContext`text, 
+                    "cloudlogin"], 
+                    False -> $CellContext`styledtext[$CellContext`text, 
+                    "localfileaccess"]}, $CellContext`test]]}}},
+                  
+                  Initialization:>($CellContext`rawlist$$ = {}; \
+$CellContext`filelist$$ = {}; $CellContext`length$$ = 0),
+                  
+                  UnsavedVariables:>{$CellContext`filelist$$, \
+$CellContext`rawlist$$, $CellContext`length$$}],
+                 Alignment->{Left, Top},
+                 FrameMargins->{{0, 0}, {0, 10}},
+                 ImageSize->{218, 410}]}
+              },
+              DefaultBaseStyle->"Column",
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+              GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}],
+             "Column"], 
+            StyleBox[
+             GraphicsBox[{},
+              ImageSize->{20, 20}],
+             StripOnInput->False,
+             CacheGraphics->False], 
+            TagBox[GridBox[{
+               {
+                PaneBox[
+                 StyleBox[
+                  RowBox[{
+                   
+                   DynamicBox[FEPrivate`FrontEndResource[
+                    "WelcomeScreen", "VersionNumberLabel"],
+                    ImageSizeCache->{37., {1., 8.}}], ":", " ", 
+                   RowBox[{
+                    ValueBox["$VersionNumber"], ".", 
+                    ValueBox["$ReleaseNumber"], ".", 
+                    ValueBox["$MinorReleaseNumber"]}]}], "VersionNumberStyle"],
+                 
+                 Alignment->{Left, Top},
+                 FrameMargins->{{43, 0}, {0, 0}},
+                 ImageMargins->{{0, 0}, {0, 183}},
+                 ImageSize->{Full, Automatic}]},
+               {
+                PaneBox[GridBox[{
+                   {
+                    TagBox[
+                    TagBox[
+                    PaneSelectorBox[{False->
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CDFButton-Default.png"]],
+                    ImageSizeCache->{120., {48., 52.}}], True->
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "CDFButton-Hover.png"]]]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    
+                    EventHandlerTag[{
+                    "LeftMouseClicked" :> 
+                    FE`hyperlinkCoded[
+                    "https://www.wolfram.com/notebooks/", 
+                    "source=welcomescreen"], Method -> "Preemptive", 
+                    PassEventsDown -> Automatic, PassEventsUp -> True}]],
+                    MouseAppearanceTag["LinkHand"]], 
+                    TagBox[
+                    TagBox[
+                    PaneSelectorBox[{False->
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "AdoptingCDFButton-Default.png"]],
+                    ImageSizeCache->{143., {48., 52.}}], True->
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "AdoptingCDFButton-Hover.png"]]]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    
+                    EventHandlerTag[{
+                    "LeftMouseClicked" :> 
+                    FE`hyperlinkCoded[
+                    "https://demonstrations.wolfram.com/", 
+                    "source=welcomescreen"], Method -> "Preemptive", 
+                    PassEventsDown -> Automatic, PassEventsUp -> True}]],
+                    MouseAppearanceTag["LinkHand"]], 
+                    TagBox[
+                    TagBox[
+                    PaneSelectorBox[{False->
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "ActivatePlayerProButton-Default.png"]],
+                    ImageSizeCache->{120., {48., 52.}}], True->
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Dialogs", "WelcomeScreen"}, 
+                    "ActivatePlayerProButton-Hover.png"]]]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    EventHandlerTag[{"LeftMouseClicked" :> SetOptions[
+                    FrontEnd`DialogOpen["ActivationDialog.nb"], 
+                    TaggingRules -> {
+                    "ActivationState" -> "Online", "ErrorMessage" -> None, 
+                    "Unsecured" -> False, "Reactivate" -> True}], Method -> 
+                    "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+                    True}]],
+                    MouseAppearanceTag["LinkHand"]]}
+                  },
+                  AutoDelete->False,
+                  GridBoxAlignment->{"Columns" -> {{Left}}},
+                  
+                  GridBoxItemSize->{
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                  
+                  GridBoxSpacings->{
+                   "Columns" -> {0, 4.4, 2.8}, "Rows" -> {{Automatic}}}],
+                 Alignment->{Left, Bottom},
+                 FrameMargins->{{38, 0}, {0, 0}},
+                 ImageSize->{Full, 172}]},
+               {
+                PaneBox["\<\"\"\>",
+                 Alignment->{Right, Bottom},
+                 FrameMargins->{{0, 2}, {0, 0}},
+                 ImageSize->{Full, 36}]}
+              },
+              DefaultBaseStyle->"Column",
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+              GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
+             
+             "Column"]}
+          },
+          AutoDelete->False,
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}],
+         "Grid"],
+        ImageSize->825]}, {1, 2}, 2,
+       Alignment->{Left, Top}]}
+    },
+    DefaultBaseStyle->"Column",
+    GridBoxAlignment->{"Columns" -> {{Left}}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+    GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}],
+   "Column"],
+  DynamicModuleValues:>{},
+  Initialization:>($CellContext`boxExistsQ[
+      Pattern[$CellContext`nb, 
+       Blank[]], 
+      Pattern[$CellContext`id, 
+       Blank[]]] := $CellContext`boxExistsQ[
+      FE`BoxReference[$CellContext`nb, {$CellContext`id}]]; \
+$CellContext`boxExistsQ[
+      Pattern[$CellContext`nb, 
+       Blank[]]] := MathLink`CallFrontEnd[
+      FrontEnd`BoxReferenceExists[$CellContext`nb]]; $CellContext`boxFind[
+      Pattern[$CellContext`nb, 
+       Blank[]], 
+      Pattern[$CellContext`id, 
+       Blank[]]] := $CellContext`boxFind[
+      FE`BoxReference[$CellContext`nb, {$CellContext`id}]]; \
+$CellContext`boxFind[
+      Pattern[$CellContext`nb, 
+       Blank[]]] := MathLink`CallFrontEnd[
+      FrontEnd`BoxReferenceFind[$CellContext`nb]]; \
+$CellContext`arrowKeyFunction[
+      Pattern[$CellContext`dir, 
+       Blank[]]] := $CellContext`arrowKeyFunction[
+      MathLink`CallFrontEnd[
+       FrontEnd`GetBoxIDs[
+        EvaluationNotebook[]]], $CellContext`dir]; \
+$CellContext`arrowKeyFunction[
+      Blank[], 
+      Blank[]] := $CellContext`arrowKeyFunction[
+      FE`BoxReference[
+       EvaluationNotebook[], {1}], 0]; $CellContext`arrowKeyFunction[
+      FE`BoxReference[
+       Pattern[$CellContext`nb, 
+        Blank[]], {"Open"}], -1] := Do[
+      If[
+       $CellContext`boxExistsQ[$CellContext`nb, $CellContext`i], \
+$CellContext`boxFind[$CellContext`nb, $CellContext`i]; 
+       Break[]], {$CellContext`i, 10, 1, -1}]; $CellContext`arrowKeyFunction[
+      FE`BoxReference[
+       Pattern[$CellContext`nb, 
+        Blank[]], {"CloudOpen"}], -1] := $CellContext`boxFind[$CellContext`nb,
+       "Open"]; $CellContext`arrowKeyFunction[
+      FE`BoxReference[
+       Pattern[$CellContext`nb, 
+        Blank[]], {
+        Pattern[$CellContext`id, 
+         Blank[Integer]]}], 
+      Pattern[$CellContext`dir, 
+       Blank[]]] := $CellContext`arrowKeyFunction[
+      FE`BoxReference[$CellContext`nb, {{$CellContext`id + $CellContext`dir}},
+        FE`SearchStart -> 
+       "StartFromBeginning"]]; $CellContext`arrowKeyFunction[
+      FE`BoxReference[
+       Pattern[$CellContext`nb, 
+        Blank[]], {{0}}, FE`SearchStart -> "StartFromBeginning"]] := If[
+      $CellContext`boxExistsQ[$CellContext`nb, "CloudOpen"], 
+      $CellContext`boxFind[$CellContext`nb, "CloudOpen"], 
+      $CellContext`boxFind[$CellContext`nb, 
+       "Open"]]; $CellContext`arrowKeyFunction[
+      FE`BoxReference[
+       Pattern[$CellContext`nb, 
+        Blank[]], {"Open"}], 
+      Plus[1]] := If[
+      $CellContext`boxExistsQ[$CellContext`nb, "CloudOpen"], 
+      $CellContext`boxFind[$CellContext`nb, "CloudOpen"], 
+      $CellContext`boxFind[$CellContext`nb, 1]]; $CellContext`arrowKeyFunction[
+      Pattern[$CellContext`nb, 
+       Blank[FE`BoxReference]]] := $CellContext`boxFind[
+      If[
+       $CellContext`boxExistsQ[$CellContext`nb], $CellContext`nb, 
+       ReplacePart[$CellContext`nb, {
+        2 -> {"Open"}}]]]; $CellContext`arrowKeyFunction[
+     FE`BoxReference[
+      EvaluationNotebook[], {1}], 0]; $CellContext`returnKeyFunction[
+      Pattern[$CellContext`openerType$, 
+       Alternatives["FileOpen", "CloudFileOpen"]]] := 
+    With[{$CellContext`cloudenableFunction$ = FEPrivate`SameQ[
+         FEPrivate`Or[
+          FEPrivate`SameQ[
+           FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player Pro"], 
+          FEPrivate`SameQ[
+           FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+          FEPrivate`SameQ[
+           FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+         True], $CellContext`initialNBCount$ = Length[
+         Notebooks[]]}, 
+      If[$CellContext`openerType$ === "FileOpen", 
+       If[$CellContext`initialNBCount$ < (If[
+           CurrentValue["LocalFileSystemAccessAllowed"], 
+           FrontEndTokenExecute["Open"], Null]; Length[
+           Notebooks[]]), 
+        NotebookClose[
+         ButtonNotebook[]]], 
+       If[
+        FE`Evaluate[$CellContext`cloudenableFunction$], 
+        FrontEndTokenExecute["OpenCloudObject"], 
+        Null]]]; $CellContext`returnKeyFunction["SlideShow"] := 
+    FrontEndExecute[{
+       FrontEnd`NotebookOpen[
+        FrontEnd`FindFileOnPath[
+        "PresenterNotebookChooser.nb", 
+         "PalettePath"]]}]; $CellContext`openDocument[
+      Pattern[$CellContext`nb, 
+       Blank[FrontEnd`FileName]]] := 
+    NotebookOpen[$CellContext`nb]; $CellContext`openDocument[
+      Pattern[$CellContext`cloudnb, 
+       Blank[FrontEnd`CloudObject]]] := FE`Evaluate[
+      FEPrivate`OpenCloudObject[$CellContext`cloudnb]]; \
+$CellContext`numberKeyFunction[
+      Pattern[$CellContext`n$, 
+       Blank[]]] := DynamicModule[{$CellContext`fileaccessibilitytest}, 
+      (With[{$CellContext`file$ = 
+        Part[#, -$CellContext`n$, 2, 1], $CellContext`cloudenableFunction$ = 
+        FEPrivate`SameQ[
+          FEPrivate`Or[
+           FEPrivate`SameQ[
+            FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player Pro"], 
+           FEPrivate`SameQ[
+            FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+           FEPrivate`SameQ[
+            FrontEnd`CurrentValue["WolframCloudConnected"], True]], 
+          True]}, $CellContext`fileaccessibilitytest = 
+        If[Head[$CellContext`file$] === FrontEnd`CloudObject, 
+          FE`Evaluate[$CellContext`cloudenableFunction$], 
+          CurrentValue["LocalFileSystemAccessAllowed"]]; 
+       If[$CellContext`fileaccessibilitytest, 
+         If[$CellContext`n$ <= Length[#], 
+          If[$CellContext`openDocument[$CellContext`file$] =!= $Failed, 
+            #3[#2], CurrentValue[$FrontEnd, NotebooksMenu] = 
+            Delete[#, -$CellContext`n$]]; $CellContext`boxFind[#2, \
+$CellContext`n$ + 0]], Null]]& )[
+       CurrentValue[FrontEnd`$FrontEnd, NotebooksMenu], 
+       EvaluationNotebook[], 
+       If[
+        CurrentValue["ShiftKey"], SetSelectedNotebook, NotebookClose]]]; Null),
+  SynchronousInitialization->False]],
+ CellMargins->{{0, 0}, {0, -2}},
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue[
+  "PanelFontSize"],ExpressionUUID->"28ad9bfc-a514-4d18-acae-a61513d0fc0a"]
+},
+NotebookEventActions->{{"KeyDown", "1"} :> $CellContext`numberKeyFunction[
+   1], {"KeyDown", "2"} :> $CellContext`numberKeyFunction[2], {
+   "KeyDown", "3"} :> $CellContext`numberKeyFunction[3], {
+   "KeyDown", "4"} :> $CellContext`numberKeyFunction[4], {
+   "KeyDown", "5"} :> $CellContext`numberKeyFunction[5], {
+   "KeyDown", "6"} :> $CellContext`numberKeyFunction[6], {
+   "KeyDown", "7"} :> $CellContext`numberKeyFunction[7], {
+   "KeyDown", "8"} :> $CellContext`numberKeyFunction[8], 
+  "DownArrowKeyDown" :> $CellContext`arrowKeyFunction[
+    Plus[1]], 
+  "UpArrowKeyDown" :> $CellContext`arrowKeyFunction[-1], {
+   "MenuCommand", "Close"} :> NotebookClose[
+    EvaluationNotebook[]]},
+WindowSize->FEPrivate`If[
+  FEPrivate`SameQ[
+   FEPrivate`LessEqual[FEPrivate`$DaysUntilExpiration, 15], True], {825, 
+  478}, {825, 420}],
+WindowMargins->Automatic,
+WindowFrame->"ModelessDialog",
+WindowElements->{},
+WindowFrameElements->{"CloseBox", "MinimizeBox"},
+WindowTitle->FEPrivate`If[
+  FEPrivate`SameQ[
+   FEPrivate`Runtime`CurrentEnvironment[]["Name"], "Player"], 
+  FEPrivate`FrontEndResource["WelcomeScreen", "WindowTitlePlayer"], 
+  FEPrivate`FrontEndResource["WelcomeScreen", "WindowTitlePlayerPro"]],
+ScrollingOptions->{"VerticalScrollRange"->0},
+PrivateNotebookOptions->{"ExcludeFromShutdown"->False,
+"FileOutlineCache"->True},
+TaggingRules->{"NotebookID" -> "WelcomeScreen"},
+CellContext->Notebook,
+CacheGraphics->False,
+Background->None,
+PaneBoxOptions->{Alignment->{Left, Center}},
+PaneSelectorBoxOptions->{Alignment->{Left, Center}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 1, 2019)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "SystemDialog.nb"]], 
+   Cell[
+    StyleData["Graphics"], ContextMenu -> None], 
+   Cell[
+    StyleData["HyperlinkActive"], ContextMenu -> None, FontColor -> 
+    RGBColor[0.9, 0, 0.11]], 
+   Cell[
+    StyleData["ContactLink", StyleDefinitions -> StyleData["Hyperlink"]], 
+    ContextMenu -> None, FontColor -> FEPrivate`If[
+      FrontEnd`CurrentValue["MouseOver"], 
+      RGBColor[0.9, 0.37, 0], 
+      RGBColor[0.88, 0.02, 0]], 
+    ButtonBoxOptions -> {ButtonFunction :> (FE`hyperlinkCoded[
+        If[
+         StringQ[#], #, "http://www.wolfram.com/support/contact/email"], 
+        "source=welcomescreen"]& ), Evaluator -> Automatic}], 
+   Cell[
+    StyleData["ControlStyle"], AutoSpacing -> False, FontFamily -> 
+    "Helvetica", FontSize -> 12, FontColor -> GrayLevel[0.15]], 
+   Cell[
+    StyleData["DialogStyle", StyleDefinitions -> StyleData["ControlStyle"]], 
+    FontSize -> FEPrivate`If[
+      FEPrivate`SameQ[FEPrivate`$OperatingSystem, "Unix"], 10, 11]], 
+   Cell[
+    StyleData[
+    "CloudSettingsDefault", StyleDefinitions -> StyleData["ControlStyle"]], 
+    LineBreakWithin -> False, FontSize -> 14, FontWeight -> Bold, FontColor -> 
+    RGBColor[0.39215686274509803`, 0.39215686274509803`, 
+      0.39215686274509803`]], 
+   Cell[
+    StyleData[
+    "VersionNumberStyle", StyleDefinitions -> StyleData["ControlStyle"]], 
+    FontSize -> FEPrivate`If[
+      FEPrivate`SameQ[FEPrivate`$OperatingSystem, "Unix"], 10, 11], FontColor -> 
+    RGBColor[0.6039, 0.6, 0.6]], 
+   Cell[
+    StyleData[
+    "ExpirationMessage", StyleDefinitions -> StyleData["ControlStyle"]], 
+    LineIndent -> 0, LinebreakAdjustments -> {1, 100, 0, 0, 100}, FontWeight -> 
+    Bold], 
+   Cell[
+    StyleData[
+    "CloudSettingsHover", StyleDefinitions -> 
+     StyleData["CloudSettingsDefault"]], FontColor -> 
+    RGBColor[0.996078431372549, 0, 0]]}, Visible -> False, FrontEndVersion -> 
+  "12.0 for Mac OS X x86 (64-bit) (April 1, 2019)", StyleDefinitions -> 
+  "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[611, 21, 1690, 50, 1, InheritFromParent,ExpressionUUID->"6c872a76-f141-4a6f-924d-1951ead34392",
+ PageBreakAbove->True,
+ PageBreakWithin->False],
+Cell[2304, 73, 136203, 2746, 422, InheritFromParent,ExpressionUUID->"28ad9bfc-a514-4d18-acae-a61513d0fc0a",
+ PageBreakAbove->True,
+ PageBreakWithin->False]
+}
+]
+*)
+
+(* End of internal cache information *)
+
+(* NotebookSignature oTUUVN#yDcrjluAufS4TLALf *)

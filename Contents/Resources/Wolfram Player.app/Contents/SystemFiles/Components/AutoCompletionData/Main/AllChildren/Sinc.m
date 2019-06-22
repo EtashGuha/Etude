@@ -1,0 +1,13 @@
+{"Pi", "Sin", "Sinc", "Rational", "Sqrt", "Cos", "Quantity", "E", "None", 
+ "I", "Tan", "Degree", "Plus", "Abs", "Exp", "Log", "PrimePi", "ArcCos", 
+ "Tanh", "UnitBox", "D", "ArcSin", "Range", "Interpolation", "Sinh", "Sign", 
+ "Erf", "ArcTan", "Cosh", "Infinity", "UnitStep", "DiracDelta", 
+ "SinIntegral", "Ceiling", "Subscript", "HeavisideTheta", "SawtoothWave", 
+ "Ratios", "ProductLog", "EllipticPi", "Cot", "UnitTriangle", "Sec", 
+ "HeavisideLambda", "Gamma", "Floor", "Conjugate", "ArcSinh", 
+ "KroneckerDelta", "EulerE", "Csc", "BesselJ", "Re", "LogIntegral", "Erfi", 
+ "Derivative", "Sum", "Norm", "Limit", "Less", "Greater", "Convolve", 
+ "BaseForm", "Zeta", "Quotient", "PrimeZetaP", "PlusMinus", "Mod", 
+ "MatrixExp", "ListConvolve", "Inverse", "Identity", "HypergeometricU", 
+ "FourierTransform", "Fourier", "Fit", "EvenQ", "EllipticE", "DiracComb", 
+ "DawsonF", "Coth", "CosIntegral", "Arg", "ArcSec", "ArcCoth"}

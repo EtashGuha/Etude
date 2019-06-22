@@ -1,0 +1,70 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>MathKernel Class</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.MathKernel.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">MathKernel Class</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> MathKernel is a non-visual component that provides a very high-level interface for interacting with <i>Mathematica</i>. It is especially intended for use in visual programming environments, as it is highly configurable via properties. </p>
+      <p>For a list of all members of this type, see <a href="Wolfram.NETLink.MathKernelMembers.html">MathKernel Members</a>.</p>
+      <p>
+        <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemObjectClassTopic.htm">System.Object</a>
+        <br />   <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemMarshalByRefObjectClassTopic.htm">System.MarshalByRefObject</a><br />      <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemComponentModelComponentClassTopic.htm">System.ComponentModel.Component</a><br />         <b>Wolfram.NETLink.MathKernel</b></p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Public Class MathKernel<div>    Inherits <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemComponentModelComponentClassTopic.htm">Component</a></div></div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <div>public class MathKernel<b> : <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemComponentModelComponentClassTopic.htm">Component</a></b></div>
+      </div>
+      <H4 class="dtH4">Thread Safety</H4>
+      <P>Public static (<b>Shared</b> in Visual Basic) members of this type are 
+				safe for multithreaded operations. Instance members are <b>not</b> guaranteed to be 
+				thread-safe.</P>
+      <h4 class="dtH4">Remarks</h4>
+      <p> MathKernel provides a higher-level interface than <a href="Wolfram.NETLink.IKernelLink.html">IKernelLink</a>. For many types of .NET programs that use <i>Mathematica</i> for computations, the IKernelLink interface provides ideal functionality. For some types of programs, however, programmers might find the MathKernel object even easier to use. This is especially true for programs that want to capture not just the result of a computation, but also messages, Print output, or graphics generated as side effects of the computation. <p> The typical use of a MathKernel is to set the <a href="Wolfram.NETLink.MathKernel.Input.html">Input</a> property, call the <a href="Wolfram.NETLink.MathKernel.Compute_overload_1.html">Compute</a> method, and when it returns you can get the various outputs produced by the computation via the <a href="Wolfram.NETLink.MathKernel.Result.html">Result</a>, <a href="Wolfram.NETLink.MathKernel.Messages.html">Messages</a>, <a href="Wolfram.NETLink.MathKernel.PrintOutput.html">PrintOutput</a>, and <a href="Wolfram.NETLink.MathKernel.Graphics.html">Graphics</a> properties. </p> The .NET/Link distribution contains a sample program showing the use of MathKernel. You can find it in [Mathematica directory]\AddOns\NETLink\Examples\Part2\MathKernel. </p>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="Wolfram.NETLink.html">Wolfram.NETLink</a>
+      </p>
+      <p>
+        <b>Assembly: </b>Wolfram.NETLink (in Wolfram.NETLink.dll)
+					</p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.MathKernelMembers.html">MathKernel Members</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="MathKernel class, about MathKernel class">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

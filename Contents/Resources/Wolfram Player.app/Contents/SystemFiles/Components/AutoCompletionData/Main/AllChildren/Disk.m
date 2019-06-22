@@ -1,0 +1,10 @@
+{"Pi", "Sqrt", "Tan", "Sin", "Extract", "Cos", "Mod", "Abs", "Apply", 
+ "IntegerPart", "If", "Min", "Max", "List", "Unitize", "Scaled", 
+ "RandomReal", "Large", "Chop", "ArcSin", "Yellow", "White", "Total", 
+ "Through", "Reverse", "Red", "Re", "PlotLabel", "Pane", "Orange", "Norm", 
+ "N", "Last", "ImageSize", "Im", "Green", "Function", "Floor", "First", 
+ "Degree", "Blue", "ArcTan", "Round", "Most", "Length", "ImageScaled", 
+ "Evaluate", "E", "All", "Which", "VectorAngle", "UnitStep", "Take", "Table", 
+ "Sum", "Sort", "RootMeanSquare", "Positive", "Position", "Polygon", 
+ "MousePosition", "Median", "Mean", "Map", "Log", "HarmonicMean", 
+ "GeometricMean", "Flatten", "Exp", "Dynamic", "D", "ArcCos"}

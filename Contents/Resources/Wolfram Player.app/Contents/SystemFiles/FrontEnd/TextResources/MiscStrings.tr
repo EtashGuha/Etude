@@ -1,0 +1,2714 @@
+@@resource fontsNotListedInFontsMenu
+{
+"Math1",
+"Math1Mono",
+"Math2",
+"Math2Mono",
+"Math3",
+"Math3Mono",
+"Math4",
+"Math4Mono",
+"Math5",
+"Math5Mono",
+"Mathematica1",
+"Mathematica1Mono",
+"Mathematica2",
+"Mathematica2Mono",
+"Mathematica3",
+"Mathematica3Mono",
+"Mathematica4",
+"Mathematica4Mono",
+"Mathematica5",
+"Mathematica5Mono",
+"Mathematica6",
+"Mathematica6Mono",
+"Mathematica7",
+"Mathematica7Mono",
+"MT",
+"MH",
+"MC",
+"MP",
+"Mathematica",
+"MathematicaMono",
+"MathematicaSans"
+}
+@|
+@|
+@@resource textCapTypeStringTable
+{
+"\"Normal\"", 
+"\"AllCaps\"", 
+"\"AllLower\"", 
+"\"SmallCaps\"", 
+"\"AllSmallCaps\""
+}
+@|
+@|
+@@resource evaluationModeStringTable
+{
+"\"Mathematica\"", 
+"\"WolframAlphaShort\"",
+"\"WolframAlphaLong\""
+}
+@|
+@|
+@@resource untitledStringNum
+Untitled-
+@|
+@|
+@@resource untitledStringNoNum
+Untitled
+@|
+@|
+@@resource previewWindowTitle
+Preview of
+@|
+@|
+@@resource saveAsStringNum
+Save this document as:
+@|
+@|
+@@resource errorTimeStringANum
+(This refers to a beep that occurred 
+@|
+@|
+@@resource errorTimeStringBNum
+ minutes ago.)
+@|
+@|
+@@resource stylesTitleStringNum
+Style Definitions for 
+@|
+@|
+@@resource runningTitleStringNum
+Running...
+@|
+@|
+@@resource renderingTitleStringNum
+Rendering...
+@|
+@|
+@@resource debuggingTitleStringNum
+ (Debug)
+@|
+@|
+@@resource inputPromptDebugging
+(Debug) 
+@|
+@|
+@@resource localKernelName
+Local
+@|
+@|
+@@resource inputPromptExtraNoDialog
+(%s) 
+@|
+@|
+@@resource inputPromptExtraOneDialog
+(%s, Dialog) 
+@|
+@|
+@@resource inputPromptExtraManyDialog
+(%s, Dialog Level %ld) 
+@|
+@|
+@@resource inputPromptExtraNoDialogNoKernel
+
+@|
+@|
+@@resource inputPromptExtraOneDialogNoKernel
+(Dialog) 
+@|
+@|
+@@resource inputPromptExtraManyDialogNoKernel
+(Dialog Level %ld) 
+@|
+@|
+@@resource frontEndPromptName
+During formatting 
+@|
+@|
+@@resource kernelInitWindowName
+Messages
+@|
+@|
+@@resource associatedEvaluationString
+During evaluation of 
+@|
+@|
+@@resource couldNotGenerateOutputForm
+Can't format cell.
+@|
+@|
+@@resource dummyPendingOutputForm
+Waiting for formatted cell contents.
+@|
+@|
+@@resource pageNumberString
+Page: %ld
+@|
+@|
+@@resource elapsedTimeString
+Time: %.2f seconds
+@|
+@|
+@@resource savingFileString
+Saving: %ld%%
+@|
+@|
+@@resource checkingSaveFileString
+Checking: %ld%%
+@|
+@|
+@@resource pictureFilesString
+Picture files
+@|
+@|
+@@resource coordinatePairString
+{%.5g, %.5g}
+@|
+@|
+@@resource dragginFrameString
+Left:%.0f Top:%.0f
+@|
+@|
+@@resource resizingFrameString
+W:%.0f H:%.0f
+@|
+@|
+@@resource resizingShadeString
+Height:%.0f
+@|
+@|
+@@resource findUserFilePromptString
+Find the file you would like to add.
+@|
+@|
+@@resource findPrefsPromptString
+Please locate the preferences file, which will normally be called "FrontEndInit.m".
+@|
+@|
+@@resource findSharedStyleSheetString
+Choose Stylesheet
+@|
+@|
+@@resource defaultsNotebookPromptString
+Please locate a Defaults notebook.  They can normally be found in the Defaults folder, and there will usually be one called "Normal".
+@|
+@|
+@@resource pastePathPromptString
+Select a file:
+@|
+@|
+@@resource pastePathPromptStringB
+Select a folder:
+@|
+@|
+@@resource installBaseDirectoryPromptString Macintosh
+The path to the selected folder will be used as the base for installing the add-on.
+@|
+@|
+@@resource installBaseDirectoryPromptString X
+Select a folder and click "OK".  The path to this folder will be used as the base for installing the add-on.
+@|
+@|
+@@resource installBaseDirectoryPromptString Windows
+Select a folder and click "OK".  The path to this folder will be used as the base for installing the add-on.
+@|
+@|
+@@resource findWebBrowserString
+Please locate a web browser.
+@|
+@|
+@@resource destroyingPrivateStylesWarningStyle
+Are you sure you want to destroy the private styles defined in this notebook, and replace them with a shared stylesheet?
+@|
+@|
+@@resource xLabelString
+x
+@|
+@|
+@@resource yLabelString
+y
+@|
+@|
+@@resource zLabelString
+z
+@|
+@|
+@@resource pLabelString
+phi
+@|
+@|
+@@resource rLabelString
+r
+@|
+@|
+@@resource tLabelString
+theta
+@|
+@|
+@@resource aboutBoxStringNum
+%ldK
+Bytes Free
+%ldK
+Available
+%ldK In
+Clipboard
+@|
+@|
+@@resource saveChangesStringNum
+Save changes to "%s"?
+@|
+@|
+@@resource saveClosedGroupChangesStringNum
+Save closed group changes to "%s"?
+@|
+@|
+@@resource saveChangesBeforeQuittingStringNum
+Save changes to "%s" before quitting?
+@|
+@|
+@@resource saveClosedGroupChangesBeforeQuittingStringNum
+Save closed group changes to "%s" before quitting?
+@|
+@|
+@@resource nowPrintingStringNum Macintosh
+Now printing page %s.
+@|
+@|
+@@resource nowPrintingStringNum X
+Now printing page %s.
+@|
+@|
+@@resource nowPrintingStringNum Windows
+Now printing page %s.
+@|
+@|
+@@resource nowSpoolingStringNum
+Now spooling page %s.
+@|
+@|
+@@resource askInitStringNumA
+Do you want to automatically evaluate all the initialization cells in the notebook "
+@|
+@|
+@@resource askInitStringNumB
+"?
+@|
+@|
+@@resource closeRunningStringNumA
+The notebook "
+@|
+@|
+@@resource closeRunningStringNumB
+" contains a running evaluation.  If you close it now, any results from the evaluation will be placed in the Messages window.
+@|
+@|
+@@resource openFileTypesListID
+TEXTttroOCDZPICTEPSFPICSZSYSscrpMooVJPEGTIFF
+@|
+@|
+@@resource cLineTokenStringID
+active,
+inactive,
+locked,
+unlocked,
+paletteCell,
+notPaletteCell,
+mathEditTraditionalNotation,
+mathEditMathematicaNotation,
+italicSingleLetterVariables,
+notItalicSingleLetterVariables,
+mathEditDisplayStyle,
+mathEditTextStyle,
+mathEditScriptStyle,
+mathEditScriptScriptStyle,
+mathEditForm,
+mathEditRelativeSizes,
+input,
+output,
+open,
+closed,
+Copen,
+Cclosed,
+pageBreak,
+dontPageBreak,
+pageBreakBelow,
+dontPageBreakBelow,
+noPageBreak,
+dontNoPageBreak,
+noPageBreakBelow,
+dontNoPageBreakBelow,
+keepOnOnePage,
+noKeepOnOnePage,
+noPageBreakInGroup,
+dontNoPageBreakInGroup,
+initialization,
+notInitialization,
+autoActive,
+notAutoActive,
+statusCell,
+notStatusCell,
+Text,
+PostScript,
+PICT,
+Bitmap,
+fill,
+noFill,
+lines,
+noLines,
+thickLines,
+thinLines,
+preserveAspect,
+dontPreserveAspect,
+left,
+right,
+center,
+full,
+wordwrap,
+nowordwrap,
+hscroll,
+nohscroll,
+groupLikeNormal,
+groupLikeTitle,
+groupLikeSection,
+groupLikeInput,
+groupLikeOutput,
+groupLikeGraphics,
+cellOutline,
+noCellOutline,
+noDingbat,
+blackBox,
+grayBox,
+whiteBox,
+blackDot,
+grayDot,
+whiteDot,
+watchDingbatToken,
+starDingbatToken,
+plain,
+bold,
+italic,
+underline,
+outline,
+shadow,
+superscript,
+subscript,
+overstrike,
+leftWrapOffset,
+leftNameWrapOffset,
+rightWrapOffset,
+pictureLeft,
+pictureTop,
+pictureWidth,
+pictureHeight,
+leftCropOffset,
+topCropOffset,
+rightCropOffset,
+bottomCropOffset,
+animationSpeed,
+loopCount,
+infiniteLoop,
+loopDistance,
+fontName,
+fullFontName,
+fontSize,
+fontColorRed,
+fontColorGreen,
+fontColorBlue,
+fontLeading,
+backColorRed,
+backColorGreen,
+backColorBlue,
+spaceAbove,
+spaceBelow,
+height,
+evaluateAsCurrentKernel,
+evaluateAsNotebooksKernel,
+evaluateAsLocalKernel,
+remoteEvaluator,
+remoteFormatter,
+formatAsCurrentKernel,
+formatAsNotebooksKernel,
+formatAsLocalKernel,
+keywords,
+startGroup,
+endGroup,
+inlineCell,
+font,
+pictureID,
+soundID,
+templateID,
+virtualLink,
+fontset,
+RelatedFiles,
+paletteColors,
+graysOnly,
+useSolids,
+useDithersForBitmaps,
+alwaysUseMacCustomDithers,
+neverUseMacCustomDithers,
+showRuler,
+automaticGrouping,
+magnification,
+currentKernel,
+localKernel,
+remoteKernel,
+macintoshStandardFontEncoding,
+nextStandardFontEncoding,
+microsoftWindowsStandardFontEncoding,
+x11StandardFontEncoding,
+fileCreatorVersion,
+MacintoshStandardFontEncoding,
+NeXTStandardFontEncoding,
+MSWindowsStandardFontEncoding,
+X11StandardFontEncoding,
+FrontEndVersion,
+Information,
+PaletteWindow,
+formatAsNotebooksKernel,
+formatAsPostScript,
+formatAsPICT,
+formatAsBitmap,
+formatAsQuickTime,
+formatAsMathEdit,
+formatAsGraphEdit
+
+
+@|
+@|
+@@resource lfontNamesStringID
+(*^
+:[font = text; inactive; preserveAspect; startGroup]
+ReferenceStyle
+:[font = title; inactive; preserveAspect]
+title
+:[font = subtitle; inactive; preserveAspect]
+subtitle
+:[font = subsubtitle; inactive; preserveAspect]
+subsubtitle
+:[font = section; inactive; preserveAspect]
+section
+:[font = subsection; inactive; preserveAspect]
+subsection
+:[font = subsubsection; inactive; preserveAspect]
+subsubsection
+:[font = text; inactive; preserveAspect]
+text
+:[font = smalltext; inactive; preserveAspect]
+smalltext
+:[font = input; preserveAspect]
+input
+:[font = output; output; inactive; preserveAspect]
+output
+;[o]
+output
+:[font = message; inactive; preserveAspect]
+message
+:[font = print; inactive; preserveAspect]
+print
+:[font = info; inactive; preserveAspect]
+info
+:[font = postscript; PostScript; formatAsPostScript; output; inactive; preserveAspect; pictureLeft = 34; pictureWidth = 282; pictureHeight = 174]
+postscript
+:[font = name; inactive; preserveAspect]
+name
+:[font = header; inactive; preserveAspect]
+header
+:[font = footer; inactive; preserveAspect; endGroup]
+footer
+^*)
+
+@|
+@|
+@@resource PostScriptToMacFontNamesID
+Times, New York, 0,
+Helvetica, Geneva, 0,
+Courier, Courier, 0
+
+@|
+@|
+@@resource PostScriptToMacFaceNamesID
+Bold, 1,
+Italic, 2,
+BoldItalic, 3,
+Oblique, 2,
+BoldOblique, 3
+@|
+@|
+@@resource overwriteFileStringID
+The file %s already exists.  Overwrite?
+
+@|
+@|
+@@resource SpeakNoSelection
+No selection 
+
+@|
+@|
+@@resource SpeakEmptyNotebookSelection
+Empty Notebook 
+
+@|
+@|
+@@resource SpeakCellRangeSelection
+Cell range with head 
+
+@|
+@|
+@@resource SpeakAboveCellSelection
+Above cell containing 
+
+@|
+@|
+@@resource SpeakBelowCellSelection
+Below cell containing 
+
+@@resource anotherClientRequestingFileOpen
+Another client is requesting that you open the file %s. Open File?
+
+@@resource convertingFileProgress
+Converting: %ld Cells.
+File: %s
+@@resource convertingFileProgressStandardForm
+Converting: %ld Cells.  Converting to StandardForm
+File: %s
+@@resource convertingFileProgressRendering
+Converting: %ld Cells.  Rendering PostScript
+File: %s
+@|
+@|
+@@resource openingHelpTopic
+Opening help topic...
+@|
+@|
+@@resource askIfDeleteSessionDumpFile
+The kernel you asked to delete uses a session dump file (%s).  Do you want to delete the session dump file too?
+@|
+@|
+@@resource cantDeleteSessionDumpFile
+The kernel you asked to delete uses a session dump file (%s).  The front end can't delete this file, because it is on a remote file system.  You may want to delete it yourself.
+@|
+@|
+@@resource defaultNewFontName
+NewFont
+@|
+@|
+@@resource colorSelectorPrompt
+Color
+@|
+@|
+@@resource savingRenderedImagesProgressString
+Saving Rendered Images: %d.
+@|
+@|
+@@resource resizingGraphicString
+Size: %d x %d
+@|
+@|
+@@resource displayImageSizeString
+Image Dimension: %d x %d   |   Display: %d x %d
+@|
+@|
+@@resource modifyThisMenuString
+Modify this Menu...
+@|
+@|
+@@resource IPCErrorEmptySelection
+You tried to evaluate an empty selection.
+@|
+@|
+@@resource IPCErrorNoKernel
+No Kernel was available.
+@|
+@|
+@@resource IPCErrorNoOutput
+There was no output from the expression you asked to evaluate.
+@|
+@|
+@@resource IPCErrorSyntaxError
+There was a syntax error in the expression you asked to evaluate.
+@|
+@|
+@@resource FavoriteFileDefaultName
+Filename
+@|
+@|
+@@resource saveFilePromptString
+Save as
+@|
+@|
+@@resource selectFilePromptString
+Please select file to open
+@|
+@|
+@@resource installSourceFilePromptString
+Select the file that you want to install.
+@|
+@|
+@@resource installConfirmationPromptString
+Verify the name and location of the file that you want to install.
+@|
+@|
+@@resource parsingProgressString
+Parsing: %ld%% complete.
+@|
+@|
+@@resource readingCellsProgressString
+Reading: %ld Cells.
+@|
+@|
+@@resource paginatingProgressString
+Calculating page breaks: %ld%% complete.
+@|
+@|
+@@resource choosePrintFileString
+Choose a file as the print destination:
+@|
+@|
+@@resource defaultPasswordString
+Password
+@|
+@|
+@@resource defaultKeyString
+EncodingID
+@|
+@|
+@@resource enterPasswordTitleString
+Enter Password
+@|
+@|
+@@resource styleDataStringA
+Prototype for style "%s":
+@|
+@|
+@@resource styleDataStringB
+Local definition for all styles in style environment "%s":
+@|
+@|
+@@resource styleDataStringC
+Local definition for style "%s" in style environment "%s":
+@|
+@|
+@@resource styleDataStringD
+Local definition for style "%s":
+@|
+@|
+@@resource styleDataStringInherited
+Inheriting base definitions from stylesheet "%s"
+@|
+@|
+@@resource styleDataStringIllFormed
+Unknown StyleData syntax
+@|
+@|
+@@resource mathEditRemoveBoxString
+Remove 
+@|
+@|
+@@resource convertedFileStepAsideString
+.new
+@|
+@@resource buildingAFMCache
+Building AFM cache. File %d of %d.
+
+@@resource PostScriptNameToFontDescription
+{}
+
+@|
+@@resource urlPrefixStrings
+{
+	"http://",
+	"ftp://",
+	"mail:",
+	"gopher://",
+	"https://",
+	"nntp://",
+	"news:",
+	"wais://",
+	"mailto:",
+	"telnet:",
+	"javascript:",
+	"vbscript:",
+	"nfs://",
+	"mocca:",
+	"about:",
+	"file:///"
+}
+@|
+@|
+@@resource twoByteSyntaxCharacterAutoReplacementsTable
+{
+"\:ff10"->"0",
+"\:ff11"->"1",
+"\:ff12"->"2",
+"\:ff13"->"3",
+"\:ff14"->"4",
+"\:ff15"->"5",
+"\:ff16"->"6",
+"\:ff17"->"7",
+"\:ff18"->"8",
+"\:ff19"->"9",
+"\:ff21"->"A",
+"\:ff22"->"B",
+"\:ff23"->"C",
+"\:ff24"->"D",
+"\:ff25"->"E",
+"\:ff26"->"F",
+"\:ff27"->"G",
+"\:ff28"->"H",
+"\:ff29"->"I",
+"\:ff2a"->"J",
+"\:ff2b"->"K",
+"\:ff2c"->"L",
+"\:ff2d"->"M",
+"\:ff2e"->"N",
+"\:ff2f"->"O",
+"\:ff30"->"P",
+"\:ff31"->"Q",
+"\:ff32"->"R",
+"\:ff33"->"S",
+"\:ff34"->"T",
+"\:ff35"->"U",
+"\:ff36"->"V",
+"\:ff37"->"W",
+"\:ff38"->"X",
+"\:ff39"->"Y",
+"\:ff3a"->"Z",
+"\:ff41"->"a",
+"\:ff42"->"b",
+"\:ff43"->"c",
+"\:ff44"->"d",
+"\:ff45"->"e",
+"\:ff46"->"f",
+"\:ff47"->"g",
+"\:ff48"->"h",
+"\:ff49"->"i",
+"\:ff4a"->"j",
+"\:ff4b"->"k",
+"\:ff4c"->"l",
+"\:ff4d"->"m",
+"\:ff4e"->"n",
+"\:ff4f"->"o",
+"\:ff50"->"p",
+"\:ff51"->"q",
+"\:ff52"->"r",
+"\:ff53"->"s",
+"\:ff54"->"t",
+"\:ff55"->"u",
+"\:ff56"->"v",
+"\:ff57"->"w",
+"\:ff58"->"x",
+"\:ff59"->"y",
+"\:ff5a"->"z",
+"\:ff01"->"!",
+"\:ff20"->"@",
+"\:ff03"->"#",
+"\:ff04"->"$",
+"\:ff05"->"%",
+"\:ff3e"->"^",
+"\:ff06"->"&",
+"\:ff0a"->"*",
+"\:ff08"->"(",
+"\:ff09"->")",
+"\:2212"->"-",
+"\:ff3f"->"_",
+"\:ff0b"->"+",
+"\:ff1d"->"=",
+"\:301c"->"\:30fc",
+"\:ff40"->"`",
+"\:ff5b"->"{",
+"\:ff5d"->"}",
+"\:ff3b"->"[",
+"\:ff3d"->"]",
+"\:ff1a"->":",
+"\:ff1b"->";",
+"\:ff5c"->"|",
+"\:ffe5"->"\\",
+"\:ff1c"->"<",
+"\:ff1e"->">",
+"\:ff0c"->",",
+"\:ff0e"->".",
+"\:3001"->",",
+"\:3002"->".",
+"\:ff1f"->"?",
+"\:ff0f"->"/",
+"\:3000"->" ",
+"\:300e"->"{",
+"\:300f"->"}",
+"\:300c"->"[",
+"\:300d"->"]",
+"\:ff5b"->"{",
+"\:ff5d"->"}",
+"\:ff3b"->"[",
+"\:ff3d"->"]"
+}
+@|
+@|
+@@resource cleanStartMessage
+Starting with clean preferences...
+@|
+@@resource startupMessageOne
+Initializing kernel connections...
+@|
+@@resource startupMessageTwo
+Initializing cell styles...
+@|
+@@resource startupMessageThree
+Initializing fonts...
+@|
+@@resource startupMessageFour
+Initializing menus...
+@|
+@@resource startupMessageFive
+Initializing defaults notebook...
+@|
+@@resource startupMessageSix
+Initializing defaults clipboards...
+@|
+@@resource startupMessageSeven
+Initializing internal preferences...
+@|
+@@resource startupMessageEight
+Initializing kernels...
+@|
+@@resource startupMessageNine
+Opening Welcome Screen...
+@|
+@@resource startupMessageActivation
+Checking activation...
+@|
+@@resource expirationDateStringPrefix
+Expiration Date: 
+@|
+@@resource versionString
+%s for %s (%s)
+@|
+@@resource machineIDString
+Machine Name: %s
+@|
+@@resource hostNameString
+Host Name: %s
+@|
+@@resource quittingWithOpenParentLinks
+One or more programs are currently using the Wolfram Language front end as a service.  If you Quit now, they may be unable to continue operating properly.  Do you really want to Quit?
+@|
+@@resource oldPrefsFoundString
+No current user preferences file was found, but preferences from an older version of the Wolfram Language were found.  Do you want to copy the old preference settings?
+@|
+@@resource pastingCellExpressionString
+The text you are pasting corresponds to a cell expression.  You can either paste the literal text, or interpret it and paste the resulting cell object.  Do you want to interpret the text?
+@|
+@@resource pastingNotebookExpressionString
+The text you are pasting corresponds to a notebook expression.  You can either paste the literal text into your current notebook, or interpret the text and open it as a new notebook.  Do you want to interpret the text?
+@|
+@@resource pastingMathMLExpressionString
+The text you are pasting appears to be a MathML expression. You can either paste the literal text or try to paste the corresponding typeset expression. Do you want to paste the typeset expression?
+@|
+@@resource pastingIntoMStringString
+You are pasting text into a string ("...").
+
+Your text contains quotes or backslashes.
+
+Do you want to escape these so they appear verbatim in the string?
+@|
+@@resource studentTitle
+ Student Edition - Personal Use Only
+@|
+@@resource licenseExpiringTitle
+License Expiring
+@|
+@@resource licenseExpiredTitle
+License Expired
+@|
+@@resource fileFilters
+{
+"All files\.00*.*\.00\.00",
+"All files (*.*)\.00*.*\.00Notebooks (*.nb, *.cdf)\.00*.nb;*.cdf;*.nbp;*.nbml\.00Packages (*.wl, *.m)\.00*.wl;*.m\.00Version 2.x notebooks (*.ma)\.00*.ma\.00Text files (*.txt)\.00*.txt\.00Bitmap files (*.bmp)\.00*.bmp\.00EPS files (*.eps)\.00*.eps\.00Metafiles (*.?mf)\.00*.emf;*.wmf\.00Wave files (*.wav)\.00*.wav\.00\.00",
+"All files (*.*)\.00*.*\.00Notebooks (*.nb, *.cdf)\.00*.nb;*.cdf;*.nbp;*.nbml\.00\.00",
+"All files (*.*)\.00*.*\.00Packages (*.wl, *.m)\.00*.wl;*.m\.00\.00",
+"All files (*.*)\.00*.*\.00Version 2.x notebooks (*.ma)\.00*.ma\.00\.00",
+"All files (*.*)\.00*.*\.00EPS files (*.eps)\.00*.eps\.00\.00",
+"All files (*.*)\.00*.*\.00Text files (*.txt)\.00*.txt\.00\.00",
+"All files (*.*)\.00*.*\.00Adobe Illustrator files (*.ai)\.00*.ai\.00\.00",
+"All files (*.*)\.00*.*\.00Enhanced Metafiles (*.emf)\.00*.emf\.00\.00",
+"All files (*.*)\.00*.*\.00Windows metafiles (*.wmf)\.00*.wmf\.00\.00",
+"All files (*.*)\.00*.*\.00Bitmap files (*.bmp)\.00*.bmp\.00\.00",
+"All files (*.*)\.00*.*\.00Rich Text files (*.rtf)\.00*.rtf\.00\.00",
+"All files (*.*)\.00*.*\.00Wave files (*.wav)\.00*.wav\.00\.00",
+"All files (*.*)\.00*.*\.00Known file types\.00*.nb;*.cdf;*.nbp;*.nbml;*.wl;*.m;*.wls;*.ma;*.eps;*.txt;*.emf;*.wmf;*.bmp;*.rtf;*.wav\.00\.00",
+"All files (*.*)\.00*.*\.00Executables (*.exe)\.00*.exe\.00\.00",
+"All files (*.*)\.00*.*\.00Printer files (*.prn)\.00*.prn\.00\.00",
+"Wolfram Files\.00*.cdf;*.nb;*.nbp;*.wl;*.m;*.wls\.00\.00"
+}
+@|
+@@resource OptionInspectorHeading1
+Option name:
+@|
+@@resource OptionInspectorHeading2
+Option setting:
+@|
+@@resource OptionTargetGlobalPreferences
+Global Preferences
+@|
+@@resource OptionTargetSelectedNotebook
+Selected Notebook
+@|
+@@resource OptionTargetSelection
+Selection
+@|
+@@resource ByCategoryString
+By Category
+@|
+@@resource AlphabeticallyString
+Alphabetically
+@|
+@@resource AsTextString
+As Text
+@|
+@@resource HelpString
+Help
+@|
+@@resource SearchString
+Search
+@|
+@@resource ScopeString
+Scope
+@|
+@@resource ViewAsString
+View
+@|
+@@resource ApplyString
+Apply
+@|
+@@resource StyleString
+Style
+@|
+@@resource AlignmentString
+Alignment
+@|
+@@resource AlignLeftString
+Align Left
+@|
+@@resource AlignCenterString
+Align Center
+@|
+@@resource AlignRightString
+Align Right
+@|
+@@resource AlignBothString
+Align Both
+@|
+@@resource BackString
+Back
+@|
+@@resource ForwardString
+Forward
+@|
+@@resource PreviousString
+Previous
+@|
+@@resource NextString
+Next
+@|
+@@resource CategoriesString
+Categories
+@|
+@@resource LookupString
+Go
+@|
+@@resource BookmarksString
+Bookmarks
+@|
+@@resource SearchTypeString
+Search Type
+@|
+@@resource showBrowsersButtonTitleString
+Show Categories
+@|
+@@resource hideBrowsersButtonTitleString
+Hide Categories
+@|
+@@resource CurrentColorString
+Current Color
+@|
+@@resource OtherString
+Other
+@|
+@@resource clickOptionsPrompt
+Click the Options button to change the default settings for accessing selected files.
+@|
+@@resource AllFilesString
+All Files
+@|
+@@resource subMenuIsEmpty
+(Empty)
+@|
+@@resource retryServerText
+Retry server
+@|
+@@resource EPSDummyText1
+EPS Graphic
+@|
+@@resource EPSDummyText2
+Title: 
+@|
+@@resource EPSDummyText3
+Creator: 
+@|
+@@resource PSDummyText1
+PostScript Graphic
+@|
+@@resource PSDummyText2
+The option to display dummy
+@|
+@@resource PSDummyText3
+graphics in place of PostScript is
+@|
+@@resource PSDummyText4
+enabled. If this cell is printed, the
+@|
+@@resource PSDummyText5
+correct graphic will be substituted.
+@|
+@@resource revertText
+Are you sure you want to revert "%s" (you will lose all unsaved changes)?
+@|
+@@resource DynamicRegistrationURL
+http://register.wolfram.com/?version=`version`&license=`license`&source=Mathematica
+@|
+@@resource WolframPlayerPublishURL
+http://www.wolfram.com/publish.html?filename=`filename`
+@|
+@@resource WolframCloudAccountSettingsURL
+https://www.wolframcloud.com/app/account/
+@|
+@@resource JapanesePostScriptFontName
+Ryumin-Light-RKSJ-H
+@|
+@@resource JapanesePostScriptFontWidth
+1000
+@|
+@@resource JapanesePostScriptFontAscent
+990
+@|
+@@resource JapanesePostScriptFontLBearing
+10
+@|
+@@resource JapanesePostScriptFontRBearing
+990
+@|
+@|
+@|
+@@resource debuggerToolsWindowName
+
+@|
+@|
+@@resource debuggerStackWindowName
+Stack
+@|
+@|
+@@resource debuggerBreakpointsWindowName
+Breakpoints
+@|
+@|
+@@resource debuggerMessageBreakpointsWindowName
+Message Breakpoints
+@|
+@|
+@@resource debuggerToolsWindowContents
+Notebook[{
+Cell[BoxData[
+ GridBox[{
+  {TooltipBox[ButtonBox["\"Break at Selection\"", ButtonFunction:>(FrontEndToken["DebuggerToggleBreakpoint"]& )], 
+  	"Select expression then press"]},
+  {""},
+  {TooltipBox[ButtonBox["\"Halt\"", ButtonFunction:>(FrontEndToken[FrontEnd`EvaluationNotebook[], "EvaluatorHalt", Automatic]& ), 
+  			Enabled:>Dynamic@FEPrivate`And[FEPrivate`Unequal[FEPrivate`DebuggerState[], "Halted"], FEPrivate`Unequal[FEPrivate`DebuggerState[], "Idle"], 
+  			CurrentValue[$FrontEnd, {"DebuggerSettings", "DebuggerEnabled"}]]],
+  	"Interrupt and display stack"]},
+  {TooltipBox[ButtonBox["\"Continue\"", ButtonFunction:>(FrontEndToken["DebuggerContinue"]& ), 
+  			Enabled:>Dynamic@FEPrivate`And[FEPrivate`Unequal[FEPrivate`DebuggerState[], "Running"], FEPrivate`Unequal[FEPrivate`DebuggerState[], "Idle"], 
+  			CurrentValue[$FrontEnd, {"DebuggerSettings", "DebuggerEnabled"}]]],
+  	"Continue until next breakpoint"]},
+  {TooltipBox[ButtonBox["\"Run to Selection\"", ButtonFunction:>(FrontEndToken["DebuggerContinueToSelection"]& ), 
+  			Enabled:>Dynamic@CurrentValue[$FrontEnd, {"DebuggerSettings", "DebuggerEnabled"}]],
+  	"Continue until reaching selected expression\nStart evaluation and run to selection."]},
+  {""},
+  {TooltipBox[ButtonBox["\"Step\"", ButtonFunction:>(FrontEndToken["DebuggerStep"]& ), 
+  			Enabled:>Dynamic@FEPrivate`And[FEPrivate`Equal[FEPrivate`DebuggerState[], "Halted"], CurrentValue[$FrontEnd, {"DebuggerSettings", "DebuggerEnabled"}]]],
+  	"Stop at beginning of next expression"]},
+  {TooltipBox[ButtonBox["\"Step In\"", ButtonFunction:>(FrontEndToken["DebuggerStepIn"]& ), 
+  			Enabled:>Dynamic@FEPrivate`And[FEPrivate`Equal[FEPrivate`DebuggerState[], "Halted"], CurrentValue[$FrontEnd, {"DebuggerSettings", "DebuggerEnabled"}]]],
+  	"Stop at next possible stopping point"]},
+  {TooltipBox[ButtonBox["\"Step In to Body\"", ButtonFunction:>(FrontEndToken["DebuggerStepInBody"]& ), 
+  			Enabled:>Dynamic@FEPrivate`And[FEPrivate`Equal[FEPrivate`DebuggerState[], "Halted"], CurrentValue[$FrontEnd, {"DebuggerSettings", "DebuggerEnabled"}]]],
+  	"Step over arguments, step into body of function"]},
+  {TooltipBox[ButtonBox["\"Step Out\"", ButtonFunction:>(FrontEndToken["DebuggerStepOut"]& ), 
+  			Enabled:>Dynamic@FEPrivate`And[FEPrivate`Equal[FEPrivate`DebuggerState[], "Halted"], CurrentValue[$FrontEnd, {"DebuggerSettings", "DebuggerEnabled"}]]],
+  	"Stop after exiting current stack frame"]},
+  {TooltipBox[ButtonBox["\"Finish\"", ButtonFunction:>(FrontEndToken["DebuggerFinish"]& ), 
+  			Enabled:>Dynamic@FEPrivate`And[FEPrivate`Equal[FEPrivate`DebuggerState[], "Halted"], CurrentValue[$FrontEnd, {"DebuggerSettings", "DebuggerEnabled"}]]],
+  	"Ignore breakpoints until end of evaluation"]},
+  {TooltipBox[ButtonBox["\"Abort\"", ButtonFunction:>(FrontEndToken["DebuggerAbort"]& ), 
+  			Enabled:>Dynamic@FEPrivate`And[FEPrivate`Unequal[FEPrivate`DebuggerState[], "Idle"], CurrentValue[$FrontEnd, {"DebuggerSettings", "DebuggerEnabled"}]]],
+  	"Exit evaluation without finishing"]},
+  {""},
+  {ButtonBox[DynamicBox[FEPrivate`If[CurrentValue[$FrontEnd, {"DebuggerSettings", "ShowBreakpoints"}], "\"Hide Breakpoints\"", "\"Show Breakpoints\""]], 
+  						ButtonFunction:>(SetOptions[$FrontEnd, DebuggerSettingsShowBreakpoints->FEPrivate`Not[CurrentValue[$FrontEnd, {"DebuggerSettings", "ShowBreakpoints"}]]]& )]},
+  {ButtonBox[DynamicBox[FEPrivate`If[CurrentValue[$FrontEnd, {"DebuggerSettings", "ShowStack"}], "\"Hide Stack\"", "\"Show Stack\""]], 
+  						ButtonFunction:>(SetOptions[$FrontEnd, DebuggerSettingsShowStack->FEPrivate`Not[CurrentValue[$FrontEnd, {"DebuggerSettings", "ShowStack"}]]]& )]},
+  {""},
+  {TooltipBox[RowBox[{CheckboxBox[Dynamic[CurrentValue[$FrontEnd, {"DebuggerSettings", "BreakOnAllMessages"}], FEPrivate`ReverseSet]], "\"Break at Messages\""}],
+  	"Set breakpoint at all messages"]},
+  {TooltipBox[RowBox[{CheckboxBox[Dynamic[CurrentValue[$FrontEnd, {"DebuggerSettings", "BreakOnAsserts"}], FEPrivate`ReverseSet]], "\"Break at Asserts\""}],
+  	"Set breakpoint at all asserts"]},
+  {""}
+ },
+ RowSpacings->0, ColumnSpacings->0, ColumnAlignments -> Left]], 
+ FontFamily :> CurrentValue["PanelFontFamily"],
+ CellMargins->{{3,3},{3,3}}]
+},
+FontFamily :> CurrentValue["PanelFontFamily"],
+StyleDefinitions->"Palette.nb",
+WindowSize->{FitAll,FitAll},
+ScrollingOptions -> {"PagewiseScrolling" -> False, "VerticalScrollRange" -> FitAll},
+ShowSelection->False,
+WindowFrameElements->{},
+WindowElements->{},
+DockedCells->{},
+ClosingSaveDialog->False,
+UndoOptions->{"Enabled"->False}
+]
+@|
+@|
+@@resource debuggerStackWindowContents
+Notebook[{
+},
+StyleDefinitions->Notebook[{Cell[StyleData[StyleDefinitions -> "Default.nb"]],
+      Cell[StyleData["Input"], Evaluatable->False],
+      Cell[StyleData["InputOnly"], Evaluatable->False],
+      Cell[StyleData["Code"], Evaluatable->False]},
+  StyleDefinitions->"StylesheetFormatting.nb"],
+CellInsertionPointCell->None,
+Editable->False,
+Evaluatable->False,
+FontFamily->CurrentValue["PanelFontFamily"],
+GraphicsOptions->{ImageSize->100},
+Graphics3DOptions->{ImageSize->100},
+ShowSyntaxStyles->False,
+ClosingSaveDialog->False,
+ShowGroupOpenCloseIcon -> True,
+CellGrouping->Manual,
+WindowElements -> {"StatusArea", "MemoryMonitor", "MagnificationPopUp", "HorizontalScrollBar", "VerticalScrollBar"},
+ButtonBoxOptions -> {Alignment -> Left},
+DockedCells->{},
+ShowStringCharacters->False,
+UndoOptions->{"Enabled"->False}
+]
+@|
+@|
+@@resource debuggerBreakpointsWindowContents
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  OpenerBox[Dynamic[
+    CurrentValue[$FrontEnd, {"DebuggerSettings", "BreakpointsGroup"}], 
+    FEPrivate`ReverseSet ]], 
+  StyleBox["Breakpoints",
+   FontWeight->"Bold"], 
+  StyleBox["\<\"To set, use Break at Selection.\"\>",
+   FontFamily->CurrentValue["PanelFontFamily"],
+   FontSize->10]}]],
+ CellFrame->{{0, 0}, {
+    FEPrivate`If[
+     FEPrivate`Equal[
+      CurrentValue[$FrontEnd, {"DebuggerSettings", "BreakpointsGroup"}], 
+      False], 1, 0], 1}},
+ CellMargins->{{0, 0}, {0, 3}},
+ CellFrameMargins->{{8, 8}, {4, 8}},
+ FontFamily->CurrentValue["PanelFontFamily"],
+ FontSize->1.33333333 10,
+ Background->GrayLevel[0.9]],
+
+Cell[BoxData[
+ DynamicBox[GridBox[
+   FEPrivate`Join[{{
+      RotationBox["Delete", BoxRotation -> 1.5707963267948966`], 
+      RotationBox["Enabled", BoxRotation -> 1.5707963267948966`], 
+      RotationBox["\"Auto-continue\"", BoxRotation -> 1.5707963267948966`], 
+      RotationBox["Expression", BoxRotation -> 1.5707963267948966`]}}, 
+    FEPrivate`If[
+     FEPrivate`Equal[
+      FEPrivate`Length[
+       FEPrivate`DebuggerBreakpointsList[]], 0], {{
+       StyleBox[
+        ButtonBox[
+        "\[CheckedBox]", ButtonFunction :> Null, ButtonExpandable -> False], 
+        ShowContents -> False], 
+       StyleBox[
+        CheckboxBox[
+         Dynamic[False]], ShowContents -> False], 
+       StyleBox[
+        CheckboxBox[
+         Dynamic[False]], ShowContents -> False], ""}}, 
+     FEPrivate`Map[
+      Function[FEPrivate`id, {
+        ButtonBox[
+         StyleBox["\[CheckedBox]", FontSize -> 28, FontColor -> Hue[1]], 
+         ButtonFunction :> (DebuggerRemoveBreakpoint[FEPrivate`id]& ), 
+         ButtonFrame -> None, ButtonExpandable -> False], 
+        CheckboxBox[
+         Dynamic[
+          FEPrivate`DebuggerBreakpointEnabled[FEPrivate`id], 
+          FEPrivate`ReverseSet ]], 
+        CheckboxBox[
+         Dynamic[
+          FEPrivate`DebuggerBreakpointAutoContinue[FEPrivate`id], 
+          FEPrivate`ReverseSet ]], 
+        ButtonBox[
+         StyleBox[
+          DynamicBox[
+           FEPrivate`DebuggerBreakpointText[FEPrivate`id]], FontFamily -> 
+          "Courier", ShowStringCharacters->True], ButtonFunction :> (SelectObject[FEPrivate`id]& ), 
+         ButtonExpandable -> False]}], 
+      FEPrivate`DebuggerBreakpointsList[]]]], RowLines -> {True, False}, 
+   ColumnLines -> True, RowAlignments -> {Bottom, Baseline}, 
+   ColumnAlignments -> {Center, Center, Center, Left}]]],
+ CellFrame->{{0, 0}, {1, 0}},
+ CellMargins->{{0, 0}, {3, 0}},
+ Active->True,
+ CellFrameMargins->{{8, 8}, {8, 4}},
+ FontFamily->CurrentValue["PanelFontFamily"],
+ FontSize->10,
+ Background->GrayLevel[0.9]]
+}, Dynamic[CurrentValue[$FrontEnd, {"DebuggerSettings", "BreakpointsGroup"}], FEPrivate`ReverseSet]]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  OpenerBox[Dynamic[
+    CurrentValue[$FrontEnd, {"DebuggerSettings", "MessageBreakpointsGroup"}], 
+    FEPrivate`ReverseSet ]], 
+  "\<\"Message Breakpoints\"\>"}]],
+ CellFrame->{{0, 0}, {
+    FEPrivate`If[
+     FEPrivate`Equal[
+      CurrentValue[$FrontEnd, {"DebuggerSettings", "MessageBreakpointsGroup"}],
+       False], 1, 0], 1}},
+ CellMargins->{{0, 0}, {0, 3}},
+ CellFrameMargins->{{8, 8}, {4, 8}},
+ FontFamily->CurrentValue["PanelFontFamily"],
+ FontSize->1.33333333 10,
+ FontWeight->"Bold",
+ Background->GrayLevel[0.9]],
+
+Cell[BoxData[GridBox[{
+   {"", 
+    RowBox[{
+     CheckboxBox[Dynamic[
+       CurrentValue[$FrontEnd, {"DebuggerSettings", "BreakOnAllMessages"}], 
+       FEPrivate`ReverseSet ]], "\<\"Break at all messages\"\>"}]},
+   {"\<\"Message name to add :\"\>", 
+    StyleBox[
+     DynamicModuleBox[{message$$=""},
+      InputFieldBox[
+       Dynamic[message$$, 
+        Function[{FEPrivate`val, FEPrivate`var}, 
+		  FEPrivate`FrontEndExecute[DebuggerAddBreakpoint[Message[FEPrivate`val]]]; FEPrivate`Set[FEPrivate`var,FEPrivate`val], HoldRest]
+       ], Boxes, 
+      FieldSize->{30, 1},
+      ContinuousAction->False]],
+     ShowSelection->True]}
+   },
+  ColumnLines->False,
+  ColumnAlignments->{Right, Left}]],
+ Selectable->True,
+ CellFrame->{{0, 0}, {0, 0}},
+ ShowSelection->True,
+ CellMargins->{{0, 0}, {0, 0}},
+ Active->True,
+ CellFrameMargins->{{8, 8}, {4, 4}},
+ FontFamily->CurrentValue["PanelFontFamily"],
+ FontSize->10,
+ Background->GrayLevel[0.9]],
+
+Cell[BoxData[
+ DynamicBox[GridBox[
+   FEPrivate`Join[{{
+      RotationBox["Delete", BoxRotation -> 1.5707963267948966`], 
+      RotationBox["Enabled", BoxRotation -> 1.5707963267948966`], 
+      RotationBox["\"Auto-continue\"", BoxRotation -> 1.5707963267948966`], 
+      RotationBox["Message", BoxRotation -> 1.5707963267948966`]}}, 
+    FEPrivate`If[
+     FEPrivate`Equal[
+      FEPrivate`Length[
+       FEPrivate`DebuggerMessageBreakpointsList[]], 0], {{
+       StyleBox[
+        ButtonBox[
+        "\[CheckedBox]", ButtonFunction :> Null, ButtonExpandable -> False], 
+        ShowContents -> False], 
+       StyleBox[
+        CheckboxBox[
+         Dynamic[False]], ShowContents -> False], 
+       StyleBox[
+        CheckboxBox[
+         Dynamic[False]], ShowContents -> False], ""}}, 
+     FEPrivate`Map[
+      Function[FEPrivate`id, {
+        ButtonBox[
+         StyleBox["\[CheckedBox]", FontSize -> 28, FontColor -> Hue[1]], 
+         ButtonFunction :> (DebuggerRemoveBreakpoint[FEPrivate`id]& ), 
+         ButtonFrame -> None, ButtonExpandable -> False], 
+        CheckboxBox[
+         Dynamic[
+          FEPrivate`DebuggerBreakpointEnabled[FEPrivate`id], 
+          FEPrivate`ReverseSet ]], 
+        CheckboxBox[
+         Dynamic[
+          FEPrivate`DebuggerBreakpointAutoContinue[FEPrivate`id], 
+          FEPrivate`ReverseSet ]], 
+        StyleBox[
+         DynamicBox[
+          FEPrivate`DebuggerBreakpointText[FEPrivate`id]], FontFamily -> 
+         "Courier"]}], 
+      FEPrivate`DebuggerMessageBreakpointsList[]]]], 
+   RowLines -> {True, False}, ColumnLines -> True, 
+   RowAlignments -> {Bottom, Baseline}, 
+   ColumnAlignments -> {Center, Center, Center, Left}]]],
+ CellFrame->{{0, 0}, {1, 0}},
+ CellMargins->{{0, 0}, {3, 0}},
+ Active->True,
+ CellFrameMargins->{{8, 8}, {8, 4}},
+ FontFamily->CurrentValue["PanelFontFamily"],
+ FontSize->10,
+ Background->GrayLevel[0.9]]
+}, Dynamic[CurrentValue[$FrontEnd, {"DebuggerSettings", "MessageBreakpointsGroup"}], FEPrivate`ReverseSet]]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  OpenerBox[Dynamic[
+    CurrentValue[$FrontEnd, {"DebuggerSettings", "WatchpointsGroup"}], 
+    FEPrivate`ReverseSet ]], "Watchpoints"}]],
+ CellFrame->{{0, 0}, {
+    FEPrivate`If[
+     FEPrivate`Equal[
+      CurrentValue[$FrontEnd, {"DebuggerSettings", "WatchpointsGroup"}], 
+      False], 1, 0], 1}},
+ CellMargins->{{0, 0}, {0, 3}},
+ CellFrameMargins->{{8, 8}, {4, 8}},
+ FontFamily->CurrentValue["PanelFontFamily"],
+ FontSize->1.33333333 10,
+ FontWeight->"Bold",
+ Background->GrayLevel[0.9]],
+
+Cell[BoxData[
+ RowBox[{
+  "\<\"Expression to add:\"\>", 
+  StyleBox[
+   DynamicModuleBox[{expression$$=""},
+    InputFieldBox[Dynamic[expression$$, 
+	 Function[{FEPrivate`val, FEPrivate`var}, 
+		 FEPrivate`FrontEndExecute[
+				DebuggerAddBreakpoint[Expression[FEPrivate`val]]];FEPrivate`Set[FEPrivate`var, FEPrivate`val], HoldRest]], Boxes, 
+    FieldSize->{30, 1},
+    ContinuousAction->False]],
+   ShowSelection->True]}]],
+ Selectable->True,
+ CellFrame->{{0, 0}, {0, 0}},
+ ShowSelection->True,
+ CellMargins->{{0, 0}, {0, 0}},
+ Active->True,
+ CellFrameMargins->{{8, 8}, {4, 4}},
+ FontFamily->CurrentValue["PanelFontFamily"],
+ FontSize->10,
+ Background->GrayLevel[0.9]],
+
+Cell[BoxData[
+ DynamicBox[GridBox[
+   FEPrivate`Join[{{
+      RotationBox["Delete", BoxRotation -> 1.5707963267948966`], 
+      RotationBox["Enabled", BoxRotation -> 1.5707963267948966`], 
+      RotationBox["\"Auto-continue\"", BoxRotation -> 1.5707963267948966`], 
+      RotationBox["\"Break on Assignment\"", BoxRotation -> 1.5707963267948966`], 
+      RotationBox["\"Break on Evaluation\"", BoxRotation -> 1.5707963267948966`], 
+      RotationBox["\"Break on use as Function\"", BoxRotation -> 1.5707963267948966`], 
+      RotationBox["Symbol", BoxRotation -> 1.5707963267948966`]}}, 
+    FEPrivate`If[
+     FEPrivate`Equal[
+      FEPrivate`Length[
+       FEPrivate`DebuggerWatchpointsList[]], 0], {{
+       StyleBox[
+        ButtonBox[
+        "\[CheckedBox]", ButtonFunction :> Null, ButtonExpandable -> False], 
+        ShowContents -> False], 
+       StyleBox[
+        CheckboxBox[
+         Dynamic[False]], ShowContents -> False], 
+       StyleBox[
+        CheckboxBox[
+         Dynamic[False]], ShowContents -> False], 
+       StyleBox[
+        CheckboxBox[
+         Dynamic[False]], ShowContents -> False], 
+       StyleBox[
+        CheckboxBox[
+         Dynamic[False]], ShowContents -> False], 
+       StyleBox[
+        CheckboxBox[
+         Dynamic[False]], ShowContents -> False], ""}}, 
+     FEPrivate`Map[
+      Function[FEPrivate`id, {
+        ButtonBox[
+         StyleBox["\[CheckedBox]", FontSize -> 28, FontColor -> Hue[1]], 
+         ButtonFunction :> (DebuggerRemoveBreakpoint[FEPrivate`id]& ), 
+         ButtonFrame -> None, ButtonExpandable -> False], 
+        CheckboxBox[
+         Dynamic[
+          FEPrivate`DebuggerBreakpointEnabled[FEPrivate`id], 
+          FEPrivate`ReverseSet ]], 
+        CheckboxBox[
+         Dynamic[
+          FEPrivate`DebuggerBreakpointAutoContinue[FEPrivate`id], 
+          FEPrivate`ReverseSet ]], 
+        CheckboxBox[
+         Dynamic[
+          FEPrivate`DebuggerBreakpointBreakOnAssignment[FEPrivate`id], 
+          FEPrivate`ReverseSet ]], 
+        CheckboxBox[
+         Dynamic[
+          FEPrivate`DebuggerBreakpointBreakOnEvaluation[FEPrivate`id], 
+          FEPrivate`ReverseSet ]], 
+        CheckboxBox[
+         Dynamic[
+          FEPrivate`DebuggerBreakpointBreakOnFunction[FEPrivate`id], 
+          FEPrivate`ReverseSet ]], 
+        StyleBox[
+         DynamicBox[
+          FEPrivate`DebuggerBreakpointText[FEPrivate`id]], FontFamily -> 
+         "Courier"]}], 
+      FEPrivate`DebuggerWatchpointsList[]]]], RowLines -> {True, False}, 
+   ColumnLines -> True, RowAlignments -> {Bottom, Baseline}, 
+   ColumnAlignments -> {Center, Center, Center, Left}]]],
+ CellFrame->{{0, 0}, {1, 0}},
+ CellMargins->{{0, 0}, {3, 0}},
+ Active->True,
+ CellFrameMargins->{{8, 8}, {8, 4}},
+ FontFamily->CurrentValue["PanelFontFamily"],
+ FontSize->10,
+ Background->GrayLevel[0.9]]
+}, Dynamic[CurrentValue[$FrontEnd, {"DebuggerSettings", "WatchpointsGroup"}], FEPrivate`ReverseSet]]]
+},
+ClosingSaveDialog->False,
+Selectable->True,
+CellGrouping->Manual,
+WindowSize->{642, 705},
+DockedCells->{},
+WindowMargins->{{Automatic, 145}, {Automatic, 3}},
+WindowElements -> {"StatusArea", "MemoryMonitor", "MagnificationPopUp", "HorizontalScrollBar", "VerticalScrollBar"},
+ShowCellBracket->False,
+ShowSelection->True,
+ShowGroupOpenCloseIcon->False,
+Active->True,
+ShowSyntaxStyles->False,
+FontFamily->CurrentValue["PanelFontFamily"],
+ButtonBoxOptions->{Alignment->Left},
+GridBoxOptions->{ColumnLines->True,
+ColumnAlignments->Left},
+GraphicsOptions->{ImageSize->100},
+Graphics3DOptions->{ImageSize->100},
+ShowStringCharacters->False,
+UndoOptions->{"Enabled"->False}
+]
+@|
+@|
+@@resource displayAsString
+%s Display
+@|
+@@resource creatingEPSPreviewString
+Creating EPS Preview...
+@|
+@@resource insertFileString
+Insert File
+@|
+@@resource insertPictureString
+Insert Picture
+@|
+@@resource askIfRemoveQuotedPrefix
+The text you are pasting appears to be formatted like quoted email. Do you want to remove the quoting marks before pasting it?
+@|
+@|
+@@resource notifyUserSavingLosesSignature
+The document you are saving will no longer be fully compatible with Wolfram Player.  Would you like to continue anyway?
+@|
+@@resource FEStrings
+{
+
+	(* Custom styles *)
+	"customStylesFieldLabel" -> "Select or type a style name:",
+	"customStylesPreviewLabel" -> "Preview:",
+	"customStylesWindowTitle" -> "Choose a custom style",
+
+	(* Sound tooltips *)
+	"playText" -> "Play",
+	"stopText" -> "Stop",
+	
+	(* Audio tooltips *)
+	"audioPlayText" -> "Play",
+	"audioPauseText" -> "Pause",
+	"audioExpandText" -> "Expand",
+	"audioCollapseText" -> "Collapse",
+	"audioResetText" -> "Reset Position",
+	"audioLoopText" -> "Loop",
+	"audioVolumeText" -> "Volume",
+	"audioOutputText" -> "Output Device",
+	"audioSampleRateText" -> "Sample Rate: ",
+	"audioChannelsText" -> "Channels: ",
+	"audioTypeText" -> "Type: ",
+	"audioBadLocationText" -> "The audio resource could not be found at the\nspecified location.",
+	"audioBadConnectionText" -> "A connection could not be established to the\nspecified audio resource.",
+	"audioBadDeviceText" -> "The specified device could not be found. Select another\ndevice or press Play to use the default device.",
+	"audioVersionText" -> "Displaying this audio object requires a more recent version. Contact Wolfram Research to upgrade. ",
+	"audioOSPlaybackText" -> "Playback is not yet supported on this OS.",
+	"audioNoOutputDevices" -> "No audio output devices available.",
+	
+	(* AudioCapture tooltips *)
+	"audioCaptureRecordText" -> "Record",
+	"audioCapturePauseText" -> "Pause",
+	"audioCaptureCancelText" -> "Cancel",
+	"audioCaptureStopText" -> "Stop",
+	"audioCaptureInputText" -> "Input Device",
+	"audioCaptureBadDeviceText" -> "The specified device could not be found. Select another\ndevice or press Record to use the default device.",
+	"audioCaptureNoInputDevicesText" -> "No audio input devices available.",
+	"audioCaptureVersionText" -> "Displaying this audio capture GUI requires a more recent version. Contact Wolfram Research to upgrade. ",
+
+	(* WebAudioSearch string *)
+	"webAudioSearchVersionText" -> "Displaying this WebAudioSearch GUI requires a more recent version. Contact Wolfram Research to upgrade. ",
+	
+	(* Interactive image crop *)
+	"cropImageReplaceLabel" -> "Crop image",
+	"cropImagePasteLabel" -> "Paste cropped image below",
+	"cropImageCopyLabel" -> "Copy cropped image to clipboard",
+	"cropImageRectTooltip" -> "Drag to move.\nDouble click to crop.",
+	
+	(* Messsages *)
+	"messageMenuTooltip" -> "More information",
+	"messageShowStackTrace" -> "Show Stack Trace",
+	"messageTurnOff" -> "Turn Off This Message\[Ellipsis]",
+	"messageTurnOn" -> "Turn On This Message",
+	"messageCopyMessageName" -> "Copy Message Name",
+	"stackTraceFor" -> "Stack Trace for ",
+	"stackItemExpand" -> "Show full expression",
+	"stackItemCollapse" -> "Show shortened expression",
+	"stackElidedItems" -> " additional messages elided.",
+	"stackPopoutButtonLabel" -> "Pop Out",
+	"stackPopoutButtonTooltip" -> "Show this stack trace in a new untitled notebook.",
+	"stackCopyAllButtonLabel" ->  "Copy All",
+	"stackCopyAllButtonTooltip" -> "Copy this stack trace to the clipboard.",
+	"confirmOffText" -> "Are you sure you want to turn off `1` for the remainder of this kernel session?",
+	"confirmOffCaption" -> "You can turn it back on by evaluating: `1`",
+	"confirmOffOK" -> "OK",
+	"confirmOffCancel" -> "Cancel",
+	
+	(* Size-limited output *)
+	"sizeExplanation" -> "A very large output was generated. Showing a sample of it.",
+	"sizeBriefExplanation" -> "large output",
+	"sizeShowLess" -> "show less",
+	"sizeShowMore" -> "show more",
+	"sizeShowAll" -> "show all",
+	"sizeChangeLimit" -> "set size limit...",
+	
+	(* SummaryBox structures *)
+	"summaryBoxEmbed" -> "Data not in notebook; Store now \[RightGuillemet]",
+	"summaryBoxEmbedTip" -> "Unless you store the data (`1`), it will not be available when you quit the kernel.",
+	"summaryBoxEmbedFailed" -> "Unable to store data in notebook.",
+	"summaryBoxEmbedFailedTip" -> "This object cannot be used as input.",
+	
+	(* Iconize *)
+	"uniconizeLabel" -> "Uniconize",
+	"uniconizeTooltip" -> "Click to uniconize this object",
+	
+	(* SystemDialogInput file and sound dialog *)
+	"systemSoundInputText" -> "Input:",
+	"systemSoundFormatText" -> "Format:",
+	"systemSoundWindowTitle" -> "Sound Recorder",
+	"systemSoundRecordingText" -> "Recording...",
+	"systemSoundWaitingText" -> "Waiting...",
+	"systemSoundWorkingText" -> "Converting...",
+	"systemSoundRecordedText" -> "Recorded `1` secs.",
+	"systemFileTypes" -> {
+	"All Files" -> {"*"},
+	"Computable Document (*.cdf)" -> {"*.cdf"},
+	"EPS" -> {"*.eps"},
+	"GIF" -> {"*.gif"},
+	"JPEG" -> {"*.jpg", "*.jpeg"},
+	"LaTeX Document (*.tex)" -> {"*.tex"},
+	"Wolfram Notebook (*.nb)" -> {"*.nb"},
+	"Wolfram Language Package (*.wl, *.m)" -> {"*.wl", "*.m"},
+	"Wolfram Files (*.nb, *.cdf, *.nbp, *.wl, *.ma, *.m)" -> {"*.nb", "*.cdf"," *.nbp", "*.wl", "*.ma", "*.m"},
+	"PDF Document (*.pdf)" -> {"*.pdf"},
+	"Plain Text (*.txt)" -> {"*.txt"},
+	"PNG" -> {"*.png"},
+	"PostScript Document (*.ps)" -> {"*.ps"},
+	"Rich Text Format (*.rtf)" -> {"*.rtf"},
+	"SVG" -> {"*.svg"},
+	"Text files" -> {"*.txt"},
+	"TIFF" -> {"*.tiff", "*.tif"},
+	"Web Page (*.html)" -> {"*.htm", "*.html"},
+	"XML" -> {"*.xml"},
+	"XML -- XHTML+MathML (*.xml)" -> {"*.xml", "*.htm", "*.html"},
+	"Picture Files" -> {"*.eps", "*.gif", "*.jpeg", "*.jpg", "*.pdf", "*.png", "*.ps", "*.svg", "*.tif", "*.tiff"}
+	},
+
+	(* Why the Beep dialog *)
+	"whyBeepTitle" -> "Why the Beep?", 
+	
+	(* Why the Coloring dialog *)
+	"whyNoColoring" -> "No syntax coloring detected in this selection",
+	"whyTitle" -> "Why the Coloring?",
+	"whyTip" -> "Turn all coloring associated with this reason on or off",
+	"whyMore" -> "See the preferences dialog for more syntax coloring options",
+	
+	"whyCategoryError" -> "Errors and Warnings",
+	"whyCategoryVariables" -> "Local Variables",
+	"whyCategoryOther" -> "Other",
+
+	"whyComment" -> "Comments",
+	"whyEmphasizedSyntaxError" -> "Emphasized syntax errors",
+	"whyExcessArgument" -> "Excess arguments",
+	"whyFunctionLocalVariable" -> "Variables made special by use in arguments",
+	"whyGlobalSymbol" -> "Global symbols with a value",
+	"whyGlobalToLocalScopeConflict" -> "Global to local scope conflicts",
+	"whyGraphicsCompatibilityProblem" -> "Using semicolons or old options with new graphics",
+	"whyLocalScopeConflict" -> "Local scope conflicts",
+	"whyLocalVariable" -> "The local variables of Block, Module and With",
+	"whyMissingArgument" -> "Missing argument",
+	"whyMissingArgumentWithTemplate" -> "Missing argument",
+	"whyMisspelledWord" -> "Misspelled words",
+	"whyNoKernelPresent" -> "No kernel present",
+	"whyNotebookVariable" -> "The local variables of this notebook",
+	"whyOrderOfEvaluationConflict" -> "Order of evaluation conflicts",
+	"whyPatternVariable" -> "Function arguments and pattern names",
+	"whyString" -> "Strings",
+	"whySymbolShadowing" -> "Shadowing in multiple contexts",
+	"whySyntaxError" -> "Syntax errors",
+	"whyUndefinedSymbol" -> "Global symbols that have no value assigned",
+	"whyUnknownOption" -> "Unrecognized option names",
+	"whyUnwantedAssignment" -> "Using = instead of ==",
+	
+	"whySymbolContext" -> "Context-specific styling",
+	
+	"whyAutoItalicWords" -> "AutoItalicWords",
+	"whyAutoStyleWords" -> "AutoStyleWords",
+	"whyMultiLetterItalics" -> "MultiLetterItalics",
+	"whyMultiLetterStyle" -> "MultiLetterStyle",
+	"whyLowerCaseStyle" -> "LowerCaseStyle",
+	"whySingleLetterItalics" -> "SingleLetterItalics",
+	"whySingleLetterStyle" -> "SingleLetterStyle",
+	"whyUnmatchedBracket" -> "Unmatched brackets",
+
+	"whyInvalid" -> "Unknown coloring token",
+	"whyError" -> "There is no open notebook!",
+	"whyEmpty" -> "No syntax coloring detected in any of these cells!",
+	"whySelectionLabel" -> "Selection",
+	"whyCellLabel" -> "Cell ",
+	"whyJumpLabel" -> "Jump to ",
+	
+	(* Install palette *)
+	"installTypesList" -> {"Palette","Stylesheet","Package",".mx File","WSTP Program", "Application"},
+	"installFileFilter" -> {"MX files (*.mx)" -> {"*.mx"}, "All files" -> {"*"}},
+	"installApplicationFilter" -> {"Compressed files (*.zip, *.gz, *.tar, *.bz2)" -> {"*.zip", "*.gz", "*.tar", "*.bz2"}, "All files" -> {"*"}},
+	"installProgramFilter" -> {"WSTP Program (*.exe)" -> {"*.exe"}, "All files" -> {"*"}},
+	"installFromClip" -> "From Clipboard",
+	"installFromFile" -> "From File...",
+	"installFromDir" -> "From Directory...",
+	"installUserBaseDir" -> Cell[TextData[{"Install for this user only (", ValueBox[FEPrivate`$UserName], ")"}]],
+	"installSystemBaseDir" -> "Install for all users that share this computer",
+	"installType" -> "Type of Item to Install:",
+	"installName" -> "Install Name:",
+	"installSource" -> "Source:",
+	"installTitle" -> "Install Wolfram System Item",
+	"installHelp" -> "Help",
+	"installExtractTitle" -> "Extracting files..",
+	"installExtractTo" -> "Extracting files to",
+	"installExtractFrom" -> "Extracting files from",
+	
+	
+	(* Input and InputString strings *)
+	
+	"InputPrompt" -> "Enter an expression:",
+	"InputStringPrompt" -> "Enter a string:",
+	
+	
+	(* Manipulate strings *)
+	
+	"ManipulateShow" -> "Show Controls",
+	"ManipulateHide" -> "Hide Controls",
+	"ManipulateReset" -> "Reset",
+	"ManipulateUpdate" -> "Update",
+	"ManipulatePaste" -> "Paste Snapshot",
+	"ManipulateInit" -> "Initial Settings", 
+	"ManipulateAddBookmark" -> "Add To Bookmarks\[Ellipsis]",
+	"ManipulatePasteBookmarks" -> "Paste Bookmarks",
+	"ManipulateAnimate" -> "Animate Bookmarks",
+	"ManipulateAutorun" -> "Autorun",
+	"ManipulateBookmarksAutorun" -> "Bookmarks/Autorun",
+	"ManipulateBookmarks" -> "Bookmarks",
+	"BookmarkName" -> "Name:",
+	"BookmarkAdd" -> "Add a bookmark with the specified name for the current parameter settings",
+	"BookmarkMode" -> "Add Bookmark",
+	"BookmarkAddButtonLabel" -> "add",
+	"BookmarkCloseButtonLabel" -> "close",
+	"BookmarkUntitled" -> "untitled",
+	"ManipulateCancel" -> "Cancel",
+
+	
+	(* ImageCapture strings *)
+	"ImageCaptureDeviceControls" -> "Device controls",
+	"ImageCaptureDevice" -> "Device",
+	"ImageCaptureFrameRate" -> "Frame rate",
+	"ImageCaptureRasterSize" -> "Raster size",
+	"ImageCaptureStartCamera" -> "Start Camera",
+	"ImageCaptureStopCamera" -> "Stop Camera",
+	"ImageCaptureCaptureAction" -> "Capture Frame To Notebook",
+	"ImageCaptureCustomCaptureAction" -> "Capture and Process Image",
+	"ImageCaptureCopy" -> "Copy Frame To Clipboard",
+	"ImageCaptureVersionText" -> "Displaying this ImageCapture object requires a more recent version. Contact Wolfram Research to upgrade.",
+	
+	
+	(*Unevaluated Dynamic templates strings*)
+	
+	"UnevaluatedDynamicDisplayString" -> "Unresolved Dynamic Content",
+	"UnevaluatedDynamicDisplayStringShorter" -> "Dynamic Content",
+	"UnevaluatedDynamicDisplayStringShortest" -> "Dynamic",
+	"UnevaluatedDynamicReasonEvaluationDisabled" ->
+		"This dynamic content could not be displayed because dynamic updating has been disabled in the Evaluation menu.",
+	"UnevaluatedDynamicReasonNotebookSignatureInvalid" ->
+		"This dynamic content could not be displayed in Wolfram Player.\[NewLine]\[NewLine]To display this content requires the full Wolfram System.\[NewLine]\[NewLine]Wolfram Player can only display verified special dynamic content (e.g. from the Wolfram Demonstrations Project).",
+	"UnevaluatedDynamicReasonRecursionLimitExceeded" ->
+		"This dynamic content could not be displayed because the RecursionLimit option of the Dynamic has been exceeded.",
+	"UnevaluatedDynamicReasonStillEvaluating" ->
+		"The dynamic content to be displayed here is still being initialized.",
+
+
+	(*Manipulator strings*)
+
+	"ManipulatorTooltipShowControls" -> "\"Show Animation Controls\"",
+	"ManipulatorTooltipHideControls" -> "\"Hide Animation Controls\"",
+	
+	(* ExternalLanguage strings *)
+	"ExternalLanguagePython" -> "\"  Python \"",
+	"ExternalLanguageNodeJS" -> "\"  NodeJS \"",
+ 	
+	(*Slide show strings*)
+	
+	"SlideshowPrevSlideText" -> "Previous Slide",
+	"SlideshowNextSlideText" -> "Next Slide",
+	"SlideshowSlideText" -> "Slide",
+	"SlideshowTextContents" -> "This is a text cell.",
+	
+	(* BoxObject, CellObject and NotebookObject Typesetting *)
+	"SelectBoxObject" -> "Select this box",
+	"SelectCellObject" -> "Select this cell",
+	"NotebookObjectToTheFront" -> "Bring this notebook to the front",
+	"NotebookInNewWindow" -> "Open this notebook in a new window",
+	
+	(* Docs Navigator strings*)
+	"navigatorTutorialTitle" -> "Virtual Book - Wolfram Language",
+	"navigatorFunctionTitle" -> "Function Navigator - Wolfram Language",
+	"navigatorLabelNew" -> "\" What's New\"",
+	"navigatorLabelNewIn" -> (Cell[TextData[{" New in ", #, ".0"}]]&),
+	"navigatorAddOnsAndPackages" -> "\" Add\[Hyphen]Ons & Packages\"",
+	"navigatorPackages" -> "\" Packages\"",
+	"navigatorAddOns" -> "\" Add\[Hyphen]Ons\"",
+	"navigatorCollapse" -> "Collapse All \[RightGuillemet]",
+	"navigatorArrange" -> "Arrange Windows \[RightGuillemet]",
+	"navigatorHowTo" -> "\"How To\" Topics \[RightGuillemet]",
+	
+	(* About box strings *)
+	"aboutboxTitle" -> "About Wolfram Mathematica",
+	"aboutboxTitlePlayer" -> "About Wolfram Player",
+	"aboutboxTitlePlayerPro" -> "About Wolfram Player Pro",
+	"aboutboxTitleWDP" -> "About Wolfram Discovery Platform",
+	"aboutboxTitleWD" -> "About Wolfram Desktop",
+	"aboutboxTitleWPL" -> "About Wolfram Programming Lab",
+	"aboutboxTitleWFP" -> "About Wolfram Finance Platform",
+	"aboutboxTitleANB" -> "About Wolfram|Alpha Notebook Edition",
+	"aboutboxVersion" -> "Version Number",
+	"aboutboxPlatform" -> "Platform",
+	"aboutboxUser" -> "Registered Name",
+	"aboutboxOrganization" -> "Organization",
+	"aboutboxLicense" -> "Activation Key",
+	"aboutboxSysInfo" -> "System Information",
+	"aboutboxMain" -> "Main",
+	"aboutboxAgreement" -> "License Agreement",
+	"aboutboxPrivacy" -> "Privacy Policy",
+	"aboutboxCredits" -> "Credits",
+	"aboutboxProgress" -> "Loading\[Ellipsis]",
+	"aboutboxExpiration" -> "Expiration Date: ",
+	
+	"aboutboxSysInfoPaletteTitle" -> "Wolfram System Information",
+	"aboutboxSysInfoPlayerPaletteTitle" -> "Wolfram Player System Information",
+	"aboutboxSysInfoPlayerProPaletteTitle" -> "Wolfram Player Pro System Information",
+	
+	"aboutboxCopyLabel" -> "Copy",
+	"aboutboxCopyTooltip" -> "Copy Activation Key to the clipboard",
+
+	
+	(* Player utility dialog strings*)
+	"PlayerUtilText1" -> "Deploying to Wolfram Player",
+	"PlayerUtilText2" -> Row[{"Notebooks must be converted to enable interactivity in Wolfram Player. Go to ",Hyperlink["wolfram.com/publishforplayer \[RightGuillemet]","http://www.wolfram.com/publishforplayer"],"."}],
+	"PlayerUtilText3" -> "Deploying to Player Pro",
+	"PlayerUtilText4" -> "No conversion is needed for Player Pro interactivity\[LongDash]just save and deploy.",
+	"PlayerUtilText5" -> Hyperlink["More about Player family deployment \[RightGuillemet]","http://www.wolfram.com/solutions/interactivedeployment/technicalguidelines.html"],
+	
+	(* image context menu strings *)
+	"imagePixelRow" -> "Row:",
+	"imagePixelCol" -> "Column:",
+	"imagePixelVal" -> "Channel",
+	"imageInfoDimsLabel" -> "Image Dimensions",
+	"imageInfoColorLabel" -> "Color Space",
+	"imageInfoChannelsLabel" -> "Channels",
+	"imageInfoInterleaveLabel" -> "Interleaving",
+	"imageInfoHistogramLabel" -> "Histogram",
+	"imageInfoOptionsLabel" -> "Options",
+	"imageInfoMessage" -> "The selected object is not an image.",
+	"graphicsInfoMessage" -> "The selected object does not contain any graphics.",
+	
+	"imageEditBrightness" -> "Brightness",
+	"imageEditContrast" -> "Contrast",
+	"imageEditGamma" -> "Gamma",
+	"imageEditApply" -> "Apply",
+	"imageEditReset" -> "Reset",
+	"imageEditBefore" -> "Before",
+	"imageEditAfter" -> "After",
+	"imageEditTitle"-> "Adjust Image",
+
+	"image3DColorFunctionEditTitle"-> "Color Function Editor",
+	"image3DColorFunctionEditHistogram"-> "Histogram",
+	"image3DColorFunctionEditOpacity"-> "Opacity",
+	"image3DColorFunctionEditColors"-> "Color Source",
+	"image3DColorFunctionEditCustom"-> "Custom",
+	"image3DColorFunctionEditBackground"-> "Background",
+	"image3DColorFunctionEditCopy"-> "Copy Function",
+	"image3DColorFunctionEditEdges" -> "Press \!\(\*StyleBox[\"\[AltKey]\",\nFontSize->16]\) and click to insert an opacity node here.\n\nClick and drag to move the adjacent nodes simultaneously.",
+	"image3DColorFunctionEditEdgesMac" -> "Press \!\(\*StyleBox[\"\[CommandKey]\",\nFontSize->16]\) and click to insert an opacity node here.\n\nClick and drag to move the adjacent nodes simultaneously.",
+	"image3DColorFunctionEditVertices" -> "Press \!\(\*StyleBox[\"\[AltKey]\",\nFontSize->16]\) and click to remove this color & opacity node.\n\nDouble-click to assign a new color.",
+	"image3DColorFunctionEditVerticesMac" -> "Press \!\(\*StyleBox[\"\[CommandKey]\",\nFontSize->16]\) and click to remove this color & opacity node.\n\nDouble-click to assign a new color.",
+	"image3DColorFunctionEditFixedVertices" -> "Double-click to assign a new color.",
+	
+	(*Palette strings*)
+	"algebraicTitle" -> "Algebraic Manipulation",
+	"mathinputTitle" -> "Basic Math Input",
+	"nblauncherTitle" -> "Notebook Launcher",
+	
+	"typesetOpsLabel" -> "Operators",
+	"typesetArrowLabel" -> "Arrows",
+	"typesetIconLabel" -> "Icons",
+	"typesetAllCharLabel" -> "All Special Characters \[RightSkeleton]",
+	"typesetTitle" -> "Basic Typesetting",
+	
+	"colorschemesInsertLabel" -> "Insert",
+	"colorschemesColorLabel" -> "color",
+	"colorschemesNameLabel" -> "name",
+	"colorschemesSortLabel" -> "Sort",
+	"colorschemesGradientsLabel" -> "  Gradients",
+	"colorschemesPhysicalLabel" -> "  Physical",
+	"colorschemesNamedLabel" -> "  Named",
+	"colorschemesIndexedLabel" -> "  Indexed",
+	"colorschemesTitle" -> "Color Schemes",
+	
+	"chartelementdataGeneral" -> "General",
+	"chartelementdataStatistical" -> "Statistical",
+	"chartelementdataFinancial" -> "Financial",
+	"chartelementdataGauges" -> "Gauges",
+	"chartelementdataMarkers" -> "Markers",
+	"chartelementdataFace" -> "Face",
+	"chartelementdataFrame" -> "Frame",
+	"chartelementdataChartSection" -> "Chart Type",
+	"chartelementdataChartSectionTooltip" -> "Family of charts",
+	"chartelementdataElementSection" -> "Chart Element",
+	"chartelementdataControlsSection" -> "Parameters",
+	"chartelementdataOptionsSection" -> "Options Preview",
+	"chartelementdataInsertButton" -> "Insert Option",
+	"chartelementdataInsertButtonTooltip" -> "Insert ChartElementFunction option",
+	"chartelementdataTitle" -> "Chart Element Schemes",	
+
+	"slideshowBreakLabel" -> "Blank Slide",
+	"slideshowBreakTooltip" -> "Insert a slide page break (blank template)",
+	"slideshowConvertLabel" -> "Slide Show from Current Document",
+	"slideshowConvertStylesLabel" -> "\n Indicate where slide breaks should be inserted:",
+	"slideshowConvertTitle" -> "Convert to Slide Show",
+	"slideshowConvertTooltip" -> RowBox[{"Create a new slide show from ", FEPrivate`ToString[FrontEnd`CurrentValue[FrontEnd`InputNotebook[], "NotebookFileName"], InputForm]}],
+	"slideshowInsertLabel" -> "Insert",
+	"slideshowEnvLabel" -> "View Environment",
+	"slideshowFullScreenLabel" -> "Full Screen",
+	"slideShowHorizontalScrollBarLabel" -> "Horizontal Scrollbar",
+	"slideshowMagLabel" -> "Magnification",
+	"slideshowTransLabel" -> "Transition Effect",
+	"slideshowTransNoneLabel" -> "None",
+	"slideshowTransCrossLabel" -> "Crossfade",
+	"slideShowMagnificationPopUpLabel" -> "Magnification Popup",
+	"slideShowNavBarLabel" -> "Navigation Toolbar",
+	"slideshowNewLabel" -> "Create",
+	"slideshowStartLabel" -> "Start Presentation",
+	"slideshowEndLabel" -> "End Presentation",
+	"slideshowStartLabelTooltip" -> "Start or end slide show mode",
+	"slideshowSettingsLabel" -> "Settings",
+	"slideshowSizeLabel" -> "Presentation Size",
+	"slideshowSlideLabel"-> "New Slide Template",
+	"slideshowSlideTooltip" -> "Insert a new slide template",
+	"slideShowStatusAreaLabel" -> "Status Area",
+	"slideshowTemplateLabel" -> "New Classic Slide Show...",
+	"slideshowTemplateTooltip" -> "Create a classic slide show template",
+	"slideshowTitle" -> "Classic Slide Show",
+	"slideshowTOCContentsLabel" -> "Contents",
+	"slideshowTOCLabel" -> "Table of Contents",
+	"slideshowTOCTooltip" -> RowBox[{"Show a table of contents for ", FEPrivate`ToString[FrontEnd`CurrentValue[FrontEnd`InputNotebook[], "NotebookFileName"], InputForm]}],
+	"slideShowVerticalScrollBarLabel" -> "Vertical Scrollbar",
+	"slideshowWinElemLabel" -> "Window Elements",
+	"slideshowFirstSlideWarning" -> "Background images and text colors have been adjusted for editing purposes.",
+	
+	"specialCharsGreekTooltip" -> "Greek Letters",
+	"specialCharsScriptTooltip" -> "Script Letters",
+	"specialCharsGothicTooltip" -> "Gothic Letters",
+	"specialCharsStruckTooltip" -> "Double\[Dash]Struck",
+	"specialCharsLatinTooltip" -> "Extended Latin",
+	"specialCharsFormalTooltip" -> "Formal Characters",
+	"specialCharsTechnicalTooltip" -> "Technical Symbols",
+	"specialCharsGeneralTooltip" -> "General Operators",
+	"specialCharsRelationalTooltip" -> "Relational Operators",
+	"specialCharsArrowsTooltip" -> "Arrows",
+	"specialCharsShapesTooltip" -> "Shapes and Icons",
+	"specialCharsTextualTooltip" -> "Textual Forms",
+	"specialCharsKeyboardTooltip" -> "Keyboard Forms",
+	"specialCharsLettersLabel" -> "Letters",
+	"specialCharsSymbolsLabel" -> "Symbols",
+	"specialCharsTitle" -> "Special Characters",
+	
+	"BrowseLabel" -> "Browse\[Ellipsis]",
+	
+	"slideshowChooserTitleLabel" -> "Slide Show Templates",
+	"slideshowChooserSectionTitleLabel" -> "Choose a Template",
+	"slideshowChooserDefaultLabel" -> "Default",
+	"slideshowChooserSteelLabel" -> "Steel",
+	"slideshowChooserEarthLabel" -> "Earth",
+	"slideshowChooserSapphireLabel" -> "Sapphire",
+	"slideshowChooserOpalLabel" -> "Opal",
+	"slideshowChooserSunriseLabel" -> "Sunrise",
+	"slideshowChooserGarnetLabel" -> "Garnet",
+	"slideshowChooserWaterLabel" -> "Water",
+	
+	(* MeshGraphics *)
+	
+	"meshGraphicsTransformationTooltip" -> "Transformation Tools",
+	"meshGraphicsMeshLayoutTooltip" -> "Mesh Themes",
+	"meshGraphicsInformationTooltip" -> "Mesh Information",
+	"meshGraphicsMoreTooltip" -> "More tools & actions",
+	"meshGraphicsDecorationTooltip" -> "Mesh Decoration",
+	"meshGraphicsPrintingTooltip" -> "Printing",
+
+	"meshGraphicsTransformationTitle" -> "Transformation Tools",
+	"meshGraphicsMeshLayoutTitle" -> "Mesh Themes",
+	"meshGraphicsInformationTitle" -> "Mesh Information",
+	"meshGraphicsDecorationTitle" -> "Mesh Decoration",
+	"meshGraphicsMoreTab" -> "More\[Ellipsis]",
+	"meshGraphicsMoreTitle" -> "Actions & Tools",
+	"meshGraphicsPrintingTitle" -> "Printing",
+
+	"meshGraphicsTransformationCaption" -> "Flip, rotate and resize the mesh.",
+	"meshGraphicsMeshLayoutCaption" -> "Change the plot and the rendering of the mesh.",
+	"meshGraphicsInformationCaption" -> "Show the information of the mesh.",
+	"meshGraphicsMoreCaption" -> "Analyze and print the mesh.",
+	"meshGraphicsDecorationCaption" -> "Decorate the mesh.",
+	
+	"meshGraphicsPrintingCaption" -> "Print the mesh.",
+	"meshGraphicsPropertiesCaption" -> "Show properties.",
+	
+	"meshGraphicsFlipHorizontal" -> "Flip Horizontal",
+	"meshGraphicsFlipVertical" -> "Flip Vertical",
+	"meshGraphicsRotateCounterclockwise" -> "Rotate Counterclockwise",
+	"meshGraphicsRotateClockwise" -> "Rotate Clockwise",
+	
+	"meshGraphicsMeshLayoutMode" -> "Mesh Featured Theme",
+
+	"meshGraphicsMeshLayoutDefault" -> "Default",
+	"meshGraphicsPoints" -> "Points",
+	"meshGraphicsSampledPoints" -> "SampledPoints",
+	"meshGraphicsPolygons" -> "Polygons",
+	"meshGraphicsLines" -> "Lines",
+	"meshGraphicsShowcase" -> "Showcase",
+	"meshGraphicsIllustration" -> "Illustration",
+	
+	"meshGraphicsPlotThemeDefault" -> "Default",
+	"meshGraphicsPlotThemeBusiness" -> "Business",
+	"meshGraphicsPlotThemeDetailed" -> "Detailed",
+	"meshGraphicsPlotThemeMarketing" -> "Marketing",
+	"meshGraphicsPlotThemeMinimal" -> "Minimal",
+	"meshGraphicsPlotThemeMonochrome" -> "Monochrome",
+	"meshGraphicsPlotThemeScientific" -> "Scientific",
+	"meshGraphicsPlotThemeWeb" -> "Web",
+	"meshGraphicsPlotThemeClassic" -> "Classic",
+	
+	"meshGraphicsPlotThemeBoldLabels" -> "BoldLabels",
+	"meshGraphicsPlotThemeItalicLabels" -> "ItalicLabels",
+	"meshGraphicsPlotThemeLargeLabels" -> "LargeLabels",
+	"meshGraphicsPlotThemeSmallLabels" -> "SmallLabels",
+	"meshGraphicsPlotThemeSansLabels" -> "SansLabels",
+	"meshGraphicsPlotThemeSerifLabels" -> "SerifLabels",
+	
+	"meshGraphicsEmbeddingDimensions" -> "Embedding Dimension",
+	"meshGraphicsGeometricDimensions" -> "Geometric Dimension",
+	"meshGraphicsVertexCount" -> "Vertex Cells",
+	"meshGraphicsEdgeCount" -> "Edge Cells",
+	"meshGraphicsFaceCount" -> "Face Cells",
+	"meshGraphicsBoundaryMeshRegionQ" -> "Boundary mesh region",
+	"meshGraphicsRegionMeasure" -> "Length/Area/Volume",
+	"meshGraphicsCount" -> "Count",
+	"meshGraphicsLength" -> "Length",
+	"meshGraphicsArea" -> "Area",
+	"meshGraphicsVolume" -> "Volume",
+	"meshGraphicsRegionBounds" -> "Region Bounds",
+	"meshGraphicsRegionCentroid" -> "Region Centroid",
+	"meshGraphicsVolumeSurface" -> "Volume/Surface",
+	"meshGraphicsOriented" -> "Oriented",
+	
+	"meshGraphicsTransformMove" -> "Move",
+	"meshGraphicsTransformRotate" -> "Rotate",
+	"meshGraphicsTransformScale" -> "Scale",
+	"meshGraphicsTransformFit" -> "Fit",
+
+	"meshGraphicsShowAxes" -> "Show axes",
+	"meshGraphicsShowFrame" -> "Show frame",
+	"meshGraphicsShowLabels0" -> "Show vertex labels",
+	"meshGraphicsShowLabels1" -> "Show edge labels",
+	"meshGraphicsShowLabels2" -> "Show face labels",
+	"meshGraphicsShowCells0" -> "Show vertices",
+	"meshGraphicsShowCells1" -> "Show edges",
+	"meshGraphicsShowCells2" -> "Show faces",
+	"meshGraphicsCells0"  -> "Vertices",
+	"meshGraphicsCells1"  -> "Edges",
+	
+	"meshGraphicsPrint" -> "Print\[Ellipsis]",
+
+	(* MeshGraphics3D *)
+
+	"meshGraphics3DRenderingTooltip" -> "Mesh Themes",
+	"meshGraphics3DPrintingTooltip" -> "3D Printing",
+	"meshGraphics3DViewOptionsTooltip" -> "View Options",
+	"meshGraphics3DInformationTooltip" -> "Mesh Information",
+	"meshGraphics3DDecorationTooltip" -> "Mesh Decoration",
+	"meshGraphics3DMoreTooltip" -> "More tools & actions",
+
+	"meshGraphics3DRenderingTitle" -> "Mesh Themes",
+	"meshGraphics3DViewOptionsTitle" -> "View Options",
+	"meshGraphics3DInformationTitle" -> "Mesh Information",
+	"meshGraphics3DDecorationTitle" -> "Mesh Decoration",
+	"meshGraphics3DPrintingTitle" -> "3D Printing",
+	"meshGraphics3DMoreTitle" -> "Actions & Tools",
+	"meshGraphics3DMoreTab" -> "More\[Ellipsis]",
+
+	"meshGraphics3DViewOptionsCaption" -> "Change how the mesh appears in the notebook.",
+	"meshGraphics3DRenderingCaption" -> "Change the plot and the rendering of the mesh.",
+	"meshGraphics3DInformationCaption" -> "Show the information of the mesh.",
+	"meshGraphics3DDecorationCaption" -> "Decorate the mesh.",
+	"meshGraphics3DMoreCaption" -> "Analyze and print the mesh.",
+	"meshGraphics3DPrintingCaption" -> "Print the mesh.",
+
+	"meshGraphics3DPropertiesCaption" -> "Show properties.",
+	"meshGraphics3DShow & ActionCaption" -> "Show and fix.",
+
+	"meshGraphics3DViewPoint" -> "View Point",
+	"meshGraphics3DViewPointDefault" -> "Default",
+	"meshGraphics3DViewPointFront" -> "Front",
+	"meshGraphics3DViewPointBack" -> "Back",
+	"meshGraphics3DViewPointTop" -> "Top",
+	"meshGraphics3DViewPointBottom" -> "Bottom",
+	"meshGraphics3DViewPointLeft" -> "Left",
+	"meshGraphics3DViewPointRight" -> "Right",
+	"meshGraphics3DViewBoundingBox" -> "Show bounding box",
+	"meshGraphics3DViewBoxCorner" -> "Show box corners",
+	
+	"meshGraphics3DRenderingDefault" -> "Default",
+	"meshGraphics3DPoints" -> "Points",
+	"meshGraphics3DLines" -> "Lines",
+	"meshGraphics3DPolygons" -> "Polygons",
+	"meshGraphics3DSampledPoints" -> "SampledPoints",
+	"meshGraphics3DSmoothShading" -> "SmoothShading",
+	"meshGraphics3DSphereAndTube" -> "SphereAndTube",
+	"meshGraphics3DShowcase" -> "Showcase",
+	"meshGraphics3DIllustration" -> "Illustration",
+	"meshGraphics3DRenderingMode" -> "Mesh Feature Theme",
+	"meshGraphics3DBaseTheme" -> "Base Feature Theme:",
+	"meshGraphics3DFontTheme" -> "Font Feature Theme:",
+	"meshGraphics3DPlotThemeDefault" -> "Default",
+	"meshGraphics3DPlotThemeBusiness" -> "Business",
+	"meshGraphics3DPlotThemeDetailed" -> "Detailed",
+	"meshGraphics3DPlotThemeMarketing" -> "Marketing",
+	"meshGraphics3DPlotThemeMinimal" -> "Minimal",
+	"meshGraphics3DPlotThemeMonochrome" -> "Monochrome",
+	"meshGraphics3DPlotThemeScientific" -> "Scientific",
+	"meshGraphics3DPlotThemeWeb" -> "Web",
+	"meshGraphics3DPlotThemeClassic" -> "Classic",
+
+	"meshGraphics3DPlotThemeBoldLabels" -> "BoldLabels",
+	"meshGraphics3DPlotThemeItalicLabels" -> "ItalicLabels",
+	"meshGraphics3DPlotThemeLargeLabels" -> "LargeLabels",
+	"meshGraphics3DPlotThemeSmallLabels" -> "SmallLabels",
+	"meshGraphics3DPlotThemeSansLabels" -> "SansLabels",
+	"meshGraphics3DPlotThemeSerifLabels" -> "SerifLabels",
+	
+	"meshGraphics3DEmbeddingDimensions" -> "Embedding Dimension",
+	"meshGraphics3DGeometricDimensions" -> "Geometric Dimension",
+	"meshGraphics3DVertexCount" -> "Vertex Cells",
+	"meshGraphics3DEdgeCount" -> "Edge Cells",
+	"meshGraphics3DFaceCount" -> "Face Cells",
+	"meshGraphics3DVolumeCount" -> "Volume Cells",
+	"meshGraphics3DBoundaryMeshRegionQ" -> "Boundary mesh region",
+	"meshGraphics3DRegionMeasure" -> "Length/Area/Volume",
+	"meshGraphics3DCount" -> "Count",
+	"meshGraphics3DLength" -> "Length",
+	"meshGraphics3DArea" -> "Area",
+	"meshGraphics3DVolume" -> "Volume",
+	"meshGraphics3DRegionBounds" -> "Region Bounds",
+	"meshGraphics3DRegionCentroid" -> "Region Centroid",
+	"meshGraphics3DVolumeSurface" -> "Volume/Surface",
+	"meshGraphics3DOriented" -> "Oriented",
+
+	"meshGraphics3DPrintingService" -> "3D Printing Service:",
+	"meshGraphics3DPrinting" -> "3D Printing",
+	"meshGraphics3DProperties" -> "Properties",
+	"meshGraphics3DOriented" -> "Oriented",
+	
+	"meshGraphics3DTransformMove" -> "Move",
+	"meshGraphics3DTransformRotate" -> "Rotate",
+	"meshGraphics3DTransformScale" -> "Scale",
+	"meshGraphics3DTransformFit" -> "Fit",
+
+	"meshGraphics3DShowFlatform" -> "Show build platform",
+	"meshGraphics3DPrint" -> "Print\[Ellipsis]",
+	"meshGraphics3DPrintOptions" -> "Print Options",
+	
+	"meshGraphics3DShowBoundaryEdge" -> "Show boundary edges",
+	"meshGraphics3DVertexNormal" -> "Show vertex normals",
+	"meshGraphics3DShowNormal" -> "Show normals",
+	"meshGraphics3DShowTexture" -> "Show texture",
+	"meshGraphics3DShowAxes" -> "Show axes",
+	"meshGraphics3DShowBoundingBox" -> "Show bounding box",
+	"meshGraphics3DShowLabels0" -> "Show vertex labels",
+	"meshGraphics3DShowLabels1" -> "Show edge labels",
+	"meshGraphics3DShowLabels2" -> "Show face labels",
+	"meshGraphics3DShowBoxCorner" -> "Show box corner",
+	"meshGraphics3DShowVertices" -> "Show vertices",
+	"meshGraphics3DShowEdges" -> "Show edges",
+	"meshGraphics3DShowFaces" -> "Show faces",
+	"meshGraphics3DShowCells0" -> "Show vertices",
+	"meshGraphics3DShowCells1" -> "Show edges",
+	"meshGraphics3DShowCells2" -> "Show faces",
+
+	"meshGraphics3DLabels0" -> "Vertex Labels",
+	"meshGraphics3DLabels1" -> "Edge Labels",
+	"meshGraphics3DLabels2" -> "Face Labels",
+	"meshGraphics3DCells0"  -> "Vertices",
+	"meshGraphics3DCells1"  -> "Edges",
+	"meshGraphics3DCells2"  -> "Faces",
+
+	"meshGraphics3DShowNonManifoldEdges" -> "Show non manifold edges",
+	"meshGraphics3DShowNonManifoldVertices" -> "Show non manifold vertices",
+	"meshGraphics3DShowSelfIntersecionFaces" -> "Show self intersection faces",
+	"meshGraphics3DShowCloseVertices" -> "Show close vertices",
+	"meshGraphics3DShowDuplicatedVertices" -> "Show duplicated vertices",
+
+	"meshGraphics3DRemoveNonManifoldEdges" -> "Remove non manifold edges",
+	"meshGraphics3DRemoveNonManifoldVertices" -> "Remove non manifold vertices",
+	"meshGraphics3DRemoveSelfIntersecionFaces" -> "Remove self intersection faces",
+	"meshGraphics3DRemoveCloseVertices" -> "Remove close vertices",
+	"meshGraphics3DRemoveDuplicatedVertices" -> "Remove duplicated vertices",
+	
+	(* RegionGraphics *)
+	
+	"regionGraphicsTransformationTooltip" -> "Transformation Tools",
+	"regionGraphicsMeshLayoutTooltip" -> "Plot Themes",
+	"regionGraphicsInformationTooltip" -> "Region Information",
+	"regionGraphicsMoreTooltip" -> "More tools & actions",
+
+	"regionGraphicsTransformationTitle" -> "Transformation Tools",
+	"regionGraphicsMeshLayoutTitle" -> "Plot Themes",
+	"regionGraphicsInformationTitle" -> "Region Information",
+	"regionGraphicsMoreTab" -> "More\[Ellipsis]",
+	"regionGraphicsMoreTitle" -> "Actions & Tools",
+
+	"regionGraphicsTransformationCaption" -> "Flip, rotate and resize the region.",
+	"regionGraphicsMeshLayoutCaption" -> "Change the plot and the rendering of the region.",
+	"regionGraphicsInformationCaption" -> "Show the information of the region.",
+	"regionGraphicsMoreCaption" -> "Analyze and print the region.",
+	
+	"regionGraphicsPrintingCaption" -> "Print the region.",
+	"regionGraphicsPropertiesCaption" -> "Show properties.",
+	
+	"regionGraphicsFlipHorizontal" -> "Flip Horizontal",
+	"regionGraphicsFlipVertical" -> "Flip Vertical",
+	"regionGraphicsRotateCounterclockwise" -> "Rotate Counterclockwise",
+	"regionGraphicsRotateClockwise" -> "Rotate Clockwise",
+
+	"regionGraphicsMeshLayoutDefault" -> "Default",
+	"regionGraphicsPoints" -> "Points",
+	"regionGraphicsSampledPoints" -> "SampledPoints",
+	"regionGraphicsPolygons" -> "Polygons",
+	"regionGraphicsLines" -> "Lines",
+	
+	"regionGraphicsPlotThemeDefault" -> "Default",
+	"regionGraphicsPlotThemeBusiness" -> "Business",
+	"regionGraphicsPlotThemeDetailed" -> "Detailed",
+	"regionGraphicsPlotThemeMarketing" -> "Marketing",
+	"regionGraphicsPlotThemeMinimal" -> "Minimal",
+	"regionGraphicsPlotThemeMonochrome" -> "Monochrome",
+	"regionGraphicsPlotThemeScientific" -> "Scientific",
+	"regionGraphicsPlotThemeWeb" -> "Web",
+	"regionGraphicsPlotThemeClassic" -> "Classic",
+
+	"regionGraphicsEmbeddingDimensions" -> "Embedding Dimension",
+	"regionGraphicsGeometricDimensions" -> "Geometric Dimension",
+	"regionGraphicsRegionMeasure" -> "Length/Area/Volume",
+	"regionGraphicsLength" -> "Length",
+	"regionGraphicsArea" -> "Area",
+	"regionGraphicsVolume" -> "Volume",
+	"regionGraphicsRegionBounds" -> "Region Bounds",
+	"regionGraphicsRegionCentroid" -> "Region Centroid",
+	"regionGraphicsVolumeSurface" -> "Volume/Surface",
+	"regionGraphicsOriented" -> "Oriented",
+	
+	"regionGraphicsTransformMove" -> "Move",
+	"regionGraphicsTransformRotate" -> "Rotate",
+	"regionGraphicsTransformScale" -> "Scale",
+	"regionGraphicsTransformFit" -> "Fit",
+
+	"regionGraphicsShowAxes" -> "Show axes",
+	"regionGraphicsShowFrame" -> "Show frame",
+	"regionGraphicsCells0"  -> "Vertices",
+	"regionGraphicsCells1"  -> "Edges",
+	
+	"regionGraphicsPrint" -> "Print",
+	
+	(* RegionGraphics3D *)
+
+	"regionGraphics3DRenderingTooltip" -> "Plot Themes",
+	"regionGraphics3DPrintingTooltip" -> "3D Printing",
+	"regionGraphics3DViewOptionsTooltip" -> "View Options",
+	"regionGraphics3DInformationTooltip" -> "Region Information",
+	"regionGraphics3DMoreTooltip" -> "More tools & actions",
+
+	"regionGraphics3DRenderingTitle" -> "Plot Themes",
+	"regionGraphics3DViewOptionsTitle" -> "View Options",
+	"regionGraphics3DInformationTitle" -> "Region Information",
+	"regionGraphics3DMoreTitle" -> "Actions & Tools",
+	"regionGraphics3DMoreTab" -> "More\[Ellipsis]",
+
+	"regionGraphics3DViewOptionsCaption" -> "Change how the region appears in the notebook.",
+	"regionGraphics3DRenderingCaption" -> "Change the plot and the rendering of the region.",
+	"regionGraphics3DInformationCaption" -> "Show the information of the region.",
+	"regionGraphics3DMoreCaption" -> "Analyze and print the region.",
+
+	"regionGraphics3DPrintingCaption" -> "Print the mesh.",
+	"regionGraphics3DPropertiesCaption" -> "Show properties.",
+	"regionGraphics3DShow & ActionCaption" -> "Show and fix.",
+
+	"regionGraphics3DViewPoint" -> "View Point",
+	"regionGraphics3DViewPointDefault" -> "Default",
+	"regionGraphics3DViewPointFront" -> "Front",
+	"regionGraphics3DViewPointBack" -> "Back",
+	"regionGraphics3DViewPointTop" -> "Top",
+	"regionGraphics3DViewPointBottom" -> "Bottom",
+	"regionGraphics3DViewPointLeft" -> "Left",
+	"regionGraphics3DViewPointRight" -> "Right",
+	"regionGraphics3DViewBoundingBox" -> "Show bounding box",
+	"regionGraphics3DViewBoxCorner" -> "Show box corners",
+	
+	"regionGraphics3DRenderingDefault" -> "Default",
+	"regionGraphics3DPoints" -> "Points",
+	"regionGraphics3DLines" -> "Lines",
+	"regionGraphics3DPolygons" -> "Polygons",
+	"regionGraphics3DSampledPoints" -> "SampledPoints",
+	"regionGraphics3DSmoothShading" -> "SmoothShading",
+	"regionGraphics3DSphereAndTube" -> "SphereAndTube",
+	"regionGraphics3DRenderingMode" -> "Mesh Feature Theme",
+	"regionGraphics3DBaseTheme" -> "Base Feature Theme:",
+	"regionGraphics3DFontTheme" -> "Font Feature Theme:",
+	"regionGraphics3DPlotThemeDefault" -> "Default",
+	"regionGraphics3DPlotThemeBusiness" -> "Business",
+	"regionGraphics3DPlotThemeDetailed" -> "Detailed",
+	"regionGraphics3DPlotThemeMarketing" -> "Marketing",
+	"regionGraphics3DPlotThemeMinimal" -> "Minimal",
+	"regionGraphics3DPlotThemeMonochrome" -> "Monochrome",
+	"regionGraphics3DPlotThemeScientific" -> "Scientific",
+	"regionGraphics3DPlotThemeWeb" -> "Web",
+	"regionGraphics3DPlotThemeClassic" -> "Classic",
+	
+	"regionGraphics3DEmbeddingDimensions" -> "Embedding dimension",
+	"regionGraphics3DGeometricDimensions" -> "Geometric dimension",
+	"regionGraphics3DRegionMeasure" -> "Length/Area/Volume",
+	"regionGraphics3DLength" -> "Length",
+	"regionGraphics3DArea" -> "Area",
+	"regionGraphics3DVolume" -> "Volume",
+	"regionGraphics3DRegionBounds" -> "Region bounds",
+	"regionGraphics3DRegionCentroid" -> "Region centroid",
+	"regionGraphics3DVolumeSurface" -> "Volume/Surface",
+	"regionGraphics3DOriented" -> "Oriented",
+
+	"regionGraphics3DPrinting" -> "3D Printing",
+	"regionGraphics3DProperties" -> "Properties",
+	"regionGraphics3DOriented" -> "Oriented",
+	
+	"regionGraphics3DTransformMove" -> "Move",
+	"regionGraphics3DTransformRotate" -> "Rotate",
+	"regionGraphics3DTransformScale" -> "Scale",
+	"regionGraphics3DTransformFit" -> "Fit",
+
+	"regionGraphics3DShowFlatform" -> "Show build platform",
+	"regionGraphics3DPrint" -> "Print",
+	"regionGraphics3DPrintOptions" -> "Print Options",
+	
+	"regionGraphics3DShowTexture" -> "Show texture",
+	"regionGraphics3DShowAxes" -> "Show axes",
+	"regionGraphics3DShowBoundingBox" -> "Show bounding box",
+	"regionGraphics3DShowBoxCorner" -> "Show box corner"
+}
+@|
+@@resource PackageTemplate
+Notebook[{
+Cell[BoxData[
+	RowBox[{"BeginPackage", "[", "\"\<\[Placeholder]`\>\"", "]"}]], "Code"],
+Cell[BoxData[
+	RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}]], "Code"],
+Cell[BoxData[
+	RowBox[{"End", "[", "]"}]], "Code"],
+Cell[BoxData[
+	RowBox[{"EndPackage", "[", "]"}]], "Code"]
+}]
+@|
+@@resource HelpViewerHistoryAction
+FEPrivate`FrontEndExecute[FrontEnd`FrontEndToken[FrontEnd`ButtonNotebook[], "HyperlinkGo", `distance`]]
+@|
+@@resource InitializingSearchSystem
+Initializing search system...
+@|
+@@resource URL2HyperlinkTemplate
+InterpretationBox[TagBox[ButtonBox[PaneSelectorBox[{False->"\<\"%URL%\"\>",True->StyleBox["\<\"%URL%\"\>","HyperlinkActive"]},Dynamic[CurrentValue["MouseOver"]],BaseStyle->{"Hyperlink"},BaselinePosition->Baseline,FrameMargins->0,ImageSize->Automatic],BaseStyle->"Hyperlink",ButtonData->{URL["%URL%"],None},ButtonNote->"%URL%"],Annotation[#,"%URL%","Hyperlink"]&],"%URL%"]
+@|
+@@resource URLLocating
+Locating
+@|
+@@resource URLConnecting
+Connecting to
+@|
+@@resource URLRedirecting
+Redirecting to
+@|
+@@resource URLDownloading
+Downloading
+@|
+@@resource URLDetectingProxy
+Detecting Proxy
+@|
+@@resource LoadingFile
+Loading Computable Document...
+@|
+@@resource CorruptFileLine1
+File could not be loaded
+@|
+@@resource CorruptFileLine2
+Try refreshing the page
+@|
+@@resource CommandCompletion
+Command Completion
+@|
+@@resource FailedToFindExpression Macintosh
+Not found
+@|
+@@resource WrappedAroundNotebookEnd Macintosh
+""
+@|
+@@resource FoundExpression Macintosh
+""
+@|
+@@resource ReplacedOccurrences Macintosh
+%d replaced
+@|
+@@resource ReplacedOccurrence Macintosh
+1 replaced
+@|
+@@resource FailedToReplaceOccurrences Macintosh
+Not found
+@|
+@@resource FoundExpressionInBeginningOfNotebook Macintosh
+""
+@|
+@@resource FoundExpressionInEndOfNotebook Macintosh
+""
+@|
+@@resource FailedToFindExpression
+Match not found
+@|
+@@resource WrappedAroundNotebookEnd
+Wrapped around to the beginning of the document
+@|
+@@resource FoundExpression
+Match found
+@|
+@@resource FoundExpressionInBeginningOfNotebook
+Match found in beginning of the document
+@|
+@@resource FoundExpressionInEndOfNotebook
+Match found in end of the document
+@|
+@@resource ReplacedOccurrences
+Replaced %d matches
+@|
+@@resource ReplacedOccurrence
+Replaced 1 match
+@|
+@@resource FoundOccurrence
+Found 1 match
+@|
+@@resource FoundOccurrences
+Found %d matches
+@|
+@@resource FailedToReplaceOccurrences
+Failed to replace any matches
+@|
+@@resource CellInsertionMenu
+{
+	"Tooltip" -> "Choose new cell type",
+	"MathematicaInput" -> "Wolfram Language Input",
+	"MathematicaInput2" -> "(default)", (*When the English-language rhs of "MathematicaInput2" is changed, copy/paste the English-version, UNTRANSLATED, to all language versions of the rhs for "ShortcutColumnMaxStringLen", including English. See comment following the Rule for "ShortcutColumnMaxStringLen" for more details.*)
+	"ExternalLanguageInput" -> "External Language Input",
+	"ExternalLanguageInput2" -> ">",
+	"FreeformInput" -> "Free-form Input",
+	"FreeformInput2" -> "=",
+	"WAQuery" -> "Wolfram|Alpha Query",
+	"WAQuery2" -> "==",
+	"TextStyle" -> "Plain Text",
+	"TextStyle2" -> "Alt+7",
+	"TextStyle2Mac" -> "\[CloverLeaf]7",
+	"OtherStyle" -> "Other Style of Text...",
+	"OtherStyle2" -> "",
+	"ShortcutColumnMaxStringLen" -> "(default)" (*DO NOT REMOVE! DO NOT TRANSLATE! The rhs of "ShortcutColumnMaxStringLen" represents the max size of the right-most column in the menu. The string must be identical to the rhs string of "MathematicaInput2" in the English-version of the file (i.e., TextResources/MiscStrings.tr). 
+			If and when the rhs of "MathematicaInput2" from the English-language version of MiscStrings.tr is changed. That same rhs value replaces the rhs value of "ShortcutColumnMaxStringLen" in MiscStrings.tr of all languages, UNTRANSLATED, not just English.*)
+}
+@|
+@@resource Image3DEditModeMenu
+{
+	(* top level tooltips *)
+	"ColorFunctionTooltip" -> "Color Function Editor",
+	"ClippingTooltip" -> "Clipping",
+	"ViewOptionsTooltip" -> "View Options",
+	"InformationTooltip" -> "Image Information",
+	(* titles *)
+	"ColorFunctionTitle" -> "Color Function Editor",
+	"ClippingTitle" -> "Clipping",
+	"ViewOptionsTitle" -> "View Options",
+	"InformationTitle" -> "Image Information",
+	(* captions *)
+	"ColorFunctionCaption" -> "Set the transfer function to map data levels to opacity and color.",
+	"ClippingCaption" -> "Position clipping planes to slice image.",
+	"ViewOptionsCaption" -> "Change how the image appears in the notebook.",
+	"InformationCaption" -> "",
+	(* color function tab *)
+	"ColorFunctionSingleChannel" -> "The Color Function Editor currently supports images with a single channel.",
+	"ColorFunctionChannelCount" -> "This image has `1` channels.",
+	(* clipping tab *)
+	"ClippingOrientation" -> "Orientation",
+	"ClippingPosition" -> "Position",
+	"ClippingShowPlane" -> "Show\nPlane",
+	"ClippingDirectionX" -> "x-direction",
+	"ClippingDirectionY" -> "y-direction",
+	"ClippingDirectionZ" -> "z-direction",
+	"ClippingDirectionCustom" -> "custom normal vector",
+	"ClippingNewPlanes" -> "New clipping planes",
+	(* view tab *)
+	"ViewPoint" -> "View Point",
+	"ViewPointDefault" -> "Default",
+	"ViewPointFront" -> "Front",
+	"ViewPointBack" -> "Back",
+	"ViewPointTop" -> "Top",
+	"ViewPointBottom" -> "Bottom",
+	"ViewPointLeft" -> "Left",
+	"ViewPointRight" -> "Right",
+	"ViewBoundingBox" -> "Show bounding box",
+	"ViewRelativeSize" -> "Relative Size",
+	"ViewBoxRatio" -> "Box Ratio:",
+	"ViewVoxelRatio" -> "Voxel Ratio:",
+	"ViewResetButton" -> "Reset",
+	"ViewResetButtonTooltip" -> "Reset relative size",
+	"ViewRatioDefault" -> "Default",
+	"ViewRatio1:1:1" -> "1:1:1",
+	"ViewRatioCustom" -> "Custom",
+	"ViewApply" -> "Apply",
+	(* Info tab *)
+	"ImageDimensions" -> "Image Dimensions",
+	"ColorSpace" -> "Color Space",
+	"Channels" -> "Channels",
+	"AlphaChannel" -> "Alpha Channel",
+	"DataType" -> "Data Type",
+	"Interleaving" -> "Interleaving",
+	"Size" -> "Byte Count",
+	"Magnification" -> "Magnification",
+	"MagnificationAutomatic" -> "Automatic",
+	"MagnificationOther" -> "other",
+	"DataHistogram" -> "Histogram of data values",
+	"CopyHistogram" -> "Copy Histogram"
+}
+@|
+@@resource ImageEditModeMenu
+{
+	(* tab labels *)
+	"MoreTab" -> "more\[Ellipsis]",
+	(* top level tooltips *)
+	"SelectionTooltip" -> "Selection Tool",
+	"CropTooltip" -> "Crop Tool",
+	"TransformTooltip" -> "Transform Tool",
+	"CoordinatesTooltip" -> "Coordinates Tool",
+	"MaskTooltip" -> "Mask Tool",
+	"InfoAndZoomTooltip" -> "Image Information",
+	"MoreTooltip" -> "More tools & actions",
+	(* titles *)
+	"SelectionTitle" -> "Selection Tools",
+	"CropTitle" -> "Crop Tool",
+	"TransformTitle" -> "Transformation Tools",
+	"CoordinatesTitle" -> "Coordinates Tool",
+	"MaskTitle" -> "Mask Tool",
+	"InfoAndZoomTitle" -> "Image Information",
+	"MoreTitle" -> "Actions & Tools",
+	(* captions*)
+	"SelectionCaption" -> "Click and drag on the image to create single or multiple selections.",
+	"CropCaption" -> "Click and drag on the image to create a crop area.",
+	"TransformCaption" -> "Flip, rotate and resize the image.",
+	"CoordinatesCaption" -> "Click to place points on the image. Hold Cmd to remove.",
+	"MaskCaption" -> "Drag on the image to create regions",
+	"InfoAndZoomCaption" -> "",
+	"MoreCaption" -> "",
+	(* selection tab *)
+	"ClearMarkers" -> "Clear All",
+	"Cancel" -> "Cancel",
+	"CopyToClipboard" -> "Copy",
+	"ImageSingle" -> "Selection as a Single Image",
+	"ImageList" -> "Selection as a List of Images",
+	"RectangleSelection" -> "Rectangle Selection Tool",
+	"DiskSelection" -> "Elliptical Selection Tool",
+	"LassoSelection" -> "Lasso Selection Tool",
+	"EraseSelection" -> "Click on a selection to delete it",
+	"ViewOptions" -> "Tooltip Options",
+	"ShowImagePeek" -> "Display detailed tooltip",
+	(* crop tab *)
+	"ClearCrop" -> "Clear",
+	"Crop" -> "Crop",
+	"AutoCrop" -> "Auto crop",
+	(* transform tab *)
+	"Pixels" -> "pixels",
+	"Percent" -> "%",
+	"Custom" -> "Custom...",
+	"Width" -> "Width",
+	"Height" -> "Height",
+	"FlipHorizontal" -> "Flip Horizontal",
+	"FlipVertical" -> "Flip Vertical",
+	"RotateCounterclockwise" -> "Rotate Counterclockwise",
+	"RotateClockwise" -> "Rotate Clockwise",
+	"LockAspectRatio" -> "Maintain aspect ratio",
+	"Resize" -> "Resize",
+	(* coordinates tab *)
+	"CoordinatesToMarkerImage" -> "Copy as Marker Image",
+	"CoordinatesCopyCoordinates" -> "Copy Coordinates",
+	"CoordinatesCopyIndices" -> "Copy Indices",
+	"CoordinatesCopyColorValues" -> "Copy Color Values",
+	(* mask tab *)
+	"MaskPoint" -> "Point",
+	"MaskLine" -> "Line\n(Shift+drag to constrain)",
+	"MaskLineSegments" -> "Line segments\n(Shift+drag to constrain,\n double-click to confirm)",
+	"MaskFreehandLine" -> "Freehand line",
+	"MaskRectangle" -> "Rectangle\n(Shift+drag to constrain)",
+	"MaskPolygon" -> "Polygon",
+	"MaskEllipse" -> "Ellipse\n(Shift+drag to constrain)",
+	"MaskFreehandShape" -> "Freehand shape",
+	"MaskEraser" -> "Eraser\n(Click on a region to delete)",
+	"MaskFillShape" -> "Fill shape",
+	"MaskThickness" -> "Thickness",
+	"MaskToGraphics" -> "Mask as a Graphics",
+	"InverseMaskToGraphics" -> "Inverse Mask as a Graphics",
+	"MaskToAnImage" -> "Mask as an Image",
+	"InverseMaskToAnImage" -> "Inverse Mask as an Image",
+	(* info and zoom tab *)
+	"ImageDimensions" -> "Image Dimensions",
+	"ColorSpace" -> "Color Space",
+	"Channels" -> "Channels",
+	"AlphaChannel" -> "Alpha Channel",
+	"DataType" -> "Data Type",
+	"Interleaving" -> "Interleaving",
+	"Size" -> "Byte Count",
+	"Magnification" -> "Magnification",
+	"MagnificationAutomatic" -> "Automatic",
+	"MagnificationOther" -> "other",
+	"Histogram" -> "Histogram",
+	"CopyHistogram" -> "Copy Histogram",
+	(* other *)
+	"DrawingTool" -> "Drawing Tool"	
+}
+@|
+@@resource askStartRefSystem
+Your reference system is not currently running.  The Wolfram System needs it to rebuild references.  Start reference system?
+@|
+@@resource askDeleteStaleRefs
+Unable to start reference system.  The Wolfram System needs it to rebuild references.  Delete stale bibliograpy entries?
+@|
+@@resource askCantStartRefSystem
+Unable to automatically start reference system.  Please start it manually.
+@|
+@@resource printSelectionFrom
+Notebook Selection
+@|
+@@resource embeddedCDFTemplate
+<script type="text/javascript" src="http://www.wolfram.com/cdf-player/plugin/v2.1/cdfplugin.js"></script>
+<script type="text/javascript">
+var cdf = new cdfplugin();
+cdf.embed('`1`', `100`, `101`);
+</script>
+@|
+@@resource embeddedCDFTemplateWithAltImage
+<script type="text/javascript" src="http://www.wolfram.com/cdf-player/plugin/v2.1/cdfplugin.js"></script>
+<script type="text/javascript">
+var cdf = new cdfplugin();
+cdf.setDefaultContent('<a href="http://www.wolfram.com/cdf-player/"><img  src="`2`"></a>');
+cdf.embed('`1`', `100`, `101`);
+</script>
+@|
+@@resource undoInformationDescriptionText
+{
+	(* "internal name" -> "localized name" *)
+	"Type"->"Typing",
+	"Click"->"Click",
+	"Draw"->"Drawing"
+	"Delete"->"Deletion",
+	"Style"->"Style Change",
+	"Evaluate"->"Evaluation"
+}
+@|
+@@resource evaluationPendingDescription
+Wolfram Engine computation in progress...
+@|
+@@resource evaluationCompletedDescription
+Evaluation completed...
+@|
+@@resource evaluationCompletedForNotebookDescription
+Evaluation completed for `1`...
+@|
+@@resource expiredCellLabelTooltipString
+`1` in a previous session
+@|
+@@resource obsoleteCDFLearnMoreUrl
+https://www.wolfram.com/notebooks/licensing-options.html
+@|

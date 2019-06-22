@@ -1,0 +1,323 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     11633,        313]
+NotebookOptionsPosition[      8722,        222]
+NotebookOutlinePosition[     10231,        274]
+CellTagsIndexPosition[     10160,        269]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["MathLink", 
+    StyleBox["\[RegisteredTrademark]",
+     FontSize->12]], TraditionalForm]]],
+ " Addendum to the ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["Mathematica", 
+     StyleBox["\[RegisteredTrademark]",
+      FontSize->12]], " "}], TraditionalForm]]],
+ " License Agreement"
+}], "Chapter",
+ CellTags->"mllicense"],
+
+Cell[TextData[{
+ "Pursuant to this Limited License Agreement \
+(\[OpenCurlyDoubleQuote]Agreement\[CloseCurlyDoubleQuote]) Wolfram Research, \
+Inc. (\[OpenCurlyDoubleQuote]WRI\[CloseCurlyDoubleQuote]) grants you (\
+\[OpenCurlyDoubleQuote]Licensee\[CloseCurlyDoubleQuote]), free of charge, a \
+nonexclusive, perpetual license to use, copy, and distribute ",
+ StyleBox["MathLink",
+  FontSlant->"Italic"],
+ " (\[OpenCurlyDoubleQuote]the Program\[CloseCurlyDoubleQuote]) for the \
+purpose of enhancing the interoperability of certain Licensee products and \
+services with ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " (\[OpenCurlyDoubleQuote]Licensee Work\[CloseCurlyDoubleQuote]), provided \
+that such use or distribution does not violate the terms of this Agreement. "
+}], "Text",
+ CellTags->"mllicense"],
+
+Cell["1.  Program Use ", "ItemizedText",
+ CellTags->"mllicense"],
+
+Cell["\<\
+Licensee may download, install, and use the Program. Licensee is permitted to \
+distribute the Program for noncommercial purposes, provided that this \
+Agreement is included with each copy distributed. Any person or entity who \
+obtains or uses a copy of the Program under or through this Agreement agrees \
+to be bound thereby.\
+\>", "ItemizedTextNote"],
+
+Cell["2.  Ownership ", "ItemizedText",
+ CellTags->"mllicense"],
+
+Cell["\<\
+The Program and related user documentation are proprietary products of WRI \
+and are protected under U.S. and international copyright, trademark, and \
+other intellectual property laws. All rights, title, and interest in and to \
+the Program, including associated intellectual property rights, are and shall \
+remain with WRI. This Agreement does not convey to Licensee an interest in or \
+to the Program, but only a limited right to use the Program, revocable in \
+accordance with the terms of this Agreement.\
+\>", "ItemizedTextNote"],
+
+Cell["3.  Restrictions", "ItemizedText",
+ CellTags->"mllicense"],
+
+Cell["\<\
+Licensee agrees not to reverse assemble, reverse compile, or otherwise \
+translate the Program. Licensee may not use, copy, modify, or distribute the \
+Program (electronically or otherwise), or any copy, adaptation, \
+transcription, or merged portion thereof, except as expressly authorized by \
+this Agreement.\
+\>", "ItemizedTextNote"],
+
+Cell["4.  No Warranty", "ItemizedText",
+ CellTags->"mllicense"],
+
+Cell[TextData[{
+ StyleBox["The Program is being delivered as is and WRI makes no warranty as \
+to its use or performance. WRI AND ITS SUPPLIERS DO NOT AND CANNOT WARRANT \
+THE PERFORMANCE OR RESULTS LICENSEE MAY OBTAIN BY USING THE PROGRAM. WRI AND \
+ITS SUPPLIERS MAKE NO WARRANTIES, EXPRESS OR IMPLIED, AS TO NON-INFRINGEMENT \
+OF THIRD-PARTY RIGHTS, MERCHANTABILITY, OR FITNESS FOR ANY PARTICULAR \
+PURPOSE. IN NO EVENT WILL WRI OR ITS SUPPLIERS BE LIABLE TO LICENSEE FOR ANY \
+CONSEQUENTIAL, INCIDENTAL, OR SPECIAL DAMAGES, INCLUDING ANY LOST PROFITS OR \
+LOST SAVINGS, EVEN IF A WRI REPRESENTATIVE HAS BEEN ADVISED OF THE \
+POSSIBILITY OF SUCH DAMAGES, OR FOR ANY CLAIM BY ANY THIRD PARTY",
+  FontWeight->"Bold"],
+ "."
+}], "ItemizedTextNote"],
+
+Cell[TextData[StyleBox["Some states or jurisdictions do not allow the \
+exclusion or limitation of incidental, consequential, or special damages, or \
+the exclusion of implied warranties or limitations on how long an implied \
+warranty may last, so that all or some of the above limitations may not apply \
+to all Licensees.",
+ FontWeight->"Bold"]], "ItemizedTextNote"],
+
+Cell["5.  Jurisdictions ", "ItemizedText",
+ CellTags->"mllicense"],
+
+Cell["\<\
+This Agreement will be governed by the laws of the State of Illinois, USA, \
+excluding the application of its conflicts of law rules. Application of the \
+United Nations Convention on Contracts for the International Sale of Goods is \
+expressly excluded.\
+\>", "ItemizedTextNote"],
+
+Cell["6.  Waiver, Severability, and Merger", "ItemizedText",
+ CellTags->"mllicense"],
+
+Cell["\<\
+The failure of either party to enforce any rights granted hereunder or to \
+take action against the other party in the event of any breach hereunder \
+shall not be deemed a waiver by that party as to subsequent enforcement of \
+rights or subsequent actions in the event of future breaches. If any part of \
+this Agreement is found void and unenforceable, it will not affect the \
+validity of the balance of the Agreement, which shall remain valid and \
+enforceable according to its terms. This Agreement is the full and final \
+expression of the intent of the parties with respect to the subject matter \
+herein; this Agreement supersedes any prior or contemporaneous discussions, \
+agreements, or representations by or between the parties hereto.\
+\>", "ItemizedTextNote"],
+
+Cell["7.  Export ", "ItemizedText",
+ CellTags->"mllicense"],
+
+Cell["\<\
+Licensee agrees not to ship or otherwise permit distribution of the Program \
+into any country or for any use prohibited by the United States Export \
+Administration Act or any other export laws, restrictions, or regulations.\
+\>", "ItemizedTextNote"],
+
+Cell["8.  Term and Termination ", "ItemizedText",
+ CellTags->"mllicense"],
+
+Cell["\<\
+This Agreement is effective upon Licensee\[CloseCurlyQuote]s execution of \
+this Agreement, and shall continue until terminated. WRI may terminate this \
+Agreement immediately in the event of any breach by Licensee of any term \
+hereof. Upon such termination by WRI, Licensee agrees to destroy all copies \
+or portions of the Program under its control.\
+\>", "ItemizedTextNote"],
+
+Cell["9.  Notice to Government End Users", "ItemizedText",
+ CellTags->"mllicense"],
+
+Cell["\<\
+The Program is a \[OpenCurlyDoubleQuote]Commercial Item,\
+\[CloseCurlyDoubleQuote] as that term is defined at 48 C.F.R. \
+\[Section]2.101, consisting of \[OpenCurlyDoubleQuote]Commercial Computer \
+Software\[CloseCurlyDoubleQuote] and \[OpenCurlyDoubleQuote]Commercial \
+Computer Software Documentation,\[CloseCurlyDoubleQuote] as such terms are \
+used in 48 C.F.R. \[Section]12.212 or 48 C.F.R. \[Section]227.7202, as \
+applicable. Consistent with 48 C.F.R. \[Section]12.212 or 48 C.F.R. \
+\[Section]\[Section]227.7202-1 through 227.7202-4, as applicable, the \
+Commercial Computer Software and Commercial Computer Software Documentation \
+are being licensed to U.S. Government end users (A) only as Commercial Items \
+and (B) with only those rights as are granted to all other end users pursuant \
+to the terms and conditions herein.\
+\>", "ItemizedTextNote"],
+
+Cell[" 10.  Commercial Licenses ", "ItemizedText",
+ CellTags->"mllicense"],
+
+Cell[TextData[{
+ "Requests for Licenses to distribute the Program for commercial purposes \
+should be directed to Legal Administration at Wolfram Research, Inc., 100 \
+Trade Center Drive, Champaign, IL 61820, or by email to ",
+ ButtonBox["info@wolfram.com",
+  ButtonData:>{
+    URL["mailto:comments@wolfram.com"], None},
+  ButtonStyle->"Hyperlink"],
+ "."
+}], "ItemizedTextNote"],
+
+Cell[TextData[{
+ "Please note that Wolfram Research\[CloseCurlyQuote]s standard license \
+agreements prohibit access to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " through internet sites. Refer to the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " License Agreement for further details. Information on licensing options \
+for internet usage is available from WRI and our international resellers."
+}], "Text",
+ CellTags->"mllicense"],
+
+Cell[TextData[StyleBox["This Agreement may only be modified in writing, with \
+the signature of an authorized officer of WRI. ",
+ FontWeight->"Bold"]], "Text",
+ CellTags->"mllicense"],
+
+Cell[TextData[{
+ StyleBox["MathLink",
+  FontSlant->"Italic"],
+ " and ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " are registered trademarks of Wolfram Research, Inc."
+}], "Text"]
+}, Open  ]]
+},
+FrontEndVersion->"6.0 for Microsoft Windows",
+AutoGeneratedPackage->None,
+ScreenStyleEnvironment->"Brackets",
+PrintingStyleEnvironment->"EnhancedPrintout",
+WindowSize->{1144, 747},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "mllicense"->{
+  Cell[567, 22, 397, 15, 85, "Chapter",
+   CellTags->"mllicense"],
+  Cell[967, 39, 810, 16, 55, "Text",
+   CellTags->"mllicense"],
+  Cell[1780, 57, 64, 1, 23, "ItemizedText",
+   CellTags->"mllicense"],
+  Cell[2214, 68, 62, 1, 23, "ItemizedText",
+   CellTags->"mllicense"],
+  Cell[2828, 81, 64, 1, 23, "ItemizedText",
+   CellTags->"mllicense"],
+  Cell[3245, 92, 63, 1, 23, "ItemizedText",
+   CellTags->"mllicense"],
+  Cell[4433, 116, 66, 1, 23, "ItemizedText",
+   CellTags->"mllicense"],
+  Cell[4795, 126, 84, 1, 23, "ItemizedText",
+   CellTags->"mllicense"],
+  Cell[5668, 142, 59, 1, 23, "ItemizedText",
+   CellTags->"mllicense"],
+  Cell[5994, 151, 73, 1, 23, "ItemizedText",
+   CellTags->"mllicense"],
+  Cell[6461, 162, 82, 1, 23, "ItemizedText",
+   CellTags->"mllicense"],
+  Cell[7420, 180, 74, 1, 27, "ItemizedText",
+   CellTags->"mllicense"],
+  Cell[7878, 194, 451, 11, 42, "Text",
+   CellTags->"mllicense"],
+  Cell[8332, 207, 183, 3, 25, "Text",
+   CellTags->"mllicense"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"mllicense", 9158, 237}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 397, 15, 85, "Chapter",
+ CellTags->"mllicense"],
+Cell[967, 39, 810, 16, 55, "Text",
+ CellTags->"mllicense"],
+Cell[1780, 57, 64, 1, 23, "ItemizedText",
+ CellTags->"mllicense"],
+Cell[1847, 60, 364, 6, 36, "ItemizedTextNote"],
+Cell[2214, 68, 62, 1, 23, "ItemizedText",
+ CellTags->"mllicense"],
+Cell[2279, 71, 546, 8, 53, "ItemizedTextNote"],
+Cell[2828, 81, 64, 1, 23, "ItemizedText",
+ CellTags->"mllicense"],
+Cell[2895, 84, 347, 6, 36, "ItemizedTextNote"],
+Cell[3245, 92, 63, 1, 23, "ItemizedText",
+ CellTags->"mllicense"],
+Cell[3311, 95, 747, 12, 87, "ItemizedTextNote"],
+Cell[4061, 109, 369, 5, 36, "ItemizedTextNote"],
+Cell[4433, 116, 66, 1, 23, "ItemizedText",
+ CellTags->"mllicense"],
+Cell[4502, 119, 290, 5, 36, "ItemizedTextNote"],
+Cell[4795, 126, 84, 1, 23, "ItemizedText",
+ CellTags->"mllicense"],
+Cell[4882, 129, 783, 11, 70, "ItemizedTextNote"],
+Cell[5668, 142, 59, 1, 23, "ItemizedText",
+ CellTags->"mllicense"],
+Cell[5730, 145, 261, 4, 36, "ItemizedTextNote"],
+Cell[5994, 151, 73, 1, 23, "ItemizedText",
+ CellTags->"mllicense"],
+Cell[6070, 154, 388, 6, 36, "ItemizedTextNote"],
+Cell[6461, 162, 82, 1, 23, "ItemizedText",
+ CellTags->"mllicense"],
+Cell[6546, 165, 871, 13, 70, "ItemizedTextNote"],
+Cell[7420, 180, 74, 1, 27, "ItemizedText",
+ CellTags->"mllicense"],
+Cell[7497, 183, 378, 9, 38, "ItemizedTextNote"],
+Cell[7878, 194, 451, 11, 42, "Text",
+ CellTags->"mllicense"],
+Cell[8332, 207, 183, 3, 25, "Text",
+ CellTags->"mllicense"],
+Cell[8518, 212, 188, 7, 25, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

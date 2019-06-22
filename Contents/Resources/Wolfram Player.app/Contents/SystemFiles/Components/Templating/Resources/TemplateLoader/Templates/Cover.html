@@ -1,0 +1,88 @@
+<wolfram:get path="Templates/Clean.html">
+  <wolfram:slot id="ExtraHead">
+    <style type="text/css">
+
+    /*
+     * Base structure
+    */
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    .page-title {margin-bottom:30px;}
+    .page-title img {display:inline;}
+    .submit-row {margin-top:30px;}
+
+    /* Extra markup and styles for table-esque vertical and horizontal centering */
+    .site-wrapper {
+      display: table;
+      width: 100%;
+      height: 100%; /* For at least Firefox */
+      min-height: 100%;
+    }
+    .site-wrapper-inner {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    /* Padding for spacing */
+    .container-main {
+      max-width: 600px;
+    }
+
+    .footer {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    /*
+     * Affix and center
+     */
+    body,
+    body.body-branded {margin-top:20px;text-align:center;}
+
+    .footer {margin-top: 20px}
+
+
+    @media (min-width: 768px) {
+      /* Pull out the header and footer */
+      body, body.body-branded {
+        margin-top:0px;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width:100%;
+        margin-top: 0px;
+        margin-bottom: 20px
+      }
+      /* Start the vertical centering */
+      .site-wrapper-inner {
+        vertical-align: middle;
+      }
+      /* Handle the widths */
+
+    }
+
+    </style>
+  </wolfram:slot>  
+
+  <wolfram:slot id="Content">
+      <wolfram:get path="Templates/Includes/Title.html"/>
+      <div class="panel-body">
+        <wolfram:slot id="Expression"/>
+      </div>
+      <wolfram:if test="Not @ MatchQ[#FormSubmitLabel, _Missing|None]">
+        <div class="text-center submit-row">
+          <button type="submit" class="btn btn-primary form-submit" autocomplete="off">
+            <wolfram:slot id="FormSubmitLabel">Submit</wolfram:slot>
+          </button>
+        </div>
+      </wolfram:if>
+  </wolfram:slot>
+
+
+</wolfram:get>

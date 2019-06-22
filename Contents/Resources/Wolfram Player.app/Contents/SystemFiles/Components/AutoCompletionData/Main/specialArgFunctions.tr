@@ -1,0 +1,376 @@
+(*
+	Special Argument Forms
+	----------------------
+	Each function which provides string completions has an entry in the 
+	following list of the form: 
+	
+	"FunctionName"->ArgumentList
+
+	where ArgumentList is a list of argument specifiers:
+	
+	{argSpec1, argSpec2,..., argSpecN}
+	
+	Each argument specifier corresponds to an argument in the function identified by
+	"FunctionName".
+
+	Argument specifiers can take several forms:
+	
+	A Numeric Code
+	A String
+	A List
+	
+	Numeric codes are for certain special types of completions.  Zero means 'don't complete':
+	
+	Normal argument		0
+	Filename			2
+	Color				4
+	PackageName	    	7
+	DirectoryName		8
+	InterpreterType		9
+
+	Strings are either for specifying internal lists inside the Front End or for specifying 
+	the file name of a list of completions compiled into a search trie.  If the string ends with
+	".trie", the FE will look for a compiled search trie file.  An example is "ImportFormats_Names.trie".
+
+	Alternative formats for arguments:
+
+	Specify a reference page target
+	==============================
+	You can annotate the strings in the .trie file with the target URI of a help page for any particular 
+	string:
+	{"ImportFormats_Names.trie", "URI"->"ref/format/"}
+
+	Dependent Argument Completions
+	==============================
+	These types of completions are supported with descriptors of the form:
+
+	{"CompletionsFile", "DependsOnArgument"->argNumber, "OptionalFallbackCompletionsFile"}
+	or 
+	{"CompletionsFile", "DependsOnArgument"->{argNumber, subArgNumber}, "OptionalFallbackCompletionsFile"}
+	
+	In the first form, the completions in CompletionsFile are dependent upon the argument specified by argNumber.
+
+	In the second form the completions in CompletionsFile are dependent upon a 2 element list in the slot specified by argNumber.
+	Here, subArgNumber indicates which element of the list we are dependent upon.  Completions are taken from the OptionalFallbackCompletionsFile if
+	we are in an argument that depends upon itself.  If there is no OptionalFallbackCompletionsFile in this case, no completions are returned.
+
+	Example 1:
+	"EntityValue"->{"EntityTypeNames.trie", {"EntityPropertyNames.trie", "DependsOnArgument"->1}, "EntityValue_Annotation.trie"},
+
+	Here the 2nd argument completions for EntityValue come from the file EntityPropertyNames.trie and are dependent upon the value of the 1st argument.
+
+	Example 2:
+	"ExampleData" -> {{"ExampleData_TypeNames.trie", "DependsOnArgument"->{1,1}, "ExampleData_Names.trie"}, {"ExampleData_Props.trie", "DependsOnArgument"->{1,1}}}
+
+	Here the 1st argument of ExampleData (a list) is dependent upon the first sub-argument:
+	a) If the selection is in the first sub argument, that is a self-reference, so take completions from ExampleData_Names.trie.
+	b) If the selection is in the 2nd sub argument, there is no self-reference, so take completions from ExampleData_TypeNames.trie.
+
+	In each case, the text of the "DependsOnArgument" is prepended to the text that you are typing and the resulting string 
+	is used as the key by the lookup engine.
+
+	Otherwise, the completion engine will look for an internal list.  These are the keywords that specify internal lists:
+
+	"Style"
+	"ScreenStyleEnvironment"
+	"PrintingStyleEnvironment"
+	"MenuListStyles"
+	"MenuListScreenStyleEnvironments"
+	"MenuListPrintingStyleEnvironments"
+	"codingNoteFontCom"
+	"ExternalDataCharacterEncoding"
+	"MenuListPalettesMenu"
+	"MenuListStyleDefinitions"
+	"ConvertersPath"
+	"MenuListDisplayAsFormatTypes"
+	"MenuListConvertFormatTypes"
+	"MenuListCellTags"
+	"MenuListWindows"
+	"MenuListHelpWindows"
+	"MenuListPackageWindows"
+	"MenuListPaletteWindows"
+	"MenuListPlayerWindows"
+	"MenuListStylesheetWindows"
+	"MenuListTextWindows"
+	"MenuListFonts"
+	"MenuListGlobalEvaluators"
+	"MenuListNotebookEvaluators"
+	"MenuListStartEvaluators"
+	"MenuListQuitEvaluators"
+	"MenuListNotebooksMenu"
+
+	The argument specifier can also be a list of strings that will be used exactly like the lists provided
+	above, but without the need for compiling the list into a .trie file.  For example:
+	"MyPlanetInfo"->{{"Mercury", "Venus", "Earth", "Mars", "Jupiter", "Uranus", "Neptune"}}		
+*)
+{
+"AbsoluteFileName" -> {2},
+"AdministrativeDivisionData" -> {"AdministrativeDivisionData_Names.trie", "AdministrativeDivisionData_Props.trie", "StandardAnnotations.trie"},
+"AircraftData" -> {"AircraftData_Names.trie", "AircraftData_Props.trie"},
+"AirportData" -> {"AirportData_Names.trie", "AirportData_Props.trie"},
+"Alphabet" -> {"Alphabet_Names.trie"},
+"AstronomicalData" -> {"AstronomicalData_Names.trie", "AstronomicalData_Props.trie"},
+"Audio" -> {2},
+"BinaryRead" -> {2, "BinaryRead_Type.trie"},
+"BinaryReadList" -> {2, "BinaryRead_Type.trie"},
+"BinaryWrite" -> {2, 0, "BinaryRead_Type.trie"},
+"BridgeData" -> {"BridgeData_Names.trie", "BridgeData_Props.trie", "StandardAnnotations.trie"},
+"BroadcastStationData" -> {"BroadcastStationData_Names.trie", "BroadcastStationData_Props.trie"},
+"BuildingData" -> {"BuildingData_Names.trie", "BuildingData_Props.trie", "StandardAnnotations.trie"},
+"ByteArrayToString" -> {0, "ExternalDataCharacterEncoding"},
+"CalendarData" -> {"CalendarData_Names.trie"},
+"CapForm" -> {"CapForm_Type.trie"},
+"Cell" -> {0, "MenuListStyles"},
+"CellularAutomaton" -> {{"CellularAutomaton_NamedRules.trie", "LHSRule" -> "CellularAutomaton_Rules.trie"}},
+"CharacterName" -> {0, "CharacterName_Types.trie"},
+"ChemicalData" -> {"ChemicalData_Names.trie", "ChemicalData_Props.trie"},
+"CityData" -> {"CityData_Names.trie", "CityData_Props.trie", "StandardAnnotations1.trie"},
+"ClassifierFunction" -> {0, "ClassifierFunction_Prop.trie"},
+"ColorData" -> {"ColorData_Names.trie", "ColorData_Props.trie"},
+"CometData" -> {"CometData_Names.trie", "CometData_Props.trie", "StandardAnnotations.trie"},
+"CompanyData" -> {"CompanyData_Names.trie", "CompanyData_Props.trie", "StandardAnnotations.trie"},
+"ConstellationData" -> {"ConstellationData_Names.trie", "ConstellationData_Props.trie", "StandardAnnotations.trie"},
+"CopyDirectory" -> {8, 8},
+"CopyFile" -> {2, 2},
+"CountryData" -> {"CountryData_Names.trie", "CountryData_Props.trie", "StandardAnnotations1.trie"},
+"CreateDirectory" -> {8},
+"CreateSearchIndex" -> {2},
+"CurrencyConvert" -> {0, "CurrencyUnit_Names.trie"},
+"DamData" -> {"DamData_Names.trie", "DamData_Props.trie", "StandardAnnotations.trie"},
+"DateHistogram" -> {0, "DateHistogram_Bspec.trie", "DateHistogram_Hspec.trie"},
+"DateObject" -> {0, "DateObject_Gran.trie"},
+"DateValue" -> {"DateValue_Elem.trie", "DateValue_Elem.trie"},
+"DeepSpaceProbeData" -> {"DeepSpaceProbeData_Names.trie", "DeepSpaceProbeData_Props.trie", "StandardAnnotations.trie"},
+"Delayed" -> {0, "Delayed_Names.trie"},
+"DeleteDirectory" -> {8},
+"DeleteFile" -> {2, 2},
+"DelimitedSequence" -> {{"Interpreter_Names.trie", "URI" -> "ref/interpreters/"}},
+"DensityHistogram" -> {0, "DensityHistogram_Bspec.trie", "DensityHistogram_Hspec.trie"},
+"DeviceConfigure" -> {{"Device_Names.trie", "URI" -> "ref/devices/"}, 0},
+"DeviceExecute" -> {{"Device_Names0.trie", "URI" -> "ref/devices/"}, 0},
+"DeviceExecuteAsynchronous" -> {{"Device_Names0.trie", "URI" -> "ref/devices/"}, 0},
+"DeviceClose" -> {{"Device_Names.trie", "URI" -> "ref/devices/"}, 0},
+"DeviceOpen" -> {{"Device_Names.trie", "URI" -> "ref/devices/"}, 0},
+"DeviceRead" -> {{"Device_Names.trie", "URI" -> "ref/devices/"}, 0},
+"DeviceReadBuffer" -> {{"Device_Names.trie", "URI" -> "ref/devices/"}, 0},
+"DeviceWrite" -> {{"Device_Names0.trie", "URI" -> "ref/devices/"}, 0},
+"DictionaryLookup" -> {"DictionaryLookup_Langs.trie", 0},
+"DimensionalCombinations" -> {"PhysicalQuantities_Names.trie", "PhysicalQuantities_Names.trie"},
+"DirectoryName" -> {2},
+"DirectoryQ" -> {8},
+"DynamicImage" -> {2},
+"EarthImpactData" -> {"EarthImpactData_Names.trie", "EarthImpactData_Props.trie", "StandardAnnotations.trie"},
+"ElementData" -> {"ElementData_Names.trie", "ElementData_Props.trie", "StandardAnnotations2.trie"},
+"ElementwiseLayer" -> {"ElementwiseLayer_Names.trie"},
+"EmbedCode" -> {0, {"EmbedCode_Names.trie", "URI" -> "ref/embeddingformat/"}, 2},
+"ExampleData" -> {{"ExampleData_TypeNames.trie", "DependsOnArgument" -> {1, 1}, "ExampleData_Names.trie"}, {"ExampleData_Props.trie", "DependsOnArgument" -> {1, 1}}},
+"ExoplanetData" -> {"ExoplanetData_Names.trie", "ExoplanetData_Props.trie"},
+"ExpandFileName" -> {2},
+"Export" -> {2, 0, {"ExportFormats_Names.trie", "URI" -> "ref/format/"}},
+"ExportForm" -> {0, "ExportForm_Names.trie"},
+"ExportString" -> {0, {"ExportFormats_Names.trie", "URI" -> "ref/format/"}},
+"ExpressionCell" -> {0, "MenuListStyles"},
+"Failure" -> {0, "Failure_Names.trie"},
+"File" -> {2},
+"FileBaseName" -> {2},
+"FileByteCount" -> {2},
+"FileDate" -> {2, "../Documentation/FileDate_2.trie"},
+"FileExistsQ" -> {2},
+"FileExtension" -> {2},
+"FileFormat" -> {2},
+"FileHash" -> {2, "../Documentation/FileHash_2.trie", 0, "../Documentation/FileHash_4.trie"},
+"FileNameDepth" -> {2},
+"FileNameDrop" -> {2},
+"FileNames" -> {0, 8},
+"FileNameSplit" -> {2},
+"FileNameTake" -> {2},
+"FileNameTake" -> {2},
+"FilePrint" -> {2},
+"FileSize" -> {2},
+"FileSystemMap" -> {0, 8},
+"FileSystemScan" -> {0, 8},
+"FileTemplate" -> {2},
+"FileType" -> {2},
+"FinancialData" -> {"FinancialData_Names.trie", "FinancialData_Props.trie", "StandardAnnotations5.trie"},
+"FinancialIndicator" -> {{"FinancialIndicator_Names.trie", "URI" -> "ref/indicator/"}, 0},
+"FindDevices" -> {{"Device_Names.trie", "URI" -> "ref/devices/"}, 0},
+"FindMinimumCostFlow" -> {0, 0, 0, "FindMinimumCostFlow_Prop.trie"},
+"FiniteGroupData" -> {"FiniteGroupData_Names.trie", "FiniteGroupData_Props.trie"},
+"FormFunction" -> {9, 0, "FormFunction_Formats.trie"},
+"FormObject" -> {{"FormObject_Names.trie", "LHSRule" -> "FormObject_Names.trie", "RHSRule" -> "Interpreter_Names.trie"}},
+"FormulaData" -> {"FormulaData_Names.trie", "FormulaData_Props.trie"},
+"FromCharacterCode" -> {0, "ExternalDataCharacterEncoding"},
+"GalaxyData" -> {"GalaxyData_Names.trie", "GalaxyData_Props.trie", "StandardAnnotations.trie"},
+"GenomeData" -> {"GenomeData_Names.trie", "GenomeData_Props.trie", "StandardAnnotations6.trie"},
+"GeodesyData" -> {"GeodesyData_Names.trie", "GeodesyData_Props.trie"},
+"GeoGridPosition" -> {0, "GeoGridPosition_Proj.trie"},
+"GeologicalPeriodData" -> {"GeologicalPeriodData_Names.trie", "GeologicalPeriodData_Props.trie"},
+"GeoProjectionData" -> {"GeoProjectionData_Names.trie", "GeoProjectionData_Props.trie"},
+"GeoQualifier" -> {0, "GeoQualifier_Names.trie"},
+"GeoStyle" -> {"GeoStyle_Names.trie"},
+"Get" -> {2},
+"GraphData" -> {"GraphData_Names.trie", "GraphData_Props.trie"},
+"GraphElementData" -> {"GraphElementData_Names.trie", "GraphElementData_Props.trie"},
+"Histogram" -> {0, "Histogram_Bspec.trie", "Histogram_Hspec.trie"},
+"HistoricalPeriodData" -> {"HistoricalPeriodData_Names.trie", "HistoricalPeriodData_Props.trie", "StandardAnnotations.trie"},
+"ImageCollage" -> {0, 0, "ImageCollage_Fit.trie"},
+"ImageEffect" -> {0, "ImageEffect_Names.trie"},
+"ImageFileApply" -> {0, 2, 2},
+"ImageFileFilter" -> {0, 2, 0, 2},
+"ImageFileScan" -> {0, 2},
+"Import" -> {2, {"ImportFormats_Names.trie", "URI" -> "ref/format/"}},
+"ImportString" -> {0, {"ImportFormats_Names.trie", "URI" -> "ref/format/"}},
+"Install" -> {2},
+"Interpreter" -> {{"Interpreter_Names.trie", "URI" -> "ref/interpreters/"}},
+"IslandData" -> {"IslandData_Names.trie", "IslandData_Props.trie"},
+"IsotopeData" -> {"IsotopeData_Names.trie", "IsotopeData_Props.trie", "StandardAnnotations2.trie"},
+"JarqueBeraALMTest" -> {0, "JarqueBeraALMTest_Prop.trie"},
+"JoinForm" -> {"JoinForm_Type.trie"},
+"KernelMixtureDistribution" -> {0, "KernelMixtureDistribution_Band.trie", "KernelMixtureDistribution_Ker.trie"},
+"KnotData" -> {"KnotData_Names.trie", "KnotData_Props.trie"},
+"LakeData" -> {"LakeData_Names.trie", "LakeData_Props.trie"},
+"LaminaData" -> {"LaminaData_Names.trie", "LaminaData_Props.trie"},
+"LanguageData" -> {"LanguageData_Names.trie", "LanguageData_Props.trie", "StandardAnnotations.trie"},
+"LatticeData" -> {"LatticeData_Names.trie", "LatticeData_Props.trie"},
+"LaunchKernels" -> {2},
+"LinkLaunch" -> {2},
+"ListStepPlot" -> {0, "ListStepPlot_Steps.trie"},
+"LocalTimeZone" -> {0, 0, "LocalTimeZone_Names.trie"},
+"LunarEclipse" -> {"LunarEclipse_Names.trie", "LunarEclipse_Names.trie"},
+"MannedSpaceMissionData" -> {"MannedSpaceMissionData_Names.trie", "MannedSpaceMissionData_Props.trie", "StandardAnnotations.trie"},
+"MannWhitneyTest" -> {0, 0, "MannWhitneyTest_Prop.trie"},
+"MardiaKurtosisTest" -> {0, "MardiaKurtosisTest_Prop.trie"},
+"MardiaSkewnessTest" -> {0, "MardiaSkewnessTest_Prop.trie"},
+"MathematicalFunctionData" -> {"MathematicalFunctionData_Names.trie", "MathematicalFunctionData_Props.trie", "StandardAnnotations.trie"},
+"MedicalTestData" -> {"MedicalTestData_Names.trie", "MedicalTestData_Props.trie", "StandardAnnotations.trie"},
+"MeteorShowerData" -> {"MeteorShowerData_Names.trie", "MeteorShowerData_Props.trie", "StandardAnnotations.trie"},
+"MineralData" -> {"MineralData_Names.trie", "MineralData_Props.trie", "StandardAnnotations.trie"},
+"MinorPlanetData" -> {"MinorPlanetData_Names.trie", "MinorPlanetData_Props.trie", "StandardAnnotations.trie"},
+"MomentConvert" -> {0, "MomentConvert_Form.trie"},
+"MoonPhase" -> {"MoonPhase_Names.trie", "MoonPhase_Names.trie"},
+"MorphologicalTransform" -> {0, "MorphologicalTransform_Name.trie"},
+"MountainData" -> {"MountainData_Names.trie", "MountainData_Props.trie", "StandardAnnotations.trie"},
+"MousePosition" -> {"MousePosition_Coords.trie"},
+"MovieData" -> {"MovieData_Names.trie", "MovieData_Props.trie", "StandardAnnotations.trie"},
+"NebulaData" -> {"NebulaData_Names.trie", "NebulaData_Props.trie", "StandardAnnotations.trie"},
+"Needs" -> {7},
+"NeighborhoodData" -> {"NeighborhoodData_Names.trie", "NeighborhoodData_Props.trie", "StandardAnnotations.trie"},
+"NetModel" -> {"NetModel_Names.trie", "NetModel_Props.trie"}, 
+"NotebookEvaluate" -> {2},
+"NotebookImport" -> {2},
+"NotebookOpen" -> {2},
+"NotebookSave" -> {0, 2},
+"NuclearExplosionData" -> {"NuclearExplosionData_Names.trie", "NuclearExplosionData_Props.trie", "StandardAnnotations.trie"},
+"NuclearReactorData" -> {"NuclearReactorData_Names.trie", "NuclearReactorData_Props.trie", "StandardAnnotations.trie"},
+"OceanData" -> {"OceanData_Names.trie", "OceanData_Props.trie", "StandardAnnotations.trie"},
+"Off" -> {"Off_Name.trie"},
+"OpenAppend" -> {2},
+"OpenRead" -> {2},
+"OpenWrite" -> {2},
+"PacletDirectoryAdd" -> {8},
+"PacletDirectoryRemove" -> {8},
+"PacletInstall" -> {2},
+"PairedHistogram" -> {0, 0, "PairedHistogram_Hspec.trie", "PairedHistogram_Bspec.trie"},
+"ParentDirectory" -> {8},
+"ParkData" -> {"ParkData_Names.trie", "ParkData_Props.trie", "StandardAnnotations.trie"},
+"ParticleAcceleratorData" -> {"ParticleAcceleratorData_Names.trie", "ParticleAcceleratorData_Props.trie", "StandardAnnotations.trie"},
+"ParticleData" -> {"ParticleData_Names.trie", "ParticleData_Props.trie", "StandardAnnotations2.trie"},
+"PersonData" -> {"PersonData_Names.trie", "PersonData_Props.trie", "StandardAnnotations.trie"},
+"PhysicalSystemData" -> {"PhysicalSystemData_Names.trie", "PhysicalSystemData_Props.trie", "StandardAnnotations.trie"},
+"PlaneCurveData" -> {"PlaneCurveData_Names.trie", "PlaneCurveData_Props.trie"},
+"PlanetaryMoonData" -> {"PlanetaryMoonData_Names.trie", "PlanetaryMoonData_Props.trie", "StandardAnnotations.trie"},
+"PlanetData" -> {"PlanetData_Names.trie", "PlanetData_Props.trie", "StandardAnnotations.trie"},
+"PlantData" -> {"PlantData_Names.trie", "PlantData_Props.trie", "StandardAnnotations.trie"},
+"PolyhedronData" -> {"PolyhedronData_Names.trie", "PolyhedronData_Props.trie"},
+"Predict" -> {"Predict_Name.trie", 0, "Predict_Prop.trie"},
+"PredictorFunction" -> {0, "PredictorFunction_Prop.trie"},
+"ProteinData" -> {"ProteinData_Names.trie", "ProteinData_Props.trie"},
+"PulsarData" -> {"PulsarData_Names.trie", "PulsarData_Props.trie", "StandardAnnotations.trie"},
+"Put" -> {2, 2},
+"Quantity" -> {"Unit_Names.trie", "Unit_Names.trie"},
+"QuantityArray" -> {0, "Unit_Names.trie"},
+"QuantityMagnitude" -> {0, "Unit_Names.trie"},
+"QuantityVariable" -> {"PhysicalQuantities_Names.trie", "PhysicalQuantities_Names.trie"},
+"Read" -> {2},
+"ReadList" -> {2},
+"ReadString" -> {2},
+"RegionBounds" -> {0, "RegionBounds_Type.trie"},
+"RegionRange" -> {0, "RegionRange_Names.trie"},
+"RenameDirectory" -> {8, 0},
+"RenameFile" -> {2, 2},
+"ResponseForm" -> {0, "ResponseForm_Names.trie"},
+"Restricted" -> {{"Interpreter_Names.trie", "URI" -> "ref/interpreters/"}, {"QuantityUnit_Names.trie", "DependsOnArgument" -> 1}},
+"Run" -> {2},
+"RunThrough" -> {2, 0},
+"SatelliteData" -> {"SatelliteData_Names.trie", "SatelliteData_Props.trie", "StandardAnnotations.trie"},
+"SemanticImport" -> {2, "SemanticImport_Names.trie", "SemanticImport_Shape.trie"},
+"SendMail" -> {{"SendMail_Names.trie", "LHSRule" -> "SendMail_Names.trie"}},
+"ServiceConnect" -> {"ServiceConnect_Services.trie", 0},
+"SetDirectory" -> {8},
+"SetFileDate" -> {2},
+"ShapiroWilkTest" -> {0, "ShapiroWilkTest_Prop.trie"},
+"SocialMediaData" -> {"SocialMediaData_Names.trie", {"SocialMediaData_Props.trie", "DependsOnArgument" -> 1}, "SocialMediaData_Anno.trie"},
+"SolarEclipse" -> {"SolarEclipse_Names.trie", "SolarEclipse_Names.trie"},
+"SolarSystemFeatureData" -> {"SolarSystemFeatureData_Names.trie", "SolarSystemFeatureData_Props.trie", "StandardAnnotations.trie"},
+"SolidData" -> {"SolidData_Names.trie", "SolidData_Props.trie"},
+"SoundNote" -> {"SoundNote_Pitch.trie", 0, "SoundNote_Style.trie"},
+"SpaceCurveData" -> {"SpaceCurveData_Names.trie", "SpaceCurveData_Props.trie"},
+"Speak" -> {0, "Speak_Opt.trie"},
+"SpeciesData" -> {"SpeciesData_Names.trie", "SpeciesData_Props.trie"},
+"SpokenString" -> {0, "SpokenString_Option.trie"},
+"StarClusterData" -> {"StarClusterData_Names.trie", "StarClusterData_Props.trie", "StandardAnnotations.trie"},
+"StarData" -> {"StarData_Names.trie", "StarData_Props.trie", "StandardAnnotations.trie"},
+"StartProcess" -> {2},
+"StringToByteArray" -> {0, "ExternalDataCharacterEncoding"},
+"Style" -> {0, "MenuListStyles"},
+"SupernovaData" -> {"SupernovaData_Names.trie", "SupernovaData_Props.trie", "StandardAnnotations.trie"},
+"SurfaceData" -> {"SurfaceData_Names.trie", "SurfaceData_Props.trie"},
+"SystemDialogInput" -> {"SystemDialogInput_Type.trie"},
+"SystemOpen" -> {2},
+"TestReport"->{2},
+"TextCases" -> {0, {"Text_Forms.trie", "LHSRule" -> "Text_Forms.trie", "RHSRule" -> "Text_Specs.trie"}, 0},
+"TextCell" -> {0, "MenuListStyles"},
+"TextSearch" -> {2},
+"TextSearchReport" -> {2},
+"TextTranslation" -> {0, {"TextTranslation_Names.trie", "LHSRule" -> "TextTranslation_Names.trie", "RHSRule" -> "TextTranslation_Names.trie"}},
+"ThermodynamicData" -> {"ThermodynamicData_Names.trie", "ThermodynamicData_Props.trie"},
+"Thumbnail" -> {2},
+"ToCharacterCode" -> {0, "ExternalDataCharacterEncoding"},
+"ToFileName" -> {8, 2},
+"Transliterate" -> {0, {"Transliterate_Names.trie", "LHSRule" -> "Transliterate_Names.trie", "RHSRule" -> "Transliterate_Names.trie"}},
+"TropicalStormData" -> {"TropicalStormData_Names.trie", "TropicalStormData_Props.trie", "StandardAnnotations.trie"},
+"TunnelData" -> {"TunnelData_Names.trie", "TunnelData_Props.trie"},
+"UnderseaFeatureData" -> {"UnderseaFeatureData_Names.trie", "UnderseaFeatureData_Props.trie", "StandardAnnotations.trie"},
+"UnitConvert" -> {0, "Unit_Names.trie"},
+"UniversityData" -> {"UniversityData_Names.trie", "UniversityData_Props.trie", "StandardAnnotations.trie"},
+"URLBuild" -> {{"URLBuild_Names.trie", "LHSRule" -> "URLBuild_Names.trie"}},
+"URLFetch" -> {0, "URLFetch_Names.trie"},
+"VolcanoData" -> {"VolcanoData_Names.trie", "VolcanoData_Props.trie", "StandardAnnotations.trie"},
+"WaveletScalogram" -> {0, "WaveletScalogram_Func.trie"},
+"WaveletThreshold" -> {0, "WaveletThreshold_Tspec.trie"},
+"WeatherData" -> {"WeatherData_Names.trie", "WeatherData_Props.trie", 0, "StandardAnnotations3.trie"},
+"WeatherForecastData" -> {"WeatherForecastData_Props.trie", "WeatherForecastData_Props.trie"},
+"WikipediaData" -> {0, "WikipediaData_Props.trie"},
+"WolframLanguageData" -> {"WolframLanguageData_Names.trie", "WolframLanguageData_Props.trie"},
+"WordData" -> {"WordData_Names.trie", "WordData_Props.trie", "StandardAnnotations4.trie"},
+"WordDefinition" -> {"WordData_Names.trie"},
+"WordList" -> {"WordList_Types.trie"},
+"WordStem" -> {"WordData_Names.trie"},
+"WordTranslation" -> {"WordData_Names.trie", {"LanguageData_Names.trie", "LHSRule" -> "LanguageData_Names.trie", "RHSRule" -> "LanguageData_Names.trie"}},
+"ZIPCodeData" -> {"ZIPCodeData_Names.trie", "ZIPCodeData_Props.trie", "StandardAnnotations.trie"},
+":Databin" -> {"Databin_Head.trie"},
+":TemporalData" -> {"TemporalData_Head.trie"},
+":ColorProfileData" -> {"ColorProfileData_Head.trie"},
+":EventData" -> {"EventData_Head.trie"},
+":SurvivalModel" -> {"SurvivalModel_Head.trie"},
+":WeightedData" -> {"WeightedData_Head.trie"},
+":PIDData" -> {"PIDData_Head.trie"},
+":TimeSeries" -> {"TimeSeries_Head.trie"},
+":TimeSeriesModel" -> {"TimeSeriesModel_Head.trie"},
+":HypothesisTestData" -> {"HypothesisTestData_Head.trie"},
+":DataDistribution" -> {"DataDistribution_Head.trie"},
+":CoxModel" -> {"CoxModel_Head.trie"},
+":ResourceObject" -> {"ResourceObject_Head.trie"},
+":Around" -> {{"Value", "Uncertainty", "Number", "Interval"}},
+":VectorAround" -> {{"Vector", "Covariance", "Correlation", "Distribution"}}
+}

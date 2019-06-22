@@ -1,0 +1,2183 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     97160,       2172]
+NotebookOptionsPosition[     91377,       2030]
+NotebookOutlinePosition[     96995,       2169]
+CellTagsIndexPosition[     96952,       2166]
+WindowTitle->Wolfram Product Activation
+WindowFrame->ModalDialog*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ PanelBox["\<\"\"\>",
+  Appearance->{
+   "Default" -> 
+    FrontEnd`FileName[{"Dialogs", "Activation"}, 
+      "ActivationDialogHeader.9.png"]},
+  ImageSize->Full]],
+ CellMargins->{{0, -5}, {-2, -2}},
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue[
+  "PanelFontSize"],ExpressionUUID->"3c22f7b5-2ec8-42b2-a15d-9afa7e949668"],
+
+Cell[BoxData[
+ PaneBox[
+  DynamicModuleBox[{$CellContext`activationKey$$, $CellContext`name$$ = 
+   "", $CellContext`org$$ = "", $CellContext`server$$ = 
+   "", $CellContext`password$$ = ""}, 
+   TagBox[GridBox[{
+      {
+       PaneSelectorBox[{"Online"->
+        FrameBox[
+         PaneSelectorBox[{True->
+          TagBox[GridBox[{
+             {
+              StyleBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "ActivationDialog", "LicenseSubtitle"], StandardForm],
+                ImageSizeCache->{62., {1., 12.}}], "Heading",
+               StripOnInput->False]},
+             {
+              TagBox[GridBox[{
+                 {
+                  ItemBox[
+                   StyleBox[
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "LicenseText"], StandardForm],
+                    ImageSizeCache->{233., {3., 10.}}], "TextIndent",
+                    StripOnInput->False],
+                   Alignment->Left,
+                   StripOnInput->False], "\[SpanFromLeft]"},
+                 {
+                  DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "NameLabel"], StandardForm],
+                   ImageSizeCache->{35., {1., 10.}}], 
+                  InputFieldBox[Dynamic[$CellContext`name$$], String,
+                   BoxID -> "inputfield"]},
+                 {
+                  DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "OrganizationLabel"], StandardForm],
+                   ImageSizeCache->{79., {3., 10.}}], 
+                  InputFieldBox[Dynamic[$CellContext`org$$], String]},
+                 {
+                  DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "PasswordLabel"], StandardForm],
+                   ImageSizeCache->{61., {1., 10.}}], 
+                  InputFieldBox[Dynamic[$CellContext`password$$], String,
+                   ContinuousAction->True]}
+                },
+                AutoDelete->False,
+                GridBoxAlignment->{"Columns" -> {Right, Left}},
+                
+                GridBoxItemSize->{
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                
+                GridBoxSpacings->{
+                 "Columns" -> {{Automatic}}, "Rows" -> {{0.5}}, 
+                  "RowsIndexed" -> {2 -> 1}}],
+               "Grid"]},
+             {
+              PaneSelectorBox[{True->"\<\"\"\>", False->
+               PanelBox[
+                TagBox[GridBox[{
+                   {
+                    PaneBox[
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ErrorIcon.png"]],
+                    ImageSizeCache->{35., {14., 19.}}],
+                    ImageMargins->{{15, 5}, {0, 0}}], 
+                    PaneBox[
+                    DynamicBox[ToBoxes[
+                    Style[
+                    CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}], 
+                    Plain, FormatType -> TextForm], StandardForm],
+                    ImageSizeCache->{31., {1., 10.}}],
+                    Alignment->{Left, Center},
+                    AppearanceElements->{},
+                    BaseStyle->"ErrorText",
+                    ImageSize->{Full, 70},
+                    Scrollbars->Automatic]}
+                  },
+                  AutoDelete->False,
+                  
+                  GridBoxAlignment->{
+                   "Columns" -> {{Center}}, "Rows" -> {{Left}}},
+                  
+                  GridBoxItemSize->{
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                 "Grid"],
+                Alignment->{0.5, Center},
+                
+                Appearance->{
+                 "Default" -> 
+                  FrontEnd`FileName[{"Dialogs", "Activation"}, 
+                    "ErrorBackground.9.png"]},
+                FrameMargins->{{0, 0}, {8, 8}}]}, Dynamic[
+                FEPrivate`MemberQ[{"", None}, 
+                 CurrentValue[
+                  EvaluationNotebook[], {TaggingRules, "ErrorMessage"}]]],
+               ImageMargins->{{0, 0}, {10, 0}}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+           "Column"], False->
+          TagBox[GridBox[{
+             {
+              StyleBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "ActivationDialog", "OnlineActivateSubtitle"], StandardForm],
+                
+                ImageSizeCache->{113., {1., 12.}}], "Heading",
+               StripOnInput->False]},
+             {
+              TagBox[GridBox[{
+                 {
+                  StyleBox[
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "OnlineActivateText"], StandardForm],
+                    ImageSizeCache->{353., {3., 10.}}], "DefaultText",
+                   StripOnInput->False], "\[SpanFromLeft]"},
+                 {
+                  DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "ActKeyLabel"], StandardForm],
+                   ImageSizeCache->{91., {3., 10.}}], 
+                  
+                  InputFieldBox[
+                   Dynamic[$CellContext`activationKey$$, FEPrivate`ReverseSet[
+                    
+                    
+                    FEPrivate`ToUpperCase[#], $CellContext`activationKey$$]& \
+], String,
+                   BoxID -> "inputfield"]},
+                 {"", 
+                  StyleBox["\<\"(XXXX-XXXX-XXXXXX)\"\>",
+                   StripOnInput->False,
+                   LineColor->GrayLevel[0.4],
+                   FrontFaceColor->GrayLevel[0.4],
+                   BackFaceColor->GrayLevel[0.4],
+                   GraphicsColor->GrayLevel[0.4],
+                   FontSize->11,
+                   FontWeight->Plain,
+                   FontSlant->Plain,
+                   FontVariations->{"Underline"->False},
+                   FontColor->GrayLevel[0.4]]}
+                },
+                AutoDelete->False,
+                GridBoxAlignment->{"Columns" -> {{Left}}},
+                
+                GridBoxItemSize->{
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                
+                GridBoxSpacings->{
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+                  "RowsIndexed" -> {2 -> 1}}],
+               "Grid"]},
+             {
+              PaneSelectorBox[{True->"\<\"\"\>", False->
+               PanelBox[
+                TagBox[GridBox[{
+                   {
+                    PaneBox[
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ErrorIcon.png"]],
+                    ImageSizeCache->{35., {14., 19.}}],
+                    ImageMargins->{{15, 5}, {0, 0}}], 
+                    PaneBox[
+                    DynamicBox[ToBoxes[
+                    Style[
+                    CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}], 
+                    Plain, FormatType -> TextForm], StandardForm],
+                    ImageSizeCache->{31., {1., 10.}}],
+                    Alignment->{Left, Center},
+                    AppearanceElements->{},
+                    BaseStyle->"ErrorText",
+                    ImageSize->{Full, 70},
+                    Scrollbars->Automatic]}
+                  },
+                  AutoDelete->False,
+                  
+                  GridBoxAlignment->{
+                   "Columns" -> {{Center}}, "Rows" -> {{Left}}},
+                  
+                  GridBoxItemSize->{
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                 "Grid"],
+                Alignment->{0.5, Center},
+                Appearance->{
+                 "Default" -> 
+                  FrontEnd`FileName[{"Dialogs", "Activation"}, 
+                    "ErrorBackground.9.png"]},
+                FrameMargins->{{0, 0}, {8, 8}}]}, Dynamic[
+                FEPrivate`MemberQ[{"", None}, 
+                 CurrentValue[
+                  EvaluationNotebook[], {TaggingRules, "ErrorMessage"}]]],
+               ImageMargins->{{0, 0}, {10, 0}}]},
+             {
+              PaneBox["\<\"\"\>",
+               ImageSize->{Automatic, 20}]},
+             {
+              StyleBox[
+               TagBox[GridBox[{
+                  {
+                   TagBox[
+                    ButtonBox[
+                    PaneSelectorBox[{True->
+                    RowBox[{
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "OnlineActivateLink"], StandardForm],
+                    ImageSizeCache->{148., {1., 10.}}], "\[RightGuillemet]"}],
+                     False->
+                    RowBox[{
+                    StyleBox[
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "OnlineActivateLink"], StandardForm],
+                    ImageSizeCache->{148., {1., 10.}}], "Hyperlink"], 
+                    StyleBox["\[RightGuillemet]", "Chevron"]}]}, Dynamic[
+                    CurrentValue["MouseOver"]]],
+                    BaseStyle->"ContactActivationLinkUnbold",
+                    ButtonData->"OnlineActivateLink"],
+                    MouseAppearanceTag["LinkHand"]]},
+                  {
+                   TagBox[
+                    ButtonBox[
+                    PaneSelectorBox[{True->
+                    RowBox[{
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "PrivacyPolicyLink"], StandardForm],
+                    ImageSizeCache->{134., {3., 10.}}], "\[RightGuillemet]"}],
+                     False->
+                    RowBox[{
+                    StyleBox[
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "PrivacyPolicyLink"], StandardForm],
+                    ImageSizeCache->{134., {3., 10.}}], "Hyperlink"], 
+                    StyleBox["\[RightGuillemet]", "Chevron"]}]}, Dynamic[
+                    CurrentValue["MouseOver"]]],
+                    BaseStyle->"ContactActivationLinkUnbold",
+                    ButtonData->"PrivacyPolicyLink"],
+                    MouseAppearanceTag["LinkHand"]]},
+                  {
+                   TagBox[
+                    ButtonBox[
+                    PaneSelectorBox[{True->
+                    RowBox[{
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "AboutCDFPlayerPro"], StandardForm],
+                    ImageSizeCache->{252., {3., 10.}}], "\[RightGuillemet]"}],
+                     False->
+                    RowBox[{
+                    StyleBox[
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "AboutCDFPlayerPro"], StandardForm],
+                    ImageSizeCache->{252., {3., 10.}}], "Hyperlink"], 
+                    StyleBox["\[RightGuillemet]", "Chevron"]}]}, Dynamic[
+                    CurrentValue["MouseOver"]]],
+                    BaseStyle->"ContactActivationLinkUnbold",
+                    ButtonData->"AboutCDFPlayerPro"],
+                    MouseAppearanceTag["LinkHand"]]}
+                 },
+                 DefaultBaseStyle->"Column",
+                 GridBoxAlignment->{"Columns" -> {{Left}}},
+                 
+                 GridBoxItemSize->{
+                  "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                "Column"], "DefaultText",
+               StripOnInput->False]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+           "Column"]}, Dynamic[
+           FEPrivate`SameQ[
+           FrontEnd`$NotebookLicenseType, "Unauthorized Unsecured"]],
+          ImageSize->All],
+         FrameMargins->0,
+         FrameStyle->None,
+         StripOnInput->False], "Manual"->
+        TagBox[GridBox[{
+           {
+            StyleBox[
+             DynamicBox[ToBoxes[
+               FEPrivate`FrontEndResource[
+               "ActivationDialog", "ManualActivateSubtitle"], StandardForm],
+              ImageSizeCache->{135., {4., 12.}}], "Heading",
+             StripOnInput->False]},
+           {
+            TagBox[GridBox[{
+               {
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "ActivationDialog", "ManualActivateStep1"], StandardForm],
+                 ImageSizeCache->{43., {3., 10.}}], 
+                StyleBox[
+                 DynamicBox[ToBoxes[
+                   FEPrivate`FrontEndResource[
+                   "ActivationDialog", "ManualActivateText1"], StandardForm],
+                  ImageSizeCache->{470.5, {35., 11.}}], 
+                 "ManualActivationText", "TextIndent",
+                 StripOnInput->False,
+                 FontWeight->Plain,
+                 FontSlant->Plain,
+                 FontVariations->{"Underline"->False}]},
+               {"", 
+                StyleBox[
+                 RowBox[{
+                  DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "MathIDLabel"], StandardForm],
+                   ImageSizeCache->{47., {1., 10.}}], 
+                  "\[InvisibleSpace]", "\<\" \"\>", "\[InvisibleSpace]", 
+                  TagBox[
+                   InputFieldBox[Dynamic[FEPrivate`$MachineID, None], String,
+                    BoxID -> "",
+                    Appearance->None,
+                    BaseStyle->{ZeroWidthTimes -> True, FontWeight -> Bold},
+                    ContinuousAction->True],
+                   
+                   EventHandlerTag[{{"MouseClicked", 1} :> 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`BoxReferenceFind[
+                    FE`BoxReference[
+                    EvaluationNotebook[], {{""}}, FE`BoxOffset -> {
+                    FE`BoxChild[1]}, FE`SearchStart -> 
+                    "StartFromBeginning"]]], Method -> "Preemptive", 
+                    PassEventsDown -> Automatic, PassEventsUp -> True}]]}], 
+                 "Hyperlink",
+                 StripOnInput->False]},
+               {
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "ActivationDialog", "ManualActivateStep2"], StandardForm],
+                 ImageSizeCache->{43., {3., 10.}}], 
+                PaneBox[
+                 DynamicBox[ToBoxes[
+                   FEPrivate`FrontEndResource[
+                   "ActivationDialog", "ManualActivateText2"], StandardForm],
+                  ImageSizeCache->{441., {3., 10.}}],
+                 BaseStyle->{"ManualActivationText", LineBreakWithin -> False},
+                 ImageSize->Full,
+                 ImageSizeAction->"ResizeToFit"]}
+              },
+              AutoDelete->False,
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+              
+              GridBoxSpacings->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{1}}, 
+                "RowsIndexed" -> {2 -> 0.1}}],
+             "Grid"]},
+           {
+            TagBox[GridBox[{
+               {
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "ActivationDialog", "ActKeyLabel"], StandardForm],
+                 ImageSizeCache->{91., {3., 10.}}], 
+                
+                InputFieldBox[
+                 Dynamic[$CellContext`activationKey$$, FEPrivate`ReverseSet[
+                   FEPrivate`ToUpperCase[#], $CellContext`activationKey$$]& ],
+                  String,
+                 BoxID -> "inputfield"]},
+               {"", 
+                StyleBox["\<\"(XXXX-XXXX-XXXXXX)\"\>",
+                 StripOnInput->False,
+                 LineColor->GrayLevel[0.4],
+                 FrontFaceColor->GrayLevel[0.4],
+                 BackFaceColor->GrayLevel[0.4],
+                 GraphicsColor->GrayLevel[0.4],
+                 FontSize->11,
+                 FontWeight->Plain,
+                 FontSlant->Plain,
+                 FontVariations->{"Underline"->False},
+                 FontColor->GrayLevel[0.4]]},
+               {
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "ActivationDialog", "PasswordLabel"], StandardForm],
+                 ImageSizeCache->{61., {1., 10.}}], 
+                InputFieldBox[Dynamic[$CellContext`password$$], String]}
+              },
+              AutoDelete->False,
+              GridBoxAlignment->{"Columns" -> {Right, Left}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+              
+              GridBoxSpacings->{
+               "Columns" -> {{Automatic}}, "Rows" -> {Automatic, 0.5, 1}}],
+             "Grid"]},
+           {
+            PaneSelectorBox[{True->"\<\"\"\>", False->
+             PanelBox[
+              TagBox[GridBox[{
+                 {
+                  PaneBox[
+                   DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ErrorIcon.png"]],
+                    ImageSizeCache->{35., {14., 19.}}],
+                   ImageMargins->{{15, 5}, {0, 0}}], 
+                  PaneBox[
+                   DynamicBox[ToBoxes[
+                    Style[
+                    CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}], 
+                    Plain, FormatType -> TextForm], StandardForm],
+                    ImageSizeCache->{31., {1., 10.}}],
+                   Alignment->{Left, Center},
+                   AppearanceElements->{},
+                   BaseStyle->"ErrorText",
+                   ImageSize->{Full, 70},
+                   Scrollbars->Automatic]}
+                },
+                AutoDelete->False,
+                
+                GridBoxAlignment->{
+                 "Columns" -> {{Center}}, "Rows" -> {{Left}}},
+                
+                GridBoxItemSize->{
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+               "Grid"],
+              Alignment->{0.5, Center},
+              
+              Appearance->{
+               "Default" -> 
+                FrontEnd`FileName[{"Dialogs", "Activation"}, 
+                  "ErrorBackground.9.png"]},
+              FrameMargins->{{0, 0}, {8, 8}}]}, Dynamic[
+              FEPrivate`MemberQ[{"", None}, 
+               CurrentValue[
+                EvaluationNotebook[], {TaggingRules, "ErrorMessage"}]]],
+             ImageMargins->{{0, 0}, {10, 0}}]}
+          },
+          DefaultBaseStyle->"Column",
+          GridBoxAlignment->{"Columns" -> {{Left}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+         "Column"], "Network"->
+        TagBox[GridBox[{
+           {
+            StyleBox[
+             DynamicBox[ToBoxes[
+               FEPrivate`FrontEndResource[
+               "ActivationDialog", "NetworkSubtitle"], StandardForm],
+              ImageSizeCache->{281., {1., 12.}}], "Heading",
+             StripOnInput->False]},
+           {
+            TagBox[GridBox[{
+               {
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "ActivationDialog", "NetworkText"], StandardForm],
+                 ImageSizeCache->{509., {3., 10.}}], "\[SpanFromLeft]"},
+               {
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "ActivationDialog", "ServerLabel"], StandardForm],
+                 ImageSizeCache->{78., {1., 10.}}], 
+                InputFieldBox[Dynamic[$CellContext`server$$], String,
+                 BoxID -> "inputfield"]}
+              },
+              AutoDelete->False,
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+              GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+             
+             "Grid"]},
+           {
+            PaneSelectorBox[{True->"\<\"\"\>", False->
+             PanelBox[
+              TagBox[GridBox[{
+                 {
+                  PaneBox[
+                   DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ErrorIcon.png"]],
+                    ImageSizeCache->{35., {14., 19.}}],
+                   ImageMargins->{{15, 5}, {0, 0}}], 
+                  PaneBox[
+                   DynamicBox[ToBoxes[
+                    Style[
+                    CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}], 
+                    Plain, FormatType -> TextForm], StandardForm],
+                    ImageSizeCache->{31., {1., 10.}}],
+                   Alignment->{Left, Center},
+                   AppearanceElements->{},
+                   BaseStyle->"ErrorText",
+                   ImageSize->{Full, 70},
+                   Scrollbars->Automatic]}
+                },
+                AutoDelete->False,
+                
+                GridBoxAlignment->{
+                 "Columns" -> {{Center}}, "Rows" -> {{Left}}},
+                
+                GridBoxItemSize->{
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+               "Grid"],
+              Alignment->{0.5, Center},
+              
+              Appearance->{
+               "Default" -> 
+                FrontEnd`FileName[{"Dialogs", "Activation"}, 
+                  "ErrorBackground.9.png"]},
+              FrameMargins->{{0, 0}, {8, 8}}]}, Dynamic[
+              FEPrivate`MemberQ[{"", None}, 
+               CurrentValue[
+                EvaluationNotebook[], {TaggingRules, "ErrorMessage"}]]],
+             ImageMargins->{{0, 0}, {10, 0}}]}
+          },
+          DefaultBaseStyle->"Column",
+          GridBoxAlignment->{"Columns" -> {{Left}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxSpacings->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{2}}, 
+            "RowsIndexed" -> {2 -> 1}}],
+         "Column"], "Method"->
+        TagBox[GridBox[{
+           {
+            PaneBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "ActivationDialog", "MethodSubtitle"], StandardForm],
+               ImageSizeCache->{205., {1., 12.}}], "Heading",
+              StripOnInput->False],
+             ImageMargins->{{0, 0}, {5, 0}},
+             ImageSize->Full]},
+           {
+            PaneBox[
+             TagBox[
+              TagBox[
+               PaneSelectorBox[{False->
+                TagBox[GridBox[{
+                   {
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "OnlineActivation-Default.png"]],
+                    ImageSizeCache->{46., {21., 27.}}], 
+                    PaneBox[
+                    StyleBox[
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "MethodOnlineLabel"], StandardForm],
+                    ImageSizeCache->{230., {2.939453125, 11.}}],
+                    StripOnInput->False,
+                    FontSize->FEPrivate`If[
+                    FEPrivate`SameQ[FEPrivate`$OperatingSystem, "Unix"], 13, 
+                    14]],
+                    BaseStyle->{StripOnInput -> True},
+                    FrameMargins->{{0, 0}, {0, 5}}]},
+                   {"\[SpanFromAbove]", 
+                    StyleBox[
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "MethodOnlineText"], StandardForm],
+                    ImageSizeCache->{309., {3., 10.}}], "DefaultText", 
+                    "GrayText",
+                    StripOnInput->False]}
+                  },
+                  AutoDelete->False,
+                  GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+                  
+                  GridBoxItemSize->{
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                 "Grid"], True->
+                TagBox[GridBox[{
+                   {
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "OnlineActivation-Hover.png"]]], 
+                    PaneBox[
+                    StyleBox[
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "MethodOnlineLabel"], StandardForm]], 
+                    "Chevron",
+                    StripOnInput->False,
+                    FontSize->FEPrivate`If[
+                    FEPrivate`SameQ[FEPrivate`$OperatingSystem, "Unix"], 13, 
+                    14]],
+                    BaseStyle->{StripOnInput -> True},
+                    FrameMargins->{{0, 0}, {0, 5}}]},
+                   {"\[SpanFromAbove]", 
+                    StyleBox[
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "MethodOnlineText"], StandardForm]], 
+                    "DefaultText",
+                    StripOnInput->False]}
+                  },
+                  AutoDelete->False,
+                  GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+                  
+                  GridBoxItemSize->{
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                 "Grid"]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                FrameMargins->0,
+                ImageSize->Automatic],
+               MouseAppearanceTag["LinkHand"]],
+              EventHandlerTag[{"MouseClicked" :> (If[
+                  FE`Evaluate[
+                   FEPrivate`SameQ[
+                    FEPrivate`Runtime`CurrentEnvironment[][
+                    "RequiresWolframCloudLogin"], True]], 
+                  DialogReturn[
+                   FrontEnd`DialogOpen["WolframDesktopLoginDialog.nb"]], 
+                  ((CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                   "Online"; FinishDynamic[]; MathLink`CallFrontEnd[
+                    FrontEnd`BoxReferenceFind[
+                    FE`BoxReference[
+                    EvaluationNotebook[], {{"inputfield"}}, FE`BoxOffset -> {
+                    FE`BoxChild[1]}, FE`SearchStart -> 
+                    "StartFromBeginning"]]])& )[]]& )[], Method -> 
+                "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+                True}]],
+             Alignment->{Left, Center},
+             ImageMargins->{{0, 0}, {19, 19}},
+             ImageSize->Full]},
+           {
+            PaneBox[
+             TagBox[
+              TagBox[
+               PaneSelectorBox[{False->
+                TagBox[GridBox[{
+                   {
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ManualActivation-Default.png"]],
+                    ImageSizeCache->{46., {21., 27.}}], 
+                    PaneBox[
+                    StyleBox[
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "MethodManualLabel"], StandardForm],
+                    ImageSizeCache->{120., {1., 10.}}],
+                    StripOnInput->False,
+                    FontSize->FEPrivate`If[
+                    FEPrivate`SameQ[FEPrivate`$OperatingSystem, "Unix"], 13, 
+                    14]],
+                    BaseStyle->{StripOnInput -> True},
+                    FrameMargins->{{0, 0}, {0, 7}}]},
+                   {"\[SpanFromAbove]", 
+                    StyleBox[
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "MethodManualText"], StandardForm],
+                    ImageSizeCache->{368., {3., 10.}}], "DefaultText", 
+                    "GrayText",
+                    StripOnInput->False]}
+                  },
+                  AutoDelete->False,
+                  GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+                  
+                  GridBoxItemSize->{
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                 "Grid"], True->
+                TagBox[GridBox[{
+                   {
+                    DynamicBox[FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ManualActivation-Hover.png"]]], 
+                    PaneBox[
+                    StyleBox[
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "MethodManualLabel"], StandardForm]], 
+                    "Chevron",
+                    StripOnInput->False,
+                    FontSize->FEPrivate`If[
+                    FEPrivate`SameQ[FEPrivate`$OperatingSystem, "Unix"], 13, 
+                    14]],
+                    BaseStyle->{StripOnInput -> True},
+                    FrameMargins->{{0, 0}, {0, 7}}]},
+                   {"\[SpanFromAbove]", 
+                    StyleBox[
+                    DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "MethodManualText"], StandardForm]], 
+                    "DefaultText",
+                    StripOnInput->False]}
+                  },
+                  AutoDelete->False,
+                  GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+                  
+                  GridBoxItemSize->{
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                 "Grid"]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                FrameMargins->0,
+                ImageSize->Automatic],
+               MouseAppearanceTag["LinkHand"]],
+              EventHandlerTag[{"MouseClicked" :> ((CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                  "Manual"; FinishDynamic[]; MathLink`CallFrontEnd[
+                   FrontEnd`BoxReferenceFind[
+                    FE`BoxReference[
+                    EvaluationNotebook[], {{"inputfield"}}, FE`BoxOffset -> {
+                    FE`BoxChild[1]}, FE`SearchStart -> 
+                    "StartFromBeginning"]]])& )[], Method -> "Preemptive", 
+                PassEventsDown -> Automatic, PassEventsUp -> True}]],
+             Alignment->{Left, Center},
+             ImageMargins->{{0, 0}, {19, 19}},
+             ImageSize->Full]},
+           {"\<\"\"\>"}
+          },
+          DefaultBaseStyle->"Column",
+          GridBoxAlignment->{"Columns" -> {{Left}}},
+          
+          GridBoxDividers->{
+           "Columns" -> {{False}}, "Rows" -> {False, False, {
+               GrayLevel[0.85]}, False, False}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
+         "Column"], "Progress"->
+        TagBox[GridBox[{
+           {
+            StyleBox[
+             DynamicBox[ToBoxes[
+               FEPrivate`FrontEndResource[
+               "ActivationDialog", "ProgressSubtitle"], StandardForm],
+              ImageSizeCache->{90., {4., 12.}}], "Heading",
+             StripOnInput->False]},
+           {
+            PaneSelectorBox[{False->
+             DynamicBox[ToBoxes[
+               FEPrivate`FrontEndResource["ActivationDialog", "ProgressText"],
+                StandardForm],
+              ImageSizeCache->{139., {3., 10.}}], True->
+             DynamicBox[ToBoxes[
+               FEPrivate`FrontEndResource["ActivationDialog", "SuccessText"], 
+               StandardForm]]}, Dynamic[
+              FEPrivate`MemberQ[{"Success", "ServerSuccess"}, 
+               CurrentValue[
+                EvaluationNotebook[], {TaggingRules, "ErrorMessage"}]]],
+             FrameMargins->0,
+             ImageMargins->0,
+             ImageSize->Automatic]},
+           {
+            PaneBox[
+             
+             DynamicModuleBox[{$CellContext`i$$ = 
+              3, $CellContext`mat$$ = CompressedData["
+1:eJxTTMoPSmVmYGDgAWImKF7lE/GiattrewYweACj96OLw/hQej+qehj4AOV/
+2I8qjjAPTf9+7Oahi6ObB7cPXT/cHFz2oPlrP7p5qP6Au98eh3577Oahi6Ob
+B7fPHgBxvnAl
+              "]}, 
+              OverlayBox[{
+               AnimatorBox[Dynamic[$CellContext`i$$], {1, 12, 1},
+                AnimationRunTime->5.223681926727295,
+                AnimationTimeIndex->0.22368192672729492`,
+                AppearanceElements->{},
+                DefaultDuration->1,
+                ImageSize->{1, 1}], 
+               PaneSelectorBox[{1->
+                DynamicBox[FEPrivate`ImportImage[
+                  
+                  FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                   "ProgressIndicator1.png"]],
+                 ImageSizeCache->{128., {61., 67.}}], 2->
+                DynamicBox[FEPrivate`ImportImage[
+                  
+                  FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                   "ProgressIndicator2.png"]],
+                 ImageSizeCache->{128., {61., 67.}}], 3->
+                DynamicBox[FEPrivate`ImportImage[
+                  
+                  FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                   "ProgressIndicator3.png"]],
+                 ImageSizeCache->{128., {61., 67.}}], 4->
+                DynamicBox[FEPrivate`ImportImage[
+                  
+                  FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                   "ProgressIndicator4.png"]],
+                 ImageSizeCache->{128., {61., 67.}}], 5->
+                DynamicBox[FEPrivate`ImportImage[
+                  
+                  FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                   "ProgressIndicator5.png"]],
+                 ImageSizeCache->{128., {61., 67.}}], 6->
+                DynamicBox[FEPrivate`ImportImage[
+                  
+                  FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                   "ProgressIndicator6.png"]],
+                 ImageSizeCache->{128., {61., 67.}}], 7->
+                DynamicBox[FEPrivate`ImportImage[
+                  
+                  FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                   "ProgressIndicator7.png"]],
+                 ImageSizeCache->{128., {61., 67.}}], 8->
+                DynamicBox[FEPrivate`ImportImage[
+                  
+                  FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                   "ProgressIndicator8.png"]],
+                 ImageSizeCache->{128., {61., 67.}}], 9->
+                DynamicBox[FEPrivate`ImportImage[
+                  
+                  FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                   "ProgressIndicator9.png"]],
+                 ImageSizeCache->{128., {61., 67.}}], 10->
+                DynamicBox[FEPrivate`ImportImage[
+                  
+                  FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                   "ProgressIndicator10.png"]],
+                 ImageSizeCache->{128., {61., 67.}}], 11->
+                DynamicBox[FEPrivate`ImportImage[
+                  
+                  FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                   "ProgressIndicator11.png"]],
+                 ImageSizeCache->{128., {61., 67.}}], 12->
+                DynamicBox[FEPrivate`ImportImage[
+                  
+                  FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                   "ProgressIndicator12.png"]],
+                 ImageSizeCache->{128., {61., 67.}}]}, 
+                Dynamic[$CellContext`i$$]]}],
+              DynamicModuleValues:>{},
+              Initialization:>If[CurrentValue[
+                  EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] =!= 
+                None, 
+                FrontEndTokenExecute["HandleShiftReturn"]],
+              SynchronousInitialization->False],
+             Alignment->{-0.1, 0},
+             ImageSize->{Full, 200}]}
+          },
+          DefaultBaseStyle->"Column",
+          GridBoxAlignment->{"Columns" -> {{Left}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+         "Column"], "Contact"->
+        PaneBox[
+         TagBox[GridBox[{
+            {
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "ActivationDialog", "ContactTitle"], StandardForm],
+               ImageSizeCache->{463., {4., 12.}}], "Heading",
+              StripOnInput->False,
+              LineBreakWithin->False]},
+            {
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "ActivationDialog", "ContactSubtitle"], StandardForm],
+               ImageSizeCache->{484., {20., 10.01025390625}}], "DefaultText",
+              StripOnInput->False,
+              LineBreakWithin->False]},
+            {
+             DynamicBox[ToBoxes[
+               FEPrivate`FrontEndResource[
+               "ActivationDialog", "ContactWithText"], StandardForm],
+              ImageSizeCache->{155., {3., 10.}}]},
+            {
+             PaneBox[
+              StyleBox[
+               TemplateBox[{DynamicBox[
+                  ToBoxes[
+                   FEPrivate`FrontEndResource[
+                   "ActivationDialog", "ContactKeyLabel"], StandardForm]],
+                 TagBox[
+                  InputFieldBox[
+                   Dynamic[$CellContext`activationKey$$, None], String, 
+                   Appearance -> None, ContinuousAction -> True, BoxID -> 
+                   "copyablepane1", 
+                   BaseStyle -> {ZeroWidthTimes -> True, FontWeight -> Bold}], 
+                  
+                  EventHandlerTag[{{"MouseClicked", 1} :> 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`BoxReferenceFind[
+                    FE`BoxReference[
+                    EvaluationNotebook[], {{"copyablepane1"}}, FE`BoxOffset -> {
+                    FE`BoxChild[1]}, FE`SearchStart -> 
+                    "StartFromBeginning"]]], Method -> "Preemptive", 
+                    PassEventsDown -> Automatic, PassEventsUp -> True}]]},
+                "RowDefault"], "Hyperlink",
+               StripOnInput->False],
+              Alignment->Left,
+              ImageMargins->{{35, 0}, {0, 0}},
+              ImageSize->Automatic]},
+            {
+             PaneBox[
+              StyleBox[
+               TemplateBox[{DynamicBox[
+                  ToBoxes[
+                   FEPrivate`FrontEndResource[
+                   "ActivationDialog", "ContactIDLabel"], StandardForm]],
+                 TagBox[
+                  InputFieldBox[
+                   Dynamic[FEPrivate`$MachineID, None], String, Appearance -> 
+                   None, ContinuousAction -> True, BoxID -> "copyablepane2", 
+                   BaseStyle -> {ZeroWidthTimes -> True, FontWeight -> Bold}], 
+                  
+                  EventHandlerTag[{{"MouseClicked", 1} :> 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`BoxReferenceFind[
+                    FE`BoxReference[
+                    EvaluationNotebook[], {{"copyablepane2"}}, FE`BoxOffset -> {
+                    FE`BoxChild[1]}, FE`SearchStart -> 
+                    "StartFromBeginning"]]], Method -> "Preemptive", 
+                    PassEventsDown -> Automatic, PassEventsUp -> True}]]},
+                "RowDefault"], "Hyperlink",
+               StripOnInput->False],
+              Alignment->Left,
+              ImageMargins->{{35, 0}, {0, 0}},
+              ImageSize->Automatic]},
+            {
+             PaneBox[
+              TagBox[GridBox[{
+                 {
+                  DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "ContactNameInc"], StandardForm],
+                   ImageSizeCache->{146., {3., 10.}}], 
+                  DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "ContactNameLtd"], StandardForm],
+                   ImageSizeCache->{192., {3., 10.}}]},
+                 {
+                  StyleBox[
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "ContactAddrInc"], StandardForm],
+                    
+                    ImageSizeCache->{
+                    320., {101.98974609375, 10.01025390625}}], 
+                   "ContactInformationText", "GrayText",
+                   StripOnInput->False,
+                   LineBreakWithin->False], 
+                  StyleBox[
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "ContactAddrLtd"], StandardForm],
+                    ImageSizeCache->{173., {84.98974609375, 10.01025390625}}],
+                    "ContactInformationText", "GrayText",
+                   StripOnInput->False]}
+                },
+                AutoDelete->False,
+                GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+                GridBoxItemSize->{"Columns" -> {Fit, Automatic}},
+                
+                GridBoxItemStyle->{
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                
+                GridBoxSpacings->{
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+                  "RowsIndexed" -> {2 -> 0.15}}],
+               "Grid"],
+              ImageMargins->{{0, 0}, {0, 7}}]}
+           },
+           DefaultBaseStyle->"Column",
+           GridBoxAlignment->{"Columns" -> {{Left}}},
+           
+           GridBoxDividers->{
+            "Columns" -> {{False}}, "Rows" -> {{False}}, 
+             "RowsIndexed" -> {-2 -> GrayLevel[0.85]}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+           
+           GridBoxSpacings->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+             "RowsIndexed" -> {
+              2 -> 0.9, 3 -> 0.7, 4 -> 0.4, 5 -> 0.2, 6 -> 2.2}}],
+          "Column"],
+         BaseStyle->"DialogStyle",
+         ImageSize->Full], "Expired"->
+        TagBox[GridBox[{
+           {
+            StyleBox[
+             DynamicBox[ToBoxes[
+               FEPrivate`FrontEndResource[
+               "ActivationDialog", "ExpiredSubtitle"], StandardForm],
+              ImageSizeCache->{187., {4., 12.}}], "Heading",
+             StripOnInput->False]},
+           {
+            TagBox[GridBox[{
+               {
+                PaneBox[
+                 StyleBox[
+                  DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "ExpiredBuyText"], StandardForm],
+                   ImageSizeCache->{225., {3., 11.}}],
+                  StripOnInput->False,
+                  FontSize->FEPrivate`If[
+                    FEPrivate`SameQ[FEPrivate`$OperatingSystem, "Unix"], 13, 
+                    14]],
+                 Alignment->{Left, Center},
+                 ImageSize->{Full, Automatic}], 
+                TagBox[
+                 ButtonBox[
+                  StyleBox[
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "ExpiredBuyButton"], StandardForm],
+                    ImageSizeCache->{70., {3., 10.}}],
+                   StripOnInput->False,
+                   LineColor->GrayLevel[1],
+                   FrontFaceColor->GrayLevel[1],
+                   BackFaceColor->GrayLevel[1],
+                   GraphicsColor->GrayLevel[1],
+                   FontWeight->Plain,
+                   FontColor->GrayLevel[1]],
+                  
+                  Appearance->{
+                   "Default" -> 
+                    FrontEnd`FileName[{"Dialogs", "Activation"}, 
+                    "RedButton-Default.9.png"], "Hover" -> 
+                    FrontEnd`FileName[{"Dialogs", "Activation"}, 
+                    "RedButton-Hover.9.png"], "Pressed" -> 
+                    FrontEnd`FileName[{"Dialogs", "Activation"}, 
+                    "RedButton-Pressed.9.png"]},
+                  
+                  ButtonFunction:>FE`hyperlinkCoded[
+                   "http://www.wolfram.com/mathematica/how-to-buy", 
+                    "source=expired"],
+                  Evaluator->Automatic,
+                  FrameMargins->{{10, 10}, {0, 0}}],
+                 MouseAppearanceTag["LinkHand"]]},
+               {
+                PaneBox[
+                 StyleBox[
+                  DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "ExpiredExtendText"], StandardForm],
+                   ImageSizeCache->{185., {3., 11.}}],
+                  StripOnInput->False,
+                  FontSize->FEPrivate`If[
+                    FEPrivate`SameQ[FEPrivate`$OperatingSystem, "Unix"], 13, 
+                    14]],
+                 Alignment->{Left, Center},
+                 ImageSize->{Full, Automatic}], 
+                TagBox[
+                 ButtonBox[
+                  StyleBox[
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "ExpiredExtendButton"], StandardForm],
+                    
+                    ImageSizeCache->{117., {3., 10.}}],
+                   StripOnInput->False,
+                   LineColor->GrayLevel[1],
+                   FrontFaceColor->GrayLevel[1],
+                   BackFaceColor->GrayLevel[1],
+                   GraphicsColor->GrayLevel[1],
+                   FontWeight->Plain,
+                   FontColor->GrayLevel[1]],
+                  
+                  Appearance->{
+                   "Default" -> 
+                    FrontEnd`FileName[{"Dialogs", "Activation"}, 
+                    "DarkGrayButton-Default.9.png"], "Hover" -> 
+                    FrontEnd`FileName[{"Dialogs", "Activation"}, 
+                    "DarkGrayButton-Hover.9.png"], "Pressed" -> 
+                    FrontEnd`FileName[{"Dialogs", "Activation"}, 
+                    "DarkGrayButton-Pressed.9.png"]},
+                  BaseStyle->"ActivationLink",
+                  ButtonData->"Online",
+                  Evaluator->Automatic,
+                  FrameMargins->{{10, 10}, {0, 0}}],
+                 MouseAppearanceTag["LinkHand"]]},
+               {
+                PaneBox[
+                 StyleBox[
+                  DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "ExpiredRequestText"], StandardForm],
+                   ImageSizeCache->{299., {3., 11.}}],
+                  StripOnInput->False,
+                  FontSize->FEPrivate`If[
+                    FEPrivate`SameQ[FEPrivate`$OperatingSystem, "Unix"], 13, 
+                    14]],
+                 Alignment->{Left, Center},
+                 ImageSize->{Full, Automatic}], 
+                TagBox[
+                 ButtonBox[
+                  StyleBox[
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "ExpiredRequestButton"], StandardForm],
+                    ImageSizeCache->{108., {3., 10.}}],
+                   StripOnInput->False,
+                   LineColor->GrayLevel[1],
+                   FrontFaceColor->GrayLevel[1],
+                   BackFaceColor->GrayLevel[1],
+                   GraphicsColor->GrayLevel[1],
+                   FontWeight->Plain,
+                   FontColor->GrayLevel[1]],
+                  
+                  Appearance->{
+                   "Default" -> 
+                    FrontEnd`FileName[{"Dialogs", "Activation"}, 
+                    "DarkGrayButton-Default.9.png"], "Hover" -> 
+                    FrontEnd`FileName[{"Dialogs", "Activation"}, 
+                    "DarkGrayButton-Hover.9.png"], "Pressed" -> 
+                    FrontEnd`FileName[{"Dialogs", "Activation"}, 
+                    "DarkGrayButton-Pressed.9.png"]},
+                  BaseStyle->"ContactActivationLinkUnbold",
+                  Evaluator->Automatic,
+                  FrameMargins->{{10, 10}, {0, 0}}],
+                 MouseAppearanceTag["LinkHand"]]}
+              },
+              AutoDelete->False,
+              FrameStyle->GrayLevel[0.85],
+              
+              GridBoxAlignment->{
+               "Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+              
+              GridBoxDividers->{
+               "Columns" -> {{False}}, "Rows" -> {False, {True}, False}},
+              GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{4}}}],
+             
+             "Grid"]},
+           {
+            PaneBox[
+             StyleBox[
+              RowBox[{
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "ActivationDialog", "ExpiredContactText"], StandardForm],
+                ImageSizeCache->{225., {1., 10.}}], "\[InvisibleSpace]", 
+               TagBox[
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "ActivationDialog", "ContactActivationLink"], StandardForm],
+                 
+                 ImageSizeCache->{168., {3., 11.}}],
+                MouseAppearanceTag["LinkHand"]]}],
+              StripOnInput->False,
+              FontWeight->Plain,
+              FontSlant->Plain,
+              FontVariations->{"Underline"->False}],
+             Alignment->Right,
+             ImageMargins->{{0, 0}, {0, 80}},
+             ImageSize->Full]}
+          },
+          DefaultBaseStyle->"Column",
+          GridBoxAlignment->{"Columns" -> {{Left}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1.1}}}],
+         "Column"], "CloudProgress"->
+        TagBox[GridBox[{
+           {
+            StyleBox[
+             DynamicBox[ToBoxes[
+               FEPrivate`FrontEndResource[
+               "ActivationDialog", "ProgressSubtitle"], StandardForm],
+              ImageSizeCache->{90., {4., 12.}}], "Heading",
+             StripOnInput->False]},
+           {
+            PaneSelectorBox[{False->
+             DynamicBox[ToBoxes[
+               FEPrivate`FrontEndResource["ActivationDialog", "ProgressText"],
+                StandardForm],
+              ImageSizeCache->{139., {3., 10.}}], True->
+             DynamicBox[ToBoxes[
+               FEPrivate`FrontEndResource["ActivationDialog", "SuccessText"], 
+               StandardForm]]}, Dynamic[
+              FEPrivate`MemberQ[{"Success", "ServerSuccess"}, 
+               CurrentValue[
+                EvaluationNotebook[], {TaggingRules, "ErrorMessage"}]]],
+             FrameMargins->0,
+             ImageMargins->0,
+             ImageSize->Automatic]},
+           {
+            DynamicWrapperBox[
+             PaneBox[
+              
+              DynamicModuleBox[{$CellContext`i$$ = 
+               1, $CellContext`mat$$ = CompressedData["
+1:eJxTTMoPSmVmYGDgAWImKF7lE/GiattrewYweACj96OLw/hQej+qehj4AOV/
+2I8qjjAPTf9+7Oahi6ObB7cPXT/cHFz2oPlrP7p5qP6Au98eh3577Oahi6Ob
+B7fPHgBxvnAl
+               "]}, 
+               OverlayBox[{
+                AnimatorBox[Dynamic[$CellContext`i$$], {1, 12, 1},
+                 AnimationRunTime->0.,
+                 AppearanceElements->{},
+                 DefaultDuration->1,
+                 ImageSize->{1, 1}], 
+                PaneSelectorBox[{1->
+                 DynamicBox[FEPrivate`ImportImage[
+                   
+                   FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ProgressIndicator1.png"]],
+                  ImageSizeCache->{128., {61., 67.}}], 2->
+                 DynamicBox[FEPrivate`ImportImage[
+                   
+                   FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ProgressIndicator2.png"]],
+                  ImageSizeCache->{128., {61., 67.}}], 3->
+                 DynamicBox[FEPrivate`ImportImage[
+                   
+                   FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ProgressIndicator3.png"]],
+                  ImageSizeCache->{128., {61., 67.}}], 4->
+                 DynamicBox[FEPrivate`ImportImage[
+                   
+                   FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ProgressIndicator4.png"]],
+                  ImageSizeCache->{128., {61., 67.}}], 5->
+                 DynamicBox[FEPrivate`ImportImage[
+                   
+                   FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ProgressIndicator5.png"]],
+                  ImageSizeCache->{128., {61., 67.}}], 6->
+                 DynamicBox[FEPrivate`ImportImage[
+                   
+                   FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ProgressIndicator6.png"]],
+                  ImageSizeCache->{128., {61., 67.}}], 7->
+                 DynamicBox[FEPrivate`ImportImage[
+                   
+                   FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ProgressIndicator7.png"]],
+                  ImageSizeCache->{128., {61., 67.}}], 8->
+                 DynamicBox[FEPrivate`ImportImage[
+                   
+                   FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ProgressIndicator8.png"]],
+                  ImageSizeCache->{128., {61., 67.}}], 9->
+                 DynamicBox[FEPrivate`ImportImage[
+                   
+                   FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ProgressIndicator9.png"]],
+                  ImageSizeCache->{128., {61., 67.}}], 10->
+                 DynamicBox[FEPrivate`ImportImage[
+                   
+                   FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ProgressIndicator10.png"]],
+                  ImageSizeCache->{128., {61., 67.}}], 11->
+                 DynamicBox[FEPrivate`ImportImage[
+                   
+                   FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ProgressIndicator11.png"]],
+                  ImageSizeCache->{128., {61., 67.}}], 12->
+                 DynamicBox[FEPrivate`ImportImage[
+                   
+                   FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                    "ProgressIndicator12.png"]],
+                  ImageSizeCache->{128., {61., 67.}}]}, 
+                 Dynamic[$CellContext`i$$]]}],
+               DynamicModuleValues:>{},
+               Initialization:>If[CurrentValue[
+                   EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] =!= 
+                 None, 
+                 FrontEndTokenExecute["HandleShiftReturn"]],
+               SynchronousInitialization->False],
+              Alignment->{-0.1, 0},
+              ImageSize->{Full, 200}], 
+             Module[{$CellContext`i$, $CellContext`name$ = 
+               "", $CellContext`org$ = "", $CellContext`server$ = 
+               "", $CellContext`password$ = "", $CellContext`tmperrormsg$ = 
+               "", $CellContext`activationkeyList$ = FE`Evaluate[
+                 FEPrivate`ActivationKeys[]], $CellContext`state$ = 
+               "Progress"}, 
+              For[$CellContext`i$ = 0, $CellContext`i$ < 
+                Length[$CellContext`activationkeyList$], 
+                
+                Increment[$CellContext`i$], $CellContext`tmperrormsg$ = (
+                  MathLink`CallFrontEndHeld[
+                   FrontEnd`ActivateLicense[
+                    SlotSequence[1]]]& )[
+                   
+                   Part[$CellContext`activationkeyList$, $CellContext`i$ + 
+                    1], $CellContext`name$, $CellContext`org$, \
+$CellContext`server$, $CellContext`password$]; If[
+                  
+                  MemberQ[{
+                   "Success", "ServerSuccess", 
+                    "Waiting"}, $CellContext`tmperrormsg$], 
+                  While[$CellContext`tmperrormsg$ === "Waiting", 
+                    Pause[0.1]; $CellContext`tmperrormsg$ = FrontEndExecute[
+                    FrontEnd`TickleActivation[]]]; 
+                  If[$CellContext`tmperrormsg$ === "Success", CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, 
+                    "ErrorMessage"}] = $CellContext`tmperrormsg$; Pause[1.5]]; 
+                  If[
+                    
+                    MemberQ[{
+                    "Success", "ServerSuccess"}, $CellContext`tmperrormsg$], 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`StartupAction[]]; Break[]]]]; If[
+                Not[
+                 
+                 MemberQ[{
+                  "Success", "ServerSuccess"}, $CellContext`tmperrormsg$]], 
+                MathLink`CallFrontEnd[
+                 FrontEnd`WolframCloud`ConnectionFailed[1502]]]; 
+              FinishDynamic[]; Null],
+             ImageSizeCache->{540., {97., 103.}},
+             SynchronousUpdating->False]}
+          },
+          DefaultBaseStyle->"Column",
+          GridBoxAlignment->{"Columns" -> {{Left}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+         "Column"]}, Dynamic[
+         CurrentValue[
+          EvaluationNotebook[], {TaggingRules, "ActivationState"}]],
+        Alignment->{Left, Top},
+        Background->GrayLevel[1],
+        BaseStyle->"DialogStyle",
+        FrameMargins->{{60, 50}, {0, 25}},
+        ImageSize->{650, All}]},
+      {
+       PaneSelectorBox[{True->
+        TagBox[GridBox[{
+           {"", 
+            PaneSelectorBox[{False->
+             ButtonBox[
+              DynamicBox[FEPrivate`FrontEndResourceString["quitButtonText"]],
+              Appearance->"CancelButton",
+              ButtonFunction:>FrontEndExecute[
+                FrontEnd`FrontEndToken["FrontEndQuit", {"Cancel" -> False}]],
+              Evaluator->None,
+              Method->"Preemptive"], True->
+             ButtonBox[
+              DynamicBox[FEPrivate`FrontEndResourceString["cancelButtonText"]],
+              Appearance->"CancelButton",
+              ButtonFunction:>DialogReturn[$Canceled],
+              Evaluator->Automatic,
+              ImageSize->Dynamic[
+                CurrentValue["DefaultButtonSize"]],
+              Method->"Preemptive"]}, Dynamic[
+              CurrentValue["LicenseValid"]]], "", 
+            PaneSelectorBox[{False->
+             ButtonBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["ActivationDialog", "FinishLabel"],
+                 StandardForm]],
+              Appearance->"DefaultButton",
+              
+              ButtonFunction:>
+               Module[{$CellContext`tmperrormsg$, $CellContext`securedQ$ = 
+                 FE`Evaluate[
+                   FEPrivate`Not[
+                    FEPrivate`SameQ[
+                    FrontEnd`$NotebookLicenseType, 
+                    "Unauthorized Unsecured"]]]}, $CellContext`tmperrormsg$ = 
+                 If[CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                   "Progress", "Waiting", 
+                   (MathLink`CallFrontEndHeld[
+                    FrontEnd`ActivateLicense[
+                    SlotSequence[1]]]& )[
+                   "", $CellContext`name$$, $CellContext`org$$, 
+                    "", $CellContext`password$$]]; If[CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                  "Online", CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                   "Progress"; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                   ""; FinishDynamic[]]; If[
+                  And[$CellContext`securedQ$, CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                   "Progress"], 
+                  While[$CellContext`tmperrormsg$ === "Waiting", 
+                    Pause[0.1]; $CellContext`tmperrormsg$ = FrontEndExecute[
+                    FrontEnd`TickleActivation[]]]; 
+                  If[$CellContext`tmperrormsg$ === "Success", CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, 
+                    "ErrorMessage"}] = $CellContext`tmperrormsg$; 
+                    Pause[1.5]]]; Switch[$CellContext`tmperrormsg$, 
+                  Alternatives["Success", "ServerSuccess"], 
+                  DialogReturn[
+                   MathLink`CallFrontEnd[
+                    FrontEnd`StartupAction[]]], "EnterPassword", 
+                  CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                   ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                   If[$CellContext`securedQ$, "Manual", "Online"], 
+                  "DoNothing", CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                   ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                   If[$CellContext`securedQ$, "Method", "Online"], 
+                  Alternatives["Expired", "TrialExpired"], CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                   ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                   "Expired", 
+                  Blank[], CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, 
+                    "ErrorMessage"}] = $CellContext`tmperrormsg$; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                   Which["" =!= "", "Network", 
+                    
+                    And[$CellContext`securedQ$, $CellContext`password$$ =!= 
+                    ""], "Manual", True, "Online"]]],
+              Evaluator->Automatic,
+              Method->"Queued"], True->
+             ButtonBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["ActivationDialog", "FinishLabel"],
+                 StandardForm]],
+              Appearance->Automatic,
+              ButtonFunction:>Null,
+              Enabled->False,
+              Evaluator->Automatic,
+              Method->"Preemptive"]}, 
+             Dynamic[$CellContext`password$$ === ""]], ""}
+          },
+          AutoDelete->False,
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {3 -> Fit}},
+          GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
+         "Grid"], False->
+        TagBox[GridBox[{
+           {"", 
+            PaneSelectorBox[{1->
+             TagBox[GridBox[{
+                {
+                 PaneSelectorBox[{False->
+                  ButtonBox[
+                   
+                   DynamicBox[FEPrivate`FrontEndResourceString[
+                    "quitButtonText"]],
+                   Appearance->"CancelButton",
+                   ButtonFunction:>FrontEndExecute[
+                    FrontEnd`FrontEndToken[
+                    "FrontEndQuit", {"Cancel" -> False}]],
+                   Evaluator->None,
+                   Method->"Preemptive"], True->
+                  ButtonBox[
+                   
+                   DynamicBox[FEPrivate`FrontEndResourceString[
+                    "cancelButtonText"]],
+                   Appearance->"CancelButton",
+                   ButtonFunction:>DialogReturn[$Canceled],
+                   Evaluator->Automatic,
+                   ImageSize->Dynamic[
+                    CurrentValue["DefaultButtonSize"]],
+                   Method->"Preemptive"]}, Dynamic[
+                   CurrentValue["LicenseValid"]]], ""}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 2->
+             TagBox[GridBox[{
+                {
+                 PaneSelectorBox[{False->
+                  ButtonBox[
+                   
+                   DynamicBox[FEPrivate`FrontEndResourceString[
+                    "quitButtonText"],
+                    ImageSizeCache->{26., {1., 10.}}],
+                   Appearance->"CancelButton",
+                   ButtonFunction:>FrontEndExecute[
+                    FrontEnd`FrontEndToken[
+                    "FrontEndQuit", {"Cancel" -> False}]],
+                   Evaluator->None,
+                   Method->"Preemptive"], True->
+                  ButtonBox[
+                   
+                   DynamicBox[FEPrivate`FrontEndResourceString[
+                    "cancelButtonText"],
+                    ImageSizeCache->{42., {1., 10.}}],
+                   Appearance->"CancelButton",
+                   ButtonFunction:>DialogReturn[$Canceled],
+                   Evaluator->Automatic,
+                   ImageSize->Dynamic[
+                    CurrentValue["DefaultButtonSize"]],
+                   Method->"Preemptive"]}, Dynamic[
+                   CurrentValue["LicenseValid"]]], 
+                 PaneBox[
+                  ButtonBox[
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ActivationDialog", "ActivateMethodLabel"], StandardForm],
+                    
+                    ImageSizeCache->{139., {3., 10.}}],
+                   Appearance->Automatic,
+                   ButtonFunction:>(CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    "Method"; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""),
+                   Evaluator->Automatic,
+                   Method->"Preemptive"]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 3->
+             TagBox[GridBox[{
+                {
+                 ButtonBox["\<\"\"\>",
+                  
+                  Appearance->{
+                   "ButtonType" -> "Default", "Default" -> None, "Hover" -> 
+                    None, "Pressed" -> None, "Disabled" -> None},
+                  
+                  ButtonFunction:>
+                   Module[{$CellContext`tmperrormsg$, $CellContext`securedQ$ = 
+                    FE`Evaluate[
+                    FEPrivate`Not[
+                    FEPrivate`SameQ[
+                    FrontEnd`$NotebookLicenseType, 
+                    "Unauthorized Unsecured"]]]}, $CellContext`tmperrormsg$ = 
+                    If[CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                    "Progress", "Waiting", 
+                    (MathLink`CallFrontEndHeld[
+                    FrontEnd`ActivateLicense[
+                    SlotSequence[1]]]& )[$CellContext`activationKey$$, "", 
+                    "", $CellContext`server$$, $CellContext`password$$]]; 
+                    If[CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                    "Online", CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    "Progress"; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; FinishDynamic[]]; If[
+                    And[$CellContext`securedQ$, CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                    "Progress"], 
+                    While[$CellContext`tmperrormsg$ === "Waiting", 
+                    Pause[0.1]; $CellContext`tmperrormsg$ = FrontEndExecute[
+                    FrontEnd`TickleActivation[]]]; 
+                    If[$CellContext`tmperrormsg$ === "Success", CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, 
+                    "ErrorMessage"}] = $CellContext`tmperrormsg$; 
+                    Pause[1.5]]]; Switch[$CellContext`tmperrormsg$, 
+                    Alternatives["Success", "ServerSuccess"], 
+                    DialogReturn[
+                    MathLink`CallFrontEnd[
+                    FrontEnd`StartupAction[]]], "EnterPassword", 
+                    CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    If[$CellContext`securedQ$, "Manual", "Online"], 
+                    "DoNothing", CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    If[$CellContext`securedQ$, "Method", "Online"], 
+                    Alternatives["Expired", "TrialExpired"], CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    "Expired", 
+                    Blank[], CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, 
+                    "ErrorMessage"}] = $CellContext`tmperrormsg$; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    Which[$CellContext`server$$ =!= "", "Network", 
+                    
+                    And[$CellContext`securedQ$, $CellContext`password$$ =!= 
+                    ""], "Manual", True, "Online"]]],
+                  Evaluator->Automatic,
+                  ImageSize->{1, 1},
+                  Method->"Queued"], ""}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]}, Dynamic[
+              FEPrivate`Which[
+               FEPrivate`MemberQ[{"Online", "Manual", "Network"}, 
+                CurrentValue[
+                 EvaluationNotebook[], {TaggingRules, "ActivationState"}]], 2, 
+               FEPrivate`MemberQ[{"Method", "Expired"}, 
+                CurrentValue[
+                 EvaluationNotebook[], {TaggingRules, "ActivationState"}]], 1, 
+               FEPrivate`MemberQ[{"Progress", "CloudProgress"}, 
+                CurrentValue[
+                 EvaluationNotebook[], {TaggingRules, "ActivationState"}]], 3,
+                True, 0]],
+             ImageSize->Automatic], "", 
+            PaneSelectorBox[{"Online"->
+             PaneSelectorBox[{False->
+              ButtonBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "ActivationDialog", "ActivateButtonLabel"], StandardForm],
+                ImageSizeCache->{50., {0., 10.}}],
+               Appearance->"DefaultButton",
+               
+               ButtonFunction:>
+                Module[{$CellContext`tmperrormsg$, $CellContext`securedQ$ = 
+                  FE`Evaluate[
+                    FEPrivate`Not[
+                    FEPrivate`SameQ[
+                    FrontEnd`$NotebookLicenseType, 
+                    "Unauthorized Unsecured"]]]}, $CellContext`tmperrormsg$ = 
+                  If[CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                    "Progress", "Waiting", 
+                    (MathLink`CallFrontEndHeld[
+                    FrontEnd`ActivateLicense[
+                    SlotSequence[1]]]& )[$CellContext`activationKey$$, "", "",
+                     "", ""]]; If[CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                   "Online", CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    "Progress"; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; FinishDynamic[]]; If[
+                   And[$CellContext`securedQ$, CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                    "Progress"], 
+                   While[$CellContext`tmperrormsg$ === "Waiting", 
+                    Pause[0.1]; $CellContext`tmperrormsg$ = FrontEndExecute[
+                    FrontEnd`TickleActivation[]]]; 
+                   If[$CellContext`tmperrormsg$ === "Success", CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, 
+                    "ErrorMessage"}] = $CellContext`tmperrormsg$; 
+                    Pause[1.5]]]; Switch[$CellContext`tmperrormsg$, 
+                   Alternatives["Success", "ServerSuccess"], 
+                   DialogReturn[
+                    MathLink`CallFrontEnd[
+                    FrontEnd`StartupAction[]]], "EnterPassword", 
+                   CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    If[$CellContext`securedQ$, "Manual", "Online"], 
+                   "DoNothing", CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    If[$CellContext`securedQ$, "Method", "Online"], 
+                   Alternatives["Expired", "TrialExpired"], CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    "Expired", 
+                   Blank[], CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, 
+                    "ErrorMessage"}] = $CellContext`tmperrormsg$; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    Which["" =!= "", "Network", 
+                    And[$CellContext`securedQ$, "" =!= ""], "Manual", True, 
+                    "Online"]]],
+               Evaluator->Automatic,
+               Method->"Queued"], True->
+              ButtonBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "ActivationDialog", "ActivateButtonLabel"], StandardForm],
+                ImageSizeCache->{50., {0., 10.}}],
+               Appearance->Automatic,
+               ButtonFunction:>Null,
+               Enabled->False,
+               Evaluator->Automatic,
+               Method->"Preemptive"]}, 
+              Dynamic[$CellContext`activationKey$$ === ""]], "Manual"->
+             PaneSelectorBox[{False->
+              ButtonBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "ActivationDialog", "ActivateButtonLabel"], StandardForm],
+                ImageSizeCache->{50., {0., 10.}}],
+               Appearance->"DefaultButton",
+               
+               ButtonFunction:>
+                Module[{$CellContext`tmperrormsg$, $CellContext`securedQ$ = 
+                  FE`Evaluate[
+                    FEPrivate`Not[
+                    FEPrivate`SameQ[
+                    FrontEnd`$NotebookLicenseType, 
+                    "Unauthorized Unsecured"]]]}, $CellContext`tmperrormsg$ = 
+                  If[CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                    "Progress", "Waiting", 
+                    (MathLink`CallFrontEndHeld[
+                    FrontEnd`ActivateLicense[
+                    SlotSequence[1]]]& )[$CellContext`activationKey$$, "", "",
+                     "", $CellContext`password$$]]; If[CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                   "Online", CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    "Progress"; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; FinishDynamic[]]; If[
+                   And[$CellContext`securedQ$, CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                    "Progress"], 
+                   While[$CellContext`tmperrormsg$ === "Waiting", 
+                    Pause[0.1]; $CellContext`tmperrormsg$ = FrontEndExecute[
+                    FrontEnd`TickleActivation[]]]; 
+                   If[$CellContext`tmperrormsg$ === "Success", CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, 
+                    "ErrorMessage"}] = $CellContext`tmperrormsg$; 
+                    Pause[1.5]]]; Switch[$CellContext`tmperrormsg$, 
+                   Alternatives["Success", "ServerSuccess"], 
+                   DialogReturn[
+                    MathLink`CallFrontEnd[
+                    FrontEnd`StartupAction[]]], "EnterPassword", 
+                   CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    If[$CellContext`securedQ$, "Manual", "Online"], 
+                   "DoNothing", CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    If[$CellContext`securedQ$, "Method", "Online"], 
+                   Alternatives["Expired", "TrialExpired"], CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    "Expired", 
+                   Blank[], CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, 
+                    "ErrorMessage"}] = $CellContext`tmperrormsg$; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    Which["" =!= "", "Network", 
+                    
+                    And[$CellContext`securedQ$, $CellContext`password$$ =!= 
+                    ""], "Manual", True, "Online"]]],
+               Evaluator->Automatic,
+               Method->"Queued"], True->
+              ButtonBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "ActivationDialog", "ActivateButtonLabel"], StandardForm],
+                ImageSizeCache->{50., {0., 10.}}],
+               Appearance->Automatic,
+               ButtonFunction:>Null,
+               Enabled->False,
+               Evaluator->Automatic,
+               Method->"Preemptive"]}, Dynamic[
+               Or[$CellContext`activationKey$$ === 
+                "", $CellContext`password$$ === ""]]], "Network"->
+             PaneSelectorBox[{False->
+              ButtonBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "ActivationDialog", "ActivateButtonLabel"], StandardForm],
+                ImageSizeCache->{50., {0., 10.}}],
+               Appearance->"DefaultButton",
+               
+               ButtonFunction:>
+                Module[{$CellContext`tmperrormsg$, $CellContext`securedQ$ = 
+                  FE`Evaluate[
+                    FEPrivate`Not[
+                    FEPrivate`SameQ[
+                    FrontEnd`$NotebookLicenseType, 
+                    "Unauthorized Unsecured"]]]}, $CellContext`tmperrormsg$ = 
+                  If[CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                    "Progress", "Waiting", 
+                    (MathLink`CallFrontEndHeld[
+                    FrontEnd`ActivateLicense[
+                    SlotSequence[1]]]& )[
+                    "", "", "", $CellContext`server$$, ""]]; If[CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                   "Online", CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    "Progress"; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; FinishDynamic[]]; If[
+                   And[$CellContext`securedQ$, CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] === 
+                    "Progress"], 
+                   While[$CellContext`tmperrormsg$ === "Waiting", 
+                    Pause[0.1]; $CellContext`tmperrormsg$ = FrontEndExecute[
+                    FrontEnd`TickleActivation[]]]; 
+                   If[$CellContext`tmperrormsg$ === "Success", CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, 
+                    "ErrorMessage"}] = $CellContext`tmperrormsg$; 
+                    Pause[1.5]]]; Switch[$CellContext`tmperrormsg$, 
+                   Alternatives["Success", "ServerSuccess"], 
+                   DialogReturn[
+                    MathLink`CallFrontEnd[
+                    FrontEnd`StartupAction[]]], "EnterPassword", 
+                   CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    If[$CellContext`securedQ$, "Manual", "Online"], 
+                   "DoNothing", CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    If[$CellContext`securedQ$, "Method", "Online"], 
+                   Alternatives["Expired", "TrialExpired"], CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = 
+                    ""; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    "Expired", 
+                   Blank[], CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, 
+                    "ErrorMessage"}] = $CellContext`tmperrormsg$; CurrentValue[
+                    EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                    Which[$CellContext`server$$ =!= "", "Network", 
+                    And[$CellContext`securedQ$, "" =!= ""], "Manual", True, 
+                    "Online"]]],
+               Evaluator->Automatic,
+               Method->"Queued"], True->
+              ButtonBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "ActivationDialog", "ActivateButtonLabel"], StandardForm],
+                ImageSizeCache->{50., {0., 10.}}],
+               Appearance->Automatic,
+               ButtonFunction:>Null,
+               Enabled->False,
+               Evaluator->Automatic,
+               Method->"Preemptive"]}, Dynamic[$CellContext`server$$ === ""]],
+              "Progress"->
+             ButtonBox[
+              
+              DynamicBox[FEPrivate`FrontEndResourceString["cancelButtonText"],
+               
+               ImageSizeCache->{42., {1., 10.}}],
+              Appearance->"CancelButton",
+              ButtonFunction:>(FE`Evaluate[
+                 FEPrivate`If[
+                  FEPrivate`SameQ[
+                   FEPrivate`Runtime`CurrentEnvironment[][
+                   "RequiresWolframCloudLogin"], True], 
+                  MathLink`CallFrontEnd[
+                   FrontEnd`WolframCloud`ConnectionCancelled[]]]]; 
+               FrontEndExecute[
+                 FrontEnd`EvaluatorAbort["System"]]; CurrentValue[
+                  EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = ""; 
+               CurrentValue[
+                  EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                "Online"),
+              Evaluator->Automatic,
+              ImageSize->Dynamic[
+                CurrentValue["DefaultButtonSize"]],
+              Method->"Preemptive"], "CloudProgress"->
+             ButtonBox[
+              
+              DynamicBox[FEPrivate`FrontEndResourceString["cancelButtonText"],
+               
+               ImageSizeCache->{42., {1., 10.}}],
+              Appearance->"CancelButton",
+              ButtonFunction:>(MathLink`CallFrontEnd[
+                 FrontEnd`WolframCloud`ConnectionCancelled[]]; CurrentValue[
+                  EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = ""; 
+               CurrentValue[
+                  EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                "Online"),
+              Evaluator->Automatic,
+              ImageSize->Dynamic[
+                CurrentValue["DefaultButtonSize"]],
+              Method->"Preemptive"], "Contact"->
+             ButtonBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["ActivationDialog", "BackLabel"], 
+                StandardForm],
+               ImageSizeCache->{30., {0., 10.}}],
+              Appearance->"CancelButton",
+              ButtonFunction:>(CurrentValue[
+                  EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = ""; 
+               CurrentValue[
+                  EvaluationNotebook[], {TaggingRules, "ActivationState"}] = 
+                "Manual"),
+              Evaluator->Automatic,
+              Method->"Preemptive"]}, Dynamic[
+              CurrentValue[
+               EvaluationNotebook[], {TaggingRules, "ActivationState"}]]], 
+            ""}
+          },
+          AutoDelete->False,
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {3 -> Fit}},
+          GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
+         "Grid"]}, Dynamic[
+         FEPrivate`SameQ[
+         FrontEnd`$NotebookLicenseType, "Unauthorized Unsecured"]],
+        ImageMargins->{{0, 0}, {3, 
+           FEPrivate`If[
+            FEPrivate`SameQ[FEPrivate`$OperatingSystem, "Unix"], 8, 6]}},
+        ImageSize->Full]}
+     },
+     DefaultBaseStyle->"Column",
+     FrameStyle->GrayLevel[0.8],
+     GridBoxAlignment->{"Columns" -> {{Left}}},
+     GridBoxDividers->{
+      "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
+    "Column"],
+   DynamicModuleValues:>{},
+   Initialization:>($CellContext`activationKey$$ = FE`Evaluate[
+       FEPrivate`If[
+        FEPrivate`PlayerQ[], "", FrontEnd`$NotebookActivationKey]]; 
+    CurrentValue[
+       EvaluationNotebook[], {TaggingRules, "ActivationState"}] = Which[
+       FE`Evaluate[
+       FrontEnd`$NotebookNetworkLicense], $CellContext`server$$ = 
+        FE`Evaluate[FrontEnd`$NotebookLicenseServer]; "Network", 
+       Or[
+        Not[
+         CurrentValue[
+          EvaluationNotebook[], {TaggingRules, "Reactivate"}, True]], 
+        FE`Evaluate[
+         FEPrivate`SameQ[
+         FrontEnd`$NotebookLicenseType, 
+          "Unauthorized Unsecured"]], $CellContext`activationKey$$ === ""], 
+       "Online", FE`Evaluate[FrontEnd`$NotebookLicenseType] === "Trial", 
+       CurrentValue[
+          EvaluationNotebook[], {TaggingRules, "ErrorMessage"}] = None; 
+       "Online", True, "Progress"]),
+   UnsavedVariables:>{$CellContext`activationKey$$}],
+  ImageSize->650]],
+ CellMargins->0,
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue[
+  "PanelFontSize"],ExpressionUUID->"74185216-119a-4857-ad66-47cc6af70d73"]
+},
+NotebookEventActions->{"EscapeKeyDown" :> FE`Evaluate[
+    FEPrivate`FindAndClickCancelButton[]], "WindowClose" :> FE`Evaluate[
+    FEPrivate`FindAndClickCancelButton[]], "ReturnKeyDown" :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {"MenuCommand", "EvaluateCells"} :> 
+  FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {
+   "MenuCommand", "EvaluateNextCell"} :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {
+   "MenuCommand", "HandleShiftReturn"} :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]]},
+NotebookDynamicExpression:>MathLink`CallFrontEnd[
+  FrontEnd`BoxReferenceFind[
+   FE`BoxReference[
+    EvaluationNotebook[], {{"inputfield"}}, FE`BoxOffset -> {
+      FE`BoxChild[1]}, FE`SearchStart -> "StartFromBeginning"]]],
+WindowSize->{650, FitAll},
+WindowMargins->Automatic,
+WindowFrame->"ModalDialog",
+WindowTitle->Dynamic[
+  FEPrivate`FrontEndResource["ActivationDialog", "WindowTitle"]],
+PrivateNotebookOptions->{"ExcludeFromShutdown"->False,
+"FileOutlineCache"->True,
+"SafeFileOpen"->"None"},
+TaggingRules->{
+ "ActivationState" -> "Online", "ErrorMessage" -> "", "Unsecured" -> False},
+CellContext->"Global`",
+ButtonBoxOptions->{ImageSize->FrontEnd`CurrentValue["DefaultButtonSize"]},
+InputFieldBoxOptions->{BaseStyle->{
+ ZeroWidthTimes -> True, FontWeight -> Plain},
+ContinuousAction->True,
+ImageSize->{306, Automatic}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "SystemDialog.nb"]], 
+   Cell[
+    StyleData["Heading", StyleDefinitions -> StyleData["DialogStyle"]], 
+    FontSize -> FEPrivate`If[
+      FEPrivate`SameQ[FEPrivate`$OperatingSystem, "Unix"], 15, 16], FontColor -> 
+    RGBColor[0.88, 0.02, 0]], 
+   Cell[
+    StyleData["DialogStyle"], FontFamily -> "Helvetica", FontSize -> 
+    FEPrivate`If[
+      FEPrivate`SameQ[FEPrivate`$OperatingSystem, "Unix"], 12, 13], 
+    FontWeight -> Bold, FontColor -> GrayLevel[0]], 
+   Cell[
+    StyleData["DefaultText", StyleDefinitions -> StyleData["DialogStyle"]], 
+    LineIndent -> 0, LinebreakAdjustments -> {1., 1, 2, 10, 1}, FontWeight -> 
+    Plain], 
+   Cell[
+    StyleData[
+    "ManualActivationText", StyleDefinitions -> StyleData["DefaultText"]], 
+    LineSpacing -> {1, 2}], 
+   Cell[
+    StyleData[
+    "ContactInformationText", StyleDefinitions -> StyleData["DefaultText"]], 
+    LineSpacing -> {1, 3}], 
+   Cell[
+    StyleData["GrayText"], FontColor -> GrayLevel[0.4]], 
+   Cell[
+    StyleData["TextIndent", StyleDefinitions -> StyleData["DialogStyle"]], 
+    LineIndent -> 0, LinebreakAdjustments -> {1, 100, 0, 0, 100}], 
+   Cell[
+    StyleData["ErrorText", StyleDefinitions -> StyleData["TextIndent"]], 
+    LineSpacing -> {1, 2}, FontColor -> RGBColor[0.5, 0, 0]], 
+   Cell[
+    StyleData["Chevron"], FontColor -> RGBColor[0.88, 0.02, 0]], 
+   Cell[
+    StyleData["Hyperlink"], ContextMenu -> None, FontColor -> GrayLevel[0.4]], 
+   Cell[
+    StyleData["HyperlinkBold", StyleDefinitions -> StyleData["Hyperlink"]], 
+    FontWeight -> Bold], 
+   Cell[
+    StyleData["HyperlinkActive"], FontColor -> 
+    RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333]], 
+   Cell[
+    StyleData["ActivationLink"], FontColor -> FEPrivate`If[
+      FrontEnd`CurrentValue["MouseOver"], 
+      RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333], 
+      RGBColor[0.88, 0.02, 0]], 
+    ButtonBoxOptions -> {
+     Appearance -> None, ButtonFunction :> (FrontEndExecute[
+        FrontEnd`SetOptions[
+         FrontEnd`ButtonNotebook[], 
+         TaggingRules -> {"ActivationState" -> #, "ErrorMessage" -> ""}]]& ), 
+      Evaluator -> None, ImageSize -> All}], 
+   Cell[
+    StyleData[
+    "ContactActivationLink", StyleDefinitions -> StyleData["ActivationLink"]],
+     FontWeight -> Bold, 
+    ButtonBoxOptions -> {ButtonFunction :> (FE`hyperlinkCoded[
+        Switch[#, "AboutCDFPlayerPro", "http://www.wolfram.com/player-pro/", 
+         "OnlineActivateLink", "http://support.wolfram.com/kb/373", 
+         "PrivacyPolicyLink", 
+         StringJoin["http://www.wolfram.com/legal/privacy/wolfram-", 
+          
+          If[$ProgramName === "WolframCDFPlayer", "cdf-player", 
+           "mathematica"], ".html"], "Register", 
+         "https://user.wolfram.com/portal/ProductRegistration", "UserPortal", 
+         "https://user.wolfram.com", 
+         Blank[], "http://www.wolfram.com/support/contact/email/"], 
+        "topic=Activation", 
+        StringJoin["source=", 
+         ToLowerCase[
+          CurrentValue[
+           EvaluationNotebook[], {TaggingRules, "ActivationState"}]]]]& ), 
+      Evaluator -> Automatic}], 
+   Cell[
+    StyleData[
+    "ContactActivationLinkUnbold", StyleDefinitions -> 
+     StyleData["ContactActivationLink"]], FontWeight -> Plain], 
+   Cell[
+    StyleData[
+    "SystemTransferLink", StyleDefinitions -> StyleData["ActivationLink"]], 
+    FontWeight -> Bold, 
+    ButtonBoxOptions -> {
+     ButtonFunction :> (FE`hyperlinkCoded[
+       "https://user.wolfram.com/portal/requestSystemTransfer.html", 
+        "topic=Activation", 
+        StringJoin["source=", 
+         ToLowerCase[
+          CurrentValue[
+           EvaluationNotebook[], {TaggingRules, "ActivationState"}]]]]& ), 
+      Evaluator -> Automatic}]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  StyleDefinitions -> "Default.nb"],
+Modal -> True
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[603, 21, 626, 19, 69, InheritFromParent,ExpressionUUID->"3c22f7b5-2ec8-42b2-a15d-9afa7e949668",
+ PageBreakAbove->True,
+ PageBreakWithin->False],
+Cell[1232, 42, 90141, 1986, 392, InheritFromParent,ExpressionUUID->"74185216-119a-4857-ad66-47cc6af70d73",
+ PageBreakAbove->True,
+ PageBreakWithin->False]
+}
+]
+*)
+
+(* End of internal cache information *)
+
+(* NotebookSignature nKziOPJdxkslfK5bKe7#Mmh4 *)

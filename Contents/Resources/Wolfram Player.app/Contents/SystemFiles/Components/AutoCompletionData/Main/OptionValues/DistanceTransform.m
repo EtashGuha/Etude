@@ -1,0 +1,2 @@
+{DistanceFunction -> {"EuclideanDistance", "ManhattanDistance"}, 
+ Padding -> {}}

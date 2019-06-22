@@ -1,0 +1,18 @@
+
+/* Class = "NSTextFieldCell"; title = "Kernel:"; ObjectID = "6OE-My-2dZ"; */
+"6OE-My-2dZ.title" = "カーネル：";
+
+/* Class = "NSButtonCell"; title = "Quit Kernel"; ObjectID = "7fj-Ho-6PV"; */
+"7fj-Ho-6PV.title" = "カーネルの終了";
+
+/* Class = "NSButtonCell"; title = "Retry"; ObjectID = "FJF-yX-1R1"; */
+"FJF-yX-1R1.title" = "再接続";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "Pb7-1Z-uPc"; */
+"Pb7-1Z-uPc.title" = "Label";
+
+/* Class = "NSWindow"; title = "Kernel Interrupt"; ObjectID = "Xym-TK-Z2g"; */
+"Xym-TK-Z2g.title" = "カーネルの中止";
+
+/* Class = "NSTextFieldCell"; title = "The kernel has lost its connection to the license server."; ObjectID = "cDr-Im-clr"; */
+"cDr-Im-clr.title" = "カーネルはライセンスサーバへの接続を失いました．";

@@ -1,0 +1,27 @@
+
+/* Class = "NSWindow"; title = "Local Kernel Interrupt"; ObjectID = "CFh-Py-O7v"; */
+"CFh-Py-O7v.title" = "Interrupción local de kernel";
+
+/* Class = "NSButtonCell"; title = "Kill Program"; ObjectID = "DXy-kh-kPu"; */
+"DXy-kh-kPu.title" = "Eliminar el programa";
+
+/* Class = "NSButtonCell"; title = "Abort"; ObjectID = "QeK-nE-81i"; */
+"QeK-nE-81i.title" = "Abortar";
+
+/* Class = "NSButtonCell"; title = "Abort"; ObjectID = "Svz-st-AXp"; */
+"Svz-st-AXp.title" = "Abortar";
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "V9t-Ab-M97"; */
+"V9t-Ab-M97.title" = "Continuar";
+
+/* Class = "NSButtonCell"; title = "Enter Subsession"; ObjectID = "htY-J0-Smd"; */
+"htY-J0-Smd.title" = "Ingresar subsesión";
+
+/* Class = "NSTextFieldCell"; title = "Current running evaluation:"; ObjectID = "lD2-Hi-p0f"; */
+"lD2-Hi-p0f.title" = "Evaluación en ejecución actual:";
+
+/* Class = "NSButtonCell"; title = "Interrupt"; ObjectID = "lW1-Eh-mQ1"; */
+"lW1-Eh-mQ1.title" = "Interrumpir";
+
+/* Class = "NSTextFieldCell"; title = "MathLink control of linked program:"; ObjectID = "qXL-u6-3fM"; */
+"qXL-u6-3fM.title" = "Control MathLink del programa vinculado:";

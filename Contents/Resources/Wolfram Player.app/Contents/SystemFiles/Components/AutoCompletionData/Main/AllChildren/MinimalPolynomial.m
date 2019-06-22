@@ -1,0 +1,12 @@
+{"Sqrt", "Pi", "I", "Cos", "E", "Sin", "Exp", "Tan", "Cot", "Degree", "Sec", 
+ "ArcTan", "Root", "Sum", "Plus", "Quantity", "Subscript", 
+ "GammaRegularized", "None", "Abs", "FromContinuedFraction", 
+ "GeneratingFunction", "ArcCot", "PrimitiveRoot", "MatrixPower", 
+ "MatrixForm", "Csc", "Product", "Resultant", "Ratios", "MinimalPolynomial", 
+ "KroneckerDelta", "EulerGamma", "Transpose", "RootOfUnityQ", "GoldenRatio", 
+ "Det", "Mod", "Log", "FractionalPart", "Array", "Zeta", "Re", "Rational", 
+ "PrimePi", "KleinInvariantJ", "Eigenvalues", "CharacteristicPolynomial", 
+ "BitAnd", "Binomial", "ToNumberField", "Rationalize", "Range", "Quotient", 
+ "LiouvilleLambda", "Im", "Factor", "D", "Cosh", "BitOr", "RowReduce", 
+ "Log2", "Log10", "Inverse", "Infinity", "EllipticTheta", "Eigensystem", 
+ "Diagonal", "Derivative", "BesselI", "BaseForm", "ArcTanh", "ArcCosh"}

@@ -1,0 +1,98 @@
+%!PS-Adobe-3.0 Resource-ProcSet
+%%BeginResource: procset WRI-MathToIllustrator 1.0 0
+
+/WRI-PSConvert /ProcSet findresource begin
+/WRI-MathToIllustrator currentdict /ProcSet defineresource pop 
+
+/_pathops [
+  (m)		% moveto
+  (L)		% lineto
+  (C)		% curveto
+  (q)		% gsave
+  (Q)		% grestore
+  (H W n)	% clip newpath
+  (h W n)	% closepath clip newpath
+] def
+
+/show {
+  true _docolor
+  (0 To) _prop		% Begin text object
+
+  _fontsizematrix
+  _fontcurrentpoint
+  { _prnum } forall	
+
+  0 _prnum
+  (Tp) _prop		% Text path matrix etc
+  (TP) _prop		% End Text path
+  (0 Tr) _prop		% Fill mode text rendering
+  (/_) _print
+  _fontname _str cvs _print
+  ( ) _print
+  _fontsize _prnum
+  (Tf) _prop		% Font
+  (0 Ts) _prop		% super/sub height % DEFAULT
+  (100 Tz) _prop	% Scale factor % DEFAULT
+  (0 Tt) _prop		% user tracking
+  (0 TA) _prop		% pairwise kerning
+  (0 0 5 TC) _prop	% character spacing
+  (100 100 200 TW) _prop	% word spacing
+  (0 0 0 Ti) _prop	% indentation
+  (0 Ta) _prop		% left aligned
+  (0 Tq) _prop		% no hanging quotes
+  (0 0 Tl) _prop	% paragraph leading
+  (\() _print		% Do the string
+  dup _prstring
+  (\) Tx) _prop
+  (\(\\r\) TX) _prop
+  (TO) _prop		% End text object
+  /show _opexec
+} def
+
+% Image stuff 
+
+% Generic PostScript images not supported
+% (Illustrator < 6.0 has no bitmap image support except as file REFERENCES)
+/_imagebegin {
+  IllustratorImagesNotSupported
+} def
+
+/_imageend {
+} def
+
+% Use the Mimage stuff for Mathematica image support
+
+_setup_math_ops
+
+/WRI-Mathematica-prolog /ProcSet findresource begin 
+
+/Mimage { /Mimage _opexec } store
+/Mcolorimage { /Mcolorimage _opexec } store
+
+end
+
+% begin-end stuff
+
+/_begin_doc {
+  %_real_write
+  (%!PS-Adobe-3.0 EPSF-3.0) _printnl
+  _mathscaleflag {
+    _bbox_hook
+  } {
+    (%%BoundingBox: 0 0 612 792) _printnl
+  } ifelse
+  (%%TemplateBox: 0 0 612 792) _printnl
+  (%%Creator: Mathematica-PSRender) _printnl
+  (%%EndComments) _printnl
+  (%%BeginProlog) _printnl
+  (%%EndProlog) _printnl
+} def
+
+/_end_doc {
+  (%%Trailer) _printnl
+  (%%EOF) _printnl
+} def
+
+end
+
+%%EndResource

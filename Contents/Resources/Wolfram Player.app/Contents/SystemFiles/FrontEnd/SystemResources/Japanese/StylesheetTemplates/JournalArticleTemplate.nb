@@ -1,0 +1,1188 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     41987,       1179]
+NotebookOptionsPosition[     36645,       1011]
+NotebookOutlinePosition[     37131,       1029]
+CellTagsIndexPosition[     37088,       1026]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+", "Title"],
+
+Cell[CellGroupData[{
+
+Cell["\:8457\:8005\:306e\:540d\:524d\:3092\:3053\:3053\:306b\:5165\:529b\:3059\
+\:308b", "Author"],
+
+Cell["\:6240\:5c5e\:6a5f\:95a2\:540d\:3092\:3053\:3053\:306b\:5165\:529b\:3059\
+\:308b", "Institution"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:4ed6\:306e\:8457\:8005\:306e\:540d\:524d\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b", "Author"],
+
+Cell["\:6240\:5c5e\:6a5f\:95a2\:540d\:3092\:3053\:3053\:306b\:5165\:529b\:3059\
+\:308b", "Institution"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:6458\:8981\:306e\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b", "AbstractSection"],
+
+Cell["\:6458\:8981\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e\:6458\:8981\:3067\:8868\:793a\:3059\:308b\:6570\:5f0f\
+\:306f\:4e0b\:306e\:5225\:306e\:30bb\:30eb\:306b\:5165\:529b\:3059\:308b\:ff0e\
+ ", "Abstract"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{"x", 
+     RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+   SqrtBox["z"]}], TraditionalForm]], "AbstractMath"],
+
+Cell["\:6458\:8981\:306e\:7d9a\:304d\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "AbstractContinuation"],
+
+Cell["\:65e5\:4ed8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b", "Date"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:30bb\:30af\:30b7\:30e7\:30f3\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["\:30b5\:30d6\:30bb\:30af\:30b7\:30e7\:30f3\:30bf\:30a4\:30c8\:30eb\:3092\
+\:3053\:3053\:306b\:5165\:529b\:3059\:308b", "Subsection"],
+
+Cell["\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e\:8868\:793a\:3059\:308b\:5f0f\:3092\:4e0b\:306e\:5225\:306e\:30bb\:30eb\
+\:306b\:5165\:529b\:3059\:308b\:ff0e ", "Text"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{"x", 
+     RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+   SqrtBox["z"]}], TraditionalForm]], "Equation"],
+
+Cell[CellGroupData[{
+
+Cell["\:756a\:53f7\:4ed8\:304d\:306e\:9805\:76ee1\:306e\:30c6\:30ad\:30b9\
+\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e ", \
+"Item1Numbered"],
+
+Cell[CellGroupData[{
+
+Cell["\:9805\:76ee1\:306e\:6bb5\:843d\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "Item1Paragraph"],
+
+Cell[CellGroupData[{
+
+Cell["\:756a\:53f7\:4ed8\:304d\:306e\:9805\:76ee2 \:306e\:30c6\:30ad\:30b9\
+\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "Item2Numbered"],
+
+Cell[CellGroupData[{
+
+Cell["\:9805\:76ee2\:306e\:6bb5\:843d\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "Item2Paragraph"],
+
+Cell[CellGroupData[{
+
+Cell["\:756a\:53f7\:4ed8\:304d\:306e\:9805\:76ee3\:306e\:30c6\:30ad\:30b9\
+\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e ", \
+"Item3Numbered"],
+
+Cell["\:9805\:76ee3\:306e\:6bb5\:843d\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "Item3Paragraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e \:756a\:53f7\:4ed8\:304d\:3067\:8868\:793a\:3059\:308b\:5f0f\:3092\
+\:4e0b\:306e\:5225\:306e\:30bb\:30eb\:306b\:5165\:529b\:3059\:308b\:ff0e ", \
+"Text"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{"x", 
+     RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+   SqrtBox["z"]}], TraditionalForm]], "EquationNumbered"],
+
+Cell[CellGroupData[{
+
+Cell["\:9805\:76ee1\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\
+\:5165\:529b\:3059\:308b\:ff0e ", "Item1"],
+
+Cell[CellGroupData[{
+
+Cell["\:9805\:76ee1\:306e\:6bb5\:843d\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "Item1Paragraph"],
+
+Cell[CellGroupData[{
+
+Cell["\:9805\:76ee2 \:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\
+\:5165\:529b\:3059\:308b\:ff0e", "Item2"],
+
+Cell[CellGroupData[{
+
+Cell["\:9805\:76ee2\:306e\:6bb5\:843d\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "Item2Paragraph"],
+
+Cell[CellGroupData[{
+
+Cell["\:9805\:76ee3\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\
+\:5165\:529b\:3059\:308b\:ff0e ", "Item3"],
+
+Cell["\:9805\:76ee3\:306e\:6bb5\:843d\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "Item3Paragraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:30b5\:30d6\:30bb\:30af\:30b7\:30e7\:30f3\:30bf\:30a4\:30c8\:30eb\:3092\
+\:3053\:3053\:306b\:5165\:529b\:3059\:308b", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[Cell[GraphicsData["CompressedBitmap", "\<\
+eJztWLtKA0EUvdnNCwULH30aC7XzFwStbPwAYQlCLEQxYit2FhZpJIVWamMh
+iCCIjTYKNkIKGxEbsRDBQkTs1jl35q6768QQJSA4xc7O3HPfc2Y2ZDJYqszM
+BUuz5aA0sRgsVGbL1dL4/KIS+RkiquEpEeahmpqhRvWxZTXx+R2GIT/rGDMO
+cpCDHOQgB/1zaJBHnzamPmW5lOz65JI82qmsUS/PD1c36Xh9l7H31zc6re/T
+1vQK7VVrdN+4ieQX20cshx/oQwZMrX2eZBNhlbrH+gW2FLGoSCSt001XB2cJ
+7JtoNPKTBhQiGdw+3T3wXMJ6vOrhlCDDCjrQRWjIgEkamEvTLA0w6h7r9ye8
+igoKhDzejJR5s2i/rB8bjujY3JfH51j9xahesUUPsAYZ1Ns37oUXME3XDmYp
+Vc9EhTVE8dqNioma47lgJhLZQv2ycLgF49FeNOCzcD9KSa/0KPzTehizLJN0
+oirbKl5aLKayBQbL2gMNtyjdN3sBM1AFG+el6o+faCE363jMsHwCQFqGt9pP
+d0RLSUvONUzgO05dTf2clfo6XMFKfdHXMfNfYqI2VcNQKybkE0yQzJR1uilI
+HicCa2zV7XkjOg1yEQkG8sSS1ndX8cv9BDUgxp1stFxpePh21F1N34hiCS/2
+2zLfLGLLriTPR5q8xtuARbXLIstaZKPt74v5BnkWb30dzESXnWPiytdA2tmh
+DvyRHwkOcpCDHOQgB3UCkv9qMx+BuT88\
+\>"], "Graphics",
+  Evaluatable->False,
+  ImageSize->{144, 144},
+  ImageMargins->{{0, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}}]], "Figure"],
+
+Cell[TextData[{
+ StyleBox["\:56f3 ", "FigureCaptionLabel"],
+ StyleBox[
+ CounterBox["FigureCaption"], "FigureCaptionLabel"],
+ StyleBox[".\[ThickSpace]\[ThickSpace]\[ThickSpace]", "FigureCaptionLabel"],
+ StyleBox["\[ThickSpace]", "FigureCaptionLabel"],
+ "\:56f3\:306e\:30ad\:30e3\:30d7\:30b7\:30e7\:30f3"
+}], "FigureCaption"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[Cell[GraphicsData["CompressedBitmap", "\<\
+eJztWLtKA0EUvdnNCwULH30aC7XzFwStbPwAYQlCLEQxYit2FhZpJIVWamMh
+iCCIjTYKNkIKGxEbsRDBQkTs1jl35q6768QQJSA4xc7O3HPfc2Y2ZDJYqszM
+BUuz5aA0sRgsVGbL1dL4/KIS+RkiquEpEeahmpqhRvWxZTXx+R2GIT/rGDMO
+cpCDHOQgB/1zaJBHnzamPmW5lOz65JI82qmsUS/PD1c36Xh9l7H31zc6re/T
+1vQK7VVrdN+4ieQX20cshx/oQwZMrX2eZBNhlbrH+gW2FLGoSCSt001XB2cJ
+7JtoNPKTBhQiGdw+3T3wXMJ6vOrhlCDDCjrQRWjIgEkamEvTLA0w6h7r9ye8
+igoKhDzejJR5s2i/rB8bjujY3JfH51j9xahesUUPsAYZ1Ns37oUXME3XDmYp
+Vc9EhTVE8dqNioma47lgJhLZQv2ycLgF49FeNOCzcD9KSa/0KPzTehizLJN0
+oirbKl5aLKayBQbL2gMNtyjdN3sBM1AFG+el6o+faCE363jMsHwCQFqGt9pP
+d0RLSUvONUzgO05dTf2clfo6XMFKfdHXMfNfYqI2VcNQKybkE0yQzJR1uilI
+HicCa2zV7XkjOg1yEQkG8sSS1ndX8cv9BDUgxp1stFxpePh21F1N34hiCS/2
+2zLfLGLLriTPR5q8xtuARbXLIstaZKPt74v5BnkWb30dzESXnWPiytdA2tmh
+DvyRHwkOcpCDHOQgB3UCkv9qMx+BuT88\
+\>"], "Graphics",
+  Evaluatable->False,
+  ImageSize->{144, 144},
+  ImageMargins->{{0, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}}]], "Picture"],
+
+Cell[TextData[{
+ StyleBox["\:5199\:771f ", "PictureCaptionLabel"],
+ StyleBox[
+ CounterBox["PictureCaption"], "PictureCaptionLabel"],
+ StyleBox[".\[ThickSpace]\[ThickSpace]\[ThickSpace]", "PictureCaptionLabel"],
+ "\:5199\:771f\:306e\:30ad\:30e3\:30d7\:30b7\:30e7\:30f3"
+}], "PictureCaption"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:30bb\:30af\:30b7\:30e7\:30f3\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[TextData[{
+  "\:8868 ",
+  
+  CounterBox["TableTitle"],
+  ". "
+ }], "TableTitleLabel"],
+ "\:8868\:306e\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\:306b\:5165\:529b\
+\:3059\:308b"
+}], "TableTitle"],
+
+Cell[BoxData[
+ FormBox[
+  TagBox[GridBox[{
+     {
+      InterpretationBox[Cell[
+       "\:9805\:76ee\:898b\:51fa\:3057\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:9805\:76ee\:898b\:51fa\:3057\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]}
+    },
+    AutoDelete->False,
+    BaseStyle->{TextJustification -> 0, ParagraphIndent -> 0},
+    GridBoxAlignment->{"Columns" -> {Left, Center}, "Rows" -> {Bottom, Top}},
+    GridBoxDividers->{
+     "Columns" -> {False}, 
+      "RowsIndexed" -> {
+       1 -> AbsoluteThickness[2.], 2 -> AbsoluteThickness[0.5], -1 -> 
+        AbsoluteThickness[0.5]}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+    GridBoxSpacings->{"Columns" -> {{10.}}, "Rows" -> {1, 0.5}}],
+   "Grid"], TraditionalForm]], "Table"],
+
+Cell["\:8868\:306e\:6ce8\:91c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e", "TableNote"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["\:8868 ", "TableTitleLabel"],
+ StyleBox[
+ CounterBox["TableTitle"], "TableTitleLabel"],
+ StyleBox[".\[ThickSpace]\[ThickSpace]", "TableTitleLabel"],
+ "\:8868\:306e\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\:306b\:5165\:529b\
+\:3059\:308b"
+}], "TableTitle"],
+
+Cell[BoxData[
+ FormBox[
+  TagBox[GridBox[{
+     {
+      InterpretationBox[Cell[
+       "\:9805\:76ee\:898b\:51fa\:3057\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:9805\:76ee\:898b\:51fa\:3057\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell[TextData[Cell[BoxData[
+        FormBox[
+         InterpretationBox[Cell[
+          "\:9805\:76ee\:898b\:51fa\:3057\:3092\:3053\:3053\:306b\:5165\:529b",
+           Editable->True,
+           FontSlant->Italic],
+          TextCell["Enter column head here", Italic, Editable -> True]], 
+         TraditionalForm]], "Table"]],
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]}
+    },
+    AutoDelete->False,
+    BaseStyle->{TextJustification -> 0, ParagraphIndent -> 0},
+    GridBoxAlignment->{"Columns" -> {Left, Center}, "Rows" -> {Bottom, Top}},
+    GridBoxDividers->{
+     "Columns" -> {False}, 
+      "RowsIndexed" -> {
+       1 -> AbsoluteThickness[2.], 2 -> AbsoluteThickness[0.5], -1 -> 
+        AbsoluteThickness[0.5]}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+    GridBoxSpacings->{"Columns" -> {{6.666666666666666}}, "Rows" -> {1, 0.5}}],
+   "Grid"], TraditionalForm]], "Table"],
+
+Cell["\:8868\:306e\:6ce8\:91c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e", "TableNote"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["\:8868 ", "TableTitleLabel"],
+ StyleBox[
+ CounterBox["TableTitle"], "TableTitleLabel"],
+ StyleBox[".\[ThickSpace]\[ThickSpace]\[ThickSpace]", "TableTitleLabel"],
+ "\:8868\:306e\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\:306b\:5165\:529b\
+\:3059\:308b"
+}], "TableTitle"],
+
+Cell[BoxData[
+ FormBox[
+  TagBox[GridBox[{
+     {
+      InterpretationBox[Cell[TextData[Cell[BoxData[
+        FormBox[
+         InterpretationBox[Cell[
+          "\:9805\:76ee\:898b\:51fa\:3057\:3092\:3053\:3053\:306b\:5165\:529b",
+           Editable->True,
+           FontSlant->Italic],
+          TextCell["Enter column head here", Italic, Editable -> True]], 
+         TraditionalForm]], "Table"]],
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:9805\:76ee\:898b\:51fa\:3057\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:9805\:76ee\:898b\:51fa\:3057\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:9805\:76ee\:898b\:51fa\:3057\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]}
+    },
+    AutoDelete->False,
+    BaseStyle->{TextJustification -> 0, ParagraphIndent -> 0},
+    GridBoxAlignment->{"Columns" -> {Left, Center}, "Rows" -> {Bottom, Top}},
+    GridBoxDividers->{
+     "Columns" -> {False}, 
+      "RowsIndexed" -> {
+       1 -> AbsoluteThickness[2.], 2 -> AbsoluteThickness[0.5], -1 -> 
+        AbsoluteThickness[0.5]}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+    GridBoxSpacings->{"Columns" -> {{5.}}, "Rows" -> {1, 0.5}}],
+   "Grid"], TraditionalForm]], "Table"],
+
+Cell["\:8868\:306e\:6ce8\:91c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e", "TableNote"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["\:8868 ", "TableTitleLabel"],
+ StyleBox[
+ CounterBox["TableTitle"], "TableTitleLabel"],
+ StyleBox[".\[ThickSpace]\[ThickSpace]\[ThickSpace]", "TableTitleLabel"],
+ "\:8868\:306e\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\:306b\:5165\:529b\
+\:3059\:308b"
+}], "TableTitle"],
+
+Cell[BoxData[
+ FormBox[
+  TagBox[GridBox[{
+     {
+      InterpretationBox[Cell[
+       "\:9805\:76ee\:898b\:51fa\:3057\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:9805\:76ee\:898b\:51fa\:3057\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:9805\:76ee\:898b\:51fa\:3057\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:9805\:76ee\:898b\:51fa\:3057\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:9805\:76ee\:898b\:51fa\:3057\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell[
+       "\:30c7\:30fc\:30bf\:3092\:3053\:3053\:306b\:5165\:529b",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]}
+    },
+    AutoDelete->False,
+    BaseStyle->{TextJustification -> 0, ParagraphIndent -> 0},
+    GridBoxAlignment->{"Columns" -> {Left, Center}, "Rows" -> {Bottom, Top}},
+    GridBoxDividers->{
+     "Columns" -> {False}, 
+      "RowsIndexed" -> {
+       1 -> AbsoluteThickness[2.], 2 -> AbsoluteThickness[0.5], -1 -> 
+        AbsoluteThickness[0.5]}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+    GridBoxSpacings->{"Columns" -> {{4.}}, "Rows" -> {1, 0.5}}],
+   "Grid"], TraditionalForm]], "Table"],
+
+Cell["\:8868\:306e\:6ce8\:91c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e", "TableNote"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:30b5\:30d6\:30bb\:30af\:30b7\:30e7\:30f3\:30bf\:30a4\:30c8\:30eb\:3092\
+\:3053\:3053\:306b\:5165\:529b\:3059\:308b", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["\:5b9a\:7406\[MediumSpace]\[ThinSpace]", "TheoremLabel"],
+ StyleBox[
+ CounterBox["Theorem"], "TheoremLabel"],
+ StyleBox[". ", "TheoremLabel"],
+ "\:5b9a\:7406\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e"
+}], "Theorem"],
+
+Cell["\:5b9a\:7406\:306e\:7d9a\:304d\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "TheoremContinuation"],
+
+Cell[TextData[{
+ StyleBox["\:7cfb\[MediumSpace]\[ThinSpace]", "CorollaryLabel"],
+ StyleBox[
+ CounterBox["Corollary"], "CorollaryLabel"],
+ StyleBox[". ", "CorollaryLabel"],
+ "\:7cfb\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\
+\:3059\:308b\:ff0e"
+}], "Corollary"],
+
+Cell["\:7cfb\:306e\:7d9a\:304d\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b\:ff0e", "LemmaContinuation"],
+
+Cell[TextData[{
+ StyleBox["\:5b9a\:7fa9\[MediumSpace]", "DefinitionLabel"],
+ StyleBox[
+ CounterBox["Definition"], "DefinitionLabel"],
+ StyleBox[". ", "DefinitionLabel"],
+ "\:5b9a\:7fa9\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e"
+}], "Definition"],
+
+Cell["\:5b9a\:7fa9\:306e\:7d9a\:304d\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "DefinitionContinuation"],
+
+Cell[TextData[{
+ StyleBox["\:547d\:984c\[MediumSpace]\[ThinSpace]", "PropositionLabel"],
+ StyleBox[
+ CounterBox["Proposition"], "PropositionLabel"],
+ StyleBox[". ", "PropositionLabel"],
+ "\:547d\:984c\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e"
+}], "Proposition"],
+
+Cell["\:547d\:984c\:306e\:7d9a\:304d\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "PropositionContinuation"],
+
+Cell[TextData[{
+ StyleBox["\:63a8\:6e2c\[MediumSpace]\[ThinSpace]", "ConjectureLabel"],
+ StyleBox[
+ CounterBox["Conjecture"], "ConjectureLabel"],
+ StyleBox[". ", "ConjectureLabel"],
+ "\:63a8\:6e2c\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e"
+}], "Conjecture"],
+
+Cell["\:63a8\:6e2c\:306e\:7d9a\:304d\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "ConjectureContinuation"],
+
+Cell[TextData[{
+ StyleBox["\:516c\:7406\[MediumSpace]\[ThinSpace]", "AxiomLabel"],
+ StyleBox[
+ CounterBox["Axiom"], "AxiomLabel"],
+ StyleBox[". ", "AxiomLabel"],
+ "\:516c\:7406\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e"
+}], "Axiom"],
+
+Cell["\:516c\:7406\:306e\:7d9a\:304d\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "AxiomContinuation"],
+
+Cell[TextData[{
+ StyleBox["\:898f\:5247\[MediumSpace]\[ThinSpace]", "RuleLabel"],
+ StyleBox[
+ CounterBox["Rule"], "RuleLabel"],
+ StyleBox[". ", "RuleLabel"],
+ "\:898f\:5247\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e"
+}], "Rule"],
+
+Cell["\:898f\:5247\:306e\:7d9a\:304d\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "RuleContinuation"],
+
+Cell[TextData[{
+ StyleBox["\:4f8b\:984c\[MediumSpace]\[MediumSpace]\[ThinSpace]", 
+  "ExampleLabel"],
+ StyleBox[
+ CounterBox["Example"], "ExampleLabel"],
+ StyleBox[". ", "ExampleLabel"],
+ "\:4f8b\:984c\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e"
+}], "Example"],
+
+Cell["\:4f8b\:984c\:306e\:7d9a\:304d\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "ExampleContinuation"],
+
+Cell[TextData[{
+ StyleBox["\:898b\:89e3\[MediumSpace]\[ThinSpace]", "RemarkLabel"],
+ StyleBox[
+ CounterBox["Remark"], "RemarkLabel"],
+ StyleBox[". ", "RemarkLabel"],
+ "\:898b\:89e3\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e"
+}], "Remark"],
+
+Cell["\:898b\:89e3\:306e\:7d9a\:304d\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "RemarkContinuation"],
+
+Cell[TextData[{
+ StyleBox["\:89e3\:7b54\[MediumSpace]\[ThinSpace]", "SolutionLabel"],
+ StyleBox[
+ CounterBox["Remark"], "SolutionLabel"],
+ StyleBox[". ", "SolutionLabel"],
+ "\:89e3\:7b54\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e"
+}], "Solution"],
+
+Cell["\:89e3\:7b54\:306e\:7d9a\:304d\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "SolutionContinuation"],
+
+Cell[TextData[{
+ StyleBox["\:8a3c\:660e\[MediumSpace]\[ThinSpace]", "ProofLabel"],
+ StyleBox[
+ CounterBox["Remark"], "ProofLabel"],
+ StyleBox[". ", "ProofLabel"],
+ "\:8a3c\:660e\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e"
+}], "Proof"],
+
+Cell["\:8a3c\:660e\:306e\:7d9a\:304d\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\
+\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "ProofContinuation"],
+
+Cell["\[EmptySquare]", "QED"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:4ed8\:9332\:306e\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b", "AppendixSection"],
+
+Cell[CellGroupData[{
+
+Cell["\:4ed8\:9332\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e\:4ed8\:9332\:3067\:8868\:793a\:3059\:308b\:65b9\:7a0b\
+\:5f0f\:306f\:4e0b\:306e\:5225\:306e\:30bb\:30eb\:306b\:5165\:529b\:3059\:308b\
+\:ff0e", "Appendix"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{"x", 
+     RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+   SqrtBox["z"]}], TraditionalForm]], "AppendixEquation"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:8b1d\:8f9e\:306e\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b", "AcknowledgmentsSection"],
+
+Cell["\:8b1d\:8f9e\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e", "Acknowledgments"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:5dfb\:672b\:306e\:6ce8\:306e\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b", "EndnoteSection"],
+
+Cell["\:5dfb\:672b\:306e\:6ce8\:306e\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b\:ff0e", "Endnote"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:53c2\:8003\:6587\:732e\:306e\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b", "ReferenceSection"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\:8457\:8005\:6c0f\:540d, \[OpenCurlyDoubleQuote]\:8ad6\:6587\:984c\:540d,\
+\[CloseCurlyDoubleQuote] ",
+ StyleBox["\:96d1\:8a8c\:540d",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["\:5dfb",
+  FontWeight->"Bold"],
+ "(\:53f7), \:51fa\:7248\:5e74 pp. \
+\:958b\:59cb\:30da\:30fc\:30b8\:6570\[Dash]\:6700\:7d42\:30da\:30fc\:30b8\
+\:6570."
+}], "Reference"],
+
+Cell[TextData[{
+ "\:8457\:80051\:6c0f\:540d and \:8457\:80052\:6c0f\:540d, \
+\[OpenCurlyDoubleQuote]\:8ad6\:6587\:984c\:540d,\[CloseCurlyDoubleQuote] ",
+ StyleBox["\:96d1\:8a8c\:540d",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["\:5dfb",
+  FontWeight->"Bold"],
+ "(\:53f7), \:51fa\:7248\:5e74 pp. \
+\:958b\:59cb\:30da\:30fc\:30b8\:6570\[Dash]\:6700\:7d42\:30da\:30fc\:30b8\
+\:6570."
+}], "Reference"],
+
+Cell[TextData[{
+ "\:8457\:80051\:6c0f\:540d, \:8457\:80052\:6c0f\:540d, and \:8457\:80053\
+\:6c0f\:540d, \[OpenCurlyDoubleQuote]\:8ad6\:6587\:984c\:540d,\
+\[CloseCurlyDoubleQuote] ",
+ StyleBox["\:96d1\:8a8c\:540d",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["\:5dfb",
+  FontWeight->"Bold"],
+ "(\:53f7), \:51fa\:7248\:5e74 pp. \
+\:958b\:59cb\:30da\:30fc\:30b8\:6570\[Dash]\:6700\:7d42\:30da\:30fc\:30b8\
+\:6570."
+}], "Reference"],
+
+Cell[TextData[{
+ "\:8457\:8005\:6c0f\:540d, ",
+ StyleBox["\:66f8\:540d",
+  FontSlant->"Italic"],
+ ", \:7248\:6570th ed., \:51fa\:7248\:793e\:6240\:5728\:5730: ",
+ "\:51fa\:7248\:793e\:540d",
+ ", \:51fa\:7248\:5e74."
+}], "Reference"],
+
+Cell[TextData[{
+ "\:8457\:80051\:6c0f\:540d and \:8457\:80052\:6c0f\:540d, ",
+ StyleBox["\:66f8\:540d",
+  FontSlant->"Italic"],
+ ", \:7248\:6570th ed., \:51fa\:7248\:793e\:6240\:5728\:5730: ",
+ "\:51fa\:7248\:793e\:540d",
+ ", \:51fa\:7248\:5e74."
+}], "Reference"],
+
+Cell[TextData[{
+ "\:8457\:80051\:6c0f\:540d, \:8457\:80052\:6c0f\:540d, and \:8457\:80053\
+\:6c0f\:540d, ",
+ StyleBox["\:66f8\:540d",
+  FontSlant->"Italic"],
+ ",\:7248\:6570th ed., \:51fa\:7248\:793e\:6240\:5728\:5730: ",
+ "\:51fa\:7248\:793e\:540d",
+ ", \:51fa\:7248\:5e74."
+}], "Reference"],
+
+Cell[TextData[{
+ "\:8457\:8005\:6c0f\:540d, \[OpenCurlyDoubleQuote]\:7814\:7a76\:8ad6\:6587\
+\:306e\:984c\:540d,\[CloseCurlyDoubleQuote] in ",
+ StyleBox["\:5b66\:4f1a\:7d00\:8981\:306e\:984c\:540d (\:5b66\:4f1a\:306e\
+\:7565\:79f0\:3068\:958b\:50ac\:5e74)",
+  FontSlant->"Italic"],
+ ", \:5b66\:4f1a\:958b\:50ac\:5730 (\:7de8\:8005\:6c0f\:540d, ed.), \:51fa\
+\:7248\:793e\:6240\:5728\:5730: \:51fa\:7248\:793e\:540d, ",
+ "\:51fa\:7248\:65e5",
+ " pp. \:958b\:59cb\:30da\:30fc\:30b8\:6570\[Dash]\:6700\:7d42\:30da\:30fc\
+\:30b8\:6570."
+}], "Reference"],
+
+Cell[TextData[{
+ "\:8457\:80051\:6c0f\:540d and \:8457\:80052\:6c0f\:540d, \
+\[OpenCurlyDoubleQuote]\:7814\:7a76\:8ad6\:6587\:306e\:984c\:540d,\
+\[CloseCurlyDoubleQuote] in ",
+ StyleBox["\:5b66\:4f1a\:7d00\:8981\:306e\:984c\:540d (\:5b66\:4f1a\:306e\
+\:7565\:79f0\:3068\:958b\:50ac\:5e74)",
+  FontSlant->"Italic"],
+ ", \:5b66\:4f1a\:958b\:50ac\:5730 (\:7de8\:8005\:6c0f\:540d, ed.), \:51fa\
+\:7248\:793e\:6240\:5728\:5730: \:51fa\:7248\:793e\:540d, ",
+ "\:51fa\:7248\:65e5",
+ " pp. \:958b\:59cb\:30da\:30fc\:30b8\:6570\[Dash]\:6700\:7d42\:30da\:30fc\
+\:30b8\:6570."
+}], "Reference"],
+
+Cell[TextData[{
+ "\:8457\:80051\:6c0f\:540d, \:8457\:80052\:6c0f\:540d, and \:8457\:80053\
+\:6c0f\:540d, \[OpenCurlyDoubleQuote]\:7814\:7a76\:8ad6\:6587\:306e\:984c\
+\:540d,\[CloseCurlyDoubleQuote] in ",
+ StyleBox["\:5b66\:4f1a\:7d00\:8981\:306e\:984c\:540d (\:5b66\:4f1a\:306e\
+\:7565\:79f0\:3068\:958b\:50ac\:5e74)",
+  FontSlant->"Italic"],
+ ", \:5b66\:4f1a\:958b\:50ac\:5730 (\:7de8\:8005\:6c0f\:540d, ed.), \:51fa\
+\:7248\:793e\:6240\:5728\:5730: \:51fa\:7248\:793e\:540d, \:51fa\:7248\:65e5 \
+pp. \:958b\:59cb\:30da\:30fc\:30b8\:6570\[Dash]\:6700\:7d42\:30da\:30fc\:30b8\
+\:6570."
+}], "Reference"],
+
+Cell["\:8457\:8005\:6c0f\:540d. \[OpenCurlyDoubleQuote]Web\:30b5\:30a4\:30c8\
+\:306e\:984c\:540d.\[CloseCurlyDoubleQuote] (\:6700\:5f8c\:306b\:66f4\:65b0\
+\:3055\:308c\:305f\:65e5\:3042\:308b\:3044\:306f\:8a2a\:554f\:3057\:305f\:65e5\
+\:3092\:300c\:6708\:7701\:7565\:5f62 \:65e5, \:5e74\:300d\:306e\:5f62\:5f0f\
+\:3067) URL.", "Reference"],
+
+Cell["\:8457\:8005\:6c0f\:540d. \[OpenCurlyDoubleQuote]\:8a18\:5165\:4e8b\
+\:9805\:306e\:984c\:540d\[CloseCurlyDoubleQuote] from \:4f1a\:793e\:540d\
+\[LongDash]A \:4f1a\:793e\:540d Web Resource. URL.", "Reference"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{775, 697},
+WindowMargins->{{Automatic, 308}, {Automatic, 207}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (2013\:5e7412\:670826\
+\:65e5)",
+StyleDefinitions->FrontEnd`FileName[{"Article"}, "JournalArticle.nb", 
+  CharacterEncoding -> "ShiftJIS"],
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 91, 1, 75, "Title"],
+Cell[CellGroupData[{
+Cell[695, 27, 98, 1, 43, "Author"],
+Cell[796, 30, 103, 1, 14, "Institution"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[936, 36, 110, 1, 43, "Author"],
+Cell[1049, 39, 103, 1, 14, "Institution"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1189, 45, 119, 1, 46, "AbstractSection"],
+Cell[1311, 48, 255, 3, 36, "Abstract"],
+Cell[1569, 53, 183, 6, 43, "AbstractMath"],
+Cell[1755, 61, 148, 1, 18, "AbstractContinuation"],
+Cell[1906, 64, 76, 0, 27, "Date"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2019, 69, 123, 1, 49, "Section"],
+Cell[CellGroupData[{
+Cell[2167, 74, 138, 1, 35, "Subsection"],
+Cell[2308, 77, 207, 2, 22, "Text"],
+Cell[2518, 81, 179, 6, 43, "Equation"],
+Cell[CellGroupData[{
+Cell[2722, 91, 157, 2, 17, "Item1Numbered"],
+Cell[CellGroupData[{
+Cell[2904, 97, 137, 1, 16, "Item1Paragraph"],
+Cell[CellGroupData[{
+Cell[3066, 102, 155, 1, 17, "Item2Numbered"],
+Cell[CellGroupData[{
+Cell[3246, 107, 137, 1, 16, "Item2Paragraph"],
+Cell[CellGroupData[{
+Cell[3408, 112, 157, 2, 17, "Item3Numbered"],
+Cell[3568, 116, 137, 1, 70, "Item3Paragraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[3768, 124, 240, 3, 70, "Text"],
+Cell[4011, 129, 187, 6, 70, "EquationNumbered"],
+Cell[CellGroupData[{
+Cell[4223, 139, 117, 1, 70, "Item1"],
+Cell[CellGroupData[{
+Cell[4365, 144, 137, 1, 70, "Item1Paragraph"],
+Cell[CellGroupData[{
+Cell[4527, 149, 117, 1, 70, "Item2"],
+Cell[CellGroupData[{
+Cell[4669, 154, 137, 1, 70, "Item2Paragraph"],
+Cell[CellGroupData[{
+Cell[4831, 159, 117, 1, 70, "Item3"],
+Cell[4951, 162, 137, 1, 70, "Item3Paragraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5185, 173, 138, 1, 70, "Subsection"],
+Cell[CellGroupData[{
+Cell[5348, 178, 965, 18, 70, "Figure"],
+Cell[6316, 198, 323, 7, 70, "FigureCaption"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6676, 210, 966, 18, 70, "Picture"],
+Cell[7645, 230, 290, 6, 70, "PictureCaption"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7996, 243, 123, 1, 70, "Section"],
+Cell[CellGroupData[{
+Cell[8144, 248, 216, 9, 70, "TableTitle"],
+Cell[8363, 259, 2478, 61, 70, "Table"],
+Cell[10844, 322, 101, 1, 70, "TableNote"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10982, 328, 283, 7, 70, "TableTitle"],
+Cell[11268, 337, 3672, 88, 70, "Table"],
+Cell[14943, 427, 101, 1, 70, "TableNote"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15081, 433, 296, 7, 70, "TableTitle"],
+Cell[15380, 442, 4591, 109, 70, "Table"],
+Cell[19974, 553, 101, 1, 70, "TableNote"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20112, 559, 296, 7, 70, "TableTitle"],
+Cell[20411, 568, 5279, 124, 70, "Table"],
+Cell[25693, 694, 101, 1, 70, "TableNote"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25831, 700, 138, 1, 70, "Subsection"],
+Cell[CellGroupData[{
+Cell[25994, 705, 286, 7, 70, "Theorem"],
+Cell[26283, 714, 147, 1, 70, "TheoremContinuation"],
+Cell[26433, 717, 284, 7, 70, "Corollary"],
+Cell[26720, 726, 139, 1, 70, "LemmaContinuation"],
+Cell[26862, 729, 289, 7, 70, "Definition"],
+Cell[27154, 738, 150, 1, 70, "DefinitionContinuation"],
+Cell[27307, 741, 306, 7, 70, "Proposition"],
+Cell[27616, 750, 151, 1, 70, "PropositionContinuation"],
+Cell[27770, 753, 301, 7, 70, "Conjecture"],
+Cell[28074, 762, 150, 1, 70, "ConjectureContinuation"],
+Cell[28227, 765, 276, 7, 70, "Axiom"],
+Cell[28506, 774, 145, 1, 70, "AxiomContinuation"],
+Cell[28654, 777, 271, 7, 70, "Rule"],
+Cell[28928, 786, 144, 1, 70, "RuleContinuation"],
+Cell[29075, 789, 303, 8, 70, "Example"],
+Cell[29381, 799, 147, 1, 70, "ExampleContinuation"],
+Cell[29531, 802, 281, 7, 70, "Remark"],
+Cell[29815, 811, 146, 1, 70, "RemarkContinuation"],
+Cell[29964, 814, 289, 7, 70, "Solution"],
+Cell[30256, 823, 148, 1, 70, "SolutionContinuation"],
+Cell[30407, 826, 277, 7, 70, "Proof"],
+Cell[30687, 835, 145, 1, 70, "ProofContinuation"],
+Cell[30835, 838, 29, 0, 70, "QED"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30925, 845, 119, 1, 70, "AppendixSection"],
+Cell[CellGroupData[{
+Cell[31069, 850, 260, 3, 70, "Appendix"],
+Cell[31332, 855, 187, 6, 70, "AppendixEquation"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31568, 867, 126, 1, 70, "AcknowledgmentsSection"],
+Cell[31697, 870, 125, 1, 70, "Acknowledgments"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31859, 876, 130, 1, 70, "EndnoteSection"],
+Cell[31992, 879, 129, 1, 70, "Endnote"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32158, 885, 132, 1, 70, "ReferenceSection"],
+Cell[CellGroupData[{
+Cell[32315, 890, 365, 11, 70, "Reference"],
+Cell[32683, 903, 396, 11, 70, "Reference"],
+Cell[33082, 916, 426, 12, 70, "Reference"],
+Cell[33511, 930, 232, 7, 70, "Reference"],
+Cell[33746, 939, 263, 7, 70, "Reference"],
+Cell[34012, 948, 292, 8, 70, "Reference"],
+Cell[34307, 958, 549, 11, 70, "Reference"],
+Cell[34859, 971, 582, 12, 70, "Reference"],
+Cell[35444, 985, 602, 11, 70, "Reference"],
+Cell[36049, 998, 339, 4, 70, "Reference"],
+Cell[36391, 1004, 214, 2, 70, "Reference"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

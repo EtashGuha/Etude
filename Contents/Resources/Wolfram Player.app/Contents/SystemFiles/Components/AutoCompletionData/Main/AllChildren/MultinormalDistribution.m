@@ -1,0 +1,1 @@
+{"Subscript", "PauliMatrix", "I", "DiagonalMatrix"}
