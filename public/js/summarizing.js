@@ -34,7 +34,8 @@ var btnClicked = false;
 var bookmarkOpened = false;
 var java = require('java');
 java.classpath.push("./Kernel.jar");
-java.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
+java.classpath.push("./Contents/Resources/Wolfram Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
+//njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
 var kernel = java.newInstanceSync('p1.Kernel');
 
 // for (var j = 0; j < i; j++){
