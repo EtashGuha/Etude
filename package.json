@@ -34,6 +34,7 @@
     "fs": "0.0.1-security",
     "hummus": "^1.0.104",
     "pdf.js-extract": "^0.1.1",
-    "sentence-tokenizer": "^1.0.1"
+    "sentence-tokenizer": "^1.0.1",
+    "string-similarity": "^3.0.0"
   }
 }

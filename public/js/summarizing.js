@@ -5,6 +5,8 @@ const path = require('path');
 // bookmarkStore.clear();
 // var i = bookmarkStore.size;
 
+var tools = require('./createFile/coordinates.js')
+const fs = require('fs')
 var bookmarkArray = [];
 var Tokenizer = require('sentence-tokenizer');
 var tokenizer = new Tokenizer('Chuck');
@@ -39,7 +41,8 @@ var bookmarkOpened = false;
 // }
 
 $("#bookmark_icon").click(function(){
-
+  
+  //PDFJS.GlobalWorkerOptions.workerSrc ='../../node_modules/pdfjs-dist/build/pdf.worker.js';
   // document.getElementById("bookmark_icon").src="./assets/images/bookmarkselected.png";
   // var whichpagetobookmark = $("#bookmark_select_page").val();
   //get the page number
@@ -58,6 +61,7 @@ $("#bookmark_icon").click(function(){
 })
 
 function showPDF(pdf_url,bookmark_page) {
+  //PDFJS.GlobalWorkerOptions.workerSrc ='../../node_modules/pdfjs-dist/build/pdf.worker.js';
     PDFJS.getDocument({ url: pdf_url }).then(function(pdf_doc) {
       __PDF_DOC = pdf_doc;
       __TOTAL_PAGES = __PDF_DOC.numPages;
@@ -300,11 +304,16 @@ function getTextByPageForSummarization(instance){
       deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
       deepai.callStandardApi("summarization", {
         text: textDsum}).then((resp) => {
+          fs.unlinkSync("./folderForHighlightedPDF/secVersion.pdf")
           processSummarizationResult(resp)
           noLineBreakText = resp["output"].replace(/(\r\n|\n|\r)/gm, " ");
 
           tokenizer.setEntry(noLineBreakText);
           console.log(tokenizer.getSentences());
+
+          tools.extractor(tokenizer.getSentences(),filepath, './folderForHighlightedPDF/secVersion.pdf');
+          checkFlag()
+          
         });
       return;
     }
@@ -332,6 +341,20 @@ $('#getRangeButton').click(function(){
   $('.su_popup').show();
 })
 
+
+function checkFlag() {
+    if(!fs.existsSync('/Users/etashguha/Documents/etude/folderForHighlightedPDF/secVersion.pdf')){
+      console.log("checking")
+      window.setTimeout(checkFlag, 100); /* this checks the flag every 100 milliseconds*/
+    } else {
+      viewerEle.innerHTML = "";
+      console.log(`./pdfjsOriginal/web/viewer.html?file=${'../../../../../secVersion.pdf'}`)
+      iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${'/Users/etashguha/Documents/etude/folderForHighlightedPDF/secVersion.pdf'}`);
+      // iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${'/Users/etashguha/Documents/etude/secVersion.pdf'}`);
+      viewerEle.appendChild(iframe);
+      console.log("DONE")
+    }
+}
 
 // function queueRenderPage(num) {
 //   if (pageRendering) {
