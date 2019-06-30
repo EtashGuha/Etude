@@ -1,1 +1,0 @@
-{"Sort", "Show", "ColorNegate", "Blur"}

@@ -1,1 +1,0 @@
-{"VertexCoordinates", "EdgeWeight"}

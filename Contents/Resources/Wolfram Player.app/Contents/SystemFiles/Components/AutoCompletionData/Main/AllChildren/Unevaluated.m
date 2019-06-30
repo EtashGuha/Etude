@@ -1,1 +1,0 @@
-{"Sequence", "SetAttributes", "D", "Apply"}

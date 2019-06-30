@@ -1,1 +1,0 @@
-{"Quantity", "Subscript", "None", "Range"}

@@ -1,1 +1,0 @@
-{Method -> {"\"LeastSquares\"", "\"DeltaFunction\""}}

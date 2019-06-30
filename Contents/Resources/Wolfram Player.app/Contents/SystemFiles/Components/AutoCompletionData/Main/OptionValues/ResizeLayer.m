@@ -1,1 +1,0 @@
-{Resampling -> {"\"Linear\"", "\"Nearest\""}}

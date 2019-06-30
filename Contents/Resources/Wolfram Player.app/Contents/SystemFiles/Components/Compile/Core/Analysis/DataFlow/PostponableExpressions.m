@@ -1,1 +1,0 @@
-(* Wolfram Language package *)

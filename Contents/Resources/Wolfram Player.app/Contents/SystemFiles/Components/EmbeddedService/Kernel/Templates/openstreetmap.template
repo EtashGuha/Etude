@@ -1,8 +1,0 @@
-<iframe 
-	width="500"
-	height="500" 
-	frameborder="0" 
-	scrolling="no" 
-	src="https://www.openstreetmap.org/export/embed.html?bbox=`lon1`%2C`lat1`%2C`lon2`%2C`lat2`&amp;layer=mapnik" 
-	style="border: 1px solid black">
-</iframe>

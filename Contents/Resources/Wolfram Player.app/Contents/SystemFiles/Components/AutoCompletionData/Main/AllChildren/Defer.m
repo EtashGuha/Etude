@@ -1,1 +1,0 @@
-{"TraditionalForm", "Sum", "Mean", "Blend"}

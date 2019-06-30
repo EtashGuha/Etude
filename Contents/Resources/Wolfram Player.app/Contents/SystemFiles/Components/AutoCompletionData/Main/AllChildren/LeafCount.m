@@ -1,1 +1,0 @@
-{"Numerator", "Simplify", "Expand"}

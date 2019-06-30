@@ -1,1 +1,0 @@
-{Method -> {"\"HarmonicMean\"", "\"HarrisStephens\"", "\"ShiTomasi\""}}

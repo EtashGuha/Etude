@@ -1,1 +1,0 @@
-{Appearance -> {"\"Horizontal\"", "\"Row\"", "\"Vertical\""}}

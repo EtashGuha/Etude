@@ -1,3 +1,0 @@
-(* PolyhedronOperations *)
-
-Get["PolyhedronOperations`PolyhedronOperations`"]

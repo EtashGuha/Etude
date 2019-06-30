@@ -1,4 +1,0 @@
-The Python software package is under a separate license. By proceeding you
-understand and agree that Python is a separate software package with separate
-licensing. Additionally, by proceeding you agree that pyzmq is a separate
-software package with separate licensing.

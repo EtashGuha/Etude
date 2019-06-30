@@ -1,7 +1,0 @@
-(* ::Package:: *)
-
-{
-"\[AltKey]",
-
-"\\[WindowsKey]"
-}

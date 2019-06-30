@@ -1,6 +1,0 @@
-C:\Jenkins\workspace\Component.NETLink.12.0\NETLink\build\Examples\Part2\MathKernelApp\bin\Release\MathKernelApp.exe
-C:\Jenkins\workspace\Component.NETLink.12.0\NETLink\build\Examples\Part2\MathKernelApp\bin\Release\Wolfram.NETLink.dll
-C:\Jenkins\workspace\Component.NETLink.12.0\NETLink\build\Examples\Part2\MathKernelApp\obj\Release\MathKernelApp.csprojResolveAssemblyReference.cache
-C:\Jenkins\workspace\Component.NETLink.12.0\NETLink\build\Examples\Part2\MathKernelApp\obj\Release\MathKernelApp.Form1.resources
-C:\Jenkins\workspace\Component.NETLink.12.0\NETLink\build\Examples\Part2\MathKernelApp\obj\Release\MathKernelApp.csproj.GenerateResource.Cache
-C:\Jenkins\workspace\Component.NETLink.12.0\NETLink\build\Examples\Part2\MathKernelApp\obj\Release\MathKernelApp.exe

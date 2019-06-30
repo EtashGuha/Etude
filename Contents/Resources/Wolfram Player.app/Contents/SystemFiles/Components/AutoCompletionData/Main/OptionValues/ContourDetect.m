@@ -1,1 +1,0 @@
-{CornerNeighbors -> {"None"}}

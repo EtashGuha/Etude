@@ -1,1 +1,0 @@
-{ScriptBaselineShifts -> {}, ScriptSizeMultipliers -> {".71"}}

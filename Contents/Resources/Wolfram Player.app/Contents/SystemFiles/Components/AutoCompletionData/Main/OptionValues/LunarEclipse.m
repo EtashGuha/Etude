@@ -1,1 +1,0 @@
-{EclipseType -> {"Automatic", "\"Total\"", "\"Partial\""}}

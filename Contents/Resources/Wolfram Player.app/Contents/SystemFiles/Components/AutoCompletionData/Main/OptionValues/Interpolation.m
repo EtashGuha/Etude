@@ -1,1 +1,0 @@
-{Method -> {"\"Spline\"", "\"Hermite\""}}

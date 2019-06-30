@@ -1,1 +1,0 @@
-{CharacterEncoding -> {"\"MacintoshRoman\"", "\"Symbol\""}}

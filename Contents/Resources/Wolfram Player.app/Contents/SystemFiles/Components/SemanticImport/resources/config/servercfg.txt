@@ -1,4 +1,0 @@
-{"Setting" : "ServiceAddress", "Value" : ":"}
-{"Setting" : "WebdavPath", "Value" : ""}
-{"Setting" : "ConsumerKey", "Value" : ""}
-{"Setting" : "ConsumerSecret", "Value" : ""}

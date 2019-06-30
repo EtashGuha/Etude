@@ -1,1 +1,0 @@
-{"ViewPoint", "PlotRange", "Automatic"}

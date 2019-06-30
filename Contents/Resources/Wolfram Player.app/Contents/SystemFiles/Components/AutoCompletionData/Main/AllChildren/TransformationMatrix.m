@@ -1,1 +1,0 @@
-{"RotationTransform", "TranslationTransform", "RescalingTransform"}

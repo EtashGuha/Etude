@@ -1,1 +1,0 @@
-(* https://github.com/troore/scale/tree/master/scale/alias/shapirohorowitz *)

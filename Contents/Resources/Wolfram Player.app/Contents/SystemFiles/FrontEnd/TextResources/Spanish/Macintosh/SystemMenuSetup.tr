@@ -1,6 +1,0 @@
-@@resource SystemMenuSetup
-Menu["System", {
-	Item["Nuevo", "New"],
-	Item["Abrir...", "Open"],
-	Item["Documentation Center", SelectionHelpDialog[False]]
-}]

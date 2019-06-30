@@ -1,1 +1,0 @@
-{"Quantity", "None", "Pi", "ArcTan"}

@@ -1,1 +1,0 @@
-{Appearance -> {"\"Frameless\"", "\"DialogBox\"", "\"Palette\""}}
