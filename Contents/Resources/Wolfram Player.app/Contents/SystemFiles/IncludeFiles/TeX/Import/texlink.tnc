@@ -1,0 +1,75 @@
+\makeatletter
+% texlink.tnc
+\def\@MathOutEscapes{%
+    \chardef\\=`\\%
+    \chardef\{=`\{%
+    \chardef\}=`\}%
+    \chardef\n="0A%
+    \chardef~=`\~%
+    \let\!=\relax
+    \let\%=\relax
+   \let\&=\relax
+    \let\(=\relax
+    \let\)=\relax
+    \let\[=\relax
+    \let\]=\relax
+    \let\/=\relax
+    \let\*=\relax
+    \let\@=\relax
+    \let\^=\relax
+    \let\_=\relax
+    \let\`=\relax
+    \let\"=\relax
+    \let\:=\relax
+    \let\+=\relax
+    \let\muni=\@MathOutUnicode
+}
+
+
+\newif\if@marun
+\global\@marunfalse
+
+\def\@eolactive{\catcode`\^^M=13\relax}
+\def\@Rawcatcodes{
+    \catcode`\#=12\catcode`\$=12\catcode`\&=12\catcode`\^=12\relax
+    \catcode`\_=12\catcode`\~=12\catcode`\%=12\relax
+}
+\def\@SFcatcodes{
+    \@Rawcatcodes
+    \catcode`\ =12
+    \@eolactive
+}
+
+
+\def\@MLOpen{\special{TnbMLOpen}}
+\def\@MLClose{\special{TnbMLClose}}
+\def\@MLEndPacket{\special{TnbMLEndPacket}}
+\def\@MLFlush{\special{TnbMLFlush}}
+\def\@MLResult{\special{TnbMLResult}}
+\def\@MLStringResult{\special{TnbMLStringResult}}
+\def\@MLIgnoreResult{\special{TnbMLIgnoreResult}}
+\def\@MLPutString#1{\special{TnbMLPutString:#1}}
+\def\@MLPutFunction#1{\special{TnbMLPutFunction:#1}}
+
+
+\def\TNBMRun{\begingroup\@SFcatcodes\@TNBMRun}
+% \@TNBeol turns TeX end-of-lines into linefeeds ("0A) for the kernel
+{\@eolactive\catcode"0A=12 \gdef\@TNBeol{\@eolactive\let^^M=^^J}}
+\def\@TNBMRun#1{\endgroup\@@TNBMRun{#1}}
+\def\@@TNBMRun#1{\relax%
+    \@maruntrue%
+	{%
+	\begingroup
+    \@MLPutFunction{EnterTextPacket}%
+    \@MathOutEscapes
+    \@TNBeol
+    \@MLPutString{#1}%
+    \endgroup
+    \@MLEndPacket
+    \@MLResult
+	}
+    \@marunfalse%
+}
+\makeatother
+% end texlink.tnc code
+

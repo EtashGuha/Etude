@@ -1,0 +1,583 @@
+\message{FILE: This is amsmath.sty}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\defaultMathEnv{\special{TnbSetDefaultStyle:DisplayMath:NumberedEquation}}
+\defaultMathEnv
+
+%%\newenvironment{gather}
+\def\gather{%
+  \special{TnbSetDefaultStyle:DisplayMath:NumberedEquation}
+  \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{"Tex Macro Name"->"gather"}}%
+  \eqnarray
+}
+\def\endgather{%
+  \endeqnarray
+  \defaultMathEnv
+}
+
+%%\newenvironment{gather*}
+\@namedef{gather*}{%
+  \special{TnbSetDefaultStyle:DisplayMath:Equation}
+  \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{"Tex Macro Name"->"gather*"}}%
+  \eqnarray
+}
+\@namedef{endgather*}{%
+  \endeqnarray
+  \defaultMathEnv
+}
+
+%%\newenvironment{gathered}
+\let\gathered\gather
+\let\endgathered\endgather
+
+%%\newenvironment{multline}
+\def\multline{%
+  \special{TnbSetDefaultStyle:DisplayMath:NumberedEquation}
+  \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{"Tex Macro Name"->"multline"}}%
+  \equation
+}
+\def\endmultline{%
+  \endequation
+  \defaultMathEnv
+}
+
+%%\newenvironment{multline*}
+\@namedef{multline*}{%
+  \special{TnbSetDefaultStyle:DisplayMath:Equation}
+  \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{"Tex Macro Name"->"multline*"}}%
+  \equation
+}
+\@namedef{endmultline*}{%
+  \endequation
+  \defaultMathEnv
+}
+
+%%\renewenvironment{matrix}
+\def\matrix{%
+    \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{"Tex Macro Name"->"matrix"}}%
+    \let\@acol\@arrayacol
+    \let\@classz\@arrayclassz
+    \let\@classiv\@arrayclassiv
+    \let\\\@arraycr
+    \def\@halignto{}
+    \@array[c]{c}
+}
+\def\endmatrix{\crcr\egroup\egroup}
+
+%%\renewenvironment{pmatrix}
+\def\pmatrix{%
+    \left(
+    \begin{matrix}
+}
+\def\endpmatrix{%
+    \end{matrix}
+    \right)
+}
+
+%%\newenvironment{bmatrix}
+\def\bmatrix{%
+    \left[
+    \begin{matrix}
+}
+\def\endbmatrix{%
+    \end{matrix}
+    \right]
+}
+
+%%\newenvironment{Bmatrix}
+\def\Bmatrix{%
+    \left\{
+    \begin{matrix}
+}
+\def\endBmatrix{%
+    \end{matrix}
+    \right\}
+}
+
+%%\newenvironment{vmatrix}
+\def\vmatrix{%
+    \left|
+    \begin{matrix}
+}
+\def\endvmatrix{%
+    \end{matrix}
+    \right|
+}
+
+%%\newenvironment{Vmatrix}
+\def\Vmatrix{%
+    \left|\left|
+    \begin{matrix}
+}
+\def\endVmatrix{%
+    \end{matrix}
+    \right|\right|
+}
+
+%%\newenvironment{smallmatrix}
+\let\smallmatrix\matrix
+\let\endsmallmatrix\endmatrix
+
+%%\newenvironment{subarray}
+\let\subarray\array
+\let\endsubarray\endarray
+
+%%\renewenvironment{cases}
+\def\cases{%
+    \left\{
+    \begin{matrix}
+}
+\def\endcases{%
+    \end{matrix}
+    \right.
+}
+
+%%\newenvironment{align}
+\def\align{%
+    \let\@acol\@arrayacol
+    \let\@classz\@arrayclassz
+    \let\@classiv\@arrayclassiv
+    \let\\\@arraycr
+    \def\@halignto{}
+    \@array[c]{c}
+}
+\def\endalign{%
+    \crcr\egroup\egroup%
+}
+
+%%\newenvironment{align*}
+\@namedef{align*}{%
+    \let\@acol\@arrayacol
+    \let\@classz\@arrayclassz
+    \let\@classiv\@arrayclassiv
+    \let\\\@arraycr
+    \def\@halignto{}
+    \@array[c]{c}
+}
+\@namedef{endalign*}{%
+    \crcr\egroup\egroup%
+}
+
+%%\newenvironment{aligned}
+\let\aligned\align
+\let\endaligned\endalign
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Implement the various equation environments of AMSMath including
+%% subequations, alignat, alignat*, xalignat, xalignat*, xxalignat,
+%% flalign, flalign*, split, *multiline, *multiline*, *equation, *equation*,
+%% mathdisplay.
+%% 
+
+%%subequations
+
+\let\alignat\align
+\let\endalignat\endalign
+
+\@namedef{alignat*}{\align}
+\@namedef{endalignat*}{\align}
+
+\let\xalignat\align
+\let\endxalignat\endalign
+
+\@namedef{xalignat*}{\align}
+\@namedef{endxalignat*}{\endalign}
+
+\let\xxalignat\align
+\let\endxxalignat\endalign
+
+\let\flalign\align
+\let\endflalign\endalign
+
+\@namedef{flalign*}{\align}
+\@namedef{endflalign*}{\endalign}
+
+\let\split\align
+\let\endsplit\endalign
+
+%%mathdisplay
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\varepsilon\epsilon
+\def\textasciicircum{\ifmmode\wedge\else$\wedge$\fi}
+
+\newcommand\varGamma{%
+    \leavevmode{%
+        \TnbPush{Generic}{StyleBox}%
+        \special{TnbAddOption:Generic:FontSlant->"Italic"}%
+        \Gamma%
+    }%
+}
+\newcommand\varDelta{%
+    \leavevmode{%
+        \TnbPush{Generic}{StyleBox}%
+        \special{TnbAddOption:Generic:FontSlant->"Italic"}%
+        \Delta%
+    }%
+}
+\newcommand\varTheta{%
+    \leavevmode{%
+        \TnbPush{Generic}{StyleBox}%
+        \special{TnbAddOption:Generic:FontSlant->"Italic"}%
+        \Theta%
+    }%
+}
+\newcommand\varLambda{%
+    \leavevmode{%
+        \TnbPush{Generic}{StyleBox}%
+        \special{TnbAddOption:Generic:FontSlant->"Italic"}%
+        \Lambda%
+    }%
+}
+\newcommand\varXi{%
+    \leavevmode{%
+        \TnbPush{Generic}{StyleBox}%
+        \special{TnbAddOption:Generic:FontSlant->"Italic"}%
+        \Xi%
+    }%
+}
+\newcommand\varPi{%
+    \leavevmode{%
+        \TnbPush{Generic}{StyleBox}%
+        \special{TnbAddOption:Generic:FontSlant->"Italic"}%
+        \Pi%
+    }%
+}
+\newcommand\varSigma{%
+    \leavevmode{%
+        \TnbPush{Generic}{StyleBox}%
+        \special{TnbAddOption:Generic:FontSlant->"Italic"}%
+        \Sigma%
+    }%
+}
+\newcommand\varUpsilon{%
+    \leavevmode{%
+        \TnbPush{Generic}{StyleBox}%
+        \special{TnbAddOption:Generic:FontSlant->"Italic"}%
+        \Upsilon%
+    }%
+}
+\newcommand\varPhi{%
+    \leavevmode{%
+        \TnbPush{Generic}{StyleBox}%
+        \special{TnbAddOption:Generic:FontSlant->"Italic"}%
+        \Phi%
+    }%
+}
+\newcommand\varPsi{%
+    \leavevmode{%
+        \TnbPush{Generic}{StyleBox}%
+        \special{TnbAddOption:Generic:FontSlant->"Italic"}%
+        \Psi%
+    }%
+}
+\newcommand\varOmega{%
+    \leavevmode{%
+        \TnbPush{Generic}{StyleBox}%
+        \special{TnbAddOption:Generic:FontSlant->"Italic"}%
+        \Omega%
+    }%
+}
+
+\def\AmS{\leavevmode{\@rm AmS}}
+\let\AmSfont\relax
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Some spacing commands from AMSMath
+%%
+\let\mspace\hspace
+\let\tmspace\hspace
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%
+%%
+%% Fraction stuff
+%%
+
+\newcommand{\primfrac}{\relax}
+
+\def\frac#1#2{{#1\over #2}}
+\newcommand{\dfrac}{\genfrac{}{}{}0}
+\newcommand{\tfrac}{\genfrac{}{}{}1}
+\newcommand{\dbinom}{\genfrac(){0pt}0}
+\newcommand{\tbinom}{\genfrac(){0pt}1}
+
+%
+% \genfrac<left delim><right delim><over / above size><mathstyle>
+% Note: The logic should use atop if 3rd arg is 0pt and over otherwise.
+%       Currently jurryrigged to always set as over thus binoms will set as fractions for the time being.
+%
+\newcommand{\genfrac}[4]{%
+    \@genfrac{#1}{#2}{\ifx#3\@empty over\else over\fi}
+}
+
+%\@genfrac<left delim><right delim><over or atop><numerator><denominator>
+\newcommand{\@genfrac}[5]{%
+     #1\begingroup#4\endgroup\csname #3\endcsname#5#2
+}
+
+%%
+%%%%%%%%%%%%%%%%%%
+
+\def\binom#1#2{%
+  \special{TnbPush:TemplateBox:Binomial}%
+  \TnbPush{RowBox}{}%
+  #1%
+  \TnbPop{RowBox}%
+  \TnbPush{RowBox}{}%
+  #2%
+  \TnbPop{RowBox}%
+  \special{TnbPop:TemplateBox}
+}
+
+%%%%%%%%%%%%%%%%%%
+%%
+%% Root stuff
+%%
+
+%% Note: The macro \root has already been defined in latex.tnb and does not
+%%       need to be redefined here.
+
+%% Note: leftroot and uproot are used to adjust the positioning of the radical
+%%       in LaTeX and are unneeded in Mathematica's TeXImport.
+
+\newcommand{\leftroot}{\relax}
+\newcommand{\uproot}{\relax}
+
+%%
+%%%%%%%%%%%%%%%%%%
+
+%% Note: A redefinition of overline in AMSTeX. Probably can be ignored and not
+%%       defined here. Will check more in depth once the rest of AMSMath has
+%%       been implemented.
+%\DeclareRobustCommand{\overline}
+
+%% Note: This is supposed to put a box around an equation or piece of an
+%%       equation but not the equation number.
+\newcommand{\boxed}{\relax}
+
+\newcommand{\implies}{\Longrightarrow}
+
+\newcommand{\impliedby}{\Longleftarrow}
+
+\newcommand{\And}{\&}
+
+%% Note: This is supposed to prevent a linebreak following the -, --, or ---
+%%       that follows it. I will need to determine if we should preserve this
+%%       or ignore it.
+\newcommand{\nobreakdash}{\relax}
+
+%% Note: colon is supposed to set a colon that looks like a text colon but in math.
+%%       A text colon has a small space to the left and a larger space to the right,
+%%       while a colon in math has equal amounts of space on each side. I need to
+%%       determine Mathematicas concept of the colon and if there is an analouge or
+%%       if this should just be ignored.
+\newcommand{\colon}{:}
+
+%%%%%%%%%%%%%%%%%%
+%%
+%% Ellipsis stuff
+%%
+\newcommand{\dotsi}{\dots}
+\newcommand{\dotso}{\dots}
+\newcommand{\dotsc}{\dots}
+\let\hdots\ldots
+\def\hdotsfor{%
+    \@ifnextchar[%]
+    {\@hdotsfor}%
+    {\@hdotsfor[0]}%
+}
+\def\@hdotsfor[#1]#2{%
+    \hdots% Temporary solution sets a simple \hdots in the current location.
+    %%
+    %% Discard #1
+    %% Check that #2 is a number
+    %% If #2 is less than 1 do nothing.
+    %% If #2 is 1 just place an \hdots
+    %% Otherwise place \hdots & (#2 - 1) times followed by an \hdots
+}
+
+%%
+%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%
+%%
+%% Arrow-like commands
+%%
+\newcommand{\longmapsto}{\mapsto}
+\def\hookrightarrow{\@unicode{21AA}}
+\def\hookleftarrow{\@unicode{21A9}}
+\def\overrightarrow#1{%
+    \TnbPush{OverscriptBox}{\longrightarrow}%
+    \TnbPush{RowBox}{}%
+    #1%
+    \TnbPop{RowBox}%
+    \TnbPop{OverscriptBox}%
+}
+\def\overleftarrow#1{%
+    \TnbPush{OverscriptBox}{\longleftarrow}%
+    \TnbPush{RowBox}{}%
+    #1%
+    \TnbPop{RowBox}%
+    \TnbPop{OverscriptBox}%
+}
+\def\underrightarrow#1{%
+    \TnbPush{UnderscriptBox}{\longrightarrow}%
+    \TnbPush{RowBox}{}%
+    #1%
+    \TnbPop{RowBox}%
+    \TnbPop{OverscriptBox}%
+}
+\def\underleftarrow#1{%
+    \TnbPush{UnderscriptBox}{\longleftarrow}%
+    \TnbPush{RowBox}{}%
+    #1%
+    \TnbPop{RowBox}%
+    \TnbPop{OverscriptBox}%
+}
+\def\xrightarrow#1{%
+    \TnbPush{OverscriptBox}{#1}%
+    \longrightarrow%
+    \TnbPop{OverscriptBox}%
+}
+\def\xleftarrow#1{%
+    \TnbPush{OverscriptBox}{#1}%
+    \longleftarrow%
+    \TnbPop{OverscriptBox}%
+}
+%%
+%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Overet and similar macros
+%%
+\def\overset#1#2{%
+    \TnbPush{OverscriptBox}{#1}%
+    \TnbPush{RowBox}{}%
+    #2%
+    \TnbPop{RowBox}%
+    \TnbPop{OverscriptBox}%
+}
+\def\underset#1#2{%
+    \TnbPush{UnderscriptBox}{#1}%
+    \TnbPush{RowBox}{}%
+    #2%
+    \TnbPop{RowBox}%
+    \TnbPop{UnderscriptBox}%
+}
+\def\sideset#1#2#3{%
+    \special{TnbSetUnicode:InvisiblePrefixScriptBase}\nolimits#1{#3}\nolimits#2
+}
+\def\smash{%
+    \@ifnextchar[%]
+    {\@smash}%
+    {\@smash[b]}%
+}
+\def\@smash[#1]#2{#2}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lvert}{|}
+\newcommand{\lVert}{||}
+\newcommand{\rvert}{|}
+\newcommand{\rVert}{||}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Multiple Integral macros
+%%
+\newcommand{\iint}{\int\int}
+\newcommand{\iiint}{\int\int\int}
+\newcommand{\iiiint}{\int\int\int\int}
+\newcommand{\idotsint}{\int\dots\int}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Math Accents
+%%
+\def\dddot{\mathaccent"20DB }
+\def\ddddot{\mathaccent"20DC }
+%%\mathring 
+\newcommand{\Hat}{\hat}
+\newcommand{\Check}{\check}
+\newcommand{\Acute}{\acute}
+\newcommand{\Grave}{\grave}
+\newcommand{\Dot}{\dot}
+\newcommand{\Ddot}{\ddot}
+\newcommand{\Breve}{\breve}
+\newcommand{\Bar}{\bar}
+\newcommand{\Vec}{\vec}
+\let\@texttilde\Tilde
+\renewcommand\Tilde{\tilde}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\pod#1{\;\;(#1)}
+\def\mod{\;\;{\rm mod}}
+
+\def\cfrac{%
+    \@ifnextchar[%]
+    {\@cfrac}
+    {\@cfrac[t]}
+}
+
+\def\@cfrac[#1]#2#3{%
+    \frac{\ifx r#1\hfill\fi#2\ifx l#1\hfill\fi}{#3}%
+}
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\substack#1{#1}
+\def\numberwithin#1#2{}
+\def\allowdisplaybreaks{%
+    \@ifnextchar[%]
+    {\@allowdisplaybreaks}%
+    {\@allowdisplaybreaks[4]}%
+}
+\def\@allowdisplaybreaks[#1]{}
+\def\displaybreak{%
+    \@ifnextchar[%]
+    {\@displaybreak}%
+    {\@displaybreak[4]}%
+}
+\def\@displaybreak[#1]{}
+\def\raisetag#1{}
+\def\notag{}
+\def\nonumber{}
+\def\eqref#1{%
+    \CounterBoxTwo{Equation}{#1}
+}
+\def\intertext#1{%
+    \text{#1} \\
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Sandbox for \text macro
+%%
+
+\def\text#1{\mbox{#1}}
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\textasciicircum{\unicode{005E}}
+
+\makeatother
+
+
+
+
+
+

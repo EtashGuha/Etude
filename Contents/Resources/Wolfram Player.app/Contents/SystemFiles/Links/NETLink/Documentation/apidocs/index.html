@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN"> 
+<html>
+	<head>
+		<meta name="Robots" content="noindex">
+		<title>.NETLink API</title>
+		<script language="JavaScript">
+		// ensure this page is not loaded inside another frame
+		if (top.location != self.location)
+		{
+			top.location = self.location;
+		}
+		</script>
+					<SCRIPT type="text/javascript">
+					targetPage = "" + window.location.search;
+					if (targetPage != "" && targetPage != "undefined")
+						targetPage = targetPage.substring(1);
+					function loadFrames() {
+						if (targetPage != "" && targetPage != "undefined")
+							top.main.location = top.targetPage;
+						}
+					</SCRIPT>
+	</head>
+	<frameset cols="250,*" framespacing="6" bordercolor="#6699CC" onload="loadFrames()">
+		<frame name="contents" src="contents.html" frameborder="0" scrolling="no">
+		<frame name="main" src="default.html" frameborder="1">
+		<noframes>
+			<p>This page requires frames, but your browser does not support them.</p>
+		</noframes>
+	</frameset>
+</html>

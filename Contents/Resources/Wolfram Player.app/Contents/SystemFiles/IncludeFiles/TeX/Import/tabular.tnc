@@ -1,0 +1,195 @@
+\message{FILE: This is tabular.txs}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% From wri.txs to support the stuff from mathworld.txs
+%%
+\def\@defboxcr{%
+    \xdef\@gridtext{\@gridtext
+        \ifnum\value{gridcount}>1 , \fi
+        \ifnum\value{gridcount}>0 \@rowvalue\fi
+    }%
+    \gdef\@rowvalue{False}%
+    \stepcounter{gridcount}%
+    \@cr
+}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% tabular stuff from mathworld.txs
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% list-processing macros from Stephan von Bechtolsheim, TeX in
+%% Practice, volume 3; retrieved from
+%% /ftp:anonymous@tug.ctan.org:/pub/tex-archive/macros/tip/
+
+\def\StringsEqualConditional #1#2{% 
+    TT\fi
+    \edef\@StringsEqualOneConditional{#1}% 
+    \edef\@StringsEqualTwoConditional{#2}% 
+    \ifx\@StringsEqualOneConditional\@StringsEqualTwoConditional
+}
+\def\ForEachToken #1#2{%
+    \def\@ForEachTokenMacro{#2}%
+    \expandafter\@ForEachToken\the#1\@ForEachTokenDel
+}
+\def\@ForEachToken #1{% 
+    \if\StringsEqualConditional{\string\@ForEachTokenDel}{\string#1}%
+        \let\@ForEachTokenNext = \relax % Done.
+    \else
+        \@ForEachTokenMacro{#1}%        % Call macro and continue.
+        \let\@ForEachTokenNext = \@ForEachToken
+    \fi
+    \@ForEachTokenNext
+}
+\newtoks\@AppendTokOne
+\newtoks\@AppendTokTwo
+\def\RightAppendElement #1#2{%
+    \edef\@AppendTemp{#2}% 
+    \@AppendTokOne = \expandafter{\@AppendTemp}%
+    \@AppendTokTwo = \expandafter{#1}%
+    \edef#1{\the\@AppendTokTwo \the\@AppendTokOne}%
+}
+
+%% end of von Bechtolsheim code
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Infrastructure for parsing tabular's column specification tokens;
+%% e.g., {cc|c}.
+%%
+%% Features:
+%%   - | is ignored at when at beginning or end of token list.
+%% Bugs: 
+%%   - generates one extra boolean in each table's ColumnLines option; 
+%%     fortunately Mathematica doesn't choke on it.
+%% To do:
+%%   - Test whether consecutive |s are treated as one |.  The code is
+%%     there and isn't breaking things at the moment, but it's
+%%     untested.
+
+\def\@ColumnList{}
+\newif\if@pipeseen
+\newif\if@addcommas
+\def\@addcomma{\RightAppendElement{\@ColumnList}{, }}
+\def\@addtrue{\RightAppendElement{\@ColumnList}{True}\global\@addcommastrue}
+\def\@addfalse{\RightAppendElement{\@ColumnList}{False}\global\@addcommastrue}
+
+\newcounter{tablecolumns}%
+\setcounter{tablecolumns}{0}%
+\newcounter{mathworld@tempcounta}
+\def\CountTableColumns#1{%
+  \ifx#1|%
+    \if@pipeseen\relax
+    \else
+      \ifnum\value{tablecolumns}>0\relax
+        \if@addcommas\@addcomma\fi
+        \@addtrue
+      \fi
+    \fi
+    \global\@pipeseentrue
+  \else
+    \global\@pipeseenfalse
+    \ifnum\value{tablecolumns}>0\relax
+      \if@addcommas\@addcomma\fi
+      \@addfalse
+     \fi
+    \addtocounter{tablecolumns}{1}%
+  \fi
+}
+
+%% end of token-parsing infrastructure
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% renamed from \@defboxone... etc
+\newif\if@tabularone \@tabularonefalse
+\newif\if@tabulartwo \@tabulartwofalse
+
+\newtoks\alignmenttoks
+
+\def\tabular#1{%
+  % assign user's alignment specs to token register
+  \alignmenttoks{#1}%
+  \setcounter{tablecolumns}{0}%
+  % the number of user-specified columns is in \c@tablecolumns
+  \global\@addcommasfalse
+  \@pipeseenfalse
+  \ForEachToken{\alignmenttoks}{\CountTableColumns}%
+  % 1-col and 2-col tables have special stylesheet names, so flag such
+  % tables
+  \@tabularonefalse
+  \@tabulartwofalse
+  \ifnum\c@tablecolumns=1
+    \global\@tabularonetrue
+  \else\ifnum\c@tablecolumns=2
+    \global\@tabulartwotrue
+  \fi\fi
+  % get things going
+  \@tabularinit{\the\c@tablecolumns}{\the\alignmenttoks}%
+}
+
+% This is defined in wrilatex; don't try to redefine.
+\@ifundefined{c@gridcount}{\newcounter{gridcount}}{\relax}
+
+\let\@cr=\cr
+
+\def\@tabularcr{%
+    \xdef\@gridtext{\@gridtext
+        \ifnum\value{gridcount}>1 , \fi
+        \ifnum\value{gridcount}>0 \@rowvalue\fi
+    }%
+    \gdef\@rowvalue{False}%
+    \stepcounter{gridcount}%
+    \@cr
+}
+
+\def\@tabularinit#1#2{%
+  \TnbPopCell%
+  \special{TnbSetAlignWidth:#1}%
+  \gdef\@BStyle{Table}%
+  % this is a tex2nb primitive
+  \@alignjustify{#2}%
+  \@tabularargs%
+}
+
+\def\@tabularargs{\@ifnextchar[{\@tabularignore}{\@tabularmain}}
+% ignore user width specifications
+\def\@tabularignore[#1]{\@tabularargs}
+
+\def\@tabularmain{\relax
+  \begingroup
+  \normalsize\rm\TnbFont{TR}{TI}{2}%
+  \let\cr=\@defboxcr
+  \let\\\@defboxcr
+  \gdef\@rowvalue{False}%
+  \setcounter{gridcount}{0}%
+  \gdef\@gridtext{}%
+  \def\hhline{\noalign{\gdef\@rowvalue{True}\ignorespaces}}%
+  \let\hline=\hhline
+  \parindent=0pt\everypar{}%
+  \halign\bgroup##&&##\crcr}
+
+\def\endtabular{\crcr
+    \noalign{\special{TnbAddOption:Cell:GridBoxOptions->RowLines->{\@gridtext}}}
+    \noalign{\special{TnbAddOption:Cell:GridBoxOptions->ColumnLines->{\@ColumnList}}}
+    \noalign{\special{TnbAddOption:Cell:GridBoxOptions->RowSpacings->0.4}}
+    \noalign{\special{TnbSetArgument:Cell:\@BStyle}}
+%    \noalign{\special{TnbSetArgument:FormBox:StandardForm}}
+    \egroup
+  \endgroup
+  \special{TnbSetAlignWidth:0}%
+}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\makeatother

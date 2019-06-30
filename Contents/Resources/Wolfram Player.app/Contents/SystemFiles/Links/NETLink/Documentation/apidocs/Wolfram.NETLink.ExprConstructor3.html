@@ -1,0 +1,75 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>Expr Constructor (Object, Object[])</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.ExprConstructor3.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">Expr Constructor (Object, Object[])</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Creates an Expr with the given head and arguments. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Overloads Public Sub New( _<br />   ByVal <i>head</i> As <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemObjectClassTopic.htm">Object</a>, _<br />   ParamArray <i>args</i> As <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemObjectClassTopic.htm">Object()</a> _<br />)</div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />public Expr(<br />   <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemObjectClassTopic.htm">object</a> <i>head</i>,<br />   params <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemObjectClassTopic.htm">object[]</a> <i>args</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>head</i>
+        </dt>
+        <dd>An object giving the head of the new Expr.</dd>
+        <dt>
+          <i>args</i>
+        </dt>
+        <dd>A sequence or array of objects giving the arguments of this Expr; pass null or an empty array for no arguments.</dd>
+      </dl>
+      <h4 class="dtH4">Remarks</h4>
+      <p> The head and args are made into Exprs by calling the Expr constructor on each object, unless they are already Exprs, in which case they are used directly. </p>
+      <h4 class="dtH4">Exceptions</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Exception Type</th>
+            <th width="50%">Condition</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemArgumentExceptionClassTopic.htm">ArgumentException</a>
+            </td>
+            <td width="50%">If any of the objects are of a type that cannot be handled.</td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.Expr.html">Expr Class</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.ExprConstructor.html">Expr Constructor Overload List</a></p>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{"BaseForm", "BitShiftRight", "BitShiftLeft", "Quantity", "BitNot", "BitOr", 
+ "None", "BitAnd", "BitXor", "E", "Mod", "Floor", "Rational", "Log", "Sin", 
+ "Derivative", "Sqrt", "Pi", "D", "Abs", "Subfactorial", "Range", 
+ "Integrate", "Gudermannian", "Round", "RandomInteger", "MovingAverage", 
+ "IntegerDigits", "Cos", "Complement", "Variance", "Ratios", "Total", "Tanh", 
+ "Sum", "Subscript", "Inverse", "IntegerPart", "Implies", "I", "Degree", 
+ "Conjugate", "Xor", "StringJoin", "Projection", "Mean", "Log10", "Limit", 
+ "Infinity", "Factor", "Tr", "Tan", "Sinh", "Sign", "Select", "Sec", 
+ "PolyLog", "Plus", "JacobiCN", "Intersection", "If", "HoldPattern", "Exp", 
+ "Exists", "EllipticPi", "EllipticF", "Csc", "Cot", "Cells", "ArcSin"}

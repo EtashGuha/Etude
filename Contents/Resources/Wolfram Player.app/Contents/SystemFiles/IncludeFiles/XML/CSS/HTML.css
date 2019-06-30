@@ -1,0 +1,756 @@
+/* Wolfram Mathematica HTML stylesheet
+* CSS version
+*
+* Created by Wolfram Mathematica 6.0. */
+
+/* Notebook:*/
+html {
+  font-size: 12px;
+  padding: 8px;
+}
+img {
+  border: 0px;
+}
+
+/* H1:*/
+.H1 {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.36111;
+  padding: 8px;
+  margin-left: 12px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.H1Inline {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.36111;
+}
+/* H2:*/
+.H2 {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 8px;
+  margin-left: 12px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.H2Inline {
+  font-size: 24px;
+  font-weight: bold;
+}
+/* H3:*/
+.H3 {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px;
+  margin-left: 12px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.H3Inline {
+  font-size: 18px;
+  font-weight: bold;
+}
+/* H4:*/
+.H4 {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px;
+  margin-left: 12px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.H4Inline {
+  font-size: 14px;
+  font-weight: bold;
+}
+/* H5:*/
+.H5 {
+  font-weight: bold;
+  padding: 8px;
+  margin-left: 12px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.H5Inline {
+  font-weight: bold;
+}
+/* H6:*/
+.H6 {
+  font-size: 10px;
+  font-weight: bold;
+  padding: 8px;
+  margin-left: 12px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.H6Inline {
+  font-size: 10px;
+  font-weight: bold;
+}
+/* Body:*/
+.Body {
+  line-height: 1.25;
+  padding: 8px;
+  margin-left: 14px;
+  margin-right: 10px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.BodyInline {
+  line-height: 1.25;
+}
+/* LI:*/
+.LI {
+  line-height: 1.25;
+  padding: 8px;
+  margin-left: 23px;
+  margin-right: 10px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  display: list-item;
+  list-style-type: disk;
+}
+.LIInline {
+  line-height: 1.25;
+}
+/* Input:*/
+.Input {
+  font-weight: bold;
+  padding: 8px;
+  margin-left: 45px;
+  margin-right: 10px;
+  margin-top: 7px;
+  margin-bottom: 5px;
+}
+.InputInline {
+  font-weight: bold;
+}
+/* Output:*/
+.Output {
+  padding: 8px;
+  margin-left: 47px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 7px;
+}
+.OutputInline {
+}
+/* Message:*/
+.Message {
+  color: #0000FF;
+  padding: 8px;
+  margin-left: 45px;
+}
+.MessageInline {
+  color: #0000FF;
+}
+/* Print:*/
+.Print {
+  padding: 8px;
+  margin-left: 45px;
+}
+.PrintInline {
+}
+/* Graphics:*/
+.Graphics {
+  padding: 8px;
+  margin-left: 45px;
+}
+.GraphicsInline {
+}
+/* CellLabel:*/
+.CellLabel {
+  font-size: 9px;
+  font-family: Helvetica;
+  color: #0000FF;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+/* RM:*/
+.RM {
+  font-style: normal;
+  font-weight: normal;
+  padding: 8px;
+}
+.RMInline {
+  font-style: normal;
+  font-weight: normal;
+}
+/* BF:*/
+.BF {
+  font-weight: bold;
+  padding: 8px;
+}
+.BFInline {
+  font-weight: bold;
+}
+/* IT:*/
+.IT {
+  font-style: italic;
+  padding: 8px;
+}
+.ITInline {
+  font-style: italic;
+}
+/* TR:*/
+.TR {
+  font-family: Times;
+  font-style: normal;
+  font-weight: normal;
+  padding: 8px;
+}
+.TRInline {
+  font-family: Times;
+  font-style: normal;
+  font-weight: normal;
+}
+/* TI:*/
+.TI {
+  font-family: Times;
+  font-style: italic;
+  font-weight: normal;
+  padding: 8px;
+}
+.TIInline {
+  font-family: Times;
+  font-style: italic;
+  font-weight: normal;
+}
+/* TB:*/
+.TB {
+  font-family: Times;
+  font-style: normal;
+  font-weight: bold;
+  padding: 8px;
+}
+.TBInline {
+  font-family: Times;
+  font-style: normal;
+  font-weight: bold;
+}
+/* TBI:*/
+.TBI {
+  font-family: Times;
+  font-style: italic;
+  font-weight: bold;
+  padding: 8px;
+}
+.TBIInline {
+  font-family: Times;
+  font-style: italic;
+  font-weight: bold;
+}
+/* MR:*/
+.MR {
+  font-family: Courier;
+  font-style: normal;
+  font-weight: normal;
+  padding: 8px;
+}
+.MRInline {
+  font-family: Courier;
+  font-style: normal;
+  font-weight: normal;
+}
+/* MO:*/
+.MO {
+  font-family: Courier;
+  font-style: italic;
+  font-weight: normal;
+  padding: 8px;
+}
+.MOInline {
+  font-family: Courier;
+  font-style: italic;
+  font-weight: normal;
+}
+/* MB:*/
+.MB {
+  font-family: Courier;
+  font-style: normal;
+  font-weight: bold;
+  padding: 8px;
+}
+.MBInline {
+  font-family: Courier;
+  font-style: normal;
+  font-weight: bold;
+}
+/* MBO:*/
+.MBO {
+  font-family: Courier;
+  font-style: italic;
+  font-weight: bold;
+  padding: 8px;
+}
+.MBOInline {
+  font-family: Courier;
+  font-style: italic;
+  font-weight: bold;
+}
+/* SR:*/
+.SR {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  padding: 8px;
+}
+.SRInline {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+}
+/* SO:*/
+.SO {
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: normal;
+  padding: 8px;
+}
+.SOInline {
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: normal;
+}
+/* SB:*/
+.SB {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: bold;
+  padding: 8px;
+}
+.SBInline {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: bold;
+}
+/* SBO:*/
+.SBO {
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: bold;
+  padding: 8px;
+}
+.SBOInline {
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: bold;
+}
+/* SO10:*/
+.SO10 {
+  font-size: 10px;
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: normal;
+  padding: 8px;
+}
+.SO10Inline {
+  font-size: 10px;
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: normal;
+}
+/* Inert:*/
+.Inert {
+  background-color: #DEE7F8;
+  padding: 8px;
+}
+.InertInline {
+  background-color: #DEE7F8;
+}
+/* Small:*/
+.Small {
+  font-size: 9px;
+  padding: 8px;
+}
+.SmallInline {
+  font-size: 9px;
+}
+/* Medium:*/
+.Medium {
+  font-size: 12px;
+  padding: 8px;
+}
+.MediumInline {
+  font-size: 12px;
+}
+/* Large:*/
+.Large {
+  font-size: 24px;
+  padding: 8px;
+}
+.LargeInline {
+  font-size: 24px;
+}
+/* Hyperlink:*/
+.Hyperlink {
+  color: #0000FF;
+  padding: 8px;
+}
+.HyperlinkInline {
+  color: #0000FF;
+}
+/* MainBookLink:*/
+.MainBookLink {
+  color: #0000FF;
+  padding: 8px;
+}
+.MainBookLinkInline {
+  color: #0000FF;
+}
+/* AddOnsLink:*/
+.AddOnsLink {
+  font-family: Courier;
+  color: #0000FF;
+  padding: 8px;
+}
+.AddOnsLinkInline {
+  font-family: Courier;
+  color: #0000FF;
+}
+/* RefGuideLink:*/
+.RefGuideLink {
+  font-family: Courier;
+  color: #0000FF;
+  padding: 8px;
+}
+.RefGuideLinkInline {
+  font-family: Courier;
+  color: #0000FF;
+}
+/* GettingStartedLink:*/
+.GettingStartedLink {
+  color: #0000FF;
+  padding: 8px;
+}
+.GettingStartedLinkInline {
+  color: #0000FF;
+}
+/* OtherInformationLink:*/
+.OtherInformationLink {
+  color: #0000FF;
+  padding: 8px;
+}
+.OtherInformationLinkInline {
+  color: #0000FF;
+}
+/* DemosLink:*/
+.DemosLink {
+  color: #0000FF;
+  padding: 8px;
+}
+.DemosLinkInline {
+  color: #0000FF;
+}
+/* TourLink:*/
+.TourLink {
+  color: #0000FF;
+  padding: 8px;
+}
+.TourLinkInline {
+  color: #0000FF;
+}
+/* MasterIndexLink:*/
+.MasterIndexLink {
+  color: #0000FF;
+  padding: 8px;
+}
+.MasterIndexLinkInline {
+  color: #0000FF;
+}
+/* Paste:*/
+.Paste {
+  padding: 8px;
+}
+.PasteInline {
+}
+/* Evaluate:*/
+.Evaluate {
+  padding: 8px;
+}
+.EvaluateInline {
+}
+/* EvaluateCell:*/
+.EvaluateCell {
+  padding: 8px;
+}
+.EvaluateCellInline {
+}
+/* CopyEvaluate:*/
+.CopyEvaluate {
+  padding: 8px;
+}
+.CopyEvaluateInline {
+}
+/* CopyEvaluateCell:*/
+.CopyEvaluateCell {
+  padding: 8px;
+}
+.CopyEvaluateCellInline {
+}
+
+@media screen{
+/* All:Working*/
+html {
+}
+}
+
+@media print{
+/* All:Printout*/
+html {
+  font-size: 10pt;
+}
+/* H1:Printout*/
+.H1 {
+  font-size: 30pt;
+  padding: 8pt;
+  margin-left: 2pt;
+  margin-right: 10pt;
+  margin-top: 30pt;
+  margin-bottom: 15pt;
+}
+.H1Inline {
+  font-size: 30pt;
+}
+/* H2:Printout*/
+.H2 {
+  font-size: 20pt;
+  padding: 8pt;
+  margin-left: 2pt;
+  margin-right: 10pt;
+  margin-top: 15pt;
+  margin-bottom: 10pt;
+}
+.H2Inline {
+  font-size: 20pt;
+}
+/* H3:Printout*/
+.H3 {
+  font-size: 16pt;
+  padding: 8pt;
+  margin-left: 2pt;
+  margin-right: 10pt;
+  margin-top: 10pt;
+  margin-bottom: 8pt;
+}
+.H3Inline {
+  font-size: 16pt;
+}
+/* H4:Printout*/
+.H4 {
+  font-size: 12pt;
+  padding: 8pt;
+  margin-left: 2pt;
+  margin-right: 10pt;
+  margin-top: 10pt;
+  margin-bottom: 8pt;
+}
+.H4Inline {
+  font-size: 12pt;
+}
+/* H5:Printout*/
+.H5 {
+  padding: 8pt;
+  margin-left: 2pt;
+  margin-right: 10pt;
+  margin-top: 10pt;
+  margin-bottom: 8pt;
+}
+.H5Inline {
+}
+/* H6:Printout*/
+.H6 {
+  font-size: 9pt;
+  padding: 8pt;
+  margin-left: 2pt;
+  margin-right: 10pt;
+  margin-top: 10pt;
+  margin-bottom: 8pt;
+}
+.H6Inline {
+  font-size: 9pt;
+}
+/* Body:Printout*/
+.Body {
+  padding: 8pt;
+  margin-left: 2pt;
+  margin-right: 2pt;
+  margin-top: 6pt;
+  margin-bottom: 6pt;
+}
+.BodyInline {
+}
+/* LI:Printout*/
+.LI {
+  padding: 8pt;
+  margin-left: 12pt;
+  margin-right: 2pt;
+  margin-top: 6pt;
+  margin-bottom: 6pt;
+}
+.LIInline {
+}
+/* Input:Printout*/
+.Input {
+  font-size: 9pt;
+  padding: 8pt;
+  margin-left: 39pt;
+  margin-right: 0pt;
+  margin-top: 6pt;
+  margin-bottom: 4pt;
+}
+.InputInline {
+  font-size: 9pt;
+}
+/* Output:Printout*/
+.Output {
+  font-size: 9pt;
+  padding: 8pt;
+  margin-left: 39pt;
+  margin-right: 0pt;
+  margin-top: 4pt;
+  margin-bottom: 6pt;
+}
+.OutputInline {
+  font-size: 9pt;
+}
+/* Message:Printout*/
+.Message {
+  font-size: 8pt;
+  color: #000000;
+  padding: 8pt;
+  margin-left: 39pt;
+}
+.MessageInline {
+  font-size: 8pt;
+  color: #000000;
+}
+/* Print:Printout*/
+.Print {
+  font-size: 8pt;
+  padding: 8pt;
+  margin-left: 39pt;
+}
+.PrintInline {
+  font-size: 8pt;
+}
+/* Graphics:Printout*/
+.Graphics {
+  font-size: 9pt;
+  padding: 8pt;
+  margin-left: 39pt;
+}
+.GraphicsInline {
+  font-size: 9pt;
+}
+/* CellLabel:Printout*/
+.CellLabel {
+  font-size: 8pt;
+  font-family: Courier;
+  font-style: italic;
+  color: #000000;
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+}
+/* SO10:Printout*/
+.SO10 {
+  font-size: 7pt;
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: normal;
+  padding: 8pt;
+}
+.SO10Inline {
+  font-size: 7pt;
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: normal;
+}
+/* Inert:Printout*/
+.Inert {
+  background-color: #FFFFFF;
+  padding: 8pt;
+}
+.InertInline {
+  background-color: #FFFFFF;
+}
+/* Hyperlink:Printout*/
+.Hyperlink {
+  color: #000000;
+  padding: 8pt;
+}
+.HyperlinkInline {
+  color: #000000;
+}
+/* MainBookLink:Printout*/
+.MainBookLink {
+  color: #000000;
+  padding: 8pt;
+}
+.MainBookLinkInline {
+  color: #000000;
+}
+/* AddOnLink:Printout*/
+.AddOnLink {
+  color: #000000;
+  padding: 8pt;
+}
+.AddOnLinkInline {
+  color: #000000;
+}
+/* RefGuideLink:Printout*/
+.RefGuideLink {
+  color: #000000;
+  padding: 8pt;
+}
+.RefGuideLinkInline {
+  color: #000000;
+}
+/* GettingStartedLink:Printout*/
+.GettingStartedLink {
+  color: #000000;
+  padding: 8pt;
+}
+.GettingStartedLinkInline {
+  color: #000000;
+}
+/* OtherInformationLink:Printout*/
+.OtherInformationLink {
+  color: #000000;
+  padding: 8pt;
+}
+.OtherInformationLinkInline {
+  color: #000000;
+}
+/* DemosLink:Printout*/
+.DemosLink {
+  color: #000000;
+  padding: 8pt;
+}
+.DemosLinkInline {
+  color: #000000;
+}
+/* TourLink:Printout*/
+.TourLink {
+  color: #000000;
+  padding: 8pt;
+}
+.TourLinkInline {
+  color: #000000;
+}
+/* MasterIndexLink:Printout*/
+.MasterIndexLink {
+  color: #000000;
+  padding: 8pt;
+}
+.MasterIndexLinkInline {
+  color: #000000;
+}
+}
+
+.script {font-family: Mathematica5, cursive}
+.gothic {font-family: Mathematica6, Century Gothic}
+.doublestruck {font-family: Mathematica7}

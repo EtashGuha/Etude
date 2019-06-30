@@ -1,0 +1,112 @@
+@@resource openMenuItems Macintosh
+{"Abrir...", "Abrir desde la nube..."}
+@|
+@|
+@@resource saveMenuItems Macintosh
+{"Guardar...", "Guardar como...", "Guardar en la nube..."}
+@|
+@|
+@@resource openMenuItems X
+{"&Abrir...", "Abrir desde la nube..."}
+@|
+@|
+@@resource saveMenuItems X
+{"&Guardar...", "G&uardar como...", "Guardar en la nube..."}
+@|
+@|
+@@resource openMenuItems Windows
+{"&Abrir...", "Abrir desde la nube..."}
+@|
+@|
+@@resource saveMenuItems Windows
+{"&Guardar...", "G&uardar como...", "Guardar en la nube..."}
+@|
+@|
+@@resource wolframCloudSignIn
+Iniciar sesi\[OAcute]n...
+@|
+@|
+@@resource wolframCloudSignOut
+Cerrar sesi\[OAcute]n
+@|
+@|
+@@resource palettesMenuAdditionalItems Macintosh
+{
+MenuItem["Generar paleta a partir de la selecci\[OAcute]n", "GeneratePalette"],
+MenuItem["Generar cuaderno a partir de la paleta", "GenerateNotebook"],
+MenuItem["Instalar paleta...", FrontEndExecute[{
+	FrontEnd`SetValue[FEPrivate`Set[CurrentValue[$FrontEnd, {"DialogSettings", "Install", "Type"}], "Palette"]], 
+	FrontEnd`NotebookOpen[FrontEnd`FindFileOnPath["InstallDialog.nb", "PrivatePathsSystemResources"]]}]]	
+}
+@|
+@|
+@@resource palettesMenuAdditionalItems X
+{
+MenuItem["Generar paleta a partir de la selecci\[OAcute]n", "GeneratePalette"],
+MenuItem["Instalar paleta...", FrontEndExecute[{
+	FrontEnd`SetValue[FEPrivate`Set[CurrentValue[$FrontEnd, {"DialogSettings", "Install", "Type"}], "Palette"]], 
+	FrontEnd`NotebookOpen[FrontEnd`FindFileOnPath["InstallDialog.nb", "PrivatePathsSystemResources"]]}]]
+}
+@|
+@|
+@@resource palettesMenuAdditionalItems Windows
+{
+MenuItem["Generar &paleta a partir de la selecci\[OAcute]n", "GeneratePalette"],
+MenuItem["Instalar paleta...", FrontEndExecute[{
+	FrontEnd`SetValue[FEPrivate`Set[CurrentValue[$FrontEnd, {"DialogSettings", "Install", "Type"}], "Palette"]], 
+	FrontEnd`NotebookOpen[FrontEnd`FindFileOnPath["InstallDialog.nb", "PrivatePathsSystemResources"]]}]]
+}
+@|
+@|
+@@resource styleSheetMenuAdditionalItems Macintosh
+{
+MenuItem["Selector de hoja de estilo...", FrontEndExecute[{FrontEnd`NotebookOpen["StylesheetChooser.nb"]}]],
+Delimiter,
+MenuItem["Otro...", "StyleDefinitionsOther"]
+}
+@|
+@|
+@@resource styleSheetMenuAdditionalItems X
+{
+MenuItem["Sele&ctor de hoja de estilo...", FrontEndExecute[{FrontEnd`NotebookOpen["StylesheetChooser.nb"]}]],
+Delimiter,
+MenuItem["&Otro...", "StyleDefinitionsOther"]
+}
+@|
+@|
+@@resource styleSheetMenuAdditionalItems Windows
+{
+MenuItem["Sele&ctor de hoja de estilo...", FrontEndExecute[{FrontEnd`NotebookOpen["StylesheetChooser.nb"]}]],
+Delimiter,
+MenuItem["&Otro...", "StyleDefinitionsOther"]
+}
+@|
+@|
+@@resource aboutBoxMenuItemString Macintosh
+Acerca de %s...
+@|
+@|
+@@resource aboutBoxMenuItemString Windows
+&Acerca de %s...
+@|
+@|
+@@resource aboutBoxMenuItemString X
+&Acerca de %s...
+@|
+@|
+@@resource spellMenuItemIgnore
+Ignorar
+@|
+@|
+@@resource spellMenuItemIgnoreAll
+Ignorar todo
+@|
+@|
+@@resource spellMenuItemAddToDictionary
+Agregar al diccionario
+@|
+@|
+@@resource spellMenuItemNoSuggestions
+No se encontraron sugerencias
+@|
+@|

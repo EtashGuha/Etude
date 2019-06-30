@@ -1,0 +1,61 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>UseFrontEnd Property</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IKernelLink.UseFrontEnd.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IKernelLink.UseFrontEnd Property</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Gets or sets whether the <i>Mathematica</i> notebook front end should be used in the background to assist in rendering graphics. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Property UseFrontEnd As <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemBooleanClassTopic.htm">Boolean</a></div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />
+        <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemBooleanClassTopic.htm">bool</a> UseFrontEnd {get; set;}</div>
+      <p>
+      </p>
+      <h4 class="dtH4">Remarks</h4>
+      <p> This property is deprecated when using <i>Mathematica</i> 5.1 and later--the front end is always used for rendering. <p> The front end does a better job for many types of graphics than the standalone renderers that can be used instead, especially for 3D graphics with gradations of color. It is also necessary to use the front end to get typeset expressions in text in graphics, such as plot labels. </p> With this property set to true, the front end will typically launch in a special "server" mode the first time a graphic is created. This server instance of the front end has no user interface. It cannot be brought to the foreground and used like a normal instance. <p> The default value is true. </p>
+            </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IKernelLink.html">IKernelLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="UseFrontEnd property">
+        </param>
+        <param name="Keyword" value="UseFrontEnd property, IKernelLink interface">
+        </param>
+        <param name="Keyword" value="IKernelLink.UseFrontEnd property">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

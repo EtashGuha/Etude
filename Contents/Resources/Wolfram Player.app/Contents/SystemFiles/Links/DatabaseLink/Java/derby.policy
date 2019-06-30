@@ -1,0 +1,3 @@
+grant {
+    permission org.apache.derby.security.SystemPermission "engine", "usederbyinternals";
+};

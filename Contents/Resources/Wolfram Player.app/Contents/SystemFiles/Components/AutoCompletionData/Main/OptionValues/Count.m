@@ -1,0 +1,1 @@
+{Heads -> {"True", "False"}}

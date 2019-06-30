@@ -1,0 +1,101 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IKernelLink.HandlePacket Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IKernelLink.HandlePacket.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IKernelLink.HandlePacket Method </h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Call this to invoke .NET/Link's internal handling of special packet types. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Sub HandlePacket( _<br />   ByVal <i>pkt</i> As <a href="Wolfram.NETLink.PacketType.html">PacketType</a> _<br />)</div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />
+        <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> HandlePacket(<br />   <a href="Wolfram.NETLink.PacketType.html">PacketType</a> <i>pkt</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>pkt</i>
+        </dt>
+        <dd>The packet type that was read using <a href="Wolfram.NETLink.IMathLink.NextPacket.html">NextPacket</a>.</dd>
+      </dl>
+      <h4 class="dtH4">Remarks</h4>
+      <p> If you absolutely must write your own packet loop instead of using the <a href="Wolfram.NETLink.IKernelLink.PacketArrived.html">PacketArrived</a> event, (this is strongly discouraged), you should call this method if a call to NextPacket returns a packet type that you are not handling entirely with your own code. In fact, you can call HandlePacket for <i>every</i> packet you read with NextPacket. <p>
+            <example> For example, here is a basic packet loop: <pre class="code">bool done = false;
+while (!done) {
+    PacketType pkt = ml.NextPacket();
+    if (ml.OnPacketArrived(pkt))
+        ml.HandlePacket(pkt);
+    switch (pkt) {
+        case PacketType.Return:
+            // read and handle contents of ReturnPacket ...
+            done = true;
+            break;
+         case PacketType.Text:
+            // read and handle contents of TextPacket ...
+            break;
+        .. etc for other packet types
+    }
+    ml.NewPacket();
+}
+</pre>
+            </example>
+            </p> After HandlePacket returns you should call <a href="Wolfram.NETLink.IMathLink.NewPacket.html">NewPacket</a>. <p> To remind again, writing your own packet loop like this is strongly discouraged. Use WaitForAnswer, WaitAndDiscardAnswer, or one of the "EvaluateTo" methods instead. These methods hide the packet loop within them. If you want more information about what packet types arrive and their contents, simply use the <b>PacketArrived</b> event. </p> An example of the special type of packets that your packet loop might encounter is PacketType.Call. Encountering a PacketType.Call means that <i>Mathematica</i> code is trying to call into .NET using the mechanism described in Part 1 of the .NET/Link User Guide. Only the internals of .NET/Link know how to manage these callbacks, so the HandlePacket method provides a means to invoke this handling for you. <p> If you are using WaitForAnswer, WaitAndDiscardAnswer, or any of the "EvaluateTo" methods, and therefore not writing your own packet loop, you do not need to be concerned with HandlePacket. </p>
+            </p>
+      <h4 class="dtH4">Exceptions</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Exception Type</th>
+            <th width="50%">Condition</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MathLinkException.html">MathLinkException</a>
+            </td>
+            <td width="50%">On any MathLink error.</td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IKernelLink.html">IKernelLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="HandlePacket method">
+        </param>
+        <param name="Keyword" value="HandlePacket method, IKernelLink interface">
+        </param>
+        <param name="Keyword" value="IKernelLink.HandlePacket method">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

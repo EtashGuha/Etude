@@ -1,0 +1,39 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IMathLink.Yield Event</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IMathLink.Yield.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IMathLink.Yield Event
+					</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Occurs periodically when the link is blocking in a reading call. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Event Yield As <a href="Wolfram.NETLink.YieldFunction.html">YieldFunction</a></div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />event <a href="Wolfram.NETLink.YieldFunction.html">YieldFunction</a> Yield;</div>
+      <p>
+      </p>
+      <h4 class="dtH4">Remarks</h4> The Yield event is raised at unspecified intervals (but generally many times a second) while the link is blocked in a "Get" call waiting for data to arrive, or a "Put" call waiting for buffer space to free up inside MathLink. <p> In a single-threaded program, a handler for the Yield event can be used as a place to perform actions necessary to keep the program responsive (like calling Application.DoEvents()). For most programs, a better choice is to use multiple threads, so that your user interface thread is not blocked waiting for the result of a <i>Mathematica</i> computation. </p> The Yield handler is passed no arguments. It should return true or false to indicate whether to back out of the read call or not. Returning true means to back out, which will cause a MathLinkException to be thrown in the Get call that is currently blocked waiting for data. <h4 class="dtH4">See Also</h4><p><a href="Wolfram.NETLink.IMathLink.html">IMathLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;"><param name="Keyword" value="Yield event"></param><param name="Keyword" value="Yield event, IMathLink class"></param><param name="Keyword" value="IMathLink.Yield event"></param></object><hr /><div id="footer"><p><a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a></p><p></p></div></div>
+  </body>
+</html>

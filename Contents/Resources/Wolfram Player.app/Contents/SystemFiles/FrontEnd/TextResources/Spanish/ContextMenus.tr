@@ -1,0 +1,1262 @@
+{
+    "Global" -> {
+        MenuItem["&Copiar", "Copy"],
+        MenuItem["&Pantalla completa", FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]]],
+	MenuItem["Copiar ob&jeto de cuaderno", FrontEnd`CopySpecial["NotebookObject"]]},
+
+    "Notebook" -> {(*
+        MenuItem["&Ayuda", "OpenHelpLink"],
+        Delimiter,
+        MenuItem["&Evaluar cuaderno", "EvaluateNotebook"],
+        MenuItem["&Guardar cuaderno", "Save"],
+        MenuItem["&Imprimir cuaderno...", "PrintDialog"],
+	MenuItem["Copiar ob&jeto de cuaderno", FrontEnd`CopySpecial["NotebookObject"]],
+        Delimiter,
+        MenuItem["Cambiar pan&talla completa", FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]]]*)
+    },
+
+    "Citation" -> {
+        MenuItem["Eliminar referencia o no&ta bibliogr\[AAcute]fica ", "DeleteBibReference"],
+        MenuItem["&Editar nota bibliogr\[AAcute]fica...", "EditBibNote"]
+    },
+
+    "Text" -> {
+        MenuItem["Cor&tar", "Cut"],
+        MenuItem["&Copiar", "Copy"],
+        MenuItem["&Pegar", FrontEnd`Paste[After]],
+        Menu["Cop&iar como",
+        {
+            MenuItem["&Texto sin formato", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["Texto &de entrada", FrontEnd`CopySpecial["InputText"]],
+            MenuItem["&LaTeX",
+                KernelExecute[ToExpression["FrontEnd`CopyAsTeX[]"]],
+                MenuEvaluator -> "System"],
+            MenuItem["M&athML",
+                KernelExecute[ToExpression["FrontEnd`CopyAsMathML[]"]],
+                MenuEvaluator -> "System"],
+            Delimiter,
+            MenuItem["&Objeto de celda", FrontEnd`CopySpecial["CellObject"]],
+            MenuItem["Expresi\[OAcute]n de &celda", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["Expresi\[OAcute]&n de cuaderno", FrontEnd`CopySpecial["NotebookExpression"]]
+        }],
+        Delimiter,
+        MenuItem["Crear &hiperenlace...", "CreateHyperlinkDialog"],
+        MenuItem["Insertar tabla/&matriz...", "CreateGridBoxDialog"],
+        MenuItem["&Revisar ortograf\[IAcute]a...", "FindNextMisspelling"],
+        Menu["&Cita",
+        {
+            MenuItem["Ins&ertar referencia bibliogr\[AAcute]fica...", "InsertBibReference"],
+            MenuItem["Insertar nota bib&liogr\[AAcute]fica...", "InsertBibNote"],
+            Delimiter,
+            MenuItem["Fijar / Cambiar e&stilo de cita...", "SetCitationStyle"],
+            MenuItem["&Insertar bibliograf\[IAcute]a y notas", "InsertBibAndNotes"],
+            MenuItem["&Borrar bibliograf\[IAcute]a y notas", "DeleteBibAndNotes"],
+            MenuItem["Recrear biblio&graf\[IAcute]a y notas", "RebuildBibAndNotes"]
+        }],
+        Delimiter,
+        Menu["Estil&o",
+        {
+            MenuItem["Iniciar nombres de celda de estilo", "MenuListStyles", MenuAnchor->True],
+            Delimiter,
+            MenuItem["&Otro...", "StyleOther"]
+        }],
+        Delimiter,
+        MenuItem["Crear celda alineada", "CreateInlineCell"],
+        MenuItem["Di&vidir celda", "CellSplit"],
+        MenuItem["Evaluar in sit&u", Evaluate[All]],
+        Delimiter,
+        MenuItem["Cambiar pan&talla completa", FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]]]
+        },
+
+    "MisspelledText" -> {
+        MenuItem["Iniciar sugerencias ortográficas", "MenuListSpellingSuggestions", MenuAnchor->True],
+        Delimiter,
+        MenuItem["I&gnorar", "IgnoreMisspelling"],
+        MenuItem["Ignorar &todo", "IgnoreAllMisspellings"],
+        MenuItem["Agregar a &diccionario", "RememberMisspelling"],
+	Delimiter,
+        MenuItem["Cor&tar", "Cut"],
+        MenuItem["&Copiar", "Copy"],
+        MenuItem["&Pegar", FrontEnd`Paste[After]],
+        Menu["Cop&iar como",
+        {
+            MenuItem["&Texto sin formato", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["Texto &de entrada", FrontEnd`CopySpecial["InputText"]],
+            MenuItem["&LaTeX",
+                KernelExecute[ToExpression["FrontEnd`CopyAsTeX[]"]],
+                MenuEvaluator -> "System"],
+            MenuItem["M&athML",
+                KernelExecute[ToExpression["FrontEnd`CopyAsMathML[]"]],
+                MenuEvaluator -> "System"],
+            Delimiter,
+            MenuItem["Cell &Object", FrontEnd`CopySpecial["CellObject"]],
+            MenuItem["Expresi\[OAcute]n de &celda", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["Expresi\[OAcute]&n de cuaderno", FrontEnd`CopySpecial["NotebookExpression"]]
+        }],
+    	Delimiter,
+        MenuItem["Crear &hiperenlace...", "CreateHyperlinkDialog"],
+        MenuItem["Insertar tabla/&matriz...", "CreateGridBoxDialog"],
+        MenuItem["&Revisar ortograf\[IAcute]a...", "FindNextMisspelling"],
+        Menu["&Cita",
+        {
+            MenuItem["Ins&ertar referencia bibliogr\[AAcute]fica...", "InsertBibReference"],
+            MenuItem["Insertar &nota bibliogr\[AAcute]fica...", "InsertBibNote"],
+            Delimiter,
+            MenuItem["Fijar / Cambiar e&stilo de cita....", "SetCitationStyle"],
+            MenuItem["&Insertar bibliograf\[IAcute]a y notas", "InsertBibAndNotes"],
+            MenuItem["&Borrar bibliograf\[IAcute]a y notas", "DeleteBibAndNotes"],
+            MenuItem["Recrear biblio&graf\[IAcute]a y notas", "RebuildBibAndNotes"]
+        }],
+        Delimiter,
+        Menu["Estil&o",
+        {
+            MenuItem["Iniciar nombres de celda de estilo", "MenuListStyles", MenuAnchor->True],
+            Delimiter,
+            MenuItem["&Otro...", "StyleOther"]
+        }],
+        Delimiter,
+        MenuItem["Crear celda alineada", "CreateInlineCell"],
+        MenuItem["Di&vidir celda", "CellSplit"],
+        MenuItem["Evaluar in sit&u", Evaluate[All]],
+        Delimiter,
+        MenuItem["Cambiar pan&talla completa", FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]]]
+        },
+    "Input" -> {
+        MenuItem["Cor&tar", "Cut"],
+        MenuItem["&Copiar", "Copy"],
+        MenuItem["&Pegar", FrontEnd`Paste[After]],
+        Menu["Cop&iar como",
+        {
+            MenuItem["&Texto sin formato", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["Texto &de entrada", FrontEnd`CopySpecial["InputText"]],
+            MenuItem["&LaTeX",
+                KernelExecute[ToExpression["FrontEnd`CopyAsTeX[]"]],
+                MenuEvaluator -> "System"],
+            MenuItem["M&athML",
+                KernelExecute[ToExpression["FrontEnd`CopyAsMathML[]"]],
+                MenuEvaluator -> "System"],
+            Delimiter,
+            MenuItem["Cell &Object", FrontEnd`CopySpecial["CellObject"]],
+            MenuItem["Expresi\[OAcute]n de &celda", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["Expresi\[OAcute]&n de cuaderno", FrontEnd`CopySpecial["NotebookExpression"]]
+        }],
+        Delimiter,
+        MenuItem["E&valuar celda", "EvaluateCells"],
+        MenuItem["Evaluar in sit&u", Evaluate[All]],
+        MenuItem["Evaluar celdas de iniciali&zaci\[OAcute]n", "EvaluateInitialization"],
+        Menu["C&onvertir a",
+        {
+            MenuItem["&InputForm", "SelectionConvert"->InputForm],
+            MenuItem["Input&Form crudo", "SelectionConvert"->RawInputForm],
+            MenuItem["&OutputForm", "SelectionConvert"->OutputForm],
+            MenuItem["Convertir primero a BoxForm", "MenuListConvertFormatTypes", MenuAnchor->True]
+        }],
+        Delimiter,
+        MenuItem["Crear &hiperenlace...", "CreateHyperlinkDialog"],
+        MenuItem["Insertar tabla/&Matriz...", "CreateGridBoxDialog"],
+        MenuItem["In&sertar caracter especial...", FrontEndExecute[{FrontEnd`NotebookOpen["SpecialCharacters.nb"]}]],
+        Delimiter,
+        MenuItem["Comprobar &balance", "Balance"],
+        MenuItem["Di&vidir celda", "CellSplit"],
+        MenuItem["Com&entar/Descomentar",
+            KernelExecute[ToExpression["FE`toggleComment[]"]], MenuEvaluator -> "System"],
+        MenuItem["iconizar", KernelExecute[ToExpression["FE`iconizeSelection[]"]], MenuEvaluator -> "System"],
+        Delimiter,
+        MenuItem["Solicitar &ayuda", FrontEnd`SelectionHelpDialog[True]],
+        MenuItem["Causa de la coloraci\[OAcute]n...", FrontEndExecute[{FrontEnd`NotebookOpen[
+                    FrontEnd`FindFileOnPath["WhyTheColoring.nb", "PrivatePathsSystemResources"]]}]],
+        MenuItem["&Hablar la selecci\[OAcute]n", "SelectionSpeak"],
+        Delimiter,
+        MenuItem["Cambiar pan&talla completa", FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]]]
+        },
+
+    "Output" -> {
+        MenuItem["Cor&tar", "Cut"],
+        MenuItem["&Copiar", "Copy"],
+        MenuItem["&Pegar", FrontEnd`Paste[After]],
+        Menu["Cop&iar como",
+        {
+            MenuItem["&Texto sin formato", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["Texto &de entrada", FrontEnd`CopySpecial["InputText"]],
+            MenuItem["&LaTeX",
+                KernelExecute[ToExpression["FrontEnd`CopyAsTeX[]"]],
+                MenuEvaluator -> "System"],
+            MenuItem["M&athML",
+                KernelExecute[ToExpression["FrontEnd`CopyAsMathML[]"]],
+                MenuEvaluator -> "System"],
+            Delimiter,
+            MenuItem["Cell &Object", FrontEnd`CopySpecial["CellObject"]],
+            MenuItem["Expresi\[OAcute]n de &celda", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["Expresi\[OAcute]&n de cuaderno", FrontEnd`CopySpecial["NotebookExpression"]]
+        }],
+        Delimiter,
+        Menu["Con&vertir a",
+        {
+            MenuItem["&InputForm", "SelectionConvert"->InputForm],
+            MenuItem["Input&Form crudo", "SelectionConvert"->RawInputForm],
+            MenuItem["&OutputForm", "SelectionConvert"->OutputForm],
+            MenuItem["Convertir primero a BoxForm", "MenuListConvertFormatTypes", MenuAnchor->True]
+        }],
+        Delimiter,
+        MenuItem["Generar paleta", "GeneratePalette"],
+        MenuItem["iconizar", KernelExecute[ToExpression["FE`iconizeSelection[]"]], MenuEvaluator -> "System"],
+        Delimiter,
+        MenuItem["Solicitar &ayuda", FrontEnd`SelectionHelpDialog[True]],
+        MenuItem["&Hablar la selecci\[OAcute]n", "SelectionSpeak"],
+        Delimiter,
+        MenuItem["Cambiar pan&talla completa", FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]]]
+        },
+
+    "Plugin" -> {
+        MenuItem["Cor&tar", "Cut"],
+        MenuItem["&Copiar", "Copy"],
+        MenuItem["&Pegar", FrontEnd`Paste[After]],
+        Menu["Cop&iar como",
+        {
+            MenuItem["&Texto sin formato", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["Texto &de entrada", FrontEnd`CopySpecial["InputText"]],
+            MenuItem["&LaTeX",
+                KernelExecute[ToExpression["FrontEnd`CopyAsTeX[]"]],
+                MenuEvaluator -> "System"],
+            MenuItem["M&athML",
+                KernelExecute[ToExpression["FrontEnd`CopyAsMathML[]"]],
+                MenuEvaluator -> "System"],
+            Delimiter,
+            MenuItem["Expresi\[OAcute]n de &celda", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["Expresi\[OAcute]&n de cuaderno", FrontEnd`CopySpecial["NotebookExpression"]]
+        }]},
+
+    "GraphicsBox" -> {
+        MenuItem["Cor&tar gr\[AAcute]fico", "Cut"],
+        MenuItem["&Copiar gr\[AAcute]fico", "Copy"],
+        MenuItem["&Pegar", FrontEnd`Paste[After]],
+        Delimiter,
+        MenuItem["Guardar gr\[AAcute]fico como...", "SelectionSaveSpecial"],
+        MenuItem["Imp&rimir gr\[AAcute]fico...", "PrintSelectionDialog"],
+        Delimiter,
+        MenuItem["Herramientas de &dibujo",
+                FrontEndExecute[{FrontEnd`NotebookOpen[
+                    FrontEnd`FindFileOnPath["DrawingTools.nb", "PrivatePathsSystemResources"]]}]],
+        MenuItem["&Obtener coordenadas", FrontEndExecute[FrontEnd`Select2DTool["GetCoordinates"]]],
+        MenuItem["Pasar a ta&ma\[NTilde]o est\[AAcute]ndar", "GraphicsOriginalSize"]},
+
+    "Graphics" -> {
+        MenuItem["Cor&tar selecci\[OAcute]n de gr\[AAcute]ficos", "Cut"],
+        MenuItem["&Copiar selecci\[OAcute]n de gr\[AAcute]ficos", "Copy"],
+        MenuItem["&Pegar en el gr\[AAcute]fico", FrontEnd`Paste[After]],
+        Delimiter,
+        MenuItem["Herramientas de &dibujo",
+                FrontEndExecute[{FrontEnd`NotebookOpen[
+                    FrontEnd`FindFileOnPath["DrawingTools.nb", "PrivatePathsSystemResources"]]}]],
+        MenuItem["&Obtener coordenadas", FrontEndExecute[FrontEnd`Select2DTool["GetCoordinates"]]],
+        Delimiter,
+        MenuItem["Ag&rupar", "Group"],
+        MenuItem["&Separar", "Ungroup"],
+        Delimiter,
+        MenuItem["&Mover a primer plano", "MoveToFront"],
+        MenuItem["Mover &al fondo",  "MoveToBack"],
+        MenuItem["Mo&ver hacia adelante", "MoveForward"],
+        MenuItem["Mov&er hacia atr\[AAcute]s",  "MoveBackward"]
+        },
+
+    "Image" -> {
+        MenuItem["Cor&tar imagen", "Cut"],
+        MenuItem["&Copiar imagen", "Copy"],
+        Delimiter,
+        MenuItem["Obtener coor&denadas", FrontEndExecute[FrontEnd`Select2DTool["GetCoordinates"]]],
+        MenuItem["Obtener \[IAcute]nd&ices", FrontEndExecute[FrontEnd`Select2DTool["GetIndices"]]],
+        MenuItem["Obtener color del &pixel", KernelExecute[(
+                FrontEnd`$SelectedImage = Image[ToExpression[CurrentValue["SelectionData"]]];
+                FrontEndExecute[FrontEnd`Select2DTool["GetPixelValues"]])], MenuEvaluator -> Automatic],
+        MenuItem["Obt&ener informaci\[OAcute]n de imagen", KernelExecute[ToExpression["FrontEnd`GetImageInformation[]"]], MenuEvaluator -> "System"],
+        Delimiter,
+        MenuItem["T&ama\[NTilde]o autom\[AAcute]tico", "GraphicsBoxOptionsImageSize"->Automatic],
+        MenuItem["Tama\[NTilde]o &real", "GraphicsBoxOptionsImageSize"->Magnification[1]],
+        Menu["A&mpliaci\[OAcute]n",
+        {
+            MenuItem["5%", "GraphicsBoxOptionsImageSize"->Magnification[0.05]],
+            MenuItem["10%", "GraphicsBoxOptionsImageSize"->Magnification[0.1]],
+            MenuItem["25%", "GraphicsBoxOptionsImageSize"->Magnification[0.25]],
+            MenuItem["&50%", "GraphicsBoxOptionsImageSize"->Magnification[0.5]],
+            MenuItem["&100", "GraphicsBoxOptionsImageSize"->Magnification[1]],
+            MenuItem["&200%", "GraphicsBoxOptionsImageSize"->Magnification[2]],
+            MenuItem["&300%", "GraphicsBoxOptionsImageSize"->Magnification[3]],
+            MenuItem["&400%", "GraphicsBoxOptionsImageSize"->Magnification[4]],
+            MenuItem["&800%", "GraphicsBoxOptionsImageSize"->Magnification[8]],
+            MenuItem["1&600%", "GraphicsBoxOptionsImageSize"->Magnification[16]]
+        }],
+        Delimiter,
+        MenuItem["Ajustar imagen...", KernelExecute[ToExpression["FrontEnd`EditImage[]"]], MenuEvaluator -> "System"],
+        Menu["M&odo de imagen",
+        {
+            MenuItem["&Binario", "ImageToBinary"],
+            MenuItem["Escala de &gris", "ImageToGrayscale"],
+            MenuItem["Color &RGB", "ImageToRGB"],
+            MenuItem["Color &HSB", "ImageToHSB"],
+            MenuItem["Color &XYZ ", "ImageToXYZ"],
+            MenuItem["Color &LAB", "ImageToLAB"],
+            MenuItem["Co&lor LCH", "ImageToLCH"],
+            MenuItem["Color LU&V", "ImageToLUV"],
+            MenuItem["Color CMY&K", "ImageToCMYK"],
+            MenuItem["A&utom\[AAcute]tico", "ImageToAutomatic"],
+            Delimiter,
+            MenuItem["Canal al&fa", "ImageToggleAlphaChannel"],
+            Delimiter,
+            MenuItem["1 &Bit/Canal", "ImageToBit"],
+            MenuItem["8 Bits/Ca&nal", "ImageToByte"],
+            MenuItem["1&6 Bits/Canal", "ImageToBit16"],
+            MenuItem["3&2 Bits/Canal (Real)", "ImageToReal32"],
+            MenuItem["6&4 Bits/Canal (Real)", "ImageToReal64"],
+            Delimiter,
+            MenuItem["&Intercalado", "ImageToggleInterleaving"]
+        }],
+        Menu["Edici\[OAcute]n de &gr\[AAcute]ficos",
+        {
+            MenuItem["&Crear m\[AAcute]scara",  KernelExecute[ToExpression["FrontEnd`CreateMask[]"]], MenuEvaluator -> "System"],
+            MenuItem["&Extraer gr\[AAcute]ficos",  KernelExecute[ToExpression["FrontEnd`ExtractGraphics[]"]], MenuEvaluator -> "System"],
+            MenuItem["&Pegar en el gr\[AAcute]fico", FrontEnd`Paste[After]],
+            MenuItem["Herramientas de dibu&jo",
+                    FrontEndExecute[{FrontEnd`NotebookOpen[
+                        FrontEnd`FindFileOnPath["DrawingTools.nb", "PrivatePathsSystemResources"]]}]],
+            Delimiter,
+            MenuItem["&Mover a primer plano", "MoveToFront"],
+            MenuItem["Mover &al fondo",  "MoveToBack"],
+            MenuItem["Mo&ver hacia adelante", "MoveForward"],
+            MenuItem["Mov&er hacia atr\[AAcute]s",  "MoveBackward"]
+        }],
+        Delimiter,
+        MenuItem["G&uardar imagen como...", "SelectionSaveSpecial"],
+        MenuItem["Imprimir i&magen...", "PrintSelectionDialog"]
+    },
+
+    "Image3D" -> {
+        MenuItem["Cor&tar imagen", "Cut"],
+        MenuItem["&Copiar imagen", "Copy"],
+        Delimiter,
+        MenuItem["Obt&ener informaci\[OAcute]n de imagen", KernelExecute[ToExpression["FrontEnd`GetImageInformation[]"]], MenuEvaluator -> "System"],
+        Delimiter,
+        MenuItem["T&ama\[NTilde]o autom\[AAcute]tico", "Graphics3DBoxOptionsImageSize"->Automatic],
+        MenuItem["Tama\[NTilde]o &real", "Graphics3DBoxOptionsImageSize"->Magnification[1]],
+        Menu["A&mpliaci\[OAcute]n",
+        {
+            MenuItem["5%", "Graphics3DBoxOptionsImageSize"->Magnification[0.05]],
+            MenuItem["10%", "Graphics3DBoxOptionsImageSize"->Magnification[0.1]],
+            MenuItem["25%", "Graphics3DBoxOptionsImageSize"->Magnification[0.25]],
+            MenuItem["50% (&5)", "Graphics3DBoxOptionsImageSize"->Magnification[0.5]],
+            MenuItem["100% (&1)", "Graphics3DBoxOptionsImageSize"->Magnification[1]],
+            MenuItem["200% (&2)", "Graphics3DBoxOptionsImageSize"->Magnification[2]],
+            MenuItem["300% (&3)", "Graphics3DBoxOptionsImageSize"->Magnification[3]],
+            MenuItem["400% (&4)", "Graphics3DBoxOptionsImageSize"->Magnification[4]],
+            MenuItem["800% (&8)", "Graphics3DBoxOptionsImageSize"->Magnification[8]],
+            MenuItem["1600% (&6)", "Graphics3DBoxOptionsImageSize"->Magnification[16]]
+        }],
+        Delimiter,
+        MenuItem["Ajustar imagen...", KernelExecute[ToExpression["FrontEnd`EditImage3D[]"]], MenuEvaluator -> "System"],
+        MenuItem["Editar ColorFunction...", "Image3DColorFunctionEditor"],
+        Menu["M&odo de imagen",
+        {
+            MenuItem["&Binario", "ImageToBinary"],
+            MenuItem["Escala de &gris", "ImageToGrayscale"],
+            MenuItem["Color &RGB", "ImageToRGB"],
+            MenuItem["Color &HSB", "ImageToHSB"],
+            MenuItem["Color &XYZ ", "ImageToXYZ"],
+            MenuItem["Color &LAB", "ImageToLAB"],
+            MenuItem["Co&lor LCH", "ImageToLCH"],
+            MenuItem["Color LU&V", "ImageToLUV"],
+            MenuItem["Color CMY&K", "ImageToCMYK"],
+            MenuItem["A&utom\[AAcute]tico", "Image3DToAutomatic"],
+            Delimiter,
+            MenuItem["Canal al&fa", "ImageToggleAlphaChannel"],
+            Delimiter,
+            MenuItem["1 &Bit/Canal", "Image3DToBit"],
+            MenuItem["8 Bits/Ca&nal", "Image3DToByte"],
+            MenuItem["1&6 Bits/Canal", "Image3DToBit16"],
+            MenuItem["3&2 Bits/Canal (Real)", "Image3DToReal32"],
+            MenuItem["6&4 Bits/Canal (Real)", "Image3DToReal64"],
+            Delimiter,
+            MenuItem["&Intercalado", "Image3DToggleInterleaving"]
+        }],
+        Delimiter,
+        MenuItem["G&uardar imagen como...", "SelectionSaveSpecial"],
+        MenuItem["Imprimir i&magen...", "PrintSelectionDialog"],
+        Delimiter,
+        MenuItem["Vista &frontal", FrontEndExecute[FrontEndToken["Graphics3DBoxOptionsViewPoint", Front]; FrontEndToken["Graphics3DBoxOptionsViewVertical", Inherited]]],
+        MenuItem["Vista de arri&ba", FrontEndExecute[FrontEndToken["Graphics3DBoxOptionsViewPoint", Top]; FrontEndToken["Graphics3DBoxOptionsViewVertical", Inherited]]],
+        MenuItem["Vista pre&determinada", FrontEndExecute[FrontEndToken["Graphics3DBoxOptionsViewPoint", Inherited]; FrontEndToken["Graphics3DBoxOptionsViewVertical", Inherited]]],
+        MenuItem["Restablecer paneo/&Zoom", FrontEndExecute[FrontEndToken["Graphics3DBoxOptionsViewAngle", Inherited]; FrontEndToken["Graphics3DBoxOptionsViewCenter", Inherited]]],
+        Delimiter,
+        MenuItem["Redu&cir cuadro delimitador", FrontEnd`Graphics3DBoxOptionsMethod->{"ShrinkWrap"->True}]
+    },
+    
+       "MeshGraphics" -> {
+        MenuItem["Cor&tar malla", "Cut"],
+        Menu["&Copiar como",
+        {
+            MenuItem["Expresi\[OAcute]n de malla", "Copy"],
+            MenuItem["Expresi\[OAcute]n gr\[AAcute]fica", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu[{"CopyAs", "Graphics"}]]]],
+            Delimiter,
+            MenuItem["Texto de entrada", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu[{"CopyAs", "InputText"}]]]],
+            MenuItem["Texto sin formato", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu[{"CopyAs", "PlainText"}]]]]
+        }],
+        Delimiter,
+        MenuItem["Convertir a gr\[AAcute]fico", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu["Graphics"]]]],
+        Delimiter,
+        MenuItem["Gu&ardar malla como...", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu["SaveAs"]]]],
+        MenuItem["Imp&rimir...", "PrintSelectionDialog"]
+    },
+
+    "MeshGraphics3D" -> {
+        MenuItem["Cor&tar malla", "Cut"],
+        Menu["&Copiar como",
+        {
+            MenuItem["Expresi\[OAcute]n de malla", "Copy"],
+            MenuItem["Expresi\[OAcute]n gr\[AAcute]fica", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu[{"CopyAs", "Graphics3D"}]]]],
+            Delimiter,
+            MenuItem["Texto de entrada", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu[{"CopyAs", "InputText"}]]]],
+            MenuItem["Texto sin formato", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu[{"CopyAs", "PlainText"}]]]]
+        }],
+        Delimiter,
+        MenuItem["Convertir a gr\[AAcute]fico", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu["Graphics3D"]]]],
+        Delimiter,
+        MenuItem["Gu&ardar malla como...", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], Region`MeshRegionContextMenu["SaveAs"]]]],
+        MenuItem["Imp&rimir...", "PrintSelectionDialog"]
+    }, 
+
+    "NetworkGraphics" -> {
+        MenuItem["Cor&tar grafo", "Cut"],
+        Menu["&Copiar como",
+        {
+            MenuItem["Expresi\[OAcute]n del grafo", "Copy"],
+            MenuItem["Expresi\[OAcute]n de gr\[AAcute]ficos", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"CopyAs", "Graphics"}]]]],
+            Delimiter,
+            MenuItem["Texto de entrada", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"CopyAs", "InputText"}]]]],
+            MenuItem["Texto sin formato", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"CopyAs", "PlainText"}]]]]
+        }],
+        Delimiter,
+        Menu["E&stilo de grafo",
+        {
+            MenuItem["&Autom\[AAcute]tico", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", Automatic}]]]],
+            Delimiter,
+            MenuItem["Negro &b\[AAcute]sico", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BasicBlack"}]]]],
+            MenuItem["Azul b\[AAcute]sico",	FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BasicBlue"}]]]],
+            MenuItem["Dorado b\[AAcute]sico",	FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BasicGold"}]]]],
+            MenuItem["Verde b\[AAcute]sico", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BasicGreen"}]]]],
+            Delimiter,
+            MenuItem["Fondo negro", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BackgroundBlack"}]]]],
+            MenuItem["Fondo azul", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BackgroundBlue"}]]]],
+            MenuItem["Fondo dorado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BackgroundGold"}]]]],
+            MenuItem["Fondo verde", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "BackgroundGreen"}]]]],
+            Delimiter,
+            MenuItem["&Diagrama negro", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "DiagramBlack"}]]]],
+            MenuItem["Diagrama azul", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "DiagramBlue"}]]]],
+            MenuItem["Diagrama dorado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "DiagramGold"}]]]],
+            MenuItem["Diagrama verde", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "DiagramGreen"}]]]],
+            Delimiter,
+            MenuItem["&Red extensa", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "LargeNetwork"}]]]],
+            MenuItem["Red &peque\[NTilde]a", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "SmallNetwork"}]]]],
+            Delimiter,
+            MenuItem["Resalte din\[AAcute]mico", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "DynamicHighlight"}]]]],
+            MenuItem["&Enlace simple", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "SimpleLink"}]]]],
+            MenuItem["&Borde grueso", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "ThickEdge"}]]]],
+            MenuItem["Vintage", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "Vintage"}]]]],
+            MenuItem["Diagrama vintage", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphStyle", "VintageDiagram"}]]]]
+        }],
+        Menu["Selecci\[OAcute]n &en grafos",
+        {
+            MenuItem["&Autom\[AAcute]tico", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", Automatic}]]]],
+            Delimiter,
+            MenuItem["Raya&do", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "Dashed"}]]]],
+            MenuItem["Punteado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "Dotted"}]]]],
+            Delimiter,
+            MenuItem["&Grueso", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "Thick"}]]]],
+            Delimiter,
+            MenuItem["&V\[EAcute]rtice de tri\[AAcute]ngulo", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "VertexTriangle"}]]]],
+            MenuItem["V\[EAcute]rtice de diamante", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "VertexDiamond"}]]]],
+            MenuItem["V\[EAcute]rtice de diamante c\[OAcute]ncavo", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "VertexConcaveDiamond"}]]]],
+            Delimiter,
+            MenuItem["Atenuar &elementos no seleccionados", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "DehighlightFade"}]]]],
+            MenuItem["Elementos &no seleccionados en gris", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "DehighlightGray"}]]]],
+            MenuItem["&Ocultar elementos no seleccionados", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphHighlightStyle", "DehighlightHide"}]]]]
+        }],
+        Menu["&Dise\[NTilde]o de grafos",
+        {
+            MenuItem["&Autom\[AAcute]tico", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", Automatic}]]]],
+            Delimiter,
+            MenuItem["Dibujo &radial", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "RadialDrawing"}]]]],
+            MenuItem["Dibu&jo en capas", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "LayeredDrawing"}]]]],
+            Delimiter,
+            MenuItem["In&serci\[OAcute]n por fuerzas el\[EAcute]ctricas y de resorte", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "SpringElectricalEmbedding"}]]]],
+            MenuItem["Inmersi\[OAcute]n por fuerzas de resorte", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "SpringEmbedding"}]]]],
+            MenuItem["&Inmersi\[OAcute]n de alta dimensi\[OAcute]n",  FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "HighDimensionalEmbedding"}]]]],
+            Delimiter,
+            MenuItem["Inmersi\[OAcute]n &circular", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "CircularEmbedding"}]]]],
+            MenuItem["Inmersi\[OAcute]n espiral", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "SpiralEmbedding"}]]]],
+            Delimiter,
+            MenuItem["Empaque m\[AAcute]s cercano", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "ClosestPacking"}]]]],
+            MenuItem["Empaque de centros m\[AAcute]s cercanos",   FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "ClosestCenterPacking"}]]]],
+            MenuItem["Empaque por capas", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "LayeredPacking"}]]]],
+            MenuItem["Empaque izquierdo por capas", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "LayeredLeftPacking"}]]]],
+            MenuItem["Empaque superior por capas", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "LayeredTopPacking"}]]]],
+            MenuItem["Empaque de grilla anidado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"GraphLayout", "NestedGridPacking"}]]]]
+        }],
+            Delimiter,
+        Menu["Forma de v\[EAcute]rtice",
+        {
+            MenuItem["&Autom\[AAcute]tico", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", Automatic}]]]],
+            Delimiter,
+            MenuItem["C\[IAcute]rc&ulo", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Circle"}]]]],
+            MenuItem["&Tri\[AAcute]ngulo", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Triangle"}]]]],
+            MenuItem["C&uadrado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Square"}]]]],
+            MenuItem["Punt&o", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Point"}]]]],
+            Delimiter,
+            MenuItem["C\[AAcute]psula", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Capsule"}]]]],
+            MenuItem["&Diamante", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Diamond"}]]]],
+            MenuItem["Trapecio invertido", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "DownTrapezoid"}]]]],
+            MenuItem["Escudo", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "FiveDown"}]]]],
+            MenuItem["&Hex\[AAcute]gono", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Hexagon"}]]]],
+            MenuItem["&Oct\[AAcute]gono", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Octagon"}]]]],
+            MenuItem["Paralelo&gramo", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Parallelogram"}]]]],
+            MenuItem["Pent\[AAcute]gono", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Pentagon"}]]]],
+            MenuItem["Rect\[AAcute]ngulo", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Rectangle"}]]]],
+            MenuItem["Estrella", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "Star"}]]]],
+            MenuItem["Trapecio normal", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "UpTrapezoid"}]]]],
+            Delimiter,
+            MenuItem["Diamante c\[OAcute]ncavo", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "ConcaveDiamond"}]]]],
+            MenuItem["He&x\[AAcute]gono c\[OAcute]ncavo", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "ConcaveHexagon"}]]]],
+            MenuItem["Pent\[AAcute]gono c\[OAcute]ncavo", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "ConcavePentagon"}]]]],
+            MenuItem["Cuadrado c\[OAcute]ncavo", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "ConcaveSquare"}]]]],
+            MenuItem["Tr&i\[AAcute]ngulo c\[OAcute]ncavo", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "ConcaveTriangle"}]]]],
+            Delimiter,
+            MenuItem["Diamante redondeado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedDiamond"}]]]],
+            MenuItem["Trapecio invertido redondeado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedDownTrapezoid"}]]]],
+            MenuItem["Escudo redondeado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedFiveDown"}]]]],
+            MenuItem["Hex\[AAcute]gono redondeado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedHexagon"}]]]],
+            MenuItem["Paralelogramo redondeado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedParallelogram"}]]]],
+            MenuItem["Pent\[AAcute]gono redondeado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedPentagon"}]]]],
+            MenuItem["Rect\[AAcute]ngulo redondeado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedRectangle"}]]]],
+            MenuItem["Cuadrado redondeado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedSquare"}]]]],
+            MenuItem["Tri\[AAcute]ngulo redondeado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedTriangle"}]]]],
+            MenuItem["Trapecio redondeado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexShape", "RoundedUpTrapezoid"}]]]]
+        }],
+        Menu["Tama\[NTilde]o de v\[EAcute]rtice",
+        {
+        LinkedItems[{
+            MenuItem["&Autom\[AAcute]tico", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", Automatic}]]]],
+            Delimiter,
+            MenuItem["Diminuto m\[AAcute]s &cercano", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Nearest", 0.05}}]]]],
+            MenuItem["Peque\[NTilde]o m\[AAcute]&s cercano", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Nearest", 0.1}}]]]],
+            MenuItem["&Mediano m\[AAcute]s cercano", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Nearest", 0.2}}]]]],
+            MenuItem["&Grande m\[AAcute]s cercano", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Nearest", 0.4}}]]]],
+            Delimiter,
+            MenuItem["Diminuto a escala", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Scaled", 0.005}}]]]],
+            MenuItem["Peque\[NTilde]o a escala", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Scaled", 0.01}}]]]],
+            MenuItem["Mediano a escala", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Scaled", 0.025}}]]]],
+            MenuItem["Grande a escala", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexSize", {"Scaled", 0.05}}]]]]
+            }]
+        }],
+        Menu["Estilo de v\[EAcute]rtice",
+        {
+        LinkedItems[{
+            MenuItem["&Autom\[AAcute]tico", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexStyle", Automatic}]]]],
+            Delimiter,
+            MenuItem["&Negro", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexStyle", Black}]]]],
+            MenuItem["&Gris", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexStyle", GrayLevel[0.5]}]]]],
+            MenuItem["A&zul", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexStyle", RGBColor[0, 0, 1]}]]]],
+            MenuItem["Caf\[EAcute]", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexStyle", RGBColor[0.6, 0.4, 0.2]}]]]],
+            MenuItem["Anara&njado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexStyle", RGBColor[1, 0.5, 0]}]]]],
+            MenuItem["Ada&ptar color...", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"VertexStyle", SystemDialogInput["Color"]}]]]]
+            }]
+        }],
+        Delimiter,
+        Menu["Forma de borde",
+        {
+            MenuItem["&Autom\[AAcute]tico", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", Automatic}]]]],
+            Delimiter,
+            MenuItem["Flecha", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "Arrow"}]]]],
+            MenuItem["&L\[IAcute]nea", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "Line"}]]]],
+            Delimiter,
+            MenuItem["&Flecha rellena", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "FilledArrow"}]]]],
+            MenuItem["Flecha &no rellena", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "UnfilledArrow"}]]]],
+            MenuItem["Flecha &corta rellena", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "ShortFilledArrow"}]]]],
+            MenuItem["Flecha corta no rellena", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "ShortUnfilledArrow"}]]]],
+            Delimiter,
+            MenuItem["Flecha arqueada rellena", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "FilledArcArrow"}]]]],
+            MenuItem["Flecha arqueada no rellena", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "UnfilledArcArrow"}]]]],
+            MenuItem["Flecha arqueada rellena corta", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "ShortFilledArcArrow"}]]]],
+            MenuItem["Flecha arqueada no rellena corta", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "ShortUnfilledArcArrow"}]]]],
+            Delimiter,
+            MenuItem["Flec&ha tallada", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "CarvedArrow"}]]]],
+            MenuItem["Flecha tallada corta", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "ShortCarvedArrow"}]]]],
+            MenuItem["Flecha arqueada tallada", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "CarvedArcArrow"}]]]],
+            MenuItem["Flecha arqueada tallada corta", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "ShortCarvedArcArrow"}]]]],
+            Delimiter,
+            MenuItem["Mitad de &flecha rellena", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "HalfFilledArrow"}]]]],
+            MenuItem["Mitad de flecha no rellena", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "HalfUnfilledArrow"}]]]],
+            MenuItem["Mitad de doble flecha rellena", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "HalfFilledDoubleArrow"}]]]],
+            MenuItem["Mitad de doble flecha no rellena", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "HalfUnfilledDoubleArrow"}]]]],
+            Delimiter,
+            MenuItem["L\[IAcute]nea discontinua", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "DashedLine"}]]]],
+            MenuItem["L\[IAcute]nea punteada", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "DottedLine"}]]]],
+            Delimiter,
+            MenuItem["L\[IAcute]nea de cuadro", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "BoxLine"}]]]],
+            MenuItem["L\[IAcute]nea de diamante", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "DiamondLine"}]]]],
+            MenuItem["L\[IAcute]nea de puntos", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeShape", "DotLine"}]]]]
+        }],
+        Menu["Estilo de borde",
+        {
+        LinkedItems[{
+            MenuItem["&Autom\[AAcute]tico", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", Automatic}]]]],
+            Delimiter,
+            MenuItem["&Negro", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", Black}]]]],
+            MenuItem["&Gris", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", GrayLevel[0.5]}]]]],
+            MenuItem["Azul", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", RGBColor[0, 0, 1]}]]]],
+            MenuItem["Caf\[EAcute]", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", RGBColor[0.6, 0.4, 0.2]}]]]],
+            MenuItem["Anara&njado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", RGBColor[1, 0.5, 0]}]]]],
+            MenuItem["Ada&ptar color...", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", SystemDialogInput["Color"]}]]]]
+            }],
+            Delimiter,
+        LinkedItems[{
+            MenuItem["Delgado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", AbsoluteThickness[0.5]}]]]],
+            MenuItem["Mediano", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", AbsoluteThickness[1]}]]]],
+            MenuItem["Grueso", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", Thick}]]]]
+            }],
+            Delimiter,
+        LinkedItems[{
+            MenuItem["Raya&do", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", Dashed}]]]],
+            MenuItem["Punteado", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", Dotted}]]]],
+            MenuItem["Puntos y rayas", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", DotDashed}]]]]
+            }],
+            Delimiter,
+        LinkedItems[{
+            MenuItem["S\[OAcute]lido", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", Opacity[1]}]]]],
+            MenuItem["Transparente", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu[{"EdgeStyle", Opacity[0.7]}]]]]
+            }]
+        }],
+        Delimiter,
+        MenuItem["Convertir a gr\[AAcute]ficos", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu["Graphics"]]]],
+        MenuItem["Gu&ardar grafo como...", FrontEndExecute[FrontEnd`SelectionEvaluateApply[
+                InputNotebook[], GraphComputation`GraphContextMenu["SaveAs"]]]],
+        MenuItem["Imp&rimir...", "PrintSelectionDialog"]
+    },
+
+    "HeadersFooters" -> {
+        MenuItem["Cortar", KernelExecute[FE`headersFootersDialogMenu["Cut"]], MenuEvaluator -> Automatic],
+        MenuItem["Copiar", KernelExecute[FE`headersFootersDialogMenu["Copy"]], MenuEvaluator -> Automatic],
+        MenuItem["Pegar", KernelExecute[FE`headersFootersDialogMenu["Paste"]], MenuEvaluator -> Automatic],
+        Delimiter,
+        MenuItem["Borrar", KernelExecute[FE`headersFootersDialogMenu["Clear"]], MenuEvaluator -> Automatic],
+        MenuItem["Restaurar", KernelExecute[FE`headersFootersDialogMenu["Reset"]], MenuEvaluator -> Automatic]
+    },
+
+    "PacletLink" -> {
+        MenuItem["&Abrir en una ventana nueva", FrontEndExecute[FEPrivate`FrontEndExecute[FrontEndToken["OpenHelpLink",
+                {CurrentValue[{ButtonBoxOptions, ButtonData}], Null}]]], MenuEvaluator->None],
+        Delimiter,
+        MenuItem["&Copiar hiperenlace", FrontEndExecute[{KernelExecute[MathLink`CallFrontEnd[FrontEnd`CopyToClipboard[
+                Cell[BoxData[CurrentValue[InputNotebook[], FrontEnd`RightClickData]]]]]]}], MenuEvaluator->"System"],
+        MenuItem["Copiar &direcci\[OAcute]n", FrontEndExecute[{FEPrivate`FrontEndExecute[FrontEnd`CopyToClipboard[
+                CurrentValue[{ButtonBoxOptions, ButtonData}]]]}], MenuEvaluator->None]},
+
+    "Hyperlink" -> {
+        MenuItem["&Copiar hiperenlace", FrontEndExecute[{KernelExecute[MathLink`CallFrontEnd[FrontEnd`CopyToClipboard[
+                Cell[BoxData[CurrentValue[InputNotebook[], FrontEnd`RightClickData]]]]]]}], MenuEvaluator->"System"],
+        MenuItem["Copiar &direcci\[OAcute]n", FrontEndExecute[{FEPrivate`FrontEndExecute[FrontEnd`CopyToClipboard[
+                CurrentValue[{ButtonBoxOptions, ButtonData}]]]}], MenuEvaluator->None]},
+     "Entity" -> {
+        MenuItem["&Copiar",
+            KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "Boxes"]],
+            MenuEvaluator -> "System"],
+        Menu["Copiar como",
+        {
+			MenuItem["Texto &de entrada",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "InputForm"]],
+				MenuEvaluator -> "System"],
+			Delimiter,
+			MenuItem["no&mbre com\[UAcute]n",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "CommonName"]],
+				MenuEvaluator -> "System"],
+			MenuItem["&nombre can\[OAcute]nico",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "CanonicalName"]],
+				MenuEvaluator -> "System"],
+			MenuItem["nombre de &tipo de entidad",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "EntityTypeName"]],
+				MenuEvaluator -> "System"]
+		}]
+    },
+    
+    "Quantity" -> {
+        MenuItem["&Copiar",
+            KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "Boxes"]],
+            MenuEvaluator -> "System"],
+        Menu["Copiar como",
+        {
+			MenuItem["Texto &de entrada",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "InputForm"]],
+				MenuEvaluator -> "System"],
+			Delimiter,
+			MenuItem["&magnitud de cantidad",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "QuantityMagnitude"]],
+				MenuEvaluator -> "System"],
+			MenuItem["&unidad de cantidad",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "QuantityUnit"]],
+				MenuEvaluator -> "System"]
+		}]
+    },
+
+    "DateObject" -> {
+        MenuItem["&Copiar",
+            KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "Boxes"]],
+            MenuEvaluator -> "System"],
+        Menu["Copiar como",
+        {
+			MenuItem["Texto &de entrada",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "InputForm"]],
+				MenuEvaluator -> "System"],
+			Delimiter,
+			MenuItem["&fecha",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "DateList"]],
+				MenuEvaluator -> "System"],
+			MenuItem["objeto de &tiempo",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "TimeObject"]],
+				MenuEvaluator -> "System"]
+		}]
+    },
+
+    "TimeObject" -> {
+        MenuItem["&Copiar",
+            KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "Boxes"]],
+            MenuEvaluator -> "System"],
+        Menu["Copiar como",
+        {
+			MenuItem["Texto &de entrada",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "InputForm"]],
+				MenuEvaluator -> "System"],
+			Delimiter,
+			MenuItem["&fecha",
+				KernelExecute[FE`CopyExprAs[CurrentValue[InputNotebook[], FrontEnd`RightClickData], "DateList"]],
+				MenuEvaluator -> "System"]
+		}]
+    },
+               
+
+    "InputField" -> {
+        MenuItem["Cor&tar", "Cut"],
+        MenuItem["&Copiar", "Copy"],
+        MenuItem["&Pegar", FrontEnd`Paste[After]]},
+
+    "TextStyleInputField" -> {
+        MenuItem["Cor&tar", "Cut"],
+        MenuItem["&Copiar", "Copy"],
+        MenuItem["&Pegar", FrontEnd`Paste[After]],
+        Delimiter,
+        Menu["T&ipo",
+        {
+            MenuItem["&Normal", "PlainFont"],
+            MenuItem["N&egrita", FontWeight->Toggle, MenuKey["b", Modifiers->{"Control"}]],
+            MenuItem["Curs&iva", FontSlant->Toggle, MenuKey["i", Modifiers->{"Control"}]],
+            MenuItem["S&ubrayado", FrontEnd`FontVariationsUnderline->Toggle, MenuKey["u", Modifiers->{"Control"}]]
+        }],
+        Menu["T&ama\[NTilde]o",
+        {
+            MenuItem["&M\[AAcute]s grande", FontSize->Larger, MenuKey["=", Modifiers->{"Command"}]],
+            MenuItem["M\[AAcute]s &peque\[NTilde]o", FontSize->Smaller, MenuKey["-", Modifiers->{"Command"}]],
+            Delimiter,
+            LinkedItems[{
+                MenuItem["&9 puntos", FontSize->9],
+                MenuItem["1&0 puntos", FontSize->10],
+                MenuItem["&12 puntos", FontSize->12],
+                MenuItem["1&4 puntos", FontSize->14],
+                MenuItem["1&6 puntos", FontSize->16],
+                MenuItem["1&8 puntos", FontSize->18],
+                MenuItem["&24 puntos", FontSize->24],
+                MenuItem["&36 puntos", FontSize->36],
+                MenuItem["&72 puntos", FontSize->72]
+            }]
+        }],
+        Menu["Color de te&xto",
+        {
+            MenuItem["Paleta...", "FontColorDialog"],
+            Delimiter,
+            LinkedItems[{
+                MenuItem["Negro",	FontColor->GrayLevel[0]],
+                MenuItem["Gris",	FontColor->GrayLevel[0.5]],
+                MenuItem["Blanco",	FontColor->GrayLevel[1]],
+                Delimiter,
+                MenuItem["Azul",	FontColor->RGBColor[0, 0, 1]],
+                MenuItem["Caf\[EAcute]",	FontColor->RGBColor[0.6, 0.4, 0.2]],
+                MenuItem["Cian",	FontColor->RGBColor[0, 1, 1]],
+                MenuItem["Verde",	FontColor->RGBColor[0, 1, 0]],
+                MenuItem["Magenta",	FontColor->RGBColor[1, 0, 1]],
+                MenuItem["Anaranjado",	FontColor->RGBColor[1, 0.5, 0]],
+                MenuItem["Rosado",	FontColor->RGBColor[1, 0.5, 0.5]],
+                MenuItem["Morado",	FontColor->RGBColor[0.5, 0, 0.5]],
+                MenuItem["Rojo",		FontColor->RGBColor[1, 0, 0]],
+                MenuItem["Amarillo",	FontColor->RGBColor[1, 1, 0]]
+            }]
+        }],
+        Menu["C&olor de fondo",
+        {
+            MenuItem["Paleta...", "BackgroundDialog"],
+            Delimiter,
+            LinkedItems[{
+                MenuItem["Ninguno",		Background->None],
+                Delimiter,
+                MenuItem["Negro",		Background->GrayLevel[0]],
+                MenuItem["Gris",		Background->GrayLevel[0.5]],
+                MenuItem["Gris claro",	Background->GrayLevel[0.85]],
+                MenuItem["Blanco",		Background->GrayLevel[1]],
+                Delimiter,
+                MenuItem["Azul claro",	Background->RGBColor[0.87, 0.94, 1]],
+                MenuItem["Caf\[EAcute] claro",	Background->RGBColor[0.94, 0.91, 0.88]],
+                MenuItem["Cian claro",	Background->RGBColor[0.9, 1, 1]],
+                MenuItem["Verde claro",	Background->RGBColor[0.88, 1, 0.88]],
+                MenuItem["Magenta claro",Background->RGBColor[1, 0.9, 1]],
+                MenuItem["Anaranjado claro",Background->RGBColor[1, 0.9, 0.8]],
+                MenuItem["Rosado claro",	Background->RGBColor[1, 0.925, 0.925]],
+                MenuItem["Morado claro",Background->RGBColor[0.94, 0.88, 0.94]],
+                MenuItem["Rojo claro",	Background->RGBColor[1, 0.85, 0.85]],
+                MenuItem["Amarillo claro",Background->RGBColor[1, 1, 0.85]],
+                Delimiter,
+                MenuItem["Anaranjado",		Background->RGBColor[1, 0.5, 0]],
+                MenuItem["Rosado",		Background->RGBColor[1, 0.5, 0.5]],
+                MenuItem["Amarillo",		Background->RGBColor[1, 1, 0]]
+            }]
+        }]
+        },
+
+    "ErrorIcon" -> {
+        (*MenuItem["Show Synta&x Errors", FrontEndExecute[{}]],
+        MenuItem["Clear &Error Highlights", FrontEndExecute[{}]]*)
+    },
+
+    "Graphics3DBox" -> {
+        MenuItem["Cor&tar gr\[AAcute]fico", "Cut"],
+        MenuItem["&Copiar gr\[AAcute]fico", "Copy"],
+        MenuItem["&Pegar", FrontEnd`Paste[After]],
+        Delimiter,
+        MenuItem["Gu&ardar gr\[AAcute]fico como...", "SelectionSaveSpecial"],
+        MenuItem["Imp&rimir gr\[AAcute]fico...", "PrintSelectionDialog"],
+        Delimiter,
+        MenuItem["Vista &frontal", FrontEndExecute[SetOptions[NotebookSelection[InputNotebook[]], {Graphics3DBoxOptions->{ViewPoint->Front, ViewVertical->Inherited}}]]],
+        MenuItem["Vista de arri&ba", FrontEndExecute[SetOptions[NotebookSelection[InputNotebook[]], {Graphics3DBoxOptions->{ViewPoint->Top, ViewVertical->Inherited}}]]],
+        MenuItem["Vista pre&determinada", FrontEndExecute[SetOptions[NotebookSelection[InputNotebook[]], {Graphics3DBoxOptions->{ViewPoint->Inherited, ViewVertical->Inherited}}]]],
+        MenuItem["Restablecer paneo/&Zoom", FrontEndExecute[SetOptions[NotebookSelection[InputNotebook[]], {Graphics3DBoxOptions->{ViewAngle->Inherited, ViewCenter->Inherited}}]]],
+        Delimiter,
+        MenuItem["Redu&cir cuadro delimitador", FrontEnd`Graphics3DBoxOptionsMethod->{"ShrinkWrap"->True}]},
+
+    "LocatorPaneBox" -> {
+        (*MenuItem["Add &Locator", FrontEndExecute[{}]]*)},
+
+    "CellGroup" -> {
+        MenuItem["Cor&tar", "Cut"],
+        MenuItem["&Copiar", "Copy"],
+        MenuItem["&Pegar", FrontEnd`Paste[After]],
+        Menu["Cop&iar como",
+        {
+            MenuItem["&Texto sin formato", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["Cell &Object", FrontEnd`CopySpecial["CellObject"]],
+            MenuItem["Expresi\[OAcute]n de &celda", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["Expresi\[OAcute]&n de cuaderno", FrontEnd`CopySpecial["NotebookExpression"]]
+        }],
+        Delimiter,
+        MenuItem["Co&mbinar celdas", "CellMerge"],
+        MenuItem["&Separar celdas", "CellUngroup"],
+        Delimiter,
+        MenuItem["Abrir/Cerrar &grupo", "OpenCloseGroup"],
+        MenuItem["&Abrir todos los subgrupos", "SelectionOpenAllGroups"],
+        MenuItem["Cerrar todos &los subgrupos", "SelectionCloseAllGroups"],
+        Delimiter,
+        MenuItem["&Evaluar celdas", "EvaluateCells"],
+        MenuItem["Quita&r de cola de evaluaci\[OAcute]n", "RemoveFromEvaluationQueue"],
+        Delimiter,
+        MenuItem["Eliminar &formato", "ClearCellOptions"],
+        Menu["Est&ilo",
+        {
+            LinkedItems[{
+                MenuItem["Iniciar nombres de celda de estilo", "MenuListStyles", MenuAnchor->True]
+            }],
+            Delimiter,
+            MenuItem["&Otro...", "StyleOther"]
+        }]
+        },
+
+    "CellBracket" -> {
+        MenuItem["Cor&tar", "Cut"],
+        MenuItem["&Copiar", "Copy"],
+        MenuItem["&Pegar", FrontEnd`Paste[After]],
+        Menu["Cop&iar como",
+        {
+            MenuItem["&Texto sin formato", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["Texto &de entrada", FrontEnd`CopySpecial["InputText"]],
+            MenuItem["&LaTeX",
+                KernelExecute[ToExpression["FrontEnd`CopyAsTeX[]"]],
+                MenuEvaluator -> "System"],
+            MenuItem["M&athML",
+                KernelExecute[ToExpression["FrontEnd`CopyAsMathML[]"]],
+                MenuEvaluator -> "System"],
+            Delimiter,
+            MenuItem["Cell &Object", FrontEnd`CopySpecial["CellObject"]],
+            MenuItem["Expresi\[OAcute]n de &celda", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["Expresi\[OAcute]&n de cuaderno", FrontEnd`CopySpecial["NotebookExpression"]]
+        }],
+        Delimiter,
+        MenuItem["&Evaluar celda", "EvaluateCells"],
+        MenuItem["Quita&r de cola de evaluaci\[OAcute]n", "RemoveFromEvaluationQueue"],
+        Delimiter,
+        Menu["Con&vertir a",
+        {
+            MenuItem["&InputForm", "SelectionConvert"->InputForm],
+            MenuItem["Input&Form crudo", "SelectionConvert"->RawInputForm],
+            MenuItem["&OutputForm", "SelectionConvert"->OutputForm],
+            MenuItem["Convertir primero a BoxForm", "MenuListConvertFormatTypes", MenuAnchor->True]
+        }],
+        ToggleMenuItem["&Initialization Cell", InitializationCell->Toggle],
+        MenuItem["A&gregar/Eliminar identificadores de celda...", "CellTagsEditDialog"],
+        Delimiter,
+        Menu["Est&ilo",
+        {
+            LinkedItems[{
+                MenuItem["Iniciar nombres de celda de estilo", "MenuListStyles", MenuAnchor->True]
+            }],
+            Delimiter,
+            MenuItem["&Otro...", "StyleOther"]
+        }],
+        Menu["C&olor de fondo",
+        {
+            MenuItem["Paleta...", "BackgroundDialog"],
+            Delimiter,
+            LinkedItems[{
+                MenuItem["Ninguno",		Background->None],
+                Delimiter,
+                MenuItem["Negro",		Background->GrayLevel[0]],
+                MenuItem["Gris",		Background->GrayLevel[0.5]],
+                MenuItem["Gris claro",	Background->GrayLevel[0.85]],
+                MenuItem["Blanco",		Background->GrayLevel[1]],
+                Delimiter,
+                MenuItem["Azul claro",	Background->RGBColor[0.87, 0.94, 1]],
+                MenuItem["Caf\[EAcute] claro",	Background->RGBColor[0.94, 0.91, 0.88]],
+                MenuItem["Cian claro",	Background->RGBColor[0.9, 1, 1]],
+                MenuItem["Verde claro",	Background->RGBColor[0.88, 1, 0.88]],
+                MenuItem["Magenta claro",Background->RGBColor[1, 0.9, 1]],
+                MenuItem["Anaranjado claro",Background->RGBColor[1, 0.9, 0.8]],
+                MenuItem["Rosado claro",	Background->RGBColor[1, 0.925, 0.925]],
+                MenuItem["Morado claro",Background->RGBColor[0.94, 0.88, 0.94]],
+                MenuItem["Rojo claro",	Background->RGBColor[1, 0.85, 0.85]],
+                MenuItem["Amarillo claro",Background->RGBColor[1, 1, 0.85]],
+                Delimiter,
+                MenuItem["Anaranjado",		Background->RGBColor[1, 0.5, 0]],
+                MenuItem["Rosado",		Background->RGBColor[1, 0.5, 0.5]],
+                MenuItem["Amarillo",		Background->RGBColor[1, 1, 0]]
+            }]
+        }],
+        Menu["T&ama\[NTilde]o",
+        {
+            MenuItem["&M\[AAcute]s grande", FontSize->Larger],
+            MenuItem["M\[AAcute]s &peque\[NTilde]o", FontSize->Smaller],
+            Delimiter,
+            LinkedItems[{
+                MenuItem["&9 puntos", FontSize->9],
+                MenuItem["1&0 puntos", FontSize->10],
+                MenuItem["&12 puntos", FontSize->12],
+                MenuItem["1&4 puntos", FontSize->14],
+                MenuItem["1&6 puntos", FontSize->16],
+                MenuItem["1&8 puntos", FontSize->18],
+                MenuItem["&24 puntos", FontSize->24],
+                MenuItem["&36 puntos", FontSize->36],
+                MenuItem["&72 puntos", FontSize->72]
+            }]
+        }],
+        MenuItem["Eliminar &formato", "ClearCellOptions"],
+        Delimiter,
+        MenuItem["&Guardar selecci\[OAcute]n como...", "SelectionSaveSpecial"],
+        MenuItem["Imprimir la selecci\[OAcute]&n...", "PrintSelectionDialog"],
+        MenuItem["&Hablar la selecci\[OAcute]n", "SelectionSpeak"],
+        Delimiter,
+        MenuItem["Propiedades...", "OptionsDialog", Scope->Selection]
+        },
+
+    "CellRange" -> {
+        MenuItem["Cor&tar", "Cut"],
+        MenuItem["&Copiar", "Copy"],
+        MenuItem["&Pegar", FrontEnd`Paste[After]],
+        Menu["Cop&iar como",
+        {
+            MenuItem["&Texto sin formato", FrontEnd`CopySpecial["PlainText"]],
+            MenuItem["Cell &Object", FrontEnd`CopySpecial["CellObject"]],
+            MenuItem["Expresi\[OAcute]n de &celda", FrontEnd`CopySpecial["CellExpression"]],
+            MenuItem["Expresi\[OAcute]&n de cuaderno", FrontEnd`CopySpecial["NotebookExpression"]]
+        }],
+        Delimiter,
+        MenuItem["Co&mbinar celdas", "CellMerge"],
+        MenuItem["A&grupar celdas", "CellGroup"],
+        Delimiter,
+        MenuItem["&Abrir todos los subgrupos", "SelectionOpenAllGroups"],
+        MenuItem["Cerrar todos &los subgrupos", "SelectionCloseAllGroups"],
+        Delimiter,
+        MenuItem["&Evaluar celdas", "EvaluateCells"],
+        MenuItem["Quita&r de cola de evaluaci\[OAcute]n", "RemoveFromEvaluationQueue"],
+        Delimiter,
+        MenuItem["Eliminar &formato", "ClearCellOptions"],
+        Menu["Est&ilo",
+        {
+            LinkedItems[{
+                MenuItem["Iniciar nombres de celda de estilo", "MenuListStyles", MenuAnchor->True]
+            }],
+            Delimiter,
+            MenuItem["&Otro...", "StyleOther"]
+        }]
+        },
+
+    "CellExpression" -> {
+        MenuItem["Cor&tar", "Cut"],
+        MenuItem["&Copiar", "Copy"],
+        MenuItem["&Pegar", FrontEnd`Paste[After]],
+        Delimiter,
+        MenuItem["Comprobar &balance", "Balance"],
+        MenuItem["&Mostrar celda", "ToggleShowExpression"]},
+
+    "CellInsertionPoint" -> {
+        MenuItem["&Pegar", FrontEnd`Paste[After]],
+        Menu["&Insertar celda nueva",
+        {
+            MenuItem["Iniciar nombres de celda de estilo", "MenuListStyles", MenuAnchor->True],
+            Delimiter,
+            MenuItem["&Otro...", "StyleOther"]
+        }],
+        Menu["Inse&rtar l\[IAcute]nea horizontal",
+        {
+            MenuItem["L\[IAcute]&nea fina", FrontEndExecute[{
+                    FrontEnd`NotebookWrite[FrontEnd`InputNotebook[],
+                        Cell[" ", "Text",
+                            Editable->False,
+                            Selectable->False,
+                            CellElementSpacings->{"CellMinHeight"->1},
+                            ShowCellBracket->False,
+                            CellMargins->{{0, 0}, {1, 1}},
+                            CellSize->{Inherited, 3},
+                            CellFrame->{{0,0},{0,0.5}},
+                            CellFrameMargins->0,
+                            CellFrameColor->RGBColor[0, 0, 1]],
+                        After]
+                }]],
+            MenuItem["L\[IAcute]nea &media", FrontEndExecute[{
+                    FrontEnd`NotebookWrite[FrontEnd`InputNotebook[],
+                        Cell[" ", "Text",
+                            Editable->False,
+                            Selectable->False,
+                            CellElementSpacings->{"CellMinHeight"->1},
+                            ShowCellBracket->False,
+                            CellMargins->{{0, 0}, {1, 1}},
+                            CellSize->{Inherited, 4},
+                            CellFrame->{{0,0},{0,2}},
+                            CellFrameMargins->0,
+                            CellFrameColor->RGBColor[0, 0, 1]], After]
+                }]],
+            MenuItem["&L\[IAcute]nea gruesa", FrontEndExecute[{
+                    FrontEnd`NotebookWrite[FrontEnd`InputNotebook[],
+                        Cell[" ", "Text",
+                            Editable->False,
+                            Selectable->False,
+                            CellElementSpacings->{"CellMinHeight"->1},
+                            ShowCellBracket->False,
+                            CellMargins->{{0, 0}, {1, 1}},
+                            CellSize->{Inherited, 5},
+                            CellFrame->{{0,0},{0,3}},
+                            CellFrameMargins->0,
+                            CellFrameColor->RGBColor[0, 0, 1]], After]
+                }]]
+        }],
+        Delimiter,
+        MenuItem["Insertar &salto de p\[AAcute]gina",
+            FrontEndExecute[{
+                FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[],
+                    Cell["", "PageBreak", PageBreakBelow -> True],
+                    After]}]],
+	Delimiter,
+	MenuItem["Copiar ob&jeto de cuaderno", FrontEnd`CopySpecial["NotebookObject"]],
+        Delimiter,
+        MenuItem["Cambiar pan&talla completa", FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[]]]]
+    },
+
+    "TableView" -> {
+        MenuItem["Cambiar orden de columnas", KernelExecute[ TableView`SortData[ButtonNotebook[], "column", "Sort"]], MenuEvaluator -> Automatic],
+        MenuItem["Revertir orden de columnas", KernelExecute[ TableView`SortData[ButtonNotebook[], "column", "Reverse sort"]], MenuEvaluator -> Automatic],
+        MenuItem["Columna nueva antes", KernelExecute[ TableView`NewRowColumn[ButtonNotebook[], "column", 0]], MenuEvaluator -> Automatic],
+        MenuItem["Columna nueva despu\[EAcute]s", KernelExecute[ TableView`NewRowColumn[ButtonNotebook[], "column", 1]], MenuEvaluator -> Automatic],
+        MenuItem["Borrar columna", KernelExecute[ TableView`DeleteRowColumn[ButtonNotebook[], "column"]], MenuEvaluator -> Automatic],
+        MenuItem["Usar columna como encabezado de fila", KernelExecute[ TableView`DataToHeadings[ButtonNotebook[], "column"]], MenuEvaluator -> Automatic],
+        Delimiter,
+        MenuItem["Cambiar orden de filas", KernelExecute[ TableView`SortData[ButtonNotebook[], "row", "Sort"]], MenuEvaluator -> Automatic],
+        MenuItem["Revertir orden de filas", KernelExecute[ TableView`SortData[ButtonNotebook[], "row", "Reverse sort"]], MenuEvaluator -> Automatic],
+        MenuItem["Fila nueva antes", KernelExecute[ TableView`NewRowColumn[ButtonNotebook[], "row", 0]], MenuEvaluator -> Automatic],
+        MenuItem["Fila nueva despu\[EAcute]s", KernelExecute[ TableView`NewRowColumn[ButtonNotebook[], "row", 1]], MenuEvaluator -> Automatic],
+        MenuItem["Borrar fila", KernelExecute[ TableView`DeleteRowColumn[ButtonNotebook[], "row"]], MenuEvaluator -> Automatic],
+        MenuItem["Usar fila como encabezado de columna", KernelExecute[ TableView`DataToHeadings[ButtonNotebook[], "row"]], MenuEvaluator -> Automatic],
+        Delimiter,
+        MenuItem["Ocultar/mostrar tipos", KernelExecute[ TableView`ToggleTypes[ButtonNotebook[]]], MenuEvaluator -> Automatic],
+        MenuItem["Cambiar tipo de \[IAcute]tem", KernelExecute[ TableView`ConvertType[ButtonNotebook[]]], MenuEvaluator -> Automatic],
+        MenuItem["Usar encabezados como datos", KernelExecute[ TableView`HeadingsToData[boxid, ButtonNotebook[]]], MenuEvaluator -> Automatic],
+        Delimiter,
+        MenuItem["Copiar datos", KernelExecute[ TableView`CopyEvent[ButtonNotebook[]]], MenuEvaluator -> Automatic],
+        MenuItem["Pegar datos", KernelExecute[ TableView`PasteData[ButtonNotebook[]]], MenuEvaluator -> Automatic]
+    },
+
+    "SystemsModelMinimal" -> {
+        MenuItem["Pantalla completa", KernelExecute[Control`Typesetting`SystemsModelTypesetToggle[ButtonNotebook[], FE`CMObj]], MenuEvaluator -> Automatic]
+    },
+
+    "SystemsModelFull" -> {
+        MenuItem["Pantalla m\[IAcute]nima", KernelExecute[Control`Typesetting`SystemsModelTypesetToggle[ButtonNotebook[], FE`CMObj]], MenuEvaluator -> Automatic]
+    },
+
+    "Palette" -> {
+        MenuItem["Generar cuaderno", "GenerateNotebook"],
+        Delimiter,
+        MenuItem["Cerrar", "Close", MenuKey["w", Modifiers->{"Control"}]]
+    }
+}

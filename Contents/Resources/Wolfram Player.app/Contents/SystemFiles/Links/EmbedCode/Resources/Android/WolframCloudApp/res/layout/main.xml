@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}">
+
+    <LinearLayout
+        android:id="@+id/fieldsWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        `fields`
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fieldsWrapper"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:onClick="buttonClick"
+        android:text="@string/button" />
+
+    <View
+        android:id="@+id/horizontalRule"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/button"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray"/>
+
+    <RelativeLayout
+        android:id="@+id/resultLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/horizontalRule">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateOnly="true"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+			android:gravity="center"
+            android:textSize="36sp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

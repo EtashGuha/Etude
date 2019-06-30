@@ -1,0 +1,2 @@
+<!ENTITY % notebookmlref SYSTEM "NotebookML1/notebookml.dtd" >
+%notebookmlref;

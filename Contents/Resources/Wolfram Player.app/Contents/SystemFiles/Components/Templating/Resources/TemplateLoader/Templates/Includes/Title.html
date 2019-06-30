@@ -1,0 +1,10 @@
+<wolfram:if test="! MatchQ[#PageTitle, Automatic|_Missing|None|Null]">
+  <h1 class="page-header page-title">
+    <wolfram:slot id="PageTitle"/>
+  </h1>
+</wolfram:if>
+<wolfram:if test="! MatchQ[#PageDescription, Automatic|_Missing|None|Null]">
+  <p class="page-description">
+    <wolfram:slot id="PageDescription"/>
+  </p>
+</wolfram:if>

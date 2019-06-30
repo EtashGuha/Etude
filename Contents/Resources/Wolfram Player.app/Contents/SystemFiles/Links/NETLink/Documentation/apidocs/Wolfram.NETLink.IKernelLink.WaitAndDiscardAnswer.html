@@ -1,0 +1,78 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IKernelLink.WaitAndDiscardAnswer Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IKernelLink.WaitAndDiscardAnswer.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IKernelLink.WaitAndDiscardAnswer Method </h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Reads and discards all packets from a computation, including the result. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Sub WaitAndDiscardAnswer()</div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />
+        <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> WaitAndDiscardAnswer();</div>
+      <h4 class="dtH4">Remarks</h4>
+      <p> Use this method if you are not interested in the result of a computation. If you <i>are</i> interested in examining the result of the evaluation, use <a href="Wolfram.NETLink.IKernelLink.WaitForAnswer.html">WaitForAnswer</a> instead. <p> Use this method after sending an expression to evaluate with <a href="Wolfram.NETLink.IKernelLink.Evaluate_overload_1.html">Evaluate</a> or a manual sequence of Put methods. </p>
+            <example>
+            <pre class="code">ml.Evaluate("Needs[\"Algebra`FiniteFields`\"]");
+ml.WaitAndDiscardAnswer();
+</pre>
+            </example> Examples of packets that arrive and are discarded other than the result are PacketType.Text, PacketType.Message, PacketType.Display, etc. If you want to examine or operate on the incoming packets that are discarded by this method, use the <a href="Wolfram.NETLink.IKernelLink.PacketArrived.html">PacketArrived</a> event. </p>
+      <h4 class="dtH4">Exceptions</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Exception Type</th>
+            <th width="50%">Condition</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MathLinkException.html">MathLinkException</a>
+            </td>
+            <td width="50%">On any MathLink error.</td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IKernelLink.html">IKernelLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.IKernelLink.WaitForAnswer.html">WaitForAnswer</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="WaitAndDiscardAnswer method">
+        </param>
+        <param name="Keyword" value="WaitAndDiscardAnswer method, IKernelLink interface">
+        </param>
+        <param name="Keyword" value="IKernelLink.WaitAndDiscardAnswer method">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

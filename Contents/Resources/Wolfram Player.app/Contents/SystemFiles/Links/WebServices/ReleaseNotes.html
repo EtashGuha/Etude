@@ -1,0 +1,128 @@
+<html>
+<h2><i>Web Services</i> 1.0 Release Notes</h2>
+
+
+Welcome to <i>Web Services</i>, version 1.0.
+<p>
+Web services is an emerging technology that provides programmatic interfaces on the network that are used for application to application communication.
+Web services allow users to integrate code from most platforms or languages with their application. The Web Services Package is a <i>Mathematica</i> Package
+that integrates <i>Mathematica</i> and web services by letting a user call web services from <i>Mathematica</i> in a completely transparent way. <i>Mathematica</i> users
+can dynamically access new data and functionality located on the network. The Web Services Package makes the whole universe of existing and future web
+services an automatic extension to the <i>Mathematica</i> environment.
+<p>
+<i>Web Services</i> runs on Windows, Macintosh, Linux, and UNIX.
+<p>
+Please direct comments, questions, etc. to <a
+href="mailto:webservices@wolfram.com">webservices@wolfram.com</a>.
+<p>
+<br>
+
+
+<h3>Revision History</h3>
+<table border=1 cellpadding=5 cellspacing=0>
+<tr>
+<td>1.0.2</td><td>6/05</td><td>Minor bug fixes.</td>
+</tr>
+<tr>
+<td>1.0.1</td><td>1/05</td><td>Minor bug fixes.</td>
+</tr>
+<tr>
+<td>1.0.0</td><td>11/04</td><td>Final 1.0.0 release.</td>
+</tr>
+<tr>
+<td>1.0.0b3</td><td>1/04</td><td>Minor bug fixes regarding ExpressionML and MathML support.</td>
+</tr>
+<tr>
+<td>1.0.0b2</td><td>11/03</td><td>Major upgrade with several internal fixes and some useful features.</td>
+</tr>
+<tr>
+<td>1.0.0b1</td><td>5/03</td><td>First release.</td>
+</tr>
+</table>
+<P>
+<br>
+
+<h3>Changes in version 1.0.2 </h3>
+<p>Moved $WebServicesSecurityInitialized symbol into the package context.</p>
+
+<h3>Changes in version 1.0.1 </h3>
+<p>A bug was fixed in the XML parser that affected how the WSDL file was parsed within
+InstallService.  This bug was common in web services implemented in .Net.</p>
+<p>Fixed a bug in Deserialize that forced an ugly message and forced deserialization to fail.
+The problem occurred when a data type definition was not found.  Data will be converted
+generically if a data type definition is not found.  Simple data will become a string
+and complex data will become a rule.</p>
+<p>Updated the Wolfram Search example to use Wolfram Search version 2.</p>
+
+<h3>Changes in version 1.0.0 </h3>
+<p>Reorganized the package. This includes where some of the file are located and how
+the code loads.  This fixes some problems with symbols clashing with other symbols.</p>
+<p>Updated the TerraService example to use GUIKit.</p>
+<p>Added Web Services Navigator example.</p>
+
+<h3>Changes in version 1.0.0b3 </h3>
+<p>Fixed the semantics for using MathML with Web Services.  The client will support
+sending MathML when a type is specified as math.type rather than just supporting
+a math element defined in the MathML Schema.</p>
+<p>Fixed the semantics for using Expressions with Web Services.  The client will support
+sending Expressions when a type is specified as Expression rather than just supporting
+a Expression element defined in the MathML Schema.</p>
+<p>Updated Amazon examples to version 3.  Version 1 is going offline.</p>
+
+<h3>Changes in version 1.0.0b2 </h3>
+<p>Added support for ExpressionML.  If a web service returns ExpressionML, the client will transform the data
+into an Expression automatically for the user.</p>
+<p>Added InsecureExprQ function that helps ensure ExpressionML that is converted by the client is safe.  A
+user used SetSecurity to specify allowed and disallowed symbols and contexts.  This function returns True
+if a symbol is disallowed.</p>
+<p>Added SetSecurity function that is used to specify which symbols and contexts are allowed and disallowed by
+InsecureExprQ.</p>
+<p>Added ExpressionWrapperFunction option that allows the user to specify a function that will wrap each
+Expression that is created with ExpressionML returned from a web service operation.  One use of this option
+is it provides the users with a way to use Hold on a Expression before it is evaluated.</p>
+<p>Added support for MathML.  If a web service returns MathML, the client will transform the data
+into Symbolic XML automatically for the user.</p>
+<p>Removed support for the HeaderEncodingStyleURI option.  Headers will use the encoding style used by the body.
+HeaderEncodingStyleURI did not scale properly as there could be multiple headers each with different
+encoding styles.  Yet there was only one HeaderEncodingStyleURI option.  WS-I profiles specifies that
+only literal encoding should be used.  So really this should be the standard and there should be no need to
+specify the headers encoding style URI.  However, encoding may still be used for the client, but only if the
+encoding matches the body's encoding.</p>
+<p>Added DeencodeParameters option that is mostly an internal option.  Parameters are encoded with their type
+and arrayType in order to identify the type and arrayType of parameters at runtime.  For SOAP encoded messages,
+this is useful because these are required within the message.  However, literal messages do not require
+these encodings to be in the message and they should not be sent to the service as it may cause iteroperability
+problems.  Therefor the encodings must be removed after the types and arrayTypes are identified by the code
+building the message.  By setting this option to True, the encodings are removed.  By setting the option to
+False the encodings remain for messages that are SOAP encoded.  This option is exposed to the user, as it may
+be useful while building a function using InstallServiceOperation.</p>
+<p>Added support the elementFormDefault attribute in XML Schema definitions.  Previous versions of the Web
+Services package were ignoring this attribute and not building messages correctly.  For previous versions,
+if a service was document-style it used qualified elements, but if it rpc-style it used unqualified elements.
+</p>
+<p>Fixed support for importing schema.  Previous versions were not importing schema defined in the types
+section correctly.  This should be fixed.</p>
+
+<h3>Changes in version 1.0.0b1 </h3>
+Initial Release.
+
+<h3>Known issues in this release </h3>
+<p>
+  <b>XML Schema</b>
+</p>
+<p>
+  The entire XML Schema specification is not supported.  There will be complex
+  schema type definitions which will not work properly.  This can be overcome by
+  building the requests by hand using ToServiceRequest.  More schema support will
+  be added in the next version.
+</p>
+<p>
+  <b>HTTP Requests</b>
+</p>
+<p>
+  Timeouts may occur only after a lengthy wait.  This occurs because the Java libraries
+  that are used to make the HTTP requests only allow for the server to determine when the
+  timeout occurs.  So the client may wait for a longer period waiting than intended, waiting
+  for the server to timeout.  This will hopefully be addressed in future releases.
+</p>
+</html>

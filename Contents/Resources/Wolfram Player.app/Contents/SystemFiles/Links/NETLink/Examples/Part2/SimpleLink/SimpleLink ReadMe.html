@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title></title>
+<meta name="GENERATOR" content="Microsoft Visual Studio.NET 7.0">
+<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+</head>
+<body>
+<H2>SimpleLink <EM>.NET/Link</EM> Example Program</H2>
+<P>&nbsp;</P>
+<P>SimpleLink is a very simple .NET/Link example program demonstrating various methods
+from the IKernelLink interface. Look at the <a href="../../../Documentation/apidocs/index.html">.NET/Link
+API Documentation</a> for more information on .NET/Link programming.</P>
+<P>The source is provided in C# and Visual Basic .NET versions, and&nbsp;there is also
+a&nbsp;compiled program, SimpleLink.exe.</P>
+<P>You will notice that a copy of the .NET/Link assembly, Wolfram.NETLink.dll, is
+located in the same directory as SimpleLink.exe. This is how .NET/Link applications will always be deployed
+(Wolfram.NETLink.dll is not a strong-named assembly and therefore cannot be placed into the Global Assembly Cache).</P>
+<P>&nbsp;</P>
+<H3>How to compile SimpleLink</H3>
+<P>You can use Visual Studio .NET to compile this program, but here is how to do it using
+the command-line C# and VB.NET compilers, which&nbsp;are included free with the .NET
+Framework SDK (and with Visual Studio .NET of course). First, make sure that
+the&nbsp;compilers (csc.exe or vbc.exe) are on your PATH. If you have Visual Studio .NET
+installed, the easiest thing to do is use the "Visual Studio .NET Command Prompt" choice in
+the Microsoft Visual Studio .NET/Visual Studio .NET Tools&nbsp;program group on the Start
+menu. This will open up a command window with all the required environment variables set
+correctly.</P>
+<H4>For the C# version</H4>
+<P>From the comand line:</P>
+<BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+<P>csc /target:exe /reference:Wolfram.NETLink.dll SimpleLink.cs</P>
+</BLOCKQUOTE>
+<H4>For the VB version:</H4>
+<P>From the comand line:</P>
+<BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+<P>vbc /target:exe /reference:Wolfram.NETLink.dll SimpleLink.vb</P>
+</BLOCKQUOTE>
+<P>&nbsp;</P>
+</body>
+</html>

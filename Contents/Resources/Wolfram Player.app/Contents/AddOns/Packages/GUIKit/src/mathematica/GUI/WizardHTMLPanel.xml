@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<widget class="com.wolfram.guikit.wizard.ui.WizardHTMLPane">
+	<args ref="##"/>
+	<property name="engine">
+	  <property target="ScriptEvaluator" name="engine"/>
+	</property>
+</widget>

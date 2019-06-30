@@ -1,0 +1,9 @@
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "ENY-HL-7tm"; */
+"ENY-HL-7tm.title" = "OK";
+
+/* Class = "NSTextFieldCell"; title = "New font size:"; ObjectID = "dCl-Aa-zm7"; */
+"dCl-Aa-zm7.title" = "新しいフォントサイズ：";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "jI9-LH-3Rm"; */
+"jI9-LH-3Rm.title" = "キャンセル";

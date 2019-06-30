@@ -1,0 +1,111 @@
+\message{FILE: This is frontmatter.tnc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Filename: frontmatter.tnc
+%%
+%%
+%% Purpose: This file takes the frontmatter commands common to the
+%%          article, book, and report classes and defines them in one
+%%          place so that global changes can be made in one location
+%%          instead of three or more.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+
+\def\frontmattertext#1{\gdef\@frontmattertext{#1}}
+\frontmattertext{F R O N T M A T T E R}
+
+%%
+%% \newenvironment{titlepage}
+%%
+\def\titlepage{\relax}
+\def\endtitlepage{\relax}
+
+%%
+%% \maketitle
+%%
+\def\maketitle{%
+    \begin{titlepage}
+        %% Set the Title Cell
+        \@PendingCellStyle{Title}%
+        \leavevmode\TnbFont{TB}{TBI}{1}{\large\bf\@title}\relax
+        \TnbPopCell
+        %% Set the Author Cell
+        \@ifundefined{@author}{}{
+            \@PendingCellStyle{Author}% KLUDGE sb. author
+	    \leavevmode\@author
+	    \TnbPopCell
+        }\relax
+        %% Set the Thanks Cell
+        \@ifundefined{@thanks}{}{
+            \@PendingCellStyle{Text}% KLUDGE sb. thanks
+	    \leavevmode\@thanks
+	    \TnbPopCell
+        }\relax
+        %% Set the Date Cell
+        \@ifundefined{@date}{}{
+            \@PendingCellStyle{Date}% KLUDGE sb. thanks
+	    \leavevmode\@date
+	    \TnbPopCell
+        }\relax
+    \end{titlepage}
+}
+
+%%
+%% Definitions for Abstract
+%%
+%% \abstract does not exist in all classes so be sure to
+%% \let\abstract\@abstract and \let\endabstract\end@abstract in
+%% classes which have an abstract.
+%%
+
+\newcommand{\abstractname}{Abstract}
+\def\@abstract{\relax
+    \TnbPopCell
+    \TnbPush{CellGroup}{Open}
+    \@PendingCellStyle{AbstractSection}
+    \abstractname
+    \TnbPopCell
+    \@DefaultCellType{Abstract}
+}
+
+\def\end@abstract{%
+    \TnbPopCell
+    \TnbPop{CellGroup}
+    \@DefaultCellType{Text}
+}
+
+%%
+%% Definitions for frontmatter tables and lists
+%%
+\newlength\abovecaptionskip
+\newlength\belowcaptionskip
+
+\newcommand{\contentsname}{Contents}
+\newcommand{\tableofcontents}{%
+    \TnbPopCell
+    \@PendingCellStyle{TOCSection}
+    \contentsname
+    \TnbPopCell
+}
+
+\newcommand{\listfigurename}{List of Figures}
+\newcommand{\listoffigures}{%
+    \TnbPopCell
+    \@PendingCellStyle{LOFSection}
+    \listfigurename
+    \TnbPopCell
+}
+
+\newcommand{\listtablename}{List of Tables}
+\newcommand{\listoftables}{%
+    \TnbPopCell
+    \@PendingCellStyle{LOTSection}
+    \listtablename
+    \TnbPopCell
+}
+
+\makeatother
+

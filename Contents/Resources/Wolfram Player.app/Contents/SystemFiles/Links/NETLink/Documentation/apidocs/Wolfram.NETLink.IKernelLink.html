@@ -1,0 +1,145 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IKernelLink Interface</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IKernelLink.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IKernelLink Interface</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> The link interface that most programmers will use. </p>
+      <p>For a list of all members of this type, see <a href="Wolfram.NETLink.IKernelLinkMembers.html">IKernelLink Members</a>.</p>
+      <p>
+      </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Public Interface IKernelLink<div>    Implements <a href="Wolfram.NETLink.IMathLink.html">IMathLink</a></div></div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <div>public interface IKernelLink<b> : <a href="Wolfram.NETLink.IMathLink.html">IMathLink</a></b></div>
+      </div>
+      <h4 class="dtH4">Remarks</h4>
+      <p> The <a href="Wolfram.NETLink.IMathLink.html">IMathLink</a> interface contains low-level methods for reading and writing data. IKernelLink extends the IMathLink interface, adding some higher-level methods that are appropriate on the assumption that the program on the other side of the link is a <i>Mathematica</i> kernel. <p> An example is the WaitAndDiscardAnswer method, which reads and discards the sequence of packets the kernel will send in the course of a single evaluation. </p> Do not forget, however, that all the methods in the <b>IMathLink</b> interface are also available for IKernelLinks. <p> Most programmers will use links that implement this interface. The actual implementation classes are not documented and are of no concern. You will always interact with link objects via an interface type. Use the <a href="Wolfram.NETLink.MathLinkFactory.CreateKernelLink_overload_1.html">MathLinkFactory.CreateKernelLink</a> method to create an IKernelLink. </p>
+            <example> Here is a simple example program in C#: <pre class="code">using System;
+using Wolfram.NETLink;
+
+public class LinkTest {
+    public static void Main(String[] args) {
+    
+        // This launches the Mathematica kernel:
+        IKernelLink ml = MathLinkFactory.CreateKernelLink();
+        
+        // Discard the initial InputNamePacket the kernel will send when launched.
+        ml.WaitAndDiscardAnswer();
+        
+        // Now compute 2+2 in several different ways.
+        
+        // The easiest way. Send the computation as a string and get the result in a single call:
+        string result = ml.EvaluateToOutputForm("2+2", 0);
+        Console.WriteLine("2 + 2 = " + result);
+        
+        // Use Evaluate() instead of EvaluateToXXX() if you want to read the result as a native type
+        // instead of a string.
+        ml.Evaluate("2+2");
+        ml.WaitForAnswer();
+        int intResult = ml.GetInteger();
+        Console.WriteLine("2 + 2 = " + intResult);
+        
+        // You can also get down to the metal by using methods from IMathLink:
+        ml.PutFunction("EvaluatePacket", 1);
+        ml.PutFunction("Plus", 2);
+        ml.Put(2);
+        ml.Put(2);
+        ml.EndPacket();
+        ml.WaitForAnswer();
+        intResult = ml.GetInteger();
+        Console.WriteLine("2 + 2 = " + intResult);
+        
+        // Always Close when done:
+        ml.Close();
+    }
+}
+</pre> Here is the same program in Visual Basic .NET: <pre class="code">Imports Wolfram.NETLink
+
+Public Class LinkTest
+    Public Shared Sub Main(ByVal args As String())
+
+        ' This launches the Mathematica kernel:
+        Dim ml As IKernelLink = MathLinkFactory.CreateKernelLink()
+
+        ' Discard the initial InputNamePacket the kernel will send when launched.
+         ml.WaitAndDiscardAnswer()
+
+        ' Now compute 2+2 in several different ways.
+
+        ' The easiest way. Send the computation as a string and get the result in a single call:
+        Dim result As String = ml.EvaluateToOutputForm("2+2", 0)
+        Console.WriteLine("2 + 2 = " &amp; result)
+
+        ' Use Evaluate() instead of EvaluateToXXX() if you want to read the result
+        ' as a native type instead of a string.
+        ml.Evaluate("2+2")
+        ml.WaitForAnswer()
+        Dim intResult As Integer = ml.GetInteger()
+        Console.WriteLine("2 + 2 = " &amp; intResult)
+
+        ' You can also get down to the metal by using methods from IMathLink:
+        ml.PutFunction("EvaluatePacket", 1)
+        ml.PutFunction("Plus", 2)
+        ml.Put(2)
+        ml.Put(2)
+        ml.EndPacket()
+        ml.WaitForAnswer()
+        intResult = ml.GetInteger()
+        Console.WriteLine("2 + 2 = " &amp; intResult)
+
+        'Always Close when done:
+        ml.Close()
+     End Sub
+End Class
+</pre>
+            </example>
+            </p>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="Wolfram.NETLink.html">Wolfram.NETLink</a>
+      </p>
+      <p>
+        <b>Assembly: </b>Wolfram.NETLink (in Wolfram.NETLink.dll)
+					</p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IKernelLinkMembers.html">IKernelLink Members</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.MathLinkFactory.html">MathLinkFactory</a> | <a href="Wolfram.NETLink.IMathLink.html">IMathLink</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="IKernelLink interface, about IKernelLink interface">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

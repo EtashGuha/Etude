@@ -1,0 +1,1 @@
+{"Pi", "Dynamic", "ImageSize", "Automatic"}

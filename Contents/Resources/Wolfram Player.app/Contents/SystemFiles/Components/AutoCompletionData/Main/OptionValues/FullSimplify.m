@@ -1,0 +1,1 @@
+{ComplexityFunction -> {"LeafCount"}, ExcludedForms -> {}}

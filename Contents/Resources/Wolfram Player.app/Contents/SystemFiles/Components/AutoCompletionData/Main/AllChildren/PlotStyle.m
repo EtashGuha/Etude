@@ -1,0 +1,1 @@
+{"Graphics", "Yellow", "HoldPattern", "Blue"}

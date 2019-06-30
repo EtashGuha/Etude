@@ -1,0 +1,10 @@
+{"Sqrt", "I", "E", "Cos", "Exp", "Pi", "Sin", "Sinh", "Cosh", "Log", 
+ "Infinity", "Rational", "Quantity", "Subscript", "None", "Tan", 
+ "KleinInvariantJ", "EulerE", "EllipticK", "Fibonacci", "Zeta", "Tanh", 
+ "Cot", "Arg", "Ratios", "RandomReal", "PrimeZetaP", "JacobiP", 
+ "GegenbauerC", "Gamma", "Floor", "BernoulliB", "BaseForm", "PartitionsP", 
+ "EllipticPi", "Derivative", "ArcSin", "WeierstrassZeta", "Sec", 
+ "QPochhammer", "QGamma", "ProductLog", "N", "LegendreP", 
+ "Hypergeometric2F1", "Conjugate", "ChebyshevT", "Ceiling", "Abs", 
+ "ZetaZero", "Sign", "RiemannSiegelTheta", "Range", "RamanujanTauTheta", 
+ "QPolyGamma", "Pochhammer", "Log2", "EulerPhi", "Csch", "ArcTan", "ArcCos"}

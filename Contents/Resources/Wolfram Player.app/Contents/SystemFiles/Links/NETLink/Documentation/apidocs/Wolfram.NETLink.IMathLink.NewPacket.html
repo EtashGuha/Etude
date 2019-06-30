@@ -1,0 +1,59 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IMathLink.NewPacket Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IMathLink.NewPacket.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IMathLink.NewPacket Method </h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Discards the current packet, if it has been partially read. Has no effect if the previous packet was fully read. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Sub NewPacket()</div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />
+        <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> NewPacket();</div>
+      <h4 class="dtH4">Remarks</h4>
+      <p> This is a useful cleanup function. You can call it when you are finished examining the contents of a packet that was opened with <a href="Wolfram.NETLink.IMathLink.NextPacket.html">NextPacket</a> or <a href="Wolfram.NETLink.IKernelLink.WaitAndDiscardAnswer.html">WaitAndDiscardAnswer</a>, whether you have read the entire packet contents or not. You can be sure that the link is then in a state where you are ready to read the next packet. <p> It is also frequently used in a catch block for a MathLinkException, to clear off any unread data in a packet before returning to the normal program flow. </p>
+            </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IMathLink.html">IMathLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.IMathLink.NextPacket.html">NextPacket</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="NewPacket method">
+        </param>
+        <param name="Keyword" value="NewPacket method, IMathLink interface">
+        </param>
+        <param name="Keyword" value="IMathLink.NewPacket method">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

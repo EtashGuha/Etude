@@ -1,0 +1,86 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>StdLink.RequestTransaction Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.StdLink.RequestTransaction.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">StdLink.RequestTransaction Method </h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Must always be called before calling into <i>Mathematica</i> from a .NET user-interface action. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Public Shared Sub RequestTransaction()</div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />public static <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> RequestTransaction();</div>
+      <h4 class="dtH4">Remarks</h4>
+      <p> You should always call RequestTransaction whenever you are preparing to call into <i>Mathematica</i> from a .NET user-interface action, like clicking a button. This only applies for code executing in a .NET runtime launched from <i>Mathematica</i> by InstallNET[], not if you are launching and controlling the kernel from a standalone .NET program. <p> The only time you do <b>not</b> need to call RequestTransaction before calling into <i>Mathematica</i> is when the call is being made during the handling of a call from <i>Mathematica</i> into .NET. In other words, when <i>Mathematica</i> is currently in the middle of a call into .NET, it is always safe for calls to be made from .NET back into <i>Mathematica</i> (and RequestTransaction does nothing in this circumstance). You need RequestTransaction to guard calls that <i>originate</i> in .NET. User interface actions are typical examples of such calls, as <i>Mathematica</i> might not currently be ready to accept incoming requests from .NET. </p> It is safe to call RequestTransaction <i>whenever</i> you call back into <i>Mathematica</i>--if it is not necessary then RequestTransaction will simply return immediately. In other words, if you do not understand the exact circumstances in which it is necessary, you can err on the side of caution and call it more often than needed. <p> What RequestTransaction does is check whether it is safe to call into <i>Mathematica</i>. If it is safe, it returns immediately. If it is not safe, a <a href="Wolfram.NETLink.MathematicaNotReadyException.html">MathematicaNotReadyException</a> is thrown. You can typically ignore this exception and let it propagate up into the .NET event-dispatching mechanism, where it will be caught by the internals of .NET/Link and cause a MessageBox to be displayed. </p> It is safe to call into <i>Mathematica</i> in several circumstances. The first is if the <i>Mathematica</i> functions DoNETModal or DoNETModeless are currently running. This is the normal situation when user interface actions that call <i>Mathematica</i> are being executed. It is also safe to call into <i>Mathematica</i> when <i>Mathematica</i> is in the middle of calling .NET. Finally, it is safe to call into <i>Mathematica</i> if you have launched the kernel from your own program instead of running in the .NET runtime launched from <i>Mathematica</i> by InstallNET[]. <p> Many programmers will never use this method, because they will use the <i>Mathematica</i> function AddEventHandler to establish callbacks from .NET into <i>Mathematica</i>. Event handlers created by AddEventHandler handle all details of the communication with <i>Mathematica</i> for you (and of course they call RequestTransaction internally). </p>
+             <example> Here is an example of .NET code that is intended to be executed as a result of a user interface action. <pre class="code">IKernelLink ml = StdLink.Link;
+if (ml != null) {
+    StdLink.RequestTransaction();
+    // Always lock the link before using it.
+    lock (ml) {
+        ml.Print("You clicked a button");
+    }    
+}
+</pre>
+             </example>
+             <p> Note again that this is not the "normal" way you would wire up a Print action to a button click. Instead, you would just write something like this in <i>Mathematica</i>: <pre class="code">(* Mathematica code *)
+AddEventHandler[myButton@Click, Print["You clicked a button"]&amp;];
+</pre> This discussion about RequestTransaction only applies to programmers who are writing their own custom .NET code. </p>
+             </p>
+      <h4 class="dtH4">Exceptions</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Exception Type</th>
+            <th width="50%">Condition</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MathematicaNotReadyException.html">MathematicaNotReadyException</a>
+            </td>
+            <td width="50%"> If the kernel is not in a state where it is receptive to calls originating in .NET, as described above. </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.StdLink.html">StdLink Class</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="RequestTransaction method">
+        </param>
+        <param name="Keyword" value="RequestTransaction method, StdLink class">
+        </param>
+        <param name="Keyword" value="StdLink.RequestTransaction method">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

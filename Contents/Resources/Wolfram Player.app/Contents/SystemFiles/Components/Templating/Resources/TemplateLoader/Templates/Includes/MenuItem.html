@@ -1,0 +1,8 @@
+<wolfram:which>
+  <wolfram:if test="#1 === Delimiter">
+    <li class="divider"></li>
+  </wolfram:if>
+  <wolfram:else>
+    <li><wolfram:expr>Hyperlink[#1, "#"]</wolfram:expr></li>
+  </wolfram:else>
+</wolfram:which>

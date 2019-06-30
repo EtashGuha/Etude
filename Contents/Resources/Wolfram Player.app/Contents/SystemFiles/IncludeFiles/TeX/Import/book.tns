@@ -1,0 +1,75 @@
+\message{FILE: This is book.txs}
+
+\makeatletter
+
+%% Book Class definitions go here
+
+\special{TnbSetOption:^Notebook:StyleDefinitions->"Book/LaTeX-Book.nb"}
+
+\input frontmatter.tnc
+\input sectioning.tnc
+\input stdenvironments.tnc
+\input backmatter.tnc
+\input tabular.tnc
+
+\makeatletter
+
+\newcounter {part}
+\newcounter {chapter}
+\newcounter {section}[chapter]
+\newcounter {subsection}[section]
+\newcounter {subsubsection}[subsection]
+\newcounter {paragraph}[subsubsection]
+\newcounter {subparagraph}[paragraph]
+
+\renewcommand{\thepart}{\Roman{part}}
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\renewcommand{\theparagraph}{\thesubsubsection.\arabic{paragraph}}
+\renewcommand{\thesubparagraph}{\theparagraph.\arabic{subparagraph}}
+
+\newcommand{\partname}{Part}
+\newcommand{\chaptername}{Chapter}
+
+\def\part{\@ifstar{\@part}{\@part}}
+\def\chapter{\@ifstar{\@chapter}{\@chapter}}
+\def\section{\@ifstar{\@section}{\@section}}
+\def\subsection{\@ifstar{\@subsection}{\@subsection}}
+\def\subsubsection{\@ifstar{\@subsubsection}{\@subsubsection}}
+\def\paragraph{\@ifstar{\@paragraph}{\@paragraph}}
+\def\subparagraph{\@ifstar{\@subparagraph}{\@subparagraph}}
+
+%%
+%% I need to review what these do in the Book class.
+%%
+\newcommand\frontmatter{}
+\newcommand\mainmatter{}
+\newcommand\backmatter{}
+
+\let\thebibliography\@thebibliography
+\let\endthebibliography\end@thebibliography
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Font stuff
+%%
+\let\mit\relax
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% To Do:
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Notes:
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

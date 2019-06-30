@@ -1,0 +1,4416 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    193684,       4408]
+NotebookOptionsPosition[    171437,       3953]
+NotebookOutlinePosition[    172884,       3995]
+CellTagsIndexPosition[    172693,       3988]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[StyleData[StyleDefinitions -> "Core.nb"],ExpressionUUID->"503eba78-b2b7-4494-864a-7a3f0a69af78"],
+
+Cell[StyleData[StyleDefinitions -> "Default.nb"],ExpressionUUID->"d0fe9f07-0ba0-458c-823b-c053394ec2d0"],
+
+Cell[CellGroupData[{
+
+Cell["Style Environment Names", "Section",ExpressionUUID->"39d2ff4a-7c23-44d0-9a91-11f0d461ad8b"],
+
+Cell[StyleData[All, "Working"],
+ CellInsertionPointCell->FEPrivate`FrontEndResource[
+  "FEExpressions", "CellInsertionMenu"],
+ DockedCells->{
+   Cell[
+    BoxData[
+     GridBox[{{
+        GraphicsBox[
+         TagBox[
+          RasterBox[CompressedData["
+1:eJztmT9IG2EYh+Mf1GAsIg6KGCIUFAoqDuLgYBdBwUVTKZk0NKYuqcQWcRGH
+QgcV0tEQTUZBhAxSuhQCDm5FcIiDiFtXB9EqxfP3kTf09eP8vMS7eAd38CTk
+zX3v++TulztIusKfJueqPR7PYgMeJmeX3sbjs8tTzXjxLrY4H41FPozFPkei
+kfhQuAbFN6AX1Hqs2fInJ50gQXRaNMa0DY7dYBvcAo24pVr3S/vJG5wGwC64
+Y77X4IK9vqN9BmzgOwJ+MjeNXL+BNuADX8AfaR+xZqTCrlVgAhxKLsJtCbzS
+WVMHouBUWnNIvaos9K0FIXAszT4lp3qDPd6DI6nHMfU27VKBXl7wEZxJs36D
+aVBdRk9xzsbBgdTzjGZ5n+HbROddzuYvMFpuX505w+DHI5lrKqFPK/iqcy3Y
+A4Nm+erM7QM74J/0HRcurYp1fvAdXEnX3i3QY5WvjsdrsAlumMcVufnZfj0g
+nX94r7gEG6CjUr46/u1gjVz4cUyTc07KluAvnSM7cK3jl3vE2+4IZ3FfCziM
+Np1c7SvOWcjCPIcUc/cNrFflZsZC7xlVLgysV+XGZ6G3r5RcKPpkjRxnTdMy
+2v9t1QR/ftyzZax3vUub63qb4C3eY/tlKumNeY2gmah3kHeWzV5wvZ3lLbLG
+ctfoIO8FVsu63uV547kFBIgWB3knWC3herverrfr7VDvJDgngjQnCc6JMNXW
+Wa34WVZYbYU5FmvrVAuzWpLmBtncZAm+/fnC/wh2ot+At+p3iBf7fcqAdypf
++D/ATqQclI0nM2PTbDyZGZtmQ5mZe9tTqiA=
+           "], {{0, 43}, {46, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+          BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+           Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+         ImageSizeRaw -> {46, 43}, PlotRange -> {{0, 46}, {0, 43}}], 
+        StyleBox[
+        "Data Resource \nConstruction Notebook", FontColor -> GrayLevel[1], 
+         LineSpacing -> {1.1, 0}, FontSize -> 20, FontWeight -> "SemiBold", 
+         FontFamily -> "SourceSansPro"], 
+        Cell[
+         BoxData[
+          ButtonBox[
+           PaneSelectorBox[{False -> GraphicsBox[
+               TagBox[
+                RasterBox[CompressedData["
+1:eJztmz1rVEEUhoNaWPoLBMv8A1tLIUkR8QckmASbCImgaUWwsLCx0UpsLLRT
+S7USFGzUSkEQC8VCRBNQq3if1UcPw8zu3bjL3ZgZeM3Ox51555z3nJm7uEcW
+z8wv75uamlo/2Pwzv3Du2NrawsaJQ03l5Or66ZXVpVPHV88urSytHV3c3zQe
+bnChwYEG0ytXxGyDhw02G2xX/NfY/O3rmeB/cHECuFV0A3yPBmYmgEtFt/As
+6JpHRbdAA18ngEdFt6gaqKioqKioqNgR7j56th3L5y+bvba589eGmofxwz5T
+4kB58+7D9sbVO53bB8AFxLblSzc75zUOHdy6/7iHp89f/fHDMPO8//ipN9co
+OADm+/b9x461NU4dXL/9oMe3a17j0EFsu3zjXq9tGL+aR0bFgXhTG13bKAWc
+9oIOAPEIrBMDxASFONU/xGtaPFcePnnRG2t+KcV2iUOqxXS+mJsdK0d0mZ4r
+6DvugflSHrSDeC5FfubLWOL82IzCX+rpfrDjy9dve5/pZy3mjOOowz+2RduN
+I0eWfKDNXRde8MP/7kM7GR+085l25sUW5nnmor8tB3MSdqOOX8w5zGc92pgC
+79y5Aif1Q78+N9+b62lnbfbq2pEf87h/5nGMfLVB9HXkqB0YAzfW0c4ip1HG
+wQPts+9R309KOii1xxwQYzWt99NVaS01Q529AtbSxjG+5aCd1YD9+j3qKOa3
+6Ht1m65RskXONrn5qcd7hTqMY1Ke7jX1M/vFfowDfB6lFtrkA3mYd83Ng3Rg
+XOHPNIfmOMQS836u3+L5lFs/tuViLI5hf+Z01tYvbXWQmz+1YSlWWM9cib1S
+PUV7UvRFKa5GqYOoZc8F6nBpkw88C8xl/fJL7FP3MW7sxzesH2HeT9dPOQ7S
+gfV4D3L8uHVgXnLvpbyq7xmHboZ9pxtWB/Iy1nJjBukgtQuf2+ggrm9Mmjv7
+vTvk/Enx3Bh0LqTzeR9sq4O250LJx94XKbl8D0fG8Bdb9rt3/4sO+n1/4D3Q
+O5r5M+7J9wv6sT35w7oaaKsD7er9gLr3Lu+BPBPvnRRjyVwU/TLonsi+PQ+8
+9/t8Sadyoa3tPbGkA21UinH4MRcaGbUG4h4tpe8B1Af9aiGO0/faJ9a1zTA6
+YL9pTtF3OZ7aMK6Z2ir33ugY1uMZ3xvj8zl+0R7Gb5v3xpIO2uS8isHoZ+Pd
+AONkEr4/3c3YrTogZ3iO5e6xFXtDB94j0u8UKyoqKsaE+n8UK/xdS9c8KroF
+GpidAB4V3QIN1N+17W34uzYxN/0rP2xNALeK8WJr+u9Z0PP/TzwUZ54=
+                 "], {{0, 30}, {130, 0}}, {0, 255}, ColorFunction -> 
+                 RGBColor], 
+                BoxForm`ImageTag[
+                "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+               ImageSizeRaw -> {130, 30}, PlotRange -> {{0, 130}, {0, 30}}], 
+             True -> GraphicsBox[
+               TagBox[
+                RasterBox[CompressedData["
+1:eJztmz1rVEEUhoOmsPQXCP4L2xQWQmIRsVUSjEGQCElABCsVC0tBbIW0InY2
+ImIjglXARsRCEMFC0QRiF++z+uhhmNm9G3e5GzMDr9n5uDPvnPOeM3MX9/ji
+lfmLh6amptaONP/ML1ydWV1duHbmaFM5u7J2aXll6cKplfWl5aXVE4uHm8Zj
+DW40mAYnL4u5Bs8abDXYrfivsfXb17PB/+DWBHCr6Ab4Hg3MTgCXim7hWdA1
+j4pugQa+TwCPim5RNVBRUVFRUVGxJzx+8nw3li9fv/XaZs5fH2oexg/7TIkD
+5d37D7vrN+93bh8AFxDbzq3d6ZzXOHSw8fBJDy9fb/7xwzDzfPz0uTfXKDgA
+5tvZ+bFnbY1TB/cePOrx7ZrXOHQQ227f3ei1DeNX88ioOBBvaqNrG6WA00HQ
+ASAegXVigJigEKf6h3hNi+fK0xevemPNL6XYLnFItZjOF3OzY+WILtNzBX3H
+PTBfyoN2EM+lyM98GUucH5tR+Es93Q923HzztveZftZizjiOOvxjW7TdOHJk
+yQfa3HXhBT/87z60k/FBO59pZ15sYZ5nLvrbcjAnYTfq+MWcw3zWo40p8M6d
+K3BSP/Trc/O9uZ521mavrh35MY/7Zx7HyFcbRF9HjtqBMXBjHe0schplHDzQ
+Pvse9f2kpINSe8wBMVbTej9dldZSM9TZK2AtbRzjWw7aWQ3Yr9+jjmJ+i75X
+t+kaJVvkbJObn3q8V6jDOCbl6V5TP7Nf7Mc4wOdRaqFNPpCHedfcPEgHxhX+
+THNojkMsMe/n+i2eT7n1Y1suxuIY9mdOZ2390lYHuflTG5ZihfXMldgr1VO0
+J0VflOJqlDqIWvZcoA6XNvnAs8Bc1i+/xD51H+PGfnzD+hHm/XT9lOMgHViP
+9yDHj1sH5iX3Xsqr+p5x6GbYd7phdSAvYy03ZpAOUrvwuY0O4vrGpLmz37tD
+zp8Uz41B50I6n/fBtjpoey6UfOx9kZLL93BkDH+xZb9797/ooN/3B94DvaOZ
+P+OefL+gH9uTP6yrgbY60K7eD6h77/IeyDPx3kkxlsxF0S+D7ons2/PAe7/P
+l3QqF9ra3hNLOtBGpRiHH3OhkVFrIO7RUvoeQH3QrxbiOH2vfWJd2wyjA/ab
+5hR9l+OpDeOaqa1y742OYT2e8b0xPp/jF+1h/LZ5byzpoE3OqxiMfjbeDzBO
+JuH70/2M/aoDcobnWO4eW3EwdOA9Iv1OsaKiomJMqP9HscLftXTNo6JboIG5
+CeBR0S3QQP1d28GGv2sTp6d/5YftCeBWMV5sT/89C3r+/wkup+rs
+                 "], {{0, 30}, {130, 0}}, {0, 255}, ColorFunction -> 
+                 RGBColor], 
+                BoxForm`ImageTag[
+                "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+               ImageSizeRaw -> {130, 30}, PlotRange -> {{0, 130}, {0, 30}}]}, 
+            Dynamic[
+             CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+            Automatic], Appearance -> None, ButtonFunction :> 
+           SystemOpen["http://datarepository.wolframcloud.com"], Evaluator -> 
+           Automatic, Method -> "Preemptive"]], "Output", 
+         CellChangeTimes -> {{3.6956662424789486`*^9, 
+          3.695666272630949*^9}}]}}, ColumnWidths -> {Full, 
+        Scaled[0.7], Full}, RowMinHeight -> 7, 
+      GridBoxAlignment -> {
+       "Columns" -> {Left, Left, Right}, "Rows" -> {Center}}]], 
+    CellMargins -> {{0, 0}, {-4, -2}}, Background -> 
+    RGBColor[{74/255, 137/255, 176/255}], 
+    CellFrameMargins -> {{50, 40}, {10, 10}}, Selectable -> False, 
+    Magnification -> 1]},
+ ShowCellTags->False,
+ CellChangeTimes->{{3.696377005707614*^9, 3.69637702247129*^9}, {
+   3.696377225845625*^9, 3.696377236186659*^9}, 3.696377278504891*^9, {
+   3.696377319054945*^9, 3.6963773247475147`*^9}, 3.6963774601870575`*^9, {
+   3.696377490692107*^9, 3.696377510279066*^9}},
+ Background->
+  RGBColor[{
+   16/17, 16/17, 16/
+    17}],ExpressionUUID->"485d7b6a-d915-49f5-b5ba-2a168e26ff64"],
+
+Cell[StyleData[All, "SlideShow", StyleDefinitions -> StyleData[
+ All, "Presentation"]],
+ PageWidth->WindowWidth,
+ DockedCells->{
+   FEPrivate`FrontEndResource["FEExpressions", "SlideshowToolbar"], 
+   Cell[
+    BoxData[
+     GridBox[{{
+        ButtonBox[
+         GraphicsBox[{
+           Thickness[0.011111111111111112`], 
+           StyleBox[{
+             
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{3.789, 
+              7.266}, {86.20700000000001, 7.266}, {86.20700000000001, 
+              3.266}, {3.789, 3.266}}}], 
+             
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{14.129, 
+              54.07}, {19.878999999999998`, 54.07}, {19.878999999999998`, 
+              15.57}, {14.129, 15.57}}}]}, 
+            FaceForm[], StripOnInput -> False], 
+           StyleBox[{
+             
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{24.129, 
+              41.82}, {29.879, 41.82}, {29.879, 15.57}, {24.129, 15.57}}}], 
+             
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+              33.160000000000004`, 54.07}, {38.910000000000004`, 54.07}, {
+              38.910000000000004`, 15.57}, {33.160000000000004`, 15.57}}}], 
+             
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{42.191, 
+              31.781}, {47.941, 31.781}, {47.941, 15.569999999999997`}, {
+              42.191, 15.569999999999997`}}}], 
+             
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+              51.223000000000006`, 46.875}, {56.973000000000006`, 46.875}, {
+              56.973000000000006`, 15.57}, {51.223000000000006`, 15.57}}}], 
+             
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{60.254, 
+              37.707}, {66.00399999999999, 37.707}, {66.00399999999999, 
+              15.569999999999997`}, {60.254, 15.569999999999997`}}}]}, 
+            FaceForm[], StripOnInput -> False], 
+           StyleBox[{
+             
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+              70.12899999999999, 54.07}, {75.87899999999999, 54.07}, {
+              75.87899999999999, 15.57}, {70.12899999999999, 15.57}}}], 
+             
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+              9.879000000000001, 60.547}, {24.129, 60.547}, {24.129, 
+              56.547}, {9.879000000000001, 56.547}}}], 
+             
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{9.871, 
+              13.097999999999999`}, {80.121, 13.097999999999999`}, {80.121, 
+              9.097999999999999}, {9.871, 9.097999999999999}}}], 
+             
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+              65.87899999999999, 60.547}, {80.12899999999999, 60.547}, {
+              80.12899999999999, 56.547}, {65.87899999999999, 56.547}}}], 
+             
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {
+               0, 1, 0}, {0, 1, 0}}}, {{{11.469000000000001`, 
+               66.54700000000001}, {45., 82.418}, {78.398, 
+               66.54700000000001}}, {{45., 86.73400000000001}, {
+               2.2230000000000003`, 66.54700000000001}, {2.2230000000000003`, 
+               62.547}, {87.777, 62.547}, {87.777, 66.54700000000001}}}]}, 
+            FaceForm[], StripOnInput -> False]}, ImageSize -> {90., 90.}, 
+          PlotRange -> {{0., 90.}, {0., 90.}}, AspectRatio -> Automatic], 
+         ButtonFrame -> None, ButtonFunction :> NotebookLocate[{
+            URL["http://datarepository.wolfram.com"], None}]], 
+        StyleBox["Construct a Data Resource", 
+         GrayLevel[1], 30], 
+        ButtonBox[
+        "Data Repository\[RightGuillemet]", ButtonFrame -> None, 
+         ButtonFunction :> NotebookLocate[{
+            URL["http://datarepository.wolfram.com"], None}]]}}, 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      ColumnWidths -> {Full, 
+        Scaled[0.7], Full}, 
+      GridBoxAlignment -> {
+       "Columns" -> {Left, Left, Right}, 
+        "Rows" -> {Center, Bottom, Center}}]], 
+    CellMargins -> {{0, 0}, {-4, -2}}, Background -> 
+    RGBColor[{74/255, 137/255, 176/255}], CellFrameMargins -> None, 
+    Selectable -> False, Magnification -> 1]},
+ ScrollingOptions->{"PagewiseDisplay"->True,
+ "VerticalScrollRange"->Fit},
+ ShowGroupOpener->False,
+ PrivateCellOptions->{"EvaluationUnmatchedStyle"->{}},
+ MenuSortingValue->1300,
+ Background->
+  RGBColor[{
+   16/17, 16/17, 16/
+    17}],ExpressionUUID->"cdc3ed46-0970-4691-981f-a650fc7cdd39"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Styles", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9},ExpressionUUID->"80fb587e-b3ff-4b4a-bde6-\
+eef616ca8708"],
+
+Cell[CellGroupData[{
+
+Cell["Standard Style name defintions", "Subsection",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6963797354861856`*^9, 
+   3.6963797468411856`*^9}},ExpressionUUID->"1ac2a6f5-7d0d-4c92-b5d9-\
+f8ed42563398"],
+
+Cell[StyleData["Text"],
+ CellMargins->{{66, 10}, {7, 7}},
+ CellFrameMargins->{{Inherited, Inherited}, {15, Inherited}},
+ LineSpacing->{1, 3},
+ CounterIncrements->"Text",
+ MenuSortingValue->1400,
+ MenuCommandKey->"7",
+ FontFamily->"Arial",
+ FontSize->14,ExpressionUUID->"de7ae963-e1b0-430e-8614-2634e0a34906"],
+
+Cell[StyleData["Input"],
+ CellElementSpacings->{"CellMinHeight"->22},
+ CellLabelMargins->{{28, 0}, {-25, 0}},
+ FontSize->13,ExpressionUUID->"9c25c5cb-13d7-4f43-aaca-ce2f6827da9c"],
+
+Cell[StyleData["Output"],
+ CellElementSpacings->{"CellMinHeight"->22},
+ CellLabelMargins->{{24, 0}, {-25, 0}},
+ FontSize->13,ExpressionUUID->"4e1c589c-2740-44de-abaf-13b9435da97d"],
+
+Cell[StyleData["CellLabel"],
+ FontFamily->"Helvetica",
+ FontSize->9,
+ FontColor->GrayLevel[0.6],
+ Background->GrayLevel[
+  1],ExpressionUUID->"fcef2225-2269-48f2-944a-dc45b6549f14"],
+
+Cell[StyleData["CheckboxBarLabel", StyleDefinitions -> StyleData["Text"]],
+ FontFamily->
+  "SourceSansPro",ExpressionUUID->"c5d6d853-11c2-4e83-950e-09960962040a"],
+
+Cell[StyleData["Section"],
+ CellFrame->{{0, 0}, {0, 1}},
+ CellMargins->{{27, Inherited}, {8, 18}},
+ StyleKeyMapping->{"Tab" -> "Subsection"},
+ CellGroupingRules->{"SectionGrouping", 30},
+ PageBreakBelow->False,
+ CellFrameMargins->4,
+ CellFrameColor->GrayLevel[0.7],
+ LineSpacing->{1, 2},
+ LanguageCategory->"NaturalLanguage",
+ CounterIncrements->"Section",
+ CounterAssignments->{{"Subsection", 0}, {"Subsubsection", 0}, {"Item", 0}, {
+   "Subitem", 0}, {"Subsubitem", 0}, {"ItemNumbered", 0}, {
+   "SubitemNumbered", 0}, {"SubsubitemNumbered", 0}},
+ MenuSortingValue->1250,
+ MenuCommandKey->"4",
+ FontFamily->"Source Sans Pro",
+ FontSize->28,
+ FontColor->
+  RGBColor[{
+   32/85, 32/85, 32/
+    85}],ExpressionUUID->"5e5dcbc7-9c16-4077-a18f-e72c6942be49"],
+
+Cell[StyleData["Subsection"],
+ CellMargins->{{50.34765625, 3.}, {8., 12.}},
+ StyleKeyMapping->{
+  "Tab" -> "Subsubsection", "Backspace" -> "Section", 
+   KeyEvent["Tab", Modifiers -> {Shift}] -> "Section"},
+ CellGroupingRules->{"SectionGrouping", 40},
+ PageBreakBelow->False,
+ LanguageCategory->"NaturalLanguage",
+ CounterIncrements->"Subsection",
+ CounterAssignments->{{"Subsubsection", 0}, {"Item", 0}, {"Subitem", 0}, {
+   "Subsubitem", 0}, {"ItemNumbered", 0}, {"SubitemNumbered", 0}, {
+   "SubsubitemNumbered", 0}},
+ MenuSortingValue->1300,
+ MenuCommandKey->"5",
+ FontFamily->"Source Sans Pro",
+ FontSize->18,
+ FontWeight->"SemiBold",
+ FontColor->RGBColor[
+  61/255, 122/255, 158/
+   255],ExpressionUUID->"356ff807-6e9f-4841-8a33-c8fafe240113"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Custom names", "Subsection",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6963797515961857`*^9, 
+   3.6963797568451853`*^9}},ExpressionUUID->"35f38083-2d50-48d3-a87a-\
+6b97fadd7f21"],
+
+Cell[StyleData["DataResourceChapter", StyleDefinitions -> StyleData["Chapter"]
+ ],
+ Editable->False,
+ Deletable->False,
+ CellFrame->{{50, 40}, {5, 5}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ Evaluatable->False,
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ FontFamily->"Source Sans Pro",
+ FontSize->26,
+ FontColor->
+  RGBColor[{
+   32/85, 32/85, 32/
+    85}],ExpressionUUID->"bafb3835-cc24-4f26-9793-358d158117a0"],
+
+Cell[StyleData["DataResourceChapterText", StyleDefintions -> StyleData[
+ "DataResourceChapter"]],
+ CellMargins->{{0, 0}, {15, 5}},
+ CellFrameMargins->0,
+ CellSize->{800, 50},
+ CellChangeTimes->{3.696157311418272*^9},
+ FontFamily->
+  "Source Sans Pro",ExpressionUUID->"318bc438-cd42-426c-bf8c-0c547b4bcc47"],
+
+Cell[StyleData["DataResourceSection", StyleDefinitions -> StyleData["Section"]
+ ],
+ Editable->False,
+ Deletable->False,
+ CellFrame->{{50, 40}, {10, 10}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ Evaluatable->False,
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ FontFamily->"Source Sans Pro",
+ FontColor->
+  RGBColor[{
+   32/85, 32/85, 32/
+    85}],ExpressionUUID->"90f7c665-b9b3-4a97-ab99-ba34cff0cf1b"],
+
+Cell[StyleData["DataResourceSectionText", StyleDefintions -> StyleData[
+ "DataResourceSection"]],
+ CellMargins->{{0, 0}, {15, 5}},
+ CellFrameMargins->0,
+ CellSize->{800, 35},
+ FontFamily->
+  "Source Sans Pro",ExpressionUUID->"5594f488-e445-422f-a63b-90349000d815"],
+
+Cell[StyleData["DataResourceText", StyleDefintions -> StyleData["Text"]],
+ FontFamily->
+  "Source Sans Pro",ExpressionUUID->"6c226f7a-0387-4e7d-b0eb-37168f9b20e4"],
+
+Cell[StyleData["DataResourceSectionLabelText", StyleDefintions -> StyleData[
+ "Section"]],
+ CellFrame->{{0, 0}, {0, 0}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ Evaluatable->False,
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ FontFamily->
+  "Source Sans Pro",ExpressionUUID->"39ddc8f7-dde1-4b64-a5a7-297a553a4d75"],
+
+Cell[StyleData["DataResourceSectionLabel", StyleDefintions -> StyleData[
+ "Section"]],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellSize->{400, Automatic},
+ FontFamily->
+  "Source Sans Pro",ExpressionUUID->"ac05d3fa-f807-4171-bd14-b3cd54f70f2f"],
+
+Cell[StyleData["DataResourceSubsectionText", StyleDefinitions -> StyleData[
+ "Subsection"]],
+ CellFrame->{{0, 0}, {0, 0}},
+ CellMargins->{{0, 0}, {0, 0}},
+ FontFamily->"Source Sans Pro",
+ FontSize->18,
+ FontWeight->"SemiBold",
+ FontColor->RGBColor[
+  61/255, 122/255, 158/
+   255],ExpressionUUID->"937e9e40-f15b-4b1b-8333-d2f06dd25f4c"],
+
+Cell[StyleData["DataResourceSubsection", StyleDefinitions -> StyleData[
+ "Subsection"]],
+ Editable->False,
+ Deletable->False,
+ PageWidth->725,
+ CellFrame->{{50, 50}, {0, 0}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ Evaluatable->False,
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ CellFrameLabelMargins->0,
+ ShowCellTags->False,
+ CellSize->{Automatic, 20},
+ CellChangeTimes->{{3.6955625122205715`*^9, 3.6955625146618156`*^9}},
+ FontFamily->"Source Sans Pro",
+ FontWeight->Bold,ExpressionUUID->"aa549d20-7a60-4245-83e1-abb4a8cbeffa"],
+
+Cell[StyleData["DataResourceSubsubsection", StyleDefinitions -> StyleData[
+ "Subsubsection"]],
+ Editable->False,
+ Deletable->False,
+ PageWidth->725,
+ CellFrame->{{70, 40}, {0, 10}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ Evaluatable->False,
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ ShowCellTags->False,
+ FontFamily->"Source Sans Pro",
+ FontColor->
+  RGBColor[{
+   32/85, 32/85, 32/
+    85}],ExpressionUUID->"00a9669d-6133-4c59-9cd6-5ac94ad8f52a"],
+
+Cell[StyleData["DataResourceSubsubsectionText", StyleDefinitions -> StyleData[
+ "Subsubsection"]],
+ CellFrame->{{0, 0}, {0, 0}},
+ CellMargins->{{0, 0}, {0, 0}},
+ FontFamily->"Source Sans Pro",
+ FontColor->
+  RGBColor[{
+   59/255, 122/255, 32/
+    51}],ExpressionUUID->"59453a95-dc73-4a96-a32b-acecbf250262"],
+
+Cell[StyleData["DataResourceCaption"],
+ Editable->False,
+ Deletable->False,
+ Evaluatable->False,
+ CellFrameMargins->0,
+ CellSize->{1022, 20},
+ CellChangeTimes->{{3.6963614404141965`*^9, 3.6963614438455396`*^9}},
+ FontFamily->"Source Sans Pro",
+ FontWeight->Medium,
+ GridBoxOptions->{GridBoxAlignment->{"Columns" -> {{Left}}},
+ GridBoxItemSize->{"Columns" -> {
+     Scaled[0.59], {
+      Scaled[0.01]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}},
+ GridBoxSpacings->{
+  "Columns" -> {0}}},ExpressionUUID->"b76d926b-3132-49e6-9150-8210ce4053af"],
+
+Cell[StyleData["DataResourceCaptionText", StyleDefinitions -> StyleData[
+ "Text"]],
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ Evaluatable->False,
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ FontFamily->"Source Sans Pro",
+ FontSize->14,
+ FontWeight->Medium,
+ FontColor->RGBColor[
+  25/51, 25/51, 25/51],ExpressionUUID->"4b368005-91dc-4911-9aa7-053d168cbfa1"],
+
+Cell[StyleData["DataResourceLimitText", StyleDefinitions -> StyleData["Text"]],
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ Evaluatable->False,
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ FontFamily->"Source Sans Pro",
+ FontSize->13,
+ FontWeight->SemiBold,
+ FontColor->RGBColor[
+  25/51, 25/51, 25/51],ExpressionUUID->"a0a18c1d-03ba-4036-ab37-507da4eeb5cd"],
+
+Cell[StyleData["DataResourceInstructionText", StyleDefinitions -> StyleData[
+ "Text"]],
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ Evaluatable->False,
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ FontFamily->"Source Sans Pro",
+ FontWeight->Medium,
+ FontSlant->Italic,
+ FontColor->RGBColor[
+  25/51, 25/51, 25/51],ExpressionUUID->"97c57489-34c1-4ed5-b2e7-282124b454b3"],
+
+Cell[StyleData["DataResourceExampleText", StyleDefinitions -> StyleData[
+ "Text"]],
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ Evaluatable->False,
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ FontFamily->"Source Sans Pro",
+ FontSize->14,
+ FontWeight->SemiBold,
+ FontColor->RGBColor[
+  71/255, 71/255, 71/
+   255],ExpressionUUID->"5077def9-d482-47e4-8c93-3a8b326690d2"],
+
+Cell[StyleData["DataResourceExampleLabel", StyleDefinitions -> StyleData[
+ "Text"]],
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ Evaluatable->False,
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ FontFamily->"Source Sans Pro",
+ FontSize->14,
+ FontWeight->Light,
+ FontColor->RGBColor[
+  25/51, 25/51, 25/51],ExpressionUUID->"9d927307-f966-4351-9e0e-fa619cb7c315"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Input cells", "Subsection",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.695648631418396*^9, 3.695648653561396*^9}, {
+   3.6956496211020403`*^9, 
+   3.6956496229342237`*^9}},ExpressionUUID->"fbd8c2c8-6a3c-4d75-9f8a-\
+ac5b811c0204"],
+
+Cell[StyleData["DataResourceTextInput", StyleDefinitions -> StyleData["Text"]],
+ Editable->True,
+ Selectable->True,
+ Deletable->False,
+ CellFrame->{{53, 40}, {5, 0}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {23, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ CellElementSpacings->{"CellMinHeight"->23},
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ ShowCellTags->False,
+ CellChangeTimes->{
+  3.695649352600193*^9, {3.6963781570131893`*^9, 3.696378157595189*^9}},
+ Background->GrayLevel[
+  1],ExpressionUUID->"602e22b9-f1a4-4371-8694-7bc296909f8d"],
+
+Cell[StyleData["DataResourceTextComplete", StyleDefinitions -> StyleData[
+ "DataResourceTextInput"]],
+ Editable->False,
+ Selectable->True,
+ Deletable->False,
+ CellFrame->{{100, 40}, {5, 1}},
+ CellMargins->{{0, 0}, {10, 0}},
+ CellChangeTimes->{3.696379133803419*^9},
+ ShowAutoSpellCheck->False,
+ FontFamily->"SourceSansPro",
+ FontSize->16,
+ FontWeight->SemiBold,
+ FontColor->RGBColor[71/255, 71/255, 71/255],
+ Background->
+  RGBColor[{
+   16/17, 16/17, 16/
+    17}],ExpressionUUID->"90baf963-90de-4f13-9cd7-2bb3b63eeeda"],
+
+Cell[StyleData["DataResourceSMDTextInput", StyleDefinitions -> StyleData[
+ "Text"]],
+ Editable->True,
+ Selectable->True,
+ Deletable->False,
+ CellFrame->{{71, 40}, {5, 1}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {10, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ ShowCellTags->False,
+ CellChangeTimes->{3.695649352600193*^9},
+ Background->GrayLevel[
+  1],ExpressionUUID->"c6bbfadf-7716-4c69-9a68-3f8b68a1dc22"],
+
+Cell[StyleData["DataResourceSubsectionLabel", StyleDefintions -> StyleData[
+ "Subsection"]],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellSize->{400, 20},
+ FontFamily->"Source Sans Pro",
+ FontColor->
+  RGBColor[{
+   59/255, 122/255, 32/
+    51}],ExpressionUUID->"3a3cd69c-eb95-4fe7-aadb-173a45084045"],
+
+Cell[StyleData["DataResourceSubsectionLabelText", StyleDefintions -> \
+StyleData["Subsection"]],
+ CellFrame->{{0, 0}, {0, 0}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ Evaluatable->False,
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ FontFamily->"Source Sans Pro",
+ FontSize->18,
+ FontWeight->"SemiBold",
+ FontColor->RGBColor[
+  61/255, 122/255, 158/
+   255],ExpressionUUID->"64c94032-936b-4f14-99ab-c71548205f43"],
+
+Cell[StyleData["DataResourceSubsubsectionLabelText", StyleDefintions -> \
+StyleData["Subsection"]],
+ CellFrame->{{0, 0}, {0, 0}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ Evaluatable->False,
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ FontFamily->"Source Sans Pro",
+ FontSize->18,
+ FontWeight->"Regular",
+ FontColor->RGBColor[
+  61/255, 122/255, 158/
+   255],ExpressionUUID->"4656384f-1259-4fd1-8594-5be373ac7e09"],
+
+Cell[StyleData["DataResourceTextInputItem", StyleDefinitions -> StyleData[
+ "Item"]],
+ CellFrame->{{60, 40}, {5, 1}},
+ CellDingbat->StyleBox["\[FilledSmallSquare]", Alignment -> Baseline, 
+   RGBColor[{59/255, 122/255, 32/51}]],
+ CellMargins->{{0, 0}, {0, 0}},
+ StyleKeyMapping->{},
+ CellFrameMargins->{{20, Inherited}, {Inherited, Inherited}},
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ ShowCellTags->False,
+ CounterIncrements->"DataResourceTextInputItem",
+ Background->GrayLevel[
+  1],ExpressionUUID->"2c5e12c9-213a-4a71-b1d6-b073d99d122c"],
+
+Cell[StyleData["CheckBoxBarOutput"],
+ ShowCellBracket->False,
+ CellMargins->{{52, 4}, {6, 4}},
+ CellGroupingRules->"OutputGrouping",
+ CellHorizontalScrolling->True,
+ PageBreakWithin->False,
+ GroupPageBreakWithin->False,
+ CellLabelPositioning->Left,
+ CellLabelMargins->{{14, Inherited}, {Inherited, Inherited}},
+ CellChangeTimes->{{3.6963793749835343`*^9, 3.6963793921772537`*^9}},
+ HyphenationOptions->{"HyphenationCharacter"->"\[Continuation]"},
+ FormatType->InputForm,
+ ShowStringCharacters->False,
+ FontFamily->"Source Sans Pro",
+ FontColor->GrayLevel[0],
+ TextBoxOptions -> {
+  ContentStyle -> {
+    FontSize -> 10}},ExpressionUUID->"c461f5dd-e2b6-45c9-8e13-ca907fc71cd5"],
+
+Cell[StyleData["DataResourceContentInput", StyleDefinitions -> StyleData[
+ "Input"]],
+ Editable->True,
+ Selectable->True,
+ Deletable->False,
+ CellFrame->{{2, 0}, {0, 0}},
+ CellDingbat->Cell[
+   BoxData[
+    GraphicsBox[
+     RasterBox[CompressedData["
+1:eJytlk+IjGEcx8fsGjsx1pKDNrKFcZE5KHJhNxexu1pMTmo3Y1qHWTur2J1s
+OFC/ixtSTsKKstSwB4YbB0o4aJmiSHLZNv+25PX99X6f5vHs+85MMvWZmed5
+3uf3e35/n7etb6DnYDQSiQw14aun92h7Pt87vHsRBntzQ/3ZXObA9tyRTDaT
+39TXgMllpBGISDUSYD8YA2XwC3j8LXNe1xOe50XCCJEdB6NgCsyAIhgBadDN
+Xx3f5foUn4/XqSMFJsE0KICWKnY20R6P6L5UDR0d4CsogdYafozw7B7Psw08
+5P6OEB0prl8DsTrkt4Ef4DfopCzdd5VyUo6OOO18Vqd85Q5tOO6cOUY/TJr4
+ODY/r1P+Dj5/C8wJ8H8r/TfKcYJ5Yew2MZ5XI87qj0NgGJwHN8AlsJByC5Rr
+8v8nyPBsnZR1GnwD78AL8AZ8Jq/pD/W9fvJgHzgJbqttPOuMVOrrHv34BZyj
+jg20N0WSYL5rl+Mjlf0JDHJclEr9FrhHP++tPHgMxkFDWGws+c3gAnil5+Pc
+iFT6Q5p7VnC8HkxwXdeijuyNYLnRQf9+AKc0jpbetFT6T7e1/zrtmQuyYKkj
+/yn9kaF/z/IsmwPya5dU+lvakrGWMuIh/llAuxaDR+Cm+imkTxk7yvSbLeci
+OBYWA7BK/Dw7IwH1Yekw8Rhj/G0ZS8TP2a0B8tcxrh/Byho93eSV5q/msdtf
+28Fb0OjM3xe/Vz0AySry7fowdV4IOLP2pD3WeLX4daf/x2vosOvc9CutN7ef
+a75NWONB8XN0DXUE+kpm9yu775bk774bpe+Tlp8OMxYvg/JJwvuuYu6PK46e
+neL3mmbu1bku8F1m95IY9wfdH4awe/Cy+LU3YM1tsXXw+ZJUvwdte9z7XOvu
+ifi9xn2+hc9NS333uR0f973khPh12yWV95Ki/Nt7ic1/eb/6AzfsSoE=
+      "], {{0, 0}, {
+      25, 25}}, {0, 255}, ColorFunction -> RGBColor], Background -> 
+     RGBColor[{
+        Rational[16, 17], 
+        Rational[16, 17], 
+        Rational[16, 17]}], ImageSize -> {25, 25}, 
+     PlotRange -> {{0, 25}, {0, 25}}]], "Output"],
+ ShowCellBracket->False,
+ CellMargins->{{Automatic, Automatic}, {8, 8}},
+ Evaluatable->True,
+ CellContext->Notebook,
+ CellLabelStyle->Directive[
+  Background -> RGBColor[{16/17, 16/17, 16/17}], 
+   CellLabelMargins -> {{12, Inherited}, {Inherited, Inherited}}, 
+   LanguageCategory -> None, StyleMenuListing -> None, FontFamily -> 
+   "Helvetica", FontSize -> 9, FontColor -> GrayLevel[0.6]],
+ CellLabelMargins->{{2, 0}, {-2, 0}},
+ CellFrameMargins->{{10, 10}, {40, 10}},
+ CellFrameColor->RGBColor[{59/255, 122/255, 32/51}],
+ CellFrameLabels->None,
+ CellFrameLabelMargins->{{20, 0}, {0, 0}},
+ ShowCellTags->False,
+ Background->GrayLevel[
+  1],ExpressionUUID->"94de483f-6098-4d16-b659-bfb095d9fea7"],
+
+Cell[StyleData["DataResourcePageBreak"],
+ Editable->False,
+ Deletable->False,
+ CellFrame->0,
+ ShowCellBracket->False,
+ ShowSelection->False,
+ CellMargins->0,
+ CellBracketOptions->{"OverlapContent"->True},
+ CellElementSpacings->{"CellMinHeight"->5},
+ ShowCellLabel->False,
+ CellLabelMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabelMargins->0,
+ ShowCellTags->False,
+ CellSize->{Automatic, 5},
+ Background->RGBColor[
+  8/255, 23/85, 107/
+   255],ExpressionUUID->"0127746e-6484-4d92-b3c3-3fad5e6d0ff6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Property sections with info buttons, etc", "Subsection",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.695648631418396*^9, 
+   3.695648653561396*^9}},ExpressionUUID->"7511d1a0-7905-4a1c-a0db-\
+1d3accd2d649"],
+
+Cell[StyleData["DataResourcePropertyLabel", StyleDefintions -> StyleData[
+ "Subsection"]],
+ CellMargins->{{0, 0}, {10, 5}},
+ CellFrameMargins->0,
+ CellSize->{800, Automatic},
+ FontFamily->"Source Sans Pro",
+ FontColor->
+  RGBColor[{
+   59/255, 122/255, 32/
+    51}],ExpressionUUID->"763adc22-7aa8-4c33-945f-40bd4ca068e5"],
+
+Cell[StyleData["DataResourcePropertyCaption"],
+ Editable->False,
+ Deletable->False,
+ CellFrame->True,
+ CellMargins->{{3, 3}, {0, 0}},
+ Evaluatable->False,
+ CellFrameMargins->{{2, 2}, {1, 0}},
+ CellSize->{1604, 30},
+ CellChangeTimes->{{3.699871021211817*^9, 3.6998710214758167`*^9}},
+ FontFamily->"Source Sans Pro",
+ GridBoxOptions->{GridBoxAlignment->{"Columns" -> {{Left}}},
+ GridBoxItemSize->{"Columns" -> {
+     Scaled[0.59], {
+      Scaled[0.01]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}},
+ GridBoxSpacings->{
+  "Columns" -> {0}}},ExpressionUUID->"0e0a1eb5-44f0-479d-9e31-1c2ead0d495b"],
+
+Cell[StyleData["DataResourceMoreInfoNameText", StyleDefinitions -> StyleData[
+ "Text"]],
+ Editable->False,
+ Selectable->False,
+ Deletable->False,
+ CellMargins->{{50, 0}, {0, 0}},
+ Evaluatable->False,
+ CellFrameMargins->0,
+ CellSize->{725, Automatic},
+ FontFamily->"Source Sans Pro",
+ FontSize->14,
+ FontWeight->"Light",
+ FontColor->RGBColor[
+  61/255, 122/255, 158/
+   255],ExpressionUUID->"da05eef6-1844-451b-bbf7-3df5276e0fc0"],
+
+Cell[StyleData["DataResourceMoreInfo", StyleDefinitions -> StyleData["Text"]],
+ Editable->False,
+ Selectable->False,
+ Deletable->False,
+ CellMargins->{{50, 0}, {0, 0}},
+ Evaluatable->False,
+ CellFrameMargins->0,
+ CellSize->{725, Automatic},
+ FontFamily->"Source Sans Pro",
+ FontSize->14,
+ FontWeight->Plain,
+ FontColor->RGBColor[
+  71/255, 71/255, 71/
+   255],ExpressionUUID->"ad148d4b-79f9-440d-82c7-8625fdcc038d"],
+
+Cell[StyleData["DataResourceMoreInfoSection", StyleDefinitions -> StyleData[
+ "Subsection"]],
+ Editable->False,
+ Deletable->False,
+ PageWidth->725,
+ CellFrame->{{50, 50}, {10, 0}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ CellElementSpacings->{"ClosedCellHeight"->0},
+ Evaluatable->False,
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ CellFrameLabelMargins->100,
+ CellSize->{Automatic, 20},
+ CellChangeTimes->{{3.695725946965846*^9, 3.695725947733923*^9}},
+ FontFamily->"Source Sans Pro",
+ FontWeight->"Medium",ExpressionUUID->"a3b1575f-225d-43a7-905d-ecdd4f9521cc"],
+
+Cell[StyleData["DataResourceSubPropertyCaption"],
+ Editable->False,
+ Deletable->False,
+ CellFrame->True,
+ CellMargins->{{3, 3}, {0, 0}},
+ Evaluatable->False,
+ CellFrameMargins->{{2, 2}, {1, 1}},
+ CellSize->{1578, 24},
+ CellChangeTimes->{{3.6960316271811748`*^9, 3.696031627312175*^9}, {
+  3.696688210555371*^9, 3.6966882112863708`*^9}},
+ FontFamily->"Source Sans Pro",
+ GridBoxOptions->{GridBoxAlignment->{"Columns" -> {{Left}}},
+ GridBoxItemSize->{"Columns" -> {
+     Scaled[0.59], {
+      Scaled[0.01]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}},
+ GridBoxSpacings->{
+  "Columns" -> {0}}},ExpressionUUID->"084802e3-ac90-497b-9926-01828f38807f"],
+
+Cell[StyleData["DataResourceSMDMoreInfoSection", StyleDefinitions -> \
+StyleData["Subsubsection"]],
+ Editable->False,
+ Deletable->False,
+ PageWidth->725,
+ CellFrame->{{70, 40}, {0, 0}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"OverlapContent"->True},
+ CellElementSpacings->{"ClosedCellHeight"->0},
+ Evaluatable->False,
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[{16/17, 16/17, 16/17}],
+ CellFrameLabelMargins->100,
+ CellSize->{Automatic, 20},
+ CellChangeTimes->{{3.695725946965846*^9, 3.695725947733923*^9}},
+ FontFamily->
+  "Source Sans Pro",ExpressionUUID->"b3d092a9-9082-4f04-96e6-d32ce5f9e2e9"],
+
+Cell[StyleData["DataResourceActionButton", StyleDefinitions -> "Output"],
+ Deletable->False,
+ ShowCellBracket->False,
+ CellMargins->{{52, 4}, {6, 4}},
+ ShowCellTags->False,
+ FontFamily->
+  "Source Sans Pro",ExpressionUUID->"7824f95d-9227-475e-b0e9-375dbf120a18"],
+
+Cell[StyleData["DataResourceSortingPropertyField", StyleDefinitions -> \
+StyleData["Output"]],
+ Selectable->False,
+ Deletable->False,
+ ShowCellBracket->False,
+ CellMargins->{{66, Inherited}, {20, Inherited}},
+ ShowCellTags->False,
+ CellChangeTimes->{3.6998724071638556`*^9, 
+  3.699872500834157*^9},ExpressionUUID->"29e9417c-b4f5-48d4-a962-\
+82e9e66953e9"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Custom", " ", "Cells"}]], "Chapter",
+ CellChangeTimes->{
+  3.6956681119938703`*^9},ExpressionUUID->"560ffced-b487-484e-80b0-\
+83daff3a4f01"],
+
+Cell[StyleData["DataResourceConstructChapter", StyleDefinitions -> StyleData[
+ "DataResourceChapter"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["Construct the Resource", "DataResourceChapterText"]}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourceChapterText", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->{{0, 0}, {0, 20}},
+ CellFrameMargins->0,
+ CellChangeTimes->{{3.696157111283261*^9, 
+  3.696157111756308*^9}},ExpressionUUID->"bc15e545-d569-4a61-a37d-\
+afca3a978854"],
+
+Cell[CellGroupData[{
+
+Cell["----UUID", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.6956628859044447`*^9}},ExpressionUUID->"63562194-a559-4d6f-b1c1-\
+f719bfe2253e"],
+
+Cell[StyleData["DataResourceUUIDSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsection"]],
+ Selectable->True,
+ CellDingbat->Cell["UUID", "DataResourceSubsectionLabel"],
+ CellMargins->{{Inherited, Inherited}, {0, Inherited}},
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         Cell[
+         "This UUID has been automatically generated for the ResourceObject. \
+It cannot be edited.", "DataResourceCaptionText"], ""}}]], 
+     "DataResourceCaption", CellSize -> {Inherited, 24}], None}},
+ CellFrameLabelMargins->{{0, 0}, {10, 0}},
+ CellChangeTimes->{{3.6998706493988166`*^9, 
+  3.6998706539248166`*^9}},ExpressionUUID->"11a92a7f-f68f-4db5-b2b8-\
+468b9a4c6ff9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----Name/Title", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}},ExpressionUUID->"fc3e8726-9a99-494f-b8b0-\
+03d7e571e032"],
+
+Cell[StyleData["DataResourceNameSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+        BoxData[
+         TagBox[
+          GridBox[{{
+             Cell[
+              TextData["TITLE/NAME"], "DataResourceSubsectionText"], 
+             TagBox[
+              GridBox[{{""}, {
+                 Cell[
+                  TextData["*"], "Text", FontFamily -> "SourceSansPro"]}}, 
+               GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {
+                   Scaled[0], 2}}, GridBoxSpacings -> {"Columns" -> {{0}}}, 
+               GridBoxAlignment -> {"Rows" -> {{Top}}}], "TextGrid"], 
+             TagBox[
+              GridBox[{{""}, {
+                 Cell[
+                  TextData[
+                   StyleBox[
+                   "(Required)    ", FontFamily -> "SourceSansPro", FontSize -> 
+                    8, FontColor -> GrayLevel[0.4]]], "Text"]}}, 
+               GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {
+                   Scaled[0], 1.4}}, GridBoxSpacings -> {"Columns" -> {{0}}}, 
+               GridBoxAlignment -> {"Rows" -> {{Top}}}], "TextGrid"]}}, 
+           BaselinePosition -> Bottom, AutoDelete -> False, 
+           GridBoxSpacings -> {"Columns" -> {{0}}}, 
+           GridBoxAlignment -> {"Rows" -> {{Center}}}, 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+          "TextGrid"]], "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "more info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  80 characters max", "DataResourceInstructionText"], 
+       Cell[" | ", "DataResourceCaptionText"], 
+       Cell["Use title case", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0, CellSize -> {Inherited, 35}],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Example: ", "DataResourceExampleLabel"], 
+           Cell["UFO Sightings 2015", "DataResourceExampleText"]}], ""}}]], 
+     "DataResourcePropertyCaption"], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"236de4c3-09f2-4a94-8bf8-bad407440c7f"],
+
+Cell[StyleData["DataResourceNameMoreInfo", StyleDefinitions -> StyleData[
+ "DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Name\": ", "DataResourceMoreInfoNameText"], 
+     "\nThe name of the resource should be concise yet descriptive. This will \
+be the title of the object within the Wolfram Language, in search results and \
+on documentation pages. ", 
+     StyleBox[
+     "Use title case: capitalize important words only.", FontSlant -> 
+      Italic]}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"09d9fdcb-539e-4603-b819-\
+2a5db417978c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----Description", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 
+   3.6956680877964506`*^9}},ExpressionUUID->"f8f5bad2-aae5-4453-a922-\
+da125774a2e0"],
+
+Cell[StyleData["DataResourceDescriptionSection", StyleDefinitions -> \
+StyleData["DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+        BoxData[
+         TagBox[
+          GridBox[{{
+             Cell[
+              TextData["ONE-LINE DESCRIPTION"], "DataResourceSubsectionText"], 
+             TagBox[
+              GridBox[{{""}, {
+                 Cell[
+                  TextData["*  "], "Text", FontFamily -> "SourceSansPro"]}}, 
+               GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {
+                   Scaled[0], 2}}, GridBoxSpacings -> {"Columns" -> {{0}}}, 
+               GridBoxAlignment -> {"Rows" -> {{Top}}}], "TextGrid"]}}, 
+           BaselinePosition -> Bottom, AutoDelete -> False, 
+           GridBoxSpacings -> {"Columns" -> {{0}}}, 
+           GridBoxAlignment -> {"Rows" -> {{Center}}}, 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+          "TextGrid"]], "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  400 characters max", "DataResourceInstructionText"], 
+       Cell[" | ", "DataResourceCaptionText"], 
+       Cell["Use initial caps", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0, CellSize -> {Inherited, 36}],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Example: ", "DataResourceExampleLabel"], 
+           Cell[
+           "Dataset of UFO sightings in the United States in 2015", 
+            "DataResourceExampleText"]}], ""}}]], 
+     "DataResourcePropertyCaption"], None}},
+ CellFrameLabelMargins->{{0, 0}, {4, 0}},
+ CellChangeTimes->{{3.696360068895058*^9, 3.6963600700061693`*^9}, 
+   3.6963609463967996`*^9, 3.6963744621294003`*^9, {3.6963746837244005`*^9, 
+   3.6963746841674004`*^9}, 3.6963757344594*^9, {3.696600795407156*^9, 
+   3.6966008015761557`*^9}},ExpressionUUID->"ffabe673-12c2-495e-a7be-\
+fd6c7532b7f3"],
+
+Cell[StyleData["DataResourceDescriptionMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Description\": ", "DataResourceMoreInfoNameText"], 
+     "A one-line description of the resource. A good description will \
+succinctly convey information about the resource's form, scope, spatial \
+and/or temporal coverage, etc. It should not end with punctuation. This field \
+is shown in search results and ResourceObject boxes in the Wolfram Language. \
+", 
+     StyleBox[
+     "The summary should not repeat the title/name and should be descriptive \
+on its own, without the title/name.", FontSlant -> Italic]}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"032405a5-574a-4dd6-a801-\
+83a204ca7415"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----Originator", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 3.6956680877964506`*^9}, {
+   3.6957268009792385`*^9, 
+   3.695726803950536*^9}},ExpressionUUID->"01167d0e-8268-476e-a80f-\
+554f59cb2e3c"],
+
+Cell[StyleData["DataResourceOriginatorSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["ORIGINATOR  ", "DataResourceSubsectionText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  1,000 characters max", "DataResourceInstructionText"], 
+       Cell[" | ", "DataResourceCaptionText"], 
+       Cell[
+       "Omit if already in title/description", 
+        "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Examples: ", "DataResourceExampleLabel"], 
+           Cell[
+           "John Doe (ABC Company), et al.\nUS Dept. of ABC", 
+            "DataResourceExampleText"]}], ""}}]], 
+     "DataResourcePropertyCaption", CellSize -> {Inherited, 43}], None}},
+ CellFrameLabelMargins->{{0, 0}, {10, 
+  0}},ExpressionUUID->"32828faf-7731-411b-b1ea-536e02a45890"],
+
+Cell[StyleData["DataResourceOriginatorMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Originator\": ", "DataResourceMoreInfoNameText"], 
+     "\nThe originator should be the person or entity that originally created \
+or collected the content. This could be a lead researcher or the organization \
+that published the data.\n\nOn the website, this field will be displayed with \
+the title and description and should be omitted if already included in one of \
+those fields.\n"}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"a092759e-e8d0-4662-b999-\
+e6b6e734c2de"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----ContributedBy", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 3.6956680877964506`*^9}, {
+   3.6957268009792385`*^9, 3.695726803950536*^9}, {3.701454036513462*^9, 
+   3.7014540421120214`*^9}},ExpressionUUID->"b290d71c-20be-42ce-a313-\
+c3cad6546d59"],
+
+Cell[StyleData["DataResourceContributedBySection", StyleDefinitions -> \
+StyleData["DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["CONTRIBUTED BY  ", "DataResourceSubsectionText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  1,000 characters max", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Examples: ", "DataResourceExampleLabel"], 
+           Cell[
+           "John User\nJoe User (University of ABC)", 
+            "DataResourceExampleText"]}], ""}}]], 
+     "DataResourcePropertyCaption", CellSize -> {Inherited, 43}], None}},
+ CellFrameLabelMargins->{{0, 0}, {10, 
+  0}},ExpressionUUID->"cd90e303-794b-4d59-9415-656ad9937533"],
+
+Cell[StyleData["DataResourceContributedByMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"ContributedBy\": ", "DataResourceMoreInfoNameText"], 
+     "\nThe individual or individuals responsible for creating this data \
+resource notebook."}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"d01738c4-53c0-43ff-9b61-\
+f126795a7cf3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----Details", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 3.6956680877964506`*^9}, {
+   3.6957268009792385`*^9, 3.695726803950536*^9}, {3.695732452098151*^9, 
+   3.6957324529811516`*^9}},ExpressionUUID->"0286d033-3200-476f-97e6-\
+e53365d65ac2"],
+
+Cell[StyleData["DataResourceDetailsSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+        BoxData[
+         Cell["DETAILS ", "DataResourceSubsectionText"]], 
+        "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "more info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell[" 100,000 characters max", "DataResourceInstructionText"], 
+       Cell[" | ", "DataResourceCaptionText"], 
+       Cell["Use paragraphs as needed", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0, CellSize -> {Inherited, 32}],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {None, None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"7d0c34c4-1761-4d6b-bce9-8a5ba54db019"],
+
+Cell[StyleData["DataResourceDetailsMoreInfo", StyleDefinitions -> StyleData[
+ "DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Details\": ", "DataResourceMoreInfoNameText"], 
+     "\nDetails may include a long description of the resource's contents, \
+history, methodology or other relevant information. Give references here if \
+they are directly relevant to the resource. The details will appear above the \
+examples on the webpage for the resource.", ""}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"728c1103-bc19-4c4c-8618-\
+a66f221ff19f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----Source", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 3.6956680877964506`*^9}, {
+   3.6957268009792385`*^9, 3.695726803950536*^9}, {3.695732452098151*^9, 
+   3.6957324529811516`*^9}, {3.6957334108581467`*^9, 
+   3.695733411812146*^9}},ExpressionUUID->"1c5879a0-8c1f-457e-8ada-\
+03e62113b039"],
+
+Cell[StyleData["DataResourceCitationSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+        BoxData[
+         Cell[
+          TextData["SOURCE/REFERENCE CITATION "], 
+          "DataResourceSubsectionText"]], "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "more info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell[" 1,000 characters max", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0, CellSize -> {Inherited, 24}],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Example: ", "DataResourceExampleLabel"], 
+           Cell[
+           "Bureau of Labor Statistics,\"2016-17 Occupational Outlook \
+Handbook\"" "J.Smith& J.Doe,\"Data on ABC\",Journal of XYZ,14 (1985) 567", 
+            "DataResourceExampleText"]}], ""}}]], 
+     "DataResourcePropertyCaption"], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"f8edf2ad-05f2-4f17-b5ca-9a232edb1d2b"],
+
+Cell[StyleData["DataResourceCitationMoreInfo", StyleDefinitions -> StyleData[
+ "DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Citation\": ", "DataResourceMoreInfoNameText"], 
+     "\nThe source reference should be a bibliographic-style citation for the \
+source of the data if otherwise published.", ""}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"8adcc72e-7c42-494d-aaf9-\
+5ec0afe61a1b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----SourceLink", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 3.6956680877964506`*^9}, {
+   3.6957268009792385`*^9, 3.695726803950536*^9}, {3.695732452098151*^9, 
+   3.6957324529811516`*^9}, {3.6957334108581467`*^9, 3.695733411812146*^9}, {
+   3.6957342278361425`*^9, 
+   3.695734228502143*^9}},ExpressionUUID->"6a24c989-82fd-477b-bad6-\
+ff530ec42253"],
+
+Cell[StyleData["DataResourceSourceSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+        BoxData[
+         Cell[
+          TextData["SOURCE LINK "], "DataResourceSubsectionText"]], 
+        "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "more info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  Include one URL", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0, CellSize -> {Inherited, 24}],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Example: ", "DataResourceExampleLabel"], 
+           Cell[
+           "www.irs.gov/uac/soi-tax-stats-historical-table-1", 
+            "DataResourceExampleText"]}], ""}}]], 
+     "DataResourcePropertyCaption"], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"721db5e7-4be4-466a-8f29-0081a0f5ddb8"],
+
+Cell[StyleData["DataResourceSourceMoreInfo", StyleDefinitions -> StyleData[
+ "DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Source\": ", "DataResourceMoreInfoNameText"], 
+     "\nWeb link to the source. ", 
+     StyleBox[
+     "Link directly to the webpage hosting the content, not just to the \
+domain.", FontSlant -> Italic]}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"01183c2c-8a51-4fce-a0a7-\
+87ec9a4fd267"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----ExternalLinks", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 3.6956680877964506`*^9}, {
+   3.6957268009792385`*^9, 3.695726803950536*^9}, {3.695732452098151*^9, 
+   3.6957324529811516`*^9}, {3.6957334108581467`*^9, 3.695733411812146*^9}, {
+   3.6957342278361425`*^9, 3.695734228502143*^9}, {3.695734761892143*^9, 
+   3.6957347641361427`*^9}},ExpressionUUID->"49595336-71d8-4bc4-b40b-\
+49d0d36cc401"],
+
+Cell[StyleData["DataResourceExternalLinksSection", StyleDefinitions -> \
+StyleData["DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+        BoxData[
+         Cell[
+          TextData["ADDITIONAL LINKS "], "DataResourceSubsectionText"]], 
+        "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "more info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  20 URLs max", "DataResourceInstructionText"], 
+       Cell[" | ", "DataResourceCaptionText"], 
+       Cell["Each URL on a new line", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0, CellSize -> {Inherited, 24}],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Example: ", "DataResourceExampleLabel"], 
+           Cell[
+           "www.irs.gov/uac/soi-tax-stats-historical-table-1", 
+            "DataResourceExampleText"]}], ""}}]], 
+     "DataResourcePropertyCaption"], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"9628f612-b6a7-4673-a5f4-100c5f361c79"],
+
+Cell[StyleData["DataResourceExternalLinksMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"ExternalLinks\": ", "DataResourceMoreInfoNameText"], 
+     "\nLinks pointing to relevant external sites or resources. These could \
+be related websites, articles, papers or reports, supplemental data \
+dictionaries, additional details on the history or methodology of the data, \
+etc.", ""}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"b409a555-0734-4f32-8537-\
+2df4e3e4fe17"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----Related resources", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 3.6956680877964506`*^9}, {
+   3.6957268009792385`*^9, 3.695726803950536*^9}, {3.695732452098151*^9, 
+   3.6957324529811516`*^9}, {3.6957334108581467`*^9, 3.695733411812146*^9}, {
+   3.6957342278361425`*^9, 3.695734228502143*^9}, {3.695734761892143*^9, 
+   3.6957347641361427`*^9}, {3.6957478190518875`*^9, 
+   3.6957478228268876`*^9}},ExpressionUUID->"05fba5bb-1d8e-4b58-8440-\
+37955553c296"],
+
+Cell[StyleData["DataResourceRelatedResourcesSection", StyleDefinitions -> \
+StyleData["DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+        BoxData[
+         Cell[
+          TextData["RELATED RESOURCES "], "DataResourceSubsectionText"]], 
+        "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "more info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell[
+       "  20 resource names or ResourceObjects max", 
+        "DataResourceInstructionText"], 
+       Cell[" | ", "DataResourceCaptionText"], 
+       Cell["Each resource on a new line", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0, CellSize -> {Inherited, 24}],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Example: ", "DataResourceExampleLabel"], 
+           Cell["Fireballs and Bolides", "DataResourceExampleText"]}], ""}}]],
+      "DataResourcePropertyCaption"], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"c2c0f4a6-dd06-40a3-aa41-2824501ac1e9"],
+
+Cell[StyleData["DataResourceRelatedResourcesMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"SeeAlso\": ", "DataResourceMoreInfoNameText"], 
+     "\nRelated resources are ResourceObjects that are closely related to the \
+resource.\n", 
+     StyleBox[
+     "Give one resource per line, either their names or the symbolic object \
+that represents them.", FontSlant -> Italic]}], "DataResourceMoreInfo"],
+ CellChangeTimes->{
+  3.6969545714895554`*^9, {3.6969546173715553`*^9, 
+   3.696954619424556*^9}},ExpressionUUID->"c6953326-baeb-4fde-9c67-\
+be0d5270b62a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----Keywords", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 3.6956680877964506`*^9}, {
+   3.6957268009792385`*^9, 3.695726803950536*^9}, {3.695732452098151*^9, 
+   3.6957324529811516`*^9}, {3.6957334108581467`*^9, 3.695733411812146*^9}, {
+   3.6957342278361425`*^9, 3.695734228502143*^9}, {3.695734761892143*^9, 
+   3.6957347641361427`*^9}, {3.695736480060701*^9, 
+   3.6957364810778027`*^9}},ExpressionUUID->"f5f964d7-60a9-4383-92f0-\
+430fb341bcb7"],
+
+Cell[StyleData["DataResourceKeywordsSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+        BoxData[
+         Cell[
+          TextData["ADDITIONAL KEYWORDS "], "DataResourceSubsectionText"]], 
+        "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "more info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  40 characters max", "DataResourceInstructionText"], 
+       Cell[" | ", "DataResourceCaptionText"], 
+       Cell["Each keyword on a new line", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0, CellSize -> {Inherited, 24}],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Examples: ", "DataResourceExampleLabel"], 
+           Cell["ecology\namphibian habitats", "DataResourceExampleText"]}], 
+         ""}}]], "DataResourcePropertyCaption", CellSize -> {Inherited, 50}], 
+    None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"7d4eb99b-b27d-4248-bf7e-002e159e6cde"],
+
+Cell[StyleData["DataResourceKeywordsMoreInfo", StyleDefinitions -> StyleData[
+ "DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Keywords\": ", "DataResourceMoreInfoNameText"], 
+     "\nAdditional keywords relevant for finding this resource through \
+searches.", 
+     StyleBox[
+     " Each keyword should be entered on a new line.", FontSlant -> Italic]}],
+    "DataResourceMoreInfo"],ExpressionUUID->"fb94d1ce-2bfa-4678-b501-\
+31d2c1a5fdfc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----Categories", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 3.6956680877964506`*^9}, {
+   3.6957268009792385`*^9, 3.695726803950536*^9}, {3.695732452098151*^9, 
+   3.6957324529811516`*^9}, {3.6957334108581467`*^9, 3.695733411812146*^9}, {
+   3.6957342278361425`*^9, 3.695734228502143*^9}, {3.695734761892143*^9, 
+   3.6957347641361427`*^9}, {3.695736480060701*^9, 3.6957364810778027`*^9}, {
+   3.6957501958344536`*^9, 
+   3.6957501979256625`*^9}},ExpressionUUID->"ad65eb51-0379-486a-b881-\
+98e101e36a97"],
+
+Cell[StyleData["DataResourceCategoriesSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+        BoxData[
+         Cell[
+          TextData["CATEGORIES "], "DataResourceSubsectionText"]], 
+        "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "more info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  Select from list", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0, CellSize -> {Inherited, 24}],
+ CellMargins->{{0, 0}, {0, 10}},
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {None, None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"8842050d-b47d-4689-b9ff-082d38a2b686"],
+
+Cell[StyleData["DataResourceCategoriesMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Categories\": ", "DataResourceMoreInfoNameText"], 
+     "\nCategories describe broad topics and areas of study that are relevant \
+to the resource content.", ""}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"e5d02123-6327-4b45-8d4a-\
+b83e8f795a39"],
+
+Cell[StyleData["DataResourceContentTypesSection", StyleDefinitions -> \
+StyleData["DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+        BoxData[
+         Cell[
+          TextData["CONTENT TYPES "], "DataResourceSubsectionText"]], 
+        "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "more info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  Select from list", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0, CellSize -> {Inherited, 24}],
+ CellMargins->{{0, 0}, {0, 10}},
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {None, None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"9cf6d4ef-300c-4aad-abad-72b05f319d74"],
+
+Cell[StyleData["DataResourceContentTypesMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"ContentTypes\": ", "DataResourceMoreInfoNameText"], 
+     "\nContent types describe the formats of the content.", ""}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"fdb6097f-f545-41a8-9388-\
+de72c07b220d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----Source Metadata", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 3.6956680877964506`*^9}, {
+   3.6957268009792385`*^9, 3.695726803950536*^9}, {3.695732452098151*^9, 
+   3.6957324529811516`*^9}, {3.6957334108581467`*^9, 3.695733411812146*^9}, {
+   3.6957342278361425`*^9, 3.695734228502143*^9}, {3.695734761892143*^9, 
+   3.6957347641361427`*^9}, {3.695736480060701*^9, 3.6957364810778027`*^9}, {
+   3.6957501958344536`*^9, 3.6957501979256625`*^9}, {3.696029621754363*^9, 
+   3.6960296240281353`*^9}},ExpressionUUID->"9082045c-776a-484c-a9d3-\
+58d30af52423"],
+
+Cell[StyleData["DataResourceCreatorSMDSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["Author/Creator  ", "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  1,000 Characters max", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Examples: ", "DataResourceExampleLabel"], 
+           Cell[
+           "John Doe (ABC Company), et al.\nUS Dept. of ABC", 
+            "DataResourceExampleText"]}], ""}}]], 
+     "DataResourceSubPropertyCaption", CellSize -> {Inherited, 50}], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 0}},
+ CellChangeTimes->{
+  3.696688267791371*^9},ExpressionUUID->"5ea6be36-8f22-43fd-be3d-\
+a22eaa240f93"],
+
+Cell[StyleData["DataResourceCreatorSMDMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceSMDMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Creator\": ", "DataResourceMoreInfoNameText"], 
+     "\nThe Creator is the person or entity that is primarily responsible for \
+making the content. If the ResourceObject contains public or government data, \
+the creator should be the government agency that originally collected or \
+produced the data.\n\n", 
+     StyleBox[
+     "The creator corresponds to the \"Creator\" field in the Dublin Core \
+Metadata Standard.", FontSlant -> Italic]}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"4070bee3-a2e9-4373-acfd-\
+c65ebefec434"],
+
+Cell[StyleData["DataResourceContributorsSMDSection", StyleDefinitions -> \
+StyleData["DataResourceSubsubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["Additional Contributors  ", "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  20 contributors max", "DataResourceInstructionText"], 
+       Cell[" | ", "DataResourceCaptionText"], 
+       Cell[
+       "Each contributor on a new line", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Examples: ", "DataResourceExampleLabel"], 
+           Cell[
+           "Jane Smith\nUK Department for Business, Energy & Industrial \
+Strategy", "DataResourceExampleText"]}], ""}}]], 
+     "DataResourceSubPropertyCaption", CellSize -> {Inherited, 50}], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 0}},
+ CellChangeTimes->{
+  3.696688267791371*^9},ExpressionUUID->"88e145f5-483f-48dd-937c-\
+e5887735f0df"],
+
+Cell[StyleData["DataResourceContributorsSMDMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceSMDMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Contributors\": ", "DataResourceMoreInfoNameText"], 
+     "\nPeople or organizations that contributed to the original source but \
+were not the primary creators.", ""}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"a93e681e-f95f-4542-99d6-\
+58e45398b7c8"],
+
+Cell[StyleData["DataResourceTitleSMDSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["Source Title  ", "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  1,000 characters max", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Examples: ", "DataResourceExampleLabel"], 
+           Cell[
+           "IRS Statistics of Income\nGlobal Landslide Catalog", 
+            "DataResourceExampleText"]}], ""}}]], 
+     "DataResourceSubPropertyCaption", CellSize -> {Inherited, 50}], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"56a36f46-3dd2-486f-b79f-5744a249ef58"],
+
+Cell[StyleData["DataResourceTitleSMDMoreInfo", StyleDefinitions -> StyleData[
+ "DataResourceSMDMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Title\": ", "DataResourceMoreInfoNameText"], 
+     "\nTitle of the source document from which the resource is derived.", 
+     ""}], "DataResourceMoreInfo"],ExpressionUUID->"ddfb8e0e-c942-4c10-ad52-\
+7fec320884d5"],
+
+Cell[StyleData["DataResourceDescriptionSMDSection", StyleDefinitions -> \
+StyleData["DataResourceSubsubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+       "General Source Description  ", "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  1,000 characters max", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Example: ", "DataResourceExampleLabel"], 
+           Cell["The Great Encyclopedia", "DataResourceExampleText"]}], 
+         ""}}]], "DataResourceSubPropertyCaption", 
+     CellSize -> {Inherited, 30}], None}},
+ CellFrameLabelMargins->{{0, 0}, {0, 
+  0}},ExpressionUUID->"e3777234-f8b0-402f-b861-583fd5d22286"],
+
+Cell[StyleData["DataResourceDescriptionSMDMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceSMDMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Description\": ", "DataResourceMoreInfoNameText"], 
+     "\nAdditional description of the general source of data, beyond the \
+description of the actual data given. In general, only useful when a \
+description of the original source would be significantly different from the \
+description of the resource itself.", ""}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"3124dae2-d81e-4f33-9e38-\
+92978422aca5"],
+
+Cell[StyleData["DataResourceDateSMDSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["Source Date  ", "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  Include one date", "DataResourceInstructionText"], 
+       Cell[" | ", "DataResourceCaptionText"], 
+       Cell["Use ISO datetime format", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Examples: ", "DataResourceExampleLabel"], 
+           Cell[
+           "18 May 2009 13:05:34\nAugust 1985\n1990", 
+            "DataResourceExampleText"]}], ""}}]], 
+     "DataResourceSubPropertyCaption", CellSize -> {Inherited, 66}], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"d63353cc-2a01-4425-b226-1ced0dcf77ab"],
+
+Cell[StyleData["DataResourceDateSMDMoreInfo", StyleDefinitions -> StyleData[
+ "DataResourceSMDMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Date\": ", "DataResourceMoreInfoNameText"], 
+     "\nDate associated with the original source (publication date, revision \
+date, etc.)", 
+     StyleBox[
+     " Dates can be in any format understood by DateObject[str] and will \
+respect the current value of $TimeZone.\n\n\"ISODateTime\" format \
+(YYYY-MM-DDTHH:MM:SS) is preferred.", FontSlant -> Italic]}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"cd5c5b36-8c70-4eb5-bf3a-\
+cfffe962ea33"],
+
+Cell[StyleData["DataResourcePublisherSMDSection", StyleDefinitions -> \
+StyleData["DataResourceSubsubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["Source Publisher  ", "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  1000 characters max", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Examples: ", "DataResourceExampleLabel"], 
+           Cell[
+           "National Institute of Standards and Technology\nHoughton Mifflin \
+Harcourt", "DataResourceExampleText"]}], ""}}]], 
+     "DataResourceSubPropertyCaption", CellSize -> {Inherited, 50}], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"8ca58577-545e-4f13-8600-9b2767e586fa"],
+
+Cell[StyleData["DataResourcePublisherSMDMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceSMDMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Publisher\": ", "DataResourceMoreInfoNameText"], 
+     "\nPeople or organizations responsible for making the resource \
+available.", ""}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"1a5aef84-e436-416d-a1ff-\
+460924e42fea"],
+
+Cell[StyleData["DataResourceGeographicCoverageSMDSection", StyleDefinitions -> \
+StyleData["DataResourceSubsubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["Geographic Coverage  ", "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  20 geolocations max", "DataResourceInstructionText"], 
+       Cell[" | ", "DataResourceCaptionText"], 
+       Cell["Each location on a new line", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Example: ", "DataResourceExampleLabel"], 
+           Cell["North America", "DataResourceExampleText"]}], ""}}]], 
+     "DataResourceSubPropertyCaption", CellSize -> {Inherited, 30}], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"7a4d3971-2289-4f63-a9a9-ae8180a90f97"],
+
+Cell[StyleData["DataResourceGeographicCoverageSMDMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceSMDMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"GeographicCoverage\": ", "DataResourceMoreInfoNameText"], 
+     "\nGeographic location covered by the data.", ""}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"d15b78c1-1e31-4f5c-b377-\
+2fd77d545797"],
+
+Cell[StyleData["DataResourceTemporalCoverageSMDSection", StyleDefinitions -> \
+StyleData["DataResourceSubsubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["Temporal Coverage  ", "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  20 time specifications max", "DataResourceInstructionText"], 
+       Cell[" | ", "DataResourceCaptionText"], 
+       Cell["Each time on a new line", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Examples: ", "DataResourceExampleLabel"], 
+           Cell[
+           "18 May 2009 13:05:34\nAugust 1985", "DataResourceExampleText"]}], 
+         ""}}]], "DataResourceSubPropertyCaption", 
+     CellSize -> {Inherited, 50}], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"e426c926-d6b6-4384-8ed7-06002f5c706c"],
+
+Cell[StyleData["DataResourceTemporalCoverageSMDMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceSMDMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"TemporalCoverage\": ", "DataResourceMoreInfoNameText"], 
+     "\nTime periods covered by the data. Dates and date ranges are \
+supported.", ""}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"0fa81641-ed61-4778-8e74-\
+7089bfdf1ee1"],
+
+Cell[StyleData["DataResourceLanguageSMDSection", StyleDefinitions -> \
+StyleData["DataResourceSubsubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["Source Language  ", "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  20 languages max", "DataResourceInstructionText"], 
+       Cell[" | ", "DataResourceCaptionText"], 
+       Cell["Each language on a new line", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Example: ", "DataResourceExampleLabel"], 
+           Cell["English", "DataResourceExampleText"]}], ""}}]], 
+     "DataResourceSubPropertyCaption", CellSize -> {Inherited, 30}], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"c78fbb80-9eeb-45fa-b56f-15c8152e0db6"],
+
+Cell[StyleData["DataResourceLanguageSMDMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceSMDMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Language\": ", "DataResourceMoreInfoNameText"], 
+     "\nHuman language used in the data. This field should only be specified \
+when the content includes a specific language.", ""}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"a5d40002-6c88-4539-8568-\
+43a2528356e3"],
+
+Cell[StyleData["DataResourceRightsSMDSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["Rights  ", "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["  10,000 characters max", "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Examples: ", "DataResourceExampleLabel"], 
+           Cell[
+           "https://creativecommons.org/licenses/by-sa/4.0\nPublic domain\n\
+(c) ABC Corp; Use subject to license", "DataResourceExampleText"]}], ""}}]], 
+     "DataResourceSubPropertyCaption", CellSize -> {Inherited, 65}], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"dfde7d09-f90f-4f47-bfdc-63d95a67e7d1"],
+
+Cell[StyleData["DataResourceRightsSMDMoreInfo", StyleDefinitions -> StyleData[
+ "DataResourceSMDMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"Rights\": ", "DataResourceMoreInfoNameText"], 
+     "\nCopyrights and/or distribution rights for the content.", 
+     StyleBox[
+     " If not Public Domain, URLs to licensing documents preferred.", 
+      FontSlant -> Italic]}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"5fd95810-10e5-47fc-a5d4-\
+74a1a657ac30"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----Content Section", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 3.6956680877964506`*^9}, {
+   3.6957268009792385`*^9, 3.695726803950536*^9}, {3.695732452098151*^9, 
+   3.6957324529811516`*^9}, {3.6957334108581467`*^9, 3.695733411812146*^9}, {
+   3.6957342278361425`*^9, 3.695734228502143*^9}, {3.695734761892143*^9, 
+   3.6957347641361427`*^9}, {3.695736480060701*^9, 3.6957364810778027`*^9}, {
+   3.6957501958344536`*^9, 3.6957501979256625`*^9}, {3.696029621754363*^9, 
+   3.6960296240281353`*^9}, {3.6960890431423054`*^9, 
+   3.6960890477457657`*^9}},ExpressionUUID->"6ca894d9-b90e-4a8a-bb88-\
+2a98a05908d5"],
+
+Cell[StyleData["DataResourceContentSection", StyleDefinitions -> StyleData[
+ "DataResourceSection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["Resource Content", "DataResourceSectionLabelText"]}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourceSectionText", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         Cell["See the ", "DataResourceCaptionText"], 
+         Cell[
+          BoxData[
+           TagBox[
+            ButtonBox[
+             
+             PaneSelectorBox[{
+              False -> StyleBox[
+                "\"Curation Guidelines\"", FontFamily -> "Source Sans Pro"], 
+               True -> StyleBox[
+                "\"      Coming Soon       \"", FontFamily -> 
+                 "Source Sans Pro"]}, 
+              Dynamic[
+               CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+              Automatic], BaseStyle -> "Hyperlink", FontFamily -> 
+             "Source Sans Pro", ButtonData -> None, ButtonNote -> 
+             "Coming Soon"], Annotation[#, "Coming Soon"]& ]], 
+          "DataResourceCaptionText"], 
+         Cell[
+         " for information on how to prepare content.", 
+          "DataResourceCaptionText"]}}, 
+       GridBoxSpacings -> {"Columns" -> {{0}}}, 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]], 
+     "DataResourcePropertyCaption", CellSize -> {1620, 60}], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 0}},
+ CellChangeTimes->{{3.6969466559923606`*^9, 
+  3.696946674108172*^9}},ExpressionUUID->"ead9fa73-9ec8-447a-b574-\
+75f05801477c"],
+
+Cell[StyleData["DataResourceContentElementsSection", StyleDefinitions -> \
+StyleData["DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+        BoxData[
+         TagBox[
+          GridBox[{{
+             Cell[
+              TextData["CONTENT ELEMENTS"], "DataResourceSubsectionText"], 
+             Cell[
+              TextData["*  "], "Text", FontFamily -> "SourceSansPro", 
+              CellSize -> {Automatic, 26}]}}, BaselinePosition -> Bottom, 
+           AutoDelete -> False, GridBoxSpacings -> {"Columns" -> {{0}}}, 
+           GridBoxAlignment -> {"Rows" -> {{Center}}}, 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+          "TextGrid"]], "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell[
+       "  Wolfram Language association specifying all content", 
+        "DataResourceInstructionText"]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         Cell[
+          TextData[{
+            Cell["Examples: ", "DataResourceExampleLabel"], 
+            "<|\"Thing1\"->{1,2,3},\"Thing2\"->Dataset[...],\"Thing3\"->\
+LocalObject[...],\"Thing4\"->CloudObject[...]|>"}], 
+          "DataResourceExampleText"], ""}}]], "DataResourcePropertyCaption", 
+     CellSize -> {Inherited, 30}], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"51ef2636-508e-4027-a289-12fc8813ac2f"],
+
+Cell[StyleData["DataResourceContentElementsMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"ContentElements\": ", "DataResourceMoreInfoNameText"], 
+     "Each content element must have a string name, preferably camel case. \
+The element name is used to access the associated content via \
+ResourceData[obj,element].      "}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"c161552b-a119-4114-9895-\
+f99dd92816a3"],
+
+Cell[StyleData["DataResourceDefaultContentElementSection", StyleDefinitions -> \
+StyleData["DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["DEFAULT ELEMENT ", "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0]}}, 
+     GridBoxSpacings -> {"Columns" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {None, None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"1949de31-ae6c-42e2-827a-afb65ff1b9f4"],
+
+Cell[StyleData["DataResourceDefaultContentElementMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"DefaultContentElement\": ", "DataResourceMoreInfoNameText"], 
+     "\nThe element flagged as default will be returned by ResourceData[obj] \
+without specifying an element name. Specify a key from the full content \
+association. If a default element is not specified, ResourceData[...] will \
+return the full content association.", ""}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"ce93c2ea-c167-4f90-a347-\
+e94e09a82e01"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----Examples Section", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 3.6956680877964506`*^9}, {
+   3.6957268009792385`*^9, 3.695726803950536*^9}, {3.695732452098151*^9, 
+   3.6957324529811516`*^9}, {3.6957334108581467`*^9, 3.695733411812146*^9}, {
+   3.6957342278361425`*^9, 3.695734228502143*^9}, {3.695734761892143*^9, 
+   3.6957347641361427`*^9}, {3.695736480060701*^9, 3.6957364810778027`*^9}, {
+   3.6957501958344536`*^9, 3.6957501979256625`*^9}, {3.696029621754363*^9, 
+   3.6960296240281353`*^9}, {3.6960890431423054`*^9, 
+   3.6960890477457657`*^9}, {3.696096886553254*^9, 
+   3.6960968875092545`*^9}},ExpressionUUID->"dfafe98b-9b31-487e-b529-\
+c883af3ac77e"],
+
+Cell[StyleData["DataResourceExamplesChapter", StyleDefinitions -> StyleData[
+ "DataResourceChapter"]],
+ CellFrame->{{0, 0}, {0, 0}},
+ CellMargins->{{0, 0}, {0, 0}},
+ PrivateCellOptions->{
+ "CellGroupBaseStyle"->{
+  Background -> GrayLevel[1], CellMargins -> {{0, 0}, {0, 0}}, 
+   CellFrameMargins -> {{66, 8}, {12, 12}}}},
+ CellFrameMargins->{{10, 8}, {8, 12}},
+ CellChangeTimes->{{3.696157111283261*^9, 3.696157111756308*^9}, 
+   3.696600263879156*^9, {3.7014411619058704`*^9, 3.701441164121092*^9}, {
+   3.7014413087305517`*^9, 
+   3.701441310327711*^9}},ExpressionUUID->"572f609e-a9c6-4f56-b78a-\
+d51ee535b24f"],
+
+Cell[CellGroupData[{
+
+Cell["NOT USED", "Subsection",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 3.6956680877964506`*^9}, {
+   3.6957268009792385`*^9, 3.695726803950536*^9}, {3.695732452098151*^9, 
+   3.6957324529811516`*^9}, {3.6957334108581467`*^9, 3.695733411812146*^9}, {
+   3.6957342278361425`*^9, 3.695734228502143*^9}, {3.695734761892143*^9, 
+   3.6957347641361427`*^9}, {3.695736480060701*^9, 3.6957364810778027`*^9}, {
+   3.6957501958344536`*^9, 3.6957501979256625`*^9}, {3.696029621754363*^9, 
+   3.6960296240281353`*^9}, {3.6960890431423054`*^9, 
+   3.6960890477457657`*^9}, {3.696096886553254*^9, 3.6960968875092545`*^9}, {
+   3.696680066329917*^9, 
+   3.6966800676930532`*^9}},ExpressionUUID->"08e0a432-e6c4-422a-ad98-\
+c4e7ffcc0601"],
+
+Cell[StyleData["DataResourceExamplesSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+       "ADD EXAMPLES TO THE RESOURCE", "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0], 
+       Cell["Optional", "DataResourceCaptionText"]}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellFrameColor -> GrayLevel[1], CellMargins -> 
+   0, CellFrameMargins -> 0, CellSize -> {3000, Automatic}],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameColor->GrayLevel[1],
+ CellChangeTimes->{
+  3.696679267198597*^9},ExpressionUUID->"c62d8480-0454-4e0e-a224-\
+a4a35cdf1b4a"],
+
+Cell[StyleData["DataResourceExampleNotebookMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"ExampleNotebook\": ", "DataResourceMoreInfoNameText"], 
+     "\nExamples added here will be included in the example notebook for the \
+resource and will appear on the webpage for the resource. Give examples \
+including section headings, text, and code. Examples should be self-contained \
+and the simplest examples should be given first. Browse the Data Repository \
+website for examples.\n\nUse Subsection cells to divide examples into groups.\
+\n\tCommon section names are \"Basic Examples\", \"Visualization\", and \
+\"Analysis\"\nUse Text cells to provide a brief explanation of each example.\n\
+\n\nUse $$Data to represent ResourceData[...]\nUse $$Object to represent the \
+completed ResourceObject[...]\nUse $$Object[\"FullContent\"] to represent \
+ResourceData[...,All]\n\nBe sure to evaluate definitions of $$Data etc. in \
+the Resource Content section. The $$Data etc. symbols will automatically be \
+replaced by ResourceData[...] or ResourceObject, as appropriate, when the \
+output is built.\n\nExample code: Histogram[$$Data[All,\"col1\"]]", ""}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"15e972ad-e90b-495d-9602-\
+f81fe0f1ca79"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["----Actions", "Section",
+ CellChangeTimes->{
+  3.6955522284612465`*^9, {3.6955583556359*^9, 3.6955583568269*^9}, {
+   3.6956496327942095`*^9, 3.6956496419371233`*^9}, {3.6956628719050446`*^9, 
+   3.695662880722926*^9}, {3.6956680861122828`*^9, 3.6956680877964506`*^9}, {
+   3.6957268009792385`*^9, 3.695726803950536*^9}, {3.695732452098151*^9, 
+   3.6957324529811516`*^9}, {3.6957334108581467`*^9, 3.695733411812146*^9}, {
+   3.6957342278361425`*^9, 3.695734228502143*^9}, {3.695734761892143*^9, 
+   3.6957347641361427`*^9}, {3.6961572327434053`*^9, 
+   3.696157234062537*^9}},ExpressionUUID->"edb82bf4-da46-4910-9cfd-\
+90bfabaf2fca"],
+
+Cell[StyleData["DataResourceCreateChapter", StyleDefinitions -> StyleData[
+ "DataResourceChapter"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell["Create a Private Data Resource", "DataResourceChapterText"]}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourceChapterText", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->{{Inherited, Inherited}, {Inherited, 30}},
+ CellFrameMargins->0,
+ CellChangeTimes->{{3.696157111283261*^9, 
+  3.696157111756308*^9}},ExpressionUUID->"5acc5e7f-9c85-47b2-9eb6-\
+5b67ebf6ac45"],
+
+Cell[StyleData["DataResourceLocalSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsection"]],
+ Deletable->False,
+ CellFrame->{{50, 20}, {0, 30}},
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{"", ""}, {
+       Cell[
+        BoxData[
+         ButtonBox[
+          GraphicsBox[
+           RasterBox[CompressedData["
+1:eJztmr9Lw0AUgKOVUjrUiijo0vpjLIJbkUN0FBxKRdBB0GIrLhWqIm4dCp0E
+F9fiII4OnVwUoYJ0K9RVFP8CBxfpoO+Rq8QYa0zurpd4B1+haXL3PpK83DVv
+LLOTzvVqmrYbgo/0xsF8obBxuBSFL8v53e2tfHZzIb+X3coWkpkAbExS+rSv
+jRxWwsAYkACmPEaCxh7WvnsFgBLQAt49Tou6BAx+JQniYk2JuoV8ct6sziPe
+b6MSxMKLcSAuQRy8SHD2ewBm6BhWzNB9eI0/xdmvbM7VFrm77GG/og2/ovJT
+fgL8XoEz4NRAyoZfynTMGe1LNr86McyJnDaizxXrEvoh50DQhVuQ9iHj9dmm
+6sSRulUZx8Irv2Cc39YpHdzCHNx4+iHXdhyp2zWnGHg/HzDuSAe3CEc3EX4I
+5sJ+C7d+wi5PdtOv7ThocBsU4CbSD2kCQ5SmoDFF+iGPFFHjifYTjfLzNsrv
+dzDPH3PgBHjush+O73pN1GF+MwK8ddHvxhRPDXhxSc3U551Efg2X1xPSMPV5
+o/yUn/JTfv/Az00ub3MrsV8MWAPWHbICDMvqx6MpP+Wn/Oz5Eb0WA2tN7Kx/
+joCYx/xm/3j8usf85n7Y7wkYBqLAAHDpMz/znORU+X3u6+Z/bmn94Lceoucg
+p7FJ60f0d9QVl24s/O5Z+xH9Pe4FAzcWfsg+MEn7mQZyFqySr3VZi3S7uXZr
+Arhi5MbKT2awvs7P9ZFYr+zr+lZ6T/u2PtmQj31bX27wxGsV78e4R8HYQ0an
+DzI5uX0=
+            "], {{0, 0}, {56, 56}}, {0, 255}, ColorFunction -> RGBColor], 
+           Background -> None, ImageSize -> {56, 56}, 
+           PlotRange -> {{0, 56}, {0, 56}}], Appearance -> None, 
+          ButtonFunction :> 
+          Catch[Needs["ResourceSystemClient`"]; Needs["DataResource`"]; 
+            DataResource`Private`buildAndSaveDataResourceFromNotebook[
+              EvaluationNotebook[]]], Evaluator -> Automatic, Method -> 
+          "Queued"]], "DataResourceSubsectionLabelText", 
+        CellChangeTimes -> {{3.696591612370904*^9, 3.696591646127904*^9}, 
+          3.696592718165595*^9, 3.6965928115939007`*^9}], 
+       Cell[
+        BoxData[
+         GridBox[{{
+            Cell[
+            "DEPLOY LOCALLY ON YOUR COMPUTER", 
+             "DataResourceSubsectionLabelText", CellMargins -> 0]}, {
+            Cell[
+            "Store the content and metadata to disk locally. The resource \
+will be persistently available on this device only.", 
+             "DataResourceCaptionText"]}}, 
+          GridBoxSpacings -> {"Columns" -> {{0}}, "Rows" -> {{0}}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}]], 
+        "DataResourceSubsectionLabelText"]}}, 
+     GridBoxItemSize -> {
+      "Columns" -> {{Automatic}}, "Rows" -> {1.8, Automatic}}, 
+     GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0}}}, 
+     GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellSize -> {600, Automatic}, CellFrameLabelMargins -> 0],
+ ShowCellBracket->True,
+ CellMargins->{{Inherited, 10}, {20, 0}},
+ CellGroupingRules->{},
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {None, None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 0}},
+ CellTags->
+  "SaveLocalResourceActionButton",ExpressionUUID->"892e736c-ab24-4eb0-9898-\
+fe5cea6878ba"],
+
+Cell[StyleData["DataResourceCloudSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsection"]],
+ Deletable->False,
+ CellFrame->{{40, 0}, {0, 20}},
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{"", ""}, {
+       Cell[
+        BoxData[
+         ButtonBox[
+          GraphicsBox[
+           RasterBox[CompressedData["
+1:eJztmstrE1EUh6eNlBiEiC4EF7YFxU0oLqNcF4IL3bRQrZTiwgRjECRKqkg2
+UjVQcNFF/4BuShYuBAluBO3Sx05cKSI+VqKCGx9gFf0degbGONF5nTMPcuEL
+eUzuOV9m7s29d+549fz0mWHLsubzeJiuXD7UbFZax7bixUxj/my9UTt9tHGx
+Vq81y9Uc3iwzm6w/i2mtFMA4KIGJlFHi3AvW31450Abr4FfKWWeXnMOvnYC8
+oqbNbvmMnDe380jtbWcCcpGC2uNYAvKQoiTs9wYcBvv6QJ+9FYw/Iey32NtX
+u/Tdiyn2W/DgtzDwG/gp+H0FXXDbwawHv9me73S5rqT5PQBD//Px4DvEdSXN
+j1g1jnFfALcc15HE69OmE8SR3ToR5yLVv1A7GvHhNsLfiToPyf6z68WR3bpC
+OUj/P9wzLvNNh1uBj5GKL+1HrLk5stuacGwNP+IhKDrcivyedFwtP+IxexX5
+uUZMTT/iGaMVT9tPm4Ffuhn49ecHeAmeCPMCfFf0+wZaYJvX8WXYglhbwDnw
+SdjvC9iv5eXiuRe8E/Srx+XmcDwi5Ee/W+8tp1iK8T7+8ePXidvLLsjlioDf
+UtxedkEuVQG/lbi97IJcLgj4vQbDcbtRQR63BPyImQS4jRrv//d+/T6A3TG6
+0VqNnzl/kPHLezCnfa0i3i5w32euYcaf25X9TgbIMYzfZmW/KWW/Pcp+V5X9
+aopuO8xG36bp90jJjXJ8GjDHsPP3OSEnukdG69rPQ+QWhd9nIzAfRJ0HQ3pF
+5UfQvVaaW0c2d0JddxPkZ/MKLJmNsf0JcAlcC+B2KqJ8ovbrxw3j8b41jps0
+wdeS4vIj7oDRf3jR+tF18DPiuJrrn3ReboIKOADK4DhYBh+FYmZ9fZf212V9
+f2Sm97dy+87s/mT2y/T+cocnXavUHsdSCuWedzr9BqLIJ1A=
+            "], {{0, 0}, {56, 56}}, {0, 255}, ColorFunction -> RGBColor], 
+           Background -> None, ImageSize -> {56, 56}, 
+           PlotRange -> {{0, 56}, {0, 56}}], Appearance -> None, 
+          ButtonFunction :> 
+          Catch[Needs["ResourceSystemClient`"]; Needs["DataResource`"]; 
+            DataResource`Private`buildAndDeployDataResourceFromNotebook[
+              EvaluationNotebook[]]], Evaluator -> Automatic, Method -> 
+          "Queued"]], "DataResourceSubsectionLabelText", 
+        CellChangeTimes -> {{3.696591612370904*^9, 3.696591646127904*^9}, 
+          3.696592718165595*^9, 3.6965928115939007`*^9}], 
+       Cell[
+        BoxData[
+         GridBox[{{
+            Cell[
+            "DEPLOY TO YOUR WOLFRAM CLOUD ACCOUNT", 
+             "DataResourceSubsectionLabelText"]}, {
+            Cell[
+            "Store the content and metadata of the resource in the cloud. The \
+resource will be available to the authenticated user from any Wolfram \
+Language product. Additionally, the owner can assign permissions like any \
+other cloud object.", "DataResourceCaptionText"]}}, 
+          GridBoxSpacings -> {"Columns" -> {{0}}, "Rows" -> {{0}}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}]], 
+        "DataResourceSubsectionLabelText"]}}, 
+     GridBoxItemSize -> {
+      "Columns" -> {{Automatic}}, "Rows" -> {1.8, Automatic}}, 
+     GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{1}}}, 
+     GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellSize -> {600, Automatic}, CellFrameLabelMargins -> 0],
+ ShowCellBracket->True,
+ CellMargins->{{10, 10}, {0, 0}},
+ CellGroupingRules->{},
+ CellFrameMargins->{{10, 0}, {0, 0}},
+ CellFrameLabels->{{None, None}, {None, None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 0}},
+ CellChangeTimes->{3.701556253021827*^9},
+ CellTags->
+  "SaveCloudResourceActionButton",ExpressionUUID->"6c2b7d42-e5d6-4b92-9e0c-\
+70c03415ab53"],
+
+Cell[StyleData["DataResourceSubmitChapter", StyleDefinitions -> StyleData[
+ "DataResourceChapter"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+       "Submit to the Wolfram Data Repository", "DataResourceChapterText"]}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourceChapterText", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellChangeTimes->{{3.696157111283261*^9, 
+  3.696157111756308*^9}},ExpressionUUID->"ccb9d33a-d9d0-4b17-a62b-\
+5bd8224b6ef4"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["DataResourcePublisherIDSection", StyleDefinitions -> \
+StyleData["DataResourceSubsection"]],
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{
+       Cell[
+        BoxData[
+         TagBox[
+          GridBox[{{
+             Cell[
+              TextData["PUBLISHER ID"], "DataResourceSubsectionText"], 
+             Cell[
+              TextData["*"], "Text", FontFamily -> "SourceSansPro", 
+              CellSize -> {Automatic, 26}]}}, BaselinePosition -> Bottom, 
+           AutoDelete -> False, GridBoxSpacings -> {"Columns" -> {{0}}}, 
+           GridBoxAlignment -> {"Rows" -> {{Center}}}, 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+          "TextGrid"]], "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         TagBox[
+          TooltipBox[
+           ButtonBox[
+            PaneSelectorBox[{False -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJylk01OwkAYhocfgUQXxBu4AuIF3Bl/wLjFeACIBQHTYiExLuYgsPQiLjmA
+NJqgB9C4MmxwI+8k74TaOGMpi6dpv+n3zve71/TqrbQQYlDAo964O/L9xv1F
+ER+X7qDTdp2rc3fotB3/oJmBcZdkgZTyL47BCMzAgsxoOzH4hCmDRxCAW1AB
+eVKhLeA/ZYPGIXgHHZCx3KXObsAnfaJxfIDTGDFrqvTRcaXAhHfE1dD06Jti
+DFNLLj/ElOOUGmPQt9xp0xH0VRqv7MW6OYVrqzQW7GvSeHLU+OJ7Up0d6rxI
+80zF0dkHb+Bhwzp71DgDTxv0XfnW5GoOewl0unI1h+G9iLPL0b2Izoze02uQ
+tvirM9OehmdKxRmwfiWwBbbZF49nk396LJirqtuY/fwGc/BMm67pL78ldZcs
+pQ==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}], 
+              True -> GraphicsBox[
+                TagBox[
+                 RasterBox[CompressedData["
+1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
+UFAIilmAuLa2Fht2AuKZQHwbiH9C8W2omDOy2v///4Mxmn4NIN4PxP8J4P1Q
+tdjMsQfiT0SYAcMgtfZo5oDM/kCCGTAM0qMBNYcRiI+TYQYMH4ea4YJPHQwQ
+MAtkxiwqmAMy4w4FfoLhO9C0Qal7fhKKaxLMuUEFc+4C8SIqmAMyw50K5rjV
+EkiHRJgDS4eU5gtNGuRT5PxKTF47Xou73IBhRmi4zYLG5y8g/gLE16FisDBF
+KccAMHgRtA==
+                  "], {{0, 18}, {18, 0}}, {0, 255}, ColorFunction -> 
+                  RGBColor], 
+                 BoxForm`ImageTag[
+                 "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+                ImageSizeRaw -> {18, 18}, PlotRange -> {{0, 18}, {0, 18}}]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+             Automatic], Appearance -> None, ButtonFunction :> 
+            With[{next = NextCell[
+                 ParentCell[
+                  ParentCell[
+                   EvaluationCell[]]]]}, 
+              If[Head[next] === CellObject, 
+               SetOptions[next, CellOpen -> Not[
+                  Lookup[
+                   Options[next, CellOpen], CellOpen, True]]]]], Evaluator -> 
+            Automatic, Method -> "Preemptive"], "\"More info\"", TooltipStyle -> 
+           "TextStyling"], Annotation[#, "More info", "Tooltip"]& ]], 
+        "DataResourceCaptionText", CellMargins -> 0, CellFrameMargins -> 0, 
+        CellFrameLabelMargins -> 0]}}, 
+     GridBoxAlignment -> {"Columns" -> {Automatic}, "Rows" -> {Center}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellFrameLabelMargins -> 0],
+ CellMargins->0,
+ CellFrameMargins->0,
+ CellFrameLabels->{{None, None}, {
+    Cell[
+     BoxData[
+      GridBox[{{
+         RowBox[{
+           Cell["Example: ", "DataResourceExampleLabel"], 
+           Cell["The ABC Company", "DataResourceExampleText"]}], ""}}]], 
+     "DataResourcePropertyCaption", CellSize -> {Inherited, 30}], None}},
+ CellFrameLabelMargins->{{0, 0}, {5, 
+  0}},ExpressionUUID->"cd9a46a3-8160-44c4-88ca-4f1353adbd62"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6998762334416776`*^9, 3.6998762334456778`*^9}, {
+  3.6998762646657996`*^9, 
+  3.699876271976531*^9}},ExpressionUUID->"afa6c725-e34d-4b4c-9284-\
+04a543c50474"]
+}, Open  ]],
+
+Cell[StyleData["DataResourcePublisherRequest", StyleDefinitions -> StyleData[
+ "DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   BoxData[
+    TagBox[
+     ButtonBox[
+      PaneSelectorBox[{
+       False -> "\"Request a Publisher ID \[RightGuillemet]\"", True -> 
+        StyleBox[
+         "\"Request a Publisher ID \[RightGuillemet]\"", "HyperlinkActive"]}, 
+       Dynamic[
+        CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+       Automatic], Appearance -> None, 
+      ButtonFunction -> (SystemOpen[
+       "https://datarepository.wolframcloud.com/publisheridrequest/"]& ), 
+      ButtonNote -> 
+      "https://datarepository.wolframcloud.com/publisheridrequest/"], 
+     Annotation[#, 
+      "https://datarepository.wolframcloud.com/publisheridrequest/", 
+      "Hyperlink"]& ]], "Output", FontColor -> 
+   RGBColor[61/255, 122/255, 158/255], FontSize -> 14, FontFamily -> 
+   "SourceSansPro"],
+ CellMargins->{{Inherited, Inherited}, {
+   20, Inherited}},ExpressionUUID->"34d35bcd-759c-4b6c-a765-ed54e6a05c1d"],
+
+Cell[StyleData["DataResourcePublisherIDMoreInfo", StyleDefinitions -> \
+StyleData["DataResourceMoreInfoSection"]],
+ CellDingbat->Cell[
+   TextData[{
+     Cell["\"PublisherID\": ", "DataResourceMoreInfoNameText"], 
+     "To submit to the Wolfram Data Repository, you must be an approved user \
+on a publisher account. You can request a new publisher account ", 
+     Cell[
+      BoxData[
+       TagBox[
+        ButtonBox[
+         PaneSelectorBox[{
+          False -> "\"here \[RightGuillemet]\"", True -> 
+           StyleBox["\"here \[RightGuillemet]\"", "HyperlinkActive"]}, 
+          Dynamic[
+           CurrentValue["MouseOver"]], FrameMargins -> 0, ImageSize -> 
+          Automatic], Appearance -> None, 
+         ButtonFunction -> (SystemOpen[
+          "https://www.wolfram.com/support/contact/"]& ), ButtonNote -> 
+         "https://www.wolfram.com/support/contact/"], 
+        Annotation[#, "https://www.wolfram.com/support/contact/", 
+         "Hyperlink"]& ]], "Text", FontFamily -> "SourceSansPro"]}], 
+   "DataResourceMoreInfo"],ExpressionUUID->"4b5ed272-8eac-4817-b095-\
+868da20255a3"],
+
+Cell[StyleData["DataResourceSubmitSection", StyleDefinitions -> StyleData[
+ "DataResourceSubsection"]],
+ Deletable->False,
+ CellFrame->{{40, 0}, {0, 20}},
+ CellDingbat->Cell[
+   BoxData[
+    GridBox[{{"", ""}, {
+       Cell[
+        BoxData[
+         ButtonBox[
+          GraphicsBox[
+           RasterBox[CompressedData["
+1:eJztmkto1EAYgONuD2t9UEQvUpDWIggq6MUKwddFPSmV9mwX16LCWrc+KGqp
+sDdPiniUvShIUTwoqAepqAieRLAHHygqeqiIKPhoff0/O8XpdJPJZOZPMjEL
+X2mS2X//j2QemZm24oGuPTnHcQYK8Ker9+imSqV3cGcLHHSXB/b2lUu7t5UP
+lfpKlc5iHk52Mpqc6R938Hwz0AYstxTMvdmZ6ZUHqsAk8MdyJplLnvOrJiAv
+01SZWyEl963RfcT6tjgBuVCB9bE9AXlQgW1ORwLyyPwyv8zPLN+By0DNgwvA
+O4v9torjpAbjpkXAR0v9csBa4KoHZeZ4x0Y/lvsOnzI1VmY088v8Mj8pX4BP
+QVHwu+YTZyICv5fAMllb79H+S/0k358DnCX2ewKIUxle+WwAdnGc8Yl7Tyjb
+A8xqELMJeEPohxwO6NcKPA+Rx1dgs0/cI8R+WPdaiRx93VjMFuAzoR8yEsRP
+0VHqxsU8ReyHbDHoGNiNi6fangbx+8D9/wwoGHBUcuPi1Qj8ht16XzR1PKSY
+k+gYyo3FWkHg1w8c547xvW5pSMfQblys6wR+c4Fx7tzNEHmh43odNxZno2k/
+FrdfON+jm6uG40ODfkMs5mzgNXce5xbmx+TXbdBvmItbFK6djskP5wZeEPjh
+OtMYd+0XsCYmx32m/Vjc7cJ1rAu5GPywvoyb9mOx7wplDkbtx/KQjdnC+q1m
+z+ZUGewTtfq1kH4nKPxY7HNCOXQ8BiyMyG2JW3/3pvLDtcPHDcr/Bt4Drwh5
+C/yU5K3lxxxxTDIW4HfiIojfSclzguvbJbc+tveaq9blKaHfRb2aov9x6/1u
+0DGZqt83YFUCHG8Q+SH43oxtySOBS4o5rgQecN/HezLqwS3u+bxP+HzKmKfg
+t1/zt+LwW6DgJ75j2eC3TsEv6n1SJvxwbgbHo7fdme36iPtvPfoK8MNCvyST
++dnN/+CX9v11ad8fmer9rTH1u1FQ5cYVqd5fznnis4r1EducDstoZ7lPW7/7
+CwZlxwE=
+            "], {{0, 0}, {56, 56}}, {0, 255}, ColorFunction -> RGBColor], 
+           Background -> None, ImageSize -> {56, 56}, 
+           PlotRange -> {{0, 56}, {0, 56}}], Appearance -> None, 
+          ButtonFunction :> 
+          Catch[Needs["ResourceSystemClient`"]; Needs["DataResource`"]; 
+            DataResource`Private`buildAndSubmitDataResourceFromNotebook[
+              EvaluationNotebook[]]], Evaluator -> Automatic, Method -> 
+          "Queued"]], "DataResourceSubsectionLabelText"], 
+       Cell[
+        BoxData[
+         GridBox[{{
+            Cell["SUBMIT FOR REVIEW", "DataResourceSubsectionLabelText"]}, {
+            Cell[
+            "Submit the resource to the Wolfram Data Repository. Approved \
+submissions will be publicly available to all users of the repository. Please \
+allow a few days for the review process.", "DataResourceCaptionText"]}}, 
+          GridBoxSpacings -> {"Columns" -> {{0}}, "Rows" -> {{0}}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}]], 
+        "DataResourceSubsectionLabelText"]}}, 
+     GridBoxItemSize -> {
+      "Columns" -> {{Automatic}}, "Rows" -> {1.8, Automatic}}, 
+     GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{2}}}, 
+     GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}]], 
+   "DataResourcePropertyLabel", CellMargins -> 0, CellFrameMargins -> 0, 
+   CellSize -> {600, Automatic}, CellFrameLabelMargins -> 0],
+ ShowCellBracket->True,
+ CellMargins->0,
+ CellGroupingRules->{},
+ CellFrameMargins->{{10, 0}, {0, 0}},
+ CellFrameLabels->None,
+ CellTags->
+  "SubmitResourceActionButton",ExpressionUUID->"fc89d587-8420-4cc6-8aa5-\
+9a0fbac87875"]
+}, Open  ]]
+}, Open  ]]
+},
+Saveable->True,
+WindowSize->{825, 762},
+WindowMargins->{{Automatic, 234}, {Automatic, -946}},
+FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 18, \
+2017)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData["CreateResourceInstructionCell"]]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 18, 2017)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "SaveLocalResourceActionButton"->{
+  Cell[155144, 3591, 3000, 63, 131, 102, 1, "StyleData", 
+  "DataResourceLocalSection", 
+  "All", "ExpressionUUID" -> "892e736c-ab24-4eb0-9898-fe5cea6878ba",
+   CellTags->"SaveLocalResourceActionButton"]},
+ "SaveCloudResourceActionButton"->{
+  Cell[158147, 3656, 3306, 67, 138, 102, 1, "StyleData", 
+  "DataResourceCloudSection", 
+  "All", "ExpressionUUID" -> "6c2b7d42-e5d6-4b92-9e0c-70c03415ab53",
+   CellTags->"SaveCloudResourceActionButton"]},
+ "SubmitResourceActionButton"->{
+  Cell[168378, 3887, 3031, 62, 133, 103, 1, "StyleData", 
+  "DataResourceSubmitSection", 
+  "All", "ExpressionUUID" -> "fc89d587-8420-4cc6-8aa5-9a0fbac87875",
+   CellTags->"SubmitResourceActionButton"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"SaveLocalResourceActionButton", 171985, 3970},
+ {"SaveCloudResourceActionButton", 172227, 3975},
+ {"SubmitResourceActionButton", 172466, 3980}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 101, 0, 36, 46, 0, "StyleData", "StyleDefinitions", "", \
+"ExpressionUUID" -> "503eba78-b2b7-4494-864a-7a3f0a69af78"],
+Cell[662, 22, 104, 0, 36, 49, 0, "StyleData", "StyleDefinitions", "", \
+"ExpressionUUID" -> "d0fe9f07-0ba0-458c-823b-c053394ec2d0"],
+Cell[CellGroupData[{
+Cell[791, 26, 97, 0, 64, "Section", "ExpressionUUID" -> \
+"39d2ff4a-7c23-44d0-9a91-11f0d461ad8b"],
+Cell[891, 28, 6394, 119, 52, 31, 0, "StyleData", "All", "Working", \
+"ExpressionUUID" -> "485d7b6a-d915-49f5-b5ba-2a168e26ff64"],
+Cell[7288, 149, 4582, 93, 52, 87, 1, "StyleData", "All", "SlideShow", \
+"ExpressionUUID" -> "cdc3ed46-0970-4691-981f-a650fc7cdd39",
+ MenuSortingValue->1300]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11907, 247, 129, 3, 64, "Section", "ExpressionUUID" -> \
+"80fb587e-b3ff-4b4a-bde6-eef616ca8708"],
+Cell[CellGroupData[{
+Cell[12061, 254, 210, 4, 44, "Subsection", "ExpressionUUID" -> \
+"1ac2a6f5-7d0d-4c92-b5d9-f8ed42563398"],
+Cell[12274, 260, 308, 8, 46, 23, 0, "StyleData", "Text", "All", \
+"ExpressionUUID" -> "de7ae963-e1b0-430e-8614-2634e0a34906",
+ CounterIncrements->"Text",
+ MenuSortingValue->1400,
+ MenuCommandKey->"7"],
+Cell[12585, 270, 179, 3, 44, 24, 0, "StyleData", "Input", "All", \
+"ExpressionUUID" -> "9c25c5cb-13d7-4f43-aaca-ce2f6827da9c"],
+Cell[12767, 275, 180, 3, 44, 25, 0, "StyleData", "Output", "All", \
+"ExpressionUUID" -> "4e1c589c-2740-44de-abaf-13b9435da97d"],
+Cell[12950, 280, 181, 5, 33, 28, 0, "StyleData", "CellLabel", "All", \
+"ExpressionUUID" -> "fcef2225-2269-48f2-944a-dc45b6549f14"],
+Cell[13134, 287, 162, 2, 47, 74, 0, "StyleData", "CheckboxBarLabel", "All", \
+"ExpressionUUID" -> "c5d6d853-11c2-4e83-950e-09960962040a"],
+Cell[13299, 291, 754, 21, 82, 26, 0, "StyleData", "Section", "All", \
+"ExpressionUUID" -> "5e5dcbc7-9c16-4077-a18f-e72c6942be49",
+ CounterIncrements->"Section",
+ CounterAssignments->{{"Subsection", 0}, {"Subsubsection", 0}, {"Item", 0}, {
+   "Subitem", 0}, {"Subsubitem", 0}, {"ItemNumbered", 0}, {
+   "SubitemNumbered", 0}, {"SubsubitemNumbered", 0}},
+ MenuSortingValue->1250,
+ MenuCommandKey->"4"],
+Cell[14056, 314, 749, 19, 51, 29, 0, "StyleData", "Subsection", "All", \
+"ExpressionUUID" -> "356ff807-6e9f-4841-8a33-c8fafe240113",
+ CounterIncrements->"Subsection",
+ CounterAssignments->{{"Subsubsection", 0}, {"Item", 0}, {"Subitem", 0}, {
+   "Subsubitem", 0}, {"ItemNumbered", 0}, {"SubitemNumbered", 0}, {
+   "SubsubitemNumbered", 0}},
+ MenuSortingValue->1300,
+ MenuCommandKey->"5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14842, 338, 192, 4, 44, "Subsection", "ExpressionUUID" -> \
+"35f38083-2d50-48d3-a87a-6b97fadd7f21"],
+Cell[15037, 344, 485, 15, 75, 82, 1, "StyleData", "DataResourceChapter", \
+"All", "ExpressionUUID" -> "bafb3835-cc24-4f26-9793-358d158117a0"],
+Cell[15525, 361, 306, 7, 69, 97, 1, "StyleData", "DataResourceChapterText", \
+"All", "ExpressionUUID" -> "318bc438-cd42-426c-bf8c-0c547b4bcc47"],
+Cell[15834, 370, 472, 14, 79, 82, 1, "StyleData", "DataResourceSection", \
+"All", "ExpressionUUID" -> "90f7c665-b9b3-4a97-ab99-ba34cff0cf1b"],
+Cell[16309, 386, 264, 6, 54, 97, 1, "StyleData", "DataResourceSectionText", \
+"All", "ExpressionUUID" -> "5594f488-e445-422f-a63b-90349000d815"],
+Cell[16576, 394, 163, 2, 39, 73, 0, "StyleData", "DataResourceText", "All", \
+"ExpressionUUID" -> "6c226f7a-0387-4e7d-b0eb-37168f9b20e4"],
+Cell[16742, 398, 407, 10, 31, 90, 1, "StyleData", \
+"DataResourceSectionLabelText", "All", "ExpressionUUID" -> \
+"39ddc8f7-dde1-4b64-a5a7-297a553a4d75"],
+Cell[17152, 410, 244, 6, 31, 86, 1, "StyleData", "DataResourceSectionLabel", \
+"All", "ExpressionUUID" -> "ac05d3fa-f807-4171-bd14-b3cd54f70f2f"],
+Cell[17399, 418, 336, 9, 39, 92, 1, "StyleData", \
+"DataResourceSubsectionText", "All", "ExpressionUUID" -> \
+"937e9e40-f15b-4b1b-8333-d2f06dd25f4c"],
+Cell[17738, 429, 624, 17, 20, 88, 1, "StyleData", "DataResourceSubsection", \
+"All", "ExpressionUUID" -> "aa549d20-7a60-4245-83e1-abb4a8cbeffa"],
+Cell[18365, 448, 522, 16, 58, 94, 1, "StyleData", \
+"DataResourceSubsubsection", "All", "ExpressionUUID" -> \
+"00a9669d-6133-4c59-9cd6-5ac94ad8f52a"],
+Cell[18890, 466, 307, 8, 40, 98, 1, "StyleData", \
+"DataResourceSubsubsectionText", "All", "ExpressionUUID" -> \
+"59453a95-dc73-4a96-a32b-acecbf250262"],
+Cell[19200, 476, 567, 15, 28, 38, 0, "StyleData", "DataResourceCaption", \
+"All", "ExpressionUUID" -> "b76d926b-3132-49e6-9150-8210ce4053af"],
+Cell[19770, 493, 427, 11, 34, 83, 1, "StyleData", "DataResourceCaptionText", \
+"All", "ExpressionUUID" -> "4b368005-91dc-4911-9aa7-053d168cbfa1"],
+Cell[20200, 506, 425, 10, 33, 79, 0, "StyleData", "DataResourceLimitText", \
+"All", "ExpressionUUID" -> "a0a18c1d-03ba-4036-ab37-507da4eeb5cd"],
+Cell[20628, 518, 436, 11, 34, 87, 1, "StyleData", \
+"DataResourceInstructionText", "All", "ExpressionUUID" -> \
+"97c57489-34c1-4ed5-b2e7-282124b454b3"],
+Cell[21067, 531, 436, 12, 34, 83, 1, "StyleData", "DataResourceExampleText", \
+"All", "ExpressionUUID" -> "5077def9-d482-47e4-8c93-3a8b326690d2"],
+Cell[21506, 545, 427, 11, 34, 84, 1, "StyleData", "DataResourceExampleLabel", \
+"All", "ExpressionUUID" -> "9d927307-f966-4351-9e0e-fa619cb7c315"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21970, 561, 241, 5, 44, "Subsection", "ExpressionUUID" -> \
+"fbd8c2c8-6a3c-4d75-9f8a-ac5b811c0204"],
+Cell[22214, 568, 566, 14, 75, 79, 0, "StyleData", "DataResourceTextInput", \
+"All", "ExpressionUUID" -> "602e22b9-f1a4-4371-8694-7bc296909f8d"],
+Cell[22783, 584, 520, 16, 74, 101, 1, "StyleData", \
+"DataResourceTextComplete", "All", "ExpressionUUID" -> \
+"90baf963-90de-4f13-9cd7-2bb3b63eeeda"],
+Cell[23306, 602, 475, 13, 71, 84, 1, "StyleData", "DataResourceSMDTextInput", \
+"All", "ExpressionUUID" -> "c6bbfadf-7716-4c69-9a68-3f8b68a1dc22"],
+Cell[23784, 617, 300, 9, 20, 92, 1, "StyleData", \
+"DataResourceSubsectionLabel", "All", "ExpressionUUID" -> \
+"3a3cd69c-eb95-4fe7-aadb-173a45084045"],
+Cell[24087, 628, 505, 14, 39, 96, 1, "StyleData", \
+"DataResourceSubsectionLabelText", "All", "ExpressionUUID" -> \
+"64c94032-936b-4f14-99ab-c71548205f43"],
+Cell[24595, 644, 507, 14, 39, 99, 1, "StyleData", \
+"DataResourceSubsubsectionLabelText", "All", "ExpressionUUID" -> \
+"4656384f-1259-4fd1-8594-5be373ac7e09"],
+Cell[25105, 660, 550, 12, 54, 85, 1, "StyleData", \
+"DataResourceTextInputItem", "All", "ExpressionUUID" -> \
+"2c5e12c9-213a-4a71-b1d6-b073d99d122c",
+ CounterIncrements->"DataResourceTextInputItem"],
+Cell[25658, 674, 676, 17, 41, 36, 0, "StyleData", "CheckBoxBarOutput", "All", \
+"ExpressionUUID" -> "c461f5dd-e2b6-45c9-8e13-ca907fc71cd5"],
+Cell[26337, 693, 2187, 49, 45, 85, 1, "StyleData", \
+"DataResourceContentInput", "All", "ExpressionUUID" -> \
+"94de483f-6098-4d16-b659-bfb095d9fea7"],
+Cell[28527, 744, 499, 17, 5, 40, 0, "StyleData", "DataResourcePageBreak", \
+"All", "ExpressionUUID" -> "0127746e-6484-4d92-b3c3-3fad5e6d0ff6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29063, 766, 216, 4, 44, "Subsection", "ExpressionUUID" -> \
+"7511d1a0-7905-4a1c-a0db-1d3accd2d649"],
+Cell[29282, 772, 321, 9, 46, 90, 1, "StyleData", "DataResourcePropertyLabel", \
+"All", "ExpressionUUID" -> "763adc22-7aa8-4c33-945f-40bd4ca068e5"],
+Cell[29606, 783, 617, 16, 33, 46, 0, "StyleData", \
+"DataResourcePropertyCaption", "All", "ExpressionUUID" -> \
+"0e0a1eb5-44f0-479d-9e31-1c2ead0d495b"],
+Cell[30226, 801, 429, 14, 34, 88, 1, "StyleData", \
+"DataResourceMoreInfoNameText", "All", "ExpressionUUID" -> \
+"da05eef6-1844-451b-bbf7-3df5276e0fc0"],
+Cell[30658, 817, 415, 13, 34, 78, 0, "StyleData", "DataResourceMoreInfo", \
+"All", "ExpressionUUID" -> "ad148d4b-79f9-440d-82c7-8625fdcc038d"],
+Cell[31076, 832, 657, 17, 30, 93, 1, "StyleData", \
+"DataResourceMoreInfoSection", "All", "ExpressionUUID" -> \
+"a3b1575f-225d-43a7-905d-ecdd4f9521cc"],
+Cell[31736, 851, 671, 17, 28, 49, 0, "StyleData", \
+"DataResourceSubPropertyCaption", "All", "ExpressionUUID" -> \
+"084802e3-ac90-497b-9926-01828f38807f"],
+Cell[32410, 870, 642, 17, 20, 99, 1, "StyleData", \
+"DataResourceSMDMoreInfoSection", "All", "ExpressionUUID" -> \
+"b3d092a9-9082-4f04-96e6-d32ce5f9e2e9"],
+Cell[33055, 889, 262, 6, 41, 73, 0, "StyleData", "DataResourceActionButton", \
+"All", "ExpressionUUID" -> "7824f95d-9227-475e-b0e9-375dbf120a18"],
+Cell[33320, 897, 356, 9, 53, 94, 1, "StyleData", \
+"DataResourceSortingPropertyField", "All", "ExpressionUUID" -> \
+"29e9417c-b4f5-48d4-a962-82e9e66953e9"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33725, 912, 164, 4, 68, "Chapter", "ExpressionUUID" -> \
+"560ffced-b487-484e-80b0-83daff3a4f01"],
+Cell[33892, 918, 580, 13, 79, 103, 1, "StyleData", \
+"DataResourceConstructChapter", "All", "ExpressionUUID" -> \
+"bc15e545-d569-4a61-a37d-afca3a978854"],
+Cell[CellGroupData[{
+Cell[34497, 935, 281, 5, 50, "Section", "ExpressionUUID" -> \
+"63562194-a559-4d6f-b1c1-f719bfe2253e"],
+Cell[34781, 942, 704, 16, 61, 101, 1, "StyleData", "DataResourceUUIDSection", \
+"All", "ExpressionUUID" -> "11a92a7f-f68f-4db5-b2b8-468b9a4c6ff9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35522, 963, 285, 5, 64, "Section", "ExpressionUUID" -> \
+"fc3e8726-9a99-494f-b8b0-03d7e571e032"],
+Cell[35810, 970, 4919, 104, 56, 101, 1, "StyleData", \
+"DataResourceNameSection", "All", "ExpressionUUID" -> \
+"236de4c3-09f2-4a94-8bf8-bad407440c7f"],
+Cell[40732, 1076, 576, 12, 105, 107, 1, "StyleData", \
+"DataResourceNameMoreInfo", "All", "ExpressionUUID" -> \
+"09d9fdcb-539e-4603-b819-2a5db417978c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41345, 1093, 340, 6, 63, "Section", "ExpressionUUID" -> \
+"c61b1bac-75b9-46de-9d4b-ed7febebe1a1"],
+Cell[41688, 1101, 4742, 100, 54, 108, 1, "StyleData", \
+"DataResourceDescriptionSection", "All", "ExpressionUUID" -> \
+"ffabe673-12c2-495e-a7be-fd6c7532b7f3"],
+Cell[46433, 1203, 764, 14, 129, 114, 1, "StyleData", \
+"DataResourceDescriptionMoreInfo", "All", "ExpressionUUID" -> \
+"032405a5-574a-4dd6-a801-83a204ca7415"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47234, 1222, 391, 7, 63, "Section", "ExpressionUUID" -> \
+"79fff55d-7d72-474a-ac6a-f26873ef3b05"],
+Cell[47628, 1231, 3715, 80, 80, 107, 1, "StyleData", \
+"DataResourceOriginatorSection", "All", "ExpressionUUID" -> \
+"32828faf-7731-411b-b1ea-536e02a45890"],
+Cell[51346, 1313, 637, 11, 177, 113, 1, "StyleData", \
+"DataResourceOriginatorMoreInfo", "All", "ExpressionUUID" -> \
+"a092759e-e8d0-4662-b999-e6b6e734c2de"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52020, 1329, 442, 7, 63, "Section", "ExpressionUUID" -> \
+"b2b6023c-4b50-4e72-8a43-7f2a34299202"],
+Cell[52465, 1338, 3564, 76, 80, 110, 1, "StyleData", \
+"DataResourceContributedBySection", "All", "ExpressionUUID" -> \
+"cd90e303-794b-4d59-9415-656ad9937533"],
+Cell[56032, 1416, 401, 8, 57, 116, 1, "StyleData", \
+"DataResourceContributedByMoreInfo", "All", "ExpressionUUID" -> \
+"d01738c4-53c0-43ff-9b61-f126795a7cf3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56470, 1429, 436, 7, 63, "Section", "ExpressionUUID" -> \
+"e6b25a1a-8e24-41ef-bc99-ffdcbd4c65a6"],
+Cell[56909, 1438, 3475, 72, 33, 104, 1, "StyleData", \
+"DataResourceDetailsSection", "All", "ExpressionUUID" -> \
+"7d0c34c4-1761-4d6b-bce9-8a5ba54db019"],
+Cell[60387, 1512, 576, 10, 105, 110, 1, "StyleData", \
+"DataResourceDetailsMoreInfo", "All", "ExpressionUUID" -> \
+"728c1103-bc19-4c4c-8618-a66f221ff19f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[61000, 1527, 487, 8, 63, "Section", "ExpressionUUID" -> \
+"994b0b27-0216-4c3d-b67f-3bedf6589519"],
+Cell[61490, 1537, 3760, 81, 55, 105, 1, "StyleData", \
+"DataResourceCitationSection", "All", "ExpressionUUID" -> \
+"f8edf2ad-05f2-4f17-b5ca-9a232edb1d2b"],
+Cell[65253, 1620, 424, 8, 81, 111, 1, "StyleData", \
+"DataResourceCitationMoreInfo", "All", "ExpressionUUID" -> \
+"8adcc72e-7c42-494d-aaf9-5ec0afe61a1b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[65714, 1633, 543, 9, 63, "Section", "ExpressionUUID" -> \
+"5b2ad2e2-e695-45c0-9d21-b22f4c5fb4a8"],
+Cell[66260, 1644, 3654, 80, 55, 103, 1, "StyleData", \
+"DataResourceSourceSection", "All", "ExpressionUUID" -> \
+"721db5e7-4be4-466a-8f29-0081a0f5ddb8"],
+Cell[69917, 1726, 448, 10, 57, 109, 1, "StyleData", \
+"DataResourceSourceMoreInfo", "All", "ExpressionUUID" -> \
+"01183c2c-8a51-4fce-a0a7-87ec9a4fd267"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70402, 1741, 594, 9, 63, "Section", "ExpressionUUID" -> \
+"0337dfed-179b-4f02-9c16-88502ee5c7b4"],
+Cell[70999, 1752, 3781, 82, 55, 110, 1, "StyleData", \
+"DataResourceExternalLinksSection", "All", "ExpressionUUID" -> \
+"9628f612-b6a7-4673-a5f4-100c5f361c79"],
+Cell[74783, 1836, 542, 10, 81, 116, 1, "StyleData", \
+"DataResourceExternalLinksMoreInfo", "All", "ExpressionUUID" -> \
+"b409a555-0734-4f32-8537-2df4e3e4fe17"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[75362, 1851, 652, 10, 63, "Section", "ExpressionUUID" -> \
+"fa2529c0-4258-4b23-ad2d-4cf6e39650b6"],
+Cell[76017, 1863, 3784, 82, 55, 113, 1, "StyleData", \
+"DataResourceRelatedResourcesSection", "All", "ExpressionUUID" -> \
+"c2c0f4a6-dd06-40a3-aa41-2824501ac1e9"],
+Cell[79804, 1947, 631, 13, 81, 119, 1, "StyleData", \
+"DataResourceRelatedResourcesMoreInfo", "All", "ExpressionUUID" -> \
+"c6953326-baeb-4fde-9c67-be0d5270b62a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[80472, 1965, 641, 10, 63, "Section", "ExpressionUUID" -> \
+"8c817699-66dc-4a1c-a32f-ec89e62cb874"],
+Cell[81116, 1977, 3782, 81, 80, 105, 1, "StyleData", \
+"DataResourceKeywordsSection", "All", "ExpressionUUID" -> \
+"7d4eb99b-b27d-4248-bf7e-002e159e6cde"],
+Cell[84901, 2060, 473, 10, 81, 111, 1, "StyleData", \
+"DataResourceKeywordsMoreInfo", "All", "ExpressionUUID" -> \
+"fb94d1ce-2bfa-4678-b501-31d2c1a5fdfc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[85411, 2075, 697, 11, 63, "Section", "ExpressionUUID" -> \
+"79ec7d46-f990-4742-bd19-7422054164c8"],
+Cell[86111, 2088, 3392, 71, 35, 107, 1, "StyleData", \
+"DataResourceCategoriesSection", "All", "ExpressionUUID" -> \
+"8842050d-b47d-4689-b9ff-082d38a2b686"],
+Cell[89506, 2161, 410, 8, 57, 113, 1, "StyleData", \
+"DataResourceCategoriesMoreInfo", "All", "ExpressionUUID" -> \
+"e5d02123-6327-4b45-8d4a-b83e8f795a39"],
+Cell[89919, 2171, 3397, 71, 29, 109, 1, "StyleData", \
+"DataResourceContentTypesSection", "All", "ExpressionUUID" -> \
+"9cf6d4ef-300c-4aad-abad-72b05f319d74"],
+Cell[93319, 2244, 368, 7, 57, 115, 1, "StyleData", \
+"DataResourceContentTypesMoreInfo", "All", "ExpressionUUID" -> \
+"fdb6097f-f545-41a8-9388-de72c07b220d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[93724, 2256, 750, 11, 63, "Section", "ExpressionUUID" -> \
+"280ebd60-c251-4808-9a92-391888cfd874"],
+Cell[94477, 2269, 3623, 78, 106, 110, 1, "StyleData", \
+"DataResourceCreatorSMDSection", "All", "ExpressionUUID" -> \
+"5ea6be36-8f22-43fd-be3d-a22eaa240f93"],
+Cell[98103, 2349, 694, 13, 149, 116, 1, "StyleData", \
+"DataResourceCreatorSMDMoreInfo", "All", "ExpressionUUID" -> \
+"4070bee3-a2e9-4373-acfd-c65ebefec434"],
+Cell[98800, 2364, 3781, 81, 106, 115, 1, "StyleData", \
+"DataResourceContributorsSMDSection", "All", "ExpressionUUID" -> \
+"88e145f5-483f-48dd-937c-e5887735f0df"],
+Cell[102584, 2447, 424, 8, 49, 121, 1, "StyleData", \
+"DataResourceContributorsSMDMoreInfo", "All", "ExpressionUUID" -> \
+"a93e681e-f95f-4542-99d6-58e45398b7c8"],
+Cell[103011, 2457, 3578, 76, 106, 108, 1, "StyleData", \
+"DataResourceTitleSMDSection", "All", "ExpressionUUID" -> \
+"56a36f46-3dd2-486f-b79f-5744a249ef58"],
+Cell[106592, 2535, 376, 7, 49, 114, 1, "StyleData", \
+"DataResourceTitleSMDMoreInfo", "All", "ExpressionUUID" -> \
+"ddfb8e0e-c942-4c10-ad52-7fec320884d5"],
+Cell[106971, 2544, 3562, 76, 81, 114, 1, "StyleData", \
+"DataResourceDescriptionSMDSection", "All", "ExpressionUUID" -> \
+"e3777234-f8b0-402f-b861-583fd5d22286"],
+Cell[110536, 2622, 574, 10, 99, 120, 1, "StyleData", \
+"DataResourceDescriptionSMDMoreInfo", "All", "ExpressionUUID" -> \
+"3124dae2-d81e-4f33-9e38-92978422aca5"],
+Cell[111113, 2634, 3681, 78, 122, 107, 1, "StyleData", \
+"DataResourceDateSMDSection", "All", "ExpressionUUID" -> \
+"d63353cc-2a01-4425-b226-1ced0dcf77ab"],
+Cell[114797, 2714, 605, 12, 124, 113, 1, "StyleData", \
+"DataResourceDateSMDMoreInfo", "All", "ExpressionUUID" -> \
+"cd5c5b36-8c70-4eb5-bf3a-cfffe962ea33"],
+Cell[115405, 2728, 3597, 76, 106, 112, 1, "StyleData", \
+"DataResourcePublisherSMDSection", "All", "ExpressionUUID" -> \
+"8ca58577-545e-4f13-8600-9b2767e586fa"],
+Cell[119005, 2806, 390, 8, 49, 118, 1, "StyleData", \
+"DataResourcePublisherSMDMoreInfo", "All", "ExpressionUUID" -> \
+"1a5aef84-e436-416d-a1ff-460924e42fea"],
+Cell[119398, 2816, 3658, 76, 86, 121, 1, "StyleData", \
+"DataResourceGeographicCoverageSMDSection", "All", "ExpressionUUID" -> \
+"7a4d3971-2289-4f63-a9a9-ae8180a90f97"],
+Cell[123059, 2894, 376, 7, 49, 127, 1, "StyleData", \
+"DataResourceGeographicCoverageSMDMoreInfo", "All", "ExpressionUUID" -> \
+"d15b78c1-1e31-4f5c-b377-2fd77d545797"],
+Cell[123438, 2903, 3700, 78, 106, 119, 1, "StyleData", \
+"DataResourceTemporalCoverageSMDSection", "All", "ExpressionUUID" -> \
+"e426c926-d6b6-4384-8ed7-06002f5c706c"],
+Cell[127141, 2983, 404, 8, 49, 125, 1, "StyleData", \
+"DataResourceTemporalCoverageSMDMoreInfo", "All", "ExpressionUUID" -> \
+"0fa81641-ed61-4778-8e74-7089bfdf1ee1"],
+Cell[127548, 2993, 3635, 76, 86, 111, 1, "StyleData", \
+"DataResourceLanguageSMDSection", "All", "ExpressionUUID" -> \
+"c78fbb80-9eeb-45fa-b56f-15c8152e0db6"],
+Cell[131186, 3071, 433, 8, 74, 117, 1, "StyleData", \
+"DataResourceLanguageSMDMoreInfo", "All", "ExpressionUUID" -> \
+"a5d40002-6c88-4539-8568-43a2528356e3"],
+Cell[131622, 3081, 3612, 76, 121, 109, 1, "StyleData", \
+"DataResourceRightsSMDSection", "All", "ExpressionUUID" -> \
+"dfde7d09-f90f-4f47-bfdc-63d95a67e7d1"],
+Cell[135237, 3159, 477, 10, 74, 115, 1, "StyleData", \
+"DataResourceRightsSMDMoreInfo", "All", "ExpressionUUID" -> \
+"5fd95810-10e5-47fc-a5d4-74a1a657ac30"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[135751, 3174, 804, 12, 63, "Section", "ExpressionUUID" -> \
+"b10d8935-edfb-4135-bada-fc3837f3ce08"],
+Cell[136558, 3188, 1763, 43, 138, 101, 1, "StyleData", \
+"DataResourceContentSection", "All", "ExpressionUUID" -> \
+"ead9fa73-9ec8-447a-b574-75f05801477c"],
+Cell[138324, 3233, 4238, 92, 66, 112, 1, "StyleData", \
+"DataResourceContentElementsSection", "All", "ExpressionUUID" -> \
+"51ef2636-508e-4027-a289-12fc8813ac2f"],
+Cell[142565, 3327, 485, 9, 57, 118, 1, "StyleData", \
+"DataResourceContentElementsMoreInfo", "All", "ExpressionUUID" -> \
+"c161552b-a119-4114-9895-f99dd92816a3"],
+Cell[143053, 3338, 3202, 66, 27, 118, 1, "StyleData", \
+"DataResourceDefaultContentElementSection", "All", "ExpressionUUID" -> \
+"1949de31-ae6c-42e2-827a-afb65ff1b9f4"],
+Cell[146258, 3406, 594, 10, 105, 124, 1, "StyleData", \
+"DataResourceDefaultContentElementMoreInfo", "All", "ExpressionUUID" -> \
+"ce93c2ea-c167-4f90-a347-e94e09a82e01"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[146889, 3421, 857, 13, 63, "Section", "ExpressionUUID" -> \
+"a6d2188c-2456-42ff-b5fb-46f86f87a7ac"],
+Cell[147749, 3436, 614, 13, 50, 102, 1, "StyleData", \
+"DataResourceExamplesChapter", "All", "ExpressionUUID" -> \
+"572f609e-a9c6-4f56-b78a-d51ee535b24f"],
+Cell[CellGroupData[{
+Cell[148388, 3453, 900, 14, 35, "Subsection", "ExpressionUUID" -> \
+"c514f833-dddd-429f-9013-1c6b839e37bc"],
+Cell[149291, 3469, 3235, 68, 27, 105, 1, "StyleData", \
+"DataResourceExamplesSection", "All", "ExpressionUUID" -> \
+"c62d8480-0454-4e0e-a224-a4a35cdf1b4a"],
+Cell[152529, 3539, 1311, 19, 489, 118, 1, "StyleData", \
+"DataResourceExampleNotebookMoreInfo", "All", "ExpressionUUID" -> \
+"15e972ad-e90b-495d-9602-f81fe0f1ca79"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[153889, 3564, 640, 10, 63, "Section", "ExpressionUUID" -> \
+"2ac16a13-4493-473b-ba8e-bcf96464c7fe"],
+Cell[154532, 3576, 609, 13, 94, 100, 1, "StyleData", \
+"DataResourceCreateChapter", "All", "ExpressionUUID" -> \
+"5acc5e7f-9c85-47b2-9eb6-5b67ebf6ac45"],
+Cell[155144, 3591, 3000, 63, 131, 102, 1, "StyleData", \
+"DataResourceLocalSection", "All", "ExpressionUUID" -> \
+"892e736c-ab24-4eb0-9898-fe5cea6878ba",
+ CellTags->"SaveLocalResourceActionButton"],
+Cell[158147, 3656, 3306, 67, 138, 102, 1, "StyleData", \
+"DataResourceCloudSection", "All", "ExpressionUUID" -> \
+"6c2b7d42-e5d6-4b92-9e0c-70c03415ab53",
+ CellTags->"SaveCloudResourceActionButton"],
+Cell[161456, 3725, 584, 14, 60, 100, 1, "StyleData", \
+"DataResourceSubmitChapter", "All", "ExpressionUUID" -> \
+"ccb9d33a-d9d0-4b17-a62b-5bd8224b6ef4"],
+Cell[CellGroupData[{
+Cell[162065, 3743, 3942, 85, 66, 108, 1, "StyleData", \
+"DataResourcePublisherIDSection", "All", "ExpressionUUID" -> \
+"cd9a46a3-8160-44c4-88ca-4f1353adbd62"],
+Cell[166010, 3830, 207, 4, 30, "Input", "ExpressionUUID" -> \
+"ef527697-77e8-4eb8-b717-9018f3b156dc"]
+}, Open  ]],
+Cell[166232, 3837, 1039, 23, 56, 111, 1, "StyleData", \
+"DataResourcePublisherRequest", "All", "ExpressionUUID" -> \
+"34d35bcd-759c-4b6c-a765-ed54e6a05c1d"],
+Cell[167274, 3862, 1101, 23, 57, 114, 1, "StyleData", \
+"DataResourcePublisherIDMoreInfo", "All", "ExpressionUUID" -> \
+"4b5ed272-8eac-4817-b095-868da20255a3"],
+Cell[168378, 3887, 3031, 62, 133, 103, 1, "StyleData", \
+"DataResourceSubmitSection", "All", "ExpressionUUID" -> \
+"fc89d587-8420-4cc6-8aa5-9a0fbac87875",
+ CellTags->"SubmitResourceActionButton"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

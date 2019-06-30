@@ -1,0 +1,150 @@
+@@resource PresenterToolStrings
+
+{
+	"SLIDE" -> "\:6295\:5f71\:7247",
+
+	(* TOOLBAR *)
+	"InsertSlide" -> "\:63d2\:5165\:65b0\[LineSeparator]\:6295\:5f71\:7247",
+	"InsertSlidePalette" -> "\:63d2\:5165\:65b0\:6295\:5f71\:7247",
+	"TooltipInsertSlide" -> "\:5728\:6b63\:6587\:6e38\:6a19\:4f4d\:7f6e\:63d2\:5165\:6295\:5f71\:7247\:4e2d\:65b7",
+	"TooltipSetCellAlignment" -> "\:8a2d\:5b9a\:5132\:5b58\:683c\:5c0d\:9f4a",
+	"TooltipApplyCurrentFormatting" -> "\:5c07\:7576\:524d\:683c\:5f0f\:61c9\:7528\:81f3\:6587\:4ef6\:4e2d\:6240\:6709\:5177\:6709\:76f8\:540c\:6a23\:5f0f\:7684\:5132\:5b58\:683c",
+	"TooltipCellStyle" -> "\:5132\:5b58\:683c\:6a23\:5f0f",
+	"TooltipFontFamily" -> "\:5b57\:9ad4\:5bb6\:65cf",
+	"TooltipModifyFontSize" -> "\:653e\:5927/\:7e2e\:5c0f\:5b57\:9ad4\:5c3a\:5bf8",
+	"TooltipFontBold" -> "Bold",
+	"TooltipFontItalic" -> "Italic",
+	"TooltipFontUnderline" -> "Underline",
+	"TooltipFontColor" -> "\:5b57\:9ad4\:984f\:8272",
+	"TooltipFontColorPalette" -> "Palette...",
+	"TooltipClearFormatting" -> "\:6e05\:9664\:683c\:5f0f",
+	"TooltipMoreButton" -> "\:66f4\:591a...",
+	"TooltipSlidePresentationView" -> "\:6295\:5f71\:7247\:7c21\:5831\:6aa2\:8996",
+
+	"TooltipSlideBreakOptions" -> "\:6295\:5f71\:7247\:4e2d\:65b7\:9078\:9805",
+	"TooltipAutomaticSlideBreak" -> "\:6295\:5f71\:7247\:81ea\:52d5\:4e2d\:65b7",
+	"TooltipManualSlideBreak" -> "\:6295\:5f71\:7247\:624b\:52d5\:4e2d\:65b7",
+
+	"TooltipNudgeCellLeft" -> "\:5c07\:5132\:5b58\:683c\:5411\:5de6\:8f15\:79fb",
+	"TooltipNudgeCellRight" -> "\:5c07\:5132\:5b58\:683c\:5411\:53f3\:8f15\:79fb",
+	"TooltipNudgeCellUp" -> "\:5c07\:5132\:5b58\:683c\:5411\:4e0a\:8f15\:79fb",
+	"TooltipNudgeCellDown" -> "\:5c07\:5132\:5b58\:683c\:5411\:4e0b\:8f15\:79fb",
+
+	"TooltipWindowSize" -> "\:8996\:7a97\:5927\:5c0f",
+	"TooltipWindowElements" -> "\:8996\:7a97\:5143\:7d20",
+
+	(* TOOLBAR and MENU *)
+	"CellActionsToolbarLabel" -> "\:5132\:5b58\:683c\:64cd\:4f5c",
+	"WindowOptionsToolbarLabel" -> "\:8996\:7a97\:9078\:9805",
+	"StartPresentation" -> "\:555f\:52d5\:7c21\:5831",
+	"EndPresentation" -> "\:7d50\:675f\:7c21\:5831",
+	"ToggleFullScreen" -> "\:5207\:63db\:5168\:87a2\:5e55",
+	"PresentationControlsMenuItem" -> "\:7c21\:5831\:63a7\:5236",
+	"SideNotesPaletteButtonTooltip" -> "\:986f\:793a\:6295\:5f71\:7247\:5099\:5fd8\:7a3f",
+	"ThemeOptionsMenuItem" -> "\:4e3b\:984c\:9078\:9805",
+	"AddNewStyleMenuItem" -> "\:5c07\:65b0\:6a23\:5f0f\:589e\:6dfb\:81f3\:6a23\:5f0f\:8868",
+	"SwapScreensMenuItem" -> "\:8abf\:63db\:87a2\:5e55",
+	"SideNotesMenuItem" -> "\:6295\:5f71\:7247\:5099\:5fd8\:7a3f",
+	"StylePaletteMenuItem" -> "\:6a23\:5f0f\:9762\:677f",
+	"ToggleStylePaletteMenuItem" -> "\:5207\:63db\:6a23\:5f0f\:5de5\:5177",
+	"NavigationBarMenuItem" -> "\:5207\:63db\:5c0e\:89bd\:5217",
+	"CloseNotebookMenuItem" -> "\:95dc\:9589\:7b46\:8a18\:672c",
+	"SaveToWolframCloud" -> "\:5132\:5b58\:81f3 Wolfram Cloud",
+	"HelpMenuItem" -> "\:6c42\:52a9",
+	"InsertSlideMenu" -> "\:63d2\:5165\:6295\:5f71\:7247",
+	"InsertSlideWithBackgroundMenu" -> "\:63d2\:5165\:5e36\:6709\:80cc\:666f\:7684\:6295\:5f71\:7247",
+
+	"FirstSlideMenuItem" -> "\:7b2c\:4e00\:5f35\:6295\:5f71\:7247",
+	"PreviousSlideMenuItem" -> "\:524d\:4e00\:5f35\:6295\:5f71\:7247",
+	"NextSlideMenuItem" -> "\:4e0b\:4e00\:5f35\:6295\:5f71\:7247",
+	"LastSlideMenuItem" -> "\:6700\:5f8c\:4e00\:5f35\:6295\:5f71\:7247",
+	"ExitPresentationLabel" -> "\:9000\:51fa\:7c21\:5831",
+	"SpecifyKeysCommandsLabel" -> "\:6307\:5b9a\:5728\:7c21\:5831\:671f\:9593\:7684\:6295\:5f71\:7247\:5c0e\:822a\:6309\:9375\:3002",
+
+	"LockSizeAndPositionLabel" -> "\:7c21\:5831\:9032\:884c\:671f\:9593\:7684\:5716\:5f62\:5927\:5c0f\:ff1a",
+	"LockToCurrentSizeLabel" -> "\:9396\:5b9a\:73fe\:6709\:5c3a\:5bf8",
+	"ScaleWithScreenSizeLabel" -> "\:96a8\:87a2\:5e55\:5927\:5c0f\:7e2e\:653e",
+
+	"OpenAutomaticSlideBreakDialog" -> "\:6295\:5f71\:7247\:4e2d\:65b7\:9810\:8a2d\:503c",
+	"OpenAutomaticSlideBreakDialogMenuItem" -> "\:6295\:5f71\:7247\:81ea\:52d5\:4e2d\:65b7\:9810\:8a2d\:503c",
+	"RefreshSlideBreaksTooltip" -> "\:91cd\:65b0\:6574\:7406\:6295\:5f71\:7247\:4e2d\:65b7",
+	"AutomaticSlideBreakDialogLabelCell" -> "\:5132\:5b58\:683c\:6a23\:5f0f",
+	"AutomaticSlideBreakDialogLabelPreview" -> "\:9810\:89bd",
+
+	"UpdateAllCellStyleLabel" -> "\:4f7f\:7528\:6b64\:6a23\:5f0f\:66f4\:65b0\:6240\:6709\:5132\:5b58\:683c\:ff1a",
+
+	(* CONTEXT MENU *)
+	"RemoveThisSlideBreakMenuItem" -> "\:79fb\:9664\:6295\:5f71\:7247\:4e2d\:65b7",
+
+	(* DIALOGS *)
+	"AutomaticSlideBreakDialogText" ->
+(*		"Specify cell styles that will automatically be the beginning of a new slide.", *)
+		 "\:6cbf\:7528\:5132\:5b58\:683c\:4e4b\:524d\:589e\:6dfb\:6295\:5f71\:7247\:4e2d\:65b7\:ff1a",
+
+	"AutomaticSlideBreakDialogButtonText" -> "\:8a2d\:5b9a",
+	"RemoveAllManualSlideBreaksButtonText" -> "\:79fb\:9664\:6240\:6709\:624b\:52d5\:6295\:5f71\:7247\:4e2d\:65b7",
+	"NoSideNotesPresentDialog" -> "\:6b64\:6295\:5f71\:7247\:5c55\:793a\:672a\:5167\:542b\:4efb\:4f55\:6295\:5f71\:7247\:5099\:5fd8\:7a3f\:3002",
+	"AddSideNotesLabel" -> "\:589e\:6dfb\:5099\:5fd8\:7a3f\:81f3\:6295\:5f71\:7247",
+	"OutlinePaletteShowThumbnailsLabel" -> "\:986f\:793a\:7e2e\:5716",
+	"AddNewStyleLabel" -> "\:5c07\:65b0\:6a23\:5f0f\:589e\:6dfb\:81f3\:6a23\:5f0f\:8868",
+	"StyleNameLabel" -> "\:6a23\:5f0f\:540d\:7a31",
+	"StyleInheritanceLabel" -> "\:627f\:63a5\:65e2\:6709\:7684\:6a23\:5f0f",
+	"NewStyleNameHintLabel" -> "MyNewStyle",
+	"NoSideNotesFoundLabel" -> "\:6c92\:6709\:627e\:5230 SideNotes\:3002",
+	"UpdateAllStylesWithLabel" -> "\:4f7f\:7528\:6b64\:6a23\:5f0f\:66f4\:65b0\:6240\:6709\:5132\:5b58\:683c\:ff1a",
+	"UpdateAllStylesLabel" -> "\:66f4\:65b0\:5168\:90e8",
+	"UpdateCellsWithLabel" -> " \:5132\:5b58\:683c\:6709\:ff1a",
+	"UseDefaultKeysButtonText" -> "\:4f7f\:7528\:9810\:8a2d\:9375",
+	"OKButtonText" -> "OK",
+	"CancelButtonText" -> "\:53d6\:6d88",
+
+	"Loading" -> "\:8f09\:5165\:4e2d\[Ellipsis]",
+	"Update"->"\:66f4\:65b0",
+
+	(* Chooser palette *)
+	"ThemeChooserHeading" -> "\:5275\:5efa\:65b0\:7c21\:5831",
+	"ThemeChooserThemeLabel" -> "\:4e3b\:984c",
+	"ThemeChooserFontSetLabel" -> "\:4e3b\:984c\:5b57\:9ad4",
+	"ThemeChooserColorSetLabel" -> "\:4e3b\:984c\:984f\:8272",
+	"ThemeChooserPreviewLabel" -> "\:9810\:89bd",
+	"ThemeChooserMenuHeading" -> "\:8a2d\:5b9a",
+	"ThemeChooserIncludeSampleContent" -> "\:5c07\:6a23\:677f\:5167\:5bb9\:9810\:5148\:653e\:5165\:6295\:5f71\:7247",
+	"ThemeChooserCreateNotebook" -> "\:5275\:5efa",
+	"ThemeChooserWindowTitle" -> "\:7c21\:5831\:7b46\:8a18\:672c\:9078\:64c7\:5668",
+	"ThemeChooserImportButton" -> "\:5c0e\:5165",
+	"ThemeChooserImportButtonTooltip" -> "\:5f9e\:65e2\:5b58\:7c21\:5831\:5c0e\:5165\:6a23\:5f0f",
+	"ThemeChooserImportStylesheet" -> "\:5c0e\:5165\:6a23\:5f0f\:8868",
+	"ThemeChooserBackButton" -> "\:8fd4\:56de",
+	"ThemeChooserRemoveButton" -> "\:79fb\:9664",
+	"ThemeChooserImportStylesheetText" -> "\:5f9e Presenter Tools \:4e2d\:9078\:53d6\:60a8\:8981\:5c0e\:5165\:7684\:7c21\:5831\:7b46\:8a18\:672c\:6a23\:5f0f\:3002",
+    "ThemeChooserImportStylesErrorMessage" -> "\:6240\:9078\:53d6\:7684\:7b46\:8a18\:672c\:5fc5\:9808\:662f\:7531 Presenter Tools \:5275\:5efa\:800c\:4f86\:3002",
+
+	"ThemeOptionsHeading" -> "\:6539\:8b8a\:7c21\:5831\:6a23\:5f0f",
+	"ThemeOptionsApply" -> "\:61c9\:7528",
+
+	(* Outline palette *)
+	"ThumbnailSize" -> "\:5927\:5c0f",
+	"OutlinePaletteRefreshTooltip" -> "\:91cd\:65b0\:6574\:7406\:7db1\:8981",
+	"OutlinePaletteWindowTitle" -> "\:6295\:5f71\:7247\:7db1\:8981",
+	"OutlinePaletteButtonTooltip" -> "\:5c55\:793a\:6295\:5f71\:7247\:7db1\:8981",
+	"OutlinePaletteMenuItem" -> "\:6295\:5f71\:7247\:7db1\:8981",
+
+	(* SideNotes Palette *)
+	"SideNotesPasteAndEvaluateTooltip" -> "\:8cbc\:4e0a\:4e26\:52a0\:4ee5\:8a08\:7b97",
+	"SideNotesPasteIntoNotebookTooltip" -> "\:6309\:4e0b\:8cbc\:4e0a\[LineSeparator]\:53f3\:9ede\:64ca\:4ee5\:5229\:8cbc\:4e0a\:8207\:8a08\:7b97",
+	"SideNotesRefreshTooltip" -> "\:91cd\:65b0\:6574\:7406\:6295\:5f71\:7247\:8a3b\:89e3",
+	"SideNotesPaletteWindowTitle" -> "\:6295\:5f71\:7247\:8a3b\:89e3",
+
+	(* screen style environments *)
+	"Slideshow Working" -> "\:6295\:5f71\:7247\:64ad\:653e\:4e2d",
+	"Slideshow Presentation" -> "\:6295\:5f71\:7247\:64ad\:653e\:7c21\:5831",
+	"Scrolling Presentation" -> "\:6372\:52d5\:7c21\:5831",
+
+	(* Style Palette *)
+	"StylePaletteLabelCellStyle" -> "\:5132\:5b58\:683c\:6a23\:5f0f\:8207\:683c\:5f0f\:4e2d"
+
+}
+
+@@resource PresenterToolLocalizableBitmaps
+
+{}

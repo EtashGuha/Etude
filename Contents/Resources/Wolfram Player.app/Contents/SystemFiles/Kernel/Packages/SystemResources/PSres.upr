@@ -1,0 +1,16 @@
+PS-Resources-1.0
+ProcSet
+mkpsresPrivate
+.
+ProcSet
+WRI-MathToEPS=mtoeps.ps
+WRI-MathToIllustrator=mtoai.ps
+WRI-MathToPDF=mtopdf.ps
+WRI-Mathematica-prolog=mathproc.ps
+WRI-PSConvert=psconv.ps
+WRI-PSToMathematica=mtomath.ps
+WRI-Post-startup=init.ps
+.
+mkpsresPrivate
+NONRESOURCE=psfix
+.

@@ -1,0 +1,2 @@
+<!ENTITY % mathmlref SYSTEM "MathML1/mathml.dtd" >
+%mathmlref;

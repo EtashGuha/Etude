@@ -1,0 +1,12 @@
+{"I", "Pi", "Exp", "E", "Sin", "Sqrt", "Cos", "Log", "Cot", "Sinh", 
+ "Infinity", "Cosh", "Tan", "Gamma", "Zeta", "Beta", "Csc", "Abs", "Plus", 
+ "BesselI", "Coth", "Quantity", "Tanh", "ArcTan", "Sum", "Subscript", "None", 
+ "BesselK", "ComplexInfinity", "Integrate", "BesselJ", "EulerGamma", "Sech", 
+ "HurwitzZeta", "Conjugate", "Limit", "D", "Derivative", "ArcCos", 
+ "JacobiZeta", "PolyGamma", "Direction", "Sec", "Ratios", "BaseForm", 
+ "Assumptions", "Im", "Degree", "Sinc", "Csch", "ArcSin", "ZetaZero", 
+ "Residue", "FresnelS", "EulerPhi", "ArcTanh", "Range", "Product", "Log2", 
+ "Erf", "Root", "RiemannR", "Rational", "PrimeZetaP", "Mod", "FresnelC", 
+ "Floor", "DivisorSigma", "Cross", "BitOr", "BesselJZero", "Assuming", 
+ "SinIntegral", "RiemannSiegelZ", "PrimePi", "Piecewise", "MeijerG", 
+ "Implies", "ExpIntegralEi", "BesselYZero", "ArcSech", "ArcCoth"}

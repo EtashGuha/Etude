@@ -1,0 +1,2880 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    133541,       2870]
+NotebookOptionsPosition[    133075,       2849]
+NotebookOutlinePosition[    133595,       2871]
+CellTagsIndexPosition[    133510,       2866]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`selType$$ = 0, $CellContext`fixRatio$$ = 
+  True, $CellContext`opcurrent$$ = ImageResize[#, {
+    Scaled[1], 
+    Scaled[1]}]& , $CellContext`mesh$$, $CellContext`maskFill$$ = 
+  True, $CellContext`query$$ = None, $CellContext`alphamode$$ = "More"}, 
+  DynamicBox[ToBoxes[
+    Quiet[
+     If[RegionEmbeddingDimension[
+        $CellContext`mesh$$[]] === 2, 
+      DynamicModule[{
+       Ribbon`Private`page = None, Ribbon`Private`mouseover = {0}}, 
+       Column[{
+         Item[
+          Grid[{{
+             EventHandler[
+              Tooltip[
+               Button[
+                PaneSelector[{False -> Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MeshLayoutIcon.png"]]]], "RibbonTabLabel"], True -> Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MeshLayoutIconHighlight.png"]]]], 
+                    "RibbonTabLabelActive"]}, 
+                 Dynamic[
+                  FEPrivate`Or[
+                   FEPrivate`SameQ[Ribbon`Private`page, "MeshLayoutTab"], 
+                   FEPrivate`SameQ[Ribbon`Private`mouseover, {1}]]]], Null; 
+                Ribbon`Private`page = "MeshLayoutTab", BaseStyle -> {}, 
+                DefaultBaseStyle -> "RibbonButton", 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingRightNinePatchAppearance"], 
+                  "MeshLayoutTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingRightBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingRightBottomNinePatchAppearance"]], 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingRightNinePatchAppearance"], 
+                  "MeshLayoutTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingRightBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingRightBottomNinePatchAppearance"]], Appearance -> 
+                "RibbonButton"], 
+               Dynamic[
+                RawBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "meshGraphicsMeshLayoutTooltip"]], 
+                BaseStyle -> {"TextStyling"}]], {
+              "MouseEntered" :> FEPrivate`Set[Ribbon`Private`mouseover, {1}], 
+               "MouseExited" :> FEPrivate`If[
+                 FEPrivate`SameQ[Ribbon`Private`mouseover, {1}], 
+                 FEPrivate`Set[Ribbon`Private`mouseover, {0}]]}, 
+              PassEventsDown -> True], 
+             EventHandler[
+              Tooltip[
+               Button[
+                PaneSelector[{False -> Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MeshDecorationIcon.png"]]]], "RibbonTabLabel"], True -> 
+                  Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MeshDecorationIconHighlight.png"]]]], 
+                    "RibbonTabLabelActive"]}, 
+                 Dynamic[
+                  FEPrivate`Or[
+                   FEPrivate`SameQ[Ribbon`Private`page, "DecorationTab"], 
+                   FEPrivate`SameQ[Ribbon`Private`mouseover, {2}]]]], Null; 
+                Ribbon`Private`page = "DecorationTab", BaseStyle -> {}, 
+                DefaultBaseStyle -> "RibbonButton", 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingLeftRightNinePatchAppearance"],
+                   "DecorationTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomNinePatchAppearance"]], 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingLeftRightNinePatchAppearance"],
+                   "DecorationTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomNinePatchAppearance"]], 
+                Appearance -> "RibbonButton"], 
+               Dynamic[
+                RawBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "meshGraphicsDecorationTooltip"]], 
+                BaseStyle -> {"TextStyling"}]], {
+              "MouseEntered" :> FEPrivate`Set[Ribbon`Private`mouseover, {2}], 
+               "MouseExited" :> FEPrivate`If[
+                 FEPrivate`SameQ[Ribbon`Private`mouseover, {2}], 
+                 FEPrivate`Set[Ribbon`Private`mouseover, {0}]]}, 
+              PassEventsDown -> True], 
+             EventHandler[
+              Tooltip[
+               Button[
+                PaneSelector[{False -> Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ImageTransformIcon.png"]]]], "RibbonTabLabel"], True -> 
+                  Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ImageTransformIconHighlight.png"]]]], 
+                    "RibbonTabLabelActive"]}, 
+                 Dynamic[
+                  FEPrivate`Or[
+                   FEPrivate`SameQ[Ribbon`Private`page, "Transform"], 
+                   FEPrivate`SameQ[Ribbon`Private`mouseover, {3}]]]], Null; 
+                Ribbon`Private`page = "Transform", BaseStyle -> {}, 
+                DefaultBaseStyle -> "RibbonButton", 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingLeftRightNinePatchAppearance"],
+                   "Transform", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomNinePatchAppearance"]], 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingLeftRightNinePatchAppearance"],
+                   "Transform", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomNinePatchAppearance"]], 
+                Appearance -> "RibbonButton"], 
+               Dynamic[
+                RawBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "meshGraphicsTransformationTooltip"]], 
+                BaseStyle -> {"TextStyling"}]], {
+              "MouseEntered" :> FEPrivate`Set[Ribbon`Private`mouseover, {3}], 
+               "MouseExited" :> FEPrivate`If[
+                 FEPrivate`SameQ[Ribbon`Private`mouseover, {3}], 
+                 FEPrivate`Set[Ribbon`Private`mouseover, {0}]]}, 
+              PassEventsDown -> True], 
+             EventHandler[
+              Tooltip[
+               Button[
+                PaneSelector[{False -> Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PrintingIcon.png"]]]], "RibbonTabLabel"], True -> Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PrintingIconHighlight.png"]]]], "RibbonTabLabelActive"]}, 
+                 Dynamic[
+                  FEPrivate`Or[
+                   FEPrivate`SameQ[Ribbon`Private`page, "PrintingTab"], 
+                   FEPrivate`SameQ[Ribbon`Private`mouseover, {4}]]]], Null; 
+                Ribbon`Private`page = "PrintingTab", BaseStyle -> {}, 
+                DefaultBaseStyle -> "RibbonButton", 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingLeftRightNinePatchAppearance"],
+                   "PrintingTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomNinePatchAppearance"]], 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingLeftRightNinePatchAppearance"],
+                   "PrintingTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomNinePatchAppearance"]], 
+                Appearance -> "RibbonButton"], 
+               Dynamic[
+                RawBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "meshGraphicsPrintingTooltip"]], 
+                BaseStyle -> {"TextStyling"}]], {
+              "MouseEntered" :> FEPrivate`Set[Ribbon`Private`mouseover, {4}], 
+               "MouseExited" :> FEPrivate`If[
+                 FEPrivate`SameQ[Ribbon`Private`mouseover, {4}], 
+                 FEPrivate`Set[Ribbon`Private`mouseover, {0}]]}, 
+              PassEventsDown -> True], 
+             EventHandler[
+              Tooltip[
+               Button[
+                PaneSelector[{False -> Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "InformationIcon.png"]]]], "RibbonTabLabel"], True -> 
+                  Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "InformationIconHighlight.png"]]]], 
+                    "RibbonTabLabelActive"]}, 
+                 Dynamic[
+                  FEPrivate`Or[
+                   FEPrivate`SameQ[Ribbon`Private`page, "MeshInformationTab"], 
+                   FEPrivate`SameQ[Ribbon`Private`mouseover, {5}]]]], Null; 
+                Ribbon`Private`page = "MeshInformationTab", BaseStyle -> {}, 
+                DefaultBaseStyle -> "RibbonButton", 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingLeftNinePatchAppearance"], 
+                  "MeshInformationTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftBottomNinePatchAppearance"]], 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingLeftNinePatchAppearance"], 
+                  "MeshInformationTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftBottomNinePatchAppearance"]], Appearance -> 
+                "RibbonButton"], 
+               Dynamic[
+                RawBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "meshGraphicsInformationTooltip"]], 
+                BaseStyle -> {"TextStyling"}]], {
+              "MouseEntered" :> FEPrivate`Set[Ribbon`Private`mouseover, {5}], 
+               "MouseExited" :> FEPrivate`If[
+                 FEPrivate`SameQ[Ribbon`Private`mouseover, {5}], 
+                 FEPrivate`Set[Ribbon`Private`mouseover, {0}]]}, 
+              PassEventsDown -> True], 
+             EventHandler[
+              Button[
+              "", Null, BaseStyle -> {ShowStringCharacters -> False}, 
+               DefaultBaseStyle -> {}, FrameMargins -> {{0, 0}, {0, 0}}, 
+               ImageSize :> 
+               FEPrivate`Switch[
+                Ribbon`Private`page, None, {1, 1}, "MeshLayoutTab", 90, 
+                 "DecorationTab", 90, "Transform", 90, "PrintingTab", 90, 
+                 "MeshInformationTab", 90, 6, 290, 
+                 Blank[], {1, 1}], Enabled -> False, Appearance :> 
+               FEPrivate`Switch[Ribbon`Private`page, None, None, 
+                 Blank[], 
+                 FEPrivate`FrontEndResource[
+                 "FEExpressions", "TabEmptyNinePatchAppearance"]]], {
+              "MouseEntered" :> FEPrivate`Set[Ribbon`Private`mouseover, {6}], 
+               "MouseExited" :> FEPrivate`If[
+                 FEPrivate`SameQ[Ribbon`Private`mouseover, {6}], 
+                 FEPrivate`Set[Ribbon`Private`mouseover, {0}]]}, 
+              PassEventsDown -> True]}}, Spacings -> {0, 0}, Alignment -> 
+           Bottom], Alignment -> Bottom], 
+         Item[
+          PaneSelector[{None -> "", "MeshLayoutTab" -> Deploy[
+              Column[{
+                Panel[
+                 Grid[{{
+                    Pane[
+                    Column[{
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsMeshLayoutTitle"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonTitle"], 
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsMeshLayoutCaption"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonCaption"]}, 
+                    Spacings -> 0.5], ImageMargins -> {{8, 0}, {5, 5}}], 
+                    Item["", ItemSize -> Fit], 
+                    Item[
+                    Button[
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close-Hover.png"]]]]], Ribbon`Private`page = None, 
+                    FrameMargins -> 0, ContentPadding -> False, Appearance -> 
+                    None, ImageMargins -> {{0, 8}, {8, 4}}], Alignment -> 
+                    Center]}}, Alignment -> {{Left, Left, Right}, Center}, 
+                  Spacings -> {0, 0}], ImageSize -> 335, FrameMargins -> 0, 
+                 Alignment -> {Left, Center}, 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentTitleStripe.9.png"]}], 
+                Panel[
+                 Pane[
+                  Grid[{{
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MeshLayoutDefault.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], Automatic, "MeshLayoutTab"]; Null, 
+                    ImageSize -> {30, 30}, FrameMargins -> {{1, 1}, {1, 1}}, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsMeshLayoutDefault"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MeshLayoutLines.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Lines", "MeshLayoutTab"]; Null, 
+                    ImageSize -> {30, 30}, FrameMargins -> {{1, 1}, {1, 1}}, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsLines"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MeshLayoutPolygons.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Polygons", "MeshLayoutTab"]; Null,
+                     ImageSize -> {30, 30}, FrameMargins -> {{1, 1}, {1, 1}}, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPolygons"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PlotThemeShowcase.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Showcase", "MeshLayoutTab"]; Null,
+                     ImageSize -> {30, 30}, FrameMargins -> {{1, 1}, {1, 1}}, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowcase"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PlotThemeIllustration.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Illustration", "MeshLayoutTab"]; 
+                    Null, ImageSize -> {30, 30}, 
+                    FrameMargins -> {{1, 1}, {1, 1}}, Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsIllustration"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0]}, {
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PlotThemeBusiness.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Business", "MeshLayoutTab"]; Null,
+                     ImageSize -> {30, 30}, FrameMargins -> {{1, 1}, {1, 1}}, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPlotThemeBusiness"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PlotThemeDetailed.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Detailed", "MeshLayoutTab"]; Null,
+                     ImageSize -> {30, 30}, FrameMargins -> {{1, 1}, {1, 1}}, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPlotThemeDetailed"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PlotThemeMarketing.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Marketing", "MeshLayoutTab"]; 
+                    Null, ImageSize -> {30, 30}, 
+                    FrameMargins -> {{1, 1}, {1, 1}}, Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPlotThemeMarketing"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PlotThemeScientific.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Scientific", "MeshLayoutTab"]; 
+                    Null, ImageSize -> {30, 30}, 
+                    FrameMargins -> {{1, 1}, {1, 1}}, Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPlotThemeScientific"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PlotThemeWeb.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Web", "MeshLayoutTab"]; Null, 
+                    ImageSize -> {30, 30}, FrameMargins -> {{1, 1}, {1, 1}}, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPlotThemeWeb"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0]}}, 
+                   Alignment -> {Center, Center}, Spacings -> Dynamic[{
+                    FEPrivate`If[
+                    FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"], 
+                    0.8, 0.7], 1}]], FrameMargins -> 10], 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentAreaGradient.9.png"]}, DefaultBaseStyle -> {}, 
+                 ImageSize -> 335]}, Spacings -> {0, 0}]], "DecorationTab" -> 
+            Deploy[
+              Column[{
+                Panel[
+                 Grid[{{
+                    Pane[
+                    Column[{
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsDecorationTitle"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonTitle"], 
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsDecorationCaption"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonCaption"]}, 
+                    Spacings -> 0.5], ImageMargins -> {{8, 0}, {5, 5}}], 
+                    Item["", ItemSize -> Fit], 
+                    Item[
+                    Button[
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close-Hover.png"]]]]], Ribbon`Private`page = None, 
+                    FrameMargins -> 0, ContentPadding -> False, Appearance -> 
+                    None, ImageMargins -> {{0, 8}, {8, 4}}], Alignment -> 
+                    Center]}}, Alignment -> {{Left, Left, Right}, Center}, 
+                  Spacings -> {0, 0}], ImageSize -> 335, FrameMargins -> 0, 
+                 Alignment -> {Left, Center}, 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentTitleStripe.9.png"]}], 
+                Panel[
+                 Pane[
+                  Grid[{{
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetGraphicProperties", 
+                    ButtonNotebook[], 
+                    Dynamic[$CellContext`mesh$$], Frame -> $CellContext`value,
+                     "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowFrame.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowFrame.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowFrame"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[
+                    ReplaceAll[
+                    ReplaceAll[Frame, 
+                    Quiet[
+                    Options[
+                    Show[
+                    $CellContext`mesh$$[]], Frame]]], Frame -> False]]]], 
+                    DynamicModuleValues :> {}], 
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetGraphicProperties", 
+                    ButtonNotebook[], 
+                    Dynamic[$CellContext`mesh$$], Axes -> $CellContext`value, 
+                    "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowAxes.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowAxes.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowAxes"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[
+                    ReplaceAll[
+                    ReplaceAll[Axes, 
+                    Quiet[
+                    Options[
+                    Show[
+                    $CellContext`mesh$$[]], Axes]]], Axes -> False]]]], 
+                    DynamicModuleValues :> {}], 
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetProperties", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], {
+                    MeshCellLabel, 0, "Index"}, $CellContext`value, 
+                    "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowLabels0.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowLabels0.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowLabels0"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[PropertyValue[{
+                    $CellContext`mesh$$[], 0}, MeshCellLabel] === "Index"]]], 
+                    DynamicModuleValues :> {}], 
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetProperties", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], {
+                    MeshCellLabel, 1, "Index"}, $CellContext`value, 
+                    "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowLabels1.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowLabels1.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowLabels1"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[PropertyValue[{
+                    $CellContext`mesh$$[], 1}, MeshCellLabel] === "Index"]]], 
+                    DynamicModuleValues :> {}], 
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetProperties", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], {
+                    MeshCellLabel, 2, "Index"}, $CellContext`value, 
+                    "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowLabels2.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowLabels2.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowLabels2"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[PropertyValue[{
+                    $CellContext`mesh$$[], 2}, MeshCellLabel] === "Index"]]], 
+                    DynamicModuleValues :> {}], 
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetProperties", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], {MeshCellHighlight, 0, 
+                    Region`MeshInformation[
+                    MeshCellHighlight, 0, 2]}, $CellContext`value, 
+                    "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowCells0.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowCells0.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowCells0"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[PropertyValue[{
+                    $CellContext`mesh$$[], 0}, MeshCellHighlight] === 
+                    Region`MeshInformation[MeshCellHighlight, 0, 2]]]], 
+                    DynamicModuleValues :> {}], 
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetProperties", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], {MeshCellHighlight, 1, 
+                    Region`MeshInformation[
+                    MeshCellHighlight, 1, 2]}, $CellContext`value, 
+                    "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowCells1.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowCells1.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowCells1"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[PropertyValue[{
+                    $CellContext`mesh$$[], 1}, MeshCellHighlight] === 
+                    Region`MeshInformation[MeshCellHighlight, 1, 2]]]], 
+                    DynamicModuleValues :> {}], 
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetProperties", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], {MeshCellHighlight, 2, 
+                    Region`MeshInformation[
+                    MeshCellHighlight, 2, 2]}, $CellContext`value, 
+                    "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowCells2.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowCells2.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowCells2"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[PropertyValue[{
+                    $CellContext`mesh$$[], 2}, MeshCellHighlight] === 
+                    Region`MeshInformation[MeshCellHighlight, 2, 2]]]], 
+                    DynamicModuleValues :> {}]}}, 
+                   Alignment -> {Center, Center}, Spacings -> {0.8, 1}], 
+                  FrameMargins -> 10], 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentAreaGradient.9.png"]}, DefaultBaseStyle -> {}, 
+                 ImageSize -> 335]}, Spacings -> {0, 0}]], "Transform" -> 
+            Deploy[
+              Column[{
+                Panel[
+                 Grid[{{
+                    Pane[
+                    Column[{
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsTransformationTitle"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonTitle"], 
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsTransformationCaption"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonCaption"]}, 
+                    Spacings -> 0.5], ImageMargins -> {{8, 0}, {5, 5}}], 
+                    Item["", ItemSize -> Fit], 
+                    Item[
+                    Button[
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close-Hover.png"]]]]], Ribbon`Private`page = None, 
+                    FrameMargins -> 0, ContentPadding -> False, Appearance -> 
+                    None, ImageMargins -> {{0, 8}, {8, 4}}], Alignment -> 
+                    Center]}}, Alignment -> {{Left, Left, Right}, Center}, 
+                  Spacings -> {0, 0}], ImageSize -> 335, FrameMargins -> 0, 
+                 Alignment -> {Left, Center}, 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentTitleStripe.9.png"]}], 
+                Panel[
+                 Pane[
+                  Grid[{{
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MirrorHorizontal.png"]]]], 
+                    Quiet[
+                    Region`MeshAssistant["Transform", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "FlipHorizontal", "Transform"]], 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    Method -> "Queued", ImageSize -> {30, 30}, 
+                    FrameMargins -> {{1, 1}, {1, 1}}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsFlipHorizontal"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MirrorVertical.png"]]]], 
+                    Quiet[
+                    Region`MeshAssistant["Transform", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "FlipVertical", "Transform"]], 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    Method -> "Queued", ImageSize -> {30, 30}, 
+                    FrameMargins -> {{1, 1}, {1, 1}}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsFlipVertical"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "Counterclockwise90.png"]]]], 
+                    Quiet[
+                    Region`MeshAssistant["Transform", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "RotateCounterclockwise", 
+                    "Transform"]], Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    Method -> "Queued", ImageSize -> {30, 30}, 
+                    FrameMargins -> {{1, 1}, {1, 1}}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsRotateCounterclockwise"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "Clockwise90.png"]]]], 
+                    Quiet[
+                    Region`MeshAssistant["Transform", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "RotateClockwise", "Transform"]], 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    Method -> "Queued", ImageSize -> {30, 30}, 
+                    FrameMargins -> {{1, 1}, {1, 1}}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsRotateClockwise"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0]}}, 
+                   Alignment -> {Center, Center}, Spacings -> {0.8, 1}], 
+                  FrameMargins -> 10], 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentAreaGradient.9.png"]}, DefaultBaseStyle -> {}, 
+                 ImageSize -> 335]}, Spacings -> {0, 0}]], "PrintingTab" -> 
+            Deploy[
+              Column[{
+                Panel[
+                 Grid[{{
+                    Pane[
+                    Column[{
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPrintingTitle"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonTitle"], 
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPrintingCaption"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonCaption"]}, 
+                    Spacings -> 0.5], ImageMargins -> {{8, 0}, {5, 5}}], 
+                    Item["", ItemSize -> Fit], 
+                    Item[
+                    Button[
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close-Hover.png"]]]]], Ribbon`Private`page = None, 
+                    FrameMargins -> 0, ContentPadding -> False, Appearance -> 
+                    None, ImageMargins -> {{0, 8}, {8, 4}}], Alignment -> 
+                    Center]}}, Alignment -> {{Left, Left, Right}, Center}, 
+                  Spacings -> {0, 0}], ImageSize -> 335, FrameMargins -> 0, 
+                 Alignment -> {Left, Center}, 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentTitleStripe.9.png"]}], 
+                Panel[
+                 Pane[
+                  DynamicModule[{$CellContext`pservice = "Local"}, 
+                   Pane[
+                    Grid[{{
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPrint"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Region`MeshAssistant["PrintingService", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], 
+                    Dynamic[$CellContext`pservice]], ImageSize -> {70, 18}, 
+                    Method -> "Queued", FrameMargins -> 0, ImageSize -> 87, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "OrangeButtonNinePatchAppearance"], 
+                    BaseStyle -> {"RibbonWhite"}]}}, Alignment -> Bottom]], 
+                   Initialization :> (Region`MeshAssistant; 
+                    Quiet[Printout3D[]; Null]), DynamicModuleValues :> {}, 
+                   BaseStyle -> "RibbonText"], FrameMargins -> 10], 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentAreaGradient.9.png"]}, DefaultBaseStyle -> {}, 
+                 ImageSize -> 335]}, Spacings -> {0, 0}]], 
+            "MeshInformationTab" -> Deploy[
+              Column[{
+                Panel[
+                 Grid[{{
+                    Pane[
+                    Column[{
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsInformationTitle"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonTitle"], 
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsInformationCaption"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonCaption"]}, 
+                    Spacings -> 0.5], ImageMargins -> {{8, 0}, {5, 5}}], 
+                    Item["", ItemSize -> Fit], 
+                    Item[
+                    Button[
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close-Hover.png"]]]]], Ribbon`Private`page = None, 
+                    FrameMargins -> 0, ContentPadding -> False, Appearance -> 
+                    None, ImageMargins -> {{0, 8}, {8, 4}}], Alignment -> 
+                    Center]}}, Alignment -> {{Left, Left, Right}, Center}, 
+                  Spacings -> {0, 0}], ImageSize -> 335, FrameMargins -> 0, 
+                 Alignment -> {Left, Center}, 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentTitleStripe.9.png"]}], 
+                Panel[
+                 Pane[
+                  Grid[{{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsEmbeddingDimensions"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["EmbeddingDimension", 
+                    $CellContext`mesh$$[]]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}, {
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsGeometricDimensions"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["Dimension", 
+                    $CellContext`mesh$$[]]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}, {
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsVertexCount"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["CellCount", 
+                    $CellContext`mesh$$[], 0]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}, {
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsEdgeCount"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["CellCount", 
+                    $CellContext`mesh$$[], 1]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}, {
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsFaceCount"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["CellCount", 
+                    $CellContext`mesh$$[], 2]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}, {
+                    Dynamic[
+                    Switch[
+                    RegionDimension[
+                    $CellContext`mesh$$[]], 0, 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsCount"]], 
+                    BaseStyle -> {"TextStyling"}], 1, 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsLength"]], 
+                    BaseStyle -> {"TextStyling"}], 2, 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsArea"]], 
+                    BaseStyle -> {"TextStyling"}], 3, 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsVolume"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Blank[], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsRegionMeasure"]], 
+                    BaseStyle -> {"TextStyling"}]]], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["Measure", 
+                    $CellContext`mesh$$[]]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}, {
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsRegionBounds"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["Bounds", 
+                    $CellContext`mesh$$[]]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}, {
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsRegionCentroid"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["Centroid", 
+                    $CellContext`mesh$$[]]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}}, Alignment -> {{Right, Left}}, 
+                   ItemStyle -> {{Bold, Plain}}, Spacings -> {1, {0.2}}, 
+                   Dividers -> False, FrameStyle -> 
+                   RGBColor[
+                    0.7019607843137254, 0.7019607843137254, 
+                    0.7019607843137254], ItemSize -> {{13, Automatic}}, 
+                   BaseStyle -> "RibbonText"], FrameMargins -> 10], 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentAreaGradient.9.png"]}, DefaultBaseStyle -> {}, 
+                 ImageSize -> 335]}, Spacings -> {0, 0}]]}, 
+           Dynamic[Ribbon`Private`page], ImageSize -> Automatic], Alignment -> 
+          Top]}, Spacings -> {0, 0}], Initialization :> (If[
+          ValueQ[FrontEnd`Private`$RibbonDefaultPage], Ribbon`Private`page = 
+          FrontEnd`Private`$RibbonDefaultPage]; 
+        ClearAll[FrontEnd`Private`$RibbonDefaultPage]), 
+       DynamicModuleValues :> {}], 
+      DynamicModule[{
+       Ribbon`Private`page = None, Ribbon`Private`mouseover = {0}}, 
+       Column[{
+         Item[
+          Grid[{{
+             EventHandler[
+              Tooltip[
+               Button[
+                PaneSelector[{False -> Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MeshLayoutIcon.png"]]]], "RibbonTabLabel"], True -> Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MeshLayoutIconHighlight.png"]]]], 
+                    "RibbonTabLabelActive"]}, 
+                 Dynamic[
+                  FEPrivate`Or[
+                   FEPrivate`SameQ[Ribbon`Private`page, "MeshLayoutTab"], 
+                   FEPrivate`SameQ[Ribbon`Private`mouseover, {1}]]]], Null; 
+                Ribbon`Private`page = "MeshLayoutTab", BaseStyle -> {}, 
+                DefaultBaseStyle -> "RibbonButton", 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingRightNinePatchAppearance"], 
+                  "MeshLayoutTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingRightBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingRightBottomNinePatchAppearance"]], 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingRightNinePatchAppearance"], 
+                  "MeshLayoutTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingRightBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingRightBottomNinePatchAppearance"]], Appearance -> 
+                "RibbonButton"], 
+               Dynamic[
+                RawBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "meshGraphicsMeshLayoutTooltip"]], 
+                BaseStyle -> {"TextStyling"}]], {
+              "MouseEntered" :> FEPrivate`Set[Ribbon`Private`mouseover, {1}], 
+               "MouseExited" :> FEPrivate`If[
+                 FEPrivate`SameQ[Ribbon`Private`mouseover, {1}], 
+                 FEPrivate`Set[Ribbon`Private`mouseover, {0}]]}, 
+              PassEventsDown -> True], 
+             EventHandler[
+              Tooltip[
+               Button[
+                PaneSelector[{False -> Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MeshDecorationIcon.png"]]]], "RibbonTabLabel"], True -> 
+                  Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MeshDecorationIconHighlight.png"]]]], 
+                    "RibbonTabLabelActive"]}, 
+                 Dynamic[
+                  FEPrivate`Or[
+                   FEPrivate`SameQ[Ribbon`Private`page, "DecorationTab"], 
+                   FEPrivate`SameQ[Ribbon`Private`mouseover, {2}]]]], Null; 
+                Ribbon`Private`page = "DecorationTab", BaseStyle -> {}, 
+                DefaultBaseStyle -> "RibbonButton", 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingLeftRightNinePatchAppearance"],
+                   "DecorationTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomNinePatchAppearance"]], 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingLeftRightNinePatchAppearance"],
+                   "DecorationTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomNinePatchAppearance"]], 
+                Appearance -> "RibbonButton"], 
+               Dynamic[
+                RawBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "meshGraphicsDecorationTooltip"]], 
+                BaseStyle -> {"TextStyling"}]], {
+              "MouseEntered" :> FEPrivate`Set[Ribbon`Private`mouseover, {2}], 
+               "MouseExited" :> FEPrivate`If[
+                 FEPrivate`SameQ[Ribbon`Private`mouseover, {2}], 
+                 FEPrivate`Set[Ribbon`Private`mouseover, {0}]]}, 
+              PassEventsDown -> True], 
+             EventHandler[
+              Tooltip[
+               Button[
+                PaneSelector[{False -> Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PrintingIcon.png"]]]], "RibbonTabLabel"], True -> Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PrintingIconHighlight.png"]]]], "RibbonTabLabelActive"]}, 
+                 Dynamic[
+                  FEPrivate`Or[
+                   FEPrivate`SameQ[Ribbon`Private`page, "PrintingTab"], 
+                   FEPrivate`SameQ[Ribbon`Private`mouseover, {3}]]]], Null; 
+                Ribbon`Private`page = "PrintingTab", BaseStyle -> {}, 
+                DefaultBaseStyle -> "RibbonButton", 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingLeftRightNinePatchAppearance"],
+                   "PrintingTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomNinePatchAppearance"]], 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingLeftRightNinePatchAppearance"],
+                   "PrintingTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftRightBottomNinePatchAppearance"]], 
+                Appearance -> "RibbonButton"], 
+               Dynamic[
+                RawBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "meshGraphicsPrintingTooltip"]], 
+                BaseStyle -> {"TextStyling"}]], {
+              "MouseEntered" :> FEPrivate`Set[Ribbon`Private`mouseover, {3}], 
+               "MouseExited" :> FEPrivate`If[
+                 FEPrivate`SameQ[Ribbon`Private`mouseover, {3}], 
+                 FEPrivate`Set[Ribbon`Private`mouseover, {0}]]}, 
+              PassEventsDown -> True], 
+             EventHandler[
+              Tooltip[
+               Button[
+                PaneSelector[{False -> Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "InformationIcon.png"]]]], "RibbonTabLabel"], True -> 
+                  Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "InformationIconHighlight.png"]]]], 
+                    "RibbonTabLabelActive"]}, 
+                 Dynamic[
+                  FEPrivate`Or[
+                   FEPrivate`SameQ[Ribbon`Private`page, "MeshInformationTab"], 
+                   FEPrivate`SameQ[Ribbon`Private`mouseover, {4}]]]], Null; 
+                Ribbon`Private`page = "MeshInformationTab", BaseStyle -> {}, 
+                DefaultBaseStyle -> "RibbonButton", 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingLeftNinePatchAppearance"], 
+                  "MeshInformationTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftBottomNinePatchAppearance"]], 
+                FrameMargins -> {{10, 10}, {0, 0}}, ImageSize -> 49, 
+                Appearance :> FEPrivate`Switch[Ribbon`Private`page, None, 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", "TabAbuttingLeftNinePatchAppearance"], 
+                  "MeshInformationTab", 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftBottomPressedNinePatchAppearance"], 
+                  Blank[], 
+                  FEPrivate`FrontEndResource[
+                  "FEExpressions", 
+                   "TabAbuttingLeftBottomNinePatchAppearance"]], Appearance -> 
+                "RibbonButton"], 
+               Dynamic[
+                RawBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "meshGraphicsInformationTooltip"]], 
+                BaseStyle -> {"TextStyling"}]], {
+              "MouseEntered" :> FEPrivate`Set[Ribbon`Private`mouseover, {4}], 
+               "MouseExited" :> FEPrivate`If[
+                 FEPrivate`SameQ[Ribbon`Private`mouseover, {4}], 
+                 FEPrivate`Set[Ribbon`Private`mouseover, {0}]]}, 
+              PassEventsDown -> True], 
+             EventHandler[
+              Button[
+              "", Null, BaseStyle -> {ShowStringCharacters -> False}, 
+               DefaultBaseStyle -> {}, FrameMargins -> {{0, 0}, {0, 0}}, 
+               ImageSize :> 
+               FEPrivate`Switch[
+                Ribbon`Private`page, None, {1, 1}, "MeshLayoutTab", 139, 
+                 "DecorationTab", 139, "PrintingTab", 139, 
+                 "MeshInformationTab", 139, 5, 290, 
+                 Blank[], {1, 1}], Enabled -> False, Appearance :> 
+               FEPrivate`Switch[Ribbon`Private`page, None, None, 
+                 Blank[], 
+                 FEPrivate`FrontEndResource[
+                 "FEExpressions", "TabEmptyNinePatchAppearance"]]], {
+              "MouseEntered" :> FEPrivate`Set[Ribbon`Private`mouseover, {5}], 
+               "MouseExited" :> FEPrivate`If[
+                 FEPrivate`SameQ[Ribbon`Private`mouseover, {5}], 
+                 FEPrivate`Set[Ribbon`Private`mouseover, {0}]]}, 
+              PassEventsDown -> True]}}, Spacings -> {0, 0}, Alignment -> 
+           Bottom], Alignment -> Bottom], 
+         Item[
+          PaneSelector[{None -> "", "MeshLayoutTab" -> Deploy[
+              Column[{
+                Panel[
+                 Grid[{{
+                    Pane[
+                    Column[{
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsMeshLayoutTitle"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonTitle"], 
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsMeshLayoutCaption"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonCaption"]}, 
+                    Spacings -> 0.5], ImageMargins -> {{8, 0}, {5, 5}}], 
+                    Item["", ItemSize -> Fit], 
+                    Item[
+                    Button[
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close-Hover.png"]]]]], Ribbon`Private`page = None, 
+                    FrameMargins -> 0, ContentPadding -> False, Appearance -> 
+                    None, ImageMargins -> {{0, 8}, {8, 4}}], Alignment -> 
+                    Center]}}, Alignment -> {{Left, Left, Right}, Center}, 
+                  Spacings -> {0, 0}], ImageSize -> 335, FrameMargins -> 0, 
+                 Alignment -> {Left, Center}, 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentTitleStripe.9.png"]}], 
+                Panel[
+                 Pane[
+                  Grid[{{
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MeshLayoutDefault.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], Automatic, "MeshLayoutTab"]; Null, 
+                    ImageSize -> {30, 30}, FrameMargins -> {{1, 1}, {1, 1}}, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsMeshLayoutDefault"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MeshLayoutLines.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Lines", "MeshLayoutTab"]; Null, 
+                    ImageSize -> {30, 30}, FrameMargins -> {{1, 1}, {1, 1}}, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsLines"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "MeshLayoutPolygons.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Polygons", "MeshLayoutTab"]; Null,
+                     ImageSize -> {30, 30}, FrameMargins -> {{1, 1}, {1, 1}}, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPolygons"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PlotThemeShowcase.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Showcase", "MeshLayoutTab"]; Null,
+                     ImageSize -> {30, 30}, FrameMargins -> {{1, 1}, {1, 1}}, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowcase"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PlotThemeIllustration.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Illustration", "MeshLayoutTab"]; 
+                    Null, ImageSize -> {30, 30}, 
+                    FrameMargins -> {{1, 1}, {1, 1}}, Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsIllustration"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0]}, {
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PlotThemeBusiness.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Business", "MeshLayoutTab"]; Null,
+                     ImageSize -> {30, 30}, FrameMargins -> {{1, 1}, {1, 1}}, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPlotThemeBusiness"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PlotThemeDetailed.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Detailed", "MeshLayoutTab"]; Null,
+                     ImageSize -> {30, 30}, FrameMargins -> {{1, 1}, {1, 1}}, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPlotThemeDetailed"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PlotThemeMarketing.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Marketing", "MeshLayoutTab"]; 
+                    Null, ImageSize -> {30, 30}, 
+                    FrameMargins -> {{1, 1}, {1, 1}}, Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPlotThemeMarketing"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PlotThemeScientific.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Scientific", "MeshLayoutTab"]; 
+                    Null, ImageSize -> {30, 30}, 
+                    FrameMargins -> {{1, 1}, {1, 1}}, Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPlotThemeScientific"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0], 
+                    Tooltip[
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "PlotThemeWeb.png"]]]], 
+                    Region`MeshAssistant["SetPlotTheme", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], "Web", "MeshLayoutTab"]; Null, 
+                    ImageSize -> {30, 30}, FrameMargins -> {{1, 1}, {1, 1}}, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "SubtitleButtonNinePatchAppearance"], 
+                    BaseStyle -> "RibbonText", ImageSize -> 50], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPlotThemeWeb"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 0]}}, 
+                   Alignment -> {Center, Center}, Spacings -> Dynamic[{
+                    FEPrivate`If[
+                    FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"], 
+                    0.8, 0.7], 1}]], FrameMargins -> 10], 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentAreaGradient.9.png"]}, DefaultBaseStyle -> {}, 
+                 ImageSize -> 335]}, Spacings -> {0, 0}]], "DecorationTab" -> 
+            Deploy[
+              Column[{
+                Panel[
+                 Grid[{{
+                    Pane[
+                    Column[{
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsDecorationTitle"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonTitle"], 
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsDecorationCaption"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonCaption"]}, 
+                    Spacings -> 0.5], ImageMargins -> {{8, 0}, {5, 5}}], 
+                    Item["", ItemSize -> Fit], 
+                    Item[
+                    Button[
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close-Hover.png"]]]]], Ribbon`Private`page = None, 
+                    FrameMargins -> 0, ContentPadding -> False, Appearance -> 
+                    None, ImageMargins -> {{0, 8}, {8, 4}}], Alignment -> 
+                    Center]}}, Alignment -> {{Left, Left, Right}, Center}, 
+                  Spacings -> {0, 0}], ImageSize -> 335, FrameMargins -> 0, 
+                 Alignment -> {Left, Center}, 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentTitleStripe.9.png"]}], 
+                Panel[
+                 Pane[
+                  Grid[{{
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetGraphicProperties", 
+                    ButtonNotebook[], 
+                    Dynamic[$CellContext`mesh$$], Frame -> $CellContext`value,
+                     "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowFrame.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowFrame.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowFrame"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[
+                    ReplaceAll[
+                    ReplaceAll[Frame, 
+                    Quiet[
+                    Options[
+                    Show[
+                    $CellContext`mesh$$[]], Frame]]], Frame -> False]]]], 
+                    DynamicModuleValues :> {}], 
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetGraphicProperties", 
+                    ButtonNotebook[], 
+                    Dynamic[$CellContext`mesh$$], Axes -> $CellContext`value, 
+                    "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowAxes.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowAxes.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowAxes"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[
+                    ReplaceAll[
+                    ReplaceAll[Axes, 
+                    Quiet[
+                    Options[
+                    Show[
+                    $CellContext`mesh$$[]], Axes]]], Axes -> False]]]], 
+                    DynamicModuleValues :> {}], 
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetProperties", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], {
+                    MeshCellLabel, 0, "Index"}, $CellContext`value, 
+                    "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowLabels0.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowLabels0.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowLabels0"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[PropertyValue[{
+                    $CellContext`mesh$$[], 0}, MeshCellLabel] === "Index"]]], 
+                    DynamicModuleValues :> {}], 
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetProperties", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], {
+                    MeshCellLabel, 1, "Index"}, $CellContext`value, 
+                    "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowLabels1.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowLabels1.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowLabels1"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[PropertyValue[{
+                    $CellContext`mesh$$[], 1}, MeshCellLabel] === "Index"]]], 
+                    DynamicModuleValues :> {}], 
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetProperties", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], {
+                    MeshCellLabel, 2, "Index"}, $CellContext`value, 
+                    "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowLabels2.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowLabels2.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowLabels2"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[PropertyValue[{
+                    $CellContext`mesh$$[], 2}, MeshCellLabel] === "Index"]]], 
+                    DynamicModuleValues :> {}], 
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetProperties", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], {MeshCellHighlight, 0, 
+                    Region`MeshInformation[
+                    MeshCellHighlight, 0, 2]}, $CellContext`value, 
+                    "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowCells0.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowCells0.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowCells0"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[PropertyValue[{
+                    $CellContext`mesh$$[], 0}, MeshCellHighlight] === 
+                    Region`MeshInformation[MeshCellHighlight, 0, 2]]]], 
+                    DynamicModuleValues :> {}], 
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetProperties", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], {MeshCellHighlight, 1, 
+                    Region`MeshInformation[
+                    MeshCellHighlight, 1, 2]}, $CellContext`value, 
+                    "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowCells1.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowCells1.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowCells1"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[PropertyValue[{
+                    $CellContext`mesh$$[], 1}, MeshCellHighlight] === 
+                    Region`MeshInformation[MeshCellHighlight, 1, 2]]]], 
+                    DynamicModuleValues :> {}], 
+                    DynamicModule[{$CellContext`value}, 
+                    DynamicWrapper[
+                    Tooltip[
+                    Toggler[
+                    
+                    Dynamic[$CellContext`value, ($CellContext`value = #; 
+                    Region`MeshAssistant["SetProperties", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], {MeshCellHighlight, 2, 
+                    Region`MeshInformation[
+                    MeshCellHighlight, 2, 2]}, $CellContext`value, 
+                    "DecorationTab"])& ], {True -> Overlay[{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Pressed.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowCells2.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0], False -> 
+                    Overlay[{
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Default.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "SmallSquareButton-Highlight.png"]]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "MeshGraphics"}, 
+                    "ShowCells2.png"]]]]}, {1, 2}, 1, Alignment -> Center, 
+                    ImageSize -> {30, 30}, ImageMargins -> 0]}], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsShowCells2"]], 
+                    BaseStyle -> {"TextStyling"}], TooltipDelay -> 
+                    0], $CellContext`value = TrueQ[
+                    Quiet[PropertyValue[{
+                    $CellContext`mesh$$[], 2}, MeshCellHighlight] === 
+                    Region`MeshInformation[MeshCellHighlight, 2, 2]]]], 
+                    DynamicModuleValues :> {}]}}, 
+                   Alignment -> {Center, Center}, Spacings -> {0.8, 1}], 
+                  FrameMargins -> 10], 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentAreaGradient.9.png"]}, DefaultBaseStyle -> {}, 
+                 ImageSize -> 335]}, Spacings -> {0, 0}]], "PrintingTab" -> 
+            Deploy[
+              Column[{
+                Panel[
+                 Grid[{{
+                    Pane[
+                    Column[{
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPrintingTitle"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonTitle"], 
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPrintingCaption"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonCaption"]}, 
+                    Spacings -> 0.5], ImageMargins -> {{8, 0}, {5, 5}}], 
+                    Item["", ItemSize -> Fit], 
+                    Item[
+                    Button[
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close-Hover.png"]]]]], Ribbon`Private`page = None, 
+                    FrameMargins -> 0, ContentPadding -> False, Appearance -> 
+                    None, ImageMargins -> {{0, 8}, {8, 4}}], Alignment -> 
+                    Center]}}, Alignment -> {{Left, Left, Right}, Center}, 
+                  Spacings -> {0, 0}], ImageSize -> 335, FrameMargins -> 0, 
+                 Alignment -> {Left, Center}, 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentTitleStripe.9.png"]}], 
+                Panel[
+                 Pane[
+                  DynamicModule[{$CellContext`pservice = "Local"}, 
+                   Pane[
+                    Grid[{{
+                    Button[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsPrint"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Region`MeshAssistant["PrintingService", 
+                    ButtonNotebook[], 
+                    $CellContext`mesh$$[], 
+                    Dynamic[$CellContext`pservice]], ImageSize -> {70, 18}, 
+                    Method -> "Queued", FrameMargins -> 0, ImageSize -> 87, 
+                    Appearance :> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "OrangeButtonNinePatchAppearance"], 
+                    BaseStyle -> {"RibbonWhite"}]}}, Alignment -> Bottom]], 
+                   Initialization :> (Region`MeshAssistant; 
+                    Quiet[Printout3D[]; Null]), DynamicModuleValues :> {}, 
+                   BaseStyle -> "RibbonText"], FrameMargins -> 10], 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentAreaGradient.9.png"]}, DefaultBaseStyle -> {}, 
+                 ImageSize -> 335]}, Spacings -> {0, 0}]], 
+            "MeshInformationTab" -> Deploy[
+              Column[{
+                Panel[
+                 Grid[{{
+                    Pane[
+                    Column[{
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsInformationTitle"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonTitle"], 
+                    Style[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsInformationCaption"]], 
+                    BaseStyle -> {"TextStyling"}], "RibbonCaption"]}, 
+                    Spacings -> 0.5], ImageMargins -> {{8, 0}, {5, 5}}], 
+                    Item["", ItemSize -> Fit], 
+                    Item[
+                    Button[
+                    Mouseover[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`ToFileName[{"Ribbons", "Common"}, 
+                    "Close-Hover.png"]]]]], Ribbon`Private`page = None, 
+                    FrameMargins -> 0, ContentPadding -> False, Appearance -> 
+                    None, ImageMargins -> {{0, 8}, {8, 4}}], Alignment -> 
+                    Center]}}, Alignment -> {{Left, Left, Right}, Center}, 
+                  Spacings -> {0, 0}], ImageSize -> 335, FrameMargins -> 0, 
+                 Alignment -> {Left, Center}, 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentTitleStripe.9.png"]}], 
+                Panel[
+                 Pane[
+                  Grid[{{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsEmbeddingDimensions"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["EmbeddingDimension", 
+                    $CellContext`mesh$$[]]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}, {
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsGeometricDimensions"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["Dimension", 
+                    $CellContext`mesh$$[]]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}, {
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsVertexCount"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["CellCount", 
+                    $CellContext`mesh$$[], 0]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}, {
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsEdgeCount"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["CellCount", 
+                    $CellContext`mesh$$[], 1]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}, {
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsFaceCount"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["CellCount", 
+                    $CellContext`mesh$$[], 2]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}, {
+                    Dynamic[
+                    Switch[
+                    RegionDimension[
+                    $CellContext`mesh$$[]], 0, 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsCount"]], 
+                    BaseStyle -> {"TextStyling"}], 1, 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsLength"]], 
+                    BaseStyle -> {"TextStyling"}], 2, 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsArea"]], 
+                    BaseStyle -> {"TextStyling"}], 3, 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsVolume"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Blank[], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsRegionMeasure"]], 
+                    BaseStyle -> {"TextStyling"}]]], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["Measure", 
+                    $CellContext`mesh$$[]]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}, {
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsRegionBounds"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["Bounds", 
+                    $CellContext`mesh$$[]]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}, {
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "meshGraphicsRegionCentroid"]], 
+                    BaseStyle -> {"TextStyling"}], 
+                    Dynamic[
+                    BoxForm`Undeploy[
+                    Region`MeshAssistant["Centroid", 
+                    $CellContext`mesh$$[]]], SynchronousUpdating -> False, 
+                    CachedValue -> StyleBox[
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ShowContents -> False, 
+                    StripOnInput -> False]]}}, Alignment -> {{Right, Left}}, 
+                   ItemStyle -> {{Bold, Plain}}, Spacings -> {1, {0.2}}, 
+                   Dividers -> False, FrameStyle -> 
+                   RGBColor[
+                    0.7019607843137254, 0.7019607843137254, 
+                    0.7019607843137254], ItemSize -> {{13, Automatic}}, 
+                   BaseStyle -> "RibbonText"], FrameMargins -> 10], 
+                 Appearance -> {
+                  "Default" -> 
+                   FrontEnd`FileName[{"Ribbons", "Common"}, 
+                    "ContentAreaGradient.9.png"]}, DefaultBaseStyle -> {}, 
+                 ImageSize -> 335]}, Spacings -> {0, 0}]]}, 
+           Dynamic[Ribbon`Private`page], ImageSize -> Automatic], Alignment -> 
+          Top]}, Spacings -> {0, 0}], Initialization :> (If[
+          ValueQ[FrontEnd`Private`$RibbonDefaultPage], Ribbon`Private`page = 
+          FrontEnd`Private`$RibbonDefaultPage]; 
+        ClearAll[FrontEnd`Private`$RibbonDefaultPage]), 
+       DynamicModuleValues :> {}]]], StandardForm],
+   ImageSizeCache->{197., {21.9169921875, 27.0830078125}},
+   TrackedSymbols:>{$CellContext`mesh$$}],
+  BaseStyle->{"RibbonText"},
+  DynamicModuleValues:>{{DownValues[$CellContext`mesh$$] = {HoldPattern[
+         $CellContext`mesh$$[]] :> With[{expr$ = ToExpression[
+            MathLink`CallFrontEnd[
+             FrontEnd`NotebookRead[
+              FrontEnd`AttachedCellParent[]]]]}, 
+         If[
+          Or[
+           MeshRegionQ[expr$], 
+           BoundaryMeshRegionQ[expr$]], $CellContext`mesh$$[] = expr$]]}}},
+  Initialization:>(If[
+     RegionQ[
+     FrontEnd`Private`$MeshGraphicsEditorDefault], $CellContext`mesh$$[] = 
+      FrontEnd`Private`$MeshGraphicsEditorDefault; 
+     Null, $CellContext`mesh$$[] := With[{$CellContext`expr$ = ToExpression[
+          MathLink`CallFrontEnd[
+           FrontEnd`NotebookRead[
+            FrontEnd`AttachedCellParent[]]]]}, 
+       If[
+        Or[
+         MeshRegionQ[$CellContext`expr$], 
+         BoundaryMeshRegionQ[$CellContext`expr$]], $CellContext`mesh$$[] = \
+$CellContext`expr$]]]; ClearAll[FrontEnd`Private`$MeshGraphicsEditorDefault]; 
+   If[
+     ValueQ[FrontEnd`Private`$DefaultMeshMoreMode], $CellContext`alphamode$$ = 
+     FrontEnd`Private`$DefaultMeshMoreMode]; 
+   ClearAll[FrontEnd`Private`$DefaultMeshMoreMode]; If[
+     ValueQ[FrontEnd`Private`$DefaultMeshMoreQuery], $CellContext`query$$ = 
+     FrontEnd`Private`$DefaultMeshMoreQuery]; 
+   ClearAll[FrontEnd`Private`$DefaultMeshMoreQuery]; Null),
+  SynchronousInitialization->False]],
+ Evaluator->"System",
+ Deployed->True,
+ CellContext->Cell,
+ DynamicUpdating->True,
+ DynamicEvaluationTimeout->12,
+ Magnification->1,
+ CellTags->
+  "AttachedMeshGraphics",ExpressionUUID->"6ab39963-07cd-48ff-a394-\
+9ad33324e6f7"]
+},
+WindowSize->{808, 751},
+WindowMargins->{{316, Automatic}, {Automatic, 50}},
+FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 23, \
+2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "AttachedMeshGraphics"->{
+  Cell[558, 20, 132513, 2827, 60, InheritFromParent,
+   CellTags->"AttachedMeshGraphics"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"AttachedMeshGraphics", 133395, 2860}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 132513, 2827, 60, InheritFromParent,
+ CellTags->"AttachedMeshGraphics"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

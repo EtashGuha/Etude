@@ -1,0 +1,11 @@
+{"Sqrt", "E", "Pi", "Cos", "Sin", "Exp", "I", "Log", "Quantity", "None", "D", 
+ "Integrate", "FresnelC", "Csc", "Cot", "Abs", "Sinh", "Derivative", "Cosh", 
+ "BitOr", "Tan", "Infinity", "Binomial", "Union", "Subscript", "Erf", 
+ "DiracDelta", "RiemannSiegelZ", "Ratios", "PrimeZetaP", "Degree", 
+ "BaseForm", "Sec", "Range", "Product", "FresnelS", "Complement", "Xor", 
+ "Rational", "N", "Intersection", "Coth", "Sum", "HeavisideTheta", 
+ "HarmonicNumber", "Floor", "BitAnd", "Beta", "WeierstrassInvariants", 
+ "UnitStep", "Tanh", "SinIntegral", "Sech", "Gamma", "Fibonacci", "EulerPhi", 
+ "Conjunction", "Conjugate", "ArcSinh", "ArcSin", "ArcCos", "SquaresR", 
+ "Sign", "PlusMinus", "Mod", "Log2", "Limit", "JacobiDN", "Inverse", 
+ "EllipticE", "CosIntegral", "ArcTan", "ArcCot"}

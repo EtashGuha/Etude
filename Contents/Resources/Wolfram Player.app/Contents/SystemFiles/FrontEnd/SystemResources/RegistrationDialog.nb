@@ -1,0 +1,275 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9769,        265]
+NotebookOptionsPosition[      8316,        222]
+NotebookOutlinePosition[      9716,        262]
+CellTagsIndexPosition[      9673,        259]
+WindowTitle->Wolfram Product Registration
+WindowFrame->ModalDialog*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ PanelBox["\<\"\"\>",
+  Appearance->{
+   "Default" -> 
+    FrontEnd`FileName[{"Dialogs", "Activation"}, 
+      "ActivationDialogHeader.9.png"]},
+  ImageSize->Full]],
+ CellMargins->{{0, -5}, {-2, -2}},
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue["PanelFontSize"]],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     PaneBox[
+      TagBox[GridBox[{
+         {
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource[
+             "ActivationDialog", "RegistrationTitle"], StandardForm],
+            ImageSizeCache->{320., {4., 12.}}], "Heading",
+           StripOnInput->False]},
+         {
+          DynamicBox[ToBoxes[
+            FEPrivate`FrontEndResource[
+            "ActivationDialog", "RegistrationSubtitle"], StandardForm],
+           ImageSizeCache->{451., {3., 11.}}]},
+         {
+          TagBox[GridBox[{
+             {
+              DynamicBox[FEPrivate`ImportImage[
+                
+                FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                 "RegistrationDownloadIcon.png"]],
+               ImageSizeCache->{35., {26., 30.}}], 
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "ActivationDialog", "RegistrationDownload"], StandardForm],
+               ImageSizeCache->{124., {22.7421875, 12.568359375}}], 
+              DynamicBox[FEPrivate`ImportImage[
+                
+                FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                 "RegistrationNotificationIcon.png"]],
+               ImageSizeCache->{41., {15., 20.}}], 
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "ActivationDialog", "RegistrationNotification"], StandardForm],
+               ImageSizeCache->{143., {42.7421875, 12.568359375}}]},
+             {
+              DynamicBox[FEPrivate`ImportImage[
+                
+                FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                 "RegistrationViewIcon.png"]],
+               ImageSizeCache->{49., {16., 21.}}], 
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "ActivationDialog", "RegistrationView"], StandardForm],
+               ImageSizeCache->{98., {23., 12.568359375}}], 
+              DynamicBox[FEPrivate`ImportImage[
+                
+                FrontEnd`ToFileName[{"Dialogs", "Activation"}, 
+                 "RegistrationManageIcon.png"]],
+               ImageSizeCache->{42., {14., 18.}}], 
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "ActivationDialog", "RegistrationManage"], StandardForm],
+               ImageSizeCache->{181., {22.7421875, 12.568359375}}]},
+             {"", "", "", 
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "ActivationDialog", "RegistrationMore"], StandardForm],
+               ImageSizeCache->{74., {1., 10.}}]}
+            },
+            AutoDelete->False,
+            BaselinePosition->{{1, 1}, Baseline},
+            GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+            GridBoxItemSize->{"Columns" -> {{Automatic, Fit}}},
+            GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{2}}}],
+           "Grid"]}
+        },
+        BaseStyle->"ControlStyle",
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{Left}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {0, 1, 3}}],
+       "Column"],
+      FrameMargins->{{60, 0}, {0, 20}},
+      ImageSize->{650, 340},
+      ScrollPosition->{0., 0.}]},
+    {
+     PaneBox[
+      TagBox[GridBox[{
+         {
+          ButtonBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource[
+             "ActivationDialog", "RegistrationNever"], StandardForm],
+            ImageSizeCache->{97., {3., 10.}}],
+           Appearance->Automatic,
+           
+           ButtonFunction:>(
+            CurrentValue[$FrontEnd, {
+               PrivateFrontEndOptions, "LastRegistrationReminderDate"}] = 
+             None; FrontEndExecute[{
+               FrontEndToken[
+                FrontEnd`EvaluationNotebook[], "Close"]}]),
+           Evaluator->Automatic,
+           Method->"Preemptive"], 
+          ButtonBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource[
+             "ActivationDialog", "RegistrationLater"], StandardForm],
+            ImageSizeCache->{83., {3., 10.}}],
+           Appearance->Automatic,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEndToken[
+               FrontEnd`EvaluationNotebook[], "Close"]}],
+           Evaluator->Automatic,
+           Method->"Preemptive"], "", 
+          ButtonBox[
+           PaneBox[
+            StyleBox[
+             
+             DynamicBox[FEPrivate`FrontEndResource[
+              "ActivationDialog", "RegistrationNow"],
+              ImageSizeCache->{79., {3., 10.}},
+              
+              Initialization:>(
+               CurrentValue[$FrontEnd, {
+                 PrivateFrontEndOptions, "LastRegistrationReminderDate"}] = 
+               FE`Evaluate[
+                 FEPrivate`DateList[]])],
+             StripOnInput->False,
+             LineColor->GrayLevel[1],
+             FrontFaceColor->GrayLevel[1],
+             BackFaceColor->GrayLevel[1],
+             GraphicsColor->GrayLevel[1],
+             FontWeight->Plain,
+             FontColor->GrayLevel[1]],
+            FrameMargins->{{10, 10}, {0, 0}}],
+           
+           Appearance->{
+            "Default" -> 
+             FrontEnd`FileName[{"Dialogs", "Activation"}, 
+               "RedButton-Default.9.png"], "Hover" -> 
+             FrontEnd`FileName[{"Dialogs", "Activation"}, 
+               "RedButton-Hover.9.png"], "Pressed" -> 
+             FrontEnd`FileName[{"Dialogs", "Activation"}, 
+               "RedButton-Pressed.9.png"]},
+           
+           ButtonFunction:>(
+            FE`hyperlinkCoded[
+             "https://user.wolfram.com/portal/ProductRegistration", 
+              "source=registration"]; FE`Evaluate[
+              FEPrivate`SetUserRegistered[]]; FrontEndExecute[{
+               FrontEndToken[
+                FrontEnd`EvaluationNotebook[], "Close"]}]),
+           Evaluator->Automatic,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {3 -> Fit}}],
+       "Grid"],
+      Alignment->Center,
+      FrameMargins->{{10, 10}, {0, 0}},
+      ImageSize->{650, 40}]}
+   },
+   DefaultBaseStyle->"Column",
+   FrameStyle->GrayLevel[0.8],
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {{
+        GrayLevel[1], None}}},
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
+  "Column"]],
+ CellMargins->0,
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue["PanelFontSize"]]
+},
+NotebookEventActions->{"WindowClose" :> MathLink`CallFrontEnd[
+    FrontEnd`StartupAction[]]},
+WindowSize->{650, 
+  FEPrivate`If[False, 475, 460]},
+WindowMargins->Automatic,
+WindowFrame->"ModalDialog",
+WindowTitle->Dynamic[
+  FEPrivate`FrontEndResource["ActivationDialog", "RegistrationWindowTitle"]],
+PrivateNotebookOptions->{"ExcludeFromShutdown"->False,
+"FileOutlineCache"->True},
+CellContext->"Global`",
+ButtonBoxOptions->{ImageSize->FrontEnd`CurrentValue["DefaultButtonSize"]},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (May 1, 2014)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "SystemDialog.nb"]], 
+   Cell[
+    StyleData[All], AutoItalicWords -> {"Mathematica", "Premier Service"}], 
+   Cell[
+    StyleData["Heading", StyleDefinitions -> StyleData["DialogStyle"]], 
+    FontSize -> FEPrivate`If[False, 15, 16], FontColor -> 
+    RGBColor[0.88, 0.02, 0]], 
+   Cell[
+    StyleData["DialogStyle"], FontFamily -> "Helvetica", FontSize -> 
+    FEPrivate`If[False, 11, 12], FontWeight -> Bold, FontColor -> 
+    GrayLevel[0]]}, Visible -> False, FrontEndVersion -> 
+  "10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (May 1, 2014)", 
+  StyleDefinitions -> "Default.nb"],
+Modal -> True
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[605, 21, 568, 18, 68, InheritFromParent,
+ PageBreakAbove->True,
+ PageBreakWithin->False],
+Cell[1176, 41, 7136, 179, 382, InheritFromParent,
+ PageBreakAbove->True,
+ PageBreakWithin->False]
+}
+]
+*)
+
+(* End of internal cache information *)
+

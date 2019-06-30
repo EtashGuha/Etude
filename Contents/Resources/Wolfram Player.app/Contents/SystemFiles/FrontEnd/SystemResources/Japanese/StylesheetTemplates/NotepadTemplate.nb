@@ -1,0 +1,131 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3692,        122]
+NotebookOptionsPosition[      2644,         83]
+NotebookOutlinePosition[      3070,        100]
+CellTagsIndexPosition[      3027,         97]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\:30bb\:30af\:30b7\:30e7\:30f3\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b", "Section"],
+
+Cell["\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e \:8a55\:4fa1\:3059\:308b\:5165\:529b\:5f0f\:306f\:ff0c\:4e0b\:306e\
+\:5225\:306e\:30bb\:30eb\:306b\:5165\:529b\:3059\:308b\:ff0e", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"2", "+", "2"}]], "Input"],
+
+Cell[BoxData["4"], "Output"]
+}, Open  ]],
+
+Cell["\:30c6\:30ad\:30b9\:30c8\:3092\:ff0c\:3053\:3053\:306b\:5165\:529b\:ff0e\
+\:8868\:793a\:3059\:308b\:5f0f\:3092\:4e0b\:306e\:5225\:306e\:30bb\:30eb\:306b\
+\:5165\:529b\:3059\:308b\:ff0e ", "Text"],
+
+Cell[BoxData[
+ RowBox[{"2", "+", "2"}]], "DisplayFormula"],
+
+Cell[CellGroupData[{
+
+Cell["\:9ed2\:4e38\:4ed8\:304d\:306e\:9805\:76ee\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e", "Item"],
+
+Cell[CellGroupData[{
+
+Cell["\:9ed2\:4e38\:4ed8\:304d\:30b5\:30d6\:9805\:76ee\:3092\:3053\:3053\:306b\
+\:5165\:529b\:3059\:308b\:ff0e", "Subitem"],
+
+Cell["\:9ed2\:4e38\:4ed8\:304d\:30b5\:30d6\:9805\:76ee\:3092\:3053\:3053\:306b\
+\:5165\:529b\:3059\:308b\:ff0e", "Subitem"],
+
+Cell["\:30b5\:30d6\:9805\:76ee\:306e\:6bb5\:843d\:30c6\:30ad\:30b9\:30c8\:3092\
+\:3053\:3053\:306b\:5165\:529b\:3059\:308b\:ff0e", "SubitemParagraph"]
+}, Open  ]],
+
+Cell["\:9ed2\:4e38\:4ed8\:304d\:306e\:9805\:76ee\:3092\:3053\:3053\:306b\:5165\
+\:529b\:3059\:308b\:ff0e", "Item"],
+
+Cell["\:9805\:76ee\:306e\:6bb5\:843d\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b\:ff0e", "ItemParagraph"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:30bb\:30af\:30b7\:30e7\:30f3\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b", "Section"],
+
+Cell["\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e \:8868\:793a\:3059\:308b\:756a\:53f7\:4ed8\:304d\:306e\:5f0f\:3092\
+\:4e0b\:306e\:5225\:306e\:30bb\:30eb\:306b\:5165\:529b\:3059\:308b\:ff0e", \
+"Text"],
+
+Cell[BoxData[
+ RowBox[{"2", "+", "2"}]], "DisplayFormulaNumbered"]
+}, Open  ]]
+},
+WindowSize->{775, 697},
+WindowMargins->{{Automatic, 322}, {14, Automatic}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (2013\:5e7412\:670826\
+\:65e5)",
+StyleDefinitions->FrontEnd`FileName[{"Utility"}, "Notepad.nb", 
+  CharacterEncoding -> "ShiftJIS"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 123, 1, 67, "Section"],
+Cell[705, 25, 225, 2, 30, "Text"],
+Cell[CellGroupData[{
+Cell[955, 31, 49, 1, 28, "Input"],
+Cell[1007, 34, 28, 0, 28, "Output"]
+}, Open  ]],
+Cell[1050, 37, 201, 2, 30, "Text"],
+Cell[1254, 41, 58, 1, 22, "DisplayFormula"],
+Cell[CellGroupData[{
+Cell[1337, 46, 114, 1, 24, "Item"],
+Cell[CellGroupData[{
+Cell[1476, 51, 123, 1, 24, "Subitem"],
+Cell[1602, 54, 123, 1, 24, "Subitem"],
+Cell[1728, 57, 150, 1, 21, "SubitemParagraph"]
+}, Open  ]],
+Cell[1893, 61, 114, 1, 24, "Item"],
+Cell[2010, 64, 135, 1, 21, "ItemParagraph"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2194, 71, 123, 1, 67, "Section"],
+Cell[2320, 74, 239, 3, 30, "Text"],
+Cell[2562, 79, 66, 1, 23, "DisplayFormulaNumbered"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

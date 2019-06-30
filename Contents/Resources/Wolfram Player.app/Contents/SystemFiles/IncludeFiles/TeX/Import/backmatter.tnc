@@ -1,0 +1,98 @@
+\message{FILE: This is backmatter.tnc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Filename: bacmatter.tnc
+%%
+%%
+%% Purpose: This file takes the backmatter commands common to the
+%%          article, book, and report classes and defines them in one
+%%          place so that global changes can be made in one location
+%%          instead of three or more.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Define \appendix and \appendixname
+%%
+%% To Do: Determine the appropriate target Cell Style and change this
+%%        to create a Cell of that style with \appendixname as the
+%%        content.
+%%
+\newcommand{\appendixname}{Appendix}
+\newcommand{\appendix}{\appendixname}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Bibliography / References related macros.
+%%
+
+\newdimen\bibindent
+\newcommand{\newblock}{\ \ }
+\newcommand{\refname}{References}
+\newcommand\bibname{Bibliography}
+
+%%
+%% \newenvironment{thebibliography}
+%%
+
+\def\@thearticlebibliography#1{\section*{\refname}\setcounter{biblio}{0}\relax}
+\def\@thebibliography#1{\section*{\bibname}\setcounter{biblio}{0}\relax}
+\def\end@thebibliography{\TnbPopCell}
+
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Index related macros
+%%
+
+%%
+%% \subitem
+%% \subsubitem
+%%
+\def\@idxitem{%
+    \TnbPopCell%
+    \@PendingCellStyle{IndexItem}%
+}
+\def\@idxsubitem{%
+    \TnbPopCell%
+    \@PendingCellStyle{IndexSubitem}%
+}
+\def\@idxsubsubitem{%
+    \TnbPopCell%
+    \@PendingCellStyle{IndexSubsubitem}%
+}
+
+\newcommand{\indexspace}{\relax}
+
+%%
+%% \newenvironment{theindex}
+%%
+\newcommand{\indexname}{Index}
+\def\theindex{%
+  \TnbPopCell
+  \@PendingCellStyle{IndexSection}
+  \indexname
+  \begingroup
+  \let\item\@idxitem
+  \let\subitem\@idxsubitem
+  \let\subsubitem\@idxsubsubitem
+}
+\def\endtheindex{%
+  \endgroup
+  \TnbPopCell
+}
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatother
+

@@ -1,0 +1,1468 @@
+@|
+@| *****************************************************************************************
+@|
+@| Note: The resources defined in this file do not need to be translated.
+@|
+@| *****************************************************************************************
+@|
+@|
+@@resource NotebookTemplatingExpressions
+{
+
+"DockedCellBackground"->
+ Image[CompressedData["
+        	1:eJyd0jsOwjAMBuAIOnAN7sFCj1BO0EqwIhUk1PPm/X6sGUIqFVYrtWT7+z37
+        	PD2HxwEh9DrVMYyf6zyPy62roV/e9+lYcam97vW4Vfkh51y2XFJKoGOMux1C
+        	aLL3vsnOOdDWWtDGGNBaa9BKKdBSyiYLIUBzzkEzxppMKW0yIWS3McaQ/z/8
+        	BQ+BVdQ=
+            "], "Byte", ColorSpace -> "RGB", Interleaving -> True],
+            
+"RepeatingBlockDivider"->
+ Image[{{{0, 0, 0, 0}, {0, 0, 0, 255}, {0, 0, 0, 0}}, {{0, 0, 0, 
+    255}, {214, 214, 214, 255}, {0, 0, 0, 255}}, {{0, 0, 0, 
+    255}, {252, 252, 252, 255}, {0, 0, 0, 255}}, {{0, 0, 0, 0}, {0, 0,
+     0, 255}, {0, 0, 0, 0}}}, "Byte", ColorSpace -> "RGB", 
+ Interleaving -> True],            
+
+"SlotDialogInputField"->
+ Image[CompressedData["
+      1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEFxSDB////wzEU
+      /IdiFDkYzlqwrRaInwHxfygGsWvhmqFqpu4+/f/Dtx//YQDEBolB1YLNB+lF
+      VoOsFiQHcwvIHlwAJEeiOpz2foTY+xziDag/9pwBi8PA+6/f/4PEgHJ1MHVQ
+      M+tAepHC5QkQVyOHC1r4omOwGgB5zgaU
+          "], "Byte", ColorSpace -> "RGB", Interleaving -> True],
+
+"ExpressionDialogInputField"->
+ Image[CompressedData["
+      1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEFxSDB////wzEU
+      /IdiFDkYrjv8oBaInwHxfygGsWvhmqFqFl95+f/Tzz//YQDEBolB1YLNB+lF
+      VoOsFiQHcwvIHlwAJEeiOpz2fobY+xziDYQ/PiOp/fjzN8wfdTB1UDPrQHqR
+      wuUJEFcjhwta+KJjsBoAq8cRBQ==
+          "], "Byte", 
+ ColorSpace -> "RGB", Interleaving -> True], 
+              
+
+"ButtonDefaultAppearance" -> 
+{"Default" -> 
+  Image[CompressedData["
+       1:eJytlDsOgkAQhola2HgDG4+iHZZ4Akm0NUETw7k4Db1R3u9Huc6ga3ATdyxm
+       k48wzP8t3b+yT9ZxYhjGeQ4Pa39dO87e3c1g2LiXgz2FlyWwAPCjEGLgfYSG
+       TxbxPM8E7oDQgHtTXo5zEARCd3CPOflfvKfve9F13U9wj7mxo8tLVKdtWxIO
+       p2kaEg6nrmsS1amqioTDKcuSRHWKoiBRnTzPSTicLMtIVCdNUxIOJ0kSEtWJ
+       45iEw4miiITDCcOQZOQMXeX7vjaPe8g9XtU4dOIWZ6ITb5iTffpH73717xOE
+       Fmi7
+           "], "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+ "Hover" -> 
+  Image[CompressedData["
+       1:eJzFlD0OgkAQhYla2HgDG4+iHZZ4Aki0NUETw7m4EIVRelj+YZ1BMUqxz2IS
+       N/kIw7xv6d7KOzqHiWVZpzk9HPey9n032M1o2ATnvTellyWxIPij1rrndbSB
+       d5YJw9AmboQ2wHt7uJznOI616fCec8N/+Z6u6yCc+4fTti1EwmmaBiLh1HUN
+       GTtVVUEknLIsIRJOURSQsZPnOUTCybIMIuEopSASTpqmEAknSRLIh9N3VRRF
+       xjzvKXd/VmPfiVueQSdeOTf06Q+9+9W/D2j2fuQ=
+           "], "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+ "Pressed" -> 
+  Image[CompressedData["
+       1:eJyt1DsOgkAUhWGiFjbuwMalaKelrkASbU3QxLguNkLH+/1mE+NcFKM3gWOB
+       yWccZn4sCHelXvbniaIo17n82h/va007Pg4zudg8bid1Kn8spYVEF4UQrfdH
+       DPicJbqub6VCEgNof9vdnNaGYQjf93vRPp3r/pfuY1mWME2zF+3TOd4gYzS2
+       bUO8cRwH4o3ruhBvPM+DeDP0bDpjNEEQQLwJwxDiTRRFEG/iOIZ4kyQJxJs0
+       TSHeZFkG8SbPc4g3RVFAvCnLEuJNVVXQGE1d19BX084qeg+bpun1fk/L12hs
+       Z+KO1mAmZnSum6d/zN2f+fsEtwNAkg==
+           "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+
+
+"ButtonDropdownBothAppearance" -> 
+{"Default" -> 
+  Image[CompressedData["
+      1:eJzFlktOhEAQhom68AombjyK7sbleIKZRLcmo2Bmz0FYcIAhHAbYG+T9HliW
+      XR0w2IbHaEVIPpruVP8fNIH0zfZ5/XQmSdLLJTutN2+3u91m/3DBOnf718ft
+      Obu4ZlwxcNA0TU57wABfdSIAMElbu2K4DCAE81a9+3M9zwPKA/MwF9ehdUDT
+      NFDXNRmYh7l9B2V+h+g4Ho/kLOGoqoqcJRxlWZLTOdpvBIqiIKfngH9w8OfI
+      83wQTdNAluUf4PjYPPF9ZFk2SJIkoKrqt3zs4/jYPNGRpukgWG/bNiiKwvOx
+      tSyLj4/NO8WB4PoahsEdh8OB96fmiA587ilwjXVd5+2cetERx/Es8F83t/a3
+      jlMQHVEUkSM6wjAkZwlHEATkLOHwfZ8cweE6jkOaj3ks96PnuMc+8R7uHXO7
+      PdzEPvTPe9FP5JA57g==
+          "], "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+ "Hover" -> 
+  Image[CompressedData["
+    1:eJzdlstOg0AUhkntoq9g4sZH0V1d1idoE92atELTPW9CeADgaWDFokH23K/H
+    ORNqcEwZqieSlORjmMmZ/+Oeud+8rV5niqLsFmy3Wu8fttv14XnOOo+H95fN
+    DTu4Y9wycNBxHE63wRm+6kQAQEpXu2QEDCAE85a98wvCMATKDfMwF+9D54C2
+    bcnB3Gt0NE1DzhSOuq7J+U9H941AVVXk9Bz8uCxLcsTrGKo1DANUVf0Bjo9x
+    nJ5HURRniaIIdF3/lo99HB+ad4kD8TwPNE3j+di6riudIzryPB8E59i2zR2W
+    ZfG+bI7oyLJMSpqmYJomb8fU/8aB4Ds5tlZ04LlRM4UjSRJypnDEcUzOFA78
+    L1AjOALf90nzMY/lfvQcT9gnXsMdMfe0hpOsQ/+8Fv0EFSdrUw==
+        "], "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+ "Pressed" -> 
+  Image[CompressedData["
+      1:eJzFls1qwkAQgEPbQ1+h0Esfpb3Zo30ChfZasI3Fc/ISevUehLyIkID5URM1
+      v3rKE0x3lkTslCRChxr4stllZr7Nz5J96L93364URfm4Fadu7+txMOiNXm5E
+      52n0+dq/Fhf3gjsBDpqmKSkPqOEYRwGAVsrYjiARACNYr3Myv2Q+n8NqtWID
+      62FdfA6lAxzHgcViwQbWw7rUwc0lHK7rskMdnuexQx2+77NDHcvlkp3KUa4R
+      1rVRceKAf3DI+1iv17VMJhNQVfUX4/G4MY++jyAIaknTFHRd/1Ff0zQ53pRH
+      HWEY1rLdbsG2bRgOh7I+tpZlyfGmPOrYbDaN4Jxns5l0GIYh+2051IFzauNw
+      OMB0OoX9fn9WPHXsdrtWoiiCoihke048dWAeN9QRxzE71JEkCTvUgd8JN9SR
+      ZRk7l3Dkec4OcST438K1xUX5H0xPHM/YZ97DRVi32sO17EP/vBf9Brt04Cc=
+      
+          "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+
+
+"ButtonDropdownLeftAppearance" ->
+{"Default" -> 
+  Image[CompressedData["
+      1:eJyl1MsKgkAUxnGpFkGv0KZHqV0t7QkUahtYED6XT+MLmPf7ZXk6Eyox+JEx
+      A385yo9hcDE786ZfF5qm3df80I3n3rIM+7zil4P9uJhLHrbchhMfiehTvwg0
+      OsdxjpzHEWrwwvm+T2j1lnpLXddR27aTyRa5Kds0DUzF1nUNU7FVVcEGK/6x
+      mMuyhH1Z+sN+9i2KAiafN89zmGyzLIOp2DRNYbJNkgSmYuM4hsk2iiKYig3D
+      EKZigyCASdZzXXeuPXGvOXfJj/tpdG+SZsuG
+          "], "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+ "Hover" -> 
+  Image[CompressedData["
+    1:eJy91E8KgkAUx3GpFkFXaNNRaldLO4FCbQMLwnN5oVmZe3X8O77eiEoM/Ega
+    aOAjb+SLyCxm59/c68JxnPuaH6733AeBF55XvDmEj4u/5GHLNky/JKLesAiY
+    uiiKjixmhIy97pIkIbSGloaWuq6D/tUqpSCbtm1b6JdWn7Gem6aBPtp+rusa
+    Mr87px3/t6oqyKYtyxIy26IoIJtWSgnZtHmeQzZtlmWQTZumKWS0sRBibnti
+    rzl3yZf7aereYBTcyQ==
+        "], "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+ "Pressed" -> 
+  Image[CompressedData["
+      1:eJyl1EsKglAUxnGpBkFbaNJSalbDWkFCTQMLonW5EWe+33p9bOJ0b6jEwY+K
+      hJ9c5c9FDnJX+mV/nmiadp3L2/54XxvG8XGYyYfN43bSp3KxlBaSeklEL91F
+      wNCZprmVhERI36vOsiwKw3BU11LXkuM4ZNv2qLEW+ad1XRfired5EG9934d4
+      GwQB1LdqxmqNZvs+X+WH9rVvFEUQ/944jiHeJkkC8TZNU4i3WZZBvM3zHOJt
+      URQQb8uyhHgrhIB4W1UVxNu6rqF/2qZpINYK9f+3bTuKtTup+uYs+XA+Dd0T
+      XqesOQ==
+          "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+
+
+"ButtonDropdownRightAppearance" ->
+{"Default" -> 
+  Image[CompressedData["
+    1:eJy9lk1Og0AUgIm68Agu3HgU3emynqBNdGtSBdM9B2HBASAcBtgb5b/ln8Li
+    OW9akjpCi2Zgko+ZeXnzzU/IZG4WL7PnM0EQXi/JZzZ/v10u56vHC9K5W709
+    Lc5J45pwRcCgYRjCvsAeGhsCAAyC5AJnPgn3dNG7ObgWx3HoHDs9CE3TQFEU
+    3CjLku5jLD/C+vM858rU/izLuDKlv65rSNOUK6w/SRKutH5kTD+uf7vdQhzH
+    nSiKAqIo/gLjfWMQ1r/ZbDqJoghkWf7hxj7G+8YgrH+9XneCuZZlgSRJ1I21
+    aZo03jcGGepH8Dx1Xad+TdNo/1g+66+qiu73GHimqqrS+lQuwvrDMDwJ3ltD
+    8pD/+P/CoR/v6yAIuML6fd/nytR+z/O4MqUf/zvXdbkypt+2bfR/tf4R3lcf
+    hIf2fXXwNuQJdX8Dgcr1UA==
+        "], "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+ "Hover" -> 
+  Image[CompressedData["
+    1:eJzdlrtOhEAUhidq4SNY2Pgo2mm5PsFuoq3JKpjteRPCAwBPAxWFUXru1+P8
+    s5AoCrLJWQpJPoYz+edjJlwyV5un1eOJEOL5XJ5W69fr7Xa9uz+Txc3u5WFz
+    Ki8uJRcSdBKR6A7qEK7rzgJj5yCzxMy75FZ08yfmIwxDdY+9fu9v25YVrOO/
+    +FE3TcPK0v66rllZ0o/1VFXFSu8H8Jdlycpw/mM50zRJ07QfoP8Qf1EUvxJF
+    ERmG8c2NGv1jY8BcP/B9n3RdV260nudN5od+PO88z0dB3nEc5bdtW9VTeTD0
+    Z1k2SZqmZFmWav/KgkP9AO/dnNzQj3GYFydL+5MkYWVpfxzHrCzpx/8C3zsn
+    x/QHQQD/R+8/wv7qTXLX76++7A05Ue5PJFcmOg==
+        "], "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+ "Pressed" -> 
+  Image[CompressedData["
+    1:eJy9ls1OwkAQxxv14CN48OKj6E2P+ASQ6NUEBcMZXgKu3BsSXoQEEgotlI/S
+    8p3wBOP+R5qMSIHDQJNft53u/rrbzKT7kPlIvV9ZlvV5a06p9PdjNpsuvN6Y
+    m6fC11vm2lzcG+4MCNbrdWt70BaOnQIRnYTpS8qEhmeetPEHQUC9Xk+NRqPB
+    7/jVk+X7PrXbbTUcx+F1xP7BYMAxTS7pHw6H1Ol0VNn1d7tdVaR/NBqR67qq
+    SP94PCbP81SRfu38B7EfnNOP+U8mE+r3+3upVCqUy+X+US6XE8eAXT9qeB9R
+    FFGpVPrjLhaLHE8aA6Q/DENCje0DudVqtSifz7MbbbPZ5HjSGCD9mAtqIAk8
+    r9Vq7Ldtm471B9I/nU55PodYLBZUrVZpPp8f7QukfzabEWrgEMixzWbD7bG+
+    YNePcZpIP9aMHNJE+vFtkUOaSP9yueSc0ET6V6sVIYc0ubQfOaSJ9K/Xa64b
+    Lbb/ryj2n2F/FRhe4v2V2Btqwu4fxzeatA==
+        "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+
+"ButtonOKAppearance" ->
+{"ButtonType" -> "Default",
+ "Default" -> 
+  Image[CompressedData["
+    1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkCEDxLxADBL8//8/
+    GEPBfzwYrhaEV9uxegLxMyD+jweD5D1hhoP4z6Zk/f+/cypODJIHqYPZCzLn
+    X7fv/39tbrgxUB6kDkVPiytBjKGn2ZkgRtfzt8mRIMbQ02BPEGPoqbMhiNH1
+    /Km1Iogx9FRbEMToen5XmhLEGHrKjQhidD2/Sg0IYnQ9P4t1CWIMPYVaBDG6
+    nh/5GgQxhp5cVYIYXc/3HCWCGENPlgJBjK7nW4YcQYyhJ02aIMbQkypJEKPr
+    +ZosThBj6EkSJYiR9IDLqvvhAv+/JorgxCB5oLrnkKIRXCZ6gfgEysQnIHWw
+    8pSIchel/AUAYhoW7g==
+        "], "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+ "Hover" -> 
+  Image[CompressedData["
+    1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkCEDxLxADBL8//8/
+    GEPBfzwYrhaEV9uxegLxMyD+jweD5D1hhoP4zxY3/P9/fitODJIHqYPZCzLn
+    /9rm//9X1eHGQHmQOmQ9/1ZUE8QYepZVEMQYepaUEsQYehYVEcToev7OzyOI
+    MfTMzSKIMfTMSieI0fX8mZ5MEGPomRpHEGPomRRFEKPr+d0fRhBj6OkJIogx
+    9HT6EsToen61eRLEGHqaXQliDD2NjgQxhp46O4IYXc/PGiuCGENPpTlBjKGn
+    3JggxtBTakgQI+kBl1UPk5X+/yjWw4lB8kB1zyFFI7hM9ALxCZSJT0DqYOUp
+    EeUuSvkLAGwFUW4=
+        "], "Byte", ColorSpace -> "RGB", Interleaving -> True], 
+ "Pressed" -> 
+  Image[CompressedData["
+    1:eJyN1N9KAlEQx/ElC7rprogoxIIgJCGKIEKMLRTs0p5gNxSJQlYLWUKREl+m
+    h+qm8gnW/lieZrY2cob1p/ARj2e+u3ez7tZKlRnLshrz9FVymna97vhns3Q4
+    9q/LboJ+rJEFwn8aY0K/HzPB3yx7yM0VyQsxE/B9MXo4nx/dlAm87Vh8z3PR
+    e/k5wfmyCZzFeHTPc2ONuwSpht8DyGZQXoFUU1mFVFNNQrJ5vUhBqrncgGTz
+    drUJqaa2Bcnm3UtDqmlkINl83OxAshk2dyHV+PuQbD5vDyDVtA4h2Xy1s5Bq
+    OkeQau5sSDaj+xNINd089K8Jd9Wzt2dGvUIsvqe5/s9qDHfiKZ/BTnziuWif
+    TrF3x/bvN3oIEIM=
+        "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+ 
+ 
+        
+
+"ButtonDefaultAppearanceCloud" -> 
+{"Default" -> 
+  Image[CompressedData["
+  1:eJyVkzsKwkAQhoNaeArBo2gXy3iCCNoKUZBcIJfLDVKLkvc7KceZNRsy283C
+  t8z8H7vdv7/cndvKsqzHFi/HfR08z/XPG1yO/vN6WeOwQ8hSCACK6cDEnBNB
+  ENjIB4EJmm39iPYoikAfminT/9GbcRxhGAYFzZQtvXYaqe/7nmH6rusYUt+2
+  LUPqm6ZhmL6ua4bUV1XFMH1ZlgypL4qCIfV5njNMn2UZQ+rTNGWYPkkShtTH
+  ccwQeNWPMAxnRzNm33/NVL9OtC/69aZM99DoJuvoD5sqgtM=
+      "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+
+
+"ButtonDropdownBothAppearanceCloud" -> 
+{"Default" -> 
+  Image[CompressedData["
+      1:eJzFlktOhEAQhom68AombjyK7sbleIKZRLcmo2Bmz0FYcIAhHAbYG+T9HliW
+      XR0w2IbHaEVIPpruVP8fNIH0zfZ5/XQmSdLLJTutN2+3u91m/3DBOnf718ft
+      Obu4ZlwxcNA0TU57wABfdSIAMElbu2K4DCAE81a9+3M9zwPKA/MwF9ehdUDT
+      NFDXNRmYh7l9B2V+h+g4Ho/kLOGoqoqcJRxlWZLTOdpvBIqiIKfngH9w8OfI
+      83wQTdNAluUf4PjYPPF9ZFk2SJIkoKrqt3zs4/jYPNGRpukgWG/bNiiKwvOx
+      tSyLj4/NO8WB4PoahsEdh8OB96fmiA587ilwjXVd5+2cetERx/Es8F83t/a3
+      jlMQHVEUkSM6wjAkZwlHEATkLOHwfZ8cweE6jkOaj3ks96PnuMc+8R7uHXO7
+      PdzEPvTPe9FP5JA57g==
+          "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+
+
+"ButtonDropdownLeftAppearanceCloud" ->
+{"Default" -> 
+  Image[CompressedData["
+      1:eJyl1MsKgkAUxnGpFkGv0KZHqV0t7QkUahtYED6XT+MLmPf7ZXk6Eyox+JEx
+      A385yo9hcDE786ZfF5qm3df80I3n3rIM+7zil4P9uJhLHrbchhMfiehTvwg0
+      OsdxjpzHEWrwwvm+T2j1lnpLXddR27aTyRa5Kds0DUzF1nUNU7FVVcEGK/6x
+      mMuyhH1Z+sN+9i2KAiafN89zmGyzLIOp2DRNYbJNkgSmYuM4hsk2iiKYig3D
+      EKZigyCASdZzXXeuPXGvOXfJj/tpdG+SZsuG
+          "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+
+
+"ButtonDropdownRightAppearanceCloud" ->
+{"Default" -> 
+  Image[CompressedData["
+    1:eJy9lk1Og0AUgIm68Agu3HgU3emynqBNdGtSBdM9B2HBASAcBtgb5b/ln8Li
+    OW9akjpCi2Zgko+ZeXnzzU/IZG4WL7PnM0EQXi/JZzZ/v10u56vHC9K5W709
+    Lc5J45pwRcCgYRjCvsAeGhsCAAyC5AJnPgn3dNG7ObgWx3HoHDs9CE3TQFEU
+    3CjLku5jLD/C+vM858rU/izLuDKlv65rSNOUK6w/SRKutH5kTD+uf7vdQhzH
+    nSiKAqIo/gLjfWMQ1r/ZbDqJoghkWf7hxj7G+8YgrH+9XneCuZZlgSRJ1I21
+    aZo03jcGGepH8Dx1Xad+TdNo/1g+66+qiu73GHimqqrS+lQuwvrDMDwJ3ltD
+    8pD/+P/CoR/v6yAIuML6fd/nytR+z/O4MqUf/zvXdbkypt+2bfR/tf4R3lcf
+    hIf2fXXwNuQJdX8Dgcr1UA==
+        "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+
+(* unused; override is in clientresources *)
+"ButtonOKAppearanceCloud" ->
+{"Default" -> 
+  Image[CompressedData["
+   1:eJxlk01OwlAURht14Cr4scCkLTOnEp3VIawAEpmaAAlhJ2yEBaiIf0AgBIJG
+   mWhwGY/vNq2597PJae47J+/NbrF1W28feZ7XPcWv3uxfdjrNQeMEh6tB76Z1
+   jCEHpIp0ziWkn0v588IwV47BHrgUmePskpyn5xfuuxYnyCwue0/u7Pyq+8oH
+   CTKL0/0TXsP9oxAYuL/DabhvC6GB+6YYGriv4TTcV3Aa7suz0MB9AafhPvdD
+   A/eZHxm4T+E03N/gNNxfS5GB+wuchvsznIb7UzkycJ/Aabg/wmm4j+E03B/g
+   NP96pWrgfg+nob4flQJ3By/IDPeb7Rrmazmr/foRl+0h7abZ0QPNHqSI
+       "], "Byte", ColorSpace -> "RGB", Interleaving -> True]},
+
+"CellBehaviorDisplayFunctionEvaluateDeleteInput"->
+Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]],
+
+"CellBehaviorDisplayFunctionEvaluateHideInput"->
+Cell[
+     BoxData[
+      TemplateBox[{"EvaluateHideInput"}, "NotebookTemplateCellBehavior"]]],
+       
+"CellBehaviorDisplayFunctionUnevaluated"->
+Cell[
+     BoxData[
+      TemplateBox[{"Unevaluated"}, "NotebookTemplateCellBehavior"]]],
+       
+"CellBehaviorDisplayFunctionExcludeCell"->
+Cell[
+     BoxData[
+      TemplateBox[{"ExcludeCell"}, "NotebookTemplateCellBehavior"]]],              
+       
+"CellBehaviorDisplayFunction" ->
+(TooltipBox[
+   DynamicBox[
+    ToBoxes[ReplaceAll[#, 
+      MapThread[
+       Rule, {NotebookTemplating`Utilities`evaluationTags, 
+        NotebookTemplating`Authoring`Private`evaluationIcons}]], 
+     StandardForm]], 
+   StyleBox[
+    DynamicBox[
+     ToBoxes[ReplaceAll[#, 
+       MapThread[
+        Rule, {NotebookTemplating`Utilities`evaluationTags, 
+         NotebookTemplating`Authoring`evaluationTooltipLabels}]], 
+      StandardForm]], 
+    LinebreakAdjustments -> {0.95, 10, 100, 500, 500}, 
+    StripOnInput -> False]] &),       
+
+"TemplateSlotDisplayFunction" -> (TooltipBox[ButtonBox[GridBox[{{FrameBox[#]}}]
+        , Appearance -> None
+        , ButtonFunction :> NotebookTemplating`Authoring`Private`rewriteFun[#1, #2, #3, #4]
+        , Evaluator -> Automatic
+        , BaseStyle -> {}
+    ],
+    DynamicBox[ToBoxes[NotebookTemplating`Authoring`Private`defaultTipBox[
+        NotebookTemplating`Authoring`Private`fixPreview[#2], 20
+    ], StandardForm]]] &),
+ 
+"TemplateExpressionDisplayFunction" -> (PaneSelectorBox[{
+    True -> ButtonBox[
+        TooltipBox[GridBox[{{FrameBox[#]}}], FEPrivate`FrontEndResource["NotebookTemplatingStrings", "ExpBoxTooltip"]]
+            , Appearance -> None
+            , ButtonFunction :> NotebookTemplating`Authoring`Private`rewriteExpressionFun[#, #3]
+            , Evaluator -> Automatic
+            , BaseStyle -> {}
+        ], 
+    False -> GridBox[{{FrameBox[#]}}]
+}, Dynamic[TrueQ[CloudSystem`$CloudNotebooks]]] &),
+   
+"TemplateSlotUIDisplayFunction" ->       
+(StyleBox[
+   GridBox[{{PanelBox[
+       GridBox[{{ItemBox[
+           DynamicBox[
+            ToBoxes[
+             NotebookTemplating`Authoring`Private`dialogText[StringJoin[{#3, " ", "Template Slot"}], 
+              FontWeight -> Bold, 
+              FontColor -> RGBColor[0.16862745098039217`, 0.396078431372549, 0.47843137254901963`], 
+              FontSize -> 11, 
+              StripOnInput -> False], 
+             StandardForm]], 
+           Alignment -> 
+            Center]}, {GridBox[{{DynamicBox[
+              ToBoxes[
+               NotebookTemplating`Authoring`Private`templateSlotUIValueLabel[#3], StandardForm]], 
+             PanelBox[#5, FrameMargins -> 0]}, {GridBox[{{Cell[
+                 BoxData[
+                  FormBox[
+                   StyleBox["\"Default Value:\"", "Text",
+                    FontSize -> 11,
+                    FontColor -> RGBColor[0.13725490196078433`, 0.34901960784313724`, 0.42745098039215684`], 
+                    StripOnInput -> False], TextForm]], 
+                 "InlineText"]}, {Cell[
+                 BoxData[
+                  FormBox[
+                   StyleBox["\"(optional)\"", "Text",
+                    FontSlant -> Italic, 
+                    FontSize -> 11,
+                    FontColor -> RGBColor[0.13725490196078433`, 0.34901960784313724`, 0.42745098039215684`], 
+                    StripOnInput -> False], TextForm]], 
+                 "InlineText"]}}, 
+              GridBoxAlignment -> {"Columns" -> {{Right}}}, 
+              AutoDelete -> False, 
+              GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                "Rows" -> {{Automatic}}}, 
+              GridBoxSpacings -> {"Columns" -> {{0}}}], 
+             PanelBox[#6, FrameMargins -> 0]}, {"", 
+             ItemBox[
+              GridBox[{{ButtonBox[
+                  FrameBox[
+                   StyleBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["NotebookTemplatingStrings", "Cancel"], 
+                    BaseStyle -> "TextStyling", 
+                    SingleEvaluation -> True], "Text",
+                    FontSize -> 12, 
+                    FontColor -> RGBColor[0.34901960784313724`, 0.34901960784313724`, 0.34901960784313724`], 
+                    FontWeight -> Plain,
+                    StripOnInput -> False], FrameStyle -> None, 
+                   FrameMargins -> {{5, 5}, {Automatic, Automatic}}, 
+                   StripOnInput -> False], Evaluator -> Automatic, 
+                  
+                  ButtonFunction :> NotebookTemplating`Authoring`Private`returnCancelFun[#, #2, #3, #4], 
+                  Appearance -> FEPrivate`FrontEndResource["NotebookTemplatingExpressions", "ButtonDefaultAppearance"]
+                  , ImageSize -> {Automatic, 26}
+                 ], 
+                 ButtonBox[
+                  FrameBox[
+                   StyleBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["NotebookTemplatingStrings", "OK"], 
+                    BaseStyle -> "TextStyling", 
+                    SingleEvaluation -> True], "Text",
+                    FontSize -> 12, 
+                    FontColor -> GrayLevel[1], 
+                    FontWeight -> Plain,
+                    StripOnInput -> False], FrameStyle -> None, 
+                   FrameMargins -> {{10, 10}, {Automatic, Automatic}},
+                    StripOnInput -> False], Evaluator -> Automatic, 
+                  ButtonFunction :> 
+                   NotebookTemplating`Authoring`Private`returnFun[#3, #4],
+                   (* has clientresources override *) 
+                   Appearance -> FEPrivate`FrontEndResource["NotebookTemplatingExpressions", "ButtonOKAppearance"]
+                   , ImageSize -> {Automatic, 26}
+               ]}},
+               AutoDelete -> False, 
+               GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                 "Rows" -> {{Automatic}}}], Alignment -> Right]}}, 
+           GridBoxAlignment -> {"Columns" -> {{Right}}}]}}, 
+        GridBoxSpacings -> {"Columns" -> {{Automatic}}, 
+          "RowsIndexed" -> {2 -> .5}}], 
+       Background -> 
+        RGBColor[0.4980392156862745, 0.7686274509803922, 
+         0.8666666666666667], Appearance -> None, 
+       FrameMargins -> {{8, 8}, {8, 4}}]}}, AutoDelete -> False, 
+    FrameStyle -> 
+     RGBColor[0.3137254901960784, 0.5882352941176471, 
+      0.6862745098039216], 
+    GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+    GridBoxSpacings -> {"Columns" -> {0, 0}, "Rows" -> {0, 0}}, 
+    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+      "Rows" -> {{Automatic}}}], Editable -> False] &),
+       
+"TemplateExpressionUIDisplayFunction"->
+(StyleBox[
+   GridBox[{{PanelBox[
+       GridBox[{{ItemBox[
+           Cell[BoxData[
+             FormBox[
+              StyleBox["\"Template Expression\"", "Text", 
+               FontWeight -> Bold, 
+               FontColor -> RGBColor[0.2980392156862745, 0.48627450980392156`, 0.5568627450980392], 
+               FontSize -> 11, 
+               StripOnInput -> False], TextForm]], "InlineText"], 
+           Alignment -> Center]}, {PanelBox[#3, FrameMargins -> 0]}, {ItemBox[
+           GridBox[{{ButtonBox[
+               FrameBox[
+                StyleBox[
+                 DynamicBox[
+                  FEPrivate`FrontEndResource["NotebookTemplatingStrings", "Cancel"], 
+                  BaseStyle -> "TextStyling", 
+                  SingleEvaluation -> True], "Text", 
+                  FontSize -> 12, 
+                  FontColor -> RGBColor[0.34901960784313724`, 0.34901960784313724`, 0.34901960784313724`],
+                  FontWeight -> Plain,
+                  StripOnInput -> False], FrameStyle -> None, 
+                FrameMargins -> {{5, 5}, {Automatic, Automatic}}, 
+                StripOnInput -> False], Evaluator -> Automatic, 
+               ButtonFunction :> 
+                NotebookTemplating`Authoring`Private`contractExpressionFun[#, #2], 
+               Appearance -> FEPrivate`FrontEndResource["NotebookTemplatingExpressions", "ButtonDefaultAppearance"]
+               , ImageSize -> {Automatic, 26}
+               ], 
+              ButtonBox[
+               FrameBox[
+                StyleBox[
+                 DynamicBox[
+                  FEPrivate`FrontEndResource["NotebookTemplatingStrings", "OK"], 
+                  BaseStyle -> "TextStyling", 
+                  SingleEvaluation -> True], "Text", 
+                  FontSize -> 12,
+                  FontColor -> GrayLevel[1], 
+                  FontWeight -> Plain,
+                  StripOnInput -> False], FrameStyle -> None, 
+                FrameMargins -> {{10, 10}, {Automatic, Automatic}}, 
+                StripOnInput -> False], Evaluator -> Automatic, 
+               
+               ButtonFunction :> 
+                NotebookTemplating`Authoring`Private`contractExpressionFun[#2], 
+                (* has clientresources override *) 
+               Appearance -> FEPrivate`FrontEndResource["NotebookTemplatingExpressions", "ButtonOKAppearance"]
+               , ImageSize -> {Automatic, 26}
+               ]}}, AutoDelete -> False, 
+            GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+              "Rows" -> {{Automatic}}}], Alignment -> Right]}}, 
+        GridBoxSpacings -> {"Columns" -> {{Automatic}}, 
+          "RowsIndexed" -> {2 -> .5}}, 
+        GridBoxAlignment -> {"Columns" -> {{Right}}}], 
+       Appearance -> None, 
+       Background -> 
+        RGBColor[0.9372549019607843, 0.9803921568627451, 1.], 
+       FrameMargins -> {{8, 8}, {8, 4}}]}}, AutoDelete -> False, 
+    FrameStyle -> 
+     Directive[
+      RGBColor[0.49411764705882355`, 0.7647058823529411, 
+       0.8666666666666667], AbsoluteThickness[1]], 
+    GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+    GridBoxSpacings -> {"Columns" -> {0, 0}, "Rows" -> {0, 0}}, 
+    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+      "Rows" -> {{Automatic}}}], Editable -> False] &),       
+   
+"RepeatingBlockDisplayFunction"-> (GridBox[{
+{
+    Cell[
+        TextData[{StyleBox["Repeating Block",
+            FontColor -> RGBColor[0.16862745098039217, 0.3607843137254902, 0.4392156862745098],
+            FontSize -> 12,
+            FontWeight -> Bold
+        ]}],
+        "Text"
+    ], 
+    ItemBox["", ItemSize -> Fit]
+},
+{
+    RowBox[{
+        Cell[
+            TextData[StyleBox[" Looping over:",
+                FontColor -> RGBColor[0.29411764705882354, 0.5058823529411764, 0.596078431372549],
+                FontSize -> 12,
+                FontSlant -> Italic
+            ]],
+            "Text"
+        ], 
+        Cell[
+            BoxData[TemplateBox[{#}, #2,
+                DisplayFunction -> (GridBox[{{FrameBox[StyleBox[#, FontSize -> 12]]}}] &)]
+            ],
+            "Input"
+        ]
+    }], 
+    ItemBox[""]
+}
+}, RowMinHeight -> 1.25] &),    
+              
+"AuthoringDockedCell" ->
+Cell[BoxData[
+ PanelBox[
+  PaneBox[
+   TagBox[GridBox[{
+      {
+       StyleBox[
+        DynamicBox[FEPrivate`FrontEndResource["NotebookTemplatingStrings", "TemplateNotebook"],
+         BaseStyle->"TextStyling",
+         ImageSizeCache->{122., {3., 10.}},
+         SingleEvaluation->True],
+            "Text",
+        StripOnInput->False,
+        FontSize->12,
+        FontWeight->Bold,
+        FontColor->GrayLevel[0.4]]},
+      {
+       TagBox[GridBox[{
+          {
+           TagBox[GridBox[{
+              {
+               TagBox[
+                TooltipBox[
+                 TagBox[GridBox[{
+                    {
+                    DynamicModuleBox[{}, 
+                    ButtonBox[
+                    PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    PaneBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingBitmaps", "TemplateSlotIcon"],
+                    ImageSizeCache->{14., {4., 8.}},
+                    SingleEvaluation->True],
+                    
+                    ImageMargins->{{Automatic, Automatic}, {
+                    2, Automatic}}],
+                    
+                    RowBox[{
+                     
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource["NotebookTemplatingStrings", "TemplateSlot"],
+                    BaseStyle->"TextStyling",
+                    ImageSizeCache->{22., {1., 9.}},
+                    SingleEvaluation->True],
+                        "Text",
+                    StripOnInput->False,
+                    TextAlignment->Center,
+                    FontSize->11,
+                    FontWeight->Bold,
+                    
+                    FontColor->RGBColor[0.4588235294117647, 0.4588235294117647, 0.4588235294117647]],
+                    
+                    StyleBox["j", "Text", FontSize -> 11, FontWeight -> Bold, ShowContents -> False]
+                    }]
+                    
+                    }
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Center}}},
+                    
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.5}}, "Rows" -> {{Automatic}}}],
+                    "Grid"]],
+                    Alignment->Center,
+                    
+                    Appearance->FEPrivate`FrontEndResource[
+                    "NotebookTemplatingExpressions", 
+                    "ButtonDropdownLeftAppearance"],
+                    
+                    ButtonFunction:>
+                    NotebookTemplating`Authoring`Private`\
+makeTemplateSlot[
+                    ButtonNotebook[], "Named"],
+                    Evaluator->Automatic,
+                    FrameMargins->{{5, 0}, {Inherited, Inherited}},
+                    ImageSize->{Automatic, 26},
+                    Method->"Preemptive"],
+                    DynamicModuleValues:>{},
+                    
+                    Initialization:>(Needs["NotebookTemplating`"]; 
+                    Needs["NotebookTemplating`Authoring`"]; Null)], 
+                    DynamicModuleBox[{}, 
+                    ActionMenuBox[
+                    DynamicModuleBox[{}, 
+                    ButtonBox["\<\"\"\>",
+                    Alignment->Center,
+                    
+                    Appearance->FEPrivate`FrontEndResource[
+                    "NotebookTemplatingExpressions", 
+                    "ButtonDropdownRightAppearance"],
+                    ButtonFunction:>Null,
+                    Evaluator->Automatic,
+                    ImageSize->{Automatic, 26},
+                    Method->"Preemptive"],
+                    DynamicModuleValues:>{},
+                    
+                    Initialization:>(Needs["NotebookTemplating`"]; 
+                    Needs["NotebookTemplating`Authoring`"]; Null)], {
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", "Named"],
+                    BaseStyle->"TextStyling",
+                    SingleEvaluation->True],
+                    StripOnInput->False,
+                    TextAlignment->Left]:>
+                    NotebookTemplating`Authoring`Private`\
+makeTemplateSlot[
+                    ButtonNotebook[], "Named"], 
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", "Positional"],
+                    BaseStyle->"TextStyling",
+                    SingleEvaluation->True],
+                    StripOnInput->False,
+                    TextAlignment->Left]:>
+                    NotebookTemplating`Authoring`Private`\
+makeTemplateSlot[
+                    ButtonNotebook[], "Positional"]},
+                    Appearance->None],
+                    DynamicModuleValues:>{},
+                    
+                    Initialization:>(Needs["NotebookTemplating`"]; 
+                    Needs["NotebookTemplating`Authoring`"])]}
+                   },
+                   AutoDelete->False,
+                   GridBoxAlignment->{"Rows" -> {{Bottom}}},
+                   
+                   GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}},
+                   GridBoxSpacings->{"Columns" -> {{0}}}],
+                  "Grid"],
+                 StyleBox[
+                  DynamicBox[
+                   FEPrivate`FrontEndResource[
+                   "NotebookTemplatingStrings", 
+                    "TemplateSlotTooltip"], BaseStyle -> 
+                   "TextStyling", SingleEvaluation -> True], 
+                  LinebreakAdjustments -> {0.95, 10, 100, 500, 500}, 
+                  StripOnInput -> False],
+                 TooltipDelay->0.5,
+                 TooltipStyle->{"Text", Smaller}],
+                Annotation[#, 
+                 Style[
+                  Dynamic[
+                   RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", 
+                    "TemplateSlotTooltip"]], BaseStyle -> 
+                   "TextStyling", SingleEvaluation -> True], 
+                  LinebreakAdjustments -> {0.95, 10, 100, 500, 500}], 
+                 "Tooltip"]& ], 
+               TagBox[
+                TooltipBox[
+                 DynamicModuleBox[{}, 
+                  ButtonBox[
+                   PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    PaneBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingBitmaps", 
+                    "TemplateExpressionIcon"],
+                    ImageSizeCache->{14., {4., 8.}},
+                    SingleEvaluation->True],
+                    
+                    ImageMargins->{{Automatic, Automatic}, {
+                    2, Automatic}}], 
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource["NotebookTemplatingStrings", "TemplateExpression"],
+                    BaseStyle->"TextStyling",
+                    ImageSizeCache->{63., {2., 9.}},
+                    SingleEvaluation->True], "Text",
+                    StripOnInput->False,
+                    TextAlignment->Center,
+                    FontSize->11,
+                    FontWeight->Bold,                    
+                    FontColor->RGBColor[0.4588235294117647, 0.4588235294117647, 0.4588235294117647]]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Center}}},
+                    
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.5}}, "Rows" -> {{Automatic}}}],
+                    "Grid"]],
+                   Alignment->Center,
+                   
+                   Appearance->FEPrivate`FrontEndResource[
+                    "NotebookTemplatingExpressions", 
+                    "ButtonDefaultAppearance"],
+                   
+                   ButtonFunction:>
+                    NotebookTemplating`Authoring`Private`\
+makeEvaluationExpression[
+                    ButtonNotebook[]],
+                   Evaluator->Automatic,
+                   FrameMargins->{{5, 5}, {Inherited, Inherited}},
+                   ImageSize->{Automatic, 26},
+                   Method->"Preemptive"],
+                  DynamicModuleValues:>{},
+                  
+                  Initialization:>(Needs["NotebookTemplating`"]; 
+                   Needs["NotebookTemplating`Authoring`"]; Null)],
+                 StyleBox[
+                  DynamicBox[
+                   FEPrivate`FrontEndResource[
+                   "NotebookTemplatingStrings", 
+                    "TemplateExpressionTooltip"], BaseStyle -> 
+                   "TextStyling", SingleEvaluation -> True], 
+                  LinebreakAdjustments -> {0.95, 10, 100, 500, 500}, 
+                  StripOnInput -> False],
+                 TooltipDelay->0.5,
+                 TooltipStyle->{"Text", Smaller}],
+                Annotation[#, 
+                 Style[
+                  Dynamic[
+                   RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", 
+                    "TemplateExpressionTooltip"]], BaseStyle -> 
+                   "TextStyling", SingleEvaluation -> True], 
+                  LinebreakAdjustments -> {0.95, 10, 100, 500, 500}], 
+                 "Tooltip"]& ], 
+               TagBox[
+                TooltipBox[
+                 DynamicModuleBox[{}, 
+                  ButtonBox[
+                   PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    PaneBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingBitmaps", "RepeatingBlockIcon"],
+                    ImageSizeCache->{14., {4., 8.}},
+                    SingleEvaluation->True],
+                    
+                    ImageMargins->{{Automatic, Automatic}, {
+                    1, Automatic}}], 
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource["NotebookTemplatingStrings", "RepeatingBlock"],
+                    BaseStyle->"TextStyling",
+                    ImageSizeCache->{91., {3., 9.}},
+                    SingleEvaluation->True], "Text",
+                    StripOnInput->False,
+                    TextAlignment->Center,
+                    FontSize->11,
+                    FontWeight->Bold,                    
+                    FontColor->RGBColor[0.4588235294117647, 0.4588235294117647, 0.4588235294117647]]}
+                    },
+                    AutoDelete->False,
+                    GridBoxAlignment->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Center}}},
+                    
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.5}}, "Rows" -> {{Automatic}}}],
+                    "Grid"]],
+                   Alignment->Center,
+                   
+                   Appearance->FEPrivate`FrontEndResource[
+                    "NotebookTemplatingExpressions", 
+                    "ButtonDefaultAppearance"],
+                   
+                   ButtonFunction:>
+                    NotebookTemplating`Authoring`Private`\
+manageTemplateNameBlock[
+                    ButtonNotebook[]],
+                   Evaluator->Automatic,
+                   FrameMargins->{{5, 5}, {Inherited, Inherited}},
+                   ImageSize->{Automatic, 26},
+                   Method->"Queued"],
+                  DynamicModuleValues:>{},
+                  
+                  Initialization:>(Needs["NotebookTemplating`"]; 
+                   Needs["NotebookTemplating`Authoring`"]; Null)],
+                 StyleBox[
+                  DynamicBox[
+                   FEPrivate`FrontEndResource[
+                   "NotebookTemplatingStrings", 
+                    "RepeatingBlockTooltip"], BaseStyle -> 
+                   "TextStyling", SingleEvaluation -> True], 
+                  LinebreakAdjustments -> {0.95, 10, 100, 500, 500}, 
+                  StripOnInput -> False],
+                 TooltipDelay->0.5,
+                 TooltipStyle->{"Text", Smaller}],
+                Annotation[#, 
+                 Style[
+                  Dynamic[
+                   RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", 
+                    "RepeatingBlockTooltip"]], BaseStyle -> 
+                   "TextStyling", SingleEvaluation -> True], 
+                  LinebreakAdjustments -> {0.95, 10, 100, 500, 500}], 
+                 "Tooltip"]& ], "\<\"\"\>", "\<\"\"\>", 
+               TagBox[
+                TooltipBox[
+                 DynamicModuleBox[{}, 
+                  ActionMenuBox[
+                   DynamicModuleBox[{}, 
+                    ButtonBox[
+                    PaneBox[
+                    
+                    RowBox[{
+                    
+                    StyleBox[
+                    DynamicBox[FEPrivate`FrontEndResource["NotebookTemplatingStrings", "CellBehavior"],
+                    BaseStyle->"TextStyling",
+                    ImageSizeCache->{80., {1., 9.}},
+                    SingleEvaluation->True], "Text",
+                    StripOnInput->False,
+                    TextAlignment->Center,
+                    FontSize->11,
+                    FontWeight->Bold,
+                    FontColor->RGBColor[0.4588235294117647, 0.4588235294117647, 0.4588235294117647]],
+                    StyleBox["j", "Text", FontSize -> 11, FontWeight -> Bold, ShowContents -> False]
+                    }],
+                    ImageMargins->1],
+                    Alignment->Center,
+                    
+                    Appearance->FEPrivate`FrontEndResource[
+                    "NotebookTemplatingExpressions", 
+                    "ButtonDropdownBothAppearance"],
+                    ButtonFunction:>Null,
+                    Evaluator->Automatic,
+                    FrameMargins->{{5, 0}, {Inherited, Inherited}},
+                    ImageSize->{Automatic, 26},
+                    Method->"Preemptive"],
+                    DynamicModuleValues:>{},
+                    
+                    Initialization:>(Needs["NotebookTemplating`"]; 
+                    Needs["NotebookTemplating`Authoring`"]; Null)], {
+                   TagBox[GridBox[{
+                    {
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingBitmaps", "evalDeleteMenuIcon"],
+                    SingleEvaluation->True], 
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", 
+                    "reportInputMenuDelete"],
+                    BaseStyle->"TextStyling",
+                    SingleEvaluation->True],
+                    StripOnInput->False,
+                    TextAlignment->Left,
+                    Background->None]}
+                    },
+                    AutoDelete->False,
+                    GridBoxAlignment->{"Rows" -> {{Bottom}}},
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}],
+                    "Grid"]:>
+                   NotebookTemplating`Authoring`Private`tagEvaluationCell[1], 
+                   TagBox[GridBox[{
+                    {
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingBitmaps", "evalHideMenuIcon"],
+                    SingleEvaluation->True], 
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", 
+                    "reportInputMenuHide"],
+                    BaseStyle->"TextStyling",
+                    SingleEvaluation->True],
+                    StripOnInput->False,
+                    TextAlignment->Left,
+                    Background->None]}
+                    },
+                    AutoDelete->False,
+                    GridBoxAlignment->{"Rows" -> {{Bottom}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}],
+                    "Grid"]:>
+                   NotebookTemplating`Authoring`Private`tagEvaluationCell[2], 
+                   TagBox[GridBox[{
+                    {
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingBitmaps", "unevalMenuIcon"],
+                    SingleEvaluation->True], 
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", 
+                    "reportInputMenuUnevaluated"],
+                    BaseStyle->"TextStyling",
+                    SingleEvaluation->True],
+                    StripOnInput->False,
+                    TextAlignment->Left,
+                    Background->None]}
+                    },
+                    AutoDelete->False,
+                    GridBoxAlignment->{"Rows" -> {{Bottom}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}],
+                    "Grid"]:>
+                   NotebookTemplating`Authoring`Private`\
+tagEvaluationCell[3], 
+                   TagBox[GridBox[{
+                    {
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingBitmaps", "excludeMenuIcon"],
+                    SingleEvaluation->True], 
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", 
+                    "reportInputMenuExclude"],
+                    BaseStyle->"TextStyling",
+                    SingleEvaluation->True],
+                    StripOnInput->False,
+                    TextAlignment->Left,
+                    Background->None]}
+                    },
+                    AutoDelete->False,
+                    GridBoxAlignment->{"Rows" -> {{Bottom}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}],
+                    "Grid"]:>
+                   NotebookTemplating`Authoring`Private`tagEvaluationCell[4], Delimiter, 
+                   TagBox[GridBox[{
+                    {
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingBitmaps", "removeMenuIcon"],
+                    SingleEvaluation->True], 
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", 
+                    "reportInputMenuRemove"],
+                    BaseStyle->"TextStyling",
+                    SingleEvaluation->True],
+                    StripOnInput->False,
+                    TextAlignment->Left,
+                    Background->None]}
+                    },
+                    AutoDelete->False,
+                    GridBoxAlignment->{"Rows" -> {{Bottom}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}],
+                    "Grid"]:>
+                   NotebookTemplating`Authoring`Private`untagEvaluationCell[
+                    EvaluationNotebook[]]},
+                   Alignment->Left
+                   , Appearance -> None
+                   ],
+                  DynamicModuleValues:>{},
+                  
+                  Initialization:>(Needs["NotebookTemplating`"]; 
+                   Needs["NotebookTemplating`Authoring`"])],
+                 StyleBox[
+                  DynamicBox[
+                   FEPrivate`FrontEndResource[
+                   "NotebookTemplatingStrings", 
+                    "EvaluatableCellsTooltip"], BaseStyle -> 
+                   "TextStyling", SingleEvaluation -> True], 
+                  LinebreakAdjustments -> {0.95, 10, 100, 500, 500}, 
+                  StripOnInput -> False],
+                 TooltipDelay->0.5,
+                 TooltipStyle->{"Text", Smaller}],
+                Annotation[#, 
+                 Style[
+                  Dynamic[
+                   RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", 
+                    "EvaluatableCellsTooltip"]], BaseStyle -> 
+                   "TextStyling", SingleEvaluation -> True], 
+                  LinebreakAdjustments -> {0.95, 10, 100, 500, 500}], 
+                 "Tooltip"]& ], "\<\"\"\>", "\<\"\"\>"}
+             },
+             AutoDelete->False,
+             
+             GridBoxDividers->{
+              "ColumnsIndexed" -> {
+                5 -> RGBColor[
+                  0.7176470588235294, 0.7176470588235294, 
+                   0.7176470588235294], 8 -> 
+                 RGBColor[
+                  0.7176470588235294, 0.7176470588235294, 
+                   0.7176470588235294]}},
+             GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+             GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Grid"], 
+           ItemBox[
+            TagBox[GridBox[{
+               {"\<\"\"\>", 
+                TagBox[
+                 TooltipBox[
+                  
+                  DynamicModuleBox[{
+                   NotebookTemplating`Authoring`Private`running$$ = 
+                   False}, 
+                   DynamicModuleBox[{}, 
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingBitmaps", "GenerateIcon"],
+                    ImageSizeCache->{11., {4., 8.}},
+                    SingleEvaluation->True], 
+                    RowBox[{
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource["NotebookTemplatingStrings", "Preview"],
+                    BaseStyle->"TextStyling",
+                    ImageSizeCache->{51., {1., 8.}},
+                    SingleEvaluation->True], "Text",
+                    StripOnInput->False,
+                    TextAlignment->Center,
+                    FontSize->11,
+                    FontWeight->Bold,
+                    
+                    FontColor->RGBColor[0.4588235294117647, 0.4588235294117647, 0.4588235294117647]],
+                    
+                    StyleBox["j", "Text", FontSize -> 11, FontWeight -> Bold, ShowContents -> False]
+                    
+                    }]
+                    
+                    }
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Center}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.5}}, "Rows" -> {{Automatic}}}],
+                    "Grid"]], True->"\<\"\[Ellipsis]\"\>"}, Dynamic[
+                    TrueQ[
+                    NotebookTemplating`Authoring`Private`running$$]],
+                    Alignment->{Center, Baseline},
+                    BaselinePosition->Baseline],
+                    Alignment->Center,
+                    
+                    Appearance->FEPrivate`FrontEndResource[
+                    "NotebookTemplatingExpressions", 
+                    "ButtonDefaultAppearance"],
+                    
+                    ButtonFunction:>(
+                    NotebookTemplating`Authoring`Private`running$$ = 
+                    True; CheckAbort[
+                    
+                    NotebookTemplating`Authoring`Private`\
+generatePreview[
+                    ButtonNotebook[]], $Aborted]; 
+                    NotebookTemplating`Authoring`Private`running$$ = 
+                    False),
+                    Enabled->Dynamic[
+                    Not[
+                    NotebookTemplating`Authoring`Private`running$$]],
+                    Evaluator->Automatic,
+                    FrameMargins->{{10, 6}, {Inherited, Inherited}},
+                    ImageSize->{Automatic, 26},
+                    Method->"Queued"],
+                    DynamicModuleValues:>{},
+                    
+                    Initialization:>(Needs["NotebookTemplating`"]; 
+                    Needs["NotebookTemplating`Authoring`"]; Null)],
+                   DynamicModuleValues:>{},
+                   
+                   Initialization:>(Needs["NotebookTemplating`"]; 
+                    Needs["NotebookTemplating`Authoring`"])],
+                  StyleBox[
+                   DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", "PreviewTooltip"], 
+                    BaseStyle -> "TextStyling", SingleEvaluation -> 
+                    True], 
+                   LinebreakAdjustments -> {0.95, 10, 100, 500, 500}, 
+                   StripOnInput -> False],
+                  TooltipDelay->0.5,
+                  TooltipStyle->{"Text", Smaller}],
+                 Annotation[#, 
+                  Style[
+                   Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", "PreviewTooltip"]], 
+                    BaseStyle -> "TextStyling", SingleEvaluation -> 
+                    True], 
+                   LinebreakAdjustments -> {0.95, 10, 100, 500, 500}],
+                   "Tooltip"]& ], 
+                TagBox[
+                 TooltipBox[
+                  DynamicModuleBox[{}, 
+                   ButtonBox[
+                    PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "NotebookTemplatingBitmaps", "HelpIcon"],
+                    ImageSizeCache->{12., {4., 8.}},
+                    SingleEvaluation->True], 
+                    StyleBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource["NotebookTemplatingStrings", "Help"],
+                    BaseStyle->"TextStyling",
+                    ImageSizeCache->{26., {2., 9.}},
+                    SingleEvaluation->True], "Text",
+                    StripOnInput->False,
+                    TextAlignment->Center,
+                    FontSize->11,
+                    FontWeight->Bold,
+                    FontColor->RGBColor[0.4588235294117647, 0.4588235294117647, 0.4588235294117647]]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Center}}},
+                    
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.5}}, "Rows" -> {{Automatic}}}],
+                    "Grid"]],
+                    Alignment->Center,
+                    
+                    Appearance->FEPrivate`FrontEndResource[
+                    "NotebookTemplatingExpressions", 
+                    "ButtonDefaultAppearance"],
+                    
+                    ButtonFunction:>SystemOpen[
+                    "paclet:guide/AutomatedReports"],
+                    Evaluator->Automatic,
+                    FrameMargins->{{10, 10}, {Inherited, Inherited}},
+                    ImageSize->{Automatic, 26},
+                    Method->"Preemptive"],
+                   DynamicModuleValues:>{},
+                   
+                   Initialization:>(Needs["NotebookTemplating`"]; 
+                    Needs["NotebookTemplating`Authoring`"]; Null)],
+                  StyleBox[
+                   DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", "HelpTooltip"], 
+                    BaseStyle -> "TextStyling", SingleEvaluation -> 
+                    True], 
+                   LinebreakAdjustments -> {0.95, 10, 100, 500, 500}, 
+                   StripOnInput -> False],
+                  TooltipDelay->0.5,
+                  TooltipStyle->{"Text", Smaller}],
+                 Annotation[#, 
+                  Style[
+                   Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "NotebookTemplatingStrings", "HelpTooltip"]], 
+                    BaseStyle -> "TextStyling", SingleEvaluation -> 
+                    True], 
+                   LinebreakAdjustments -> {0.95, 10, 100, 500, 500}],
+                   "Tooltip"]& ]}
+              },
+              AutoDelete->False,
+              GridBoxAlignment->{"Rows" -> {{Bottom}}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+             "Grid"],
+            Alignment->Right,
+            StripOnInput->False]}
+         },
+         AutoDelete->False,
+         
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "Rows" -> {{Bottom}}},
+         GridBoxItemSize->{"Columns" -> {
+             Scaled[0.7], 
+             Scaled[0.3]}}],
+        "Grid"]}
+     },
+     BaseStyle->{
+      "DialogStyle", FontColor -> 
+       RGBColor[
+        0.33333333333333337`, 0.33333333333333337`, 
+         0.33333333333333337`]},
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+    "Column"],
+   ImageMargins->{{5, 5}, {Automatic, Automatic}}],
+  Appearance->FEPrivate`FrontEndResource[
+   "NotebookTemplatingExpressions", "DockedCellBackground"],
+  FrameMargins->{{8, 8}, {8, 12}},
+  ImageMargins->-1]], ShowStringCharacters->False, "NotebookTemplateDockedCell"]
+}     
+@|
+@|
+@@resource NotebookTemplatingBitmaps
+{
+
+"Test" -> "Those are icons",
+
+"TemplateSlotIcon" ->
+GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+    1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEDxHxADGIHTtsQ
+    MHU9kAQxpkEY6wPACC4CU7C+7tADEDqMQPWHHyJzgbIQvXAuHgQxHEUl2MB6
+    JNNA5gNVTl0PRJh2wR1TDxOBuBlZO7IuCBdiJsRfyNohKhFqkH0EUXkIxXZ8
+    fkeyGplEM7MeyTo006BceCjhDUl4eEKMhZDweESgqQg2AAIkU00=
+        "], {{0, 12}, {14, 0}}, {0, 255},
+       ColorFunction -> RGBColor],
+     BoxForm`ImageTag["Byte", ColorSpace -> "RGB", 
+   Interleaving -> True],
+     Selectable -> False],
+   BaseStyle -> "ImageGraphics", ImageSize -> {13.5, 12.},
+   ImageSizeRaw -> {14, 12},
+   PlotRange -> {{0, 14}, {0, 12}}],
+
+"TemplateExpressionIcon" -> 
+GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+    1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEDxHxADGLXHXpA
+    PHr/+z9BBFf57hdUBMKAkxCErPI9hhQcoatEVvYLVcsvwrYjM5BVolmKXyUu
+    hNWdUHMwvIbsdzRDIOqxqEQNQ0wuSVEJAN4Uyp0=
+        "], {{0, 12}, {14, 0}}, {0, 255},
+       ColorFunction -> RGBColor],
+     BoxForm`ImageTag["Byte", ColorSpace -> "RGB", 
+   Interleaving -> True],
+     Selectable -> False],
+   BaseStyle -> "ImageGraphics", ImageSize -> {13.5, 12.},
+   ImageSizeRaw -> {14, 12},
+   PlotRange -> {{0, 14}, {0, 12}}],
+
+"RepeatingBlockIcon" ->
+ GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+    1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEDxHxADBIkF0w6
+    +/T/5HNP/086h6DB+CwSRheD8m9++YeE/6KwbyDxb3z+C8YwvTdQ1KLrhfH/
+    wvXC7TyL5k4k8cnnnqGKQTEFQUN2eE6/+AyBL0DoaRcgGFkOxJ9y4RlSeKKH
+    AzqGhskXpPAE4gvvf/8///4XGEPYSPwPv8FiIBokDtYHtGvexaf/5154AqEv
+    QvgQMQjGxSc3XADwDY7s
+        "], {{0, 12}, {14, 0}}, {0, 255},
+       ColorFunction -> RGBColor],
+     BoxForm`ImageTag["Byte", ColorSpace -> "RGB", 
+   Interleaving -> True],
+     Selectable -> False],
+   BaseStyle -> "ImageGraphics", ImageSize -> {13.5, 12.},
+   ImageSizeRaw -> {14, 12},
+   PlotRange -> {{0, 14}, {0, 12}}],
+
+"GenerateIcon" -> 
+ GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+    1:eJxdkctKQlEUhqUaBPUSvUYjLyU4CMuamCIY5A28oOEF0amhA0VQ8IKSIjRx
+    YiBiSJD4AmojRbyEEwtq4I3orP4tnTAH395nr//f66y19sGVVaHbEggEjl0s
+    Cq1LZLdrPec7OIg9N9dX2/jYB3uABYnoD6VSeQ8mQAvE4I7t6x6GSqUS+v1+
+    LhgMksViIYPBQF6vl2w2W4f3qNXqQ9AwmUzf4XCYIpHIPwKBAAddyry4W8GZ
+    otEopVIp6vV6NJ/PaTAYUCaTWcXNZjOn0WhKrVbrMR6PE6Pb7X4ul0u5z+eT
+    Y5f1+/0Ji8diMUJtX+l0+jaRSBBjNBpd6vV6CWoknU53Mp1OpbzWbDYXyPEB
+    PzHQ2wXySdj/4ZNbrVYhr1Wr1WS5XF5ks1lioPY39Hg0m81OHQ6HyO12v/Ja
+    KBRqoL+H8XjM5fP51X2Xy0VGo5GcTiclk0nK5XJUKpWo3W4//87uuFKpcIVC
+    gTYZDocc9CaQ8XPGrF7q9TrrjzqdDhWLRarVapBIsfluLDcogjNgBO/gad3z
+    A9ttdPU=
+        "], {{0, 12}, {11, 0}}, {0, 255},
+       ColorFunction -> RGBColor],
+     BoxForm`ImageTag["Byte", ColorSpace -> "RGB", 
+   Interleaving -> True],
+     Selectable -> False],
+   BaseStyle -> "ImageGraphics",
+   ImageSizeRaw -> {11, 12},ImageSize -> Magnification[1],
+   PlotRange -> {{0, 11}, {0, 12}}],
+
+"HelpIcon" -> 
+ GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+    1:eJxdkc1LAmEQxqU6dOgfqJunzkHXDkWnLkERJAq5QR4STLZEAm+BH6gIil8p
+    +IHiByyeVpRFSLx0yIsHDyoIgtDFCNLAbXWaWXpBOvzed2fmeWcfZrTXd2em
+    NY1Gc7+JxxlnP+R57vF8A4Ojx4eb63X82PqDkgCgotPpthE/0kfmyBjJIXtM
+    w9Dr9Qccx33Y7XZwuVwQCATA4/GAw+EAk8mkYP2WaQ0Gw7bZbP70+XwQDAah
+    UCiAJEmLcrkMoVBIfcvz/BJ1x6S3WCzPlKNaMpmETqfTHwwGQq/X69RqNYXy
+    hM1m65He7XZ/RiIRIGKx2ALjF6vV2k0kEk/1er3Nal6vF4xG4w69jcfjKuFw
+    GPx+/zf27lerVY/T6XxnNQL9nuTzedUHo1KpzDOZjBf/LzOPjFarddpoNGap
+    VAoY2Wz2KxqNSul0GlbzgiCgfdCOx2Mhl8uRTqVYLM5EUXzFe8lyRLfbff+b
+    6e5wOPyhOZI38kk7oP4UE+12m3pfrezscjKZyM1mE0qlkroDAucDo9GItIH/
+    O0b2EVFRFHk6nYIsy6R7Qy5Wdb9ADJh0
+        "], {{0, 12}, {12, 0}}, {0, 255},
+       ColorFunction -> RGBColor],
+     BoxForm`ImageTag["Byte", ColorSpace -> "RGB", 
+   Interleaving -> True],
+     Selectable -> False],
+   BaseStyle -> "ImageGraphics",ImageSize -> Magnification[1],
+   ImageSizeRaw -> {12, 12},PlotRange -> {{0, 12}, {0, 12}}],   
+
+"evalDeleteMenuIcon" -> 
+ GraphicsBox[TagBox[RasterBox[CompressedData["
+      1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEHxLxADBL8////
+oMOZmZn/QZgcfYNZD7EYXc/ChQvxYmrpIdZt5MYPPTEAUj4LYw==
+      "], {{0, 14}, {13, 
+       0}}, {0, 255}, ColorFunction -> RGBColor], 
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True], 
+    Selectable -> False], BaseStyle -> "ImageGraphics", ImageSize -> Magnification[1],
+   ImageSizeRaw -> {13, 14}, PlotRange -> {{0, 13}, {0, 14}}],
+   
+"evalHideMenuIcon" -> 
+ GraphicsBox[TagBox[RasterBox[CompressedData["
+      1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEHxLxADBL8//8/
+      XXB1dfV/YmgQzszM/A/CpNpBrh5S3EaJPcRidD0LFy7Ei6mlh1i3kRs/9MQA
+      2/wF4Q==
+      "], {{0, 14}, {13, 0}}, {0, 255}, 
+     ColorFunction -> RGBColor], 
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True], 
+    Selectable -> False], BaseStyle -> "ImageGraphics", ImageSize -> Magnification[1],
+   ImageSizeRaw -> {13, 14}, PlotRange -> {{0, 13}, {0, 14}}],
+
+"unevalMenuIcon" -> 
+ GraphicsBox[TagBox[RasterBox[CompressedData["
+      1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEHxLxADBL8//8/
+      XXBmZuZ/YjC6WmLMRbeDHD3Eug1dPyn+Hy56iA3ngcQAoo8NEw==
+      "], {{0, 
+       14}, {13, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True], 
+    Selectable -> False], BaseStyle -> "ImageGraphics", 
+   ImageSize -> Magnification[1], ImageSizeRaw -> {13, 14}, 
+   PlotRange -> {{0, 13}, {0, 14}}],
+
+"excludeMenuIcon" -> 
+ GraphicsBox[TagBox[RasterBox[CompressedData["
+      1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEHxLxADBL8//8/
+      TpyZmZkKxMvwqUFTHwHEz4FYC4vcf2Iwulo0MxyB+DUQ2yKbi24HEt8cqt4D
+      3S2kugtdD5RWAeKnQJxIRNjA9NQBcR6R4fmfGHX01oMtbgYbBgBqZviB
+      "], {{0, 14}, {13, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True], 
+    Selectable -> False], BaseStyle -> "ImageGraphics", ImageSize -> Magnification[1],
+   ImageSizeRaw -> {13, 14}, PlotRange -> {{0, 13}, {0, 14}}],
+
+"removeMenuIcon" -> 
+ GraphicsBox[
+      TagBox[RasterBox[CompressedData["
+    1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEHxLxADBL8////
+ oMOZmZn/QZgcfaN6aK+H3PihJwYAdtEfWw=="], {{0, 14}, {13, 0}}, {0, 255},ColorFunction -> RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],Selectable -> False],
+ BaseStyle -> "ImageGraphics",ImageSize -> Magnification[1], ImageSizeRaw -> {13, 14},PlotRange -> {{0, 13}, {0, 14}}],
+ 
+"evalDeleteIcon" -> 
+ GraphicsBox[TagBox[RasterBox[CompressedData["
+      1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEHxLxADBL8////
+oMOZmZkNIEyOvsGsh1iMrmfhwoV4MbX0EOs2cuOHnhgA+iryBw==
+      "], {{0, 14}, {13, 
+       0}}, {0, 255}, ColorFunction -> RGBColor], 
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True], 
+    Selectable -> False], BaseStyle -> "ImageGraphics", ImageSize -> Magnification[1],
+   ImageSizeRaw -> {13, 14}, PlotRange -> {{0, 13}, {0, 14}}],
+   
+"evalHideIcon" -> 
+ GraphicsBox[TagBox[RasterBox[CompressedData["
+      1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEHxLxADBL8//8/
+      XXB1dXUDMTQIZ2ZmNoAwqXaQq4cUt1FiD7EYXc/ChQvxYmrpIdZt5MYPPTEA
+      TPfnjw==
+      "], {{0, 14}, {13, 0}}, {0, 255}, 
+     ColorFunction -> RGBColor], 
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True], 
+    Selectable -> False], BaseStyle -> "ImageGraphics", ImageSize -> Magnification[1], 
+   ImageSizeRaw -> {13, 14}, PlotRange -> {{0, 13}, {0, 14}}],  
+  
+"unevalIcon" ->
+  GraphicsBox[TagBox[RasterBox[CompressedData["
+      1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEHxLxADBL8//8/
+      XXBmZmYDMRhdLTHmottBjh5i3YaunxT/Dxc9xIbzQGIAah77pw==
+      "], {{0, 
+       14}, {13, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True], 
+    Selectable -> False], BaseStyle -> "ImageGraphics", ImageSize -> Magnification[1],
+   ImageSizeRaw -> {13, 14}, PlotRange -> {{0, 13}, {0, 14}}],
+
+"excludeIcon" ->
+  GraphicsBox[TagBox[RasterBox[CompressedData["
+      1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBLECOU2VJahIzkMEHxLxADBL8//8/
+      TpyZmWkMxMH41KCp1wHiEiAWxSLXQAxGV4tmhiIQlwGxPLK56HYg8WWg6lXQ
+      3UKqu9D1QGkhIC4GYkMiwgamxx6IzYkMzwZi1NFbD7a4GWwYAGLH41o=
+      "], {{0, 14}, {13, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True], 
+    Selectable -> False], BaseStyle -> "ImageGraphics",ImageSize -> Magnification[1], 
+   ImageSizeRaw -> {13, 14}, PlotRange -> {{0, 13}, {0, 14}}]     	
+  
+}
+@|
+
+
+
+
+
+
+
+
+
+
+
+

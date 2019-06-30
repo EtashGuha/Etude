@@ -1,0 +1,12 @@
+{"Integrate", "Infinity", "Pi", "E", "Sqrt", "Quantity", "Limit", "Abs", 
+ "Sin", "None", "Exp", "Log", "Cos", "D", "I", "Sum", "Re", "Interval", 
+ "Plus", "Tan", "Gamma", "Projection", "NormalDistribution", "LessEqual", 
+ "Less", "Equal", "Cosh", "ArcSin", "Rationalize", "Derivative", "Csc", 
+ "Binomial", "Erf", "PrimeZetaP", "Min", "HeavisideTheta", "GreaterEqual", 
+ "FourierTransform", "ArcCos", "Rational", "Max", "InverseFourierTransform", 
+ "Intersection", "Greater", "Cot", "BitOr", "Arg", "Tanh", "Subscript", 
+ "Normalize", "Log10", "Length", "LaguerreL", "Inverse", "Im", "Factor", 
+ "Erfc", "ArcSech", "UnitBox", "Total", "SymmetricMatrixQ", "Sinh", "Sec", 
+ "Ratios", "Orthogonalize", "Norm", "MoebiusMu", "MatrixRank", "LerchPhi", 
+ "LaplaceTransform", "HypergeometricPFQRegularized", "Dt", "Direction", 
+ "ArcSec"}

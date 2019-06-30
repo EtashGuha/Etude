@@ -1,0 +1,545 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     15187,        536]
+NotebookOptionsPosition[     13818,        483]
+NotebookOutlinePosition[     14800,        523]
+CellTagsIndexPosition[     14729,        518]
+WindowTitle->None
+WindowFrame->Palette*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[GraphicsData["CompressedBitmap", "\<\
+eJytlk1OG0EQhdsz4z+cEHAsIguQEAon4ADJAiWLOIss2LCzUBAsokQEiStw
+BW6AuAJX4ApInIArOP1V1xv3QIJZpCV7uuu/Xr8a++v07Pj7j+nZyeF06/Pp
+9NfxyeHvrU8/T6OobIUQvsXP263Afha3+ip5hF6vZ88JX61QlubC+r/6Ny7b
+3t4Oe3t7YXV1NcmKsLu7O9+161037aJDb0HsymWXl5dhNpuF8/PzJCvsWFoy
+hJySrBcuLi7MDR2Sm5sbO/OM58IO7XB3d2dqmd7e3nqIjun29/dNp/Cxt1Rc
+p44ce8ndk3eK/EjlkZcaOjJwzrNwjt12XwRMZaA/PDzYJ6YqXEwGRavRGoej
+o6NwfX1tJ/YsTPBmCWauMUPMskiHP8XiI1tiNa4n5kIvCPEFBMBQs+gV9186
+tcEij4DDnpydBSi1XSZw+VT2vWl5WZyIxyLnXxjTYJlwy2jRwImlusEKPXvy
+VV4V9vgrB/syXRRmZcOgyBWqmAyFd0dFIPZyRAbWkW6Q7kmosxIjT3NlBaBO
+wRiwpKC5fsMpp4KoBizFnIfzLsggTAiqO+HJuXQ6E4wKXZ7E/VqsYkU3NYN+
+0SAZYOFDfZ35teSjoF5EQelVLntKFoUYK0CmJsXVXnQXNTR+eiOJYvlIqE9R
+K7chHjU8p1MP6k/3gs0ijLp+RfmrQmRJJOw1xiHHhHP0K3z2BJu3LUKoqjQk
+TRkupburM0dOyfUiFYA0rVmMusIUgycqcVScVn9EXzRIwiTnu+KnspYtDnJh
+ojP55UdO9hq2aFNgJOrLx+Ok0H3rWKHzFKIfT3+jRFW73iksKUWpkP8sP9Oy
+fnmEslN+ycSd/Pcmn5ahR8rJsewyDQBr6YXZ5eNEV3YaEmN0FxGklbrz6ArG
+3LP/lKiK/M3dT/ZVVT0poO/mojDT9tpl+ZSvJGIk2operFduDEhCop91vbGx
+YfrxeIzA9ONHSDEg77NC1HIeB3/06+vrdZyP7kPRjV7dB1v0BwcHodtN5PY/
+fvHYMjn6q6urMJlMDKAvSR+3LWQtU9L6/f297XHa2dkJa2trEdPhcNgNRVG8
+YxdDjUajGppNL28wGJg2WfDdNhkRiEREIrcsR8z+Bx9Iul8=\
+\>"], "Graphics",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {2, 0}},
+ ShowCellBracket->False,
+ CellMargins->{{4, 4}, {0, 6}},
+ Deployed->False,
+ Evaluatable->False,
+ CellFrameMargins->False,
+ ImageSize->{81, 19},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"ShortTab"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Insert", " ", "Value"}], "   ", 
+  ButtonBox[
+   RowBox[{" ", 
+    RowBox[{
+     StyleBox["?",
+      FontSize->12], " "}]}],
+   ButtonData->"paclet:AuthorTools/tutorial/InsertValue",
+   ButtonFunction:>(FEPrivate`FrontEndExecute[
+     FrontEndToken["OpenHelpLink", {#, 
+       FEPrivate`If[
+        CurrentValue["ShiftKey"], Null, 
+        FEPrivate`ButtonNotebook[]]}]]& ),
+   Evaluator->None]}]], "PaletteTitle",
+ FontFamily->"Helvetica"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox[
+     StyleBox[
+      RowBox[{
+       StyleBox[
+        RowBox[{"Date", " ", "and", " ", "Time"}],
+        FontSize->10,
+        FontWeight->"Bold"], 
+       StyleBox[
+        AdjustmentBox["\[DownPointer]",
+         BoxBaselineShift->0.25,
+         BoxMargins->{{0, 0}, {-0.25, 0.25}}],
+        FontSize->18]}],
+      FontFamily->"Helvetica"],
+     ButtonFunction:>FrontEndExecute[{
+        FrontEnd`SelectionMove[
+         FrontEnd`ButtonNotebook[], All, ButtonCell], 
+        FrontEndToken[
+         FrontEnd`ButtonNotebook[], "OpenCloseGroup"]}]]}
+  }]],
+ CellMargins->{{0, 0}, {-1, 2}},
+ TextAlignment->Left,
+ SingleLetterItalics->False,
+ FontColor->GrayLevel[1],
+ ButtonBoxOptions->{Active->True,
+ Background->RGBColor[0, 0.32549, 0.537255],
+ ButtonMargins->3},
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {{
+      Scaled[0.99]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}},
+ GridBoxSpacings->{"Columns" -> {
+     Offset[0.27999999999999997`], {
+      Offset[0.]}, 
+     Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+     Offset[0.2], {
+      Offset[0.]}, 
+     Offset[0.2]}, "RowsIndexed" -> {}}}],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox["Date",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["Date"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["DateLong",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["DateLong"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["Day",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["Day"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["Month",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["Month"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["Year",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["Year"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["DayName",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["DayName"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["MonthName",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["MonthName"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["ShortDayName",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["ShortDayName"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["ShortYear",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["ShortYear"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["Time",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["Time"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["Hour",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["Hour"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["Minute",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["Minute"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["Second",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["Second"]]]],
+     Evaluator->None]}
+  },
+  GridBoxItemSize->{"Columns" -> {{
+       Scaled[0.99]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+    "RowsIndexed" -> {}},
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.27999999999999997`], {
+       Offset[0.5599999999999999]}, 
+      Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}}]], NotebookDefault,
+ CellMargins->{{0, 0}, {0, -1}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox[
+     StyleBox[
+      RowBox[{
+       StyleBox[
+        RowBox[{"Files", " ", "and", " ", "Directories"}],
+        FontSize->10,
+        FontWeight->"Bold"], 
+       StyleBox[
+        AdjustmentBox["\[DownPointer]",
+         BoxBaselineShift->0.25,
+         BoxMargins->{{0, 0}, {-0.25, 0.25}}],
+        FontSize->18]}],
+      FontFamily->"Helvetica"],
+     ButtonFunction:>FrontEndExecute[{
+        FrontEnd`SelectionMove[
+         FrontEnd`ButtonNotebook[], All, ButtonCell], 
+        FrontEndToken[
+         FrontEnd`ButtonNotebook[], "OpenCloseGroup"]}]]}
+  }]],
+ CellMargins->{{0, 0}, {-1, 2}},
+ TextAlignment->Left,
+ SingleLetterItalics->False,
+ FontColor->GrayLevel[1],
+ ButtonBoxOptions->{Active->True,
+ Background->RGBColor[0, 0.32549, 0.537255],
+ ButtonMargins->3},
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {{
+      Scaled[0.99]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}},
+ GridBoxSpacings->{"Columns" -> {
+     Offset[0.27999999999999997`], {
+      Offset[0.]}, 
+     Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+     Offset[0.2], {
+      Offset[0.]}, 
+     Offset[0.2]}, "RowsIndexed" -> {}}}],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox["Page",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         CounterBox["Page"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["FileName",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["FileName"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["PathName",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["PathName"]]]],
+     Evaluator->None]}
+  },
+  GridBoxItemSize->{"Columns" -> {{
+       Scaled[0.99]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+    "RowsIndexed" -> {}},
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.27999999999999997`], {
+       Offset[0.5599999999999999]}, 
+      Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}}]], NotebookDefault,
+ CellMargins->{{0, 0}, {0, -1}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox[
+     StyleBox[
+      RowBox[{
+       StyleBox[
+        RowBox[{"System", " ", "Variables"}],
+        FontSize->10,
+        FontWeight->"Bold"], 
+       StyleBox[
+        AdjustmentBox["\[DownPointer]",
+         BoxBaselineShift->0.25,
+         BoxMargins->{{0, 0}, {-0.25, 0.25}}],
+        FontSize->18]}],
+      FontFamily->"Helvetica"],
+     ButtonFunction:>FrontEndExecute[{
+        FrontEnd`SelectionMove[
+         FrontEnd`ButtonNotebook[], All, ButtonCell], 
+        FrontEndToken[
+         FrontEnd`ButtonNotebook[], "OpenCloseGroup"]}]]}
+  }]],
+ CellMargins->{{0, 0}, {-1, 2}},
+ TextAlignment->Left,
+ SingleLetterItalics->False,
+ FontColor->GrayLevel[1],
+ ButtonBoxOptions->{Active->True,
+ Background->RGBColor[0, 0.32549, 0.537255],
+ ButtonMargins->3},
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {{
+      Scaled[0.99]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}},
+ GridBoxSpacings->{"Columns" -> {
+     Offset[0.27999999999999997`], {
+      Offset[0.]}, 
+     Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+     Offset[0.2], {
+      Offset[0.]}, 
+     Offset[0.2]}, "RowsIndexed" -> {}}}],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox["$System",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["$System"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["$SystemID",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["$SystemID"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["$OperatingSystem",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["$OperatingSystem"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["$MachineName",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["$MachineName"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["$MachineType",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["$MachineType"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["$MachineID",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["$MachineID"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["$Version",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["$Version"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["$VersionNumber",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["$VersionNumber"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["$ReleaseNumber",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["$ReleaseNumber"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["$CreationDate",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["$CreationDate"]]]],
+     Evaluator->None]},
+   {
+    ButtonBox["$UserName",
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>FrontEndExecute[
+       NotebookWrite[
+        InputNotebook[], 
+        TextData[
+         ValueBox["$UserName"]]]],
+     Evaluator->None]}
+  },
+  GridBoxItemSize->{"Columns" -> {{
+       Scaled[0.99]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+    "RowsIndexed" -> {}},
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.27999999999999997`], {
+       Offset[0.5599999999999999]}, 
+      Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}}]], NotebookDefault,
+ CellMargins->{{0, 0}, {0, -1}}]
+}, Closed]]
+},
+ClosingAutoSave->True,
+WindowToolbars->{},
+CellGrouping->Manual,
+WindowSize->{173, 256},
+WindowMargins->{{Automatic, 131}, {Automatic, 0}},
+WindowFrame->"Palette",
+WindowElements->"VerticalScrollBar",
+WindowFrameElements->{"CloseBox", "ResizeArea"},
+WindowClickSelect->False,
+WindowTitle->None,
+ScrollingOptions->{"VerticalScrollRange"->Fit},
+ShowCellBracket->False,
+CellMargins->{{0, 0}, {Inherited, 0}},
+Deployed->True,
+CellOpen->True,
+ShowCellLabel->False,
+ShowCellTags->False,
+ImageMargins->{{0, Inherited}, {Inherited, 0}},
+Background->GrayLevel[0.85098],
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 31, \
+2012)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ShortTab"->{
+  Cell[576, 21, 1508, 32, 27, "Graphics",
+   Evaluatable->False,
+   CellTags->"ShortTab"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ShortTab", 14614, 511}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[576, 21, 1508, 32, 27, "Graphics",
+ Evaluatable->False,
+ CellTags->"ShortTab"],
+Cell[2087, 55, 475, 15, 52, "PaletteTitle"],
+Cell[CellGroupData[{
+Cell[2587, 74, 1196, 37, 27, InheritFromParent],
+Cell[3786, 113, 3365, 129, 379, NotebookDefault]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7188, 247, 1204, 37, 27, InheritFromParent],
+Cell[8395, 286, 1145, 39, 89, NotebookDefault]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9577, 330, 1191, 37, 27, InheritFromParent],
+Cell[10771, 369, 3031, 111, 321, NotebookDefault]
+}, Closed]]
+}
+]
+*)
+
+(* End of internal cache information *)

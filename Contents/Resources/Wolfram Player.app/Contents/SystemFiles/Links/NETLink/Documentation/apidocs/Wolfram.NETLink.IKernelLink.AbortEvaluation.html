@@ -1,0 +1,58 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IKernelLink.AbortEvaluation Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IKernelLink.AbortEvaluation.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IKernelLink.AbortEvaluation Method </h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Sends a request to the kernel to abort the current evaluation. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Sub AbortEvaluation()</div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />
+        <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> AbortEvaluation();</div>
+      <h4 class="dtH4">Remarks</h4>
+      <p> This method is typically called from a different thread than the one that is performing the computation. That "computation" thread is typically blocking in WaitForAnswer or some other method that is waiting for the result to arrive from <i>Mathematica</i>. If you want to abort the computation so that the main thread does not have to continue waiting, you can call AbortEvaluation on some other thread (perhaps in response to some user action like clicking an "abort" button). The <i>Mathematica</i> computation will terminate and return the symbol $Aborted. <p> Be aware that <i>Mathematica</i> is not always in a state where it is receptive to abort requests. A quick return of $Aborted is not always guaranteed. </p> What this method does is simply use <a href="Wolfram.NETLink.IMathLink.PutMessage.html">PutMessage</a> to send a MathLinkMessage.Abort to the kernel. It is provided as a convenience to shield programmers from such low-level details. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IKernelLink.html">IKernelLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.IKernelLink.InterruptEvaluation.html">InterruptEvaluation</a> | <a href="Wolfram.NETLink.IKernelLink.AbandonEvaluation.html">AbandonEvaluation</a> | <a href="Wolfram.NETLink.IKernelLink.TerminateKernel.html">TerminateKernel</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="AbortEvaluation method">
+        </param>
+        <param name="Keyword" value="AbortEvaluation method, IKernelLink interface">
+        </param>
+        <param name="Keyword" value="IKernelLink.AbortEvaluation method">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

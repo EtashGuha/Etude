@@ -1,0 +1,93 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3052,         85]
+NotebookOptionsPosition[      1627,         52]
+NotebookOutlinePosition[      2172,         74]
+CellTagsIndexPosition[      2129,         71]
+MenuPosition->0
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[StyleData[StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+  "Reference.nb", CharacterEncoding -> "ShiftJIS"]],
+ Editable->False,ExpressionUUID->"f924e416-40f3-4d25-8920-2a314c238c64"],
+
+Cell[CellGroupData[{
+
+Cell["Function Page Styles", "Section",ExpressionUUID->"4ac18bf3-4a3b-42e1-b4dd-71b391f42b72"],
+
+Cell[StyleData["History"],
+ FontSlant->"Plain",ExpressionUUID->"5c43bd12-379c-4546-a48f-e13e362ec5d2"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Entity Type Page Styles", "Section",ExpressionUUID->"74d6c838-95c2-475a-a1fe-74e5c63e104c"],
+
+Cell[StyleData["EntityAbstract"],
+ FontSlant->"Plain",ExpressionUUID->"65879d44-279a-4fca-bd2b-3c16441c27a1"],
+
+Cell[StyleData["EntityRelatedInterpreter"],
+ FontSlant->"Plain",ExpressionUUID->"1e0ad68c-62a4-4943-924e-5860f5b09996"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Interpreter Type Page Styles", "Section",ExpressionUUID->"afe23597-8062-4160-9217-132c6f598b05"],
+
+Cell[StyleData["InterpreterUsage"],
+ FontSlant->"Plain",ExpressionUUID->"a90b0397-0877-4e88-bfe3-a866b454bfee"]
+}, Closed]]
+},
+Editable->True,
+Saveable->True,
+WindowSize->{899, 724},
+WindowMargins->{{3, Automatic}, {Automatic, 44}},
+ShowSelection->True,
+TaggingRules->{"NewStyles" -> False},
+TrackCellChangeTimes->False,
+MenuSortingValue->None,
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"StylesheetFormatting.nb",
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[574, 21, 192, 2, 36, 119, 1, "StyleData", "StyleDefinitions", "",ExpressionUUID->"f924e416-40f3-4d25-8920-2a314c238c64"],
+Cell[CellGroupData[{
+Cell[791, 27, 94, 0, 49, "Section",ExpressionUUID->"4ac18bf3-4a3b-42e1-b4dd-71b391f42b72"],
+Cell[888, 29, 102, 1, 65, 26, 0, "StyleData", "History", "All",ExpressionUUID->"5c43bd12-379c-4546-a48f-e13e362ec5d2"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1027, 35, 97, 0, 33, "Section",ExpressionUUID->"74d6c838-95c2-475a-a1fe-74e5c63e104c"],
+Cell[1127, 37, 109, 1, 51, 33, 0, "StyleData", "EntityAbstract", "All",ExpressionUUID->"65879d44-279a-4fca-bd2b-3c16441c27a1"],
+Cell[1239, 40, 119, 1, 48, 43, 0, "StyleData", "EntityRelatedInterpreter", "All",ExpressionUUID->"1e0ad68c-62a4-4943-924e-5860f5b09996"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1395, 46, 102, 0, 49, "Section",ExpressionUUID->"afe23597-8062-4160-9217-132c6f598b05"],
+Cell[1500, 48, 111, 1, 73, 35, 0, "StyleData", "InterpreterUsage", "All",ExpressionUUID->"a90b0397-0877-4e88-bfe3-a866b454bfee"]
+}, Closed]]
+}
+]
+*)
+

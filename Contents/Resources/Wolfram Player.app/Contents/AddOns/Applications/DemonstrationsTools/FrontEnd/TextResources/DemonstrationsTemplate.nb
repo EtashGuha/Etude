@@ -1,0 +1,391 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     12339,        382]
+NotebookOptionsPosition[      9266,        289]
+NotebookOutlinePosition[     10830,        339]
+CellTagsIndexPosition[     10514,        327]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Your Title Here", "DemoTitle"],
+
+Cell["", "InitializationSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{"XXXX", ",", 
+   RowBox[{"{", "}"}]}], "]"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell["XXXX", "ManipulateCaption"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ GraphicsBox[
+  {EdgeForm[GrayLevel[0]], FaceForm[GrayLevel[1]], RectangleBox[{0, 0}], 
+   InsetBox[
+    StyleBox["\<\"Thumbnail Placeholder\"\>",
+     StripOnInput->False,
+     FontFamily->"Verdana",
+     FontSize->14], {0.5, 0.6}], InsetBox[
+    StyleBox["\<\"Replace this with your\"\>",
+     StripOnInput->False,
+     FrontFaceColor->GrayLevel[0.5],
+     BackFaceColor->GrayLevel[0.5],
+     GraphicsColor->GrayLevel[0.5],
+     FontFamily->"Verdana",
+     FontSize->10,
+     FontColor->GrayLevel[0.5]], {0.5, 0.45}], InsetBox[
+    StyleBox["\<\"Manipulate at a particular setting.\"\>",
+     StripOnInput->False,
+     FrontFaceColor->GrayLevel[0.5],
+     BackFaceColor->GrayLevel[0.5],
+     GraphicsColor->GrayLevel[0.5],
+     FontFamily->"Verdana",
+     FontSize->10,
+     FontColor->GrayLevel[0.5]], {0.5, 0.39}], InsetBox[
+    StyleBox["\<\"(Do not use a bitmap.)\"\>",
+     StripOnInput->False,
+     FrontFaceColor->GrayLevel[0.5],
+     BackFaceColor->GrayLevel[0.5],
+     GraphicsColor->GrayLevel[0.5],
+     FontFamily->"Verdana",
+     FontSize->10,
+     FontColor->GrayLevel[0.5]], {0.5, 0.315}]},
+  ImageMargins->0.,
+  ImageSize->220]], "Output",
+ CellEditDuplicate->False]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ GraphicsBox[
+  {EdgeForm[GrayLevel[0]], FaceForm[GrayLevel[1]], RectangleBox[{0, 0}], 
+   InsetBox[
+    StyleBox["\<\"Snapshot Placeholder\"\>",
+     StripOnInput->False,
+     FontFamily->"Verdana",
+     FontSize->14], {0.5, 0.6}], InsetBox[
+    StyleBox["\<\"Replace this with your\"\>",
+     StripOnInput->False,
+     FrontFaceColor->GrayLevel[0.5],
+     BackFaceColor->GrayLevel[0.5],
+     GraphicsColor->GrayLevel[0.5],
+     FontFamily->"Verdana",
+     FontSize->10,
+     FontColor->GrayLevel[0.5]], {0.5, 0.45}], InsetBox[
+    StyleBox["\<\"Manipulate at a particular setting.\"\>",
+     StripOnInput->False,
+     FrontFaceColor->GrayLevel[0.5],
+     BackFaceColor->GrayLevel[0.5],
+     GraphicsColor->GrayLevel[0.5],
+     FontFamily->"Verdana",
+     FontSize->10,
+     FontColor->GrayLevel[0.5]], {0.5, 0.39}], InsetBox[
+    StyleBox["\<\"(Do not use a bitmap.)\"\>",
+     StripOnInput->False,
+     FrontFaceColor->GrayLevel[0.5],
+     BackFaceColor->GrayLevel[0.5],
+     GraphicsColor->GrayLevel[0.5],
+     FontFamily->"Verdana",
+     FontSize->10,
+     FontColor->GrayLevel[0.5]], {0.5, 0.315}]},
+  ImageMargins->0.,
+  ImageSize->220]], "Output",
+ CellEditDuplicate->False]
+}, Open  ]],
+
+Cell["", "DetailsSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\""]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" on Mac) and drag up and down to zoom.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" to make ever finer adjustments.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\""]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0, CellBaseline -> Baseline], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell["", "SearchTermsSection"],
+
+Cell["", "RelatedLinksSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell["Contributed by: XXXX", "Author",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.432333043774981*^9, 3.432333045441087*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{700, Automatic},
+WindowMargins->{{10, Automatic}, {Automatic, 0}},
+FrontEndVersion->"6.0 for Mac OS X x86 (32-bit) (May 21, 2008)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ResizeImages"->{
+  Cell[3571, 132, 290, 7, 29, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[3864, 141, 661, 16, 29, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[4528, 159, 318, 10, 29, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[4849, 171, 615, 14, 29, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "SliderZoom"->{
+  Cell[5467, 187, 827, 21, 29, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[6297, 210, 347, 8, 29, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[6647, 220, 1442, 30, 29, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[8092, 252, 886, 20, 29, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ResizeImages", 9631, 300},
+ {"RotateAndZoomIn3D", 9738, 303},
+ {"DragLocators", 9846, 306},
+ {"CreateAndDeleteLocators", 9960, 309},
+ {"SliderZoom", 10072, 312},
+ {"GamepadControls", 10176, 315},
+ {"AutomaticAnimation", 10287, 318},
+ {"BookmarkAnimation", 10402, 321}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 36, 0, 74, "DemoTitle"],
+Cell[629, 25, 33, 0, 156, "InitializationSection"],
+Cell[CellGroupData[{
+Cell[687, 29, 29, 0, 188, "ManipulateSection"],
+Cell[719, 31, 108, 3, 23, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[864, 39, 36, 0, 136, "ManipulateCaptionSection"],
+Cell[903, 41, 33, 0, 21, "ManipulateCaption"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[973, 46, 28, 0, 168, "ThumbnailSection"],
+Cell[1004, 48, 1197, 34, 230, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2238, 87, 28, 0, 138, "SnapshotsSection"],
+Cell[2269, 89, 1196, 34, 230, "Output"]
+}, Open  ]],
+Cell[3480, 126, 26, 0, 232, "DetailsSection"],
+Cell[CellGroupData[{
+Cell[3531, 130, 37, 0, 108, "ControlSuggestionsSection"],
+Cell[3571, 132, 290, 7, 29, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[3864, 141, 661, 16, 29, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[4528, 159, 318, 10, 29, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[4849, 171, 615, 14, 29, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[5467, 187, 827, 21, 29, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[6297, 210, 347, 8, 29, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[6647, 220, 1442, 30, 29, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[8092, 252, 886, 20, 29, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[8993, 275, 30, 0, 152, "SearchTermsSection"],
+Cell[9026, 277, 31, 0, 126, "RelatedLinksSection"],
+Cell[CellGroupData[{
+Cell[9082, 281, 25, 0, 124, "AuthorSection"],
+Cell[9110, 283, 128, 2, 21, "Author"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

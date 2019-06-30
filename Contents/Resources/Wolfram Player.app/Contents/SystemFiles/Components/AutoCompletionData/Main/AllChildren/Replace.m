@@ -1,0 +1,10 @@
+{"NumericQ", "List", "Symbol", "E", "Text", "Options", "True", "PlotRange", 
+ "None", "Heads", "Automatic", "Tooltip", "False", "Sequence", "NSolve", 
+ "Full", "SpanFromLeft", "Reverse", "Or", "N", "If", "I", "Yellow", "White", 
+ "Unevaluated", "Times", "Table", "Replace", "Re", "Null", "Map", "Length", 
+ "Join", "IntegerDigits", "Inherited", "Im", "Flatten", "All", "With", 
+ "Union", "Transpose", "Ticks", "Take", "Switch", "Red", "Purple", 
+ "Positive", "Pink", "Pane", "Orange", "O", "Negative", "Magnify", 
+ "ListLogPlot", "Lighter", "Infinity", "ImageData", "Hold", "Green", 
+ "Graphics", "ExpandAll", "Composition", "Complex", "Characters", "C", 
+ "Blue", "Apply", "And"}

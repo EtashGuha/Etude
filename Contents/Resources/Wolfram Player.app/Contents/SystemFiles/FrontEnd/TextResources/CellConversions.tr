@@ -1,0 +1,40 @@
+@@resource skippedUnknownSoundStringID
+%% Ignored Unknown Sound Type
+
+@|
+@|
+@@resource soundHeaderStringID
+1 string
+%g %ld %ld {
+ currentfile
+  1 index
+   readhexstring
+    pop
+    } false %ld sampledsound
+    
+@|
+@|
+@@resource soundTrailerStringID
+pop
+
+@|
+@|
+@@resource IFskippedUnknownSoundStringID
+(* Ignored Unknown Sound Type. *)
+
+@|
+@|
+@@resource IFsoundHeaderStringID
+SampledSoundList[{
+
+@|
+@|
+@@resource IFsoundDataStringID
+%g, 
+@|
+@|
+@@resource IFsoundTrailerStringID
+}, %g],
+
+@|
+@|

@@ -1,0 +1,3 @@
+The WinPcap software package is under a separate license. By proceeding you
+understand and agree that WinPcap is a separate software package with separate
+licensing.

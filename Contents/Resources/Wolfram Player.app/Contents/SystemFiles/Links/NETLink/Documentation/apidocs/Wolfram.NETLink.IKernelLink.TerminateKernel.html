@@ -1,0 +1,38 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IKernelLink.TerminateKernel Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IKernelLink.TerminateKernel.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IKernelLink.TerminateKernel Method </h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Sends a request to the kernel to shut down. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Sub TerminateKernel()</div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />
+        <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> TerminateKernel();</div>
+      <h4 class="dtH4">Remarks</h4> Most of the time, when you call Close on a link, the kernel will quit. If the kernel is busy with a computation, however, it will not stop just because the link closes. Use TerminateKernel to force the kernel to quit even though it may be busy. This is not an operating system-level "kill" command, and it is not absolutely guaranteed that the kernel will die immediately. <p> This method is safe to call from any thread. Any method that is blocking waiting for a result from <i>Mathematica</i> (such as WaitForAnswer) will return immediately and throw a MathLinkException. You will typically call <a href="Wolfram.NETLink.IMathLink.Close.html">Close</a> immediately after TerminateKernel, as the link will die when the kernel quits. </p> A typical usage scenario is as follows. You have a thread that is blocking in WaitForAnswer waiting for the result of some computation, and you decide that it must return right away and you are willing to sacrifice the kernel to guarantee this. You then call AbandonEvaluation on a separate thread. This causes WaitForAnswer to immediately throw a MathLinkException. You catch this exception, discover that ClearError returns false indicating that the link is hopeless, and then you call TerminateKernel followed by Close. The reason TerminateKernel is useful here is that because you called AbandonEvaluation, the kernel may still be computing and it may not die when you call Close. You call TerminateKernel to give it a little help. <p> What this method does is simply use <a href="Wolfram.NETLink.IMathLink.PutMessage.html">PutMessage</a> to send a MathLinkMessage.Terminate to the kernel. It is provided as a convenience to shield programmers from such low-level details. </p>
+            <h4 class="dtH4">See Also</h4><p><a href="Wolfram.NETLink.IKernelLink.html">IKernelLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.IKernelLink.AbortEvaluation.html">AbortEvaluation</a> | <a href="Wolfram.NETLink.IKernelLink.InterruptEvaluation.html">InterruptEvaluation</a> | <a href="Wolfram.NETLink.IKernelLink.AbandonEvaluation.html">AbandonEvaluation</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;"><param name="Keyword" value="TerminateKernel method"></param><param name="Keyword" value="TerminateKernel method, IKernelLink interface"></param><param name="Keyword" value="IKernelLink.TerminateKernel method"></param></object><hr /><div id="footer"><p><a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a></p><p></p></div></div>
+  </body>
+</html>

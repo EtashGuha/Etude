@@ -1,0 +1,63 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>CreateDelegate Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.MathDelegate.CreateDelegate_overloads.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">MathDelegate.CreateDelegate Method</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Creates a delegate object that calls a specified <i>Mathematica</i> function. </p>
+      <h4 class="dtH4">Overload List</h4>
+      <p> The link that is used is the one given by <a href="Wolfram.NETLink.StdLink.Link.html">StdLink.Link</a>. </p>
+      <blockquote class="dtBlock">
+        <a href="Wolfram.NETLink.MathDelegate.CreateDelegate_overload_1.html">public static Delegate CreateDelegate(Type,string);</a>
+      </blockquote>
+      <p> Uses the specified link. </p>
+      <blockquote class="dtBlock">
+        <a href="Wolfram.NETLink.MathDelegate.CreateDelegate_overload_2.html">public static Delegate CreateDelegate(Type,string,IKernelLink);</a>
+      </blockquote>
+      <p> Use this overload in cases where you need to specify advanced behavior. </p>
+      <blockquote class="dtBlock">
+        <a href="Wolfram.NETLink.MathDelegate.CreateDelegate_overload_3.html">public static Delegate CreateDelegate(Type,string,IKernelLink,bool,bool);</a>
+      </blockquote>
+      <h4 class="dtH4">Remarks</h4>
+      <p> This method is comparable to the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDelegateClassCreateDelegateTopic.htm">CreateDelegate</a> method, except that it creates delegates whose action is to call a <i>Mathematica</i> function. <p> Use this method to easily create <i>Mathematica</i> event handler functions from a .NET language. It provides similar functionality to the AddEventHandler <i>Mathematica</i> function. </p>
+             <pre class="code"> // C# example:
+ myTextBox.KeyPress += (KeyPressEventHandler) MathDelegate.CreateDelegate(typeof(KeyPressEventHandler), "KeyPressHandlerFunction", ml); 
+
+ ' VB example:
+ AddHandler myTextBox.KeyPress, CType(MathDelegate.CreateDelegate(GetType(KeyPressEventHandler), "KeyPressHandlerFunction", ml), KeyPressEventHandler)
+ </pre>
+             <p> The <i>Mathematica</i> function can be the name of a function as a string, or a pure function like "(x = #)&amp;". The function will be passed all the arguments that the corresponding delegate type takes, and it should return a result of the same type as the delegate type. If the delegate type returns void, the result from the <i>Mathematica</i> function is ignored. </p> The call is automatically wrapped in NETBlock unless you use the one overload that allows you to specify otherwise. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.MathDelegate.html">MathDelegate Class</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a></p>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

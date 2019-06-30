@@ -1,0 +1,483 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     15398,        474]
+NotebookOptionsPosition[     13795,        417]
+NotebookOutlinePosition[     14820,        457]
+CellTagsIndexPosition[     14680,        450]
+WindowTitle->Make Project
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[GraphicsData["CompressedBitmap", "\<\
+eJytlk1OG0EQhdszYzCYJNgYR5ZBQig+AQfIBiUbZ8mGnUWCYBElIkhcgStw
+A8QVuAJXQOIEXMHpr7re0ANJzCIjzUx3/dfrV2N/mZ2ffPs+Oz89mu18Ppv9
+PDk9+rXz6cdZFJWtEMJpvDd2Aut5XOpR8gqdTsfeX3m0QlmaC9f/1Y9dtru7
+G/b390Ov1wvvEBVhb2/vadWuV8tpFR0GC2Kvu+zq6irM5/NwcXERquTNtrRk
+CNklWSdcXl6aGzokt7e3tucd94Vt2uH+/t7UMr27u/MQS6Y7ODgwncLH3lJx
+S3Xk2EvunrxT5Gcqj7za0JGBfZ6Ffex241XAVAb64+Oj3TFV4WIyKFqN1igc
+Hx+Hm5sb27HmwgRvLsHMMWaIWRbp8KdYfGRLrMbxxFzoBSG+gAAYaha94v5N
+pza4yCPgsCdnfwFKPZcJXO7KntuWl4sd8bjI+QfGNFgm3DJaNHDiUt1ghZ41
++SqnHvb4KwfrMh0UZmXDoMgVqpgMhXdHRSD2ekS61pFOkO5JqL0SI09zZQWg
+TsEYsKSguZWGU04FUQ1YiicePnVBBmFCUJ0Jb/al05lgVOjyJF6pxSpWdFMz
+6BcNkgEWPtbHmR9LPgrqRRSUXuWypmRRiLECZGpSXK1Fd1FD46cvkiiWj4T6
+FLVyG+JRw7906kH96VywWYTRhh9R/qkQWRIJO41xyDFhH/0Knz3B5m2LEKoq
+DUlThkvp7urMkVNyfUgFIE1rFqOuMEX3hUocFafVH9EXDZIwyfmu+KmstxYH
+uTDRnvzyIydrDVu0KTAS9eXjcVLoFetYofMUoh9v/6JEVbteKSwpRangP8uL
+aDBwX6HslF818VL+e5NPS98j5eR46zINANfwldnl40RXdhoSY3QWEaT1uvPo
+Csacs/+UqIr8y72Z7KuqelHAppuLwkzbG5flU76eiJFoK3pxrbkxIAmJzazr
+ra0t049GIwSmnzxDigH5kBWilvM4+KMfj8d1nKn7UHSjV/fBFv3h4WFYXrY/
+aPrjF7ctk6O/vr4O0+nUADpK+rhsIWuZkrN4eHiwNU6TySQMh8PQ7/fVf1yG
+oijsbvN8b6IyDAaDGqxtP+5ut2tav9fS+bBrm47Y5CAXOVuWPdb1G6LLvLc=
+\
+\>"], "Graphics",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {2, 0}},
+ ShowCellBracket->False,
+ CellMargins->{{4, 0}, {0, 8}},
+ Deployed->False,
+ Evaluatable->False,
+ CellFrameMargins->False,
+ ImageSize->{105, 19},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[BoxData[GridBox[{
+   {
+    RowBox[{"Make", " ", "Project"}], 
+    ButtonBox[
+     RowBox[{" ", 
+      RowBox[{
+       StyleBox["?",
+        FontSize->12], " "}]}],
+     Active->True,
+     Background->RGBColor[0.329412, 0.584314, 0.694118],
+     ButtonData->"paclet:AuthorTools/tutorial/MakeProject",
+     ButtonFunction:>(FEPrivate`FrontEndExecute[
+       FrontEndToken["OpenHelpLink", {#, 
+         FEPrivate`If[
+          CurrentValue["ShiftKey"], Null, 
+          FEPrivate`ButtonNotebook[]]}]]& ),
+     ButtonMargins->3,
+     Evaluator->None]}
+  },
+  GridBoxAlignment->{
+   "Columns" -> {Left, {Right}}, "ColumnsIndexed" -> {}, 
+    "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+  GridBoxItemSize->{"Columns" -> {
+      Scaled[0.9], {2}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+    "RowsIndexed" -> {}}]], "DefinitionBox",
+ CellMargins->{{4, 4}, {Inherited, 0}},
+ FontFamily->"Helvetica",
+ FontSize->14,
+ FontWeight->"Bold",
+ FontColor->GrayLevel[1],
+ Background->RGBColor[0, 0.32549, 0.537255]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  ButtonBox[GridBox[{
+     {" ", 
+      StyleBox[
+       RowBox[{
+        StyleBox["Project",
+         FontSize->10], 
+        StyleBox[" ",
+         FontSize->10], 
+        RowBox[{
+         StyleBox["File",
+          FontSize->10], 
+         StyleBox[
+          AdjustmentBox["\[DownPointer]",
+           BoxBaselineShift->0.25,
+           BoxMargins->{{0, 0}, {-0.25, 0.25}}],
+          FontSize->18]}]}],
+       FontFamily->"Helvetica"], " "}
+    },
+    GridBoxItemSize->{"Columns" -> {
+        Scaled[0.13], 
+        Scaled[0.72], {
+         Scaled[0.13]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+      "RowsIndexed" -> {}}],
+   ButtonFunction:>FrontEndExecute[{
+      FrontEnd`SelectionMove[
+       FrontEnd`ButtonNotebook[], All, ButtonCell], 
+      FrontEndToken[
+       FrontEnd`ButtonNotebook[], "OpenCloseGroup"]}],
+   ButtonNote->"Project Handling"], TraditionalForm]],
+ CellMargins->{{11, 0}, {-1, 6}},
+ TextAlignment->Left,
+ SingleLetterItalics->False,
+ FontColor->GrayLevel[1],
+ ButtonBoxOptions->{Active->True,
+ Background->RGBColor[0, 0.32549, 0.537255],
+ ButtonMargins->3}],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox["Load\[Ellipsis]",
+     ButtonFunction:>(Needs["AuthorTools`MakeProject`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`MakeProject`Private`ProjectDialogFunction"][
+        "Load", 
+         ButtonNotebook[]]])], 
+    ButtonBox["Save",
+     ButtonFunction:>(Needs["AuthorTools`MakeProject`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`MakeProject`Private`ProjectDialogFunction"][
+        "Save", 
+         ButtonNotebook[]]])], 
+    ButtonBox[
+     RowBox[{"Save", " ", "As\[Ellipsis]"}],
+     ButtonFunction:>(Needs["AuthorTools`MakeProject`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`MakeProject`Private`ProjectDialogFunction"][
+        "SaveAs", 
+         ButtonNotebook[]]])], 
+    ButtonBox["Clear",
+     ButtonFunction:>(Needs["AuthorTools`MakeProject`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`MakeProject`Private`ProjectDialogFunction"][
+        "Clear", 
+         ButtonNotebook[]]])]}
+  }]],
+ CellMargins->{{11, 0}, {0, -1}},
+ FontFamily->"Helvetica",
+ FontWeight->"Bold",
+ FontColor->GrayLevel[1],
+ ButtonBoxOptions->{Active->True,
+ Background->RGBColor[0.329412, 0.584314, 0.694118],
+ ButtonMargins->6,
+ Evaluator->"Local"},
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {{
+      Scaled[0.25]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}},
+ GridBoxSpacings->{"Columns" -> {
+     Offset[0.27999999999999997`], {
+      Offset[0.]}, 
+     Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+     Offset[0.2], {
+      Offset[0.]}, 
+     Offset[0.2]}, "RowsIndexed" -> {}}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  ButtonBox[GridBox[{
+     {" ", 
+      StyleBox[
+       RowBox[{
+        StyleBox["Project",
+         FontSize->10], 
+        StyleBox[" ",
+         FontSize->10], 
+        StyleBox["Actions",
+         FontSize->10], 
+        StyleBox[
+         AdjustmentBox["\[DownPointer]",
+          BoxBaselineShift->0.25,
+          BoxMargins->{{0, 0}, {-0.25, 0.25}}],
+         FontSize->18]}],
+       FontFamily->"Helvetica"], " "}
+    },
+    GridBoxItemSize->{"Columns" -> {
+        Scaled[0.13], 
+        Scaled[0.72], {
+         Scaled[0.13]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+      "RowsIndexed" -> {}}],
+   ButtonFunction:>FrontEndExecute[{
+      FrontEnd`SelectionMove[
+       FrontEnd`ButtonNotebook[], All, ButtonCell], 
+      FrontEndToken[
+       FrontEnd`ButtonNotebook[], "OpenCloseGroup"]}],
+   ButtonNote->"Project Actions"], TraditionalForm]],
+ CellMargins->{{11, 0}, {-1, 6}},
+ TextAlignment->Left,
+ SingleLetterItalics->False,
+ FontColor->GrayLevel[1],
+ ButtonBoxOptions->{Active->True,
+ Background->RGBColor[0, 0.32549, 0.537255],
+ ButtonMargins->3}],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox[
+     StyleBox["Contents",
+      FontWeight->"Bold"],
+     Active->True,
+     Background->RGBColor[0, 0.32549, 0.537255],
+     ButtonFunction:>FrontEndExecute[{
+        FrontEnd`HelpBrowserLookup["AddOns", "Handling a Project"]}],
+     Evaluator->None], 
+    ButtonBox[
+     StyleBox["Index",
+      FontWeight->"Bold"],
+     Active->True,
+     Background->RGBColor[0, 0.32549, 0.537255],
+     ButtonFunction:>FrontEndExecute[{
+        FrontEnd`HelpBrowserLookup["AddOns", "Handling a Project"]}],
+     Evaluator->None], 
+    ButtonBox[
+     StyleBox["Other",
+      FontWeight->"Bold"],
+     Active->True,
+     Background->RGBColor[0, 0.32549, 0.537255],
+     ButtonFunction:>FrontEndExecute[{
+        FrontEnd`HelpBrowserLookup["AddOns", "Handling a Project"]}],
+     Evaluator->None]},
+   {
+    ButtonBox["Simple",
+     ButtonFunction:>(Needs["AuthorTools`MakeContents`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`MakeContents`MakeContents"][
+         ButtonNotebook[], "Simple"]])], 
+    ButtonBox["Simple",
+     ButtonFunction:>(Needs["AuthorTools`MakeIndex`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`MakeIndex`MakeIndex"][
+         ButtonNotebook[], "Simple"]])], 
+    ButtonBox["BrowserCategories",
+     ButtonFunction:>(Needs["AuthorTools`MakeCategories`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`MakeCategories`MakeBrowserCategories"][
+         ButtonNotebook[], "Full"]])]},
+   {
+    ButtonBox["Book",
+     ButtonFunction:>(Needs["AuthorTools`MakeContents`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`MakeContents`MakeContents"][
+         ButtonNotebook[], "Book"]])], 
+    ButtonBox["Book",
+     ButtonFunction:>(Needs["AuthorTools`MakeIndex`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`MakeIndex`MakeIndex"][
+         ButtonNotebook[], "Book"]])], 
+    ButtonBox["BrowserIndex",
+     ButtonFunction:>(Needs["AuthorTools`MakeIndex`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`MakeIndex`MakeIndex"][
+         ButtonNotebook[], "BrowserIndex"]])]},
+   {
+    ButtonBox["Condensed",
+     ButtonFunction:>(Needs["AuthorTools`MakeContents`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`MakeContents`MakeContents"][
+         ButtonNotebook[], "BookCondensed"]])], 
+    ButtonBox[
+     RowBox[{"Two", " ", "Column"}],
+     ButtonFunction:>(Needs["AuthorTools`MakeIndex`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`MakeIndex`MakeIndex"][
+         ButtonNotebook[], "TwoColumn"]])], 
+    ButtonBox["Paginate",
+     ButtonFunction:>(Needs["AuthorTools`Pagination`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`Pagination`Paginate"][
+         ButtonNotebook[]]])]}
+  }]],
+ CellMargins->{{11, 0}, {-1, -1}},
+ TextAlignment->Left,
+ FontFamily->"Helvetica",
+ FontSize->12,
+ FontWeight->"Plain",
+ FontColor->GrayLevel[1],
+ ButtonBoxOptions->{Active->True,
+ Background->RGBColor[0.329412, 0.584314, 0.694118],
+ ButtonMargins->4,
+ Evaluator->"Local"},
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {{
+      Scaled[0.33]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}},
+ GridBoxSpacings->{"Columns" -> {
+     Offset[0.27999999999999997`], {
+      Offset[0.]}, 
+     Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+     Offset[0.2], {
+      Offset[0.]}, 
+     Offset[0.2]}, "RowsIndexed" -> {}}}]
+}, Closed]],
+
+Cell["Name of Project:", NotebookDefault,
+ CellMargins->{{12, 10}, {0, 20}},
+ CellElementSpacings->{"ClosedGroupTopMargin"->20},
+ FontFamily->"Helvetica",
+ FontSize->10,
+ FontWeight->"Bold"],
+
+Cell["", "Text",
+ CellFrame->1,
+ ShowSelection->True,
+ CellMargins->{{12, 10}, {5, 6}},
+ InputAutoReplacements->{},
+ AllowInlineCells->False,
+ AutoItalicWords->{},
+ Background->GrayLevel[1],
+ CellTags->"ProjectName"],
+
+Cell[BoxData[GridBox[{
+   {Cell["Directory:",
+     FontFamily->"Helvetica",
+     FontSize->10,
+     FontWeight->"Bold",
+     FontSlant->"Plain"], Cell[TextData[{
+     StyleBox[ButtonBox["Pick a file",
+      Appearance->{Automatic, None},
+      Active->True,
+      ButtonFunction:>(Needs["AuthorTools`MakeProject`"]; 
+       Symbol["FrontEnd`MessagesToConsole"][
+         Symbol["AuthorTools`MakeProject`Private`ProjectDialogFunction"][
+         "ChooseDirectory", 
+          ButtonNotebook[]]])],
+      FontVariations->{"Underline"->True},
+      FontColor->RGBColor[0.100008, 0.4, 0.6]],
+     " in the Target Directory."
+    }],
+     FontFamily->"Times",
+     FontWeight->"Plain",
+     FontSlant->"Italic",
+     ButtonBoxOptions->{Evaluator->Automatic}]}
+  },
+  GridBoxAlignment->{
+   "Columns" -> {Left, {Right}}, "ColumnsIndexed" -> {}, 
+    "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+  GridBoxItemSize->{"Columns" -> {
+      Scaled[0.3], {
+       Scaled[0.7]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+    "RowsIndexed" -> {}}]], NotebookDefault,
+ CellMargins->{{12, 10}, {0, 4}}],
+
+Cell["", "Text",
+ CellFrame->1,
+ ShowSelection->True,
+ CellMargins->{{12, 10}, {5, 4}},
+ InputAutoReplacements->{},
+ CellChangeTimes->{{3.56045195204522*^9, 3.560451956451357*^9}, {
+  3.560452307146884*^9, 3.560452307611895*^9}},
+ AllowInlineCells->False,
+ AutoItalicWords->{},
+ Background->GrayLevel[1],
+ CellTags->"ProjectDirectory"],
+
+Cell[BoxData[GridBox[{
+   {Cell["Files:",
+     FontFamily->"Helvetica",
+     FontSize->10,
+     FontWeight->"Bold",
+     FontSlant->"Plain"], Cell[TextData[{
+     StyleBox[ButtonBox["Select all .nb files",
+      Appearance->{Automatic, None},
+      Active->True,
+      ButtonFunction:>(Needs["AuthorTools`MakeProject`"]; 
+       Symbol["FrontEnd`MessagesToConsole"][
+         Symbol["AuthorTools`MakeProject`Private`ProjectDialogFunction"][
+         "ListFiles", 
+          ButtonNotebook[]]])],
+      FontVariations->{"Underline"->True},
+      FontColor->RGBColor[0.100008, 0.4, 0.6]],
+     " in the Target Directory."
+    }],
+     FontFamily->"Times",
+     FontWeight->"Plain",
+     FontSlant->"Italic",
+     ButtonBoxOptions->{Evaluator->Automatic}]}
+  },
+  GridBoxAlignment->{
+   "Columns" -> {Left, {Right}}, "ColumnsIndexed" -> {}, 
+    "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+  GridBoxItemSize->{"Columns" -> {
+      Scaled[0.3], {
+       Scaled[0.7]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+    "RowsIndexed" -> {}}]], NotebookDefault,
+ CellMargins->{{12, 10}, {0, 4}}],
+
+Cell["", "Text",
+ CellFrame->1,
+ ShowSelection->True,
+ CellMargins->{{12, 10}, {5, 4}},
+ InputAutoReplacements->{},
+ AllowInlineCells->False,
+ AutoItalicWords->{},
+ Background->GrayLevel[1],
+ CellTags->"ProjectFiles"]
+},
+Saveable->False,
+CellGrouping->Manual,
+WindowSize->{400, 400},
+WindowMargins->{{Automatic, 131}, {Automatic, 0}},
+WindowFrame->"Normal",
+WindowElements->{"StatusArea", "VerticalScrollBar", "MenuBar"},
+WindowTitle->"Make Project",
+ShowCellBracket->False,
+ShowSelection->False,
+TaggingRules:>{"ProjectFileLocation" -> ""},
+Magnification->1,
+Background->GrayLevel[0.850004],
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 27, \
+2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ProjectName"->{
+  Cell[10834, 321, 216, 8, 45, "Text",
+   CellTags->"ProjectName"]},
+ "ProjectDirectory"->{
+  Cell[12145, 363, 335, 10, 43, "Text",
+   CellTags->"ProjectDirectory"]},
+ "ProjectFiles"->{
+  Cell[13574, 407, 217, 8, 43, "Text",
+   CellTags->"ProjectFiles"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ProjectName", 14401, 438},
+ {"ProjectDirectory", 14493, 441},
+ {"ProjectFiles", 14587, 444}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[583, 21, 1499, 32, 29, "Graphics",
+ Evaluatable->False],
+Cell[2085, 55, 1008, 30, 48, "DefinitionBox"],
+Cell[CellGroupData[{
+Cell[3118, 89, 1119, 37, 34, InheritFromParent],
+Cell[4240, 128, 1692, 45, 34, InheritFromParent]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5969, 178, 1095, 36, 34, InheritFromParent],
+Cell[7067, 216, 3559, 95, 70, InheritFromParent]
+}, Closed]],
+Cell[10641, 314, 190, 5, 32, NotebookDefault],
+Cell[10834, 321, 216, 8, 45, "Text",
+ CellTags->"ProjectName"],
+Cell[11053, 331, 1089, 30, 22, NotebookDefault],
+Cell[12145, 363, 335, 10, 43, "Text",
+ CellTags->"ProjectDirectory"],
+Cell[12483, 375, 1088, 30, 22, NotebookDefault],
+Cell[13574, 407, 217, 8, 43, "Text",
+ CellTags->"ProjectFiles"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,674 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     21880,        666]
+NotebookOptionsPosition[     15205,        498]
+NotebookOutlinePosition[     15705,        518]
+CellTagsIndexPosition[     15662,        515]
+MenuPosition->1100
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[StyleData[StyleDefinitions -> "Default.nb"]],
+
+Cell[StyleData[StyleDefinitions -> "StyleMenuClear.nb"]],
+
+Cell[StyleData[StyleDefinitions -> "EnvironmentMenuClear.nb"]],
+
+Cell["\<\
+Modify the definitions below to change the default appearance of all cells in \
+a given style. 
+Make modifications to any definition using commands in the Format menu.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Style Environment Names", "Section"],
+
+Cell[StyleData[All, "Working"],
+ ScreenStyleEnvironment->"Numbered",
+ PrintingStyleEnvironment->"PreviewNumbered",
+ PageWidth->WindowWidth,
+ DockedCells->{
+   Cell[
+    BoxData[
+     StyleBox[
+      GridBox[{{
+         StyleBox["Outline Level: ", FontWeight -> "Bold"], 
+         TooltipBox[
+          ButtonBox["1", ButtonFunction :> (SelectionMove[
+              ButtonNotebook[], After, Cell]; NotebookWrite[
+              ButtonNotebook[], 
+              Cell["XXXX", "Outline1"], All]; SelectionMove[
+              ButtonNotebook[], All, CellContents]), BaseStyle -> 
+           "ToolbarButton", Appearance -> None, ButtonFrame -> None, 
+           Evaluator -> Automatic, ImageSize -> Automatic, Method -> 
+           "Queued"], "Insert outline level 1.", ActionDelay -> 0.35], " | ", 
+         
+         TooltipBox[
+          ButtonBox["2", ButtonFunction :> (SelectionMove[
+              ButtonNotebook[], After, Cell]; NotebookWrite[
+              ButtonNotebook[], 
+              Cell["XXXX", "Outline2"], All]; SelectionMove[
+              ButtonNotebook[], All, CellContents]), BaseStyle -> 
+           "ToolbarButton", Appearance -> None, ButtonFrame -> None, 
+           Evaluator -> Automatic, ImageSize -> Automatic, Method -> 
+           "Queued"], "Insert outline level 2.", ActionDelay -> 0.35], " | ", 
+         
+         TooltipBox[
+          ButtonBox["3", ButtonFunction :> (SelectionMove[
+              ButtonNotebook[], After, Cell]; NotebookWrite[
+              ButtonNotebook[], 
+              Cell["XXXX", "Outline3"], All]; SelectionMove[
+              ButtonNotebook[], All, CellContents]), BaseStyle -> 
+           "ToolbarButton", Appearance -> None, ButtonFrame -> None, 
+           Evaluator -> Automatic, ImageSize -> Automatic, Method -> 
+           "Queued"], "Insert outline level 3.", ActionDelay -> 0.35], " | ", 
+         
+         TooltipBox[
+          ButtonBox["4", ButtonFunction :> (SelectionMove[
+              ButtonNotebook[], After, Cell]; NotebookWrite[
+              ButtonNotebook[], 
+              Cell["XXXX", "Outline4"], All]; SelectionMove[
+              ButtonNotebook[], All, CellContents]), BaseStyle -> 
+           "ToolbarButton", Appearance -> None, ButtonFrame -> None, 
+           Evaluator -> Automatic, ImageSize -> Automatic, Method -> 
+           "Queued"], "Insert outline level 4.", ActionDelay -> 0.35], " | ", 
+         
+         TooltipBox[
+          ButtonBox["5", ButtonFunction :> (SelectionMove[
+              ButtonNotebook[], After, Cell]; NotebookWrite[
+              ButtonNotebook[], 
+              Cell["XXXX", "Outline5"], All]; SelectionMove[
+              ButtonNotebook[], All, CellContents]), BaseStyle -> 
+           "ToolbarButton", Appearance -> None, ButtonFrame -> None, 
+           Evaluator -> Automatic, ImageSize -> Automatic, Method -> 
+           "Queued"], "Insert outline level 5.", ActionDelay -> 0.35], " | ", 
+         
+         TooltipBox[
+          ButtonBox["6", ButtonFunction :> (SelectionMove[
+              ButtonNotebook[], After, Cell]; NotebookWrite[
+              ButtonNotebook[], 
+              Cell["XXXX", "Outline6"], All]; SelectionMove[
+              ButtonNotebook[], All, CellContents]), BaseStyle -> 
+           "ToolbarButton", Appearance -> None, ButtonFrame -> None, 
+           Evaluator -> Automatic, ImageSize -> Automatic, Method -> 
+           "Queued"], "Insert outline level 6.", ActionDelay -> 0.35]}}, 
+       ColumnSpacings -> 0], ShowStringCharacters -> False, FontFamily -> 
+      "Verdana", FontColor -> GrayLevel[1]]], CellMargins -> {{0, 0}, {0, 0}},
+     FontSize -> 11, CellFrameMargins -> {{40, 24}, {8, 16}}, Background -> 
+    GrayLevel[0.5]]},
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellLabelMargins->{{12, Inherited}, {Inherited, Inherited}},
+ ShowAutoStyles->False,
+ ScriptMinSize->9,
+ MenuSortingValue->None],
+
+Cell[StyleData[All, "Numbered", StyleDefinitions -> StyleData[All, "Working"]],
+ MenuSortingValue->1000],
+
+Cell[StyleData[All, "Bulleted", StyleDefinitions -> StyleData[All, "Working"]],
+ MenuSortingValue->2000],
+
+Cell[StyleData[All, "PreviewNumbered", StyleDefinitions -> StyleData[
+ All, "Printout"]],
+ ShowCellBracket->False,
+ MenuSortingValue->3000],
+
+Cell[StyleData[All, "PreviewBulleted", StyleDefinitions -> StyleData[
+ All, "Bulleted"]],
+ DockedCells->None,
+ ShowCellBracket->False,
+ MenuSortingValue->3100],
+
+Cell[StyleData[All, "Presentation", StyleDefinitions -> StyleData[
+ All, "Numbered"]],
+ DockedCells->None,
+ ShowGroupOpener->True,
+ CellLabelMargins->{{18, Inherited}, {Inherited, Inherited}},
+ ShowAutoSpellCheck->False,
+ ScriptMinSize->15],
+
+Cell[StyleData[All, "SlideShow", StyleDefinitions -> StyleData[
+ All, "Presentation"]],
+ PageWidth->WindowWidth,
+ DockedCells->FEPrivate`FrontEndResource[
+  "FEExpressions", "SlideshowToolbar"],
+ ScrollingOptions->{"PagewiseDisplay"->True,
+ "VerticalScrollRange"->Fit},
+ MenuSortingValue->3300],
+
+Cell[StyleData[All, "Printout", StyleDefinitions -> StyleData[All, "Numbered"]
+ ],
+ DockedCells->None,
+ ShowCellBracket->False,
+ MenuSortingValue->None]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Notebook Options Settings", "Section"],
+
+Cell["\<\
+The options defined for the style below will be used at the Notebook level.\
+\>", "Text"],
+
+Cell[StyleData["Notebook"],
+ CellFrameLabelMargins->6,
+ DefaultNewCellStyle->"Title",
+ ShowStringCharacters->True,
+ MenuSortingValue->None]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Styles for Input and Output Cells", "Section"],
+
+Cell[StyleData["Input"],
+ MenuCommandKey->"9"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Styles for Title and Section Cells", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Title", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Title"],
+ ReturnCreatesNewCell->True,
+ DefaultNewCellStyle->"Outline1",
+ DefaultReturnCreatedCellStyle->"Outline1",
+ MenuSortingValue->1100,
+ MenuCommandKey->None],
+
+Cell[StyleData["Title", "Presentation"],
+ CellMargins->{{18, Inherited}, {10, 30}},
+ FontSize->60]
+}, Closed]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Styles for Outline Documents", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Outline1"],
+ CellMargins->{{80, 10}, {7, 7}},
+ ReturnCreatesNewCell->True,
+ StyleKeyMapping->{"Tab" -> "Outline2"},
+ CellGroupingRules->{"SectionGrouping", 50},
+ DefaultNewCellStyle->"Outline2",
+ DefaultReturnCreatedCellStyle->"Outline1",
+ ParagraphIndent->0,
+ CounterIncrements->"Outline1",
+ CounterAssignments->{{"Outline2", 0}, {"Outline3", 0}, {"Outline4", 0}, {
+   "Outline5", 0}, {"Outline6", 0}},
+ MenuSortingValue->1200,
+ MenuCommandKey->"1",
+ FontFamily->"Verdana",
+ FontSize->18,
+ FontWeight->"Bold",
+ CounterBoxOptions->{CounterFunction:>CapitalRomanNumeral}],
+
+Cell[StyleData["Outline1", "Numbered"],
+ CellDingbat->StyleBox[
+   RowBox[{
+     CounterBox["Outline1"], "."}], FontFamily -> "Verdana", TextAlignment -> 
+   Right]],
+
+Cell[StyleData["Outline1", "PreviewNumbered", StyleDefinitions -> StyleData[
+ "Outline1", "Numbered"]]],
+
+Cell[StyleData["Outline1", "Bulleted"],
+ CellDingbat->"\[FilledSmallSquare]"],
+
+Cell[StyleData["Outline1", "PreviewBulleted", StyleDefinitions -> StyleData[
+ "Outline1", "Bulleted"]]],
+
+Cell[StyleData["Outline1", "Presentation"],
+ CellMargins->{{80, 10}, {10, 10}},
+ FontSize->36]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Outline2"],
+ CellMargins->{{120, 10}, {7, 7}},
+ ReturnCreatesNewCell->True,
+ StyleKeyMapping->{
+  "Tab" -> "Outline3", "Backspace" -> "Outline1", 
+   KeyEvent["Tab", Modifiers -> {Shift}] -> "Outline1"},
+ CellGroupingRules->{"SectionGrouping", 60},
+ DefaultNewCellStyle->"Outline3",
+ DefaultReturnCreatedCellStyle->"Outline2",
+ ParagraphIndent->0,
+ CounterIncrements->"Outline2",
+ CounterAssignments->{{"Outline3", 0}, {"Outline4", 0}, {"Outline5", 0}, {
+   "Outline6", 0}},
+ MenuSortingValue->1250,
+ MenuCommandKey->"2",
+ FontFamily->"Verdana",
+ FontSize->15,
+ FontWeight->"Bold",
+ CounterBoxOptions->{CounterFunction:>(Part[
+   CharacterRange["A", "Z"], #]& )}],
+
+Cell[StyleData["Outline2", "Numbered"],
+ CellDingbat->StyleBox[
+   RowBox[{
+     CounterBox["Outline2"], "."}], FontFamily -> "Verdana", TextAlignment -> 
+   Right],
+ CounterBoxOptions->{CounterFunction:>(Part[
+   CharacterRange["A", "Z"], #]& )}],
+
+Cell[StyleData["Outline2", "PreviewNumbered", StyleDefinitions -> StyleData[
+ "Outline2", "Numbered"]]],
+
+Cell[StyleData["Outline2", "Bulleted"],
+ CellDingbat->"\[FilledSmallCircle]"],
+
+Cell[StyleData["Outline2", "PreviewBulleted", StyleDefinitions -> StyleData[
+ "Outline2", "Bulleted"]]],
+
+Cell[StyleData["Outline2", "Presentation"],
+ CellMargins->{{130, 10}, {10, 10}},
+ FontSize->30]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Outline3"],
+ CellMargins->{{160, 10}, {7, 7}},
+ ReturnCreatesNewCell->True,
+ StyleKeyMapping->{
+  "Tab" -> "Outline4", "Backspace" -> "Outline2", 
+   KeyEvent["Tab", Modifiers -> {Shift}] -> "Outline2"},
+ CellGroupingRules->{"SectionGrouping", 70},
+ DefaultNewCellStyle->"Outline4",
+ DefaultReturnCreatedCellStyle->"Outline3",
+ ParagraphIndent->0,
+ CounterIncrements->"Outline3",
+ CounterAssignments->{{"Outline4", 0}, {"Outline5", 0}, {"Outline6", 0}},
+ MenuSortingValue->1300,
+ MenuCommandKey->"3",
+ FontFamily->"Verdana",
+ FontSize->12,
+ FontWeight->"Bold",
+ CounterBoxOptions->{CounterFunction:>Identity}],
+
+Cell[StyleData["Outline3", "Numbered"],
+ CellDingbat->StyleBox[
+   RowBox[{
+     CounterBox["Outline3"], "."}], FontFamily -> "Verdana", TextAlignment -> 
+   Right]],
+
+Cell[StyleData["Outline3", "PreviewNumbered", StyleDefinitions -> StyleData[
+ "Outline3", "Numbered"]]],
+
+Cell[StyleData["Outline3", "Bulleted"],
+ CellDingbat->"\[FilledSmallSquare]"],
+
+Cell[StyleData["Outline3", "PreviewBulleted", StyleDefinitions -> StyleData[
+ "Outline3", "Bulleted"]]],
+
+Cell[StyleData["Outline3", "Presentation"],
+ CellMargins->{{180, 10}, {10, 10}},
+ FontSize->24]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Outline4"],
+ CellMargins->{{200, 10}, {7, 7}},
+ ReturnCreatesNewCell->True,
+ StyleKeyMapping->{
+  "Tab" -> "Outline5", "Backspace" -> "Outline3", 
+   KeyEvent["Tab", Modifiers -> {Shift}] -> "Outline3"},
+ CellGroupingRules->{"SectionGrouping", 80},
+ DefaultNewCellStyle->"Outline5",
+ DefaultReturnCreatedCellStyle->"Outline4",
+ ParagraphIndent->0,
+ CounterIncrements->"Outline4",
+ CounterAssignments->{{"Outline5", 0}, {"Outline6", 0}},
+ MenuSortingValue->1350,
+ MenuCommandKey->"4",
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontWeight->"Bold",
+ CounterBoxOptions->{CounterFunction:>(Part[
+   CharacterRange["a", "z"], #]& )}],
+
+Cell[StyleData["Outline4", "Numbered"],
+ CellDingbat->StyleBox[
+   RowBox[{
+     CounterBox["Outline4"], "."}], FontFamily -> "Verdana", TextAlignment -> 
+   Right]],
+
+Cell[StyleData["Outline4", "PreviewNumbered", StyleDefinitions -> StyleData[
+ "Outline4", "Numbered"]]],
+
+Cell[StyleData["Outline4", "Bulleted"],
+ CellDingbat->"\[FilledSmallCircle]"],
+
+Cell[StyleData["Outline4", "PreviewBulleted", StyleDefinitions -> StyleData[
+ "Outline4", "Bulleted"]]],
+
+Cell[StyleData["Outline4", "Presentation"],
+ CellMargins->{{230, 10}, {10, 10}},
+ FontSize->24]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Outline5"],
+ CellMargins->{{240, 10}, {7, 7}},
+ ReturnCreatesNewCell->True,
+ StyleKeyMapping->{
+  "Tab" -> "Outline6", "Backspace" -> "Outline4", 
+   KeyEvent["Tab", Modifiers -> {Shift}] -> "Outline4"},
+ CellGroupingRules->{"SectionGrouping", 90},
+ DefaultNewCellStyle->"Outline6",
+ DefaultReturnCreatedCellStyle->"Outline5",
+ ParagraphIndent->0,
+ CounterIncrements->"Outline5",
+ CounterAssignments->{{"Outline6", 0}},
+ MenuSortingValue->1400,
+ MenuCommandKey->"5",
+ FontFamily->"Verdana",
+ FontSize->10,
+ CounterBoxOptions->{CounterFunction:>Identity}],
+
+Cell[StyleData["Outline5", "Numbered"],
+ CellDingbat->StyleBox[
+   RowBox[{
+     CounterBox["Outline5"], "."}], FontFamily -> "Verdana", TextAlignment -> 
+   Right]],
+
+Cell[StyleData["Outline5", "PreviewNumbered", StyleDefinitions -> StyleData[
+ "Outline5", "Numbered"]]],
+
+Cell[StyleData["Outline5", "Bulleted"],
+ CellDingbat->"\[FilledSmallSquare]"],
+
+Cell[StyleData["Outline5", "PreviewBulleted", StyleDefinitions -> StyleData[
+ "Outline5", "Bulleted"]]],
+
+Cell[StyleData["Outline5", "Presentation"],
+ CellMargins->{{280, 10}, {10, 10}},
+ FontSize->20]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Outline6"],
+ CellMargins->{{280, 10}, {7, 7}},
+ ReturnCreatesNewCell->True,
+ StyleKeyMapping->{
+  "Backspace" -> "Outline5", KeyEvent["Tab", Modifiers -> {Shift}] -> 
+   "Outline5"},
+ CellGroupingRules->{"SectionGrouping", 100},
+ DefaultNewCellStyle->"Outline6",
+ DefaultReturnCreatedCellStyle->"Outline6",
+ ParagraphIndent->0,
+ CounterIncrements->"Outline6",
+ MenuSortingValue->1450,
+ MenuCommandKey->"6",
+ FontFamily->"Verdana",
+ FontSize->10,
+ CounterBoxOptions->{CounterFunction:>(Part[
+   CharacterRange["a", "z"], #]& )}],
+
+Cell[StyleData["Outline6", "Numbered"],
+ CellDingbat->StyleBox[
+   RowBox[{
+     CounterBox["Outline6"], "."}], FontFamily -> "Verdana", TextAlignment -> 
+   Right]],
+
+Cell[StyleData["Outline6", "PreviewNumbered", StyleDefinitions -> StyleData[
+ "Outline6", "Numbered"]]],
+
+Cell[StyleData["Outline6", "Bulleted"],
+ CellDingbat->"\[FilledSmallCircle]"],
+
+Cell[StyleData["Outline6", "PreviewBulleted", StyleDefinitions -> StyleData[
+ "Outline6", "Bulleted"]]],
+
+Cell[StyleData["Outline6", "Presentation"],
+ CellMargins->{{330, 10}, {10, 10}},
+ FontSize->20]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Styles for ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " System\[Hyphen]specific Elements"
+}], "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Default Box Styles", "Subsection"],
+
+Cell[StyleData["ToolbarButton"],
+ FontFamily->"Verdana",
+ FontSize->11]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Citation Styles", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Reference"],
+ CellMargins->{{80, 10}, {3, 3}},
+ FontFamily->"Verdana",
+ FontSize->10],
+
+Cell[StyleData["Reference", "PreviewNumbered", StyleDefinitions -> StyleData[
+ "Reference"]]],
+
+Cell[StyleData["Reference", "PreviewNumbered"]],
+
+Cell[StyleData["Reference", "Presentation"],
+ CellMargins->{{80, 10}, {5, 5}},
+ FontSize->20]
+}, Closed]]
+}, Closed]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{743, 825},
+WindowMargins->{{77, Automatic}, {Automatic, 56}},
+TrackCellChangeTimes->False,
+MenuSortingValue->1100,
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 19, \
+2016)",
+StyleDefinitions->"StylesheetFormatting.nb",
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[564, 21, 49, 0, 36, 49, 0, "StyleData", "StyleDefinitions", ""],
+Cell[616, 23, 56, 0, 36, 56, 0, "StyleData", "StyleDefinitions", ""],
+Cell[675, 25, 62, 0, 36, 62, 0, "StyleData", "StyleDefinitions", ""],
+Cell[740, 27, 191, 4, 59, "Text"],
+Cell[CellGroupData[{
+Cell[956, 35, 42, 0, 49, "Section"],
+Cell[1001, 37, 3891, 77, 36, 31, 0, "StyleData", "All", "Working",
+ MenuSortingValue->None],
+Cell[4895, 116, 104, 1, 36, 79, 0, "StyleData", "All", "Numbered",
+ MenuSortingValue->1000],
+Cell[5002, 119, 104, 1, 36, 79, 0, "StyleData", "All", "Bulleted",
+ MenuSortingValue->2000],
+Cell[5109, 122, 139, 3, 36, 89, 1, "StyleData", "All", "PreviewNumbered",
+ MenuSortingValue->3000],
+Cell[5251, 127, 159, 4, 36, 89, 1, "StyleData", "All", "PreviewBulleted",
+ MenuSortingValue->3100],
+Cell[5413, 133, 240, 6, 36, 86, 1, "StyleData", "All", "Presentation"],
+Cell[5656, 141, 294, 7, 36, 87, 1, "StyleData", "All", "SlideShow",
+ MenuSortingValue->3300],
+Cell[5953, 150, 152, 4, 36, 82, 1, "StyleData", "All", "Printout",
+ MenuSortingValue->None]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6142, 159, 44, 0, 33, "Section"],
+Cell[6189, 161, 99, 2, 42, "Text"],
+Cell[6291, 165, 139, 4, 35, 27, 0, "StyleData", "Notebook", "All",
+ MenuSortingValue->None]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6467, 174, 52, 0, 33, "Section"],
+Cell[6522, 176, 46, 1, 42, 24, 0, "StyleData", "Input", "All",
+ MenuCommandKey->"9"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6605, 182, 53, 0, 33, "Section"],
+Cell[CellGroupData[{
+Cell[6683, 186, 27, 0, 44, "Subsection"],
+Cell[CellGroupData[{
+Cell[6735, 190, 179, 5, 91, 24, 0, "StyleData", "Title", "All",
+ MenuSortingValue->1100,
+ MenuCommandKey->None],
+Cell[6917, 197, 98, 2, 115, 40, 0, "StyleData", "Title", "Presentation"]
+}, Closed]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7076, 206, 47, 0, 33, "Section"],
+Cell[CellGroupData[{
+Cell[7148, 210, 586, 16, 53, 27, 0, "StyleData", "Outline1", "All",
+ CounterIncrements->"Outline1",
+ CounterAssignments->{{"Outline2", 0}, {"Outline3", 0}, {"Outline4", 0}, {
+   "Outline5", 0}, {"Outline6", 0}},
+ MenuSortingValue->1200,
+ MenuCommandKey->"1"],
+Cell[7737, 228, 165, 4, 35, 39, 0, "StyleData", "Outline1", "Numbered"],
+Cell[7905, 234, 103, 1, 35, 103, 1, "StyleData", "Outline1", \
+"PreviewNumbered"],
+Cell[8011, 237, 77, 1, 35, 39, 0, "StyleData", "Outline1", "Bulleted"],
+Cell[8091, 240, 103, 1, 35, 103, 1, "StyleData", "Outline1", \
+"PreviewBulleted"],
+Cell[8197, 243, 94, 2, 71, 43, 0, "StyleData", "Outline1", "Presentation"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8328, 250, 679, 19, 46, 27, 0, "StyleData", "Outline2", "All",
+ CounterIncrements->"Outline2",
+ CounterAssignments->{{"Outline3", 0}, {"Outline4", 0}, {"Outline5", 0}, {
+   "Outline6", 0}},
+ MenuSortingValue->1250,
+ MenuCommandKey->"2"],
+Cell[9010, 271, 247, 6, 35, 39, 0, "StyleData", "Outline2", "Numbered"],
+Cell[9260, 279, 103, 1, 35, 103, 1, "StyleData", "Outline2", \
+"PreviewNumbered"],
+Cell[9366, 282, 77, 1, 35, 39, 0, "StyleData", "Outline2", "Bulleted"],
+Cell[9446, 285, 103, 1, 35, 103, 1, "StyleData", "Outline2", \
+"PreviewBulleted"],
+Cell[9552, 288, 95, 2, 65, 43, 0, "StyleData", "Outline2", "Presentation"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9684, 295, 625, 17, 42, 27, 0, "StyleData", "Outline3", "All",
+ CounterIncrements->"Outline3",
+ CounterAssignments->{{"Outline4", 0}, {"Outline5", 0}, {"Outline6", 0}},
+ MenuSortingValue->1300,
+ MenuCommandKey->"3"],
+Cell[10312, 314, 165, 4, 35, 39, 0, "StyleData", "Outline3", "Numbered"],
+Cell[10480, 320, 103, 1, 35, 103, 1, "StyleData", "Outline3", \
+"PreviewNumbered"],
+Cell[10586, 323, 77, 1, 35, 39, 0, "StyleData", "Outline3", "Bulleted"],
+Cell[10666, 326, 103, 1, 35, 103, 1, "StyleData", "Outline3", \
+"PreviewBulleted"],
+Cell[10772, 329, 95, 2, 59, 43, 0, "StyleData", "Outline3", "Presentation"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10904, 336, 641, 18, 40, 27, 0, "StyleData", "Outline4", "All",
+ CounterIncrements->"Outline4",
+ CounterAssignments->{{"Outline5", 0}, {"Outline6", 0}},
+ MenuSortingValue->1350,
+ MenuCommandKey->"4"],
+Cell[11548, 356, 165, 4, 35, 39, 0, "StyleData", "Outline4", "Numbered"],
+Cell[11716, 362, 103, 1, 35, 103, 1, "StyleData", "Outline4", \
+"PreviewNumbered"],
+Cell[11822, 365, 77, 1, 35, 39, 0, "StyleData", "Outline4", "Bulleted"],
+Cell[11902, 368, 103, 1, 35, 103, 1, "StyleData", "Outline4", \
+"PreviewBulleted"],
+Cell[12008, 371, 95, 2, 59, 43, 0, "StyleData", "Outline4", "Presentation"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[12140, 378, 570, 16, 40, 27, 0, "StyleData", "Outline5", "All",
+ CounterIncrements->"Outline5",
+ CounterAssignments->{{"Outline6", 0}},
+ MenuSortingValue->1400,
+ MenuCommandKey->"5"],
+Cell[12713, 396, 165, 4, 35, 39, 0, "StyleData", "Outline5", "Numbered"],
+Cell[12881, 402, 103, 1, 35, 103, 1, "StyleData", "Outline5", \
+"PreviewNumbered"],
+Cell[12987, 405, 77, 1, 35, 39, 0, "StyleData", "Outline5", "Bulleted"],
+Cell[13067, 408, 103, 1, 35, 103, 1, "StyleData", "Outline5", \
+"PreviewBulleted"],
+Cell[13173, 411, 95, 2, 55, 43, 0, "StyleData", "Outline5", "Presentation"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[13305, 418, 543, 16, 40, 27, 0, "StyleData", "Outline6", "All",
+ CounterIncrements->"Outline6",
+ MenuSortingValue->1450,
+ MenuCommandKey->"6"],
+Cell[13851, 436, 165, 4, 35, 39, 0, "StyleData", "Outline6", "Numbered"],
+Cell[14019, 442, 103, 1, 35, 103, 1, "StyleData", "Outline6", \
+"PreviewNumbered"],
+Cell[14125, 445, 77, 1, 35, 39, 0, "StyleData", "Outline6", "Bulleted"],
+Cell[14205, 448, 103, 1, 35, 103, 1, "StyleData", "Outline6", \
+"PreviewBulleted"],
+Cell[14311, 451, 95, 2, 55, 43, 0, "StyleData", "Outline6", "Presentation"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[14455, 459, 132, 5, 33, "Section"],
+Cell[CellGroupData[{
+Cell[14612, 468, 40, 0, 44, "Subsection"],
+Cell[14655, 470, 71, 2, 36, 32, 0, "StyleData", "ToolbarButton", "All"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[14775, 478, 34, 0, 33, "Section"],
+Cell[CellGroupData[{
+Cell[14834, 482, 101, 3, 35, 28, 0, "StyleData", "Reference", "All"],
+Cell[14938, 487, 93, 1, 35, 93, 1, "StyleData", "Reference", \
+"PreviewNumbered"],
+Cell[15034, 490, 47, 0, 35, 47, 0, "StyleData", "Reference", \
+"PreviewNumbered"],
+Cell[15084, 492, 93, 2, 49, 44, 0, "StyleData", "Reference", "Presentation"]
+}, Closed]]
+}, Closed]]
+}
+]
+*)
+

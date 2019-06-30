@@ -1,0 +1,13 @@
+{"BaseForm", "BitShiftLeft", "BitOr", "BitAnd", "BitShiftRight", "Sqrt", 
+ "Quantity", "Abs", "E", "Mod", "Exp", "Log", "Sin", "Pi", "None", "Cos", 
+ "Floor", "I", "Integrate", "BitXor", "Log2", "Cosh", "Infinity", 
+ "Subfactorial", "RandomReal", "D", "Tanh", "Derivative", "Ceiling", 
+ "Assuming", "BitNot", "Log10", "Cot", "Tan", "Sum", "Coth", "Range", 
+ "Limit", "Sinh", "Subscript", "IntegerPart", "Equal", "ArcTan", "Xor", 
+ "Round", "Automatic", "Ratios", "Less", "Expand", "Sech", "Norm", "N", "Im", 
+ "Hypergeometric2F1", "Gamma", "FresnelC", "Re", "PlusMinus", "LessEqual", 
+ "Fourier", "Fibonacci", "EllipticK", "Degree", "DateDifference", "Count", 
+ "Arg", "ArcTanh", "ArcSinh", "ArcSin", "ArcCos", "ToCharacterCode", 
+ "StringTake", "SphericalBesselJ", "Rational", "ProductLog", "Plus", 
+ "Inverse", "HeavisideTheta", "HarmonicNumber", "FromCharacterCode", 
+ "FourierSeries", "Erfc", "Eigenvalues", "Det", "Csc", "Binomial", "And"}

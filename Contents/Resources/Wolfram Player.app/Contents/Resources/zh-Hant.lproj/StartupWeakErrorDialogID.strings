@@ -1,0 +1,12 @@
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "3pK-d4-lp0"; */
+"3pK-d4-lp0.title" = "繼續";
+
+/* Class = "NSButtonCell"; title = "Quit"; ObjectID = "dhr-ZS-zQ8"; */
+"dhr-ZS-zQ8.title" = "退出";
+
+/* Class = "NSTextFieldCell"; title = "StaticText"; ObjectID = "nLX-ac-3Nx"; */
+"nLX-ac-3Nx.title" = "StaticText";
+
+/* Class = "NSTextFieldCell"; title = "An error has occurred while Mathematica was starting up.  Mathematica may not function properly until this problem is resolved.  You may choose to continue anyway, but you could encounter additional problems."; ObjectID = "nh3-pD-gDE"; */
+"nh3-pD-gDE.title" = "在 Mathematica 啟動時產生一個嚴重的錯誤。問題尚未排除前，Mathematica 可能無法正常運作。您仍然可以選擇繼續使用，只是您可能會遇到一些衍生的問題。";

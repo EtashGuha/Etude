@@ -1,0 +1,13 @@
+{"Sqrt", "E", "Sin", "Cos", "I", "Tan", "Pi", "Sec", "Plus", "Log", 
+ "Quantity", "Cot", "Subscript", "Derivative", "None", "Exp", "Csc", "D", 
+ "Ratios", "List", "FresnelC", "Distribute", "ArcTan", "Integrate", 
+ "Exponent", "BaseForm", "Factor", "Implies", "EllipticK", "Union", 
+ "EllipticE", "Abs", "UnitStep", "Table", "Limit", "GammaRegularized", 
+ "Degree", "Sum", "Rational", "PrimeZetaP", "PlusMinus", "Norm", 
+ "InverseLaplaceTransform", "Range", "N", "Inverse", "Infinity", 
+ "IdentityMatrix", "GoldenRatio", "Cross", "Complement", "Automatic", 
+ "ArcSin", "Append", "Apart", "Xor", "TrigToExp", "Sinh", "Sign", 
+ "ProductLog", "Normal", "ModularLambda", "Map", "Log10", "JacobiCD", 
+ "InverseFunction", "Intersection", "HeavisideTheta", "FresnelS", "Flatten", 
+ "Expand", "Equivalent", "Equal", "Curl", "Cosh", "BitAnd", "Binomial", 
+ "BesselY", "Assumptions", "ArcCot", "All"}

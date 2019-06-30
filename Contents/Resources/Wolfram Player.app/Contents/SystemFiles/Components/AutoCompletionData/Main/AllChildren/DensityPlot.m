@@ -1,0 +1,13 @@
+{"False", "None", "Function", "Pi", "Sqrt", "Automatic", "PlotPoints", 
+ "Style", "Re", "PerformanceGoal", "Mesh", "Im", "Frame", "Cos", "Evaluate", 
+ "ColorFunction", "White", "Length", "AspectRatio", "Sin", "Row", 
+ "RegionFunction", "PlotRange", "PlotLabel", "MeshFunctions", "List", 
+ "ImageSize", "If", "FrameTicks", "ColorFunctionScaling", "ColorData", 
+ "Text", "Table", "Rescale", "Pick", "Hue", "Erfc", "ControlActive", "Which", 
+ "True", "Total", "Thick", "Sum", "Scaled", "Roots", "Point", 
+ "PlotRangePadding", "PlotRangeClipping", "Norm", "N", "Module", "Mod", 
+ "MaxRecursion", "LabelStyle", "ImagePadding", "ImageMargins", "Identity", 
+ "GrayLevel", "FrameTicksStyle", "FrameStyle", "FrameLabel", "FontSize", 
+ "Exp", "EvaluationMonitor", "Epilog", "Dynamic", "DisplayFunction", 
+ "Directive", "ClippingStyle", "Chop", "BoundaryStyle", "Black", "BesselJ", 
+ "Background", "AxesLabel", "Axes", "Arg", "All", "Abs"}

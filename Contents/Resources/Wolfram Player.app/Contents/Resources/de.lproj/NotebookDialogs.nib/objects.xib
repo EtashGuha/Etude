@@ -1,0 +1,1276 @@
+<?xml version="1.0" standalone="yes"?>
+<object class="NSIBObjectData">
+  <object name="rootObject" class="NSCustomObject" id="1">
+  </object>
+  <array count="126" name="allObjects">
+    <object class="IBCarbonDBListView" id="569">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">2906</int>
+      <ostype name="command">OMEG</ostype>
+      <string name="helpTagText">Double click to remove the tag from the currently selected cell(s)</string>
+      <boolean name="variableWidthColumns">FALSE</boolean>
+      <array count="1" name="listViewColumns">
+        <object class="IBCarbonDBListViewColumn">
+          <ostype name="propertyID">List</ostype>
+          <int name="sortOrder">1</int>
+          <int name="maxWidth">359</int>
+          <int name="minWidth">359</int>
+          <int name="textAlignment">0</int>
+          <string name="titleString">Tags of the currently selected cell(s)</string>
+        </object>
+      </array>
+      <int name="hiliteStyle">1</int>
+      <int name="selectionFlags">10</int>
+      <boolean name="horzScrollBar">FALSE</boolean>
+      <string name="viewFrame">20 168 380 140 </string>
+      <string name="bounds">168 20 308 400 </string>
+    </object>
+    <object class="IBCarbonEditText" id="394">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">3107</int>
+      <ostype name="command">OMEG</ostype>
+      <boolean name="isUnicode">TRUE</boolean>
+      <string name="viewFrame">35 128 382 16 </string>
+      <string name="bounds">128 35 144 417 </string>
+    </object>
+    <object class="IBCarbonRadioButton" id="420">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">3010</int>
+      <ostype name="command">OMEG</ostype>
+      <string name="title">The current location</string>
+      <string name="viewFrame">32 267 388 14 </string>
+      <string name="bounds">267 32 281 420 </string>
+    </object>
+    <object class="IBCarbonEditText" id="557">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">2308</int>
+      <ostype name="command">OMEG</ostype>
+      <boolean name="isUnicode">TRUE</boolean>
+      <string name="viewFrame">391 63 92 16 </string>
+      <string name="bounds">63 391 79 483 </string>
+    </object>
+    <object class="IBCarbonButton" id="609">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">2702</int>
+      <ostype name="command">not!</ostype>
+      <int name="buttonType">2</int>
+      <string name="title">Cancel</string>
+      <string name="viewFrame">228 59 70 20 </string>
+      <string name="bounds">59 228 79 298 </string>
+    </object>
+    <object class="IBCarbonButton" id="401">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">3001</int>
+      <ostype name="command">ok  </ostype>
+      <int name="buttonType">1</int>
+      <string name="title">OK</string>
+      <string name="viewFrame">350 503 70 20 </string>
+      <string name="bounds">503 350 523 420 </string>
+    </object>
+    <object class="IBCarbonPopupButton" id="425">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">3006</int>
+      <ostype name="command">OMEG</ostype>
+      <object name="menu" class="IBCarbonMenu" id="431">
+        <string name="title">Popup:</string>
+        <array count="1" name="items">
+          <object class="IBCarbonMenuItem" id="400">
+            <string name="title">Item 1</string>
+            <boolean name="checked">TRUE</boolean>
+          </object>
+        </array>
+      </object>
+      <string name="viewFrame">179 98 241 20 </string>
+      <string name="bounds">98 179 118 420 </string>
+    </object>
+    <object class="IBCarbonWindow" id="346">
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">11</int>
+      <int name="scalingMode">1048576</int>
+      <string name="title"></string>
+      <object name="rootControl" class="IBCarbonRootControl" id="344">
+        <string name="viewFrame">0 0 440 475 </string>
+        <array count="14" name="subviews">
+          <object class="IBCarbonStaticText" id="501">
+            <string name="title">Destination notebook:</string>
+            <string name="viewFrame">20 12 400 16 </string>
+            <string name="bounds">12 20 28 420 </string>
+          </object>
+          <object class="IBCarbonRadioButton" id="502">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2204</int>
+            <ostype name="command">OMEG</ostype>
+            <string name="title">Current notebook</string>
+            <string name="viewFrame">32 36 294 14 </string>
+            <string name="bounds">36 32 50 326 </string>
+          </object>
+          <object class="IBCarbonBevelButton" id="504">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2207</int>
+            <ostype name="command">OMEG</ostype>
+            <int name="contentType">0</int>
+            <int name="textPlacement">3</int>
+            <string name="title">Browse...</string>
+            <string name="viewFrame">354 46 66 24 </string>
+            <string name="bounds">46 354 70 420 </string>
+          </object>
+          <object class="IBCarbonRadioButton" id="503">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2205</int>
+            <ostype name="command">OMEG</ostype>
+            <string name="title">Other notebook or URL:</string>
+            <string name="viewFrame">32 56 294 14 </string>
+            <string name="bounds">56 32 70 326 </string>
+          </object>
+          <object class="IBCarbonEditText" id="505">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2206</int>
+            <ostype name="command">OMEG</ostype>
+            <boolean name="isUnicode">TRUE</boolean>
+            <string name="viewFrame">35 81 382 74 </string>
+            <string name="bounds">81 35 155 417 </string>
+          </object>
+          <object class="IBCarbonSeparator" id="507">
+            <string name="viewFrame">12 166 416 1 </string>
+            <string name="bounds">166 12 167 428 </string>
+          </object>
+          <object class="IBCarbonStaticText" id="506">
+            <string name="title">Destination within notebook:</string>
+            <string name="viewFrame">20 175 400 16 </string>
+            <string name="bounds">175 20 191 420 </string>
+          </object>
+          <object class="IBCarbonRadioButton" id="508">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2208</int>
+            <ostype name="command">OMEG</ostype>
+            <string name="title">Entire notebook</string>
+            <string name="viewFrame">32 199 388 14 </string>
+            <string name="bounds">199 32 213 420 </string>
+          </object>
+          <object class="IBCarbonRadioButton" id="509">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2209</int>
+            <ostype name="command">OMEG</ostype>
+            <string name="title">Cells with the tag:</string>
+            <string name="viewFrame">32 219 388 14 </string>
+            <string name="bounds">219 32 233 420 </string>
+          </object>
+          <object class="IBCarbonEditText" id="510">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2210</int>
+            <ostype name="command">OMEG</ostype>
+            <boolean name="isUnicode">TRUE</boolean>
+            <string name="viewFrame">35 244 382 16 </string>
+            <string name="bounds">244 35 260 417 </string>
+          </object>
+          <object class="IBCarbonDBListView" id="570">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2211</int>
+            <ostype name="command">OMEG</ostype>
+            <string name="helpTagText">To set up new tags, use the Cell Tags command in the Cell menu.</string>
+            <boolean name="variableWidthColumns">FALSE</boolean>
+            <array count="1" name="listViewColumns">
+              <object class="IBCarbonDBListViewColumn">
+                <ostype name="propertyID">List</ostype>
+                <int name="sortOrder">1</int>
+                <int name="maxWidth">367</int>
+                <int name="minWidth">367</int>
+                <int name="textAlignment">0</int>
+                <string name="titleString">All cell tags in the notebook</string>
+              </object>
+            </array>
+            <int name="hiliteStyle">1</int>
+            <int name="selectionFlags">10</int>
+            <boolean name="horzScrollBar">FALSE</boolean>
+            <string name="viewFrame">32 271 388 144 </string>
+            <string name="bounds">271 32 415 420 </string>
+          </object>
+          <object class="IBCarbonRoundButton" id="348">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2203</int>
+            <ostype name="command">OMEG</ostype>
+            <string name="viewFrame">18 432 25 25 </string>
+            <string name="bounds">432 18 457 43 </string>
+            <int name="contentType">132</int>
+            <int name="iconCreator">1835098995</int>
+            <int name="iconType">1751477360</int>
+          </object>
+          <object class="IBCarbonButton" id="353">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2202</int>
+            <ostype name="command">not!</ostype>
+            <int name="buttonType">2</int>
+            <string name="title">Cancel</string>
+            <string name="viewFrame">268 435 70 20 </string>
+            <string name="bounds">435 268 455 338 </string>
+          </object>
+          <object class="IBCarbonButton" id="352">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2201</int>
+            <ostype name="command">ok  </ostype>
+            <int name="buttonType">1</int>
+            <string name="title">OK</string>
+            <string name="viewFrame">350 435 70 20 </string>
+            <string name="bounds">435 350 455 420 </string>
+          </object>
+        </array>
+        <string name="bounds">0 0 475 440 </string>
+      </object>
+      <string name="windowRect">95 384 570 824 </string>
+      <string name="ScreenRectAtEncodeTime">0 0 768 1024 </string>
+    </object>
+    <reference idRef="506"/>
+    <reference idRef="504"/>
+    <object class="IBCarbonMenuItem" id="395">
+      <string name="title">Item 1</string>
+      <boolean name="checked">TRUE</boolean>
+    </object>
+    <object class="IBCarbonRootControl" id="398">
+      <string name="viewFrame">0 0 440 375 </string>
+      <array count="9" name="subviews">
+        <object class="IBCarbonPopupButton" id="386">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3104</int>
+          <ostype name="command">OMEG</ostype>
+          <object name="menu" class="IBCarbonMenu" id="393">
+            <string name="title">Popup:</string>
+            <array count="1" name="items">
+              <reference idRef="395"/>
+            </array>
+          </object>
+          <string name="title">Counter</string>
+          <int name="titleJustification">0</int>
+          <string name="viewFrame">20 19 400 20 </string>
+          <string name="bounds">19 20 39 420 </string>
+        </object>
+        <object class="IBCarbonStaticText" id="392">
+          <string name="title">Use the counter value corresponding to the location of</string>
+          <string name="viewFrame">20 59 400 16 </string>
+          <string name="bounds">59 20 75 420 </string>
+        </object>
+        <object class="IBCarbonRadioButton" id="397">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3105</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="title">This counter object</string>
+          <string name="viewFrame">32 83 388 14 </string>
+          <string name="bounds">83 32 97 420 </string>
+        </object>
+        <object class="IBCarbonRadioButton" id="388">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3106</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="title">The first cell with the tag:</string>
+          <string name="viewFrame">32 103 388 14 </string>
+          <string name="bounds">103 32 117 420 </string>
+        </object>
+        <reference idRef="394"/>
+        <object class="IBCarbonDBListView" id="571">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3108</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="helpTagText">To set up new tags, use the Cell Tags command in the Cell menu.</string>
+          <boolean name="variableWidthColumns">FALSE</boolean>
+          <array count="1" name="listViewColumns">
+            <object class="IBCarbonDBListViewColumn">
+              <ostype name="propertyID">List</ostype>
+              <int name="sortOrder">1</int>
+              <int name="maxWidth">367</int>
+              <int name="minWidth">367</int>
+              <int name="textAlignment">0</int>
+              <string name="titleString">All cell tags in the notebook</string>
+            </object>
+          </array>
+          <int name="hiliteStyle">1</int>
+          <int name="selectionFlags">10</int>
+          <boolean name="horzScrollBar">FALSE</boolean>
+          <string name="viewFrame">32 155 388 160 </string>
+          <string name="bounds">155 32 315 420 </string>
+        </object>
+        <object class="IBCarbonRoundButton" id="389">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3103</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="viewFrame">18 332 25 25 </string>
+          <string name="bounds">332 18 357 43 </string>
+          <int name="contentType">132</int>
+          <int name="iconCreator">1835098995</int>
+          <int name="iconType">1751477360</int>
+        </object>
+        <object class="IBCarbonButton" id="396">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3102</int>
+          <ostype name="command">not!</ostype>
+          <int name="buttonType">2</int>
+          <string name="title">Cancel</string>
+          <string name="viewFrame">268 335 70 20 </string>
+          <string name="bounds">335 268 355 338 </string>
+        </object>
+        <object class="IBCarbonButton" id="387">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3101</int>
+          <ostype name="command">ok  </ostype>
+          <int name="buttonType">1</int>
+          <string name="title">OK</string>
+          <string name="viewFrame">350 335 70 20 </string>
+          <string name="bounds">335 350 355 420 </string>
+        </object>
+      </array>
+      <string name="bounds">0 0 375 440 </string>
+    </object>
+    <object class="IBCarbonButton" id="209">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">2901</int>
+      <ostype name="command">OMEG</ostype>
+      <int name="buttonType">1</int>
+      <string name="title">Add</string>
+      <string name="viewFrame">330 382 70 20 </string>
+      <string name="bounds">382 330 402 400 </string>
+    </object>
+    <reference idRef="400"/>
+    <object class="IBCarbonRootControl" id="232">
+      <string name="viewFrame">0 0 506 242 </string>
+      <array count="19" name="subviews">
+        <object class="IBCarbonStaticText" id="551">
+          <string name="title">Create:</string>
+          <string name="viewFrame">20 12 200 16 </string>
+          <string name="bounds">12 20 28 220 </string>
+        </object>
+        <object class="IBCarbonEditText" id="555">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2307</int>
+          <ostype name="command">OMEG</ostype>
+          <boolean name="isUnicode">TRUE</boolean>
+          <string name="viewFrame">391 33 92 16 </string>
+          <string name="bounds">33 391 49 483 </string>
+        </object>
+        <object class="IBCarbonStaticText" id="556">
+          <string name="title">Number of rows:</string>
+          <int name="justification">-1</int>
+          <string name="viewFrame">236 32 144 16 </string>
+          <string name="bounds">32 236 48 380 </string>
+        </object>
+        <object class="IBCarbonRadioButton" id="552">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2304</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="title">Table (Grid[...])</string>
+          <string name="viewFrame">32 34 188 14 </string>
+          <string name="bounds">34 32 48 220 </string>
+        </object>
+        <object class="IBCarbonRadioButton" id="553">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2305</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="title">Matrix (List of lists)</string>
+          <string name="viewFrame">32 54 188 14 </string>
+          <string name="bounds">54 32 68 220 </string>
+        </object>
+        <reference idRef="557"/>
+        <object class="IBCarbonStaticText" id="558">
+          <string name="title">Number of columns:</string>
+          <int name="justification">-1</int>
+          <string name="viewFrame">236 62 144 16 </string>
+          <string name="bounds">62 236 78 380 </string>
+        </object>
+        <object class="IBCarbonSeparator" id="562">
+          <string name="viewFrame">12 91 482 1 </string>
+          <string name="bounds">91 12 92 494 </string>
+        </object>
+        <object class="IBCarbonStaticText" id="563">
+          <string name="title">Options:</string>
+          <string name="viewFrame">20 100 200 16 </string>
+          <string name="bounds">100 20 116 220 </string>
+        </object>
+        <object class="IBCarbonCheckBox" id="560">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2309</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="title">Draw lines between rows</string>
+          <string name="viewFrame">32 124 220 14 </string>
+          <string name="bounds">124 32 138 252 </string>
+        </object>
+        <object class="IBCarbonEditText" id="564">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2313</int>
+          <ostype name="command">OMEG</ostype>
+          <boolean name="isUnicode">TRUE</boolean>
+          <string name="viewFrame">391 130 92 16 </string>
+          <string name="bounds">130 391 146 483 </string>
+        </object>
+        <object class="IBCarbonCheckBox" id="566">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2312</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="title">Fill with:</string>
+          <string name="viewFrame">260 131 120 14 </string>
+          <string name="bounds">131 260 145 380 </string>
+        </object>
+        <object class="IBCarbonCheckBox" id="559">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2310</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="title">Draw lines between columns</string>
+          <string name="viewFrame">32 146 220 14 </string>
+          <string name="bounds">146 32 160 252 </string>
+        </object>
+        <object class="IBCarbonEditText" id="565">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2315</int>
+          <ostype name="command">OMEG</ostype>
+          <boolean name="isUnicode">TRUE</boolean>
+          <string name="viewFrame">391 160 92 16 </string>
+          <string name="bounds">160 391 176 483 </string>
+        </object>
+        <object class="IBCarbonCheckBox" id="567">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2314</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="title">Fill diagonal:</string>
+          <string name="viewFrame">260 161 120 14 </string>
+          <string name="bounds">161 260 175 380 </string>
+        </object>
+        <object class="IBCarbonCheckBox" id="561">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2311</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="title">Draw frame</string>
+          <string name="viewFrame">32 168 220 14 </string>
+          <string name="bounds">168 32 182 252 </string>
+        </object>
+        <object class="IBCarbonRoundButton" id="247">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2303</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="viewFrame">18 199 25 25 </string>
+          <string name="bounds">199 18 224 43 </string>
+          <int name="contentType">132</int>
+          <int name="iconCreator">1835098995</int>
+          <int name="iconType">1751477360</int>
+        </object>
+        <object class="IBCarbonButton" id="241">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2302</int>
+          <ostype name="command">not!</ostype>
+          <int name="buttonType">2</int>
+          <string name="title">Cancel</string>
+          <string name="viewFrame">334 202 70 20 </string>
+          <string name="bounds">202 334 222 404 </string>
+        </object>
+        <object class="IBCarbonButton" id="246">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2301</int>
+          <ostype name="command">ok  </ostype>
+          <int name="buttonType">1</int>
+          <string name="title">OK</string>
+          <string name="viewFrame">416 202 70 20 </string>
+          <string name="bounds">202 416 222 486 </string>
+        </object>
+      </array>
+      <string name="bounds">0 0 242 506 </string>
+    </object>
+    <object class="IBCarbonRootControl" id="470">
+      <string name="viewFrame">0 0 358 102 </string>
+      <array count="4" name="subviews">
+        <object class="IBCarbonEditText" id="472">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">1904</int>
+          <ostype name="command">OMEG</ostype>
+          <boolean name="isUnicode">TRUE</boolean>
+          <string name="viewFrame">133 23 202 16 </string>
+          <string name="bounds">23 133 39 335 </string>
+        </object>
+        <object class="IBCarbonStaticText" id="471">
+          <string name="title">New font size:</string>
+          <int name="justification">-1</int>
+          <string name="viewFrame">20 22 102 16 </string>
+          <string name="bounds">22 20 38 122 </string>
+        </object>
+        <object class="IBCarbonButton" id="474">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">1902</int>
+          <ostype name="command">not!</ostype>
+          <int name="buttonType">2</int>
+          <string name="title">Cancel</string>
+          <string name="viewFrame">186 62 70 20 </string>
+          <string name="bounds">62 186 82 256 </string>
+        </object>
+        <object class="IBCarbonButton" id="473">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">1901</int>
+          <ostype name="command">ok  </ostype>
+          <int name="buttonType">1</int>
+          <string name="title">OK</string>
+          <string name="viewFrame">268 62 70 20 </string>
+          <string name="bounds">62 268 82 338 </string>
+        </object>
+      </array>
+      <string name="bounds">0 0 102 358 </string>
+    </object>
+    <object class="IBCarbonEditText" id="218">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">2905</int>
+      <ostype name="command">OMEG</ostype>
+      <boolean name="isUnicode">TRUE</boolean>
+      <string name="title">Cell tag</string>
+      <string name="viewFrame">23 343 374 16 </string>
+      <string name="bounds">343 23 359 397 </string>
+    </object>
+    <object class="IBCarbonStaticText" id="423">
+      <string name="title">Character options: </string>
+      <int name="justification">-1</int>
+      <string name="viewFrame">20 195 151 16 </string>
+      <string name="bounds">195 20 211 171 </string>
+    </object>
+    <object class="IBCarbonEditText" id="612">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">2704</int>
+      <ostype name="command">OMEG</ostype>
+      <boolean name="isUnicode">TRUE</boolean>
+      <string name="viewFrame">159 25 218 16 </string>
+      <string name="bounds">25 159 41 377 </string>
+    </object>
+    <reference idRef="348"/>
+    <object class="IBCarbonSeparator" id="405">
+      <string name="viewFrame">20 234 400 1 </string>
+      <string name="bounds">234 20 235 420 </string>
+    </object>
+    <reference idRef="551"/>
+    <object class="IBCarbonCheckBox" id="221">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">2606</int>
+      <ostype name="command">OMEG</ostype>
+      <string name="title">Top</string>
+      <string name="viewFrame">152 20 87 14 </string>
+      <string name="bounds">20 152 34 239 </string>
+    </object>
+    <object class="IBCarbonRootControl" id="217">
+      <string name="viewFrame">0 0 420 422 </string>
+      <array count="7" name="subviews">
+        <object class="IBCarbonDBListView" id="568">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2907</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="helpTagText">Double click to add the tag to the currently selected cell(s)</string>
+          <boolean name="variableWidthColumns">FALSE</boolean>
+          <array count="1" name="listViewColumns">
+            <object class="IBCarbonDBListViewColumn">
+              <ostype name="propertyID">List</ostype>
+              <int name="sortOrder">1</int>
+              <int name="maxWidth">359</int>
+              <int name="minWidth">359</int>
+              <int name="textAlignment">0</int>
+              <string name="titleString">All cell tags in the notebook</string>
+            </object>
+          </array>
+          <int name="hiliteStyle">1</int>
+          <int name="selectionFlags">10</int>
+          <boolean name="horzScrollBar">FALSE</boolean>
+          <string name="viewFrame">20 20 380 140 </string>
+          <string name="bounds">20 20 160 400 </string>
+        </object>
+        <reference idRef="569"/>
+        <object class="IBCarbonStaticText" id="210">
+          <string name="title">Cell tag:</string>
+          <string name="viewFrame">20 316 380 16 </string>
+          <string name="bounds">316 20 332 400 </string>
+        </object>
+        <reference idRef="218"/>
+        <object class="IBCarbonRoundButton" id="213">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2903</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="viewFrame">18 378 25 25 </string>
+          <string name="bounds">378 18 403 43 </string>
+          <int name="contentType">132</int>
+          <int name="iconCreator">1835098995</int>
+          <int name="iconType">1751477360</int>
+        </object>
+        <object class="IBCarbonButton" id="216">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2904</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="title">Remove</string>
+          <string name="viewFrame">238 382 80 20 </string>
+          <string name="bounds">382 238 402 318 </string>
+        </object>
+        <reference idRef="209"/>
+      </array>
+      <string name="bounds">0 0 422 420 </string>
+    </object>
+    <object class="IBCarbonRoundButton" id="402">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">3003</int>
+      <ostype name="command">OMEG</ostype>
+      <string name="viewFrame">18 499 25 25 </string>
+      <string name="bounds">499 18 524 43 </string>
+      <int name="contentType">132</int>
+      <int name="iconCreator">1835098995</int>
+      <int name="iconType">1751477360</int>
+    </object>
+    <object class="IBCarbonRootControl" id="607">
+      <string name="viewFrame">0 0 400 102 </string>
+      <array count="5" name="subviews">
+        <reference idRef="612"/>
+        <object class="IBCarbonStaticText" id="611">
+          <string name="title">New cell context:</string>
+          <int name="justification">-1</int>
+          <string name="viewFrame">20 24 128 16 </string>
+          <string name="bounds">24 20 40 148 </string>
+        </object>
+        <object class="IBCarbonRoundButton" id="610">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2703</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="viewFrame">18 58 25 25 </string>
+          <string name="bounds">58 18 83 43 </string>
+          <int name="contentType">132</int>
+          <int name="iconCreator">1835098995</int>
+          <int name="iconType">1751477360</int>
+        </object>
+        <reference idRef="609"/>
+        <object class="IBCarbonButton" id="608">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2701</int>
+          <ostype name="command">ok  </ostype>
+          <int name="buttonType">1</int>
+          <string name="title">OK</string>
+          <string name="viewFrame">310 59 70 20 </string>
+          <string name="bounds">59 310 79 380 </string>
+        </object>
+      </array>
+      <string name="bounds">0 0 102 400 </string>
+    </object>
+    <reference idRef="505"/>
+    <reference idRef="216"/>
+    <reference idRef="502"/>
+    <object class="IBCarbonCheckBox" id="223">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">2607</int>
+      <ostype name="command">OMEG</ostype>
+      <string name="title">Right</string>
+      <string name="viewFrame">247 42 87 14 </string>
+      <string name="bounds">42 247 56 334 </string>
+    </object>
+    <reference idRef="344"/>
+    <object class="IBCarbonButton" id="219">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">2603</int>
+      <ostype name="command">not!</ostype>
+      <int name="buttonType">2</int>
+      <string name="title">Cancel</string>
+      <string name="viewFrame">208 230 70 20 </string>
+      <string name="bounds">230 208 250 278 </string>
+    </object>
+    <object class="IBCarbonMenuItem" id="426">
+      <string name="title">Item 1</string>
+      <boolean name="checked">TRUE</boolean>
+    </object>
+    <reference idRef="559"/>
+    <object class="IBCarbonEditText" id="437">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">2804</int>
+      <ostype name="command">OMEG</ostype>
+      <boolean name="isUnicode">TRUE</boolean>
+      <string name="viewFrame">23 47 394 144 </string>
+      <string name="bounds">47 23 191 417 </string>
+    </object>
+    <reference idRef="241"/>
+    <object class="IBCarbonStaticText" id="407">
+      <string name="title">Cell options: </string>
+      <int name="justification">-1</int>
+      <string name="viewFrame">20 163 151 16 </string>
+      <string name="bounds">163 20 179 171 </string>
+    </object>
+    <object class="IBCarbonStaticText" id="231">
+      <string name="title">Align the edge(s) of all selected graphics cells with the first selected cell.</string>
+      <string name="viewFrame">20 94 340 36 </string>
+      <string name="bounds">94 20 130 360 </string>
+    </object>
+    <reference idRef="570"/>
+    <reference idRef="213"/>
+    <object class="IBCarbonStaticText" id="419">
+      <string name="title">Notebook options: </string>
+      <int name="justification">-1</int>
+      <string name="viewFrame">20 131 151 16 </string>
+      <string name="bounds">131 20 147 171 </string>
+    </object>
+    <reference idRef="567"/>
+    <object class="IBCarbonMenuItem" id="429">
+      <string name="title">Item 1</string>
+      <boolean name="checked">TRUE</boolean>
+    </object>
+    <reference idRef="352"/>
+    <object class="IBCarbonStaticText" id="222">
+      <string name="title">If you check both Top and Bottom, or both Left and Right, the cells will be resized so both edges are aligned.</string>
+      <string name="viewFrame">20 162 340 48 </string>
+      <string name="bounds">162 20 210 360 </string>
+    </object>
+    <reference idRef="509"/>
+    <object class="IBCarbonStaticText" id="416">
+      <string name="title">Create an object to display the current setting of the</string>
+      <string name="viewFrame">20 12 400 16 </string>
+      <string name="bounds">12 20 28 420 </string>
+    </object>
+    <reference idRef="353"/>
+    <reference idRef="568"/>
+    <object class="IBCarbonWindow" id="226">
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="hasHorizontalZoom">FALSE</boolean>
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="hasVerticalZoom">FALSE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="themeBrush">5</int>
+      <int name="scalingMode">1048576</int>
+      <string name="title">Align Selected Graphics</string>
+      <object name="rootControl" class="IBCarbonRootControl" id="224">
+        <string name="viewFrame">0 0 380 270 </string>
+        <array count="11" name="subviews">
+          <reference idRef="221"/>
+          <object class="IBCarbonCheckBox" id="229">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2605</int>
+            <ostype name="command">OMEG</ostype>
+            <string name="title">Left</string>
+            <string name="viewFrame">72 42 87 14 </string>
+            <string name="bounds">42 72 56 159 </string>
+          </object>
+          <reference idRef="223"/>
+          <object class="IBCarbonCheckBox" id="220">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2608</int>
+            <ostype name="command">OMEG</ostype>
+            <string name="title">Bottom</string>
+            <string name="viewFrame">152 64 87 14 </string>
+            <string name="bounds">64 152 78 239 </string>
+          </object>
+          <reference idRef="231"/>
+          <object class="IBCarbonStaticText" id="227">
+            <string name="title">Note:</string>
+            <string name="viewFrame">20 138 76 16 </string>
+            <string name="bounds">138 20 154 96 </string>
+          </object>
+          <reference idRef="222"/>
+          <object class="IBCarbonRoundButton" id="230">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2604</int>
+            <ostype name="command">OMEG</ostype>
+            <string name="viewFrame">18 226 25 25 </string>
+            <string name="bounds">226 18 251 43 </string>
+            <int name="contentType">132</int>
+            <int name="iconCreator">1835098995</int>
+            <int name="iconType">1751477360</int>
+          </object>
+          <object class="IBCarbonButton" id="225">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2602</int>
+            <ostype name="command">OMEG</ostype>
+            <string name="title">Apply</string>
+            <string name="viewFrame">126 230 70 20 </string>
+            <string name="bounds">230 126 250 196 </string>
+          </object>
+          <reference idRef="219"/>
+          <object class="IBCarbonButton" id="228">
+            <ostype name="controlSignature">OMEG</ostype>
+            <int name="controlID">2601</int>
+            <ostype name="command">ok  </ostype>
+            <int name="buttonType">1</int>
+            <string name="title">OK</string>
+            <string name="viewFrame">290 230 70 20 </string>
+            <string name="bounds">230 290 250 360 </string>
+          </object>
+        </array>
+        <string name="bounds">0 0 270 380 </string>
+      </object>
+      <string name="windowRect">417 398 687 778 </string>
+      <string name="ScreenRectAtEncodeTime">0 0 768 1024 </string>
+    </object>
+    <object class="IBCarbonMenuItem" id="424">
+      <string name="title">Item 1</string>
+      <boolean name="checked">TRUE</boolean>
+    </object>
+    <reference idRef="556"/>
+    <object class="IBCarbonRootControl" id="436">
+      <string name="viewFrame">0 0 440 254 </string>
+      <array count="5" name="subviews">
+        <object class="IBCarbonStaticText" id="434">
+          <string name="title">InputForm for box or cell expression:</string>
+          <string name="viewFrame">20 20 400 16 </string>
+          <string name="bounds">20 20 36 420 </string>
+        </object>
+        <reference idRef="437"/>
+        <object class="IBCarbonRoundButton" id="440">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2803</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="viewFrame">18 212 25 25 </string>
+          <string name="bounds">212 18 237 43 </string>
+          <int name="contentType">132</int>
+          <int name="iconCreator">1835098995</int>
+          <int name="iconType">1751477360</int>
+        </object>
+        <object class="IBCarbonButton" id="439">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2802</int>
+          <ostype name="command">not!</ostype>
+          <int name="buttonType">2</int>
+          <string name="title">Cancel</string>
+          <string name="viewFrame">268 214 70 20 </string>
+          <string name="bounds">214 268 234 338 </string>
+        </object>
+        <object class="IBCarbonButton" id="438">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">2801</int>
+          <ostype name="command">ok  </ostype>
+          <int name="buttonType">1</int>
+          <string name="title">Insert</string>
+          <string name="viewFrame">350 214 70 20 </string>
+          <string name="bounds">214 350 234 420 </string>
+        </object>
+      </array>
+      <string name="bounds">0 0 254 440 </string>
+    </object>
+    <object class="IBCarbonStaticText" id="421">
+      <string name="title">Option or variable: </string>
+      <int name="justification">-1</int>
+      <string name="viewFrame">20 38 151 16 </string>
+      <string name="bounds">38 20 54 171 </string>
+    </object>
+    <reference idRef="510"/>
+    <reference idRef="564"/>
+    <reference idRef="388"/>
+    <object class="IBCarbonStaticText" id="428">
+      <string name="title">Use the value corresponding to</string>
+      <string name="viewFrame">20 243 400 16 </string>
+      <string name="bounds">243 20 259 420 </string>
+    </object>
+    <reference idRef="553"/>
+    <reference idRef="508"/>
+    <object class="IBCarbonButton" id="404">
+      <ostype name="controlSignature">OMEG</ostype>
+      <int name="controlID">3002</int>
+      <ostype name="command">OMEG</ostype>
+      <int name="buttonType">2</int>
+      <string name="title">Cancel</string>
+      <string name="viewFrame">268 503 70 20 </string>
+      <string name="bounds">503 268 523 338 </string>
+    </object>
+    <reference idRef="387"/>
+    <reference idRef="560"/>
+    <reference idRef="503"/>
+    <reference idRef="571"/>
+    <reference idRef="558"/>
+    <reference idRef="608"/>
+    <reference idRef="386"/>
+    <reference idRef="247"/>
+    <reference idRef="474"/>
+    <reference idRef="210"/>
+    <reference idRef="507"/>
+    <object class="IBCarbonRootControl" id="432">
+      <string name="viewFrame">0 0 440 543 </string>
+      <array count="22" name="subviews">
+        <reference idRef="416"/>
+        <object class="IBCarbonEditText" id="412">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3004</int>
+          <ostype name="command">OMEG</ostype>
+          <boolean name="isUnicode">TRUE</boolean>
+          <string name="viewFrame">182 39 235 16 </string>
+          <string name="bounds">39 182 55 417 </string>
+        </object>
+        <reference idRef="421"/>
+        <object class="IBCarbonPopupButton" id="406">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3005</int>
+          <ostype name="command">OMEG</ostype>
+          <object name="menu" class="IBCarbonMenu" id="430">
+            <string name="title">Popup:</string>
+            <array count="1" name="items">
+              <reference idRef="424"/>
+            </array>
+          </object>
+          <string name="viewFrame">179 66 241 20 </string>
+          <string name="bounds">66 179 86 420 </string>
+        </object>
+        <object class="IBCarbonStaticText" id="414">
+          <string name="title">Global variable: </string>
+          <int name="justification">-1</int>
+          <string name="viewFrame">20 67 151 16 </string>
+          <string name="bounds">67 20 83 171 </string>
+        </object>
+        <reference idRef="425"/>
+        <object class="IBCarbonStaticText" id="409">
+          <string name="title">Global options: </string>
+          <int name="justification">-1</int>
+          <string name="viewFrame">20 99 151 16 </string>
+          <string name="bounds">99 20 115 171 </string>
+        </object>
+        <object class="IBCarbonPopupButton" id="427">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3007</int>
+          <ostype name="command">OMEG</ostype>
+          <object name="menu" class="IBCarbonMenu" id="418">
+            <string name="title">Popup:</string>
+            <array count="1" name="items">
+              <reference idRef="426"/>
+            </array>
+          </object>
+          <string name="viewFrame">179 130 241 20 </string>
+          <string name="bounds">130 179 150 420 </string>
+        </object>
+        <reference idRef="419"/>
+        <object class="IBCarbonPopupButton" id="415">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3008</int>
+          <ostype name="command">OMEG</ostype>
+          <object name="menu" class="IBCarbonMenu" id="411">
+            <string name="title">Popup:</string>
+            <array count="1" name="items">
+              <reference idRef="429"/>
+            </array>
+          </object>
+          <string name="viewFrame">179 162 241 20 </string>
+          <string name="bounds">162 179 182 420 </string>
+        </object>
+        <reference idRef="407"/>
+        <object class="IBCarbonPopupButton" id="422">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3009</int>
+          <ostype name="command">OMEG</ostype>
+          <object name="menu" class="IBCarbonMenu" id="433">
+            <string name="title">Popup:</string>
+            <array count="1" name="items">
+              <object class="IBCarbonMenuItem" id="410">
+                <string name="title">Item 1</string>
+                <boolean name="checked">TRUE</boolean>
+              </object>
+            </array>
+          </object>
+          <string name="viewFrame">179 194 241 20 </string>
+          <string name="bounds">194 179 214 420 </string>
+        </object>
+        <reference idRef="423"/>
+        <reference idRef="405"/>
+        <reference idRef="428"/>
+        <reference idRef="420"/>
+        <object class="IBCarbonRadioButton" id="417">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3011</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="title">The first cell with the tag:</string>
+          <string name="viewFrame">32 287 388 14 </string>
+          <string name="bounds">287 32 301 420 </string>
+        </object>
+        <object class="IBCarbonEditText" id="403">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3012</int>
+          <ostype name="command">OMEG</ostype>
+          <boolean name="isUnicode">TRUE</boolean>
+          <string name="viewFrame">35 312 382 16 </string>
+          <string name="bounds">312 35 328 417 </string>
+        </object>
+        <object class="IBCarbonDBListView" id="572">
+          <ostype name="controlSignature">OMEG</ostype>
+          <int name="controlID">3013</int>
+          <ostype name="command">OMEG</ostype>
+          <string name="helpTagText">To set up new tags, use the Cell Tags command in the Cell menu.</string>
+          <boolean name="variableWidthColumns">FALSE</boolean>
+          <array count="1" name="listViewColumns">
+            <object class="IBCarbonDBListViewColumn">
+              <ostype name="propertyID">List</ostype>
+              <int name="sortOrder">1</int>
+              <int name="maxWidth">367</int>
+              <int name="minWidth">367</int>
+              <int name="textAlignment">0</int>
+              <string name="titleString">All cell tags in the notebook</string>
+            </object>
+          </array>
+          <int name="hiliteStyle">1</int>
+          <int name="selectionFlags">10</int>
+          <boolean name="horzScrollBar">FALSE</boolean>
+          <string name="viewFrame">32 339 388 144 </string>
+          <string name="bounds">339 32 483 420 </string>
+        </object>
+        <reference idRef="402"/>
+        <reference idRef="404"/>
+        <reference idRef="401"/>
+      </array>
+      <string name="bounds">0 0 543 440 </string>
+    </object>
+    <reference idRef="392"/>
+    <reference idRef="439"/>
+    <reference idRef="417"/>
+    <object class="IBCarbonWindow" id="606">
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">11</int>
+      <int name="scalingMode">1048576</int>
+      <string name="title"></string>
+      <reference name="rootControl" idRef="607"/>
+      <string name="windowRect">91 400 193 800 </string>
+      <string name="ScreenRectAtEncodeTime">0 0 768 1024 </string>
+    </object>
+    <reference idRef="611"/>
+    <object class="IBCarbonWindow" id="408">
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">11</int>
+      <int name="scalingMode">1048576</int>
+      <string name="title"></string>
+      <reference name="rootControl" idRef="432"/>
+      <string name="windowRect">91 203 634 643 </string>
+      <string name="ScreenRectAtEncodeTime">0 0 768 1024 </string>
+    </object>
+    <reference idRef="224"/>
+    <reference idRef="393"/>
+    <reference idRef="501"/>
+    <reference idRef="572"/>
+    <reference idRef="430"/>
+    <reference idRef="431"/>
+    <reference idRef="229"/>
+    <reference idRef="438"/>
+    <object class="IBCarbonWindow" id="390">
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">11</int>
+      <int name="scalingMode">1048576</int>
+      <string name="title"></string>
+      <reference name="rootControl" idRef="398"/>
+      <string name="windowRect">225 286 600 726 </string>
+      <string name="ScreenRectAtEncodeTime">0 0 768 1024 </string>
+    </object>
+    <reference idRef="225"/>
+    <reference idRef="411"/>
+    <reference idRef="434"/>
+    <reference idRef="610"/>
+    <reference idRef="427"/>
+    <reference idRef="433"/>
+    <reference idRef="403"/>
+    <object class="IBCarbonWindow" id="469">
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">11</int>
+      <int name="scalingMode">1048576</int>
+      <string name="title"></string>
+      <reference name="rootControl" idRef="470"/>
+      <string name="windowRect">241 130 343 488 </string>
+      <string name="ScreenRectAtEncodeTime">0 0 768 1024 </string>
+    </object>
+    <reference idRef="415"/>
+    <reference idRef="220"/>
+    <reference idRef="228"/>
+    <reference idRef="565"/>
+    <reference idRef="418"/>
+    <reference idRef="230"/>
+    <reference idRef="246"/>
+    <reference idRef="227"/>
+    <object class="IBCarbonWindow" id="435">
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="liveResize">TRUE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">11</int>
+      <int name="scalingMode">1048576</int>
+      <string name="title"></string>
+      <reference name="rootControl" idRef="436"/>
+      <string name="windowRect">451 410 705 850 </string>
+      <string name="ScreenRectAtEncodeTime">0 0 768 1024 </string>
+    </object>
+    <reference idRef="389"/>
+    <reference idRef="473"/>
+    <reference idRef="561"/>
+    <reference idRef="566"/>
+    <reference idRef="397"/>
+    <reference idRef="555"/>
+    <reference idRef="414"/>
+    <reference idRef="410"/>
+    <reference idRef="440"/>
+    <reference idRef="412"/>
+    <reference idRef="472"/>
+    <object class="IBCarbonWindow" id="215">
+      <boolean name="hasHorizontalZoom">FALSE</boolean>
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="hasVerticalZoom">FALSE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="themeBrush">5</int>
+      <int name="scalingMode">1048576</int>
+      <string name="title">Edit Cell Tags for </string>
+      <reference name="rootControl" idRef="217"/>
+      <string name="windowRect">141 275 563 695 </string>
+      <string name="ScreenRectAtEncodeTime">0 0 768 1024 </string>
+    </object>
+    <reference idRef="552"/>
+    <reference idRef="396"/>
+    <reference idRef="409"/>
+    <reference idRef="471"/>
+    <object class="IBCarbonWindow" id="245">
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">11</int>
+      <int name="scalingMode">1048576</int>
+      <string name="title"></string>
+      <reference name="rootControl" idRef="232"/>
+      <string name="windowRect">96 35 338 541 </string>
+      <string name="ScreenRectAtEncodeTime">0 0 768 1024 </string>
+    </object>
+    <reference idRef="562"/>
+    <reference idRef="406"/>
+    <reference idRef="563"/>
+    <reference idRef="422"/>
+  </array>
+  <array count="126" name="allParents">
+    <reference idRef="217"/>
+    <reference idRef="398"/>
+    <reference idRef="432"/>
+    <reference idRef="232"/>
+    <reference idRef="607"/>
+    <reference idRef="432"/>
+    <reference idRef="432"/>
+    <reference idRef="1"/>
+    <reference idRef="344"/>
+    <reference idRef="344"/>
+    <reference idRef="393"/>
+    <reference idRef="390"/>
+    <reference idRef="217"/>
+    <reference idRef="431"/>
+    <reference idRef="245"/>
+    <reference idRef="469"/>
+    <reference idRef="217"/>
+    <reference idRef="432"/>
+    <reference idRef="607"/>
+    <reference idRef="344"/>
+    <reference idRef="432"/>
+    <reference idRef="232"/>
+    <reference idRef="224"/>
+    <reference idRef="215"/>
+    <reference idRef="432"/>
+    <reference idRef="606"/>
+    <reference idRef="344"/>
+    <reference idRef="217"/>
+    <reference idRef="344"/>
+    <reference idRef="224"/>
+    <reference idRef="346"/>
+    <reference idRef="224"/>
+    <reference idRef="418"/>
+    <reference idRef="232"/>
+    <reference idRef="436"/>
+    <reference idRef="232"/>
+    <reference idRef="432"/>
+    <reference idRef="224"/>
+    <reference idRef="344"/>
+    <reference idRef="217"/>
+    <reference idRef="432"/>
+    <reference idRef="232"/>
+    <reference idRef="411"/>
+    <reference idRef="344"/>
+    <reference idRef="224"/>
+    <reference idRef="344"/>
+    <reference idRef="432"/>
+    <reference idRef="344"/>
+    <reference idRef="217"/>
+    <reference idRef="1"/>
+    <reference idRef="430"/>
+    <reference idRef="232"/>
+    <reference idRef="435"/>
+    <reference idRef="432"/>
+    <reference idRef="344"/>
+    <reference idRef="232"/>
+    <reference idRef="398"/>
+    <reference idRef="432"/>
+    <reference idRef="232"/>
+    <reference idRef="344"/>
+    <reference idRef="432"/>
+    <reference idRef="398"/>
+    <reference idRef="232"/>
+    <reference idRef="344"/>
+    <reference idRef="398"/>
+    <reference idRef="232"/>
+    <reference idRef="607"/>
+    <reference idRef="398"/>
+    <reference idRef="232"/>
+    <reference idRef="470"/>
+    <reference idRef="217"/>
+    <reference idRef="344"/>
+    <reference idRef="408"/>
+    <reference idRef="398"/>
+    <reference idRef="436"/>
+    <reference idRef="432"/>
+    <reference idRef="1"/>
+    <reference idRef="607"/>
+    <reference idRef="1"/>
+    <reference idRef="226"/>
+    <reference idRef="386"/>
+    <reference idRef="344"/>
+    <reference idRef="432"/>
+    <reference idRef="406"/>
+    <reference idRef="425"/>
+    <reference idRef="224"/>
+    <reference idRef="436"/>
+    <reference idRef="1"/>
+    <reference idRef="224"/>
+    <reference idRef="415"/>
+    <reference idRef="436"/>
+    <reference idRef="607"/>
+    <reference idRef="432"/>
+    <reference idRef="422"/>
+    <reference idRef="432"/>
+    <reference idRef="1"/>
+    <reference idRef="432"/>
+    <reference idRef="224"/>
+    <reference idRef="224"/>
+    <reference idRef="232"/>
+    <reference idRef="427"/>
+    <reference idRef="224"/>
+    <reference idRef="232"/>
+    <reference idRef="224"/>
+    <reference idRef="1"/>
+    <reference idRef="398"/>
+    <reference idRef="470"/>
+    <reference idRef="232"/>
+    <reference idRef="232"/>
+    <reference idRef="398"/>
+    <reference idRef="232"/>
+    <reference idRef="432"/>
+    <reference idRef="433"/>
+    <reference idRef="436"/>
+    <reference idRef="432"/>
+    <reference idRef="470"/>
+    <reference idRef="1"/>
+    <reference idRef="232"/>
+    <reference idRef="398"/>
+    <reference idRef="432"/>
+    <reference idRef="470"/>
+    <reference idRef="1"/>
+    <reference idRef="232"/>
+    <reference idRef="432"/>
+    <reference idRef="232"/>
+    <reference idRef="432"/>
+  </array>
+  <dictionary count="10" name="nameTable">
+    <string>File&apos;s Owner</string>
+    <reference idRef="1"/>
+    <string>alignGraphicsSettingsID</string>
+    <reference idRef="226"/>
+    <string>cellContextDialogID</string>
+    <reference idRef="606"/>
+    <string>copyLinkDialogID</string>
+    <reference idRef="346"/>
+    <string>createCounterBoxDialogID</string>
+    <reference idRef="390"/>
+    <string>createGridBoxDialogID</string>
+    <reference idRef="245"/>
+    <string>createOptionValueBoxDialogID</string>
+    <reference idRef="408"/>
+    <string>editKeysID</string>
+    <reference idRef="215"/>
+    <string>fontSizeDialogID</string>
+    <reference idRef="469"/>
+    <string>insertRawExpressionDialogID</string>
+    <reference idRef="435"/>
+  </dictionary>
+  <string name="targetFramework">IBCarbonFramework</string>
+  <unsigned_int name="nextObjectID">628</unsigned_int>
+</object>

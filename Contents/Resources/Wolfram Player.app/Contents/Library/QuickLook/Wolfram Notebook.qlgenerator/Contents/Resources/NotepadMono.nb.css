@@ -1,0 +1,24 @@
+div.Input {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	margin-left: 45px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-top: 7px;
+}
+div.Text {
+	font-family: Courier, monospaced;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Section {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	margin-left: 24px;
+	margin-bottom: 8px;
+	margin-top: 24px;
+	display: list-item;
+	list-style-type: square;
+}

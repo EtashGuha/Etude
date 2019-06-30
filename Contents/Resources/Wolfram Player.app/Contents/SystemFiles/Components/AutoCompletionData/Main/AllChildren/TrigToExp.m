@@ -1,0 +1,12 @@
+{"Sin", "Cos", "Pi", "I", "Sqrt", "Sinh", "Log", "Tan", "Cosh", "E", 
+ "ArcTan", "Sec", "Cot", "Csc", "Exp", "Tanh", "Integrate", "ArcTanh", 
+ "ArcSin", "BesselJ", "Degree", "Derivative", "ArcSinh", "ArcCos", "Abs", 
+ "Log2", "Quantity", "Log10", "BesselY", "Sech", "Re", "Subscript", "Coth", 
+ "ArcCosh", "D", "ArcCot", "Sum", "Infinity", "Gamma", "Floor", "Fit", 
+ "Csch", "Beta", "ArcSec", "ArcCsch", "Sinc", "FourierTransform", 
+ "ExpToTrig", "None", "CosIntegral", "ArcSech", "InverseLaplaceTransform", 
+ "Conjugate", "Arg", "TrigToExp", "SphericalBesselJ", "Rational", 
+ "MatrixExp", "InverseFunction", "Expand", "ComplexExpand", "BaseForm", 
+ "ArcCsc", "TrigReduce", "TrigFactor", "Sign", "Residue", "Product", 
+ "PlusMinus", "Mod", "Im", "Hypergeometric2F1", "Erf", "EllipticE", 
+ "DiracComb", "BitOr", "Assuming", "ArcCoth"}

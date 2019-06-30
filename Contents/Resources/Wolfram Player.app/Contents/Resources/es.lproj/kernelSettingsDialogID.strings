@@ -1,0 +1,54 @@
+
+/* Class = "NSTextFieldCell"; title = "Launch on:"; ObjectID = "7M6-4I-mGx"; */
+"7M6-4I-mGx.title" = "Ejecutar el:";
+
+/* Class = "NSTextFieldCell"; title = "Remote user:"; ObjectID = "9SH-8i-Hhk"; */
+"9SH-8i-Hhk.title" = "Usuario remoto:";
+
+/* Class = "NSWindow"; title = "Kernel Configuration"; ObjectID = "9VK-nt-Pky"; */
+"9VK-nt-Pky.title" = "Configuración de kernel";
+
+/* Class = "NSButtonCell"; title = "Advanced Options"; ObjectID = "Ab3-Y0-DtQ"; */
+"Ab3-Y0-DtQ.title" = "Opciones avanzadas";
+
+/* Class = "NSButtonCell"; title = "Raw MathLink connection"; ObjectID = "BMy-Rq-ge0"; */
+"BMy-Rq-ge0.title" = "Conexión MathLink sin procesar";
+
+/* Class = "NSButtonCell"; title = "Remote machine"; ObjectID = "CfY-wy-vfN"; */
+"CfY-wy-vfN.title" = "Máquina remota";
+
+/* Class = "NSButtonCell"; title = "Translate Return into Newline"; ObjectID = "FsS-Xp-EmK"; */
+"FsS-Xp-EmK.title" = "Pasar Regresar a Nueva línea";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "Hsf-tQ-57f"; */
+"Hsf-tQ-57f.title" = "OK";
+
+/* Class = "NSTextFieldCell"; title = "Kernel name:"; ObjectID = "K4k-pk-E51"; */
+"K4k-pk-E51.title" = "Nombre de kernel:";
+
+/* Class = "NSTextFieldCell"; title = "Remote host:"; ObjectID = "OWc-CE-NbJ"; */
+"OWc-CE-NbJ.title" = "Huésped remoto:";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Vb4-BM-RE5"; */
+"Vb4-BM-RE5.title" = "Cancelar";
+
+/* Class = "NSTextFieldCell"; title = "Arguments to MLOpen:"; ObjectID = "WVU-8g-RWW"; */
+"WVU-8g-RWW.title" = "Argumentos a MLOpen:";
+
+/* Class = "NSButtonCell"; title = "Basic Options"; ObjectID = "YvN-b3-57C"; */
+"YvN-b3-57C.title" = "Opciones básicas";
+
+/* Class = "NSButtonCell"; title = "Append name to In/Out prompts"; ObjectID = "dCI-ek-Vzh"; */
+"dCI-ek-Vzh.title" = "Adjuntar nombre a las indicaciones de entrada/salida";
+
+/* Class = "NSButtonCell"; title = "Local machine"; ObjectID = "i9l-Uz-UdG"; */
+"i9l-Uz-UdG.title" = "Máquina local";
+
+/* Class = "NSTextFieldCell"; title = "Launch command:"; ObjectID = "jmF-Q8-eTt"; */
+"jmF-Q8-eTt.title" = "Ejecutar comando:";
+
+/* Class = "NSButtonCell"; title = "Automatically launch on front end startup"; ObjectID = "trU-Cu-kBj"; */
+"trU-Cu-kBj.title" = "Ejecutar automáticamente en la interfaz al arranque";
+
+/* Class = "NSTextFieldCell"; title = "Kernel program:"; ObjectID = "vic-pp-YSt"; */
+"vic-pp-YSt.title" = "Programa de  kernel:";

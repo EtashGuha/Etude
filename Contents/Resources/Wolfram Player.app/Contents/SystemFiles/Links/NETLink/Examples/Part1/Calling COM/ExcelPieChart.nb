@@ -1,0 +1,694 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     22174,        685]
+NotebookOptionsPosition[     20662,        632]
+NotebookOutlinePosition[     21179,        651]
+CellTagsIndexPosition[     21136,        648]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[".NET/Link Example : Controlling Excel", "Title",
+ CellID->560470177],
+
+Cell[TextData[{
+ "This example demonstrates calling a COM object from Mathematica using .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ ". The COM object used is the Microsoft Excel application, and of course you \
+must have Excel installed for this to work. You do not need to have a very \
+recent version of Excel--this will probably work for at least as far back as \
+Excel 97."
+}], "Text",
+ CellChangeTimes->{{3.4131514221928062`*^9, 3.4131514224117002`*^9}},
+ CellID->51678359],
+
+Cell[TextData[{
+ ".",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " allows you to control COM objects via their IDispatch interface, otherwise \
+known as ActiveX Automation, or just Automation. This means that the same \
+sorts of things that can be done with scripting languages like Visual Basic \
+and VBScript can be done in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ". Microsoft Excel is a good example of an application that exposes a very \
+complete and useful object model to Automation. If you have ever programmed \
+in Excel\[CloseCurlyQuote]s Visual Basic for Applications (VBA), you know \
+that everything that can be done in Excel can be done from VBA. ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " can use the same Automation services that VBA uses, and so it is equally \
+powerful. As can be seen by looking at the code, it is also as easy to \
+program these tasks in Mathematica as it is in Visual Basic."
+}], "Text",
+ CellChangeTimes->{{3.4131514278684196`*^9, 3.4131514501487226`*^9}},
+ CellID->329246284],
+
+Cell[TextData[{
+ "This example presents a function called ",
+ Cell[BoxData["ExcelPieChart"], "InlineFormula"],
+ ", which produces a pie chart in Excel as its output."
+}], "Text",
+ CellChangeTimes->{3.413151454573512*^9},
+ CellID->291207559],
+
+Cell[TextData[{
+ "To try this example, evaluate all the initialization cells (you can do this \
+using the menu item ",
+ StyleBox[ButtonBox["Evaluation",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/EvaluationMenu"], "MenuName"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter"],
+ StyleBox[ButtonBox["Evaluate Initialization Cells",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/menuitem/EvaluateInitializationCells"], "MenuName"],
+ ") and then go to the Example section."
+}], "Text",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707597948962*^9}, {
+  3.412707959534474*^9, 3.412707967363954*^9}, {3.412708138927157*^9, 
+  3.412708173015101*^9}, {3.412708230174596*^9, 3.412708252892912*^9}},
+ CellID->1738407360],
+
+Cell[CellGroupData[{
+
+Cell["Code and Explanation", "Section"],
+
+Cell[TextData[{
+ "The following cell compares two programs that create a simple pie chart in \
+Excel. The code on the left is the Visual Basic for Applications code that \
+you would write if you were working within Excel. The code on the right is a ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " program that does the same thing. You can see that these two programs are \
+essentially identical. Note only does .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " give you the same power as Visual Basic, it provides the same convenience \
+to the programmer."
+}], "Text",
+ CellChangeTimes->{{3.413151486766595*^9, 3.413151487001125*^9}}],
+
+Cell[TextData[Cell[BoxData[GridBox[{
+   {
+    RowBox[{
+     RowBox[{"Visual", " ", "Basic"}], "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     StyleBox[
+      RowBox[{
+       RowBox[{"Set", " ", "wb"}], " ", "=", " ", 
+       RowBox[{
+        RowBox[{"Application", ".", "Workbooks"}], 
+        RowBox[{"(", "1", ")"}]}]}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{"Set", " ", "ws"}], " ", "=", " ", 
+       RowBox[{
+        RowBox[{"wb", ".", "Worksheets"}], 
+        RowBox[{"(", "1", ")"}]}]}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", ".", "Range"}], 
+        RowBox[{
+         RowBox[{"(", "\"\<A1\>\"", ")"}], ".", "Value"}]}], " ", "=", " ", 
+       "\"\<North\>\""}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", ".", "Range"}], 
+        RowBox[{
+         RowBox[{"(", "\"\<A2\>\"", ")"}], ".", "Value"}]}], " ", "=", " ", 
+       "\"\<South\>\""}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", ".", "Range"}], 
+        RowBox[{
+         RowBox[{"(", "\"\<A3\>\"", ")"}], ".", "Value"}]}], " ", "=", " ", 
+       "\"\<East\>\""}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", ".", "Range"}], 
+        RowBox[{
+         RowBox[{"(", "\"\<A4\>\"", ")"}], ".", "Value"}]}], " ", "=", " ", 
+       "\"\<West\>\""}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", ".", "Range"}], 
+        RowBox[{
+         RowBox[{"(", "\"\<B1\>\"", ")"}], ".", "Value"}]}], " ", "=", " ", 
+       "5.2"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", ".", "Range"}], 
+        RowBox[{
+         RowBox[{"(", "\"\<B2\>\"", ")"}], ".", "Value"}]}], " ", "=", " ", 
+       "10"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", ".", "Range"}], 
+        RowBox[{
+         RowBox[{"(", "\"\<B3\>\"", ")"}], ".", "Value"}]}], " ", "=", " ", 
+       "8"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", ".", "Range"}], 
+        RowBox[{
+         RowBox[{"(", "\"\<B4\>\"", ")"}], ".", "Value"}]}], " ", "=", " ", 
+       "20"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{"Set", " ", "sourceRange"}], " ", "=", " ", 
+       RowBox[{
+        RowBox[{"ws", ".", "Range"}], 
+        RowBox[{"(", "\"\<A1:B4\>\"", ")"}]}]}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{"Set", " ", "chrt"}], " ", "=", " ", 
+       RowBox[{"wb", ".", "Charts", ".", "Add"}]}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"chrt", ".", "ChartWizard"}], " ", "sourceRange"}], ",", " ", 
+       "xl3DPie", ",", " ", "7", ",", " ", "xlColumns", ",", 
+       "\[IndentingNewLine]", "\t\t ", "1", ",", " ", "0", ",", " ", "2", ",",
+        " ", "\"\<Sales Percentages\>\""}],
+      FontSize->12,
+      FontWeight->"Normal"]}], 
+    RowBox[{"Mathematica", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     StyleBox[
+      RowBox[{
+       RowBox[{"wb", "=", 
+        RowBox[{"excel", "@", 
+         RowBox[{"Workbooks", "@", 
+          RowBox[{"Item", "[", "1", "]"}]}]}]}], ";"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{"ws", "=", 
+        RowBox[{"wb", "@", 
+         RowBox[{"Worksheets", "@", 
+          RowBox[{"Item", "[", "1", "]"}]}]}]}], ";"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", "@", 
+         RowBox[{
+          RowBox[{"Range", "[", "\"\<A1\>\"", "]"}], "@", "Value"}]}], "=", 
+        "\"\<North\>\""}], ";"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", "@", 
+         RowBox[{
+          RowBox[{"Range", "[", "\"\<A2\>\"", "]"}], "@", "Value"}]}], "=", 
+        "\"\<South\>\""}], ";"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", "@", 
+         RowBox[{
+          RowBox[{"Range", "[", "\"\<A3\>\"", "]"}], "@", "Value"}]}], "=", 
+        "\"\<East\>\""}], ";"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", "@", 
+         RowBox[{
+          RowBox[{"Range", "[", "\"\<A4\>\"", "]"}], "@", "Value"}]}], "=", 
+        "\"\<West\>\""}], ";"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", "@", 
+         RowBox[{
+          RowBox[{"Range", "[", "\"\<B1\>\"", "]"}], "@", "Value"}]}], "=", 
+        "5.2"}], ";"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", "@", 
+         RowBox[{
+          RowBox[{"Range", "[", "\"\<B2\>\"", "]"}], "@", "Value"}]}], "=", 
+        "10"}], ";"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", "@", 
+         RowBox[{
+          RowBox[{"Range", "[", "\"\<B3\>\"", "]"}], "@", "Value"}]}], "=", 
+        "8"}], ";"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ws", "@", 
+         RowBox[{
+          RowBox[{"Range", "[", "\"\<B4\>\"", "]"}], "@", "Value"}]}], "=", 
+        "20"}], ";"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{"srcRange", "=", 
+        RowBox[{"ws", "@", 
+         RowBox[{"Range", "[", "\"\<A1:B4\>\"", "]"}]}]}], ";"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{"chrt", "=", 
+        RowBox[{"wb", "@", 
+         RowBox[{"Charts", "@", "Add"}]}]}], ";"}],
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox["\n",
+      FontSize->12,
+      FontWeight->"Normal"], 
+     StyleBox[
+      RowBox[{
+       RowBox[{"chrt", "@", 
+        RowBox[{"ChartWizard", "[", 
+         RowBox[{"srcRange", ",", 
+          RowBox[{"-", "4102"}], ",", "7", ",", "2", ",", 
+          "\[IndentingNewLine]", "\t\t", "1", ",", "0", ",", "2", ",", 
+          "\"\<Sales Percentages\>\""}], "]"}]}], ";"}],
+      FontSize->12,
+      FontWeight->"Normal"]}]}
+  }]]]], "Input",
+ Evaluatable->False,
+ Background->GrayLevel[0.900008]],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData["ExcelPieChart"], "InlineFormula"],
+ " program developed below is a slightly generalized version of the example \
+code in the above cell."
+}], "Text",
+ CellChangeTimes->{3.4131514944122567`*^9}],
+
+Cell["\<\
+Needs[\"NETLink`\"]
+
+ExcelPieChart[{labels:{__String}, values:{__?NumberQ}}, title_String] :=
+\tModule[{excel, wb, ws},
+\t\tNETBlock[
+\t\t\tInstallNET[];
+\t\t\t(* We use CreateCOMObject to launch an instance of Excel. It will not \
+be visible until
+\t\t\t   we make it so at the end of the program. Use GetActiveCOMObject \
+instead of CreateCOMObject
+\t\t\t   if you want to attach to a currently-running instance of Excel \
+instead of launching a new one.
+\t\t\t   The argument to CreateCOMObject is a COM ProgID or CLSID (most users \
+will use the ProgID,
+\t\t\t   which is readable text, like \"Excel.Application\". The excel object \
+returned is a .NET
+\t\t\t   object that \"wraps\" a COM object and makes it look like a .NET \
+object to callers.
+\t\t\t*)
+\t\t\texcel = CreateCOMObject[\"Excel.Application\"];
+\t\t\tIf[!NETObjectQ[excel],
+\t\t\t\tReturn[$Failed]
+\t\t\t];
+\t\t\t
+\t\t\t(* Now we begin working with the excel COM object. Consult Excel's \
+documentation for its object
+\t\t\t   model to see what properties and methods are supported and how to \
+use them.
+\t\t\t*)
+\t\t\twb = excel@Workbooks@Add[];
+\t\t\tws = wb@Worksheets@Item[1];
+\t\t\t
+\t\t\t(* Here we fill the range A1 ... An with the pie slice labels. *)
+\t\t\tMapThread[(ws@Range[#1]@Value = #2)&,
+\t\t\t\t{Table[\"A\" <> ToString[i], {i, Length[labels]}], labels}
+\t\t\t];
+\t\t\t(* Here we fill the range B1 ... Bn with the values the control the \
+slice sizes. *)
+\t\t\tMapThread[(ws@Range[#1]@Value = #2)&,
+\t\t\t\t{Table[\"B\" <> ToString[i], {i, Length[values]}], values}
+\t\t\t];
+\t\t\tsrcRange = ws@Range[\"A1:\" <> \"B\" <> ToString[Length[values]]];
+\t\t\t
+\t\t\t(* Now create a new Chart object and call the ChartWizard to build the \
+chart. *)
+\t\t\tchrt = wb@Charts@Add[];
+\t\t\tchrt@ChartWizard[srcRange, -4102, 7, 2, 1, 0, 2, title];
+\t\t\t
+\t\t\t(* This makes the Excel application visible. *)
+\t\t\texcel@Visible = True;
+\t\t];
+\t\t
+\t\t(* The Excel instance we launched will not quit until all the COM \
+resources that are being held by
+\t\t   .NET objects we created are released. .NET/Link provides a function \
+called ReleaseCOMObject that
+\t\t   can be used to force .NET objects that \"wrap\" COM objects to release \
+those COM objects. We could,
+\t\t   for example, call ReleaseCOMObject[excel] here, but that is not enough \
+because we have created
+\t\t   many COM objects (Range objects, for example). Rather that try to keep \
+track of them all and call
+\t\t   ReleaseCOMObject on every one, it's easier to rely on the fact that \
+COM resources are freed when
+\t\t   their .NET wrapper objects are freed by the garbage collector. \
+Therefore we use a NETBlock to
+\t\t   ensure that all objects are marked for release when the NETBlock ends, \
+and then explictly call
+\t\t   the garbage collector to force the objects to be freed in a timely \
+manner.
+\t\t*)
+\t\tLoadNETType[\"System.GC\"];
+\t\tGC`Collect[];
+\t]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell["Interop Assembles", "Subsection"],
+
+Cell[TextData[{
+ ".",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " can work with \"raw\" COM objects or COM objects that have a so-called \
+\"interop assembly\" created from them. The Microsoft .NET Framework SDK \
+includes a tool called tlbimp.exe that you can use to import a COM type \
+library and spit out a .NET assembly that exposes the COM types in the \
+library as .NET objects. The .NET SDK is freely availablefrom Microsoft, but \
+it is a separate download from the .NET Framework runtime, which is all that \
+you need to run, but not actually compile, .NET programs. Although creating \
+an interop assembly from a COM type library is not necessary to use the COM \
+objects in the library from ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", it is recommended if you are doing serious work. (Note that essentially \
+the same functionality provided by the command-line tool tlbimp.exe is \
+provided by the .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " function ",
+ Cell[BoxData[
+  ButtonBox["LoadCOMTypeLibrary",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/LoadCOMTypeLibrary"]], "InlineFormula"],
+ ". You can use that function to create and load an interop assembly \"on the \
+fly\" without getting the .NET SDK.)"
+}], "Text",
+ CellChangeTimes->{{3.413151589602536*^9, 3.4131515897275667`*^9}, {
+  3.4131516290965137`*^9, 3.413151667465218*^9}}],
+
+Cell[TextData[{
+ "Some interop assemblies are specially designated as \"primary interop \
+assemblies\", or PIAs. Typically, the vendor of the COM type library will \
+provide a PIA for that type library. PIAs are strongly-named assemblies and \
+can be installed in the Global Assembly Cache. Microsoft makes PIAs available \
+for the entire Office XP suite, and anyone working with Office XP using \
+.NET/Link should definitely obtain and install them. A good place to start is \
+this link: ",
+ ButtonBox["http://msdn.microsoft.com/library/default.asp?url=/library/en-us/\
+dnoxpta/html/odc_oxppias.asp",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://msdn.microsoft.com/library/default.asp?url=/library/en-us/\
+dnoxpta/html/odc_oxppias.asp"], None}],
+ "."
+}], "Text"],
+
+Cell[TextData[{
+ "Once you have created or obtained an interop assembly, you load it and use \
+it in .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " like any other assembly. Two advantages of using an interop assembly are: \
+(1) The types can be inspected just like other native .NET types using the .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " ",
+ Cell[BoxData[
+  ButtonBox["NETTypeInfo",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/NETTypeInfo"]], "InlineFormula"],
+ " function, and (2) You can get access to constants and COM events defined \
+in the type library. You may have noticed the cryptic constants in the \
+chart@ChartWizard[] call in the ",
+ Cell[BoxData["ExcelPieChart"], "InlineFormula"],
+ " program, vs. the descriptive names xl3DPie and xlColumns in the Visual \
+Basic for Applications version. You can discover the values of these \
+constants in VBA by executing, for example, ?xl3DPie in the Immediate window \
+of the Excel Visual Basic Editor. But if you have installed the Excel PIA, \
+these constants are available by name. This means that you could use the \
+following code:"
+}], "Text",
+ CellChangeTimes->{{3.4131516932996244`*^9, 3.413151735278581*^9}, 
+   3.4131518124976254`*^9}],
+
+Cell["\<\
+\tLoadNETType[\"Microsoft.Office.Interop.Excel.XlChartType\"];
+\tchrt@ChartWizard[srcRange, XlChartType`xl3DPie, 7, 2, 1, 0, 2, title]\
+\>", "Input"],
+
+Cell[TextData[{
+ "How did I know that the xl3DPie constant was in an enumeration called \
+Microsoft.Office.Interop.Excel.xlChartType? I used ",
+ Cell[BoxData[
+  ButtonBox["NETTypeInfo",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/NETTypeInfo"]], "InlineFormula"],
+ " on the interop assembly object and did some guesswork from there. \
+Unfortunately, there is not yet much documentation on the Office PIAs. I \
+never did find out where the xlColumn constant is defined."
+}], "Text",
+ CellChangeTimes->{{3.413151823106913*^9, 3.413151838918907*^9}}],
+
+Cell[TextData[{
+ "If you have a PIA installed for a given COM object, then .",
+ StyleBox["NET/Link",
+  FontSlant->"Italic"],
+ " will automatically return the correct .NET object from that PIA when you \
+call ",
+ Cell[BoxData[
+  ButtonBox["CreateCOMObject",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/CreateCOMObject"]], "InlineFormula"],
+ " or ",
+ Cell[BoxData[
+  ButtonBox["GetActiveCOMObject",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/GetActiveCOMObject"]], "InlineFormula"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.4131518462780466`*^9, 3.4131518879642124`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Section"],
+
+Cell["\<\
+data = {{\"label1\", \"label2\", \"label3\", \"label4\"}, {45, 15, 30, 10}};\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["This will launch Excel and make the chart appear:", "Text"],
+
+Cell["ExcelPieChart[data, \"Chart Title\"]", "Input"]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{773, 665},
+WindowMargins->{{Automatic, 197}, {Automatic, 111}},
+DockedCells->(None& ),
+PrivateNotebookOptions->{"NotebookAuthor"->""},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (August 15, 2010)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 74, 1, 51, "Title",
+ CellID->560470177],
+Cell[644, 25, 485, 10, 90, "Text",
+ CellID->51678359],
+Cell[1132, 37, 1044, 21, 170, "Text",
+ CellID->329246284],
+Cell[2179, 60, 240, 6, 52, "Text",
+ CellID->291207559],
+Cell[2422, 68, 729, 15, 50, "Text",
+ CellID->1738407360],
+Cell[CellGroupData[{
+Cell[3176, 87, 39, 0, 51, "Section"],
+Cell[3218, 89, 644, 13, 110, "Text"],
+Cell[3865, 104, 8424, 303, 316, "Input",
+ Evaluatable->False],
+Cell[12292, 409, 233, 6, 38, "Text"],
+Cell[12528, 417, 2966, 76, 945, "Input",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[15519, 497, 39, 0, 38, "Subsection"],
+Cell[15561, 499, 1435, 32, 158, "Text"],
+Cell[16999, 533, 776, 15, 96, "Text"],
+Cell[17778, 550, 1225, 26, 145, "Text"],
+Cell[19006, 578, 159, 3, 44, "Input"],
+Cell[19168, 583, 553, 11, 68, "Text"],
+Cell[19724, 596, 580, 17, 38, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20353, 619, 26, 0, 40, "Section"],
+Cell[20382, 621, 128, 3, 27, "Input",
+ InitializationCell->True],
+Cell[20513, 626, 65, 0, 21, "Text"],
+Cell[20581, 628, 53, 0, 27, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,33 @@
+
+/* Class = "NSTableColumn"; headerCell.title = "Value"; ObjectID = "AdH-5E-zh9"; */
+"AdH-5E-zh9.headerCell.title" = "值";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "FDg-5l-w33"; */
+"FDg-5l-w33.title" = "文本单元";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "MB5-6O-K78"; */
+"MB5-6O-K78.title" = "表格视图单元";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "PUA-R7-IL9"; */
+"PUA-R7-IL9.title" = "文本单元";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "SIG-Zp-TVD"; */
+"SIG-Zp-TVD.title" = "表格视图单元";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "Ta2-vG-q1p"; */
+"Ta2-vG-q1p.title" = "文本单元";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "VTZ-Sa-74N"; */
+"VTZ-Sa-74N.title" = "表格视图单元";
+
+/* Class = "NSTableColumn"; headerCell.title = "Option"; ObjectID = "WQ2-OK-qVg"; */
+"WQ2-OK-qVg.headerCell.title" = "选项";
+
+/* Class = "NSWindow"; title = "Options for "; ObjectID = "ZSS-yw-mHY"; */
+"ZSS-yw-mHY.title" = "选项 ";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "dh7-wL-Gi4"; */
+"dh7-wL-Gi4.title" = "文本单元";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "iDN-Mh-ko8"; */
+"iDN-Mh-ko8.title" = "表格视图单元";

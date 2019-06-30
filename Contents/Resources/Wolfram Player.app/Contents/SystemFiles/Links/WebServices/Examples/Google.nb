@@ -1,0 +1,829 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     24900,        820]
+NotebookOptionsPosition[     21924,        723]
+NotebookOutlinePosition[     22488,        743]
+CellTagsIndexPosition[     22445,        740]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Google Web Service", "Title"],
+
+Cell["\<\
+This example demonstrates the Google web service.  The Google web service is \
+good demenstration of using Web Services to retrieve data.  This example \
+searches the Google databases for web pages containing a certain keyword.  \
+The example code then places the results in the notebook.\
+\>", "Text"],
+
+Cell[TextData[{
+ "To try this example, evaluate all the initialization cells (you can do this \
+with the menu command ",
+ StyleBox[ButtonBox["Evaluation",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/EvaluationMenu"], "MenuName"],
+ StyleBox[" ", "MenuName"],
+ StyleBox["\[FilledRightTriangle] ", "MenuPointer"],
+ StyleBox[ButtonBox["Evaluate Initialization Cells",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/menuitem/EvaluateInitializationCells"], 
+  "MenuName"],
+ "). Then go to the Examples section."
+}], "Text",
+ CellChangeTimes->{{3.3818640913344727`*^9, 3.381864107452289*^9}, {
+  3.3818641871286*^9, 3.381864213434875*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Code", "Section",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"<<", "WebServices`"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "InstallService", "[", "\"\<http://api.google.com/GoogleSearch.wsdl\>\"", 
+   "]"}], ";"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Options", "[", "GoogleSearch", "]"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"MaxHits", " ", "\[Rule]", "10"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Filter", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"IncludeURL", " ", "\[Rule]", " ", "True"}]}], 
+    "\[IndentingNewLine]", "}"}]}], ";"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$backgrounds", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.960784", ",", "0.878431", ",", "0.666667"}], "]"}], ",", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.964706", ",", "0.929412", ",", "0.839216"}], "]"}]}], 
+    "}"}]}], ";"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"GoogleSearch", "::", "err"}], "=", "\"\<Search Error.\>\""}], 
+  ";"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"GoogleSearch", "::", "nomatch"}], "=", 
+   "\"\<No page containing `1` found.\>\""}], ";"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GoogleSearch", "[", 
+   RowBox[{"str_String", ",", "opts___"}], "]"}], ":=", "\[IndentingNewLine]",
+   
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "lis", ",", "results", ",", "matches", ",", "filterQ", ",", " ", 
+      "urlQ"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"matches", ",", "filterQ", ",", "urlQ"}], "}"}], "=", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"MaxHits", ",", "Filter", ",", "IncludeURL"}], "}"}], " ", "/.",
+        " ", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"{", 
+         RowBox[{"opts", ",", 
+          RowBox[{"Options", " ", "@", " ", "GoogleSearch"}]}], "}"}], 
+        "]"}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"results", "=", 
+      RowBox[{"GoogleSearchService`GoogleSearchPort`doGoogleSearch", "[", 
+       RowBox[{
+       "\"\<3HB82PdQFHITKPmbmm5G/9aTfVHx/m95\>\"", ",", "str", ",", " ", "0", 
+        ",", "matches", ",", "filterQ", ",", "\"\<\>\"", ",", "True", ",", 
+        "\"\<\>\"", ",", "\"\<\>\"", ",", "\"\<\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"results", "===", "$Failed"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Message", "[", 
+        RowBox[{"GoogleSearch", "::", "err"}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"lis", " ", "=", " ", 
+         RowBox[{"\"\<resultElements\>\"", "/.", "results"}]}], ";"}]}], 
+      "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"lis", "===", 
+         RowBox[{"{", "}"}]}], "||", 
+        RowBox[{"lis", "===", "Null"}], "||", 
+        RowBox[{"lis", " ", "===", " ", "\"\<resultElements\>\""}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Message", "[", 
+        RowBox[{
+         RowBox[{"GoogleSearch", "::", "nomatch"}], ",", " ", "str"}], "]"}], 
+       ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"$bg", "=", "0"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Scan", "[", 
+         RowBox[{"CellPrint", ",", 
+          RowBox[{"searchResultCells", "[", 
+           RowBox[{"lis", ",", "urlQ"}], "]"}]}], "]"}]}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"searchResultCells", "[", 
+   RowBox[{"lis_", ",", "urlQ_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"cellTemplate", "[", 
+     RowBox[{"formatSingleResult", "[", 
+      RowBox[{"#", ",", "urlQ"}], "]"}], "]"}], "&"}], " ", "/@", " ", 
+   "lis"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cellTemplate", "[", "lis_", "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"Cell", "[", 
+   RowBox[{
+    RowBox[{"TextData", " ", "@", " ", 
+     RowBox[{"Flatten", " ", "@", " ", 
+      RowBox[{"{", "lis", "}"}]}]}], ",", "\"\<Print\>\"", ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"FontFamily", "->", "\"\<Times\>\""}], ",", "\[IndentingNewLine]",
+     
+    RowBox[{"CellMargins", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Inherited", ",", "Inherited"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}], ",", "\[IndentingNewLine]",
+     
+    RowBox[{"CellDingbat", "\[Rule]", 
+     RowBox[{"ToString", "[", 
+      RowBox[{"++", "$bg"}], "]"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Background", "\[Rule]", 
+     RowBox[{"Part", "[", 
+      RowBox[{"$backgrounds", ",", 
+       RowBox[{"Mod", "[", 
+        RowBox[{"$bg", ",", "2", ",", "1"}], "]"}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"formatSingleResult", "[", 
+   RowBox[{"opts_", ",", "urlQ_"}], "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"u", ",", "t"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"u", ",", "t"}], "}"}], "=", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<URL\>\"", ",", "\"\<title\>\""}], "}"}], " ", "/.", " ", 
+       "opts"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{"\"\< \>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"webLink", "[", 
+        RowBox[{
+         RowBox[{"StyleBox", "[", 
+          RowBox[{
+           RowBox[{"formatTitle", " ", "@", " ", "t"}], ",", 
+           RowBox[{"FontWeight", "->", "\"\<Bold\>\""}]}], "]"}], ",", "u"}], 
+        "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{"urlQ", ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<\\n\>\"", ",", 
+           RowBox[{"webLink", "[", 
+            RowBox[{
+             RowBox[{"StyleBox", "[", 
+              RowBox[{"u", ",", "\"\<SmallText\>\"", ",", 
+               RowBox[{"FontColor", "\[Rule]", 
+                RowBox[{"GrayLevel", "[", "0.4", "]"}]}]}], "]"}], ",", "u"}],
+             "]"}]}], "}"}], ",", 
+         RowBox[{"{", "}"}]}], "]"}]}], "\[IndentingNewLine]", "}"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"webLink", "[", 
+   RowBox[{"content_", ",", "url_"}], "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"ButtonBox", "[", 
+   RowBox[{"content", ",", "\[IndentingNewLine]", 
+    RowBox[{"ButtonData", "\[RuleDelayed]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"URL", "[", "url", "]"}], ",", "None"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"ButtonStyle", "->", "\"\<Hyperlink\>\""}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"formatTitle", "[", "str_String", "]"}], ":=", 
+  RowBox[{"translateAllEntities", "[", "str", "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"decodeString", "[", "str_", "]"}], ":=", 
+  RowBox[{"StringReplace", "[", 
+   RowBox[{"str", ",", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<&lt;\>\"", "->", "\"\<<\>\""}], ",", "\[IndentingNewLine]",
+       
+      RowBox[{"\"\<&gt;\>\"", "->", "\"\<>\>\""}], ",", "\[IndentingNewLine]",
+       
+      RowBox[{"\"\<&amp;\>\"", "->", "\"\<&\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<&quot;\>\"", "->", "\"\<\\\"\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<\\\\\>\"", "->", "\"\<\\\\[Backslash]\>\""}]}], 
+     "\[IndentingNewLine]", "}"}]}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"translateAllEntities", "[", "str_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"StringReplace", "[", 
+    RowBox[{"str", ",", 
+     RowBox[{
+     "Reverse", " ", "/@", " ", 
+      "System`Convert`MLStringDataDump`$UnicodeToHTML4Entities"}]}], "]"}], "//",
+    "decodeString"}]}]], "Input",
+ InitializationCell->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Examples", "Section",
+ CellChangeTimes->{3.381864108611965*^9}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Find the top 10 wolfram.com web pages containing all the given strings.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GoogleSearch", "[", "\"\<Mathematica\>\"", "]"}]], "Input"],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["Wolfram Research, Inc.",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.wolfram.com/"], None}],
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox[ButtonBox["http://www.wolfram.com/",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.wolfram.com/"], None}], "SmallText",
+  FontColor->GrayLevel[0.4]]
+}], "Print",
+ CellDingbat->"1",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.960784, 0.878431, 0.666667]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["<b>Mathematica</b>: The Way the World Calculates",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.wolfram.com/products/mathematica/"], None}],
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox[ButtonBox["http://www.wolfram.com/products/mathematica/",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.wolfram.com/products/mathematica/"], None}], "SmallText",
+  FontColor->GrayLevel[0.4]]
+}], "Print",
+ CellDingbat->"2",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.964706, 0.929412, 0.839216]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["<b>Mathematica</b> Home Page",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.mathematica-mpr.com/"], None}],
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox[ButtonBox["http://www.mathematica-mpr.com/",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.mathematica-mpr.com/"], None}], "SmallText",
+  FontColor->GrayLevel[0.4]]
+}], "Print",
+ CellDingbat->"3",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.960784, 0.878431, 0.666667]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["MathSource has moved",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.mathsource.com/"], None}],
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox[ButtonBox["http://www.mathsource.com/",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.mathsource.com/"], None}], "SmallText",
+  FontColor->GrayLevel[0.4]]
+}], "Print",
+ CellDingbat->"4",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.964706, 0.929412, 0.839216]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["SpringerLink - Publication",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://link.springer.de/link/service/journals/00229/"], None}],
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox[ButtonBox["http://link.springer.de/link/service/journals/00229/",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://link.springer.de/link/service/journals/00229/"], None}], 
+  "SmallText",
+  FontColor->GrayLevel[0.4]]
+}], "Print",
+ CellDingbat->"5",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.960784, 0.878431, 0.666667]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["SpringerLink - Publication",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://link.springer.de/link/service/journals/10114/"], None}],
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox[ButtonBox["http://link.springer.de/link/service/journals/10114/",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://link.springer.de/link/service/journals/10114/"], None}], 
+  "SmallText",
+  FontColor->GrayLevel[0.4]]
+}], "Print",
+ CellDingbat->"6",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.964706, 0.929412, 0.839216]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["DOCUMENTA <b>MATHEMATICA</b>",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.math.uiuc.edu/documenta/"], None}],
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox[ButtonBox["http://www.math.uiuc.edu/documenta/",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.math.uiuc.edu/documenta/"], None}], "SmallText",
+  FontColor->GrayLevel[0.4]]
+}], "Print",
+ CellDingbat->"7",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.960784, 0.878431, 0.666667]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["Calculus and <b>Mathematica</b> at UIUC",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www-cm.math.uiuc.edu/"], None}],
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox[ButtonBox["http://www-cm.math.uiuc.edu/",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www-cm.math.uiuc.edu/"], None}], "SmallText",
+  FontColor->GrayLevel[0.4]]
+}], "Print",
+ CellDingbat->"8",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.964706, 0.929412, 0.839216]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["The Integrator",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://integrals.wolfram.com/"], None}],
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox[ButtonBox["http://integrals.wolfram.com/",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://integrals.wolfram.com/"], None}], "SmallText",
+  FontColor->GrayLevel[0.4]]
+}], "Print",
+ CellDingbat->"9",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.960784, 0.878431, 0.666667]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["ACTA <b>MATHEMATICA</b> UNIVERSITATIS COMENIANAE",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.emis.de/journals/AMUC/_amuc.html"], None}],
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox[ButtonBox["http://www.emis.de/journals/AMUC/_amuc.html",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.emis.de/journals/AMUC/_amuc.html"], None}], "SmallText",
+  FontColor->GrayLevel[0.4]]
+}], "Print",
+ CellDingbat->"10",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.964706, 0.929412, 0.839216]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Search for pages containing all of the given strings, and return only the top \
+two results.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GoogleSearch", "[", 
+  RowBox[{"\"\<Hermite polynomial\>\"", ",", 
+   RowBox[{"MaxHits", "\[Rule]", "2"}]}], "]"}]], "Input"],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["<b>Hermite</b> <b>Polynomial</b> -- from MathWorld",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://mathworld.wolfram.com/HermitePolynomial.html"], None}],
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox[ButtonBox["http://mathworld.wolfram.com/HermitePolynomial.html",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://mathworld.wolfram.com/HermitePolynomial.html"], None}], 
+  "SmallText",
+  FontColor->GrayLevel[0.4]]
+}], "Print",
+ CellDingbat->"1",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.960784, 0.878431, 0.666667]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["<b>Hermite</b> <b>Polynomial</b>",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.efunda.com/math/Hermite/index.cfm"], None}],
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox[ButtonBox["http://www.efunda.com/math/Hermite/index.cfm",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.efunda.com/math/Hermite/index.cfm"], None}], "SmallText",
+  FontColor->GrayLevel[0.4]]
+}], "Print",
+ CellDingbat->"2",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.964706, 0.929412, 0.839216]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Display less verbose results and do not filter near-duplicate content and \
+host crowding.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GoogleSearch", "[", 
+  RowBox[{"\"\<Chebyshev\>\"", ",", 
+   RowBox[{"IncludeURL", "\[Rule]", "False"}], ",", 
+   RowBox[{"Filter", "\[Rule]", "False"}]}], "]"}]], "Input"],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["<b>Chebyshev</b>",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www-gap.dcs.st-and.ac.uk/~history/Mathematicians/Chebyshev.\
+html"], None}],
+  FontWeight->"Bold"]
+}], "Print",
+ CellDingbat->"1",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.960784, 0.878431, 0.666667]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["One tailed version of <b>Chebyshev&#39;s</b> inequality \
+- by Henry Bottomley",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.btinternet.com/~se16/hgb/cheb.htm"], None}],
+  FontWeight->"Bold"]
+}], "Print",
+ CellDingbat->"2",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.964706, 0.929412, 0.839216]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["<b>Chebyshev</b>, Pafnuty Lvovich -- Encyclop\[AE]dia \
+Britannica Online <b>...</b>",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.britannica.com/eb/article?eu=23095"], None}],
+  FontWeight->"Bold"]
+}], "Print",
+ CellDingbat->"3",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.960784, 0.878431, 0.666667]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["<b>Chebyshev</b> Polynomial of the First Kind -- from \
+MathWorld",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://mathworld.wolfram.com/ChebyshevPolynomialoftheFirstKind.html"]\
+, None}],
+  FontWeight->"Bold"]
+}], "Print",
+ CellDingbat->"4",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.964706, 0.929412, 0.839216]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["<b>Chebyshev</b> Polynomial of the Second Kind -- from \
+MathWorld",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://mathworld.wolfram.com/ChebyshevPolynomialoftheSecondKind.\
+html"], None}],
+  FontWeight->"Bold"]
+}], "Print",
+ CellDingbat->"5",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.960784, 0.878431, 0.666667]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["<b>Chebyshev</b> Polynomial",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.efunda.com/math/Chebyshev/index.cfm"], None}],
+  FontWeight->"Bold"]
+}], "Print",
+ CellDingbat->"6",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.964706, 0.929412, 0.839216]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["<b>Chebyshev</b>",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.mathsoc.spb.ru/pantheon/chebyshe/"], None}],
+  FontWeight->"Bold"]
+}], "Print",
+ CellDingbat->"7",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.960784, 0.878431, 0.666667]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["Butterworth / Bessel / <b>Chebyshev</b> Filters",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www-users.cs.york.ac.uk/~fisher/mkfilter/trad.html"], None}],
+  FontWeight->"Bold"]
+}], "Print",
+ CellDingbat->"8",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.964706, 0.929412, 0.839216]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["<b>Chebyshev</b>",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.nag.com/numeric/FL/manual/html/indexes/kwic/chebyshev.\
+html"], None}],
+  FontWeight->"Bold"]
+}], "Print",
+ CellDingbat->"9",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.960784, 0.878431, 0.666667]],
+
+Cell[TextData[{
+ " ",
+ StyleBox[ButtonBox["<b>Chebyshev</b>",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.nag.co.uk/numeric/FL/manual/html/indexes/kwic/chebyshev.\
+html"], None}],
+  FontWeight->"Bold"]
+}], "Print",
+ CellDingbat->"10",
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ FontFamily->"Times",
+ Background->RGBColor[0.964706, 0.929412, 0.839216]]
+}, Closed]]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{794, 682},
+WindowMargins->{{Automatic, 255}, {Automatic, 83}},
+DockedCells->(FrontEndExecute[{
+   FrontEnd`NotebookApply[
+    FrontEnd`InputNotebook[], #, Placeholder]}]& ),
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 16, 2007)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "TutorialPageStyles.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 35, 0, 105, "Title"],
+Cell[628, 25, 312, 5, 51, "Text"],
+Cell[943, 32, 637, 15, 36, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1617, 52, 50, 1, 40, "Section",
+ InitializationCell->True],
+Cell[1670, 55, 83, 2, 30, "Input",
+ InitializationCell->True],
+Cell[1756, 59, 165, 5, 50, "Input",
+ InitializationCell->True],
+Cell[1924, 66, 434, 10, 110, "Input",
+ InitializationCell->True],
+Cell[2361, 78, 351, 10, 50, "Input",
+ InitializationCell->True],
+Cell[2715, 90, 155, 5, 30, "Input",
+ InitializationCell->True],
+Cell[2873, 97, 176, 5, 50, "Input",
+ InitializationCell->True],
+Cell[3052, 104, 2394, 60, 410, "Input",
+ InitializationCell->True],
+Cell[5449, 166, 330, 10, 50, "Input",
+ InitializationCell->True],
+Cell[5782, 178, 1059, 28, 150, "Input",
+ InitializationCell->True],
+Cell[6844, 208, 1479, 38, 250, "Input",
+ InitializationCell->True],
+Cell[8326, 248, 514, 13, 110, "Input",
+ InitializationCell->True],
+Cell[8843, 263, 173, 4, 30, "Input",
+ InitializationCell->True],
+Cell[9019, 269, 693, 17, 150, "Input",
+ InitializationCell->True],
+Cell[9715, 288, 344, 10, 110, "Input",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10096, 303, 69, 1, 40, "Section"],
+Cell[CellGroupData[{
+Cell[10190, 308, 95, 2, 21, "Text"],
+Cell[CellGroupData[{
+Cell[10310, 314, 83, 1, 27, "Input"],
+Cell[10396, 317, 513, 17, 41, "Print"],
+Cell[10912, 336, 602, 17, 41, "Print"],
+Cell[11517, 355, 543, 17, 41, "Print"],
+Cell[12063, 374, 520, 17, 41, "Print"],
+Cell[12586, 393, 607, 18, 41, "Print"],
+Cell[13196, 413, 607, 18, 41, "Print"],
+Cell[13806, 433, 555, 17, 41, "Print"],
+Cell[14364, 452, 545, 17, 41, "Print"],
+Cell[14912, 471, 523, 17, 41, "Print"],
+Cell[15438, 490, 600, 17, 41, "Print"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16087, 513, 116, 3, 21, "Text"],
+Cell[CellGroupData[{
+Cell[16228, 520, 149, 3, 27, "Input"],
+Cell[16380, 525, 628, 18, 41, "Print"],
+Cell[17011, 545, 586, 17, 41, "Print"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17646, 568, 114, 3, 21, "Text"],
+Cell[CellGroupData[{
+Cell[17785, 575, 196, 4, 27, "Input"],
+Cell[17984, 581, 373, 12, 28, "Print"],
+Cell[18360, 595, 407, 12, 28, "Print"],
+Cell[18770, 609, 414, 12, 28, "Print"],
+Cell[19187, 623, 419, 13, 28, "Print"],
+Cell[19609, 638, 421, 13, 28, "Print"],
+Cell[20033, 653, 358, 11, 28, "Print"],
+Cell[20394, 666, 345, 11, 28, "Print"],
+Cell[20742, 679, 389, 11, 28, "Print"],
+Cell[21134, 692, 372, 12, 28, "Print"],
+Cell[21509, 706, 375, 12, 28, "Print"]
+}, Closed]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

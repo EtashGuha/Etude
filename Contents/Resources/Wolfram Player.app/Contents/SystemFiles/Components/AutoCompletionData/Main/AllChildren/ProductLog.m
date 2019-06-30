@@ -1,0 +1,13 @@
+{"E", "Log", "Exp", "Cos", "Pi", "Sin", "I", "Sqrt", "ProductLog", 
+ "Projection", "Rational", "Abs", "Quantity", "Cosh", "Sinh", "Subscript", 
+ "DivisorSigma", "Derivative", "Log2", "Tan", "None", "Log10", "FresnelC", 
+ "Floor", "Cot", "Fibonacci", "D", "EulerGamma", "Sum", "BesselJ", 
+ "Infinity", "Gamma", "PrimePi", "Plus", "Zeta", "Re", "Prime", 
+ "LogIntegral", "HeavisideTheta", "BesselY", "SinIntegral", "Sec", "Ratios", 
+ "Beta", "Range", "RandomInteger", "PolyGamma", "N", "GoldenRatio", 
+ "EulerPhi", "Csc", "BitOr", "Binomial", "Tanh", "Sech", "InverseFunction", 
+ "Im", "ExpIntegralEi", "Erf", "EllipticPi", "EllipticK", "Degree", 
+ "DedekindEta", "BesselI", "BaseForm", "ArcTanh", "ArcSinh", "PrimeZetaP", 
+ "Mod", "Limit", "LessEqual", "Less", "KelvinBei", "JacobiZeta", 
+ "Hyperfactorial", "GCD", "GammaRegularized", "FractionalPart", "EulerE", 
+ "Erfc", "Ceiling", "BesselK", "ArcCos"}

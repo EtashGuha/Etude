@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<invokemethod target="class:javax.swing.KeyStroke" name="getKeyStroke">
+	<widget ref="#1"/>
+</invokemethod>

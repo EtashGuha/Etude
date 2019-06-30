@@ -1,0 +1,171 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      5794,        161]
+NotebookOptionsPosition[      5019,        130]
+NotebookOutlinePosition[      5412,        147]
+CellTagsIndexPosition[      5369,        144]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "J/Link Example: A \"RealTimePlotting\" Dialog\n\n",
+ StyleBox["Code for a RealTimePlot dialog adapted from the RealTimeAlgebra \
+example.\n\nAs you drag the slider the value of the parameter ",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["a",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontSlant->"Italic",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[" is modified and the plotting command is reevaluated.\n\n\
+Contributed by Tom Wickham-Jones",
+  FontSize->12,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}]
+}], "Title"],
+
+Cell[CellGroupData[{
+
+Cell["Code", "Subsection"],
+
+Cell[TextData[{
+ "Needs[\"JLink`\"]\n\n(* Set this to True to cause the front end to be used \
+for rendering services. *)\nUseFrontEndForRendering = False;\n\n\
+createWindow[graphicsCommand_] :=\n\tModule[{frame, slider, listener, text},\n\
+\t\ttext =\n\t\t\tWhich[\n\t\t\t\tgraphicsCommand === \"\",\n\t\t\t\t\t\
+\"Plot[Sin[x]^a, {x,0,4Pi}]\",\n\t\t\t\tStringQ[graphicsCommand],\n\t\t\t\t\t\
+graphicsCommand,\n\t\t\t\tTrue,\n\t\t\t\t\tToString[graphicsCommand, \
+InputForm]\n\t\t\t];\n\t\tInstallJava[];\n\t\tinText = \
+JavaNew[\"java.awt.TextArea\", text, 4, 40];\n\t\tframe = \
+JavaNew[\"com.wolfram.jlink.MathFrame\", \"RealTimePlotting\"];\n\t\tdrawArea \
+= JavaNew[\"com.wolfram.jlink.MathCanvas\"];\n\t\tdrawArea@",
+ StyleBox["setUsesFE[",
+  PageWidth->Infinity,
+  ShowSpecialCharacters->False],
+ "UseFrontEndForRendering",
+ StyleBox["];",
+  PageWidth->Infinity,
+  ShowSpecialCharacters->False],
+ "\n\t\tdrawArea@setSize[400, 272];",
+ StyleBox["\n",
+  PageWidth->Infinity,
+  ShowSpecialCharacters->False,
+  FontFamily->"Courier New",
+  FontSize->10],
+ "\t\tJavaBlock[\n\t\t\tframe@setLayout[JavaNew[\"java.awt.BorderLayout\"]];\n\
+\t\t\tslider = JavaNew[\"java.awt.Scrollbar\", Scrollbar`HORIZONTAL, 0, 1, 0, \
+20];\n\t\t\tframe@add[slider, ReturnAsJavaObject[BorderLayout`NORTH]];\n\t\t\t\
+frame@add[drawArea, ReturnAsJavaObject[BorderLayout`CENTER]];\n\t\t\t\
+frame@add[inText, ReturnAsJavaObject[BorderLayout`SOUTH]];\n\t\t\t\
+frame@pack[];\n\t\t\tlistener = \
+JavaNew[\"com.wolfram.jlink.MathAdjustmentListener\"];\n\t\t\t\
+listener@setHandler[\"adjustmentValueChanged\", \"sliderFunc\"];\n\t\t\t\
+slider@addAdjustmentListener[listener];\n\t\t\tframe@setLocation[200, 200];\n\
+\t\t\tframe@setSize[408, 394];\n\t\t\tJavaShow[frame]\n\t\t];\n\t\tframe\n\t]\
+\n\n(* This is what will be called in response to moving the slider position: \
+*)\n\nsliderFunc[evt_, type_, scrollPos_] :=\n\tJavaBlock[\n\t\t(* Keeping \
+track of lastScrollPos is an optimization for Mac OSX, which will queue\n\t\t \
+  up many ScrollBar events with the same scrollPos while the plot is drawing \
+if you\n\t\t   hold down the scroll arrow. We don't want to keep rendering \
+the image as we\n\t\t   service these redundant events.\n\t\t*)\n\t\t\
+If[scrollPos =!= lastScrollPos,\n\t\t\tBlock[{a = scrollPos, $DisplayFunction \
+= Identity, obj},\n\t\t\t\tobj = ToExpression[inText@getText[]];\n\t\t\t\tobj \
+= Show[obj, PlotRange-> yRange];\n\t\t\t\t\
+drawArea@setMathCommand[ToString[obj, InputForm]];\n\t\t\t\t\
+drawArea@repaintNow[];\n\t\t\t\tlastScrollPos = scrollPos\n\t\t\t]\n\t\t];\n\t\
+\tReleaseObject[evt]\n\t]\n\nRealTimePlot[text_String:\"\", opts___?OptionQ] \
+:=\n\tJavaBlock[\n\t\t(* We can wrap the whole thing in JavaBlock and be sure \
+that all the objects will get \n\t\t   released, including the inText and \
+outText ones needed during event handling.\n\t\t*)\n\t\tBlock[{frm, yRange, \
+lastScrollPos},\n\t\t\tyRange = PlotRange /. Flatten[{opts}] /. PlotRange -> \
+{-1, 1};\n\t\t\tfrm = createWindow[text];\n\t\t\tfrm@setModal[];\n\t\t\t\
+DoModal[];\n\t\t]\n\t]"
+}], "Input",
+ PageWidth->Infinity,
+ InitializationCell->True,
+ ShowSpecialCharacters->False]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Examples", "Subsection"],
+
+Cell["\<\
+This runs the plotting dialog, you can set the graphics command and the \
+plotrange to be used.\
+\>", "Text"],
+
+Cell["RealTimePlot[]", "Input"],
+
+Cell["\<\
+You can set the graphics command and the PlotRange to be used:\
+\>", "Text"],
+
+Cell["RealTimePlot[\"Plot[Sin[x+a Pi/4], {x,0,4Pi}]\"]", "Input"],
+
+Cell["RealTimePlot[PlotRange -> {0,1}]", "Input"],
+
+Cell["\<\
+RealTimePlot[\"ParametricPlot[{a/5. Sin[t], Cos[t]}, {t,0,2Pi}, \
+AspectRatio->Automatic]\", PlotRange -> All]\
+\>", "Input"]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{823, 547},
+WindowMargins->{{1, Automatic}, {Automatic, 3}},
+DockedCells->(None& ),
+FrontEndVersion->"6.0 for Mac OS X PowerPC (32-bit) (February 21, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 618, 17, 285, "Title"],
+Cell[CellGroupData[{
+Cell[1233, 44, 26, 0, 34, "Subsection"],
+Cell[1262, 46, 3159, 55, 1308, "Input",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[4458, 106, 30, 0, 26, "Subsection"],
+Cell[4491, 108, 119, 3, 26, "Text"],
+Cell[4613, 113, 31, 0, 24, "Input"],
+Cell[4647, 115, 86, 2, 26, "Text"],
+Cell[4736, 119, 65, 0, 24, "Input"],
+Cell[4804, 121, 49, 0, 24, "Input"],
+Cell[4856, 123, 135, 3, 24, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

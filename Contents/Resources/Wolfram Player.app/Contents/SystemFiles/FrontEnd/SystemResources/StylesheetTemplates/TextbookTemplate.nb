@@ -1,0 +1,1116 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     34143,       1107]
+NotebookOptionsPosition[     29010,        944]
+NotebookOutlinePosition[     29483,        962]
+CellTagsIndexPosition[     29440,        959]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[
+CounterBox["BookChapterNumber"]], "BookChapterNumber"],
+
+Cell["Enter chapter title here", "BookChapterTitle"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["BookChapterNumber"],
+ ".",
+ 
+ CounterBox["Section"],
+ ". ",
+ "Enter section title here"
+}], "Section"],
+
+Cell["Enter text here.", "Text"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{"x", 
+     RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+   SqrtBox["z"]}], TraditionalForm]], "EquationNumbered"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["BookChapterNumber"],
+ ".",
+ 
+ CounterBox["Section"],
+ ".",
+ 
+ CounterBox["Subsection"],
+ ". Enter subsection title here"
+}], "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"2", "+", "2"}]], "Input"],
+
+Cell[BoxData["4"], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["BookChapterNumber"],
+ ".",
+ 
+ CounterBox["Section"],
+ ".",
+ 
+ CounterBox["Subsection"],
+ ". ",
+ "Enter subsection title here"
+}], "Subsection"],
+
+Cell["Enter text here.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Enter item1 text here.", "Item1"],
+
+Cell[CellGroupData[{
+
+Cell["Enter item1paragraph text here.", "Item1Paragraph"],
+
+Cell[CellGroupData[{
+
+Cell["Enter item2 text here.", "Item2"],
+
+Cell[CellGroupData[{
+
+Cell["Enter item2paragraph text here.", "Item2Paragraph"],
+
+Cell[CellGroupData[{
+
+Cell["Enter item3 text here.", "Item3"],
+
+Cell["Enter item3paragraph text here.", "Item3Paragraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["BookChapterNumber"],
+ ".",
+ 
+ CounterBox["Section"],
+ ". ",
+ "Enter section title here"
+}], "Section"],
+
+Cell[TextData[{
+ "Enter text here. Enter an inline formula like this: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2", "+", "2"}], TraditionalForm]]],
+ "."
+}], "Text"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{"x", 
+     RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+   SqrtBox["z"]}], TraditionalForm]], "EquationNumbered"],
+
+Cell["Enter text here.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Enter item1numbered text here.", "Item1Numbered"],
+
+Cell[CellGroupData[{
+
+Cell["Enter item1paragraph text here.", "Item1Paragraph"],
+
+Cell[CellGroupData[{
+
+Cell["Enter item2numbered text here.", "Item2Numbered"],
+
+Cell[CellGroupData[{
+
+Cell["Enter item2paragraph text here.", "Item2Paragraph"],
+
+Cell[CellGroupData[{
+
+Cell["Enter item3numbered text here.", "Item3Numbered"],
+
+Cell["Enter item3paragraph text here.", "Item3Paragraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Enter indented text here.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Theorem\[MediumSpace]\[ThinSpace]", "TheoremLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "TheoremLabel"],
+ StyleBox[".", "TheoremLabel"],
+ StyleBox[
+ CounterBox["Theorem"], "TheoremLabel"],
+ StyleBox[". ", "TheoremLabel"],
+ "Enter theorem text here."
+}], "Theorem"],
+
+Cell["Enter continued theorem text here.", "TheoremContinuation"],
+
+Cell[TextData[{
+ StyleBox["Corollary\[MediumSpace]\[ThinSpace]", "CorollaryLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "CorollaryLabel"],
+ StyleBox[".", "CorollaryLabel"],
+ StyleBox[
+ CounterBox["Corollary"], "CorollaryLabel"],
+ StyleBox[". ", "CorollaryLabel"],
+ "Enter corollary text here."
+}], "Corollary"],
+
+Cell["Enter continued corollary text here.", "CorollaryContinuation"],
+
+Cell[TextData[{
+ StyleBox["Definition\[MediumSpace]", "DefinitionLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "DefinitionLabel"],
+ StyleBox[".", "DefinitionLabel"],
+ StyleBox[
+ CounterBox["Definition"], "DefinitionLabel"],
+ StyleBox[". ", "DefinitionLabel"],
+ "Enter definition text here."
+}], "Definition"],
+
+Cell["Enter continued definition text here.", "DefinitionContinuation"],
+
+Cell[TextData[{
+ StyleBox["Proposition\[MediumSpace]\[ThinSpace]", "PropositionLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "PropositionLabel"],
+ StyleBox[".", "PropositionLabel"],
+ StyleBox[
+ CounterBox["Proposition"], "PropositionLabel"],
+ StyleBox[". ", "PropositionLabel"],
+ "Enter proposition text here."
+}], "Proposition"],
+
+Cell["Enter continued proposition text here.", "PropositionContinuation"],
+
+Cell[TextData[{
+ StyleBox["Conjecture\[MediumSpace]\[ThinSpace]", "ConjectureLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "ConjectureLabel"],
+ StyleBox[".", "ConjectureLabel"],
+ StyleBox[
+ CounterBox["Conjecture"], "ConjectureLabel"],
+ StyleBox[". ", "ConjectureLabel"],
+ "Enter conjecture text here."
+}], "Conjecture"],
+
+Cell["Enter continued conjecture text here.", "ConjectureContinuation"],
+
+Cell[TextData[{
+ StyleBox["Axiom\[MediumSpace]\[ThinSpace]", "AxiomLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "AxiomLabel"],
+ StyleBox[".", "AxiomLabel"],
+ StyleBox[
+ CounterBox["Axiom"], "AxiomLabel"],
+ StyleBox[". ", "AxiomLabel"],
+ "Enter axiom text here."
+}], "Axiom"],
+
+Cell["Enter continued axiom text here.", "AxiomContinuation"],
+
+Cell[TextData[{
+ StyleBox["Rule\[MediumSpace]\[ThinSpace]", "RuleLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "RuleLabel"],
+ StyleBox[".", "RuleLabel"],
+ StyleBox[
+ CounterBox["Rule"], "RuleLabel"],
+ StyleBox[". ", "RuleLabel"],
+ "Enter rule text here."
+}], "Rule"],
+
+Cell["Enter continued rule text here.", "RuleContinuation"],
+
+Cell[TextData[{
+ StyleBox["Example\[MediumSpace]\[ThinSpace]", "ExampleLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "ExampleLabel"],
+ StyleBox[".", "ExampleLabel"],
+ StyleBox[
+ CounterBox["Example"], "ExampleLabel"],
+ StyleBox[". ", "ExampleLabel"],
+ "Enter example text here."
+}], "Example"],
+
+Cell["Enter continued example text here.", "ExampleContinuation"],
+
+Cell[TextData[{
+ StyleBox["Remark\[MediumSpace]\[ThinSpace]", "RemarkLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "RemarkLabel"],
+ StyleBox[".", "RemarkLabel"],
+ StyleBox[
+ CounterBox["Remark"], "RemarkLabel"],
+ StyleBox[". ", "RemarkLabel"],
+ "Enter remark text here."
+}], "Remark"],
+
+Cell["Enter continued remark text here.", "RemarkContinuation"],
+
+Cell[TextData[{
+ StyleBox["Solution\[MediumSpace]\[ThinSpace]", "SolutionLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "SolutionLabel"],
+ StyleBox[".", "SolutionLabel"],
+ StyleBox[
+ CounterBox["Remark"], "SolutionLabel"],
+ StyleBox[". ", "SolutionLabel"],
+ "Enter solution text here."
+}], "Solution"],
+
+Cell["Enter continued solution text here.", "SolutionContinuation"],
+
+Cell[TextData[{
+ StyleBox["Proof\[MediumSpace]\[ThinSpace]", "ProofLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "ProofLabel"],
+ StyleBox[".", "ProofLabel"],
+ StyleBox[
+ CounterBox["Remark"], "ProofLabel"],
+ StyleBox[". ", "ProofLabel"],
+ "Enter solution text here."
+}], "Proof"],
+
+Cell["Enter continued solution text here.", "ProofContinuation"],
+
+Cell["\[EmptySquare]", "QED"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJzt2DFr1GAcx/FDHXwbvhT1HZy70ILiJrRS6SRuDg4dlA46qYuDIIIgLroo
+uAgdXERcxEEEBxFxO3/6h4d4ae/UQ5MvfD+kJZfknivPN8mFHls/Pz17aDKZ
+bB7Nr+naxeMbG2vbp47kxYntC2fWD2flWn528vNjfSaU3ZNbLqxl6FNGv8te
+LPZisReLvVjsxWIvFnux2IvFXiz2YrEXi71Y7MViLxZ7sdiLxV4s9mKxF4u9
+WOzFYi8We7HYi8VeLPZisReLvVjsxWIvFnux2IvFXiz2YrEXi71Y7MViLxZ7
+sdiLxV4s9mKxF4u9WOzFYi8We7HYi8VeLPZisReLvVjsxWIvFnux2IvFXiz2
+YrEXi71Y7MViLxZ7sdiLxV4sA/a6Pt1qy93NnY9v37ftq4/814et/un/1LC9
+2vqrxy8eXL7R3776yH96mL0OMjcz7aW9FhhJr5f3nz66eqe7PbfHXHFZv33u
+yptne7Xr25evz289rI25JGvLk917N09fypIR8rJGyN5s6b43b6zDstL9oDZC
+jTm3cd9h/8fsHGAM3181J3PfX/lGe7f3evYzXJuizGGWtvHzh095mda1Nyu1
+NyNUlByWcdquTHuFqLfUB7Uxa1fbuO+w+TvrrxrKSK6v/vbMXk7mzFVdULUr
+l0Cd6k2qdZ9bqmxW2mH13u4bs5KXbVfe0nblBGgbFw87lNH2ys0wpXIytzmc
+/Tq3uXaynsunO4d18ndHXtprble7uhcPO5TR9kqaukPmEmtHtttU3Q8zpe1G
+V3vrS7Dfa8H9MGdF/364dNihjLZXboY58+sZINdazVh7DGjfbvUEUrev7oNB
+/1OWPm9kaefG0mGH4v83WOzFYi8We7HYi8VeLPZisReLvVjsxWIvFnux2IvF
+Xiz2YrEXi71Y7MViLxZ7sdiLxV4s9mKxF4u9WOzFYi8We7HYi8VeLPZisReL
+vVjsxWIvFnux2IvFXiz2YrEXi71Y7MViLxZ7sdiLxV4s9mKxF4u9WOzFYi8W
+e7HYi8VeLPZisReLvVjsxWIvFnux2IvFXiz2YrEXi71Y7MViL5bq5QJahj5l
+JGksvgOlkhSu
+    "], {{0, 148}, {144, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->{144., 148.},
+  ImageSizeRaw->{144, 148},
+  PlotRange->{{0, 144}, {0, 148}}]], "Figure"],
+
+Cell[TextData[{
+ StyleBox["Figure ", "FigureCaptionLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "FigureCaptionLabel"],
+ StyleBox[".", "FigureCaptionLabel"],
+ StyleBox[
+ CounterBox["FigureCaption"], "FigureCaptionLabel"],
+ StyleBox[".\[ThickSpace]\[ThickSpace]\[ThickSpace]", "FigureCaptionLabel"],
+ "Figure caption."
+}], "FigureCaption"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJzt2DFr1GAcx/FDHXwbvhT1HZy70ILiJrRS6SRuDg4dlA46qYuDIIIgLroo
+uAgdXERcxEEEBxFxO3/6h4d4ae/UQ5MvfD+kJZfknivPN8mFHls/Pz17aDKZ
+bB7Nr+naxeMbG2vbp47kxYntC2fWD2flWn528vNjfSaU3ZNbLqxl6FNGv8te
+LPZisReLvVjsxWIvFnux2IvFXiz2YrEXi71Y7MViLxZ7sdiLxV4s9mKxF4u9
+WOzFYi8We7HYi8VeLPZisReLvVjsxWIvFnux2IvFXiz2YrEXi71Y7MViLxZ7
+sdiLxV4s9mKxF4u9WOzFYi8We7HYi8VeLPZisReLvVjsxWIvFnux2IvFXiz2
+YrEXi71Y7MViLxZ7sdiLxV4sA/a6Pt1qy93NnY9v37ftq4/814et/un/1LC9
+2vqrxy8eXL7R3776yH96mL0OMjcz7aW9FhhJr5f3nz66eqe7PbfHXHFZv33u
+yptne7Xr25evz289rI25JGvLk917N09fypIR8rJGyN5s6b43b6zDstL9oDZC
+jTm3cd9h/8fsHGAM3181J3PfX/lGe7f3evYzXJuizGGWtvHzh095mda1Nyu1
+NyNUlByWcdquTHuFqLfUB7Uxa1fbuO+w+TvrrxrKSK6v/vbMXk7mzFVdULUr
+l0Cd6k2qdZ9bqmxW2mH13u4bs5KXbVfe0nblBGgbFw87lNH2ys0wpXIytzmc
+/Tq3uXaynsunO4d18ndHXtprble7uhcPO5TR9kqaukPmEmtHtttU3Q8zpe1G
+V3vrS7Dfa8H9MGdF/364dNihjLZXboY58+sZINdazVh7DGjfbvUEUrev7oNB
+/1OWPm9kaefG0mGH4v83WOzFYi8We7HYi8VeLPZisReLvVjsxWIvFnux2IvF
+Xiz2YrEXi71Y7MViLxZ7sdiLxV4s9mKxF4u9WOzFYi8We7HYi8VeLPZisReL
+vVjsxWIvFnux2IvFXiz2YrEXi71Y7MViLxZ7sdiLxV4s9mKxF4u9WOzFYi8W
+e7HYi8VeLPZisReLvVjsxWIvFnux2IvFXiz2YrEXi71Y7MViL5bq5QJahj5l
+JGksvgOlkhSu
+    "], {{0, 148}, {144, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->{144., 148.},
+  ImageSizeRaw->{144, 148},
+  PlotRange->{{0, 144}, {0, 148}}]], "Picture"],
+
+Cell[TextData[{
+ StyleBox["Picture ", "PictureCaptionLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "PictureCaptionLabel"],
+ StyleBox[".", "PictureCaptionLabel"],
+ StyleBox[
+ CounterBox["PictureCaption"], "PictureCaptionLabel"],
+ StyleBox[".\[ThickSpace]\[ThickSpace]\[ThickSpace]", "PictureCaptionLabel"],
+ "Picture caption."
+}], "PictureCaption"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Table ", "TableTitleLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "TableTitleLabel"],
+ StyleBox[".", "TableTitleLabel"],
+ StyleBox[
+ CounterBox["TableTitle"], "TableTitleLabel"],
+ StyleBox[".\[ThickSpace]\[ThickSpace]\[ThickSpace]", "TableTitleLabel"],
+ "Enter table title here"
+}], "TableTitle"],
+
+Cell[BoxData[
+ FormBox[
+  TagBox[GridBox[{
+     {
+      InterpretationBox[Cell["Enter column head here",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell["Enter column head here",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]}
+    },
+    AutoDelete->False,
+    BaseStyle->{TextJustification -> 0, ParagraphIndent -> 0},
+    GridBoxAlignment->{"Columns" -> {Left, Center}, "Rows" -> {Bottom, Top}},
+    GridBoxDividers->{
+     "Columns" -> {False}, 
+      "RowsIndexed" -> {
+       1 -> AbsoluteThickness[2.], 2 -> AbsoluteThickness[0.5], -1 -> 
+        AbsoluteThickness[0.5]}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+    GridBoxSpacings->{"Columns" -> {{10.}}, "Rows" -> {1, 0.5}}],
+   "Grid"], TraditionalForm]], "Table"],
+
+Cell["Enter table note here.", "TableNote"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Table ", "TableTitleLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "TableTitleLabel"],
+ StyleBox[".", "TableTitleLabel"],
+ StyleBox[
+ CounterBox["TableTitle"], "TableTitleLabel"],
+ StyleBox[".\[ThickSpace]\[ThickSpace]\[ThickSpace]", "TableTitleLabel"],
+ "Enter table title here"
+}], "TableTitle"],
+
+Cell[BoxData[
+ FormBox[
+  TagBox[GridBox[{
+     {
+      InterpretationBox[Cell["Enter column head here",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell["Enter column head here",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell["Enter column head here",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]}
+    },
+    AutoDelete->False,
+    BaseStyle->{TextJustification -> 0, ParagraphIndent -> 0},
+    GridBoxAlignment->{"Columns" -> {Left, Center}, "Rows" -> {Bottom, Top}},
+    GridBoxDividers->{
+     "Columns" -> {False}, 
+      "RowsIndexed" -> {
+       1 -> AbsoluteThickness[2.], 2 -> AbsoluteThickness[0.5], -1 -> 
+        AbsoluteThickness[0.5]}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+    GridBoxSpacings->{"Columns" -> {{6.666666666666666}}, "Rows" -> {1, 0.5}}],
+   "Grid"], TraditionalForm]], "Table"],
+
+Cell["Enter table note here.", "TableNote"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Table ", "TableTitleLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "TableTitleLabel"],
+ StyleBox[".", "TableTitleLabel"],
+ StyleBox[
+ CounterBox["TableTitle"], "TableTitleLabel"],
+ StyleBox[".\[ThickSpace]\[ThickSpace]\[ThickSpace]", "TableTitleLabel"],
+ "Enter table title here"
+}], "TableTitle"],
+
+Cell[BoxData[
+ FormBox[
+  TagBox[GridBox[{
+     {
+      InterpretationBox[Cell["Enter column head here",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell["Enter column head here",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell["Enter column head here",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell["Enter column head here",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]}
+    },
+    AutoDelete->False,
+    BaseStyle->{TextJustification -> 0, ParagraphIndent -> 0},
+    GridBoxAlignment->{"Columns" -> {Left, Center}, "Rows" -> {Bottom, Top}},
+    GridBoxDividers->{
+     "Columns" -> {False}, 
+      "RowsIndexed" -> {
+       1 -> AbsoluteThickness[2.], 2 -> AbsoluteThickness[0.5], -1 -> 
+        AbsoluteThickness[0.5]}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+    GridBoxSpacings->{"Columns" -> {{5.}}, "Rows" -> {1, 0.5}}],
+   "Grid"], TraditionalForm]], "Table"],
+
+Cell["Enter table note here.", "TableNote"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Table ", "TableTitleLabel"],
+ StyleBox[
+ CounterBox["BookChapterNumber"], "TableTitleLabel"],
+ StyleBox[".", "TableTitleLabel"],
+ StyleBox[
+ CounterBox["TableTitle"], "TableTitleLabel"],
+ StyleBox[".\[ThickSpace]\[ThickSpace]\[ThickSpace]", "TableTitleLabel"],
+ "Enter table title here"
+}], "TableTitle"],
+
+Cell[BoxData[
+ FormBox[
+  TagBox[GridBox[{
+     {
+      InterpretationBox[Cell["Enter column head here",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell["Enter column head here",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell["Enter column head here",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell["Enter column head here",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]], 
+      InterpretationBox[Cell["Enter column head here",
+        Editable->True,
+        FontSlant->Italic],
+       TextCell["Enter column head here", Italic, Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]},
+     {
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]], 
+      InterpretationBox[Cell["Enter data here",
+        Editable->True],
+       TextCell["Enter data here", Editable -> True]]}
+    },
+    AutoDelete->False,
+    BaseStyle->{TextJustification -> 0, ParagraphIndent -> 0},
+    GridBoxAlignment->{"Columns" -> {Left, Center}, "Rows" -> {Bottom, Top}},
+    GridBoxDividers->{
+     "Columns" -> {False}, 
+      "RowsIndexed" -> {
+       1 -> AbsoluteThickness[2.], 2 -> AbsoluteThickness[0.5], -1 -> 
+        AbsoluteThickness[0.5]}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+    GridBoxSpacings->{"Columns" -> {{4.}}, "Rows" -> {1, 0.5}}],
+   "Grid"], TraditionalForm]], "Table"],
+
+Cell["Enter table note here.", "TableNote"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Enter exercise section title here", "ExerciseSection"],
+
+Cell[CellGroupData[{
+
+Cell["Enter item1exercise text here.", "Item1Exercise"],
+
+Cell[CellGroupData[{
+
+Cell["Enter item2exercise text here.", "Item2Exercise"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{"x", 
+     RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+   SqrtBox["z"]}], TraditionalForm]], "ExerciseEquationNumbered"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[
+CounterBox["AppendixSectionNumber"]], "AppendixSectionNumber"],
+
+Cell[CellGroupData[{
+
+Cell["Enter appendix title here", "AppendixSection"],
+
+Cell[CellGroupData[{
+
+Cell["Enter appendix text here.", "Appendix"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{"x", 
+     RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+   SqrtBox["z"]}], TraditionalForm]], "AppendixEquation"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Enter reference title here", "ReferenceSection"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Authorlast, \[OpenCurlyDoubleQuote]Article Title,\[CloseCurlyDoubleQuote] \
+",
+ StyleBox["Journal Title",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["Volume",
+  FontWeight->"Bold"],
+ "(Issue), 2005 pp. #\[Dash]#."
+}], "Reference"],
+
+Cell[TextData[{
+ "Authorlast1 and B. Authorlast2, \[OpenCurlyDoubleQuote]Article Title,\
+\[CloseCurlyDoubleQuote] ",
+ StyleBox["Journal Title",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["Volume",
+  FontWeight->"Bold"],
+ "(Issue), 2005 pp. #\[Dash]#."
+}], "Reference"],
+
+Cell[TextData[{
+ "Authorlast1, B. Authorlast2, and C. Authorlast3, \
+\[OpenCurlyDoubleQuote]Article Title,\[CloseCurlyDoubleQuote] ",
+ StyleBox["Journal Title",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["Volume",
+  FontWeight->"Bold"],
+ "(Issue), 2005 pp. #\[Dash]#."
+}], "Reference"],
+
+Cell[TextData[{
+ "Authorlast, ",
+ StyleBox["Book Title",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ "th ed., Publisher Location: Publisher Name, 2005."
+}], "Reference"],
+
+Cell[TextData[{
+ "Authorlast1 and B. Authorlast2, ",
+ StyleBox["Book Title",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ "th ed., Publisher Location: Publisher Name, 2005."
+}], "Reference"],
+
+Cell[TextData[{
+ "Authorlast1, B. Authorlast2, and C. Authorlast3, ",
+ StyleBox["Book Title",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ "th ed., Publisher Location: Publisher Name, 2005."
+}], "Reference"],
+
+Cell[TextData[{
+ "Authorlast, \[OpenCurlyDoubleQuote]Paper Title,\[CloseCurlyDoubleQuote] in ",
+ StyleBox["Conference Proceedings Title (Conference Acronym and Year)",
+  FontSlant->"Italic"],
+ ", Conference Location (A. Authorlast, ed.), Publisher Location: Publisher \
+Name, Publication Date pp. #\[Dash]#."
+}], "Reference"],
+
+Cell[TextData[{
+ "Authorlast1, B. Authorlast2, and C. Authorlast3, \
+\[OpenCurlyDoubleQuote]Paper Title,\[CloseCurlyDoubleQuote] in ",
+ StyleBox["Conference Proceedings Title (Conference Acronym and Year)",
+  FontSlant->"Italic"],
+ ", Conference Location (A. Authorlast, ed.), Publisher Location: Publisher \
+Name, Publication Date pp. #\[Dash]#."
+}], "Reference"],
+
+Cell[TextData[{
+ "Authorlast1, B. Authorlast2, and C. Authorlast3, \
+\[OpenCurlyDoubleQuote]Paper Title,\[CloseCurlyDoubleQuote] in ",
+ StyleBox["Conference Proceedings Title (Conference Acronym and Year)",
+  FontSlant->"Italic"],
+ ", Conference Location (A. Authorlast, ed.), Publisher Location: Publisher \
+Name, Publication Date pp. #\[Dash]#."
+}], "Reference"],
+
+Cell["\<\
+Authorlast. \[OpenCurlyDoubleQuote]Website Title.\[CloseCurlyDoubleQuote] \
+(Last updated date or date visited in three-character Month Day, Year format) \
+URL.\
+\>", "Reference"],
+
+Cell["\<\
+B. Authorlast. \[OpenCurlyDoubleQuote]Entry Title\[CloseCurlyDoubleQuote] \
+from CompanyN\[LongDash]A CompanyN Web Resource. URL.\
+\>", "Reference"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 892},
+WindowMargins->{{84, Automatic}, {16, Automatic}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 16, \
+2015)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"],
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 69, 1, 147, "BookChapterNumber"],
+Cell[651, 25, 52, 0, 126, "BookChapterTitle"],
+Cell[CellGroupData[{
+Cell[728, 29, 133, 8, 55, "Section"],
+Cell[864, 39, 32, 0, 20, "Text"],
+Cell[899, 41, 187, 6, 43, "EquationNumbered"],
+Cell[CellGroupData[{
+Cell[1111, 51, 169, 10, 32, "Subsection"],
+Cell[CellGroupData[{
+Cell[1305, 65, 49, 1, 28, "Input"],
+Cell[1357, 68, 28, 0, 28, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1434, 74, 174, 11, 32, "Subsection"],
+Cell[1611, 87, 32, 0, 20, "Text"],
+Cell[CellGroupData[{
+Cell[1668, 91, 39, 0, 16, "Item1"],
+Cell[CellGroupData[{
+Cell[1732, 95, 57, 0, 15, "Item1Paragraph"],
+Cell[CellGroupData[{
+Cell[1814, 99, 39, 0, 15, "Item2"],
+Cell[CellGroupData[{
+Cell[1878, 103, 57, 0, 15, "Item2Paragraph"],
+Cell[CellGroupData[{
+Cell[1960, 107, 39, 0, 15, "Item3"],
+Cell[2002, 109, 57, 0, 15, "Item3Paragraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2168, 120, 133, 8, 55, "Section"],
+Cell[2304, 130, 163, 6, 20, "Text"],
+Cell[2470, 138, 187, 6, 43, "EquationNumbered"],
+Cell[2660, 146, 32, 0, 20, "Text"],
+Cell[CellGroupData[{
+Cell[2717, 150, 55, 0, 16, "Item1Numbered"],
+Cell[CellGroupData[{
+Cell[2797, 154, 57, 0, 15, "Item1Paragraph"],
+Cell[CellGroupData[{
+Cell[2879, 158, 55, 0, 15, "Item2Numbered"],
+Cell[CellGroupData[{
+Cell[2959, 162, 57, 0, 15, "Item2Paragraph"],
+Cell[CellGroupData[{
+Cell[3041, 166, 55, 0, 15, "Item3Numbered"],
+Cell[3099, 168, 57, 0, 15, "Item3Paragraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[3219, 175, 41, 0, 20, "Text"],
+Cell[CellGroupData[{
+Cell[3285, 179, 301, 9, 20, "Theorem"],
+Cell[3589, 190, 65, 0, 20, "TheoremContinuation"],
+Cell[3657, 192, 319, 9, 20, "Corollary"],
+Cell[3979, 203, 69, 0, 20, "CorollaryContinuation"],
+Cell[4051, 205, 316, 9, 20, "Definition"],
+Cell[4370, 216, 71, 0, 20, "DefinitionContinuation"],
+Cell[4444, 218, 337, 9, 20, "Proposition"],
+Cell[4784, 229, 73, 0, 20, "PropositionContinuation"],
+Cell[4860, 231, 328, 9, 20, "Conjecture"],
+Cell[5191, 242, 71, 0, 20, "ConjectureContinuation"],
+Cell[5265, 244, 283, 9, 20, "Axiom"],
+Cell[5551, 255, 61, 0, 20, "AxiomContinuation"],
+Cell[5615, 257, 274, 9, 20, "Rule"],
+Cell[5892, 268, 59, 0, 20, "RuleContinuation"],
+Cell[5954, 270, 301, 9, 20, "Example"],
+Cell[6258, 281, 65, 0, 20, "ExampleContinuation"],
+Cell[6326, 283, 292, 9, 20, "Remark"],
+Cell[6621, 294, 63, 0, 20, "RemarkContinuation"],
+Cell[6687, 296, 308, 9, 20, "Solution"],
+Cell[6998, 307, 67, 0, 20, "SolutionContinuation"],
+Cell[7068, 309, 287, 9, 20, "Proof"],
+Cell[7358, 320, 64, 0, 20, "ProofContinuation"],
+Cell[7425, 322, 29, 0, 23, "QED"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7491, 327, 1473, 29, 162, "Figure"],
+Cell[8967, 358, 346, 9, 20, "FigureCaption"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9350, 372, 1474, 29, 162, "Picture"],
+Cell[10827, 403, 355, 9, 20, "PictureCaption"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11219, 417, 331, 9, 20, "TableTitle"],
+Cell[11553, 428, 1998, 51, 99, "Table"],
+Cell[13554, 481, 43, 0, 16, "TableNote"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13634, 486, 331, 9, 20, "TableTitle"],
+Cell[13968, 497, 2706, 67, 99, "Table"],
+Cell[16677, 566, 43, 0, 16, "TableNote"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16757, 571, 331, 9, 20, "TableTitle"],
+Cell[17091, 582, 3385, 83, 114, "Table"],
+Cell[20479, 667, 43, 0, 16, "TableNote"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20559, 672, 331, 9, 20, "TableTitle"],
+Cell[20893, 683, 4079, 99, 174, "Table"],
+Cell[24975, 784, 43, 0, 16, "TableNote"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25067, 790, 60, 0, 275, "ExerciseSection"],
+Cell[CellGroupData[{
+Cell[25152, 794, 55, 0, 16, "Item1Exercise"],
+Cell[CellGroupData[{
+Cell[25232, 798, 55, 0, 15, "Item2Exercise"],
+Cell[25290, 800, 195, 6, 43, "ExerciseEquationNumbered"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25546, 813, 77, 1, 137, "AppendixSectionNumber"],
+Cell[CellGroupData[{
+Cell[25648, 818, 52, 0, 126, "AppendixSection"],
+Cell[CellGroupData[{
+Cell[25725, 822, 45, 0, 20, "Appendix"],
+Cell[25773, 824, 187, 6, 43, "AppendixEquation"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26021, 837, 54, 0, 275, "ReferenceSection"],
+Cell[CellGroupData[{
+Cell[26100, 841, 246, 9, 16, "Reference"],
+Cell[26349, 852, 266, 9, 16, "Reference"],
+Cell[26618, 863, 283, 9, 16, "Reference"],
+Cell[26904, 874, 196, 8, 16, "Reference"],
+Cell[27103, 884, 216, 8, 16, "Reference"],
+Cell[27322, 894, 233, 8, 30, "Reference"],
+Cell[27558, 904, 325, 6, 30, "Reference"],
+Cell[27886, 912, 364, 7, 44, "Reference"],
+Cell[28253, 921, 364, 7, 44, "Reference"],
+Cell[28620, 930, 189, 4, 30, "Reference"],
+Cell[28812, 936, 158, 3, 16, "Reference"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

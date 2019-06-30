@@ -1,0 +1,342 @@
+{"AdministrativeDivisionData" -> {"AdministrativeDivisionData_1.trie", 
+   "AdministrativeDivisionData_2.trie", "AdministrativeDivisionData_3.trie"}, 
+ "AircraftData" -> {0, "AircraftData_2.trie"}, 
+ "AirportData" -> {0, "AirportData_2.trie"}, 
+ "AirPressureData" -> {0, "AirPressureData_2.trie", 
+   "AirPressureData_3.trie"}, "AirTemperatureData" -> 
+  {0, "AirTemperatureData_2.trie", "AirTemperatureData_3.trie"}, 
+ "AnatomyData" -> {"AnatomyData_1.trie", "AnatomyData_2.trie", 
+   "AnatomyData_3.trie"}, "AndersonDarlingTest" -> 
+  {0, 0, "AndersonDarlingTest_3.trie"}, 
+ "Annotation" -> {0, 0, "Annotation_3.trie"}, 
+ "APIFunction" -> {0, 0, "APIFunction_3.trie"}, 
+ "ArcCurvature" -> {0, 0, "CoordinateChartData_1.trie"}, 
+ "ArcLength" -> {0, 0, "CoordinateChartData_1.trie"}, 
+ "Area" -> {0, 0, 0, "CoordinateChartData_1.trie"}, 
+ "ArrayPad" -> {0, 0, "ArrayPad_3.trie"}, "ArrayResample" -> 
+  {0, 0, "ArrayResample_3.trie"}, "Audio" -> {0, "Audio_2.trie"}, 
+ "AudioData" -> {0, "AudioData_2.trie"}, "AudioIdentify" -> 
+  {0, 0, 0, "AudioIdentify_4.trie"}, "AudioLocalMeasurements" -> 
+  {0, 0, "AudioLocalMeasurements_3.trie"}, 
+ "AudioLoudness" -> {0, "AudioLoudness_2.trie"}, 
+ "AudioMeasurements" -> {0, 0, "AudioMeasurements_3.trie"}, 
+ "AudioPad" -> {0, 0, "AudioPad_3.trie"}, 
+ "AudioReplace" -> {0, 0, "AudioReplace_3.trie"}, 
+ "AuthenticationDialog" -> {"AuthenticationDialog_1.trie"}, 
+ "AutocorrelationTest" -> {0, 0, "AutocorrelationTest_3.trie"}, 
+ "AxiomaticTheory" -> {"AxiomaticTheory_1.trie"}, 
+ "BarcodeImage" -> {0, "BarcodeImage_2.trie"}, 
+ "BarcodeRecognize" -> {0, "BarcodeRecognize_2.trie", 
+   "BarcodeRecognize_3.trie"}, "BaringhausHenzeTest" -> 
+  {0, "BaringhausHenzeTest_2.trie"}, "BlockchainBlockData" -> 
+  {0, "BlockchainBlockData_2.trie"}, "BlockchainData" -> 
+  {"BlockchainData_1.trie"}, "BlockchainTransactionData" -> 
+  {0, "BlockchainTransactionData_2.trie"}, "BlomqvistBetaTest" -> 
+  {0, 0, "BlomqvistBetaTest_3.trie"}, "BooleanConvert" -> 
+  {0, "BooleanConvert_2.trie"}, "BooleanMinimize" -> 
+  {0, "BooleanMinimize_2.trie"}, "BoxWhiskerChart" -> 
+  {0, "BoxWhiskerChart_2.trie"}, "BridgeData" -> 
+  {"BridgeData_1.trie", "BridgeData_2.trie", "BridgeData_3.trie"}, 
+ "BroadcastStationData" -> {0, "BroadcastStationData_2.trie"}, 
+ "BrownForsytheTest" -> {0, 0, "BrownForsytheTest_3.trie"}, 
+ "BuildingData" -> {"BuildingData_1.trie", "BuildingData_2.trie", 
+   "BuildingData_3.trie"}, "Capitalize" -> {0, "Capitalize_2.trie"}, 
+ "CDFWavelet" -> {"CDFWavelet_1.trie"}, "ChemicalData" -> 
+  {0, "ChemicalData_2.trie"}, "ChromaticityPlot" -> 
+  {"ChromaticityPlot_1.trie", "ChromaticityPlot_2.trie"}, 
+ "ChromaticityPlot3D" -> {"ChromaticityPlot3D_1.trie", 
+   "ChromaticityPlot3D_2.trie"}, "CityData" -> 
+  {0, "CityData_2.trie", "CityData_3.trie"}, "ClassifierFunction" -> 
+  {0, "ClassifierFunction_2.trie"}, "ClassifierInformation" -> 
+  {0, "ClassifierInformation_2.trie"}, "ClassifierMeasurements" -> 
+  {0, 0, "ClassifierMeasurements_3.trie"}, "ClassifierMeasurementsObject" -> 
+  {0, 0, "ClassifierMeasurementsObject_3.trie"}, 
+ "Classify" -> {"Classify_1.trie", 0, "Classify_3.trie"}, 
+ "CloudAccountData" -> {"CloudAccountData_1.trie"}, 
+ "CloudLoggingData" -> {0, "CloudLoggingData_2.trie"}, 
+ "CloudObjects" -> {"CloudObjects_1.trie"}, 
+ "ColorConvert" -> {0, "ColorConvert_2.trie"}, 
+ "ColorData" -> {"ColorData_1.trie", "ColorData_2.trie"}, 
+ "ColorSeparate" -> {0, "ColorSeparate_2.trie"}, 
+ "ColorToneMapping" -> {0, "ColorToneMapping_2.trie"}, 
+ "CombinedEntityClass" -> {0, 0, 0, "CombinedEntityClass_4.trie"}, 
+ "CometData" -> {"CometData_1.trie", "CometData_2.trie", "CometData_3.trie"}, 
+ "CompanyData" -> {"CompanyData_1.trie", 0, "CompanyData_3.trie"}, 
+ "ComponentMeasurements" -> {0, "ComponentMeasurements_2.trie", 0, 
+   "ComponentMeasurements_4.trie"}, "ConformImages" -> 
+  {0, 0, "ConformImages_3.trie"}, "ConoverTest" -> 
+  {0, 0, "ConoverTest_3.trie"}, "ConstellationData" -> 
+  {"ConstellationData_1.trie", "ConstellationData_2.trie", 
+   "ConstellationData_3.trie"}, "ControllableModelQ" -> 
+  {"ControllableModelQ_1.trie"}, "CoordinateChartData" -> 
+  {"CoordinateChartData_1.trie", "CoordinateChartData_2.trie"}, 
+ "CoordinateTransform" -> {{"CoordinateChartData_1.trie", 
+    "LHSRule" -> "CoordinateChartData_1.trie", 
+    "RHSRule" -> "CoordinateChartData_1.trie"}}, 
+ "CoordinateTransformData" -> {{"CoordinateChartData_1.trie", 
+    "LHSRule" -> "CoordinateChartData_1.trie", 
+    "RHSRule" -> "CoordinateChartData_1.trie"}, 
+   "CoordinateTransformData_2.trie"}, "CopulaDistribution" -> 
+  {"CopulaDistribution_1.trie"}, "CorrelationTest" -> 
+  {0, "CorrelationTest_2.trie"}, "CountryData" -> 
+  {0, "CountryData_2.trie", "CountryData_3.trie"}, 
+ "CramerVonMisesTest" -> {0, 0, "CramerVonMisesTest_3.trie"}, 
+ "CreateNotebook" -> {"CreateNotebook_1.trie"}, 
+ "Curl" -> {0, 0, "CoordinateChartData_1.trie"}, 
+ "CurrentValue" -> {"CurrentValue_1.trie"}, 
+ "DamData" -> {"DamData_1.trie", "DamData_2.trie", "DamData_3.trie"}, 
+ "DateHistogram" -> {0, 0, "DateHistogram_3.trie"}, 
+ "DateString" -> {"DateString_1.trie"}, "DateValue" -> {"DateValue_1.trie"}, 
+ "DaylightQ" -> {0, 0, "DaylightQ_3.trie"}, 
+ "DeBruijnGraph" -> {0, 0, "DeBruijnGraph_3.trie"}, 
+ "DeepSpaceProbeData" -> {"DeepSpaceProbeData_1.trie", 
+   "DeepSpaceProbeData_2.trie", "DeepSpaceProbeData_3.trie"}, 
+ "DensityHistogram" -> {0, 0, "DensityHistogram_3.trie"}, 
+ "DirectedGraph" -> {0, "DirectedGraph_2.trie"}, 
+ "DistributionFitTest" -> {0, 0, "DistributionFitTest_3.trie"}, 
+ "Div" -> {0, 0, "CoordinateChartData_1.trie"}, 
+ "DominantColors" -> {0, 0, "DominantColors_3.trie"}, 
+ "EarthImpactData" -> {"EarthImpactData_1.trie", "EarthImpactData_2.trie", 
+   "EarthImpactData_3.trie"}, "ElementData" -> {0, "ElementData_2.trie", 
+   "ElementData_3.trie"}, "ExampleData" -> {"ExampleData_1.trie"}, 
+ "ExoplanetData" -> {"ExoplanetData_1.trie", "ExoplanetData_2.trie", 
+   "ExoplanetData_3.trie"}, "ExternalEvaluate" -> 
+  {"ExternalEvaluate_1.trie"}, "ExternalSessions" -> 
+  {"ExternalSessions_1.trie"}, "FeedbackLinearize" -> 
+  {0, 0, "FeedbackLinearize_3.trie"}, "FetalGrowthData" -> 
+  {0, "FetalGrowthData_2.trie"}, "FileDate" -> {0, "FileDate_2.trie"}, 
+ "FileHash" -> {0, "FileHash_2.trie", 0, "FileHash_4.trie"}, 
+ "FileNameSetter" -> {0, "FileNameSetter_2.trie"}, 
+ "FinancialBond" -> {0, "FinancialBond_2.trie", "FinancialBond_3.trie"}, 
+ "FinancialData" -> {0, "FinancialData_2.trie", 0, "FinancialData_4.trie"}, 
+ "FindAnomalies" -> {0, 0, "FindAnomalies_3.trie"}, 
+ "FindDistribution" -> {0, 0, "FindDistribution_3.trie"}, 
+ "FindExternalEvaluators" -> {"FindExternalEvaluators_1.trie"}, 
+ "FindFormula" -> {0, 0, 0, "FindFormula_4.trie"}, 
+ "FindHiddenMarkovStates" -> {0, 0, "FindHiddenMarkovStates_3.trie"}, 
+ "FindMaximumFlow" -> {0, 0, 0, "FindMaximumFlow_4.trie"}, 
+ "FindTextualAnswer" -> {0, 0, 0, "FindTextualAnswer_4.trie"}, 
+ "FiniteGroupData" -> {"FiniteGroupData_1.trie", "FiniteGroupData_2.trie"}, 
+ "FisherRatioTest" -> {0, 0, "FisherRatioTest_3.trie"}, 
+ "FormulaData" -> {0, "FormulaData_2.trie"}, "FrenetSerretSystem" -> 
+  {0, 0, "CoordinateChartData_1.trie"}, "FromJulianDate" -> 
+  {"FromJulianDate_1.trie"}, "GalaxyData" -> {"GalaxyData_1.trie", 
+   "GalaxyData_2.trie", "GalaxyData_3.trie"}, "GenerateAsymmetricKeyPair" -> 
+  {"GenerateAsymmetricKeyPair_1.trie"}, 
+ "GenomeData" -> {0, "GenomeData_2.trie", "GenomeData_3.trie"}, 
+ "GeodesyData" -> {0, "GeodesyData_2.trie"}, 
+ "GeoElevationData" -> {0, "GeoElevationData_2.trie", 
+   "GeoElevationData_3.trie"}, "GeoEntities" -> {0, "GeoEntities_2.trie"}, 
+ "GeoIdentify" -> {"GeoIdentify_1.trie"}, "GeoImage" -> {"GeoImage_1.trie"}, 
+ "GeologicalPeriodData" -> {0, "GeologicalPeriodData_2.trie"}, 
+ "GeoNearest" -> {"GeoNearest_1.trie"}, "GeoPath" -> {0, "GeoPath_2.trie"}, 
+ "GeoPosition" -> {0, "GeoPosition_2.trie"}, 
+ "GeoPositionXYZ" -> {0, "GeoPositionXYZ_2.trie"}, 
+ "GeoProjectionData" -> {0, "GeoProjectionData_2.trie"}, 
+ "GeoStyling" -> {"GeoStyling_1.trie"}, 
+ "GeoVariant" -> {0, "GeoVariant_2.trie"}, "GoodmanKruskalGammaTest" -> 
+  {0, 0, "GoodmanKruskalGammaTest_3.trie"}, 
+ "Grad" -> {0, 0, "CoordinateChartData_1.trie"}, 
+ "GraphData" -> {0, "GraphData_2.trie"}, 
+ "Hash" -> {0, "Hash_2.trie", "Hash_3.trie"}, 
+ "HiddenMarkovProcess" -> {0, "HiddenMarkovProcess_2.trie"}, 
+ "Histogram3D" -> {0, "Histogram3D_2.trie", "Histogram3D_3.trie"}, 
+ "HistogramDistribution" -> {0, "HistogramDistribution_2.trie"}, 
+ "HistogramList" -> {0, "HistogramList_2.trie", "HistogramList_3.trie"}, 
+ "HistoricalPeriodData" -> {"HistoricalPeriodData_1.trie", 
+   "HistoricalPeriodData_2.trie", "HistoricalPeriodData_3.trie"}, 
+ "HoeffdingDTest" -> {0, 0, "HoeffdingDTest_3.trie"}, 
+ "HostLookup" -> {0, "HostLookup_2.trie"}, 
+ "HTTPRedirect" -> {0, "HTTPRedirect_2.trie"}, 
+ "HTTPRequestData" -> {"HTTPRequestData_1.trie"}, 
+ "HTTPResponse" -> {0, "HTTPResponse_2.trie"}, 
+ "HumanGrowthData" -> {0, "HumanGrowthData_2.trie"}, 
+ "IconData" -> {"IconData_1.trie"}, "Image" -> {0, "Image_2.trie"}, 
+ "Image3D" -> {0, "Image3D_2.trie"}, "ImageCollage" -> 
+  {0, "ImageCollage_2.trie"}, "ImageContents" -> 
+  {0, 0, "ImageContents_3.trie"}, "ImageData" -> {0, "ImageData_2.trie"}, 
+ "ImageDemosaic" -> {0, "ImageDemosaic_2.trie"}, 
+ "ImageHistogram" -> {0, "ImageHistogram_2.trie", "ImageHistogram_3.trie"}, 
+ "ImageIdentify" -> {0, 0, 0, "ImageIdentify_4.trie"}, 
+ "ImageKeypoints" -> {0, "ImageKeypoints_2.trie"}, 
+ "ImageMeasurements" -> {0, "ImageMeasurements_2.trie", 
+   "ImageMeasurements_3.trie"}, "ImagePad" -> {0, 0, "ImagePad_3.trie"}, 
+ "ImagePyramid" -> {0, "ImagePyramid_2.trie"}, 
+ "ImageRotate" -> {0, 0, "ImageRotate_3.trie"}, 
+ "Import" -> {0, "Import_2.trie"}, "IndependenceTest" -> 
+  {0, 0, "IndependenceTest_3.trie"}, "InitializationValue" -> 
+  {0, "InitializationValue_2.trie"}, "IntegerName" -> 
+  {0, "IntegerName_2.trie"}, "IntegerString" -> {0, "IntegerString_2.trie"}, 
+ "Interpreter" -> {"Interpreter_1.trie"}, 
+ "IslandData" -> {0, "IslandData_2.trie"}, 
+ "IsotopeData" -> {0, "IsotopeData_2.trie", "IsotopeData_3.trie"}, 
+ "JoinAcross" -> {0, 0, 0, "JoinAcross_4.trie"}, 
+ "JulianDate" -> {"JulianDate_1.trie"}, "KendallTauTest" -> 
+  {0, 0, "KendallTauTest_3.trie"}, "KnotData" -> {0, "KnotData_2.trie"}, 
+ "KolmogorovSmirnovTest" -> {0, 0, "KolmogorovSmirnovTest_3.trie"}, 
+ "KuiperTest" -> {0, 0, "KuiperTest_3.trie"}, 
+ "LakeData" -> {0, "LakeData_2.trie"}, "LanguageData" -> 
+  {"LanguageData_1.trie", "LanguageData_2.trie", "LanguageData_3.trie"}, 
+ "Laplacian" -> {0, 0, "CoordinateChartData_1.trie"}, 
+ "LatticeData" -> {0, "LatticeData_2.trie"}, 
+ "LeveneTest" -> {0, 0, "LeveneTest_3.trie"}, "ListSliceContourPlot3D" -> 
+  {0, "ListSliceContourPlot3D_2.trie"}, "ListSliceDensityPlot3D" -> 
+  {0, "ListSliceDensityPlot3D_2.trie"}, "ListSliceVectorPlot3D" -> 
+  {0, "ListSliceVectorPlot3D_2.trie"}, "LocalTimeZone" -> 
+  {0, "LocalTimeZone_2.trie"}, "LocationEquivalenceTest" -> 
+  {0, "LocationEquivalenceTest_2.trie"}, "LocationTest" -> 
+  {0, 0, "LocationTest_3.trie"}, "LogRankTest" -> 
+  {0, "LogRankTest_2.trie", "LogRankTest_3.trie"}, 
+ "MannedSpaceMissionData" -> {"MannedSpaceMissionData_1.trie", 
+   "MannedSpaceMissionData_2.trie", "MannedSpaceMissionData_3.trie"}, 
+ "MardiaCombinedTest" -> {0, "MardiaCombinedTest_2.trie"}, 
+ "MarkovProcessProperties" -> {0, "MarkovProcessProperties_2.trie"}, 
+ "MathematicalFunctionData" -> {"MathematicalFunctionData_1.trie", 
+   "MathematicalFunctionData_2.trie", "MathematicalFunctionData_3.trie"}, 
+ "MedicalTestData" -> {"MedicalTestData_1.trie", "MedicalTestData_2.trie", 
+   "MedicalTestData_3.trie"}, "MeteorShowerData" -> 
+  {"MeteorShowerData_1.trie", "MeteorShowerData_2.trie", 
+   "MeteorShowerData_3.trie"}, "MineralData" -> 
+  {"MineralData_1.trie", "MineralData_2.trie", "MineralData_3.trie"}, 
+ "MinorPlanetData" -> {"MinorPlanetData_1.trie", "MinorPlanetData_2.trie", 
+   "MinorPlanetData_3.trie"}, "MortalityData" -> {0, "MortalityData_2.trie"}, 
+ "MountainData" -> {"MountainData_1.trie", "MountainData_2.trie", 
+   "MountainData_3.trie"}, "MouseAppearance" -> 
+  {0, "MouseAppearance_2.trie"}, "MovieData" -> 
+  {"MovieData_1.trie", "MovieData_2.trie", "MovieData_3.trie"}, 
+ "MovingMap" -> {0, 0, 0, "MovingMap_4.trie"}, 
+ "NebulaData" -> {"NebulaData_1.trie", "NebulaData_2.trie", 
+   "NebulaData_3.trie"}, "NeighborhoodData" -> {"NeighborhoodData_1.trie", 
+   "NeighborhoodData_2.trie", "NeighborhoodData_3.trie"}, 
+ "NetInformation" -> {0, "NetInformation_2.trie"}, 
+ "NetModel" -> {0, "NetModel_2.trie"}, 
+ "NetTrain" -> {0, 0, "NetTrain_3.trie"}, "NetTrainResultsObject" -> 
+  {0, 0, "NetTrainResultsObject_3.trie"}, "NotebookImport" -> 
+  {0, "NotebookImport_2.trie"}, "NuclearExplosionData" -> 
+  {"NuclearExplosionData_1.trie", "NuclearExplosionData_2.trie", 
+   "NuclearExplosionData_3.trie"}, "NuclearReactorData" -> 
+  {"NuclearReactorData_1.trie", "NuclearReactorData_2.trie", 
+   "NuclearReactorData_3.trie"}, "NumericArray" -> 
+  {0, "NumericArray_2.trie", "NumericArray_3.trie"}, 
+ "OceanData" -> {"OceanData_1.trie", "OceanData_2.trie", "OceanData_3.trie"}, 
+ "On" -> {"On_1.trie"}, "PairedHistogram" -> 
+  {0, 0, 0, "PairedHistogram_4.trie"}, "PairedSmoothHistogram" -> 
+  {0, 0, 0, "PairedSmoothHistogram_4.trie"}, 
+ "PairedTTest" -> {0, 0, "PairedTTest_3.trie"}, 
+ "PairedZTest" -> {0, 0, 0, "PairedZTest_4.trie"}, 
+ "ParkData" -> {"ParkData_1.trie", "ParkData_2.trie", "ParkData_3.trie"}, 
+ "ParticleAcceleratorData" -> {"ParticleAcceleratorData_1.trie", 
+   "ParticleAcceleratorData_2.trie", "ParticleAcceleratorData_3.trie"}, 
+ "ParticleData" -> {0, "ParticleData_2.trie", "ParticleData_3.trie"}, 
+ "PearsonChiSquareTest" -> {0, 0, "PearsonChiSquareTest_3.trie"}, 
+ "PearsonCorrelationTest" -> {0, 0, "PearsonCorrelationTest_3.trie"}, 
+ "PersistenceLocation" -> {"PersistenceLocation_1.trie"}, 
+ "PersistentObject" -> {0, "PersistentObject_2.trie"}, 
+ "PersistentValue" -> {0, "PersistentValue_2.trie"}, 
+ "PersonData" -> {"PersonData_1.trie", "PersonData_2.trie", 
+   "PersonData_3.trie"}, "PhysicalSystemData" -> 
+  {"PhysicalSystemData_1.trie", "PhysicalSystemData_2.trie", 
+   "PhysicalSystemData_3.trie"}, "PIDTune" -> {0, "PIDTune_2.trie", 
+   "PIDTune_3.trie"}, "PillaiTraceTest" -> {0, 0, "PillaiTraceTest_3.trie"}, 
+ "PlaneCurveData" -> {0, "PlaneCurveData_2.trie"}, 
+ "PlanetaryMoonData" -> {"PlanetaryMoonData_1.trie", 
+   "PlanetaryMoonData_2.trie", "PlanetaryMoonData_3.trie"}, 
+ "PlanetData" -> {"PlanetData_1.trie", "PlanetData_2.trie", 
+   "PlanetData_3.trie"}, "PlantData" -> {"PlantData_1.trie", 
+   "PlantData_2.trie", "PlantData_3.trie"}, 
+ "PolyhedronData" -> {0, "PolyhedronData_2.trie", "PolyhedronData_3.trie"}, 
+ "Predict" -> {0, 0, "Predict_3.trie"}, "PredictorFunction" -> 
+  {0, "PredictorFunction_2.trie"}, "PredictorInformation" -> 
+  {0, "PredictorInformation_2.trie"}, "PredictorMeasurements" -> 
+  {0, 0, "PredictorMeasurements_3.trie"}, "PredictorMeasurementsObject" -> 
+  {0, 0, "PredictorMeasurementsObject_3.trie"}, 
+ "ProbabilityScalePlot" -> {0, "ProbabilityScalePlot_2.trie"}, 
+ "ProcessConnection" -> {0, "ProcessConnection_2.trie"}, 
+ "ProgressIndicator" -> {0, 0}, "ProteinData" -> 
+  {0, "ProteinData_2.trie", "ProteinData_3.trie"}, 
+ "PulsarData" -> {"PulsarData_1.trie", "PulsarData_2.trie", 
+   "PulsarData_3.trie"}, "QueueProperties" -> {0, "QueueProperties_2.trie"}, 
+ "RandomWord" -> {"RandomWord_1.trie"}, 
+ "Rasterize" -> {0, "Rasterize_2.trie"}, "RegionMeasure" -> 
+  {0, 0, "CoordinateChartData_1.trie"}, "RegisterExternalEvaluator" -> 
+  {"RegisterExternalEvaluator_1.trie"}, "RemoteRunProcess" -> 
+  {0, "RemoteRunProcess_2.trie"}, "ResamplingAlgorithmData" -> 
+  {0, "ResamplingAlgorithmData_2.trie"}, "ResourceSearch" -> 
+  {0, "ResourceSearch_2.trie"}, "RunProcess" -> {0, "RunProcess_2.trie"}, 
+ "SatelliteData" -> {"SatelliteData_1.trie", "SatelliteData_2.trie", 
+   "SatelliteData_3.trie"}, "ScheduledTask" -> {0, "ScheduledTask_2.trie"}, 
+ "SemanticImport" -> {0, "SemanticImport_2.trie", "SemanticImport_3.trie"}, 
+ "SendMessage" -> {"SendMessage_1.trie"}, "ShapiroWilkTest" -> 
+  {0, 0, "ShapiroWilkTest_3.trie"}, "SiegelTukeyTest" -> 
+  {0, 0, "SiegelTukeyTest_3.trie"}, "SignedRankTest" -> 
+  {0, 0, "SignedRankTest_3.trie"}, "SignTest" -> {0, 0, "SignTest_3.trie"}, 
+ "SliceContourPlot3D" -> {0, "SliceContourPlot3D_2.trie"}, 
+ "SliceDensityPlot3D" -> {0, "SliceDensityPlot3D_2.trie"}, 
+ "SliceVectorPlot3D" -> {0, "SliceVectorPlot3D_2.trie"}, 
+ "SmoothDensityHistogram" -> {0, 0, "SmoothDensityHistogram_3.trie"}, 
+ "SmoothHistogram" -> {0, 0, "SmoothHistogram_3.trie"}, 
+ "SmoothHistogram3D" -> {0, 0, "SmoothHistogram3D_3.trie"}, 
+ "SmoothKernelDistribution" -> {0, "SmoothKernelDistribution_2.trie", 
+   "SmoothKernelDistribution_3.trie"}, "SocialMediaData" -> 
+  {0, "SocialMediaData_2.trie", "SocialMediaData_3.trie"}, 
+ "SolarEclipse" -> {"SolarEclipse_1.trie"}, "SolarSystemFeatureData" -> 
+  {"SolarSystemFeatureData_1.trie", "SolarSystemFeatureData_2.trie", 
+   "SolarSystemFeatureData_3.trie"}, "SolidData" -> {0, "SolidData_2.trie"}, 
+ "SpaceCurveData" -> {0, "SpaceCurveData_2.trie"}, 
+ "SpearmanRankTest" -> {0, 0, "SpearmanRankTest_3.trie"}, 
+ "SpeciesData" -> {0, "SpeciesData_2.trie"}, "StandardAtmosphereData" -> 
+  {0, "StandardAtmosphereData_2.trie"}, "StarClusterData" -> 
+  {"StarClusterData_1.trie", "StarClusterData_2.trie", 
+   "StarClusterData_3.trie"}, "StarData" -> {"StarData_1.trie", 
+   "StarData_2.trie", "StarData_3.trie"}, "StartExternalSession" -> 
+  {"StartExternalSession_1.trie"}, "StateTransformationLinearize" -> 
+  {0, 0, "StateTransformationLinearize_3.trie"}, 
+ "StoppingPowerData" -> {0, 0, "StoppingPowerData_3.trie"}, 
+ "SupernovaData" -> {"SupernovaData_1.trie", "SupernovaData_2.trie", 
+   "SupernovaData_3.trie"}, "SurfaceData" -> {0, "SurfaceData_2.trie"}, 
+ "SystemInformation" -> {"SystemInformation_1.trie"}, 
+ "SystemInstall" -> {"SystemInstall_1.trie"}, 
+ "TextElement" -> {0, "TextElement_2.trie"}, 
+ "TextStructure" -> {0, "TextStructure_2.trie"}, 
+ "ThermodynamicData" -> {0, "ThermodynamicData_2.trie"}, 
+ "TimeSeriesModelFit" -> {0, "TimeSeriesModelFit_2.trie"}, 
+ "TimeSeriesResample" -> {0, "TimeSeriesResample_2.trie"}, 
+ "TouchPosition" -> {"TouchPosition_1.trie"}, 
+ "TransformedField" -> {{"CoordinateChartData_1.trie", 
+    "LHSRule" -> "CoordinateChartData_1.trie", 
+    "RHSRule" -> "CoordinateChartData_1.trie"}}, 
+ "TravelDirections" -> {0, "TravelDirections_2.trie"}, 
+ "TropicalStormData" -> {"TropicalStormData_1.trie", 
+   "TropicalStormData_2.trie", "TropicalStormData_3.trie"}, 
+ "TTest" -> {0, 0, "TTest_3.trie"}, "TunnelData" -> {0, "TunnelData_2.trie"}, 
+ "Typed" -> {0, "Typed_2.trie"}, "UnderseaFeatureData" -> 
+  {"UnderseaFeatureData_1.trie", "UnderseaFeatureData_2.trie", 
+   "UnderseaFeatureData_3.trie"}, "UnitRootTest" -> 
+  {0, "UnitRootTest_2.trie", "UnitRootTest_3.trie"}, 
+ "UniversityData" -> {"UniversityData_1.trie", "UniversityData_2.trie", 
+   "UniversityData_3.trie"}, "UnregisterExternalEvaluator" -> 
+  {"UnregisterExternalEvaluator_1.trie"}, "URL" -> {0, "URL_2.trie"}, 
+ "URLParse" -> {0, "URLParse_2.trie"}, "URLResponseTime" -> 
+  {0, "URLResponseTime_2.trie"}, "VarianceEquivalenceTest" -> 
+  {0, "VarianceEquivalenceTest_2.trie"}, "VarianceTest" -> 
+  {0, 0, "VarianceTest_3.trie"}, "VolcanoData" -> 
+  {"VolcanoData_1.trie", "VolcanoData_2.trie", "VolcanoData_3.trie"}, 
+ "Volume" -> {0, 0, 0, 0, "CoordinateChartData_1.trie"}, 
+ "WatsonUSquareTest" -> {0, 0, "WatsonUSquareTest_3.trie"}, 
+ "WaveletScalogram" -> {0, 0, "WaveletScalogram_3.trie"}, 
+ "WeatherData" -> {0, "WeatherData_2.trie", 0, "WeatherData_4.trie"}, 
+ "WebAudioSearch" -> {0, "WebAudioSearch_2.trie"}, 
+ "WebImageSearch" -> {0, "WebImageSearch_2.trie"}, 
+ "WebSearch" -> {0, "WebSearch_2.trie"}, "WikipediaData" -> 
+  {0, "WikipediaData_2.trie"}, "WilksWTest" -> {0, 0, "WilksWTest_3.trie"}, 
+ "WindDirectionData" -> {0, "WindDirectionData_2.trie", 
+   "WindDirectionData_3.trie"}, "WindVectorData" -> 
+  {0, "WindVectorData_2.trie", "WindVectorData_3.trie"}, 
+ "WolframAlpha" -> {0, "WolframAlpha_2.trie"}, 
+ "WolframLanguageData" -> {"WolframLanguageData_1.trie", 
+   "WolframLanguageData_2.trie"}, "WordData" -> 
+  {0, "WordData_2.trie", "WordData_3.trie"}, 
+ "WordFrequencyData" -> {0, "WordFrequencyData_2.trie"}, 
+ "WordList" -> {"WordList_1.trie"}, "ZIPCodeData" -> 
+  {"ZIPCodeData_1.trie", "ZIPCodeData_2.trie", "ZIPCodeData_3.trie"}, 
+ "ZTest" -> {0, 0, 0, "ZTest_4.trie"}}

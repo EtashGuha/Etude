@@ -1,0 +1,35 @@
+\message{FILE: This is slides.tns}
+
+\makeatletter
+
+%% Slides Class definitions go here
+
+%%\special{TnbSetOption:^Notebook:StyleDefinitions->"Article/LaTeX-Article.nb"}
+
+\input frontmatter.tnc
+\input stdenvironments.tnc
+\input backmatter.tnc
+\input tabular.tnc
+
+\def\slide{%
+    \TnbPush{CellGroup}{Open}
+    \TnbPush{Cell}{SlideShowNavigationBar}
+    \TnbPop{Cell}
+    \TnbPush{CellGroup}{Open}
+}
+\def\endslide{%
+    \TnbPopCell
+    \TnbPush{Cell}{PreviousNext}
+    \TnbPop{Cell}
+    \TnbPop{CellGroup}
+    \TnbPop{CellGroup}
+}
+
+\def\overlay{}
+\def\endoverlay{}
+
+\def\visible{}
+\def\invisible{}
+
+\makeatother
+

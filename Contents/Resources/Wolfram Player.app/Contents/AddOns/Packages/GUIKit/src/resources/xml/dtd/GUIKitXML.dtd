@@ -1,0 +1,290 @@
+<?xml encoding="UTF-8"?>
+
+<!--
+   GUIKit` XML Markup Language, GUIKitXML DTD
+   Copyright 2004, Wolfram Research, Inc.
+-->
+
+<!ENTITY % common-elems "widget|group|string|integer|double|null|true|false|invokemethod|property|script|space|fill|align">
+<!ENTITY % invokemethod-valued-elems "%common-elems;">
+<!ENTITY % bindevent-valued-elems "widget|script|invokemethod|property|bindevent">
+<!ENTITY % stmt-elems "%common-elems;|bindevent">
+
+<!-- layout can exist as either a simple attribute or as a subelement
+	   on widget and group.  The subelement trumps the attribute if
+	   both exist 
+	-->
+
+<!ELEMENT widget (layout?,args?,expose*,(%stmt-elems;)*)>
+<!ATTLIST widget
+  src NMTOKEN #IMPLIED
+  ref CDATA #IMPLIED
+  class NMTOKEN #IMPLIED
+  id CDATA #IMPLIED
+  layout CDATA #IMPLIED>
+
+<!ELEMENT group (layout?,(%stmt-elems;)*)>
+<!ATTLIST group
+  layout CDATA #IMPLIED
+  id CDATA #IMPLIED
+  root CDATA #IMPLIED>
+  
+<!--  value should be in integer pixel units -->
+<!ELEMENT space EMPTY >
+<!ATTLIST space
+  value CDATA #REQUIRED>
+  
+<!ELEMENT fill EMPTY >
+
+<!--  ref should be a widget reference string
+	    from and to can be either "Before" or "After"
+ -->
+<!ELEMENT align EMPTY >
+<!ATTLIST align
+  ref CDATA #IMPLIED
+  from CDATA #IMPLIED
+  to CDATA #IMPLIED>
+  
+<!ELEMENT layout (grouping?,alignment?,stretching?,spacing?,border?)>
+
+<!--  grouping either specifies a simple attribute type of
+	    None, Automatic, Column, Row, Grid  or a
+	    subelement that resolves to a Java layout manager widget
+	    equivalent to just using a "layout" property on the container
+ -->
+<!ELEMENT grouping (%common-elems;) >
+<!ATTLIST grouping
+  type CDATA #IMPLIED>
+
+<!-- alignment type can be Automatic, Left, Center, Right, Top or Bottom
+	   and can specify different values for both axes such as
+	   "Automatic, Top" or "Left,Center"
+	-->
+<!ELEMENT alignment EMPTY >
+<!ATTLIST alignment
+  type CDATA #REQUIRED>
+  
+<!-- stretching type can be Automatic, None, WidgetAlignments, True, Maximize
+	   and can specify different values for both axes such as
+	   "None,True"
+	-->
+<!ELEMENT stretching EMPTY >
+<!ATTLIST stretching
+  type CDATA #REQUIRED>
+  
+<!--  value should be in integer pixel units -->
+<!ELEMENT spacing EMPTY >
+<!ATTLIST spacing
+  value CDATA #REQUIRED>
+  
+<!ELEMENT border (((border+)|%common-elems;)?) >
+<!ATTLIST border
+  type CDATA #IMPLIED
+  title CDATA #IMPLIED
+  left CDATA #IMPLIED
+  right CDATA #IMPLIED
+  top CDATA #IMPLIED
+  bottom CDATA #IMPLIED>
+  
+<!-- Versions:
+
+		Create and configure an widget:
+		
+         <widget src="filename | URL" [id="name-to-register-as"]> ... </widget>
+         <widget src="class:a.b.C" [id="name-to-register-as"]> ... </widget>
+         <widget class="a.b.C" [id="name-to-register-as"]> ... </widget>
+         
+         src="class:className" is identical to using class="className".
+         The arguments define the constructor args.
+         The arguments to the inner GUIKitXML file can be accessed via the names:
+         "#1", "#2", ..., "#n".
+
+		Configure an existing widget:
+       
+         <widget ref="name-to-look-up" [class="a.b.C"] > ... </widget>
+         
+	   The class attrib is optional because the API doesn't need it,
+	   but a possible compiler may.
+     If id attribute is present then register the widget. 
+ -->
+
+<!-- constructor arguments -->
+<!ELEMENT args (%common-elems;)*>
+<!ATTLIST args
+  ref CDATA #IMPLIED>
+<!-- Versions:
+      <args ref=""/> provides a way of referencing a 
+      vector or collection of widgets to use as arguments.
+      
+      Most importantly, used with <args ref="##"/>
+      to specify that the array of arguments passed to the script
+      should be used as arguments to the constructor of the wrapping widget.
+      A useful pattern for building reusable GUIKit widgets in 
+      self contained files.
+      
+ -->
+     
+<!ELEMENT property (%common-elems;)?>
+<!ATTLIST property
+  target CDATA #IMPLIED
+  name NMTOKEN #REQUIRED
+  index NMTOKEN #IMPLIED
+  value CDATA #IMPLIED
+  id CDATA #IMPLIED
+  invokeThread NMTOKEN #IMPLIED
+  invokeWait NMTOKEN #IMPLIED>
+<!-- Versions:
+       Get: <property [target="t"] name="foo" [index="num"] [id="name"]/>
+       Set: <property [target="t"] name="foo" [index="num"] [id="name"]>
+               some-element
+            </property>
+            or
+            <property [target="t"] name="foo" [index="num"] value="stuff"
+                      [id="name"]/>
+            where stuff is either is one of the valid elements.
+     If index is given, then property is an indexed property.
+     XML and Mathematica is 1-based, Java is 0-based
+     Set version of property returns nothing (i.e., void) and hence only
+     makes sense as a direct child of <widget>. If id attribute is present
+     then register the property value. -->
+
+<!ELEMENT bindevent (%bindevent-valued-elems;)+>
+<!ATTLIST bindevent
+  target CDATA #IMPLIED
+  name NMTOKEN #REQUIRED
+  filter NMTOKEN #IMPLIED
+  id CDATA #IMPLIED
+  invokeThread NMTOKEN #IMPLIED
+  invokeWait NMTOKEN #IMPLIED>
+
+<!-- Versions:
+       <bindevent [target="t"] name="e" [filter="f"]>
+         <widget ... />
+       </bindevent>
+
+     This is the conventional event binding. The target t is the
+     target of the binding, not the target of the actual firing of
+     the event. Bind the child widget as a listener for e events from
+     target t. The child widget must implement the appropriate listener
+     interface. The filter f is optional and used in rare cases only if (e = propertyChange or
+     vetoableChange) as that allows property
+     and vetoable change listeners to register for specific properties
+     rather than any property. The filter will name a property in
+     these cases. 
+     name="mouse" filter="mouseEntered" can instead just be specified by name="mouseEntered" now
+     
+     Missing target attribute makes the context widget be
+     the target.
+
+
+       <bindevent [target="t"] name="e" [filter="f"]>
+         <script [language="mathematica"]>
+	   ...
+         </script>
+       </bindevent>
+
+     When event e occurs in source, process the script. If
+     filter is specified, then only events delivered which match
+     that filter cause the script to be processed. In general, the
+     filter attribute is used to name a method in a listener type
+     that has multiple methods (e.g., WindowEvent in AWT). For event
+     name = propertyChange or vetoableChange, the filter is the name
+     of the property for which the binding should be done. JDK1.2
+     has direct support for these types of property and vetoable
+     change listeners, but others will require the
+     propchange/vetochange event processor to do the filtering work.
+     Missing target attribute makes the context widget be the target.
+     See the <script> element for a description of how to access the
+     arguments to the script (such as an event widget, or any
+     arbitrary list of event arguments).-->
+
+
+<!ELEMENT script (#PCDATA|%stmt-elems;)*>
+<!ATTLIST script
+  language NMTOKEN #IMPLIED
+  src NMTOKEN #IMPLIED>
+<!--
+     The script contained in the element is processed by a scripting
+     engine capable of processing the language described by the language
+     attribute. The value of the language attribute can be anything
+     supported by the widget scripting framework. The src attribute can
+     give a URL or relative file from which the script is to be loaded.
+
+     The arguments to the <script> element can be accessed via the names:
+     "#1", "#2", "#3", ..., "#n"
+
+     Example:
+       <widget class="java.awt.Button">
+         <bindevent name="action">
+           <script>
+	           <invokemethod target="demomgr" name="load">
+	             <property target="#1" name="actionCommand"/>
+	           </invokemethod>
+	     **************************************************
+	     above will call the "load" method of the widget named
+	     "demomgr" with the "actionCommand" property of the
+	     actionevent widget generated by the event source.
+	     Note that the widget "#0" in this case will be
+	     java.lang.String("actionPerformed"), which is the
+	     name of the method via which the event was delivered.
+ 	     **************************************************
+	          </script>
+         </bindevent>
+       </widget>
+     -->
+
+
+<!-- call a method -->
+<!ELEMENT invokemethod (%invokemethod-valued-elems;)*>
+<!ATTLIST invokemethod
+  target CDATA #IMPLIED
+  name NMTOKEN #REQUIRED
+  id CDATA #IMPLIED
+  invokeThread NMTOKEN #IMPLIED
+  invokeWait NMTOKEN #IMPLIED>
+<!-- The arguments to the method are the children widgets and the signature
+     of the method to call is defined by the children's types.
+     If id attribute is present then register the return value. -->
+
+
+<!ELEMENT string (#PCDATA)>
+<!ATTLIST string
+  value CDATA #IMPLIED
+  id CDATA #IMPLIED>
+<!-- treat the pcdata as a string. empty <string/> is 'new String("")'.
+     If id attribute is present then register the string. -->
+
+<!ELEMENT integer (#PCDATA)>
+<!ATTLIST integer
+  value CDATA #IMPLIED
+  id CDATA #IMPLIED>
+<!-- treat the pcdata as a integer.
+     If id attribute is present then register the integer. -->
+     
+<!ELEMENT double (#PCDATA)>
+<!ATTLIST double
+  value CDATA #IMPLIED
+  id CDATA #IMPLIED>
+<!-- treat the pcdata as a double.
+     If id attribute is present then register the double. -->
+     
+<!ELEMENT null (#PCDATA)>
+<!ATTLIST null
+  class CDATA #IMPLIED
+  id CDATA #IMPLIED>
+<!-- null. If id attribute is present then register the Null. -->
+    
+<!ELEMENT true EMPTY>
+<!-- Boolean.TRUE -->
+<!ELEMENT false EMPTY>
+<!-- Boolean.FALSE  -->
+     
+<!ELEMENT expose EMPTY >
+<!ATTLIST expose
+  ref CDATA #REQUIRED
+  as CDATA #IMPLIED>
+  
+<!-- expose can be child elements of <widget class="*.xml"> to expose 
+     widgets registered in the child xml document to the parent documents
+     widget registry, optionally using a different ref than the child by
+     specifying an as attribute. -->

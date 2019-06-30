@@ -1,0 +1,17 @@
+
+/* Class = "NSTextFieldCell"; title = "Kernel:"; ObjectID = "6OE-My-2dZ"; */
+"6OE-My-2dZ.title" = "核心：";
+
+/* Class = "NSButtonCell"; title = "Quit Kernel"; ObjectID = "7fj-Ho-6PV"; */
+"7fj-Ho-6PV.title" = "退出核心";
+
+/* Class = "NSButtonCell"; title = "Retry"; ObjectID = "FJF-yX-1R1"; */
+"FJF-yX-1R1.title" = "再試";
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "Pb7-1Z-uPc"; */
+"Pb7-1Z-uPc.title" = "標籤";
+
+/* Class = "NSWindow"; title = "Kernel Interrupt"; ObjectID = "Xym-TK-Z2g"; */
+"Xym-TK-Z2g.title" = "核心中斷";
+
+/* Class = "NSTextFieldCell"; title = "The kernel has lost its connection to the license server."; ObjectID = "cDr-Im-clr"; */
+"cDr-Im-clr.title" = "核心已失去與許可證伺服器的連接。";

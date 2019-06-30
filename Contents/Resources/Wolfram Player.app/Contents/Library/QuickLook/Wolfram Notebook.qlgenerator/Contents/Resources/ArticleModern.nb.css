@@ -1,0 +1,189 @@
+div.Title {
+	font-family: Helvetica, sans-serif;
+	font-size: 36px;
+	font-weight: bold;
+	margin-left: 18px;
+	margin-right: 10px;
+	margin-bottom: 4px;
+	margin-top: 20px;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 1px;
+}
+div.Subtitle {
+	font-family: Helvetica, sans-serif;
+	font-size: 24px;
+	margin-left: 18px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 10px;
+}
+div.SectionFirst {
+	font-family: Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 18px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top: 30px;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 3px;
+}
+div.Section {
+	font-family: Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 18px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
+div.Subsection {
+	font-family: Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 18px;
+	margin-right: 50px;
+	margin-bottom: 10px;
+	margin-top: 26px;
+	display: list-item;
+	list-style-type: square;
+}
+div.Subsubsection {
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 18px;
+	margin-right: 50px;
+	margin-bottom: 6px;
+	margin-top: 20px;
+	display: list-item;
+	list-style-type: square;
+}
+div.Text {
+	margin-left: 18px;
+	margin-right: 10px;
+	margin-top: 4px;
+}
+div.Caption {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 55px;
+	margin-right: 55px;
+	margin-bottom: 5px;
+	margin-top: 4px;
+}
+div.Input {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	background: #d9d9d9;
+	margin-left: 55px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 10px;
+	border-width: 0px;
+	border-style: solid;
+	border-left-width: 1px;
+	border-right-width: 1px;
+	border-top-width: 1px;
+}
+div.InlineInput {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+}
+div.Output {
+	font-family: Courier, monospaced;
+	background: #d9d9d9;
+	margin-left: 55px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top: 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-left-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+}
+div.InputOnly {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	background: #d9d9d9;
+	margin-left: 55px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 10px;
+}
+div.Author {
+	font-family: Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: italic;
+	margin-left: 20px;
+	margin-bottom: 2px;
+	margin-top: 20px;
+}
+div.Address {
+	font-family: Helvetica, sans-serif;
+	font-style: italic;
+	margin-left: 18px;
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+div.Abstract {
+	margin-left: 45px;
+	margin-right: 75px;
+	margin-top: 30px;
+}
+div.Reference {
+	margin-left: 18px;
+	margin-right: 40px;
+	margin-top: 0px;
+}
+div.PreviousNext {
+	font-family: Helvetica, sans-serif;
+	color: #808080;
+	font-size: 10px;
+	text-align: left;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.NumberedEquation {
+	margin-left: 55px;
+	margin-right: 10px;
+	margin-bottom: 2px;
+	margin-top: 10px;
+}
+div.NumberedFigure {
+	text-align: left;
+	margin-left: 55px;
+	margin-right: 145px;
+	margin-bottom: 2px;
+	margin-top: 10px;
+}
+div.NumberedTable {
+	text-align: center;
+	margin-left: 55px;
+	margin-right: 145px;
+	margin-bottom: 2px;
+	margin-top: 10px;
+}
+div.DisplayFormula {
+	margin-left: 55px;
+	margin-right: 10px;
+	margin-bottom: 2px;
+	margin-top: 10px;
+}
+div.ChemicalFormula {
+	margin-left: 55px;
+	margin-right: 10px;
+	margin-bottom: 2px;
+	margin-top: 10px;
+}
+div.Program {
+	font-family: Courier, monospaced;
+	margin-left: 18px;
+	margin-right: 10px;
+	margin-top: 6px;
+}

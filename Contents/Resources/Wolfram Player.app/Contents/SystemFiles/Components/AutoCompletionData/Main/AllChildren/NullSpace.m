@@ -1,0 +1,12 @@
+{"I", "Sqrt", "MatrixPower", "Transpose", "Cos", "Sin", "Pi", "Abs", "E", 
+ "IdentityMatrix", "Derivative", "Exp", "Subscript", "RowReduce", "Quantity", 
+ "None", "Mod", "Plus", "D", "NullSpace", "Ratios", "Orthogonalize", 
+ "MatrixForm", "Log", "Beta", "Array", "BesselI", "Modulus", "Inverse", 
+ "Identity", "Root", "BaseForm", "ArcTan", "Det", "N", "FresnelC", 
+ "FourierTransform", "First", "Conjugate", "Tr", "PseudoInverse", 
+ "GroebnerBasis", "GeneratingFunction", "Convolve", "BitOr", "BitAnd", 
+ "UnitStep", "Tan", "Sinh", "PrimeZetaP", "MatrixExp", "LaplaceTransform", 
+ "KelvinKer", "Gamma", "Cross", "Cot", "ZeroTest", "Thread", 
+ "SingularValueDecomposition", "RandomReal", "MatrixQ", "Map", "Join", 
+ "Integrate", "Im", "Grad", "Function", "Fibonacci", "Cosh", "ConstantArray", 
+ "Block"}

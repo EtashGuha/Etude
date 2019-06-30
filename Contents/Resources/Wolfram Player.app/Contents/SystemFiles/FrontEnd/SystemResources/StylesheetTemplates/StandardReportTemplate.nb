@@ -1,0 +1,245 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5566,        235]
+NotebookOptionsPosition[      3643,        169]
+NotebookOutlinePosition[      3989,        183]
+CellTagsIndexPosition[      3946,        180]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Enter title here", "Title"],
+
+Cell["Enter subtitle here", "Subtitle"],
+
+Cell["Enter subsubtitle here", "Subsubtitle"],
+
+Cell["Enter author here", "Author"],
+
+Cell["Enter department here", "Department"],
+
+Cell["Enter date here", "Date"],
+
+Cell[CellGroupData[{
+
+Cell["Enter section title here", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Enter subsection title here", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell["Enter subsubsection title here", "Subsubsection"],
+
+Cell["\<\
+Enter text here. Enter TraditionalForm input for evaluation in a separate \
+cell below:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Integral]", 
+   RowBox[{"x", 
+    RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+  SqrtBox["z"]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   SuperscriptBox["x", "2"], "2"], "+", 
+  SqrtBox["z"]}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Enter bulleted item text here.", "Item"],
+
+Cell["Enter item paragraph text here.", "ItemParagraph"],
+
+Cell[CellGroupData[{
+
+Cell["Enter subitem text here.", "Subitem"],
+
+Cell["Enter item paragraph text here.", "SubitemParagraph"],
+
+Cell[CellGroupData[{
+
+Cell["Enter subitem text here.", "Subsubitem"],
+
+Cell["Enter item paragraph text here.", "SubsubitemParagraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Enter text here. Enter formula for display in a separate cell below:\
+\>", "Text"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{"x", 
+     RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+   SqrtBox["z"]}], TraditionalForm]], "DisplayFormula"],
+
+Cell[TextData[{
+ "Enter text here. Enter an inline formula like this: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2", "+", "2"}], TraditionalForm]]],
+ "."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Enter numbered item text here.", "ItemNumbered"],
+
+Cell["Enter item paragraph text here.", "ItemParagraph"],
+
+Cell[CellGroupData[{
+
+Cell["Enter numbered subitem text here.", "SubitemNumbered"],
+
+Cell["Enter item paragraph text here.", "SubitemParagraph"],
+
+Cell[CellGroupData[{
+
+Cell["Enter subitem text here.", "SubsubitemNumbered"],
+
+Cell["Enter item paragraph text here.", "SubsubitemParagraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Enter text here. Enter formula for numbered display in a separate cell below:\
+\
+\>", "Text"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{"x", 
+     RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+   SqrtBox["z"]}], TraditionalForm]], "DisplayFormulaNumbered"],
+
+Cell["Enter text here. Enter Wolfram Language program code below.", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fun", "[", "x_", "]"}], ":=", "1"}]], "Code"],
+
+Cell["\<\
+Enter text here. Enter non-Wolfram Language program code below.\
+\>", "Text"],
+
+Cell["\<\
+DLLEXPORT int fun(WolframLibraryData libData, mreal A1, mreal *Res)
+{
+ mreal R0_0;
+ mreal R0_1;
+ R0_0 = A1;
+ R0_1 = R0_0 * R0_0;
+ *Res = R0_1;
+ funStructCompile->WolframLibraryData_cleanUp(libData, 1);
+ return 0;
+}\
+\>", "Program"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (May 1, 2014)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 33, 0, 90, "Title"],
+Cell[616, 24, 39, 0, 31, "Subtitle"],
+Cell[658, 26, 45, 0, 29, "Subsubtitle"],
+Cell[706, 28, 35, 0, 40, "Author"],
+Cell[744, 30, 43, 0, 16, "Department"],
+Cell[790, 32, 31, 0, 42, "Date"],
+Cell[CellGroupData[{
+Cell[846, 36, 43, 0, 66, "Section"],
+Cell[CellGroupData[{
+Cell[914, 40, 49, 0, 32, "Subsection"],
+Cell[CellGroupData[{
+Cell[988, 44, 55, 0, 31, "Subsubsection"],
+Cell[1046, 46, 111, 3, 30, "Text"],
+Cell[CellGroupData[{
+Cell[1182, 53, 143, 5, 56, "Input"],
+Cell[1328, 60, 108, 4, 58, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1473, 69, 46, 0, 24, "Item"],
+Cell[1522, 71, 56, 0, 21, "ItemParagraph"],
+Cell[CellGroupData[{
+Cell[1603, 75, 43, 0, 26, "Subitem"],
+Cell[1649, 77, 59, 0, 21, "SubitemParagraph"],
+Cell[CellGroupData[{
+Cell[1733, 81, 46, 0, 23, "Subsubitem"],
+Cell[1782, 83, 62, 0, 20, "SubsubitemParagraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[1883, 88, 92, 2, 30, "Text"],
+Cell[1978, 92, 185, 6, 42, "DisplayFormula"],
+Cell[2166, 100, 163, 6, 31, "Text"],
+Cell[CellGroupData[{
+Cell[2354, 110, 54, 0, 26, "ItemNumbered"],
+Cell[2411, 112, 56, 0, 21, "ItemParagraph"],
+Cell[CellGroupData[{
+Cell[2492, 116, 60, 0, 24, "SubitemNumbered"],
+Cell[2555, 118, 59, 0, 21, "SubitemParagraph"],
+Cell[CellGroupData[{
+Cell[2639, 122, 54, 0, 23, "SubsubitemNumbered"],
+Cell[2696, 124, 62, 0, 20, "SubsubitemParagraph"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[2797, 129, 103, 3, 30, "Text"],
+Cell[2903, 134, 193, 6, 42, "DisplayFormulaNumbered"],
+Cell[3099, 142, 75, 0, 30, "Text"],
+Cell[3177, 144, 80, 2, 45, "Code"],
+Cell[3260, 148, 87, 2, 30, "Text"],
+Cell[3350, 152, 241, 11, 164, "Program"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

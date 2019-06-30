@@ -1,0 +1,53 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>Connect Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IMathLink.Connect_overloads.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IMathLink.Connect Method</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Connects the link, if it has not already been connected. </p>
+      <h4 class="dtH4">Overload List</h4>
+      <p> Waits for the link to be connected. </p>
+      <blockquote class="dtBlock">
+        <a href="Wolfram.NETLink.IMathLink.Connect_overload_1.html">void Connect();</a>
+      </blockquote>
+      <p> Waits for the link to be connected for at most the specified number of milliseconds before throwing a MathLinkException. </p>
+      <blockquote class="dtBlock">
+        <a href="Wolfram.NETLink.IMathLink.Connect_overload_2.html">void Connect(long);</a>
+      </blockquote>
+      <h4 class="dtH4">Remarks</h4>
+      <p> There is a difference between opening a link (which is what the MathLinkFactory methods CreateMathLink and CreateKernelLink do) and connecting it, which verifies that it is alive and ready for data transfer. <p> All the methods that read from the link will connect it if necessary. The Connect method lets you deliberately control the point in the program where the connection occurs, without having to read anything. </p>
+            </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IMathLink.html">IMathLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a></p>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

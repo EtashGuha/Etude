@@ -1,0 +1,263 @@
+%!PS-Adobe-3.0 Resource-ProcSet
+%%BeginResource: procset WRI-PSToMathematica 1.0 0
+
+/WRI-PSConvert /ProcSet findresource begin
+/WRI-PSToMathematica currentdict /ProcSet defineresource pop 
+
+/_commaflag false def
+/_nlflag false def
+
+/_prnum {
+  _comma
+  dup abs .0001 lt { pop 0 } if
+  _fp exch _str cvs _write    
+  true _setcomma
+} def
+
+/_setcomma {
+  /_commaflag exch _cdef
+} def
+
+/_comma {
+  _commaflag {
+    _nlflag { (,\n) } { (, ) } ifelse
+    _print
+    false _setcomma
+    /_nlflag false _cdef
+  } if
+} def
+
+/_prpoint {
+  /_nlflag true _cdef
+  _comma
+  ({) _print
+  false _setcomma
+  exch _prnum
+  _prnum
+  (}) _print
+} def
+
+/_inline false def
+
+/_pathop { (BLORT) } def
+
+/_beginline {
+  _comma
+  () _printnl
+  _pathop _print
+  ([{) _print
+  false _setcomma
+  _prpoint
+  /_inline true _cdef
+} def
+
+/_endline {
+  _inline {
+    (}]) _print
+    /_inline false _cdef
+  } if
+} def
+
+/_pt1 2 array def
+
+/_dopath {
+  /_isclosed false _cdef
+  flattenpath
+  _gsave _deftm setmatrix
+  /_mx false _cdef
+  /_nopath true _cdef
+  /_firstpoint false _cdef
+  {
+    _mx false eq {
+      /_mx 2 index _cdef /_my 1 index _cdef		% save points for close
+    } if
+    _endline
+    _pt1 astore pop
+    /_firstpoint true _cdef
+  } % move
+  { 
+    _firstpoint {
+      _pt1 aload pop
+      _beginline
+      /_firstpoint false _cdef
+    } if
+    _prpoint
+    /_nopath false _cdef
+  } % line
+  {
+  } % curve
+  {
+  _mx false eq not _isclosed not and _inline and {
+      _mx _my _prpoint _endline
+    } if
+    /_isclosed true _cdef
+  } % close
+  pathforall
+  _grestore
+  newpath
+  /_nopath true _cdef
+} def
+
+/clip {
+} def
+
+/_outfont {
+  _fontmatrix _fontsizecheck not {
+    _fontmatrix dup
+%dup ( \(*) _print { ( ) _print _prnum } forall (*\) ) _print
+    1 get exch 0 get
+    1 _fontsize div
+    dup
+    4 1 roll mul
+    3 1 roll mul
+    _prpoint
+    true _setcomma
+  } if
+  _fontname /Courier ne
+  pop true		% KLUDGE til default font stuff done
+  {
+    currentfont /FontInfo known {
+      currentfont /FontInfo get
+      (,\n  TextStyle->{) _print
+      (FontFamily->") _print
+      dup /FamilyName get _print
+      (") _print
+      true _setcomma _comma
+      (FontSize->) _print _fontsize _prnum
+      dup /Weight get (Normal) ne {
+	(, FontWeight->") _print
+	dup /Weight get _print
+	(") _print
+      } if
+      dup /ItalicAngle get 0 ne {
+	(, FontSlant->"Italic") _print
+      } if
+      (}) _print
+      pop
+    } { } ifelse
+  } if
+  (]) _print
+  true _setcomma
+} def
+
+/show {
+  true _docolor
+  _comma
+  () _printnl
+  (Text[") _print
+  dup _prstring
+  (") _print
+  _gsave
+  _deftm setmatrix
+  currentpoint
+  true _setcomma
+  _prpoint
+  true _setcomma
+  -1 -1 _prpoint
+  true _setcomma
+  _grestore
+  _outfont
+  /show _opexec
+} def
+
+/fill {
+  true _docolor
+  /_pathop (Polygon) _cdef
+  _gsave
+  _dopath
+  _endline
+  _grestore
+  /fill _opexec
+} def
+
+/stroke {
+  true _docolor
+  _dolinestuff
+  /_pathop (Line) _cdef
+  _gsave
+  _dopath
+  _endline
+  _grestore
+  /stroke _opexec
+} def
+
+/_setcolor {
+  pop
+  _comma
+  () _printnl
+  currentcmykcolor pop
+  add add 0 eq
+  {
+    (GrayLevel[) _print
+    false _setcomma
+    currentgray _prnum
+  } {
+    (CMYKColor[) _print
+    false _setcomma
+    _currentcol { _prnum } forall
+  } ifelse
+  (]) _print
+  true _setcomma
+} def
+
+/_newdash {	% array phase _newdash
+  pop
+  _comma
+  () _printnl
+  (AbsoluteDashing[{) _print
+  false _setcomma
+  dup length 0 eq
+  { pop 0 _prnum } { { _prnum } forall } ifelse
+  (}]) _print
+  true _setcomma
+} def
+
+/_setline [
+  { _comma
+    () _printnl
+    (AbsoluteThickness[) _print		% HORRID KLUDGE
+    false _setcomma _prnum
+    (]) _print
+  } % width
+  { pop }  % cap
+  { pop }  % join
+  { pop }  % miterlimit
+] def
+
+% Left to do: Raster, RasterArray
+
+/.devicefill /fill load def
+/.devicestroke /stroke load def
+
+%_setup_math_ops
+
+% begin-end stuff
+
+/WRI-Mathematica-prolog /ProcSet findresource begin 
+/MathScaleHook { } def
+/Mistroke { } def
+end
+
+/_begin_doc {
+  ({) _printnl
+} def
+
+/_end_doc {
+  (}) _printnl
+} def
+
+/_begin_page {
+  _pagenum 1 gt { (,) _printnl } if
+  (Graphics[{) _print
+  false _setcomma
+} def
+
+/_end_page {
+  (}]) _printnl
+  false _setcomma
+} def
+
+_initfont		% KLUDGE???
+
+end
+%%EndResource

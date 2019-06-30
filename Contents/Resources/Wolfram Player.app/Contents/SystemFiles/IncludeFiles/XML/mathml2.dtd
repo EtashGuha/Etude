@@ -1,0 +1,64 @@
+<!--
+	This file should be the primary access point for the MathML2 DTD from any Wolfram Research
+	product.
+
+	It is basically a small wrapper which Wolfram Research can adapt to put in special behaviors to
+	MathML2.
+
+	The first customization is to include some of the MathML1 entities on import for backwards
+	compatibility. These are the isogrk1 , 2, and 4 character sets. There is some confusion about
+	using these characters because even the MathML2 test suite uses these characters, and the greek
+	letters are an integral part of mathematics. Thus leaving them out of the MathML2 DTD is at best
+	a questionable decision. Thus, we will recognize these characters on import as MathML1 did.
+
+	The second customization is to allow NotebookML structures inside MathML. Thus in the semantics
+	tags we can allow a Mathematica XML markup. Without this modification to the DTD errors are
+	reported.
+
+	All customizations necessary for any Wolfram Research product should be included in this part of
+	the DTD and not in the files located in MathML2/. This allows a more modular approach to any
+	updates.
+-->
+
+<!--
+	Unfortunately there is a simple update which appears that it needs to be placed in the actual
+	source MathML2/mathml2.dtd
+
+	The change just involves adding the attribute mathematica:form to the main math tag. This is in
+	accordace with the MathML specification. Unfortunately DTD technology has not caught up yet so
+	with DTD's we cannot yet tell the parser to ignore all the other attributes not in the MathML
+	namespace. Hopefully with the advent of Schemeas this can be fixed. In any case we need to patch
+	our local copy of the DTD so we allow the mathematica:form attribute on the root math tag.
+-->
+
+
+<!-- Include the main MathML2 DTD  -->
+
+<!ENTITY % mathml2 SYSTEM "MathML2/mathml2.dtd">
+%mathml2;
+
+
+<!-- For backward compatibility we include the greek entites of MathML1 -->
+
+<!ENTITY % ent-isogrk1 SYSTEM "MathML1/isogrk1.ent" >
+%ent-isogrk1;
+
+<!ENTITY % ent-isogrk2 SYSTEM "MathML1/isogrk2.ent" >
+%ent-isogrk2;
+
+<!ENTITY % ent-isogrk4 SYSTEM "MathML1/isogrk4.ent" >
+%ent-isogrk4;
+
+
+<!--
+	include NotebookML. 
+	
+	Have to set it up conditionally so that the NotebookML DTD doesn't reference this again, which
+	would result in infinite recursion.
+-->
+<!ENTITY % include-mathml "IGNORE">
+<!ENTITY % include-notebookml "INCLUDE">
+<![%include-notebookml;[
+<!ENTITY % notebookml SYSTEM "NotebookML1/notebookml.dtd">
+%notebookml;
+]]>

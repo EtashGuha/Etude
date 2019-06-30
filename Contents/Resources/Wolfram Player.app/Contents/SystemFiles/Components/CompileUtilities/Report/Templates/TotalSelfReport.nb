@@ -1,0 +1,173 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5878,        165]
+NotebookOptionsPosition[      4490,        132]
+NotebookOutlinePosition[      5076,        153]
+CellTagsIndexPosition[      5033,        150]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Profile Report", "Title",
+ CellChangeTimes->{{3.6834564879109297`*^9, 3.683456490173889*^9}, {
+   3.6834614322388983`*^9, 3.683461433005259*^9}, {3.68838002201191*^9, 
+   3.68838002258645*^9}, {3.718351744980917*^9, 3.7183517472829657`*^9}, 
+   3.756456560734345*^9},ExpressionUUID->"665a7435-479e-4f69-a25e-\
+3eee02a80c5e"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TemplateBox[{RowBox[{
+      RowBox[{"DateString", "[", "]"}], " "}],"General",TextData},
+   "NotebookTemplateExpression"], 
+  TextForm]],ExpressionUUID->"cdeaa1e6-ba61-4bf1-a8cc-f479622956b3"]], \
+"Subsubtitle",
+ CellChangeTimes->{{3.683457658076201*^9, 
+  3.6834576615155153`*^9}},ExpressionUUID->"9be6c77f-83cd-4297-9f30-\
+0b69d6c9e20e"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TemplateBox[{"\"description\"","\"description\"","Named",TextData},
+   "NotebookTemplateSlot"], 
+  TextForm]],ExpressionUUID->"8c6c3038-1393-40f4-a64f-1fcca75f4835"]], "Text",\
+
+ CellChangeTimes->{{3.688385195233878*^9, 
+  3.688385199852372*^9}},ExpressionUUID->"4e506463-7eb6-4502-aeaf-\
+90cf5aba51cf"],
+
+Cell[TextData[{
+ "Total time:    ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[{"\"totalTime\"","\"totalTime\"","Named",TextData},
+    "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+  "9af13e91-a451-4323-a16a-710dab870d33"]
+}], "Text",
+ CellChangeTimes->{{3.688385195233878*^9, 3.688385199852372*^9}, {
+  3.718364067754099*^9, 3.718364078995884*^9}, {3.756461747158139*^9, 
+  3.75646174746346*^9}},ExpressionUUID->"66a30bea-dbeb-4b0b-8775-\
+4b9d430f7ba2"],
+
+Cell[TextData[{
+ "Input:    ",
+ Cell[BoxData[Cell[BoxData[
+   FormBox[
+    TemplateBox[{"\"computation\"","\"computation\"","Named",BoxData},
+     "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+   "291a1f4a-cdac-480e-ac43-e6279765ca62"]],ExpressionUUID->
+  "89bf0386-a12a-4047-a161-d93779d7c3c9"]
+}], "Text",
+ CellChangeTimes->{{3.688385195233878*^9, 3.688385199852372*^9}, {
+  3.718364067754099*^9, 3.718364078995884*^9}, {3.756461636230565*^9, 
+  3.756461706441329*^9}, {3.756461750154088*^9, 
+  3.756461752373761*^9}},ExpressionUUID->"f72c4a6a-adb7-45bb-ba1a-\
+07dc77ef2cf3"],
+
+Cell[CellGroupData[{
+
+Cell["Profile", "Subsection",
+ CellChangeTimes->{{3.7564620310610237`*^9, 
+  3.7564620319568777`*^9}},ExpressionUUID->"92cefa05-b639-4922-866c-\
+b17ada1154d7"],
+
+Cell[BoxData[
+ RowBox[{"CellPrint", "[", 
+  RowBox[{"Cell", "[", 
+   RowBox[{
+    RowBox[{"BoxData", "[", 
+     RowBox[{"MakeBoxes", "[", Cell[BoxData[
+       FormBox[
+        TemplateBox[{"\"data\"","\"data\"","Named",BoxData},
+         "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+       "096a9f32-9938-4aab-a76d-d8163004c732"], "]"}], "]"}], ",", 
+    "\"\<Output\>\""}], "]"}], "]"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.718367416927803*^9, 3.718367432748904*^9}, {
+  3.7564612620497227`*^9, 3.75646126837356*^9}, {3.7564618183059673`*^9, 
+  3.756461852954262*^9}, {3.7564618865165977`*^9, 3.756461911990766*^9}, {
+  3.7564619570808973`*^9, 
+  3.756462004415925*^9}},ExpressionUUID->"5b12042c-9e0f-443a-89eb-\
+82647d30c60e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Parameters", "Subsection",
+ CellChangeTimes->{{3.756461516100698*^9, 
+  3.756461527009671*^9}},ExpressionUUID->"9be1d2f0-f24e-4d6f-8c05-\
+a951014d0b59"],
+
+Cell[TextData[{
+ "Sort Key:     ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[{"\"sortKey\"","\"sortKey\"","Named",TextData},
+    "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+  "9065dad6-7972-4e18-a881-808d1161c6c3"]
+}], "Text",
+ CellChangeTimes->{{3.688385195233878*^9, 3.688385199852372*^9}, {
+  3.718364067754099*^9, 3.718364078995884*^9}, {3.756461544279256*^9, 
+  3.7564615569060783`*^9}, {3.7564620636037483`*^9, 
+  3.756462064382043*^9}},ExpressionUUID->"6560bead-c9d5-46b5-afcb-\
+289255127404"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1040, 733},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "NotebookTemplatingExpressions", "AuthoringDockedCell"],
+TaggingRules->{"NotebookTemplateVersion" -> 1., "NotebookTemplate" -> True},
+CellContext->Notebook,
+ShowCellTags->True,
+ShowAutoSpellCheck->False,
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (December 30, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 330, 5, 98, "Title",ExpressionUUID->"665a7435-479e-4f69-a25e-3eee02a80c5e"],
+Cell[913, 29, 379, 9, 40, "Subsubtitle",ExpressionUUID->"9be6c77f-83cd-4297-9f30-0b69d6c9e20e"],
+Cell[1295, 40, 343, 8, 44, "Text",ExpressionUUID->"4e506463-7eb6-4502-aeaf-90cf5aba51cf"],
+Cell[1641, 50, 459, 11, 44, "Text",ExpressionUUID->"66a30bea-dbeb-4b0b-8775-4b9d430f7ba2"],
+Cell[2103, 63, 584, 13, 46, "Text",ExpressionUUID->"f72c4a6a-adb7-45bb-ba1a-07dc77ef2cf3"],
+Cell[CellGroupData[{
+Cell[2712, 80, 159, 3, 54, "Subsection",ExpressionUUID->"92cefa05-b639-4922-866c-b17ada1154d7"],
+Cell[2874, 85, 882, 21, 41, "Input",ExpressionUUID->"5b12042c-9e0f-443a-89eb-82647d30c60e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3793, 111, 158, 3, 54, "Subsection",ExpressionUUID->"9be1d2f0-f24e-4d6f-8c05-a951014d0b59"],
+Cell[3954, 116, 508, 12, 44, "Text",ExpressionUUID->"6560bead-c9d5-46b5-afcb-289255127404"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

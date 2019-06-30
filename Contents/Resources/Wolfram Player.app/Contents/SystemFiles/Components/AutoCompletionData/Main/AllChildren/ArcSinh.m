@@ -1,0 +1,10 @@
+{"Sqrt", "Pi", "E", "Sin", "Sinh", "Log", "Tan", "Cos", "Cosh", "ArcSinh", 
+ "I", "Exp", "Quantity", "Degree", "ArcCos", "Plus", "Tanh", "ArcCosh", 
+ "Abs", "ArcSin", "ArcTan", "Cot", "None", "Rational", "D", "ArcTanh", 
+ "Infinity", "BesselI", "Csc", "Subscript", "Integrate", "Root", 
+ "EulerGamma", "Zeta", "Sec", "GoldenRatio", "Coth", "Sech", "Re", 
+ "PauliMatrix", "ArcCoth", "Im", "Derivative", "Csch", "Range", "Beta", 
+ "Automatic", "ArcSech", "ArcCsc", "ArcCot", "Log2", "Limit", 
+ "InverseFunction", "Coefficient", "ArcCsch", "Symbol", "SinIntegral", 
+ "ProductLog", "PrimePi", "Log10", "Gamma", "Floor", "DateDifference", 
+ "ArcSec"}

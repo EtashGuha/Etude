@@ -1,0 +1,2921 @@
+@@resource noErrorYet
+Wolfram \:7cfb\:7edf\:5c1a\:672a\:53d1\:51fa\:63d0\:793a\:97f3. 
+@|
+@|
+@@resource maxErrorCountExceeded
+\:4e0a\:4e00\:4e2a\:9519\:8bef\:7684\:8fdb\:4e00\:6b65\:8f93\:51fa\:5c06\:5728\:8fd9\:4e2a\:62a5\:544a\:4e2d\:88ab\:7ec8\:6b62. 
+@|
+@|
+@@resource badCellUuid
+\:68c0\:6d4b\:5230\:5e26\:6709\:65e0\:6548 ExpressionUUID \:7684\:5355\:5143. \:4f1a\:81ea\:52a8\:91cd\:65b0\:4ea7\:751f UUID.
+@|
+@|
+@@resource cantAllocate
+\:6ca1\:6709\:8db3\:591f\:7684\:5185\:5b58\:53ef\:5229\:7528. \:4e3a\:83b7\:5f97\:66f4\:591a\:5185\:5b58\:ff0c\:8bf7\:9000\:51fa\:5176\:4ed6\:5e94\:7528\:7a0b\:5e8f\:6216\:5173\:95ed\:6253\:5f00\:7684\:7a97\:53e3. 
+@|
+@|
+@@resource cantReadResource
+Mathematica\:65e0\:6cd5\:53d1\:73b0\:4e00\:4e2a\:91cd\:8981\:8d44\:6e90. \:60a8\:7684 Wolfram \:7cfb\:7edf\:5df2\:7ecf\:635f\:574f\:6216\:88ab\:66f4\:6539\:ff0c\:8bf7\:91cd\:65b0\:5b89\:88c5. 
+@|
+@|
+@@resource omegaSyntaxError
+Wolfram  \:8bed\:8a00\:65e0\:6cd5\:7406\:89e3\:60a8\:8981\:8ba1\:7b97\:7684\:8868\:8fbe\:5f0f. \:4e0d\:660e\:5904\:5df2\:7528\:63d2\:5165\:6761\:6807\:660e. 
+@|
+@|
+@@resource cantEvalNoSelection
+\:60a8\:6ca1\:6709\:9009\:62e9\:4efb\:4f55\:5185\:5bb9\:6765\:505a\:8ba1\:7b97. 
+@|
+@|
+@@resource cantEvalNonEvalCells
+\:60a8\:8bbe\:6cd5\:8ba1\:7b97\:4e00\:4e2a\:65e0\:6cd5\:8ba1\:7b97\:7684\:5355\:5143. \:60a8\:53ef\:4ee5\:5728 "\:5355\:5143\:5c5e\:6027" \:5b50\:83dc\:5355\:4e2d\:9009\:62e9"\:53ef\:8ba1\:7b97"\:ff0c\:4ece\:800c\:6fc0\:6d3b\:5355\:5143\:8ba1\:7b97. 
+@|
+@|
+@@resource cantEditNoSelection
+\:60a8\:5728\:4f7f\:7528\:83dc\:5355\:547d\:4ee4\:524d\:5fc5\:987b\:9009\:62e9\:5185\:5bb9. 
+@|
+@|
+@@resource cantTypeToNameSelection
+\:5f53\:5355\:5143\:6807\:7b7e\:88ab\:9009\:62e9\:65f6\:ff0c\:60a8\:952e\:5165\:4e86\:5b57\:7b26. \:5355\:5143\:6807\:7b7e\:5c06\:81ea\:52a8\:88ab\:5206\:914d\:ff0c\:65e0\:6cd5\:6539\:53d8. 
+@|
+@|
+@@resource cantTypeToCellRangeSelection
+\:5f53\:60a8\:952e\:5165\:65f6\:ff0c\:60a8\:9009\:62e9\:4e86\:4e00\:4e2a\:6216\:591a\:4e2a\:5355\:5143. \:5728\:5355\:5143\:91cc\:9762\:6216\:4e24\:4e2a\:5355\:5143\:4e4b\:95f4\:70b9\:51fb\:83b7\:5f97\:63d2\:5165\:70b9. 
+@|
+@|
+@@resource cantUndoThat
+\:65e0\:6cd5\:64a4\:9500\:4e0a\:4e00\:6b65\:64cd\:4f5c. 
+@|
+@|
+@@resource cantUndoTooBig
+\:65e0\:6cd5\:64a4\:9500\:4e0a\:4e00\:6b65\:64cd\:4f5c, \:56e0\:4e3a\:4e0a\:4e00\:9009\:62e9\:4f7f\:7528\:8fc7\:591a\:5185\:5b58. 
+@|
+@|
+@@resource cantFindNoSelection
+\:60a8\:8981\:6c42\:79fb\:52a8\:5f53\:524d\:7684\:9009\:62e9\:ff0c\:4f46\:65e0\:5185\:5bb9\:88ab\:9009\:62e9. 
+@|
+@|
+@@resource cantCopyFromAboveNonContent
+\:590d\:5236 "\:4e0a\:4e00\:4e2a\:5355\:5143\:7684\:8f93\:5165/\:8f93\:51fa" \:9700\:8981\:7c98\:8d34\:5230\:63d2\:5165\:70b9. \:5728\:5355\:5143\:5185\:6216\:4e24\:4e2a\:5355\:5143\:4e4b\:95f4\:70b9\:51fb\:4ee5\:4fbf\:83b7\:5f97\:63d2\:5165\:70b9. 
+@|
+@|
+@@resource nothingToCopyFromAbove
+\:60a8\:4f7f\:7528\:4e86\:590d\:5236 "\:4e0a\:4e00\:4e2a\:5355\:5143\:7684\:8f93\:5165/\:8f93\:51fa"\:ff0c\:4f46\:5728\:5f53\:524d\:7684\:9009\:62e9\:4e4b\:4e0a\:6ca1\:6709\:9002\:5f53\:7684\:5355\:5143\:8fdb\:884c\:590d\:5236. 
+@|
+@|
+@@resource cantFindMatchParenthesis
+\:5728\:8868\:8fbe\:5f0f\:4e2d\:6709\:4e0d\:76f8\:914d\:7684\:65b9\:62ec\:53f7\:3001\:5706\:62ec\:53f7\:3001\:6216\:82b1\:62ec\:53f7. 
+@|
+@|
+@@resource wrongTypeOfParenthesis
+\:5728\:8868\:8fbe\:5f0f\:4e2d\:6709\:7c7b\:578b\:4e0d\:76f8\:914d\:7684\:65b9\:62ec\:53f7\:3001\:5706\:62ec\:53f7\:3001 \:6216\:82b1\:62ec\:53f7. 
+@|
+@|
+@@resource noMoreParenthesisToBalance
+\:6ca1\:6709\:66f4\:591a\:7684\:65b9\:62ec\:53f7\:3001\:5706\:62ec\:53f7\:3001 \:6216\:82b1\:62ec\:53f7\:6765\:7ef4\:6301\:8868\:8fbe\:5f0f\:7684\:5e73\:8861. 
+@|
+@|
+@@resource cantShiftNonIndented
+\:6ca1\:6709\:7f29\:8fdb\:53ef\:4f9b\:53bb\:9664. 
+@|
+@|
+@@resource cantGroupSingleCellSelection
+\:60a8\:65e0\:6cd5\:5c06\:5355\:4e2a\:7684\:5355\:5143\:7f16\:7ec4. 
+@|
+@|
+@@resource cantGroupContentSelection
+\:60a8\:53ea\:80fd\:5c06\:5b8c\:6574\:7684\:5355\:5143\:7f16\:7ec4. 
+@|
+@|
+@@resource cantGroupDisjointSelection
+\:60a8\:53ea\:80fd\:5c06\:8fde\:7eed\:7684\:5355\:5143\:7f16\:7ec4. 
+@|
+@|
+@@resource illegalGroupingOperation
+\:60a8\:8bbe\:6cd5\:7f16\:7ec4\:5355\:5143\:7684\:65b9\:6cd5\:4e0e\:5df2\:6709\:7684\:7f16\:7ec4\:65b9\:6cd5\:4e0d\:4e00\:81f4. (\:4f8b\:5982\:ff0c\:5728\:4efb\:4f55\:65f6\:5019\:ff0c\:5404\:4e2a\:5355\:5143\:53ea\:80fd\:662f\:4e00\:4e2a\:7ec4\:7684\:9876\:5934\:5355\:5143. )
+@|
+@|
+@@resource cantUngroupContentSelection
+\:60a8\:53ea\:80fd\:5bf9\:5b8c\:6574\:7684\:5355\:5143\:64a4\:9500\:7f16\:7ec4. 
+@|
+@|
+@@resource cantUngroupDisjointSelection
+\:60a8\:4e00\:6b21\:53ea\:80fd\:5bf9\:4e00\:4e2a\:8303\:56f4\:7684\:5355\:5143\:64a4\:9500\:7f16\:7ec4. 
+@|
+@|
+@@resource cantUngroupNonGroupedCells
+\:60a8\:8bd5\:56fe\:5bf9\:672a\:88ab\:7f16\:7ec4\:7684\:5355\:5143\:64a4\:9500\:7f16\:7ec4. 
+@|
+@|
+@@resource illegalUngroupingOperation
+\:60a8\:8bd5\:56fe\:64a4\:9500\:5355\:5143\:7f16\:7ec4\:ff0c\:4f46\:8fd9\:4e9b\:5355\:5143\:672a\:4f7f\:7528\:7b80\:5355\:65b9\:5f0f\:7f16\:7ec4. 
+@|
+@|
+@@resource cantOpenGroupUngroupedCell
+\:60a8\:4f7f\:7528\:4e86 "\:6253\:5f00\:7f16\:7ec4"\:ff0c\:4f46\:60a8\:9009\:62e9\:7684\:5355\:5143\:672a\:88ab\:7f16\:7ec4. 
+@|
+@|
+@@resource cantCloseGroupUngroupedCell
+\:60a8\:5bf9\:672a\:88ab\:7f16\:7ec4\:7684\:5355\:5143\:4f7f\:7528\:4e86"\:5173\:95ed\:7f16\:7ec4". 
+@|
+@|
+@@resource cantCompleteNonContentSelection
+\:60a8\:8bbe\:6cd5\:5b8c\:6210\:7684\:9009\:62e9\:6709\:4e00\:4e2a\:6216\:591a\:4e2a\:5355\:5143\:88ab\:9009\:62e9. \:60a8\:53ea\:80fd\:5728\:4e00\:4e2a\:5355\:5143\:5185\:5b8c\:6210\:9009\:62e9. 
+@|
+@|
+@@resource cantCompleteNoKernel
+\:7531\:4e8e\:5f53\:524d\:7684\:5185\:6838\:65e0\:6cd5\:4f7f\:7528\:ff0c\:9009\:62e9\:4e0d\:80fd\:88ab\:5b8c\:6210. \:56e0\:4e3a\:8be5\:5185\:6838\:4e0d\:80fd\:542f\:52a8\:6216\:6b63\:5fd9\:788c\:4e8e\:5176\:4ed6\:8ba1\:7b97. 
+@|
+@|
+@@resource cantCompleteNonIdentifier
+\:4ec5\:5f53\:53ea\:6709\:4e00\:4e2a\:51fd\:6570\:6216\:53d8\:91cf\:540d\:79f0\:65f6\:ff0c\:60a8\:624d\:80fd\:5b8c\:6210\:9009\:62e9. 
+@|
+@|
+@@resource noCompletionsError
+\:65e0\:6cd5\:5b8c\:6210\:60a8\:8981\:6c42\:5b8c\:6210\:7684\:9009\:62e9. 
+@|
+@|
+@@resource nonUniqueCompletion
+\:60a8\:8981\:6c42\:5b8c\:6210\:7684\:9009\:62e9\:6ca1\:6709\:552f\:4e00\:7684\:5b8c\:6210\:5f62\:5f0f. \:60a8\:7684\:9009\:62e9\:5c06\:4ec5\:7531\:6240\:6709\:5b8c\:6210\:7684\:5171\:540c\:5b57\:7b26\:7ec4\:6210. 
+@|
+@|
+@@resource cantEnterSearchNoSelection
+\:5f53\:60a8\:6ca1\:6709\:9009\:62e9\:5185\:5bb9\:65f6\:ff0c\:60a8\:8bbe\:6cd5\:8f93\:5165\:5f53\:524d\:7684\:9009\:62e9\:4f5c\:4e3a\:641c\:7d22\:5b57\:7b26\:4e32. 
+@|
+@|
+@@resource cantEnterSearchNonTextSelection
+\:5f53\:60a8\:9009\:62e9\:8d85\:8fc7\:4e00\:4e2a\:5355\:5143\:65f6\:ff0c\:60a8\:8bbe\:6cd5\:8f93\:5165\:5f53\:524d\:7684\:9009\:62e9\:4f5c\:4e3a\:641c\:7d22\:5b57\:7b26\:4e32. \:60a8\:8f93\:5165\:7684\:641c\:7d22\:5b57\:7b26\:4e32\:5fc5\:987b\:662f\:5728\:4e00\:4e2a\:5355\:5143\:5185\:7684\:9009\:62e9. 
+@|
+@|
+@@resource searchStringTooLong
+\:60a8\:8bbe\:6cd5\:8f93\:5165\:957f\:5ea6\:8d85\:8fc7255\:4e2a\:5b57\:7b26\:7684\:641c\:7d22\:5b57\:7b26\:4e32. \:591a\:4f59\:5b57\:7b26\:5df2\:88ab\:5ffd\:7565. 
+@|
+@|
+@@resource noMoreMatchesForFindNext
+\:5728\:5f53\:524d\:7684\:9009\:62e9\:4ee5\:540e\:ff0c\:6ca1\:6709\:53d1\:73b0\:5339\:914d\:7684\:641c\:5bfb\:6761\:76ee. 
+@|
+@|
+@@resource noMatchesForFindAll
+\:6ca1\:6709\:53d1\:73b0\:5339\:914d\:7684\:641c\:5bfb\:6761\:76ee. 
+@|
+@|
+@@resource cantReplaceNoSelection
+\:60a8\:5728\:65e0\:9009\:62e9\:5185\:5bb9\:65f6\:8bbe\:6cd5\:4f7f\:7528\:66ff\:6362\:547d\:4ee4. 
+@|
+@|
+@@resource cantReplaceNonTextSelection
+\:60a8\:8bbe\:6cd5\:5728\:8d85\:8fc7\:4e00\:4e2a\:5355\:5143\:7684\:9009\:62e9\:5185\:4f7f\:7528\:4e00\:9879\:66ff\:6362\:547d\:4ee4. \:60a8\:53ea\:80fd\:5728\:4e00\:4e2a\:5355\:5143\:4e4b\:5185\:66ff\:6362\:6587\:672c. 
+@|
+@|
+@@resource searchHaltedByUserInterrupt
+\:60a8\:5728\:64cd\:4f5c\:5b8c\:6210\:4e4b\:524d\:4e2d\:6b62\:4e86\:67e5\:5bfb\:6216\:67e5\:5bfb\:ff0f\:66ff\:6362\:64cd\:4f5c. 
+@|
+@|
+@@resource formattingHaltedByUserInterrupt
+\:60a8\:5728\:64cd\:4f5c\:5b8c\:6210\:4e4b\:524d\:4e2d\:6b62\:4e86\:7ed3\:679c\:7684\:683c\:5f0f\:5316. 
+@|
+@|
+@@resource interruptedLocalized
+\:4e2d\:65ad
+@|
+@|
+@@resource grepSyntaxError
+\:5728\:60a8\:8bbe\:6cd5\:4f7f\:7528\:7684Grep\:65b9\:5f0f\:641c\:7d22\:5b57\:7b26\:4e32\:4e2d\:6709\:4e00\:4e2a\:53e5\:6cd5\:9519\:8bef. \:505a\:7b80\:5355\:7684\:6587\:672c\:67e5\:5bfb\:ff0c\:8bf7\:4f7f\:7528"\:9010\:5b57"\:67e5\:5bfb\:65b9\:5f0f. 
+@|
+@|
+@@resource cantOpenTrieFile
+\:4e0d\:80fd\:6253\:5f00\:81ea\:52a8\:5b8c\:6210\:7684\:6570\:636e\:6587\:4ef6\:ff1a %s.
+@|
+@|
+@@resource cantOpenFile
+\:65e0\:6cd5\:6253\:5f00\:6587\:4ef6%s. \:60a8\:7684\:78c1\:76d8\:53ef\:80fd\:6709\:95ee\:9898\:ff0c\:6216\:5982\:679c\:60a8\:6b63\:5728\:4f7f\:7528\:6587\:4ef6\:670d\:52a1\:5668\:ff0c\:522b\:4eba\:53ef\:80fd\:6b63\:5728\:4f7f\:7528\:8be5\:6587\:4ef6. \:9519\:8bef\:7f16\:7801 = %d. 
+@|
+@|
+@@resource cantOpenFileB
+\:65e0\:6cd5\:6253\:5f00\:6587\:4ef6%s. \:5982\:679c\:60a8\:8bbe\:6cd5\:4ece\:6d4f\:89c8\:5668\:6253\:5f00\:8fd9\:4e2a\:6587\:4ef6\:ff0c\:5728\:6253\:5f00\:6587\:4ef6\:4e4b\:524d\:ff0c\:8bf7\:8bbe\:6cd5\:6e05\:9664\:60a8\:7684\:6d4f\:89c8\:5668\:7684\:9ad8\:901f\:7f13\:51b2\:5b58\:50a8\:5668\:6216\:5728\:672c\:5730\:590d\:5236\:8be5\:6587\:4ef6\:5e76\:8bbe\:6cd5\:4ece\:90a3\:91cc\:6253\:5f00. \:9519\:8bef\:7f16\:7801 = %d. 
+@|
+@|
+@@resource cantCloseFile
+\:4e0d\:80fd\:5173\:95ed\:60a8\:7684\:6587\:4ef6. \:8fd9\:8868\:660e\:4e00\:4e2a\:4e25\:91cd\:7684\:95ee\:9898\:ff0c\:5efa\:8bae\:60a8\:91cd\:65b0\:542f\:52a8\:60a8\:7684\:8ba1\:7b97\:673a\:5e76\:5728\:518d\:6b21\:8bfb\:53d6\:8be5\:6587\:4ef6\:4e4b\:524d\:5907\:4efd\:6587\:4ef6. \:9519\:8bef\:7f16\:7801 = %d. 
+@|
+@|
+@@resource cantWriteDataToFile
+\:4e0d\:80fd\:5bf9\:6587\:4ef6%s\:5199\:5165\:6570\:636e. \:60a8\:5e94\:8be5\:68c0\:67e5\:6587\:4ef6\:7684\:5141\:8bb8\:6743\:9650. 
+@|
+@@resource cantReadFromDirectory
+\:4e0d\:80fd\:8bbf\:95ee\:76ee\:5f55%s . \:60a8\:5e94\:8be5\:68c0\:67e5\:76ee\:5f55\:7684\:5141\:8bb8\:6743\:9650. 
+@|
+@|
+@@resource cantIncreaseSizeOfFile
+\:4e0d\:80fd\:53d1\:73b0\:8db3\:591f\:7684\:78c1\:76d8\:7a7a\:95f4\:4fdd\:5b58\:6587\:4ef6 %s. \:6587\:4ef6\:672a\:88ab\:4fee\:6539. \:78c1\:76d8\:5df2\:7ecf\:65e0\:7a7a\:95f4\:6216\:8fbe\:5230\:4e86\:60a8\:4f7f\:7528\:7684\:6587\:4ef6\:670d\:52a1\:5668\:7684\:78c1\:76d8\:7a7a\:95f4\:914d\:989d. 
+@|
+@|
+@@resource cantReadDataFromFile
+\:4e0d\:80fd\:4ece\:60a8\:7684\:6587\:4ef6\:8bfb\:53d6\:4e00\:4e9b\:6570\:636e. \:60a8\:7684\:78c1\:76d8\:53ef\:80fd\:5b58\:5728\:95ee\:9898\:ff0c\:6216\:60a8\:6ca1\:6709\:6587\:4ef6\:7cfb\:7edf\:7684\:5141\:8bb8\:6743\:9650\:6765\:8bfb\:53d6\:6587\:4ef6. 
+@|
+@|
+@@resource diskFullError
+\:56e0\:4e3a\:78c1\:76d8\:5df2\:7ecf\:88c5\:6ee1\:ff0c\:6240\:4ee5\:65e0\:6cd5\:5b8c\:6210\:4fdd\:5b58\:60a8\:7684\:6587\:4ef6. \:5efa\:8bae\:60a8\:5728\:9000\:51fa\:4e4b\:524d\:ff0c\:4fdd\:5b58\:60a8\:7684\:6587\:4ef6\:81f3\:5176\:4ed6\:7a7a\:95f4. \:9519\:8bef\:7f16\:7801= %d. 
+@|
+@|
+@@resource diskLockedError
+\:6587\:4ef6\:88ab\:9501\:ff0c\:65e0\:6cd5\:4fdd\:5b58\:6587\:4ef6. \:5982\:679c\:60a8\:60f3\:8981\:4fdd\:5b58\:60a8\:505a\:7684\:53d8\:52a8\:ff0c\:60a8\:5c06\:5fc5\:987b\:4fdd\:5b58\:4e3a\:5176\:4ed6\:6587\:4ef6. \:4f7f\:7528\:83dc\:5355\:4e2d\:7684"\:53e6\:5b58\:4e3a"\:547d\:4ee4. \:9519\:8bef\:7f16\:7801= %d.  
+@|
+@|
+@@resource cantDoToPostScriptOutCell
+\:60a8\:7684\:4efb\:52a1\:65e0\:6cd5\:5b8c\:6210\:ff0c\:65e0\:6cd5\:5bf9\:4e00\:4e2a\:5305\:542bPostScript\:7684\:683c\:5f0f\:5316\:5355\:5143\:8fdb\:884c\:6b64\:9879\:64cd\:4f5c. 
+@|
+@|
+@@resource cantDoToFormattedCell
+\:60a8\:7684\:4efb\:52a1\:65e0\:6cd5\:5b8c\:6210\:ff0c\:65e0\:6cd5\:5bf9\:4e00\:4e2a\:683c\:5f0f\:5316\:7684\:5355\:5143\:8fdb\:884c\:6b64\:9879\:64cd\:4f5c. 
+@|
+@|
+@@resource cantDoToPICTCell
+\:60a8\:7684\:4efb\:52a1\:65e0\:6cd5\:5b8c\:6210\:ff0c\:65e0\:6cd5\:5bf9PICT\:5355\:5143\:8fdb\:884c\:6b64\:9879\:64cd\:4f5c. 
+@|
+@|
+@@resource cantDoToBitmapCell
+\:60a8\:7684\:4efb\:52a1\:65e0\:6cd5\:5b8c\:6210\:ff0c\:65e0\:6cd5\:5bf9\:4e00\:4e2aBitmap(\:4f4d\:56fe)\:5355\:5143\:8fdb\:884c\:6b64\:9879\:64cd\:4f5c.  
+@|
+@@resource cantImportTIFF
+\:60a8\:8bbe\:6cd5\:5bfc\:5165\:7684TIFF\:6587\:4ef6\:4e0d\:80fd\:88ab\:8f6c\:6362\:6210\:53ef\:7528\:7684\:4f4d\:56fe\:683c\:5f0f. \:60a8\:80fd\:5bfc\:51652\:4f4d\:30018\:4f4d\:300116\:4f4d\:621624\:4f4dTIFF\:56fe\:50cf. \:56fe\:50cf\:4e0d\:80fd\:6709\:4efb\:4f55\:900f\:660e\:50cf\:7d20. 
+@|
+@@resource cantReadTIFFObjectFromFile
+\:4ece\:6587\:4ef6"%s"\:8bfb\:53d6TIFF\:56fe\:50cf\:65f6\:53d1\:751f\:9519\:8bef. \:6587\:4ef6\:53ef\:80fd\:635f\:574f\:6216\:60a8\:6ca1\:6709\:8bfb\:53d6\:6587\:4ef6\:7684\:6743\:9650. 
+@|
+@|
+@@resource PSCodeError
+\:5728\:663e\:793a\:7684\:6700\:540e\:4e00\:4e2aPostScript\:4ee3\:7801\:5355\:5143\:4e2d\:7684PostScript\:4ee3\:7801\:5b58\:5728\:9519\:8bef. \:9519\:8bef\:662f %s. 
+@|
+@|
+@@resource cantEditLockedCell
+\:60a8\:8bbe\:6cd5\:7f16\:8f91\:4e00\:4e2a\:4e0d\:53ef\:4ee5\:88ab\:7f16\:8f91\:7684\:5355\:5143. \:60a8\:53ef\:4ee5\:5728\:5355\:5143\:5c5e\:6027\:5b50\:83dc\:5355\:4e2d\:9009\:62e9 "\:5355\:5143\:53ef\:7f16\:8f91" \:ff0c\:4ece\:800c\:6fc0\:6d3b\:5355\:5143\:7f16\:8f91\:529f\:80fd. 
+@|
+@|
+@@resource cantDeleteNonDeletableCell
+\:60a8\:8bbe\:6cd5\:5220\:9664\:4e00\:4e2a\:4e0d\:53ef\:5220\:9664\:7684\:5355\:5143. \:60a8\:53ef\:4ee5\:5c06"\:9009\:9879\:8bbe\:7f6e"\:4e2d\:7684"Deletable"\:9009\:9879\:8bbe\:5b9a\:4e3a"True"\:ff0c\:4ece\:800c\:8bbe\:7f6e\:8be5\:5355\:5143\:53ef\:88ab\:5220\:9664. 
+@|
+@|
+@@resource cantEditLockedNotebook
+\:60a8\:8bbe\:6cd5\:7f16\:8f91\:7684\:7b14\:8bb0\:672c\:4e0d\:53ef\:4ee5\:88ab\:7f16\:8f91. \:60a8\:53ef\:4ee5\:5c06"\:9009\:9879\:8bbe\:7f6e"\:4e2d\:7684"Editable"\:9009\:9879\:8bbe\:5b9a\:4e3a"True"\:ff0c\:4ece\:800c\:4f7f\:8be5\:7b14\:8bb0\:672c\:53ef\:88ab\:7f16\:8f91. 
+@|
+@|
+@@resource cantEditPrefsCell
+\:60a8\:5728\:6837\:5f0f\:8868\:4e2d\:7f16\:8f91\:5355\:5143\:6240\:4f7f\:7528\:7684\:65b9\:5f0f\:662f\:4e0d\:5141\:8bb8\:7684. 
+@|
+@|
+@@resource cantDeletePendingCell
+\:60a8\:8bbe\:6cd5\:53bb\:9664\:4e00\:4e2a\:6b63\:5728\:88ab\:8ba1\:7b97\:7684\:5355\:5143. \:5982\:679c\:5b83\:7684\:5355\:5143\:62ec\:53f7\:88ab\:6fc0\:6d3b\:ff0c\:60a8\:5c06\:65e0\:6cd5\:5220\:9664\:3001\:8f6c\:6362\:6216\:5408\:5e76\:5355\:5143. 
+@|
+@|
+@@resource cantOpenDuplicateFile
+\:60a8\:8bbe\:6cd5\:6253\:5f00\:5df2\:7ecf\:88ab\:6253\:5f00\:7684\:6587\:4ef6. \:540c\:4e00\:65f6\:95f4\:ff0c\:6587\:4ef6\:53ea\:80fd\:5728\:4e00\:4e2a\:7a97\:53e3\:4e2d\:6253\:5f00. 
+@|
+@|
+@@resource cantSaveOverOpenFile
+\:60a8\:8bbe\:6cd5\:66ff\:6362\:7684\:6587\:4ef6\:5df2\:6253\:5f00. \:4ee5\:4e00\:4e2a\:53e6\:5916\:540d\:5b57\:4fdd\:5b58\:8be5\:6587\:4ef6\:ff0c\:6216\:5173\:95ed\:60a8\:8bbe\:6cd5\:66ff\:6362\:7684\:6587\:4ef6\:7a97\:53e3. 
+@|
+@|
+@@resource cantFinishOpeningFile
+\:5185\:5b58\:4e0d\:8db3\:ff0c\:65e0\:6cd5\:6253\:5f00\:6587\:4ef6. \:5df2\:52a0\:8f7d\:5c3d\:91cf\:591a\:7684\:9002\:5408\:4f7f\:7528\:5185\:5b58\:7684\:5355\:5143\:ff1b\:5176\:4f59\:7684\:4ecd\:7136\:5728\:78c1\:76d8\:6587\:4ef6\:4e2d. \:73b0\:5728\:8bf7\:52ff\:4fdd\:5b58\:6587\:4ef6\:ff0c\:5426\:5219\:60a8\:5c06\:4e22\:5931\:4e0d\:80fd\:88ab\:88c5\:8f7d\:7684\:5355\:5143. 
+@|
+@|
+@@resource cellClosedDueToOutOfMemory
+\:5185\:5b58\:4e0d\:8db3\:ff0c\:65e0\:6cd5\:663e\:793a\:5355\:5143. \:5355\:5143\:88ab\:5173\:95ed\:4e86. \:5f53\:60a8\:91ca\:653e\:4e86\:5185\:5b58\:ff0c\:60a8\:53ef\:4ee5\:9009\:62e9\:5355\:5143\:5c5e\:6027\:5b50\:83dc\:5355\:4e2d\:7684"\:6253\:5f00"\:ff0c\:518d\:6b21\:6253\:5f00\:5355\:5143. 
+@|
+@|
+@@resource cantSetDefsToDefaultStyles
+\:60a8\:8bbe\:6cd5\:5728\:9ed8\:8ba4\:7b14\:8bb0\:672c\:4e2d\:91cd\:65b0\:8bbe\:7f6e\:4e3a\:5b83\:7684\:9ed8\:8ba4\:5355\:5143\:6837\:5f0f. \:8fd9\:4e0d\:4f1a\:6709\:6548\:ff0c\:56e0\:4e3a\:9ed8\:8ba4\:6837\:5f0f\:7531\:9ed8\:8ba4\:7b14\:8bb0\:672c\:786e\:5b9a. \:9ed8\:8ba4\:7b14\:8bb0\:672c\:6ca1\:6709\:9ed8\:8ba4\:8bbe\:7f6e. 
+@|
+@|
+@@resource evaluationDoneAlert
+Wolfram \:7cfb\:7edf\:53d1\:51fa\:7cfb\:7edf\:63d0\:793a\:97f3\:56e0\:4e3a\:8ba1\:7b97\:5b8c\:6210\:4e86\:ff0c\:5e76\:4e14\:8bbe\:7f6e\:4e86\:5728\:5404\:4e2a\:8ba1\:7b97\:540e\:53d1\:51fa\:63d0\:793a\:97f3\:7684\:9009\:9879. \:53c2\:89c1\:9009\:9879\:8bbe\:7f6e\:4e2d\:7684EvaluationCompletionAction. 
+@|
+@|
+@@resource noMoreInputCellsToEvaluate
+\:60a8\:8981\:6c42\:8ba1\:7b97\:5f53\:524d\:9009\:62e9\:7684\:4e0b\:4e00\:4e2a\:8f93\:5165\:5355\:5143\:ff0c\:4f46\:7b14\:8bb0\:672c\:6ca1\:6709\:66f4\:591a\:7684\:8f93\:5165\:5355\:5143. 
+@|
+@|
+@@resource cantAlignSelectionWithNoGraphics
+\:60a8\:4f7f\:7528"\:5bf9\:9f50\:9009\:62e9\:7684\:56fe\:5f62"\:ff0c\:4f46\:60a8\:6240\:9009\:7684\:5355\:5143\:672a\:5305\:542b\:56fe\:5f62. \:60a8\:9700\:8981\:9009\:62e9\:4e24\:4e2a\:6216\:591a\:4e2a\:5305\:542b\:56fe\:5f62\:7684\:5355\:5143. 
+@|
+@|
+@@resource cantAlignSelectionWithOneGraphic
+\:60a8\:4f7f\:7528"\:5bf9\:9f50\:9009\:62e9\:7684\:56fe\:5f62"\:ff0c\:4f46\:60a8\:6240\:9009\:7684\:5355\:5143\:4ec5\:5305\:542b\:4e86\:4e00\:4e2a\:56fe\:5f62. \:60a8\:9700\:8981\:9009\:62e9\:4e24\:4e2a\:6216\:591a\:4e2a\:5305\:542b\:56fe\:5f62\:7684\:5355\:5143. 
+@|
+@|
+@@resource cantTemplateNonContentSelection
+\:60a8\:8bf7\:6c42\:51fd\:6570\:6a21\:677f\:4f46\:9009\:62e9\:4e86\:4e00\:4e2a\:6216\:591a\:4e2a\:5355\:5143. \:60a8\:80fd\:5f97\:5230\:7684\:6a21\:677f\:53ea\:9002\:7528\:4e8e\:72ec\:4e2a\:5355\:5143\:5185\:7684\:9009\:62e9. 
+@|
+@|
+@@resource cantTemplateNoKernel
+\:51fd\:6570\:6a21\:677f\:4e0d\:80fd\:751f\:6210\:ff0c\:56e0\:4e3a\:5f53\:524d\:7684\:5185\:6838\:65e0\:6cd5\:4f7f\:7528. \:5b83\:4e0d\:80fd\:542f\:52a8\:6216\:6b63\:5fd9\:788c\:4e8e\:5176\:4ed6\:8ba1\:7b97. 
+@|
+@|
+@@resource cantTemplateNonIdentifier
+\:60a8\:80fd\:5f97\:5230\:7684\:51fd\:6570\:6a21\:677f\:53ea\:80fd\:9002\:7528\:4e8e\:5355\:4e2a\:51fd\:6570\:6216\:53d8\:91cf\:540d\:5b57. 
+@|
+@|
+@@resource cantPrintSelectionNoSelection
+\:60a8\:4f7f\:7528\:4e86"\:6253\:5370\:9009\:62e9"\:ff0c\:4f46\:5374\:672a\:9009\:62e9\:6253\:5370\:5185\:5bb9. 
+@|
+@|
+@@resource usedConvertCommandWithNoGoodCells
+\:60a8\:4f7f\:7528\:4e86\:4e00\:4e2a\:5355\:5143\:8f6c\:6362\:547d\:4ee4\:ff0c\:4f46\:6ca1\:6709\:9009\:62e9\:9002\:5f53\:7684\:5355\:5143. 
+@|
+@|
+@@resource noGraphicsCellsInPICSFile
+\:60a8\:8981\:6c42\:4fdd\:5b58\:4e00\:4e2a\:7b14\:8bb0\:672c\:4e3aPICS\:6587\:4ef6\:683c\:5f0f\:ff0c\:4f46\:7b14\:8bb0\:672c\:6ca1\:6709\:5305\:542bPICT\:5355\:5143. \:5982\:679c\:60a8\:60f3\:8981\:5728PICS\:6587\:4ef6\:4e2d\:4fdd\:5b58PostScript\:56fe\:5f62\:5355\:5143\:ff0c\:60a8\:9700\:8981\:9996\:5148\:4f7f\:7528"\:8f6c\:6362\:6210" \:5b50\:83dc\:5355\:4e2d\:7684\:547d\:4ee4\:8f6c\:6362\:5b83\:4eec\:6210PICTs. 
+@|
+@|
+@@resource cantPasteColorNonContentSelection
+\:53ea\:6709\:5f53\:60a8\:5728\:4e00\:4e2a\:5355\:5143\:4e4b\:5185\:6709\:4e00\:4e2a\:9009\:62e9\:65f6\:ff0c\:60a8\:624d\:80fd\:4f7f\:7528\:989c\:8272\:9009\:62e9\:5668. 
+@|
+@|
+@@resource errorInConvertColorFunction
+\:60a8\:7684RGB\:5bf9CMYK\:989c\:8272\:8f6c\:6362\:51fd\:6570\:8fd4\:56de\:4e0d\:9002\:5f53\:7684\:6570\:503c. 
+@|
+@|
+@@resource cantAnimateSelectionWithNoVisibleGraphics
+\:60a8\:4f7f\:7528\:4e86 "\:5c06\:9009\:62e9\:7684\:56fe\:5f62\:5236\:4f5c\:6210\:52a8\:753b"\:ff0c\:4f46\:5374\:6ca1\:6709\:4f7f\:8be5\:9009\:62e9\:7684\:56fe\:5f62\:5355\:5143\:53ef\:89c1. 
+\:52a8\:753b\:603b\:88ab\:663e\:793a\:5728\:4e00\:4e2a\:5df2\:9009\:5355\:5143\:4e2d. 
+@|
+@|
+@@resource cantUseKernelDuringEvaluation
+\:60a8\:65e0\:6cd5\:4f7f\:7528\:5f53\:524d\:7684\:5185\:6838\:ff0c\:56e0\:4e3a\:5b83\:6b63\:5fd9\:788c\:4e8e\:5176\:4ed6\:8ba1\:7b97. 
+@|
+@|
+@@resource cantSplitCellFromCurrentSelection
+"\:5212\:5206\:5355\:5143"\:547d\:4ee4\:5212\:5206\:4e00\:4e2a\:5355\:5143\:6210\:4e24\:4e2a\:6216\:4e09\:4e2a\:65b0\:5355\:5143. \:5212\:5206\:5355\:5143\:ff0c\:9996\:5148\:9009\:62e9\:5355\:5143\:4e2d\:6587\:672c\:7684\:8303\:56f4. \:5355\:5143\:5c06\:5728\:9009\:62e9\:8303\:56f4\:7684\:7b2c\:4e00\:4e2a\:548c\:6700\:540e\:4e00\:4e2a\:5b57\:7b26\:88ab\:5212\:5206. 
+@|
+@|
+@@resource printingError
+\:6253\:5370\:53d1\:751f\:4e86\:95ee\:9898. \:5982\:679c\:60a8\:6301\:7eed\:9047\:5230\:6253\:5370\:56f0\:96be\:ff0c\:8bf7\:68c0\:67e5\:60a8\:7684\:6253\:5370\:673a\:8bbe\:7f6e\:53ca\:53c2\:9605\:60a8\:7684\:8ba1\:7b97\:673a\:7528\:6237\:624b\:518c. \:9519\:8bef\:7f16\:7801= %d
+@|
+@|
+@@resource noPrinterInstalled
+\:6b64\:64cd\:4f5c\:9700\:8981\:4e00\:4e2a\:6253\:5370\:673a. \:8bf7\:5b89\:88c5\:6253\:5370\:673a\:540e\:518d\:5c1d\:8bd5. 
+@| 
+@| 
+@@resource cantPastePicturesIntoText
+\:5f53\:88ab\:8f6c\:6362\:6210\:6587\:672c\:5f62\:5f0f\:65f6\:ff0c\:526a\:8d34\:677f\:5305\:542b\:4e86\:4e00\:5f20\:56fe\:7247\:548c/\:6216\:58f0\:97f3. \:56fe\:7247\:548c/\:6216\:58f0\:97f3\:5df2\:4e22\:5931. 
+@|
+@|
+@@resource cantPasteNoKernel
+\:5b9a\:4e49\:88ab\:7c98\:8d34\:7684\:6587\:672c\:8981\:6c42\:4e00\:4e2a\:8fd0\:884c\:7684\:5185\:6838. \:9ed8\:8ba4\:5185\:6838\:4e0d\:80fd\:542f\:52a8. 
+@|
+@|
+@@resource cantTypeToSoundSelection
+\:5f53\:4e00\:4e2a\:58f0\:97f3\:7684\:65b9\:62ec\:53f7\:56fe\:6807\:88ab\:9009\:62e9\:65f6\:ff0c\:60a8\:65e0\:6cd5\:952e\:5165. \:8bf7\:70b9\:51fb\:5355\:5143\:5185\:90e8\:6216\:5355\:5143\:4e4b\:95f4\:ff0c \:7136\:540e\:8f93\:5165\:6587\:672c. 
+@|
+@|
+@@resource cantTypeToCellLabelSelection
+\:5f53\:5355\:5143\:6807\:7b7e\:88ab\:9009\:62e9\:65f6\:ff0c\:60a8\:65e0\:6cd5\:952e\:5165. \:8bf7\:70b9\:51fb\:5355\:5143\:5185\:90e8\:6216\:5355\:5143\:4e4b\:95f4\:ff0c\:7136\:540e\:8f93\:5165\:6587\:672c. 
+@|
+@|
+@@resource cloudObjectNotFound
+\:6ca1\:6709\:627e\:5230 "%s".  \:8bf7\:68c0\:67e5\:5e76\:786e\:8ba4\:60a8\:4f7f\:7528\:7684\:662f\:6b63\:786e\:7684\:7528\:6237\:767b\:5f55\:ff0c\:5e76\:62e5\:6709\:8bbf\:95ee\:8be5\:5bf9\:8c61\:7684\:6743\:9650.
+@|
+@|
+@@resource cantOpenSelectedFileName
+\:627e\:4e0d\:5230\:6587\:4ef6  "%s". 
+@|
+@|
+@@resource cantFindItem
+\:65e0\:6cd5\:627e\:5230 "%s". 
+@|
+@|
+@@resource cantOpenDefaultsFile
+\:9ed8\:8ba4\:7b14\:8bb0\:672c\:4e0d\:80fd\:88ab\:6253\:5f00. \:6ca1\:6709\:4e00\:4e2a\:597d\:7684\:9ed8\:8ba4\:7b14\:8bb0\:672c\:ff0c\:60a8\:5c06\:4e0d\:80fd\:4f7f\:7528 Wolfram \:8bed\:8a00. 
+@|
+@|
+@@resource noItemsToIndex
+\:60a8\:8bbe\:6cd5\:68c0\:7d22\:7684\:7b14\:8bb0\:672c\:4e0d\:5305\:542b\:5355\:5143\:6807\:7b7e. \:5206\:914d\:5355\:5143\:6807\:7b7e\:5230\:5355\:5143\:ff0c\:4f7f\:7528"\:5355\:5143\:6807\:7b7e" \:5b50\:83dc\:5355\:4e2d\:7684\:6dfb\:52a0/\:5220\:9664\:5355\:5143\:6807\:7b7e. 
+@|
+@|
+@@resource cantConcatStrangeFormatSounds
+\:60a8\:8bbe\:6cd5\:4f7f\:7528\:975e Wolfram \:8bed\:8a00\:751f\:6210\:7684\:58f0\:97f3\:ff0c\:8be5\:58f0\:97f3\:683c\:5f0f\:65e0\:6cd5\:88ab\:5408\:6210. 
+@|
+@|
+@@resource cantPasteViewPointThere
+\:60a8\:53ea\:80fd\:4ece3D\:89c6\:89d2\:9009\:62e9\:5668\:7c98\:8d34\:89c6\:89d2\:6587\:672c\:5230\:4e00\:4e2a\:5355\:5143\:5185\:6216\:5728\:4e24\:4e2a\:5355\:5143\:4e4b\:95f4. 
+@|
+@|
+@@resource cantUseRefGuideBadSelection
+\:4f7f\:7528\:67e5\:627e\:5355\:5143\:6807\:7b7e\:547d\:4ee4\:ff0c\:9009\:62e9\:4e00\:4e2a\:6216\:591a\:4e2a\:8bcd\:ff0c\:7136\:540e\:9009\:62e9\:67e5\:627e\:5355\:5143\:6807\:7b7e. \:6216\:8005\:547d\:4ee4\:53cc\:91cd\:70b9\:51fb\:4e00\:4e2a\:6216\:591a\:4e2a\:8bcd. 
+@|
+@|
+@@resource cellTagNotFoundInRefGuide
+\:60a8\:8981\:6c42\:4f5c\:4e3a\:5355\:5143\:6807\:7b7e\:67e5\:627e\:7684\:8bcd\:672a\:88ab\:53d1\:73b0. \:5355\:5143\:6807\:7b7e\:67e5\:627e\:4f01\:56fe\:67e5\:627e\:5f53\:524d\:7b14\:8bb0\:672c\:9009\:62e9\:7684\:4e00\:4e2a\:6216\:591a\:4e2a\:8bcd\:8bed\:4f5c\:4e3a\:5355\:5143\:6807\:7b7e. 
+@|
+@|
+@@resource cantPasteSoundNonCellInsertionSelection
+\:53ea\:6709\:5f53\:5f53\:524d\:7684\:9009\:62e9\:662f\:4e00\:4e2a\:6c34\:5e73\:7684\:5355\:5143\:63d2\:5165\:6761\:65f6\:ff0c\:60a8\:80fd\:8bb0\:5f55\:58f0\:97f3. \:58f0\:97f3\:5c06\:4f5c\:4e3a\:4e00\:4e2a\:65b0\:5355\:5143\:88ab\:63d2\:5165\:5728\:5f53\:524d\:7684\:63d2\:5165\:70b9. 
+@|
+@|
+@@resource cantRecordBecauseNoInitInstalled
+\:5f55\:97f3\:8f6f\:4ef6\:5b58\:5728\:4e00\:4e2a\:95ee\:9898. \:8bf7\:786e\:5b9a\:5b83\:88ab\:5b89\:88c5\:5728\:60a8\:7684\:7cfb\:7edf\:6587\:4ef6\:5939\:4e2d. 
+@|
+@|
+@@resource cantSetAnimationParametersNoCellsSelected
+\:60a8\:8bbe\:6cd5\:8bbe\:7f6e\:52a8\:753b\:53c2\:6570\:ff0c\:4f46\:6ca1\:6709\:4efb\:4f55\:5355\:5143\:88ab\:9009\:62e9. 
+\:52a8\:753b\:53c2\:6570\:9002\:7528\:4e8e\:5404\:81ea\:7684\:5355\:5143\:ff0c\:56e0\:6b64\:60a8\:9700\:8981\:9009\:62e9\:60a8\:60f3\:8981\:8c03\:6574\:7684\:5355\:5143\:ff0c\:7136\:540e\:70b9\:51fb"OK"\:6216"Apply".  
+@|
+@|
+@@resource cantPastePathNonContentSelection
+\:53ea\:5f53\:60a8\:6709\:6587\:672c\:6216\:5355\:5143\:63d2\:5165\:70b9\:65f6\:ff0c\:60a8\:624d\:80fd\:4f7f\:7528\:6587\:4ef6\:8def\:5f84\:540d\:9009\:62e9\:5668\:547d\:4ee4. 
+@|
+@|
+@@resource triedToAutoSaveUntitledNotebook
+\:5728\:5404\:4e2a\:7ed3\:679c\:540e\:81ea\:52a8\:4fdd\:5b58\:529f\:80fd\:7684\:9009\:62e9\:5df2\:88ab\:6fc0\:6d3b(NotebookAutoSave->True)\:ff0c\:4f46\:60a8\:5b89\:7f6e\:7ed3\:679c\:7684\:7b14\:8bb0\:672c\:8fd8\:672a\:88ab\:547d\:540d. \:4f7f\:7528\:4fdd\:5b58\:547d\:4ee4\:7ed9\:7b14\:8bb0\:672c\:547d\:540d\:ff0c\:4ee5\:4fbf\:5c06\:6765\:53ef\:4ee5\:81ea\:52a8\:5730\:88ab\:4fdd\:5b58. 
+@|
+@|
+@@resource mathLinkErrorNotKilled
+\:4e0b\:9762\:7684\:5185\:6838\:4e0eWSTP\:7684\:8fde\:63a5\:5b58\:5728\:95ee\:9898. \:5728\:67d0\:4e9b\:60c5\:51b5\:4e0b\:60a8\:53ef\:80fd\:5fc5\:987b\:7ed3\:675f\:5b83\:7684\:8fdb\:7a0b\:5e76\:91cd\:65b0\:542f\:52a8\:5b83. 
+\:5185\:6838: %s.  
+\:4f4e\:7ea7WSTP\:9519\:8bef: %s. 
+@|
+@|
+@@resource MLOpenFailedError
+\:4e0d\:80fd\:5efa\:7acb\:4e0e\:5185\:6838\:7684\:8fde\:63a5. 
+\:5185\:6838\:ff1a%s. 
+\:4f4e\:7ea7WSTP\:9519\:8bef\:ff1a%s. 
+@|
+@|
+@@resource mathLinkErrorKilled
+\:4e0b\:9762\:7684\:5185\:6838\:4e0eWSTP\:8fde\:63a5\:5b58\:5728\:95ee\:9898\:ff0c\:5185\:6838\:8fde\:63a5\:5df2\:7ecf\:65ad\:5f00. \:60a8\:53ef\:80fd\:9700\:8981\:624b\:52a8\:7ec8\:6b62\:5185\:6838\:8fdb\:7a0b. 
+\:5185\:6838: %s.  
+\:4f4e\:7ea7WSTP\:9519\:8bef: %s. 
+@|
+@|
+@@resource cantDontEvaluateActiveCell
+\:56e0\:4e3a\:6b63\:5728\:88ab\:8ba1\:7b97\:ff0c\:5355\:5143\:4e0d\:80fd\:4ece\:8ba1\:7b97\:961f\:5217\:4e2d\:88ab\:5220\:9664. 
+@|
+@|
+@@resource ctbNotInstalled
+\:901a\:4fe1\:5de5\:5177\:7bb1\:672a\:88ab\:5b89\:88c5. \:60a8\:65e0\:6cd5\:4e0e\:8fdc\:7aef\:5185\:6838\:8fde\:63a5\:6216\:8bbe\:7f6e\:901a\:4fe1\:53c2\:6570. 
+@|
+@|
+@@resource ctbNoCommTools
+\:60a8\:7684\:901a\:4fe1\:6587\:4ef6\:5939\:ff08\:7cfb\:7edf\:6587\:4ef6\:5939\:ff09\:4e2d\:6ca1\:6709\:8fde\:63a5\:5de5\:5177. \:8bf7\:5b89\:88c5\:4e00\:4e2a\:6216\:591a\:4e2a\:8fde\:63a5\:5de5\:5177. 
+@|
+@|
+@@resource ctbNoTermTools
+\:60a8\:7684\:901a\:4fe1\:6587\:4ef6\:5939\:ff08\:7cfb\:7edf\:6587\:4ef6\:5939\:ff09\:4e2d\:6ca1\:6709\:7ec8\:7aef\:5de5\:5177. \:8bf7\:5b89\:88c5\:4e00\:4e2a\:6216\:591a\:4e2a\:7ec8\:7aef\:5de5\:5177. 
+@|
+@|
+@@resource ctbConnToolFailCreate
+\:901a\:4fe1\:5de5\:5177\:7bb1\:521b\:9020\:8fde\:63a5\:7eaa\:5f55\:5931\:8d25\:ff0c\:8fd9\:901a\:5e38\:610f\:5473\:60a8\:7684\:5185\:5b58\:8fc7\:4f4e. 
+@|
+@|
+@@resource ctbTermToolFailCreate
+\:901a\:4fe1\:5de5\:5177\:7bb1\:6ca1\:6709\:751f\:6210\:7ec8\:7aef\:7eaa\:5f55\:ff1b\:8fd9\:901a\:5e38\:610f\:5473\:60a8\:7684\:5185\:5b58\:8fc7\:4f4e. 
+@|
+@|
+@@resource ctbOpenConnectionFailed
+\:901a\:4fe1\:5de5\:5177\:7bb1\:65e0\:6cd5\:6253\:5f00\:8fde\:63a5. \:8fd9\:901a\:5e38\:610f\:5473\:67d0\:4e00\:8fde\:63a5\:5de5\:5177\:8bbe\:7f6e\:4e0d\:6b63\:786e. 
+@|
+@|
+@@resource ctbChooseDisaster
+\:901a\:4fe1\:5de5\:5177\:7bb1\:635f\:574f\:4e86\:60a8\:7684\:8fde\:63a5\:6216\:7ec8\:7aef\:7eaa\:5f55. \:60a8\:5931\:53bb\:4e86\:8fdc\:7aef\:5185\:6838\:8fde\:63a5. 
+@|
+@|
+@@resource ctbChooseFailed
+\:901a\:4fe1\:5de5\:5177\:7bb1\:65e0\:6cd5\:66f4\:6539\:60a8\:7684\:8fde\:63a5\:6216\:7ec8\:7aef\:7eaa\:5f55. \:7eaa\:5f55\:672a\:88ab\:6539\:52a8. 
+@|
+@|
+@@resource ctbConnectionVanished
+\:60a8\:7684\:8fdc\:7aef\:5185\:6838\:8fde\:63a5\:88ab\:610f\:5916\:5173\:95ed\:4e86. \:60a8\:53ef\:80fd\:9700\:8981\:624b\:52a8\:7ec8\:6b62\:8fdc\:7a0b\:8ba1\:7b97\:673a\:4e0a\:7684\:5185\:6838\:8fdb\:7a0b. 
+@|
+@|
+@@resource yourConnectionToolNotInstalled
+\:60a8\:6307\:5b9a\:7684\:8fde\:63a5\:5de5\:5177\:672a\:88ab\:5b89\:88c5\:5728\:5f53\:524d\:7684\:7cfb\:7edf\:4e2d. \:8bf7\:53e6\:9009\:4e00\:4e2a\:8fde\:63a5\:5de5\:5177\:ff0c\:6216\:5728\:60a8\:7684\:7cfb\:7edf\:4e2d\:5b89\:88c5\:8be5\:5de5\:5177. 
+@|
+@|
+@@resource yourTerminalToolNotInstalled
+\:60a8\:6307\:5b9a\:7684\:7ec8\:7aef\:5de5\:5177\:672a\:88ab\:5b89\:88c5\:5728\:5f53\:524d\:7684\:7cfb\:7edf\:4e2d. \:8bf7\:53e6\:9009\:4e00\:4e2a\:7ec8\:7aef\:5de5\:5177\:ff0c\:6216\:5728\:60a8\:7684\:7cfb\:7edf\:4e2d\:5b89\:88c5\:8be5\:5de5\:5177. 
+@|
+@|
+@@resource cantRemovedProtectedItemFromOrderedList
+\:60a8\:65e0\:6cd5\:5220\:9664\:8be5\:9879\:76ee\:ff0c\:56e0\:4e3a\:8fd9\:662f\:4e00\:4e2a\:88ab\:4fdd\:62a4\:7684\:9ed8\:8ba4\:9879\:76ee. 
+@|
+@|
+@@resource GEOperationNotPermitted
+\:5f53\:524d\:6240\:9009\:62e9\:7684\:64cd\:4f5c\:672a\:88ab\:5141\:8bb8. 
+@|
+@|
+@@resource GEArrowMultiObjectNotSupported
+\:7bad\:5934\:7684\:53c2\:6570\:5fc5\:987b\:4e3a\:5750\:6807\:7684\:5217\:8868\:5f62\:5f0f. 
+@|
+@|
+@@resource GEBadArrowheadAppearanceOption
+Arrowhead \:5916\:89c2\:9009\:9879\:53c2\:6570 %s \:5e94\:8be5\:662f "Projected" \:6216\:8005 "Flat". 
+@|
+@|
+@@resource GEBadRadius
+\:534a\:5f84 %s\:9700\:662f\:4e00\:4e2a\:6216\:4e00\:5bf9\:6b63\:6570\:ff0c\:6216\:662fScaled\:6216Offset\:7684\:683c\:5f0f. 
+@|
+@|
+@@resource GEBadRadiusList
+\:534a\:5f84\:53c2\:6570 %s \:5e94\:8be5\:662f\:4e00\:4e2a\:6570\:5b57\:6216\:8005\:6570\:5b57\:5217\:8868\:6216\:8005\:4e00\:4e2a\:6bd4\:4f8b\:5f62\:5f0f. 
+@|\:534a\:5f84%s\:9700\:662f\:4e00\:4e2a\:6216\:4e00\:5217\:6570\:5b57. 
+@|
+@@resource GEBadRadiusMember
+\:534a\:5f84 %s \:5e94\:8be5\:662f\:4e00\:4e2a\:6570\:5b57\:6216\:8005\:4e00\:4e2a\:6bd4\:4f8b\:6570\:636e. 
+@|
+@|
+@@resource GEBadAngleOrder
+\:5728\:89d2\:5ea6\:8bbe\:5b9a %s\:4e2d\:ff0c\:5f00\:59cb\:7684\:89d2\:5ea6\:6bd4\:6700\:540e\:4e00\:4e2a\:89d2\:5ea6\:5927. 
+@|
+@|
+@@resource GEBadAngleSpecification
+\:89d2\:5ea6\:8bbe\:5b9a%s\:9700\:662f{\:5f00\:59cb\:ff0c\:7ed3\:675f}\:7684\:5f62\:5f0f. 
+@|
+@|
+@@resource GEBadCylinderCoordinatePairSpecification
+\:5706\:67f1\:4f53\:7aef\:70b9%s\:7684\:5f62\:5f0f\:5e94\:8be5\:4e3a {p1, p2}.
+@|
+@|
+@@resource GEBadCylinderRadiusListSpecification
+\:5706\:67f1\:4f53\:534a\:5f84%s\:7684\:4e2a\:6570\:5e94\:8be5\:5bf9\:5e94\:4e8e\:6307\:5b9a\:7684\:5706\:67f1\:4f53\:7684\:4e2a\:6570.
+@|
+@|
+@@resource GEBad2DCoordinate
+\:5750\:6807%s\:5e94\:8be5\:662f\:4e00\:5bf9\:6570\:503c\:ff0c\:6216\:662fScaled\:6216 Offset\:7684\:5f62\:5f0f. 
+@| 
+@| 
+@@resource GEBad2DSingleCoordinate
+\:5750\:6807 %s\:9700\:662f\:4e00\:4e2a\:6570\:5b57\:ff0cScaled\:6216Offset\:7684\:5f62\:5f0f. 
+@|
+@|
+@@resource GEBadArrayDimensionsCoordinate
+\:5bf9\:4e8e\:4e00\:4e2a\:56fe\:5f62\:5750\:6807\:5217\:8868\:ff0c\:6570\:7ec4 %s\:542b\:6709\:9519\:8bef\:7684\:7ef4\:5ea6. 
+@|
+@|
+@@resource GEGraphicsComplexIndexOutOfRangeCoordinate
+\:5750\:6807\:7d22\:5f15%s\:76f8\:5bf9\:4e8e\:8f7d\:5165\:7684GraphicsComplex\:5df2\:8d85\:51fa\:8303\:56f4. 
+@|
+@|
+@@resource GEBadOffsetBase
+\:5750\:6807%s\:9700\:662f\:4e00\:5bf9\:6570\:503c\:6216\:6bd4\:4f8b\:7684\:5f62\:5f0f. 
+@|
+@|
+@@resource GEBadSimple2DCoordinate
+\:5750\:6807%s\:9700\:662f\:4e00\:5bf9\:6570\:503c. 
+@|
+@|
+@@resource GEBadNumberPair
+\:53d1\:73b0\:4e86%s\:ff0c\:5b83\:5e94\:8be5\:662f\:4e00\:5bf9\:6570\:503c.  
+@|
+@|
+@@resource GEBad3DCoordinate
+\:5750\:6807%s\:9700\:662f\:4e09\:4e2a\:6570\:503c\:ff0c\:6216\:6bd4\:4f8b\:7684\:5f62\:5f0f. 
+@|
+@|
+@@resource GEBadSimple3DCoordinate
+\:5750\:6807%s\:9700\:662f\:4e09\:4e2a\:6570\:503c. 
+@|
+@|
+@@resource GEBadSphericalRegion
+SphericalRegion %s \:65e0\:6548.
+@|
+@|
+@@resource GEBadSphericalRegionCenter
+SphericalRegion %s \:7684\:4e2d\:5fc3\:4e0d\:5339\:914d ViewCenter \:9009\:9879.
+@|
+@|
+@@resource GEBadViewpoint
+Viewpoint %s\:4e0d\:662f\:4e09\:4e2a\:6570\:503c\:6216\:4e00\:4e2a\:88ab\:8ba4\:53ef\:7684\:7b26\:53f7\:5f62\:5f0f. 
+@|
+@|
+@@resource GEViewAngleRange
+\:89c6\:89d2%s\:9700\:57280\:548c\[Pi]\:4e4b\:95f4. 
+@|
+@|
+@@resource GEBadViewRange
+\:89c6\:56fe\:8303\:56f4%s\:9700\:662f"All"\:6216\:4e00\:5bf9\:6570\:503c. 
+@|
+@|
+@@resource GEBadViewVector
+\:89c6\:56fe\:5411\:91cf%s\:9700\:662f\:4e09\:4e2a\:6570\:503c\:3001\:6bd4\:4f8b\:3001\:6216\:4e00\:5bf9\:5ea7\:6807. 
+@|
+@|
+@@resource GEViewPointAtViewCenter
+\:6307\:5b9a\:7684\:89c6\:70b9\:8ddd\:89c6\:7ebf\:4e2d\:5fc3\:592a\:8fd1\:ff0c\:65e0\:6cd5\:5efa\:7acb\:89c6\:7ebf\:65b9\:5411. 
+@|
+@|
+@@resource GEViewVerticalLength
+\:7ad6\:76f4\:89c6\:56fe\:5411\:91cf\:592a\:77ed\:ff0c\:4e0d\:80fd\:5efa\:7acb\:5411\:4e0a\:7684\:65b9\:5411. 
+@|
+@|
+@@resource GEViewVectorParallelToViewVertical
+\:7ad6\:76f4\:89c6\:56fe\:5411\:91cf\:5e73\:884c\:4e8e\:89c6\:7ebf\:65b9\:5411\:ff0c\:65e0\:6cd5\:5efa\:7acb\:5411\:4e0a\:65b9\:5411. 
+@|
+@|
+@@resource GEBadViewMatrix
+\:77e9\:9635\:89c6\:56fe%s\:9700\:662f\:81ea\:52a8\:6216\:4e00\:5bf94x4\:77e9\:9635. 
+@|
+@|
+@@resource GEBadViewMatrixPosition
+\:77e9\:9635\:89c6\:56fe\:5143\:7d20%s\:5728{%d}\:4f4d\:7f6e\:9700\:662f\:81ea\:52a8\:6216\:4e004x4\:77e9\:9635. 
+@|
+@|
+@@resource GEInvalidViewMatrix
+ViewMatrix \:5373\:4e0d\:662f 3 D \:4e2d\:7684\:6709\:6548\:900f\:89c6\:77e9\:9635\:4e5f\:4e0d\:662f\:4eff\:5c04\:53d8\:6362 \:ff08\:56e0\:4e3a\:9f50\:6b21\:5750\:6807\:662f 0\:ff09.
+@|
+@|
+@@resource GEBadLightingSpecification
+\:5149\:7ebf\:8bbe\:5b9a %s\:9700\:662fAutomatic\:3001None \:6216\:5149\:6e90\:5217\:8868. 
+@|
+@|
+@@resource GEBadLightColorSpecification
+\:5149\:7684\:989c\:8272\:8bbe\:5b9a%s\:4e0d\:662f\:4e00\:4e2a\:88ab\:8ba4\:53ef\:7684\:989c\:8272\:5f62\:5f0f. 
+@|
+@|
+@@resource GEBadLightPositionSpecification
+\:5149\:7684\:4f4d\:7f6e\:8bbe\:5b9a%s\:4e0d\:662f\:4e00\:4e2a\:88ab\:8ba4\:53ef\:7684\:5f62\:5f0f. 
+@|
+@|
+@@resource GEBadLightAngleSpecification
+\:5149\:7684\:89d2\:5ea6\:8bbe\:5b9a%s\:4e0d\:662f\:4e00\:4e2a\:88ab\:8ba4\:53ef\:7684\:5f62\:5f0f. 
+@|
+@|
+@@resource GEBadLightDistanceAttenuationSpecification
+\:5149\:7684\:8ddd\:79bb\:7a00\:91ca\:8bbe\:5b9a%s\:4e0d\:662f\:4e00\:4e2a\:88ab\:8ba4\:53ef\:7684\:5f62\:5f0f. 
+@|
+@|
+@@resource GEArrowheadsBadForm
+Arrowheads -> "%s" \:9009\:9879\:503c\:9700\:662f\:4e00\:5217\:8868\:6216 Automatic. 
+@|
+@|
+@@resource GEArrowheadsArgCount
+Arrowheads \:7684\:9009\:9879\:503c\:4e2d\:7684\:5143\:7d20"%s"\:9700\:5305\:542b\:4ece1\:52303\:7684\:5143\:7d20. 
+@|
+@|
+@@resource GEArrowheadsBadScale
+Arrowheads \:6bd4\:4f8b"%s"\:9700\:662f\:6570\:503c\:6216 Automatic. 
+@|
+@|
+@@resource GEArrowheadsBadPosition
+Arrowheads \:4f4d\:7f6e"%s"\:9700\:662f\:6570\:503c\:6216 Automatic. 
+@|
+@|
+@@resource GEArrowheadsBadPositionRange
+Arrowheads \:4f4d\:7f6e"%s"\:9700\:662f\:4e00\:4e2a\:57280.0\:548c1.0\:4e4b\:95f4\:7684\:6570\:503c. 
+@|
+@|
+@@resource GEArrowheadsBadGraphics
+Arrowheads \:9009\:9879\:7684\:671f\:5f85\:503c\:4e3a\:56fe\:5f62\:ff0c\:53ef\:8fd9\:91cc\:4e3a"%s" . 
+@|
+@|
+@@resource GEArrowheadsErrorsInGraphics
+Arrowheads \:9009\:9879\:503c\:7684\:56fe\:5f62\:5bf9\:8c61"%s"\:4e0d\:662f\:6240\:671f\:5f85\:7684\:5f62\:5f0f. 
+@|
+@|
+@@resource GEArrowheadsBadShaftForeshortening
+\:7bad\:6746\:7684\:524d\:7f29\:503c"%s"\:9700\:662f\:6570\:503c\:6216\:81ea\:52a8. 
+@|
+@|
+@@resource GEArrowheadsExtraElements
+\:9009\:9879\:7bad\:5934\:6307\:9488\:503c\:4e2d\:5728"%s"\:540e\:53d1\:73b0\:591a\:4f59\:7684\:5217\:8868\:5143\:7d20. 
+@|
+@|
+@@resource GEAxesBadTicksSpec
+\:8bf7\:8bbe\:5b9a\:523b\:5ea6(Ticks)\:503c. 
+@|
+@|
+@@resource GEAxesBadTicksSpecList
+\:8bf7\:8bbe\:5b9a\:523b\:5ea6(Ticks)\:7684\:5217\:8868. 
+@|
+@|
+@@resource GEAxesNotListOrFunction
+\:523b\:5ea6(Ticks)\:9700\:8981\:662f\:5217\:8868\:6216\:51fd\:6570\:5f62\:5f0f. 
+@|
+@|
+@@resource GEFaceGridBadSpec
+\:4e0d\:6b63\:786e\:7684\:8868\:9762(Face)\:8bbe\:5b9a
+@|
+@|
+@@resource GEFaceGridsBadValue
+FaceGrids\:7684\:503c\:9700\:662fNone\:3001All\:6216\:8868\:9762(Face)\:8bbe\:5b9a\:7684\:5217\:8868. 
+@|
+@|
+@@resource GEFaceGridsBadFaceSpecNotList
+FaceGrids\:503c\:4e2d\:7684\:8868\:9762(Face)\:8bbe\:5b9a\:9700\:662f\:5217\:8868\:5f62\:5f0f.  
+@|
+@|
+@@resource GEFaceGridsElementNotNumberOrList
+\:5728FaceGrids\:503c\:4e2d\:51fa\:73b0\:4e0d\:5c5e\:4e8e\:6570\:503c\:6216\:5217\:8868\:5f62\:5f0f\:7684\:503c. 
+@|
+@|
+@@resource GEFaceGridsBadFaceVector
+\:5728FaceGrids\:503c\:4e2d\:7684\:8868\:9762(Face)\:8bbe\:5b9a\:9700\:662f\:4e09\:4e2a\:6570\:5b57\:7684\:5217\:8868\:5f62\:5f0f. 
+@|
+@|
+@@resource GEFaceGridsBadFaceVectorValue
+\:5728FaceGrids\:503c\:4e2d\:7684\:8868\:9762(Face)\:8bbe\:5b9a\:4e2d\:7684\:4e00\:4e2a\:6570\:5b57\:9700\:662f0\:30011\:6216-1. 
+@|
+@| \[Hyphen] == \[Hyphen]
+@@resource GEFaceGridsOnlyOneOneAllowed
+\:5728FaceGrids\:503c\:4e2d\:7684\:4e00\:9879\:8868\:9762(Face)\:8bbe\:5b9a\:542b\:6709\:4e00\:4e2a\:4ee5\:4e0a\:7684\:975e\:96f6\:5143\:7d20. 
+@|
+@|
+@@resource GEFaceGridsOneOneRequired
+\:5728FaceGrids\:503c\:4e2d\:7684\:4e00\:9879\:8868\:9762(Face)\:8bbe\:5b9a\:65e0\:975e\:96f6\:5143\:7d20. 
+@|
+@|
+@@resource GEFaceGridsBadLineSpec
+\:5728FaceGrids\:503c\:4e2d\:7684\:4e00\:9879\:683c\:7ebf\:8bbe\:5b9a\:9700\:662fNone\:3001Automatic\:3001\:6216\:5750\:6807\:5217\:8868. 
+@|
+@|
+@@resource GEFaceGridsBadStyledLineSpec
+\:5728FaceGrids\:503c\:4e2d\:7684\:4e00\:9879\:7ebf\:6307\:5b9a\:9700\:662f\:6570\:5b57\:6216\:8005{\:6570\:5b57\:ff0c\:6837\:5f0f}\:7684\:5f62\:5f0f. 
+@|
+@|
+@@resource GEFrameTicksBadTickSpec
+\:5728FramesTicks\:503c\:4e2d\:7684\:4e00\:9879\:523b\:5ea6\:8bbe\:5b9a\:9700\:662f\:6570\:5b57\:6216\:8005\:5217\:8868\:5f62\:5f0f. 
+@|
+@|
+@@resource GEFrameTicksBadTicksSpec
+\:5728FramesTicks\:503c\:4e2d\:7684\:4e00\:9879\:523b\:5ea6\:8bbe\:5b9a\:9700\:662fNone\:3001Automatic\:3001\:51fd\:6570\:3001\:6216\:523b\:5ea6\:5217\:8868\:5f62\:5f0f. 
+@|
+@|
+@@resource GETransformBadTranslation
+\:5e73\:79fb \:ff08translation\:ff09 %s\:9700\:662f\:4e00\:5bf9\:6570\:5b57\:7ec4\:6216\:5e73\:79fb\:5173\:952e\:5b57. 
+@|
+@|
+@@resource GETransformBadTransform
+\:4eff\:5c04\:53d8\:6362%s\:9700\:662f{{{xx, yx}, {xy, yy}}, {tx, ty}}\:3001{{xx, yx}, {yy, yy}}\:6216 {tx, ty}\:7684\:5f62\:5f0f. 
+@|
+@|
+@@resource GEGraphCoordBadCoordinate
+%d\:4e0d\:662f\:6709\:6548\:7684\:5750\:6807\:503c. 
+@|
+@|
+@@resource GEGraphCoordIndexToSmall
+GraphicsComplex\:7d22\:5f15 %d\:5c0f\:4e8e1. 
+@|
+@|
+@@resource GEGraphCoordBadInvisibleListForm
+\:6846 %s \:671f\:5f85\:4e00\:5957\:7531\:9017\:53f7\:5206\:9694\:7684\:70b9 p1, p2, ... \:800c\:4e0d\:662f\:70b9\:7684\:5217\:8868 {p1, p2, ...}. \:5b83\:6536\:5230\:4e86\:5217\:8868\:ff1a"%s".
+@|
+@|
+@@resource GEGraphCoordBadMultiObjectForm
+\:6846 %s \:671f\:5f85\:5bf9\:8c61\:96c6\:5408\:88ab\:6307\:5b9a\:4e3a\:5750\:6807\:89c4\:8303\:5217\:8868\:7684\:5217\:8868\:ff0c\:4f8b\:5982 {{spec1}, {spec2}, ...}. \:800c\:4e0d\:662f\:6536\:5230\:7684 "%s".
+@|
+@|
+@@resource GEGraphCoordBadSingleObjectForm
+\:6846 %s \:671f\:5f85\:503c\:7684\:5217\:8868\:88ab\:6307\:5b9a\:4e3a {p1, p2, ...}. \:800c\:4e0d\:662f\:6536\:5230\:7684 "%s".
+@|
+@|
+@@resource GEGraphCoordObjectCountNotToSpec
+\:6846 %s \:5305\:542b %d \:5bf9\:8c61\:7684\:96c6\:5408\:ff0c\:671f\:5f85\:5176\:4ecb\:4e8e %d \:548c %d \:5bf9\:8c61\:95f4\:ff0c\:800c\:4e0d\:662f "%s".
+@|
+@|
+@@resource GEGraphCoordCoordCountNotToSpec
+\:5177\:6709 %d \:70b9\:7684\:6846 %s \:671f\:5f85\:63d0\:4f9b\:4ecb\:4e8e %d \:548c %d \:70b9\:95f4\:ff0c\:800c\:4e0d\:662f "%s".
+@|
+@|
+@@resource GEGraphCoordIndexToLarge
+GraphicsComplex\:7d22\:5f15%d\:5927\:4e8e\:5750\:6807(%d)\:6570. 
+@|
+@|
+@@resource GEPlotRangePaddingBadValue
+PlotRangePadding\:7684\:503c%s\:9700\:662f\:6570\:5b57\:3001Scaled[\:6570\:5b57]\:3001None\:3001\:6216Automatic\:7684\:5f62\:5f0f. 
+@|
+@|
+@@resource GENotDirective
+%s\:4e0d\:662f\:4e00\:4e2a\:56fe\:5f62\:6307\:4ee4. 
+@|
+@|
+@@resource GEDirectiveBadContext
+\:53d1\:73b0\:4e00\:4e2a\:4e0d\:5141\:8bb8\:7684\:6307\:4ee4 %s. 
+@|
+@|
+@@resource GEDirectiveReadError
+\:5728\:8bfb\:53d6\:6307\:4ee4 %s\:65f6\:53d1\:73b0\:4e00\:4e2a\:9519\:8bef. 
+@|
+@|
+@@resource GERasterBadDestinationRectCoord
+\:5149\:6805\:957f\:65b9\:5f62%s\:4e2d\:7684 %s \:9700\:662f\:4e00\:4e2a\:56fe\:5f62\:5750\:6807. 
+@|
+@|
+@@resource GERasterBadDestinationRect
+\:5149\:6805\:957f\:65b9\:5f62%s \:9700\:662f\:4e00\:5bf9\:5750\:6807\:6216\:81ea\:52a8. 
+@|
+@|
+@@resource GERasterBadRange
+\:5149\:6805\:8303\:56f4%s\:5fc5\:987b\:4e3a\:4e00\:5bf9\:6570\:5b57. 
+@|
+@|
+@@resource GERasterBadRangeValue
+\:5149\:6805\:8303\:56f4%s\:4e2d\:7684%s\:5fc5\:987b\:4e3a\:6570\:5b57. 
+@|
+@|
+@@resource GERasterNullRange
+\:5149\:6805\:8303\:56f4%s\:4e2d\:6700\:5927\:548c\:6700\:5c0f\:7684\:503c\:76f8\:540c. 
+@|
+@|
+@@resource GERasterBadDataAutomaticSingular
+\:5149\:6805\:6570\:636e\:5728\:6bcf\:4e2a\:50cf\:7d20\:4e2d\:5305\:542b%d\:4e2a\:503c\:ff1b\:5728ColorFunction->Automatic\:4e2d\:6700\:591a\:53ef\:4e3a4\:4e2a. 
+@|
+@|
+@@resource GERasterBadDataGrayLevelSingular
+\:5149\:6805\:6570\:636e\:5728\:6bcf\:4e2a\:50cf\:7d20\:4e2d\:5305\:542b%d\:4e2a\:503c\:ff1b\:5728ColorFunction->GrayLevel\:4e2d\:6700\:591a\:53ef\:4e3a2\:4e2a. 
+@|
+@|
+@@resource GERasterBadDataRGBColorSingular
+\:5149\:6805\:6570\:636e\:5728\:6bcf\:4e2a\:50cf\:7d20\:4e2d\:5305\:542b%d\:4e2a\:503c\:ff1b\:5728ColorFunction->RGBColor\:4e2d\:9700\:89813\:62164\:4e2a. 
+@|
+@|
+@@resource GERasterBadDataHueSingular
+\:5149\:6805\:6570\:636e\:5728\:6bcf\:4e2a\:50cf\:7d20\:4e2d\:5305\:542b%d\:4e2a\:503c\:ff1b\:5728ColorFunction->Hue\:4e2d\:6700\:591a\:53ef\:4e3a4\:4e2a. 
+@|
+@|
+@@resource GEBadRasterDataCMYKColorSingular
+\:5149\:6805\:6570\:636e\:5728\:6bcf\:4e2a\:50cf\:7d20\:4e2d\:5305\:542b%d\:4e2a\:503c\:ff1b\:5728ColorFunction->CMYKColor\:4e2d\:9700\:89814\:62165\:4e2a. 
+@|
+@|
+@@resource GERasterBadDataXYZColorSingular
+Raster data contains %d value per pixel; 3 or 4 are required with ColorFunction->XYZColor.
+@|
+@|
+@@resource GERasterBadDataLABColorSingular
+Raster data contains %d value per pixel; 3 or 4 are required with ColorFunction->LABColor.
+@|
+@|
+@@resource GERasterBadDataLCHColorSingular
+Raster data contains %d value per pixel; 3 or 4 are required with ColorFunction->LCHColor.
+@|
+@|
+@@resource GERasterBadDataLUVColorSingular
+Raster data contains %d value per pixel; 3 or 4 are required with ColorFunction->LUVColor.
+@|
+@|
+@@resource GERasterBadDataAutomaticPlural
+\:5149\:6805\:6570\:636e\:5728\:6bcf\:4e2a\:50cf\:7d20\:4e2d\:5305\:542b%d\:4e2a\:503c\:ff1b\:5728ColorFunction->Automatic\:4e2d\:6700\:591a\:53ef\:4e3a4\:4e2a. 
+@|
+@|
+@@resource GERasterBadDataGrayLevelPlural
+\:5149\:6805\:6570\:636e\:5728\:6bcf\:4e2a\:50cf\:7d20\:4e2d\:5305\:542b%d\:4e2a\:503c\:ff1b\:5728ColorFunction->GrayLevel\:4e2d\:6700\:591a\:53ef\:4e3a2\:4e2a. 
+@|
+@|
+@@resource GERasterBadDataRGBColorPlural
+\:5149\:6805\:6570\:636e\:5728\:6bcf\:4e2a\:50cf\:7d20\:4e2d\:5305\:542b%d\:4e2a\:503c\:ff1b\:5728ColorFunction->RGBColor\:4e2d\:9700\:89813\:62164\:4e2a. 
+@|
+@|
+@@resource GERasterBadDataHuePlural
+\:5149\:6805\:6570\:636e\:5728\:6bcf\:4e2a\:50cf\:7d20\:4e2d\:5305\:542b%d\:4e2a\:503c\:ff1b\:5728ColorFunction->Hue\:4e2d\:6700\:591a\:53ef\:4e3a4\:4e2a. 
+@|
+@|
+@@resource GEBadRasterDataCMYKColorPlural
+\:5149\:6805\:6570\:636e\:5728\:6bcf\:4e2a\:50cf\:7d20\:4e2d\:5305\:542b%d\:4e2a\:503c\:ff1b\:5728ColorFunction->CMYKColor\:4e2d\:9700\:89814\:62165\:4e2a. 
+@|
+@|
+@@resource GERasterBadDataXYZColorPlural
+Raster data contains %d values per pixel; 3 or 4 are required with ColorFunction->XYZColor.
+@|
+@|
+@@resource GERasterBadDataLABColorPlural
+Raster data contains %d values per pixel; 3 or 4 are required with ColorFunction->LABColor.
+@|
+@|
+@@resource GERasterBadDataLCHColorPlural
+Raster data contains %d values per pixel; 3 or 4 are required with ColorFunction->LCHColor.
+@|
+@|
+@@resource GERasterBadDataLUVColorPlural
+Raster data contains %d values per pixel; 3 or 4 are required with ColorFunction->LUVColor.
+@|
+@|
+@@resource GERaster3DBadDestinationCoord
+Raster3D \:7ec8\:70b9 %s \:4e2d\:7684 %s \:5e94\:8be5\:662f\:4e00\:4e2a\:4e09\:7ef4\:56fe\:5f62\:5750\:6807.
+@|
+@|
+@@resource GERaster3DBadDestination
+Raster3D \:7ec8\:70b9 %s \:5e94\:8be5\:662f\:4e00\:5bf9\:4e09\:7ef4\:5750\:6807\:6216 Automatic.
+@|
+@|
+@@resource GERaster3DBadRange
+Raster3D \:8303\:56f4 %s \:5e94\:8be5\:662f\:4e00\:5bf9\:6570\:5b57.
+@|
+@|
+@@resource GERaster3DBadRangeValue
+Raster3D \:8303\:56f4 %s \:4e2d\:7684 %s \:5e94\:8be5\:662f\:4e00\:4e2a\:6570\:5b57.
+@|
+@|
+@@resource GERaster3DNullRange
+Raster3D \:8303\:56f4 %s \:4e2d\:7684\:6700\:5927\:548c\:6700\:5c0f\:7684\:503c\:76f8\:540c.
+@|
+@|
+@@resource GERaster3DBadDataAutomaticSingular
+Raster3D \:6570\:636e\:5728\:6bcf\:4e2a\:4f53\:7d20\:4e2d\:5305\:542b %d \:4e2a\:503c\:ff1b\:4f7f\:7528 ColorFunction->Automatic\:ff0c\:6bcf\:4e2a\:4f53\:7d20\:6700\:591a\:53ef\:5305\:542b4\:4e2a\:503c.
+@|
+@|
+@@resource GERaster3DBadDataGrayLevelSingular
+Raster3D \:6570\:636e\:5728\:6bcf\:4e2a\:4f53\:7d20\:4e2d\:5305\:542b %d \:4e2a\:503c\:ff1b\:4f7f\:7528 ColorFunction->GrayLevel\:ff0c\:6bcf\:4e2a\:4f53\:7d20\:6700\:591a\:53ef\:5305\:542b2\:4e2a\:503c.
+@|
+@|
+@@resource GERaster3DBadDataRGBColorSingular
+Raster3D \:6570\:636e\:5728\:6bcf\:4e2a\:4f53\:7d20\:4e2d\:5305\:542b %d \:4e2a\:503c\:ff1b\:4f7f\:7528 ColorFunction->RGBColor\:ff0c\:6bcf\:4e2a\:4f53\:7d20\:9700\:8981\:5305\:542b3\:62164\:4e2a\:503c.
+@|
+@|
+@@resource GERaster3DBadDataHueSingular
+Raster3D \:6570\:636e\:5728\:6bcf\:4e2a\:4f53\:7d20\:4e2d\:5305\:542b %d \:4e2a\:503c\:ff1b\:4f7f\:7528 ColorFunction->Hue\:ff0c\:6bcf\:4e2a\:4f53\:7d20\:6700\:591a\:53ef\:5305\:542b4\:4e2a\:503c.
+@|
+@|
+@@resource GEBadRaster3DDataCMYKColorSingular
+Raster3D \:6570\:636e\:5728\:6bcf\:4e2a\:4f53\:7d20\:4e2d\:5305\:542b %d \:4e2a\:503c\:ff1b\:4f7f\:7528 ColorFunction->CMYKColor\:ff0c\:6bcf\:4e2a\:4f53\:7d20\:9700\:8981\:5305\:542b4\:62165\:4e2a\:503c.
+@|
+@|
+@@resource GEBadRaster3DDataXYZColorSingular
+Raster3D data contains %d value per voxel; 3 or 4 are required with ColorFunction->XYZColor.
+@|
+@|
+@@resource GEBadRaster3DDataLUVColorSingular
+Raster3D data contains %d value per voxel; 3 or 4 are required with ColorFunction->LUVColor.
+@|
+@|
+@@resource GEBadRaster3DDataLABColorSingular
+Raster3D data contains %d value per voxel; 3 or 4 are required with ColorFunction->LABColor.
+@|
+@|
+@@resource GEBadRaster3DDataLCHColorSingular
+Raster3D data contains %d value per voxel; 3 or 4 are required with ColorFunction->LCHColor.
+@|
+@|
+@@resource GERaster3DBadDataAutomaticPlural
+Raster3D \:6570\:636e\:5728\:6bcf\:4e2a\:4f53\:7d20\:4e2d\:5305\:542b %d \:4e2a\:503c\:ff1b\:4f7f\:7528 ColorFunction->Automatic\:ff0c\:6bcf\:4e2a\:4f53\:7d20\:6700\:591a\:53ef\:5305\:542b4\:4e2a\:503c.
+@|
+@|
+@@resource GERaster3DBadDataGrayLevelPlural
+Raster3D \:6570\:636e\:5728\:6bcf\:4e2a\:4f53\:7d20\:4e2d\:5305\:542b %d \:4e2a\:503c\:ff1b\:4f7f\:7528 ColorFunction->GrayLevel\:ff0c\:6bcf\:4e2a\:4f53\:7d20\:6700\:591a\:53ef\:5305\:542b2\:4e2a\:503c.
+@|
+@|
+@@resource GERaster3DBadDataRGBColorPlural
+Raster3D \:6570\:636e\:5728\:6bcf\:4e2a\:4f53\:7d20\:4e2d\:5305\:542b %d \:4e2a\:503c\:ff1b\:4f7f\:7528 ColorFunction->RGBColor\:ff0c\:6bcf\:4e2a\:4f53\:7d20\:9700\:8981\:5305\:542b3\:62164\:4e2a\:503c.
+@|
+@|
+@@resource GERaster3DBadDataHuePlural
+Raster3D \:6570\:636e\:5728\:6bcf\:4e2a\:4f53\:7d20\:4e2d\:5305\:542b %d \:4e2a\:503c\:ff1b\:4f7f\:7528 ColorFunction->Hue\:ff0c\:6bcf\:4e2a\:4f53\:7d20\:6700\:591a\:53ef\:5305\:542b4\:4e2a\:503c.
+@|
+@|
+@@resource GEBadRaster3DDataCMYKColorPlural
+Raster3D \:6570\:636e\:5728\:6bcf\:4e2a\:4f53\:7d20\:4e2d\:5305\:542b %d \:4e2a\:503c\:ff1b\:4f7f\:7528 ColorFunction->CMYKColor\:ff0c\:6bcf\:4e2a\:4f53\:7d20\:9700\:8981\:5305\:542b4\:62165\:4e2a\:503c.
+@|
+@|
+@@resource GEBadRaster3DDataXYZColorPlural
+Raster3D data contains %d values per voxel; 3 or 4 are required with ColorFunction->XYZColor.
+@|
+@|
+@@resource GEBadRaster3DDataLUVColorPlural
+Raster3D data contains %d values per voxel; 3 or 4 are required with ColorFunction->LUVColor.
+@|
+@|
+@@resource GEBadRaster3DDataLABColorPlural
+Raster3D data contains %d values per voxel; 3 or 4 are required with ColorFunction->LABColor.
+@|
+@|
+@@resource GEBadRaster3DDataLCHColorPlural
+Raster3D data contains %d values per voxel; 3 or 4 are required with ColorFunction->LCHColor.
+@|
+@|
+@@resource GEOpenGLShaderCompileError
+OpenGL \:7740\:8272\:8bed\:8a00\:7f16\:8bd1\:9519\:8bef\:ff1a%s.
+@|
+@|
+@@resource GEOpenGLShaderLinkError
+OpenGL \:7740\:8272\:8bed\:8a00\:94fe\:63a5\:9519\:8bef\:ff1a%s.
+@|
+@|
+@@resource GEOpenGLRunningError
+OpenGL \:8fd0\:884c\:9519\:8bef\:ff1a%s.
+@|
+@|
+@@resource GEGLViewDebugPrint
+GLView \:8f93\:51fa\:ff1a%s = %s.
+@|
+@|
+@@resource GEEdgeFormBadArgument
+\:53c2\:6570\:5fc5\:987b\:662f\:5728 %s\:4e2d\:7684\:4e00\:4e2a\:6307\:4ee4\:6216\:8005\:6307\:4ee4\:5217\:8868. 
+@|
+@|
+@@resource GEGeometricTransformation3DBadTranslation
+%s\:7684\:8f6c\:6362\:5e94\:8be5\:662f\:4e00\:4e2a3\:5143\:7ec4\:7684\:6570\:5b57\:6216\:8005\:8f6c\:6362\:7684\:5173\:952e\:5b57.
+@|\:7ffb\:8bd1%s\:5fc5\:987b\:662f\:4e09\:4e2a\:6570\:5b57.
+@|
+@@resource  GEGeometricTransformation3DBadTransform
+\:4eff\:5c04\:53d8\:6362%s\:5fc5\:987b\:662f{{{xx, yx, zx}, {xy, yy, zy}, {xz, yz, zz}}, {tx, ty, tz}}\:ff1b {{xx, yx, zx}, {xy, yy, zy}, {xz, yz, zz}}\:ff1b {tx, ty, tz}\:4e2d\:7684\:4e00\:4e2a\:5f62\:5f0f.
+@|
+@|
+@@resource  GEArrowBadSetbacks
+\:7bad\:5934\:56de\:7f29\:503c%s\:5fc5\:987b\:662f\:4e00\:4e2a\:6216\:8005\:4e00\:5bf9\:6570\:5b57.
+@|
+@|
+@@resource  GECircleDiskBadAngles
+\:89d2\:5ea6\:8bbe\:5b9a%s\:5fc5\:987b\:4e3a\:4e00\:5bf9\:6570\:5b57.
+@|
+@|
+@@resource  GEInsetBadDirection
+\:63d2\:5165\:65b9\:5411\:8bbe\:5b9a %s\:5fc5\:987b\:4e3a\:4e00\:4e2a\:5411\:91cf\:3001\:4e00\:5bf9\:5411\:91cf\:6216None.
+@|
+@|
+@@resource  GEText3DBadOffset
+\:6587\:672c\:504f\:79fb\:91cf%s\:5fc5\:987b\:4e3a\:4e00\:5bf9\:6570\:5b57.
+@|
+@|
+@@resource  GEText3DBadDirection
+\:6587\:672c\:6307\:9488%s\:5fc5\:987b\:4e3a\:4e00\:5bf9\:6570\:5b57.
+@|
+@|
+@@resource  GEConicHullRegionInvalidSpecification
+%s is not a valid ConicHullRegion specification.
+@|
+@|
+@@resource  GECurveInvalidSpecification
+%s \:4e0d\:662f\:6709\:6548\:7684\:66f2\:7ebf\:53c2\:6570.
+@|
+@|
+@@resource  GECurveInvalidSplineClosed
+SplineClosed \:53c2\:6570 %s \:5e94\:8be5\:662f True \:6216\:8005 False.
+@|
+@|
+@@resource  GECurveInvalidSplineDegree
+SplineDegree \:53c2\:6570 %s\:5e94\:8be5\:662f Automatic\:6216\:8005\:662f\:4e00\:4e2a\:6b63\:6574\:6570
+@|
+@| \[Hyphen] == \[Hyphen]
+@@resource  GECurveInvalidSplineKnots
+SplineKnots \:53c2\:6570 %s \:5e94\:8be5\:662f Automatic, "Clamped", "Unclamped", \:6216\:8005\:4e00\:4e2a\:6709\:9002\:5f53\:957f\:5ea6\:7684\:975e\:4e0b\:964d\:5e8f\:5217.
+@|
+@|
+@@resource  GECurveInvalidSplineWeights
+SplineWeights \:53c2\:6570 %s \:5e94\:8be5\:662f Automatic, \:6216\:8005\:4e00\:4e32\:548c\:63a7\:5236\:70b9\:957f\:5ea6\:4e00\:6837\:7684\:6b63\:6570
+@|
+@|
+@@resource  GECurveInvalidVertexTextureCoordinates
+TextureCoordinate specification %s should be a list of coordinates.
+@|
+@|
+@@resource  GESurfaceInvalidSplineClosed
+SplineClosed \:53c2\:6570 %s \:5e94\:8be5\:662f True, False, \:6216\:8005\:4e00\:5bf9\:8fd9\:6837\:7684\:503c
+@|
+@|
+@@resource  GESurfaceInvalidSplineDegree
+SplineDegree \:53c2\:6570 %s \:5e94\:8be5\:662f Automatic, \:4e00\:4e2a\:6b63\:6574\:6570, \:6216\:8005\:4e00\:5bf9\:8fd9\:6837\:7684\:503c.
+@|
+@|
+@@resource  GEObjectNotDraggable
+\:60a8\:5c1d\:8bd5\:79fb\:52a8\:7684\:4e00\:4e9b\:5bf9\:8c61\:662f\:4e0d\:53ef\:7f16\:8f91\:7684.
+@|
+@|
+@@resource  GEDrawingInUneditableGraphic
+\:60a8\:8bd5\:56fe\:5728\:4e0d\:53ef\:7f16\:8f91\:7684\:56fe\:5f62\:4e2d\:7ed8\:5236.
+@|
+@| \[Hyphen] == \[Hyphen]
+@@resource  GESurfaceInvalidSplineKnots
+SplineKnots \:53c2\:6570 %s \:5e94\:8be5\:662f Automatic, "Clamped", "Unclamped", \:4e00\:4e2a\:6709\:9002\:5f53\:957f\:5ea6\:7684\:975e\:4e0b\:964d\:5e8f\:5217\:ff0c\:6216\:8005\:4e00\:5bf9\:8fd9\:6837\:7684\:503c.
+@|
+@|
+@@resource  GESurfaceInvalidSplineWeights
+SplineWeights \:53c2\:6570 %s \:5e94\:8be5\:662f Automatic, \:6216\:8005\:662f\:4e00\:4e2a\:62e5\:6709\:548c\:63a7\:5236\:70b9\:4e00\:6837\:5927\:5c0f\:7684\:6b63\:6570\:77e9\:9635
+@|
+@|
+@@resource GeneralArgr
+%s\:4e2d\:542b\:6709\:4e00\:4e2a\:53c2\:6570\:ff1b\:671f\:5f85\:503c\:4e3a\:53c2\:6570%d. 
+@|
+@|
+@@resource GeneralArgx
+%s\:4e2d\:542b\:6709%d\:4e2a\:53c2\:6570\:ff1b\:9700\:89811\:4e2a\:53c2\:6570.
+@|
+@|
+@@resource GeneralArgrx
+%s\:4e2d\:542b\:6709\:53c2\:6570%d\:ff1b\:9700\:8981%d\:4e2a\:53c2\:6570.
+@|
+@|
+@@resource GeneralArgtu
+%s\:4e2d\:542b\:67091\:4e2a\:53c2\:6570\:ff1b\:9700\:8981\:53c2\:6570%d\:6216\:8005%d.
+@|
+@|
+@@resource GeneralArgt
+%s\:4e2d\:542b\:6709\:53c2\:6570%d\:ff1b\:9700\:8981\:53c2\:6570%d\:6216\:8005%d.
+@|
+@|
+@@resource GeneralArgbu
+%s\:4e2d\:542b\:67091\:4e2a\:53c2\:6570\:ff1b\:9700\:8981\:5728%d\:4e2a\:548c %d\:4e2a\:53c2\:6570\:4e4b\:95f4. 
+@|
+@|
+@@resource GeneralArgb
+%s\:4e2d\:542b\:6709%d\:4e2a\:53c2\:6570\:ff1b\:9700\:8981\:5728%d\:4e2a\:548c %d\:4e2a\:53c2\:6570\:4e4b\:95f4.
+@|
+@|
+@@resource GeneralArgmu
+%s\:4e2d\:542b\:67091\:4e2a\:53c2\:6570\:ff1b\:9700\:8981%d\:6216\:66f4\:591a\:4e2a\:53c2\:6570.
+@|
+@|
+@@resource GeneralArgm
+%s\:4e2d\:542b\:6709%d\:4e2a\:53c2\:6570\:ff1b\:9700\:8981%d\:6216\:66f4\:591a\:4e2a\:53c2\:6570.
+@|
+@|
+@@resource Generallvsym
+\:5c40\:90e8\:53d8\:91cf\:63cf\:8ff0%s\:5fc5\:987b\:5305\:542b%s\:ff0c\:975e\:7b26\:53f7\:6216\:7b26\:53f7\:8d4b\:503c.
+@|
+@|
+@@resource GeneralMatrix
+%s\:53c2\:6570%s\:5728\:4f4d\:7f6e%d\:4e0d\:662f\:4e00\:4e2a\:957f\:65b9\:5f62\:77e9\:9635.
+@|
+@|
+@@resource GeneralGmat
+%s\:53c2\:6570 %s\:5728\:4f4d\:7f6e %d\:5e94\:8be5\:662f\:4e00\:4e2a\:5927\:4e8e2 x 2 \:7684\:65b9\:5f62\:77e9\:9635.
+@|
+@|
+@@resource InsufficientPrecision
+\:6ca1\:6709\:8db3\:591f\:7684\:6570\:5b57\:53ef\:4ee5\:663e\:793a.
+@|
+@|
+@@resource MatrixDatumNotList
+\:5143\:7d20%s\:5728\:4f4d\:7f6e{%d, %d}\:ff0c\:5b83\:4e0d\:662f\:4e00\:4e2a\:6570\:503c\:5217\:8868. \:8be5\:5143\:7d20\:5728%s\:7684\:7b2c\:4e00\:4e2a\:53c2\:6570\:4e2d.
+@|
+@|
+@@resource MatrixDatumWrongLength
+\:5143\:7d20%s\:5728\:4f4d\:7f6e{%d, %d}\:ff0c\:5b83\:4e0e\:524d\:9762\:5143\:7d20\:957f\:5ea6\:4e0d\:540c. \:8be5\:5143\:7d20\:5728%s\:7684\:7b2c\:4e00\:4e2a\:53c2\:6570\:4e2d.
+@|
+@| \[Hyphen] == \[Hyphen]
+@@resource MatrixDatumNonNumerical2
+\:5728\:7b2c\:4e00\:4e2a\:53c2\:6570%s\:4e2d\:7684\:4f4d\:7f6e{%d, %d}\:53d1\:73b0\:4e86\:975e\:6570\:503c%s.
+@|
+@|
+@@resource MatrixDatumNonNumerical3
+\:5728\:7b2c\:4e00\:4e2a\:53c2\:6570%s\:4e2d\:7684\:4f4d\:7f6e{%d \:3001%d, %d}\:53d1\:73b0\:4e86\:975e\:6570\:503c%s.
+@|
+@|
+@@resource RasterRsrec
+\:7b2c\:4e8c\:4e2a\:53c2\:6570%s\:5bf9\:5149\:6805\:4e0d\:662f\:4e24\:4e2a\:5ea7\:6807\:7684\:5217\:8868.
+@|
+@|
+@@resource RasterRslim
+\:7b2c\:4e09\:4e2a\:53c2\:6570%s\:5bf9\:5149\:6805\:4e0d\:662f\:4e24\:4e2a\:4e0d\:540c\:7684\:5b9e\:6570\:5217\:8868.
+@|
+@|
+@@resource Raster3DRsrec
+Raster3D \:7684\:7b2c\:4e8c\:4e2a\:53c2\:53d8\:91cf %s \:4e0d\:662f\:4e24\:4e2a\:5750\:6807\:7684\:5217\:8868\:3002
+@|
+@|
+@@resource Raster3DRslim
+Raster3D \:7684\:7b2c\:4e09\:4e2a\:53c2\:53d8\:91cf %s \:4e0d\:662f\:4e24\:4e2a\:4e0d\:540c\:5b9e\:6570\:7684\:5217\:8868\:3002
+@|
+@|
+@@resource TextBadOffset
+\:6587\:672c\:504f\:79fb\:91cf%s\:5fc5\:987b\:4e3a\:4e00\:5bf9\:6570\:5b57.
+@|
+@|
+@@resource TextBadDirection
+\:6587\:672c\:65b9\:5411\:5411\:91cf%s\:9700\:662f\:4e00\:5bf9\:6570\:5b57.
+@|
+@|
+@@resource TextDirectionIndeterminate
+\:6587\:672c\:65b9\:5411\:5411\:91cf\:4e0d\:80fd\:662f\:6570\:503c{0,0} .
+@|
+@|
+@@resource InsetBadObject
+\:65e0\:6cd5\:63d2\:5165\:4ee5%s\:5f00\:59cb\:7684\:5bf9\:8c61.
+@|
+@|
+@@resource InsetBadWidth
+\:5bbd\:5ea6%s\:9700\:662f\:4e00\:4e2a\:6570\:503c\:6216Automatic.
+@|
+@|
+@@resource InsetBadHeight
+\:9ad8\:5ea6%s\:9700\:662f\:4e00\:4e2a\:6570\:503c\:6216Automatic.
+@|
+@|
+@@resource GraphicsGpt
+\:5750\:6807%s\:9700\:91c7\:7528\:5f62\:5f0f{x, y}.
+@|
+@|
+@@resource GraphicsGptn
+\:5728%s\:4e2d\:7684\:5750\:6807%s\:4e0d\:662f\:4e00\:4e2a\:6d6e\:70b9\:6570\:5b57.
+@|
+@|
+@@resource GENotPrimitiveOrDirective
+%s\:4e0d\:662f\:4e00\:4e2a %s \:56fe\:5143\:6216\:6307\:4ee4.
+@|
+@|
+@@resource GEHeadOnly
+%s \:56fe\:5143 %s\:672a\:53d1\:73b0\:4efb\:4f55\:53c2\:6570. 
+@|
+@|
+@@resource GEIgnoringExpression
+\:5ffd\:7565\:8868\:8fbe\:5f0f%s.
+@|
+@|
+@@resource GERectangleBadThirdArg
+Rectangle\:7684\:7b2c\:4e09\:4e2a\:53c2\:6570%s\:4e0d\:662f\:56fe\:5f62\:683c\:5f0f.
+@|
+@|
+@@resource GEBadDimension
+\:53d1\:73b0%s\:ff0c\:9700\:8981\:7ef4\:5ea6.
+@|
+@|
+@@resource GEBadCoordList
+%s\:4e0d\:662f\:5750\:6807\:5217\:8868.
+@|
+@|
+@@resource GETicksBadTickPosition
+\:5728Ticks\:9009\:9879\:4e2d\:7684\:523b\:5ea6\:4f4d\:7f6e\:503c\:9700\:662f\:4e00\:4e2a\:6570\:5b57.
+@|
+@|
+@@resource GETicksBadTickLength
+\:5728Ticks\:9009\:9879\:4e2d\:7684\:523b\:5ea6\:957f\:5ea6\:503c\:9700\:662f\:4e00\:4e2a\:6216\:4e00\:5bf9\:6570\:5b57.
+@|
+@|
+@@resource GETicksTooManyElements
+\:5728Ticks\:9009\:9879\:4e2d\:7684\:523b\:5ea6\:8bbe\:5b9a\:4e0d\:662f\:4e00\:4e2a\:67094\:4e2a\:6216\:591a\:4e2a\:5143\:7d20\:7684\:5217\:8868.
+@|
+@|
+@@resource GETicksBadStyle
+\:5728Ticks\:9009\:9879\:4e2d\:7684\:523b\:5ea6\:6837\:5f0f\:4e0d\:662f\:4e00\:4e2a\:6307\:4ee4.
+@|
+@|
+@@resource GEGridLinesBadValue
+GridLines\:9009\:9879\:7684\:503c\:9700\:662fNone\:3001Automatic\:62162\:5143\:7d20\:5217\:8868.
+@|
+@|
+@@resource GEGridLinesBadAxisSpec
+GridLines\:8bbe\:5b9a\:9700\:662fNone\:3001Automatic\:6216\:7f51\:683c\:7ebf\:8bbe\:5b9a\:7684\:4e00\:4e2a\:5217\:8868.
+@|
+@|
+@@resource GEGridLinesBadLineSpec
+GridLines\:503c\:4e2d\:7684\:4e00\:9879\:7ebf\:8bbe\:5b9a\:9700\:662f\:6570\:503c\:6216{\:6570\:503c\:ff0c\:6837\:5f0f}\:7684\:5f62\:5f0f.
+@|
+@|
+@@resource GEGridLinesBadStyle
+\:53d1\:73b0%s\:ff0c\:800cGridLines\:503c\:4e2d\:9700\:8981\:4e00\:4e2a\:6307\:4ee4.
+@|
+@|
+@@resource GEInsetBadObj
+\:5728Inset\:5bf9\:8c61\:4e2d\:53d1\:73b0\:4e00\:4e2a\:9519\:8bef.
+@|
+@|
+@@resource GEInsetBadObjUnsupported
+\:5f53\:5728 Graphics3D \:5185\:4f7f\:7528\:65f6\:ff0c Inset \:56fe\:5143\:4e0d\:652f\:6301 Graphics3D \:5185\:5bb9.
+@|
+@|
+@@resource GEInsetBadDestination
+\:5728Inset\:4e2d\:53d1\:73b0%s\:ff0c\:800c\:6b64\:5904\:9700\:8981\:4e00\:4e2a\:7ec8\:70b9\:5750\:6807.
+@|
+@|
+@@resource GEInsetBadSource
+\:5728Inset\:4e2d\:53d1\:73b0%s\:ff0c\:800c\:6b64\:5904\:9700\:8981\:4e00\:4e2a\:539f\:70b9\:5750\:6807.
+@|
+@|
+@@resource GEInsetBadSize
+\:5728Inset\:4e2d\:53d1\:73b0%s\:ff0c\:800c\:6b64\:5904\:9700\:8981\:4e00\:4e2a\:5927\:5c0f\:91cf.
+@|
+@|
+@@resource GELocatorBadDestination
+\:5728Locator\:4e2d\:53d1\:73b0%s\:ff0c\:800c\:6b64\:5904\:9700\:8981\:4e00\:4e2a\:7ec8\:70b9\:5750\:6807.
+@|
+@|
+@@resource GERectangleSecondPointRequired
+Rectangle\:4e2d\:5f53\:7b2c\:4e00\:70b9\:4e3aScaled\:6216Offset\:7684\:5f62\:5f0f\:65f6\:9700\:8981\:8bbe\:5b9a\:7b2c\:4e8c\:70b9.
+@|
+@|
+@@resource MEGeneralArgr
+%s\:53d1\:73b01\:4e2a\:4e3b\:8981\:53c2\:6570\:ff0c \:9700\:8981%d\:4e2a\:4e3b\:8981\:53c2\:6570. 
+@|
+@|
+@@resource MEGeneralArgx
+%s\:53d1\:73b0%d\:4e2a\:4e3b\:8981\:53c2\:6570\:ff0c\:9700\:89811\:4e2a\:4e3b\:8981\:53c2\:6570. 
+@|
+@|
+@@resource MEGeneralArgrx
+%s\:53d1\:73b0%d\:4e2a\:4e3b\:8981\:53c2\:6570\:ff0c\:9700\:8981%d\:4e2a\:4e3b\:8981\:53c2\:6570.
+@|
+@|
+@@resource MEGeneralArgtu
+%s\:53d1\:73b01\:4e2a\:4e3b\:8981\:53c2\:6570\:ff0c\:9700\:8981%d\:6216%d\:4e2a\:4e3b\:8981\:53c2\:6570. 
+@|
+@|
+@@resource MEGeneralArgt
+%s\:53d1\:73b0%d\:4e2a\:4e3b\:8981\:53c2\:6570\:ff0c\:9700\:8981%d\:6216%d\:4e2a\:4e3b\:8981\:53c2\:6570.  
+@|
+@|
+@@resource MEGeneralArgbu
+%s\:53d1\:73b0\:4ee51\:4e2a\:4e3b\:8981\:53c2\:6570\:ff0c\:9700\:8981\:5728%d\:4e2a \:548c%d\:4e2a\:4e3b\:8981\:53c2\:6570\:4e4b\:95f4.    
+@|
+@|
+@@resource MEGeneralArgb
+%s\:53d1\:73b0%d\:4e2a\:4e3b\:8981\:53c2\:6570\:ff0c\:9700\:8981\:5728%d \:4e2a\:548c%d\:4e2a\:4e3b\:8981\:53c2\:6570\:4e4b\:95f4. 
+@|
+@|
+@@resource MEGeneralArgmu
+%s\:53d1\:73b01\:4e2a\:4e3b\:8981\:53c2\:6570\:ff0c\:9700\:8981%d\:6216\:66f4\:591a\:7684\:4e3b\:8981\:53c2\:6570.
+@|
+@|
+@@resource MEGeneralArgm
+%s\:53d1\:73b0%d\:4e2a\:4e3b\:8981\:53c2\:6570. \:9700\:8981%d\:6216\:66f4\:591a\:7684\:4e3b\:8981\:53c2\:6570.   
+@|
+@|
+@@resource MEcursorPosition
+\:6587\:672c\:63d2\:5165\:70b9\:7684\:4f4d\:7f6e\:5b58\:5728\:95ee\:9898.d2\:5165\:70b9\:4e0d\:662f\:60a8\:8bd5\:56fe\:63d2\:5165\:7684\:5730\:65b9.
+@|
+@|
+@@resource MEsubSuperAdd
+\:60a8\:4f7f\:7528\:4e86\:547d\:4ee4\:5728\:73b0\:6709\:7684\:4e0b\:6807\:6216\:4e0a\:6807\:4e0a\:589e\:52a0\:4e0b\:6807\:6216\:4e0a\:6807. \:60a8\:5fc5\:987b\:9996\:5148\:9009\:62e9\:6216\:627e\:51fa\:5728\:4e0b\:6807\:6216\:4e0a\:6807\:4e2d\:7684\:4e00\:4e2a\:63d2\:5165\:70b9.
+@|
+@|
+@@resource MEnoEmptyBox
+\:60a8\:4f7f\:7528\:4e86\:4e00\:4e2a\:547d\:4ee4\:79fb\:52a8\:4e0b\:4e00\:4e2a\:5360\:4f4d\:7b26\:ff0c \:4f46\:5728\:8868\:8fbe\:5f0f\:4e2d\:6ca1\:6709\:5360\:4f4d\:7b26.
+@|
+@|
+@@resource MEnotMathEditCell
+\:5185\:90e8\:9519\:8befMathEditCell.
+@|
+@|
+@@resource MEnoDestination
+\:60a8\:8bbe\:6cd5\:4f7f\:7528\:9762\:677f\:ff0c\:4f46\:6ca1\:6709\:9009\:62e9\:6216\:6587\:672c\:63d2\:5165\:70b9.    
+@|
+@|
+@@resource illegalDirectiveHead
+\:53d1\:73b0\:4e00\:4e2a\:4ee5 %s\:5f00\:59cb\:7684\:4e0d\:6070\:5f53\:7684\:683c\:5f0f\:5316\:6307\:4ee4.
+@|
+@|
+@@resource illegalDirective
+\:53d1\:73b0\:4e00\:4e2a\:4e0d\:6070\:5f53\:7684\:683c\:5f0f\:5316\:7684\:6307\:4ee4.   
+@|
+@|
+@@resource illegalImageMarkersOption
+\:53d1\:73b0\:4e00\:4e2a\:4e0d\:6070\:5f53\:683c\:5f0f\:7684 ImageMarkers \:9009\:9879.
+@|
+@|
+@@resource illegalNinePatchImageOption
+\:53d1\:73b0\:4e0d\:6070\:5f53\:76849\:8865\:4e01\:56fe\:50cf\:8f93\:5165\:9009\:9879\:3002
+@|
+@|
+@@resource MEillegalOptionNotARule
+\:5f53\:8bfb\:53d6%s\:65f6\:ff0c\:53d1\:73b0\:4e00\:4e2a\:4e0d\:6070\:5f53\:7684\:683c\:5f0f\:5316\:9009\:9879. \:9009\:9879\:4e0d\:662f\:4e00\:79cd\:89c4\:5219\:7684\:5f62\:5f0f.
+@|
+@|
+@@resource MEillegalOptionBadHead
+\:5f53\:8bfb\:53d6%s\:65f6\:ff0c\:53d1\:73b0\:4e00\:4e2a\:4e0d\:6070\:5f53\:7684\:683c\:5f0f\:5316\:9009\:9879\:6807\:9898(%s). \:9009\:62e9\:7684\:6807\:9898\:5fc5\:987b\:662fRule\:6216RuleDelayed.
+@|
+@| \[Hyphen] == \[Hyphen]
+@@resource MEillegalOptionLHSIsNotToken
+\:5f53\:8bfb\:53d6\:4e00\:4e2a%s\:65f6\:ff0c\:53d1\:73b0\:4e00\:4e2a\:4e0d\:6070\:5f53\:683c\:5f0f\:7684\:9009\:62e9. \:9009\:9879\:7684\:5de6\:8fb9\:4e0d\:662f\:7b26\:53f7\:6216\:5b57\:7b26\:4e32.
+@|
+@|
+@@resource MEIllegalOptionName
+\:5f53\:8bfb\:53d6%s\:65f6\:ff0c\:53d1\:73b0\:4e00\:4e2a\:65e0\:6cd5\:8fa8\:8ba4\:7684\:9009\:9879\:540d\:5b57("%s").
+@|
+@|
+@@resource MEillegalOptionBadRHS
+\:5f53\:8bfb\:53d6%s\:65f6\:ff0c\:9009\:9879("%s")\:4e2d\:53d1\:73b0\:4e0d\:6070\:5f53\:683c\:5f0f\:7684\:53f3\:8fb9\:6570\:503c. 
+@|
+@|
+@@resource optionRangeCheckError
+\:9009\:9879("%s")\:4e2d\:53d1\:73b0\:53f3\:8fb9\:6570\:503c\:ff0c\:8be5\:6570\:503c\:8d85\:51fa\:9009\:9879\:652f\:6301\:7684\:8303\:56f4. 
+@|
+@|
+@@resource cellCouldNotBeFormatted
+\:56e0\:4e3a\:5305\:542b\:4e00\:4e2a\:4e0d\:6b63\:786e\:7684\:5355\:5143\:8868\:8fbe\:5f0f\:ff0c\:5355\:5143\:65e0\:6cd5\:683c\:5f0f\:5316.
+@|
+@|
+@@resource MEillegalOptionName
+\:4e00\:4e2a\:975e\:6cd5\:9009\:9879\:540d\:5b57("%s")\:88ab\:7ed9\:4e86%s . \:9009\:9879\:88ab\:5ffd\:7565\:4e86. \:68c0\:67e5\:8868\:8fbe\:5f0f\:7684\:683c\:5f0f\:89c4\:5219.
+@|
+@|
+@@resource MEBadOptions
+\:5f53\:8bfb\:53d6%s\:7684\:9009\:9879\:65f6\:ff0c\:53d1\:751f\:4e86\:9519\:8bef.
+@|
+@|
+@@resource MEBadSize
+\:4fee\:6539 %s \:56fe\:5f62\:5316\:5c3a\:5bf8\:65f6\:51fa\:73b0\:9519\:8bef\:3002
+@|
+@|
+@@resource MEMathLinkErrorWhileReadingBox
+\:5f53\:63a5\:6536BoxData\:65f6\:ff0c\:53d1\:751f\:4e86WSTP\:9519\:8bef. 
+@|
+@|
+@@resource MEUnknownMathEditBox
+\:4e00\:4e2a\:672a\:77e5\:7684\:8fb9\:6846\:540d\:5b57(%s)\:88ab\:4f5c\:4e3aBoxForm\:4f20\:7ed9\:8868\:8fbe\:5f0f. \:68c0\:67e5\:8868\:8fbe\:5f0f\:7684\:683c\:5f0f\:89c4\:5219.
+@|
+@|
+@@resource MEArgumentCount
+\:9519\:8bef\:7684\:53c2\:6570\:503c(%d)\:88ab\:8d4b\:4e88\:7ed9\:8868\:8fbe\:5f0f\:7684BoxForm\:4e2d\:7684\:8fb9\:6846("%s"). \:68c0\:67e5\:8868\:8fbe\:5f0f\:7684\:683c\:5f0f\:89c4\:5219. 
+@|
+@|
+@@resource MERowBoxArgumentNotList
+\:53d1\:73b0RowBox\:4e2d\:7684\:7b2c\:4e00\:4e2a\:53c2\:6570\:65e0\:6548. RowBox\:7684\:7b2c\:4e00\:4e2a\:53c2\:6570\:5fc5\:987b\:662f\:5217\:8868. 
+@|
+@|
+@@resource MEFormBoxBadForm
+\:53d1\:73b0\:4e00\:4e2a\:65e0\:6548\:5f62\:5f0f\:7684FormBox. \:5f62\:5f0f\:5fc5\:987b\:662f\:5b57\:7b26\:4e32.
+@|
+@|
+@@resource MEGridBoxArgumentNotList
+\:53d1\:73b0GridBox\:4e2d\:7684\:7b2c\:4e00\:4e2a\:53c2\:6570\:65e0\:6548. GridBox\:7684\:7b2c\:4e00\:53c2\:6570\:5fc5\:987b\:662f\:4e00\:4e2a\:77e9\:5f62\:77e9\:9635(\:5185\:5d4c\:5217\:8868).
+@|
+@|
+@@resource MEInputFieldBadType
+\:53d1\:73b0\:8f93\:5165\:6846\:5177\:6709\:5f88\:7cdf\:7cd5\:7684\:57fa.
+@|
+@|
+@@resource MEMultiscriptBoxBadBase
+\:53d1\:73b0 MultiscriptBox \:5177\:6709\:5f88\:7cdf\:7cd5\:7684\:57fa\:ff08base\:ff09.
+@|
+@|
+@@resource MEMultiscriptBoxBadPrescripts
+\:53d1\:73b0 MultiscriptBox \:5177\:6709\:7cdf\:7cd5\:7684\:524d\:6807\:ff08prescript\:ff09.
+@|
+@|
+@@resource MEMultiscriptBoxBadPostscripts
+\:53d1\:73b0 MultiscriptBox \:5177\:6709\:7cdf\:7cd5\:7684\:540e\:6807\:ff08postscript\:ff09.
+@|
+@|
+@@resource MEMultiscriptBoxPrescriptsNotList
+\:53d1\:73b0\:5177\:6709\:524d\:6807\:ff08prescript\:ff09\:7684 MultiscriptBox \:4e0d\:5177\:6709\:6210\:5bf9\:811a\:672c\:ff08script\:ff09\:5217\:8868\:7684\:5f62\:5f0f.
+@|
+@|
+@@resource MEMultiscriptBoxPostscriptsNotList
+\:53d1\:73b0\:5177\:6709\:540e\:6807\:ff08postscript\:ff09\:7684 MultiscriptBox \:4e0d\:5177\:6709\:6210\:5bf9\:811a\:672c\:ff08script\:ff09\:5217\:8868\:7684\:5f62\:5f0f.
+@|
+@|
+@@resource MEMultiscriptBoxBadPrescriptPair
+MultiscriptBox \:7684\:4e00\:4e2a\:524d\:6807\:ff08prescript\:ff09\:9879\:4e0d\:662f\:4e00\:4e2a\:811a\:672c\:5217\:8868.
+@|
+@|
+@@resource MEMultiscriptBoxBadPostscriptPair
+MultiscriptBox \:7684\:4e00\:4e2a\:540e\:6807\:ff08postscript\:ff09\:9879\:4e0d\:662f\:4e00\:4e2a\:811a\:672c\:5217\:8868.
+@|
+@|
+@@resource MEMultiscriptBoxBadPrescriptPairCount
+MultiscriptBox \:7684\:4e00\:4e2a\:524d\:6807\:ff08prescript\:ff09\:9879\:662f\:957f\:5ea6%d\:7684\:4e00\:4e2a\:5217\:8868\:ff0c\:524d\:6807\:5217\:8868\:7684\:6bcf\:4e00\:9879\:9700\:8981\:662f\:4e00\:4e2a\:5305\:542b\:4e0a\:6807\:548c\:4e0b\:6807\:7684\:5217\:8868.
+@|
+@|
+@@resource MEMultiscriptBoxBadPostscriptPairCount
+MultiscriptBox \:7684\:4e00\:4e2a\:540e\:6807\:ff08postscript\:ff09\:9879\:662f\:957f\:5ea6%d\:7684\:4e00\:4e2a\:5217\:8868\:ff0c\:540e\:6807\:5217\:8868\:7684\:6bcf\:4e00\:9879\:9700\:8981\:662f\:4e00\:4e2a\:5305\:542b\:4e0a\:6807\:548c\:4e0b\:6807\:7684\:5217\:8868.
+@|
+@|
+@@resource MEMultiscriptBoxBadTag
+MultiscriptBox \:5c11\:4e00\:4e2a\:6807\:8bb0\:ff08tag\:ff09\:ff0c\:9009\:9879 %s\:5728\:6807\:8bb0\:7684\:4f4d\:7f6e\:4e0a.
+@|
+@|
+@@resource MEMultivaluedControlMissingValue
+%s\:6ca1\:6709\:7b2c\:4e8c\:4e2a\:53c2\:6570. \:7b2c\:4e8c\:4e2a\:53c2\:6570\:5fc5\:987b\:662f\:6570\:503c\:3001\:6570\:503c\:5217\:8868\:6216\:5217\:8868\:6570\:503c\:6807\:8bb0\:5bf9.
+@|
+@|
+@@resource MEMultivaluedControlMissingValueList
+%s\:6ca1\:6709\:7b2c\:4e8c\:4e2a\:53c2\:6570. \:7b2c\:4e8c\:4e2a\:53c2\:6570\:5fc5\:987b\:662f\:6570\:503c\:5217\:8868\:6216\:6570\:503c\:6807\:8bb0\:5bf9.
+@|
+@|
+@@resource MEMultivaluedControlValuesListShort
+%s\:53d1\:73b0\:7b2c\:4e8c\:4e2a\:53c2\:6570\:65e0\:6548. \:9700\:8981\:4e24\:4e2a\:6216\:66f4\:591a\:7684\:6570\:503c\:5217\:8868\:6216\:6570\:503c\:6807\:8bb0\:5bf9. \:7b2c\:4e8c\:4e2a\:53c2\:6570\:662f\:957f\:5ea6\:4e3a%d\:7684\:5217\:8868.   
+@|
+@|
+@@resource MEMultivaluedControlNonDefaultAppearance
+%s\:53d1\:73b0\:6570\:503c\:6807\:8bb0\:5bf9. \:8fd9\:4e9b\:8fb9\:6846\:65e0\:6cd5\:6709\:4efb\:4f55\:5916\:89c2\:ff0c\:9664\:9ed8\:8ba4\:5916\:89c2\:4e4b\:5916. 
+@|
+@|
+@@resource MEMultivaluedControlDefaultAppearanceSpecified
+%s\:53d1\:73b0\:9ed8\:8ba4\:5916\:89c2. \:9664\:9ed8\:8ba4\:5916\:89c2\:4e4b\:5916\:ff0c\:8fd9\:4e9b\:8fb9\:6846\:65e0\:6cd5\:6709\:4efb\:4f55\:5916\:89c2. 
+@|
+@|
+@@resource MEOverlayBoxMissingOverlayList
+OverlayBox \:5177\:6709\:65e0\:6548\:7684\:6216\:7f3a\:5c11\:91cd\:53e0\:ff08overlay\:ff09\:5217\:8868\:ff0c\:91cd\:53e0\:6846\:7b26\:7684\:5217\:8868\:5fc5\:987b\:662f\:8fd9\:79cd\:5f62\:5f0f {boxes1, boxes2, ...}.
+@|
+@|
+@@resource METabViewBoxBadLabelBox
+\:53d1\:73b0\:4e00\:4e2a\:5e26\:6709\:89c6\:56fe\:6307\:5b9a\:7684TabViewBox\:ff0c\:5b83\:5305\:542b\:65e0\:6548\:7684\:6807\:7b7e->\:8fb9\:6846\:5bf9. \:5404\:79cd\:89c6\:56fe\:6307\:5b9a\:6210\:5206\:5fc5\:987b\:91c7\:7528\:5f62\:5f0f{\:6570\:503c\:ff0c\:6807\:7b7e->\:8fb9\:6846}. 
+@|
+@|
+@@resource METabViewBoxMissingSpecifierList
+\:53d1\:73b0\:4e00\:4e2a\:5e26\:6709\:65e0\:6548\:6307\:5b9a\:6210\:5206\:5217\:8868\:5bf9\:7684TabViewBox. \:6307\:5b9a\:6210\:5206\:5217\:8868\:5fc5\:987b\:91c7\:7528\:5f62\:5f0f{{value1, label1->boxes1}\:ff0c{value2, label2->boxes2}...}.
+@|
+@|
+@@resource METabViewBoxViewSpecifierNotList
+\:53d1\:73b0\:4e00\:4e2a\:5e26\:6709\:89c6\:56fe\:6307\:5b9a\:7684TabViewBox. \:5404\:79cd\:89c6\:56fe\:6307\:5b9a\:6210\:5206\:5fc5\:987b\:91c7\:7528\:5f62\:5f0f{\:6570\:503c, \:6807\:7b7e->\:8fb9\:6846}.
+@|
+@|
+@@resource METabViewBoxViewSpecifierBadLength
+\:53d1\:73b0\:4e00\:4e2a\:5e26\:6709\:957f\:5ea6%d\:7684\:89c6\:56fe\:6307\:5b9a\:7684TabViewBox. \:5404\:79cd\:89c6\:56fe\:6307\:5b9a\:6210\:5206\:5fc5\:987b\:91c7\:7528\:5f62\:5f0f{\:6570\:503c, \:6807\:7b7e->\:8fb9\:6846}.    
+@|
+@|
+@@resource METabViewBoxMissingValue
+\:53d1\:73b0TabViewBox\:7f3a\:5c11\:4e00\:4e2a\:503c. \:6bcf\:4e2aTabViewBox\:5fc5\:987b\:6709\:63a7\:5236\:6570\:503c.
+@|
+@|
+@@resource MEPaneSelectorBoxMissingSpecifierList
+\:53d1\:73b0\:4e00\:4e2a\:5e26\:6709\:65e0\:6548\:6307\:5b9a\:6210\:5206\:5217\:8868\:5bf9\:7684PaneSelectorBox. \:6307\:5b9a\:6210\:5206\:5217\:8868\:5fc5\:987b\:91c7\:7528\:5f62\:5f0f{value1-> boxes1, value2-> boxes2...}. 
+@|
+@|
+@@resource MEPaneSelectorBoxBadViewSpecifier
+\:53d1\:73b0\:4e00\:4e2a\:5e26\:6709\:65e0\:6548\:89c6\:56fe\:6307\:5b9a\:7684PaneSelectorBox. \:6bcf\:4e2a\:89c6\:56fe\:6307\:5b9a\:6210\:5206\:5fc5\:987b\:91c7\:7528\:5f62\:5f0f{\:6570\:503c->\:8fb9\:6846}.
+@|
+@|
+@@resource MEPaneSelectorBoxMissingValue
+\:53d1\:73b0PaneSelectorBox\:7f3a\:5c11\:4e00\:4e2a\:503c. \:5404PaneSelectorBox\:5fc5\:987b\:6709\:63a7\:5236\:6570\:503c.
+@|
+@|
+@@resource MEBoxArgumentNotList
+\:53d1\:73b0\:5e26\:6709\:65e0\:6548\:53c2\:6570\:7684\:6846\:5f0f\:7ed3\:6784. \:8fb9\:6846\:53c2\:6570\:5fc5\:987b\:662f\:4e00\:5bf9\:8fb9\:6846.
+@|
+@|
+@@resource MEBoxNotPairs
+\:53d1\:73b0\:65e0\:6548\:8fb9\:6846. \:9700\:8981\:4e00\:4e2a\:5305\:542b\:6709\:8fb9\:6846\:5bf9\:7684\:5b50\:5217\:8868\:7684\:5217\:8868\:ff0c\:800c\:53d1\:73b0\:5b50\:5217\:8868\:957f\:5ea6\:4e3a%d.
+@|
+@|
+@@resource MEBadGridBoxReplaceDimensions
+GridBox\:4e2d\:7684\:66ff\:6362\:65e0\:6cd5\:6bd4\:9009\:62e9\:66f4\:5927.
+@|
+@|
+@@resource METemplateArgBoxSlot
+\:53d1\:73b0\:5e26\:6709\:7f3a\:5c11\:69fd\:5b54\:6570\:5b57\:7684TemplateArgBox.
+@|
+@|
+@@resource METemplateBoxBadArgs
+\:4e00\:4e2a\:6709\:6807\:7b7e %s\:7684TemplateBox\:51fa\:73b0\:ff0c\:5e76\:4e14\:5176\:7b2c\:4e00\:4e2a\:53c2\:6570\:4e0d\:662f\:4e00\:4e32templatebox\:53c2\:6570.
+@|
+@|
+@@resource METemplateBoxBadDisplayFunction
+\:4e00\:4e2a\:5e26\:6709\:6807\:7b7e %s \:7684TemplateBox\:51fa\:73b0\:4e00\:4e2a\:6ca1\:6709head \:51fd\:6570\:7684 DisplayFunction.
+@|
+@|
+@@resource METemplateBoxUnstableDisplayFunction
+\:4e00\:4e2a\:5e26\:6709\:6807\:7b7e %s \:7684TemplateBox\:62e5\:6709\:4e0d\:7a33\:5b9a\:7684 DisplayFunction %s. TemplateBox\:7684\:53c2\:6570\:53ef\:80fd\:5df2\:7ecf\:4e22\:5931\:4e86\:4fe1\:606f.
+@|
+@|
+@@resource METemplateBoxBadTag
+\:51fa\:73b0\:4e00\:4e2a\:4e22\:5931\:6807\:7b7e\:7684TemplateBox. \:51fa\:73b0\:9009\:9879 %s\:53d6\:4ee3\:4e86\:4e00\:4e2a\:6807\:7b7e.
+@|
+@|
+@@resource METemplateBoxBadDspFuncTooltipMsg
+TemplateBox \:65e0\:6cd5\:4f7f\:7528\:6307\:5b9a\:7684display function, \:6216\:8005\:5b83\:65e0\:6cd5\:5b9a\:4f4d\:8fd9\:4e2adisplay function \:6216\:8bb8\:56e0\:4e3a\:4e00\:4e2a\:6837\:5f0f\:8868\:7f3a\:5931.
+@|
+@|
+@@resource METemplateBoxDefaultDspFuncTooltipMsg
+TemplateBox \:6b63\:5728\:7528\:9ed8\:8ba4\:7684display function\:663e\:793a. \:4e00\:4e2a\:53ef\:4ee5\:8986\:76d6\:8fd9\:4e2a\:663e\:793a\:7684\:6837\:5f0f\:8868\:53ef\:80fd\:7f3a\:5931.
+@|
+@|
+@@resource MEinternalSelectionError
+\:5728BoxForm\:8868\:8fbe\:5f0f\:7684\:9009\:62e9\:4e2d\:53d1\:73b0\:4e00\:4e2a\:5185\:90e8\:9519\:8bef. \:9009\:62e9\:53ef\:80fd\:4e0d\:662f\:60a8\:60f3\:8981\:7684.
+@|
+@|
+@@resource MEinternalErrorUndefinedOperator
+\:5728BoxForm\:8868\:8fbe\:5f0f\:4e2d\:53d1\:73b0\:4e00\:4e2a\:5173\:4e8e\:9009\:62e9\:7684\:5185\:90e8\:9519\:8bef. \:9009\:62e9\:53ef\:80fd\:4e0d\:662f\:60a8\:60f3\:8981\:7684.
+\:5728 UnicodeCharacters.tr\:4e2d\:ff0c\:7279\:6b8a\:64cd\:4f5c\:7b260x%x\:672a\:88ab\:5b9a\:4e49.
+@|
+@|
+@@resource MEinternalEditingErrorParserError
+\:5728BoxForm\:8868\:8fbe\:5f0f\:4e2d\:53d1\:73b0\:4e00\:4e2a\:5173\:4e8e\:7f16\:8f91\:7684\:5185\:90e8\:9519\:8bef. \:6709\:89e3\:6790\:9519\:8bef.
+@|
+@|
+@@resource MEinternalEditingErrorBadPattern
+\:5728BoxForm\:8868\:8fbe\:5f0f\:4e2d\:53d1\:73b0\:4e00\:4e2a\:5173\:4e8e\:7f16\:8f91\:7684\:5185\:90e8\:9519\:8bef. \:6709\:4e00\:4e2a\:9519\:8bef\:6a21\:5f0f (pattern) .
+@|
+@|
+@@resource MEinternalFormattingErrorZeroWidthRepeat
+\:5728BoxForm\:8868\:8fbe\:5f0f\:4e2d\:53d1\:73b0\:4e00\:4e2a\:5173\:4e8e\:683c\:5f0f\:5316\:7684\:5185\:90e8\:9519\:8bef. \:4e00\:4e2a\:590d\:5408\:5b57\:7b26\:91cd\:590d\:90e8\:5206\:7684\:5bbd\:5ea6\:6216\:9ad8\:5ea6\:4e3a\:96f6.
+@|
+@|
+@@resource MEinternalLineWrappingError
+\:5728BoxForm\:8868\:8fbe\:5f0f\:4e2d\:53d1\:73b0\:4e00\:4e2a\:5173\:4e8e\:5206\:884c\:7684\:5185\:90e8\:9519\:8bef. \:8868\:8fbe\:5f0f\:53ef\:80fd\:88ab\:4e0d\:6b63\:786e\:5730\:5206\:884c.
+@|
+@|
+@@resource MEOutputOnly
+\:60a8\:8bbe\:6cd5\:5728subexpression\:91cc\:9762\:8fdb\:884c\:7684\:7f16\:8f91\:65e0\:6cd5\:88ab\:5b9e\:73b0\:ff0c\:56e0\:4e3a\:8fd9\:662f\:4e00\:79cd\:56fa\:5b9a\:7684\:7279\:6b8a\:683c\:5f0f.
+@|
+@|
+@@resource MEGridBoxRowNoElements
+\:53d1\:73b0\:4e00\:4e2aGridBox\:5305\:542b\:4e00\:4e2a\:6ca1\:6709\:5143\:7d20\:7684\:884c.
+@|
+@|
+@@resource MEGridBoxUnequalRows
+\:53d1\:73b0\:4e00\:4e2aGridBox\:5305\:542b\:4e0d\:540c\:957f\:5ea6\:7684\:884c.
+@|
+@|
+@@resource MEGridBoxNoRows
+\:53d1\:73b0\:4e00\:4e2aGridBox\:672a\:5305\:542b\:884c\:6216\:5217.
+@|
+@|
+@@resource MEGridBoxOutsideAllowedDimensions
+\:60a8\:8bd5\:56fe\:6dfb\:52a0\:6216\:5220\:9664GridBox\:5c3a\:5bf8\:5141\:8bb8\:9650\:5ea6\:4e4b\:5916\:7684\:884c\:6216\:5217.
+@|
+@|
+@@resource MEIllegalStyleBoxOptionalArg
+\:53d1\:73b0\:4e00\:4e2a\:5e26\:6709\:4e0d\:6b63\:786e\:7684\:7b2c\:4e8c\:4e2a\:53c2\:6570\:7684StyleBox.
+@|
+@|
+@@resource MEShortNameConflict
+\:4e00\:4e2a\:9762\:677f\:83dc\:5355\:9009\:9879\:7684\:77ed\:540d\:5b57\:88ab\:91cd\:65b0\:5b9a\:4e49\:4e86\:ff0c\:8986\:76d6\:540d\:5b57\:7684\:65e7\:610f\:601d. \:88ab\:8986\:76d6\:7684\:540d\:5b57 : %s
+@|
+@|
+@@resource MEExceededMaximumFormatDepth
+\:53d1\:73b0\:4e86\:4e00\:4e2a\:6df1\:5ea6\:8d85\:8fc7\:6700\:5927\:5141\:8bb8\:503c\:7684\:6846\:5f0f\:7ed3\:6784.
+@|
+@|
+@@resource MENumberExceedesMaximumDigits
+\:56e0\:4e3a\:4f4d\:6570\:592a\:591a\:ff0c\:6240\:4ee5\:8be5\:7ed9\:5b9a\:7684\:6570\:5b57\:4e0d\:80fd\:4ee5\:663e\:793a\:5f62\:5f0f\:6e32\:67d3. \:4f46\:8be5\:6570\:5b57\:53ef\:4ee5\:8f93\:5165\:5f62\:5f0f\:88ab\:6e32\:67d3.
+@|
+@|
+@@resource MEUnknownError
+\:53d1\:751f\:4e86\:975e\:6307\:5b9a\:7c7b\:578b\:7684\:9519\:8bef.
+@|
+@|
+@@resource AssertFailedErrorString
+\:67e5\:51fa\:4e00\:4e2a\:53ef\:80fd\:7684\:5185\:90e8\:9519\:8bef.\:5982\:679c\:53ef\:80fd\:ff0c\:8bf7\:5c06\:9519\:8bef\:5411 support@wolfram.com \:62a5\:544a\:ff0c\:5e76\:5f15\:8ff0 "Assertion '%s' failed at %s:%d"\:ff0c\:8bf7\:63cf\:8ff0\:5c3d\:91cf\:591a\:7684\:7ec6\:8282\:ff0c\:4f8b\:5982\:5f53\:9519\:8bef\:53d1\:751f\:65f6\:ff0c\:60a8\:6b63\:5728\:505a\:4ec0\:4e48.
+@|
+@|
+@@resource AssertFailedBoxExpression
+Cell[TextData[{"INTERNAL SELF\[Hyphen]TEST ERROR: `assertfileinfo`\[NewLine]", Cell[BoxData[ButtonBox[PaneSelectorBox[{False -> StyleBox[RowBox[{"\:8bf7\:70b9\:51fb\:8fd9\:91cc"}], FontFamily :> CurrentValue["PanelFontFamily"]], True -> StyleBox[RowBox[{"\:8bf7\:70b9\:51fb\:8fd9\:91cc"}], "HyperlinkActive", FontFamily :> CurrentValue["PanelFontFamily"]]}, Dynamic[CurrentValue["MouseOver"]], BaselinePosition -> Baseline, FrameMargins -> 0, ImageSize -> Automatic], BaseStyle -> "Hyperlink", ButtonData -> {URL["`hyperlink`"], None}, ButtonNote -> "`hyperlink`"]]],"\:ff0c\:770b\:770b\:8be5\:95ee\:9898\:662f\:5426\:5df2\:77e5\:ff0c\:5e76\:62a5\:544a\:7ed9 Wolfram Research\[NewLine]\:4ee5\:4fbf\:5e2e\:52a9\:6539\:8fdb Wolfram \:7cfb\:7edf."}], "Assert", "MSG"]
+@|
+@|
+@@resource AssertFailedHyperlink
+http://support.wolfram.com/error-report/?Version=`version`&SystemID=`systemid`&LicenseID=`licenseid`&location=`assertfileinfo`
+@|
+@|
+@@resource AssertInformationFailedBoxExpression
+Cell[TextData[{"INTERNAL SELF\[Hyphen]TEST ERROR: `assertfileinfo`\[NewLine]Information:`additionalinformation`\[NewLine]", Cell[BoxData[ButtonBox[PaneSelectorBox[{False -> StyleBox[RowBox[{"\:8bf7\:70b9\:51fb\:8fd9\:91cc"}], FontFamily :> CurrentValue["PanelFontFamily"]], True -> StyleBox[RowBox[{"\:8bf7\:70b9\:51fb\:8fd9\:91cc"}], "HyperlinkActive", FontFamily :> CurrentValue["PanelFontFamily"]]}, Dynamic[CurrentValue["MouseOver"]], BaselinePosition -> Baseline, FrameMargins -> 0, ImageSize -> Automatic], BaseStyle -> "Hyperlink", ButtonData -> {URL["`hyperlink`"], None}, ButtonNote -> "`hyperlink`"]]],"\:ff0c\:770b\:770b\:8be5\:95ee\:9898\:662f\:5426\:5df2\:77e5\:ff0c\:5e76\:62a5\:544a\:7ed9 Wolfram Research\[NewLine]\:4ee5\:4fbf\:5e2e\:52a9\:6539\:8fdb Wolfram \:7cfb\:7edf."}], "Assert", "MSG"]
+@|
+@|
+@@resource AssertInformationFailedHyperlink
+http://support.wolfram.com/error-report/?Version=`version`&SystemID=`systemid`&LicenseID=`licenseid`&location=`assertfileinfo`
+@|
+@|
+@@resource IllegalOptionRHS
+\:4e3a\:9009\:9879%s\:6307\:5b9a\:7684\:8bbe\:7f6e\:65e0\:6cd5\:88ab\:4f7f\:7528.      
+@|
+@|
+@@resource IllegalDirectiveValue
+\:5ffd\:7565\:65e0\:6548\:7684\:56fe\:5f62\:6307\:4ee4 "%s" .
+@|
+@|
+@@resource IllegalSurfaceColor
+SurfaceColor \:6307\:4ee4 : "%s" \:4e0d\:662f\:5408\:6cd5\:7684\:4e8c\:7ef4\:56fe\:5f62\:7684\:6307\:4ee4.
+@|
+@|
+@@resource cantOpenPrefsFile
+\:60a8\:8bbe\:6cd5\:6253\:5f00\:504f\:597d\:8bbe\:7f6e\:6587\:4ef6. \:8fd9\:4e2a\:6587\:4ef6\:88ab\:7528\:6765\:5b58\:50a8\:914d\:7f6e\:4fe1\:606f\:ff0c\:4f46\:65e0\:6cd5\:88ab\:6253\:5f00.
+@|
+@|
+@@resource requestedPartOutOfRangeError
+Wolfram \:8bed\:8a00\:8bbe\:6cd5\:7531\:90e8\:5206\:6570\:5b57\:6765\:9009\:62e9\:5355\:5143\:6216\:5355\:5143\:96c6\:ff0c\:4f46\:662f\:6240\:9700\:7684\:5355\:5143\:4e0d\:5b58\:5728.
+@|
+@|
+@@resource noPlaceToPasteTemplate
+\:60a8\:8bbe\:6cd5\:63d2\:5165\:4e00\:5757\:51fd\:6570\:6a21\:677f\:ff0c\:4f46\:6ca1\:6709\:63d2\:5165\:70b9.
+@|
+@|
+@@resource cantStoreSealBecauseProgramLocked
+\:56e0\:4e3a\:60a8\:6ca1\:6709\:5fc5\:8981\:7684\:8bbf\:95ee\:6743\:9650\:ff0c\:6240\:4ee5\:60a8\:7684\:4e2a\:4eba\:5316\:4fe1\:606f\:4e0d\:80fd\:88ab\:4fdd\:5b58.\:60a8\:5c06\:5fc5\:987b\:5728\:4e0b\:6b21\:542f\:52a8 Wolfram \:7cfb\:7edf\:65f6\:91cd\:65b0\:8f93\:5165\:4fe1\:606f.
+@|
+@|
+@@resource illegalOptionHeadIsNotToken	 
+\:53d1\:73b0\:4e00\:4e2a\:4e0d\:6070\:5f53\:7684\:683c\:5f0f\:5316\:9009\:9879. \:9009\:9879\:7684\:5de6\:8fb9\:4e0d\:662f\:7b26\:53f7\:6216\:5b57\:7b26\:4e32.
+@|
+@@resource syntaxErrorInNotebookFile
+\:5728%ld\:884c\:5b58\:5728\:4e00\:4e2a\:8bed\:6cd5\:9519\:8bef\:ff0c\:8be5\:884c\:5728\:6587\:4ef6: %s\:4e2d.
+\:9519\:8bef\:662f: 
+%s
+@|
+@|
+@@resource syntaxErrorReadingNotebookData
+\:5728\:7b14\:8bb0\:672c\:683c\:5f0f\:6570\:636e\:7684%ld\:884c\:5b58\:5728\:4e00\:4e2a\:8bed\:6cd5\:9519\:8bef.
+\:9519\:8bef\:662f: 
+%s
+@|
+@|
+@@resource notebookExpressionErrorNoFunction
+Wolfram \:8bed\:8a00\:8bd5\:56fe\:8bfb\:53d6\:4e00\:4e2a\:9519\:8bef\:683c\:5f0f\:7684\:7b14\:8bb0\:672c\:8868\:8fbe\:5f0f: 
+\:8868\:8fbe\:5f0f\:4e0d\:662fNotebook[ ]\:8868\:8fbe\:5f0f.
+@|
+@|
+@@resource notebookExpressionErrorNoArgs
+Wolfram \:8bed\:8a00\:8bd5\:56fe\:8bfb\:53d6\:4e00\:4e2a\:9519\:8bef\:683c\:5f0f\:7684\:7b14\:8bb0\:672c\:8868\:8fbe\:5f0f: 
+Notebook[ ]\:8868\:8fbe\:5f0f\:6ca1\:6709\:53c2\:6570.
+@|
+@|
+@@resource notebookExpressionErrorNoList
+Wolfram \:8bed\:8a00\:8bd5\:56fe\:8bfb\:53d6\:4e00\:4e2a\:9519\:8bef\:683c\:5f0f\:7684\:7b14\:8bb0\:672c\:8868\:8fbe\:5f0f: 
+\:7b14\:8bb0\:672c\:8868\:8fbe\:5f0f\:6ca1\:6709\:5305\:542b\:5217\:8868\:4f5c\:4e3a\:5b83\:7684\:7b2c\:4e00\:4e2a\:53c2\:6570.
+@|
+@|
+@@resource unrecognizedOrBoxHeadInTextData
+TextData\:5355\:5143\:5305\:542b\:4e86\:4e00\:4e2a\:8868\:8fbe\:5f0f\:ff0c\:8be5\:8868\:8fbe\:5f0f\:5305\:542b\:4e86\:5728TextData\:5355\:5143: %s\:91cc\:4e0d\:652f\:6301\:7684\:5143\:7d20.
+@|
+@|
+@@resource syntaxErrorInValueString
+\:5728\:9009\:9879\:503c\:7684%ld\:884c\:5b58\:5728\:4e00\:4e2a\:8bed\:6cd5\:9519\:8bef.
+\:9519\:8bef\:662f: 
+%s
+@|
+@|
+@@resource syntaxErrorInPreferencesFile
+\:5728%ld\:884c\:5b58\:5728\:4e00\:4e2a\:8bed\:6cd5\:9519\:8bef\:ff0c\:8be5\:884c\:4f4d\:4e8e\:504f\:597d\:8bbe\:7f6e\:6587\:4ef6: %s\:4e2d.
+\:9519\:8bef\:662f: 
+%s
+@|
+@|
+@@resource internalSyntaxError
+\:5728\:5185\:90e8\:751f\:6210\:7684\:5b57\:7b26\:4e32%ld\:884c\:4e2d\:5b58\:5728\:4e00\:4e2a\:8bed\:6cd5\:9519\:8bef.
+\:9519\:8bef\:662f: 
+%s
+@|
+@|
+@@resource syntaxErrorInTextResource
+\:5728%ld\:884c\:4e2d\:5b58\:5728\:4e00\:4e2a\:8bed\:6cd5\:9519\:8bef\:ff0c\:8be5\:884c\:4f4d\:4e8e\:6587\:672c\:8d44\:6e90%s\:4e2d.
+\:9519\:8bef\:662f: 
+%s
+@|
+@|
+@@resource syntaxErrorInCellContent
+There was a syntax error while reading this cell.
+@|
+@|
+@@resource syntaxErrorInCellExpressionText
+\:5355\:5143\:8868\:8fbe\:5f0f\:7684%ld\:884c\:4e2d\:5b58\:5728\:4e00\:4e2a\:8bed\:6cd5\:9519\:8bef.
+\:9519\:8bef\:662f: 
+%s
+@|
+@|
+@@resource outOfServerMemory
+\:60a8\:7684X\:670d\:52a1\:5668\:6b63\:4ee5\:4f4e\:5185\:5b58\:8fd0\:884c.
+@|
+@|
+@@resource MEMissingBoxData
+\:751f\:6210\:4e86\:4e00\:4e2a\:65e0\:6548\:7684\:6392\:7248\:7ed3\:6784: \:7f3a\:5c11BoxData. 
+@|
+@|
+@@resource unknownMenuItemTarget
+\:83dc\:5355\:914d\:7f6e\:6587\:672c\:8d44\:6e90\:6587\:4ef6\:5b58\:5728\:4e00\:4e2a\:9519\:8bef: \:65e0\:6548\:9879\:76ee\:76ee\:6807%s.
+@|
+@|
+@@resource syntaxErrorInLinkSetupFile
+\:5728LinkSetup\:6587\:4ef6"%s"\:4e2d\:5b58\:5728\:4e00\:4e2a\:8bed\:6cd5\:9519\:8bef.  
+@|
+@|
+@@resource missingTextResource
+\:7f3a\:5c11\:4e00\:4e2a\:6587\:672c\:8d44\:6e90. \:8fd9\:8868\:660eSystemFiles/FrontEnd/TextResources\:76ee\:5f55\:7684\:4fee\:6539\:6216\:5185\:90e8\:9519\:8bef.
+@|
+@|
+@@resource tooManyUnicodeSubfonts
+\:5728Unicode\:5b57\:4f53\:914d\:7f6e\:6587\:672c\:8d44\:6e90\:6587\:4ef6\:4e2d\:5b58\:5728\:4e00\:4e2a\:9519\:8bef\:ff1a\:5b50\:5b57\:4f53\:8fc7\:591a. 
+@|
+@|
+@@resource cantCreate1x1GridBox
+\:60a8\:65e0\:6cd5\:521b\:5efa\:4e00\:4e2a1x1\:7684GridBox.
+@|
+@|
+@@resource kernelExitedDuringEval
+\:5728\:8ba1\:7b97\:8fc7\:7a0b\:4e2d\:ff0c%s \:5185\:6838\:5df2\:4e2d\:65ad\:ff08\:9000\:51fa\:ff09\:3002
+@|
+@|
+@@resource speechManagerNotInstalled
+\:56e0\:4e3a Speech Manager \:7cfb\:7edf\:8f6f\:4ef6\:672a\:88ab\:5b89\:88c5\:ff0c\:6240\:4ee5\:4e0d\:80fd\:6267\:884c\:8bed\:97f3\:8f93\:51fa. 
+@|
+@|
+@@resource cantFindCharacterEncodingFile
+\:524d\:7aef\:4e0d\:80fd\:4e3a\:6240\:9700\:7684\:7f16\:7801 (%s) \:627e\:5230\:4e00\:4e2a CharacterEncoding \:6587\:4ef6.
+@|
+@|
+@@resource cantOpenCharacterEncodingFile
+\:8fd9\:4e2aCharacterEncoding\:6587\:4ef6\:4e0d\:80fd\:88ab\:6253\:5f00: %s.
+@|
+@|
+@@resource syntaxErrorInCharacterEncodingFile
+\:7f16\:7801%s\:6240\:9700\:7684CharacterEncoding\:6587\:4ef6\:4e2d\:5b58\:5728\:4e00\:4e2a\:8bed\:6cd5\:9519\:8bef. \:9519\:8bef\:5728%ld\:884c: 
+%s
+@|
+@|
+@@resource wrongHeadInCharacterEncodingFile
+\:7f16\:7801%s\:6240\:9700\:7684CharacterEncoding\:6587\:4ef6\:4e2d\:4e0d\:5305\:542b\:4e00\:5f20\:5217\:8868. 
+@|
+@|
+@@resource wrongArgCountInCharacterEncodingFile
+\:7f16\:7801%s\:6240\:9700\:7684CharacterEncoding\:6587\:4ef6\:4e2d\:7684\:5916\:90e8\:5217\:8868\:6709\:4e0d\:6b63\:786e\:7684\:53c2\:6570\:6570\:91cf.  
+@|
+@|
+@@resource unknownEncodingTypeInCharacterEncodingFile
+\:7f16\:7801%s\:6240\:9700\:7684CharacterEncoding\:6587\:4ef6\:4e2d\:7684\:7b2c\:4e00\:5143\:7d20\:6307\:5b9a\:4e00\:79cd\:672a\:77e5\:7684\:7f16\:7801\:7c7b\:578b.
+@|
+@|
+@@resource badElementInCharacterEncodingFile
+\:7f16\:7801%s\:6240\:9700\:7684CharacterEncoding\:6587\:4ef6\:4e2d\:7f16\:7801\:8868\:683c\:7684\:5143\:7d20\:6570%s\:662f\:65e0\:6548\:7684. 
+@|
+@|
+@@resource positionNotIntegerInCharacterEncodingFile
+\:7f16\:7801%s\:6240\:9700\:7684CharacterEncoding\:6587\:4ef6\:4e2d\:5143\:7d20\:6570%s\:6240\:6307\:5b9a\:7684\:5b57\:4f53\:4f4d\:7f6e\:4e0d\:662f\:6574\:6570.   
+@|
+@|
+@@resource positionOutOfRangeAInCharacterEncodingFile
+\:7f16\:7801%s\:6240\:9700\:7684CharacterEncoding\:6587\:4ef6\:4e2d\:5143\:7d20\:6570%s\:6240\:6307\:5b9a\:7684\:5b57\:4f53\:4f4d\:7f6e\:8d85\:51fa\:8303\:56f4(0-255).   
+@|
+@|
+@@resource positionOutOfRangeBInCharacterEncodingFile
+\:7f16\:7801%s\:6240\:9700\:7684CharacterEncoding\:6587\:4ef6\:4e2d\:5143\:7d20\:6570%s\:6240\:6307\:5b9a\:7684\:5b57\:4f53\:4f4d\:7f6e\:8d85\:51fa\:8303\:56f4(0-65535).
+@|
+@|
+@@resource unicodeEntryInvalidInCharacterEncodingFile
+\:7f16\:7801%s\:6240\:9700\:7684CharacterEncoding\:6587\:4ef6\:4e2d\:5143\:7d20\:6570%s\:6240\:6307\:5b9a\:7684unicode\:5b57\:7b26\:4e0d\:662f\:5b57\:7b26\:4e32\:6216\:6574\:6570.
+@|
+@|
+@@resource unicodeOutOfRangeInCharacterEncodingFile
+\:7f16\:7801%s\:6240\:9700\:7684CharacterEncoding\:6587\:4ef6\:4e2d\:5143\:7d20\:6570%s\:6240\:6307\:5b9a\:7684unicode\:503c\:8d85\:51fa\:8303\:56f4(0-65535).
+@|
+@|
+@@resource badThirdArgInCharacterEncodingFile
+\:7f16\:7801%s\:6240\:9700\:7684CharacterEncoding\:6587\:4ef6\:4e2d\:5143\:7d20\:6570%s\:7684\:7b2c\:4e09\:4e2a\:53c2\:6570\:4e0d\:662fTrue\:6216False.
+@|
+@|
+@@resource cantFindXFontPattern
+\:524d\:7aef\:4e0d\:80fd\:627e\:51fa\:6240\:9700\:7684\:5b57\:4f53\:6837\:5f0f: %s. 
+@|
+@|
+@@resource cantInsertInlineCellInUnformattedCell
+\:60a8\:65e0\:6cd5\:5c06\:4e00\:4e2a\:884c\:5185\:5355\:5143\:63d2\:5165\:4e00\:4e2a\:88ab\:663e\:793a\:4e3a\:5c55\:793a\:8868\:8fbe\:5f0f\:5f62\:5f0f\:7684\:5355\:5143\:4e2d.
+@|
+@|
+@@resource cantInsertInlineCellBecauseDisallowed
+\:60a8\:65e0\:6cd5\:5c06\:4e00\:4e2a\:884c\:5185\:5355\:5143\:63d2\:5165\:8be5\:5355\:5143\:4e2d\:ff0c\:56e0\:4e3a\:9009\:9879AllowInlineCells\:88ab\:8bbe\:7f6e\:4e3aFalse.
+@|
+@|
+@@resource TRMresourceOutOfRange
+\:8d44\:6e90(%d)\:8d85\:51fa\:8303\:56f4(%d - %d).  
+@|
+@|
+@@resource TRMnoFileForResource
+\:8d44\:6e90"%s"\:6240\:9700\:7684\:6587\:4ef6\:4e0d\:5b58\:5728.
+@|
+@|
+@@resource TRMcantOpenResourceFile
+\:8d44\:6e90"%s"\:6240\:9700\:7684\:6587\:4ef6%s\:4e0d\:80fd\:88ab\:6253\:5f00.
+@|
+@|
+@@resource TRMcantReadFullResource
+\:65e0\:6cd5\:8bfb\:53d6\:6240\:6709\:7684\:8d44\:6e90"%s".
+@|
+@|
+@@resource TRMcantOpenRawResourceFile
+\:524d\:7aef\:65e0\:6cd5\:6253\:5f00\:6587\:672c\:8d44\:6e90\:6587\:4ef6%s.   
+@|
+@|
+@@resource TRMcantReadRawResourceFile
+\:524d\:7aef\:65e0\:6cd5\:8bfb\:53d6\:6587\:672c\:8d44\:6e90\:6587\:4ef6%s. 
+@|
+@|
+@@resource TRMsyntaxErrorInResourceFile
+\:5728\:6587\:672c\:8d44\:6e90\:6587\:4ef6%s\:7684%d\:884c\:5b58\:5728\:4e00\:4e2a\:53e5\:6cd5\:9519\:8bef.  
+@|
+@|
+@@resource cantCreateDefaultsDirectory
+\:524d\:7aef\:65e0\:6cd5\:521b\:5efa\:9ed8\:8ba4\:76ee\:5f55%s.  
+@|
+@|
+@@resource cantFindResourceFiles
+\:524d\:7aef\:6ca1\:6709\:641c\:7d22\:5230\:6587\:672c\:8d44\:6e90\:6587\:4ef6.
+@|
+@|
+@@resource cantFindAnyFonts
+\:524d\:7aef\:65e0\:6cd5\:53d1\:73b0\:4efb\:4f55\:5b57\:4f53. \:8fd9\:8868\:660e\:670d\:52a1\:5668\:914d\:7f6e\:4e0d\:6b63\:786e. 
+@|
+@|
+@@resource prefsFileNotReadable
+\:504f\:597d\:8bbe\:7f6e\:6587\:4ef6(%s)\:4e0d\:662f\:53ef\:8bfb\:53d6\:7684.
+@|
+@|
+@@resource spanboxHashTableBroken
+\:5185\:90e8\:9519\:8bef: SpanBox \:7684 hash \:8868\:8868\:683c\:7834\:635f.
+@|
+@|
+@@resource spanboxBadFont
+\:53ef\:5ef6\:4f38\:5b57\:7b260x%x\:4f7f\:7528%s\:5b57\:4f53(\:5927\:5c0f%g)\:ff0c\:5b83\:6709\:4e00\:4e2a\:5927\:5c0f\:4e3a\:96f6\:7684\:91cd\:8986\:7247\:65ad(0x%x).
+@|
+@|
+@@resource couldntFindUnicodeCharactersTextResource
+\:524d\:7aef\:4e0d\:80fd\:53d1\:73b0UnicodeCharacters\:7684\:6587\:672c\:8d44\:6e90.  
+@|
+@|
+@@resource corruptedUnicodeResource
+Unicode \:4e8c\:8fdb\:5236\:8d44\:6e90\:635f\:574f\:4e86.
+@|
+@|
+@@resource cantFindMacResourcesFile
+\:65e0\:6cd5\:627e\:5230\:9ed8\:8ba4\:7684 Macintosh \:8d44\:6e90\:6587\:4ef6\[LongDash]Resources.rsrc. \:8fd9\:8868\:660e Wolfram \:7cfb\:7edf\:7684\:5b89\:88c5\:4e0d\:6b63\:786e\:ff0c\:6216\:6709\:78c1\:76d8\:9519\:8bef. 
+@|
+@|
+@@resource HeadOfMenuSetupIsNotMenu
+\:5728\:83dc\:5355\:8bbe\:5b9a\:6587\:4ef6 MenuSetup.tr \:4e2d\:7684\:8868\:8fbe\:5f0f\:5934\:90e8 \:ff08head\:ff09 \:4e0d\:662f "\:83dc\:5355" .
+@|
+@|
+@@resource FirstArgOfMenuWasNotString
+\:5728\:83dc\:5355\:8bbe\:5b9a\:6587\:4ef6 MenuSetup.tr \:4e2d\:7684\:4e00\:4e2a\:83dc\:5355\:51fd\:6570\:7b2c\:4e00\:53c2\:6570\:4e0d\:662f\:5b57\:7b26\:4e32.
+@|
+@|
+@@resource SecondArgOfMenuWasNotList
+\:5728\:83dc\:5355\:8bbe\:5b9a\:6587\:4ef6 MenuSetup.tr \:4e2d\:7684\:4e00\:4e2a\:83dc\:5355\:51fd\:6570\:7684\:7b2c\:4e8c\:4e2a\:53c2\:6570\:4e0d\:662f\:5217\:8868.
+@|
+@|
+@@resource UnknownHeadInMenuSetup
+\:5728\:83dc\:5355\:8bbe\:5b9a\:6587\:4ef6 MenuSetup.tr \:4e2d\:5b58\:5728\:4e00\:4e2a\:65e0\:6cd5\:8fa8\:8ba4\:7684\:8868\:8fbe\:5f0f\:5934\:90e8 "head" (%s).
+@|
+@|
+@@resource UnknownSymbolInMenuSetup
+\:5728\:83dc\:5355\:8bbe\:5b9a\:6587\:4ef6 MenuSetup.tr \:4e2d\:5b58\:5728\:4e00\:4e2a\:65e0\:6cd5\:8fa8\:8ba4\:7684\:7b26\:53f7(%s).
+@|
+@|
+@@resource UnknownObjectInMenuSetup
+\:5728\:83dc\:5355\:8bbe\:5b9a\:6587\:4ef6 MenuSetup.tr \:4e2d\:5b58\:5728\:4e00\:4e2a\:65e0\:6cd5\:8fa8\:8ba4\:7684\:8868\:8fbe\:5f0f.
+@|
+@|
+@@resource BadNumberOfArgsToMenuObject
+\:5728\:83dc\:5355\:8bbe\:5b9a\:6587\:4ef6 MenuSetup.tr \:4e2d\:4e00\:4e2a\:83dc\:5355\:51fd\:6570\:6709\:4e0d\:6b63\:786e\:7684\:53c2\:6570\:6570\:91cf. 
+@|
+@|
+@@resource BadNumberOfArgsToLinkedItems
+\:5728\:83dc\:5355\:8bbe\:5b9a\:6587\:4ef6 MenuSetup.tr \:4e2d\:4e00\:4e2aLinkedItems\:51fd\:6570\:6709\:4e0d\:6b63\:786e\:7684\:53c2\:6570\:6570\:91cf.
+@|
+@|
+@@resource FirstArgOfLinkedItemsWasNotList
+\:5728\:83dc\:5355\:8bbe\:5b9a\:6587\:4ef6 MenuSetup.tr \:4e2d\:4e00\:4e2aLinkedItems\:51fd\:6570\:7684\:7b2c\:4e00\:53c2\:6570\:4e0d\:662f\:5217\:8868. 
+@|
+@|
+@@resource BadNumberOfArgsToAlternateItems
+\:5728\:83dc\:5355\:8bbe\:5b9a\:6587\:4ef6 MenuSetup.tr \:4e2d\:4e00\:4e2aAlternateItems\:51fd\:6570\:6709\:4e0d\:6b63\:786e\:7684\:53c2\:6570\:6570\:91cf.
+@|
+@|
+@@resource FirstArgOfAlternateItemsWasNotList
+\:5728\:83dc\:5355\:8bbe\:5b9a\:6587\:4ef6 MenuSetup.tr \:4e2d\:4e00\:4e2aAlternateItems\:51fd\:6570\:7684\:7b2c\:4e00\:53c2\:6570\:4e0d\:662f\:5217\:8868.
+@|
+@|
+@@resource DelimiterWithTooManyArgs
+\:5728\:83dc\:5355\:8bbe\:5b9a\:6587\:4ef6 MenuSetup.tr \:4e2d\:4e00\:4e2aDelimiter\:51fd\:6570\:6709\:4e0d\:6b63\:786e\:7684\:53c2\:6570\:6570\:91cf.
+@|
+@|
+@@resource DelimiterWithNonStringArg
+\:5728\:83dc\:5355\:8bbe\:5b9a\:6587\:4ef6 MenuSetup.tr \:4e2d\:4e00\:4e2aDelimiter\:51fd\:6570\:6709\:975e\:5b57\:7b26\:4e32\:53c2\:6570.
+@|
+@|
+@@resource UnknownCommandInMenu
+\:5728\:83dc\:5355\:8bbe\:5b9a\:6587\:4ef6 MenuSetup.tr \:4e2d\:53d1\:73b0\:4e00\:4e2a\:672a\:77e5\:7684\:83dc\:5355\:547d\:4ee4\:7b26\:53f7(%s).
+@|
+@|
+@@resource UnknownCommandInKeyEvents
+\:5728\:952e\:76d8\:8bbe\:5b9a\:6587\:4ef6 KeyEventTranslations.tr \:4e2d\:53d1\:73b0\:4e00\:4e2a\:672a\:77e5\:7684\:83dc\:5355\:547d\:4ee4\:7b26\:53f7(%s).
+@|
+@@resource UsingUnknownCommandKey
+\:60a8\:4f7f\:7528\:4e86\:4e00\:4e2a\:672a\:88ab\:5b9a\:4e49\:7684Command\:6216Ctrl\:952e\:7ec4\:5408.
+@|
+@@resource warningOrErrorBeep
+Wolfram\:7cfb\:7edf\:53d1\:51fa\:7cfb\:7edf\:63d0\:793a\:97f3\:6765\:544a\:8bc9\:60a8\:6765\:81ea\:5185\:6838\:7684\:8b66\:544a\:6216\:9519\:8bef\:4fe1\:606f. \:60a8\:53ef\:91cd\:65b0\:8bbe\:7f6e "\:9009\:9879\:8bbe\:7f6e" \:4e2d\:7684MessageOptions\:6765\:53d6\:6d88\:63d0\:793a\:97f3.
+@|
+@@resource appearanceManagerRequiredError
+Wolfram \:7cfb\:7edf\:65e0\:6cd5\:627e\:5230 Macintosh Appearance Manager \:63a7\:5236\:9762\:677f. \:6ca1\:6709 Macintosh Appearance Manager \:63a7\:5236\:9762\:677f\:ff0cMathematica\:65e0\:6cd5\:64cd\:4f5c. \:91cd\:65b0\:5b89\:88c5Mathematica\:53ef\:4ee5\:89e3\:51b3\:8fd9\:4e2a\:95ee\:9898.
+@|
+@@resource openGLNotPresentError
+\:65e0\:6cd5\:627e\:5230 OpenGL 3D \:56fe\:5f62\:5e93. \:91cd\:65b0\:5b89\:88c5 Wolfram \:7cfb\:7edf\:53ef\:4ee5\:89e3\:51b3\:8fd9\:4e2a\:95ee\:9898.
+@|
+@|
+@|
+@|
+@|
+@|
+@|
+@| *****************************************************************************************
+@| Following are WSTP error messages: These strings must be kept in the same
+@| order, or they will not correspond to the expected errors.
+@| *****************************************************************************************
+@|
+@@resource MLErrorStringMLEOK
+\:672a\:77e5\:7684\:5185\:90e8\:9519\:8bef 
+@|
+@|
+@@resource MLErrorStringMLEDEAD
+\:94fe\:63a5\:65ad\:4e86
+@|
+@|
+@@resource MLErrorStringMLEGBAD
+\:8bfb\:53d6\:4e86\:4e0d\:4e00\:81f4\:7684\:6570\:636e 
+@|
+@|
+@@resource MLErrorStringMLEGSEQ
+MLGet \:5e8f\:5217\:9519\:4e71
+@|
+@|
+@@resource MLErrorStringMLEPBTK
+MLPutNext()\:4f20\:9012\:4e86\:4e00\:4e2a\:7cdf\:7cd5\:7684\:4ee4\:724c\:ff08token\:ff09
+@|
+@|
+@@resource MLErrorStringMLEPSEQ
+MLPut \:5e8f\:5217\:9519\:4e71
+@|
+@|
+@@resource MLErrorStringMLEPBIG
+MLPutData\:88ab\:7ed9\:4e88\:8fc7\:591a\:6570\:636e 
+@|
+@|
+@@resource MLErrorStringMLEOVFL
+\:673a\:5668\:6574\:6570\:6ea2\:51fa   
+@|
+@|
+@@resource MLErrorStringMLEMEM
+\:5185\:5b58\:4e0d\:8db3 
+@|
+@|
+@@resource MLErrorStringMLEACCEPT
+Socket\:8fde\:63a5\:63a5\:53d7\:5931\:8d25 
+@|
+@|
+@@resource MLErrorStringMLECONNECT
+\:5ef6\:671f\:7684\:8fde\:63a5\:4ecd\:7136\:6ca1\:6709\:88ab\:8fde\:4e0a
+@|
+@|
+@@resource MLErrorStringMLECLOSED
+\:5bf9\:65b9\:7ed3\:675f\:8fde\:63a5\:ff0c\:60a8\:53ef\:80fd\:4ecd\:7136\:53ef\:4ee5\:5f97\:5230\:672a\:4f20\:9001\:7684\:6570\:636e
+@|
+@|
+@@resource MLErrorStringMLEDEPTH
+\:672a\:77e5\:7684\:9519\:8bef 
+@|
+@|
+@@resource MLErrorStringMLENODUPFCN
+\:6570\:636e\:6d41\:65e0\:6cd5\:88ab\:590d\:5236
+@|
+@|
+@@resource MLErrorStringMLUnknownError14
+\:672a\:77e5\:7684\:9519\:8bef
+@|
+@|
+@@resource MLErrorStringMLUnknownError15
+\:672a\:77e5\:7684\:9519\:8bef
+@|
+@|
+@@resource MLErrorStringMLENODATA
+\:672a\:77e5\:7684\:9519\:8bef
+@|
+@|
+@@resource MLErrorStringMLENOTDELIVERED
+\:672a\:77e5\:7684\:9519\:8bef
+@|
+@|
+@@resource MLErrorStringMLENOMSG
+\:672a\:77e5\:7684\:9519\:8bef
+@|
+@|
+@@resource MLErrorStringMLEFAILED
+\:672a\:77e5\:7684\:9519\:8bef
+@|
+@|
+@@resource MLErrorStringMLUnknownError20
+\:672a\:77e5\:7684\:9519\:8bef
+@|
+@|
+@@resource MLErrorStringMLEPUTENDPACKET
+\:610f\:5916\:8c03\:7528 MLEndPacket
+@|
+@|
+@@resource MLErrorStringMLENEXTPACKET
+\:5728\:5f53\:524d\:7684\:6570\:636e\:5305\:6709\:672a\:88ab\:8bfb\:53d6\:7684\:6570\:636e\:65f6\:ff0cMLNextPacket\:88ab\:8c03\:7528\:4e86
+@|
+@|
+@@resource MLErrorStringMLEUNKNOWNPACKET
+MLNextPacket\:8bfb\:53d6\:4e86\:4e00\:4e2a\:672a\:77e5\:7684\:6570\:636e\:5305\:5934\:90e8
+@|
+@|
+@@resource MLErrorStringMLEGETENDPACKET
+\:610f\:5916\:7684\:7ed3\:675f\:6570\:636e\:5305\:4ee4\:724c
+@|
+@|
+@@resource MLErrorStringMLEABORT
+\:5728\:4fee\:6539\:94fe\:63a5\:4e4b\:524d\:ff0cput\:6216get\:51fd\:6570\:88ab\:653e\:5f03\:4e86
+@|
+@|
+@@resource MLErrorStringMLUnknownError26
+\:672a\:77e5\:7684\:9519\:8bef 
+@|
+@|
+@@resource MLErrorStringMLUnknownError27
+\:672a\:77e5\:7684\:9519\:8bef 
+@|
+@|
+@@resource MLErrorStringMLUnknownError28
+\:672a\:77e5\:7684\:9519\:8bef 
+@|
+@|
+@@resource MLErrorStringMLUnknownError29
+\:672a\:77e5\:7684\:9519\:8bef 
+@|
+@|
+@@resource MLErrorStringMLUnknownError30
+\:672a\:77e5\:7684\:9519\:8bef 
+@|
+@|
+@@resource MLErrorStringMLUnknownError31
+\:672a\:77e5\:7684\:9519\:8bef 
+@|
+@|
+@@resource MLErrorStringMLEINIT
+WSTP\:73af\:5883\:672a\:521d\:59cb\:5316
+@|
+@|
+@@resource MLErrorStringMLEARGV
+\:6253\:5f00\:94fe\:63a5\:7684\:53c2\:6570\:4e0d\:8db3
+@|
+@|
+@@resource MLErrorStringMLEPROTOCOL
+Protocol\:65e0\:6cd5\:83b7\:5f97
+@|
+@|
+@@resource MLErrorStringMLEMODE
+Mode\:65e0\:6cd5\:83b7\:5f97
+@|
+@|
+@@resource MLErrorStringMLELAUNCH
+Launch\:4e0d\:88ab\:652f\:6301
+@|
+@|
+@@resource MLErrorStringMLELAUNCHAGAIN
+\:65e0\:6cd5\:518d\:4ece\:540c\:6837\:7684\:6587\:4ef6\:542f\:52a8\:7a0b\:5e8f
+@|
+@|
+@@resource MLErrorStringMLELAUNCHSPACE
+\:542f\:52a8\:7a0b\:5e8f\:7684\:7a7a\:95f4\:4e0d\:8db3 
+@|
+@|
+@@resource MLErrorStringMLENOPARENT
+\:6ca1\:6709\:627e\:5230\:53ef\:8fde\:63a5\:7684\:4e3b\:7a0b\:5e8f 
+@|
+@|
+@@resource MLErrorStringMLENAMETAKEN
+\:8fde\:63a5\:540d\:79f0\:5df2\:7ecf\:5728\:4f7f\:7528\:4e2d
+@|
+@|
+@@resource MLErrorStringMLENOLISTEN
+\:8fde\:63a5\:540d\:79f0\:672a\:88ab\:53d1\:73b0\:5728\:63a5\:542c
+@|
+@|
+@@resource MLErrorStringMLEBADNAME
+\:7f3a\:5c11\:8fde\:63a5\:540d\:79f0\:6216\:4e0d\:662f\:9002\:5f53\:7684\:5f62\:5f0f
+@|
+@|
+@@resource MLErrorStringMLEBADHOST
+\:5730\:70b9\:4e0d\:80fd\:5f97\:5230\:6216\:4e0d\:662f\:9002\:5f53\:7684\:5f62\:5f0f  
+@|
+@|
+@@resource MLErrorStringMLERESOURCE
+\:7f3a\:5c11\:9700\:8981\:7684\:8d44\:6e90
+@|
+@|
+@@resource MLErrorStringMLELAUNCHFAILED
+\:7a0b\:5e8f\:6ca1\:6709\:542f\:52a8\:7684\:ff0c\:56e0\:4e3a\:7f3a\:5c11\:8d44\:6e90\:6216\:5e93
+@|
+@|
+@@resource MLErrorStringMLELAUNCHNAME
+\:542f\:52a8\:5931\:8d25\:ff0c\:56e0\:4e3a\:7a0b\:5e8f\:4e0d\:80fd\:88ab\:627e\:5230
+@|
+@|
+@@resource unknownPacket
+\:4e0d\:80fd\:5904\:7406\:672a\:77e5\:7684\:6570\:636e\:5305 "%s".
+@|
+@@resource cantOpenPrintFile
+\:65e0\:6cd5\:6253\:5f00\:6587\:4ef6%s\:4ee5\:4f9b\:6253\:5370.   
+@|
+@|
+@@resource cantOpenPrintPipe
+\:65e0\:6cd5\:7528\:7ba1\:9053\:547d\:4ee4"%s".
+@|
+@@resource pipeDied
+\:7ba1\:9053\:547d\:4ee4"%s" \:610f\:5916\:5730\:65ad\:4e86.
+@|
+@|
+@@resource changedScriptRestartWarning
+\:4e3a\:4f7f\:6b64\:66f4\:6539\:751f\:6548\:ff0c\:60a8\:5fc5\:987b\:9000\:51fa\:5e76\:91cd\:65b0\:542f\:52a8 Wolfram \:7684\:524d\:7aef.
+@|
+@|
+@@resource cantAdjustApplicationRegionCode
+\:60a8\:6539\:53d8\:4e86\:5f53\:524d\:7684 Wolfram \:524d\:7aef\:8bed\:8a00\:ff0c\:4f46\:5e94\:7528\:6587\:4ef6\:7684\:533a\:57df\:4ee3\:7801\:4e0d\:80fd\:88ab\:6539\:53d8. \:5f53\:60a8\:505a\:8bed\:8a00\:53d8\:5316\:65f6\:ff0c\:60a8\:5fc5\:987b\:6709\:53ef\:5199\:5165\:524d\:7aef\:7684\:6743\:9650.
+@|
+@|
+@@resource sharedStyleSheetNotFound
+\:65e0\:6cd5\:53d1\:73b0\:5171\:6709\:7684\:6837\:5f0f\:8868"%s". \:9ed8\:8ba4\:6837\:5f0f\:8868\:5c06\:88ab\:4f7f\:7528.
+@|
+@|
+@@resource noSuchOption
+\:9009\:9879\:540d\:5b57%s\:65e0\:6548.
+@|
+@|
+@@resource TRMcantFindAnyResourceFiles
+\:672a\:80fd\:627e\:5230\:4efb\:4f55\:6587\:672c\:8d44\:6e90\:6587\:4ef6\:3002
+@|
+@@resource mathematicaFontsNotInstalledError
+Wolfram \:7cfb\:7edf\:5b57\:4f53\:672a\:88ab\:9002\:5f53\:5730\:5b89\:88c5\:5728\:60a8\:7684\:7cfb\:7edf\:4e2d. \:6ca1\:6709\:8fd9\:4e9b\:5b57\:4f53\:ff0c\:6392\:7248\:6570\:5b66\:8868\:8fbe\:5f0f\:4e0d\:80fd\:9002\:5f53\:5730\:88ab\:663e\:793a.
+@|
+@@resource semanticErrorDuringFileReading
+
+\:4ece\:7b2c%ld\:884c\:5f00\:59cb\:7684\:5355\:5143\:5904\:53d1\:751f\:9519\:8bef.
+
+@@resource noAFMFilesFound
+\:65e0\:6cd5\:627e\:51fa\:4efb\:4e00AFM\:6587\:4ef6. \:6240\:6709\:6307\:6807\:5c06\:4f7f\:7528\:5c4f\:5e55\:5b57\:4f53.
+@@resource featureEnableFailureEdit
+\:60a8\:5728\:4e0d\:53ef\:7f16\:8f91\:7684\:6a21\:5f0f\:4e0b\:8fd0\:884c. \:5173\:4e8e\:542f\:7528\:66f4\:591a\:7684\:529f\:80fd\:ff0c\:8bf7\:4e0e Wolfram Research \:8054\:7cfb(http://www.wolfram.com).
+@@resource featureEnableFailurePlaceOutput
+\:60a8\:5728\:4e0d\:5141\:8bb8\:6e32\:67d3\:8f93\:51fa\:7684\:6a21\:5f0f\:4e0b\:8fd0\:884c. \:5173\:4e8e\:542f\:7528\:66f4\:591a\:7684\:529f\:80fd\:ff0c\:8bf7\:4e0e Wolfram Research \:8054\:7cfb(http://www.wolfram.com).   
+@@resource featureEnableFailurePrint
+\:60a8\:5728\:4e0d\:5141\:8bb8\:6253\:5370\:7684\:6a21\:5f0f\:4e0b\:8fd0\:884c. \:5173\:4e8e\:542f\:7528\:66f4\:591a\:7684\:529f\:80fd\:ff0c\:8bf7\:4e0e Wolfram Research \:8054\:7cfb(http://www.wolfram.com). 
+@@resource featureEnableFailureCopy
+\:60a8\:5728\:4e0d\:5141\:8bb8\:62f7\:8d1d\:7684\:6a21\:5f0f\:4e0b\:8fd0\:884c. \:5173\:4e8e\:542f\:7528\:66f4\:591a\:7684\:529f\:80fd\:ff0c\:8bf7\:4e0e Wolfram Research \:8054\:7cfb(http://www.wolfram.com).    
+@@resource featureEnableFailureSave
+\:60a8\:5728\:4e0d\:5141\:8bb8\:4fdd\:5b58\:6587\:4ef6\:7684\:6a21\:5f0f\:4e0b\:8fd0\:884c. \:5173\:4e8e\:542f\:7528\:66f4\:591a\:7684\:529f\:80fd\:ff0c\:8bf7\:4e0e Wolfram Research \:8054\:7cfb(http://www.wolfram.com).    
+@@resource featureEnableFailureEvaluate
+\:60a8\:5728\:4e0d\:5141\:8bb8\:8ba1\:7b97\:7684\:6a21\:5f0f\:4e0b\:8fd0\:884c. \:5173\:4e8e\:542f\:7528\:66f4\:591a\:7684\:529f\:80fd\:ff0c\:8bf7\:4e0e Wolfram Research \:8054\:7cfb(http://www.wolfram.com)
+@@resource featureEnableFailureLocalEvaluate
+\:60a8\:5728\:4e0d\:5141\:8bb8\:524d\:7aef\:884c\:4e3a\:7684\:6a21\:5f0f\:4e0b\:8fd0\:884c. \:5173\:4e8e\:542f\:7528\:66f4\:591a\:7684\:529f\:80fd\:ff0c\:8bf7\:4e0e Wolfram Research \:8054\:7cfb(http://www.wolfram.com). 
+@@resource featureEnableFailureAlternateFileFormats
+\:60a8\:8fd0\:884c\:7684\:6a21\:5f0f\:65e0\:6cd5\:6253\:5f00\:8fd9\:79cd\:7c7b\:578b\:7684\:6587\:4ef6. \:8bf7\:8054\:7cfb Wolfram Research (http : // www.wolfram.com) \:83b7\:53d6\:66f4\:591a\:7684\:529f\:80fd. 
+@|
+@@resource cantCopyBecauseCopyDisabled
+\:60a8\:8bd5\:56fe\:590d\:5236\:7684\:6750\:6599\:6709\:9009\:9879Copyable->False\:8bbe\:7f6e\:ff0c\:9632\:6b62\:5b83\:88ab\:590d\:5236\:5230\:526a\:8d34\:677f. 
+@|
+@@resource SelectAFile
+\:8bf7\:9009\:62e9\:4e00\:4e2a\:6587\:4ef6.  
+@|
+@@resource NotARegularFile
+\:60a8\:9009\:62e9\:7684\:6587\:4ef6\:4e0d\:662f\:4e00\:4e2a\:89c4\:5219\:6587\:4ef6. 
+@|
+@@resource AccessDenied
+\:8bbf\:95ee\:88ab\:62d2\:7edd\:4e86. 
+@|
+@@resource DirectoryTooLong
+\:76ee\:5f55\:540d\:79f0\:592a\:957f.    
+@|
+@@resource DirectoryNoExist
+\:76ee\:5f55\:4e0d\:5b58\:5728. 
+@|
+@@resource PartOfPathNotDirectory
+\:90e8\:5206\:76ee\:5f55\:8bbe\:5b9a\:4e0d\:662f\:76ee\:5f55. 
+@|
+@@resource TooManyFilesOpenForProcess
+\:8fd9\:4e2a\:5904\:7406\:6253\:5f00\:4e86\:8fc7\:591a\:4e2a\:6587\:4ef6\:63cf\:8ff0\:7b26. 
+@|
+@@resource TooManyFilesOpenForSystem
+\:8fd9\:4e2a\:7cfb\:7edf\:6253\:5f00\:4e86\:8fc7\:591a\:4e2a\:6587\:4ef6\:63cf\:8ff0\:7b26
+@|
+@@resource UnableToCompleteSelection
+\:6ca1\:6709\:6587\:4ef6\:53ef\:4ee5\:5b8c\:6210\:5f53\:524d\:8bbe\:7f6e\:7684\:8fc7\:6ee4\:5668\:9009\:62e9. 
+@|
+@@resource FileWriteFailed
+\:65e0\:6cd5\:5b8c\:6210\:5199\:6587\:4ef6\:ff0c\:5927\:6982\:56e0\:4e3a\:78c1\:76d8\:662f\:6ee1\:7684\:ff0c\:6216\:6587\:4ef6\:662f\:9501\:7740\:7684. \:60a8\:53ef\:80fd\:65e0\:6cd5\:6062\:590d\:6587\:4ef6\:7684\:5185\:5bb9. \:8bbe\:6cd5\:4ee5"\:53e6\:5b58\:4e3a..."\:7684\:65b9\:5f0f\:6765\:4fdd\:5b58\:6587\:4ef6.  
+@|
+@|
+@@resource cantCreateCompanionPackageFile
+\:65e0\:6cd5\:5199\:5165\:914d\:5957\:7a0b\:5e8f\:5305\:6587\:4ef6\:ff0c\:56e0\:4e3a\:73b0\:6709\:7684\:7a0b\:5e8f\:5305\:6587\:4ef6\:662f\:9501\:5b9a\:72b6\:6001\:6216\:6709\:6587\:4ef6\:5141\:8bb8\:6743\:9650\:95ee\:9898. 
+@|
+@|
+@@resource noViablePSNameForFont X
+\:65e0\:6cd5\:4e3a\:5b57\:4f53\:53d1\:73b0\:4efb\:4f55AFM\:6587\:4ef6. (Family->%s, Weight->%s, Slant->%s) . \:4f7f\:7528\:5185\:90e8Courier AFM.   
+@|
+@@resource noViablePSNameForFont Macintosh
+\:65e0\:6cd5\:5339\:914d\:5b57\:4f53\:7cfb\:5217 %s\:4e3aPostscript\:5b57\:4f53. \:4f7f\:7528Courier. 
+@|
+@@resource noViablePSNameForFont NeXT
+\:65e0\:6cd5\:5339\:914d\:5b57\:4f53\:7cfb\:5217 %s\:4e3aPostscript\:5b57\:4f53. \:4f7f\:7528Courier. 
+@|
+@@resource noViablePSNameForFont Windows
+\:65e0\:6cd5\:5339\:914d\:5b57\:4f53\:7cfb\:5217 %s\:4e3aPostscript\:5b57\:4f53. \:4f7f\:7528Courier. 
+@|
+@@resource outOfStackSpace
+\:8fd9\:64cd\:4f5c\:6240\:9700\:5806\:6808\:7a7a\:95f4\:4e0d\:8db3. \:5728\:8fd0\:884c Wolfram \:7cfb\:7edf\:4e4b\:524d\:8bbe\:6cd5\:589e\:52a0\:5806\:6808\:7a7a\:95f4\:6570\:91cf. 
+@|
+@@resource unableToOverwriteFile
+\:6587\:4ef6%s\:5df2\:7ecf\:5b58\:5728\:ff0c\:4f46\:4e0d\:80fd\:8986\:76d6.  
+@@resource pathToFileDoesntExist
+\:8def\:5f84%s\:7684\:4e00\:90e8\:5206\:4e0d\:5b58\:5728. \:65e0\:6cd5\:4fdd\:5b58\:6587\:4ef6%s. 
+@@resource invalidFilePath
+\:6307\:5b9a\:6587\:4ef6\:7684\:8def\:5f84\:65e0\:6548. \:8bf7\:8f93\:5165\:6709\:6548\:6587\:4ef6\:540d. 
+@|
+@@resource unableToOpenFileForWrite
+\:65e0\:6cd5\:6253\:5f00\:6587\:4ef6%s\:8fdb\:884c\:5199\:5165\:64cd\:4f5c. 
+@|
+@@resource unknownKernelName
+\:6ca1\:6709\:627e\:5230\:5177\:6709\:6307\:5b9a\:540d\:79f0"%s"\:7684\:5185\:6838. 
+@|
+@|
+@|
+@|
+@@resource mathLinkDiedBeforeConnect
+\:5185\:6838%s\:65e0\:6cd5\:8fde\:63a5\:5230\:524d\:7aef. (\:9519\:8bef= MLECONNECT). \:60a8\:5e94\:8be5\:5728\:524d\:7aef\:4e4b\:5916\:8bbe\:6cd5\:8fd0\:884c\:5185\:6838\:8fde\:63a5. 
+@|
+@@resource noSuchFaceForFont
+\:65e0\:6cd5\:627e\:5230\:5177\:6709\:6240\:9700\:5b57\:4f53\:6548\:679c\:ff08\:7c97\:7ec6\:5ea6 %s\:ff0c\:659c\:5ea6 %s\:ff09 \:7684\:5b57\:4f53\:7cfb\:5217 %s . \:4ee5\:6700\:5339\:914d\:7684\:8fdb\:884c\:66ff\:4ee3. 
+@|
+@@resource noSuchFontFamily
+\:65e0\:6cd5\:627e\:5230\:7cfb\:5217\:4e3a %s\:ff0c\:7c97\:7ec6\:5ea6\:4e3a %s\:ff0c\:659c\:5ea6\:4e3a %s \:548c\:5927\:5c0f\:4e3a %d \:7684\:5b57\:4f53. \:66ff\:4ee3\:4e3a %s. 
+@|
+@@resource invalidFileType
+\:6587\:4ef6"%s"\:4e0d\:662f\:4e00\:4e2a\:6709\:6548\:7684%s\:6587\:4ef6.  
+@|
+@@resource cantRenderMetafile
+\:5143\:6587\:4ef6\:ff08metafile\:ff09\:5355\:5143\:65e0\:6cd5\:88ab\:6e32\:67d3. \:5b83\:53ef\:80fd\:88ab\:635f\:574f\:ff0c\:6216\:8fd9\:4e2a Wolfram Wolfram \:7cfb\:7edf\:7684\:7248\:672c\:4e0d\:80fd\:652f\:6301\:5143\:6587\:4ef6\:5355\:5143. 
+@|
+@@resource cantDoToMetafileCell
+\:60a8\:7684\:4efb\:52a1\:65e0\:6cd5\:5b8c\:6210\:ff0c\:65e0\:6cd5\:5bf9\:5143\:6587\:4ef6\:ff08metafile\:ff09\:5355\:5143\:8fdb\:884c\:6b64\:9879\:64cd\:4f5c. 
+@|
+@@resource cantDoToOleCell
+\:60a8\:7684\:4efb\:52a1\:65e0\:6cd5\:5b8c\:6210\:ff0c\:65e0\:6cd5\:5bf9OLE\:5355\:5143\:8fdb\:884c\:6b64\:9879\:64cd\:4f5c. 
+@|
+@@resource noKernelCommand
+\:5185\:6838%s\:6709\:4e00\:4e2a\:7a7a\:7684\:6267\:884c\:547d\:4ee4.   
+@|
+@@resource execFailed
+\:524d\:7aef\:65e0\:6cd5\:6267\:884c\:547d\:4ee4%s. 
+@|
+@@resource nothingToExec
+\:60a8\:60f3\:6267\:884c\:7684\:547d\:4ee4\:662f\:7a7a\:7684.  
+@|
+@@resource unableToLaunchKernel
+\:65e0\:6cd5\:542f\:52a8\:5185\:6838%s. 
+@|
+@@resource unableToFindKernel
+\:65e0\:6cd5\:53d1\:73b0\:547d\:4ee4%s\:4ee5\:542f\:52a8\:5185\:6838%s. \:786e\:5b9a\:8def\:5f84\:540d\:662f\:6b63\:786e\:7684. 
+@|
+@@resource languageNotAllowedByPassword
+\:60a8\:7684\:5bc6\:7801\:4e0d\:5141\:8bb8\:60a8\:6539\:53d8\:8bed\:8a00\:4e3a%s. \:4e0e Wolfram Research \:8054\:7cfb\:ff0c\:83b7\:5f97\:4e00\:4e2a\:56fd\:9645\:5bc6\:7801. 
+@|
+@@resource pastingStyleNotPresentInNotebook
+\:60a8\:7c98\:8d34\:7684\:5355\:5143\:6709\:5173\:4e8e\:6837\:5f0f\:540d\:79f0(%s)\:7684\:5185\:5bb9\:ff0c\:4f46\:8be5\:6837\:5f0f\:5728\:60a8\:7c98\:8d34\:5165\:7684\:7b14\:8bb0\:672c\:4e2d\:672a\:88ab\:5b9a\:4e49. \:6587\:672c\:5c06\:88ab\:663e\:793a\:4e3a\:7b14\:8bb0\:672c\:7684\:9ed8\:8ba4\:6837\:5f0f. 
+@|
+@@resource cantSaveSelection
+\:9009\:62e9\:65e0\:6cd5\:88ab\:4fdd\:5b58\:4e3a\:6307\:5b9a\:7684\:683c\:5f0f. \:5c1d\:8bd5\:7f29\:5c0f\:9009\:62e9\:6216\:6307\:5b9a\:53e6\:5916\:4e00\:4e2a\:683c\:5f0f. 
+@|
+@@resource illegalMathEditString
+\:56e0\:4e3a\:5b57\:7b26\:4e32\:7684\:4e00\:4e2a\:9519\:8bef\:ff0c\:5b57\:7b26\:4e32'%.900s'\:65e0\:6cd5\:7528ShowStringCharacters->False\:663e\:793a. 
+@|
+@@resource fileOutlineNotFoundWhereSpecified
+\:60a8\:6b63\:6253\:5f00\:7684\:6587\:4ef6\:5728 Wolfram \:7cfb\:7edf\:5916\:88ab\:7f16\:8f91\:4e86\:ff0c\:6587\:4ef6\:6982\:8981 \:ff08outline\:ff09 \:7f13\:5b58\:88ab\:5ffd\:7565. \:8fd9\:4e0d\:4f1a\:5f71\:54cd\:6587\:4ef6\:7684\:4efb\:4f55\:5185\:5bb9.  
+@|
+@@resource invalidFileOutline
+\:60a8\:6b63\:6253\:5f00\:7684\:6587\:4ef6\:5728\:6587\:4ef6\:6982\:8981 \:ff08outline\:ff09 \:7f13\:5b58\:4e2d\:6709\:4e00\:4e2a\:9519\:8bef. \:6587\:4ef6\:6982\:8981 \:ff08outline\:ff09 \:7f13\:5b58\:88ab\:5ffd\:7565\:4e86. \:8fd9\:4e0d\:5e94\:8be5\:5f71\:54cd\:4efb\:4f55\:6587\:4ef6\:7684\:5185\:5bb9. 
+@|
+@@resource cellNoteFoundWhereSpecified
+\:4e0b\:9762\:7684\:6587\:4ef6\:5b58\:5728\:4e00\:4e2a\:9519\:8bef. \:60a8\:5e94\:8be5\:5173\:95ed\:5b83\:5e76\:4e0d\:505a\:4fdd\:5b58\:ff0c\:7136\:540e\:5728\:7b14\:8bb0\:672c\:9009\:9879\:5bf9\:8bdd\:6846\:4e2d\:9009\:62e9"\:5728\:7b14\:8bb0\:672c\:6253\:5f00\:65f6\:89e3\:6790\:5e76\:8f7d\:5165\:5185\:5b58"\:590d\:9009\:6846. \:6587\:4ef6\:540d\:ff1a %s.   
+@|
+@@resource noHelpFilesFound
+\:4e0d\:80fd\:627e\:5230\:4efb\:4f55\:5e2e\:52a9\:6587\:4ef6. \:60a8\:53ef\:80fd\:9700\:8981\:518d\:4ece Wolfram \:7cfb\:7edf\:5149\:76d8\:5b89\:88c5\:5728\:7ebf\:6587\:6863. 
+@|
+@@resource cantCreateCounterBoxInTypesetCell
+\:5f53\:524d\:4e0d\:652f\:6301\:5728\:6392\:7248\:7684\:8868\:8fbe\:5f0f\:5355\:5143\:4e2d\:81ea\:52a8\:7f16\:53f7\:5bf9\:8c61.  
+@|
+@@resource illegalFormatForBoxData
+BoxData[ ]\:975e\:6cd5\:683c\:5f0f: \:6240\:6709\:5143\:7d20\:5fc5\:987b\:6709\:540c\:6837FormatType.   
+@|
+@@resource unrecoverableFileError
+\:78c1\:76d8\:4e0a\:7684\:6587\:4ef6\:5728 Wolfram \:7cfb\:7edf\:5916\:88ab\:7f16\:8f91\:4e86. \:60a8\:4f7f\:7528\:7684\:7b14\:8bb0\:672c\:4e0d\:662f\:5b8c\:5168\:5728\:5185\:5b58\:4e2d\:ff0c\:56e0\:6b64\:65e0\:6cd5\:88ab\:6062\:590d. \:8bbe\:6cd5\:4fdd\:5b58\:5f53\:524d\:7684\:7b14\:8bb0\:672c\:ff1f
+@|
+@@resource unrecoverableMathLinkError
+WSTP\:901a\:4fe1\:9519\:8bef\:53d1\:751f\:ff0cWolfram \:7cfb\:7edf\:65e0\:6cd5\:6062\:590d. 
+@|
+@@resource fileOnDiskChanged
+\:7b14\:8bb0\:672c\:7684\:6587\:4ef6%s\:5728 Wolfram \:7cfb\:7edf\:5916\:6539\:53d8\:4e86. \:662f\:5426\:8986\:76d6\:ff1f
+@|
+@@resource fileGoneError
+\:78c1\:76d8\:4e0a\:7684\:6587\:4ef6\:5728 Wolfram \:7cfb\:7edf\:5916\:88ab\:5220\:9664\:4e86. \:60a8\:4f7f\:7528\:7684\:7b14\:8bb0\:672c\:4e0d\:662f\:5b8c\:5168\:5728\:5185\:5b58\:4e2d\:ff0c\:56e0\:6b64\:65e0\:6cd5\:88ab\:6062\:590d. \:8bbe\:6cd5\:4fdd\:5b58\:5f53\:524d\:7684\:7b14\:8bb0\:672c\:ff1f
+@|
+@@resource fileGoneButInMemory
+\:76d8\:4e0a\:7684\:7b14\:8bb0\:672c\:7684\:6587\:4ef6%s\:88ab\:5220\:9664\:4e86. \:521b\:5efa\:65b0\:6587\:4ef6\:ff1f 
+@|
+@@resource fileOnDiskChangedWarning
+\:8be5\:7b14\:8bb0\:672c\:6587\:4ef6%s\:5df2\:5728 Wolfram \:7cfb\:7edf\:4e4b\:5916\:88ab\:4fee\:6539\:ff0c\:4e14\:8be5\:7b14\:8bb0\:672c\:5df2\:88ab\:91cd\:547d\:540d\:4e3a%s. Mathematica \:6709\:5b8c\:6574\:7684\:7b14\:8bb0\:672c\:53d8\:5316\:7684\:8bb0\:5f55\:ff0c\:4f46\:662f\:53ef\:80fd\:65e0\:6cd5\:6062\:590d\:4e00\:4e9b\:6ca1\:6709\:53d8\:5316\:7684\:5355\:5143. \:60a8\:53ef\:4ee5\:518d\:6b21\:6253\:5f00\:5df2\:5b58\:5728\:7684\:6587\:4ef6\:ff0c\:8c03\:6574\:4efb\:4f55\:6ca1\:6709\:4fdd\:5b58\:7684\:53d8\:5316. 
+@|
+@@resource cellGoneError
+\:60a8\:6b63\:4fdd\:5b58\:7684\:7b14\:8bb0\:672c\:4e2d\:81f3\:5c11\:6709\:4e00\:4e2a\:5355\:5143\:672a\:88ab\:6b63\:786e\:5730\:4ece\:76d8\:4e0a\:88c5\:8f7d. Wolfram \:7cfb\:7edf\:4e0d\:80fd\:6b63\:786e\:5730\:4fdd\:5b58\:53d7\:5f71\:54cd\:7684\:5355\:5143\:548c\:53ef\:80fd\:5199\:4e00\:4efd\:635f\:574f\:7684\:6587\:4ef6. %s . 
+@|
+@@resource unchangedVersionMessage
+(\:60a8\:7684\:7b14\:8bb0\:672c\:7684\:672a\:6539\:53d8\:7248\:672c\:662f\:5728%s. ) 
+@|
+@@resource childProcessError
+\:5b50\:8fdb\:7a0b%d\:62a5\:544a: %s .  
+@|
+@@resource cantEvaluateTypesetExprInOldKernel
+\:60a8\:4f7f\:7528\:7684pre-3.0\:5185\:6838\:53ea\:80fd\:8ba1\:7b97InputForm\:8f93\:5165\:5355\:5143. \:4f7f\:7528\:5355\:5143\:83dc\:5355\:8bbe\:7f6e\:60a8\:7684\:9ed8\:8ba4\:8f93\:5165\:683c\:5f0f\:7c7b\:578b\:4e3aInputForm.    
+@|
+@@resource cantConvertTypesetExprInOldKernel
+\:60a8\:4f7f\:7528\:7684 pre-3.0 \:5185\:6838\:4e0d\:80fd\:8f6c\:6362\:6210\:6392\:7248\:7b26\:53f7\:ff08StandardForm \:6216 TraditionalForm\:ff09\:ff0c\:53cd\:4e4b\:4ea6\:7136. \:60a8\:53ef\:4ee5\:4f7f\:7528"\:5355\:5143"\:83dc\:5355\:4e0b\:7684\:5b50\:83dc\:5355"\:8f6c\:6362\:6210"\:4e2d\:663e\:793a\:7684\:9879\:8fdb\:884c\:7b80\:5355\:7684\:8f6c\:6362\:ff0c\:800c\:4e0d\:9700\:8981\:4f7f\:7528\:5185\:6838. 
+@|
+@@resource noSuchEncodingForFont
+\:65e0\:6cd5\:53d1\:73b0\:4f7f\:7528\:7f16\:7801%s\:7684\:5b57\:4f53%s. \:4f7f\:7528\:81ea\:52a8. 
+@|
+@@resource openingNotebookFromFutureVersion
+\:8be5\:7b14\:8bb0\:672c\:662f\:7531\:66f4\:9ad8\:7684 Wolfram \:7cfb\:7edf\:7248\:672c\:751f\:6210\:ff0c\:53ef\:80fd\:4e0d\:80fd\:5728\:60a8\:4f7f\:7528\:7684\:65e7\:7684\:524d\:7aef\:6b63\:786e\:5de5\:4f5c. \:83b7\:53d6\:6709\:5173\:5347\:7ea7\:4fe1\:606f\:ff0c\:8bf7\:8054\:7cfb Wolfram Research (www.wolfram.com). 
+@|
+@@resource openingUnsupportedPackageFile
+\:8be5\:7a0b\:5e8f\:5305\:7684\:7f16\:7801\:683c\:5f0f\:4e0d\:80fd\:5728 Wolfram \:7cfb\:7edf\:4e2d\:6253\:5f00. 
+@|
+@@resource openingNotebookFromFutureVersionDeadly
+\:8be5\:7b14\:8bb0\:672c\:662f\:7531\:66f4\:9ad8\:7684 Wolfram \:7cfb\:7edf\:7248\:672c\:751f\:6210\:ff0c\:4e0d\:80fd\:4e0e\:60a8\:6b63\:5728\:4f7f\:7528\:7684 Mathematica \:517c\:5bb9. \:83b7\:53d6\:6709\:5173\:5347\:7ea7\:4fe1\:606f\:ff0c\:8bf7\:8054\:7cfb Wolfram Research (www.wolfram.com). 
+@|
+@@resource cantFindNativeSystemResources
+\:60a8\:6240\:9700\:7684\:8bed\:8a00\:7cfb\:7edf\:8d44\:6e90\:4e0d\:80fd\:4ece%s\:88ab\:88c5\:8f7d. Wolfram \:7cfb\:7edf\:5c06\:7ee7\:7eed\:8fd0\:884c\:5185\:7f6e\:7684\:82f1\:8bed\:8d44\:6e90.  
+@|
+@@resource finishedSpellChecking
+\:68c0\:67e5\:5230\:7b14\:8bb0\:672c\:7684\:7ed3\:675f\:4f4d\:7f6e\:ff0c\:6ca1\:6709\:53d1\:73b0\:62fc\:5199\:9519\:8bef. 
+@|
+@@resource cantFindSpellingDictionaries
+\:5728%s\:4e2d\:6ca1\:6709\:53d1\:73b0\:62fc\:5199\:8bcd\:5e93. \:6587\:672c\:5185\:5bb9\:9009\:62e9\:4e4b\:4e0b\:7684\:9009\:9879DefaultNaturalLanguage\:51b3\:5b9a\:4f7f\:7528\:4ec0\:4e48\:8bed\:8a00\:6587\:5b57. 
+@|
+@@resource cantFindSpellingDictionariesGeneric
+\:6ca1\:6709\:627e\:5230\:6307\:5b9a\:8bed\:79cd\:7684\:8bcd\:5178.
+@|
+@@resource cantFindHyphenationDictionaries
+\:5728%s\:4e2d\:6ca1\:6709\:53d1\:73b0hyphenation\:8bcd\:5e93. \:6587\:672c\:5185\:5bb9\:9009\:62e9\:4e4b\:4e0b\:7684\:9009\:9879DefaultNaturalLanguage\:51b3\:5b9a\:4f7f\:7528\:4ec0\:4e48\:8bed\:8a00\:6587\:5b57. 
+@|
+@@resource cantReadSpellingDictionaries
+\:62fc\:5199\:8bcd\:5e93\:6587\:4ef6 Mathematica.rws \:65e0\:6cd5\:88ab\:52a0\:8f7d\:ff0c\:8be5\:6587\:4ef6\:53ef\:80fd\:5df2\:88ab\:635f\:574f. 
+@|
+@@resource wordTypesMisspelledWordString
+\:8be5\:5355\:8bcd\:4e0d\:5728\:8bcd\:5e93\:4e2d. 
+@|
+@@resource wordInIncorrectWordsString
+\:8bcd\:5728\:4e0d\:6b63\:786e\:8bcd\:7684\:8bcd\:5e93\:4e2d. 
+@|
+@@resource reachedEndOfNotebookString
+\:5230\:8fbe\:7b14\:8bb0\:672c\:7684\:7ed3\:675f\:4f4d\:7f6e. 
+@|
+@|
+@| WARNING! The following options must remain in the same order as the wordTypes
+@| enums in CellStyleMin.h
+@|
+@@resource wordTypesUncapitalizedStartOfSentenceString
+\:53e5\:4e2d\:7b2c\:4e00\:4e2a\:8bcd\:6ca1\:5927\:5199. 
+@|
+@@resource wordTypesRepeatedWordsString
+\:91cd\:8986\:7684\:8bcd. 
+@|
+@@resource wordTypesSingleCharacterWordsString
+\:5355\:4e2a\:5b57\:7b26\:8bcd. 
+@|
+@@resource wordTypesNumbersString
+\:6570\:5b57. 
+@|
+@@resource wordTypesWordsWithNumbersString
+\:5305\:542b\:6570\:5b57\:7684\:8bcd.  
+@|
+@@resource wordTypesWordsInAllCapsString
+\:672a\:77e5\:7684\:8bcd\:5168\:90e8\:5927\:5199.   
+@|
+@@resource wordTypesRomanNumeralsString
+\:53ef\:80fd\:662f\:7f57\:9a6c\:6570\:5b57\:7684\:8bcd. 
+@|
+@@resource wordTypesAlternateSpellingsString
+\:5df2\:77e5\:7684\:8bcd\:5176\:4ed6\:62fc\:5199. 
+@|
+@@resource wordTypesCaseDifferencesString
+\:4e0d\:4e00\:81f4\:7684\:5927\:5c0f\:5199. 
+@|
+@@resource wordTypesEncliticFormsString
+\:5305\:542b\:6487\:53f7\:5f62\:5f0f\:7684\:8bcd. 
+@|
+@@resource wordTypesCompoundWordsWithHyphensString
+\:7528\:8fde\:5b57\:7b26\:53f7\:8fde\:63a5\:7684\:590d\:5408\:8bcd. 
+@|
+@@resource wordTypesCompoundWordsWithUnderscoresString
+\:4f7f\:7528\:4e0b\:5212\:7ebf\:7684\:590d\:5408\:8bcd.  
+@|
+@@resource wordTypesCompoundWordsWithInternalCapsString
+\:4f7f\:7528\:5185\:90e8\:5927\:5c0f\:5199\:7684\:590d\:5408\:8bcd. 
+@|
+@@resource wordTypesWordsInURLString
+URL \:4e2d\:7684\:5355\:8bcd.
+@|
+@|
+@|
+@|
+@@resource cantOpenDictionaryCacheFile
+\:4e0d\:80fd\:6253\:5f00\:62fc\:5199\:5b57\:5178\:7f13\:5b58\:6587\:4ef6 (%s). \:5c06\:65e0\:6cd5\:4f7f\:7528\:8be5\:5b57\:5178. 
+@|
+@@resource syntaxErrorInDictionaryFile
+\:5728%ld\:884c\:5b58\:5728\:4e00\:4e2a\:8bed\:6cd5\:9519\:8bef\:ff0c\:5b83\:5728\:62fc\:5199\:8bcd\:5178\:6587\:4ef6%s\:4e2d. 
+\:9519\:8bef\:662f:
+%s   
+@|
+@@resource badExpressionInDictionaryFile
+\:5728\:62fc\:5199\:8bcd\:5178\:6587\:4ef6%s\:4e2d\:5b58\:5728\:4e00\:4e2a\:9519\:8bef\:7684\:683c\:5f0f\:5316\:8868\:8fbe\:5f0f. 
+@|
+@@resource MEShowStringCharactersDisallowsEdits
+\:5f53ShowStringCharacters->False\:65f6\:ff0c\:4e0d\:5141\:8bb8\:7f16\:8f91. 
+@|
+@@resource errorLaunchingWebBrowser
+\:5f53\:542f\:52a8\:6d4f\:89c8\:5668(%s)\:65f6\:ff0c\:5b58\:5728\:9519\:8bef. 
+@|
+@@resource errorWhileOpeningURL
+\:5f53\:8bf7\:6c42\:6d4f\:89c8\:5668\:6253\:5f00URL(%s)\:65f6\:ff0c\:5b58\:5728\:9519\:8bef. 
+@|
+@@resource kernelNameInUse
+\:8bf7\:4e3a\:8fd9\:4e2a\:5185\:6838\:9009\:62e9\:4e00\:4e2a\:53e6\:5916\:540d\:5b57. \:540d\:5b57\[OpenCurlyQuote]%s\[CloseCurlyQuote]\:5df2\:7ecf\:88ab\:4f7f\:7528. 
+@|
+@@resource duplicateAutoConnectPacketName
+\:53d1\:73b0\:4e86\:91cd\:590d\:7684AutoConnect\:7a0b\:5e8f\:5305\:540d\:5b57%s. \:65e7\:8fde\:63a5: %s. \:65b0\:8fde\:63a5%s. 
+@|
+@@resource cantFindKernelHostName
+WinRsh\:4e0d\:80fd\:53d1\:73b0\:542f\:52a8\:5185\:6838\[OpenCurlyQuote]%s\[CloseCurlyQuote]\:7684\:673a\:5668. 
+@|
+@@resource wrshFailedToExecute
+\:5728\:542f\:52a8\:5185\:6838\[OpenCurlyQuote]%s\[CloseCurlyQuote]\:65f6\:ff0cWinRsh \:65e0\:6cd5\:8fd0\:884c. Error code = %d\:. @|
+
+@@resource wrshLocalNetworkError
+\:5f53\:542f\:52a8\:5185\:6838\[OpenCurlyQuote]%s\[CloseCurlyQuote]\:65f6\:ff0cWinRsh\:65e0\:6cd5\:8fd0\:884c. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource wrshLowNetworkResources
+\:7531\:4e8e\:4f4e\:7f51\:7edc\:8d44\:6e90\:ff0c\:5728\:542f\:52a8\:5185\:6838\[OpenCurlyQuote]%s\[CloseCurlyQuote]\:65f6WinRsh\:4e0d\:80fd\:8bbf\:95ee\:7f51\:7edc. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource wrshNetworkUnreachable
+\:56e0\:4e3a\:65e0\:6cd5\:8bbf\:95ee\:7f51\:7edc\:ff0cWinRsh \:4e0d\:80fd\:542f\:52a8\:5185\:6838\[OpenCurlyQuote]%s\[CloseCurlyQuote]. 
+@|
+@@resource wrshTimedOut
+\:56e0\:4e3a\:7f51\:7edc\:8fde\:63a5\:8d85\:65f6\:ff0cWinRsh\:4e0d\:80fd\:542f\:52a8\:5185\:6838\[OpenCurlyQuote]%s\[CloseCurlyQuote]. 
+@|
+@@resource wrshRefusedConnection
+\:56e0\:4e3a\:8fdc\:7a0b\:673a\:5668\:62d2\:7edd\:4e86\:8fde\:63a5\:ff0cWinRsh\:4e0d\:80fd\:542f\:52a8\:5185\:6838\[OpenCurlyQuote]%s\[CloseCurlyQuote]. 
+@|
+@@resource wrshConnectionTerminated
+WinRsh\:4e3a\:5185\:6838'%s'\:7684\:8fde\:63a5\:610f\:5916\:5730\:88ab\:7ec8\:6b62\:4e86. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource wrshFailedToNetwork
+\:5f53\:542f\:52a8\:5185\:6838'%s'\:65f6\:ff0cWinRsh\:53d1\:73b0\:4e86\:7f51\:7edc\:9519\:8bef. \:9519\:8bef\:7f16\:7801=%d.    
+@|
+@@resource pserr_nocurrentpoint
+%s: nocurrentpoint
+@@resource pserr_dictstackoverflow
+%s: dictstackoverflow
+@@resource pserr_dictstackunderflow
+%s: dictstackunderflow
+@@resource pserr_limitcheck
+%s: limitcheck
+@@resource pserr_typecheck
+%s: typecheck
+@@resource pserr_stackunderflow
+%s: stackunderflow
+@@resource pserr_rangecheck
+%s: rangecheck
+@@resource pserr_invalidaccess
+%s: invalidaccess
+@@resource pserr_undefined
+%s: undefined
+@@resource pserr_invalidfont
+%s: invalidfont
+@@resource pserr_stackoverflow
+%s: stackoverflow
+@@resource pserr_undefinedresult
+%s: undefinedresult
+@@resource pserr_stacklist
+PostScript stack: %s
+@|
+@@resource oglLoadLibraryFailed
+OpenGL\:7a0b\:5e8f\:5e93\:4e0d\:80fd\:88ab\:88c5\:8f7d. \:73b0\:6709\:7684GeometryCells\:4f1a\:6b63\:786e\:663e\:793a\:4f46\:4e0d\:53ef\:4ee5\:4e92\:52a8. \:65b0GeometryCells\:5c06\:663e\:793a\:7a7a\:767d. 
+@|
+@@resource oglPlatformNotSupported
+\:5728\:60a8\:7684\:5e73\:53f0\:4e0a\:5bf9\:4e8eOpenGL\:7684\:652f\:6301\:672a\:88ab\:5b9e\:65bd. \:73b0\:6709\:7684GeometryCells\:4f1a\:6b63\:786e\:663e\:793a\:4f46\:4e0d\:53ef\:4ee5\:4e92\:52a8. \:65b0GeometryCells\:5c06\:663e\:793a\:4e3a\:7a7a\:767d.  
+@|
+@@resource tbMarginsTooLarge
+\:60a8\:4e3a\:4e0a\:4e0b\:8fb9\:9645\:9009\:62e9\:7684\:8bbe\:7f6e\:76f8\:5bf9\:9875\:9762\:9ad8\:5ea6\:592a\:5927. 
+@|
+@@resource lrMarginsTooLarge
+\:60a8\:4e3a\:5de6\:53f3\:8fb9\:9645\:9009\:62e9\:7684\:8bbe\:7f6e\:76f8\:5bf9\:9875\:9762\:5bbd\:5ea6\:592a\:5bbd. 
+@|
+@@resource cantOpenSoundDevice
+\:65e0\:6cd5\:6253\:5f00\:58f0\:97f3\:8bbe\:5907: \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource cantCreateSoundHandle
+\:5171\:4eab\:5185\:5b58\:4e0d\:8db3\:ff0c\:65e0\:6cd5\:64ad\:653e\:58f0\:97f3. 
+@|
+@@resource cantAllocateSoundMemory
+\:5171\:4eab\:5185\:5b58\:4e0d\:8db3\:ff0c\:65e0\:6cd5\:64ad\:653e\:58f0\:97f3. \:8bbe\:6cd5\:5173\:95ed\:5176\:4ed6\:5e94\:7528\:7a0b\:5e8f\:6216\:5173\:4e0a\:6253\:5f00\:7684\:7a97\:53e3\:ff0c\:83b7\:53d6\:66f4\:591a\:53ef\:5229\:7528\:5185\:5b58. 
+@|
+@@resource regconvIntFunc
+\:4e0d\:80fd\:4f5c\:4e3a\:4e00\:4e2a\:6709\:6548\:7684\:4e92\:6362\:51fd\:6570\:5904\:7406RegisterConverterPacket\:4e2d\:7684\:53c2\:65701. 
+@|
+@@resource regconvBadList
+\:4e0d\:80fd\:4ee5\:4e00\:4e2a\:6b63\:786e\:6784\:9020\:7684\:5217\:8868\:7684\:5f62\:5f0f\:5904\:7406RegisterConverterPacket\:53c2\:6570. 
+@|
+@@resource regconvFmtName
+\:4e0d\:80fd\:5904\:7406RegisterConverterPacket\:4e2d\:7684\:53c2\:65702\:7684\:5143\:7d20\:4e3a\:683c\:5f0f\:540d\:79f0. 
+@|
+@@resource regconvMimeTyp
+\:4e0d\:80fd\:5904\:7406RegisterConverterPacket\:4e2d\:7684\:53c2\:65702\:7684\:5143\:7d20\:4e3aMIME \:7c7b\:578b. 
+@|
+@@resource regconvWldCard
+\:4e0d\:80fd\:5904\:7406RegisterConverterPacket\:4e2d\:7684\:53c2\:65703\:7684\:5143\:7d20\:4e3a\:8ba1\:7b97\:673a\:901a\:914d\:7b26\:5ef6\:4f38. 
+@|
+@@resource regconvConvBin
+\:4e0d\:80fd\:5904\:7406RegisterConverterPacket\:4e2d\:7684\:53c2\:65704\:4e3a\:4e00\:4e2a\:6709\:6548\:7684\:4e8c\:8fdb\:5236\:6587\:4ef6\:540d\:79f0\:8f6c\:6362\:5668. 
+@|
+@@resource regconvCbckFcn
+\:4e0d\:80fd\:5904\:7406RegisterConverterPacket\:4e2d\:7684\:53c2\:65705\:4e3a\:4e00\:4e2a\:6709\:6548\:7684\:56de\:8c03\:51fd\:6570.  
+@|
+@@resource regconvRawData
+\:4e0d\:80fd\:5904\:7406RegisterConverterPacket\:4e2d\:7684\:53c2\:65706\:4e3a\:4e00\:79cd\:6709\:6548\:7684\:6570\:636e\:7684\:539f\:59cb\:6570\:636e\:6307\:5b9a\:5668. 
+@|
+@@resource regconvBadOptn
+\:4e0d\:80fd\:5904\:7406RegisterConverterPacket\:4e2d\:7684\:9009\:62e9\:6027\:53c2\:6570.   
+@|
+@@resource regconvFlbrDes
+\:4e0d\:80fd\:5904\:7406RegisterConverterPacket\:4e2d"FileBrowseDescription"\:7684\:9009\:9879\:6570\:503c. 
+@|
+@@resource regconvMacFile
+\:4e0d\:80fd\:5904\:7406RegisterConverterPacket\:4e2d\:7684"MacintoshFileType"\:7684\:9009\:9879\:6570\:503c. 
+@|
+@@resource regconvObjcTyp
+\:4e0d\:80fd\:5904\:7406\:9009\:62e9RegisterConverterPacket\:4e2d\:7684"ObjectType"\:7684\:9009\:9879\:6570\:503c. 
+@|
+@@resource regconvPersist
+\:4e0d\:80fd\:5904\:7406RegisterConverterPacket\:4e2d\:7684\:9009\:9879\:7684\:503c"Persist".   
+@|
+@@resource regconvBadCKey
+\:4e0d\:80fd\:751f\:6210\:552f\:4e00\:7684\:8f6c\:6362\:5bc6\:94a5\:6807\:8bc6\:7b26. 
+@|
+@@resource missingCascadingStyleSheet
+Wolfram \:7cfb\:7edf\:65e0\:6cd5\:53d1\:73b0\:6837\:5f0f\:8868 \:ff08 stylesheet \:ff09"%s"\:6240\:9700\:7684"%s"\:7684\:6837\:5f0f\:8868 \:ff08 stylesheet \:ff09. 
+@|
+@@resource installNotebookNotAPalette
+\:4e0d\:80fd\:5b89\:88c5\:7b14\:8bb0\:672c\:ff0c\:56e0\:4e3a\:8fd9\:4e0d\:662f\:9762\:677f. 
+@|
+@@resource installNotebookNotAStyleSheet
+\:4e0d\:80fd\:5b89\:88c5\:7b14\:8bb0\:672c\:ff0c\:56e0\:4e3a\:8fd9\:4e0d\:662f\:6837\:5f0f\:8868. 
+@|
+@@resource installNotebookNotAPackage
+\:4e0d\:80fd\:5b89\:88c5\:7b14\:8bb0\:672c\:ff0c\:56e0\:4e3a\:5b83\:4e0d\:662f\:4e00\:4e2a\:81ea\:5b9a\:4e49\:5305. 
+@|
+@@resource cantInstallExistingFile
+\:4e0d\:80fd\:5b89\:88c5\:6587\:4ef6\:ff0c\:56e0\:4e3a\:4e00\:4e2a\:540c\:540d\:6587\:4ef6\:5df2\:7ecf\:5b58\:5728\:4e8e\:5b89\:88c5\:5730\:70b9.  
+@|
+@@resource invalidClipboardContents
+\:4e0d\:80fd\:5b89\:88c5\:526a\:8d34\:677f\:5185\:5bb9\:ff0c\:56e0\:4e3a\:5185\:5bb9\:65e0\:6548. 
+@|
+@@resource errorInPacket
+\:5f53\:5904\:7406"%s"\:7a0b\:5e8f\:5305\:65f6\:ff0c\:524d\:7aef\:53d1\:73b0\:4e86\:9519\:8bef. %s 
+@|
+@@resource autoStyleReasonMisspelledWord
+\:5728\:5f53\:524d\:7684\:8bed\:8a00\:8bcd\:5e93\:4e2d\:ff0c\:672a\:53d1\:73b0\:6587\:672c\:4e2d\:7684\:8bcd. 
+@|
+@@resource autoStyleReasonSyntaxError
+\:5706\:62ec\:53f7\:3001\:65b9\:62ec\:53f7\:6216\:82b1\:62ec\:53f7\:672a\:88ab\:5339\:914d. 
+@|
+@@resource autoStyleReasonComment
+\:5728\:6ce8\:89e3\:4e2d\:5b58\:5728\:6587\:672c. 
+@|
+@@resource autoStyleReasonString
+\:5728\:5b57\:7b26\:4e32\:4e2d\:5b58\:5728\:6587\:672c. 
+@|
+@@resource autoStyleReasonGlobalSymbol
+\:5728\:4e00\:4e2a\:5f53\:524d\:6253\:5f00\:7b14\:8bb0\:672c\:4e2d\:ff0c\:8fd9\:4e2a\:7b26\:53f7\:6709\:4e00\:4e2a\:5168\:5c40\:5b9a\:4e49. 
+@|
+@@resource autoStyleReasonLocalVariable
+\:5728\:5757\:3001\:6a21\:5757\:3001\:6216\:5176\:4ed6\:4f5c\:7528\:57df\:6784\:5efa\:4e2d\:ff0c\:53d8\:91cf\:88ab\:4f5c\:4e3a\:4e00\:4e2a\:5c40\:90e8\:53d8\:91cf\:4f7f\:7528. 
+@|
+@@resource autoStyleReasonPatternVariable
+\:5728Function\:6216Compile\:4e2d\:ff0c\:53d8\:91cf\:88ab\:5f53\:4e00\:4e2a\:6a21\:5f0f\:540d\:5b57\:6216\:4f5c\:4e3a\:4e00\:4e2a\:5c40\:90e8\:53d8\:91cf\:4f7f\:7528.  
+@|
+@@resource autoStyleReasonFunctionLocalVariable
+\:5728\:7279\:522b\:5730\:5bf9\:5f85\:67d0\:4e9b\:53d8\:91cf\:7684\:51fd\:6570\:4e2d\:ff0c\:53d8\:91cf\:88ab\:4f5c\:4e3a\:76ee\:6807\:53d8\:91cf\:4f7f\:7528. 
+@|
+@@resource autoStyleReasonNotebookVariable
+\:5728\:4e00\:4e2a\:7279\:6b8a\:7b14\:8bb0\:672c\:4e2d\:53d8\:91cf\:88ab\:8bbe\:7f6e\:4e3a private .  
+@|
+@@resource autoStyleReasonUndefinedSymbol
+\:4f7f\:7528\:4e86\:4e00\:4e2a\:6ca1\:6709\:5168\:5c40\:6216\:5c40\:90e8\:5b9a\:4e49\:7684\:7b26\:53f7. 
+@|
+@@resource autoStyleReasonSymbolContext
+\:7531\:4e8e\:5b83\:6240\:5728\:7684\:4e0a\:4e0b\:6587\:ff0c\:8be5\:7b26\:53f7\:88ab\:7a81\:51fa\:663e\:793a. 
+@|
+@@resource autoStyleReasonNoKernelPresent
+\:8be5\:7b26\:53f7\:88ab\:7a81\:51fa\:663e\:793a\:662f\:56e0\:4e3a\:6ca1\:6709\:4e00\:4e2a\:5185\:6838\:6765\:51b3\:5b9a\:5b83\:7684\:6b63\:786e\:8bed\:6cd5\:7740\:8272. 
+@|
+@@resource autoStyleReasonSingleLetterItalics
+\:7531\:4e8eSingleLetterItalics\:9009\:9879\:ff0c\:7b26\:53f7\:88ab\:9ad8\:4eae\:663e\:793a\:4e86. 
+@|
+@@resource autoStyleReasonSingleLetterStyle
+\:7531\:4e8eSingleLetterStyle\:9009\:9879\:ff0c\:7b26\:53f7\:88ab\:9ad8\:4eae\:663e\:793a\:4e86. 
+@|
+@@resource autoStyleReasonMultiLetterItalics
+\:7531\:4e8eMultiLetterItalics\:9009\:9879\:ff0c\:7b26\:53f7\:88ab\:9ad8\:4eae\:663e\:793a\:4e86. 
+@|
+@@resource autoStyleReasonMultiLetterStyle
+\:7531\:4e8eMultiLetterStyle\:9009\:9879\:ff0c\:7b26\:53f7\:88ab\:9ad8\:4eae\:663e\:793a\:4e86. 
+@|
+@@resource autoStyleReasonLowerCaseStyle
+\:7531\:4e8eLowerCaseStyle\:9009\:9879\:ff0c\:7b26\:53f7\:88ab\:9ad8\:4eae\:663e\:793a\:4e86. 
+@|
+@@resource autoStyleReasonGreekStyle
+\:7531\:4e8eGreekStyle\:9009\:9879\:ff0c\:7b26\:53f7\:88ab\:9ad8\:4eae\:663e\:793a\:4e86. 
+@|
+@@resource autoStyleReasonAutoItalicWords
+\:7531\:4e8eAutoItalicWords\:9009\:9879\:ff0c\:7b26\:53f7\:88ab\:9ad8\:4eae\:663e\:793a\:4e86. 
+@|
+@@resource autoStyleReasonAutoStyleWords
+\:7531\:4e8eAutoStyleWords\:9009\:9879\:ff0c\:7b26\:53f7\:88ab\:9ad8\:4eae\:663e\:793a\:4e86. 
+@|
+@| group all of the red errors together
+@| ********** Begin group *************
+@@resource autoStyleReasonFirstRedColoring
+
+@|
+@@resource autoStyleReasonLocalScopeConflict
+\:5728\:5d4c\:5957\:7684\:4f5c\:7528\:57df\:7ed3\:6784\:4e2d'%AUX%'\:53d1\:751f\:4e24\:6b21\:ff0c\:5f88\:53ef\:80fd\:4ea7\:751f\:9519\:8bef.
+@|
+@@resource autoStyleReasonGlobalToLocalScopeConflict
+'%FUNCTION%'\:4e2d\:7684'%AUX%'\:4e0e\:5168\:5c40\:5b9a\:4e49\:7684\:7b26\:53f7\:51b2\:7a81\:ff0c\:5f88\:53ef\:80fd\:4ea7\:751f\:9519\:8bef.
+@|
+@@resource autoStyleReasonOrderOfEvaluationConflict
+'%FUNCTION%'\:4e2d\:7684'%AUX%'\:53d1\:751f\:5728\:51fa\:4f5c\:7528\:57df\:4e4b\:524d\:53ef\:80fd\:4e0d\:4f1a\:88ab\:8ba1\:7b97.
+@|
+@@resource autoStyleReasonSymbolShadowing
+'%AUX%'\:53d1\:751f\:5728\:591a\:4e2a\:4e0a\:4e0b\:6587\:4e2d\:ff1a\:5176\:4e2d\:4e00\:4e2a\:5b9a\:4e49\:88ab\:5c4f\:853d\:4e86.
+@|
+@@resource autoStyleReasonUnknownOption
+'%AUX%'\:4e0d\:662f'%FUNCTION%'\:7684\:4e00\:4e2a\:9009\:9879.
+@|
+@@resource autoStyleReasonGraphicsCompatibilityProblem
+\:5206\:53f7\:6216\:9009\:9879\:503c\:4e0d\:518d\:9002\:5408\:4e0e\:4ea7\:751f\:56fe\:5f62\:7684\:547d\:4ee4\:4e00\:8d77\:4f7f\:7528.
+@|
+@@resource autoStyleReasonExcessArgument
+\:4e3a'%FUNCTION%'\:63d0\:4f9b\:7684\:53c2\:6570\:8fc7\:591a.
+@|
+@@resource autoStyleReasonMissingArgument
+\:4e3a'%FUNCTION%'\:63d0\:4f9b\:7684\:53c2\:6570\:8fc7\:5c11.
+@|
+@@resource autoStyleReasonUnwantedAssignment
+\:5df2\:7ecf\:8fdb\:884c\:4e86\:8d4b\:503c (=) \:ff0c\:4f46\:662f\:671f\:671b\:7684\:8fd0\:7b97\:662f\:7b49\:4ef7 (==).
+@|
+@@resource autoStyleReasonLastRedColoring
+
+@| ********** End group *************
+@|
+@@resource sshCantFindKernelHostName
+SSH\:4e0d\:80fd\:53d1\:73b0\:542f\:52a8\:5185\:6838'%s'\:7684\:673a\:5668.  
+@|
+@@resource sshFailedToExecute
+\:5f53\:542f\:52a8\:5185\:6838'%s'\:65f6\:ff0cSSH\:65e0\:6cd5\:6267\:884c. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource sshLocalNetworkError
+\:5f53\:542f\:52a8\:5185\:6838'%s'\:65f6\:ff0cSSH\:53d1\:73b0\:4e86\:4e00\:4e2a\:672c\:5730\:7f51\:7edc\:8bbe\:7f6e\:9519\:8bef. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource sshLowNetworkResources
+\:7531\:4e8e\:7f51\:7edc\:8d44\:6e90\:8fc7\:4f4e\:ff0cSSH\:4e0d\:80fd\:5728\:542f\:52a8\:5185\:6838'%s'\:65f6\:8bbf\:95ee\:7f51\:7edc. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource sshNetworkUnreachable
+SSH\:4e0d\:80fd\:542f\:52a8\:5185\:6838'%s'\:ff0c\:56e0\:4e3a\:4e0d\:80fd\:8bbf\:95ee\:7f51\:7edc. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource sshTimedOut
+SSH\:4e0d\:80fd\:542f\:52a8\:5185\:6838'%s'\:ff0c\:56e0\:4e3a\:7f51\:7edc\:8fde\:63a5\:8d85\:65f6\:4e86. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource sshRefusedConnection
+SSH\:4e0d\:80fd\:542f\:52a8\:5185\:6838'%s'\:ff0c\:56e0\:4e3a\:8fdc\:7a0b\:673a\:5668\:62d2\:7edd\:4e86\:8fde\:63a5. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource sshConnectionTerminated
+SSH\:4e0e\:5185\:6838'%s'\:7684\:8fde\:63a5\:ff0c\:88ab\:610f\:5916\:5730\:7ec8\:6b62\:4e86. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource sshFailedToNetwork
+\:5f53\:542f\:52a8\:5185\:6838'%s'\:65f6\:ff0cSSH\:9047\:5230\:4e86\:7f51\:7edc\:9519\:8bef. \:9519\:8bef\:7f16\:7801=%d.   
+@|
+@@resource sshInvalidPrivateKey
+SSH\:88ab\:7ed9\:4e86\:4e00\:4e2a\:65e0\:6548\:7684\:79c1\:4eba\:5bc6\:94a5\:6765\:8ba4\:8bc1\:5185\:6838'%s'. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource sshKnownHostFormat
+SSH\:65e0\:6cd5\:8bc6\:522b\:5df2\:77e5\:4e3b\:673a\:6587\:4ef6\:7684\:683c\:5f0f. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource sshHostKeyChanged
+\:5f53\:542f\:52a8\:5185\:6838'%s'\:65f6\:ff0cSSH\:6536\:5230\:4e86\:4e00\:4e2a\:4e0d\:540c\:7684\:4e3b\:673a\:5bc6\:94a5. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource sshHostKeyRejected
+\:6765\:81ea\:4e8e\:4e3b\:673a\:7684\:7528\:4e8e\:5185\:6838'%s'\:7684\:5bc6\:94a5\:88ab\:62d2\:7edd. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource sshHostKeyUnknown
+SSH\:4e0d\:80fd\:4e3a\:5185\:6838'%s'\:627e\:5230\:4e3b\:673a\:5bc6\:94a5. \:9519\:8bef\:7f16\:7801=%d. 
+@|
+@@resource canOnlySetBreakpointsInStandardFormCells
+Breakpoints\:548cWatchpoints\:53ea\:80fd\:88ab\:8bbe\:7f6e\:5728StandardForm\:8f93\:5165\:5355\:5143\:91cc.  
+@|
+@@resource newlineCorruption
+Wolfram \:7cfb\:7edf\:6b63\:5728\:4fee\:7406\:6587\:4ef6'%s'\:4e2d\:635f\:574f\:884c\:7684\:7ed3\:5c3e. \:635f\:574f\:53ef\:80fd\:662f\:7531\:4e8e\:4f7f\:7528 FTP \:6216\:7535\:5b50\:90ae\:4ef6\:5728\:8ba1\:7b97\:673a\:7cfb\:7edf\:95f4\:4e0d\:6b63\:786e\:5730\:79fb\:52a8\:6587\:4ef6\:9020\:6210. \:60a8\:5e94\:8be5\:68c0\:67e5\:6587\:4ef6\:9519\:8bef\:5e76\:91cd\:65b0\:4fdd\:5b58\:5b83. 
+@|
+@@resource mathlmSaysGoodByeSoonMessage
+MathLM \:670d\:52a1\:5668 "%s" \:6ca1\:6709\:54cd\:5e94. \:5982\:679c\:4e0d\:80fd\:5f88\:5feb\:8fde\:63a5\:ff0c\:90a3\:4e48\:8fd9\:4e2a Wolfram \:7cfb\:7edf\:53ef\:80fd\:4f1a\:5931\:53bb\:8bb8\:53ef\:6743. \:4f5c\:4e3a\:9884\:9632\:63aa\:65bd\:ff0c\:8bf7\:7acb\:5373\:4fdd\:5b58\:60a8\:7684\:5de5\:4f5c. 
+@|
+@@resource maxSubsessionLevelExceeded
+\:5728\:7b14\:8bb0\:672c'%s'\:4e2d\:65e0\:6cd5\:8c03\:7528 NotebookEvaluate\:ff0c\:5df2\:8d85\:8fc7\ %d MaxSubsessionLevel. 
+@|
+@@resource fileNotifyError
+\:6587\:4ef6\:63d0\:793a%s\:9519\:8bef\:ff0c\:9519\:8bef\:4ee3\:7801 = %d\:ff0c\:9519\:8bef\:4fe1\:606f = '%s'. 
+@|
+@| ### note trailing space at the end of the next three messages
+@|
+@@resource functionInformationTemplateError
+
+\:5904\:7406\:6b64\:7b26\:53f7\:7684\:51fd\:6570\:4fe1\:606f\:6a21\:677f\:65f6\:4ea7\:751f\:9519\:8bef: 
+@|
+@@resource functionInformationOptionsError
+
+\:5904\:7406\:6b64\:7b26\:53f7\:7684\:51fd\:6570\:4fe1\:606f\:9009\:9879\:65f6\:4ea7\:751f\:9519\:8bef: 
+@|
+@@resource functionInformationContextError
+
+\:5904\:7406\:6b64\:4e0a\:4e0b\:6587\:7684\:51fd\:6570\:4fe1\:606f\:65f6\:4ea7\:751f\:9519\:8bef: 
+@|
+@|
+@@resource multipleCitationsWarning
+\:60a8\:7684\:7b14\:8bb0\:672c\:4e2d\:5305\:542b\:6765\:81ea\:591a\:4e2a\:7cfb\:7edf\:7684\:5f15\:7528. 
+@|
+@|
+@@resource endNoteNotRunningWarning
+\:60a8\:7684\:7b14\:8bb0\:672c\:4e2d\:542b\:6709\:6765\:81ea EndNote \:8f6f\:4ef6\:7684\:5f15\:7528\:ff0c\:4f46\:662f\:60a8\:6ca1\:6709\:8fd0\:884c EndNote. 
+@|
+@|
+@@resource bibTeXLinkNotRunningWarning
+\:60a8\:7684\:7b14\:8bb0\:672c\:542b\:6709 BibTeX \:5f15\:7528\:ff0c\:4f46\:662f\:6ca1\:6709\:8fd0\:884c BibTeXLink . 
+@|
+@|
+@@resource refSystemNotRunning
+\:6ca1\:6709\:53c2\:8003\:6587\:732e\:7cfb\:7edf\:ff0cWolfram \:7cfb\:7edf\:4e0d\:80fd\:6784\:5efa\:53c2\:8003\:6587\:732e\:ff0c\:8bf7\:624b\:52a8\:542f\:52a8\:5b83. 
+@|
+@|
+@@resource refSystemFormatFailure
+\:53c2\:8003\:6587\:732e\:7cfb\:7edf\:683c\:5f0f\:5316\:5f15\:7528\:5931\:8d25. 
+@|
+@|
+@@resource refDatabaseParseError
+\:5728\:5904\:7406\:5f53\:524d\:7684\:53c2\:8003\:6587\:732e\:6570\:636e\:5e93\:65f6\:ff0cWolfram \:7cfb\:7edf\:9047\:5230\:4e00\:4e2a\:9519\:8bef. 
+@|
+@|
+@@resource wolframLanguageErrorMessage
+Wolfram \:8bed\:8a00\:4ea7\:751f\:4e00\:4e2a\:9519\:8bef\:ff1a
+%s
+@|
+@|
+@@resource LicensingErrors
+{
+	50->"\:524d\:7aef\:65e0\:6cd5\:8054\:7cfb MathLM \:670d\:52a1\:5668 \!\(\*StyleBox[\"`lmserver`\", ShowStringCharacters->False,AutoSpacing->False]\). \:60a8\:53ef\:4ee5\:5728\:63a5\:4e0b\:6765\:768424\:5c0f\:65f6\:5185\:7ee7\:7eed\:4f7f\:7528\:6b64\:4ea7\:54c1\:ff0c\:800c\:65e0\:9700\:91cd\:65b0\:8fde\:63a5\:5230\:670d\:52a1\:5668.",
+	51->"\:524d\:7aef\:65e0\:6cd5\:8054\:7cfb MathLM \:670d\:52a1\:5668 \!\(\*StyleBox[\"`lmserver`\", ShowStringCharacters->False,AutoSpacing->False]\). \:5982\:679c\:6ca1\:6709\:5f88\:5feb\:91cd\:65b0\:5efa\:7acb\:8fde\:63a5\:ff0c\:60a8\:7684\:4f1a\:8bdd\:5c06\:5c06\:4f1a\:7ed3\:675f.",
+	-41->"\:8bd5\:56fe\:5199\:5bc6\:7801\:6587\:4ef6`mathpass`\:65f6\:6587\:4ef6\:7cfb\:7edf\:51fa\:9519. \:60a8\:4ecd\:53ef\:4ee5\:8fd0\:884c`product`\:ff0c\:4f46\:4e0b\:6b21\:542f\:52a8\:65f6\:4f60\:5fc5\:9700\:91cd\:65b0\:8f93\:5165\:60a8\:7684\:5bc6\:7801. ",
+	-42->"\:60a8\:6b63\:5728\:4f7f\:7528\:7684`product`\:7684\:8bb8\:53ef\:8bc1\:7684\:6709\:6548\:671f\:4e3a`expiry`",
+	-60->"\:8bb8\:53ef\:8bc1\:670d\:52a1\:5668\:6ca1\:6709\:8be5\:4ea7\:54c1\:7684\:4efb\:4f55\:8bb8\:53ef\:8bc1. \:6b32\:77e5\:8be6\:60c5 \!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-61->"\:8be5\:7f51\:7edc\:8bb8\:53ef\:8bc1\:7684\:5185\:6838\:5df2\:8fbe\:5230\:9650\:989d`limit`\:ff0c\:8bf7\:62a5\:544a\:7cfb\:7edf\:7ba1\:7406\:5458. \:6b32\:77e5\:8be6\:60c5 \!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-62->"\:6fc0\:6d3b\:5bc6\:94a5/\:5bc6\:7801\:65e0\:6548\:ff0c\:8bf7\:68c0\:67e5\:60a8\:662f\:5426\:8f93\:5165\:6b63\:786e\:7684\:6fc0\:6d3b\:5bc6\:94a5\:548c\:5bc6\:7801. \:5982\:679c\:95ee\:9898\:4ecd\:7136\:5b58\:5728\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-63->"\:60a8\:8f93\:5165\:7684\:5bc6\:7801\:6709\:6548\:671f\:4e3a`expiry`. \!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\)\:83b7\:5f97\:65b0\:7684\:5bc6\:7801. ",
+	-64->"\:5bc6\:7801\:65e0\:6548\:ff0c\:8bf7\:68c0\:67e5\:60a8\:662f\:5426\:8f93\:5165\:6b63\:786e\:7684\:5bc6\:7801. \:5982\:679c\:95ee\:9898\:4ecd\:7136\:5b58\:5728\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+    -65->"\:60a8\:6240\:8f93\:5165\:7684\:5bc6\:7801\:5bf9\:4e8e\:6240\:8f93\:5165\:7684\:7ec4\:7ec7\:65e0\:6548\:ff0c\:8bf7\:68c0\:67e5\:7ec4\:7ec7\:540d\:7684\:62fc\:5199\:548c\:5927\:5c0f\:5199\:ff0c\:7136\:540e\:518d\:8bd5\:4e00\:6b21. ",
+    -67->"Mathematica\:8bb8\:53ef\:8bc1\:7cfb\:7edf\:53d1\:751f\:4e86\:5185\:90e8\:9519\:8bef. \!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-71->"\:524d\:7aef\:65e0\:6cd5\:8fde\:63a5 MathLM \:670d\:52a1\:5668\!\(\*StyleBox[\"`lmserver`\", ShowStringCharacters->False,AutoSpacing->False]\). \:8bf7\:68c0\:67e5\:60a8\:662f\:5426\:8f93\:5165\:6b63\:786e\:7684MathLM\:670d\:52a1\:5668. \:4e86\:89e3\:8fdb\:4e00\:6b65\:7684\:4fe1\:606f\:8bf7\:8054\:7cfb\:7cfb\:7edf\:7ba1\:7406\:5458. ",
+	-75->"\:8be5\:673a\:5668\!\(\*StyleBox[\"`lmserver`\", ShowStringCharacters->False,AutoSpacing->False]\)\:8fd0\:884c`product`\:7684\:5148\:524d\:7248\:672c\:8bb8\:53ef\:8bc1\:7ba1\:7406\:ff0c\:4e0d\:80fd\:53d1\:653e\:8bb8\:53ef\:8bc1. \:5347\:7ea7MathLM\:8bf7\:4e0e\:60a8\:7684\:7cfb\:7edf\:7ba1\:7406\:5458\:8054\:7cfb. ",
+	-77->"", (* out of bounds *)
+	-78->"\:8be5\:6fc0\:6d3b\:5bc6\:94a5\"`actkey`\"\:7684\:683c\:5f0f\:4e0d\:6b63\:786e. \:6b63\:786e\:7684\:6fc0\:6d3b\:5bc6\:94a5\:7684\:5f62\:5f0f\:662f \!\(\*StyleBox[\"XXXX-XXXX-XXXXXX\", FontSlant->\"Italic\"]\). ",
+	-79->"\:60a8\:8f93\:5165\:7684\:5bc6\:7801\:65e0\:6548\:ff0c\:8bf7\:786e\:4fdd\:60a8\:8f93\:5165\:6b63\:786e\:7684\:5bc6\:7801. \:5982\:679c\:95ee\:9898\:4ecd\:7136\:5b58\:5728\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfb Wolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-84->"\:8be5 MathLM \:670d\:52a1\:5668\!\(\*StyleBox[\"`lmserver`\", ShowStringCharacters->False,AutoSpacing->False]\)\:4f7f\:7528\!\(\*StyleBox[\"-restrict\",FontFamily->\"Courier\"]\)\:ff08\:9650\:5236\:ff09 \:53c2\:6570\:914d\:7f6e. \:6709\:4e86\:8fd9\:4e2a\:9650\:5236\:ff0c\:670d\:52a1\:5668\:62d2\:7edd\:7ed9\:4f60\:8bb8\:53ef\:8bc1. \:4e86\:89e3\:8fdb\:4e00\:6b65\:7684\:4fe1\:606f\:8bf7\:8054\:7cfb\:7cfb\:7edf\:7ba1\:7406\:5458. ",
+	-85->"\:8be5\:8bb8\:53ef\:8bc1\:7684\:5185\:6838\:5df2\:8fbe\:5230\:9650\:989d`limit`. \!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\)\:83b7\:53d6\:8bb8\:53ef\:8bc1\:914d\:7f6e\:5347\:7ea7\:7684\:4fe1\:606f. ",
+	-300->"\:5728\:5c1d\:8bd5\:6fc0\:6d3b`product`\:65f6\:5931\:8d25\:ff0c\:4e0e MathID `mathid`\:6709\:5173. \!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-301->"\:8be5\:6fc0\:6d3b\:5bc6\:94a5\"`actkey`\"\:65e0\:6548. \:8bf7\:68c0\:67e5\:6fc0\:6d3b\:5bc6\:94a5\:ff0c\:518d\:8bd5\:4e00\:6b21\:ff1b\:5982\:679c\:95ee\:9898\:4ecd\:7136\:5b58\:5728\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-302->"\:60a8\:7684\:6fc0\:6d3b\:5bc6\:94a5\"`actkey`\"\:6709\:95ee\:9898\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). " (*?*),
+	-303->"\:6fc0\:6d3b\:5bc6\:94a5 \"`actkey`\" \:4e4b\:524d\:88ab\:7528\:4e8e\:6fc0\:6d3b `product`. \:5982\:679c\:8f93\:5165\:4e0d\:6b63\:786e\:ff0c\:8bf7\:786e\:8ba4\:5bc6\:94a5\:5e76\:91cd\:65b0\:8f93\:5165. \:5982\:679c\:4f60\:628a\:4f60\:7684\:8bb8\:53ef\:8bc1\:7528\:4e8e\:5176\:4ed6\:7535\:8111\:6216\:6700\:8fd1\:4f60\:7684\:7535\:8111\:6709\:66f4\:65b0\:ff0c\:8bf7\:8981\:6c42 \!\(\*ButtonBox[\"\:7cfb\:7edf\:8f6c\:79fb\",BaseStyle->\"SystemTransferLink\"]\)."
+	-304->"\:8fdb\:5165\:4ea7\:54c1\:6fc0\:6d3b\:6570\:636e\:5e93\:6709\:95ee\:9898\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfb Wolfram Research\",BaseStyle->\"ContactActivationLink\"]\). " (*?*),
+	-305->"\:8be5\:8bb8\:53ef\:8bc1\:7684\:6fc0\:6d3b\:5bc6\:94a5\:5df2\:8fc7\:671f\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfb Wolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-306->"\:4e0e\:6b64\:6fc0\:6d3b\:5bc6\:94a5\:5bf9\:5e94\:7684\:8bb8\:53ef\:8bc1\:5df2\:5931\:6548. \!\(\*ButtonBox[\"\:8bf7\:8054\:7cfb Wolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-307->"\:4f18\:8d28\:670d\:52a1 \:ff08Premier Service\:ff09 \:5df2\:5230\:671f\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfb Wolfram Research\",BaseStyle->\"ContactActivationLink\"]\). " (*?*),
+	-308->"\:6ca1\:6709\:4e0e\:8be5\:6fc0\:6d3b\:5bc6\:94a5 \"`actkey`\" \:76f8\:5339\:914d\:7684\:4ea7\:54c1\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). " (*?*),
+	-309->"\:6fc0\:6d3b\:5bc6\:94a5 \"`actkey`\" \:4e2d\:6709\:4e0d\:5b8c\:6574\:7684\:8054\:7cfb\:4fe1\:606f\:ff0c\:8bf7\:8bbf\:95ee \!\(\*ButtonBox[\"register.wolfram.com\",ButtonData->{URL[\"http://webm-dev1.wolfram.com:8080/LoginSystem/User/ProductRegistration?activationKey=`actkey`&mathid=`mathid`\"],None},BaseStyle->\"Hyperlink\"]\) \:5b8c\:6210\:60a8\:7684\:6ce8\:518c. ",
+	-310->"Wolfram \:6fc0\:6d3b\:670d\:52a1\:5668\:62a5\:544a\:6b64\:6fc0\:6d3b\:5bc6\:94a5\"`actkey`\"\:4e0d\:662f\:6709\:6548\:7684\:683c\:5f0f(XXXX-XXXX-XXXXXX). \:8bf7\:68c0\:67e5\:60a8\:662f\:5426\:8f93\:5165\:6b63\:786e\:7684\:6fc0\:6d3b\:5bc6\:94a5\:ff0c\:5982\:679c\:95ee\:9898\:4ecd\:7136\:5b58\:5728\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-312->"\:521b\:5efa\:5bc6\:7801\:65f6\:ff0c Wolfram\:6fc0\:6d3b\:670d\:52a1\:5668\:4ea7\:751f\:4e00\:4e2a\:9519\:8bef. \!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-314->"Wolfram\:6fc0\:6d3b\:670d\:52a1\:5668\:65e0\:6cd5\:521b\:5efa\:5bc6\:7801\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-315->"\:4f7f\:7528\:6b64\:6fc0\:6d3b\:5bc6\:94a5\:7684\:4ea7\:54c1\:662f\:6709\:65f6\:95f4\:9650\:5236\:7684\:ff0c\:73b0\:5df2\:8fc7\:671f. ",
+	-316->"\:8be5\:6fc0\:6d3b\:5bc6\:94a5\:4e0d\:53ef\:4ee5\:4e0e Wolfram \:7cfb\:7edf\:8bd5\:7528\:7248\:4e00\:8d77\:4f7f\:7528\:ff0c\:8bf7\:5b89\:88c5 Wolfram \:7cfb\:7edf\:6216\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\)\:83b7\:53d6\:8fdb\:4e00\:6b65\:4fe1\:606f. ",
+	-317->"\:60a8\:7684\:5b66\:751f\:8bb8\:53ef\:8bc1\:5df2\:8fc7\:671f\:ff0c\:56e0\:4e3a\:6211\:4eec\:65e0\:6cd5\:9a8c\:8bc1\:60a8\:7684\:5b66\:751f\:8eab\:4efd. \!\(\*ButtonBox[\"\:8bf7\:8054\:7cfb Wolfram Research\",BaseStyle->\"ContactActivationLink\"]\)\:83b7\:53d6\:8fdb\:4e00\:6b65\:4fe1\:606f. " (* new message *),
+	-320->"\:60a8\:7684\:5b66\:751f\:8bb8\:53ef\:8bc1\:4e0d\:80fd\:88ab\:6fc0\:6d3b\:ff0c\:9664\:975e\:60a8\:6ce8\:518c Wolfram \:7cfb\:7edf. \:8bf7\:81f3 Wolfram \:7528\:6237\:95e8\:6237\:7f51\:7ad9\!\(\*ButtonBox[\"\:7acb\:5373\:6ce8\:518c\",ButtonData->\"Register\",BaseStyle->\"ContactActivationLink\"]\)\:ff0c\:6ce8\:518c\:540e\:518d\:8bd5\:4e00\:8bd5. ",
+	-321->"\:8be5\:6fc0\:6d3b\:5bc6\:94a5 \"`actkey`\" \:662f Wolfram \:7cfb\:7edf\:5728\:53e6\:4e00\:64cd\:4f5c\:7cfb\:7edf\:4f7f\:7528\:7684. \:5982\:679c\:4f60\:6ca1\:6709 Wolfram \:7cfb\:7edf\:5728\:8be5\:64cd\:4f5c\:7cfb\:7edf\:7684\:5bc6\:94a5\:ff0c\:8bf7\!\(\*ButtonBox[\"\:8054\:7cfb Wolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+ 	-322->"\:8be5\:6fc0\:6d3b\:5bc6\:94a5 \"`actkey`\" \:9700\:8981\:901a\:8fc7\:91cd\:65b0\:9a8c\:8bc1\:624d\:80fd\:5ef6\:671f. \:8bf7\:8bbf\:95ee\!\(\*ButtonBox[\"Wolfram User Portal\",ButtonData->\"UserPortal\",BaseStyle->\"ContactActivationLink\"]\) \:8fdb\:884c\:91cd\:65b0\:9a8c\:8bc1. ",	
+ 	-323->"\:8be5\:6fc0\:6d3b\:5bc6\:94a5 \"`actkey`\"  \:4e0d\:80fd\:5ef6\:671f\:ff0c\:8bf7\:8054\:7edc\:4f60\:7684\:7cfb\:7edf\:7ba1\:7406\:5458. ",
+	-399->"\:6fc0\:6d3b\:60a8\:7684\:4ea7\:54c1\:6709\:95ee\:9898. \!\(\*ButtonBox[\"\:8bf7\:8054\:7cfb Wolfram Research\",BaseStyle->\"ContactActivationLink\"]\). " (*?*),
+	-500->"\:4e0e\:4ea7\:54c1\:6fc0\:6d3b\:670d\:52a1\:5668\:901a\:4fe1\:6210\:529f\:ff0c\:4f46\:5b83\:8fd4\:56de\:4e00\:4e2a\:4e0d\:6b63\:786e\:7684\:5bc6\:7801\:3002 \!\(\*ButtonBox[\"\:8bf7\:8054\:7cfb Wolfram Research\",BaseStyle->\"ContactActivationLink\"]\)\:3002 ",
+	-501->"\:4ea7\:54c1\:6fc0\:6d3b\:7ec4\:4ef6\:51fa\:73b0\:5f02\:5e38\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfb Wolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-502->"\:4e0e\:4ea7\:54c1\:6fc0\:6d3b\:7ec4\:4ef6\:901a\:4fe1\:9519\:8bef\:ff0c!\(\*ButtonBox[\"\:8bf7\:8054\:7cfb Wolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-503->"Wolfram \:7cfb\:7edf\:65e0\:6cd5\:4e0e Wolfram \:6fc0\:6d3b\:670d\:52a1\:5668\:8fde\:63a5. \:8bf7\:68c0\:67e5\:60a8\:7684\:56e0\:7279\:7f51\:8fde\:63a5\:ff0c\:518d\:8bd5\:4e00\:6b21. \:6216\!\(\*ButtonBox[\"\:624b\:52a8\:6fc0\:6d3b Mathematica\",ButtonData->\"Manual\",BaseStyle->\"ActivationLink\"]\). ",
+	-504->"\:65e0\:6cd5\:786e\:5b9aWolfram Research\:6fc0\:6d3b\:670d\:52a1\:5668\:7684IP\:5730\:5740\:ff0c\:8bf7\:68c0\:67e5\:60a8\:7684\:56e0\:7279\:7f51\:8fde\:63a5\:ff0c\:518d\:8bd5\:4e00\:6b21. \:5982\:679c\:95ee\:9898\:4ecd\:7136\:5b58\:5728\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-505->"Wolfram Research\:7684\:6fc0\:6d3b\:670d\:52a1\:5668\:6682\:65f6\:65e0\:6cd5\:4f7f\:7528\:ff0c\:7a0d\:540e\:518d\:5c1d\:8bd5\:6fc0\:6d3b. \:5982\:679c\:95ee\:9898\:4ecd\:7136\:5b58\:5728\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-506->"\:4ea7\:54c1\:6fc0\:6d3b\:670d\:52a1\:5668\:4ea7\:751f\:4e00\:4e2a\:6388\:6743\:9519\:8bef\:ff0c\:8bf7\:518d\:8bd5\:4e00\:6b21\:6216\!\(\*ButtonBox[\"\:8054\:7cfb Wolfram Research\",BaseStyle->\"ContactActivationLink\"]\). "(*?*),
+	-507->"\:4ea7\:54c1\:6fc0\:6d3b\:670d\:52a1\:5668\:4ea7\:751f\:4e00\:4e2a HTTP \:534f\:8bae\:9519\:8bef\:ff0c\:8bf7\:68c0\:67e5\:60a8\:7684\:56e0\:7279\:7f51\:8fde\:63a5\:ff0c\:518d\:8bd5\:4e00\:6b21. \:5982\:679c\:95ee\:9898\:4ecd\:7136\:5b58\:5728\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-508->"\:4ea7\:54c1\:6fc0\:6d3b\:670d\:52a1\:5668\:4ea7\:751f\:4e00\:4e2a\:54cd\:5e94\:9519\:8bef\:ff0c\:8bf7\:68c0\:67e5\:60a8\:7684\:56e0\:7279\:7f51\:8fde\:63a5\:ff0c\:518d\:8bd5\:4e00\:6b21. \:5982\:679c\:95ee\:9898\:4ecd\:7136\:5b58\:5728\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). ",
+	-509->"\:4ea7\:54c1\:6fc0\:6d3b\:8fd0\:884c\:65f6\:51fa\:9519\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). " (*?*),
+	-510->"\:4ea7\:54c1\:6fc0\:6d3b\:51fa\:73b0\:5f02\:5e38\:ff0c!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). " (*?*),
+    -1000->"\:4e0e\:4ea7\:54c1\:6fc0\:6d3b\:7ec4\:4ef6\:7684 WSTP \:9519\:8bef\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). \:9519\:8bef\:4e3a : `mlnum`, `mlstring`",
+	-2000->"\:5f53\:94fe\:63a5\:6fc0\:6d3b\:670d\:52a1\:5668\:65f6\:ff0c\:4ea7\:751f\:4e00\:4e2a HTTP \:9519\:8bef. \:9519\:8bef\:4e3a\:ff1a`httperr`\:ff0c\:8bf7\:68c0\:67e5\:60a8\:7684\:56e0\:7279\:7f51\:8fde\:63a5\:ff0c\:518d\:8bd5\:4e00\:6b21. \:5982\:679c\:95ee\:9898\:4ecd\:7136\:5b58\:5728\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfbWolfram Research\",BaseStyle->\"ContactActivationLink\"]\). " (*?*),
+	_->"\:4ea7\:54c1\:6fc0\:6d3b\:65f6\:4ea7\:751f\:672a\:77e5\:9519\:8bef\:ff0c\:9519\:8bef\:4ee3\:7801 : `error`"
+}
+@|
+@|
+@@resource WolframCloudLoginErrors
+{
+	401->"\:60a8\:8f93\:5165\:7684\:5bc6\:7801\:6216\:8005 Wolfram ID \:4e0d\:6b63\:786e.",
+	1500->"\:60a8\:76ee\:524d\:7684\:8ba1\:5212\:4e0d\:5305\:62ec Wolfram \:684c\:9762. \!\(\*ButtonBox[\"\:5347\:7ea7\", ButtonFunction :> (FE`hyperlinkCoded[\"https://www.wolframcloud.com/app/account/\", \"source=signinscreen\"]), Evaluator -> Automatic, Method -> \"Preemptive\", Appearance -> None, BaseStyle -> {FontColor -> RGBColor[0, 0, 1]}]\) \:540e\:624d\:53ef\:4ee5\:8bbf\:95ee.",
+	1501->"\:60a8\:7684\:8bb8\:53ef\:8bc1\:5df2\:5230\:671f\:3002 \!\(\*TagBox[ButtonBox[\"\:7acb\:5373\:8d2d\:4e70\", ButtonFunction :> (FE`hyperlinkCoded[\"https://www.wolfram.com/wolfram-one\", \"source=signinscreen\"]), Evaluator -> Automatic, Method -> \"Preemptive\", Appearance -> None, BaseStyle -> {FontColor -> RGBColor[0, 0, 1]}], MouseAppearanceTag[\"LinkHand\"]]\) \:6216 \!\(\*TagBox[ButtonBox[\"\:8054\:7cfb Wolfram Research\:3002\", ButtonFunction :> (FE`hyperlinkCoded[\"https://www.wolfram.com/support/contact/email/\", \"source=signinscreen\"]), Evaluator -> Automatic, Method -> \"Preemptive\", Appearance -> None, BaseStyle -> {FontColor -> RGBColor[0, 0, 1]}], MouseAppearanceTag[\"LinkHand\"]]\)",
+	1502->"\:60a8\:7684\:8bb8\:53ef\:8bc1\:4e0d\:53ef\:4ee5\:540c\:65f6\:5728\:4e24\:53f0\:4ee5\:4e0a\:7684\:7535\:8111\:4e2d\:6fc0\:6d3b\:3002 \!\(\*TagBox[ButtonBox[\"\:8054\:7cfb Wolfram Research\", ButtonFunction :> (FE`hyperlinkCoded[\"https://www.wolfram.com/support/contact/email/\", \"source=signinscreen\"]), Evaluator -> Automatic, Method -> \"Preemptive\", Appearance -> None, BaseStyle -> {FontColor -> RGBColor[0, 0, 1]}], MouseAppearanceTag[\"LinkHand\"]]\)\:5c06\:8bb8\:53ef\:8bc1\:4ece\:53e6\:4e00\:53f0\:7535\:8111\:8f6c\:79fb\:5230\:8be5\:8ba1\:7b97\:673a\:4e0a\:3002",
+
+	(* Internet/connection status error codes *)
+	1600->"\:65e0\:6cd5\:8fde\:63a5 Wolfram Cloud. \:7a0d\:540e\:518d\:8bd5. \:5982\:679c\:8be5\:95ee\:9898\:4ecd\:7136\:5b58\:5728\:ff0c\!\(\*ButtonBox[\"\:8bf7\:8054\:7cfb\:6211\:4eec\", ButtonFunction :> (FE`hyperlinkCoded[\"http://www.wolfram.com/support/contact/email/\", \"source=signinscreen\"]), Evaluator -> Automatic, Method -> \"Preemptive\", Appearance -> None, BaseStyle -> {FontColor -> RGBColor[0, 0, 1]}]\).",
+	"1600v11"->"\:65e0\:6cd5\:8fde\:63a5 Wolfram Cloud. \:7a0d\:540e\:518d\:8bd5. \:5982\:679c\:8be5\:95ee\:9898\:4ecd\:7136\:5b58\:5728\:ff0c \!\(\*TagBox[ButtonBox[\"\:8bf7\:8054\:7cfb\:6211\:4eec\", ButtonFunction :> (FE`hyperlinkCoded[\"http://www.wolfram.com/support/contact/email/\", \"source=signinscreen\"]), Evaluator -> Automatic, Method -> \"Preemptive\", Appearance -> None, BaseStyle -> {FontColor -> RGBColor[0.2, 0.2, 0.2], FontVariations -> {\"Underline\" -> True}}], MouseAppearanceTag[\"LinkHand\"]]\).",
+	1601->"\:65e0\:6cd5\:8fde\:63a5\:4e92\:8054\:7f51. \:8bf7\:68c0\:67e5\:4e92\:8054\:7f51\:8fde\:63a5.",
+	1602->"\:65e0\:6cd5\:8fde\:63a5\:4e92\:8054\:7f51. \:8bf7\:68c0\:67e5\:4e92\:8054\:7f51\:8fde\:63a5."
+	}
+@|

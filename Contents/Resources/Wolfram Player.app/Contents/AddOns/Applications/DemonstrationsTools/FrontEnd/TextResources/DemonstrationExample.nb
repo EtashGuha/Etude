@@ -1,0 +1,1364 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     59478,       1356]
+NotebookOptionsPosition[     52700,       1210]
+NotebookOutlinePosition[     54931,       1268]
+CellTagsIndexPosition[     54603,       1256]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Equal Time Curves   ",
+ StyleBox["(A Sample Demonstration)",
+  FontSize->20,
+  FontWeight->"Plain"]
+}], "DemoTitle",
+ CellChangeTimes->{
+  3.35332394657587*^9, {3.38126871925653*^9, 3.38126877592682*^9}, 
+   3.4324913885626087`*^9},
+ CellID->700863240,ExpressionUUID->"b92d16ba-56f7-488e-a6bd-bc61c3a71510"],
+
+Cell[CellGroupData[{
+
+Cell["", "InitializationSection",ExpressionUUID->"d1d2570e-f79b-45d3-b212-0a1bbd31da61"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"brachistochrone", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x1_", ",", " ", "yp1_"}], "}"}], ",", " ", "v0_"}], "]"}], " ",
+    ":=", "\[IndentingNewLine]", 
+   RowBox[{"Quiet", "[", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"g", "=", "9.81"}], ",", 
+        RowBox[{"y1", "=", 
+         RowBox[{"-", "yp1"}]}], ",", " ", "v1", ",", " ", "fr", ",", "curve",
+         ",", " ", "normal", ",", 
+        RowBox[{"\[Rho]", " ", "=", " ", "0.05"}], ",", " ", "\[CurlyPhi]0", 
+        ",", "\[CurlyPhi]1"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"v1", " ", "=", " ", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"v0", "^", "2"}], " ", "+", " ", 
+          RowBox[{"2", " ", "g", " ", 
+           RowBox[{"(", "y1", ")"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"fr", " ", "=", " ", 
+        RowBox[{"FindRoot", "[", 
+         RowBox[{
+          RowBox[{"Evaluate", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              FractionBox[
+               RowBox[{
+                RowBox[{"v1", "^", "2"}], " ", 
+                SuperscriptBox[
+                 RowBox[{"Sec", "[", "\[CurlyPhi]1", "]"}], "2"], " ", 
+                RowBox[{"(", 
+                 RowBox[{"\[CurlyPhi]0", "-", "\[CurlyPhi]1", "+", 
+                  RowBox[{
+                   RowBox[{"Cos", "[", "\[CurlyPhi]0", "]"}], " ", 
+                   RowBox[{"Sin", "[", "\[CurlyPhi]0", "]"}]}], "-", 
+                  RowBox[{
+                   RowBox[{"Cos", "[", "\[CurlyPhi]1", "]"}], " ", 
+                   RowBox[{"Sin", "[", "\[CurlyPhi]1", "]"}]}]}], ")"}]}], 
+               RowBox[{"2", " ", "g"}]], "\[Equal]", "x1"}], ",", 
+             RowBox[{
+              FractionBox[
+               RowBox[{
+                RowBox[{"v1", "^", "2"}], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", 
+                   RowBox[{"Cos", "[", 
+                    RowBox[{"2", " ", "\[CurlyPhi]0"}], "]"}]}], "+", 
+                  RowBox[{"Cos", "[", 
+                   RowBox[{"2", " ", "\[CurlyPhi]1"}], "]"}]}], ")"}], " ", 
+                SuperscriptBox[
+                 RowBox[{"Sec", "[", "\[CurlyPhi]1", "]"}], "2"]}], 
+               RowBox[{"4", " ", "g"}]], "\[Equal]", "y1"}]}], "}"}], "]"}], 
+          ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"\[CurlyPhi]0", ",", "1.5"}], "}"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"\[CurlyPhi]1", ",", 
+            RowBox[{"-", "0.5"}]}], "}"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"curve", "[", "\[CurlyPhi]_", "]"}], "=", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"v1", "^", "2"}]}], "/", 
+             RowBox[{"(", 
+              RowBox[{"2", " ", "g", " ", 
+               RowBox[{
+                RowBox[{"Cos", "[", "\[CurlyPhi]1", "]"}], "^", "2"}]}], 
+              ")"}]}], 
+            RowBox[{"(", 
+             RowBox[{"\[CurlyPhi]", "-", "\[CurlyPhi]0", "+", 
+              RowBox[{
+               RowBox[{"Cos", "[", 
+                RowBox[{"\[CurlyPhi]", "+", "\[CurlyPhi]0"}], "]"}], 
+               RowBox[{"Sin", "[", 
+                RowBox[{"\[CurlyPhi]", "-", "\[CurlyPhi]0"}], "]"}]}]}], 
+             ")"}]}], ",", "\[IndentingNewLine]", "  ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"v1", "^", "2"}], "/", 
+             RowBox[{"(", 
+              RowBox[{"2", " ", "g", " ", 
+               RowBox[{
+                RowBox[{"Cos", "[", "\[CurlyPhi]1", "]"}], "^", "2"}]}], 
+              ")"}]}], 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"Sin", "[", 
+               RowBox[{"\[CurlyPhi]", "+", "\[CurlyPhi]0"}], "]"}], 
+              RowBox[{"Sin", "[", 
+               RowBox[{"\[CurlyPhi]", "-", "\[CurlyPhi]0"}], "]"}]}], 
+             ")"}]}]}], "}"}], "/.", "fr"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"normal", "[", "\[CurlyPhi]_", "]"}], "=", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "/", 
+           RowBox[{"Sqrt", "[", 
+            RowBox[{"#", ".", "#"}], "]"}]}], "&"}], "[", 
+         RowBox[{
+          RowBox[{"Reverse", "[", 
+           RowBox[{"D", "[", 
+            RowBox[{
+             RowBox[{"curve", "[", "\[CurlyPhi]", "]"}], ",", "\[CurlyPhi]"}],
+             "]"}], "]"}], 
+          RowBox[{"{", 
+           RowBox[{"1", ",", " ", 
+            RowBox[{"-", "1"}]}], "}"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Show", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"ParametricPlot", "[", 
+            RowBox[{
+             RowBox[{"Evaluate", "[", 
+              RowBox[{"curve", "[", "\[CurlyPhi]", "]"}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"Evaluate", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                "\[CurlyPhi]", ",", " ", "\[CurlyPhi]0", ",", 
+                 "\[CurlyPhi]1"}], "}"}], "/.", "fr"}], "]"}], ",", 
+             RowBox[{"PlotStyle", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{"Thickness", "[", ".01", "]"}], "}"}]}], ",", 
+             RowBox[{"AxesOrigin", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0"}], "}"}]}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Thickness", "[", ".008", "]"}], ",", 
+              RowBox[{"Table", "[", 
+               RowBox[{
+                RowBox[{"Circle", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"curve", "[", "\[CurlyPhi]", "]"}], "+", 
+                   RowBox[{"\[Rho]", " ", 
+                    RowBox[{"normal", "[", "\[CurlyPhi]", "]"}]}]}], ",", 
+                  "\[Rho]"}], "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"Evaluate", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{
+                   "\[CurlyPhi]", ",", " ", "\[CurlyPhi]0", ",", 
+                    "\[CurlyPhi]1", ",", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"\[CurlyPhi]1", "-", "\[CurlyPhi]0"}], ")"}], "/",
+                     "12"}]}], "}"}], "/.", "fr"}], "]"}]}], "]"}]}], "}"}], 
+            "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"PlotRange", " ", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "3"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"1", "/", "2"}], ",", " ", 
+              RowBox[{"-", "3"}]}], "}"}]}], "}"}]}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"400", ",", "400"}], "}"}]}], ",", 
+         RowBox[{"PlotLabel", "->", 
+          RowBox[{"Style", "[", 
+           RowBox[{
+            RowBox[{"\"\<time = \>\"", "<>", 
+             RowBox[{"ToString", "[", 
+              RowBox[{"NumberForm", "[", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"v1", " ", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"\[CurlyPhi]0", "-", "\[CurlyPhi]1"}], ")"}], "/", 
+                    RowBox[{"(", 
+                    RowBox[{"g", " ", 
+                    RowBox[{"Cos", "[", "\[CurlyPhi]1", "]"}]}], ")"}]}]}], "/.",
+                   "fr"}], ")"}], ",", " ", 
+                RowBox[{"{", 
+                 RowBox[{"4", ",", "3"}], "}"}], ",", 
+                RowBox[{"NumberPadding", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"\"\<\>\"", ",", "\"\<0\>\""}], "}"}]}]}], "]"}], 
+              "]"}]}], ",", "\"\<Label\>\"", ",", "14"}], "]"}]}], ",", 
+         RowBox[{"ImagePadding", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"20", ",", "20"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"20", ",", "30"}], "}"}]}], "}"}]}]}], "]"}]}]}], "]"}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.35092666999086*^9, 3.35092667071099*^9}, {
+   3.35092672149832*^9, 3.35092694953367*^9}, {3.35092698298204*^9, 
+   3.35092702667317*^9}, {3.35092712078971*^9, 3.35092716104868*^9}, {
+   3.35092724846803*^9, 3.35092726708198*^9}, {3.35092732678105*^9, 
+   3.35092732721442*^9}, 3.35092738038621*^9, {3.35092748011684*^9, 
+   3.35092749409689*^9}, {3.35092752916099*^9, 3.350927533107*^9}, 
+   3.35092758945807*^9, {3.35092906050555*^9, 3.35092908667393*^9}, {
+   3.3509291746306*^9, 3.35092920394365*^9}, {3.35092937667745*^9, 
+   3.35092939611456*^9}, {3.35092960021951*^9, 3.35092960357359*^9}, {
+   3.35092974814*^9, 3.35092975196184*^9}, {3.35093001574458*^9, 
+   3.35093013369625*^9}, {3.35093028336249*^9, 3.35093028484376*^9}, {
+   3.35093034380298*^9, 3.35093035297765*^9}, 3.35093054095865*^9, {
+   3.35093102382172*^9, 3.35093103351868*^9}, {3.35093119196225*^9, 
+   3.35093119520379*^9}, 3.35093172316084*^9, 3.35093176172175*^9, {
+   3.35098914939429*^9, 3.35098928619145*^9}, {3.35098936800097*^9, 
+   3.35098945308198*^9}, {3.3509894867691*^9, 3.35098950570827*^9}, {
+   3.35098955306041*^9, 3.35098958312181*^9}, {3.35722558428125*^9, 
+   3.35722559946875*^9}, {3.35824688923346*^9, 3.35824689715958*^9}, {
+   3.36434521626613*^9, 3.36434523473488*^9}, {3.36434528429738*^9, 
+   3.36434531665675*^9}, {3.36434538053175*^9, 3.36434538060988*^9}, {
+   3.3647502423246*^9, 3.36475025644942*^9}, {3.36483557907852*^9, 
+   3.36483565883649*^9}, {3.36483570894105*^9, 3.36483571429991*^9}, {
+   3.36559724757968*^9, 3.36559725126718*^9}, {3.36924279801563*^9, 
+   3.36924280432813*^9}, {3.37054147034375*^9, 3.370541564484375*^9}, {
+   3.374880766359375*^9, 3.374880771*^9}, {3.3779800659189253`*^9, 
+   3.3779800685595503`*^9}},
+ CellID->24470059,ExpressionUUID->"0390a61d-680f-4e85-81be-73a6f977ad8e"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection",ExpressionUUID->"d201f57b-ae43-4a4c-9b23-ef2d7aa55fb2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"brachistochrone", "[", 
+    RowBox[{"xy", ",", " ", "v0"}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"v0", ",", " ", "0", ",", " ", "\"\<initial velocity\>\""}], 
+      "}"}], ",", " ", "0", ",", " ", "3"}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"xy", ",", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"-", "2"}]}], "}"}], ",", "\"\<final point\>\""}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "3"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", " ", 
+       RowBox[{"-", "0.3"}]}], "}"}], ",", "Locator"}], "}"}], ",", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}], ",", 
+   RowBox[{"ControlPlacement", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Top", ",", "Left"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.35332396390388*^9, 3.35332397140384*^9}, {
+  3.35472656070313*^9, 3.35472656964063*^9}, {3.3572255708125*^9, 
+  3.35722557289063*^9}, {3.35844501789063*^9, 3.358445032875*^9}, {
+  3.364345353688*^9, 3.3643453656255*^9}, {3.36434545729738*^9, 
+  3.3643454590005*^9}, {3.3779799565751753`*^9, 3.3779799639658003`*^9}, {
+  3.3779801611064253`*^9, 3.3779801940283003`*^9}, {3.3816801001007266`*^9, 
+  3.3816801002882266`*^9}},
+ CellID->1496021318,ExpressionUUID->"72bde389-a1b8-4690-bafb-4da63fb819e8"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`v0$$ = 0, $CellContext`xy$$ = {2, -2}, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`v0$$], 0, "initial velocity"}, 0, 3}, {{
+       Hold[$CellContext`xy$$], {2, -2}, "final point"}, {0, -3}, {3, -0.3}}},
+     Typeset`size$$ = {400., {197., 203.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`v0$100380$$ = 0, $CellContext`xy$100381$$ = {0, 0}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`v0$$ = 0, $CellContext`xy$$ = {2, -2}}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`v0$$, $CellContext`v0$100380$$, 0], 
+        Hold[$CellContext`xy$$, $CellContext`xy$100381$$, {0, 0}]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`brachistochrone[$CellContext`xy$$, \
+$CellContext`v0$$], 
+      "Specifications" :> {{{$CellContext`v0$$, 0, "initial velocity"}, 0, 
+         3}, {{$CellContext`xy$$, {2, -2}, "final point"}, {0, -3}, {3, -0.3},
+          ControlType -> Locator}}, 
+      "Options" :> {ControlPlacement -> {Top, Left}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{455., {246., 252.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`brachistochrone[{
+          Pattern[$CellContext`x1, 
+           Blank[]], 
+          Pattern[$CellContext`yp1, 
+           Blank[]]}, 
+         Pattern[$CellContext`v0, 
+          Blank[]]] := Quiet[
+         Module[{$CellContext`g = 
+           
+           9.81, $CellContext`y1 = -$CellContext`yp1, $CellContext`v1, \
+$CellContext`fr, $CellContext`curve, $CellContext`normal, $CellContext`\[Rho] = 
+           0.05, $CellContext`\[CurlyPhi]0, $CellContext`\[CurlyPhi]1}, \
+$CellContext`v1 = 
+           Sqrt[$CellContext`v0^2 + (
+               2 $CellContext`g) $CellContext`y1]; $CellContext`fr = 
+           FindRoot[
+             
+             Evaluate[{(($CellContext`v1^2 
+                  Sec[$CellContext`\[CurlyPhi]1]^2) \
+($CellContext`\[CurlyPhi]0 - $CellContext`\[CurlyPhi]1 + 
+                  Cos[$CellContext`\[CurlyPhi]0] 
+                   Sin[$CellContext`\[CurlyPhi]0] - 
+                  Cos[$CellContext`\[CurlyPhi]1] 
+                  Sin[$CellContext`\[CurlyPhi]1]))/(
+                2 $CellContext`g) == $CellContext`x1, (($CellContext`v1^2 (-
+                    Cos[2 $CellContext`\[CurlyPhi]0] + 
+                   Cos[2 $CellContext`\[CurlyPhi]1])) 
+                 Sec[$CellContext`\[CurlyPhi]1]^2)/(
+                4 $CellContext`g) == $CellContext`y1}], {$CellContext`\
+\[CurlyPhi]0, 1.5}, {$CellContext`\[CurlyPhi]1, -0.5}]; $CellContext`curve[
+             Pattern[$CellContext`\[CurlyPhi], 
+              Blank[]]] = 
+           ReplaceAll[{(-($CellContext`v1^2/((2 $CellContext`g) 
+                Cos[$CellContext`\[CurlyPhi]1]^2))) ($CellContext`\[CurlyPhi] - \
+$CellContext`\[CurlyPhi]0 + 
+               Cos[$CellContext`\[CurlyPhi] + $CellContext`\[CurlyPhi]0] 
+                Sin[$CellContext`\[CurlyPhi] - $CellContext`\[CurlyPhi]0]), \
+($CellContext`v1^2/((2 $CellContext`g) Cos[$CellContext`\[CurlyPhi]1]^2)) (
+               Sin[$CellContext`\[CurlyPhi] + $CellContext`\[CurlyPhi]0] 
+               Sin[$CellContext`\[CurlyPhi] - $CellContext`\[CurlyPhi]0])}, \
+$CellContext`fr]; $CellContext`normal[
+             Pattern[$CellContext`\[CurlyPhi], 
+              Blank[]]] = (#/Sqrt[
+             Dot[#, #]]& )[Reverse[
+               D[
+                $CellContext`curve[$CellContext`\[CurlyPhi]], $CellContext`\
+\[CurlyPhi]]] {1, -1}]; Show[{
+             ParametricPlot[
+              Evaluate[
+               $CellContext`curve[$CellContext`\[CurlyPhi]]], 
+              Evaluate[
+               
+               ReplaceAll[{$CellContext`\[CurlyPhi], \
+$CellContext`\[CurlyPhi]0, $CellContext`\[CurlyPhi]1}, $CellContext`fr]], 
+              PlotStyle -> {
+                Thickness[0.01]}, AxesOrigin -> {0, 0}], 
+             Graphics[{
+               Thickness[0.008], 
+               Table[
+                
+                Circle[$CellContext`curve[$CellContext`\[CurlyPhi]] + \
+$CellContext`\[Rho] $CellContext`normal[$CellContext`\[CurlyPhi]], \
+$CellContext`\[Rho]], 
+                Evaluate[
+                 
+                 ReplaceAll[{$CellContext`\[CurlyPhi], $CellContext`\
+\[CurlyPhi]0, $CellContext`\[CurlyPhi]1, ($CellContext`\[CurlyPhi]1 - \
+$CellContext`\[CurlyPhi]0)/12}, $CellContext`fr]]]}]}, 
+            PlotRange -> {{0, 3}, {1/2, -3}}, ImageSize -> {400, 400}, 
+            PlotLabel -> Style[
+              StringJoin["time = ", 
+               ToString[
+                NumberForm[
+                 
+                 ReplaceAll[$CellContext`v1 (($CellContext`\[CurlyPhi]0 - \
+$CellContext`\[CurlyPhi]1)/($CellContext`g 
+                   Cos[$CellContext`\[CurlyPhi]1])), $CellContext`fr], {4, 3},
+                  NumberPadding -> {"", "0"}]]], "Label"], 
+            ImagePadding -> {{20, 20}, {20, 30}}]]]}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->70079138,ExpressionUUID->"f6f40675-fa75-471f-8e1a-c758b0473070"]
+}, {2}]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection",ExpressionUUID->"5ba3f31c-5cf2-4015-b5c5-aab4127f23b9"],
+
+Cell["\<\
+This shows the shape of the brachistochrone from the origin to a variable \
+final point. The circles indicate the position of the sliding point at \
+equally spaced times.\
+\>", "ManipulateCaption",
+ CellChangeTimes->{
+  3.35332401137233*^9, {3.432339103349905*^9, 3.432339103436183*^9}},
+ CellID->1044312921,ExpressionUUID->"9575fc07-89a7-4f9c-b12e-189056856ef0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection",ExpressionUUID->"fbb32ef1-9048-4d6b-9024-9071650e7b73"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`v0$$ = 0, $CellContext`xy$$ = {2, -2}, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`v0$$], 0, "initial velocity"}, 0, 3}, {{
+       Hold[$CellContext`xy$$], {2, -2}, "final point"}, {0, -3}, {3, -0.3}}},
+     Typeset`size$$ = {400., {197., 203.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`v0$100436$$ = 0, $CellContext`xy$100437$$ = {0, 0}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`v0$$ = 0, $CellContext`xy$$ = {2, -2}}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`v0$$, $CellContext`v0$100436$$, 0], 
+        Hold[$CellContext`xy$$, $CellContext`xy$100437$$, {0, 0}]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`brachistochrone[$CellContext`xy$$, \
+$CellContext`v0$$], 
+      "Specifications" :> {{{$CellContext`v0$$, 0, "initial velocity"}, 0, 
+         3}, {{$CellContext`xy$$, {2, -2}, "final point"}, {0, -3}, {3, -0.3},
+          ControlType -> Locator}}, 
+      "Options" :> {ControlPlacement -> {Top, Left}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{455., {246., 252.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`brachistochrone[{
+          Pattern[$CellContext`x1, 
+           Blank[]], 
+          Pattern[$CellContext`yp1, 
+           Blank[]]}, 
+         Pattern[$CellContext`v0, 
+          Blank[]]] := Quiet[
+         Module[{$CellContext`g = 
+           
+           9.81, $CellContext`y1 = -$CellContext`yp1, $CellContext`v1, \
+$CellContext`fr, $CellContext`curve, $CellContext`normal, $CellContext`\[Rho] = 
+           0.05, $CellContext`\[CurlyPhi]0, $CellContext`\[CurlyPhi]1}, \
+$CellContext`v1 = 
+           Sqrt[$CellContext`v0^2 + (
+               2 $CellContext`g) $CellContext`y1]; $CellContext`fr = 
+           FindRoot[
+             
+             Evaluate[{(($CellContext`v1^2 
+                  Sec[$CellContext`\[CurlyPhi]1]^2) \
+($CellContext`\[CurlyPhi]0 - $CellContext`\[CurlyPhi]1 + 
+                  Cos[$CellContext`\[CurlyPhi]0] 
+                   Sin[$CellContext`\[CurlyPhi]0] - 
+                  Cos[$CellContext`\[CurlyPhi]1] 
+                  Sin[$CellContext`\[CurlyPhi]1]))/(
+                2 $CellContext`g) == $CellContext`x1, (($CellContext`v1^2 (-
+                    Cos[2 $CellContext`\[CurlyPhi]0] + 
+                   Cos[2 $CellContext`\[CurlyPhi]1])) 
+                 Sec[$CellContext`\[CurlyPhi]1]^2)/(
+                4 $CellContext`g) == $CellContext`y1}], {$CellContext`\
+\[CurlyPhi]0, 1.5}, {$CellContext`\[CurlyPhi]1, -0.5}]; $CellContext`curve[
+             Pattern[$CellContext`\[CurlyPhi], 
+              Blank[]]] = 
+           ReplaceAll[{(-($CellContext`v1^2/((2 $CellContext`g) 
+                Cos[$CellContext`\[CurlyPhi]1]^2))) ($CellContext`\[CurlyPhi] - \
+$CellContext`\[CurlyPhi]0 + 
+               Cos[$CellContext`\[CurlyPhi] + $CellContext`\[CurlyPhi]0] 
+                Sin[$CellContext`\[CurlyPhi] - $CellContext`\[CurlyPhi]0]), \
+($CellContext`v1^2/((2 $CellContext`g) Cos[$CellContext`\[CurlyPhi]1]^2)) (
+               Sin[$CellContext`\[CurlyPhi] + $CellContext`\[CurlyPhi]0] 
+               Sin[$CellContext`\[CurlyPhi] - $CellContext`\[CurlyPhi]0])}, \
+$CellContext`fr]; $CellContext`normal[
+             Pattern[$CellContext`\[CurlyPhi], 
+              Blank[]]] = (#/Sqrt[
+             Dot[#, #]]& )[Reverse[
+               D[
+                $CellContext`curve[$CellContext`\[CurlyPhi]], $CellContext`\
+\[CurlyPhi]]] {1, -1}]; Show[{
+             ParametricPlot[
+              Evaluate[
+               $CellContext`curve[$CellContext`\[CurlyPhi]]], 
+              Evaluate[
+               
+               ReplaceAll[{$CellContext`\[CurlyPhi], \
+$CellContext`\[CurlyPhi]0, $CellContext`\[CurlyPhi]1}, $CellContext`fr]], 
+              PlotStyle -> {
+                Thickness[0.01]}, AxesOrigin -> {0, 0}], 
+             Graphics[{
+               Thickness[0.008], 
+               Table[
+                
+                Circle[$CellContext`curve[$CellContext`\[CurlyPhi]] + \
+$CellContext`\[Rho] $CellContext`normal[$CellContext`\[CurlyPhi]], \
+$CellContext`\[Rho]], 
+                Evaluate[
+                 
+                 ReplaceAll[{$CellContext`\[CurlyPhi], $CellContext`\
+\[CurlyPhi]0, $CellContext`\[CurlyPhi]1, ($CellContext`\[CurlyPhi]1 - \
+$CellContext`\[CurlyPhi]0)/12}, $CellContext`fr]]]}]}, 
+            PlotRange -> {{0, 3}, {1/2, -3}}, ImageSize -> {400, 400}, 
+            PlotLabel -> Style[
+              StringJoin["time = ", 
+               ToString[
+                NumberForm[
+                 
+                 ReplaceAll[$CellContext`v1 (($CellContext`\[CurlyPhi]0 - \
+$CellContext`\[CurlyPhi]1)/($CellContext`g 
+                   Cos[$CellContext`\[CurlyPhi]1])), $CellContext`fr], {4, 3},
+                  NumberPadding -> {"", "0"}]]], "Label"], 
+            ImagePadding -> {{20, 20}, {20, 30}}]]]}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellEditDuplicate->False,
+ CellID->455422817,ExpressionUUID->"4b65c088-be99-48f2-aaae-44e47a556e1a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection",ExpressionUUID->"6aa8c08c-0fa3-4ff3-bd79-8f7063e2642f"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`v0$$ = 1.085, $CellContext`xy$$ = {
+    2.436, -1.125}, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`v0$$], 1.085, "initial velocity"}, 0, 3}, {{
+       Hold[$CellContext`xy$$], {2.436, -1.125}, "final point"}, {0, -3}, {
+      3, -0.3}}}, Typeset`size$$ = {400., {197., 203.}}, Typeset`update$$ = 0,
+     Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`v0$100492$$ = 0, $CellContext`xy$100493$$ = {0, 0}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`v0$$ = 
+        1.085, $CellContext`xy$$ = {2.436, -1.125}}, "ControllerVariables" :> {
+        Hold[$CellContext`v0$$, $CellContext`v0$100492$$, 0], 
+        Hold[$CellContext`xy$$, $CellContext`xy$100493$$, {0, 0}]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`brachistochrone[$CellContext`xy$$, \
+$CellContext`v0$$], 
+      "Specifications" :> {{{$CellContext`v0$$, 1.085, "initial velocity"}, 0,
+          3}, {{$CellContext`xy$$, {2.436, -1.125}, "final point"}, {0, -3}, {
+         3, -0.3}, ControlType -> Locator}}, 
+      "Options" :> {ControlPlacement -> {Top, Left}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{455., {246., 252.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`brachistochrone[{
+          Pattern[$CellContext`x1, 
+           Blank[]], 
+          Pattern[$CellContext`yp1, 
+           Blank[]]}, 
+         Pattern[$CellContext`v0, 
+          Blank[]]] := Quiet[
+         Module[{$CellContext`g = 
+           9.81, $CellContext`y1 = -$CellContext`yp1, $CellContext`v1, \
+$CellContext`fr, $CellContext`curve, $CellContext`normal, $CellContext`\[Rho] = 
+           0.05, $CellContext`\[CurlyPhi]0, $CellContext`\[CurlyPhi]1}, \
+$CellContext`v1 = 
+           Sqrt[$CellContext`v0^2 + (
+               2 $CellContext`g) $CellContext`y1]; $CellContext`fr = 
+           FindRoot[
+             
+             Evaluate[{(($CellContext`v1^2 
+                  Sec[$CellContext`\[CurlyPhi]1]^2) \
+($CellContext`\[CurlyPhi]0 - $CellContext`\[CurlyPhi]1 + 
+                  Cos[$CellContext`\[CurlyPhi]0] 
+                   Sin[$CellContext`\[CurlyPhi]0] - 
+                  Cos[$CellContext`\[CurlyPhi]1] 
+                  Sin[$CellContext`\[CurlyPhi]1]))/(
+                2 $CellContext`g) == $CellContext`x1, (($CellContext`v1^2 (-
+                    Cos[2 $CellContext`\[CurlyPhi]0] + 
+                   Cos[2 $CellContext`\[CurlyPhi]1])) 
+                 Sec[$CellContext`\[CurlyPhi]1]^2)/(
+                4 $CellContext`g) == $CellContext`y1}], {$CellContext`\
+\[CurlyPhi]0, 1.5}, {$CellContext`\[CurlyPhi]1, -0.5}]; $CellContext`curve[
+             Pattern[$CellContext`\[CurlyPhi], 
+              Blank[]]] = 
+           ReplaceAll[{(-($CellContext`v1^2/((2 $CellContext`g) 
+                Cos[$CellContext`\[CurlyPhi]1]^2))) ($CellContext`\[CurlyPhi] - \
+$CellContext`\[CurlyPhi]0 + 
+               Cos[$CellContext`\[CurlyPhi] + $CellContext`\[CurlyPhi]0] 
+                Sin[$CellContext`\[CurlyPhi] - $CellContext`\[CurlyPhi]0]), \
+($CellContext`v1^2/((2 $CellContext`g) Cos[$CellContext`\[CurlyPhi]1]^2)) (
+               Sin[$CellContext`\[CurlyPhi] + $CellContext`\[CurlyPhi]0] 
+               Sin[$CellContext`\[CurlyPhi] - $CellContext`\[CurlyPhi]0])}, \
+$CellContext`fr]; $CellContext`normal[
+             Pattern[$CellContext`\[CurlyPhi], 
+              Blank[]]] = (#/Sqrt[
+             Dot[#, #]]& )[Reverse[
+               D[
+                $CellContext`curve[$CellContext`\[CurlyPhi]], $CellContext`\
+\[CurlyPhi]]] {1, -1}]; Show[{
+             ParametricPlot[
+              Evaluate[
+               $CellContext`curve[$CellContext`\[CurlyPhi]]], 
+              Evaluate[
+               
+               ReplaceAll[{$CellContext`\[CurlyPhi], \
+$CellContext`\[CurlyPhi]0, $CellContext`\[CurlyPhi]1}, $CellContext`fr]], 
+              PlotStyle -> {
+                Thickness[0.01]}, AxesOrigin -> {0, 0}], 
+             Graphics[{
+               Thickness[0.008], 
+               Table[
+                
+                Circle[$CellContext`curve[$CellContext`\[CurlyPhi]] + \
+$CellContext`\[Rho] $CellContext`normal[$CellContext`\[CurlyPhi]], \
+$CellContext`\[Rho]], 
+                Evaluate[
+                 
+                 ReplaceAll[{$CellContext`\[CurlyPhi], $CellContext`\
+\[CurlyPhi]0, $CellContext`\[CurlyPhi]1, ($CellContext`\[CurlyPhi]1 - \
+$CellContext`\[CurlyPhi]0)/12}, $CellContext`fr]]]}]}, 
+            PlotRange -> {{0, 3}, {1/2, -3}}, ImageSize -> {400, 400}, 
+            PlotLabel -> Style[
+              StringJoin["time = ", 
+               ToString[
+                NumberForm[
+                 
+                 ReplaceAll[$CellContext`v1 (($CellContext`\[CurlyPhi]0 - \
+$CellContext`\[CurlyPhi]1)/($CellContext`g 
+                   Cos[$CellContext`\[CurlyPhi]1])), $CellContext`fr], {4, 3},
+                  NumberPadding -> {"", "0"}]]], "Label"], 
+            ImagePadding -> {{20, 20}, {20, 30}}]]]}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellEditDuplicate->False,
+ CellID->15896079,ExpressionUUID->"3766c278-4f90-48bd-9823-16066295e762"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`v0$$ = 2.99, $CellContext`xy$$ = {
+    1.1340000000000001`, -2.76}, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`v0$$], 2.99, "initial velocity"}, 0, 3}, {{
+       Hold[$CellContext`xy$$], {1.1340000000000001`, -2.76}, 
+       "final point"}, {0, -3}, {3, -0.3}}}, Typeset`size$$ = {
+    400., {197., 203.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`v0$100548$$ = 
+    0, $CellContext`xy$100549$$ = {0, 0}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`v0$$ = 
+        2.99, $CellContext`xy$$ = {1.1340000000000001`, -2.76}}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`v0$$, $CellContext`v0$100548$$, 0], 
+        Hold[$CellContext`xy$$, $CellContext`xy$100549$$, {0, 0}]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`brachistochrone[$CellContext`xy$$, \
+$CellContext`v0$$], 
+      "Specifications" :> {{{$CellContext`v0$$, 2.99, "initial velocity"}, 0, 
+         3}, {{$CellContext`xy$$, {1.1340000000000001`, -2.76}, 
+          "final point"}, {0, -3}, {3, -0.3}, ControlType -> Locator}}, 
+      "Options" :> {ControlPlacement -> {Top, Left}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{455., {246., 252.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`brachistochrone[{
+          Pattern[$CellContext`x1, 
+           Blank[]], 
+          Pattern[$CellContext`yp1, 
+           Blank[]]}, 
+         Pattern[$CellContext`v0, 
+          Blank[]]] := Quiet[
+         Module[{$CellContext`g = 
+           9.81, $CellContext`y1 = -$CellContext`yp1, $CellContext`v1, \
+$CellContext`fr, $CellContext`curve, $CellContext`normal, $CellContext`\[Rho] = 
+           0.05, $CellContext`\[CurlyPhi]0, $CellContext`\[CurlyPhi]1}, \
+$CellContext`v1 = 
+           Sqrt[$CellContext`v0^2 + (
+               2 $CellContext`g) $CellContext`y1]; $CellContext`fr = 
+           FindRoot[
+             
+             Evaluate[{(($CellContext`v1^2 
+                  Sec[$CellContext`\[CurlyPhi]1]^2) \
+($CellContext`\[CurlyPhi]0 - $CellContext`\[CurlyPhi]1 + 
+                  Cos[$CellContext`\[CurlyPhi]0] 
+                   Sin[$CellContext`\[CurlyPhi]0] - 
+                  Cos[$CellContext`\[CurlyPhi]1] 
+                  Sin[$CellContext`\[CurlyPhi]1]))/(
+                2 $CellContext`g) == $CellContext`x1, (($CellContext`v1^2 (-
+                    Cos[2 $CellContext`\[CurlyPhi]0] + 
+                   Cos[2 $CellContext`\[CurlyPhi]1])) 
+                 Sec[$CellContext`\[CurlyPhi]1]^2)/(
+                4 $CellContext`g) == $CellContext`y1}], {$CellContext`\
+\[CurlyPhi]0, 1.5}, {$CellContext`\[CurlyPhi]1, -0.5}]; $CellContext`curve[
+             Pattern[$CellContext`\[CurlyPhi], 
+              Blank[]]] = 
+           ReplaceAll[{(-($CellContext`v1^2/((2 $CellContext`g) 
+                Cos[$CellContext`\[CurlyPhi]1]^2))) ($CellContext`\[CurlyPhi] - \
+$CellContext`\[CurlyPhi]0 + 
+               Cos[$CellContext`\[CurlyPhi] + $CellContext`\[CurlyPhi]0] 
+                Sin[$CellContext`\[CurlyPhi] - $CellContext`\[CurlyPhi]0]), \
+($CellContext`v1^2/((2 $CellContext`g) Cos[$CellContext`\[CurlyPhi]1]^2)) (
+               Sin[$CellContext`\[CurlyPhi] + $CellContext`\[CurlyPhi]0] 
+               Sin[$CellContext`\[CurlyPhi] - $CellContext`\[CurlyPhi]0])}, \
+$CellContext`fr]; $CellContext`normal[
+             Pattern[$CellContext`\[CurlyPhi], 
+              Blank[]]] = (#/Sqrt[
+             Dot[#, #]]& )[Reverse[
+               D[
+                $CellContext`curve[$CellContext`\[CurlyPhi]], $CellContext`\
+\[CurlyPhi]]] {1, -1}]; Show[{
+             ParametricPlot[
+              Evaluate[
+               $CellContext`curve[$CellContext`\[CurlyPhi]]], 
+              Evaluate[
+               
+               ReplaceAll[{$CellContext`\[CurlyPhi], \
+$CellContext`\[CurlyPhi]0, $CellContext`\[CurlyPhi]1}, $CellContext`fr]], 
+              PlotStyle -> {
+                Thickness[0.01]}, AxesOrigin -> {0, 0}], 
+             Graphics[{
+               Thickness[0.008], 
+               Table[
+                
+                Circle[$CellContext`curve[$CellContext`\[CurlyPhi]] + \
+$CellContext`\[Rho] $CellContext`normal[$CellContext`\[CurlyPhi]], \
+$CellContext`\[Rho]], 
+                Evaluate[
+                 
+                 ReplaceAll[{$CellContext`\[CurlyPhi], $CellContext`\
+\[CurlyPhi]0, $CellContext`\[CurlyPhi]1, ($CellContext`\[CurlyPhi]1 - \
+$CellContext`\[CurlyPhi]0)/12}, $CellContext`fr]]]}]}, 
+            PlotRange -> {{0, 3}, {1/2, -3}}, ImageSize -> {400, 400}, 
+            PlotLabel -> Style[
+              StringJoin["time = ", 
+               ToString[
+                NumberForm[
+                 
+                 ReplaceAll[$CellContext`v1 (($CellContext`\[CurlyPhi]0 - \
+$CellContext`\[CurlyPhi]1)/($CellContext`g 
+                   Cos[$CellContext`\[CurlyPhi]1])), $CellContext`fr], {4, 3},
+                  NumberPadding -> {"", "0"}]]], "Label"], 
+            ImagePadding -> {{20, 20}, {20, 30}}]]]}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellEditDuplicate->False,
+ CellID->137729279,ExpressionUUID->"b55f3584-dcca-4b44-8c25-433effc1d454"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`v0$$ = 3., $CellContext`xy$$ = {
+    2.906, -0.30500000000000016`}, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`v0$$], 3., "initial velocity"}, 0, 3}, {{
+       Hold[$CellContext`xy$$], {2.906, -0.30500000000000016`}, 
+       "final point"}, {0, -3}, {3, -0.3}}}, Typeset`size$$ = {
+    400., {197., 203.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`v0$100604$$ = 
+    0, $CellContext`xy$100605$$ = {0, 0}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`v0$$ = 
+        3., $CellContext`xy$$ = {2.906, -0.30500000000000016`}}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`v0$$, $CellContext`v0$100604$$, 0], 
+        Hold[$CellContext`xy$$, $CellContext`xy$100605$$, {0, 0}]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`brachistochrone[$CellContext`xy$$, \
+$CellContext`v0$$], 
+      "Specifications" :> {{{$CellContext`v0$$, 3., "initial velocity"}, 0, 
+         3}, {{$CellContext`xy$$, {2.906, -0.30500000000000016`}, 
+          "final point"}, {0, -3}, {3, -0.3}, ControlType -> Locator}}, 
+      "Options" :> {ControlPlacement -> {Top, Left}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{455., {246., 252.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`brachistochrone[{
+          Pattern[$CellContext`x1, 
+           Blank[]], 
+          Pattern[$CellContext`yp1, 
+           Blank[]]}, 
+         Pattern[$CellContext`v0, 
+          Blank[]]] := Quiet[
+         Module[{$CellContext`g = 
+           9.81, $CellContext`y1 = -$CellContext`yp1, $CellContext`v1, \
+$CellContext`fr, $CellContext`curve, $CellContext`normal, $CellContext`\[Rho] = 
+           0.05, $CellContext`\[CurlyPhi]0, $CellContext`\[CurlyPhi]1}, \
+$CellContext`v1 = 
+           Sqrt[$CellContext`v0^2 + (
+               2 $CellContext`g) $CellContext`y1]; $CellContext`fr = 
+           FindRoot[
+             
+             Evaluate[{(($CellContext`v1^2 
+                  Sec[$CellContext`\[CurlyPhi]1]^2) \
+($CellContext`\[CurlyPhi]0 - $CellContext`\[CurlyPhi]1 + 
+                  Cos[$CellContext`\[CurlyPhi]0] 
+                   Sin[$CellContext`\[CurlyPhi]0] - 
+                  Cos[$CellContext`\[CurlyPhi]1] 
+                  Sin[$CellContext`\[CurlyPhi]1]))/(
+                2 $CellContext`g) == $CellContext`x1, (($CellContext`v1^2 (-
+                    Cos[2 $CellContext`\[CurlyPhi]0] + 
+                   Cos[2 $CellContext`\[CurlyPhi]1])) 
+                 Sec[$CellContext`\[CurlyPhi]1]^2)/(
+                4 $CellContext`g) == $CellContext`y1}], {$CellContext`\
+\[CurlyPhi]0, 1.5}, {$CellContext`\[CurlyPhi]1, -0.5}]; $CellContext`curve[
+             Pattern[$CellContext`\[CurlyPhi], 
+              Blank[]]] = 
+           ReplaceAll[{(-($CellContext`v1^2/((2 $CellContext`g) 
+                Cos[$CellContext`\[CurlyPhi]1]^2))) ($CellContext`\[CurlyPhi] - \
+$CellContext`\[CurlyPhi]0 + 
+               Cos[$CellContext`\[CurlyPhi] + $CellContext`\[CurlyPhi]0] 
+                Sin[$CellContext`\[CurlyPhi] - $CellContext`\[CurlyPhi]0]), \
+($CellContext`v1^2/((2 $CellContext`g) Cos[$CellContext`\[CurlyPhi]1]^2)) (
+               Sin[$CellContext`\[CurlyPhi] + $CellContext`\[CurlyPhi]0] 
+               Sin[$CellContext`\[CurlyPhi] - $CellContext`\[CurlyPhi]0])}, \
+$CellContext`fr]; $CellContext`normal[
+             Pattern[$CellContext`\[CurlyPhi], 
+              Blank[]]] = (#/Sqrt[
+             Dot[#, #]]& )[Reverse[
+               D[
+                $CellContext`curve[$CellContext`\[CurlyPhi]], $CellContext`\
+\[CurlyPhi]]] {1, -1}]; Show[{
+             ParametricPlot[
+              Evaluate[
+               $CellContext`curve[$CellContext`\[CurlyPhi]]], 
+              Evaluate[
+               
+               ReplaceAll[{$CellContext`\[CurlyPhi], \
+$CellContext`\[CurlyPhi]0, $CellContext`\[CurlyPhi]1}, $CellContext`fr]], 
+              PlotStyle -> {
+                Thickness[0.01]}, AxesOrigin -> {0, 0}], 
+             Graphics[{
+               Thickness[0.008], 
+               Table[
+                
+                Circle[$CellContext`curve[$CellContext`\[CurlyPhi]] + \
+$CellContext`\[Rho] $CellContext`normal[$CellContext`\[CurlyPhi]], \
+$CellContext`\[Rho]], 
+                Evaluate[
+                 
+                 ReplaceAll[{$CellContext`\[CurlyPhi], $CellContext`\
+\[CurlyPhi]0, $CellContext`\[CurlyPhi]1, ($CellContext`\[CurlyPhi]1 - \
+$CellContext`\[CurlyPhi]0)/12}, $CellContext`fr]]]}]}, 
+            PlotRange -> {{0, 3}, {1/2, -3}}, ImageSize -> {400, 400}, 
+            PlotLabel -> Style[
+              StringJoin["time = ", 
+               ToString[
+                NumberForm[
+                 
+                 ReplaceAll[$CellContext`v1 (($CellContext`\[CurlyPhi]0 - \
+$CellContext`\[CurlyPhi]1)/($CellContext`g 
+                   Cos[$CellContext`\[CurlyPhi]1])), $CellContext`fr], {4, 3},
+                  NumberPadding -> {"", "0"}]]], "Label"], 
+            ImagePadding -> {{20, 20}, {20, 30}}]]]}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellEditDuplicate->False,
+ CellID->416497313,ExpressionUUID->"c6e03460-ba5b-4bdf-a4f2-85c81e87eb46"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "DetailsSection",ExpressionUUID->"fcbfbae8-0e72-48bd-8d56-c16dcf9e20cc"],
+
+Cell[TextData[{
+ "More than 300 years after Johann Bernoulli published the \"problema novum\" \
+in ",
+ StyleBox["Acta Eruditorium",
+  FontSlant->"Italic"],
+ " in the summer of 1696, the new ",
+ StyleBox["Manipulate", "MR"],
+ " feature in the Wolfram Language shows the solution curve, a \
+brachistochrone, in an interactive way. "
+}], "DetailNotes",
+ CellChangeTimes->{{3.35332402535662*^9, 3.35332402576286*^9}, {
+   3.35824691695113*^9, 3.35824693859204*^9}, 3.35824711337094*^9, 
+   3.35825190964684*^9, 3.35825208733327*^9, {3.3584448744375*^9, 
+   3.35844487795313*^9}, {3.7628037442635083`*^9, 3.7628037548725357`*^9}},
+ CellID->29624037,ExpressionUUID->"5ee5cc5a-a337-45de-8c3e-ab739b2fa39a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection",
+ CellID->1340038535,ExpressionUUID->"5a5ed009-f4ee-4d1f-986d-60fc2c11fce1"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[
+   " Resize Images",ExpressionUUID->"6eacf5d0-590b-40a3-a0ec-1c570b31dacb"]}],
+  
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\""]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.4323390314914494`*^9},
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages",
+ CellID->1366651656,ExpressionUUID->"dd46bbd7-8ed5-4925-a1cb-67471b2adf20"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Rotate and Zoom in 3D",ExpressionUUID->
+    "b8b0ce1a-e0bf-45a8-b9d9-ef8565576481"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" on Mac) and drag up and down to zoom.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D",
+ CellID->1976777727,ExpressionUUID->"c8030fc7-55fc-4bcb-b057-ef3a1be0cb7f"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[
+   " Drag Locators",ExpressionUUID->"5173ddb6-52cd-4486-b757-2d008b5f6bba"]}],
+  
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}]]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.432339032115446*^9},
+ FontFamily->"Verdana",
+ CellTags->"DragLocators",
+ CellID->2131238599,ExpressionUUID->"c557aa78-b961-4fff-b934-4e4f92e0043a"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Create and Delete Locators",ExpressionUUID->
+    "18ffb529-d184-4b7c-b629-58eca59df438"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators",
+ CellID->1847385080,ExpressionUUID->"2b268eca-8e1e-4ed3-a22b-197146205f64"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Slider Zoom",ExpressionUUID->"3969839d-ce06-4f48-b12a-1c445e783b4a"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" to make ever finer adjustments.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom",
+ CellID->682471234,ExpressionUUID->"d0c21694-49d8-461a-b96a-0c811c2ab0a7"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Gamepad Controls",ExpressionUUID->
+    "6aecafd2-cf16-4faf-b0e4-cef90f99be57"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\""]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls",
+ CellID->583871211,ExpressionUUID->"fda4fd6d-e41f-47c8-8584-30afddc74f4c"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Automatic Animation",ExpressionUUID->
+    "096a332b-ec25-478e-9297-edabef6e932f"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0, CellBaseline -> Baseline], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation",
+ CellID->815857904,ExpressionUUID->"5a16ff8a-5e15-4507-9d3b-8215a76b27ab"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Bookmark Animation",ExpressionUUID->
+    "0f30f62a-9f03-43b4-9d48-0f1875eeeda7"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation",
+ CellID->440706433,ExpressionUUID->"7509477d-744a-4658-adc7-6819d48d3225"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection",ExpressionUUID->"d76365f2-754d-4a2d-bcce-c1fa3aadd20d"],
+
+Cell["acta eruditorium", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.36434516692238*^9, 3.36434517307863*^9}},
+ CellID->9620120,ExpressionUUID->"086f705a-b558-4602-abdf-6c374347c7a1"],
+
+Cell["brachistochrone", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.364345187125*^9, 3.36434519742188*^9}},
+ CellID->245912470,ExpressionUUID->"86619edb-243f-4b32-af2e-51c1ab25fd03"],
+
+Cell["Johann Bernoulli", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.36434517834425*^9, 3.36434518228175*^9}},
+ CellID->316166559,ExpressionUUID->"558ee533-6fe0-49a1-b099-3cb8b23a5e91"],
+
+Cell["problema novum", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.36434515707863*^9, 3.364345162188*^9}},
+ CellID->137963802,ExpressionUUID->"82ccb5e9-d296-4be4-bcea-364fb3e51a5a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "RelatedLinksSection",ExpressionUUID->"47706393-bcbc-419e-8f88-cbf9b944b55e"],
+
+Cell[TextData[ButtonBox["Brachistochrone Problem",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://mathworld.wolfram.com/BrachistochroneProblem.html"], 
+   None}]], "RelatedLinks",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.36924283604688*^9, 3.36924284157813*^9}, {
+   3.3779800163095503`*^9, 3.3779800176689253`*^9}},
+ CellID->221727717,ExpressionUUID->"37468675-9a8f-4299-a97d-3a5a16a6088d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection",ExpressionUUID->"bdc7b248-5be8-41c0-a697-d7e4c82995ff"],
+
+Cell["Contributed by: Michael Trott", "Author",
+ CellChangeTimes->{{3.35332404745022*^9, 3.35332404993458*^9}, {
+   3.36434516804688*^9, 3.36434517198438*^9}, 3.36924285448438*^9},
+ CellID->95413255,ExpressionUUID->"2bf77b6c-acd4-481b-814a-e14a99837699"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{702, 704},
+WindowMargins->{{Automatic, Automatic}, {Automatic, Automatic}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (March 27, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "AutomaticAnimation"->{
+  Cell[48226, 1098, 1581, 33, 22, "ControlSuggestions",ExpressionUUID->"5a16ff8a-5e15-4507-9d3b-8215a76b27ab",
+   CellTags->"AutomaticAnimation",
+   CellID->815857904]},
+ "BookmarkAnimation"->{
+  Cell[49810, 1133, 1025, 23, 22, "ControlSuggestions",ExpressionUUID->"7509477d-744a-4658-adc7-6819d48d3225",
+   CellTags->"BookmarkAnimation",
+   CellID->440706433]},
+ "CreateAndDeleteLocators"->{
+  Cell[46015, 1041, 755, 17, 22, "ControlSuggestions",ExpressionUUID->"2b268eca-8e1e-4ed3-a22b-197146205f64",
+   CellTags->"CreateAndDeleteLocators",
+   CellID->1847385080]},
+ "DragLocators"->{
+  Cell[45494, 1025, 518, 14, 22, "ControlSuggestions",ExpressionUUID->"c557aa78-b961-4fff-b934-4e4f92e0043a",
+   CellTags->"DragLocators",
+   CellID->2131238599]},
+ "GamepadControls"->{
+  Cell[47737, 1085, 486, 11, 22, "ControlSuggestions",ExpressionUUID->"fda4fd6d-e41f-47c8-8584-30afddc74f4c",
+   CellTags->"GamepadControls",
+   CellID->583871211]},
+ "ResizeImages"->{
+  Cell[44195, 991, 492, 11, 22, "ControlSuggestions",ExpressionUUID->"dd46bbd7-8ed5-4925-a1cb-67471b2adf20",
+   CellTags->"ResizeImages",
+   CellID->1366651656]},
+ "RotateAndZoomIn3D"->{
+  Cell[44690, 1004, 801, 19, 22, "ControlSuggestions",ExpressionUUID->"c8030fc7-55fc-4bcb-b057-ef3a1be0cb7f",
+   CellTags->"RotateAndZoomIn3D",
+   CellID->1976777727]},
+ "SliderZoom"->{
+  Cell[46773, 1060, 961, 23, 22, "ControlSuggestions",ExpressionUUID->"d0c21694-49d8-461a-b96a-0c811c2ab0a7",
+   CellTags->"SliderZoom",
+   CellID->682471234]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"AutomaticAnimation", 53088, 1221},
+ {"BookmarkAnimation", 53282, 1225},
+ {"CreateAndDeleteLocators", 53481, 1229},
+ {"DragLocators", 53675, 1233},
+ {"GamepadControls", 53861, 1237},
+ {"ResizeImages", 54046, 1241},
+ {"RotateAndZoomIn3D", 54233, 1245},
+ {"SliderZoom", 54419, 1249}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 325, 9, 74, "DemoTitle",ExpressionUUID->"b92d16ba-56f7-488e-a6bd-bc61c3a71510",
+ CellID->700863240],
+Cell[CellGroupData[{
+Cell[917, 35, 88, 0, 275, "InitializationSection",ExpressionUUID->"d1d2570e-f79b-45d3-b212-0a1bbd31da61"],
+Cell[1008, 37, 10303, 238, 70, "Input",ExpressionUUID->"0390a61d-680f-4e85-81be-73a6f977ad8e",
+ CellID->24470059]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11348, 280, 84, 0, 189, "ManipulateSection",ExpressionUUID->"d201f57b-ae43-4a4c-9b23-ef2d7aa55fb2"],
+Cell[CellGroupData[{
+Cell[11457, 284, 1487, 36, 69, "Input",ExpressionUUID->"72bde389-a1b8-4690-bafb-4da63fb819e8",
+ CellID->1496021318],
+Cell[12947, 322, 5829, 120, 510, "Output",ExpressionUUID->"f6f40675-fa75-471f-8e1a-c758b0473070",
+ CellID->70079138]
+}, {2}]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18822, 448, 91, 0, 169, "ManipulateCaptionSection",ExpressionUUID->"5ba3f31c-5cf2-4015-b5c5-aab4127f23b9"],
+Cell[18916, 450, 373, 7, 37, "ManipulateCaption",ExpressionUUID->"9575fc07-89a7-4f9c-b12e-189056856ef0",
+ CellID->1044312921]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19326, 462, 83, 0, 172, "ThumbnailSection",ExpressionUUID->"fbb32ef1-9048-4d6b-9024-9071650e7b73"],
+Cell[19412, 464, 5857, 121, 510, "Output",ExpressionUUID->"4b65c088-be99-48f2-aaae-44e47a556e1a",
+ CellID->455422817]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25306, 590, 83, 0, 142, "SnapshotsSection",ExpressionUUID->"6aa8c08c-0fa3-4ff3-bd79-8f7063e2642f"],
+Cell[25392, 592, 5896, 120, 510, "Output",ExpressionUUID->"3766c278-4f90-48bd-9823-16066295e762",
+ CellID->15896079],
+Cell[31291, 714, 5964, 123, 510, "Output",ExpressionUUID->"b55f3584-dcca-4b44-8c25-433effc1d454",
+ CellID->137729279],
+Cell[37258, 839, 5964, 123, 510, "Output",ExpressionUUID->"c6e03460-ba5b-4bdf-a4f2-85c81e87eb46",
+ CellID->416497313]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43259, 967, 81, 0, 339, "DetailsSection",ExpressionUUID->"fcbfbae8-0e72-48bd-8d56-c16dcf9e20cc"],
+Cell[43343, 969, 699, 14, 53, "DetailNotes",ExpressionUUID->"5ee5cc5a-a337-45de-8c3e-ab739b2fa39a",
+ CellID->29624037]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44079, 988, 113, 1, 126, "ControlSuggestionsSection",ExpressionUUID->"5a5ed009-f4ee-4d1f-986d-60fc2c11fce1",
+ CellID->1340038535],
+Cell[44195, 991, 492, 11, 22, "ControlSuggestions",ExpressionUUID->"dd46bbd7-8ed5-4925-a1cb-67471b2adf20",
+ CellTags->"ResizeImages",
+ CellID->1366651656],
+Cell[44690, 1004, 801, 19, 22, "ControlSuggestions",ExpressionUUID->"c8030fc7-55fc-4bcb-b057-ef3a1be0cb7f",
+ CellTags->"RotateAndZoomIn3D",
+ CellID->1976777727],
+Cell[45494, 1025, 518, 14, 22, "ControlSuggestions",ExpressionUUID->"c557aa78-b961-4fff-b934-4e4f92e0043a",
+ CellTags->"DragLocators",
+ CellID->2131238599],
+Cell[46015, 1041, 755, 17, 22, "ControlSuggestions",ExpressionUUID->"2b268eca-8e1e-4ed3-a22b-197146205f64",
+ CellTags->"CreateAndDeleteLocators",
+ CellID->1847385080],
+Cell[46773, 1060, 961, 23, 22, "ControlSuggestions",ExpressionUUID->"d0c21694-49d8-461a-b96a-0c811c2ab0a7",
+ CellTags->"SliderZoom",
+ CellID->682471234],
+Cell[47737, 1085, 486, 11, 22, "ControlSuggestions",ExpressionUUID->"fda4fd6d-e41f-47c8-8584-30afddc74f4c",
+ CellTags->"GamepadControls",
+ CellID->583871211],
+Cell[48226, 1098, 1581, 33, 22, "ControlSuggestions",ExpressionUUID->"5a16ff8a-5e15-4507-9d3b-8215a76b27ab",
+ CellTags->"AutomaticAnimation",
+ CellID->815857904],
+Cell[49810, 1133, 1025, 23, 22, "ControlSuggestions",ExpressionUUID->"7509477d-744a-4658-adc7-6819d48d3225",
+ CellTags->"BookmarkAnimation",
+ CellID->440706433]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50872, 1161, 85, 0, 158, "SearchTermsSection",ExpressionUUID->"d76365f2-754d-4a2d-bcce-c1fa3aadd20d"],
+Cell[50960, 1163, 200, 3, 22, "SearchTerms",ExpressionUUID->"086f705a-b558-4602-abdf-6c374347c7a1",
+ CellID->9620120],
+Cell[51163, 1168, 199, 3, 22, "SearchTerms",ExpressionUUID->"86619edb-243f-4b32-af2e-51c1ab25fd03",
+ CellID->245912470],
+Cell[51365, 1173, 202, 3, 22, "SearchTerms",ExpressionUUID->"558ee533-6fe0-49a1-b099-3cb8b23a5e91",
+ CellID->316166559],
+Cell[51570, 1178, 198, 3, 22, "SearchTerms",ExpressionUUID->"82ccb5e9-d296-4be4-bcea-364fb3e51a5a",
+ CellID->137963802]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51805, 1186, 86, 0, 143, "RelatedLinksSection",ExpressionUUID->"47706393-bcbc-419e-8f88-cbf9b944b55e"],
+Cell[51894, 1188, 404, 8, 22, "RelatedLinks",ExpressionUUID->"37468675-9a8f-4299-a97d-3a5a16a6088d",
+ CellID->221727717]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52335, 1201, 80, 0, 141, "AuthorSection",ExpressionUUID->"bdc7b248-5be8-41c0-a697-d7e4c82995ff"],
+Cell[52418, 1203, 254, 3, 22, "Author",ExpressionUUID->"2bf77b6c-acd4-481b-814a-e14a99837699",
+ CellID->95413255]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

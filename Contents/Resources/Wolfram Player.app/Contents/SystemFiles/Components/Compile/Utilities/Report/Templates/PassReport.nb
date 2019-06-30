@@ -1,0 +1,275 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8546,        267]
+NotebookOptionsPosition[      7059,        213]
+NotebookOutlinePosition[      7663,        235]
+CellTagsIndexPosition[      7620,        232]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["init", "Subsubsection",
+ CellChangeTimes->{{3.6883800738658743`*^9, 3.688380074288559*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ds", "=", Cell[BoxData[
+    FormBox[
+     TemplateBox[{"\"rawData\"","\"rawData\"","Named",BoxData},
+      "NotebookTemplateSlot"], TextForm]]]}], ";"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"Unevaluated"}, "NotebookTemplateCellBehavior"]]], None}, {
+   None, None}},
+ CellChangeTimes->{{3.688380053240254*^9, 3.688380082602195*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Pass Report", "Title",
+ CellChangeTimes->{{3.6834564879109297`*^9, 3.683456490173889*^9}, {
+  3.6834614322388983`*^9, 3.683461433005259*^9}, {3.68838002201191*^9, 
+  3.68838002258645*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TemplateBox[{RowBox[{
+      RowBox[{"DateString", "[", "]"}], " "}],"General",TextData},
+   "NotebookTemplateExpression"], TextForm]]]], "Subsubtitle",
+ CellChangeTimes->{{3.683457658076201*^9, 3.6834576615155153`*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TemplateBox[{"\"description\"","\"description\"","Named",TextData},
+   "NotebookTemplateSlot"], TextForm]]]], "Text",
+ CellChangeTimes->{{3.688385195233878*^9, 3.688385199852372*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[GridBox[{
+    {
+     RowBox[{"Total", " ", "Pass", " ", "Time"}], 
+     RowBox[{"Number", " ", "of", " ", "Runs"}], 
+     RowBox[{"Number", " ", "of", " ", "Passes"}]},
+    {Cell[BoxData[
+      FormBox[
+       TemplateBox[{"\"totalTime\"","\"\[Placeholder]\"","Named",BoxData},
+        "NotebookTemplateSlot"], TextForm]]], Cell[BoxData[
+      FormBox[
+       TemplateBox[{"\"passRuns\"","\"\[Placeholder]\"","Named",BoxData},
+        "NotebookTemplateSlot"], TextForm]]], Cell[BoxData[
+      FormBox[
+       TemplateBox[{"\"passNumber\"","\"\[Placeholder]\"","Named",BoxData},
+        "NotebookTemplateSlot"], TextForm]]]}
+   },
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}}], 
+  TraditionalForm]]]], "Text",
+ CellChangeTimes->{{3.688380136690899*^9, 3.6883802929716263`*^9}, {
+  3.688385492633868*^9, 3.6883854933708878`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Pass Flat Profile", "Section",
+ CellChangeTimes->{{3.683457450953265*^9, 3.683457453320129*^9}, {
+  3.688380511871871*^9, 3.6883805283819437`*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TemplateBox[{"\"plot\"","","Named",TextData},
+   "NotebookTemplateSlot"], TextForm]]]], "Subsection",
+ CellBracketOptions->{"Color"->RGBColor[0.1574, 0.8708, 1.]},
+ CellFrameLabels->{{None, None}, {None, 
+    Cell[
+     BoxData[
+      TemplateBox[{"\"passFlatProfile\"", "NotebookTemplateSlot", True}, 
+       "NotebookRepeatingBlock"]]]}},
+ CellChangeTimes->{{3.683457461440778*^9, 3.6834574956715593`*^9}, {
+  3.683457530006363*^9, 3.683457531229176*^9}, {3.688380558480324*^9, 
+  3.688380566133855*^9}, {3.688380783343048*^9, 3.688380785461762*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Pass Aggregate Time", "Section",
+ CellChangeTimes->{{3.683457450953265*^9, 3.683457453320129*^9}, {
+  3.688380511871871*^9, 3.6883805283819437`*^9}, {3.688380976253283*^9, 
+  3.688380979747666*^9}, {3.68838119831593*^9, 3.6883811991227503`*^9}}],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{
+    "\"passAggregateTimePlot\"","\"passAggregateTimePlot\"","Named",BoxData},
+    "NotebookTemplateSlot"], TextForm]]]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"Unevaluated"}, "NotebookTemplateCellBehavior"]]], None}, {
+   None, None}},
+ CellChangeTimes->{{3.68838107818871*^9, 3.6883810871360207`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Data", "Subsubsection",
+ CellChangeTimes->{{3.688381559269361*^9, 3.688381559604278*^9}}],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{
+    "\"passAggregateTimeData\"","\"passAggregateTimeData\"","Named",BoxData},
+    "NotebookTemplateSlot"], TextForm]]]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.688381062947291*^9, 3.688381076223472*^9}}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Pass Report", "Section",
+ CellChangeTimes->{{3.6883816979277487`*^9, 3.688381701670424*^9}, {
+  3.688382035483078*^9, 3.688382047680472*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TemplateBox[{"\"passName\"","\"passName\"","Named",TextData},
+   "NotebookTemplateSlot"], TextForm]]]], "Subsection",
+ CellBracketOptions->{"Color"->RGBColor[0.1574, 0.8708, 1.]},
+ CellFrameLabels->{{None, None}, {None, 
+    Cell[
+     BoxData[
+      TemplateBox[{"\"passData\"", "NotebookTemplateSlot", True}, 
+       "NotebookRepeatingBlock"]]]}},
+ CellChangeTimes->{{3.68838276584908*^9, 3.688382771343575*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[GridBox[{
+    {
+     RowBox[{"Total", " ", "Time"}], 
+     RowBox[{"Number", " ", "of", " ", "Calls"}]},
+    {Cell[BoxData[
+      FormBox[
+       TemplateBox[{"\"passTime\"","\"\[Placeholder]\"","Named",BoxData},
+        "NotebookTemplateSlot"], TextForm]]], Cell[BoxData[
+      FormBox[
+       TemplateBox[{"\"calls\"","\"\[Placeholder]\"","Named",BoxData},
+        "NotebookTemplateSlot"], TextForm]]]}
+   },
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}}], 
+  TraditionalForm]]]], "Text",
+ CellChangeTimes->{{3.688380136690899*^9, 3.6883802929716263`*^9}, {
+  3.688384407491987*^9, 3.6883844394346037`*^9}}],
+
+Cell["Call path", "Text",
+ CellChangeTimes->{{3.688384539734568*^9, 3.688384541037259*^9}}],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{"\"dependencyPath\"","","Named",BoxData},
+    "NotebookTemplateSlot"], TextForm]]]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.688381062947291*^9, 3.688381076223472*^9}, {
+  3.688382947917686*^9, 3.688382956963437*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Graph", "Subsubsection",
+ CellChangeTimes->{{3.688384488768697*^9, 3.6883844891910963`*^9}}],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{"\"graph\"","\"graph\"","Named",BoxData},
+    "NotebookTemplateSlot"], TextForm]]]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.6883835594532833`*^9, 3.6883835634555902`*^9}}]
+}, Closed]]
+}, Closed]]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{1040, 733},
+WindowMargins->{{Automatic, -1064}, {25, Automatic}},
+DockedCells->FEPrivate`FrontEndResource[
+ "NotebookTemplatingExpressions", "AuthoringDockedCell"],
+TaggingRules->{"NotebookTemplateVersion" -> 1., "NotebookTemplate" -> True},
+CellContext->Notebook,
+ShowCellTags->True,
+ShowAutoSpellCheck->False,
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 10, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 97, 1, 35, "Subsubsection"],
+Cell[680, 25, 405, 11, 46, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1122, 41, 194, 3, 66, "Title"],
+Cell[1319, 46, 259, 5, 38, "Subsubtitle"],
+Cell[1581, 53, 223, 4, 39, "Text"],
+Cell[1807, 59, 880, 20, 72, "Text"],
+Cell[CellGroupData[{
+Cell[2712, 83, 153, 2, 64, "Section"],
+Cell[2868, 87, 592, 12, 118, "Subsection"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3497, 104, 251, 3, 50, "Section"],
+Cell[3751, 109, 392, 10, 46, "Input"],
+Cell[CellGroupData[{
+Cell[4168, 123, 95, 1, 35, "Subsubsection"],
+Cell[4266, 126, 400, 10, 46, "Input"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[4715, 142, 147, 2, 50, "Section"],
+Cell[CellGroupData[{
+Cell[4887, 148, 454, 10, 118, "Subsection"],
+Cell[5344, 160, 661, 16, 72, "Text"],
+Cell[6008, 178, 91, 1, 30, "Text"],
+Cell[6102, 181, 412, 10, 46, "Input"],
+Cell[CellGroupData[{
+Cell[6539, 195, 98, 1, 35, "Subsubsection"],
+Cell[6640, 198, 367, 9, 46, "Input"]
+}, Closed]]
+}, Closed]]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+

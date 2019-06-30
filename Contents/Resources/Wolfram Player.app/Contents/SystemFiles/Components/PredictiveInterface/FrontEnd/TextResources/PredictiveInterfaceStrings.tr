@@ -1,0 +1,57 @@
+@|
+@|
+@@resource PredictiveInterfaceStrings
+{
+
+"predictionsFirstTime" -> "The Suggestions Bar is part of the Wolfram Predictive Interface.\nClick a button to perform the recommended action. \!\(\*ButtonBox[PaneSelectorBox[{False -> StyleBox[\"\\\"Learn more \[RightGuillemet]\\\"\", Rule[FontColor, RGBColor[0.176471`, 0.290196`, 0.380392`]], Rule[StripOnInput, False]], Rule[True, StyleBox[\"\\\"Learn more \[RightGuillemet]\\\"\", Rule[FontColor, RGBColor[0.956863`, 0.372549`, 0.0666667`]], Rule[StripOnInput, False]]]}, Dynamic[CurrentValue[\"MouseOver\"]], Rule[ImageSize, All], Rule[ImageSize, Automatic], Rule[FrameMargins, 0]], Rule[BaseStyle, \"Link\"], Rule[ButtonData, \"paclet:guide/WolframPredictiveInterface\"]]\)",
+"predictionsNoPredictions" -> "No predictions",
+"predictionsTimedOut" -> "Predictions timed out",
+"predictionsMore" -> "more\[Ellipsis]",
+"predictionsWolframAlpha" -> "Send to Wolfram|Alpha",
+"predictionsSendFeedback" -> "Send Suggestions Bar feedback",
+"predictionsFeedbackSubject" -> "Wolfram Predictive Interface: Feedback",
+"predictionsFeedbackHeader" -> "Provide feedback on Suggestions Bar predictions.\n\nFor general product support, please instead contact Technical Support via
+http://www.wolfram.com/support/contact/ and include your activation key.",
+"predictionsFeedbackInput" -> "Input:",
+"predictionsFeedbackOutput" -> "Output:",
+"predictionsFeedbackPredictions" -> "Predictions:",
+"predictionsFeedbackBody" -> "** Suggest additional predictions:\n\n\n\n** Suggest predictions to remove:\n\n\n\n** General comments / message:\n\n\n\n------\n\nThanks for your feedback!",
+"webpredictionsFeedbackBody" -> "** Suggest additional predictions:\n\n\n\n** Suggest predictions to remove:\n\n\n\n** General comments / message:\n\n\n\n------\n\n",
+"predictionsMinimize" -> "Minimize Suggestions Bar",
+"predictionsUnminimize" -> "Show Suggestions Bar",
+
+"predictionsAssuming" -> "Assuming",
+"predictionsAssumingWrapper" -> (Row[{#1, " ", #2}]&),
+"predictionsUseAs" -> "Use as",
+"predictionsOr" -> "or",
+"predictionsInstead" -> "instead",
+
+"predictionsRollupCode" -> "Roll up inputs",
+"predictionsRollupCodeImmediately" -> "Roll up inputs",
+"predictionsRollupCodeDelayed" -> "Review inputs prior to roll up",
+"predictionsRollupCodePreview" -> "Preview & roll up\[Ellipsis]",
+"predictionsRollupCombineThese" -> "Combine these input cells:",
+"predictionsRollupToMakeThis" -> "to create a new replacement input cell:",
+"predictionsRollupButton" -> "Roll up",
+"predictionsRollupCancel" -> "Cancel",
+
+"predictionsPruneCode" -> "Prune inputs",
+"predictionsPruneCodeImmediately" -> "Prune inputs",
+"predictionsPruneCodeDelayed" -> "Review inputs prior to pruning",
+"predictionsPruneCodePreview" -> "Preview & prune\[Ellipsis]",
+"predictionsPruneRemoveThese" -> "Remove the indicated inputs:",
+"predictionsPruneButton" -> "Prune",
+"predictionsPruneCancel" -> "Cancel",
+
+"predictionsEditArgumentsCancel" -> "Cancel",
+"predictionsEditArgumentsDone" -> "Done",
+"predictionsCancel" -> "Cancel",
+"predictionsOK" -> "OK"
+
+}
+@|
+@|
+@@resource PredictiveInterfaceLocalizableBitmaps
+{
+}
+@|

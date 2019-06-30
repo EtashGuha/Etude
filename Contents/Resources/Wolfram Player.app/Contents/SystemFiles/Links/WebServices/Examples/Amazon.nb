@@ -1,0 +1,519 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     19893,        509]
+NotebookOptionsPosition[     18991,        476]
+NotebookOutlinePosition[     19548,        496]
+CellTagsIndexPosition[     19505,        493]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Amazon Web Services", "Title"],
+
+Cell[TextData[{
+ "This example demonstrates the Amazon Web Services.  The Amazon Web Services \
+are good demenstrations of using Web Services to retrieve data.  This example \
+searches the Amazon databases for books written by certain authors, published \
+by a certain manufacturer, or containing a certain keyword.  The example code \
+then places the results in a new notebook.  The example has one option.  \
+Setting the ShowPictures option to ",
+ Cell[BoxData[
+  ButtonBox["True",
+   BaseStyle->"Link"]], "InlineFormula"],
+ " will force the code to retrieve and display the cover image of the book."
+}], "Text",
+ CellChangeTimes->{3.381863930745249*^9}],
+
+Cell[TextData[{
+ "To try this example, evaluate all the initialization cells (you can do this \
+with the menu command ",
+ StyleBox[ButtonBox["Evaluation",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/EvaluationMenu"], "MenuName"],
+ StyleBox[" ", "MenuName"],
+ StyleBox["\[FilledRightTriangle] ", "MenuPointer"],
+ StyleBox[ButtonBox["Evaluate Initialization Cells",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/menuitem/EvaluateInitializationCells"], 
+  "MenuName"],
+ "). Then go to the Examples section."
+}], "Text",
+ CellChangeTimes->{{3.381863601008605*^9, 3.3818636339312763`*^9}, {
+   3.381863791376086*^9, 3.381863792239842*^9}, {3.381863842929639*^9, 
+   3.3818638429922247`*^9}, {3.3818638763766603`*^9, 3.381863876489978*^9}, 
+   3.381863915481964*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Code", "Section"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"BeginPackage", "[", 
+    RowBox[{"\"\<WebServices`Examples`Amazon`\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<WebServices`\>\"", ",", "\"\<JLink`\>\""}], "}"}]}], "]"}],
+    ";"}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{"AuthorSearch", ";"}], "\n", 
+ RowBox[{"ManufacturerSearch", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"KeywordSearch", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ShowPictures", ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "InstallService", "[", 
+    "\"\<http://soap.amazon.com/schemas3/AmazonWebServices.wsdl\>\"", "]"}], 
+   ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Options", "[", "AuthorSearch", "]"}], "=", 
+    RowBox[{"{", 
+     RowBox[{"ShowPictures", "\[Rule]", "False"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AuthorSearch", "[", 
+    RowBox[{"keyword_String", ",", "pages_Integer", ",", 
+     RowBox[{"options___", "?", "OptionQ"}]}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "result", "}"}], ",", 
+     RowBox[{
+      RowBox[{"result", "=", 
+       RowBox[{"AuthorSearchRequest", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\"\<author\>\"", "\[Rule]", "keyword"}], ",", 
+          RowBox[{"\"\<page\>\"", "\[Rule]", "pages"}], ",", 
+          RowBox[{"\"\<mode\>\"", "\[Rule]", "\"\<books\>\""}], ",", 
+          RowBox[{"\"\<tag\>\"", "\[Rule]", "\"\<webservices-20\>\""}], ",", 
+          RowBox[{"\"\<type\>\"", "\[Rule]", "\"\<lite\>\""}], ",", 
+          RowBox[{"\"\<devtag\>\"", "\[Rule]", "\"\<D3VZJS46JD5U9D\>\""}], 
+          ",", 
+          RowBox[{"\"\<version\>\"", "\[Rule]", "\"\<1.0\>\""}]}], "}"}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"result", "===", "$Failed"}], ",", 
+        RowBox[{"Return", "[", "$Failed", "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"result", "=", 
+       RowBox[{"\"\<Details\>\"", "/.", "result"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookPut", "[", "\[IndentingNewLine]", 
+       RowBox[{"resultNotebook", "[", 
+        RowBox[{
+        "\"\<Amazon Author Search\>\"", ",", "keyword", ",", "result", ",", 
+         "options"}], "]"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ManufacturerSearch", "[", 
+     RowBox[{"keyword_String", ",", "pages_Integer", ",", 
+      RowBox[{"options___", "?", "OptionQ"}]}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "result", "}"}], ",", 
+      RowBox[{
+       RowBox[{"result", "=", 
+        RowBox[{"ManufacturerSearchRequest", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"\"\<manufacturer\>\"", "\[Rule]", "keyword"}], ",", 
+           RowBox[{"\"\<page\>\"", "\[Rule]", "pages"}], ",", 
+           RowBox[{"\"\<mode\>\"", "\[Rule]", "\"\<books\>\""}], ",", 
+           RowBox[{"\"\<tag\>\"", "\[Rule]", "\"\<webservices-20\>\""}], ",", 
+           
+           RowBox[{"\"\<type\>\"", "\[Rule]", "\"\<lite\>\""}], ",", 
+           RowBox[{"\"\<devtag\>\"", "\[Rule]", "\"\<D3VZJS46JD5U9D\>\""}], 
+           ",", 
+           RowBox[{"\"\<version\>\"", "\[Rule]", "\"\<1.0\>\""}]}], "}"}], 
+         "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"result", "===", "$Failed"}], ",", 
+         RowBox[{"Return", "[", "$Failed", "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"result", "=", 
+        RowBox[{"\"\<Details\>\"", "/.", "result"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"NotebookPut", "[", "\[IndentingNewLine]", 
+        RowBox[{"resultNotebook", "[", 
+         RowBox[{
+         "\"\<Amazon Manufacturer Search\>\"", ",", "keyword", ",", "result", 
+          ",", "options"}], "]"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"KeywordSearch", "[", 
+     RowBox[{"keyword_String", ",", "pages_Integer", ",", 
+      RowBox[{"options___", "?", "OptionQ"}]}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "result", "}"}], ",", 
+      RowBox[{
+       RowBox[{"result", "=", 
+        RowBox[{"KeywordSearchRequest", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"\"\<keyword\>\"", "\[Rule]", "keyword"}], ",", 
+           RowBox[{"\"\<page\>\"", "\[Rule]", "pages"}], ",", 
+           RowBox[{"\"\<mode\>\"", "\[Rule]", "\"\<books\>\""}], ",", 
+           RowBox[{"\"\<tag\>\"", "\[Rule]", "\"\<webservices-20\>\""}], ",", 
+           
+           RowBox[{"\"\<type\>\"", "\[Rule]", "\"\<lite\>\""}], ",", 
+           RowBox[{"\"\<devtag\>\"", "\[Rule]", "\"\<D3VZJS46JD5U9D\>\""}], 
+           ",", 
+           RowBox[{"\"\<version\>\"", "\[Rule]", "\"\<1.0\>\""}]}], "}"}], 
+         "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"result", "===", "$Failed"}], ",", 
+         RowBox[{"Return", "[", "$Failed", "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"result", "=", 
+        RowBox[{"\"\<Details\>\"", "/.", "result"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"NotebookPut", "[", "\[IndentingNewLine]", 
+        RowBox[{"resultNotebook", "[", 
+         RowBox[{
+         "\"\<Amazon Keyword Search\>\"", ",", "keyword", ",", "result", ",", 
+          "options"}], "]"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"resultNotebook", "[", 
+    RowBox[{
+    "title_String", ",", " ", "keyword_String", ",", "result_List", ",", 
+     RowBox[{"options___", "?", "OptionQ"}]}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Notebook", "[", 
+    RowBox[{
+     RowBox[{"Flatten", "[", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Cell", "[", 
+         RowBox[{"title", ",", "\"\<Subtitle\>\""}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"\"\<Results for: \>\"", "<>", "keyword"}], ",", 
+          "\"\<Section\>\""}], "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"resultCells", "[", 
+           RowBox[{"#", ",", "options"}], "]"}], "&"}], " ", "/@", " ", 
+         "result"}]}], "\[IndentingNewLine]", "}"}], "]"}], ",", 
+     RowBox[{"CellGrouping", "\[Rule]", "Manual"}], ",", 
+     RowBox[{"WindowTitle", "\[Rule]", 
+      RowBox[{"(", 
+       RowBox[{"title", "<>", "\"\<: \>\"", "<>", "keyword"}], ")"}]}]}], 
+    "]"}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"resultCells", "[", 
+    RowBox[{"d_List", ",", 
+     RowBox[{"options___", "?", "OptionQ"}]}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "url", ",", "asin", ",", "productName", ",", "authorNames", ",", 
+       "releaseDate", ",", "manufacturer", ",", "imageUrlMedium", ",", 
+       "listPrice", ",", "ourPrice", ",", "usedPrice", ",", "showPictures", 
+       ",", "cellList"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", "showPictures", "}"}], "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", "ShowPictures", "}"}], "/.", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{"{", "options", "}"}], "]"}]}], "/.", 
+        RowBox[{"Options", "[", "AuthorSearch", "]"}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"url", "=", 
+       RowBox[{"\"\<Url\>\"", "/.", "d"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"asin", "=", 
+       RowBox[{"\"\<Asin\>\"", "/.", "d"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"productName", "=", 
+       RowBox[{"\"\<ProductName\>\"", "/.", "d"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"authorNames", "=", 
+       RowBox[{"\"\<Authors\>\"", "/.", "d"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"releaseDate", "=", 
+       RowBox[{"\"\<ReleaseDate\>\"", "/.", "d"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"manufacturer", "=", 
+       RowBox[{"\"\<Manufacturer\>\"", "/.", "d"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"imageUrlMedium", "=", 
+       RowBox[{"\"\<ImageUrlMedium\>\"", "/.", "d"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"listPrice", "=", 
+       RowBox[{"\"\<ListPrice\>\"", "/.", "d"}]}], ";", "\[IndentingNewLine]",
+       
+      RowBox[{"ourPrice", "=", 
+       RowBox[{"\"\<OurPrice\>\"", "/.", "d"}]}], ";", "\[IndentingNewLine]", 
+      
+      RowBox[{"usedPrice", "=", 
+       RowBox[{"\"\<UsedPrice\>\"", "/.", "d"}]}], ";", "\[IndentingNewLine]",
+       
+      RowBox[{"authorNames", "=", 
+       RowBox[{"ToString", "[", "authorNames", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"authorNames", "=", 
+       RowBox[{"StringDrop", "[", 
+        RowBox[{"authorNames", ",", "1"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"authorNames", "=", 
+       RowBox[{"StringDrop", "[", 
+        RowBox[{"authorNames", ",", 
+         RowBox[{"-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"TrueQ", "[", "showPictures", "]"}], ",", 
+        RowBox[{
+         RowBox[{"imageUrlMedium", "=", 
+          RowBox[{"getImageData", "[", "imageUrlMedium", "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"StringMatchQ", "[", 
+            RowBox[{"imageUrlMedium", ",", "\"\<GIF*\>\""}], "]"}], ",", 
+           RowBox[{"imageCell", "=", 
+            RowBox[{"ToExpression", "[", 
+             RowBox[{"ExportString", "[", 
+              RowBox[{
+               RowBox[{"ImportString", "[", 
+                RowBox[{"imageUrlMedium", ",", "\"\<GIF\>\""}], "]"}], ",", 
+               "\"\<MGFCell\>\""}], "]"}], "]"}]}], ",", 
+           RowBox[{"imageCell", "=", 
+            RowBox[{"ToExpression", "[", 
+             RowBox[{"ExportString", "[", 
+              RowBox[{
+               RowBox[{"ImportString", "[", 
+                RowBox[{"imageUrlMedium", ",", "\"\<JPEG\>\""}], "]"}], ",", 
+               "\"\<MGFCell\>\""}], "]"}], "]"}]}]}], "]"}], ";"}]}], "]"}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"Cell", "[", 
+        RowBox[{"CellGroupData", "[", 
+         RowBox[{
+          RowBox[{"Flatten", "[", 
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Cell", "[", 
+              RowBox[{
+               RowBox[{"TextData", "[", 
+                RowBox[{"{", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"ButtonBox", "[", 
+                   RowBox[{
+                    RowBox[{"StyleBox", "[", 
+                    RowBox[{"productName", ",", 
+                    RowBox[{"FontWeight", "->", "\"\<Bold\>\""}]}], "]"}], 
+                    ",", 
+                    RowBox[{"ButtonData", "\[Rule]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"URL", "[", "url", "]"}], ",", "None"}], "}"}]}], 
+                    ",", 
+                    RowBox[{"ButtonStyle", "\[Rule]", "\"\<Hyperlink\>\""}]}],
+                    "]"}], ",", "\"\< by \>\"", ",", 
+                  RowBox[{"StyleBox", "[", 
+                   RowBox[{"authorNames", ",", 
+                    RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}]}], 
+                   "]"}]}], "}"}], "]"}], ",", "\"\<Text\>\"", ",", 
+               RowBox[{"ShowGroupOpenCloseIcon", "\[Rule]", "True"}]}], "]"}],
+              ",", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"TrueQ", "[", "showPictures", "]"}], ",", 
+               RowBox[{"Cell", "[", 
+                RowBox[{
+                 RowBox[{"TextData", "[", "imageCell", "]"}], ",", 
+                 "\"\<Text\>\""}], "]"}], ",", 
+               RowBox[{"{", "}"}]}], "]"}], ",", 
+             RowBox[{"Cell", "[", 
+              RowBox[{
+               RowBox[{"TextData", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"StyleBox", "[", 
+                   RowBox[{"\"\<Release Date: \>\"", ",", 
+                    RowBox[{"FontWeight", "\[Rule]", "\"\<Bold\>\""}]}], 
+                   "]"}], ",", "releaseDate", ",", "\"\<\\n\>\"", ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"StyleBox", "[", 
+                   RowBox[{"\"\<ASIN: \>\"", ",", 
+                    RowBox[{"FontWeight", "\[Rule]", "\"\<Bold\>\""}]}], 
+                   "]"}], ",", "asin", ",", "\"\<\\n\>\"", ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"StyleBox", "[", 
+                   RowBox[{"\"\<List Price: \>\"", ",", 
+                    RowBox[{"FontWeight", "\[Rule]", "\"\<Bold\>\""}]}], 
+                   "]"}], ",", "listPrice", ",", "\"\<\\n\>\"", ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"StyleBox", "[", 
+                   RowBox[{"\"\<Our Price: \>\"", ",", 
+                    RowBox[{"FontWeight", "\[Rule]", "\"\<Bold\>\""}]}], 
+                   "]"}], ",", "ourPrice"}], "}"}], "]"}], ",", 
+               "\"\<Text\>\""}], "]"}]}], "}"}], "]"}], ",", "Closed"}], 
+         "]"}], "]"}], "}"}]}]}], "]"}]}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"getImageData", "[", "url_String", "]"}], ":=", 
+   RowBox[{"JavaBlock", "[", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"u", ",", "connection", ",", "stream", ",", 
+        RowBox[{"input", "=", "\"\<\>\""}], ",", 
+        RowBox[{"numRead", "=", "0"}], ",", 
+        RowBox[{"bytesRead", "=", "0"}], ",", "buf"}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"u", "=", 
+        RowBox[{"JavaNew", "[", 
+         RowBox[{"\"\<java.net.URL\>\"", ",", "url"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"connection", "=", 
+        RowBox[{"u", "@", 
+         RowBox[{"openConnection", "[", "]"}]}]}], ";", "\[IndentingNewLine]",
+        
+       RowBox[{"stream", "=", 
+        RowBox[{"connection", "@", 
+         RowBox[{"getInputStream", "[", "]"}]}]}], ";", "\[IndentingNewLine]",
+        
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"stream", "\[Equal]", "$Failed"}], ",", 
+         RowBox[{"Return", "[", 
+          RowBox[{"URLError", "[", "\"\<Failed to open URL stream\>\"", "]"}],
+           "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"buf", "=", 
+        RowBox[{"JavaNew", "[", 
+         RowBox[{"\"\<[B\>\"", ",", "5000"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"While", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"numRead", "=", 
+            RowBox[{"stream", "@", 
+             RowBox[{"read", "[", "buf", "]"}]}]}], ")"}], ">", "0"}], ",", 
+         RowBox[{
+          RowBox[{"AddTo", "[", 
+           RowBox[{"bytesRead", ",", "numRead"}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"input", "=", 
+           RowBox[{"StringJoin", "[", 
+            RowBox[{"input", ",", 
+             RowBox[{"ToString", "[", 
+              RowBox[{"FromCharacterCode", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"If", "[", 
+                  RowBox[{
+                   RowBox[{"#", "<", "0"}], ",", 
+                   RowBox[{"#", "+", "256"}], ",", "#"}], "]"}], "&"}], "/@", 
+                
+                RowBox[{"Take", "[", 
+                 RowBox[{
+                  RowBox[{"JavaObjectToExpression", "[", "buf", "]"}], ",", 
+                  "numRead"}], "]"}]}], "]"}], "]"}]}], "]"}]}], ";"}]}], 
+        "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"stream", "@", 
+        RowBox[{"close", "[", "]"}]}], ";", "\[IndentingNewLine]", 
+       "input"}]}], "]"}], "]"}]}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"EndPackage", "[", "]"}], ";"}]}], "Input",
+ InitializationCell->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Examples", "Section"],
+
+Cell[BoxData[
+ RowBox[{"AuthorSearch", "[", 
+  RowBox[{"\"\<Stephen Wolfram\>\"", ",", "1"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"ManufacturerSearch", "[", 
+  RowBox[{"\"\<Addison-Wesley\>\"", ",", "1"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"KeywordSearch", "[", 
+  RowBox[{"\"\<Mathematica\>\"", ",", "1", ",", 
+   RowBox[{"ShowPictures", "\[Rule]", "True"}]}], "]"}]], "Input"]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{765, 752},
+WindowMargins->{{4, Automatic}, {0, Automatic}},
+DockedCells->(FrontEndExecute[{
+   FrontEnd`NotebookApply[
+    FrontEnd`InputNotebook[], #, Placeholder]}]& ),
+FrontEndVersion->"6.0 for Mac OS X PowerPC (32-bit) (February 27, 2007)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "TutorialPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 36, 0, 104, "Title"],
+Cell[629, 25, 656, 12, 85, "Text"],
+Cell[1288, 39, 766, 17, 37, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2091, 61, 23, 0, 41, "Section"],
+Cell[2117, 63, 16399, 392, 1554, "Input",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[18553, 460, 27, 0, 41, "Section"],
+Cell[18583, 462, 110, 2, 23, "Input"],
+Cell[18696, 466, 115, 2, 23, "Input"],
+Cell[18814, 470, 161, 3, 23, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

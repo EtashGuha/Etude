@@ -1,0 +1,11 @@
+{"Exp", "Sin", "Log", "Sqrt", "Cos", "E", "Log10", "Table", "Pi", "Zeta", 
+ "Abs", "Prime", "Transpose", "ArcTan", "Quantity", "None", "Range", 
+ "ArcSin", "Gamma", "Floor", "Ratios", "I", "Flatten", "Tan", "False", 
+ "Cosh", "Sum", "Rational", "RandomReal", "Infinity", "Riffle", "Partition", 
+ "Log2", "LegendreP", "Normal", "Sinh", "Re", "PolyLog", "NumberQ", "N", 
+ "Limit", "EllipticE", "Ceiling", "BesselI", "BaseForm", "Reverse", 
+ "PlusMinus", "Mod", "First", "Binomial", "Sec", "Plus", "Max", "MatrixExp", 
+ "Join", "DateRange", "Csc", "Automatic", "VectorQ", "Thread", "Take", 
+ "Subscript", "Sort", "SingularValueDecomposition", "Rule", "RandomInteger", 
+ "Product", "Mean", "LucasL", "Fit", "Fibonacci", "Degree", "DateDifference", 
+ "Csch", "Cot", "BesselJ", "Apply", "Accumulate"}

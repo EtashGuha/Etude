@@ -1,0 +1,463 @@
+div.Chapter {
+	font-family: Helvetica, sans-serif;
+	color: #975050;
+	font-size: 24px;
+	font-weight: plain;
+	margin-left: 27px;
+	margin-right: 27px;
+	margin-bottom: 10px;
+	margin-top: 40px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.Section {
+	font-family: Helvetica, sans-serif;
+	color: #975050;
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-right: 27px;
+	margin-bottom: 9px;
+	margin-top: 30px;
+}
+div.Subsection {
+	font-family: Helvetica, sans-serif;
+	color: #975050;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-right: 27px;
+	margin-bottom: 0px;
+	margin-top: 18px;
+}
+div.Subsubsection {
+	font-family: Helvetica, sans-serif;
+	color: #975050;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-right: 27px;
+	margin-bottom: 0px;
+	margin-top: 18px;
+}
+div.SubsectionIcon {
+	font-family: Helvetica, sans-serif;
+	color: #975050;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 46px;
+	margin-right: 27px;
+	margin-bottom: 0px;
+	margin-top: 18px;
+}
+div.SubsubsectionIcon {
+	font-family: Helvetica, sans-serif;
+	color: #975050;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 46px;
+	margin-right: 27px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+}
+div.Text {
+	font-size: 12px;
+	margin-left: 27px;
+	margin-right: 27px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+}
+div.MathCaption {
+	color: #333333;
+	margin-left: 66px;
+	margin-right: 12px;
+	margin-bottom: 2px;
+	margin-top: 20px;
+	border-color: #b3b3b3;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 1px;
+}
+div.SmallText {
+	font-size: 9px;
+	margin-left: 27px;
+	margin-right: 27px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+}
+div.Input {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	margin-left: 66px;
+	margin-right: 4px;
+	margin-bottom: 3px;
+	margin-top: 8px;
+}
+div.Output {
+	font-family: Courier, monospaced;
+	margin-left: 66px;
+	margin-right: 4px;
+	margin-bottom: 8px;
+	margin-top: 2px;
+}
+div.DefaultPanelBox {
+	font-family: "Lucida Grande";
+	font-size: 10px;
+}
+div.DefaultPopupBox {
+	font-family: "Lucida Grande";
+	font-size: 13px;
+	text-align: left;
+}
+div.DefaultButtonBox {
+	font-family: "Lucida Grande";
+	font-size: 13px;
+	text-align: left;
+}
+div.FramedBox {
+	font-weight: plain;
+	background: #f6edd6;
+	margin-left: 27px;
+	margin-right: 12px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+	border-color: #bfb18d;
+}
+div.DefinitionBox {
+	font-weight: plain;
+	background: #f6edd6;
+	margin-left: 27px;
+	margin-right: 12px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+	border-color: #bfb18d;
+}
+div.DefinitionBox3Col {
+	font-weight: plain;
+	background: #f6edd6;
+	margin-left: 27px;
+	margin-right: 12px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+	border-color: #bfb18d;
+}
+div.DefinitionBox4Col {
+	font-weight: plain;
+	background: #f6edd6;
+	margin-left: 27px;
+	margin-right: 12px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+	border-color: #bfb18d;
+}
+div.PrecedenceTable {
+	font-weight: plain;
+	background: #f6edd6;
+	margin-left: 27px;
+	margin-right: 12px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+	border-color: #bfb18d;
+}
+div.DefinitionBox5Col {
+	font-weight: plain;
+	background: #f6edd6;
+	margin-left: 27px;
+	margin-right: 12px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+	border-color: #bfb18d;
+}
+div.DefinitionBox6Col {
+	font-weight: plain;
+	background: #f6edd6;
+	margin-left: 27px;
+	margin-right: 12px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+	border-color: #bfb18d;
+}
+div.DisplayMath {
+	font-family: Courier, monospaced;
+	margin-left: 66px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.NumberedEquation {
+	margin-left: 66px;
+	margin-right: 27px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.EquationNumber {
+	margin-left: 66px;
+}
+div.Program {
+	font-family: Courier, monospaced;
+	margin-left: 66px;
+	margin-top: 10px;
+}
+div.Reference {
+	font-size: 12px;
+	margin-left: 27px;
+	margin-right: 27px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+}
+div.Theorem {
+	margin-left: 27px;
+	margin-right: 62px;
+	margin-bottom: 0px;
+	margin-top: 14px;
+	border-color: #0000cc;
+	border-width: 0px;
+	border-style: solid;
+	border-left-width: 4px;
+}
+div.Commentary {
+	font-style: italic;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+	border-color: #0033ff;
+	border-width: 0px;
+	border-style: solid;
+	border-left-width: 2px;
+}
+div.RegisterSubsection {
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+	margin-left: 27px;
+	margin-right: 27px;
+	margin-bottom: 0px;
+	margin-top: 18px;
+}
+div.RegisterSubsubsection {
+	font-family: Helvetica, sans-serif;
+	color: #975050;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-right: 27px;
+	margin-bottom: 0px;
+	margin-top: 18px;
+}
+div.SectionFirst {
+	font-family: Helvetica, sans-serif;
+	color: #975050;
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-right: 27px;
+	margin-bottom: 12px;
+	margin-top: 18px;
+}
+div.SubsectionFirst {
+	font-family: Helvetica, sans-serif;
+	color: #975050;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-right: 27px;
+	margin-bottom: 0px;
+	margin-top: 18px;
+}
+div.SubsubsectionFirst {
+	font-family: Helvetica, sans-serif;
+	color: #975050;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-right: 27px;
+	margin-bottom: 0px;
+	margin-top: 18px;
+}
+div.SmallTextSans {
+	font-family: Helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 10px;
+	margin-right: 4px;
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+div.RuledPageBreak {
+	font-size: 8px;
+	margin-left: 27px;
+	margin-right: 4px;
+	margin-bottom: 12px;
+	margin-top: 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-bottom-width: 1px;
+}
+div.Outline1 {
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+div.Outline2 {
+	font-size: 15px;
+	font-weight: bold;
+	margin-left: 57px;
+	margin-right: 10px;
+	margin-bottom: 6px;
+	margin-top: 6px;
+}
+div.Outline3 {
+	font-size: 12px;
+	margin-left: 87px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+div.Outline4 {
+	font-size: 10px;
+	margin-left: 117px;
+	margin-right: 10px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+}
+div.ContentsTitle {
+	font-family: Helvetica, sans-serif;
+	color: #975050;
+	font-size: 24px;
+	font-weight: bold;
+	margin-left: 21px;
+	margin-right: 4px;
+	margin-bottom: 12px;
+	margin-top: 24px;
+}
+div.IndexSubentry {
+	margin-left: 36px;
+	margin-right: 4px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.TOCTitle {
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 20px;
+	margin-right: 0px;
+	margin-bottom: 1px;
+	margin-top: 8px;
+}
+div.TOCSection {
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	margin-left: 48px;
+	margin-right: 0px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCSubsection {
+	font-size: 12px;
+	margin-left: 76px;
+	margin-right: 0px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCSubsubsection {
+	font-size: 12px;
+	margin-left: 104px;
+	margin-right: 0px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCTitleDingbat {
+	text-align: right;
+}
+div.TOCSectionDingbat {
+	text-align: right;
+}
+div.TOCSubsectionDingbat {
+	text-align: right;
+}
+div.TOCTitleCondensed {
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 20px;
+	margin-right: 0px;
+	margin-bottom: 1px;
+	margin-top: 8px;
+}
+div.TOCSectionCondensed {
+	font-family: Helvetica, sans-serif;
+	color: #333333;
+	font-size: 10px;
+	font-weight: bold;
+	margin-left: 48px;
+	margin-right: 0px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCSubsectionCondensed {
+	font-size: 12px;
+	margin-left: 76px;
+	margin-right: 0px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TOCSubsubsectionCondensed {
+	font-size: 12px;
+	margin-left: 104px;
+	margin-right: 0px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+div.TitlePageGraphic {
+	text-align: center;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 100px;
+	margin-top: 20px;
+}
+div.TitlePageLogo {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.ReferenceGroup {
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	background: #fcfcfc;
+	margin-left: 27px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 18px;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 1px;
+}
+div.ExampleHead1 {
+	font-family: Helvetica, sans-serif;
+	font-weight: plain;
+	margin-left: 27px;
+	margin-right: 4px;
+	margin-bottom: 6px;
+	margin-top: 6px;
+}
+div.ExampleHead2 {
+	font-family: Helvetica, sans-serif;
+	color: #975050;
+	font-weight: plain;
+	margin-left: 27px;
+	margin-right: 4px;
+	margin-bottom: 6px;
+	margin-top: 12px;
+}
+div.ExampleHead3 {
+	font-family: Times, serif;
+	font-weight: bold;
+	margin-left: 27px;
+	margin-right: 4px;
+	margin-bottom: 6px;
+	margin-top: 12px;
+}

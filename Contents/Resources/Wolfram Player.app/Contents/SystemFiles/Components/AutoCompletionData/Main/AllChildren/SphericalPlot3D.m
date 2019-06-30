@@ -1,0 +1,11 @@
+{"Pi", "False", "Mesh", "PerformanceGoal", "None", "MaxRecursion", 
+ "Function", "True", "PlotStyle", "PlotPoints", "MeshStyle", "Lighting", 
+ "Evaluate", "Directive", "Style", "Range", "PlotRange", "Ticks", "Purple", 
+ "PlotLabel", "BoxRatios", "AxesLabel", "Yellow", "White", "ViewVertical", 
+ "ViewPoint", "ViewAngle", "VectorAngle", "TextureCoordinateFunction", 
+ "Sqrt", "SphericalRegion", "Sin", "RGBColor", "RegionFunction", "Red", 
+ "Pink", "Norm", "N", "MeshShading", "MeshFunctions", "Map", "Magenta", 
+ "Log", "LightBlue", "ImageSize", "ImagePadding", "Green", "GrayLevel", 
+ "FaceForm", "Dynamic", "Dimensions", "Cyan", "Cos", "ControlActive", 
+ "ColorFunctionScaling", "ColorFunction", "ColorData", "Brown", "Boxed", 
+ "BoundaryStyle", "Blue", "Black", "Background", "Axes", "All", "Abs"}

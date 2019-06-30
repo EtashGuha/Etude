@@ -1,0 +1,16 @@
+@@resource TokenTranslationDictionary
+{
+"Algebraic Manipulation" -> "\:4ee3\:6570\:64cd\:4f5c",
+"Basic Math Assistant" -> "\:6570\:5b66\:52a9\:624b",
+"Basic Math Input" -> "\:6570\:5b66\:8f93\:5165",
+"Basic Typesetting" -> "\:57fa\:672c\:6392\:7248",
+"Chart Element Schemes" -> "\:56fe\:8868\:5143\:7d20\:65b9\:6848",
+"Classic Slide Show"-> "\:7ecf\:5178\:5e7b\:706f\:7247",
+"Classroom Assistant" -> "\:8bfe\:5802\:52a9\:624b",
+"Color Schemes" -> "\:8272\:5f69\:65b9\:6848",
+"Millimeters" -> "\:6beb\:7c73",
+"Other" -> "\:5176\:4ed6",
+"Slide Show" -> "\:5e7b\:706f\:7247",
+"Special Characters" -> "\:7279\:6b8a\:5b57\:7b26",
+"Writing Assistant" -> "\:4e66\:5199\:52a9\:624b"
+}

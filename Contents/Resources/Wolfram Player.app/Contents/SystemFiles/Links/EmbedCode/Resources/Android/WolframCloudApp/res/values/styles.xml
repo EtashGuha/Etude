@@ -1,0 +1,47 @@
+<resources>
+    <!--
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- API 14 theme customizations can go here. -->
+    </style>
+    
+    <style name="CloudTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        
+        <!-- Set the background to the landing pattern from wolframcloud.com -->
+		<item name="android:windowBackground">@drawable/backrepeat</item>
+
+		<!-- Set the text to a light color -->
+		<item name="android:textColor">@android:color/white</item>
+
+		<!-- Set style for fields, defined below -->
+		<item name="android:editTextStyle">@style/Widget.EditText.Cloud</item>
+
+		<!-- Set style for buttons, defined below -->
+		<item name="android:buttonStyle">@style/Widget.Button.Cloud</item>
+
+    </style>
+
+    <!-- Style definition for buttons, referenced above -->
+    <style name="Widget.Button.Cloud" parent="android:Widget.Button">
+        
+        <item name="android:background">@drawable/cloud_button_back</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">18sp</item>
+        
+    </style>
+    
+    <!-- Style definition for fields, referenced above -->
+    <style name="Widget.EditText.Cloud" parent="android:Widget.EditText" >
+        
+        <item name="android:background">@drawable/cloud_field_back</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:textSize">18sp</item>
+        
+    </style>
+
+</resources>

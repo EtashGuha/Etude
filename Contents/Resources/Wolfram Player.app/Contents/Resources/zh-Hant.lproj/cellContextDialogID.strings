@@ -1,0 +1,9 @@
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "MCr-Yd-4x1"; */
+"MCr-Yd-4x1.title" = "取消";
+
+/* Class = "NSTextFieldCell"; title = "New cell context:"; ObjectID = "ZGZ-Vg-aIT"; */
+"ZGZ-Vg-aIT.title" = "新儲存格內容：";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "buK-QS-9Sb"; */
+"buK-QS-9Sb.title" = "確定";

@@ -1,0 +1,1188 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     38735,       1178]
+NotebookOptionsPosition[     29779,        943]
+NotebookOutlinePosition[     36907,       1116]
+CellTagsIndexPosition[     36864,       1113]
+MenuPosition->0
+WindowFrame->Palette*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ TooltipBox[
+  ButtonBox[
+   StyleBox[
+    RowBox[{
+    "Minimal", "\[NonBreakingSpace]", "Notation", "\[NonBreakingSpace]", 
+     "Palette"}],
+    FontFamily->"Helvetica",
+    FontColor->GrayLevel[1]],
+   Background->RGBColor[0.100008, 0.100008, 0.4],
+   BaseStyle->None,
+   ButtonFunction:>(FrontEndExecute[{
+      FrontEnd`NotebookClose[
+       FrontEnd`ButtonNotebook[]], 
+      FrontEnd`NotebookOpen[
+       FrontEnd`ToFileName[{$TopDirectory, "AddOns", "Packages", "Notation", 
+         "LocalPalettes", "English", "NotationPalette.nb"}]]}]& )],
+  "Switch to minimal NotationPalette"]], "Input",
+ CellMargins->{{Inherited, Inherited}, {0, Inherited}},
+ Active->True],
+
+Cell[CellGroupData[{
+
+Cell["Notations", "Section",
+ CellMargins->{{Inherited, Inherited}, {Inherited, 6}}],
+
+Cell[CellGroupData[{
+
+Cell["StandardForm Notations", "Subsection"],
+
+Cell[BoxData[GridBox[{
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"Notation", "[", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], " ", "\[DoubleLongLeftRightArrow]", " ", 
+        TemplateBox[{"\[Placeholder]"},
+         "NotationTemplateTag"]}], "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"Notation", "[", 
+         RowBox[{
+           TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+           " ", "\[DoubleLongLeftRightArrow]", " ", 
+           TemplateBox[{"\[Placeholder]"}, "NotationTemplateTag"]}], "]"}],
+      ButtonSource->ButtonData],
+     "\[EscapeKey]notation\[EscapeKey]. Notation template that parses and \
+formats."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"Notation", "[", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], " ", "\[DoubleLongRightArrow]", " ", 
+        TemplateBox[{"\[Placeholder]"},
+         "NotationTemplateTag"]}], "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"Notation", "[", 
+         RowBox[{
+           TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+           " ", "\[DoubleLongRightArrow]", " ", 
+           TemplateBox[{"\[Placeholder]"}, "NotationTemplateTag"]}], "]"}],
+      ButtonSource->ButtonData],
+     "\[EscapeKey]notation>\[EscapeKey]. Notation template that parses."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"Notation", "[", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], " ", "\[DoubleLongLeftArrow]", " ", 
+        TemplateBox[{"\[Placeholder]"},
+         "NotationTemplateTag"]}], "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"Notation", "[", 
+         RowBox[{
+           TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+           " ", "\[DoubleLongLeftArrow]", " ", 
+           TemplateBox[{"\[Placeholder]"}, "NotationTemplateTag"]}], "]"}],
+      ButtonSource->ButtonData],
+     "\[EscapeKey]notation<\[EscapeKey]. Notation template that formats."]}
+  },
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.28], {
+       Offset[0.]}, 
+      Offset[0.28]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}},
+  GridDefaultElement:>ButtonBox[
+   "\\[Placeholder]", ButtonData :> "\\[Placeholder]", ButtonSource :> 
+    ButtonData]]], "Input",
+ Active->True],
+
+Cell[TextData[{
+ "These templates define ",
+ StyleBox["StandardForm", "MR"],
+ " notations (the default)",
+ StyleBox[".", "MR"],
+ "See the function ",
+ Cell[BoxData[
+  ButtonBox["Notation",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:Notation"},
+   ButtonSource->ButtonData]]],
+ "."
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["TraditionalForm Notations", "Subsection"],
+
+Cell[BoxData[GridBox[{
+   {
+    TooltipBox[
+     ButtonBox[
+      FormBox[
+       RowBox[{"Notation", "[", 
+        RowBox[{
+         RowBox[{
+          TemplateBox[{"\[SelectionPlaceholder]"},
+           "NotationTemplateTag"], " ", "\[DoubleLongLeftRightArrow]", " ", 
+          TemplateBox[{"\[Placeholder]"},
+           "NotationTemplateTag"]}], ",", "\n", "\t    ", 
+         RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}], 
+        "]"}],
+       TraditionalForm],
+      BaseStyle->"Paste",
+      ButtonData:>FormBox[
+        RowBox[{"Notation", "[", 
+          RowBox[{
+            RowBox[{
+              TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"],
+               " ", "\[DoubleLongLeftRightArrow]", " ", 
+              TemplateBox[{"\[Placeholder]"}, "NotationTemplateTag"]}], ",", 
+            RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}],
+           "]"}], "TraditionalForm"],
+      ButtonSource->ButtonData],
+     "TraditionalForm notation template that parses and formats."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      FormBox[
+       RowBox[{"Notation", "[", 
+        RowBox[{
+         RowBox[{
+          TemplateBox[{"\[SelectionPlaceholder]"},
+           "NotationTemplateTag"], " ", "\[DoubleLongRightArrow]", " ", 
+          TemplateBox[{"\[Placeholder]"},
+           "NotationTemplateTag"]}], ",", "\n", "\t    ", 
+         RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}], 
+        "]"}],
+       TraditionalForm],
+      BaseStyle->"Paste",
+      ButtonData:>FormBox[
+        RowBox[{"Notation", "[", 
+          RowBox[{
+            RowBox[{
+              TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"],
+               " ", "\[DoubleLongRightArrow]", " ", 
+              TemplateBox[{"\[Placeholder]"}, "NotationTemplateTag"]}], ",", 
+            RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}],
+           "]"}], "TraditionalForm"],
+      ButtonSource->ButtonData],
+     "TraditionalForm notation template that parses."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      FormBox[
+       RowBox[{"Notation", "[", 
+        RowBox[{
+         RowBox[{
+          TemplateBox[{"\[SelectionPlaceholder]"},
+           "NotationTemplateTag"], " ", "\[DoubleLongLeftArrow]", " ", 
+          TemplateBox[{"\[Placeholder]"},
+           "NotationTemplateTag"]}], ",", " ", "\n", "\t    ", 
+         RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}], 
+        "]"}],
+       TraditionalForm],
+      BaseStyle->"Paste",
+      ButtonData:>FormBox[
+        RowBox[{"Notation", "[", 
+          RowBox[{
+            RowBox[{
+              TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"],
+               " ", "\[DoubleLongLeftArrow]", " ", 
+              TemplateBox[{"\[Placeholder]"}, "NotationTemplateTag"]}], ",", 
+            RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}],
+           "]"}], "TraditionalForm"],
+      ButtonSource->ButtonData],
+     "TraditionalForm notation template that formats."]}
+  },
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.28], {
+       Offset[0.]}, 
+      Offset[0.28]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}},
+  GridDefaultElement:>ButtonBox[
+   "\\[Placeholder]", ButtonData :> "\\[Placeholder]", ButtonSource :> 
+    ButtonData]]], "Input",
+ Active->True],
+
+Cell[TextData[{
+ "These templates define ",
+ StyleBox["TraditionalForm", "MR"],
+ " notations. See the function ",
+ Cell[BoxData[
+  ButtonBox["Notation",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:Notation"},
+   ButtonSource->ButtonData]]],
+ " and the option ",
+ Cell[BoxData[
+  ButtonBox["WorkingForm",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:WorkingForm"},
+   ButtonSource->ButtonData]]],
+ "."
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\"Other Form\" Notations", "Subsection"],
+
+Cell[BoxData[GridBox[{
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"Notation", "[", 
+       RowBox[{
+        RowBox[{
+         TemplateBox[{"\[SelectionPlaceholder]"},
+          "NotationTemplateTag"], " ", "\[DoubleLongLeftRightArrow]", " ", 
+         TemplateBox[{"\[Placeholder]"},
+          "NotationTemplateTag"]}], ",", "\n", "\t    ", 
+        RowBox[{"WorkingForm", " ", "\[Rule]", " ", "\[Placeholder]"}]}], 
+       "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"Notation", "[", 
+         RowBox[{
+           RowBox[{
+             TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+             " ", "\[DoubleLongLeftRightArrow]", " ", 
+             TemplateBox[{"\[Placeholder]"}, "NotationTemplateTag"]}], ",", 
+           RowBox[{"WorkingForm", " ", "\[Rule]", " ", "\[Placeholder]"}]}], 
+         "]"}],
+      ButtonSource->ButtonData],
+     "Other-Form notation template that parses and formats."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"Notation", "[", 
+       RowBox[{
+        RowBox[{
+         TemplateBox[{"\[SelectionPlaceholder]"},
+          "NotationTemplateTag"], " ", "\[DoubleLongRightArrow]", " ", 
+         TemplateBox[{"\[Placeholder]"},
+          "NotationTemplateTag"]}], ",", "\n", "\t    ", 
+        RowBox[{"WorkingForm", " ", "\[Rule]", " ", "\[Placeholder]"}]}], 
+       "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"Notation", "[", 
+         RowBox[{
+           RowBox[{
+             TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+             " ", "\[DoubleLongRightArrow]", " ", 
+             TemplateBox[{"\[Placeholder]"}, "NotationTemplateTag"]}], ",", 
+           RowBox[{"WorkingForm", " ", "\[Rule]", " ", "\[Placeholder]"}]}], 
+         "]"}],
+      ButtonSource->ButtonData],
+     "Other-Form notation template that parses."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"Notation", "[", 
+       RowBox[{
+        RowBox[{
+         TemplateBox[{"\[SelectionPlaceholder]"},
+          "NotationTemplateTag"], " ", "\[DoubleLongLeftArrow]", " ", 
+         TemplateBox[{"\[Placeholder]"},
+          "NotationTemplateTag"]}], ",", "\n", "\t    ", 
+        RowBox[{"WorkingForm", " ", "\[Rule]", " ", "\[Placeholder]"}]}], 
+       "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"Notation", "[", 
+         RowBox[{
+           RowBox[{
+             TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+             " ", "\[DoubleLongLeftArrow]", " ", 
+             TemplateBox[{"\[Placeholder]"}, "NotationTemplateTag"]}], ",", 
+           RowBox[{"WorkingForm", " ", "\[Rule]", " ", "\[Placeholder]"}]}], 
+         "]"}],
+      ButtonSource->ButtonData],
+     "Other-Form notation template that formats."]}
+  },
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.28], {
+       Offset[0.]}, 
+      Offset[0.28]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}},
+  GridDefaultElement:>ButtonBox[
+   "\\[Placeholder]", ButtonData :> "\\[Placeholder]", ButtonSource :> 
+    ButtonData]]], "Input",
+ Active->True],
+
+Cell[TextData[{
+ "These templates define ",
+ StyleBox["\"Other Form\"", "MRs"],
+ " notations like ",
+ StyleBox["LogicForm", "MR"],
+ " or ",
+ StyleBox["PhysicsForm", "MR"],
+ ", etc. See the function ",
+ Cell[BoxData[
+  ButtonBox["Notation",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:Notation"},
+   ButtonSource->ButtonData]]],
+ " and the option ",
+ Cell[BoxData[
+  ButtonBox["WorkingForm",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:WorkingForm"},
+   ButtonSource->ButtonData]]],
+ "."
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Remove Notations", "Subsection"],
+
+Cell[BoxData[GridBox[{
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"RemoveNotation", "[", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], " ", "\[DoubleLongLeftRightArrow]", " ", 
+        TemplateBox[{"\[Placeholder]"},
+         "NotationTemplateTag"]}], "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"RemoveNotation", "[", 
+         RowBox[{
+           TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+           " ", "\[DoubleLongLeftRightArrow]", " ", 
+           TemplateBox[{"\[Placeholder]"}, "NotationTemplateTag"]}], "]"}],
+      ButtonSource->ButtonData],
+     "Remove parsing and formatting notation."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"RemoveNotation", "[", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], " ", "\[DoubleLongRightArrow]", " ", 
+        TemplateBox[{"\[Placeholder]"},
+         "NotationTemplateTag"]}], "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"RemoveNotation", "[", 
+         RowBox[{
+           TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+           " ", "\[DoubleLongRightArrow]", " ", 
+           TemplateBox[{"\[Placeholder]"}, "NotationTemplateTag"]}], "]"}],
+      ButtonSource->ButtonData],
+     "Remove parsing notation."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"RemoveNotation", "[", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], " ", "\[DoubleLongLeftArrow]", " ", 
+        TemplateBox[{"\[Placeholder]"},
+         "NotationTemplateTag"]}], "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"RemoveNotation", "[", 
+         RowBox[{
+           TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+           " ", "\[DoubleLongLeftArrow]", " ", 
+           TemplateBox[{"\[Placeholder]"}, "NotationTemplateTag"]}], "]"}],
+      ButtonSource->ButtonData],
+     "Remove formatting notation."]}
+  },
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.28], {
+       Offset[0.]}, 
+      Offset[0.28]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}},
+  GridDefaultElement:>ButtonBox[
+   "\\[Placeholder]", ButtonData :> "\\[Placeholder]", ButtonSource :> 
+    ButtonData]]], "Input",
+ Active->True],
+
+Cell[TextData[{
+ "These templates remove ",
+ StyleBox["StandardForm", "MR"],
+ " notations (the default)",
+ StyleBox[".", "MR"],
+ "See the function ",
+ Cell[BoxData[
+  ButtonBox["Notation",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:Notation"},
+   ButtonSource->ButtonData]]],
+ "."
+}], "Text"]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Symbolizations", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["StandardForm Symbolize", "Subsection"],
+
+Cell[BoxData[GridBox[{
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"Symbolize", "[", 
+       TemplateBox[{"\[SelectionPlaceholder]"},
+        "NotationTemplateTag"], " ", "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"Symbolize", "[", 
+         TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], " ",
+          "]"}],
+      ButtonSource->ButtonData],
+     "Symbolize a pattern."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"RemoveSymbolize", "[", 
+       TemplateBox[{"\[SelectionPlaceholder]"},
+        "NotationTemplateTag"], " ", "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"RemoveSymbolize", "[", 
+         TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], " ",
+          "]"}],
+      ButtonSource->ButtonData],
+     "Remove a symbolization."]}
+  },
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.28], {
+       Offset[0.]}, 
+      Offset[0.28]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}},
+  GridDefaultElement:>ButtonBox[
+   "\\[Placeholder]", ButtonData :> "\\[Placeholder]", ButtonSource :> 
+    ButtonData]]], "Input",
+ Active->True],
+
+Cell[TextData[{
+ "These templates define ",
+ StyleBox["StandardForm", "MR"],
+ " symbolizations (the default)",
+ StyleBox[".", "MR"],
+ "See the function ",
+ Cell[BoxData[
+  ButtonBox["Symbolize",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:Symbolize"},
+   ButtonSource->ButtonData]]],
+ "."
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["TraditionalForm Symbolize", "Subsection"],
+
+Cell[BoxData[GridBox[{
+   {
+    TooltipBox[
+     ButtonBox[
+      FormBox[
+       RowBox[{"Symbolize", "[", 
+        RowBox[{
+         TemplateBox[{"\[SelectionPlaceholder]"},
+          "NotationTemplateTag"], " ", ",", "\n", "\t   ", 
+         RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}], 
+        "]"}],
+       TraditionalForm],
+      BaseStyle->"Paste",
+      ButtonData:>FormBox[
+        RowBox[{"Symbolize", "[", 
+          RowBox[{
+            TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+            " ", ",", 
+            RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}],
+           "]"}], "TraditionalForm"],
+      ButtonSource->ButtonData],
+     "TraditionalForm symbolization template."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      FormBox[
+       RowBox[{"RemoveSymbolize", "[", 
+        RowBox[{
+         TemplateBox[{"\[SelectionPlaceholder]"},
+          "NotationTemplateTag"], " ", ",", "\n", "\t   ", 
+         RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}], 
+        "]"}],
+       TraditionalForm],
+      BaseStyle->"Paste",
+      ButtonData:>FormBox[
+        RowBox[{"RemoveSymbolize", "[", 
+          RowBox[{
+            TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+            " ", ",", 
+            RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}],
+           "]"}], "TraditionalForm"],
+      ButtonSource->ButtonData],
+     "Remove a TraditionalForm symbolization template."]}
+  },
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.28], {
+       Offset[0.]}, 
+      Offset[0.28]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}},
+  GridDefaultElement:>ButtonBox[
+   "\\[Placeholder]", ButtonData :> "\\[Placeholder]", ButtonSource :> 
+    ButtonData]]], "Input",
+ Active->True],
+
+Cell[TextData[{
+ "These templates define ",
+ StyleBox["TraditionalForm", "MR"],
+ " symbolizations. See the function ",
+ Cell[BoxData[
+  ButtonBox["Symbolize",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:Symbolize"},
+   ButtonSource->ButtonData]]],
+ " and the option ",
+ Cell[BoxData[
+  ButtonBox["WorkingForm",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:WorkingForm"},
+   ButtonSource->ButtonData]]],
+ "."
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\"Other Form\" Symbolize", "Subsection"],
+
+Cell[BoxData[GridBox[{
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"Symbolize", "[", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], " ", ",", "\n", "\t   ", 
+        RowBox[{"WorkingForm", " ", "\[Rule]", " ", "\[Placeholder]"}]}], 
+       "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"Symbolize", "[", 
+         RowBox[{
+           TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+           " ", ",", 
+           RowBox[{"WorkingForm", " ", "\[Rule]", " ", "\[Placeholder]"}]}], 
+         "]"}],
+      ButtonSource->ButtonData],
+     "Other-Form symbolization template."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"RemoveSymbolize", "[", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], " ", ",", "\n", "\t    ", 
+        RowBox[{"WorkingForm", " ", "\[Rule]", " ", "\[Placeholder]"}]}], 
+       "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"RemoveSymbolize", "[", 
+         RowBox[{
+           TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+           " ", ",", 
+           RowBox[{"WorkingForm", " ", "\[Rule]", " ", "\[Placeholder]"}]}], 
+         "]"}],
+      ButtonSource->ButtonData],
+     "Remove a Other-Form symbolization template."]}
+  },
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.28], {
+       Offset[0.]}, 
+      Offset[0.28]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}},
+  GridDefaultElement:>ButtonBox[
+   "\\[Placeholder]", ButtonData :> "\\[Placeholder]", ButtonSource :> 
+    ButtonData]]], "Input",
+ Active->True],
+
+Cell[TextData[{
+ "These templates define ",
+ StyleBox["\"Other Form\"", "MRs"],
+ " symbolizations like ",
+ StyleBox["LogicForm", "MR"],
+ " or ",
+ StyleBox["PhysicsForm", "MR"],
+ ", etc.See the function ",
+ Cell[BoxData[
+  ButtonBox["Symbolize",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:Symbolize"},
+   ButtonSource->ButtonData]]],
+ " and the option ",
+ Cell[BoxData[
+  ButtonBox["WorkingForm",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:WorkingForm"},
+   ButtonSource->ButtonData]]],
+ "."
+}], "Text"]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Infix Notations", "Section",
+ Active->False],
+
+Cell[CellGroupData[{
+
+Cell["StandardForm Infix Notations", "Subsection"],
+
+Cell[BoxData[GridBox[{
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"InfixNotation", "[", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], ",", "\[Placeholder]"}], "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"InfixNotation", "[", 
+         RowBox[{
+           TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+           ",", "\[Placeholder]"}], "]"}],
+      ButtonSource->ButtonData],
+     "InfixNotation template."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"RemoveInfixNotation", "[", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], ",", "\[Placeholder]"}], "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"RemoveInfixNotation", "[", 
+         RowBox[{
+           TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+           ",", "\[Placeholder]"}], "]"}],
+      ButtonSource->ButtonData],
+     "RemoveInfixNotation template."]}
+  },
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.28], {
+       Offset[0.]}, 
+      Offset[0.28]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}},
+  GridDefaultElement:>ButtonBox[
+   "\\[Placeholder]", ButtonData :> "\\[Placeholder]", ButtonSource :> 
+    ButtonData]]], "Input",
+ Active->True],
+
+Cell[TextData[{
+ "These templates define ",
+ StyleBox["StandardForm", "MR"],
+ " infix notations (the default)",
+ StyleBox[".", "MR"],
+ "See the documentation for the function ",
+ Cell[BoxData[
+  ButtonBox["InfixNotation",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:InfixNotation"},
+   ButtonSource->ButtonData]]],
+ "."
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["TraditionalForm Infix Notations", "Subsection"],
+
+Cell[BoxData[GridBox[{
+   {
+    TooltipBox[
+     ButtonBox[
+      FormBox[
+       RowBox[{"InfixNotation", "[", 
+        RowBox[{
+         TemplateBox[{"\[SelectionPlaceholder]"},
+          "NotationTemplateTag"], ",", "\[Placeholder]", ",", "\n", "\t   ", 
+         RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}], 
+        "]"}],
+       TraditionalForm],
+      BaseStyle->"Paste",
+      ButtonData:>FormBox[
+        RowBox[{"InfixNotation", "[", 
+          RowBox[{
+            TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+            ",", "\[Placeholder]", ",", 
+            RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}],
+           "]"}], "TraditionalForm"],
+      ButtonSource->ButtonData],
+     "TraditionalForm InfixNotation template."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      FormBox[
+       RowBox[{"RemoveInfixNotation", "[", 
+        RowBox[{
+         TemplateBox[{"\[SelectionPlaceholder]"},
+          "NotationTemplateTag"], ",", "\[Placeholder]", ",", "\n", "\t   ", 
+         RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}], 
+        "]"}],
+       TraditionalForm],
+      BaseStyle->"Paste",
+      ButtonData:>FormBox[
+        RowBox[{"RemoveInfixNotation", "[", 
+          RowBox[{
+            TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+            ",", "\[Placeholder]", ",", 
+            RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}],
+           "]"}], "TraditionalForm"],
+      ButtonSource->ButtonData],
+     "TraditionalForm RemoveInfixNotation template."]}
+  },
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.28], {
+       Offset[0.]}, 
+      Offset[0.28]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}},
+  GridDefaultElement:>ButtonBox[
+   "\\[Placeholder]", ButtonData :> "\\[Placeholder]", ButtonSource :> 
+    ButtonData]]], "Input",
+ Active->True],
+
+Cell[TextData[{
+ "These templates define ",
+ StyleBox["TraditionalForm", "MR"],
+ " infix notations",
+ StyleBox[".", "MR"],
+ "See the function ",
+ Cell[BoxData[
+  ButtonBox["InfixNotation",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:InfixNotation"},
+   ButtonSource->ButtonData]]],
+ " and the option ",
+ Cell[BoxData[
+  ButtonBox["WorkingForm",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:WorkingForm"},
+   ButtonSource->ButtonData]]],
+ "."
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\"Other Form\" Infix Notations", "Subsection"],
+
+Cell[BoxData[GridBox[{
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"InfixNotation", "[", "\n", "\t", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], ",", "\[Placeholder]", ",", 
+        RowBox[{"WorkingForm", " ", "\[Rule]", " ", "\[Placeholder]"}]}], 
+       "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"InfixNotation", "[", 
+         RowBox[{
+           TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+           ",", "\[Placeholder]", ",", 
+           RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}], 
+         "]"}],
+      ButtonSource->ButtonData],
+     "Other-Form InfixNotation template."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      RowBox[{"RemoveInfixNotation", "[", "\n", "\t", 
+       RowBox[{
+        TemplateBox[{"\[SelectionPlaceholder]"},
+         "NotationTemplateTag"], ",", "\[Placeholder]", ",", 
+        RowBox[{"WorkingForm", " ", "\[Rule]", " ", "\[Placeholder]"}]}], 
+       "]"}],
+      BaseStyle->"Paste",
+      ButtonData:>RowBox[{"RemoveInfixNotation", "[", 
+         RowBox[{
+           TemplateBox[{"\[SelectionPlaceholder]"}, "NotationTemplateTag"], 
+           ",", "\[Placeholder]", ",", 
+           RowBox[{"WorkingForm", " ", "\[Rule]", " ", "TraditionalForm"}]}], 
+         "]"}],
+      ButtonSource->ButtonData],
+     "Other-Form RemoveInfixNotation template."]}
+  },
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.28], {
+       Offset[0.]}, 
+      Offset[0.28]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}},
+  GridDefaultElement:>ButtonBox[
+   "\\[Placeholder]", ButtonData :> "\\[Placeholder]", ButtonSource :> 
+    ButtonData]]], "Input",
+ Active->True],
+
+Cell[TextData[{
+ "These templates define ",
+ StyleBox["\"Other Form\"", "MRs"],
+ " infix notations like ",
+ StyleBox["LogicForm", "MR"],
+ " or ",
+ StyleBox["PhysicsForm", "MR"],
+ ", etc",
+ StyleBox[".", "MR"],
+ "See the documentation for the function ",
+ Cell[BoxData[
+  ButtonBox["InfixNotation",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:InfixNotation"},
+   ButtonSource->ButtonData]]],
+ " and the option ",
+ Cell[BoxData[
+  ButtonBox["WorkingForm",
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:WorkingForm"},
+   ButtonSource->ButtonData]]],
+ "."
+}], "Text"]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Wrapper Boxes", "Section"],
+
+Cell[BoxData[GridBox[{
+   {
+    TooltipBox[
+     ButtonBox[
+      StyleBox["InsertPatternWrapper",
+       FontFamily->"Helvetica",
+       FontColor->GrayLevel[1]],
+      Background->RGBColor[0.100008, 0.100008, 0.4],
+      BaseStyle->"Paste",
+      ButtonData:>
+       TemplateBox[{"\[SelectionPlaceholder]"}, "NotationPatternTag"],
+      ButtonSource->ButtonData],
+     "\[EscapeKey]pattwrap\[EscapeKey]. Insert a complex pattern wrapper \
+TemplateBox."]},
+   {
+    TooltipBox[
+     ButtonBox[
+      StyleBox["InsertMadeBoxesWrapper",
+       FontFamily->"Helvetica",
+       FontColor->GrayLevel[1]],
+      Background->RGBColor[0.100008, 0.100008, 0.4],
+      BaseStyle->"Paste",
+      ButtonData:>
+       TemplateBox[{"\[SelectionPlaceholder]"}, "NotationMadeBoxesTag"],
+      ButtonSource->ButtonData],
+     "\[EscapeKey]madeboxeswrap\[EscapeKey]. Insert a made boxes wrapper \
+TemplateBox."]}
+  },
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.28], {
+       Offset[0.]}, 
+      Offset[0.28]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}},
+  GridDefaultElement:>ButtonBox[
+   "\[Placeholder]", ButtonData :> "\[Placeholder]", ButtonSource :> 
+    ButtonData]]], "Input",
+ Active->True],
+
+Cell[TextData[{
+ "These are functions that embed tag boxes into expressions. See ",
+ Cell[BoxData[
+  ButtonBox[
+   RowBox[{"Complex", " ", "Patterns"}],
+   BaseStyle->"DemosLink",
+   ButtonData:>{"Notation:Definition:NotationPatternTag"},
+   ButtonSource->ButtonData]]],
+ "."
+}], "Text"]
+}, Closed]]
+},
+ClosingSaveDialog->False,
+Editable->False,
+WindowSize->{289, 322},
+WindowMargins->{{Automatic, 1}, {Automatic, 0}},
+WindowFrame->"Palette",
+WindowElements->{"StatusArea", "VerticalScrollBar"},
+WindowFrameElements->{"CloseBox", "ResizeArea"},
+WindowClickSelect->False,
+ShowCellBracket->False,
+MenuPosition->None,
+Background->GrayLevel[1],
+TooltipBoxOptions->{TooltipDelay->0.4},
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (October 18, 2008)",
+StyleDefinitions->Notebook[{
+   Cell["          Prototypes for the FullNotation Palette. This abbreviated \
+style sheet is used to reduce the size of the notebook as a whole while still \
+allowing the styles to be easily modifed. Remember that all other styles will \
+be adopted from the default style sheet.          ", "Text"], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Section"], CellDingbat -> None, ShowGroupOpener -> True, 
+       CellMargins -> {{19, Inherited}, {3, 18}}, 
+       CellGroupingRules -> {"SectionGrouping", 30}, PageBreakBelow -> False, 
+       CounterIncrements -> "Section", 
+       CounterAssignments -> {{"Subsection", 0}, {"Subsubsection", 0}}, 
+       FontFamily -> "Helvetica", FontSize -> 14, FontWeight -> "Bold"], 
+      Cell[
+       StyleData["Section", "Presentation"], 
+       CellMargins -> {{24, Inherited}, {Inherited, 20}}, 
+       LineSpacing -> {1, 0}, FontSize -> 18], 
+      Cell[
+       StyleData["Section", "Printout"], 
+       CellMargins -> {{14, Inherited}, {Inherited, 20}}, FontSize -> 14], 
+      Cell[
+       StyleData["Section", "Condensed"], 
+       CellMargins -> {{4, Inherited}, {2, 2}}, FontSize -> 14]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Subsection"], CellDingbat -> None, ShowGroupOpener -> True, 
+       CellMargins -> {{25, Inherited}, {Inherited, 8}}, 
+       CellGroupingRules -> {"SectionGrouping", 50}, PageBreakBelow -> False, 
+       CounterIncrements -> "Subsubsection", FontFamily -> "Times", FontSize -> 
+       12, FontWeight -> "Bold"], 
+      Cell[
+       StyleData["Subsection", "Presentation"], 
+       CellMargins -> {{24, Inherited}, {Inherited, 15}}, 
+       LineSpacing -> {1, 0}, FontSize -> 18], 
+      Cell[
+       StyleData["Subsection", "Printout"], 
+       CellMargins -> {{14, Inherited}, {Inherited, 15}}, FontSize -> 12], 
+      Cell[
+       StyleData["Subsection", "Condensed"], 
+       CellMargins -> {{4, Inherited}, {2, 2}}, FontSize -> 12]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Hyperlink"], StyleMenuListing -> None, 
+       FontVariations -> {"Underline" -> True}, FontColor -> 
+       RGBColor[0, 0, 1]], 
+      Cell[
+       StyleData["Hyperlink", "Printout"], 
+       FontVariations -> {"Underline" -> False}, FontColor -> GrayLevel[0]]}, 
+     Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["AddOnsLink"], StyleMenuListing -> None, 
+       ButtonStyleMenuListing -> Automatic, FontFamily -> "Courier", 
+       FontVariations -> {"Underline" -> True}, FontColor -> 
+       RGBColor[0, 0, 1], 
+       ButtonBoxOptions -> {
+        Active -> True, Appearance -> {Automatic, None}, 
+         ButtonFunction :> (FrontEndExecute[{
+            FrontEnd`HelpBrowserLookup["AddOns", #]}]& )}], 
+      Cell[
+       StyleData["AddOnsLink", "Printout"], 
+       FontVariations -> {"Underline" -> False}, FontColor -> GrayLevel[0]]}, 
+     Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["DemosLink"], StyleMenuListing -> None, 
+       ButtonStyleMenuListing -> Automatic, FontFamily -> "Courier", 
+       FontVariations -> {"Underline" -> True}, FontColor -> 
+       RGBColor[0, 0, 1], 
+       ButtonBoxOptions -> {
+        Active -> True, Appearance -> {Automatic, None}, 
+         ButtonFunction :> (FrontEndExecute[{
+            FrontEnd`HelpBrowserLookup["Demos", #]}]& )}], 
+      Cell[
+       StyleData["DemosLink", "Printout"], 
+       FontVariations -> {"Underline" -> False}, FontColor -> GrayLevel[0]]}, 
+     Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Text"], CellMargins -> {{10, Inherited}, {0, Inherited}}, 
+       FontFamily -> "Times"], 
+      Cell[
+       StyleData["Text", "Presentation"], 
+       CellMargins -> {{24, Inherited}, {10, Inherited}}, 
+       LineSpacing -> {1, 0}], 
+      Cell[
+       StyleData["Text", "Printout"], 
+       CellMargins -> {{14, Inherited}, {0, Inherited}}, FontSize -> 10], 
+      Cell[
+       StyleData["Text", "Condensed"], 
+       CellMargins -> {{4, Inherited}, {0, 2}}, FontSize -> 10]}, Closed]], 
+   Cell[
+    StyleData["MR"], StyleMenuListing -> None, FontFamily -> "Courier", 
+    FontWeight -> "Plain", FontSlant -> "Plain"], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Input"], 
+       CellMargins -> {{5, Inherited}, {Inherited, Inherited}}, Evaluatable -> 
+       True, CellGroupingRules -> "InputGrouping", CellHorizontalScrolling -> 
+       True, PageBreakWithin -> False, GroupPageBreakWithin -> False, 
+       CellLabelMargins -> {{23, Inherited}, {Inherited, Inherited}}, 
+       DefaultFormatType -> Utilities`Notation`Private`DefaultInputFormatType,
+        FormatType -> InputForm, ShowStringCharacters -> True, NumberMarks -> 
+       True, FontWeight -> "Bold"], 
+      Cell[
+       StyleData["Input", "Presentation"], 
+       CellMargins -> {{45, Inherited}, {20, Inherited}}, 
+       LineSpacing -> {1, 0}], 
+      Cell[
+       StyleData["Input", "Printout"], 
+       CellMargins -> {{30, Inherited}, {10, Inherited}}, FontSize -> 10], 
+      Cell[
+       StyleData["Input", "Condensed"], 
+       CellMargins -> {{4, Inherited}, {2, 2}}, FontSize -> 10]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+      "Notation Package Styles", "Section", GeneratedCell -> True, CellTags -> 
+       "NotationPackage"], 
+      Cell[
+      "The cells below define certain styles needed by the Notation package. \
+These styles serve to make visible otherwise invisible TemplateBoxes.", 
+       "Text", GeneratedCell -> True, CellTags -> "NotationPackage"], 
+      Cell[
+       StyleData["NotationTemplateStyle"], GeneratedCell -> True, 
+       StyleMenuListing -> None, Background -> RGBColor[1, 1, 0.850004], 
+       TemplateBoxOptions -> {SyntaxForm -> "symbol"}, CellTags -> 
+       "NotationPackage"], 
+      Cell[
+       StyleData["NotationPatternWrapperStyle"], GeneratedCell -> True, 
+       StyleMenuListing -> None, Background -> 
+       RGBColor[1, 0.900008, 0.979995], 
+       TemplateBoxOptions -> {SyntaxForm -> "symbol"}, CellTags -> 
+       "NotationPackage"], 
+      Cell[
+       StyleData["NotationMadeBoxesWrapperStyle"], GeneratedCell -> True, 
+       StyleMenuListing -> None, Background -> 
+       RGBColor[0.900008, 0.889998, 1], 
+       TemplateBoxOptions -> {SyntaxForm -> "symbol"}, CellTags -> 
+       "NotationPackage"]}, Closed]]}, Visible -> False, FrontEndVersion -> 
+  "7.0 for Mac OS X x86 (32-bit) (October 18, 2008)", StyleDefinitions -> 
+  "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[562, 21, 686, 19, 28, "Input"],
+Cell[CellGroupData[{
+Cell[1273, 44, 84, 1, 23, "Section"],
+Cell[CellGroupData[{
+Cell[1382, 49, 44, 0, 70, "Subsection"],
+Cell[1429, 51, 2471, 64, 70, "Input"],
+Cell[3903, 117, 313, 12, 70, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[4253, 134, 47, 0, 70, "Subsection"],
+Cell[4303, 136, 3435, 90, 70, "Input"],
+Cell[7741, 228, 451, 16, 70, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8229, 249, 46, 0, 70, "Subsection"],
+Cell[8278, 251, 3130, 81, 70, "Input"],
+Cell[11411, 334, 538, 20, 70, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11986, 359, 38, 0, 70, "Subsection"],
+Cell[12027, 361, 2388, 63, 70, "Input"],
+Cell[14418, 426, 313, 12, 70, "Text"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[14780, 444, 33, 0, 21, "Section"],
+Cell[CellGroupData[{
+Cell[14838, 448, 44, 0, 70, "Subsection"],
+Cell[14885, 450, 1194, 36, 70, "Input"],
+Cell[16082, 488, 320, 12, 70, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[16439, 505, 47, 0, 70, "Subsection"],
+Cell[16489, 507, 1890, 54, 70, "Input"],
+Cell[18382, 563, 458, 16, 70, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[18877, 584, 46, 0, 70, "Subsection"],
+Cell[18926, 586, 1701, 48, 70, "Input"],
+Cell[20630, 636, 544, 20, 70, "Text"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[21223, 662, 50, 1, 21, "Section"],
+Cell[CellGroupData[{
+Cell[21298, 667, 50, 0, 70, "Subsection"],
+Cell[21351, 669, 1379, 40, 70, "Input"],
+Cell[22733, 711, 351, 12, 70, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[23121, 728, 53, 0, 70, "Subsection"],
+Cell[23177, 730, 1975, 54, 70, "Input"],
+Cell[25155, 786, 492, 18, 70, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[25684, 809, 52, 0, 70, "Subsection"],
+Cell[25739, 811, 1781, 48, 70, "Input"],
+Cell[27523, 861, 601, 22, 70, "Text"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[28173, 889, 32, 0, 21, "Section"],
+Cell[28208, 891, 1265, 38, 70, "Input"],
+Cell[29476, 931, 287, 9, 70, "Text"]
+}, Closed]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

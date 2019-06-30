@@ -1,0 +1,102 @@
+@@resource mruFunctionsMenuString
+Recently Used
+@|
+@@resource otherFunctionsMenuString
+Other Functions
+@|
+@@resource variablesMenuString
+User Defined
+@|
+@@resource showAllMenuString
+Show All
+@|
+@|
+@@resource showTemplatesMenuString Macintosh
+Templates... Shift+Cmd+K
+@|
+@|
+@@resource showTemplatesMenuString X
+Templates... Shift+Ctrl+K
+@|
+@|
+@@resource showTemplatesMenuString Windows
+Templates... Shift+Ctrl+K
+@|
+@|
+@@resource insertTemplateMenuString Macintosh
+Insert template Shift+Cmd+K
+@|
+@|
+@@resource insertTemplateMenuString X
+Insert template Shift+Ctrl+K
+@|
+@|
+@@resource insertTemplateMenuString Windows
+Insert template Shift+Ctrl+K
+@|
+@|
+@@resource codeAssistDocumentationMenuString
+documentation
+@|
+@|
+@@resource codeAssistFileBrowseMenuString
+File Browser
+@|
+@|
+@@resource codeAssistColorChooseMenuString
+Choose Color
+@|
+@|
+@@resource codeAssistGradientChooseMenuString
+Gradient Chooser
+@|
+@|
+@@resource codeAssistIndexedChooseMenuString
+Indexed Chooser
+@|
+@|
+@@resource codeAssistStaticMenuExpr
+{MenuItem["Function Template", "ShowStaticTemplates"]}
+@|
+@|
+@@resource codeAssistColorSchemeChooseMenuString
+Choose Color Scheme
+@|
+@|
+@@resource codeAssistWolframAlphaChooseMenuString
+Build Expression
+@|
+@@resource deprecatedSymbolWarningString
+Deprecated
+@|
+@@resource pasteTemplateString
+paste
+@|
+@|
+@@resource codeAssistConvertToMenuString
+Convert to:
+@|
+@|
+@@resource codeAssistFreeFormInputMenuString
+Convert to Free-Form Input
+@|
+@|
+@@resource codeFreeFormLinguisticInputMenuString
+Convert to Free-Form Linguistic Input
+@|
+@|
+@@resource codeConvertToStringMenuString
+Convert to String
+@|
+@|
+@@resource codeAssistConvertToTextCellMenuString
+Convert to Text Cell
+@|
+@|
+@@resource codeAssistConvertToSectionCellMenuString
+Convert to Section Cell
+@|
+@|
+@@resource codeAssistDirectoryBrowseMenuString
+Directory Browser
+@|

@@ -1,0 +1,30 @@
+
+/* Class = "NSButtonCell"; title = "Add"; ObjectID = "0vg-fd-raT"; */
+"0vg-fd-raT.title" = "Agregar";
+
+/* Class = "NSWindow"; title = "Edit Cell Tags for "; ObjectID = "1fc-IU-WFD"; */
+"1fc-IU-WFD.title" = "Editar etiquetas de celda para ";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "ETc-U8-CE8"; */
+"ETc-U8-CE8.title" = "Celda de texto";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "LFU-Zt-2LC"; */
+"LFU-Zt-2LC.title" = "Celda de vista de tabla";
+
+/* Class = "NSButtonCell"; title = "Remove"; ObjectID = "OFC-7W-U7o"; */
+"OFC-7W-U7o.title" = "Eliminar";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "Te1-Kz-Cbh"; */
+"Te1-Kz-Cbh.title" = "Celda de vista de tabla";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "XWW-lX-dR8"; */
+"XWW-lX-dR8.title" = "Celda de texto";
+
+/* Class = "NSTextFieldCell"; title = "Cell tag:"; ObjectID = "ZJO-YC-60V"; */
+"ZJO-YC-60V.title" = "Etiqueta de celda:";
+
+/* Class = "NSTableColumn"; headerCell.title = "All cell tags in the notebook"; ObjectID = "cdy-bI-xCa"; */
+"cdy-bI-xCa.headerCell.title" = "Todas las etiquetas de celda";
+
+/* Class = "NSTableColumn"; headerCell.title = "Tags of the currently selected cell(s)"; ObjectID = "yk5-nM-3xq"; */
+"yk5-nM-3xq.headerCell.title" = "Todas las etiquetas de celda seleccionadas";

@@ -1,0 +1,82 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1910,         73]
+NotebookOptionsPosition[      1310,         47]
+NotebookOutlinePosition[      1733,         64]
+CellTagsIndexPosition[      1690,         61]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\:30bb\:30af\:30b7\:30e7\:30f3\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b", "Section"],
+
+Cell["\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e \:8a55\:4fa1\:3059\:308b\:5f0f\:306f\:ff0c\:4e0b\:306e\:5225\:306e\
+\:30bb\:30eb\:306b\:5165\:529b\:3059\:308b\:ff0e", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"2", "+", "2"}]], "Input"],
+
+Cell[BoxData["4"], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:30bb\:30af\:30b7\:30e7\:30f3\:30bf\:30a4\:30c8\:30eb\:3092\:3053\:3053\
+\:306b\:5165\:529b\:3059\:308b", "Section"],
+
+Cell["\:30c6\:30ad\:30b9\:30c8\:3092\:3053\:3053\:306b\:5165\:529b\:3059\:308b\
+\:ff0e", "Text"]
+}, Open  ]]
+},
+WindowSize->{775, 697},
+WindowMargins->{{Automatic, 175}, {32, Automatic}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (2013\:5e7412\:670826\
+\:65e5)",
+StyleDefinitions->FrontEnd`FileName[{"Utility"}, "Memo.nb", CharacterEncoding -> 
+  "ShiftJIS"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 123, 1, 55, "Section"],
+Cell[705, 25, 213, 2, 30, "Text"],
+Cell[CellGroupData[{
+Cell[943, 31, 49, 1, 28, "Input"],
+Cell[995, 34, 28, 0, 28, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1072, 40, 123, 1, 55, "Section"],
+Cell[1198, 43, 96, 1, 30, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

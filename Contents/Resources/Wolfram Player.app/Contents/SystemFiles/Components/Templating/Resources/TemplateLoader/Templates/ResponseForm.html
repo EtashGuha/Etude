@@ -1,0 +1,84 @@
+<wolfram:get path="Templates/Clean.html">
+  <wolfram:slot id="Content">
+    <wolfram:with requestData='Replace[Quiet[HTTPRequestData[#]], _HTTPRequestData :> #2] &'>
+      <wolfram:get path="Templates/Includes/Title.html"/>
+      <form action="`FormAction`" method='<* Replace[#FormMethod, Automatic|_Missing|None|Null -> "GET"] *>' class="has-feedback form-default" enctype="multipart/form-data" autocomplete="off">  
+        <div class="panel panel-default panel-main panel-form">
+          <div class="panel-heading text-center">
+            <h4 class="text-muted">
+              Wolfram Cloud | 
+              <span class="text-info">API Web <wolfram:if test='! MatchQ[#StatusCode, 200|_Missing]'>Error</wolfram:if> Report</span>
+            </h4>
+            <wolfram:if test='MatchQ[#requestData["PathString", None], _String]'>
+              <div class="text-center small text-muted">
+                API method URL: <wolfram:expr>#requestData["PathString", "/"]</wolfram:expr>
+              </div>
+            </wolfram:if>
+          </div>
+          <div class="panel-body">
+            <label class="text-info">GET parameters:</label>
+            <code class="text-muted well well-sm small" style="white-space:pre-wrap;display:block"><wolfram:expr inserter="Composition[ToString, InputForm]">#requestData["Query", {}]</wolfram:expr></code>
+            
+            <wolfram:if test='#requestData["Method", "GET"] =!= "GET"'>
+              <label class="text-info"><wolfram:expr>#requestData["Method", "GET"]</wolfram:expr> parameters:</label>
+              <code class="text-muted well well-sm small" style="white-space:pre-wrap;display:block"><wolfram:expr inserter="Composition[ToString, InputForm]">#requestData["FormRules", {}]</wolfram:expr></code>          
+            </wolfram:if>
+
+            <label class="text-info">Result:</label>
+            <wolfram:which>
+              <wolfram:if test='! TrueQ[#HideResult]'>
+                <code class="text-muted well well-sm small" style="white-space:pre-wrap;display:block"><wolfram:expr>UnsafeHTML[#EvaluationData["Result"]]</wolfram:expr></code>
+              </wolfram:if>
+              <wolfram:if test='#HideResult'>
+                <code class="text-muted well well-sm small" style="white-space:pre-wrap;display:block">No result&nbsp;<em>&mdash; at least one parameter could not be interpreted</em></code>
+              </wolfram:if>
+            </wolfram:which>
+
+            <wolfram:if test="! MatchQ[#FormObject, _Missing]">
+              <label class="text-info">Form:</label>
+              <wolfram:expr>#FormObject</wolfram:expr>              
+            </wolfram:if>
+            <div class="text-right">
+              <button type="submit" class="btn btn-info form-submit" autocomplete="off">
+                <wolfram:slot id="FormSubmitLabel">Re-send API Request</wolfram:slot>
+              </button>
+            </div>
+            <hr/>
+
+            <!-- query details info -->
+            <label class="text-info">Details:</label>
+            <div class='small'>Engine CPU time taken:</div>
+            <div class="small text-muted">
+              <wolfram:expr>#EvaluationData["Timing"]</wolfram:expr> sec
+            </div>
+            <div class='small'>Absolute time taken:</div>
+            <div class="small text-muted">
+              <wolfram:expr>#EvaluationData["AbsoluteTiming"]</wolfram:expr> sec
+            </div>
+            <div class='small'>Messages generated:</div>
+            <div class='small text-muted' style="padding-bottom:10px">
+              <wolfram:sequence values='Replace[#EvaluationData["MessagesText"], {} -> {"(None)"}]'>
+                <wolfram:slot id='1'/><br />
+              </wolfram:sequence>
+            </div>
+            <!-- JSON object -->
+            <div id="container-hide">
+              <i class="glyphicon glyphicon-menu-right text-muted small"></i>
+              <label class="text-info" style="cursor:pointer" onclick="document.getElementById('container-show').style.display = 'block';document.getElementById('container-hide').style.display = 'none';">JSON object:</label>
+            </div>
+            <div id="container-show" style='display: none;'>
+              <i class="glyphicon glyphicon-menu-down text-muted small"></i>
+              <label class="text-info" style="cursor:pointer" onclick="document.getElementById('container-hide').style.display = 'block';document.getElementById('container-show').style.display = 'none';">JSON object:</label>
+              <code class="text-muted well well-sm small" style="white-space:pre-wrap;display:block"><wolfram:expr inserter="JSONTools`ToJSON">
+                ReplaceAll[
+                #EvaluationData, {
+                None|_Missing -> Null,
+                any:_HoldForm|_Hold|_MessageName :> Block[{}, ToString[Unevaluated[any], InputForm] /; True] 
+              }]
+            </wolfram:expr></code>
+          </div>
+        </div>
+      </form>
+    </wolfram:with>
+  </wolfram:slot>
+</wolfram:get>

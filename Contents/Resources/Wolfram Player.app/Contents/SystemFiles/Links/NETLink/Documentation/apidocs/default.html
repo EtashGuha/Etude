@@ -1,0 +1,64 @@
+<html dir="ltr">
+<head>
+<title>.NET/Link Overview</title><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"><xml></xml><link rel="stylesheet" type="text/css" href="MSDN.css"><script language="javascript" type="text/javascript" src="scroll.js"></script></head><body id="bodyID" class="dtBODY"><div id="nsbanner"><div id="bannerrow1"><table class="bannerparthead" cellspacing="0">
+<tr id="hdr">
+<td class="runninghead">.NET/Link API Version 1.7</td>
+<td class="product"></td>
+</tr>
+</table>
+</div>
+<div id="TitleRow" style="WIDTH: 100%; HEIGHT: 41px"><h1 class="dtH1">.NET/Link Overview</h1>
+</div>
+</div>
+<div id="nstext"><p><EM>.NET/Link</EM> is a toolkit that integrates the Wolfram Language and
+.NET. It allows you to call .NET from the Wolfram Language and call the Wolfram Language from
+.NET.
+</p>
+<P>&nbsp;</P>
+<H4 class="dtH4">Calling .NET From the Wolfram Language</H4>
+<P><EM>.NET/Link</EM> allows Wolfram Language programmers to load arbitrary .NET types into the Wolfram Language,
+create objects of these types, call methods and properties, and so on. You can, in effect,
+"script" .NET from the Wolfram Language. This powerful capability literally makes all of .NET
+accessible directly from the Wolfram Language and allows&nbsp;exciting new
+categories of Wolfram Language programs to be created, incuding&nbsp;creating user
+interfaces, controlling COM objects like Microsoft Office, interacting directly with the
+Windows operating system, and many others.</P>
+<P>Calling .NET from the Wolfram Language is documented in Part 1 of&nbsp;the <EM>.NET/Link</EM>
+User Guide. The help file you are currently reading will not be of much value, as it describes the <EM>
+.NET/Link</EM> API as seen by .NET programmers, not Wolfram Language programmers. It can
+still be useful for Wolfram Language programmers who want to use one of the <EM>.NET/Link</EM>
+classes that are designed to be used from the Wolfram Language, such as the <A href="Wolfram.NETLink.UI.MathPictureBox.html">
+MathPictureBox</A> class.</P>
+<P>&nbsp;</P>
+<h4 class="dtH4">Calling the Wolfram Language from .NET</h4>
+<p><EM>.NET/Link</EM> allows programmers writing in any .NET language, such as C#&nbsp;or
+Visual Basic .NET, to launch the Wolfram System and use it as a computational engine. This
+help file describes the <EM>.NET/Link</EM> API that .NET programmers will use to interact with the Wolfram Language.
+</p>
+<P>A good place to start is the <A href="Wolfram.NETLink.IKernelLink.html">IKernelLink</A>&nbsp;interface.
+You will find a simple example program there. IKernelLink is the link interface that most
+programmers will use.</P>
+<P>You should also look at the <A href="Wolfram.NETLink.MathKernel.html">MathKernel</A>&nbsp;class.
+This component provides a very high-level interface for interacting with the Wolfram Language.
+It is especially intended for use in visual programming environments, as it is highly
+configurable via properties. It is especially useful for programs that want to capture not just
+the result of a computation, but also messages, Print output, or graphics generated as side
+effects of the computation.</P>
+<P>
+There are example programs in the <EM>.NET/Link</EM> examples directory: <FONT face="Courier New">&lt;Wolfram
+dir&gt;\SystemFiles\Links\NETLink\Examples\Part2</FONT>.</P>
+<P>There is more documentation for .NET programmers in the <EM>.NET/Link</EM> User Guide. Part 2 of the
+User Guide describes writing .NET programs that call the Wolfram Language, and it treats
+various topics in <EM>.NET/Link</EM> programming. The present help file is the API-level
+documentation.</P>
+<P><EM>.NET/Link</EM> consists of&nbsp;a single assembly, Wolfram.NETLink.dll. The Wolfram System installer creates a special registry key that allows the
+Wolfram.NETLink assembly to automatically appear in the Visual Studio "Add Reference" dialog.
+</P>
+<P>&nbsp;</P>
+<hr>
+<div id="footer"><p><a>Copyright (c) 2003-2019, Wolfram Research, Inc.</a></p>
+<p></p>
+</div>
+</div>
+</body>
+</html>

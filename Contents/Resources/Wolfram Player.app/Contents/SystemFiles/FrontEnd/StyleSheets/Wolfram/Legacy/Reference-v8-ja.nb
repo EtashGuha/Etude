@@ -1,0 +1,595 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     17166,        586]
+NotebookOptionsPosition[     11429,        449]
+NotebookOutlinePosition[     11946,        470]
+CellTagsIndexPosition[     11903,        467]
+MenuPosition->0
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[StyleData[StyleDefinitions -> FrontEnd`FileName[{"Wolfram", "Legacy"}, 
+  "Reference-v8.nb", CharacterEncoding -> "ShiftJIS"]]],
+
+Cell[CellGroupData[{
+
+Cell["Function Page Styles", "Section"],
+
+Cell[StyleData["LinkTrail"],
+ Editable->False,
+ CellFrame->{{0, 0}, {1, 0}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {0, 0}},
+ Deployed->True,
+ CellFrameMargins->{{25, 0}, {3, 3}},
+ CellFrameColor->GrayLevel[0.77],
+ StyleMenuListing->None,
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontWeight->"Plain",
+ FontColor->RGBColor[
+  0.5211108567940795, 0.5246814679179065, 0.577126726176852],
+ Background->RGBColor[0.95, 0.95, 0.95]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["AnchorBar"],
+ Editable->False,
+ CellMargins->{{14, 24}, {20, 4}},
+ TextAlignment->Right,
+ StyleMenuListing->None,
+ FontFamily->"Verdana",
+ FontSize->10,
+ FrameBoxOptions->{BaseStyle->{"AnchorBarActionMenu"},
+ FrameMargins->{{4, 4}, {3, 2}}},
+ PopupMenuBoxOptions->{BaseStyle->{FontSize -> 9}}],
+
+Cell[StyleData["AnchorBar", "Presentation"],
+ FontSize->18],
+
+Cell[StyleData["AnchorBar", "SlideShow"],
+ StyleMenuListing->None],
+
+Cell[StyleData["AnchorBar", "Printout"],
+ CellMargins->{{Inherited, Inherited}, {0, 0}},
+ CellElementSpacings->{"CellMinHeight"->1,
+ "ClosedCellHeight"->0},
+ CellOpen->False]
+}, Closed]],
+
+Cell[StyleData["AnchorBarActionMenu"],
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->RGBColor[{0.867, 0.502, 0.173}],
+ Background->RGBColor[{1, 0.992, 0.878}]],
+
+Cell[StyleData["PacletNameCell"],
+ Editable->False,
+ StyleMenuListing->None,
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontTracking->"Wide",
+ FontColor->GrayLevel[0.6]],
+
+Cell[StyleData["NotesSection"],
+ FontSize->12],
+
+Cell[StyleData["NotesFrameText"],
+ FontSize->12,
+ FontWeight->"Plain"],
+
+Cell[StyleData["SeeAlsoSection"],
+ FontSize->12,
+ FontTracking->"Plain"],
+
+Cell[StyleData["PrimaryExamplesSection"],
+ FontSize->12],
+
+Cell[StyleData["ExampleSection"],
+ FontSize->12,
+ FontWeight->"Plain",
+ FontSlant->"Plain",
+ FontTracking->"Plain",
+ FontVariations->{"Masked"->False,
+ "Outline"->False,
+ "Shadow"->False,
+ "StrikeThrough"->False,
+ "Underline"->False}],
+
+Cell[StyleData["TutorialsSection"],
+ FontSize->12],
+
+Cell[StyleData["RelatedLinksSection"],
+ FontSize->12,
+ FontTracking->"Plain"],
+
+Cell[StyleData["MoreAboutSection"],
+ FontSize->12],
+
+Cell[StyleData["ImportExportSection"],
+ FontSize->12],
+
+Cell[StyleData["NotebookInterfaceSection"],
+ FontSize->12],
+
+Cell[StyleData["ElementsSection"],
+ FontSize->12],
+
+Cell[StyleData["OptionsSection"],
+ FontSize->12],
+
+Cell[StyleData["PrimaryExamplesSection"],
+ Editable->False,
+ CellFrame->{{0, 0}, {0, 2}},
+ ShowCellBracket->Automatic,
+ ShowGroupOpener->True,
+ CellMargins->{{24, 24}, {9, 18}},
+ CellElementSpacings->{"ClosedGroupTopMargin"->60},
+ Evaluatable->False,
+ CellGroupingRules->{"SectionGrouping", 30},
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ ShowCellLabel->False,
+ CellLabelAutoDelete->True,
+ CellFrameMargins->4,
+ CellFrameColor->RGBColor[
+  0.4823530000000001, 0.5176470000000002, 0.8196080000000002],
+ ParagraphSpacing->{0.7000000000000002, 0},
+ StyleMenuListing->None,
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontTracking->"Wide",
+ FontColor->GrayLevel[0],
+ GridBoxOptions->{
+ GridBoxAlignment->{
+  "Columns" -> {Left, {Right}}, "ColumnsIndexed" -> {}, 
+   "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+ GridBoxItemSize->{"Columns" -> {{
+      Scaled[0.499]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[StyleData["UsageDetailsSection"],
+ Editable->False,
+ CellFrame->{{0, 0}, {0, 2}},
+ ShowCellBracket->Automatic,
+ ShowGroupOpener->True,
+ CellMargins->{{24, 24}, {9, 18}},
+ CellElementSpacings->{"ClosedGroupTopMargin"->60},
+ Evaluatable->False,
+ CellGroupingRules->{"SectionGrouping", 50},
+ ShowCellLabel->False,
+ CellLabelAutoDelete->True,
+ CellFrameMargins->4,
+ CellFrameColor->RGBColor[
+  0.4823530000000001, 0.5176470000000002, 0.8196080000000002],
+ ParagraphSpacing->{0.7000000000000002, 0},
+ StyleMenuListing->None,
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontTracking->"Wide",
+ FontColor->GrayLevel[0],
+ GridBoxOptions->{
+ GridBoxAlignment->{
+  "Columns" -> {Left, {Right}}, "ColumnsIndexed" -> {}, 
+   "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+ GridBoxItemSize->{"Columns" -> {{
+      Scaled[0.499]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["TutorialCollectionSection", StyleDefinitions -> StyleData[
+ "SeeAlsoSection"]],
+ Editable->False],
+
+Cell[StyleData["TutorialCollectionSection", "Presentation"],
+ FontSize->20],
+
+Cell[StyleData["TutorialCollectionSection", "Printout"],
+ ShowGroupOpener->False,
+ CellMargins->{{3, 0}, {7, 16}},
+ PageBreakBelow->False,
+ CellFrameColor->GrayLevel[0],
+ HyphenationOptions->{"HyphenationCharacter"->"-"},
+ FontSize->8,
+ FontColor->GrayLevel[0]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorial Page Styles", "Section"],
+
+Cell[StyleData["TutorialMoreAboutSection"],
+ Editable->False,
+ CellFrame->{{0, 0}, {0, 2}},
+ ShowCellBracket->Automatic,
+ ShowGroupOpener->False,
+ CellMargins->{{42, 24}, {9, 18}},
+ FontSize->10],
+
+Cell[StyleData["RelatedTutorialsSection"],
+ Editable->False,
+ CellFrame->{{0, 0}, {0, 2}},
+ ShowCellBracket->Automatic,
+ ShowGroupOpener->False,
+ CellMargins->{{42, 24}, {9, 18}},
+ FontSize->10],
+
+Cell[StyleData["TutorialRelatedLinksSection"],
+ Editable->False,
+ CellFrame->{{0, 0}, {0, 2}},
+ ShowCellBracket->Automatic,
+ ShowGroupOpener->False,
+ CellMargins->{{42, 24}, {9, 18}},
+ FontSize->10],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["TableHeader"],
+ Editable->False,
+ AutoIndent->False,
+ AutoSpacing->False,
+ LineIndent->0,
+ StyleMenuListing->None,
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontWeight->"Bold",
+ FontSlant->"Plain",
+ CellID->838858614],
+
+Cell[StyleData["TableHeader", "Printout"],
+ CellID->466582943]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["TutorialsTutorialCollectionSection", StyleDefinitions -> \
+StyleData["SeeAlsoSection"]],
+ Editable->False,
+ CellFrame->{{0, 0}, {0, 2}},
+ ShowCellBracket->Automatic,
+ ShowGroupOpener->False,
+ CellMargins->{{42, 24}, {9, 18}}],
+
+Cell[StyleData["TutorialsTutorialCollectionSection", "Presentation"],
+ FontSize->20],
+
+Cell[StyleData["TutorialsTutorialCollectionSection", "Printout"],
+ ShowGroupOpener->False,
+ CellMargins->{{3, 0}, {7, 16}},
+ PageBreakBelow->False,
+ CellFrameColor->GrayLevel[0],
+ HyphenationOptions->{"HyphenationCharacter"->"-"},
+ FontSize->8,
+ FontColor->GrayLevel[0]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Root Guide Page styles", "Section"],
+
+Cell[StyleData["RootHeading"],
+ FontSize->12],
+
+Cell[StyleData["RootText"],
+ FontSize->10],
+
+Cell[StyleData["RootSectionCaption"],
+ CellSize->{361, Inherited},
+ TextAlignment->"Left",
+ LineSpacing->{0.9, 0},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontWeight->"Plain",
+ FontColor->GrayLevel[0.4]],
+
+Cell[StyleData["RootCaption"],
+ FontSize->10],
+
+Cell[StyleData["RootMoreAbout"],
+ FontSize->10],
+
+Cell[StyleData["RootFooter", StyleDefinitions -> StyleData["RootCell"]],
+ CellMargins->FEPrivate`If[
+  FEPrivate`$OperatingSystem === "MacOSX", {{0, 0}, {0, -1}}, {{0, 0}, {0, 
+   0}}],
+ GridBoxOptions->{GridBoxDividers->{"Columns" -> {
+     GrayLevel[0.88], {None}, 
+     GrayLevel[0.88]}, "Rows" -> {{None}, 
+     GrayLevel[0.88]}}}],
+
+Cell[StyleData["RootFooterGrid"],
+ Editable->False,
+ CellFrame->{{0, 0}, {1, 1}},
+ CellFrameMargins->{{0, 0}, {10, 20}},
+ CellFrameColor->GrayLevel[1.],
+ CellSize->{500, Inherited},
+ GridBoxOptions->{GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+ GridBoxDividers->{"Columns" -> {{None}}, "Rows" -> {False, 
+     GrayLevel[0.882353], {False}}},
+ GridBoxSpacings->{
+  "Columns" -> 
+   FEPrivate`If[
+    FEPrivate`$OperatingSystem === "Windows", {0, {1.2}, 0}, {0, {2}, 0}], 
+   "Rows" -> {0, 1, {0.2}}}}],
+
+Cell[StyleData["RootFooterLink", StyleDefinitions -> StyleData["RootLink"]],
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontWeight->"Normal",
+ FontColor->GrayLevel[0.3]],
+
+Cell[StyleData["RootFooterRedLink"],
+ FontColor->RGBColor[0.890196, 0., 0.0392157]],
+
+Cell[StyleData["RootFooterMainLink", StyleDefinitions -> StyleData[
+ "RootFooterLink"]],
+ FontSize->10,
+ GraphicsBoxOptions->{BaselinePosition->Scaled[0.25]}],
+
+Cell[StyleData["RootFooterHyperlink", StyleDefinitions -> StyleData[
+ "Hyperlink"]],
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.3]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Guide Page Styles", "Section"],
+
+Cell[StyleData["GuideRelatedLinksSection"],
+ ShowGroupOpener->False,
+ CellMargins->{{24, 24}, {9, 18}},
+ FontSize->10],
+
+Cell[StyleData["GuideTutorialsSection"],
+ ShowGroupOpener->False,
+ CellMargins->{{24, 24}, {9, 18}},
+ FontSize->10],
+
+Cell[StyleData["GuideMoreAboutSection"],
+ ShowGroupOpener->False,
+ CellMargins->{{24, 24}, {9, 18}},
+ FontSize->10],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["GuideTutorialCollectionSection", StyleDefinitions -> \
+StyleData["TutorialsSection"]],
+ ShowGroupOpener->False,
+ CellMargins->{{24, 24}, {9, 18}}],
+
+Cell[StyleData["GuideTutorialCollectionSection", "Presentation"],
+ FontSize->20],
+
+Cell[StyleData["GuideTutorialCollectionSection", "Printout"],
+ CellFrame->{{0, 0}, {0, 2}},
+ CellMargins->{{3, 0}, {10, 30}},
+ PageBreakBelow->False,
+ CellFrameColor->GrayLevel[0],
+ HyphenationOptions->{"HyphenationCharacter"->"-"},
+ FontSize->10,
+ FontColor->GrayLevel[0]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["HowTo Page Styles", "Section",
+ CellID->590976175],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["MoreToExploreSection", StyleDefinitions -> StyleData[
+ "SeeAlsoSection"]],
+ ShowGroupOpener->False,
+ CellMargins->{{24, 24}, {9, 18}}],
+
+Cell[StyleData["MoreToExploreSection", "Printout"],
+ CellFrame->{{0, 0}, {0, 2}},
+ CellMargins->{{3, 0}, {10, 30}},
+ PageBreakBelow->False,
+ CellFrameColor->GrayLevel[0],
+ HyphenationOptions->{"HyphenationCharacter"->"-"},
+ FontSize->10,
+ FontColor->GrayLevel[0]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["MoreInformationSection", StyleDefinitions -> StyleData[
+ "SeeAlsoSection"]],
+ ShowGroupOpener->False,
+ CellMargins->{{24, 24}, {9, 18}}],
+
+Cell[StyleData["MoreInformationSection", "Printout"],
+ CellFrame->{{0, 0}, {0, 2}},
+ CellMargins->{{3, 0}, {10, 30}},
+ PageBreakBelow->False,
+ CellFrameColor->GrayLevel[0],
+ HyphenationOptions->{"HyphenationCharacter"->"-"},
+ FontSize->10,
+ FontColor->GrayLevel[0]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["ScreencastMarker"],
+ Deletable->False,
+ ShowCellBracket->Automatic,
+ CellMargins->{{72, 24}, {12, 4}},
+ CellElementSpacings->{"ClosedGroupTopMargin"->8},
+ ReturnCreatesNewCell->True,
+ DefaultNewCellStyle->"HowToAbstract",
+ FontFamily->"Verdana",
+ FontSize->22,
+ Magnification->0.5],
+
+Cell[StyleData["ScreencastMarker", "Printout"],
+ CellMargins->{{2, 2}, {6, 6}},
+ TextJustification->1,
+ Hyphenation->True,
+ FontSize->10]
+}, Closed]]
+}, Closed]]
+},
+Editable->True,
+Saveable->True,
+WindowSize->{1247, 724},
+WindowMargins->{{Automatic, 6}, {Automatic, 77}},
+ShowSelection->True,
+TrackCellChangeTimes->False,
+MenuSortingValue->None,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (September 13, 2011)",
+StyleDefinitions->"StylesheetFormatting.nb",
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[561, 21, 132, 1, 40, 132, 1, "StyleData", "StyleDefinitions", ""],
+Cell[CellGroupData[{
+Cell[718, 26, 39, 0, 51, "Section"],
+Cell[760, 28, 433, 14, 36, 28, 0, "StyleData", "LinkTrail", "All",
+ StyleMenuListing->None],
+Cell[CellGroupData[{
+Cell[1218, 46, 309, 9, 53, 28, 0, "StyleData", "AnchorBar", "All",
+ StyleMenuListing->None],
+Cell[1530, 57, 59, 1, 41, 44, 0, "StyleData", "AnchorBar", "Presentation"],
+Cell[1592, 60, 66, 1, 35, 41, 0, "StyleData", "AnchorBar", "SlideShow",
+ StyleMenuListing->None],
+Cell[1661, 63, 174, 4, 2, 40, 0, "StyleData", "AnchorBar", "Printout"]
+}, Closed]],
+Cell[1850, 70, 164, 4, 53, 38, 0, "StyleData", "AnchorBarActionMenu", "All"],
+Cell[2017, 76, 166, 6, 37, 33, 0, "StyleData", "PacletNameCell", "All",
+ StyleMenuListing->None],
+Cell[2186, 84, 46, 1, 49, 31, 0, "StyleData", "NotesSection", "All"],
+Cell[2235, 87, 70, 2, 39, 33, 0, "StyleData", "NotesFrameText", "All"],
+Cell[2308, 91, 72, 2, 64, 33, 0, "StyleData", "SeeAlsoSection", "All"],
+Cell[2383, 95, 56, 1, 64, 41, 0, "StyleData", "PrimaryExamplesSection", "All"],
+Cell[2442, 98, 234, 9, 35, 33, 0, "StyleData", "ExampleSection", "All"],
+Cell[2679, 109, 50, 1, 64, 35, 0, "StyleData", "TutorialsSection", "All"],
+Cell[2732, 112, 77, 2, 64, 38, 0, "StyleData", "RelatedLinksSection", "All"],
+Cell[2812, 116, 50, 1, 64, 35, 0, "StyleData", "MoreAboutSection", "All"],
+Cell[2865, 119, 53, 1, 40, 38, 0, "StyleData", "ImportExportSection", "All"],
+Cell[2921, 122, 58, 1, 40, 43, 0, "StyleData", "NotebookInterfaceSection", \
+"All"],
+Cell[2982, 125, 49, 1, 40, 34, 0, "StyleData", "ElementsSection", "All"],
+Cell[3034, 128, 48, 1, 58, 33, 0, "StyleData", "OptionsSection", "All"],
+Cell[3085, 131, 936, 28, 59, 41, 0, "StyleData", "PrimaryExamplesSection", \
+"All",
+ StyleMenuListing->None],
+Cell[4024, 161, 885, 26, 59, 38, 0, "StyleData", "UsageDetailsSection", "All",
+ StyleMenuListing->None],
+Cell[CellGroupData[{
+Cell[4934, 191, 113, 2, 61, 95, 1, "StyleData", "TutorialCollectionSection", \
+"All"],
+Cell[5050, 195, 75, 1, 44, 60, 0, "StyleData", "TutorialCollectionSection", \
+"Presentation"],
+Cell[5128, 198, 261, 7, 56, 56, 0, "StyleData", "TutorialCollectionSection", \
+"Printout"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5438, 211, 39, 0, 51, "Section"],
+Cell[5480, 213, 195, 6, 59, 43, 0, "StyleData", "TutorialMoreAboutSection", \
+"All"],
+Cell[5678, 221, 194, 6, 59, 42, 0, "StyleData", "RelatedTutorialsSection", \
+"All"],
+Cell[5875, 229, 198, 6, 59, 46, 0, "StyleData", \
+"TutorialRelatedLinksSection", "All"],
+Cell[CellGroupData[{
+Cell[6098, 239, 231, 10, 34, 30, 0, "StyleData", "TableHeader", "All",
+ StyleMenuListing->None,
+ CellID->838858614],
+Cell[6332, 251, 62, 1, 34, 42, 0, "StyleData", "TableHeader", "Printout",
+ CellID->466582943]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6431, 257, 241, 6, 61, 104, 1, "StyleData", \
+"TutorialsTutorialCollectionSection", "All"],
+Cell[6675, 265, 84, 1, 44, 69, 0, "StyleData", \
+"TutorialsTutorialCollectionSection", "Presentation"],
+Cell[6762, 268, 270, 7, 56, 65, 0, "StyleData", \
+"TutorialsTutorialCollectionSection", "Printout"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7081, 281, 41, 0, 51, "Section"],
+Cell[7125, 283, 45, 1, 38, 30, 0, "StyleData", "RootHeading", "All"],
+Cell[7173, 286, 42, 1, 35, 27, 0, "StyleData", "RootText", "All"],
+Cell[7218, 289, 203, 7, 37, 37, 0, "StyleData", "RootSectionCaption", "All"],
+Cell[7424, 298, 45, 1, 35, 30, 0, "StyleData", "RootCaption", "All"],
+Cell[7472, 301, 47, 1, 34, 32, 0, "StyleData", "RootMoreAbout", "All"],
+Cell[7522, 304, 335, 7, 26, 72, 0, "StyleData", "RootFooter", "All"],
+Cell[7860, 313, 518, 13, 67, 33, 0, "StyleData", "RootFooterGrid", "All"],
+Cell[8381, 328, 166, 4, 35, 76, 0, "StyleData", "RootFooterLink", "All"],
+Cell[8550, 334, 83, 1, 35, 36, 0, "StyleData", "RootFooterRedLink", "All"],
+Cell[8636, 337, 158, 3, 35, 88, 1, "StyleData", "RootFooterMainLink", "All"],
+Cell[8797, 342, 151, 4, 35, 84, 1, "StyleData", "RootFooterHyperlink", "All"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8985, 351, 36, 0, 35, "Section"],
+Cell[9024, 353, 118, 3, 59, 43, 0, "StyleData", "GuideRelatedLinksSection", \
+"All"],
+Cell[9145, 358, 115, 3, 59, 40, 0, "StyleData", "GuideTutorialsSection", \
+"All"],
+Cell[9263, 363, 115, 3, 59, 40, 0, "StyleData", "GuideMoreAboutSection", \
+"All"],
+Cell[CellGroupData[{
+Cell[9403, 370, 162, 3, 61, 102, 1, "StyleData", \
+"GuideTutorialCollectionSection", "All"],
+Cell[9568, 375, 80, 1, 44, 65, 0, "StyleData", \
+"GuideTutorialCollectionSection", "Presentation"],
+Cell[9651, 378, 273, 7, 76, 61, 0, "StyleData", \
+"GuideTutorialCollectionSection", "Printout"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9973, 391, 56, 1, 51, "Section",
+ CellID->590976175],
+Cell[CellGroupData[{
+Cell[10054, 396, 150, 3, 63, 90, 1, "StyleData", "MoreToExploreSection", \
+"All"],
+Cell[10207, 401, 263, 7, 76, 51, 0, "StyleData", "MoreToExploreSection", \
+"Printout"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10507, 413, 152, 3, 63, 92, 1, "StyleData", "MoreInformationSection", \
+"All"],
+Cell[10662, 418, 265, 7, 76, 53, 0, "StyleData", "MoreInformationSection", \
+"Printout"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10964, 430, 297, 9, 36, 35, 0, "StyleData", "ScreencastMarker", "All"],
+Cell[11264, 441, 137, 4, 38, 47, 0, "StyleData", "ScreencastMarker", \
+"Printout"]
+}, Closed]]
+}, Closed]]
+}
+]
+*)
+
+(* End of internal cache information *)

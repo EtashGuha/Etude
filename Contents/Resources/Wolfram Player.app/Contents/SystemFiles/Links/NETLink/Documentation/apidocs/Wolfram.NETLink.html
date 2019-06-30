@@ -1,0 +1,203 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>Wolfram.NETLink</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">Wolfram.NETLink Namespace</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> The main .NET/Link namespace. Looking for a place to start? Try the <a href="Wolfram.NETLink.IKernelLink.html">IKernelLink</a> interface. </p>
+      <p>
+        <a href="Wolfram.NETLinkHierarchy.html">Namespace hierarchy</a>
+      </p>
+      <h3 class="dtH3">Classes</h3>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Class</th>
+            <th width="50%">Description</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.Expr.html">Expr</a>
+            </td>
+            <td width="50%"> A representation of arbitrary <i>Mathematica</i> expressions in .NET. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.ExprFormatException.html">ExprFormatException</a>
+            </td>
+            <td width="50%"> The exception thrown by the "AsXXX" methods of the <a href="Wolfram.NETLink.Expr.html">Expr</a> class (e.g., <a href="Wolfram.NETLink.Expr.AsInt64.html">AsInt64</a>, <a href="Wolfram.NETLink.Expr.AsDouble.html">AsDouble</a>, <a href="Wolfram.NETLink.Expr.AsArray.html">AsArray</a>, etc.) </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MathDelegate.html">MathDelegate</a>
+            </td>
+            <td width="50%"> Contains the <a href="Wolfram.NETLink.MathDelegate.CreateDelegate_overload_1.html">CreateDelegate</a> method, which creates delegate objects that invoke a specified <i>Mathematica</i> function. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MathematicaNotReadyException.html">MathematicaNotReadyException</a>
+            </td>
+            <td width="50%"> This exception is thrown in <a href="Wolfram.NETLink.StdLink.RequestTransaction.html">RequestTransaction</a> when the kernel is not in a state where it is receptive to calls that <i>originate</i> in .NET, such as calls initiated by user actions in a .NET user interface. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MathKernel.html">MathKernel</a>
+            </td>
+            <td width="50%"> MathKernel is a non-visual component that provides a very high-level interface for interacting with <i>Mathematica</i>. It is especially intended for use in visual programming environments, as it is highly configurable via properties. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MathLinkException.html">MathLinkException</a>
+            </td>
+            <td width="50%"> The exception thrown by methods in the <a href="Wolfram.NETLink.IMathLink.html">IMathLink</a> and <a href="Wolfram.NETLink.IKernelLink.html">IKernelLink</a> interfaces when a link error occurs. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MathLinkFactory.html">MathLinkFactory</a>
+            </td>
+            <td width="50%"> MathLinkFactory is the class that is used to construct objects of the various link interfaces (<a href="Wolfram.NETLink.IKernelLink.html">IKernelLink</a>, <a href="Wolfram.NETLink.IMathLink.html">IMathLink</a>, and <a href="Wolfram.NETLink.ILoopbackLink.html">ILoopbackLink</a>). </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.NETLinkConstants.html">NETLinkConstants</a>
+            </td>
+            <td width="50%"> A handful of constants, including the .NET/Link version number. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.StdLink.html">StdLink</a>
+            </td>
+            <td width="50%"> StdLink is a container for some methods and state related to the link back to the kernel. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.TypeLoader.html">TypeLoader</a>
+            </td>
+            <td width="50%"> TypeLoader is the class responsible for loading all assemblies and types from the Mathematica functions LoadNETAssembly and LoadNETType. </td>
+          </tr>
+        </table>
+      </div>
+      <h3 class="dtH3">Interfaces</h3>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Interface</th>
+            <th width="50%">Description</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.IKernelLink.html">IKernelLink</a>
+            </td>
+            <td width="50%"> The link interface that most programmers will use. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.ILinkMark.html">ILinkMark</a>
+            </td>
+            <td width="50%"> Represents a mark in the incoming MathLink data stream that you can seek back to. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.ILoopbackLink.html">ILoopbackLink</a>
+            </td>
+            <td width="50%"> Represents a special type of link known as a loopback link. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.IMathLink.html">IMathLink</a>
+            </td>
+            <td width="50%"> IMathLink is the low-level interface that is the root of all link objects in .NET/Link. The methods in IMathLink correspond roughly to a subset of those in the C-language MathLink API. </td>
+          </tr>
+        </table>
+      </div>
+      <h3 class="dtH3">Delegates</h3>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Delegate</th>
+            <th width="50%">Description</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MessageHandler.html">MessageHandler</a>
+            </td>
+            <td width="50%"> Represents the method that will handle the MessageArrived event. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.PacketHandler.html">PacketHandler</a>
+            </td>
+            <td width="50%"> Represents the method that will handle the PacketArrived event. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.YieldFunction.html">YieldFunction</a>
+            </td>
+            <td width="50%"> Represents the method that will handle the Yield event. </td>
+          </tr>
+        </table>
+      </div>
+      <h3 class="dtH3">Enumerations</h3>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Enumeration</th>
+            <th width="50%">Description</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.ExpressionType.html">ExpressionType</a>
+            </td>
+            <td width="50%"> Designates the type of a <i>Mathematica</i> expression being read or written on a link, or in an <a href="Wolfram.NETLink.Expr.html">Expr</a>. Used by the IMathLink methods <a href="Wolfram.NETLink.IMathLink.PutNext.html">PutNext</a>, <a href="Wolfram.NETLink.IMathLink.GetExpressionType.html">GetExpressionType</a>, and <a href="Wolfram.NETLink.IMathLink.GetNextExpressionType.html">GetNextExpressionType</a>, and by the <b>Expr</b> class. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MathKernel.ResultFormatType.html">MathKernel.ResultFormatType</a>
+            </td>
+            <td width="50%"> Values for the <a href="Wolfram.NETLink.MathKernel.ResultFormat.html">ResultFormat</a> property. These values specify the format in which results from computations should be returned. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MathLinkMessage.html">MathLinkMessage</a>
+            </td>
+            <td width="50%"> Designates the type of a low-level MathLink message. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.PacketType.html">PacketType</a>
+            </td>
+            <td width="50%"> Designates a MathLink packet type. Used by the <a href="Wolfram.NETLink.PacketHandler.html">PacketHandler</a> delegate, and returned by <a href="Wolfram.NETLink.IMathLink.NextPacket.html">NextPacket</a>. </td>
+          </tr>
+        </table>
+      </div>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

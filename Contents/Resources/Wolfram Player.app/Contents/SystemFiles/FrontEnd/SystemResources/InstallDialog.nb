@@ -1,0 +1,600 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24997,        590]
+NotebookOptionsPosition[     23908,        559]
+NotebookOutlinePosition[     24984,        590]
+CellTagsIndexPosition[     24941,        587]
+WindowTitle->Install Wolfram System Item
+WindowFrame->ModelessDialog*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`type$$ = "", $CellContext`source$$ = 
+  "", $CellContext`label$$ = "", $CellContext`loc$$ = 
+  FrontEnd`FileName[{FrontEnd`$UserBaseDirectory}], $CellContext`name$$ = ""}, 
+  DynamicWrapperBox[
+   TagBox[GridBox[{
+      {
+       PaneBox[
+        TagBox[GridBox[{
+           {
+            DynamicBox[ToBoxes[
+              FEPrivate`FrontEndResource["FEStrings", "installType"], 
+              StandardForm],
+             ImageSizeCache->{118., {3., 9.}}], 
+            DynamicBox[ToBoxes[
+              PopupMenu[
+               Dynamic[$CellContext`type$$], 
+               
+               Thread[{
+                 "Palette", "Stylesheet", "Package", ".mx File", 
+                  "WolframLink Program", "Application"} -> 
+                FrontEndResource["FEStrings", "installTypesList"]], ImageSize -> 
+               Full, BaseStyle -> "ControlStyle", Alignment -> Left], 
+              StandardForm],
+             ImageSizeCache->{154., {8., 18.}}]},
+           {
+            DynamicBox[ToBoxes[
+              FEPrivate`FrontEndResource["FEStrings", "installSource"], 
+              StandardForm],
+             ImageSizeCache->{39., {0., 9.}}], 
+            DynamicBox[ToBoxes[
+              ActionMenu[
+               Dynamic[$CellContext`label$$], 
+               Join[
+                Replace[
+                 
+                 Apply[#2 :> ($CellContext`label$$ = #2; \
+$CellContext`source$$ = #)& , 
+                  If[
+                   
+                   MemberQ[{
+                    "Palette", "Stylesheet", "Package"}, $CellContext`type$$], 
+                   (FE`Evaluate[
+                    FEPrivate`GetPopupList[#]]& )[
+                    StringJoin[
+                    "MenuList", $CellContext`type$$, "Windows"]], {}], {1}], {
+                   Pattern[$CellContext`x, 
+                    BlankSequence[]]} :> {$CellContext`x, Delimiter}], 
+                If[
+                 
+                 MemberQ[{
+                  "Palette", "Stylesheet", "Package"}, $CellContext`type$$], {
+                 Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", 
+                    "installFromClip"]]] :> ($CellContext`label$$ = Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "installFromClip"]]]; $CellContext`source$$ = 
+                    "Clipboard Contents")}, {}], {Dynamic[
+                   RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "installFromFile"]]] :> Replace[
+                   SystemDialogInput["FileOpen", 
+                    Which[
+                    
+                    MemberQ[{
+                    ".mx File", "WolframLink Program", 
+                    "Application"}, $CellContext`type$$], {"", 
+                    FrontEndResource["FEStrings", 
+                    StringJoin["install", 
+                    Last[
+                    StringSplit[$CellContext`type$$]], 
+                    "Filter"]]}, $CellContext`type$$ === "Package", "*.m", 
+                    True, "*.nb"], WindowTitle -> " "], 
+                   Pattern[$CellContext`s$, 
+                    Blank[String]] :> ($CellContext`label$$ = 
+                    Tooltip[$CellContext`name$$ = 
+                    FileBaseName[$CellContext`source$$ = $CellContext`s$], \
+$CellContext`s$])]}, 
+                If[$CellContext`type$$ === "Application", {Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "installFromDir"]]] :> Replace[
+                    SystemDialogInput["Directory", WindowTitle -> " "], 
+                    Pattern[$CellContext`s$, 
+                    Blank[String]] :> ($CellContext`label$$ = 
+                    Tooltip[$CellContext`name$$ = 
+                    FileBaseName[$CellContext`source$$ = $CellContext`s$], \
+$CellContext`s$])]}, {}]], Method -> "Queued", Appearance -> "Popup", 
+               ImageSize -> Full, BaseStyle -> "ControlStyle", Alignment -> 
+               Left], StandardForm],
+             ImageSizeCache->{153., {9., 18.}},
+             TrackedSymbols:>{$CellContext`type$$}]},
+           {
+            DynamicBox[ToBoxes[
+              FEPrivate`FrontEndResource["FEStrings", "installName"], 
+              StandardForm],
+             ImageSizeCache->{69., {1., 9.}}], 
+            InputFieldBox[Dynamic[$CellContext`name$$], String,
+             ContinuousAction->True,
+             Enabled->Dynamic[
+               FEPrivate`And[
+                FEPrivate`UnsameQ[$CellContext`source$$, ""], 
+                FEPrivate`UnsameQ[$CellContext`type$$, "Application"]]],
+             ImageSize->Full]}
+          },
+          AutoDelete->False,
+          
+          GridBoxAlignment->{
+           "Columns" -> {Right, Left}, "Rows" -> {{Baseline}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+         "Grid"],
+        FrameMargins->10,
+        ImageSize->{300, Automatic}], "\[SpanFromLeft]"},
+      {
+       InterpretationBox[
+        StyleBox[GridBox[{
+           {GridBox[{
+              {
+               
+               RadioButtonBox[Dynamic[$CellContext`loc$$], {
+                FrontEnd`FileName[{FrontEnd`$UserBaseDirectory}]},
+                
+                BaseStyle->{
+                 RadioButtonBoxOptions -> {
+                   Appearance -> Small, ImageMargins -> {{10, 3}, {5, 0}}}},
+                DefaultBaseStyle->"RadioButtonBar"], 
+               StyleBox[
+                TagBox[
+                 TagBox[
+                  TooltipBox[
+                   
+                   DynamicBox[FEPrivate`FrontEndResource[
+                    "FEStrings", "installUserBaseDir"],
+                    ImageSizeCache->{169., {3., 12.}}],
+                   DynamicBox[
+                    ToBoxes[
+                    ToFileName[
+                    Switch[$CellContext`type$$, "Palette", 
+                    
+                    FrontEnd`FileName[{
+                    FrontEnd`$UserBaseDirectory, "SystemFiles", "FrontEnd", 
+                    "Palettes"}], "Stylesheet", 
+                    
+                    FrontEnd`FileName[{
+                    FrontEnd`$UserBaseDirectory, "SystemFiles", "FrontEnd", 
+                    "Stylesheets"}], 
+                    Blank[Symbol], 
+                    FrontEnd`FileName[{FrontEnd`$UserBaseDirectory}], 
+                    Blank[], 
+                    
+                    FrontEnd`FileName[{
+                    FrontEnd`$UserBaseDirectory, "Applications"}]]], 
+                    StandardForm]],
+                   TooltipDelay->Automatic],
+                  Annotation[#, 
+                   Dynamic[
+                    ToFileName[
+                    Switch[$CellContext`type$$, "Palette", 
+                    
+                    FrontEnd`FileName[{
+                    FrontEnd`$UserBaseDirectory, "SystemFiles", "FrontEnd", 
+                    "Palettes"}], "Stylesheet", 
+                    
+                    FrontEnd`FileName[{
+                    FrontEnd`$UserBaseDirectory, "SystemFiles", "FrontEnd", 
+                    "Stylesheets"}], 
+                    Blank[Symbol], 
+                    FrontEnd`FileName[{FrontEnd`$UserBaseDirectory}], 
+                    Blank[], 
+                    
+                    FrontEnd`FileName[{
+                    FrontEnd`$UserBaseDirectory, "Applications"}]]]], 
+                   "Tooltip"]& ],
+                 
+                 EventHandlerTag[{
+                  "MouseDown" :> ($CellContext`loc$$ = 
+                    FrontEnd`FileName[{FrontEnd`$UserBaseDirectory}]), Method -> 
+                   "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+                   True}]], "RadioButtonBarLabel",
+                StripOnInput->False]}
+             },
+             AutoDelete->False,
+             
+             GridBoxAlignment->{
+              "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+               "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+             GridBoxSpacings->{"Columns" -> {
+                 Offset[0.27999999999999997`], {
+                  Offset[0.21]}, 
+                 Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+               "Rows" -> {
+                 Offset[0.2], {
+                  Offset[0.4]}, 
+                 Offset[0.2]}, "RowsIndexed" -> {}}]},
+           {GridBox[{
+              {
+               
+               RadioButtonBox[Dynamic[$CellContext`loc$$], {
+                FrontEnd`FileName[{FrontEnd`$BaseDirectory}]},
+                BaseStyle->{
+                 RadioButtonBoxOptions -> {
+                   Appearance -> Small, ImageMargins -> {{10, 3}, {5, 0}}}},
+                DefaultBaseStyle->"RadioButtonBar"], 
+               StyleBox[
+                TagBox[
+                 TagBox[
+                  TooltipBox[
+                   
+                   DynamicBox[FEPrivate`FrontEndResource[
+                    "FEStrings", "installSystemBaseDir"],
+                    ImageSizeCache->{219., {3., 9.}}],
+                   DynamicBox[
+                    ToBoxes[
+                    ToFileName[
+                    Switch[$CellContext`type$$, "Palette", 
+                    
+                    FrontEnd`FileName[{
+                    FrontEnd`$BaseDirectory, "SystemFiles", "FrontEnd", 
+                    "Palettes"}], "Stylesheet", 
+                    
+                    FrontEnd`FileName[{
+                    FrontEnd`$BaseDirectory, "SystemFiles", "FrontEnd", 
+                    "Stylesheets"}], 
+                    Blank[Symbol], 
+                    FrontEnd`FileName[{FrontEnd`$BaseDirectory}], 
+                    Blank[], 
+                    
+                    FrontEnd`FileName[{
+                    FrontEnd`$BaseDirectory, "Applications"}]]], 
+                    StandardForm]],
+                   TooltipDelay->Automatic],
+                  Annotation[#, 
+                   Dynamic[
+                    ToFileName[
+                    Switch[$CellContext`type$$, "Palette", 
+                    
+                    FrontEnd`FileName[{
+                    FrontEnd`$BaseDirectory, "SystemFiles", "FrontEnd", 
+                    "Palettes"}], "Stylesheet", 
+                    
+                    FrontEnd`FileName[{
+                    FrontEnd`$BaseDirectory, "SystemFiles", "FrontEnd", 
+                    "Stylesheets"}], 
+                    Blank[Symbol], 
+                    FrontEnd`FileName[{FrontEnd`$BaseDirectory}], 
+                    Blank[], 
+                    
+                    FrontEnd`FileName[{
+                    FrontEnd`$BaseDirectory, "Applications"}]]]], 
+                   "Tooltip"]& ],
+                 
+                 EventHandlerTag[{
+                  "MouseDown" :> ($CellContext`loc$$ = 
+                    FrontEnd`FileName[{FrontEnd`$BaseDirectory}]), Method -> 
+                   "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+                   True}]], "RadioButtonBarLabel",
+                StripOnInput->False]}
+             },
+             AutoDelete->False,
+             
+             GridBoxAlignment->{
+              "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+               "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+             GridBoxSpacings->{"Columns" -> {
+                 Offset[0.27999999999999997`], {
+                  Offset[0.21]}, 
+                 Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+               "Rows" -> {
+                 Offset[0.2], {
+                  Offset[0.4]}, 
+                 Offset[0.2]}, "RowsIndexed" -> {}}]}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}], "Deploy"],
+        RadioButtonBar[
+         Dynamic[$CellContext`loc$$], {
+         FrontEnd`FileName[{FrontEnd`$UserBaseDirectory}] -> EventHandler[
+            Tooltip[
+             Dynamic[
+              RawBoxes[
+               FEPrivate`FrontEndResource[
+               "FEStrings", "installUserBaseDir"]]], 
+             Dynamic[
+              ToFileName[
+               Switch[$CellContext`type$$, "Palette", 
+                
+                FrontEnd`FileName[{
+                 FrontEnd`$UserBaseDirectory, "SystemFiles", "FrontEnd", 
+                  "Palettes"}], "Stylesheet", 
+                
+                FrontEnd`FileName[{
+                 FrontEnd`$UserBaseDirectory, "SystemFiles", "FrontEnd", 
+                  "Stylesheets"}], 
+                Blank[Symbol], 
+                FrontEnd`FileName[{FrontEnd`$UserBaseDirectory}], 
+                Blank[], 
+                
+                FrontEnd`FileName[{
+                 FrontEnd`$UserBaseDirectory, "Applications"}]]]], 
+             TooltipDelay -> Automatic], 
+            "MouseDown" :> ($CellContext`loc$$ = 
+             FrontEnd`FileName[{FrontEnd`$UserBaseDirectory}])], 
+          FrontEnd`FileName[{FrontEnd`$BaseDirectory}] -> EventHandler[
+            Tooltip[
+             Dynamic[
+              RawBoxes[
+               FEPrivate`FrontEndResource[
+               "FEStrings", "installSystemBaseDir"]]], 
+             Dynamic[
+              ToFileName[
+               Switch[$CellContext`type$$, "Palette", 
+                
+                FrontEnd`FileName[{
+                 FrontEnd`$BaseDirectory, "SystemFiles", "FrontEnd", 
+                  "Palettes"}], "Stylesheet", 
+                
+                FrontEnd`FileName[{
+                 FrontEnd`$BaseDirectory, "SystemFiles", "FrontEnd", 
+                  "Stylesheets"}], 
+                Blank[Symbol], 
+                FrontEnd`FileName[{FrontEnd`$BaseDirectory}], 
+                Blank[], 
+                
+                FrontEnd`FileName[{
+                 FrontEnd`$BaseDirectory, "Applications"}]]]], TooltipDelay -> 
+             Automatic], 
+            "MouseDown" :> ($CellContext`loc$$ = 
+             FrontEnd`FileName[{FrontEnd`$BaseDirectory}])]}, Appearance -> 
+         "Vertical", 
+         BaseStyle -> {
+          RadioButtonBoxOptions -> {
+            Appearance -> Small, ImageMargins -> {{10, 3}, {5, 0}}}}]], 
+       "\[SpanFromLeft]"},
+      {
+       FrameBox[
+        ButtonBox[
+         DynamicBox[FEPrivate`FrontEndResource["FEStrings", "installHelp"],
+          ImageSizeCache->{25., {3., 9.}}],
+         Appearance->Automatic,
+         ButtonFunction:>FrontEndTokenExecute["OpenHelpLink", {
+            StringJoin["ref/menuitem/Install", 
+             Replace[
+              
+              CurrentValue[$FrontEnd, {
+               PrivateFrontEndOptions, "DialogSettings", "Install", "Type"}, 
+               ""], Except["Palette"] -> ""]], Automatic}],
+         Evaluator->Automatic,
+         ImageMargins->{{2, 2}, {10, 10}},
+         ImageSize->FrontEnd`CurrentValue["DefaultButtonSize"],
+         Method->"Preemptive"],
+        FrameMargins->0,
+        FrameStyle->None,
+        StripOnInput->False], 
+       DynamicModuleBox[{$CellContext`dialog$$, $CellContext`copyfiles$$, \
+$CellContext`installDir$$, $CellContext`removepreexisting$$, \
+$CellContext`newfiles$$}, 
+        StyleBox[
+         DynamicBox[FEPrivate`FrontEndResource[
+          "FEExpressions", "ChoiceButtonsOrder"][{
+            ButtonBox[
+             DynamicBox[
+              FEPrivate`FrontEndResourceString["okButtonText"]], 
+             ButtonFunction :> (If[$CellContext`type$$ === "Application", If[
+                  
+                  DirectoryQ[$CellContext`source$$], \
+$CellContext`installDir$$ = ToFileName[{$CellContext`loc$$, "Applications", 
+                    
+                    FileBaseName[$CellContext`source$$]}]; \
+$CellContext`removepreexisting$$[$CellContext`installDir$$]; 
+                  CopyDirectory[$CellContext`source$$, \
+$CellContext`installDir$$], $CellContext`newfiles$$ = 
+                   Import[$CellContext`source$$, 
+                    "FileNames"]; $CellContext`installDir$$ = 
+                   ToFileName[{$CellContext`loc$$, 
+                    "Applications"}]; $CellContext`removepreexisting$$[
+                    Union[
+                    Map[ToFileName[{$CellContext`installDir$$, 
+                    
+                    FileNameTake[#, 
+                    1]}]& , $CellContext`newfiles$$]]]; \
+$CellContext`copyfiles$$[$CellContext`source$$, $CellContext`installDir$$, \
+$CellContext`newfiles$$]]; Null, 
+                FrontEndExecute[{
+                  
+                  FrontEnd`Install[$CellContext`type$$, \
+$CellContext`source$$, $CellContext`loc$$, $CellContext`name$$]}]]; 
+              DialogReturn[]), Appearance -> "DefaultButton", Enabled -> 
+             Dynamic[
+               Or[
+                
+                And[$CellContext`type$$ =!= 
+                 "Application", $CellContext`source$$ =!= 
+                 "", $CellContext`name$$ =!= ""], 
+                And[$CellContext`type$$ === "Application", 
+                 Or[
+                  Quiet[
+                   DirectoryQ[$CellContext`source$$]], 
+                  StringMatchQ[$CellContext`source$$, 
+                   Alternatives["*.zip", "*.gz", "*.tar", "*.bz2"]]]]]], 
+             Method -> "Queued", Evaluator -> Automatic], 
+            ButtonBox[
+             DynamicBox[
+              FEPrivate`FrontEndResourceString["cancelButtonText"]], 
+             ButtonFunction :> DialogReturn[$Canceled], Appearance -> 
+             "CancelButton", Evaluator -> Automatic, Method -> "Preemptive"]}],
+          ImageSizeCache->{192., {20., 26.}}],
+         Deployed->True,
+         DynamicUpdating->True,
+         ButtonBoxOptions->{ImageMargins->{{2, 2}, {10, 10}},
+         ImageSize->Dynamic[
+           CurrentValue["DefaultButtonSize"]]},
+         GridBoxOptions->{AutoDelete->False,
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}}],
+        DynamicModuleValues:>{{
+          DownValues[$CellContext`copyfiles$$] = {HoldPattern[
+               $CellContext`copyfiles$$[
+                PatternTest[
+                 Pattern[$CellContext`sourcepath$, 
+                  Blank[]], StringMatchQ[#, 
+                  Alternatives["*.zip", "*.gz", "*.tar", "*.bz2"]]& ], 
+                Pattern[$CellContext`outputDir$, 
+                 Blank[]], 
+                Pattern[$CellContext`installfiles$, 
+                 Blank[]]]] :> 
+             DynamicModule[{$CellContext`tempdir = CreateDirectory[]}, 
+               ExtractArchive[$CellContext`sourcepath$, $CellContext`tempdir]; \
+$CellContext`copyfiles$$[$CellContext`tempdir, $CellContext`outputDir$, \
+$CellContext`installfiles$]; 
+               DeleteDirectory[$CellContext`tempdir, DeleteContents -> True]],
+              HoldPattern[
+               $CellContext`copyfiles$$[
+                Pattern[$CellContext`sourcepath$, 
+                 Blank[]], 
+                Pattern[$CellContext`outputDir$, 
+                 Blank[]], 
+                Pattern[$CellContext`installfiles$, 
+                 Blank[]]]] :> 
+             DynamicModule[{}, SetDirectory[$CellContext`outputDir$]; Scan[If[
+                  Not[
+                   DirectoryQ[#]], 
+                  CreateDirectory[#]]& , 
+                 DeleteCases[
+                  Union[
+                   Map[DirectoryName, $CellContext`installfiles$]], 
+                  ""]]; $CellContext`dialog$$ = CreateDialog[
+                  Grid[{{
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "installExtractFrom"]]], 
+                    " : ", $CellContext`sourcepath$}, {
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "installExtractTo"]]], " : ", 
+                    Directory[]}, {
+                    ProgressIndicator[
+                    Dynamic[
+                    Clock[]], Indeterminate, ImageSize -> 300], 
+                    SpanFromLeft}, {
+                    Pane[
+                    Dynamic[$CellContext`name$$], {300, 50}], SpanFromLeft}}, 
+                   Alignment -> Left, Spacings -> {Automatic, 2}], 
+                  WindowTitle -> Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "FEStrings", "installExtractTitle"]], Modal -> True, 
+                  NotebookEventActions -> {}]; 
+               Scan[Export[$CellContext`name$$ = #, 
+                  Import[$CellContext`sourcepath$, {#, "String"}], 
+                  "String"]& , $CellContext`installfiles$]; 
+               NotebookClose[$CellContext`dialog$$]; ResetDirectory[]]}}, {
+          DownValues[$CellContext`removepreexisting$$] = {HoldPattern[
+               $CellContext`removepreexisting$$[
+                Pattern[$CellContext`installpath, 
+                 Blank[]]]] :> Switch[
+               FileType[$CellContext`installpath], File, 
+               DeleteFile[$CellContext`installpath], Directory, 
+               
+               DeleteDirectory[$CellContext`installpath, DeleteContents -> 
+                True], 
+               Blank[], Null]}, 
+           Attributes[$CellContext`removepreexisting$$] = {Listable}}}]}
+     },
+     AutoDelete->False,
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "Rows" -> {{Baseline}}, 
+       "ItemsIndexed" -> {{-1, -1} -> {Right, Inherited}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {0, 2, 0.5, 1}}],
+    "Grid"], If[CurrentValue[
+      EvaluationNotebook[], WindowMargins] =!= Automatic, CurrentValue[
+      EvaluationNotebook[], WindowMargins] = MapAt[Automatic& , 
+      AbsoluteCurrentValue[
+       EvaluationNotebook[], WindowMargins], {{1, 2}, {2, 1}}]],
+   ImageSizeCache->{300., {111., 117.}}],
+  Deinitialization:>(
+   CurrentValue[$FrontEnd, {
+      PrivateFrontEndOptions, "DialogSettings", "Install", "Source"}] = 
+    Inherited; 
+   CurrentValue[$FrontEnd, {
+      PrivateFrontEndOptions, "DialogSettings", "Install", 
+       "Type"}] = $CellContext`type$$),
+  DynamicModuleValues:>{},
+  Initialization:>({$CellContext`type$$, $CellContext`source$$} = 
+    Map[CurrentValue[$FrontEnd, {
+       PrivateFrontEndOptions, "DialogSettings", "Install", #}, ""]& , {
+      "Type", "Source"}]; $CellContext`label$$ = 
+    Replace[$CellContext`source$$, 
+      FE`Evaluate[
+       FEPrivate`GetPopupList["MenuListStylesheetWindows"]]])]],
+ CellMargins->{{8, 8}, {0, 0}},
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue[
+  "PanelFontSize"],ExpressionUUID->"ce118270-d062-4f4d-a9fe-64884a4d1b28"]
+},
+Evaluator->"Local",
+NotebookEventActions->{"ReturnKeyDown" :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {"MenuCommand", "EvaluateCells"} :> 
+  FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {
+   "MenuCommand", "HandleShiftReturn"} :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {
+   "MenuCommand", "EvaluateNextCell"} :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], "EscapeKeyDown" :> (FE`Evaluate[
+     FEPrivate`FindAndClickCancelButton[]]; DialogReturn[$Canceled]), 
+  "WindowClose" :> (FE`Evaluate[
+     FEPrivate`FindAndClickCancelButton[]]; DialogReturn[$Canceled])},
+WindowSize->All,
+WindowMargins->Automatic,
+WindowFrame->"ModelessDialog",
+WindowTitle->Dynamic[
+  FEPrivate`FrontEndResource["FEStrings", "installTitle"]],
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->"SystemDialog.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[607, 21, 23297, 536, 230, InheritFromParent,ExpressionUUID->"ce118270-d062-4f4d-a9fe-64884a4d1b28",
+ PageBreakAbove->True,
+ PageBreakWithin->False]
+}
+]
+*)
+
+(* End of internal cache information *)
+

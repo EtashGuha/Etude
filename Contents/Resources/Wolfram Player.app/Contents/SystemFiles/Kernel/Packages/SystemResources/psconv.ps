@@ -1,0 +1,710 @@
+%!PS-Adobe-3.0 Resource-ProcSet
+%%BeginResource: procset WRI-PSConvert 1.0 0
+
+/.FontNameSub true store
+
+190 dict begin
+
+/_convdict currentdict def
+
+/_bdef { bind def } bind def
+/_cdef { _convdict 3 1 roll put } _bdef
+
+/_realops 30 dict def
+
+[ /clip /colorimage /fill /image /restore /selectfont /save /setcmykcolor
+  /setdash /setfont /setgray /setlinecap /setlinejoin /setlinewidth
+  /setmiterlimit /setrgbcolor /show /showpage /stroke
+] {
+  _realops exch dup load put
+} forall
+
+/_opexec {
+  _realops exch get exec
+} _bdef
+
+/_gsave /gsave load def
+/_grestore /grestore load def
+/_writestring /writestring load def
+
+% Defaults for output operators
+
+/_deftm matrix defaultmatrix def
+
+/_str 256 string def
+/_savstore 256 string def		
+/_eol (\n) def
+
+% Scratch variables
+
+/_hexin 3 string def
+/_hexout _hexin 1 2 getinterval def 
+
+/_tm0 matrix def
+/_tm1 matrix def
+/_tm2 matrix def
+
+/_real_write {
+  /_write /_writestring load _cdef
+} def
+
+/_first_write {
+  _real_write
+  _savstore copy
+  /_savstr exch _cdef
+  /_savfp exch _cdef
+  _pagenum 0 eq {
+    _begin_doc
+  } if
+  /_pagenum dup load 1 add store
+  _begin_page
+  _savfp _savstr _write
+} def
+
+/_setup_write {
+  /_write /_first_write load _cdef
+  /_glevel 1 _cdef		% gstack has implicit first gsave level
+} def
+
+/_print {
+  _fp exch _write    
+} def
+
+/_printnl {
+  _fp exch _write    
+  _fp _eol _write
+} def
+
+/_prnum {
+  dup abs .0001 lt { pop 0 } if
+  _fp exch _str cvs _write    
+  _fp ( ) _write
+} def
+
+/_prround {
+  round cvi
+  _fp exch _str cvs _write    
+  _fp ( ) _write
+} def
+
+/_prop {
+  _fp exch _write
+  _fp _eol _write
+} def
+
+/_prname {
+  _fp (/) _write
+  _fp exch _str cvs _write    
+} def
+
+/_esctable 256 string def
+(\(\)\\)	% Characters to escape
+{ _esctable exch 1 put } forall
+0 1 31		% Range to octal-ize
+{ _esctable exch 2 put } for
+128 1 255	% Range to octal-ize
+{ _esctable exch 2 put } for
+
+/_prstr 1 string def
+/_proct 3 string def
+
+/_escprocs [
+  {
+    _prstr exch 0 exch put
+    _prstr _print
+  } bind
+  {
+    (\\) _print
+    _prstr exch 0 exch put
+    _prstr _print
+  } bind
+  {
+    (\\) _print
+    8 _proct cvrs
+    dup length neg 3 add
+    { (0) _print } repeat
+    _print
+  } bind
+] def
+
+/_prstring {
+  { dup _esctable exch get
+    _escprocs exch get exec
+  }
+  forall
+} def
+
+/_dopath {
+  /_isclosed false _cdef
+  _gsave _deftm setmatrix
+  /_mx false _cdef
+  /_nopath true _cdef
+  { _mx false eq {
+      /_mx 2 index _cdef /_my 1 index _cdef		% save points for close
+    } if
+    exch _prnum _prnum _pathops 0 get _prop
+  } % move
+  { exch _prnum _prnum _pathops 1 get _prop
+    /_nopath false _cdef
+  } % line
+  {
+    6 array astore
+    { _prnum } forall
+    _pathops 2 get _prop
+    /_nopath false _cdef
+  } % curve
+  { _mx false eq not _isclosed not and {
+      _mx _prnum _my _prnum _pathops 1 get _prop
+    } if
+    /_isclosed true _cdef
+  } % close
+  pathforall
+  _grestore
+  newpath
+} def
+
+/_arraycompare {
+  2 copy length exch length eq
+  {
+    0 exch true exch 
+    {
+      3 index 3 index get
+      eq and
+      exch 1 add exch
+    } forall
+    exch pop exch pop
+  } {
+    pop pop false
+  } ifelse
+} bind def
+
+/_arrayeq {
+  2 copy eq { pop pop true } { _arraycompare } ifelse
+} bind def
+
+/_setcolor {
+  currentcmykcolor pop
+  add add 0 eq
+  {
+    currentgray _prnum
+    { (g) } { (G) } ifelse _prop
+  } {
+    _currentcol { _prnum } forall
+    { (k) } { (K) } ifelse _prop
+  } ifelse
+} def
+
+/_strokecol 4 array def
+/_fillcol 4 array def
+/_currentcol 4 array def
+
+/_docolor {	% <bool is_fill> _docolor
+  /_isfill exch _cdef
+  _isfill { _fillcol } { _strokecol } ifelse
+  currentcmykcolor _currentcol astore _arrayeq 
+  not {
+    _isfill _setcolor
+    _currentcol
+    _isfill { _fillcol } { _strokecol } ifelse
+     copy pop
+  } if
+} def
+
+/_dashstorage 16 array def
+/_dashcompare 16 array def
+
+/_initlinestate [ -1 -1 -1 -1 ] def
+/_linestate [ 0 0 0 0 ] def
+/_newlinestate [ 0 0 0 0 ] def
+
+/_initstate {
+  -1 -1 -1 -1 _strokecol astore pop
+  _strokecol _fillcol copy pop
+  /_dashphase 0 _cdef
+  /_dasharray _dashstorage 0 -1 put _dashstorage 0 1 getinterval _cdef
+  _initlinestate _linestate copy pop
+} def
+
+/_initfont {} def 	% _initfont used for EPS
+
+_initstate
+
+/fill {
+  _gsave
+  true _docolor
+  _dopath
+  _nopath not {
+    _isclosed { (f) } { (F) } ifelse
+    _prop
+  } if
+  _grestore
+  /fill _opexec
+} def
+
+% Line drawing stuff
+
+/_fixwidth {
+  0
+  dtransform 
+  _deftm idtransform
+  dup mul exch
+  dup mul
+  add sqrt
+} def
+
+/_newdash {	% array phase _newdash
+  exch
+  ([ ) _print
+  { _prnum } forall
+  (] ) _print
+  _prnum
+  (d) _prop
+} def
+
+/_currentlinestate {
+  currentlinewidth _fixwidth
+  currentlinecap
+  currentlinejoin
+  currentmiterlimit
+  _newlinestate astore pop
+} def
+
+/_setline [
+  { _prnum (w) _prop }  % width
+  { _prnum (J) _prop }  % cap
+  { _prnum (j) _prop }  % join
+  { _prnum (M) _prop }  % miterlimit
+] def
+
+/_dolinestuff {
+  _currentlinestate
+  0 1 _linestate length 1 sub {
+    _linestate 1 index get
+    _newlinestate 2 index get
+    ne { _newlinestate 1 index get _setline 2 index get exec } if
+    pop
+  } for
+  _newlinestate _linestate copy pop
+  % dashing
+  currentdash /_newdashphase exch _cdef
+  { _fixwidth } forall
+  _dashcompare 0 currentdash pop length getinterval
+  astore
+  /_newdasharray exch _cdef
+  % No new dash if: old array == new array &&
+  %                 (new phase == old phase || array == [])
+  _newdashphase _dashphase eq
+  _dasharray length 0 eq or
+  _newdasharray _dasharray _arrayeq and
+  not
+  {
+    /_dasharray _newdasharray _dashstorage copy _cdef
+    /_dashphase _newdashphase _cdef
+    _dasharray _dashphase
+    _newdash
+  } if
+} def
+
+/stroke {
+  _gsave
+  /_ToEPS where { pop true } { false } ifelse _docolor
+  _dolinestuff
+  _dopath
+  _nopath not {
+    _isclosed { (s) } { (S) } ifelse
+    _prop
+  } if
+  _grestore
+  /stroke _opexec
+} def
+
+/_gstack [ 32 { false } repeat ] def
+
+/gsave {
+  /_glevel _glevel 1 add _cdef
+  _gstack _glevel false put
+  _gsave
+} def
+
+/grestore {
+  _grestore
+  _gstack _glevel get
+  {
+    _pathops 4 get _prop
+    _initstate
+    _initfont
+  } if
+  _gstack _glevel false put
+  /_glevel _glevel 1 sub _cdef
+} def
+
+/save {
+  gsave _glevel 1 sub
+} def
+
+/restore {
+  {
+    dup _glevel ge { exit } if
+    grestore
+  } loop
+} def
+
+/clip {
+  _gsave
+  _gstack _glevel get not {		% don't gsave if already done
+    _pathops 3 get _prop
+    _gstack _glevel true put		% flag the restore
+  } if
+  _dopath
+  _nopath not {
+    _pathops _isclosed { 6 } { 5 } ifelse get
+    _prop
+  } if
+  _grestore
+  /clip _opexec
+} def
+
+/showpage {
+  % do the first write if not marked
+  /_write load /_first_write load eq {
+    () _print
+  } if
+  _glevel {		% clean up any hanging gsave's
+    grestore
+  } repeat
+  %_real_write		% KLUDGE In case a sneaky restore has happened
+  _end_page
+  /showpage _opexec
+  _setup_write
+} def
+
+/.devicefill /fill load def
+/.devicestroke /stroke load def
+
+% Show stuff (KLUDGES that should be implemented properly someday)
+
+/ashow { show pop pop } def
+/widthshow { show pop pop pop } def
+/awidthshow { show pop pop pop pop pop } def
+/xshow { pop show } def
+/yshow { pop show } def
+
+% Font stuff
+
+/_fonts 100 dict def
+/_encodings 20 dict def
+/_fidstr 66 string def
+
+/_initfont
+{
+  /_dirtyfont true _cdef
+  /_lastfont null _cdef
+  /_lastfid null _cdef
+  /_lastmtx [ 0 0 0 0 0 0 ] _cdef
+} def
+
+/_changedfont {
+  _fid _lastfid eq {
+     _fontmatrix 0 4 getinterval
+     _lastmtx 0 4 getinterval
+     _arrayeq not
+  } {
+    true
+  } ifelse
+} def
+
+/_dofont {
+  _dirtyfont {
+    _changedfont {
+    % Save off the new values
+      /_lastfont currentfont _cdef
+      /_lastfid _fid _cdef
+      _fontmatrix _lastmtx copy pop
+      _newfont
+    } if
+  } if
+} def
+
+% Current font can only change 3 ways: setfont, selectfont, grestore
+% We set the dirty flag for all of these
+% (no bind in init.ps selectfont allows not reimplementing here)
+
+/setfont {
+  /_dirtyfont true _cdef
+  dup _setfontinfo
+  /setfont _opexec
+} def
+
+/_encodingid {
+  true
+  _encodings {
+    Encoding _arrayeq
+    { exch pop false exit } { pop } ifelse
+  } forall
+  { dup _encodings dup length Encoding put } if
+} def
+
+/_fontfid {
+  begin
+  _encodingid
+  FontName _fidstr cvs
+  { exch 3 mul add } forall	% Hash it
+  end
+} def
+
+/_fid {
+  currentfont _fontfid
+} def
+
+/_fidfont	{ _fonts exch get 0 get } def
+/_fidname	{ _fonts exch get 1 get } def
+/_fidencoding	{ _fonts exch get 2 get } def
+/_fidnumber	{ _fonts exch get 3 get } def
+/_fiduntouched	{ _fonts exch get 4 get } def
+/_fidsettouched	{ _fonts exch get 4 false put } def
+/_fiduinfo	{ _fonts exch get 5 get } def
+/_fidsetuinfo	{ exch _fonts exch get exch 5 exch put } def
+
+/_fontname {
+  currentfont /FontName get
+} def
+
+/_fontmatrix {			% FontMatrix converted into our space
+  currentfont /FontMatrix get
+  currentfont /FontName get findfont /FontMatrix get
+  _tm0 invertmatrix
+  _tm1 concatmatrix
+  _tm0 currentmatrix
+  _tm2 concatmatrix
+  _tm0 defaultmatrix
+  _tm1 invertmatrix
+  _tm0 concatmatrix
+} def
+
+/__cptarray [ 0 0 ] def
+/_fontcurrentpoint {	% replaces Tx, Ty with currentpoint
+  dup
+  _gsave
+  _deftm setmatrix
+  4 currentpoint __cptarray astore
+  _grestore
+  putinterval		% currentpoint for the last 2 elements
+} def
+
+/_fontsizecheck {	% true if a simple scalefont will suffice
+  % True if Sx = Sy and angle = 0:   M[0] == M[3] && M[1] == M[2] == 0
+  0 4 getinterval aload pop
+  4 -1 roll eq			% Sx = Sy
+  3 1 roll
+  abs .000001 lt
+  exch
+  abs .000001 lt
+  and and
+} def
+
+/_fontsize {		% reasonable scalefont size for simple rotates, scales
+  _fontmatrix
+  dup
+  aload pop pop pop
+  4 -1 roll sub abs .000001 lt
+  3 1 roll neg sub abs .000001 lt
+  and
+  {
+    dup 0 get exch 1 get
+    dup mul exch dup mul add sqrt
+  } {
+    pop 1
+  } ifelse
+} def
+
+/_fontsizematrix {	% font matrix corresponding to above _fontsize
+  _fontsize dup
+  _fontmatrix 3 1 roll
+  _tm1 scale
+  _tm2 invertmatrix
+  _tm0 concatmatrix
+} def
+
+/_isreencoded { % fid
+  dup _fidfont /FontName get findfont _fontfid ne
+} def
+
+% each _fid gets entry in _fonts:
+%    [ fontdict FontName Encoding idnumber untouched uinfo ]
+/_setfontinfo {
+  begin
+  currentdict /FontName known not { UndefinedFontName } if
+  _encodingid pop
+  _fonts currentdict _fontfid known not
+  { _fonts currentdict _fontfid
+    [ currentdict FontName Encoding _fonts length true false ] put
+  } if
+  end
+} def
+
+% Image stuff
+
+/_idata 10 dict def
+
+/_fiximagedict {
+  _idata begin
+  /ByteWidth
+    Width BitsPerComponent mul
+    Decode length 2 idiv mul
+    7 add 8 idiv
+  def
+  /TotalBytes
+    ByteWidth Height mul
+  def
+  end
+} def
+
+/_imagedata {
+  _idata /TotalBytes get
+  /_icnt exch _cdef
+  {
+    _icnt 0 le { exit } if
+    _idata /DataSource get exec
+    dup length _icnt exch sub
+    /_icnt exch _cdef
+    {
+      256 add
+      16 _hexin cvrs
+      pop
+      _hexout _print
+    }
+    forall
+    () _printnl
+  } loop
+} def
+
+/_imagenames [
+  /DataSource /ImageMatrix /BitsPerComponent /Height /Width
+] def
+
+/colorimage {
+  _idata begin
+  [ exch { 0 1 } repeat ] /Decode exch def
+  { MultiProcsUnsupported } if
+  _imagenames { exch def } forall
+  end
+  _fiximagedict
+  _imagebegin
+  _imagedata
+  _imageend
+} def
+
+/image {
+  false 1 colorimage
+} def
+
+% MathScaleHook EPS BoundingBox support
+
+/_hook_names [
+  /By /Bx /Ay /Ax /lty /ltx /lgy /lgx /hty /htx /hgy /hgx
+] def
+
+/_bbox_hook		 % hgx hgy htx hty lgx lgy ltx lty Ax Ay Bx By
+{
+  _hook_names length copy
+  16 dict begin
+  _hook_names { exch def } forall
+  (%%BoundingBox: ) _print
+  lgx Ax mul ltx add Bx add floor _prround		% low-X
+  lgy Ay mul lty add By add floor _prround		% low-Y
+  hgx Ax mul htx add Bx add ceiling _prround		% high-X
+  hgy Ay mul hty add By add ceiling _prround		% high-Y
+  end
+  () _printnl
+} def
+
+% Special setup for Mathematica ProcSet operators
+
+/_mathscaleflag false _cdef
+
+/_setup_math_ops {
+  /WRI-Mathematica-prolog /ProcSet findresource begin 
+
+  /MathScaleHook {
+    /_write load /_first_write load eq {
+      /_mathscaleflag true _cdef
+      () _print
+      /_mathscaleflag false _cdef
+    } if
+  } def
+  
+  /Metetra {
+    moveto
+    lineto
+    lineto
+    lineto
+    closepath
+    _gsave
+    true _docolor
+    _dopath
+    (b) _prop
+    _grestore
+    _gsave
+    /fill _opexec
+    _grestore
+    0 setgray
+    /stroke _opexec
+  } def
+  
+  % Save these for Illustrator
+  _realops /Mimage dup load put
+  _realops /Mcolorimage dup load put
+  
+  /Mimage { image } def
+  /Mcolorimage { colorimage } def
+  
+  % KLUDGE if the Adobe image bug resurfaces, do something like
+  % /Mimage { 4 index 4 index mul 1600 gt { image } { _Mimage } ifelse } def
+  % /Mcolorimage { 6 index 6 index mul 1600 gt
+  % { colorimage } { /Mcolorimage _opexec } ifelse } def
+  
+  end
+  
+} def
+
+/_begin_page { } def
+/_end_page { } def
+/_begin_doc { } def
+/_end_doc { } def
+/__nullarray [] def
+
+/BeginDoc {
+  /_psconv_save_token /save _opexec _cdef
+  /_psconv_dict_count countdictstack _cdef
+  /_psconv_op_count count 1 sub _cdef
+  /_pagenum 0 _cdef
+  userdict begin
+  0 /setgray _opexec
+  0 /setlinecap _opexec
+  1 /setlinewidth _opexec
+  0 /setlinejoin _opexec
+  10 /setmiterlimit _opexec
+  __nullarray 0 /setdash _opexec
+  newpath
+  _setup_write
+} def
+
+/EndDoc {
+  % Do a showpage if the page has been marked
+  /_write load /_first_write load ne {
+    showpage
+  } if
+  _real_write
+  _end_doc
+  _fp closefile
+  count _convdict /_psconv_op_count get sub { pop } repeat
+  countdictstack _convdict /_psconv_dict_count get sub { end } repeat
+  _convdict /_psconv_save_token get /restore _opexec
+} def
+
+/restore { pop } def
+
+/WRI-PSConvert currentdict /ProcSet defineresource pop 
+end
+
+%%EndResource

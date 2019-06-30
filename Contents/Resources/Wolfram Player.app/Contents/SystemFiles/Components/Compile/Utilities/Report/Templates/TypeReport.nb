@@ -1,0 +1,402 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14202,        394]
+NotebookOptionsPosition[     10750,        317]
+NotebookOutlinePosition[     11508,        344]
+CellTagsIndexPosition[     11437,        339]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["Type Report", "Title",
+ CellGroupingRules->"None",
+ CellChangeTimes->{{3.6834564879109297`*^9, 3.683456490173889*^9}, {
+  3.6834614322388983`*^9, 
+  3.683461433005259*^9}},ExpressionUUID->"d36e0de6-0b2b-49e4-ba27-\
+a3ba65e3d699"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TemplateBox[{RowBox[{
+      RowBox[{"DateString", "[", "]"}], " "}],"General",TextData},
+   "NotebookTemplateExpression"], 
+  TextForm]],ExpressionUUID->"7c60c09e-f1cd-4d78-9bb6-e2fb02957a90"]], \
+"Subsubtitle",
+ CellGroupingRules->"None",
+ CellChangeTimes->{{3.683457658076201*^9, 
+  3.6834576615155153`*^9}},ExpressionUUID->"443c63dc-1bac-4fa8-ae53-\
+b7d582114b66"],
+
+Cell[CellGroupData[{
+
+Cell["Concrete Types", "Section",
+ CellChangeTimes->{{3.683457450953265*^9, 
+  3.683457453320129*^9}},ExpressionUUID->"281e9e06-9e67-4c1d-94a3-\
+f246743443a7"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TemplateBox[{"\"name\"","\"name\"","Named",TextData},
+   "NotebookTemplateSlot"], 
+  TextForm]],ExpressionUUID->"3c8faf0c-6a83-47e5-884a-8f514e319cb6"]], \
+"Subsection",
+ CellBracketOptions->{"Color"->RGBColor[0.1574, 0.8708, 1.]},
+ CellFrameLabels->{{None, None}, {None, 
+    Cell[
+     BoxData[
+      TemplateBox[{"\"concrete\"", "NotebookTemplateSlot", True}, 
+       "NotebookRepeatingBlock"]]]}},
+ CellChangeTimes->{{3.683457461440778*^9, 3.6834574956715593`*^9}, {
+  3.683457530006363*^9, 
+  3.683457531229176*^9}},ExpressionUUID->"4716d570-4575-41b2-8c41-\
+556ec42325dd"],
+
+Cell[CellGroupData[{
+
+Cell["Kind", "Subsubsection",
+ CellChangeTimes->{{3.683460426333555*^9, 3.683460429020281*^9}, {
+  3.683460912180333*^9, 3.683460915393711*^9}, {3.7541193548001204`*^9, 
+  3.754119355447352*^9}},ExpressionUUID->"23395ef8-3b8e-48e9-b3a3-\
+56724ac21c74"],
+
+Cell[TextData[{
+ "Kind     ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[{"\"kind\"","\"kind\"","Named",TextData},
+    "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+  "a565beca-4335-457a-a154-07a9a6f363fc"]
+}], "Text",
+ CellChangeTimes->{{3.717068841227803*^9, 3.717068854041809*^9}, {
+  3.717069194062344*^9, 
+  3.717069194727892*^9}},ExpressionUUID->"0f45c767-c988-42ef-ae79-\
+7bf4098928f4"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Inheritance graph", "Subsubsection",
+ CellChangeTimes->{{3.683460426333555*^9, 3.683460429020281*^9}, {
+  3.683460912180333*^9, 
+  3.683460915393711*^9}},ExpressionUUID->"5f9dc59f-ee0f-4c21-b1b8-\
+1216e7a677f7"],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{"\"graph\"","\"graph\"","Named",BoxData},
+    "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+  "330ee722-6cba-4881-858d-1ec96ba1469b"]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.683457757426619*^9, 
+  3.6834577639277773`*^9}},ExpressionUUID->"68387ed5-9db1-4f83-8422-\
+2bcfb37285b4"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Methods", "Subsubsection",
+ CellChangeTimes->{{3.683460854500998*^9, 3.683460856891968*^9}, {
+  3.7170743157346163`*^9, 3.717074316298649*^9}, {3.71713857313377*^9, 
+  3.717138573872176*^9}},ExpressionUUID->"ec550cfa-a5aa-4e7e-83d5-\
+d8627c72992e"],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{"\"methods\"","\"methods\"","Named",BoxData},
+    "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+  "5f46ee67-be1d-4b4f-8085-ce0ff6cd8075"]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.683460863135881*^9, 3.683460873908452*^9}, {
+   3.68346093733823*^9, 3.683460940856839*^9}, {3.71713866472556*^9, 
+   3.717138672079028*^9}, 3.754123956474494*^9, 
+   3.754210363515703*^9},ExpressionUUID->"845f4534-c00c-42c1-875b-\
+688e2499d963"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Types", "Subsubsection",
+ CellChangeTimes->{{3.683460854500998*^9, 3.683460856891968*^9}, {
+  3.7170743157346163`*^9, 
+  3.717074316298649*^9}},ExpressionUUID->"df4e54cf-12c9-471e-8e87-\
+aee9dd15924b"],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{"\"types\"","\"types\"","Named",BoxData},
+    "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+  "a6febafa-28e8-4c32-b995-94c36006f4e1"]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.683460863135881*^9, 3.683460873908452*^9}, {
+   3.68346093733823*^9, 3.683460940856839*^9}, 3.754123954603244*^9, {
+   3.7542103682165203`*^9, 
+   3.754210371423428*^9}},ExpressionUUID->"6102c02d-50e6-410a-b622-\
+082b66834539"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Implements", "Subsubsection",
+ CellChangeTimes->{{3.683460426333555*^9, 3.683460429020281*^9}, {
+  3.683460912180333*^9, 3.683460915393711*^9}, {3.717137485316371*^9, 
+  3.717137486442672*^9}},ExpressionUUID->"4a4b73fa-e26d-4c1a-b29d-\
+9d86286bdece"],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{"\"implements\"","\"implements\"","Named",BoxData},
+    "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+  "069f0f74-c05b-4f14-85fa-4c81153c00cb"]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.754033295848431*^9, 3.754033311004427*^9}, {
+  3.754202487272161*^9, 
+  3.7542024888394947`*^9}},ExpressionUUID->"6d69b555-9954-4744-837c-\
+c6cb596d34ae"]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Abstract Types", "Section",
+ CellChangeTimes->{{3.683460710786674*^9, 
+  3.68346071346518*^9}},ExpressionUUID->"ccd64388-c143-4126-b0cf-\
+fd86cab27d11"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TemplateBox[{"\"name\"","\"name\"","Named",TextData},
+   "NotebookTemplateSlot"], 
+  TextForm]],ExpressionUUID->"9e0988ac-da1b-40dc-b9d2-056f2479d830"]], \
+"Subsection",
+ CellBracketOptions->{"Color"->RGBColor[0.1574, 0.8708, 1.]},
+ CellFrameLabels->{{None, None}, {None, 
+    Cell[
+     BoxData[
+      TemplateBox[{"\"abstract\"", "NotebookTemplateSlot", True}, 
+       "NotebookRepeatingBlock"]]]}},
+ CellChangeTimes->{{3.6834607224065647`*^9, 3.683460727935739*^9}},
+ CellTags->"DeleteMe",ExpressionUUID->"3157162c-5342-4f5d-ad7d-586dc44e3b0e"],
+
+Cell[CellGroupData[{
+
+Cell["Methods", "Subsubsection",
+ CellFrameLabels->{{None, None}, {None, None}},
+ CellChangeTimes->{{3.683460854500998*^9, 3.683460856891968*^9}, {
+  3.6834610553973703`*^9, 3.683461055996134*^9}, {3.7170743177916317`*^9, 
+  3.717074318348585*^9}},ExpressionUUID->"d2dd5dfe-39bc-44ca-9cc0-\
+586dca4166b7"],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{"\"methods\"","\"methods\"","Named",BoxData},
+    "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+  "53977e74-e07f-4e1e-b1ba-0e954ed104ca"]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.683460863135881*^9, 3.683460873908452*^9}, {
+  3.68346093733823*^9, 3.683460940856839*^9}, {3.6834611453080587`*^9, 
+  3.683461152170466*^9}, {3.754123947258485*^9, 3.754123949187796*^9}, {
+  3.7542103741434183`*^9, 
+  3.7542103757747927`*^9}},ExpressionUUID->"01fabd43-2e35-468d-bee3-\
+c002044be20c"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Types", "Subsubsection",
+ CellFrameLabels->{{None, None}, {None, None}},
+ CellChangeTimes->{{3.683460854500998*^9, 3.683460856891968*^9}, {
+  3.7170743157346163`*^9, 
+  3.717074316298649*^9}},ExpressionUUID->"66d56942-8e68-499a-8eff-\
+f926bba5765f"],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{"\"types\"","\"types\"","Named",BoxData},
+    "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+  "43847502-9817-4e42-8e48-840c2bd66fbc"]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.683460863135881*^9, 3.683460873908452*^9}, {
+   3.68346093733823*^9, 3.683460940856839*^9}, 3.754123950692408*^9, {
+   3.754210378239306*^9, 
+   3.754210382223138*^9}},ExpressionUUID->"71509e38-e470-4c01-bac2-\
+9baaca030cd1"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Inheritance graph", "Subsubsection",
+ CellFrameLabels->{{None, None}, {None, None}},
+ CellChangeTimes->{{3.683460426333555*^9, 3.683460429020281*^9}, 
+   3.6834609199655323`*^9},ExpressionUUID->"ea6fe3ca-4e69-4a20-975d-\
+2d9d4bef6fed"],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{"\"graph\"","\"graph\"","Named",BoxData},
+    "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+  "2d6b510f-3ff9-43ca-8f90-80667c778061"]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.683457757426619*^9, 
+  3.6834577639277773`*^9}},ExpressionUUID->"00a80ac4-1b41-4f14-bbab-\
+2d6d5c7fcf1a"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Instances", "Subsubsection",
+ CellFrameLabels->{{None, None}, {None, None}},
+ CellChangeTimes->{{3.683460854500998*^9, 3.683460856891968*^9}, {
+  3.6834610553973703`*^9, 3.683461055996134*^9}, {3.7170743177916317`*^9, 
+  3.717074318348585*^9}, {3.717077719503524*^9, 
+  3.71707772073092*^9}},ExpressionUUID->"50ee2a7a-880b-4140-b90d-\
+5e5a7d93d947"],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{"\"instances\"",RowBox[{"{", 
+       RowBox[{"{", "}"}], "}"}],"Named",BoxData},
+    "NotebookTemplateSlot"], TextForm]],ExpressionUUID->
+  "e53bf861-33ed-45cc-9d22-638e83811d55"]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.683460863135881*^9, 3.683460873908452*^9}, {
+   3.68346093733823*^9, 3.683460940856839*^9}, {3.6834611453080587`*^9, 
+   3.683461152170466*^9}, {3.7170777362332563`*^9, 3.7170777496935596`*^9}, 
+   3.7541214783742523`*^9, {3.754202482840763*^9, 
+   3.754202484584127*^9}},ExpressionUUID->"af2f0e80-d6f2-429f-8096-\
+8e7984947b1e"]
+}, Closed]]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{808, 681},
+WindowMargins->{{86, Automatic}, {14, Automatic}},
+DockedCells->FEPrivate`FrontEndResource[
+ "NotebookTemplatingExpressions", "AuthoringDockedCell"],
+TaggingRules->{"NotebookTemplateVersion" -> 1., "NotebookTemplate" -> True},
+CellContext->Notebook,
+ShowCellTags->True,
+ShowAutoSpellCheck->False,
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (December 1, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "DeleteMe"->{
+  Cell[6304, 195, 587, 13, 136, "Subsection",ExpressionUUID->"3157162c-5342-4f5d-ad7d-586dc44e3b0e",
+   CellTags->"DeleteMe"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"DeleteMe", 11286, 333}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 235, 5, 98, "Title",ExpressionUUID->"d36e0de6-0b2b-49e4-ba27-a3ba65e3d699",
+ CellGroupingRules->"None"],
+Cell[796, 27, 407, 10, 40, "Subsubtitle",ExpressionUUID->"443c63dc-1bac-4fa8-ae53-b7d582114b66",
+ CellGroupingRules->"None"],
+Cell[CellGroupData[{
+Cell[1228, 41, 159, 3, 67, "Section",ExpressionUUID->"281e9e06-9e67-4c1d-94a3-f246743443a7"],
+Cell[CellGroupData[{
+Cell[1412, 48, 618, 15, 125, "Subsection",ExpressionUUID->"4716d570-4575-41b2-8c41-556ec42325dd"],
+Cell[CellGroupData[{
+Cell[2055, 67, 252, 4, 45, "Subsubsection",ExpressionUUID->"23395ef8-3b8e-48e9-b3a3-56724ac21c74"],
+Cell[2310, 73, 398, 11, 44, "Text",ExpressionUUID->"0f45c767-c988-42ef-ae79-7bf4098928f4"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2745, 89, 217, 4, 37, "Subsubsection",ExpressionUUID->"5f9dc59f-ee0f-4c21-b1b8-1216e7a677f7"],
+Cell[2965, 95, 483, 12, 41, "Input",ExpressionUUID->"68387ed5-9db1-4f83-8422-2bcfb37285b4"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3485, 112, 254, 4, 37, "Subsubsection",ExpressionUUID->"ec550cfa-a5aa-4e7e-83d5-d8627c72992e"],
+Cell[3742, 118, 628, 14, 41, "Input",ExpressionUUID->"845f4534-c00c-42c1-875b-688e2499d963"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[4407, 137, 207, 4, 37, "Subsubsection",ExpressionUUID->"df4e54cf-12c9-471e-8e87-aee9dd15924b"],
+Cell[4617, 143, 605, 14, 41, "Input",ExpressionUUID->"6102c02d-50e6-410a-b622-082b66834539"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5259, 162, 256, 4, 37, "Subsubsection",ExpressionUUID->"4a4b73fa-e26d-4c1a-b29d-9d86286bdece"],
+Cell[5518, 168, 542, 13, 41, "Input",ExpressionUUID->"6d69b555-9954-4744-837c-c6cb596d34ae"]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6121, 188, 158, 3, 67, "Section",ExpressionUUID->"ccd64388-c143-4126-b0cf-fd86cab27d11"],
+Cell[CellGroupData[{
+Cell[6304, 195, 587, 13, 136, "Subsection",ExpressionUUID->"3157162c-5342-4f5d-ad7d-586dc44e3b0e",
+ CellTags->"DeleteMe"],
+Cell[CellGroupData[{
+Cell[6916, 212, 305, 5, 45, "Subsubsection",ExpressionUUID->"d2dd5dfe-39bc-44ca-9cc0-586dca4166b7"],
+Cell[7224, 219, 683, 15, 41, "Input",ExpressionUUID->"01fabd43-2e35-468d-bee3-c002044be20c"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7944, 239, 255, 5, 37, "Subsubsection",ExpressionUUID->"66d56942-8e68-499a-8eff-f926bba5765f"],
+Cell[8202, 246, 603, 14, 41, "Input",ExpressionUUID->"71509e38-e470-4c01-bac2-9baaca030cd1"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8842, 265, 241, 4, 37, "Subsubsection",ExpressionUUID->"ea6fe3ca-4e69-4a20-975d-2d9d4bef6fed"],
+Cell[9086, 271, 483, 12, 41, "Input",ExpressionUUID->"00a80ac4-1b41-4f14-bbab-2d6d5c7fcf1a"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9606, 288, 355, 6, 37, "Subsubsection",ExpressionUUID->"50ee2a7a-880b-4140-b90d-5e5a7d93d947"],
+Cell[9964, 296, 746, 16, 41, "Input",ExpressionUUID->"af2f0e80-d6f2-429f-8096-8e7984947b1e"]
+}, Closed]]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+

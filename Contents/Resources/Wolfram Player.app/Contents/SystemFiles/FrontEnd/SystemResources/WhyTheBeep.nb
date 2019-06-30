@@ -1,0 +1,138 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4744,        128]
+NotebookOptionsPosition[      3049,         89]
+NotebookOutlinePosition[      4593,        128]
+CellTagsIndexPosition[      4550,        125]
+WindowTitle->Why the Beep?
+WindowFrame->ModelessDialog*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ StyleBox[
+  DynamicBox[ToBoxes[
+    FEPrivate`FrontEndResource["FEStrings", "whyBeepTitle"]],
+   ImageSizeCache->{125., {4., 14.}}], "DialogTitle",
+  ShowStringCharacters->False]], "DialogTitle",ExpressionUUID->"6e7c65e2-a8bb-\
+4592-99fa-5adf8924ffab"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   FEPrivate`If[
+    FEPrivate`SameQ[
+     CurrentValue[{"ErrorInformation", "Description"}], None], 
+    FEPrivate`FrontEndResourceString["noErrorYet"], 
+    CurrentValue[{"ErrorInformation", "Description"}]]],
+  Deinitialization:>(
+   CurrentValue[$FrontEnd, {"ErrorsDialogSettings", "WindowMargins"}] = 
+   CurrentValue[
+     EvaluationNotebook[], WindowMargins]),
+  ImageSizeCache->{403., {3., 10.}}]], "Text", "DialogBody",
+ Selectable->True,
+ CellMargins->{{30, 30}, {6, 0}},
+ Deployed->False,
+ ShowStringCharacters->False,
+ Background->None,ExpressionUUID->"39d8e04d-fe1f-4e6f-947f-7059f8c4e66f"],
+
+Cell[BoxData[GridBox[{
+   {
+    PaneBox[
+     DynamicBox[ToBoxes[
+       With[{$CellContext`d = CurrentValue[{"ErrorInformation", "When"}]}, 
+        If[$CellContext`d === None, " ", 
+         With[{$CellContext`minutesSinceLastError = Quiet[
+             Part[
+              Floor[
+               DateDifference[$CellContext`d, Now, "Minutes"]], 1]]}, 
+          If[
+           TrueQ[$CellContext`minutesSinceLastError > 1], 
+           Style[
+            Row[{
+              Dynamic[
+               FEPrivate`FrontEndResourceString["errorTimeStringANum"]], 
+              ToString[$CellContext`minutesSinceLastError], 
+              Dynamic[
+               FEPrivate`FrontEndResourceString["errorTimeStringBNum"]]}], 
+            "DialogBodyAlternate"], ""]]]], StandardForm],
+      ImageSizeCache->{0., {0., 6.}},
+      UpdateInterval->60],
+     ImageMargins->{{30, 0}, {30, 18}}], 
+    PaneBox[
+     ButtonBox[
+      DynamicBox[FEPrivate`FrontEndResourceString["okButtonText"],
+       ImageSizeCache->{16., {0., 9.}}],
+      Appearance->"DefaultButton",
+      ButtonFunction:>DialogReturn[],
+      Evaluator->Automatic,
+      ImageSize->Dynamic[
+        CurrentValue["DefaultButtonSize"]],
+      Method->"Preemptive"],
+     ImageMargins->{{0, 30}, {30, 18}}]}
+  },
+  AutoDelete->False,
+  GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Automatic}}},
+  GridBoxItemSize->{"Columns" -> {
+      Scaled[0.75], 
+      Scaled[0.25]}, "Rows" -> {{Automatic}}}]],
+ CellMargins->0,ExpressionUUID->"12d8f475-17c3-4cb5-bfa2-4d09f5c3e5a7"]
+},
+NotebookEventActions->{"ReturnKeyDown" :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {"MenuCommand", "EvaluateCells"} :> 
+  FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {
+   "MenuCommand", "HandleShiftReturn"} :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {
+   "MenuCommand", "EvaluateNextCell"} :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], "EscapeKeyDown" :> (FE`Evaluate[
+     FEPrivate`FindAndClickCancelButton[]]; DialogReturn[$Canceled]), 
+  "WindowClose" :> (FE`Evaluate[
+     FEPrivate`FindAndClickCancelButton[]]; DialogReturn[$Canceled])},
+WindowSize->{500, All},
+WindowMargins->FrontEnd`CurrentValue[
+ FrontEnd`$FrontEnd, {"ErrorsDialogSettings", "WindowMargins"}],
+WindowFrameElements->{"CloseBox", "MinimizeBox"},
+WindowTitle->FEPrivate`FrontEndResource["FEStrings", "whyBeepTitle"],
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (October 8, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "SystemDialog.nb"]], 
+   Cell[
+    StyleData["Notebook"], Background :> 
+    CurrentValue[{"SystemColors", "Window"}]], 
+   Cell[
+    StyleData["DialogBody"], LineSpacing -> {1, 1}, LineIndent -> 0, 
+    LinebreakAdjustments -> {1., 10, 1, 0, 1}]}, Visible -> False, 
+  FrontEndVersion -> "12.0 for Microsoft Windows (64-bit) (October 8, 2018)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[593, 21, 267, 6, 75, "DialogTitle",ExpressionUUID->"6e7c65e2-a8bb-4592-99fa-5adf8924ffab"],
+Cell[863, 29, 638, 16, 24, "Text",ExpressionUUID->"39d8e04d-fe1f-4e6f-947f-7059f8c4e66f"],
+Cell[1504, 47, 1541, 40, 76, InheritFromParent,ExpressionUUID->"12d8f475-17c3-4cb5-bfa2-4d09f5c3e5a7"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

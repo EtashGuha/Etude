@@ -1,0 +1,48 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>Expr.AsArray Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.Expr.AsArray.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">Expr.AsArray Method </h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Converts the Expr to an array of the requested type and depth. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Public Function AsArray( _<br />   ByVal <i>reqType</i> As <a href="Wolfram.NETLink.ExpressionType.html">ExpressionType</a>, _<br />   ByVal <i>depth</i> As <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemInt32ClassTopic.htm">Integer</a> _<br />) As <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemArrayClassTopic.htm">Array</a></div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />public <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemArrayClassTopic.htm">Array</a> AsArray(<br />   <a href="Wolfram.NETLink.ExpressionType.html">ExpressionType</a> <i>reqType</i>,<br />   <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemInt32ClassTopic.htm">int</a> <i>depth</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>reqType</i>
+        </dt>
+        <dd>The type of the leaf elements. Must be ExpressionType.Integer or ExpressionType.Real.</dd>
+        <dt>
+          <i>depth</i>
+        </dt>
+        <dd>The desired depth of the array. Must be 1 or 2.</dd>
+      </dl>
+      <h4 class="dtH4">Remarks</h4> The requested element type must be either ExpressionType.Integer or ExpressionType.Real, and the depth must be 1 or 2. In other words, 1- or 2-dimensionals arrays of integers or doubles can be extracted from an Expr object using this method. <p> Some Exprs represent large lists or arrays of integers or reals. This method is the only efficient way of extracting the raw array data from out of the Expr. To preserve the immutability of Exprs, however, the returned array is a copy of the Expr's internal array data. </p>
+            <h4 class="dtH4">Exceptions</h4><div class="tablediv"><table class="dtTABLE" cellspacing="0"><tr valign="top"><th width="50%">Exception Type</th><th width="50%">Condition</th></tr><tr valign="top"><td width="50%"><a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemArgumentExceptionClassTopic.htm">ArgumentException</a></td><td width="50%">If depth &gt; 2 or the requested type is not supported.</td></tr><tr valign="top"><td width="50%"><a href="Wolfram.NETLink.ExprFormatException.html">ExprFormatException</a></td><td width="50%">If the Expr cannot be converted to this format.</td></tr></table></div><h4 class="dtH4">See Also</h4><p><a href="Wolfram.NETLink.Expr.html">Expr Class</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;"><param name="Keyword" value="AsArray method"></param><param name="Keyword" value="AsArray method, Expr class"></param><param name="Keyword" value="Expr.AsArray method"></param></object><hr /><div id="footer"><p><a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a></p><p></p></div></div>
+  </body>
+</html>

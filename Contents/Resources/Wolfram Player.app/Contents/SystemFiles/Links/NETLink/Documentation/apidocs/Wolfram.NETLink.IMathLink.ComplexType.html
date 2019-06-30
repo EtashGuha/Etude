@@ -1,0 +1,98 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ComplexType Property</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IMathLink.ComplexType.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IMathLink.ComplexType Property</h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Sets or gets the class that you want to map to <i>Mathematica</i>'s Complex numbers. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Property ComplexType As <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemTypeClassTopic.htm">Type</a></div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />
+        <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemTypeClassTopic.htm">System.Type</a> ComplexType {get; set;}</div>
+      <p>
+      </p>
+      <h4 class="dtH4">Remarks</h4>
+      <p> After setting ComplexType, you can use <a href="Wolfram.NETLink.IMathLink.GetComplex.html">GetComplex</a> to read an incoming integer, real, or Complex number as instance of your class, and you can use <a href="Wolfram.NETLink.IMathLink.Put_overload_1.html">Put</a> to send objects of your class to <i>Mathematica</i> as Complex. <p> To be suitable, the Type you specify must have have appropriate members. It must have each of the following: </p> A constructor with one of these signatures: <pre class="code">    (double re, double im)
+    (float re, float im)
+</pre> A method with one of the following signatures: <pre class="code">    double Re()
+    double Real()
+    float Re()
+    float Real()
+</pre> OR, a property or field: <pre class="code">    double Re
+    double Real
+    float Re
+    float Real
+</pre> A method with one of the following signatures: <pre class="code">    double Im()
+    double Imag()
+    double Imaginary()
+    float Im()
+    float Imag()
+    float Imaginary()
+</pre> OR, a property or field: <pre class="code">    double Im
+    double Imag
+    double Imaginary
+    float Im
+    float Imag
+    float Imaginary
+</pre>
+            </p>
+      <h4 class="dtH4">Exceptions</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Exception Type</th>
+            <th width="50%">Condition</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemArgumentExceptionClassTopic.htm">ArgumentException</a>
+            </td>
+            <td width="50%">If the type does not have appropriate members as described above.</td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IMathLink.html">IMathLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.IMathLink.GetComplex.html">GetComplex</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="ComplexType property">
+        </param>
+        <param name="Keyword" value="ComplexType property, IMathLink interface">
+        </param>
+        <param name="Keyword" value="IMathLink.ComplexType property">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

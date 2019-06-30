@@ -1,0 +1,3810 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    178138,       3800]
+NotebookOptionsPosition[    177561,       3778]
+NotebookOutlinePosition[    178123,       3800]
+CellTagsIndexPosition[    178080,       3797]
+MenuPosition->0
+WindowTitle->Stylesheets
+WindowFrame->Palette*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", 
+     DynamicModuleBox[{}, 
+      DynamicModuleBox[{StylesheetChooser`stylesheetNm$$ = "Default.nb", 
+       StylesheetChooser`fullStylesheetNm$$ = "Default.nb", 
+       StylesheetChooser`TEMPLATEFILEPATH$$ = 
+       Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+         "SystemResources", "StylesheetTemplates"}], 
+       StylesheetChooser`MAXLABELWIDTH$$ = 9.5, 
+       StylesheetChooser`COLUMNSPACERSZ$$ = 0, 
+       StylesheetChooser`CAPTIONFNTFAM$$ = "Helvetica", 
+       StylesheetChooser`CAPTIONFNTWT$$ = "Plain", 
+       StylesheetChooser`CAPTIONFNTSZ$$ = 9, 
+       StylesheetChooser`DESELCAPTIONCOLOR$$ = GrayLevel[0], 
+       StylesheetChooser`SELCAPTIONCOLOR$$ = RGBColor[0, 0, 1], 
+       StylesheetChooser`TOOLTIPFNTWT$$ = "Plain", 
+       StylesheetChooser`TOOLTIPFNTSZ$$ = 10, 
+       StylesheetChooser`TOOLTIPSPACINGS$$ = {0, 0}, 
+       StylesheetChooser`TOOLTIPITEMSIZE$$ = {Automatic, Automatic}, 
+       StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{Automatic, 141}, {
+        Automatic, 0}}, StylesheetChooser`nbX$$}, 
+       TagBox[GridBox[{
+          {
+           
+           DynamicModuleBox[{StylesheetChooser`TEMPLATEFILEPATH$$ = 
+            Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+              "SystemResources", "StylesheetTemplates"}], 
+            StylesheetChooser`stylesheetNm$$ = "Default.nb", 
+            StylesheetChooser`fullStylesheetNm$$ = "Default.nb", 
+            StylesheetChooser`OPCSELRECT$$ = 0.5, 
+            StylesheetChooser`OPCDESELRECT$$ = 0.16, 
+            StylesheetChooser`OPCSELFNT$$ = 1, 
+            StylesheetChooser`OPCDESELFNT$$ = 1, StylesheetChooser`FONTSZ$$ = 
+            10, StylesheetChooser`FONTFAM$$ = "Helvetica", 
+            StylesheetChooser`FONTWT$$ = "Bold", 
+            StylesheetChooser`FONTCOLOR$$ = GrayLevel[1], 
+            StylesheetChooser`TOPBUTTONLABEL$$ = "New", 
+            StylesheetChooser`BOTBUTTONLABEL$$ = "Apply", 
+            StylesheetChooser`FULLWD$$ = 90, StylesheetChooser`FULLHT$$ = 130,
+             StylesheetChooser`MOUSEOVERWD$$ = 100, 
+            StylesheetChooser`MOUSEOVERHT$$ = 130, 
+            StylesheetChooser`BUTTONXMIN$$ = -50, 
+            StylesheetChooser`BUTTONXMAX$$ = 50, 
+            StylesheetChooser`BUTTONYMIN$$ = Rational[-65, 2], 
+            StylesheetChooser`BUTTONYMAX$$ = Rational[65, 2], 
+            StylesheetChooser`WDFUDGE$$ = 10, StylesheetChooser`HTFUDGE$$ = 0,
+             StylesheetChooser`BUTTONMARGIN$$ = -0.4, 
+            StylesheetChooser`BORDERWT$$ = 0.4, 
+            StylesheetChooser`BORDERREDUCTION$$ = 0.5, 
+            StylesheetChooser`ASPECTRATIO$$ = 0.7, 
+            StylesheetChooser`MARQUISCOLOR$$ = GrayLevel[0.5], 
+            StylesheetChooser`MARQUISOPC$$ = 0.7, 
+            StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{
+             Automatic, 141}, {Automatic, 0}}, StylesheetChooser`nbX$$ = 
+            Notebook[{
+              Cell[
+               CellGroupData[{
+                 Cell["Enter title here", "Title"], 
+                 Cell["Enter subtitle here", "Subtitle"], 
+                 Cell[
+                  CellGroupData[{
+                    Cell["Enter section title here", "Section"], 
+                    Cell[
+                    CellGroupData[{
+                    Cell["Enter subsection title here", "Subsection"], 
+                    Cell[
+                    "Enter text here. Enter TraditionalForm input for \
+evaluation in a separate cell below:", "Text"], 
+                    Cell[
+                    CellGroupData[{
+                    Cell[
+                    BoxData[
+                    FormBox[
+                    RowBox[{
+                    RowBox[{"\[Integral]", 
+                    RowBox[{"x", 
+                    RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+                    SqrtBox["z"]}], TraditionalForm]], "Input"], 
+                    Cell[
+                    BoxData[
+                    FormBox[
+                    RowBox[{
+                    FractionBox[
+                    SuperscriptBox["x", "2"], "2"], "+", 
+                    SqrtBox["z"]}], TraditionalForm]], "Output"]}, Open]], 
+                    Cell[
+                    CellGroupData[{
+                    Cell["Enter bulleted item text here.", "Item"], 
+                    Cell["Enter subitem text here.", "Subitem"]}, Open]], 
+                    Cell[
+                    "Enter text here. Enter formula for display in a separate \
+cell below:", "Text"], 
+                    Cell[
+                    BoxData[
+                    FormBox[
+                    RowBox[{
+                    RowBox[{"\[Integral]", 
+                    RowBox[{"x", 
+                    RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+                    SqrtBox["z"]}], TraditionalForm]], "DisplayFormula"]}, 
+                    Open]]}, Open]], 
+                 Cell[
+                  CellGroupData[{
+                    Cell["Enter section title here", "Section"], 
+                    Cell[
+                    
+                    TextData[{
+                    "Enter text here. Enter an inline formula like this: ", 
+                    Cell[
+                    BoxData[
+                    FormBox[
+                    RowBox[{"2", "+", "2"}], TraditionalForm]]], "."}], 
+                    "Text"], 
+                    Cell[
+                    CellGroupData[{
+                    Cell["Enter numbered item text here.", "ItemNumbered"], 
+                    Cell[
+                    "Enter numbered subitem text here.", "SubitemNumbered"]}, 
+                    Open]], 
+                    Cell[
+                    "Enter text here. Enter formula for numbered display in a \
+separate cell below:", "Text"], 
+                    Cell[
+                    BoxData[
+                    FormBox[
+                    RowBox[{
+                    RowBox[{"\[Integral]", 
+                    RowBox[{"x", 
+                    RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+                    SqrtBox["z"]}], TraditionalForm]], 
+                    "DisplayFormulaNumbered"]}, Open]]}, Open]]}, 
+             StyleDefinitions -> "Default.nb"], StylesheetChooser`newNB$$ = 
+            NotebookObject[
+             FrontEndObject[
+              LinkObject["2xj_shm", 3, 3]], 34]}, 
+            GraphicsBox[{InsetBox[
+               GraphicsBox[InsetBox[
+                 
+                 DynamicBox[FEPrivate`FrontEndResource[
+                  "StylesheetThumbnails", "DefaultAlt2"],
+                  ImageSizeCache->{90., {0., 120.}}], {0, 0}]], {0, 0}], 
+              InsetBox[
+               PaneSelectorBox[{False->
+                PaneBox["",
+                 ImageSize->{100, 130}], True->
+                GraphicsBox[InsetBox[
+                  TagBox[GridBox[{
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], RectangleBox[{-50, -32.5}, {58, 32.5}], 
+                    InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[{-50, -32.5}, {50, 32.5}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[{-50, -32.5}, {50, 32.5}]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[StylesheetChooser`nbX$$ = Get[
+                    ToFileName[
+                    ReleaseHold[StylesheetChooser`TEMPLATEFILEPATH$$], 
+                    "DefaultTemplate.nb"]]; 
+                    StylesheetChooser`newNB$$ = 
+                    ReplaceAll[StylesheetChooser`nbX$$, Notebook[
+                    Pattern[StylesheetChooser`nbCont, 
+                    Blank[]], 
+                    Pattern[StylesheetChooser`nbOpts, 
+                    BlankNullSequence[]]] :> 
+                    NotebookCreate[StylesheetChooser`nbOpts]]; 
+                    NotebookWrite[StylesheetChooser`newNB$$, 
+                    Part[StylesheetChooser`nbX$$, 1]]; 
+                    SelectionMove[
+                    StylesheetChooser`newNB$$, Before, Notebook]; 
+                    If[False, 
+                    SetOptions[
+                    StylesheetChooser`newNB$$, ScreenStyleEnvironment -> 
+                    "SlideShow"]; NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Open a new Default template.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Open a new Default template.", 
+                    "Tooltip"]& ]},
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], RectangleBox[{-50, -32.5}, {58, 32.5}], 
+                    InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[{-50, -32.5}, {50, 32.5}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[{-50, -32.5}, {50, 32.5}]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[If[
+                    And[InputNotebook[] =!= $Failed, FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]] =!= 
+                    MessagesNotebook[], Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells] =!= {
+                    DockedCells -> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "HelpViewerToolbar"]}, Cases[
+                    Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["FEBitmaps", 
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`EvaluationNotebook[], {
+                    TaggingRules, "DisplayFunction"}], "FunctionHeader", 
+                    "TutorialHeader"]]], Infinity] === {}], 
+                    SetOptions[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], StyleDefinitions -> 
+                    StylesheetChooser`fullStylesheetNm$$]]; 
+                    If[False, SetOptions[
+                    InputNotebook[], ScreenStyleEnvironment -> "SlideShow"]; 
+                    NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Apply Default stylesheet to notebook.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Apply Default stylesheet to notebook.", 
+                    "Tooltip"]& ]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{-0.4}}}],
+                   "Grid"], {0, 0}],
+                 ImageSize->{100, 130}]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                FrameMargins->0,
+                ImageSize->Automatic]]},
+             ImageSize->{90, 130}],
+            DynamicModuleValues:>{}]},
+          {
+           TagBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               StyleBox[
+                TemplateBox[{"\"Default\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->GrayLevel[0],
+                FrontFaceColor->GrayLevel[0],
+                GraphicsColor->GrayLevel[0],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->GrayLevel[1],
+                $CellContext`BackFaceColor -> GrayLevel[0]], True->
+               StyleBox[
+                TemplateBox[{"\"Default\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->RGBColor[0, 0, 1],
+                FrontFaceColor->RGBColor[0, 0, 1],
+                GraphicsColor->RGBColor[0, 0, 1],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->RGBColor[0, 0, 1],
+                $CellContext`BackFaceColor -> RGBColor[0, 0, 1]]}, Dynamic[
+                CurrentValue["MouseOver"]],
+               FrameMargins->0,
+               ImageSize->Automatic],
+              Appearance->"Frameless",
+              ButtonFunction:>DialogReturn[
+                NotebookCreate[
+                StyleDefinitions -> StylesheetChooser`fullStylesheetNm$$]],
+              Evaluator->Automatic,
+              Method->"Preemptive"],
+             StyleBox[
+             "\"Click to open a blank Default window.\"", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10, StripOnInput -> False],
+             TooltipDelay->0.2,
+             TooltipStyle->"TextStyling"],
+            Annotation[#, 
+             Style[
+             "Click to open a blank Default window.", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10], "Tooltip"]& ]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{None}}, "Rows" -> {{-0.5}}}],
+        "Grid"],
+       DynamicModuleValues:>{}],
+      DynamicModuleValues:>{}], 
+     DynamicModuleBox[{}, 
+      DynamicModuleBox[{StylesheetChooser`stylesheetNm$$ = "ReverseColor.nb", 
+       StylesheetChooser`fullStylesheetNm$$ = "ReverseColor.nb", 
+       StylesheetChooser`TEMPLATEFILEPATH$$ = 
+       Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+         "SystemResources", "StylesheetTemplates"}], 
+       StylesheetChooser`MAXLABELWIDTH$$ = 9.5, 
+       StylesheetChooser`COLUMNSPACERSZ$$ = 0, 
+       StylesheetChooser`CAPTIONFNTFAM$$ = "Helvetica", 
+       StylesheetChooser`CAPTIONFNTWT$$ = "Plain", 
+       StylesheetChooser`CAPTIONFNTSZ$$ = 9, 
+       StylesheetChooser`DESELCAPTIONCOLOR$$ = GrayLevel[0], 
+       StylesheetChooser`SELCAPTIONCOLOR$$ = RGBColor[0, 0, 1], 
+       StylesheetChooser`TOOLTIPFNTWT$$ = "Plain", 
+       StylesheetChooser`TOOLTIPFNTSZ$$ = 10, 
+       StylesheetChooser`TOOLTIPSPACINGS$$ = {0, 0}, 
+       StylesheetChooser`TOOLTIPITEMSIZE$$ = {Automatic, Automatic}, 
+       StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{Automatic, 141}, {
+        Automatic, 0}}, StylesheetChooser`nbX$$}, 
+       TagBox[GridBox[{
+          {
+           
+           DynamicModuleBox[{StylesheetChooser`TEMPLATEFILEPATH$$ = 
+            Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+              "SystemResources", "StylesheetTemplates"}], 
+            StylesheetChooser`stylesheetNm$$ = "ReverseColor.nb", 
+            StylesheetChooser`fullStylesheetNm$$ = "ReverseColor.nb", 
+            StylesheetChooser`OPCSELRECT$$ = 0.5, 
+            StylesheetChooser`OPCDESELRECT$$ = 0.16, 
+            StylesheetChooser`OPCSELFNT$$ = 1, 
+            StylesheetChooser`OPCDESELFNT$$ = 1, StylesheetChooser`FONTSZ$$ = 
+            10, StylesheetChooser`FONTFAM$$ = "Helvetica", 
+            StylesheetChooser`FONTWT$$ = "Bold", 
+            StylesheetChooser`FONTCOLOR$$ = GrayLevel[1], 
+            StylesheetChooser`TOPBUTTONLABEL$$ = "New", 
+            StylesheetChooser`BOTBUTTONLABEL$$ = "Apply", 
+            StylesheetChooser`FULLWD$$ = 90, StylesheetChooser`FULLHT$$ = 130,
+             StylesheetChooser`MOUSEOVERWD$$ = 100, 
+            StylesheetChooser`MOUSEOVERHT$$ = 130, 
+            StylesheetChooser`BUTTONXMIN$$ = -50, 
+            StylesheetChooser`BUTTONXMAX$$ = 50, 
+            StylesheetChooser`BUTTONYMIN$$ = Rational[-65, 2], 
+            StylesheetChooser`BUTTONYMAX$$ = Rational[65, 2], 
+            StylesheetChooser`WDFUDGE$$ = 10, StylesheetChooser`HTFUDGE$$ = 0,
+             StylesheetChooser`BUTTONMARGIN$$ = -0.4, 
+            StylesheetChooser`BORDERWT$$ = 0.4, 
+            StylesheetChooser`BORDERREDUCTION$$ = 0.5, 
+            StylesheetChooser`ASPECTRATIO$$ = 0.7, 
+            StylesheetChooser`MARQUISCOLOR$$ = GrayLevel[0.5], 
+            StylesheetChooser`MARQUISOPC$$ = 0.7, 
+            StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{
+             Automatic, 141}, {Automatic, 0}}, StylesheetChooser`nbX$$ = 
+            Notebook[{
+              Cell[
+               CellGroupData[{
+                 Cell["Enter title here", "Title"], 
+                 Cell["Enter subtitle here", "Subtitle"], 
+                 Cell[
+                  CellGroupData[{
+                    Cell["Enter section title here", "Section"], 
+                    Cell[
+                    CellGroupData[{
+                    Cell["Enter subsection title here", "Subsection"], 
+                    Cell[
+                    "Enter text here. Enter TraditionalForm input for \
+evaluation in a separate cell below:", "Text"], 
+                    Cell[
+                    CellGroupData[{
+                    Cell[
+                    BoxData[
+                    FormBox[
+                    RowBox[{
+                    RowBox[{"\[Integral]", 
+                    RowBox[{"x", 
+                    RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+                    SqrtBox["z"]}], TraditionalForm]], "Input"], 
+                    Cell[
+                    BoxData[
+                    FormBox[
+                    RowBox[{
+                    FractionBox[
+                    SuperscriptBox["x", "2"], "2"], "+", 
+                    SqrtBox["z"]}], TraditionalForm]], "Output"]}, Open]], 
+                    Cell[
+                    CellGroupData[{
+                    Cell["Enter bulleted item text here.", "Item"], 
+                    Cell["Enter subitem text here.", "Subitem"]}, Open]], 
+                    Cell[
+                    "Enter text here. Enter formula for display in a separate \
+cell below:", "Text"], 
+                    Cell[
+                    BoxData[
+                    FormBox[
+                    RowBox[{
+                    RowBox[{"\[Integral]", 
+                    RowBox[{"x", 
+                    RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+                    SqrtBox["z"]}], TraditionalForm]], "DisplayFormula"]}, 
+                    Open]]}, Open]], 
+                 Cell[
+                  CellGroupData[{
+                    Cell["Enter section title here", "Section"], 
+                    Cell[
+                    
+                    TextData[{
+                    "Enter text here. Enter an inline formula like this: ", 
+                    Cell[
+                    BoxData[
+                    FormBox[
+                    RowBox[{"2", "+", "2"}], TraditionalForm]]], "."}], 
+                    "Text"], 
+                    Cell[
+                    CellGroupData[{
+                    Cell["Enter numbered item text here.", "ItemNumbered"], 
+                    Cell[
+                    "Enter numbered subitem text here.", "SubitemNumbered"]}, 
+                    Open]], 
+                    Cell[
+                    "Enter text here. Enter formula for numbered display in a \
+separate cell below:", "Text"], 
+                    Cell[
+                    BoxData[
+                    FormBox[
+                    RowBox[{
+                    RowBox[{"\[Integral]", 
+                    RowBox[{"x", 
+                    RowBox[{"\[DifferentialD]", "x"}]}]}], "+", 
+                    SqrtBox["z"]}], TraditionalForm]], 
+                    "DisplayFormulaNumbered"]}, Open]]}, Open]]}, 
+             StyleDefinitions -> "ReverseColor.nb"], 
+            StylesheetChooser`newNB$$ = NotebookObject[
+             FrontEndObject[
+              LinkObject["2xj_shm", 3, 3]], 34]}, 
+            GraphicsBox[{InsetBox[
+               GraphicsBox[InsetBox[
+                 
+                 DynamicBox[FEPrivate`FrontEndResource[
+                  "StylesheetThumbnails", "ReverseColor"],
+                  ImageSizeCache->{90., {0., 120.}}], {0, 0}]], {0, 0}], 
+              InsetBox[
+               PaneSelectorBox[{False->
+                PaneBox["",
+                 ImageSize->{100, 130}], True->
+                GraphicsBox[InsetBox[
+                  TagBox[GridBox[{
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], RectangleBox[{-50, -32.5}, {58, 32.5}], 
+                    InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[{-50, -32.5}, {50, 32.5}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[{-50, -32.5}, {50, 32.5}]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[StylesheetChooser`nbX$$ = Get[
+                    ToFileName[
+                    ReleaseHold[StylesheetChooser`TEMPLATEFILEPATH$$], 
+                    "ReverseColorTemplate.nb"]]; 
+                    StylesheetChooser`newNB$$ = 
+                    ReplaceAll[StylesheetChooser`nbX$$, Notebook[
+                    Pattern[StylesheetChooser`nbCont, 
+                    Blank[]], 
+                    Pattern[StylesheetChooser`nbOpts, 
+                    BlankNullSequence[]]] :> 
+                    NotebookCreate[StylesheetChooser`nbOpts]]; 
+                    NotebookWrite[StylesheetChooser`newNB$$, 
+                    Part[StylesheetChooser`nbX$$, 1]]; 
+                    SelectionMove[
+                    StylesheetChooser`newNB$$, Before, Notebook]; 
+                    If[False, 
+                    SetOptions[
+                    StylesheetChooser`newNB$$, ScreenStyleEnvironment -> 
+                    "SlideShow"]; NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Open a new Reverse Color template.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Open a new Reverse Color template.", 
+                    "Tooltip"]& ]},
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], RectangleBox[{-50, -32.5}, {58, 32.5}], 
+                    InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[{-50, -32.5}, {50, 32.5}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[{-50, -32.5}, {50, 32.5}]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[If[
+                    And[InputNotebook[] =!= $Failed, FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]] =!= 
+                    MessagesNotebook[], Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells] =!= {
+                    DockedCells -> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "HelpViewerToolbar"]}, Cases[
+                    Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["FEBitmaps", 
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`EvaluationNotebook[], {
+                    TaggingRules, "DisplayFunction"}], "FunctionHeader", 
+                    "TutorialHeader"]]], Infinity] === {}], 
+                    SetOptions[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], StyleDefinitions -> 
+                    StylesheetChooser`fullStylesheetNm$$]]; 
+                    If[False, SetOptions[
+                    InputNotebook[], ScreenStyleEnvironment -> "SlideShow"]; 
+                    NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Apply Reverse Color stylesheet to notebook.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, 
+                    "Apply Reverse Color stylesheet to notebook.", 
+                    "Tooltip"]& ]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{-0.4}}}],
+                   "Grid"], {0, 0}],
+                 ImageSize->{100, 130}]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                FrameMargins->0,
+                ImageSize->Automatic]]},
+             ImageSize->{90, 130}],
+            DynamicModuleValues:>{}]},
+          {
+           TagBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               StyleBox[
+                TemplateBox[{"\"Reverse Color\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->GrayLevel[0],
+                FrontFaceColor->GrayLevel[0],
+                GraphicsColor->GrayLevel[0],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->GrayLevel[1],
+                $CellContext`BackFaceColor -> GrayLevel[0]], True->
+               StyleBox[
+                TemplateBox[{"\"Reverse Color\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->RGBColor[0, 0, 1],
+                FrontFaceColor->RGBColor[0, 0, 1],
+                GraphicsColor->RGBColor[0, 0, 1],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->RGBColor[0, 0, 1],
+                $CellContext`BackFaceColor -> RGBColor[0, 0, 1]]}, Dynamic[
+                CurrentValue["MouseOver"]],
+               FrameMargins->0,
+               ImageSize->Automatic],
+              Appearance->"Frameless",
+              ButtonFunction:>DialogReturn[
+                NotebookCreate[
+                StyleDefinitions -> StylesheetChooser`fullStylesheetNm$$]],
+              Evaluator->Automatic,
+              Method->"Preemptive"],
+             StyleBox[
+             "\"Click to open a blank Reverse Color window.\"", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10, StripOnInput -> False],
+             TooltipDelay->0.2,
+             TooltipStyle->"TextStyling"],
+            Annotation[#, 
+             Style[
+             "Click to open a blank Reverse Color window.", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10], "Tooltip"]& ]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{None}}, "Rows" -> {{-0.5}}}],
+        "Grid"],
+       DynamicModuleValues:>{}],
+      DynamicModuleValues:>{}], 
+     DynamicModuleBox[{}, 
+      DynamicModuleBox[{StylesheetChooser`stylesheetNm$$ = 
+       "JournalArticle.nb", StylesheetChooser`fullStylesheetNm$$ = 
+       FrontEnd`FileName[{"Article"}, "JournalArticle.nb", CharacterEncoding -> 
+        "UTF-8"], StylesheetChooser`TEMPLATEFILEPATH$$ = 
+       Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+         "SystemResources", "StylesheetTemplates"}], 
+       StylesheetChooser`MAXLABELWIDTH$$ = 9.5, 
+       StylesheetChooser`COLUMNSPACERSZ$$ = 0, 
+       StylesheetChooser`CAPTIONFNTFAM$$ = "Helvetica", 
+       StylesheetChooser`CAPTIONFNTWT$$ = "Plain", 
+       StylesheetChooser`CAPTIONFNTSZ$$ = 9, 
+       StylesheetChooser`DESELCAPTIONCOLOR$$ = GrayLevel[0], 
+       StylesheetChooser`SELCAPTIONCOLOR$$ = RGBColor[0, 0, 1], 
+       StylesheetChooser`TOOLTIPFNTWT$$ = "Plain", 
+       StylesheetChooser`TOOLTIPFNTSZ$$ = 10, 
+       StylesheetChooser`TOOLTIPSPACINGS$$ = {0, 0}, 
+       StylesheetChooser`TOOLTIPITEMSIZE$$ = {Automatic, Automatic}, 
+       StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{Automatic, 141}, {
+        Automatic, 0}}, StylesheetChooser`nbX$$}, 
+       TagBox[GridBox[{
+          {
+           
+           DynamicModuleBox[{StylesheetChooser`TEMPLATEFILEPATH$$ = 
+            Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+              "SystemResources", "StylesheetTemplates"}], 
+            StylesheetChooser`stylesheetNm$$ = "JournalArticle.nb", 
+            StylesheetChooser`fullStylesheetNm$$ = 
+            FrontEnd`FileName[{"Article"}, "JournalArticle.nb", 
+             CharacterEncoding -> "UTF-8"], StylesheetChooser`OPCSELRECT$$ = 
+            0.5, StylesheetChooser`OPCDESELRECT$$ = 0.16, 
+            StylesheetChooser`OPCSELFNT$$ = 1, 
+            StylesheetChooser`OPCDESELFNT$$ = 1, StylesheetChooser`FONTSZ$$ = 
+            10, StylesheetChooser`FONTFAM$$ = "Helvetica", 
+            StylesheetChooser`FONTWT$$ = "Bold", 
+            StylesheetChooser`FONTCOLOR$$ = GrayLevel[1], 
+            StylesheetChooser`TOPBUTTONLABEL$$ = "New", 
+            StylesheetChooser`BOTBUTTONLABEL$$ = "Apply", 
+            StylesheetChooser`FULLWD$$ = 90, StylesheetChooser`FULLHT$$ = 130,
+             StylesheetChooser`MOUSEOVERWD$$ = 100, 
+            StylesheetChooser`MOUSEOVERHT$$ = 130, 
+            StylesheetChooser`BUTTONXMIN$$ = -50, 
+            StylesheetChooser`BUTTONXMAX$$ = 50, 
+            StylesheetChooser`BUTTONYMIN$$ = Rational[-65, 2], 
+            StylesheetChooser`BUTTONYMAX$$ = Rational[65, 2], 
+            StylesheetChooser`WDFUDGE$$ = 10, StylesheetChooser`HTFUDGE$$ = 0,
+             StylesheetChooser`BUTTONMARGIN$$ = -0.4, 
+            StylesheetChooser`BORDERWT$$ = 0.4, 
+            StylesheetChooser`BORDERREDUCTION$$ = 0.5, 
+            StylesheetChooser`ASPECTRATIO$$ = 0.7, 
+            StylesheetChooser`MARQUISCOLOR$$ = GrayLevel[0.5], 
+            StylesheetChooser`MARQUISOPC$$ = 0.7, 
+            StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{
+             Automatic, 141}, {Automatic, 0}}, StylesheetChooser`nbX$$, 
+            StylesheetChooser`newNB$$}, 
+            GraphicsBox[{InsetBox[
+               GraphicsBox[InsetBox[
+                 
+                 DynamicBox[FEPrivate`FrontEndResource[
+                  "StylesheetThumbnails", "JournalArticleAlt1"],
+                  ImageSizeCache->{90., {0., 120.}}], {0, 0}]], {0, 0}], 
+              InsetBox[
+               PaneSelectorBox[{False->
+                PaneBox["",
+                 ImageSize->{100, 130}], True->
+                GraphicsBox[InsetBox[
+                  TagBox[GridBox[{
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[StylesheetChooser`nbX$$ = Get[
+                    ToFileName[
+                    ReleaseHold[StylesheetChooser`TEMPLATEFILEPATH$$], 
+                    "JournalArticleTemplate.nb"]]; 
+                    StylesheetChooser`newNB$$ = 
+                    ReplaceAll[StylesheetChooser`nbX$$, Notebook[
+                    Pattern[StylesheetChooser`nbCont, 
+                    Blank[]], 
+                    Pattern[StylesheetChooser`nbOpts, 
+                    BlankNullSequence[]]] :> 
+                    NotebookCreate[StylesheetChooser`nbOpts]]; 
+                    NotebookWrite[StylesheetChooser`newNB$$, 
+                    Part[StylesheetChooser`nbX$$, 1]]; 
+                    SelectionMove[
+                    StylesheetChooser`newNB$$, Before, Notebook]; 
+                    If[False, 
+                    SetOptions[
+                    StylesheetChooser`newNB$$, ScreenStyleEnvironment -> 
+                    "SlideShow"]; NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Open a new Journal Article template.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Open a new Journal Article template.", 
+                    "Tooltip"]& ]},
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[If[
+                    And[InputNotebook[] =!= $Failed, FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]] =!= 
+                    MessagesNotebook[], Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells] =!= {
+                    DockedCells -> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "HelpViewerToolbar"]}, Cases[
+                    Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["FEBitmaps", 
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`EvaluationNotebook[], {
+                    TaggingRules, "DisplayFunction"}], "FunctionHeader", 
+                    "TutorialHeader"]]], Infinity] === {}], 
+                    SetOptions[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], StyleDefinitions -> 
+                    StylesheetChooser`fullStylesheetNm$$]]; 
+                    If[False, SetOptions[
+                    InputNotebook[], ScreenStyleEnvironment -> "SlideShow"]; 
+                    NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Apply Journal Article stylesheet to notebook.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, 
+                    "Apply Journal Article stylesheet to notebook.", 
+                    "Tooltip"]& ]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{-0.4}}}],
+                   "Grid"], {0, 0}],
+                 ImageSize->{100, 130}]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                FrameMargins->0,
+                ImageSize->Automatic]]},
+             ImageSize->{90, 130}],
+            DynamicModuleValues:>{}]},
+          {
+           TagBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               StyleBox[
+                TemplateBox[{"\"Journal Article\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->GrayLevel[0],
+                FrontFaceColor->GrayLevel[0],
+                GraphicsColor->GrayLevel[0],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->GrayLevel[1],
+                $CellContext`BackFaceColor -> GrayLevel[0]], True->
+               StyleBox[
+                TemplateBox[{"\"Journal Article\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->RGBColor[0, 0, 1],
+                FrontFaceColor->RGBColor[0, 0, 1],
+                GraphicsColor->RGBColor[0, 0, 1],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->RGBColor[0, 0, 1],
+                $CellContext`BackFaceColor -> RGBColor[0, 0, 1]]}, Dynamic[
+                CurrentValue["MouseOver"]],
+               FrameMargins->0,
+               ImageSize->Automatic],
+              Appearance->"Frameless",
+              ButtonFunction:>DialogReturn[
+                NotebookCreate[
+                StyleDefinitions -> StylesheetChooser`fullStylesheetNm$$]],
+              Evaluator->Automatic,
+              Method->"Preemptive"],
+             StyleBox[
+             "\"Click to open a blank Journal Article window.\"", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10, StripOnInput -> False],
+             TooltipDelay->0.2,
+             TooltipStyle->"TextStyling"],
+            Annotation[#, 
+             Style[
+             "Click to open a blank Journal Article window.", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10], "Tooltip"]& ]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{None}}, "Rows" -> {{-0.5}}}],
+        "Grid"],
+       DynamicModuleValues:>{}],
+      DynamicModuleValues:>{}], 
+     DynamicModuleBox[{}, 
+      DynamicModuleBox[{StylesheetChooser`stylesheetNm$$ = "Preprint.nb", 
+       StylesheetChooser`fullStylesheetNm$$ = 
+       FrontEnd`FileName[{"Article"}, "Preprint.nb", CharacterEncoding -> 
+        "UTF-8"], StylesheetChooser`TEMPLATEFILEPATH$$ = 
+       Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+         "SystemResources", "StylesheetTemplates"}], 
+       StylesheetChooser`MAXLABELWIDTH$$ = 9.5, 
+       StylesheetChooser`COLUMNSPACERSZ$$ = 0, 
+       StylesheetChooser`CAPTIONFNTFAM$$ = "Helvetica", 
+       StylesheetChooser`CAPTIONFNTWT$$ = "Plain", 
+       StylesheetChooser`CAPTIONFNTSZ$$ = 9, 
+       StylesheetChooser`DESELCAPTIONCOLOR$$ = GrayLevel[0], 
+       StylesheetChooser`SELCAPTIONCOLOR$$ = RGBColor[0, 0, 1], 
+       StylesheetChooser`TOOLTIPFNTWT$$ = "Plain", 
+       StylesheetChooser`TOOLTIPFNTSZ$$ = 10, 
+       StylesheetChooser`TOOLTIPSPACINGS$$ = {0, 0}, 
+       StylesheetChooser`TOOLTIPITEMSIZE$$ = {Automatic, Automatic}, 
+       StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{Automatic, 141}, {
+        Automatic, 0}}, StylesheetChooser`nbX$$}, 
+       TagBox[GridBox[{
+          {
+           
+           DynamicModuleBox[{StylesheetChooser`TEMPLATEFILEPATH$$ = 
+            Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+              "SystemResources", "StylesheetTemplates"}], 
+            StylesheetChooser`stylesheetNm$$ = "Preprint.nb", 
+            StylesheetChooser`fullStylesheetNm$$ = 
+            FrontEnd`FileName[{"Article"}, "Preprint.nb", CharacterEncoding -> 
+             "UTF-8"], StylesheetChooser`OPCSELRECT$$ = 0.5, 
+            StylesheetChooser`OPCDESELRECT$$ = 0.16, 
+            StylesheetChooser`OPCSELFNT$$ = 1, 
+            StylesheetChooser`OPCDESELFNT$$ = 1, StylesheetChooser`FONTSZ$$ = 
+            10, StylesheetChooser`FONTFAM$$ = "Helvetica", 
+            StylesheetChooser`FONTWT$$ = "Bold", 
+            StylesheetChooser`FONTCOLOR$$ = GrayLevel[1], 
+            StylesheetChooser`TOPBUTTONLABEL$$ = "New", 
+            StylesheetChooser`BOTBUTTONLABEL$$ = "Apply", 
+            StylesheetChooser`FULLWD$$ = 90, StylesheetChooser`FULLHT$$ = 130,
+             StylesheetChooser`MOUSEOVERWD$$ = 100, 
+            StylesheetChooser`MOUSEOVERHT$$ = 130, 
+            StylesheetChooser`BUTTONXMIN$$ = -50, 
+            StylesheetChooser`BUTTONXMAX$$ = 50, 
+            StylesheetChooser`BUTTONYMIN$$ = Rational[-65, 2], 
+            StylesheetChooser`BUTTONYMAX$$ = Rational[65, 2], 
+            StylesheetChooser`WDFUDGE$$ = 10, StylesheetChooser`HTFUDGE$$ = 0,
+             StylesheetChooser`BUTTONMARGIN$$ = -0.4, 
+            StylesheetChooser`BORDERWT$$ = 0.4, 
+            StylesheetChooser`BORDERREDUCTION$$ = 0.5, 
+            StylesheetChooser`ASPECTRATIO$$ = 0.7, 
+            StylesheetChooser`MARQUISCOLOR$$ = GrayLevel[0.5], 
+            StylesheetChooser`MARQUISOPC$$ = 0.7, 
+            StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{
+             Automatic, 141}, {Automatic, 0}}, StylesheetChooser`nbX$$, 
+            StylesheetChooser`newNB$$}, 
+            GraphicsBox[{InsetBox[
+               GraphicsBox[InsetBox[
+                 DynamicBox[FEPrivate`FrontEndResource[
+                  "StylesheetThumbnails", "PreprintAlt1"],
+                  ImageSizeCache->{90., {0., 120.}}], {0, 0}]], {0, 0}], 
+              InsetBox[
+               PaneSelectorBox[{False->
+                PaneBox["",
+                 ImageSize->{100, 130}], True->
+                GraphicsBox[InsetBox[
+                  TagBox[GridBox[{
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[StylesheetChooser`nbX$$ = Get[
+                    ToFileName[
+                    ReleaseHold[StylesheetChooser`TEMPLATEFILEPATH$$], 
+                    "PreprintTemplate.nb"]]; 
+                    StylesheetChooser`newNB$$ = 
+                    ReplaceAll[StylesheetChooser`nbX$$, Notebook[
+                    Pattern[StylesheetChooser`nbCont, 
+                    Blank[]], 
+                    Pattern[StylesheetChooser`nbOpts, 
+                    BlankNullSequence[]]] :> 
+                    NotebookCreate[StylesheetChooser`nbOpts]]; 
+                    NotebookWrite[StylesheetChooser`newNB$$, 
+                    Part[StylesheetChooser`nbX$$, 1]]; 
+                    SelectionMove[
+                    StylesheetChooser`newNB$$, Before, Notebook]; 
+                    If[False, 
+                    SetOptions[
+                    StylesheetChooser`newNB$$, ScreenStyleEnvironment -> 
+                    "SlideShow"]; NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Open a new Preprint template.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Open a new Preprint template.", 
+                    "Tooltip"]& ]},
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[If[
+                    And[InputNotebook[] =!= $Failed, FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]] =!= 
+                    MessagesNotebook[], Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells] =!= {
+                    DockedCells -> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "HelpViewerToolbar"]}, Cases[
+                    Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["FEBitmaps", 
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`EvaluationNotebook[], {
+                    TaggingRules, "DisplayFunction"}], "FunctionHeader", 
+                    "TutorialHeader"]]], Infinity] === {}], 
+                    SetOptions[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], StyleDefinitions -> 
+                    StylesheetChooser`fullStylesheetNm$$]]; 
+                    If[False, SetOptions[
+                    InputNotebook[], ScreenStyleEnvironment -> "SlideShow"]; 
+                    NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Apply Preprint stylesheet to notebook.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Apply Preprint stylesheet to notebook.", 
+                    "Tooltip"]& ]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{-0.4}}}],
+                   "Grid"], {0, 0}],
+                 ImageSize->{100, 130}]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                FrameMargins->0,
+                ImageSize->Automatic]]},
+             ImageSize->{90, 130}],
+            DynamicModuleValues:>{}]},
+          {
+           TagBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               StyleBox[
+                TemplateBox[{"\"Preprint\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->GrayLevel[0],
+                FrontFaceColor->GrayLevel[0],
+                GraphicsColor->GrayLevel[0],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->GrayLevel[1],
+                $CellContext`BackFaceColor -> GrayLevel[0]], True->
+               StyleBox[
+                TemplateBox[{"\"Preprint\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->RGBColor[0, 0, 1],
+                FrontFaceColor->RGBColor[0, 0, 1],
+                GraphicsColor->RGBColor[0, 0, 1],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->RGBColor[0, 0, 1],
+                $CellContext`BackFaceColor -> RGBColor[0, 0, 1]]}, Dynamic[
+                CurrentValue["MouseOver"]],
+               FrameMargins->0,
+               ImageSize->Automatic],
+              Appearance->"Frameless",
+              ButtonFunction:>DialogReturn[
+                NotebookCreate[
+                StyleDefinitions -> StylesheetChooser`fullStylesheetNm$$]],
+              Evaluator->Automatic,
+              Method->"Preemptive"],
+             StyleBox[
+             "\"Click to open a blank Preprint window.\"", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10, StripOnInput -> False],
+             TooltipDelay->0.2,
+             TooltipStyle->"TextStyling"],
+            Annotation[#, 
+             Style[
+             "Click to open a blank Preprint window.", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10], "Tooltip"]& ]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{None}}, "Rows" -> {{-0.5}}}],
+        "Grid"],
+       DynamicModuleValues:>{}],
+      DynamicModuleValues:>{}], "\<\"\"\>"},
+    {"\<\"\"\>", 
+     DynamicModuleBox[{}, 
+      DynamicModuleBox[{StylesheetChooser`stylesheetNm$$ = "Textbook.nb", 
+       StylesheetChooser`fullStylesheetNm$$ = 
+       FrontEnd`FileName[{"Book"}, "Textbook.nb", CharacterEncoding -> 
+        "UTF-8"], StylesheetChooser`TEMPLATEFILEPATH$$ = 
+       Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+         "SystemResources", "StylesheetTemplates"}], 
+       StylesheetChooser`MAXLABELWIDTH$$ = 9.5, 
+       StylesheetChooser`COLUMNSPACERSZ$$ = 0, 
+       StylesheetChooser`CAPTIONFNTFAM$$ = "Helvetica", 
+       StylesheetChooser`CAPTIONFNTWT$$ = "Plain", 
+       StylesheetChooser`CAPTIONFNTSZ$$ = 9, 
+       StylesheetChooser`DESELCAPTIONCOLOR$$ = GrayLevel[0], 
+       StylesheetChooser`SELCAPTIONCOLOR$$ = RGBColor[0, 0, 1], 
+       StylesheetChooser`TOOLTIPFNTWT$$ = "Plain", 
+       StylesheetChooser`TOOLTIPFNTSZ$$ = 10, 
+       StylesheetChooser`TOOLTIPSPACINGS$$ = {0, 0}, 
+       StylesheetChooser`TOOLTIPITEMSIZE$$ = {Automatic, Automatic}, 
+       StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{Automatic, 141}, {
+        Automatic, 0}}, StylesheetChooser`nbX$$}, 
+       TagBox[GridBox[{
+          {
+           
+           DynamicModuleBox[{StylesheetChooser`TEMPLATEFILEPATH$$ = 
+            Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+              "SystemResources", "StylesheetTemplates"}], 
+            StylesheetChooser`stylesheetNm$$ = "Textbook.nb", 
+            StylesheetChooser`fullStylesheetNm$$ = 
+            FrontEnd`FileName[{"Book"}, "Textbook.nb", CharacterEncoding -> 
+             "UTF-8"], StylesheetChooser`OPCSELRECT$$ = 0.5, 
+            StylesheetChooser`OPCDESELRECT$$ = 0.16, 
+            StylesheetChooser`OPCSELFNT$$ = 1, 
+            StylesheetChooser`OPCDESELFNT$$ = 1, StylesheetChooser`FONTSZ$$ = 
+            10, StylesheetChooser`FONTFAM$$ = "Helvetica", 
+            StylesheetChooser`FONTWT$$ = "Bold", 
+            StylesheetChooser`FONTCOLOR$$ = GrayLevel[1], 
+            StylesheetChooser`TOPBUTTONLABEL$$ = "New", 
+            StylesheetChooser`BOTBUTTONLABEL$$ = "Apply", 
+            StylesheetChooser`FULLWD$$ = 90, StylesheetChooser`FULLHT$$ = 130,
+             StylesheetChooser`MOUSEOVERWD$$ = 100, 
+            StylesheetChooser`MOUSEOVERHT$$ = 130, 
+            StylesheetChooser`BUTTONXMIN$$ = -50, 
+            StylesheetChooser`BUTTONXMAX$$ = 50, 
+            StylesheetChooser`BUTTONYMIN$$ = Rational[-65, 2], 
+            StylesheetChooser`BUTTONYMAX$$ = Rational[65, 2], 
+            StylesheetChooser`WDFUDGE$$ = 10, StylesheetChooser`HTFUDGE$$ = 0,
+             StylesheetChooser`BUTTONMARGIN$$ = -0.4, 
+            StylesheetChooser`BORDERWT$$ = 0.4, 
+            StylesheetChooser`BORDERREDUCTION$$ = 0.5, 
+            StylesheetChooser`ASPECTRATIO$$ = 0.7, 
+            StylesheetChooser`MARQUISCOLOR$$ = GrayLevel[0.5], 
+            StylesheetChooser`MARQUISOPC$$ = 0.7, 
+            StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{
+             Automatic, 141}, {Automatic, 0}}, StylesheetChooser`nbX$$, 
+            StylesheetChooser`newNB$$}, 
+            GraphicsBox[{InsetBox[
+               GraphicsBox[InsetBox[
+                 
+                 DynamicBox[FEPrivate`FrontEndResource[
+                  "StylesheetThumbnails", "TextbookAlt1"],
+                  ImageSizeCache->{90., {0., 120.}}], {0, 0}]], {0, 0}], 
+              InsetBox[
+               PaneSelectorBox[{False->
+                PaneBox["",
+                 ImageSize->{100, 130}], True->
+                GraphicsBox[InsetBox[
+                  TagBox[GridBox[{
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[StylesheetChooser`nbX$$ = Get[
+                    ToFileName[
+                    ReleaseHold[StylesheetChooser`TEMPLATEFILEPATH$$], 
+                    "TextbookTemplate.nb"]]; 
+                    StylesheetChooser`newNB$$ = 
+                    ReplaceAll[StylesheetChooser`nbX$$, Notebook[
+                    Pattern[StylesheetChooser`nbCont, 
+                    Blank[]], 
+                    Pattern[StylesheetChooser`nbOpts, 
+                    BlankNullSequence[]]] :> 
+                    NotebookCreate[StylesheetChooser`nbOpts]]; 
+                    NotebookWrite[StylesheetChooser`newNB$$, 
+                    Part[StylesheetChooser`nbX$$, 1]]; 
+                    SelectionMove[
+                    StylesheetChooser`newNB$$, Before, Notebook]; 
+                    If[False, 
+                    SetOptions[
+                    StylesheetChooser`newNB$$, ScreenStyleEnvironment -> 
+                    "SlideShow"]; NotebookOpen[
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Open a new Textbook template.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Open a new Textbook template.", 
+                    "Tooltip"]& ]},
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[If[
+                    And[InputNotebook[] =!= $Failed, FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]] =!= 
+                    MessagesNotebook[], Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells] =!= {
+                    DockedCells -> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "HelpViewerToolbar"]}, Cases[
+                    Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["FEBitmaps", 
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`EvaluationNotebook[], {
+                    TaggingRules, "DisplayFunction"}], "FunctionHeader", 
+                    "TutorialHeader"]]], Infinity] === {}], 
+                    SetOptions[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], StyleDefinitions -> 
+                    StylesheetChooser`fullStylesheetNm$$]]; 
+                    If[False, SetOptions[
+                    InputNotebook[], ScreenStyleEnvironment -> "SlideShow"]; 
+                    NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Apply Textbook stylesheet to notebook.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Apply Textbook stylesheet to notebook.", 
+                    "Tooltip"]& ]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{-0.4}}}],
+                   "Grid"], {0, 0}],
+                 ImageSize->{100, 130}]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                FrameMargins->0,
+                ImageSize->Automatic]]},
+             ImageSize->{90, 130}],
+            DynamicModuleValues:>{}]},
+          {
+           TagBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               StyleBox[
+                TemplateBox[{"\"Textbook\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->GrayLevel[0],
+                FrontFaceColor->GrayLevel[0],
+                GraphicsColor->GrayLevel[0],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->GrayLevel[1],
+                $CellContext`BackFaceColor -> GrayLevel[0]], True->
+               StyleBox[
+                TemplateBox[{"\"Textbook\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->RGBColor[0, 0, 1],
+                FrontFaceColor->RGBColor[0, 0, 1],
+                GraphicsColor->RGBColor[0, 0, 1],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->RGBColor[0, 0, 1],
+                $CellContext`BackFaceColor -> RGBColor[0, 0, 1]]}, Dynamic[
+                CurrentValue["MouseOver"]],
+               FrameMargins->0,
+               ImageSize->Automatic],
+              Appearance->"Frameless",
+              ButtonFunction:>DialogReturn[
+                NotebookCreate[
+                StyleDefinitions -> StylesheetChooser`fullStylesheetNm$$]],
+              Evaluator->Automatic,
+              Method->"Preemptive"],
+             StyleBox[
+             "\"Click to open a blank Textbook window.\"", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10, StripOnInput -> False],
+             TooltipDelay->0.2,
+             TooltipStyle->"TextStyling"],
+            Annotation[#, 
+             Style[
+             "Click to open a blank Textbook window.", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10], "Tooltip"]& ]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{None}}, "Rows" -> {{-0.5}}}],
+        "Grid"],
+       DynamicModuleValues:>{}],
+      DynamicModuleValues:>{}], 
+     DynamicModuleBox[{}, 
+      DynamicModuleBox[{StylesheetChooser`stylesheetNm$$ = "Monograph.nb", 
+       StylesheetChooser`fullStylesheetNm$$ = 
+       FrontEnd`FileName[{"Book"}, "Monograph.nb", CharacterEncoding -> 
+        "UTF-8"], StylesheetChooser`TEMPLATEFILEPATH$$ = 
+       Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+         "SystemResources", "StylesheetTemplates"}], 
+       StylesheetChooser`MAXLABELWIDTH$$ = 9.5, 
+       StylesheetChooser`COLUMNSPACERSZ$$ = 0, 
+       StylesheetChooser`CAPTIONFNTFAM$$ = "Helvetica", 
+       StylesheetChooser`CAPTIONFNTWT$$ = "Plain", 
+       StylesheetChooser`CAPTIONFNTSZ$$ = 9, 
+       StylesheetChooser`DESELCAPTIONCOLOR$$ = GrayLevel[0], 
+       StylesheetChooser`SELCAPTIONCOLOR$$ = RGBColor[0, 0, 1], 
+       StylesheetChooser`TOOLTIPFNTWT$$ = "Plain", 
+       StylesheetChooser`TOOLTIPFNTSZ$$ = 10, 
+       StylesheetChooser`TOOLTIPSPACINGS$$ = {0, 0}, 
+       StylesheetChooser`TOOLTIPITEMSIZE$$ = {Automatic, Automatic}, 
+       StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{Automatic, 141}, {
+        Automatic, 0}}, StylesheetChooser`nbX$$}, 
+       TagBox[GridBox[{
+          {
+           
+           DynamicModuleBox[{StylesheetChooser`TEMPLATEFILEPATH$$ = 
+            Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+              "SystemResources", "StylesheetTemplates"}], 
+            StylesheetChooser`stylesheetNm$$ = "Monograph.nb", 
+            StylesheetChooser`fullStylesheetNm$$ = 
+            FrontEnd`FileName[{"Book"}, "Monograph.nb", CharacterEncoding -> 
+             "UTF-8"], StylesheetChooser`OPCSELRECT$$ = 0.5, 
+            StylesheetChooser`OPCDESELRECT$$ = 0.16, 
+            StylesheetChooser`OPCSELFNT$$ = 1, 
+            StylesheetChooser`OPCDESELFNT$$ = 1, StylesheetChooser`FONTSZ$$ = 
+            10, StylesheetChooser`FONTFAM$$ = "Helvetica", 
+            StylesheetChooser`FONTWT$$ = "Bold", 
+            StylesheetChooser`FONTCOLOR$$ = GrayLevel[1], 
+            StylesheetChooser`TOPBUTTONLABEL$$ = "New", 
+            StylesheetChooser`BOTBUTTONLABEL$$ = "Apply", 
+            StylesheetChooser`FULLWD$$ = 90, StylesheetChooser`FULLHT$$ = 130,
+             StylesheetChooser`MOUSEOVERWD$$ = 100, 
+            StylesheetChooser`MOUSEOVERHT$$ = 130, 
+            StylesheetChooser`BUTTONXMIN$$ = -50, 
+            StylesheetChooser`BUTTONXMAX$$ = 50, 
+            StylesheetChooser`BUTTONYMIN$$ = Rational[-65, 2], 
+            StylesheetChooser`BUTTONYMAX$$ = Rational[65, 2], 
+            StylesheetChooser`WDFUDGE$$ = 10, StylesheetChooser`HTFUDGE$$ = 0,
+             StylesheetChooser`BUTTONMARGIN$$ = -0.4, 
+            StylesheetChooser`BORDERWT$$ = 0.4, 
+            StylesheetChooser`BORDERREDUCTION$$ = 0.5, 
+            StylesheetChooser`ASPECTRATIO$$ = 0.7, 
+            StylesheetChooser`MARQUISCOLOR$$ = GrayLevel[0.5], 
+            StylesheetChooser`MARQUISOPC$$ = 0.7, 
+            StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{
+             Automatic, 141}, {Automatic, 0}}, StylesheetChooser`nbX$$, 
+            StylesheetChooser`newNB$$}, 
+            GraphicsBox[{InsetBox[
+               GraphicsBox[InsetBox[
+                 
+                 DynamicBox[FEPrivate`FrontEndResource[
+                  "StylesheetThumbnails", "MonographAlt1"],
+                  ImageSizeCache->{90., {0., 120.}}], {0, 0}]], {0, 0}], 
+              InsetBox[
+               PaneSelectorBox[{False->
+                PaneBox["",
+                 ImageSize->{100, 130}], True->
+                GraphicsBox[InsetBox[
+                  TagBox[GridBox[{
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[StylesheetChooser`nbX$$ = Get[
+                    ToFileName[
+                    ReleaseHold[StylesheetChooser`TEMPLATEFILEPATH$$], 
+                    "MonographTemplate.nb"]]; 
+                    StylesheetChooser`newNB$$ = 
+                    ReplaceAll[StylesheetChooser`nbX$$, Notebook[
+                    Pattern[StylesheetChooser`nbCont, 
+                    Blank[]], 
+                    Pattern[StylesheetChooser`nbOpts, 
+                    BlankNullSequence[]]] :> 
+                    NotebookCreate[StylesheetChooser`nbOpts]]; 
+                    NotebookWrite[StylesheetChooser`newNB$$, 
+                    Part[StylesheetChooser`nbX$$, 1]]; 
+                    SelectionMove[
+                    StylesheetChooser`newNB$$, Before, Notebook]; 
+                    If[False, 
+                    SetOptions[
+                    StylesheetChooser`newNB$$, ScreenStyleEnvironment -> 
+                    "SlideShow"]; NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Open a new Monograph template.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Open a new Monograph template.", 
+                    "Tooltip"]& ]},
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[If[
+                    And[InputNotebook[] =!= $Failed, FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]] =!= 
+                    MessagesNotebook[], Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells] =!= {
+                    DockedCells -> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "HelpViewerToolbar"]}, Cases[
+                    Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["FEBitmaps", 
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`EvaluationNotebook[], {
+                    TaggingRules, "DisplayFunction"}], "FunctionHeader", 
+                    "TutorialHeader"]]], Infinity] === {}], 
+                    SetOptions[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], StyleDefinitions -> 
+                    StylesheetChooser`fullStylesheetNm$$]]; 
+                    If[False, SetOptions[
+                    InputNotebook[], ScreenStyleEnvironment -> "SlideShow"]; 
+                    NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Apply Monograph stylesheet to notebook.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Apply Monograph stylesheet to notebook.", 
+                    "Tooltip"]& ]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{-0.4}}}],
+                   "Grid"], {0, 0}],
+                 ImageSize->{100, 130}]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                FrameMargins->0,
+                ImageSize->Automatic]]},
+             ImageSize->{90, 130}],
+            DynamicModuleValues:>{}]},
+          {
+           TagBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               StyleBox[
+                TemplateBox[{"\"Monograph\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->GrayLevel[0],
+                FrontFaceColor->GrayLevel[0],
+                GraphicsColor->GrayLevel[0],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->GrayLevel[1],
+                $CellContext`BackFaceColor -> GrayLevel[0]], True->
+               StyleBox[
+                TemplateBox[{"\"Monograph\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->RGBColor[0, 0, 1],
+                FrontFaceColor->RGBColor[0, 0, 1],
+                GraphicsColor->RGBColor[0, 0, 1],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->RGBColor[0, 0, 1],
+                $CellContext`BackFaceColor -> RGBColor[0, 0, 1]]}, Dynamic[
+                CurrentValue["MouseOver"]],
+               FrameMargins->0,
+               ImageSize->Automatic],
+              Appearance->"Frameless",
+              ButtonFunction:>DialogReturn[
+                NotebookCreate[
+                StyleDefinitions -> StylesheetChooser`fullStylesheetNm$$]],
+              Evaluator->Automatic,
+              Method->"Preemptive"],
+             StyleBox[
+             "\"Click to open a blank Monograph window.\"", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10, StripOnInput -> False],
+             TooltipDelay->0.2,
+             TooltipStyle->"TextStyling"],
+            Annotation[#, 
+             Style[
+             "Click to open a blank Monograph window.", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10], "Tooltip"]& ]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{None}}, "Rows" -> {{-0.5}}}],
+        "Grid"],
+       DynamicModuleValues:>{}],
+      DynamicModuleValues:>{}], 
+     DynamicModuleBox[{}, 
+      DynamicModuleBox[{StylesheetChooser`stylesheetNm$$ = 
+       "StandardReport.nb", StylesheetChooser`fullStylesheetNm$$ = 
+       FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+        "UTF-8"], StylesheetChooser`TEMPLATEFILEPATH$$ = 
+       Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+         "SystemResources", "StylesheetTemplates"}], 
+       StylesheetChooser`MAXLABELWIDTH$$ = 9.5, 
+       StylesheetChooser`COLUMNSPACERSZ$$ = 0, 
+       StylesheetChooser`CAPTIONFNTFAM$$ = "Helvetica", 
+       StylesheetChooser`CAPTIONFNTWT$$ = "Plain", 
+       StylesheetChooser`CAPTIONFNTSZ$$ = 9, 
+       StylesheetChooser`DESELCAPTIONCOLOR$$ = GrayLevel[0], 
+       StylesheetChooser`SELCAPTIONCOLOR$$ = RGBColor[0, 0, 1], 
+       StylesheetChooser`TOOLTIPFNTWT$$ = "Plain", 
+       StylesheetChooser`TOOLTIPFNTSZ$$ = 10, 
+       StylesheetChooser`TOOLTIPSPACINGS$$ = {0, 0}, 
+       StylesheetChooser`TOOLTIPITEMSIZE$$ = {Automatic, Automatic}, 
+       StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{Automatic, 141}, {
+        Automatic, 0}}, StylesheetChooser`nbX$$}, 
+       TagBox[GridBox[{
+          {
+           
+           DynamicModuleBox[{StylesheetChooser`TEMPLATEFILEPATH$$ = 
+            Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+              "SystemResources", "StylesheetTemplates"}], 
+            StylesheetChooser`stylesheetNm$$ = "StandardReport.nb", 
+            StylesheetChooser`fullStylesheetNm$$ = 
+            FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+             CharacterEncoding -> "UTF-8"], StylesheetChooser`OPCSELRECT$$ = 
+            0.5, StylesheetChooser`OPCDESELRECT$$ = 0.16, 
+            StylesheetChooser`OPCSELFNT$$ = 1, 
+            StylesheetChooser`OPCDESELFNT$$ = 1, StylesheetChooser`FONTSZ$$ = 
+            10, StylesheetChooser`FONTFAM$$ = "Helvetica", 
+            StylesheetChooser`FONTWT$$ = "Bold", 
+            StylesheetChooser`FONTCOLOR$$ = GrayLevel[1], 
+            StylesheetChooser`TOPBUTTONLABEL$$ = "New", 
+            StylesheetChooser`BOTBUTTONLABEL$$ = "Apply", 
+            StylesheetChooser`FULLWD$$ = 90, StylesheetChooser`FULLHT$$ = 130,
+             StylesheetChooser`MOUSEOVERWD$$ = 100, 
+            StylesheetChooser`MOUSEOVERHT$$ = 130, 
+            StylesheetChooser`BUTTONXMIN$$ = -50, 
+            StylesheetChooser`BUTTONXMAX$$ = 50, 
+            StylesheetChooser`BUTTONYMIN$$ = Rational[-65, 2], 
+            StylesheetChooser`BUTTONYMAX$$ = Rational[65, 2], 
+            StylesheetChooser`WDFUDGE$$ = 10, StylesheetChooser`HTFUDGE$$ = 0,
+             StylesheetChooser`BUTTONMARGIN$$ = -0.4, 
+            StylesheetChooser`BORDERWT$$ = 0.4, 
+            StylesheetChooser`BORDERREDUCTION$$ = 0.5, 
+            StylesheetChooser`ASPECTRATIO$$ = 0.7, 
+            StylesheetChooser`MARQUISCOLOR$$ = GrayLevel[0.5], 
+            StylesheetChooser`MARQUISOPC$$ = 0.7, 
+            StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{
+             Automatic, 141}, {Automatic, 0}}, StylesheetChooser`nbX$$, 
+            StylesheetChooser`newNB$$}, 
+            GraphicsBox[{InsetBox[
+               GraphicsBox[InsetBox[
+                 
+                 DynamicBox[FEPrivate`FrontEndResource[
+                  "StylesheetThumbnails", "StandardReport"],
+                  ImageSizeCache->{90., {0., 120.}}], {0, 0}]], {0, 0}], 
+              InsetBox[
+               PaneSelectorBox[{False->
+                PaneBox["",
+                 ImageSize->{100, 130}], True->
+                GraphicsBox[InsetBox[
+                  TagBox[GridBox[{
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[StylesheetChooser`nbX$$ = Get[
+                    ToFileName[
+                    ReleaseHold[StylesheetChooser`TEMPLATEFILEPATH$$], 
+                    "StandardReportTemplate.nb"]]; 
+                    StylesheetChooser`newNB$$ = 
+                    ReplaceAll[StylesheetChooser`nbX$$, Notebook[
+                    Pattern[StylesheetChooser`nbCont, 
+                    Blank[]], 
+                    Pattern[StylesheetChooser`nbOpts, 
+                    BlankNullSequence[]]] :> 
+                    NotebookCreate[StylesheetChooser`nbOpts]]; 
+                    NotebookWrite[StylesheetChooser`newNB$$, 
+                    Part[StylesheetChooser`nbX$$, 1]]; 
+                    SelectionMove[
+                    StylesheetChooser`newNB$$, Before, Notebook]; 
+                    If[False, 
+                    SetOptions[
+                    StylesheetChooser`newNB$$, ScreenStyleEnvironment -> 
+                    "SlideShow"]; NotebookOpen[
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Open a new Standard Report template.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Open a new Standard Report template.", 
+                    "Tooltip"]& ]},
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[If[
+                    And[InputNotebook[] =!= $Failed, FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]] =!= 
+                    MessagesNotebook[], Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells] =!= {
+                    DockedCells -> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "HelpViewerToolbar"]}, Cases[
+                    Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["FEBitmaps", 
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`EvaluationNotebook[], {
+                    TaggingRules, "DisplayFunction"}], "FunctionHeader", 
+                    "TutorialHeader"]]], Infinity] === {}], 
+                    SetOptions[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], StyleDefinitions -> 
+                    StylesheetChooser`fullStylesheetNm$$]]; 
+                    If[False, SetOptions[
+                    InputNotebook[], ScreenStyleEnvironment -> "SlideShow"]; 
+                    NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Apply Standard Report stylesheet to notebook.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, 
+                    "Apply Standard Report stylesheet to notebook.", 
+                    "Tooltip"]& ]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{-0.4}}}],
+                   "Grid"], {0, 0}],
+                 ImageSize->{100, 130}]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                FrameMargins->0,
+                ImageSize->Automatic]]},
+             ImageSize->{90, 130}],
+            DynamicModuleValues:>{}]},
+          {
+           TagBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               StyleBox[
+                TemplateBox[{"\"Standard\:f39fReport\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->GrayLevel[0],
+                FrontFaceColor->GrayLevel[0],
+                GraphicsColor->GrayLevel[0],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->GrayLevel[1],
+                $CellContext`BackFaceColor -> GrayLevel[0]], True->
+               StyleBox[
+                TemplateBox[{"\"Standard Report\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->RGBColor[0, 0, 1],
+                FrontFaceColor->RGBColor[0, 0, 1],
+                GraphicsColor->RGBColor[0, 0, 1],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->RGBColor[0, 0, 1],
+                $CellContext`BackFaceColor -> RGBColor[0, 0, 1]]}, Dynamic[
+                CurrentValue["MouseOver"]],
+               FrameMargins->0,
+               ImageSize->Automatic],
+              Appearance->"Frameless",
+              ButtonFunction:>DialogReturn[
+                NotebookCreate[
+                StyleDefinitions -> StylesheetChooser`fullStylesheetNm$$]],
+              Evaluator->Automatic,
+              Method->"Preemptive"],
+             StyleBox[
+             "\"Click to open a blank Standard Report window.\"", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10, StripOnInput -> False],
+             TooltipDelay->0.2,
+             TooltipStyle->"TextStyling"],
+            Annotation[#, 
+             Style[
+             "Click to open a blank Standard Report window.", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10], "Tooltip"]& ]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{None}}, "Rows" -> {{-0.5}}}],
+        "Grid"],
+       DynamicModuleValues:>{}],
+      DynamicModuleValues:>{}], 
+     DynamicModuleBox[{}, 
+      DynamicModuleBox[{StylesheetChooser`stylesheetNm$$ = 
+       "ConfidentialReport.nb", StylesheetChooser`fullStylesheetNm$$ = 
+       FrontEnd`FileName[{"Report"}, "ConfidentialReport.nb", 
+        CharacterEncoding -> "UTF-8"], StylesheetChooser`TEMPLATEFILEPATH$$ = 
+       Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+         "SystemResources", "StylesheetTemplates"}], 
+       StylesheetChooser`MAXLABELWIDTH$$ = 9.5, 
+       StylesheetChooser`COLUMNSPACERSZ$$ = 0, 
+       StylesheetChooser`CAPTIONFNTFAM$$ = "Helvetica", 
+       StylesheetChooser`CAPTIONFNTWT$$ = "Plain", 
+       StylesheetChooser`CAPTIONFNTSZ$$ = 9, 
+       StylesheetChooser`DESELCAPTIONCOLOR$$ = GrayLevel[0], 
+       StylesheetChooser`SELCAPTIONCOLOR$$ = RGBColor[0, 0, 1], 
+       StylesheetChooser`TOOLTIPFNTWT$$ = "Plain", 
+       StylesheetChooser`TOOLTIPFNTSZ$$ = 10, 
+       StylesheetChooser`TOOLTIPSPACINGS$$ = {0, 0}, 
+       StylesheetChooser`TOOLTIPITEMSIZE$$ = {Automatic, Automatic}, 
+       StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{Automatic, 141}, {
+        Automatic, 0}}, StylesheetChooser`nbX$$}, 
+       TagBox[GridBox[{
+          {
+           
+           DynamicModuleBox[{StylesheetChooser`TEMPLATEFILEPATH$$ = 
+            Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+              "SystemResources", "StylesheetTemplates"}], 
+            StylesheetChooser`stylesheetNm$$ = "ConfidentialReport.nb", 
+            StylesheetChooser`fullStylesheetNm$$ = 
+            FrontEnd`FileName[{"Report"}, "ConfidentialReport.nb", 
+             CharacterEncoding -> "UTF-8"], StylesheetChooser`OPCSELRECT$$ = 
+            0.5, StylesheetChooser`OPCDESELRECT$$ = 0.16, 
+            StylesheetChooser`OPCSELFNT$$ = 1, 
+            StylesheetChooser`OPCDESELFNT$$ = 1, StylesheetChooser`FONTSZ$$ = 
+            10, StylesheetChooser`FONTFAM$$ = "Helvetica", 
+            StylesheetChooser`FONTWT$$ = "Bold", 
+            StylesheetChooser`FONTCOLOR$$ = GrayLevel[1], 
+            StylesheetChooser`TOPBUTTONLABEL$$ = "New", 
+            StylesheetChooser`BOTBUTTONLABEL$$ = "Apply", 
+            StylesheetChooser`FULLWD$$ = 90, StylesheetChooser`FULLHT$$ = 130,
+             StylesheetChooser`MOUSEOVERWD$$ = 100, 
+            StylesheetChooser`MOUSEOVERHT$$ = 130, 
+            StylesheetChooser`BUTTONXMIN$$ = -50, 
+            StylesheetChooser`BUTTONXMAX$$ = 50, 
+            StylesheetChooser`BUTTONYMIN$$ = Rational[-65, 2], 
+            StylesheetChooser`BUTTONYMAX$$ = Rational[65, 2], 
+            StylesheetChooser`WDFUDGE$$ = 10, StylesheetChooser`HTFUDGE$$ = 0,
+             StylesheetChooser`BUTTONMARGIN$$ = -0.4, 
+            StylesheetChooser`BORDERWT$$ = 0.4, 
+            StylesheetChooser`BORDERREDUCTION$$ = 0.5, 
+            StylesheetChooser`ASPECTRATIO$$ = 0.7, 
+            StylesheetChooser`MARQUISCOLOR$$ = GrayLevel[0.5], 
+            StylesheetChooser`MARQUISOPC$$ = 0.7, 
+            StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{
+             Automatic, 141}, {Automatic, 0}}, StylesheetChooser`nbX$$, 
+            StylesheetChooser`newNB$$}, 
+            GraphicsBox[{InsetBox[
+               GraphicsBox[InsetBox[
+                 
+                 DynamicBox[FEPrivate`FrontEndResource[
+                  "StylesheetThumbnails", "ConfidentialReport"],
+                  ImageSizeCache->{90., {0., 120.}}], {0, 0}]], {0, 0}], 
+              InsetBox[
+               PaneSelectorBox[{False->
+                PaneBox["",
+                 ImageSize->{100, 130}], True->
+                GraphicsBox[InsetBox[
+                  TagBox[GridBox[{
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[StylesheetChooser`nbX$$ = Get[
+                    ToFileName[
+                    ReleaseHold[StylesheetChooser`TEMPLATEFILEPATH$$], 
+                    "ConfidentialReportTemplate.nb"]]; 
+                    StylesheetChooser`newNB$$ = 
+                    ReplaceAll[StylesheetChooser`nbX$$, Notebook[
+                    Pattern[StylesheetChooser`nbCont, 
+                    Blank[]], 
+                    Pattern[StylesheetChooser`nbOpts, 
+                    BlankNullSequence[]]] :> 
+                    NotebookCreate[StylesheetChooser`nbOpts]]; 
+                    NotebookWrite[StylesheetChooser`newNB$$, 
+                    Part[StylesheetChooser`nbX$$, 1]]; 
+                    SelectionMove[
+                    StylesheetChooser`newNB$$, Before, Notebook]; 
+                    If[False, 
+                    SetOptions[
+                    StylesheetChooser`newNB$$, ScreenStyleEnvironment -> 
+                    "SlideShow"]; NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Open a new Confidential Report template.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Open a new Confidential Report template.", 
+                    "Tooltip"]& ]},
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[If[
+                    And[InputNotebook[] =!= $Failed, FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]] =!= 
+                    MessagesNotebook[], Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells] =!= {
+                    DockedCells -> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "HelpViewerToolbar"]}, Cases[
+                    Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["FEBitmaps", 
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`EvaluationNotebook[], {
+                    TaggingRules, "DisplayFunction"}], "FunctionHeader", 
+                    "TutorialHeader"]]], Infinity] === {}], 
+                    SetOptions[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], StyleDefinitions -> 
+                    StylesheetChooser`fullStylesheetNm$$]]; 
+                    If[False, SetOptions[
+                    InputNotebook[], ScreenStyleEnvironment -> "SlideShow"]; 
+                    NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Apply Confidential Report stylesheet to notebook.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, 
+                    "Apply Confidential Report stylesheet to notebook.", 
+                    "Tooltip"]& ]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{-0.4}}}],
+                   "Grid"], {0, 0}],
+                 ImageSize->{100, 130}]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                FrameMargins->0,
+                ImageSize->Automatic]]},
+             ImageSize->{90, 130}],
+            DynamicModuleValues:>{}]},
+          {
+           TagBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               StyleBox[
+                TemplateBox[{"\"Confidential\:f39fReport\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->GrayLevel[0],
+                FrontFaceColor->GrayLevel[0],
+                GraphicsColor->GrayLevel[0],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->GrayLevel[1],
+                $CellContext`BackFaceColor -> GrayLevel[0]], True->
+               StyleBox[
+                TemplateBox[{"\"Confidential Report\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->RGBColor[0, 0, 1],
+                FrontFaceColor->RGBColor[0, 0, 1],
+                GraphicsColor->RGBColor[0, 0, 1],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->RGBColor[0, 0, 1],
+                $CellContext`BackFaceColor -> RGBColor[0, 0, 1]]}, Dynamic[
+                CurrentValue["MouseOver"]],
+               FrameMargins->0,
+               ImageSize->Automatic],
+              Appearance->"Frameless",
+              ButtonFunction:>DialogReturn[
+                NotebookCreate[
+                StyleDefinitions -> StylesheetChooser`fullStylesheetNm$$]],
+              Evaluator->Automatic,
+              Method->"Preemptive"],
+             StyleBox[
+             "\"Click to open a blank Confidential Report window.\"", 
+              FontFamily -> "Helvetica", FontWeight -> "Plain", 10, 
+              StripOnInput -> False],
+             TooltipDelay->0.2,
+             TooltipStyle->"TextStyling"],
+            Annotation[#, 
+             Style[
+             "Click to open a blank Confidential Report window.", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10], "Tooltip"]& ]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{None}}, "Rows" -> {{-0.5}}}],
+        "Grid"],
+       DynamicModuleValues:>{}],
+      DynamicModuleValues:>{}], "\<\"\"\>"},
+    {"\<\"\"\>", 
+     DynamicModuleBox[{}, 
+      DynamicModuleBox[{StylesheetChooser`stylesheetNm$$ = 
+       "Correspondence.nb", StylesheetChooser`fullStylesheetNm$$ = 
+       FrontEnd`FileName[{"Utility"}, "Correspondence.nb", CharacterEncoding -> 
+        "UTF-8"], StylesheetChooser`TEMPLATEFILEPATH$$ = 
+       Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+         "SystemResources", "StylesheetTemplates"}], 
+       StylesheetChooser`MAXLABELWIDTH$$ = 9.5, 
+       StylesheetChooser`COLUMNSPACERSZ$$ = 0, 
+       StylesheetChooser`CAPTIONFNTFAM$$ = "Helvetica", 
+       StylesheetChooser`CAPTIONFNTWT$$ = "Plain", 
+       StylesheetChooser`CAPTIONFNTSZ$$ = 9, 
+       StylesheetChooser`DESELCAPTIONCOLOR$$ = GrayLevel[0], 
+       StylesheetChooser`SELCAPTIONCOLOR$$ = RGBColor[0, 0, 1], 
+       StylesheetChooser`TOOLTIPFNTWT$$ = "Plain", 
+       StylesheetChooser`TOOLTIPFNTSZ$$ = 10, 
+       StylesheetChooser`TOOLTIPSPACINGS$$ = {0, 0}, 
+       StylesheetChooser`TOOLTIPITEMSIZE$$ = {Automatic, Automatic}, 
+       StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{Automatic, 141}, {
+        Automatic, 0}}, StylesheetChooser`nbX$$}, 
+       TagBox[GridBox[{
+          {
+           
+           DynamicModuleBox[{StylesheetChooser`TEMPLATEFILEPATH$$ = 
+            Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+              "SystemResources", "StylesheetTemplates"}], 
+            StylesheetChooser`stylesheetNm$$ = "Correspondence.nb", 
+            StylesheetChooser`fullStylesheetNm$$ = 
+            FrontEnd`FileName[{"Utility"}, "Correspondence.nb", 
+             CharacterEncoding -> "UTF-8"], StylesheetChooser`OPCSELRECT$$ = 
+            0.5, StylesheetChooser`OPCDESELRECT$$ = 0.16, 
+            StylesheetChooser`OPCSELFNT$$ = 1, 
+            StylesheetChooser`OPCDESELFNT$$ = 1, StylesheetChooser`FONTSZ$$ = 
+            10, StylesheetChooser`FONTFAM$$ = "Helvetica", 
+            StylesheetChooser`FONTWT$$ = "Bold", 
+            StylesheetChooser`FONTCOLOR$$ = GrayLevel[1], 
+            StylesheetChooser`TOPBUTTONLABEL$$ = "New", 
+            StylesheetChooser`BOTBUTTONLABEL$$ = "Apply", 
+            StylesheetChooser`FULLWD$$ = 90, StylesheetChooser`FULLHT$$ = 130,
+             StylesheetChooser`MOUSEOVERWD$$ = 100, 
+            StylesheetChooser`MOUSEOVERHT$$ = 130, 
+            StylesheetChooser`BUTTONXMIN$$ = -50, 
+            StylesheetChooser`BUTTONXMAX$$ = 50, 
+            StylesheetChooser`BUTTONYMIN$$ = Rational[-65, 2], 
+            StylesheetChooser`BUTTONYMAX$$ = Rational[65, 2], 
+            StylesheetChooser`WDFUDGE$$ = 10, StylesheetChooser`HTFUDGE$$ = 0,
+             StylesheetChooser`BUTTONMARGIN$$ = -0.4, 
+            StylesheetChooser`BORDERWT$$ = 0.4, 
+            StylesheetChooser`BORDERREDUCTION$$ = 0.5, 
+            StylesheetChooser`ASPECTRATIO$$ = 0.7, 
+            StylesheetChooser`MARQUISCOLOR$$ = GrayLevel[0.5], 
+            StylesheetChooser`MARQUISOPC$$ = 0.7, 
+            StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{
+             Automatic, 141}, {Automatic, 0}}, StylesheetChooser`nbX$$, 
+            StylesheetChooser`newNB$$}, 
+            GraphicsBox[{InsetBox[
+               GraphicsBox[InsetBox[
+                 
+                 DynamicBox[FEPrivate`FrontEndResource[
+                  "StylesheetThumbnails", "Correspondence"],
+                  ImageSizeCache->{90., {0., 120.}}], {0, 0}]], {0, 0}], 
+              InsetBox[
+               PaneSelectorBox[{False->
+                PaneBox["",
+                 ImageSize->{100, 130}], True->
+                GraphicsBox[InsetBox[
+                  TagBox[GridBox[{
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[StylesheetChooser`nbX$$ = Get[
+                    ToFileName[
+                    ReleaseHold[StylesheetChooser`TEMPLATEFILEPATH$$], 
+                    "CorrespondenceTemplate.nb"]]; 
+                    StylesheetChooser`newNB$$ = 
+                    ReplaceAll[StylesheetChooser`nbX$$, Notebook[
+                    Pattern[StylesheetChooser`nbCont, 
+                    Blank[]], 
+                    Pattern[StylesheetChooser`nbOpts, 
+                    BlankNullSequence[]]] :> 
+                    NotebookCreate[StylesheetChooser`nbOpts]]; 
+                    NotebookWrite[StylesheetChooser`newNB$$, 
+                    Part[StylesheetChooser`nbX$$, 1]]; 
+                    SelectionMove[
+                    StylesheetChooser`newNB$$, Before, Notebook]; 
+                    If[False, 
+                    SetOptions[
+                    StylesheetChooser`newNB$$, ScreenStyleEnvironment -> 
+                    "SlideShow"]; NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Open a new Correspondence template.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Open a new Correspondence template.", 
+                    "Tooltip"]& ]},
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[If[
+                    And[InputNotebook[] =!= $Failed, FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]] =!= 
+                    MessagesNotebook[], Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells] =!= {
+                    DockedCells -> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "HelpViewerToolbar"]}, Cases[
+                    Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["FEBitmaps", 
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`EvaluationNotebook[], {
+                    TaggingRules, "DisplayFunction"}], "FunctionHeader", 
+                    "TutorialHeader"]]], Infinity] === {}], 
+                    SetOptions[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], StyleDefinitions -> 
+                    StylesheetChooser`fullStylesheetNm$$]]; 
+                    If[False, SetOptions[
+                    InputNotebook[], ScreenStyleEnvironment -> "SlideShow"]; 
+                    NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Apply Correspondence stylesheet to notebook.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, 
+                    "Apply Correspondence stylesheet to notebook.", 
+                    "Tooltip"]& ]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{-0.4}}}],
+                   "Grid"], {0, 0}],
+                 ImageSize->{100, 130}]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                FrameMargins->0,
+                ImageSize->Automatic]]},
+             ImageSize->{90, 130}],
+            DynamicModuleValues:>{}]},
+          {
+           TagBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               StyleBox[
+                TemplateBox[{"\"Correspondence\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->GrayLevel[0],
+                FrontFaceColor->GrayLevel[0],
+                GraphicsColor->GrayLevel[0],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->GrayLevel[1],
+                $CellContext`BackFaceColor -> GrayLevel[0]], True->
+               StyleBox[
+                TemplateBox[{"\"Correspondence\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->RGBColor[0, 0, 1],
+                FrontFaceColor->RGBColor[0, 0, 1],
+                GraphicsColor->RGBColor[0, 0, 1],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->RGBColor[0, 0, 1],
+                $CellContext`BackFaceColor -> RGBColor[0, 0, 1]]}, Dynamic[
+                CurrentValue["MouseOver"]],
+               FrameMargins->0,
+               ImageSize->Automatic],
+              Appearance->"Frameless",
+              ButtonFunction:>DialogReturn[
+                NotebookCreate[
+                StyleDefinitions -> StylesheetChooser`fullStylesheetNm$$]],
+              Evaluator->Automatic,
+              Method->"Preemptive"],
+             StyleBox[
+             "\"Click to open a blank Correspondence window.\"", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10, StripOnInput -> False],
+             TooltipDelay->0.2,
+             TooltipStyle->"TextStyling"],
+            Annotation[#, 
+             Style[
+             "Click to open a blank Correspondence window.", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10], "Tooltip"]& ]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{None}}, "Rows" -> {{-0.5}}}],
+        "Grid"],
+       DynamicModuleValues:>{}],
+      DynamicModuleValues:>{}], 
+     DynamicModuleBox[{}, 
+      DynamicModuleBox[{StylesheetChooser`stylesheetNm$$ = "Memo.nb", 
+       StylesheetChooser`fullStylesheetNm$$ = 
+       FrontEnd`FileName[{"Utility"}, "Memo.nb", CharacterEncoding -> 
+        "UTF-8"], StylesheetChooser`TEMPLATEFILEPATH$$ = 
+       Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+         "SystemResources", "StylesheetTemplates"}], 
+       StylesheetChooser`MAXLABELWIDTH$$ = 9.5, 
+       StylesheetChooser`COLUMNSPACERSZ$$ = 0, 
+       StylesheetChooser`CAPTIONFNTFAM$$ = "Helvetica", 
+       StylesheetChooser`CAPTIONFNTWT$$ = "Plain", 
+       StylesheetChooser`CAPTIONFNTSZ$$ = 9, 
+       StylesheetChooser`DESELCAPTIONCOLOR$$ = GrayLevel[0], 
+       StylesheetChooser`SELCAPTIONCOLOR$$ = RGBColor[0, 0, 1], 
+       StylesheetChooser`TOOLTIPFNTWT$$ = "Plain", 
+       StylesheetChooser`TOOLTIPFNTSZ$$ = 10, 
+       StylesheetChooser`TOOLTIPSPACINGS$$ = {0, 0}, 
+       StylesheetChooser`TOOLTIPITEMSIZE$$ = {Automatic, Automatic}, 
+       StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{Automatic, 141}, {
+        Automatic, 0}}, StylesheetChooser`nbX$$}, 
+       TagBox[GridBox[{
+          {
+           
+           DynamicModuleBox[{StylesheetChooser`TEMPLATEFILEPATH$$ = 
+            Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+              "SystemResources", "StylesheetTemplates"}], 
+            StylesheetChooser`stylesheetNm$$ = "Memo.nb", 
+            StylesheetChooser`fullStylesheetNm$$ = 
+            FrontEnd`FileName[{"Utility"}, "Memo.nb", CharacterEncoding -> 
+             "UTF-8"], StylesheetChooser`OPCSELRECT$$ = 0.5, 
+            StylesheetChooser`OPCDESELRECT$$ = 0.16, 
+            StylesheetChooser`OPCSELFNT$$ = 1, 
+            StylesheetChooser`OPCDESELFNT$$ = 1, StylesheetChooser`FONTSZ$$ = 
+            10, StylesheetChooser`FONTFAM$$ = "Helvetica", 
+            StylesheetChooser`FONTWT$$ = "Bold", 
+            StylesheetChooser`FONTCOLOR$$ = GrayLevel[1], 
+            StylesheetChooser`TOPBUTTONLABEL$$ = "New", 
+            StylesheetChooser`BOTBUTTONLABEL$$ = "Apply", 
+            StylesheetChooser`FULLWD$$ = 90, StylesheetChooser`FULLHT$$ = 130,
+             StylesheetChooser`MOUSEOVERWD$$ = 100, 
+            StylesheetChooser`MOUSEOVERHT$$ = 130, 
+            StylesheetChooser`BUTTONXMIN$$ = -50, 
+            StylesheetChooser`BUTTONXMAX$$ = 50, 
+            StylesheetChooser`BUTTONYMIN$$ = Rational[-65, 2], 
+            StylesheetChooser`BUTTONYMAX$$ = Rational[65, 2], 
+            StylesheetChooser`WDFUDGE$$ = 10, StylesheetChooser`HTFUDGE$$ = 0,
+             StylesheetChooser`BUTTONMARGIN$$ = -0.4, 
+            StylesheetChooser`BORDERWT$$ = 0.4, 
+            StylesheetChooser`BORDERREDUCTION$$ = 0.5, 
+            StylesheetChooser`ASPECTRATIO$$ = 0.7, 
+            StylesheetChooser`MARQUISCOLOR$$ = GrayLevel[0.5], 
+            StylesheetChooser`MARQUISOPC$$ = 0.7, 
+            StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{
+             Automatic, 141}, {Automatic, 0}}, StylesheetChooser`nbX$$, 
+            StylesheetChooser`newNB$$}, 
+            GraphicsBox[{InsetBox[
+               GraphicsBox[InsetBox[
+                 
+                 DynamicBox[FEPrivate`FrontEndResource[
+                  "StylesheetThumbnails", "Memo"],
+                  ImageSizeCache->{90., {0., 120.}}], {0, 0}]], {0, 0}], 
+              InsetBox[
+               PaneSelectorBox[{False->
+                PaneBox["",
+                 ImageSize->{100, 130}], True->
+                GraphicsBox[InsetBox[
+                  TagBox[GridBox[{
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[StylesheetChooser`nbX$$ = Get[
+                    ToFileName[
+                    ReleaseHold[StylesheetChooser`TEMPLATEFILEPATH$$], 
+                    "MemoTemplate.nb"]]; 
+                    StylesheetChooser`newNB$$ = 
+                    ReplaceAll[StylesheetChooser`nbX$$, Notebook[
+                    Pattern[StylesheetChooser`nbCont, 
+                    Blank[]], 
+                    Pattern[StylesheetChooser`nbOpts, 
+                    BlankNullSequence[]]] :> 
+                    NotebookCreate[StylesheetChooser`nbOpts]]; 
+                    NotebookWrite[StylesheetChooser`newNB$$, 
+                    Part[StylesheetChooser`nbX$$, 1]]; 
+                    SelectionMove[
+                    StylesheetChooser`newNB$$, Before, Notebook]; 
+                    If[False, 
+                    SetOptions[
+                    StylesheetChooser`newNB$$, ScreenStyleEnvironment -> 
+                    "SlideShow"]; NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Open a new Memo template.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Open a new Memo template.", "Tooltip"]& ]},
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[If[
+                    And[InputNotebook[] =!= $Failed, FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]] =!= 
+                    MessagesNotebook[], Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells] =!= {
+                    DockedCells -> FEPrivate`FrontEndResource[
+                    "FEExpressions", "HelpViewerToolbar"]}, Cases[
+                    Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["FEBitmaps", 
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`EvaluationNotebook[], {
+                    TaggingRules, "DisplayFunction"}], "FunctionHeader", 
+                    "TutorialHeader"]]], Infinity] === {}], 
+                    SetOptions[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], StyleDefinitions -> 
+                    StylesheetChooser`fullStylesheetNm$$]]; 
+                    If[False, SetOptions[
+                    InputNotebook[], ScreenStyleEnvironment -> "SlideShow"]; 
+                    NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Apply Memo stylesheet to notebook.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Apply Memo stylesheet to notebook.", 
+                    "Tooltip"]& ]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{-0.4}}}],
+                   "Grid"], {0, 0}],
+                 ImageSize->{100, 130}]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                FrameMargins->0,
+                ImageSize->Automatic]]},
+             ImageSize->{90, 130}],
+            DynamicModuleValues:>{}]},
+          {
+           TagBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               StyleBox[
+                TemplateBox[{"\"Memo\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->GrayLevel[0],
+                FrontFaceColor->GrayLevel[0],
+                GraphicsColor->GrayLevel[0],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->GrayLevel[1],
+                $CellContext`BackFaceColor -> GrayLevel[0]], True->
+               StyleBox[
+                TemplateBox[{"\"Memo\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->RGBColor[0, 0, 1],
+                FrontFaceColor->RGBColor[0, 0, 1],
+                GraphicsColor->RGBColor[0, 0, 1],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->RGBColor[0, 0, 1],
+                $CellContext`BackFaceColor -> RGBColor[0, 0, 1]]}, Dynamic[
+                CurrentValue["MouseOver"]],
+               FrameMargins->0,
+               ImageSize->Automatic],
+              Appearance->"Frameless",
+              ButtonFunction:>DialogReturn[
+                NotebookCreate[
+                StyleDefinitions -> StylesheetChooser`fullStylesheetNm$$]],
+              Evaluator->Automatic,
+              Method->"Preemptive"],
+             StyleBox[
+             "\"Click to open a blank Memo window.\"", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10, StripOnInput -> False],
+             TooltipDelay->0.2,
+             TooltipStyle->"TextStyling"],
+            Annotation[#, 
+             Style[
+             "Click to open a blank Memo window.", FontFamily -> "Helvetica", 
+              FontWeight -> "Plain", 10], "Tooltip"]& ]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{None}}, "Rows" -> {{-0.5}}}],
+        "Grid"],
+       DynamicModuleValues:>{}],
+      DynamicModuleValues:>{}], 
+     DynamicModuleBox[{}, 
+      DynamicModuleBox[{StylesheetChooser`stylesheetNm$$ = "Notepad.nb", 
+       StylesheetChooser`fullStylesheetNm$$ = 
+       FrontEnd`FileName[{"Utility"}, "Notepad.nb", CharacterEncoding -> 
+        "UTF-8"], StylesheetChooser`TEMPLATEFILEPATH$$ = 
+       Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+         "SystemResources", "StylesheetTemplates"}], 
+       StylesheetChooser`MAXLABELWIDTH$$ = 9.5, 
+       StylesheetChooser`COLUMNSPACERSZ$$ = 0, 
+       StylesheetChooser`CAPTIONFNTFAM$$ = "Helvetica", 
+       StylesheetChooser`CAPTIONFNTWT$$ = "Plain", 
+       StylesheetChooser`CAPTIONFNTSZ$$ = 9, 
+       StylesheetChooser`DESELCAPTIONCOLOR$$ = GrayLevel[0], 
+       StylesheetChooser`SELCAPTIONCOLOR$$ = RGBColor[0, 0, 1], 
+       StylesheetChooser`TOOLTIPFNTWT$$ = "Plain", 
+       StylesheetChooser`TOOLTIPFNTSZ$$ = 10, 
+       StylesheetChooser`TOOLTIPSPACINGS$$ = {0, 0}, 
+       StylesheetChooser`TOOLTIPITEMSIZE$$ = {Automatic, Automatic}, 
+       StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{Automatic, 141}, {
+        Automatic, 0}}, StylesheetChooser`nbX$$}, 
+       TagBox[GridBox[{
+          {
+           
+           DynamicModuleBox[{StylesheetChooser`TEMPLATEFILEPATH$$ = 
+            Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+              "SystemResources", "StylesheetTemplates"}], 
+            StylesheetChooser`stylesheetNm$$ = "Notepad.nb", 
+            StylesheetChooser`fullStylesheetNm$$ = 
+            FrontEnd`FileName[{"Utility"}, "Notepad.nb", CharacterEncoding -> 
+             "UTF-8"], StylesheetChooser`OPCSELRECT$$ = 0.5, 
+            StylesheetChooser`OPCDESELRECT$$ = 0.16, 
+            StylesheetChooser`OPCSELFNT$$ = 1, 
+            StylesheetChooser`OPCDESELFNT$$ = 1, StylesheetChooser`FONTSZ$$ = 
+            10, StylesheetChooser`FONTFAM$$ = "Helvetica", 
+            StylesheetChooser`FONTWT$$ = "Bold", 
+            StylesheetChooser`FONTCOLOR$$ = GrayLevel[1], 
+            StylesheetChooser`TOPBUTTONLABEL$$ = "New", 
+            StylesheetChooser`BOTBUTTONLABEL$$ = "Apply", 
+            StylesheetChooser`FULLWD$$ = 90, StylesheetChooser`FULLHT$$ = 130,
+             StylesheetChooser`MOUSEOVERWD$$ = 100, 
+            StylesheetChooser`MOUSEOVERHT$$ = 130, 
+            StylesheetChooser`BUTTONXMIN$$ = -50, 
+            StylesheetChooser`BUTTONXMAX$$ = 50, 
+            StylesheetChooser`BUTTONYMIN$$ = Rational[-65, 2], 
+            StylesheetChooser`BUTTONYMAX$$ = Rational[65, 2], 
+            StylesheetChooser`WDFUDGE$$ = 10, StylesheetChooser`HTFUDGE$$ = 0,
+             StylesheetChooser`BUTTONMARGIN$$ = -0.4, 
+            StylesheetChooser`BORDERWT$$ = 0.4, 
+            StylesheetChooser`BORDERREDUCTION$$ = 0.5, 
+            StylesheetChooser`ASPECTRATIO$$ = 0.7, 
+            StylesheetChooser`MARQUISCOLOR$$ = GrayLevel[0.5], 
+            StylesheetChooser`MARQUISOPC$$ = 0.7, 
+            StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{
+             Automatic, 141}, {Automatic, 0}}, StylesheetChooser`nbX$$ = 
+            Notebook[{
+              Cell[
+               CellGroupData[{
+                 Cell["Enter section title here", "Section"], 
+                 Cell[
+                 "Enter text here. Enter input for evaluation in a separate \
+cell below:", "Text"], 
+                 Cell[
+                  CellGroupData[{
+                    Cell[
+                    BoxData[
+                    RowBox[{"2", "+", "2"}]], "Input"], 
+                    Cell[
+                    BoxData["4"], "Output"]}, Open]], 
+                 Cell[
+                 "Enter text here. Enter formula for display in a separate \
+cell below:", "Text"], 
+                 Cell[
+                  BoxData[
+                   RowBox[{"2", "+", "2"}]], "DisplayFormula"], 
+                 Cell[
+                  CellGroupData[{
+                    Cell["Enter bulleted item here.", "Item"], 
+                    Cell[
+                    CellGroupData[{
+                    Cell["Enter bulleted subitem here.", "Subitem"], 
+                    Cell["Enter bulleted subitem here.", "Subitem"], 
+                    Cell[
+                    "Enter subitem paragraph text here.", 
+                    "SubitemParagraph"]}, Open]], 
+                    Cell["Enter bulleted item here.", "Item"], 
+                    Cell["Enter item paragraph text here.", "ItemParagraph"]},
+                    Open]]}, Open]], 
+              Cell[
+               CellGroupData[{
+                 Cell["Enter section title here", "Section"], 
+                 Cell[
+                 "Enter text here. Enter formula for numbered display in a \
+separate cell below:", "Text"], 
+                 Cell[
+                  BoxData[
+                   RowBox[{"2", "+", "2"}]], "DisplayFormulaNumbered"]}, 
+                Open]]}, StyleDefinitions -> 
+             FrontEnd`FileName[{"Utility"}, "Notepad.nb"]], 
+            StylesheetChooser`newNB$$ = NotebookObject[
+             FrontEndObject[
+              LinkObject["2xj_shm", 3, 3]], 105]}, 
+            GraphicsBox[{InsetBox[
+               GraphicsBox[InsetBox[
+                 
+                 DynamicBox[FEPrivate`FrontEndResource[
+                  "StylesheetThumbnails", "Notepad"],
+                  ImageSizeCache->{90., {0., 120.}}], {0, 0}]], {0, 0}], 
+              InsetBox[
+               PaneSelectorBox[{False->
+                PaneBox["",
+                 ImageSize->{100, 130}], True->
+                GraphicsBox[InsetBox[
+                  TagBox[GridBox[{
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[StylesheetChooser`nbX$$ = Get[
+                    ToFileName[
+                    ReleaseHold[StylesheetChooser`TEMPLATEFILEPATH$$], 
+                    "NotepadTemplate.nb"]]; 
+                    StylesheetChooser`newNB$$ = 
+                    ReplaceAll[StylesheetChooser`nbX$$, Notebook[
+                    Pattern[StylesheetChooser`nbCont, 
+                    Blank[]], 
+                    Pattern[StylesheetChooser`nbOpts, 
+                    BlankNullSequence[]]] :> 
+                    NotebookCreate[StylesheetChooser`nbOpts]]; 
+                    NotebookWrite[StylesheetChooser`newNB$$, 
+                    Part[StylesheetChooser`nbX$$, 1]]; 
+                    SelectionMove[
+                    StylesheetChooser`newNB$$, Before, Notebook]; 
+                    If[False, 
+                    SetOptions[
+                    StylesheetChooser`newNB$$, ScreenStyleEnvironment -> 
+                    "SlideShow"]; NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Open a new Notepad template.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Open a new Notepad template.", 
+                    "Tooltip"]& ]},
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[If[
+                    And[InputNotebook[] =!= $Failed, FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]] =!= 
+                    MessagesNotebook[], Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells] =!= {
+                    DockedCells -> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "HelpViewerToolbar"]}, Cases[
+                    Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["FEBitmaps", 
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`EvaluationNotebook[], {
+                    TaggingRules, "DisplayFunction"}], "FunctionHeader", 
+                    "TutorialHeader"]]], Infinity] === {}], 
+                    SetOptions[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], StyleDefinitions -> 
+                    StylesheetChooser`fullStylesheetNm$$]]; 
+                    If[False, SetOptions[
+                    InputNotebook[], ScreenStyleEnvironment -> "SlideShow"]; 
+                    NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Apply Notepad stylesheet to notebook.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Apply Notepad stylesheet to notebook.", 
+                    "Tooltip"]& ]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{-0.4}}}],
+                   "Grid"], {0, 0}],
+                 ImageSize->{100, 130}]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                FrameMargins->0,
+                ImageSize->Automatic]]},
+             ImageSize->{90, 130}],
+            DynamicModuleValues:>{}]},
+          {
+           TagBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               StyleBox[
+                TemplateBox[{"\"Notepad\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->GrayLevel[0],
+                FrontFaceColor->GrayLevel[0],
+                GraphicsColor->GrayLevel[0],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->GrayLevel[1],
+                $CellContext`BackFaceColor -> GrayLevel[0]], True->
+               StyleBox[
+                TemplateBox[{"\"Notepad\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->RGBColor[0, 0, 1],
+                FrontFaceColor->RGBColor[0, 0, 1],
+                GraphicsColor->RGBColor[0, 0, 1],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->RGBColor[0, 0, 1],
+                $CellContext`BackFaceColor -> RGBColor[0, 0, 1]]}, Dynamic[
+                CurrentValue["MouseOver"]],
+               FrameMargins->0,
+               ImageSize->Automatic],
+              Appearance->"Frameless",
+              ButtonFunction:>DialogReturn[
+                NotebookCreate[
+                StyleDefinitions -> StylesheetChooser`fullStylesheetNm$$]],
+              Evaluator->Automatic,
+              Method->"Preemptive"],
+             StyleBox[
+             "\"Click to open a blank Notepad window.\"", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10, StripOnInput -> False],
+             TooltipDelay->0.2,
+             TooltipStyle->"TextStyling"],
+            Annotation[#, 
+             Style[
+             "Click to open a blank Notepad window.", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10], "Tooltip"]& ]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{None}}, "Rows" -> {{-0.5}}}],
+        "Grid"],
+       DynamicModuleValues:>{}],
+      DynamicModuleValues:>{}], 
+     DynamicModuleBox[{}, 
+      DynamicModuleBox[{StylesheetChooser`stylesheetNm$$ = "Outline.nb", 
+       StylesheetChooser`fullStylesheetNm$$ = 
+       FrontEnd`FileName[{"Utility"}, "Outline.nb", CharacterEncoding -> 
+        "UTF-8"], StylesheetChooser`TEMPLATEFILEPATH$$ = 
+       Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+         "SystemResources", "StylesheetTemplates"}], 
+       StylesheetChooser`MAXLABELWIDTH$$ = 9.5, 
+       StylesheetChooser`COLUMNSPACERSZ$$ = 0, 
+       StylesheetChooser`CAPTIONFNTFAM$$ = "Helvetica", 
+       StylesheetChooser`CAPTIONFNTWT$$ = "Plain", 
+       StylesheetChooser`CAPTIONFNTSZ$$ = 9, 
+       StylesheetChooser`DESELCAPTIONCOLOR$$ = GrayLevel[0], 
+       StylesheetChooser`SELCAPTIONCOLOR$$ = RGBColor[0, 0, 1], 
+       StylesheetChooser`TOOLTIPFNTWT$$ = "Plain", 
+       StylesheetChooser`TOOLTIPFNTSZ$$ = 10, 
+       StylesheetChooser`TOOLTIPSPACINGS$$ = {0, 0}, 
+       StylesheetChooser`TOOLTIPITEMSIZE$$ = {Automatic, Automatic}, 
+       StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{Automatic, 141}, {
+        Automatic, 0}}, StylesheetChooser`nbX$$}, 
+       TagBox[GridBox[{
+          {
+           
+           DynamicModuleBox[{StylesheetChooser`TEMPLATEFILEPATH$$ = 
+            Hold[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+              "SystemResources", "StylesheetTemplates"}], 
+            StylesheetChooser`stylesheetNm$$ = "Outline.nb", 
+            StylesheetChooser`fullStylesheetNm$$ = 
+            FrontEnd`FileName[{"Utility"}, "Outline.nb", CharacterEncoding -> 
+             "UTF-8"], StylesheetChooser`OPCSELRECT$$ = 0.5, 
+            StylesheetChooser`OPCDESELRECT$$ = 0.16, 
+            StylesheetChooser`OPCSELFNT$$ = 1, 
+            StylesheetChooser`OPCDESELFNT$$ = 1, StylesheetChooser`FONTSZ$$ = 
+            10, StylesheetChooser`FONTFAM$$ = "Helvetica", 
+            StylesheetChooser`FONTWT$$ = "Bold", 
+            StylesheetChooser`FONTCOLOR$$ = GrayLevel[1], 
+            StylesheetChooser`TOPBUTTONLABEL$$ = "New", 
+            StylesheetChooser`BOTBUTTONLABEL$$ = "Apply", 
+            StylesheetChooser`FULLWD$$ = 90, StylesheetChooser`FULLHT$$ = 130,
+             StylesheetChooser`MOUSEOVERWD$$ = 100, 
+            StylesheetChooser`MOUSEOVERHT$$ = 130, 
+            StylesheetChooser`BUTTONXMIN$$ = -50, 
+            StylesheetChooser`BUTTONXMAX$$ = 50, 
+            StylesheetChooser`BUTTONYMIN$$ = Rational[-65, 2], 
+            StylesheetChooser`BUTTONYMAX$$ = Rational[65, 2], 
+            StylesheetChooser`WDFUDGE$$ = 10, StylesheetChooser`HTFUDGE$$ = 0,
+             StylesheetChooser`BUTTONMARGIN$$ = -0.4, 
+            StylesheetChooser`BORDERWT$$ = 0.4, 
+            StylesheetChooser`BORDERREDUCTION$$ = 0.5, 
+            StylesheetChooser`ASPECTRATIO$$ = 0.7, 
+            StylesheetChooser`MARQUISCOLOR$$ = GrayLevel[0.5], 
+            StylesheetChooser`MARQUISOPC$$ = 0.7, 
+            StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$ = {{
+             Automatic, 141}, {Automatic, 0}}, StylesheetChooser`nbX$$, 
+            StylesheetChooser`newNB$$}, 
+            GraphicsBox[{InsetBox[
+               GraphicsBox[InsetBox[
+                 
+                 DynamicBox[FEPrivate`FrontEndResource[
+                  "StylesheetThumbnails", "Outline"],
+                  ImageSizeCache->{90., {0., 120.}}], {0, 0}]], {0, 0}], 
+              InsetBox[
+               PaneSelectorBox[{False->
+                PaneBox["",
+                 ImageSize->{100, 130}], True->
+                GraphicsBox[InsetBox[
+                  TagBox[GridBox[{
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["New", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[StylesheetChooser`nbX$$ = Get[
+                    ToFileName[
+                    ReleaseHold[StylesheetChooser`TEMPLATEFILEPATH$$], 
+                    "OutlineTemplate.nb"]]; 
+                    StylesheetChooser`newNB$$ = 
+                    ReplaceAll[StylesheetChooser`nbX$$, Notebook[
+                    Pattern[StylesheetChooser`nbCont, 
+                    Blank[]], 
+                    Pattern[StylesheetChooser`nbOpts, 
+                    BlankNullSequence[]]] :> 
+                    NotebookCreate[StylesheetChooser`nbOpts]]; 
+                    NotebookWrite[StylesheetChooser`newNB$$, 
+                    Part[StylesheetChooser`nbX$$, 1]]; 
+                    SelectionMove[
+                    StylesheetChooser`newNB$$, Before, Notebook]; 
+                    If[False, 
+                    SetOptions[
+                    StylesheetChooser`newNB$$, ScreenStyleEnvironment -> 
+                    "SlideShow"]; NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Open a new Outline template.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Open a new Outline template.", 
+                    "Tooltip"]& ]},
+                    {
+                    TagBox[
+                    TooltipBox[
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    GraphicsBox[
+                    {Opacity[0.16], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{58, Rational[65, 2]}, {58, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}], True->
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.5], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[0.5], Opacity[0.7], 
+                    RectangleBox[
+                    NCache[{-50, Rational[-65, 2]}, {-50, -32.5}], 
+                    NCache[{50, Rational[65, 2]}, {50, 32.5}]]},
+                    ImageSize->{50., 32.5}], {0, 0}], InsetBox[
+                    GraphicsBox[
+                    {GrayLevel[1], Opacity[1], 
+                    TagBox[InsetBox["Apply", {0, 0}],
+                    "InsetString"]},
+                    
+                    BaseStyle->{
+                    FontSize -> 10, FontFamily -> "Helvetica", FontWeight -> 
+                    "Bold"}], {0, 0}]}]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    ButtonFunction:>DialogReturn[If[
+                    And[InputNotebook[] =!= $Failed, FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]] =!= 
+                    MessagesNotebook[], Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells] =!= {
+                    DockedCells -> 
+                    FEPrivate`FrontEndResource[
+                    "FEExpressions", "HelpViewerToolbar"]}, Cases[
+                    Options[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], DockedCells], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["FEBitmaps", 
+                    FEPrivate`If[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`EvaluationNotebook[], {
+                    TaggingRules, "DisplayFunction"}], "FunctionHeader", 
+                    "TutorialHeader"]]], Infinity] === {}], 
+                    SetOptions[
+                    FE`Evaluate[
+                    FEPrivate`LastActiveUserNotebook[]], StyleDefinitions -> 
+                    StylesheetChooser`fullStylesheetNm$$]]; 
+                    If[False, SetOptions[
+                    InputNotebook[], ScreenStyleEnvironment -> "SlideShow"]; 
+                    NotebookOpen[
+                    
+                    FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "FrontEnd", "Palettes", "SlideShow.nb"}]]; SetOptions[
+                    Part[
+                    Notebooks[], 1], WindowMargins -> 
+                    StylesheetChooser`SLIDESHOWPALWINDOWMARGINS$$]]],
+                    Evaluator->Automatic,
+                    ImageSize->{100, 65},
+                    Method->"Preemptive"],
+                    "\"Apply Outline stylesheet to notebook.\"",
+                    TooltipDelay->0.2,
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "Apply Outline stylesheet to notebook.", 
+                    "Tooltip"]& ]}
+                    },
+                    AutoDelete->False,
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{-0.4}}}],
+                   "Grid"], {0, 0}],
+                 ImageSize->{100, 130}]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                FrameMargins->0,
+                ImageSize->Automatic]]},
+             ImageSize->{90, 130}],
+            DynamicModuleValues:>{}]},
+          {
+           TagBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               StyleBox[
+                TemplateBox[{"\"Outline\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->GrayLevel[0],
+                FrontFaceColor->GrayLevel[0],
+                GraphicsColor->GrayLevel[0],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->GrayLevel[1],
+                $CellContext`BackFaceColor -> GrayLevel[0]], True->
+               StyleBox[
+                TemplateBox[{"\"Outline\""},
+                 "RowDefault"],
+                StripOnInput->False,
+                LineColor->RGBColor[0, 0, 1],
+                FrontFaceColor->RGBColor[0, 0, 1],
+                GraphicsColor->RGBColor[0, 0, 1],
+                FontFamily->"Helvetica",
+                FontSize->9,
+                FontWeight->"Plain",
+                FontColor->RGBColor[0, 0, 1],
+                $CellContext`BackFaceColor -> RGBColor[0, 0, 1]]}, Dynamic[
+                CurrentValue["MouseOver"]],
+               FrameMargins->0,
+               ImageSize->Automatic],
+              Appearance->"Frameless",
+              ButtonFunction:>DialogReturn[
+                NotebookCreate[
+                StyleDefinitions -> StylesheetChooser`fullStylesheetNm$$]],
+              Evaluator->Automatic,
+              Method->"Preemptive"],
+             StyleBox[
+             "\"Click to open a blank Outline window.\"", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10, StripOnInput -> False],
+             TooltipDelay->0.2,
+             TooltipStyle->"TextStyling"],
+            Annotation[#, 
+             Style[
+             "Click to open a blank Outline window.", FontFamily -> 
+              "Helvetica", FontWeight -> "Plain", 10], "Tooltip"]& ]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+         GridBoxSpacings->{"Columns" -> {{None}}, "Rows" -> {{-0.5}}}],
+        "Grid"],
+       DynamicModuleValues:>{}],
+      DynamicModuleValues:>{}], "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {{4}}, "Rows" -> {{2}}}],
+  "Grid"]],
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue[
+  "PanelFontSize"],ExpressionUUID->"3a0340e9-30f7-48f7-ba4f-536f0ee2d987"]
+},
+Saveable->False,
+WindowSize->All,
+WindowMargins->Automatic,
+WindowElements->{"VerticalScrollBar"},
+WindowTitle->"Stylesheets",
+ScrollingOptions->{"VerticalScrollRange"->FitAll},
+MenuSortingValue->None,
+Background->GrayLevel[0.44921875],
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->"SystemPalette.nb",
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[600, 22, 176957, 3754, 548, InheritFromParent,ExpressionUUID->"3a0340e9-30f7-48f7-ba4f-536f0ee2d987",
+ PageBreakAbove->True,
+ PageBreakWithin->False]
+}
+]
+*)
+
+(* End of internal cache information *)
+

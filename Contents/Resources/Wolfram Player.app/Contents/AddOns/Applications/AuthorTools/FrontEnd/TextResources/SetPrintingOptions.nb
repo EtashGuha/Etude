@@ -1,0 +1,182 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5916,        172]
+NotebookOptionsPosition[      4994,        132]
+NotebookOutlinePosition[      5878,        170]
+CellTagsIndexPosition[      5808,        165]
+WindowTitle->None
+WindowFrame->Palette*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[GraphicsData["CompressedBitmap", "\<\
+eJytlk1OG0EQhdsz4z+cEHAsIguQEAon4ADJAiWLOIss2LCzUBAsokQEiStw
+BW6AuAJX4ApInIArOP1V1xv3QIJZpCV7uuu/Xr8a++v07Pj7j+nZyeF06/Pp
+9NfxyeHvrU8/T6OobIUQvsXP263Afha3+ip5hF6vZ88JX61QlubC+r/6Ny7b
+3t4Oe3t7YXV1NcmKsLu7O9+161037aJDb0HsymWXl5dhNpuF8/PzJCvsWFoy
+hJySrBcuLi7MDR2Sm5sbO/OM58IO7XB3d2dqmd7e3nqIjun29/dNp/Cxt1Rc
+p44ce8ndk3eK/EjlkZcaOjJwzrNwjt12XwRMZaA/PDzYJ6YqXEwGRavRGoej
+o6NwfX1tJ/YsTPBmCWauMUPMskiHP8XiI1tiNa4n5kIvCPEFBMBQs+gV9186
+tcEij4DDnpydBSi1XSZw+VT2vWl5WZyIxyLnXxjTYJlwy2jRwImlusEKPXvy
+VV4V9vgrB/syXRRmZcOgyBWqmAyFd0dFIPZyRAbWkW6Q7kmosxIjT3NlBaBO
+wRiwpKC5fsMpp4KoBizFnIfzLsggTAiqO+HJuXQ6E4wKXZ7E/VqsYkU3NYN+
+0SAZYOFDfZ35teSjoF5EQelVLntKFoUYK0CmJsXVXnQXNTR+eiOJYvlIqE9R
+K7chHjU8p1MP6k/3gs0ijLp+RfmrQmRJJOw1xiHHhHP0K3z2BJu3LUKoqjQk
+TRkupburM0dOyfUiFYA0rVmMusIUgycqcVScVn9EXzRIwiTnu+KnspYtDnJh
+ojP55UdO9hq2aFNgJOrLx+Ok0H3rWKHzFKIfT3+jRFW73iksKUWpkP8sP9Oy
+fnmEslN+ycSd/Pcmn5ahR8rJsewyDQBr6YXZ5eNEV3YaEmN0FxGklbrz6ArG
+3LP/lKiK/M3dT/ZVVT0poO/mojDT9tpl+ZSvJGIk2operFduDEhCop91vbGx
+YfrxeIzA9ONHSDEg77NC1HIeB3/06+vrdZyP7kPRjV7dB1v0BwcHodtN5PY/
+fvHYMjn6q6urMJlMDKAvSR+3LWQtU9L6/f297XHa2dkJa2trEdPhcNgNRVG8
+YxdDjUajGppNL28wGJg2WfDdNhkRiEREIrcsR8z+Bx9Iul8=\
+\>"], "Graphics",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {2, 0}},
+ ShowCellBracket->False,
+ CellMargins->{{4, 4}, {0, 6}},
+ Deployed->False,
+ Evaluatable->False,
+ CellFrameMargins->False,
+ ImageSize->{81, 19},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"ShortTab"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Printing", " ", "Options"}], "   ", 
+  ButtonBox[
+   RowBox[{" ", 
+    RowBox[{
+     StyleBox["?",
+      FontSize->12], " "}]}],
+   ButtonData->"paclet:AuthorTools/tutorial/PrintingOptions",
+   ButtonFunction:>(FEPrivate`FrontEndExecute[
+     FrontEndToken["OpenHelpLink", {#, 
+       FEPrivate`If[
+        CurrentValue["ShiftKey"], Null, 
+        FEPrivate`ButtonNotebook[]]}]]& ),
+   Evaluator->None]}]], "PaletteTitle",
+ FontFamily->"Helvetica"],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox[
+     RowBox[{"Edit", " ", "Headers", " ", "and", " ", "Footers\[Ellipsis]"}],
+     BaseStyle->"PaletteButton",
+     ButtonFunction:>(Needs["AuthorTools`Printing`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`Printing`HeadersDialog"][
+         InputNotebook[]]])]},
+   {
+    ButtonBox["StartingPageNumber\[Ellipsis]",
+     BaseStyle->"PaletteButton2",
+     ButtonFunction:>(Needs["AuthorTools`Printing`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`Printing`ModifyPrintingOption"][
+         InputNotebook[], "StartingPageNumber"]])]},
+   {
+    ButtonBox["PrintingMargins\[Ellipsis]",
+     BaseStyle->"PaletteButton2",
+     ButtonFunction:>(Needs["AuthorTools`Printing`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`Printing`ModifyPrintingOption"][
+         InputNotebook[], "PrintingMargins"]])]},
+   {
+    ButtonBox["CellBrackets\[Ellipsis]",
+     BaseStyle->"PaletteButton2",
+     ButtonFunction:>(Needs["AuthorTools`Printing`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`Printing`ModifyPrintingOption"][
+         InputNotebook[], "CellBrackets"]])]},
+   {
+    ButtonBox["SelectionHighlighting\[Ellipsis]",
+     BaseStyle->"PaletteButton2",
+     ButtonFunction:>(Needs["AuthorTools`Printing`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`Printing`ModifyPrintingOption"][
+         InputNotebook[], "SelectionHighlighting"]])]},
+   {
+    ButtonBox["RegistrationMarks\[Ellipsis]",
+     BaseStyle->"PaletteButton2",
+     ButtonFunction:>(Needs["AuthorTools`Printing`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`Printing`ModifyPrintingOption"][
+         InputNotebook[], "RegistrationMarks"]])]},
+   {
+    ButtonBox["MultipleHorizontalPages\[Ellipsis]",
+     BaseStyle->"PaletteButton2",
+     ButtonFunction:>(Needs["AuthorTools`Printing`"]; 
+      Symbol["FrontEnd`MessagesToConsole"][
+        Symbol["AuthorTools`Printing`ModifyPrintingOption"][
+         InputNotebook[], "MultipleHorizontalPages"]])]}
+  },
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.27999999999999997`], {
+       Offset[0.5599999999999999]}, 
+      Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}}]], NotebookDefault]
+},
+ClosingAutoSave->True,
+WindowToolbars->{},
+WindowSize->{FitAll, FitAll},
+WindowMargins->{{Automatic, 137}, {Automatic, 2}},
+WindowFrame->"Palette",
+WindowElements->{},
+WindowFrameElements->"CloseBox",
+WindowClickSelect->False,
+WindowTitle->None,
+ShowCellBracket->False,
+CellMargins->{{0, 0}, {Inherited, 0}},
+Deployed->True,
+CellOpen->True,
+ShowCellLabel->False,
+ShowCellTags->False,
+ImageMargins->{{0, Inherited}, {Inherited, 0}},
+Background->GrayLevel[0.85098],
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ShortTab"->{
+  Cell[576, 21, 1508, 32, 27, "Graphics",
+   Evaluatable->False,
+   CellTags->"ShortTab"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ShortTab", 5693, 158}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[576, 21, 1508, 32, 27, "Graphics",
+ Evaluatable->False,
+ CellTags->"ShortTab"],
+Cell[2087, 55, 483, 15, 52, "PaletteTitle"],
+Cell[2573, 72, 2417, 58, 186, NotebookDefault]
+}
+]
+*)
+
+(* End of internal cache information *)
+

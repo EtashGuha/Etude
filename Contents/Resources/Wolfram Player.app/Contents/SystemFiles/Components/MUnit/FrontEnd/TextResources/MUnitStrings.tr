@@ -1,0 +1,89 @@
+@|
+@| *****************************************************************************************
+@|
+@| DO NOT PLACE REAL RESOURCE VALUES IN THIS FILE.
+@| 
+@| This file only exists so the TRM build will know which @@resource names
+@| are present.  It is not included in the front end layout, so any actual
+@| values specified for resources below will be ignored.
+@|
+@| *****************************************************************************************
+@|
+@|
+@@resource MUnitStrings
+{
+"TestingNotebook-Title" -> "Testing Notebook",
+
+"New-Label" -> "New",
+"AssignTestIDs-Label" -> "Assign TestIDs",
+"Run-Label" -> "Run",
+"SaveAsDotwlt-Label" -> "Save As .wlt",
+"ConvertSelectiontoTest-Label" -> "Convert Selection",
+"Help-Label" -> "Help",
+"More-Label" -> "More",
+"ClearTestResults-Label" -> "Clear Test Results",
+"NextFailure-Label" -> "Next Failure",
+"PreviousFailure-Label" -> "Previous Failure",
+"MalformedTestCellsFoundColon" -> "Malformed Test Cells Found:",
+"FixAll-Label" -> "Fix All",
+"FixNext-Label" -> "Fix Next",
+"ConverttoTestingNotebook-Label" -> "Convert to Testing Notebook",
+"AddMessages-Label" -> "Add Messages",
+"AddOptions-Label" -> "Add Options",
+"MemoryConstraint-Label" -> "MemoryConstraint",
+"SameTest-Label" -> "SameTest",
+"TestID-Label" -> "TestID",
+"TimeConstraint-Label" -> "TimeConstraint",
+"ReplaceOutput-Label" -> "Replace Output",
+"ReplaceMessageList-Label" -> "Replace Message List",
+"Rerun-Label" -> "Rerun",
+
+"TotalTestsRun-Label" -> "Total Tests Run",
+"Failures-Label" -> "Failures",
+"WrongResults-Label" -> "wrong results",
+"Successes-Label" -> "Successes",
+"Errors-Label" -> "Errors",
+"Messages-Label" -> "messages",
+"Failure-Label" -> "Failure",
+"ByStatus-Label" -> "by status",
+"BySequence-Label" -> "by sequence",
+
+"Success-TestSuccess" -> "Success",
+"Failure-TestFailure" -> "Failure",
+"MessageFailure-TestMessageFailure" -> "Message Failure",
+"Error-TestError" -> "Error",
+"Details-Label" -> "Details",
+"TestID-Detail" -> "TestID:",
+"ActualOutput-Detail" -> "Actual Output:",
+"ExpectedOutput-Detail" -> "Expected Output:",
+"ActualMessages-Detail" -> "Actual Messages:",
+"ExpectedMessages-Detail" -> "Expected Messages:",
+"CPUTimeUsed-Detail" -> "Time Taken:",
+
+"New-Tooltip" -> "Add a new test",
+"AssignTestIDs-Tooltip" -> "Automatically assign UUIDs to all tests",
+"Run-Tooltip" -> "Run all tests in this notebook",
+"SaveAsDotwlt-Tooltip" -> "Save notebook in plaintext format",
+"ConvertSelectiontoTest-Tooltip" -> "Convert selected input/output cells to tests",
+"ClearTestResults-Tooltip" -> "Clear all test results from this notebook",
+"NextFailure-Tooltip" -> "Find next failure in this notebook",
+"PreviousFailure-Tooltip" -> "Find previous failure in this notebook",
+"FixAll-Tooltip" -> "Fix all malformed cells and run all tests",
+"FixNext-Tooltip" -> "Find and fix next malformed cell",
+"ConverttoTestingNotebook-Tooltip" -> "Create a testing notebook by converting all input/output cells in this notebook",
+"AddMessages-Tooltip" -> "Add a list of expected message names for this test",
+"AddOptions-Tooltip" -> "Add a list of VerificationTest options",
+"ReplaceOutput-Tooltip" -> RowBox[{"Replace ", StyleBox["\"Expected Output\"", ShowStringCharacters -> True], " with actual output"}],
+"ReplaceMessageList-Tooltip" -> RowBox[{"Replace ", StyleBox["\"Expected Messages\"", ShowStringCharacters -> True], " with actual messages"}],
+"Rerun-Tooltip" -> "Rerun this test",
+"RemoveToolbar-Tooltip" -> "Remove toolbar",
+
+"Input-Label" -> "Input",
+"ExpectedOutput-Label" -> "Expected Output",
+"ActualOutput-Label" -> "Actual Output",
+"ExpectedMessages-Label" -> "Expected Messages",
+"ActualMessages-Label" -> "Actual Messages",
+"TestOptions-Label" -> "Test Options"
+}
+@|
+@|

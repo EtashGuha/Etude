@@ -1,0 +1,1529 @@
+Notebook[{
+Cell[BoxData[
+ DynamicModuleBox[{PresenterTools`Utilities`Private`themeName$$ = "Default", 
+  PresenterTools`Utilities`Private`detailNumber$$ = 1, 
+  PresenterTools`Utilities`Private`numberOfDetails$$ = 6, 
+  PresenterTools`Utilities`Private`fontset$$ = "Default", 
+  PresenterTools`Utilities`Private`colorset$$ = "Default",
+  PresenterTools`Utilities`Private`resultNotebook$$, 
+  PresenterTools`Utilities`Private`previewQ$$, 
+  PresenterTools`Utilities`Private`file$$ = "", 
+  PresenterTools`Utilities`Private`secondScreenQ$$ = False, 
+  PresenterTools`Utilities`Private`errorMessage$$ = " "}, 
+  PaneSelectorBox[{False->
+   PanelBox[
+    TagBox[GridBox[{
+       {
+        ItemBox[
+         PaneBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource[
+             "PresenterToolStrings", "ThemeChooserHeading"], StandardForm],
+            ImageSizeCache->{236., {1., 15.}}],
+           StripOnInput->False,
+           FontFamily:>CurrentValue["PanelFontFamily"],
+           FontSize->20,
+           FontColor->RGBColor[0.2, 0.2, 0.2]]],
+         ImageMargins -> 0,
+         FrameMargins -> {{0, 0}, {0, 2}},
+         Alignment->Left,
+         StripOnInput->False], "\[SpanFromLeft]", "\[SpanFromLeft]"},
+       {
+        ItemBox[
+         StyleBox[
+          DynamicBox[ToBoxes[
+            FEPrivate`FrontEndResource[
+            "PresenterToolStrings", "ThemeChooserThemeLabel"], StandardForm],
+           ImageSizeCache->{52., {1., 12.}}],
+          StripOnInput->False,
+          FontFamily:>CurrentValue["PanelFontFamily"],
+          FontSize->16,
+          FontColor->RGBColor[0.537254, 0.537254, 0.537254]],
+         Alignment->Left,
+         StripOnInput->False], "\[SpanFromLeft]", "\[SpanFromLeft]"},
+       {
+        TagBox[GridBox[{
+           {
+            TagBox[
+             TagBox[
+              TagBox[
+               TooltipBox[
+                FrameBox[
+                 DynamicBox[ToBoxes[
+                   If[
+                   PresenterTools`Utilities`Private`themeName$$ === "Default", 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"PresenterTools"}, 
+                    "Default-title-1.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"PresenterTools"}, 
+                    "Default-title-0.png"]]]]], StandardForm],
+                  ImageSizeCache->{170., {46., 50.}}],
+                 Alignment->Center,
+                 Background->None,
+                 ContentPadding->False,
+                 FrameMargins->0,
+                 FrameStyle->Dynamic[
+                   If[
+                   PresenterTools`Utilities`Private`themeName$$ === 
+                    "Default", {
+                    Thickness[4], 
+                    RGBColor[0.6665, 0.9175, 0.992]}, {
+                    Thickness[4], 
+                    GrayLevel[0.95]}]],
+                 ImageSize->{Automatic, 96},
+                 StripOnInput->False],
+                "\"Theme: Default\"",
+                TooltipDelay->0.25,
+                TooltipStyle->"TextStyling"],
+               Annotation[#, "Theme: Default", "Tooltip"]& ],
+              
+              EventHandlerTag[{
+               "MouseDown" :> 
+                If[CurrentValue["MouseClickCount"] == 2, 
+                  PresenterTools`Utilities`Private`themeName$$ = "Default"; 
+                  PresenterTools`Utilities`Private`detailNumber$$ = 1; 
+                  PresenterTools`Utilities`Private`fontset$$ = "Default"; 
+                  PresenterTools`Utilities`Private`colorset$$ = "Default"; 
+                  FEPrivate`FindAndClickDefaultButton[], 
+                  PresenterTools`Utilities`Private`themeName$$ = "Default"; 
+                  PresenterTools`Utilities`Private`detailNumber$$ = 1; 
+                  PresenterTools`Utilities`Private`fontset$$ = "Default"; 
+                  PresenterTools`Utilities`Private`colorset$$ = "Default"; 
+                  Null], Method -> "Preemptive", PassEventsDown -> Automatic, 
+                PassEventsUp -> True}]],
+             MouseAppearanceTag["LinkHand"]], 
+            TagBox[
+             TagBox[
+              TagBox[
+               TooltipBox[
+                FrameBox[
+                 DynamicBox[ToBoxes[
+                   If[
+                   PresenterTools`Utilities`Private`themeName$$ === "Garnet", 
+                    
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"PresenterTools"}, 
+                    "Garnet-title-1.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"PresenterTools"}, 
+                    "Garnet-title-0.png"]]]]], StandardForm],
+                  ImageSizeCache->{170., {46., 50.}}],
+                 Alignment->Center,
+                 Background->None,
+                 ContentPadding->False,
+                 FrameMargins->0,
+                 FrameStyle->Dynamic[
+                   If[
+                   PresenterTools`Utilities`Private`themeName$$ === "Garnet", {
+                    Thickness[4], 
+                    RGBColor[0.6665, 0.9175, 0.992]}, {
+                    Thickness[4], 
+                    GrayLevel[0.95]}]],
+                 ImageSize->{Automatic, 96},
+                 StripOnInput->False],
+                "\"Theme: Garnet\"",
+                TooltipDelay->0.25,
+                TooltipStyle->"TextStyling"],
+               Annotation[#, "Theme: Garnet", "Tooltip"]& ],
+              
+              EventHandlerTag[{
+               "MouseDown" :> 
+                If[CurrentValue["MouseClickCount"] == 2, 
+                  PresenterTools`Utilities`Private`themeName$$ = "Garnet"; 
+                  PresenterTools`Utilities`Private`detailNumber$$ = 1; 
+                  PresenterTools`Utilities`Private`fontset$$ = "Garnet"; 
+                  PresenterTools`Utilities`Private`colorset$$ = "Garnet"; 
+                  FEPrivate`FindAndClickDefaultButton[], 
+                  PresenterTools`Utilities`Private`themeName$$ = "Garnet"; 
+                  PresenterTools`Utilities`Private`detailNumber$$ = 1; 
+                  PresenterTools`Utilities`Private`fontset$$ = "Garnet"; 
+                  PresenterTools`Utilities`Private`colorset$$ = "Garnet"; 
+                  Null], Method -> "Preemptive", PassEventsDown -> Automatic, 
+                PassEventsUp -> True}]],
+             MouseAppearanceTag["LinkHand"]], 
+            TagBox[
+             TagBox[
+              TagBox[
+               TooltipBox[
+                FrameBox[
+                 DynamicBox[ToBoxes[
+                   If[
+                   PresenterTools`Utilities`Private`themeName$$ === "Facet", 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"PresenterTools"}, 
+                    "Facet-title-1.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"PresenterTools"}, 
+                    "Facet-title-0.png"]]]]], StandardForm],
+                  ImageSizeCache->{170., {46., 50.}}],
+                 Alignment->Center,
+                 Background->None,
+                 ContentPadding->False,
+                 FrameMargins->0,
+                 FrameStyle->Dynamic[
+                   If[
+                   PresenterTools`Utilities`Private`themeName$$ === "Facet", {
+                    
+                    Thickness[4], 
+                    RGBColor[0.6665, 0.9175, 0.992]}, {
+                    Thickness[4], 
+                    GrayLevel[0.95]}]],
+                 ImageSize->{Automatic, 96},
+                 StripOnInput->False],
+                "\"Theme: Facet\"",
+                TooltipDelay->0.25,
+                TooltipStyle->"TextStyling"],
+               Annotation[#, "Theme: Facet", "Tooltip"]& ],
+              
+              EventHandlerTag[{
+               "MouseDown" :> 
+                If[CurrentValue["MouseClickCount"] == 2, 
+                  PresenterTools`Utilities`Private`themeName$$ = "Facet"; 
+                  PresenterTools`Utilities`Private`detailNumber$$ = 1; 
+                  PresenterTools`Utilities`Private`fontset$$ = "Facet"; 
+                  PresenterTools`Utilities`Private`colorset$$ = "Facet"; 
+                  FEPrivate`FindAndClickDefaultButton[], 
+                  PresenterTools`Utilities`Private`themeName$$ = "Facet"; 
+                  PresenterTools`Utilities`Private`detailNumber$$ = 1; 
+                  PresenterTools`Utilities`Private`fontset$$ = "Facet"; 
+                  PresenterTools`Utilities`Private`colorset$$ = "Facet"; 
+                  Null], Method -> "Preemptive", PassEventsDown -> Automatic, 
+                PassEventsUp -> True}]],
+             MouseAppearanceTag["LinkHand"]]},
+           {
+            TagBox[
+             TagBox[
+              TagBox[
+               TooltipBox[
+                FrameBox[
+                 DynamicBox[ToBoxes[
+                   If[
+                   PresenterTools`Utilities`Private`themeName$$ === "Carbon", 
+                    
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"PresenterTools"}, 
+                    "Carbon-title-1.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"PresenterTools"}, 
+                    "Carbon-title-0.png"]]]]], StandardForm],
+                  ImageSizeCache->{170., {46., 50.}}],
+                 Alignment->Center,
+                 Background->None,
+                 ContentPadding->False,
+                 FrameMargins->0,
+                 FrameStyle->Dynamic[
+                   If[
+                   PresenterTools`Utilities`Private`themeName$$ === "Carbon", {
+                    Thickness[4], 
+                    RGBColor[0.6665, 0.9175, 0.992]}, {
+                    Thickness[4], 
+                    GrayLevel[0.95]}]],
+                 ImageSize->{Automatic, 96},
+                 StripOnInput->False],
+                "\"Theme: Carbon\"",
+                TooltipDelay->0.25,
+                TooltipStyle->"TextStyling"],
+               Annotation[#, "Theme: Carbon", "Tooltip"]& ],
+              
+              EventHandlerTag[{
+               "MouseDown" :> 
+                If[CurrentValue["MouseClickCount"] == 2, 
+                  PresenterTools`Utilities`Private`themeName$$ = "Carbon"; 
+                  PresenterTools`Utilities`Private`detailNumber$$ = 1; 
+                  PresenterTools`Utilities`Private`fontset$$ = "Carbon"; 
+                  PresenterTools`Utilities`Private`colorset$$ = "Carbon"; 
+                  FEPrivate`FindAndClickDefaultButton[], 
+                  PresenterTools`Utilities`Private`themeName$$ = "Carbon"; 
+                  PresenterTools`Utilities`Private`detailNumber$$ = 1; 
+                  PresenterTools`Utilities`Private`fontset$$ = "Carbon"; 
+                  PresenterTools`Utilities`Private`colorset$$ = "Carbon"; 
+                  Null], Method -> "Preemptive", PassEventsDown -> Automatic, 
+                PassEventsUp -> True}]],
+             MouseAppearanceTag["LinkHand"]], 
+            TagBox[
+             TagBox[
+              TagBox[
+               TooltipBox[
+                FrameBox[
+                 DynamicBox[ToBoxes[
+                   If[PresenterTools`Utilities`Private`themeName$$ === "Aqua", 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"PresenterTools"}, 
+                    "Aqua-title-1.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"PresenterTools"}, 
+                    "Aqua-title-0.png"]]]]], StandardForm],
+                  ImageSizeCache->{170., {46., 50.}}],
+                 Alignment->Center,
+                 Background->None,
+                 ContentPadding->False,
+                 FrameMargins->0,
+                 FrameStyle->Dynamic[
+                   If[
+                   PresenterTools`Utilities`Private`themeName$$ === "Aqua", {
+                    Thickness[4], 
+                    RGBColor[0.6665, 0.9175, 0.992]}, {
+                    Thickness[4], 
+                    GrayLevel[0.95]}]],
+                 ImageSize->{Automatic, 96},
+                 StripOnInput->False],
+                "\"Theme: Aqua\"",
+                TooltipDelay->0.25,
+                TooltipStyle->"TextStyling"],
+               Annotation[#, "Theme: Aqua", "Tooltip"]& ],
+              
+              EventHandlerTag[{
+               "MouseDown" :> 
+                If[CurrentValue["MouseClickCount"] == 2, 
+                  PresenterTools`Utilities`Private`themeName$$ = "Aqua"; 
+                  PresenterTools`Utilities`Private`detailNumber$$ = 1; 
+                  PresenterTools`Utilities`Private`fontset$$ = "Aqua"; 
+                  PresenterTools`Utilities`Private`colorset$$ = "Aqua"; 
+                  FEPrivate`FindAndClickDefaultButton[], 
+                  PresenterTools`Utilities`Private`themeName$$ = "Aqua"; 
+                  PresenterTools`Utilities`Private`detailNumber$$ = 1; 
+                  PresenterTools`Utilities`Private`fontset$$ = "Aqua"; 
+                  PresenterTools`Utilities`Private`colorset$$ = "Aqua"; Null],
+                 Method -> "Preemptive", PassEventsDown -> Automatic, 
+                PassEventsUp -> True}]],
+             MouseAppearanceTag["LinkHand"]], 
+            TagBox[
+             TagBox[
+              TagBox[
+               TooltipBox[
+                FrameBox[
+                 DynamicBox[ToBoxes[
+                   If[
+                   PresenterTools`Utilities`Private`themeName$$ === "Sky", 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"PresenterTools"}, 
+                    "Sky-title-1.png"]]]], 
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"PresenterTools"}, 
+                    "Sky-title-0.png"]]]]], StandardForm],
+                  ImageSizeCache->{170., {46., 50.}}],
+                 Alignment->Center,
+                 Background->None,
+                 ContentPadding->False,
+                 FrameMargins->0,
+                 FrameStyle->Dynamic[
+                   If[PresenterTools`Utilities`Private`themeName$$ === "Sky", {
+                    Thickness[4], 
+                    RGBColor[0.6665, 0.9175, 0.992]}, {
+                    Thickness[4], 
+                    GrayLevel[0.95]}]],
+                 ImageSize->{Automatic, 96},
+                 StripOnInput->False],
+                "\"Theme: Sky\"",
+                TooltipDelay->0.25,
+                TooltipStyle->"TextStyling"],
+               Annotation[#, "Theme: Sky", "Tooltip"]& ],
+              
+              EventHandlerTag[{
+               "MouseDown" :> 
+                If[CurrentValue["MouseClickCount"] == 2, 
+                  PresenterTools`Utilities`Private`themeName$$ = "Sky"; 
+                  PresenterTools`Utilities`Private`detailNumber$$ = 1; 
+                  PresenterTools`Utilities`Private`fontset$$ = "Sky"; 
+                  PresenterTools`Utilities`Private`colorset$$ = "Sky"; 
+                  FEPrivate`FindAndClickDefaultButton[], 
+                  PresenterTools`Utilities`Private`themeName$$ = "Sky"; 
+                  PresenterTools`Utilities`Private`detailNumber$$ = 1; 
+                  PresenterTools`Utilities`Private`fontset$$ = "Sky"; 
+                  PresenterTools`Utilities`Private`colorset$$ = "Sky"; Null], 
+                Method -> "Preemptive", PassEventsDown -> Automatic, 
+                PassEventsUp -> True}]],
+             MouseAppearanceTag["LinkHand"]]}
+          },
+          FrameMargins -> {{0, 0}, {15, 15}},
+          ImageMargins -> 0,
+          AutoDelete->False,
+          FrameStyle->GrayLevel[0.6],
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+          GridBoxBackground->{"Columns" -> {{None}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+         "Grid"], "\[SpanFromLeft]", "\[SpanFromLeft]"},
+       {
+        ItemBox[
+         StyleBox[
+          DynamicBox[ToBoxes[
+            FEPrivate`FrontEndResource[
+            "PresenterToolStrings", "ThemeChooserFontSetLabel"], StandardForm],
+           ImageSizeCache->{86., {0., 11.}}],
+          StripOnInput->False,
+          FontFamily:>CurrentValue["ControlsFontFamily"],
+          FontSize->14,
+          FontColor->RGBColor[0.537254, 0.537254, 0.537254]],
+         Alignment->Left,
+         StripOnInput->False], 
+        ItemBox[
+         StyleBox[
+          DynamicBox[ToBoxes[
+            FEPrivate`FrontEndResource[
+            "PresenterToolStrings", "ThemeChooserColorSetLabel"], 
+            StandardForm],
+           ImageSizeCache->{92., {1., 11.}}],
+          StripOnInput->False,
+          FontFamily:>CurrentValue["ControlsFontFamily"],
+          FontSize->14,
+          FontColor->RGBColor[0.537254, 0.537254, 0.537254]],
+         Alignment->Left,
+         StripOnInput->False], "\[SpanFromLeft]"},
+       {
+        PopupMenuBox[Dynamic[PresenterTools`Utilities`Private`fontset$$], {
+         "Default"->
+         TemplateBox[{
+          StyleBox[
+           "\"Source Sans Pro\"", 13, FontFamily -> "Source Sans Pro", 
+            StripOnInput -> False],StyleBox[
+           "\", \"", FontFamily -> ".SF NS Text", StripOnInput -> False],
+           StyleBox[
+           "\"Source Sans Pro\"", 13, FontFamily -> "Source Sans Pro", 
+            StripOnInput -> False]},
+          "RowDefault"], "Garnet"->
+         TemplateBox[{
+          StyleBox[
+           "\"Baskerville\"", 13, FontFamily -> "Baskerville", StripOnInput -> 
+            False],StyleBox[
+           "\", \"", FontFamily -> ".SF NS Text", StripOnInput -> False],
+           StyleBox[
+           "\"Baskerville\"", 13, FontFamily -> "Baskerville", StripOnInput -> 
+            False]},
+          "RowDefault"], "Facet"->
+         TemplateBox[{
+          StyleBox[
+           "\"Source Sans Pro\"", 13, FontFamily -> "Source Sans Pro", 
+            StripOnInput -> False],StyleBox[
+           "\", \"", FontFamily -> ".SF NS Text", StripOnInput -> False],
+           StyleBox[
+           "\"Source Sans Pro\"", 13, FontFamily -> "Source Sans Pro", 
+            StripOnInput -> False]},
+          "RowDefault"], "Carbon"->
+         TemplateBox[{
+          StyleBox[
+           "\"Oswald\"", 13, FontFamily -> "Oswald", StripOnInput -> False],
+           StyleBox[
+           "\", \"", FontFamily -> ".SF NS Text", StripOnInput -> False],
+           StyleBox[
+           "\"Playfair Display\"", 13, FontFamily -> "Playfair Display", 
+            StripOnInput -> False]},
+          "RowDefault"], "Aqua"->
+         TemplateBox[{
+          StyleBox[
+           "\"Clear Sans\"", 13, FontFamily -> "Clear Sans", StripOnInput -> 
+            False],StyleBox[
+           "\", \"", FontFamily -> ".SF NS Text", StripOnInput -> False],
+           StyleBox[
+           "\"Clear Sans\"", 13, FontFamily -> "Clear Sans", StripOnInput -> 
+            False]},
+          "RowDefault"], "Sky"->
+         TemplateBox[{
+          StyleBox[
+           "\"Roboto Slab\"", 13, FontFamily -> "Roboto Slab", StripOnInput -> 
+            False],StyleBox[
+           "\", \"", FontFamily -> ".SF NS Text", StripOnInput -> False],
+           StyleBox[
+           "\"Roboto Slab\"", 13, FontFamily -> "Roboto Slab", StripOnInput -> 
+            False]},
+          "RowDefault"]},
+         ImageSize->{350, Automatic}], 
+        PopupMenuBox[Dynamic[PresenterTools`Utilities`Private`colorset$$], {
+         "Default"->
+         TemplateBox[{
+          PanelBox[
+           "\" \"", Background -> RGBColor[0.866667, 0.0666667, 0], 
+            ImageSize -> {31, 15}],TemplateBox[{1}, "Spacer1"],PanelBox[
+           "\" \"", Background -> RGBColor[0.968627, 0.466667, 0], 
+            ImageSize -> {31, 15}],TemplateBox[{1}, "Spacer1"],PanelBox[
+           "\" \"", Background -> RGBColor[0.992157, 0.376471, 0.32549], 
+            ImageSize -> {31, 15}]},
+          "RowDefault"], "Garnet"->
+         TemplateBox[{
+          PanelBox[
+           "\" \"", Background -> RGBColor[0.588235, 0.0470588, 0.164706], 
+            ImageSize -> {31, 15}],TemplateBox[{1}, "Spacer1"],PanelBox[
+           "\" \"", Background -> RGBColor[0.741176, 0.141176, 0.231373], 
+            ImageSize -> {31, 15}],TemplateBox[{1}, "Spacer1"],PanelBox[
+           "\" \"", Background -> RGBColor[1, 0.729412, 0.768627], 
+            ImageSize -> {31, 15}]},
+          "RowDefault"], "Facet"->
+         TemplateBox[{
+          PanelBox[
+           "\" \"", Background -> RGBColor[0.968627, 0.67451, 0.231373], 
+            ImageSize -> {31, 15}],TemplateBox[{1}, "Spacer1"],PanelBox[
+           "\" \"", Background -> RGBColor[0.431373, 0.698039, 0.662745], 
+            ImageSize -> {31, 15}],TemplateBox[{1}, "Spacer1"],PanelBox[
+           "\" \"", Background -> RGBColor[0.447059, 0.6, 0.529412], 
+            ImageSize -> {31, 15}]},
+          "RowDefault"], "Carbon"->
+         TemplateBox[{
+          PanelBox[
+           "\" \"", Background -> GrayLevel[0.317647], ImageSize -> {31, 15}],
+           TemplateBox[{1}, "Spacer1"],PanelBox[
+           "\" \"", Background -> RGBColor[0.952941, 0.945098, 0.517647], 
+            ImageSize -> {31, 15}],TemplateBox[{1}, "Spacer1"],PanelBox[
+           "\" \"", Background -> GrayLevel[0.858824], ImageSize -> {31, 15}]},
+          "RowDefault"], "Aqua"->
+         TemplateBox[{
+          PanelBox[
+           "\" \"", Background -> RGBColor[0.211765, 0.694118, 0.74902], 
+            ImageSize -> {31, 15}],TemplateBox[{1}, "Spacer1"],PanelBox[
+           "\" \"", Background -> RGBColor[0.901961, 0.933333, 0.439216], 
+            ImageSize -> {31, 15}],TemplateBox[{1}, "Spacer1"],PanelBox[
+           "\" \"", Background -> RGBColor[0.00392157, 0.45098, 0.501961], 
+            ImageSize -> {31, 15}]},
+          "RowDefault"], "Sky"->
+         TemplateBox[{
+          PanelBox[
+           "\" \"", Background -> RGBColor[0, 0.482353, 0.760784], 
+            ImageSize -> {31, 15}],TemplateBox[{1}, "Spacer1"],PanelBox[
+           "\" \"", Background -> RGBColor[0, 0.658824, 0.968627], 
+            ImageSize -> {31, 15}],TemplateBox[{1}, "Spacer1"],PanelBox[
+           "\" \"", Background -> RGBColor[0, 0.482353, 0.760784], 
+            ImageSize -> {31, 15}]},
+          "RowDefault"]},
+         ImageSize->{180, Automatic}], ""},
+       {
+        DynamicBox[ToBoxes[
+          Refresh[
+           If[True, 
+            Item[
+             Pane[
+              Grid[{{
+                 Checkbox[
+                  Dynamic[
+                   
+                   CurrentValue[$FrontEnd, {
+                    PrivateFrontEndOptions, "InterfaceSettings", 
+                    "PresenterTools", "CreatePresentationPalette", 
+                    "IncludeSampleContent"}, False]], BaselinePosition -> 
+                  Axis], 
+                 Style[
+                  Dynamic[
+                   FEPrivate`FrontEndResource[
+                   "PresenterToolStrings", 
+                    "ThemeChooserIncludeSampleContent"]], FontSize -> 13, 
+                  FontFamily -> CurrentValue["ControlsFontFamily"], FontColor -> 
+                  RGBColor[0.39215, 0.39215, 0.39215]]}}, Spacings -> 0.5, 
+               Alignment -> {Left, Center}], 
+              ImageMargins -> {{0, 0}, {8, 0}}], Alignment -> {Left, Center}],
+             " "], None], StandardForm],
+         ImageSizeCache->{226., {15., 13.}}], "\[SpanFromLeft]", 
+        "\[SpanFromLeft]"},
+       {
+        InterpretationBox[
+         StyleBox[
+          PaneSelectorBox[{False->GridBox[{
+             {
+              OpenerBox[Dynamic[
+                
+                CurrentValue[$FrontEnd, {
+                 PrivateFrontEndOptions, "InterfaceSettings", 
+                  "PresenterTools", "ThemeOptionsPalette", "ShowPreview"}, 
+                 True]],
+               Appearance->Automatic,
+               AutoAction->False,
+               ContinuousAction->False,
+               Enabled->Automatic], 
+              PaneBox[
+               StyleBox[
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "PresenterToolStrings", "ThemeChooserPreviewLabel"], 
+                  StandardForm],
+                 ImageSizeCache->{52., {0., 11.}}],
+                StripOnInput->False,
+                FontFamily:>CurrentValue["ControlsFontFamily"],
+                FontSize->14,
+                FontColor->RGBColor[0.537254, 0.537254, 0.537254]],
+               ContentPadding->False,
+               FrameMargins->0,
+               ImageMargins->0,
+               ImageSize->Full]}
+            },
+            AutoDelete->False,
+            BaselinePosition->{1, 1},
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxBackground->{"Columns" -> {{Automatic}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {{0.2}}, "Rows" -> {{0.5}}}], True->
+           GridBox[{
+             {
+              OpenerBox[Dynamic[
+                CurrentValue[$FrontEnd, {
+                 PrivateFrontEndOptions, "InterfaceSettings", 
+                  "PresenterTools", "ThemeOptionsPalette", "ShowPreview"}, 
+                 True]],
+               Appearance->Automatic,
+               AutoAction->False,
+               ContinuousAction->False,
+               Enabled->Automatic], 
+              PaneBox[
+               StyleBox[
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "PresenterToolStrings", "ThemeChooserPreviewLabel"], 
+                  StandardForm],
+                 ImageSizeCache->{52., {0., 11.}}],
+                StripOnInput->False,
+                FontFamily:>CurrentValue["ControlsFontFamily"],
+                FontSize->14,
+                FontColor->RGBColor[0.537254, 0.537254, 0.537254]],
+               ContentPadding->False,
+               FrameMargins->0,
+               ImageMargins->0,
+               ImageSize->Full]},
+             {"", 
+              PaneBox[
+               PaneBox[
+                TagBox[GridBox[{
+                   {
+                    TemplateBox[{TemplateBox[{180}, "Spacer1"],TemplateBox[{
+                    ButtonBox[
+                    PanelBox[
+                    StyleBox[
+                    "\"\[FirstPage]\"", FontSize -> 24, FontColor -> 
+                    GrayLevel[0.5], StripOnInput -> False], Appearance -> 
+                    None, ImageSize -> {15, 15}, Alignment -> Center, 
+                    Background -> Dynamic[
+                    If[
+                    CurrentValue["MouseOver"], 
+                    GrayLevel[0.95], 
+                    GrayLevel[1]]]], 
+                    ButtonFunction :> (
+                    PresenterTools`Utilities`Private`detailNumber$$ = 1), 
+                    Appearance -> {"Default" -> None, "Pressed" -> None}, 
+                    Tooltip -> "First Slide", TooltipDelay -> 0.25, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    ButtonBox[
+                    PanelBox[
+                    StyleBox[
+                    "\"\[LeftPointer]\"", FontSize -> 24, FontColor -> 
+                    GrayLevel[0.5], StripOnInput -> False], Appearance -> 
+                    None, ImageSize -> {15, 15}, Alignment -> Center, 
+                    Background -> Dynamic[
+                    If[
+                    CurrentValue["MouseOver"], 
+                    GrayLevel[0.95], 
+                    GrayLevel[1]]]], 
+                    ButtonFunction :> (
+                    Decrement[
+                    PresenterTools`Utilities`Private`detailNumber$$]; 
+                    If[PresenterTools`Utilities`Private`detailNumber$$ < 1, 
+                    PresenterTools`Utilities`Private`detailNumber$$ = 1]), 
+                    Appearance -> {"Default" -> None, "Pressed" -> None}, 
+                    Tooltip -> "Previous Slide", TooltipDelay -> 0.25, 
+                    Evaluator -> Automatic, Method -> "Preemptive"], 
+                    ButtonBox[
+                    PanelBox[
+                    StyleBox[
+                    "\"\[RightPointer]\"", FontSize -> 24, FontColor -> 
+                    GrayLevel[0.5], StripOnInput -> False], Appearance -> 
+                    None, ImageSize -> {15, 15}, Alignment -> Center, 
+                    Background -> Dynamic[
+                    If[
+                    CurrentValue["MouseOver"], 
+                    GrayLevel[0.95], 
+                    GrayLevel[1]]]], 
+                    ButtonFunction :> (
+                    Increment[
+                    PresenterTools`Utilities`Private`detailNumber$$]; 
+                    If[PresenterTools`Utilities`Private`detailNumber$$ > 
+                    PresenterTools`Utilities`Private`numberOfDetails$$, 
+                    PresenterTools`Utilities`Private`detailNumber$$ = 
+                    PresenterTools`Utilities`Private`numberOfDetails$$]), 
+                    Appearance -> {"Default" -> None, "Pressed" -> None}, 
+                    Tooltip -> "Next Slide", TooltipDelay -> 0.25, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    ButtonBox[
+                    PanelBox[
+                    StyleBox[
+                    "\"\[LastPage]\"", FontSize -> 24, FontColor -> 
+                    GrayLevel[0.5], StripOnInput -> False], Appearance -> 
+                    None, ImageSize -> {15, 15}, Alignment -> Center, 
+                    Background -> Dynamic[
+                    If[
+                    CurrentValue["MouseOver"], 
+                    GrayLevel[0.95], 
+                    GrayLevel[1]]]], 
+                    ButtonFunction :> (
+                    PresenterTools`Utilities`Private`detailNumber$$ = 
+                    PresenterTools`Utilities`Private`numberOfDetails$$), 
+                    Appearance -> {"Default" -> None, "Pressed" -> None}, 
+                    Tooltip -> "Last Slide", TooltipDelay -> 0.25, Evaluator -> 
+                    Automatic, Method -> "Preemptive"]}, "RowDefault"]},
+                    "RowWithSeparator"]},
+                   {
+                    ButtonBox[
+                    TagBox[
+                    DynamicBox[ToBoxes[
+                    
+                    With[{PresenterTools`Utilities`Private`themeImage = 
+                    StringJoin[
+                    ToString[
+                    Setting[PresenterTools`Utilities`Private`themeName$$]], 
+                    "-detail-", 
+                    ToString[
+                    Setting[PresenterTools`Utilities`Private`fontset$$]], "-", 
+                    ToString[
+                    Setting[PresenterTools`Utilities`Private`colorset$$]], 
+                    "-", 
+                    ToString[
+                    Setting[PresenterTools`Utilities`Private`detailNumber$$]],
+                     ".png"]}, 
+                    Framed[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"PresenterTools"}, 
+                    PresenterTools`Utilities`Private`themeImage]]]], 
+                    ImageSize -> {Automatic, 162}, Appearance -> None, 
+                    ImageMargins -> 0, FrameMargins -> 0, FrameStyle -> 
+                    GrayLevel[0.6], Background -> None, Alignment -> Center]],
+                     StandardForm],
+                    ImageSizeCache->{284., {78., 84.}}],
+                    MouseAppearanceTag["LinkHand"]],
+                    Appearance->None,
+                    
+                    ButtonFunction:>If[
+                    PresenterTools`Utilities`Private`detailNumber$$ >= 
+                    PresenterTools`Utilities`Private`numberOfDetails$$, 
+                    PresenterTools`Utilities`Private`detailNumber$$ = 1, 
+                    Increment[
+                    PresenterTools`Utilities`Private`detailNumber$$]],
+                    ContentPadding->False,
+                    Evaluator->Automatic,
+                    FrameMargins->0,
+                    ImageMargins->0,
+                    Method->"Preemptive",
+                    Tooltip->PaneBox[
+                    TagBox[
+                    GridBox[{{"\"Theme: \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    PresenterTools`Utilities`Private`themeName$$, 
+                    StandardForm]]}, {"\"FontSet: \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    PresenterTools`Utilities`Private`fontset$$, 
+                    StandardForm]]}, {"\"ColorSet: \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    PresenterTools`Utilities`Private`colorset$$, 
+                    StandardForm]]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    "Grid"]],
+                    TooltipDelay->0.25]}
+                  },
+                  AutoDelete->False,
+                  
+                  GridBoxAlignment->{
+                   "Columns" -> {{Center}}, "Rows" -> {{Top}}},
+                  GridBoxFrame->{"Columns" -> None, "Rows" -> None},
+                  
+                  GridBoxItemSize->{
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                  GridBoxSpacings->{"Columns" -> {{0}}}],
+                 "Grid"],
+                Spacings -> 0,
+                Alignment->Center,
+                FrameMargins->0,
+                ImageMargins->0,
+                ImageSize->Full],
+               ImageMargins->0]}
+            },
+            AutoDelete->False,
+            BaselinePosition->{1, 1},
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxBackground->{"Columns" -> {{Automatic}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {{0.2}}, "Rows" -> {{0.5}}}]}, 
+           Dynamic[
+            
+            CurrentValue[$FrontEnd, {
+             PrivateFrontEndOptions, "InterfaceSettings", "PresenterTools", 
+              "ThemeOptionsPalette", "ShowPreview"}, True]],
+           Alignment->Automatic,
+           BaseStyle->{},
+           BaselinePosition->Baseline,
+           DefaultBaseStyle->"OpenerView",
+           ImageMargins->0,
+           ImageSize->Automatic],
+          Deployed->False,
+          StripOnInput->False],
+         OpenerView[{
+           Pane[
+            Style[
+             Dynamic[
+              FEPrivate`FrontEndResource[
+              "PresenterToolStrings", "ThemeChooserPreviewLabel"]], FontSize -> 
+             14, FontFamily :> CurrentValue["ControlsFontFamily"], FontColor -> 
+             RGBColor[0.537254, 0.537254, 0.537254]], ImageSize -> Full, 
+            ImageMargins -> 0, FrameMargins -> 0, ContentPadding -> False], 
+           Pane[
+            Grid[{{
+               Row[{
+                 Row[{
+                   Button[
+                    Panel[
+                    Style[
+                    "\[FirstPage]", FontSize -> 24, FontColor -> 
+                    GrayLevel[0.5]], Appearance -> None, 
+                    ImageSize -> {15, 15}, Alignment -> Center, Background -> 
+                    Dynamic[
+                    If[
+                    CurrentValue["MouseOver"], 
+                    GrayLevel[0.95], 
+                    GrayLevel[1]]]], 
+                    PresenterTools`Utilities`Private`detailNumber$$ = 1, 
+                    Appearance -> {"Default" -> None, "Pressed" -> None}, 
+                    Tooltip -> "First Slide", TooltipDelay -> 0.25], 
+                   Button[
+                    Panel[
+                    Style[
+                    "\[LeftPointer]", FontSize -> 24, FontColor -> 
+                    GrayLevel[0.5]], Appearance -> None, 
+                    ImageSize -> {15, 15}, Alignment -> Center, Background -> 
+                    Dynamic[
+                    If[
+                    CurrentValue["MouseOver"], 
+                    GrayLevel[0.95], 
+                    GrayLevel[1]]]], 
+                    Decrement[
+                    PresenterTools`Utilities`Private`detailNumber$$]; 
+                    If[PresenterTools`Utilities`Private`detailNumber$$ < 1, 
+                    PresenterTools`Utilities`Private`detailNumber$$ = 1], 
+                    Appearance -> {"Default" -> None, "Pressed" -> None}, 
+                    Tooltip -> "Previous Slide", TooltipDelay -> 0.25], 
+                   Button[
+                    Panel[
+                    Style[
+                    "\[RightPointer]", FontSize -> 24, FontColor -> 
+                    GrayLevel[0.5]], Appearance -> None, 
+                    ImageSize -> {15, 15}, Alignment -> Center, Background -> 
+                    Dynamic[
+                    If[
+                    CurrentValue["MouseOver"], 
+                    GrayLevel[0.95], 
+                    GrayLevel[1]]]], 
+                    Increment[
+                    PresenterTools`Utilities`Private`detailNumber$$]; 
+                    If[PresenterTools`Utilities`Private`detailNumber$$ > 
+                    PresenterTools`Utilities`Private`numberOfDetails$$, 
+                    PresenterTools`Utilities`Private`detailNumber$$ = 
+                    PresenterTools`Utilities`Private`numberOfDetails$$], 
+                    Appearance -> {"Default" -> None, "Pressed" -> None}, 
+                    Tooltip -> "Next Slide", TooltipDelay -> 0.25], 
+                   Button[
+                    Panel[
+                    Style[
+                    "\[LastPage]", FontSize -> 24, FontColor -> 
+                    GrayLevel[0.5]], Appearance -> None, 
+                    ImageSize -> {15, 15}, Alignment -> Center, Background -> 
+                    Dynamic[
+                    If[
+                    CurrentValue["MouseOver"], 
+                    GrayLevel[0.95], 
+                    GrayLevel[1]]]], 
+                    PresenterTools`Utilities`Private`detailNumber$$ = 
+                    PresenterTools`Utilities`Private`numberOfDetails$$, 
+                    Appearance -> {"Default" -> None, "Pressed" -> None}, 
+                    Tooltip -> "Last Slide", TooltipDelay -> 0.25]}]}, 
+                Spacer[180], Alignment -> {Left, Baseline}]}, {
+               Button[
+                MouseAppearance[
+                 Dynamic[
+                  
+                  With[{PresenterTools`Utilities`Private`themeImage = 
+                    StringJoin[
+                    ToString[
+                    Setting[PresenterTools`Utilities`Private`themeName$$]], 
+                    "-detail-", 
+                    ToString[
+                    Setting[PresenterTools`Utilities`Private`fontset$$]], "-", 
+                    ToString[
+                    Setting[PresenterTools`Utilities`Private`colorset$$]], 
+                    "-", 
+                    ToString[
+                    Setting[PresenterTools`Utilities`Private`detailNumber$$]],
+                     ".png"]}, 
+                   Framed[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"PresenterTools"}, 
+                    PresenterTools`Utilities`Private`themeImage]]]], 
+                    ImageSize -> {Automatic, 162}, Appearance -> None, 
+                    ImageMargins -> 0, FrameMargins -> 0, FrameStyle -> 
+                    GrayLevel[0.6], Background -> None, Alignment -> 
+                    Center]]], "LinkHand"], 
+                If[
+                PresenterTools`Utilities`Private`detailNumber$$ >= 
+                 PresenterTools`Utilities`Private`numberOfDetails$$, 
+                 PresenterTools`Utilities`Private`detailNumber$$ = 1, 
+                 Increment[PresenterTools`Utilities`Private`detailNumber$$]], 
+                FrameMargins -> 0, ImageMargins -> 0, Appearance -> None, 
+                ContentPadding -> False, Tooltip -> PaneBox[
+                  TagBox[
+                   GridBox[{{"\"Theme: \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    PresenterTools`Utilities`Private`themeName$$, 
+                    StandardForm]]}, {"\"FontSet: \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    PresenterTools`Utilities`Private`fontset$$, 
+                    StandardForm]]}, {"\"ColorSet: \"", 
+                    DynamicBox[
+                    ToBoxes[
+                    PresenterTools`Utilities`Private`colorset$$, 
+                    StandardForm]]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                   "Grid"]], TooltipDelay -> 0.25]}}, 
+             Alignment -> {Center, Top}, Spacings -> 0, Frame -> None], 
+            ImageSize -> Full, Alignment -> Center, FrameMargins -> 0, 
+            ImageMargins -> 0, Spacings -> 0]}, 
+          Dynamic[
+           
+           CurrentValue[$FrontEnd, {
+            PrivateFrontEndOptions, "InterfaceSettings", "PresenterTools", 
+             "ThemeOptionsPalette", "ShowPreview"}, True]], FrameMargins -> 0,
+           ImageMargins -> 0]], "\[SpanFromLeft]", "\[SpanFromLeft]"},
+       {
+        ItemBox[
+         ButtonBox[
+          DynamicBox[ToBoxes[
+            FEPrivate`FrontEndResource[
+            "PresenterToolStrings", "ThemeChooserImportButton"], StandardForm],
+           ImageSizeCache->{40., {3., 10.}}],
+          Appearance->Automatic,
+          
+          ButtonFunction:>(
+           PresenterTools`Utilities`Private`errorMessage$$ = " "; 
+           PresenterTools`Utilities`Private`secondScreenQ$$ = True),
+          Evaluator->Automatic,
+          ImageSize->Dynamic[CurrentValue["DefaultButtonSize"]],
+          Method->"Preemptive",
+          Tooltip->Dynamic[
+            FEPrivate`FrontEndResource[
+            "PresenterToolStrings", "ThemeChooserImportButtonTooltip"]],
+          TooltipDelay->0.25],
+         Alignment->Left,
+         StripOnInput->False], 
+        ItemBox[
+         StyleBox[
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEExpressions", "ChoiceButtonsOrder"][{
+             ButtonBox[
+              StyleBox[
+               DynamicBox[
+                ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "PresenterToolStrings", "ThemeChooserCreateNotebook"], 
+                 StandardForm]], FontColor :> 
+               FEPrivate`If[FEPrivate`$OperatingSystem === "MacOSX", 
+                 GrayLevel[1], Automatic], StripOnInput -> False], 
+              ButtonFunction :> Dynamic[
+                
+                With[{PresenterTools`Utilities`Private`themename$ = 
+                  PresenterTools`Utilities`Private`themeName$$, 
+                  PresenterTools`Utilities`Private`syledef$ = Part[
+                    Association[
+                    "Default" -> 
+                    Association[
+                    "FileName" -> "Default.nb", "StyleDefinitions" -> 
+                    FrontEnd`FileName[{"PresenterTools"}, "Default.nb", 
+                    CharacterEncoding -> "UTF-8"], "SlideBreakStyles" -> {}, 
+                    "BackgroundImages" -> Association["Title" -> False], 
+                    "FontSet" -> {
+                    "Display1" -> "Source Sans Pro", "Display2" -> 
+                    "Source Sans Pro", "Display3" -> "Source Sans Pro", 
+                    "Text1" -> "Source Sans Pro", "Text2" -> 
+                    "Source Sans Pro", "Text3" -> "Source Sans Pro", 
+                    "Dingbat" -> "Source Sans Pro", "Default" -> 
+                    "Source Sans Pro"}, 
+                    "ColorSet" -> {
+                    "Display1" -> RGBColor[0.866667, 0.0666667, 0], 
+                    "Display2" -> RGBColor[0.968627, 0.466667, 0], "Display3" -> 
+                    RGBColor[0.992157, 0.376471, 0.32549], "Text1" -> 
+                    GrayLevel[0.388235], "Text2" -> GrayLevel[1], "Text3" -> 
+                    GrayLevel[0], "Text1Reverse" -> GrayLevel[0.75], 
+                    "Text2Reverse" -> GrayLevel[0.75], "Text3Reverse" -> 
+                    GrayLevel[0.75], "Dingbat" -> 
+                    RGBColor[0.866667, 0.0666667, 0], "Default" -> 
+                    GrayLevel[0.388235], "Background" -> GrayLevel[1]}], 
+                    "Garnet" -> 
+                    Association[
+                    "FileName" -> "Garnet.nb", "StyleDefinitions" -> 
+                    FrontEnd`FileName[{"PresenterTools"}, "Garnet.nb", 
+                    CharacterEncoding -> "UTF-8"], "SlideBreakStyles" -> {}, 
+                    "BackgroundImages" -> Association["Title" -> True], 
+                    "FontSet" -> {
+                    "Display1" -> "Baskerville", "Display2" -> "Baskerville", 
+                    "Display3" -> "Baskerville", "Text1" -> "Baskerville", 
+                    "Text2" -> "Baskerville", "Text3" -> "Baskerville", 
+                    "Dingbat" -> "Baskerville", "Default" -> "Baskerville"}, 
+                    "ColorSet" -> {
+                    "Display1" -> RGBColor[0.588235, 0.0470588, 0.164706], 
+                    "Display2" -> RGBColor[0.741176, 0.141176, 0.231373], 
+                    "Display3" -> RGBColor[1, 0.729412, 0.768627], "Text1" -> 
+                    GrayLevel[0.317647], "Text2" -> GrayLevel[1], "Text3" -> 
+                    GrayLevel[0], "Text1Reverse" -> GrayLevel[0.75], 
+                    "Text2Reverse" -> GrayLevel[0.75], "Text3Reverse" -> 
+                    GrayLevel[0.75], "Dingbat" -> 
+                    RGBColor[0.588235, 0.0470588, 0.164706], "Default" -> 
+                    GrayLevel[0.317647], "Background" -> 
+                    RGBColor[0.588235, 0.0470588, 0.164706]}], "Facet" -> 
+                    Association[
+                    "FileName" -> "Facet.nb", "StyleDefinitions" -> 
+                    FrontEnd`FileName[{"PresenterTools"}, "Facet.nb", 
+                    CharacterEncoding -> "UTF-8"], "SlideBreakStyles" -> {}, 
+                    "BackgroundImages" -> Association["Title" -> True], 
+                    "FontSet" -> {
+                    "Display1" -> "Source Sans Pro", "Display2" -> 
+                    "Source Sans Pro", "Display3" -> "Source Sans Pro", 
+                    "Text1" -> "Source Sans Pro", "Text2" -> 
+                    "Source Sans Pro", "Text3" -> "Source Sans Pro", 
+                    "Dingbat" -> "Source Sans Pro", "Default" -> 
+                    "Source Sans Pro"}, 
+                    "ColorSet" -> {
+                    "Display1" -> RGBColor[0.968627, 0.67451, 0.231373], 
+                    "Display2" -> RGBColor[0.431373, 0.698039, 0.662745], 
+                    "Display3" -> RGBColor[0.447059, 0.6, 0.529412], "Text1" -> 
+                    GrayLevel[0.388235], "Text2" -> GrayLevel[1], "Text3" -> 
+                    GrayLevel[0], "Text1Reverse" -> GrayLevel[0.75], 
+                    "Text2Reverse" -> GrayLevel[0.75], "Text3Reverse" -> 
+                    GrayLevel[0.75], "Dingbat" -> 
+                    RGBColor[0.968627, 0.67451, 0.231373], "Default" -> 
+                    GrayLevel[0.388235], "Background" -> 
+                    RGBColor[0.968627, 0.67451, 0.231373]}], "Carbon" -> 
+                    Association[
+                    "FileName" -> "Carbon.nb", "StyleDefinitions" -> 
+                    FrontEnd`FileName[{"PresenterTools"}, "Carbon.nb", 
+                    CharacterEncoding -> "UTF-8"], "SlideBreakStyles" -> {}, 
+                    "BackgroundImages" -> Association["Title" -> False], 
+                    "FontSet" -> {
+                    "Display1" -> "Oswald", "Display2" -> "Playfair Display", 
+                    "Display3" -> "Oswald", "Text1" -> "Playfair Display", 
+                    "Text2" -> "Playfair Display", "Text3" -> 
+                    "Playfair Display", "Dingbat" -> "Source Sans Pro", 
+                    "Default" -> "Playfair Display"}, 
+                    "ColorSet" -> {
+                    "Display1" -> GrayLevel[0.317647], "Display2" -> 
+                    RGBColor[0.952941, 0.945098, 0.517647], "Display3" -> 
+                    GrayLevel[0.858824], "Text1" -> GrayLevel[0.5], "Text2" -> 
+                    GrayLevel[0.858824], "Text3" -> GrayLevel[0.5], 
+                    "Text1Reverse" -> GrayLevel[1], "Text2Reverse" -> 
+                    GrayLevel[0.75], "Text3Reverse" -> GrayLevel[0.75], 
+                    "Dingbat" -> RGBColor[0.952941, 0.945098, 0.517647], 
+                    "Default" -> GrayLevel[0.858824], "Background" -> 
+                    GrayLevel[0.317647]}], "Aqua" -> 
+                    Association[
+                    "FileName" -> "Aqua.nb", "StyleDefinitions" -> 
+                    FrontEnd`FileName[{"PresenterTools"}, "Aqua.nb", 
+                    CharacterEncoding -> "UTF-8"], "SlideBreakStyles" -> {}, 
+                    "BackgroundImages" -> Association["Title" -> True], 
+                    "FontSet" -> {
+                    "Display1" -> "Clear Sans", "Display2" -> "Clear Sans", 
+                    "Display3" -> "Clear Sans", "Text1" -> "Clear Sans", 
+                    "Text2" -> "Clear Sans", "Text3" -> "Clear Sans", 
+                    "Dingbat" -> "Clear Sans", "Default" -> "Clear Sans"}, 
+                    "ColorSet" -> {
+                    "Display1" -> RGBColor[0.211765, 0.694118, 0.74902], 
+                    "Display2" -> RGBColor[0.901961, 0.933333, 0.439216], 
+                    "Display3" -> RGBColor[0.00392157, 0.45098, 0.501961], 
+                    "Text1" -> GrayLevel[0.388235], "Text2" -> GrayLevel[1], 
+                    "Text3" -> GrayLevel[0], "Text1Reverse" -> 
+                    GrayLevel[0.75], "Text2Reverse" -> GrayLevel[0.75], 
+                    "Text3Reverse" -> GrayLevel[0.75], "Dingbat" -> 
+                    RGBColor[0.211765, 0.694118, 0.74902], "Default" -> 
+                    GrayLevel[0.388235], "Background" -> 
+                    RGBColor[0.211765, 0.694118, 0.74902]}], "Sky" -> 
+                    Association[
+                    "FileName" -> "Sky.nb", "StyleDefinitions" -> 
+                    FrontEnd`FileName[{"PresenterTools"}, "Sky.nb", 
+                    CharacterEncoding -> "UTF-8"], "SlideBreakStyles" -> {}, 
+                    "BackgroundImages" -> Association["Title" -> True], 
+                    "FontSet" -> {
+                    "Display1" -> "Roboto Slab", "Display2" -> "Roboto Slab", 
+                    "Display3" -> "Roboto Slab", "Text1" -> "Roboto Light", 
+                    "Text2" -> "Roboto Light", "Text3" -> "Roboto Light", 
+                    "Dingbat" -> "Roboto Slab", "Default" -> "Roboto Light"}, 
+                    "ColorSet" -> {
+                    "Display1" -> RGBColor[0, 0.482353, 0.760784], "Display2" -> 
+                    RGBColor[0, 0.658824, 0.968627], "Display3" -> 
+                    RGBColor[0, 0.482353, 0.760784], "Text1" -> 
+                    GrayLevel[0.388235], "Text2" -> GrayLevel[1], "Text3" -> 
+                    GrayLevel[0], "Text1Reverse" -> GrayLevel[0.75], 
+                    "Text2Reverse" -> GrayLevel[0.75], "Text3Reverse" -> 
+                    GrayLevel[0.75], "Dingbat" -> 
+                    RGBColor[0, 0.658824, 0.968627], "Default" -> 
+                    GrayLevel[0.388235], "Background" -> 
+                    RGBColor[0, 0.482353, 0.760784]}]], 
+                    Key[PresenterTools`Utilities`Private`themeName$$], 
+                    Key["StyleDefinitions"]], 
+                  PresenterTools`Utilities`Private`fonts$ = 
+                  PresenterTools`Utilities`Private`fontset$$, 
+                  PresenterTools`Utilities`Private`colors$ = 
+                  PresenterTools`Utilities`Private`colorset$$}, 
+                 PresenterTools`Utilities`Private`resultNotebook$$ = 
+                  PresenterTools`CreatePresentation[
+                   "Theme" -> PresenterTools`Utilities`Private`themename$, 
+                    "StyleDefinitions" -> 
+                    PresenterTools`Utilities`Private`syledef$, "FontSet" -> 
+                    PresenterTools`Utilities`Private`fonts$, "ColorSet" -> 
+                    PresenterTools`Utilities`Private`colors$, "SampleContent" -> 
+                    CurrentValue[$FrontEnd, {
+                    PrivateFrontEndOptions, "InterfaceSettings", 
+                    "PresenterTools", "CreatePresentationPalette", 
+                    "IncludeSampleContent"}, False]]; If[
+                   MatchQ[
+                    Head[PresenterTools`Utilities`Private`resultNotebook$$], 
+                    Notebook], NotebookClose[
+                    ButtonNotebook[]]; 
+                   PresenterTools`Utilities`Private`nbObj$5558 = 
+                    NotebookPut[
+                    PresenterTools`Utilities`Private`resultNotebook$$]; 
+                   SelectionMove[
+                    PresenterTools`Utilities`Private`nbObj$5558, Before, 
+                    Notebook]; 
+                   NotebookFind[
+                    PresenterTools`Utilities`Private`nbObj$5558, 
+                    "SlideShowNavigationBar", Next, CellStyle]; 
+                   SelectionMove[
+                    PresenterTools`Utilities`Private`nbObj$5558, After, Cell],
+                    Message[
+                    MessageName[
+                    PresenterTools`Utilities`PresenterNotebookChooser, 
+                    "argx"], "presentation is not a Notebook."]; $Failed]]], 
+              Appearance -> "DefaultButton", Evaluator -> Automatic, Method -> 
+              "Preemptive"], 
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResourceString["cancelButtonText"]], 
+              ButtonFunction :> DialogReturn[$Canceled], Appearance -> 
+              "CancelButton", ImageSize -> Dynamic[
+                CurrentValue["DefaultButtonSize"]], Evaluator -> Automatic, 
+              Method -> "Preemptive"]}],
+           ImageSizeCache->{155., {20.9169921875, 26.0830078125}}],
+          Deployed->True,
+          DynamicUpdating->True,
+          ButtonBoxOptions->{ImageMargins->{{2, 2}, {10, 10}},
+          ImageSize->Dynamic[
+            CurrentValue["DefaultButtonSize"]]},
+          GridBoxOptions->{AutoDelete->False,
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}}],
+         Alignment->Right,
+         StripOnInput->False], ""}
+      },
+      AutoDelete->False,
+      FrameStyle->RGBColor[0.898039, 0.898039, 0.898039],
+      GridBoxAlignment->{"Columns" -> {{Center}}},
+      GridBoxDividers->{
+       "Columns" -> {{False}}, 
+        "RowsIndexed" -> {2 -> True, 7 -> True, 8 -> True}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+      GridBoxSpacings->{
+       "Columns" -> {{1}}, 
+        "Rows" -> {4, 4, 1.5, 2.25, 0.75, 1, 2, 3, 0, {1}}}],
+     "Grid"],
+    Appearance->None,
+    Background->GrayLevel[1],
+    ContentPadding->False,
+    FrameMargins->{{10, 10}, {10, 25}},
+    ImageMargins->0], True->
+   PanelBox[
+    TagBox[GridBox[{
+       {
+        ItemBox[
+         PaneBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource[
+             "PresenterToolStrings", "ThemeChooserImportStylesheet"], 
+             StandardForm]],
+           StripOnInput->False,
+           FontFamily:>CurrentValue["PanelFontFamily"],
+           FontSize->20,
+           FontColor->RGBColor[0.2, 0.2, 0.2]],
+          Alignment->Left,
+          ImageSize->Full],
+         Alignment->Left,
+         StripOnInput->False], "\[SpanFromLeft]", "\[SpanFromLeft]"},
+       {
+        ItemBox[
+         PaneBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource[
+             "PresenterToolStrings", "ThemeChooserImportStylesheetText"], 
+             StandardForm]],
+           StripOnInput->False,
+           TextAlignment->Left,
+           FontFamily:>CurrentValue["PanelFontFamily"],
+           FontSize->16,
+           FontColor->RGBColor[0.537254, 0.537254, 0.537254]],
+          Alignment->Left,
+          ImageSize->Full],
+         Alignment->Left,
+         StripOnInput->False], "\[SpanFromLeft]", "\[SpanFromLeft]"},
+       {
+        ItemBox[
+         PaneBox["\<\" \"\>",
+          ImageSize->Automatic],
+         Alignment->Left,
+         StripOnInput->False], "\[SpanFromLeft]", "\[SpanFromLeft]"},
+       {
+        ItemBox[
+         FrameBox[
+          PaneBox[
+           DynamicBox[FEPrivate`ImportImage[
+             
+             FrontEnd`FileName[{"PresenterTools"}, 
+              "GenericSlideThumbnail.png"]]],
+           Alignment->{Left, Top},
+           ContentPadding->False,
+           ImageSize->{100, 70},
+           ImageSizeAction->"ResizeToFit"],
+          Background->GrayLevel[1],
+          FrameMargins->0,
+          FrameStyle->{
+            Thickness[2], 
+            GrayLevel[0.85]},
+          ImageMargins->{{0, 0}, {0, 0}},
+          StripOnInput->False],
+         Alignment->Left,
+         StripOnInput->False], "\[SpanFromLeft]", "\[SpanFromLeft]"},
+       {
+        TemplateBox[{
+         Dynamic[PresenterTools`Utilities`Private`file$$],"Open",{
+          "Mathematica files" -> {"*.nb", "*.m"}}, Automatic, DynamicBox[FEPrivate`FrontEndResource["FEStrings", "BrowseLabel"]], "DialogBox", {"FileNameSetter"}, Automatic, 0, Dynamic[CurrentValue["DefaultButtonSize"]]},
+         "FileNameSetterBoxes4"], 
+        ButtonBox[
+         DynamicBox[ToBoxes[
+           FEPrivate`FrontEndResource[
+           "PresenterToolStrings", "ThemeChooserRemoveButton"], StandardForm]],
+         Alignment->Automatic,
+         Appearance->Automatic,
+         ButtonFunction:>(
+          PresenterTools`Utilities`Private`errorMessage$$ = " "; 
+          PresenterTools`Utilities`Private`file$$ = ""),
+         Enabled->Dynamic[
+           If[
+            MatchQ[PresenterTools`Utilities`Private`file$$, ""], False, True]],
+         Evaluator->Automatic,
+         ImageSize->Dynamic[CurrentValue["DefaultButtonSize"]],
+         Method->"Preemptive"], 
+        ItemBox[
+         PaneBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             If[
+              MatchQ[PresenterTools`Utilities`Private`file$$, ""], " ", 
+              Last[
+               FileNameSplit[PresenterTools`Utilities`Private`file$$]]], 
+             StandardForm]],
+           StripOnInput->False,
+           FontFamily->"Source Sans Pro",
+           FontSize->11,
+           FontColor->GrayLevel[0.4]],
+          FrameMargins->0,
+          ImageMargins->0],
+         Alignment->Left,
+         StripOnInput->False]},
+       {
+        ItemBox[
+         PaneBox[
+          TagBox[GridBox[{
+             {
+              PaneBox[
+               StyleBox[
+                
+                DynamicBox[ToBoxes[
+                 PresenterTools`Utilities`Private`errorMessage$$, 
+                  StandardForm]], "Message", "MSG",
+                StripOnInput->False],
+               Alignment->{Left, Center},
+               ImageSize->Dynamic[
+                 If[
+                 PresenterTools`Utilities`Private`errorMessage$$ === " ", 0, {
+                  Automatic, 30}]]], "\[SpanFromLeft]"},
+             {
+              
+              CheckboxBox[Dynamic[CurrentValue[$FrontEnd, {PrivateFrontEndOptions, "InterfaceSettings", 
+  "PresenterTools", "CreatePresentationPalette", 
+  "IncludeSampleContent"}, False]],
+               
+               BaselinePosition->Axis], 
+              StyleBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "PresenterToolStrings", "ThemeChooserIncludeSampleContent"], 
+                 StandardForm]],
+               StripOnInput->False,
+               FontFamily->".SF NS Text",
+               FontSize->13,
+               FontColor->RGBColor[0.39215, 0.39215, 0.39215]]}
+            },
+            AutoDelete->False,
+            GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Center}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {{0.5}}}],
+           "Grid"],
+          FrameMargins->{{4, 0}, {40, 0}}],
+         Alignment->Left,
+         StripOnInput->False], "\[SpanFromLeft]", "\[SpanFromLeft]"},
+       {
+        ItemBox[
+         ButtonBox[
+          DynamicBox[ToBoxes[
+            FEPrivate`FrontEndResource[
+            "PresenterToolStrings", "ThemeChooserBackButton"], StandardForm]],
+          
+          Appearance->Automatic,
+          
+          ButtonFunction:>(
+           PresenterTools`Utilities`Private`errorMessage$$ = " "; 
+           PresenterTools`Utilities`Private`secondScreenQ$$ = False),
+          Evaluator->Automatic,
+          ImageSize->Dynamic[CurrentValue["DefaultButtonSize"]],
+          Method->"Preemptive"],
+         Alignment->Left,
+         StripOnInput->False], "\[SpanFromLeft]", 
+        ItemBox[
+         StyleBox[
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEExpressions", "ChoiceButtonsOrder"][{
+             ButtonBox[
+              StyleBox[
+               DynamicBox[
+                ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "PresenterToolStrings", "ThemeChooserCreateNotebook"], 
+                 StandardForm]], FontColor :> 
+               FEPrivate`If[FEPrivate`$OperatingSystem === "MacOSX", 
+                 GrayLevel[1], Automatic], StripOnInput -> False], 
+              ButtonFunction :> Dynamic[
+                If[
+                 MatchQ[PresenterTools`Utilities`Private`file$$, ""], Null, 
+                 
+                 Module[{
+                  PresenterTools`Utilities`Private`newstylesheet$, 
+                   PresenterTools`Utilities`Private`notebookContent$}, 
+                  PresenterTools`Utilities`Private`newstylesheet$ = 
+                   PresenterTools`GetPresenterStylesheet[
+                    PresenterTools`Utilities`Private`file$$]; If[
+                    Not[
+                    MatchQ[
+                    PresenterTools`Utilities`Private`newstylesheet$, \
+$Failed]], NotebookClose[
+                    ButtonNotebook[]]; 
+                    If[
+                    CurrentValue[$FrontEnd, {PrivateFrontEndOptions, "InterfaceSettings", 
+  "PresenterTools", "CreatePresentationPalette", 
+  "IncludeSampleContent"}, False], 
+                    If[
+                    
+                    MemberQ[{
+                    "ChineseSimplified", "ChineseTraditional", "Japanese", 
+                    "Spanish"}, $Language], 
+                    PresenterTools`Utilities`Private`notebookContent$ = Get[
+                    
+                    FileNameJoin[{
+                    PresenterTools`Private`$\
+PresenterToolsSystemResourcesDirectory, $Language, 
+                    "SlideShowChooserTemplate.nb"}]], 
+                    PresenterTools`Utilities`Private`notebookContent$ = Get[
+                    FileNameJoin[{
+                    PresenterTools`Private`$\
+PresenterToolsSystemResourcesDirectory, "SlideShowChooserTemplate.nb"}]]]; 
+                    PresenterTools`Utilities`Private`nbObj$5558 = 
+                    NotebookPut[
+                    Notebook[
+                    First[PresenterTools`Utilities`Private`notebookContent$], 
+                    StyleDefinitions -> 
+                    PresenterTools`Utilities`Private`newstylesheet$, 
+                    ScreenStyleEnvironment -> "Slideshow Working"]], 
+
+                    PresenterTools`Utilities`Private`nbObj$5558 = 
+                    NotebookPut[
+                    Notebook[{
+                    Cell[
+                    "", "SlideShowNavigationBar", "FirstSlide", CellTags -> 
+                    "SlideShowHeader"]}, StyleDefinitions -> 
+                    PresenterTools`Utilities`Private`newstylesheet$, 
+                    ScreenStyleEnvironment -> "Slideshow Working"]]]; 
+                    SelectionMove[
+                    PresenterTools`Utilities`Private`nbObj$5558, Before, 
+                    Notebook]; 
+                    NotebookFind[
+                    PresenterTools`Utilities`Private`nbObj$5558, 
+                    "SlideShowNavigationBar", Next, CellStyle]; 
+                    SelectionMove[
+                    PresenterTools`Utilities`Private`nbObj$5558, After, Cell],
+                     PresenterTools`Utilities`Private`errorMessage$$ = Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "PresenterToolStrings", 
+                    "ThemeChooserImportStylesErrorMessage"]]; Null]]]], 
+              Appearance -> "DefaultButton", Evaluator -> Automatic, Method -> 
+              "Preemptive"], 
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResourceString["cancelButtonText"]], 
+              ButtonFunction :> DialogReturn[$Canceled], Appearance -> 
+              "CancelButton", ImageSize -> Dynamic[
+                CurrentValue["DefaultButtonSize"]], Evaluator -> Automatic, 
+              Method -> "Preemptive"]}]],
+          Deployed->True,
+          DynamicUpdating->True,
+          ButtonBoxOptions->{ImageMargins->{{2, 2}, {10, 10}},
+          ImageSize->Dynamic[
+            CurrentValue["DefaultButtonSize"]]},
+          GridBoxOptions->{AutoDelete->False,
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}},
+          GridBoxOptions -> {FrameMargins -> 0},
+          GridBoxOptions -> {ImageMargins -> 0}],
+         ImageSize -> Full,
+         Alignment->Right,
+         StripOnInput->False]}
+      },
+      AutoDelete->False,
+      FrameStyle->RGBColor[0.898039, 0.898039, 0.898039],
+      GridBoxAlignment->{"Columns" -> {{Left}}},
+      GridBoxDividers->{
+       "Columns" -> {{False}}, 
+        "RowsIndexed" -> {2 -> True, 5 -> True, 7 -> True}},
+      GridBoxFrame->{"Columns" -> False, "Rows" -> False},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+      GridBoxSpacings->{
+       "Columns" -> {{1}}, "Rows" -> {4, 4, 3, 0, 1, 0, 1, 1, {1}}}],
+     "Grid"],
+    Alignment->{Left, Top},
+    Appearance->None,
+    Background->GrayLevel[1],
+    ContentPadding->False,
+    FrameMargins->{{15, 10}, {10, 25}},
+    ImageMargins->10,
+    ImageSize->{Full, Automatic}]}, Dynamic[
+    TrueQ[PresenterTools`Utilities`Private`secondScreenQ$$]],
+   ImageSize->Automatic],
+  Deinitialization:>(
+   CurrentValue[$FrontEnd, {
+      PrivateFrontEndOptions, "InterfaceSettings", "PresenterTools", 
+       "ThemeOptionsPalette", "WindowMargins"}] = CurrentValue[
+      EvaluationNotebook[], WindowSize]; 
+   CurrentValue[$FrontEnd, {
+      PrivateFrontEndOptions, "InterfaceSettings", "PresenterTools", 
+       "ThemeOptionsPalette", "WindowMargins"}] = CurrentValue[
+      EvaluationNotebook[], WindowMargins]),
+  DynamicModuleValues:>{},
+  Initialization:>(Needs["PresenterTools`"]; If[Last[
+        Flatten[
+         CurrentValue[$FrontEndSession, ScreenRectangle]]] - 45 < 811, 
+     CurrentValue[$FrontEnd, {
+       PrivateFrontEndOptions, "InterfaceSettings", "PresenterTools", 
+        "ThemeOptionsPalette", "ShowPreview"}] = False]; 
+   PresenterTools`Utilities`Private`secondScreenQ$$ = False; If[Round[
+       CurrentValue[$FrontEnd, Magnification]] <= 1, 
+     SetOptions[
+      EvaluationNotebook[], ScrollingOptions -> {}, WindowElements -> {}], 
+     SetOptions[
+      EvaluationNotebook[], 
+      ScrollingOptions -> {
+       "HorizontalScrollRange" -> FitAll, "VerticalScrollRange" -> Fit}, 
+      WindowElements -> {"HorizontalScrollBar", "VerticalScrollBar"}]]; Null)]
+  ],
+ CellFrame->False,
+ ShowCellBracket->False,
+ CellMargins->0,
+ CellChangeTimes->{3.755973154025877*^9},
+ TextAlignment->Center,
+ Background->GrayLevel[
+  1],ExpressionUUID->"097c09eb-dcb9-4432-80d3-6372337d5cb4"]
+},
+Editable->False,
+Saveable->False,
+NotebookEventActions->{"ReturnKeyDown" :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], "EscapeKeyDown" :> FE`Evaluate[
+    FEPrivate`FindAndClickCancelButton[]], "WindowClose" :> FE`Evaluate[
+    FEPrivate`FindAndClickCancelButton[]]},
+WindowSize->{600, All},
+WindowMargins->Automatic,
+WindowFrame->"Palette",
+WindowElements -> 
+Dynamic[FEPrivate`If[
+  FEPrivate`Greater[
+   FrontEnd`AbsoluteCurrentValue[$FrontEnd, Magnification], 
+   1.49], {"HorizontalScrollBar", "VerticalScrollBar"}, {}]],
+WindowFrameElements->{"CloseBox", "ZoomBox", "MinimizeBox", "ResizeArea"},
+WindowTitle->Dynamic[
+  FEPrivate`FrontEndResource[
+  "PresenterToolStrings", "ThemeChooserWindowTitle"]],
+ScrollingOptions->{"HorizontalScrollRange"->FitAll,
+"VerticalScrollRange"->Fit},
+ShowCellBracket->False,
+Deployed->True,
+MenuSortingValue->None,
+Background->GrayLevel[1],
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]

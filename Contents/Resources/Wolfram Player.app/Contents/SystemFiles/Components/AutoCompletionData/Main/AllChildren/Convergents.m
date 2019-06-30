@@ -1,0 +1,13 @@
+{"Sqrt", "Pi", "Abs", "E", "I", "Log", "Degree", "Log2", "Sin", "Cos", "Tan", 
+ "GoldenRatio", "Rational", "ContinuedFraction", "Exp", "Log10", 
+ "DigitCount", "ArcTan", "ArcSin", "ArcCos", "Csc", "Quantity", 
+ "RootApproximant", "Norm", "Gamma", "JacobiSN", "N", "HarmonicNumber", 
+ "FromContinuedFraction", "Zeta", "VectorAngle", "Sinh", "Plus", "Cot", 
+ "Sec", "Erf", "Cosh", "Convergents", "Rationalize", "Infinity", 
+ "EulerGamma", "Binomial", "Sum", "Entropy", "BesselI", "BarnesG", "Mod", 
+ "Khinchin", "FunctionExpand", "Erfc", "Tanh", "SinIntegral", "Root", "None", 
+ "EllipticK", "DawsonF", "ContraharmonicMean", "Arg", "ArcSinh", "ArcCsc", 
+ "ArcCot", "WeierstrassP", "TrigExpand", "Sign", "Re", "Ratios", "Range", 
+ "RandomReal", "PrimePi", "Power", "Nest", "Limit", "InverseErfc", 
+ "InverseErf", "FresnelS", "Floor", "Fibonacci", "ExpIntegralEi", "Expand", 
+ "Coth", "Correlation", "BooleanConvert", "BitOr", "ArcCoth", "ArcCosh"}

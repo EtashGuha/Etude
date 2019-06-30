@@ -1,0 +1,179 @@
+@@resource SlideshowToolbarText
+{
+	"TooltipFirstSlide"->"First Slide",
+	"TooltipPreviousSlide"->"Previous Slide",
+	"TooltipNextSlide"->"Next Slide",
+	"TooltipLastSlide"->"Last Slide",
+	"TooltipToggleFullScreen"->"Toggle Full Screen",
+	"SlideshowToolbarCounterText" -> " of ",
+	"SlideshowToolbarCounterPrefixText" -> "Slide ",
+	"SlideshowToolbarEmptySlide" -> "(Slide `1`)"
+}
+@|
+@@resource HelpToolbarText
+{
+	"TooltipForward"->"Go forward one page",
+	"TooltipBack"->"Go back one page",
+	"TooltipHistory"->"History menu",
+	"TooltipGo"->"Search",
+	"TooltipHome"->"Home",
+	"TooltipFunction" -> "Function Navigator",
+	"TooltipTutorial" -> "Virtual Book",
+	"TooltipTutorial2" -> "Show in Virtual Book",
+	"TooltipRefresh"->"Reload current page",
+	"SearchString1"->"Search for all pages containing ",
+	"SearchString2"->".",
+	"SynonymString1"->"   |   ",
+	"SynonymString2"->" is ",
+	"SynonymString3"->" in Mathematica"
+}
+@|
+@@resource PackageToolbarText
+{
+	"ButtonRunPackage"->"Run Package",
+	"TooltipRunPackage" -> "Evaluate initialization cells",
+	"LabelDebug"->"Debug",
+	"ButtonUpdate"->"Update",
+	"TooltipUpdate"->"Update function and section lists",
+	"ButtonFunctions"->"Functions",
+	"ButtonSections"->"Sections"
+}
+@|
+@@resource CompatibilityToolbarText
+{
+	"Title" -> "Mathematica Version Advisory",
+	"Text1" -> "This notebook was created in an earlier version of Mathematica",
+	"Text2" -> "Most notebooks run without change. This tool scans for possible issues and suggests changes.",
+	"Scan" -> "Scan for possible issues",
+	"DontScan" -> "Do not scan this notebook",
+	"NeverScan" -> "Never scan notebooks",
+	
+	"StatusText" -> "Scanning notebook for compatibility issues...",
+	"CounterText" -> "Cells remaining: ",
+	"MessageTitle" -> "Mathematica Automated Compatibility Tool",
+	"MessageText" -> "No compatibility issues detected.",
+	"ApplyAll" -> "Apply All Suggestions",
+	"DiscardAll" -> "Discard All Suggestions",
+	"FindNext" -> "Find Next Issue",
+	"FindPrevious" -> "Find Previous Issue",
+	"IssueTag" -> "COMPATIBILITY ISSUE",
+	"SuggestionTag" -> "SUGGESTED VERSION",
+	"ApplyAllInstances" -> "Apply choice to all instances of this suggestion",
+	"ReplaceSuggestion" -> "Replace with Suggested Version",
+	"DiscardSuggestion" -> "Discard Suggested Version",
+	"DiscardAdvisory" -> "Discard Version Advisory Cells"
+}
+@|
+@@resource MainToolbarText
+{
+}
+@|
+@@resource SecurityToolbarText
+{
+"securityWarning" -> RowBox[{"This file contains potentially unsafe dynamic content.", " ",
+   TagBox[ButtonBox[
+    PaneSelectorBox[{False -> 
+       StyleBox["\"More Details \[RightGuillemet]\"", RGBColor[1, 0, 0], 
+        StripOnInput -> False], 
+      True -> StyleBox["\"More Details \[RightGuillemet]\"", "HyperlinkActive", 
+        StripOnInput -> False]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], ImageSize -> Automatic, 
+     FrameMargins -> 0], Appearance -> None, Evaluator -> None, 
+    ButtonFunction :> (FEPrivate`If[
+        FEPrivate`Or[FEPrivate`SameQ[FrontEnd`CurrentValue["PluginEnabled"], True],
+         FEPrivate`SameQ[FrontEnd`$NotebookLicenseType, "Player"],
+         FEPrivate`SameQ[FrontEnd`$NotebookLicenseType, "Player Pro"]], 
+        FEPrivate`FrontEndExecute[{FrontEnd`NotebookLocate[{URL[
+             "http://reference.wolfram.com/mathematica/tutorial/NotebookSecurity.html"], None}]}], 
+        FEPrivate`FrontEndExecute[
+         FrontEnd`FrontEndToken["OpenHelpLink", 
+          "tutorial/NotebookSecurity"]]] &)], 
+   MouseAppearanceTag["LinkHand"]]}],
+"enableDynamicButton" -> "Enable Dynamics"
+}
+@|
+@@resource CodeCaptionsText
+{
+"openPreferencesButton" -> "\:c124\:c815 \:bcf4\:ae30...",
+"neverShowButton" -> " \:b2e4\:c2dc \:bcf4\:c9c0 \:c54a\:ae30",
+"codeCaptionText" -> "\:c774 \:b178\:d2b8\:bd81\:c758 code caption\:c740 \
+\:c0ac\:c6a9\:c790 \:cef4\:d4e8\:d130\:c758 \:ae30\:bcf8 \:c5b8\:c5b4 \
+\:c124\:c815\:c778 \:d55c\:ae00\:b85c \:d45c\:ae30\:b418\:c5b4 \:c788\
+\:c2b5\:b2c8\:b2e4. \:c124\:c815 \:cc3d\:c5d0\:c11c \
+\:bcc0\:acbd\:d560 \:c218 \:c788\:c2b5\:b2c8\:b2e4."
+}
+@|
+@@resource DynamicUpdatingToolbarText
+{
+"dynamicWarning" -> RowBox[{"Open this notebook in a", " ", 
+  TagBox[
+   ButtonBox[PaneSelectorBox[{False -> 
+       StyleBox["\"Wolfram Desktop or Wolfram Cloud product\"", RGBColor[1, 0, 0], 
+        StripOnInput -> False], 
+      True -> StyleBox["\"Wolfram Desktop or Wolfram Cloud product\"", "HyperlinkActive", 
+        StripOnInput -> False]}, 
+     Dynamic[CurrentValue["MouseOver"], 
+      ImageSizeCache -> {36.`, {1.`, 8.`}}], ImageSize -> Automatic, 
+     FrameMargins -> 0], 
+     Appearance -> None, Evaluator -> None,
+     ButtonFunction :> FEPrivate`FrontEndExecute[{FrontEnd`NotebookLocate[{URL[
+             "http://www.wolfram.com/products/"], None}]}]
+    ], 
+   MouseAppearanceTag["LinkHand"]], " ", "to view dynamic content."}]
+}
+@|
+@@resource MessageToolbarText
+{
+	"ButtonDeleteAll"->" Delete All Messages "
+}
+@|
+@@resource StylesheetToolbarText
+{
+	"Title" -> "Private Style Definitions for ",
+	"BuiltInTitle" -> " style definitions",
+	"NewStyle" -> " or   Enter a style name: ",
+	"ExistingStyle" -> "Choose a style",
+	"InstallLabel" -> "Install Stylesheet...",
+	"InstallTooltip" -> "Add a copy of this stylesheet to the Stylesheet menu"
+}
+@|
+@@resource ProductSpecificToolbarText
+{
+	"Learn" -> "Learning Center",
+	"Demo" -> "Demonstrations",
+	"Help" -> "Help",
+	"Ask" -> "Contact Us",
+	"Buy" -> "Buy Mathematica",
+	"MathWorld" -> "MathWorld",
+	"Forum" -> "Wolfram Community",
+	"FullMath" -> "Full Mathematica",
+	"DemoProj" -> "Demonstrations Project",
+	"FindHint" -> "Find",
+	"FindPrevious" -> "Find Previous",
+	"FindNext" -> "Find Next",
+	"Cut" -> "Cut",
+	"Copy" -> "Copy",
+	"Paste" -> "Paste",
+	"Print" -> "Print",
+	"SaveAs" -> "Save As",
+	"Open" -> "Open in ",
+	"ExportCDF"  -> "Export CDF",
+	"FreeCDFPreview" -> "FreeCDF Preview",
+	"EnterpriseCDFPreview" -> "Enterprise CDF Preview"	
+	
+}
+@|
+@@resource VersionedStylesheetToolbar
+{
+	"MainText" -> "You opened a notebook with an old default styling. We have updated your notebook's appearance.",
+	"KeepText" -> "Continue with updated styling",
+	"RevertText" -> "Revert to older styling",
+	"RememberText" -> "Do this for all notebooks"
+}
+@|
+@@resource WolframCloudSyncToolbar
+{
+	"MainText" -> "The synchronization operation for this document has failed."
+}
+@|

@@ -1,0 +1,27 @@
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Enter section title here", "Section"],
+
+Cell["\<\
+Enter text here. Enter input for evaluation in a separate cell below:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"2", "+", "2"}]], "Input"],
+
+Cell[BoxData["4"], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Enter section title here", "Section"],
+
+Cell["Enter text here.", "Text"]
+}, Open  ]]
+},
+StyleDefinitions->FrontEnd`FileName[{"Utility"}, "Memo.nb"]
+]

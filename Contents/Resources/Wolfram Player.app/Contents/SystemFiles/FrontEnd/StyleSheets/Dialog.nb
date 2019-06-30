@@ -1,0 +1,261 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9800,        253]
+NotebookOptionsPosition[      6384,        206]
+NotebookOutlinePosition[      6822,        224]
+CellTagsIndexPosition[      6779,        221]
+MenuPosition->0
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Style Definition for Dialogs", "Title",ExpressionUUID->"29897ed0-ab78-460c-95c8-2fa5e2f7edef"],
+
+Cell[StyleData[StyleDefinitions -> "Default.nb"],ExpressionUUID->"8dcf90df-6dd6-46d8-9698-98f27dd5e0b3"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Notebook"],
+ ClosingAutoSave->False,
+ Editable->False,
+ Saveable->False,
+ WindowToolbars->{},
+ Selectable->False,
+ WindowSize->All,
+ WindowMargins->Automatic,
+ WindowFrame->"ModelessDialog",
+ WindowElements->{},
+ WindowFrameElements->{"CloseBox"},
+ WindowFloating->False,
+ WindowTitle->None,
+ ScrollingOptions->{"VerticalScrollRange"->Fit},
+ PrivateNotebookOptions->{"ExcludeFromShutdown"->True},
+ ShowCellBracket->False,
+ WholeCellGroupOpener->False,
+ CellMargins->8,
+ PrivateCellOptions->{"EvaluationUnmatchedStyle"->{}},
+ Deployed->True,
+ DynamicEvaluationTimeout->30.,
+ ShowCellLabel->False,
+ ShowCellTags->False,
+ ContextMenu->None,
+ ComponentwiseContextMenu->{},
+ ShowAutoSpellCheck->False,
+ TranslationOptions->{"Language"->None},
+ ImageMargins->0,
+ Magnification->1,ExpressionUUID->"6b81a65b-4d44-4680-b1ef-3571a7d7c709"],
+
+Cell[StyleData[All, "Working"],
+ CellInsertionPointCell->
+  None,ExpressionUUID->"9717c4d9-b089-4abe-ad14-49bd001c6182"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Main Text Dialog Styles", "Section",
+ CellChangeTimes->{{3.714220232144557*^9, 3.714220237160486*^9}, {
+  3.7154464010483437`*^9, 3.7154464016151533`*^9}, {3.715447258389803*^9, 
+  3.715447262852957*^9}},ExpressionUUID->"cd4fec6c-0791-4ace-9979-\
+bfcb0c8a18e2"],
+
+Cell[StyleData["DialogTitle"],
+ CellMargins->{{30, 30}, {30, 20}},
+ CellHorizontalScrolling->False,
+ LineBreakWithin->False,
+ FontFamily->"Source Sans Pro",
+ FontSize->20,
+ FontColor->RGBColor[
+  0.2, 0.2, 0.2],ExpressionUUID->"8c3c787d-9845-4f22-9fba-7a52d4d02b60"],
+
+Cell[StyleData["DialogTitleSubtitle", StyleDefinitions -> StyleData[
+ "DialogTitle"]],
+ CellMargins->{{30, 30}, {0, 
+  20}},ExpressionUUID->"27a80a40-5103-4397-a038-2099f37a643b"],
+
+Cell[StyleData["DialogSubtitle"],
+ CellMargins->{{30, 30}, {0, 5}},
+ FontFamily->"Source Sans Pro",
+ FontSize->14,
+ FontColor->RGBColor[
+  0.537254, 0.537254, 
+   0.537254],ExpressionUUID->"f90c06f2-4ba3-47f9-b4a9-c055b4f1a6f8"],
+
+Cell[StyleData["Delimiter"],
+ Editable->False,
+ CellFrame->{{0, 0}, {1, 0}},
+ CellMargins->{{0, 0}, {15, 12}},
+ CellBracketOptions->{"OverlapContent"->True},
+ CellElementSpacings->{"CellMinHeight"->0},
+ CellFrameColor->RGBColor[0.898039, 0.898039, 0.898039],
+ CellSize->{Automatic, 1},
+ Background->None,ExpressionUUID->"643688b0-23d7-4e0a-a8e9-2ee50d8ee63d"],
+
+Cell[StyleData["DialogHeader"],
+ CellMargins->{{30, 30}, {0, 0}},
+ FontFamily->"Source Sans Pro",
+ FontSize->16,
+ FontColor->RGBColor[
+  0.2, 0.2, 0.2],ExpressionUUID->"67e4366a-6b88-41dc-a95e-47713aa5ce0a"],
+
+Cell[StyleData["DialogHeaderAlternate", StyleDefinitions -> StyleData[
+ "DialogHeader"]],
+ FontColor->RGBColor[
+  0.39215, 0.39215, 
+   0.39215],ExpressionUUID->"b978187f-92ac-44c8-a54d-057b8039b6d5"],
+
+Cell[StyleData["DialogHeaderSubtle", StyleDefinitions -> StyleData[
+ "DialogHeader"]],
+ FontColor->RGBColor[
+  0.65098, 0.65098, 
+   0.65098],ExpressionUUID->"c69a446c-5ed9-415c-a38c-9ab41d8e7b71"],
+
+Cell[StyleData["DialogBody"],
+ CellMargins->{{30, 30}, {0, 6}},
+ FontFamily->"Source Sans Pro",
+ FontSize->14,
+ FontColor->RGBColor[
+  0.2, 0.2, 0.2],ExpressionUUID->"3085a681-a9c4-4cc3-bb2f-074b92f11c07"],
+
+Cell[StyleData["DialogBodyAlternate", StyleDefinitions -> StyleData[
+ "DialogBody"]],
+ FontColor->RGBColor[
+  0.39215, 0.39215, 
+   0.39215],ExpressionUUID->"b0d26588-8430-4075-85c0-983061f90c42"],
+
+Cell[StyleData["DialogBodySubtle", StyleDefinitions -> StyleData["DialogBody"]
+ ],
+ FontColor->RGBColor[
+  0.65098, 0.65098, 
+   0.65098],ExpressionUUID->"bd2569ef-0dfc-4ad4-a164-64a55a49b88b"],
+
+Cell[StyleData["DialogSubtext"],
+ CellMargins->{{30, 30}, {0, 8}},
+ FontFamily->"Source Sans Pro",
+ FontSize->10,
+ FontColor->RGBColor[
+  0.2, 0.2, 0.2],ExpressionUUID->"4fd96e8d-67e8-44d2-bcbf-82b7ca6cd786"],
+
+Cell[StyleData["DialogSubtextAlternate", StyleDefinitions -> StyleData[
+ "DialogSubtext"]],
+ FontColor->RGBColor[
+  0.39215, 0.39215, 
+   0.39215],ExpressionUUID->"143fa03e-441f-44f2-8b3e-0469a6a08a60"],
+
+Cell[StyleData["DialogSubtextSubtle", StyleDefinitions -> StyleData[
+ "DialogSubtext"]],
+ FontColor->RGBColor[
+  0.65098, 0.65098, 
+   0.65098],ExpressionUUID->"c6cd631e-3b26-434e-9dbc-81fb934f0160"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Dialog Inputs", "Section",
+ CellChangeTimes->{{3.714220232144557*^9, 3.714220237160486*^9}, {
+  3.7154464010483437`*^9, 3.7154464016151533`*^9}, {3.715447269036689*^9, 
+  3.7154472707317553`*^9}},ExpressionUUID->"771ef523-fa0c-4ff0-bfda-\
+4665382d0e44"],
+
+Cell[StyleData["InputTextPlaceholder", StyleDefinitions -> StyleData[
+ "DialogBodyAlternate"]],
+ FontSize->14,
+ FontSlant->"Italic",
+ FontColor->RGBColor[
+  0.651, 0.651, 0.651],ExpressionUUID->"fa66fb21-5923-4f0e-a351-049f86b3ec5b"],
+
+Cell[StyleData["InputTextActive", StyleDefinitions -> StyleData[
+ "DialogBodyAlternate"]],
+ FontSize->14,
+ FontColor->RGBColor[
+  0.2, 0.2, 0.2],ExpressionUUID->"7bccd9d9-2cbd-4299-8b7a-c1fff6e9f358"],
+
+Cell[StyleData["InputLabels", StyleDefinitions -> StyleData[
+ "DialogBodyAlternate"]],
+ FontSize->12,
+ FontColor->RGBColor[
+  0.65098, 0.65098, 
+   0.65098],ExpressionUUID->"0a9a1dd2-37e7-44ae-b195-289bc781df64"],
+
+Cell[StyleData["InputSubLabel", StyleDefinitions -> StyleData[
+ "DialogBodyAlternate"]],
+ FontSize->10,
+ FontColor->RGBColor[
+  0.65098, 0.65098, 
+   0.65098],ExpressionUUID->"02b67c7f-2eb4-4ec7-9d5f-cf49df9c382e"],
+
+Cell[StyleData["InputError", StyleDefinitions -> StyleData[
+ "DialogBodyAlternate"]],
+ FontSize->10,
+ FontColor->RGBColor[
+  0.866666, 0.066666, 
+   0.],ExpressionUUID->"bd2f5fec-815f-42e0-a4b3-3823078924e6"]
+}, Closed]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{815, 828},
+WindowMargins->{{Automatic, 43}, {73, Automatic}},
+TrackCellChangeTimes->False,
+MenuSortingValue->None,
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (October 3, 2018)",
+StyleDefinitions->"StylesheetFormatting.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[596, 23, 100, 0, 73, "Title",ExpressionUUID->"29897ed0-ab78-460c-95c8-2fa5e2f7edef"],
+Cell[699, 25, 104, 0, 40, 49, 0, "StyleData", "StyleDefinitions", "",ExpressionUUID->"8dcf90df-6dd6-46d8-9698-98f27dd5e0b3"],
+Cell[CellGroupData[{
+Cell[828, 29, 845, 28, 48, 27, 0, "StyleData", "Notebook", "All",ExpressionUUID->"6b81a65b-4d44-4680-b1ef-3571a7d7c709"],
+Cell[1676, 59, 120, 2, 40, 31, 0, "StyleData", "All", "Working",ExpressionUUID->"9717c4d9-b089-4abe-ad14-49bd001c6182"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1833, 66, 267, 4, 51, "Section",ExpressionUUID->"cd4fec6c-0791-4ace-9979-bfcb0c8a18e2"],
+Cell[2103, 72, 266, 7, 92, 30, 0, "StyleData", "DialogTitle", "All",ExpressionUUID->"8c3c787d-9845-4f22-9fba-7a52d4d02b60"],
+Cell[2372, 81, 179, 3, 62, 86, 1, "StyleData", "DialogTitleSubtitle", "All",ExpressionUUID->"27a80a40-5103-4397-a038-2099f37a643b"],
+Cell[2554, 86, 228, 6, 40, 33, 0, "StyleData", "DialogSubtitle", "All",ExpressionUUID->"f90c06f2-4ba3-47f9-b4a9-c055b4f1a6f8"],
+Cell[2785, 94, 359, 8, 37, 28, 0, "StyleData", "Delimiter", "All",ExpressionUUID->"643688b0-23d7-4e0a-a8e9-2ee50d8ee63d"],
+Cell[3147, 104, 207, 5, 37, 31, 0, "StyleData", "DialogHeader", "All",ExpressionUUID->"67e4366a-6b88-41dc-a95e-47713aa5ce0a"],
+Cell[3357, 111, 200, 4, 37, 89, 1, "StyleData", "DialogHeaderAlternate", "All",ExpressionUUID->"b978187f-92ac-44c8-a54d-057b8039b6d5"],
+Cell[3560, 117, 197, 4, 37, 86, 1, "StyleData", "DialogHeaderSubtle", "All",ExpressionUUID->"c69a446c-5ed9-415c-a38c-9ab41d8e7b71"],
+Cell[3760, 123, 205, 5, 41, 29, 0, "StyleData", "DialogBody", "All",ExpressionUUID->"3085a681-a9c4-4cc3-bb2f-074b92f11c07"],
+Cell[3968, 130, 196, 4, 41, 85, 1, "StyleData", "DialogBodyAlternate", "All",ExpressionUUID->"b0d26588-8430-4075-85c0-983061f90c42"],
+Cell[4167, 136, 193, 4, 41, 82, 1, "StyleData", "DialogBodySubtle", "All",ExpressionUUID->"bd2569ef-0dfc-4ad4-a164-64a55a49b88b"],
+Cell[4363, 142, 208, 5, 38, 32, 0, "StyleData", "DialogSubtext", "All",ExpressionUUID->"4fd96e8d-67e8-44d2-bcbf-82b7ca6cd786"],
+Cell[4574, 149, 202, 4, 38, 91, 1, "StyleData", "DialogSubtextAlternate", "All",ExpressionUUID->"143fa03e-441f-44f2-8b3e-0469a6a08a60"],
+Cell[4779, 155, 199, 4, 38, 88, 1, "StyleData", "DialogSubtextSubtle", "All",ExpressionUUID->"c6cd631e-3b26-434e-9dbc-81fb934f0160"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5015, 164, 259, 4, 35, "Section",ExpressionUUID->"771ef523-fa0c-4ff0-bfda-4665382d0e44"],
+Cell[5277, 170, 233, 5, 41, 95, 1, "StyleData", "InputTextPlaceholder", "All",ExpressionUUID->"fa66fb21-5923-4f0e-a351-049f86b3ec5b"],
+Cell[5513, 177, 200, 4, 41, 90, 1, "StyleData", "InputTextActive", "All",ExpressionUUID->"7bccd9d9-2cbd-4299-8b7a-c1fff6e9f358"],
+Cell[5716, 183, 212, 5, 38, 86, 1, "StyleData", "InputLabels", "All",ExpressionUUID->"0a9a1dd2-37e7-44ae-b195-289bc781df64"],
+Cell[5931, 190, 214, 5, 36, 88, 1, "StyleData", "InputSubLabel", "All",ExpressionUUID->"02b67c7f-2eb4-4ec7-9d5f-cf49df9c382e"],
+Cell[6148, 197, 208, 5, 36, 85, 1, "StyleData", "InputError", "All",ExpressionUUID->"bd2f5fec-815f-42e0-a4b3-3823078924e6"]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+

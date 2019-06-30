@@ -1,0 +1,1 @@
+{"TextAlignment", "LineSpacing", "Center", "BaseStyle"}

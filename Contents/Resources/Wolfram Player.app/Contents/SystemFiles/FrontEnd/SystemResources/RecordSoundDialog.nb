@@ -1,0 +1,197 @@
+Notebook[{
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`device$$ = False, $CellContext`format$$ = 
+  False, $CellContext`status$$ = "waiting", $CellContext`length$$ = 0}, 
+  TagBox[GridBox[{
+     {
+      DynamicBox[ToBoxes[
+        FEPrivate`FrontEndResource["FEStrings", "systemSoundInputText"], 
+        StandardForm],
+       ImageSizeCache->{28., {2., 8.}}], 
+      DynamicBox[ToBoxes[
+        ReplaceAll[
+         PopupMenu[
+          Dynamic[$CellContext`device$$], 
+          FrontEndExecute[
+           FrontEnd`RecordSound[5]], Enabled -> 
+          Dynamic[$CellContext`status$$ =!= "recording"]], Null -> {}], 
+        StandardForm],
+       ImageSizeCache->{169.3671875, {6., 17.}}]},
+     {
+      DynamicBox[ToBoxes[
+        FEPrivate`FrontEndResource["FEStrings", "systemSoundFormatText"], 
+        StandardForm],
+       ImageSizeCache->{37., {0., 8.}}], 
+      DynamicBox[ToBoxes[
+        ReplaceAll[
+         PopupMenu[
+          Dynamic[$CellContext`format$$], 
+          FrontEndExecute[
+           FrontEnd`RecordSound[6, $CellContext`device$$]], Enabled -> 
+          Dynamic[$CellContext`status$$ =!= "recording"]], Null -> {}], 
+        StandardForm],
+       ImageSizeCache->{169.3671875, {6., 17.}}]},
+     {
+      ItemBox[
+       TagBox[GridBox[{
+          {
+           PaneSelectorBox[{True->
+            ButtonBox[
+             GraphicsBox[
+              {GrayLevel[0], 
+               RectangleBox[{0, 0}, \
+{-2.290219094737954*^-38, -2.290219094737954*^-38}]},
+              ImageSize->{10, 10}],
+             Appearance->Automatic,
+             
+             ButtonFunction:>($CellContext`status$$ = 
+              If[($CellContext`length$$ = FrontEndExecute[
+                   FrontEnd`RecordSound[2]]) > 0, "recorded", "waiting"]),
+             Enabled->True,
+             Evaluator->Automatic,
+             Method->"Preemptive"], False->
+            ButtonBox[
+             GraphicsBox[
+              {GrayLevel[0.5], RectangleBox[{0, 0}]},
+              ImageSize->{10, 10}],
+             Appearance->Automatic,
+             
+             ButtonFunction:>($CellContext`status$$ = 
+              If[($CellContext`length$$ = FrontEndExecute[
+                   FrontEnd`RecordSound[2]]) > 0, "recorded", "waiting"]),
+             Enabled->False,
+             Evaluator->Automatic,
+             Method->"Preemptive"]}, 
+            Dynamic[$CellContext`status$$ === "recording"],
+            ImageSize->Automatic], 
+           PaneSelectorBox[{False->
+            ButtonBox[
+             GraphicsBox[
+              {RGBColor[0.8, 0, 0], DiskBox[{0, 0}]},
+              ImageSize->{10, 10}],
+             Appearance->Automatic,
+             
+             ButtonFunction:>($CellContext`status$$ = "recording"; 
+              FrontEndExecute[
+                FrontEnd`RecordSound[
+                1, $CellContext`device$$, $CellContext`format$$]]),
+             Enabled->True,
+             Evaluator->Automatic,
+             Method->"Preemptive"], True->
+            ButtonBox[
+             GraphicsBox[
+              {GrayLevel[0.5], DiskBox[{0, 0}]},
+              ImageSize->{10, 10}],
+             Appearance->Automatic,
+             
+             ButtonFunction:>($CellContext`status$$ = "recording"; 
+              FrontEndExecute[
+                FrontEnd`RecordSound[
+                1, $CellContext`device$$, $CellContext`format$$]]),
+             Enabled->False,
+             Evaluator->Automatic,
+             Method->"Preemptive"]}, 
+            Dynamic[$CellContext`status$$ === "recording"],
+            ImageSize->Automatic]}
+         },
+         AutoDelete->False,
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+        "Grid"],
+       Alignment->Center,
+       StripOnInput->False], "\[SpanFromLeft]"},
+     {
+      PaneSelectorBox[{"recording"->
+       DynamicBox[ToBoxes[
+         FEPrivate`FrontEndResource["FEStrings", "systemSoundRecordingText"], 
+         StandardForm]], "waiting"->
+       DynamicBox[ToBoxes[
+         FEPrivate`FrontEndResource["FEStrings", "systemSoundWaitingText"], 
+         StandardForm],
+        ImageSizeCache->{45., {2., 8.}}], "working"->
+       DynamicBox[ToBoxes[
+         FEPrivate`FrontEndResource["FEStrings", "systemSoundWorkingText"], 
+         StandardForm]], "recorded"->
+       DynamicBox[ToBoxes[
+         StringForm[
+          FrontEndResource["FEStrings", "systemSoundRecordedText"], 
+          NumberForm[$CellContext`length$$, {Infinity, 3}]], StandardForm]]}, 
+       Dynamic[$CellContext`status$$],
+       ImageSize->Automatic], 
+      ItemBox[
+       StyleBox[
+        DynamicBox[FEPrivate`FrontEndResource[
+         "FEExpressions", "ChoiceButtonsOrder"][{
+           ButtonBox[
+            DynamicBox[
+             FEPrivate`FrontEndResourceString["okButtonText"]], 
+            ButtonFunction :> (
+             FE`RecordSound`$Done = "OK"; $CellContext`status$$ = "working"), 
+            Appearance -> "DefaultButton", Enabled -> 
+            Dynamic[$CellContext`length$$ > 0], Evaluator -> Automatic, 
+            Method -> "Preemptive"], 
+           ButtonBox[
+            DynamicBox[
+             FEPrivate`FrontEndResourceString["cancelButtonText"]], 
+            ButtonFunction :> (FE`RecordSound`$Done = "Cancel"), Appearance -> 
+            "CancelButton", Enabled -> True, Evaluator -> Automatic, Method -> 
+            "Preemptive"]}],
+         ImageSizeCache->{155., {20.90625, 26.09375}}],
+        Deployed->True,
+        DynamicUpdating->True,
+        ButtonBoxOptions->{ImageMargins->{{2, 2}, {10, 10}},
+        ImageSize->Dynamic[
+          CurrentValue["DefaultButtonSize"]]},
+        GridBoxOptions->{AutoDelete->False,
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}}],
+       Alignment->Right,
+       StripOnInput->False]}
+    },
+    AutoDelete->False,
+    BaseStyle->{PopupMenuBoxOptions -> {FieldSize -> {{12, 
+           DirectedInfinity[1]}, 1}}, 
+      ButtonBoxOptions -> {
+       ImageSize -> FrontEnd`CurrentValue["DefaultButtonSize"]}},
+    GridBoxAlignment->{"Columns" -> {Right, Left}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+    GridBoxSpacings->{
+     "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+      "RowsIndexed" -> {3 -> 2}}],
+   "Grid"],
+  DynamicModuleValues:>{}]],
+ CellMargins->{{8, 8}, {8, 8}},
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue["PanelFontSize"]]
+},
+NotebookEventActions->{"ReturnKeyDown" :> (FE`Evaluate[
+     FEPrivate`FindAndClickDefaultButton[]]; DialogReturn[$Failed]), {
+   "MenuCommand", "EvaluateCells"} :> (FE`Evaluate[
+     FEPrivate`FindAndClickDefaultButton[]]; DialogReturn[$Failed]), {
+   "MenuCommand", "HandleShiftReturn"} :> (FE`Evaluate[
+     FEPrivate`FindAndClickDefaultButton[]]; DialogReturn[$Failed]), {
+   "MenuCommand", "EvaluateNextCell"} :> (FE`Evaluate[
+     FEPrivate`FindAndClickDefaultButton[]]; DialogReturn[$Failed]), 
+  "EscapeKeyDown" :> (FE`Evaluate[
+     FEPrivate`FindAndClickCancelButton[]]; DialogReturn[$Failed]), 
+  "WindowClose" :> (FE`Evaluate[
+     FEPrivate`FindAndClickCancelButton[]]; DialogReturn[$Failed])},
+WindowSize->All,
+WindowMargins->{{726, Automatic}, {Automatic, 425}},
+WindowFrame->"ModalDialog",
+WindowTitle->Dynamic[
+  FEPrivate`FrontEndResource["FEStrings", "systemSoundWindowTitle"]],
+FrontEndVersion->"8.1 for Mac OS X x86 (32-bit) (December 14, 2010)",
+StyleDefinitions->"SystemDialog.nb",
+Modal -> True
+]
+

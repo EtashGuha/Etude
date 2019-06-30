@@ -1,0 +1,2500 @@
+\catcode`@=11
+\nullfont
+\def\vadjust#1{}	% KLUDGE
+\let\vcenter=\vbox	% KLUDGE
+\let\vtop=\vbox		% KLUDGE
+\let\vss=\relax		% KLUDGE
+\def\unskip{}		% KLUDGE
+\newskip\lastskip
+
+\def\discretionary#1#2#3{\leavevmode#3}		% KLUDGE \leavevmode?
+\def\-{\discretionary{-}{}{}}
+
+\chardef\active=13 \catcode`\~=\active % tilde is active
+\def\dospecials{\do\ \do\\\do\{\do\}\do\$\do\&%
+  \do\#\do\^\do\^^K\do\_\do\^^A\do\%\do\~}
+\mathcode`\'="8000 % ^\prime
+\chardef\@ne=1
+\chardef\tw@=2
+\chardef\thr@@=3
+\chardef\sixt@@n=16
+\chardef\@cclv=255
+\mathchardef\@cclvi=256
+\mathchardef\@m=1000
+\mathchardef\@M=10000
+\mathchardef\@MM=20000
+\newdimen\maxdimen \maxdimen=16383.99999pt % the largest legal <dimen>
+\newskip\hideskip \hideskip=-1000pt plus 1fill % negative but can grow
+\newskip\centering \centering=0pt plus 1000pt minus 1000pt
+\newdimen\p@ \p@=1pt % this saves macro space and time
+\newdimen\z@ \z@=0pt % can be used both for 0pt and 0
+\newskip\z@skip \z@skip=0pt plus0pt minus0pt
+\newbox\voidb@x % permanently void box register
+
+\outer\def\newif#1{\count@\escapechar \escapechar\m@ne
+  \expandafter\expandafter\expandafter
+   \edef\@if#1{true}{\let\noexpand#1=\noexpand\iftrue}%
+  \expandafter\expandafter\expandafter
+   \edef\@if#1{false}{\let\noexpand#1=\noexpand\iffalse}%
+  \@if#1{false}\escapechar\count@} % the condition starts out false
+\def\@if#1#2{\csname\expandafter\if@\string#1#2\endcsname}
+{\uccode`1=`i \uccode`2=`f \uppercase{\gdef\if@12{}}} % `if' is required
+\def\^^M{\ } % control <return> = control <space>
+\let\endgraf=\par \let\endline=\cr
+
+\def\space{ }
+\def\empty{}
+\def\null{\hbox{}}
+
+\let\bgroup={ \let\egroup=}
+\def\loop#1\repeat{\def\body{#1}\iterate}
+\def\iterate{\body \let\next\iterate \else\let\next\relax\fi \next}
+\let\repeat=\fi % this makes \loop...\if...\repeat skippable
+\def\rlap#1{\hbox to\z@{#1\hss}}
+\def\llap#1{\hbox to\z@{\hss#1}}
+\def\ialign{\everycr{}\tabskip\z@skip\halign} % initialized \halign
+\newcount\mscount
+\def\multispan#1{\omit \mscount#1
+  \loop\ifnum\mscount>\@ne \sp@n\repeat}
+\def\sp@n{\span\omit\advance\mscount\m@ne}
+{\catcode`\'=\active \gdef'{^\bgroup\prim@s}}
+\def\prim@s{\prime\futurelet\next\pr@m@s}
+\def\pr@m@s{\ifx'\next\let\nxt\pr@@@s \else\ifx^\next\let\nxt\pr@@@t
+  \else\let\nxt\egroup\fi\fi \nxt}
+\def\pr@@@s#1{\prim@s} \def\pr@@@t#1#2{#2\egroup}
+\def\choose{\atopwithdelims()}
+\def\brack{\atopwithdelims[]}
+\def\brace{\atopwithdelims\{\}}
+\def\buildrel#1\over#2{\mathrel{\mathop{\kern\z@#2}\limits^{#1}}}
+\def\doteq{\buildrel\textstyle.\over=}
+
+\def\log{\mathop{\rm log}\nolimits}
+\def\lg{\mathop{\rm lg}\nolimits}
+\def\ln{\mathop{\rm ln}\nolimits}
+\def\lim{\mathop{\rm lim}}
+\def\limsup{\mathop{\rm lim\,sup}}
+\def\liminf{\mathop{\rm lim\,inf}}
+\def\sin{\mathop{\rm sin}\nolimits}
+\def\arcsin{\mathop{\rm arcsin}\nolimits}
+\def\sinh{\mathop{\rm sinh}\nolimits}
+\def\cos{\mathop{\rm cos}\nolimits}
+\def\arccos{\mathop{\rm arccos}\nolimits}
+\def\cosh{\mathop{\rm cosh}\nolimits}
+\def\tan{\mathop{\rm tan}\nolimits}
+\def\arctan{\mathop{\rm arctan}\nolimits}
+\def\tanh{\mathop{\rm tanh}\nolimits}
+\def\cot{\mathop{\rm cot}\nolimits}
+\def\coth{\mathop{\rm coth}\nolimits}
+\def\sec{\mathop{\rm sec}\nolimits}
+\def\csc{\mathop{\rm csc}\nolimits}
+\def\max{\mathop{\rm max}}
+\def\min{\mathop{\rm min}}
+\def\sup{\mathop{\rm sup}}
+\def\inf{\mathop{\rm inf}}
+\def\arg{\mathop{\rm arg}\nolimits}
+\def\ker{\mathop{\rm ker}\nolimits}
+\def\dim{\mathop{\rm dim}\nolimits}
+\def\hom{\mathop{\rm hom}\nolimits}
+\def\det{\mathop{\rm det}}
+\def\exp{\mathop{\rm exp}\nolimits}
+\def\Pr{\mathop{\rm Pr}}
+\def\gcd{\mathop{\rm gcd}}
+\def\deg{\mathop{\rm deg}\nolimits}
+\def\cases#1{\left\{\,\vcenter{\normalbaselines\m@th
+    \ialign{$##\hfil$&\quad##\hfil\crcr#1\crcr}}\right.}
+\def\pmatrix#1{\left(\matrix{#1}\right)}
+\newcount\m@ne \m@ne=-1 % a handy constant
+\newcount\count@
+
+\def\acute{\mathaccent`\'}	% \[OverAcute]
+\def\bar{\mathaccent`\_}	% \[Macron]
+\def\breve{\mathaccent"0306 }	% \[OverBreve]
+\def\check{\mathaccent"030C } 	% \[OverHacek]
+\def\ddot{\mathaccent"0308 }	% \[OverDoubleDot]
+\def\dot{\mathaccent`\.}	% \[OverDot]
+\def\grave{\mathaccent`\`}	% \[OverGrave]
+\def\hat{\mathaccent`\^}	% \[OverHat]
+\def\tilde{\mathaccent`\~}	% \[OverTilde]
+\def\vec{\mathaccent"20D7 }	% \[OverRightArrow]
+
+\let\widehat=\hat
+\let\widetilde=\tilde
+
+\newcount\@tmpdc
+
+\def\@makedelcode#1#2#3#4{%   character type leftcode rightcode
+    %\@tmpdc=#2\relax
+    \@tmpdc=0\relax
+    \multiply\@tmpdc by "1000\relax
+    \advance\@tmpdc by #3\relax
+    \multiply\@tmpdc by "1000\relax
+    \advance\@tmpdc by #4\relax
+    \delcode#1=\@tmpdc
+}
+
+\@makedelcode{`\(}{4}{`\(}{`\(}
+\@makedelcode{`\)}{5}{`\)}{`\)}
+\@makedelcode{`\[}{4}{`\[}{`\[}
+\@makedelcode{`\]}{5}{`\]}{`\]}
+\@makedelcode{`\<}{4}{`\<}{`\<}
+\@makedelcode{`\>}{5}{`\>}{`\>}
+\@makedelcode{`\/}{2}{`\/}{`\/}		% KLUDGE
+\@makedelcode{`\\}{2}{`\\}{`\\}		% KLUDGE
+\@makedelcode{`\|}{4}{"D75}{"D75}	% KLUDGE
+
+\delcode`\\=`\\
+\delcode`\.=0
+
+\def\ast{\mathbin *}
+\def\mid{\mathrel |}
+
+\def\bmod{\mathbin{\rm mod}}			% KLUDGE
+\def\pmod#1{\;\;({\rm mod}\,\,#1)}		% KLUDGE
+\def\/{}	% KLUDGE
+\def\phantom#1{{\ }}
+\def\-{}
+
+\def\big{}
+\def\Big{}
+\def\bigg{}
+\def\Bigg{}
+
+\let\bigl=\left
+\let\Bigl=\left
+\let\biggl=\left
+\let\Biggl=\left
+\let\bigggl=\left
+
+\let\bigr=\right
+\let\Bigr=\right
+\let\biggr=\right
+\let\Biggr=\right
+\let\bigggr=\right
+
+\def\rbrace{\delimiter"507D07D } \let\}=\rbrace	% KLUDGE  7D = }
+\def\lbrace{\delimiter"407B07B } \let\{=\lbrace	% KLUDGE  7B = {
+
+\mathcode`\/="202F
+
+\def\eqalign#1{\vbox{\halign{\@qr $##$&\@ql$##$\crcr #1\crcr}}}
+\let\eqalignno=\eqalign   % KLUDGE something needs to be done with this
+\let\leqalignno=\eqalign  % KLUDGE something needs to be done with this
+
+\def\displaylines#1{\vbox{\halign{\@qc$##$\crcr#1\crcr}}}
+
+\def\root#1\of#2{%
+    \begingroup
+    \@pushbaseoutput
+    \@backend{TnbCacheOutput}
+    \vbox{\let\@everycell=\relax $#1$}%
+    \@backend{TnbCacheDef:@root@}%
+    \@popoutput
+    \special{TnbSetRadical:\@root@}%
+    \endgroup
+    \radical"0 {#2}%
+}
+\def\sqrt{\radical"270370 }
+
+\def\overbrace#1{\mathop{\mathop{#1}\limits^{\mOverBrace}}\limits}
+\def\underbrace#1{\mathop{\mathop{#1}\limits_{\mUnderBrace}}\limits}
+
+\def\'#1{{\accent`\'#1}}
+\def\"#1{{\accent`\"#1}}
+\def\`#1{{\accent`\`#1}}
+\def\c#1{{\accent`\c#1}}
+
+\newbox\voidb@x
+\def\leavevmode{\unhbox\voidb@x}
+\newcount\magnification
+\let\vfill=\relax
+\let\eject=\relax
+\def\quad{\ \ }
+\def\qquad{\ \ \ \ }
+\let\enspace=\ 
+\let\nopagenumbers=\relax
+\let\strut=\relax
+
+\def\smash#1{#1}
+
+\def\dots{\relax\ifmmode\ldots\else$\ldots\,$\fi}
+
+\def\matrix#1{\hbox{}\pcomma\vcenter{%
+    \ialign{\hfil$##$\hfil&&\quad\hfil$##$\hfil\crcr
+      #1\crcr}}\pcomma}
+\def\pmatrix#1{\left(\matrix{#1}\right)}
+
+\parindent=20pt
+
+\def\@setunicode#1{\special{TnbSetUnicode:#1}}
+\def\@unicode#1{\leavevmode\special{TnbSetUnicode:#1}}
+\def\@rawunicode#1{%
+    \@ifundefined{uni@#1}%
+        {\@unicode{#1}}%
+        {\@nameuse{uni@#1}}%
+}
+\def\uni@RawDoubleQuote{"}
+\def\uni@RawEscape{\@setunicode{RawSpace}}
+\def\uni@RawBackslash{\@setunicode{Backslash}}
+
+\def\@MathOutUnicode#1{\[#1]}
+
+\def\TnbFont#1#2#3{%
+    \special{TnbFont:#1}\special{TnbFontSize:#3}%
+    \special{TnbMathRoman:#1}\special{TnbMathItalic:#2}%
+}
+\def\TnbPush#1#2{\special{TnbPush:#1:#2}}
+\def\TnbPop#1{\special{TnbPop:#1}}
+
+\TnbFont{TR}{TI}{10}
+
+\newdimen\@initparindent
+\newdimen\@parindent
+\newskip\@initparskip
+\newskip\@parskip
+
+\@initparindent=0pt\relax
+\@parindent=0pt\relax
+\@initparskip=0pt\relax
+\@parskip=1pc\relax
+\let\@everycell=\relax
+
+\newif\if@bcitem
+\@bcitemfalse
+
+\def\@PushTextCell#1{%
+    \TnbPop{^Cell}%
+    \TnbPush{Cell}{#1}%
+    \TnbPush{TextData}{}%
+    \xdef\@LastTextCellType{#1}%
+    \global\everypar{}\leavevmode
+    \global\parindent=\@parindent\relax
+    \global\parskip=\@parskip\relax
+    \global\@bcitemtrue
+    \@everycell
+}
+
+\def\@DefaultCellType#1{%
+    \edef\@TheDefaultCellType{#1}%
+    \let\@PendingCellType=\@TheDefaultCellType
+}
+\@DefaultCellType{Text}
+
+\def\@PendingCellStyle#1{%
+    \edef\@PendingCellType{#1}%
+}
+
+\def\@SetPendingCell{%
+    \global\parindent=\@initparindent\global\parskip=\@initparskip
+    \def\@PendingCellType{\@TheDefaultCellType}%
+    \global\everypar{\@PushTextCell{\@PendingCellType}\@textfont}%
+}
+\def\TnbPopCell{\TnbPop{^Cell}\endgraf\@SetPendingCell}
+
+\def\@textfont{\TnbFont{TR}{TI}{2}}
+
+\parskip=\@initparskip\relax
+\parindent=\@initparindent\relax
+
+\def\tnb@empty{}
+\def\TnbButtonBox#1#2#3{%
+    \leavevmode
+    \special{TnbPopToNestable}%
+    \begingroup
+    \TnbPush{ButtonBox}{}%
+    \edef\tnb@htmp{#2}%
+    \ifx\tnb@htmp\tnb@empty\else
+        \special{TnbSetOption:ButtonBox:ButtonStyle->"#2"}%
+    \fi
+    \edef\tnb@htmp{#3}%
+    \ifx\tnb@htmp\tnb@empty\else
+        \special{TnbSetOption:ButtonBox:ButtonData->#3}%
+    \fi
+    #1\TnbPop{ButtonBox}%
+    \endgroup
+}
+
+\def\command#1{{\tt #1}}
+\def\In#1{}
+\def\Inx#1{#1}
+\def\Out#1{}
+\def\nsellipse{\ifmmode\ldots\else\@unicode{Ellipsis}\fi}
+\def\@ellipse{\nsellipse\ \ignorespaces}
+\def\UseNoSpaceEllipse{%
+   \let\ellipse=\nsellipse\relax
+   \let\ellipsis=\nsellipse\relax}
+\def\UseRegEllipse{%
+   \let\ellipse=\@ellipse\relax
+   \let\ellipsis=\@ellipse\relax}
+\UseRegEllipse
+
+\let\@everymath=\relax
+\everymath{\@everymath}
+\newdimen\@savedisplayskip
+\@setupdisplay{\@savedisplayskip=\parskip\relax\parskip=\z@\indent}
+\def\@fixafterdisplay{\parskip=\@savedisplayskip\endgraf\@SetPendingCell}
+\everydisplay{\@everycell\@everymath\aftergroup\@fixafterdisplay}
+
+\let\@thinspace=\,
+\def\pcomma{\relax\ifmmode\@thinspace\else\thinspace\fi}
+
+\def\,{%
+    \let\@@comma=\thinspace
+    \@ifnextchar d{\ifmmode\DifferentialD\let\@@comma=\@gobble\fi\@@comma}{\protect\pcomma}}
+
+
+\def\proclaim #1. #2\par{\TnbPopCell
+  \noindent{\bf#1.\enspace}{\sl#2\TnbPopCell}}
+
+\def\eqno#1{%
+    \begingroup
+    \@pushbaseoutput
+    \@backend{TnbCacheOutput}%
+        \vbox{\@DefaultCellType{EquationNumber}%
+	    \parskip\z@\let\@everycell=\relax #1%
+	}%
+    \@backend{TnbCacheDef:@eqno@}%
+    \@popoutput
+    \special{TnbSetOption:^DisplayMath:CellFrameLabels->{{None, \@eqno@},
+	{None, None}}}%
+    \endgroup
+}
+
+\def~{\@unicode{NonBreakingSpace}}
+\def\cents{\@unicode{Cent}}
+
+\def\@@@line#1#2{\TnbPopCell\leavevmode
+  \special{TnbSetOption:-TextData:TextAlignment->#1}%
+  {#2}\TnbPopCell
+}
+\def\leftline{\@@@line{Left}}
+\def\rightline{\@@@line{Right}}
+\def\centerline{\@@@line{Center}}
+
+\catcode`@=12
+
+\catcode`@=11
+
+\let\@@par=\par
+\let\@@input=\input
+\let\@@end=\end
+\def\@height{height}
+\def\@depth{depth}
+\def\@width{width}
+\newwrite\@unused
+\newcount\@tempcnta
+\newcount\@tempcntb
+\newif\if@tempswa\@tempswatrue
+
+\newdimen\@tempdima
+\newdimen\@tempdimb
+
+\newbox\@tempboxa
+
+\newskip\@flushglue \@flushglue = 0pt plus 1fil
+\newskip\@tempskipa
+\newskip\@tempskipb
+\newtoks\@temptokena
+\def\@warning#1{\typeout{LaTeX Warning: #1.}}
+\def\@namedef#1{\expandafter\def\csname #1\endcsname}
+\def\@nameuse#1{\csname #1\endcsname}
+
+\def\@cons#1#2{\begingroup\let\@elt\relax\xdef#1{#1\@elt #2}\endgroup}
+
+\def\@car#1#2\@nil{#1}
+\def\@cdr#1#2\@nil{#2}
+
+\def\@carcube#1#2#3#4\@nil{#1#2#3}
+\def\newcommand#1{\@ifnextchar [{\@argdef#1}{\@argdef#1[0]}}
+
+\def\renewcommand#1{\edef\@tempa{\expandafter\@cdr\string 
+  #1\@nil}\@ifundefined{\@tempa}{\@latexerr{\string#1\space undefined}\@ehc
+  }{}\@ifnextchar [{\@reargdef#1}{\@reargdef#1[0]}}
+
+\def\newenvironment#1{\@ifnextchar
+     [{\@newenv{#1}}{\@newenv{#1}[0]}}
+
+\long\def\@newenv#1[#2]#3{\expandafter\newcommand 
+     \csname #1\endcsname[#2]{#3}\expandafter\long
+     \expandafter\def\csname end#1\endcsname}
+
+\def\renewenvironment#1{\@ifnextchar
+     [{\@renewenv{#1}}{\@renewenv{#1}[0]}}
+
+\long\def\@renewenv#1[#2]#3{\expandafter\renewcommand 
+     \csname #1\endcsname[#2]{#3}\expandafter\long
+     \expandafter\def\csname end#1\endcsname}
+
+\long\def\@argdef#1[#2]#3{\@ifdefinable #1{\@reargdef#1[#2]{#3}}}
+
+\catcode`\?=11\relax
+\long\def\@reargdef#1[#2]#3{\@tempcnta#2\relax\let#1\relax
+\edef\@tempa{\long\def#1}\@tempcntb \@ne
+\let\@?@?\relax\@whilenum\@tempcnta>0
+\do{\edef\@tempa{\@tempa\@?@?\the\@tempcntb}\advance\@tempcntb \@ne \advance
+\@tempcnta \m@ne}\let\@?@?##\@tempa{#3}}
+\catcode`\?=12\relax
+\long\def\@ifdefinable #1#2{\edef\@tempa{\expandafter\@cdr\string #1\@nil}
+\@ifundefined{\@tempa}{\edef\@tempb{\expandafter\@carcube \@tempa xxxx\@nil}%
+\ifx \@tempb\@qend \@notdefinable\else  
+\ifx \@tempa\@qrelax \@notdefinable\else  #2\fi\fi}{\@notdefinable}}
+
+\long\def\@ifundefined#1#2#3{\expandafter\ifx\csname 
+  #1\endcsname\relax#2\else#3\fi}
+\def\@ifnextchar#1#2#3{\let\@tempe #1\def\@tempa{#2}\def\@tempb{#3}\futurelet
+    \@tempc\@ifnch}
+\def\@ifnch{\ifx \@tempc \@sptoken \let\@tempd\@xifnch
+      \else \ifx \@tempc \@tempe\let\@tempd\@tempa\else\let\@tempd\@tempb\fi
+      \fi \@tempd}
+
+
+\def\:{\let\@sptoken= } \:  % this makes \@sptoken a space token 
+
+\def\:{\@xifnch} \expandafter\def\: {\futurelet\@tempc\@ifnch}
+
+\def\@ifstar#1#2{\@ifnextchar *{\def\@tempa*{#1}\@tempa}{#2}}
+
+\long\def\@dblarg#1{\@ifnextchar[{#1}{\@xdblarg{#1}}}
+\long\def\@xdblarg#1#2{#1[{#2}]{#2}}
+\def\@sanitize{\@makeother\ \@makeother\\\@makeother\$\@makeother\&%
+\@makeother\#\@makeother\^\@makeother\^^K\@makeother\_\@makeother\^^A%
+\@makeother\%\@makeother\~}
+\def\@notdefinable{\@latexerr{Command name '\@tempa' already used}\@eha}
+
+\def\@nolnerr{\@latexerr{There's no line here to end}\@eha}
+
+\def\@nocnterr{\@latexerr{No such counter}\@eha}
+
+\def\@ctrerr{\@latexerr{Counter too large}\@ehb}
+
+\def\@nodocument{\@latexerr{Missing \string\begin{document}}\@ehd}
+
+\def\@badend#1{\@latexerr{\string\begin{\@currenvir} ended by
+      \string\end{#1}}\@eha}
+
+\def\@badmath{\@latexerr{Bad math environment delimiter}\@eha}
+
+\def\@toodeep{\@latexerr{Too deeply nested}\@ehd}
+
+\def\@badpoptabs{\@latexerr{\string\pushtabs \space and \string\poptabs
+    \space don't match}\@ehd}
+
+\def\@badtab{\@latexerr{Undefined tab position}\@ehd}
+
+\def\@preamerr#1{\@latexerr{\ifcase #1 Illegal character\or
+     Missing @-exp\or Missing p-arg\fi\space
+     in array arg}\@ehd}
+
+\def\@badlinearg{\@latexerr{Bad \string\line\space or \string\vector
+   \space argument}\@ehb}
+
+\def\@parmoderr{\@latexerr{Not in outer par mode}\@ehb}
+
+\def\@fltovf{\@latexerr{Too many unprocessed floats}\@ehb}
+
+\def\@latexbug{\@latexerr{This may be a LaTeX bug}{Call for help}}
+
+
+\def\@badcrerr {\@latexerr{Bad use of \string\\}\@ehc}
+
+\def\@noitemerr{\@latexerr{Something's wrong--perhaps a missing 
+\string\item}\@ehc}
+
+\def\@notprerr {\@latexerr{Can be used only in preamble}\@eha}
+\def\@par{\let\par=\@@par\par}
+
+\def\@setpar#1{\def\par{#1}\def\@par{#1}}
+\def\@restorepar{\def\par{\@par}}
+\newif\if@nobreak \@nobreakfalse 
+\newif\if@minipage \@minipagefalse
+\def\addvspace#1{\ifvmode
+     \if@minipage\else
+          \ifdim \lastskip =\z@ \vskip #1\relax
+             \else \@tempskipb#1\relax\@xaddvskip
+     \fi\fi
+  \else\@noitemerr\fi}
+
+\def\@xaddvskip{\ifdim \lastskip <\@tempskipb\vskip-\lastskip\vskip 
+             \@tempskipb\relax
+        \else  \ifdim \@tempskipb<\z@ 
+                 \ifdim \lastskip <\z@
+                    \else \advance\@tempskipb\lastskip
+                           \vskip -\lastskip \vskip \@tempskipb
+      \fi\fi\fi}
+
+\def\addpenalty#1{\ifvmode 
+   \if@minipage\else\if@nobreak\else
+      \ifdim\lastskip=\z@ \penalty#1\relax
+         \else \@tempskipb\lastskip
+               \vskip -\lastskip \penalty#1\vskip\@tempskipb
+      \fi\fi\fi
+   \else\@noitemerr\fi}
+\def\endtrivlist{\if@newlist\@noitemerr\fi 
+   \if@inlabel\indent\fi 
+   \ifhmode\unskip \par\fi 
+   \if@noparlist \else
+      \ifdim\lastskip >\z@ \@tempskipa\lastskip \vskip -\lastskip
+         \advance\@tempskipa\parskip \advance\@tempskipa -\@outerparskip 
+         \vskip\@tempskipa
+   \fi\@endparenv\fi}
+\def\@endparenv{\addpenalty\@endparpenalty\addvspace\@topsepadd\@endpetrue}
+\newif\if@endpe
+\@endpefalse
+
+\def\@whilenoop#1{}
+\def\@whilenum#1\do #2{\ifnum #1\relax #2\relax\@iwhilenum{#1\relax 
+     #2\relax}\fi}
+\def\@iwhilenum#1{\ifnum #1\let\@nextwhile=\@iwhilenum 
+         \else\let\@nextwhile=\@whilenoop\fi\@nextwhile{#1}}
+
+\def\@whiledim#1\do #2{\ifdim #1\relax#2\@iwhiledim{#1\relax#2}\fi}
+\def\@iwhiledim#1{\ifdim #1\let\@nextwhile=\@iwhiledim 
+        \else\let\@nextwhile=\@whilenoop\fi\@nextwhile{#1}}
+
+\def\@whileswnoop#1\fi{}
+\def\@whilesw#1\fi#2{#1#2\@iwhilesw{#1#2}\fi\fi}
+\def\@iwhilesw#1\fi{#1\let\@nextwhile=\@iwhilesw 
+         \else\let\@nextwhile=\@whileswnoop\fi\@nextwhile{#1}\fi}
+
+
+\def\@nnil{\@nil}
+\def\@empty{}
+\def\@fornoop#1\@@#2#3{}
+
+\def\@for#1:=#2\do#3{\edef\@fortmp{#2}\ifx\@fortmp\@empty \else
+    \expandafter\@forloop#2,\@nil,\@nil\@@#1{#3}\fi}
+
+\def\@forloop#1,#2,#3\@@#4#5{\def#4{#1}\ifx #4\@nnil \else
+       #5\def#4{#2}\ifx #4\@nnil \else#5\@iforloop #3\@@#4{#5}\fi\fi}
+
+\def\@iforloop#1,#2\@@#3#4{\def#3{#1}\ifx #3\@nnil 
+       \let\@nextwhile=\@fornoop \else
+      #4\relax\let\@nextwhile=\@iforloop\fi\@nextwhile#2\@@#3{#4}}
+
+\def\@tfor#1:=#2\do#3{\xdef\@fortmp{#2}\ifx\@fortmp\@empty \else
+    \@tforloop#2\@nil\@nil\@@#1{#3}\fi}
+\def\@tforloop#1#2\@@#3#4{\def#3{#1}\ifx #3\@nnil 
+       \let\@nextwhile=\@fornoop \else
+      #4\relax\let\@nextwhile=\@tforloop\fi\@nextwhile#2\@@#3{#4}}
+
+\newif\if@filesw \@fileswtrue
+\newif\if@partsw \@partswfalse
+\newwrite\@mainaux 
+\newwrite\@partaux 
+\def\@gobbletwo#1#2{}
+
+\def\nofiles{\@fileswfalse }%Remove annoying message
+\let\@auxout=\@mainaux 
+\def\input{\@ifnextchar \bgroup{\@iinput}{\@@input }}
+\def\@iinput#1{\@@input #1 }
+
+\def\setcounter#1#2{\@ifundefined{c@#1}{\@nocnterr}%
+{\global\csname c@#1\endcsname#2\relax}}
+
+\def\addtocounter#1#2{\@ifundefined{c@#1}{\@nocnterr}%
+{\global\advance\csname c@#1\endcsname #2\relax}}
+
+\def\newcounter#1{\expandafter\@ifdefinable \csname c@#1\endcsname
+    {\@definecounter{#1}}\@ifnextchar[{\@newctr{#1}}{}}
+
+\def\value#1{\csname c@#1\endcsname}
+
+\def\@newctr#1[#2]{\@ifundefined{c@#2}{\@nocnterr}{\@addtoreset{#1}{#2}}}
+
+\def\stepcounter#1{\global\expandafter\advance\csname c@#1\endcsname
+     \@ne {\let\@elt\@stpelt \csname cl@#1\endcsname}}
+
+\def\@stpelt#1{\global\csname c@#1\endcsname \z@}
+
+\def\cl@@ckpt{\@elt{page}}
+
+\def\@definecounter#1{\expandafter\newcount\csname c@#1\endcsname
+     \setcounter{#1}0 \expandafter\gdef\csname cl@#1\endcsname{}\@addtoreset
+     {#1}{@ckpt}\expandafter\gdef\csname p@#1\endcsname{}\expandafter
+     \gdef\csname the#1\endcsname{\arabic{#1}}}
+
+\def\@addtoreset#1#2{\expandafter\@cons\csname cl@#2\endcsname {{#1}}}
+
+
+\def\arabic#1{\@arabic{\@nameuse{c@#1}}} 
+\def\roman#1{\@roman{\@nameuse{c@#1}}}  
+%%
+%% Temporarily make \Roman use lowercase roman numerals
+%% until I can track down the problem with uppercase roman numerals.
+%%
+\def\Roman#1{\@roman{\@nameuse{c@#1}}}  
+%%\def\Roman#1{\@Roman{\@nameuse{c@#1}}}  
+%%
+\def\alph#1{\@alph{\@nameuse{c@#1}}}   
+\def\Alph#1{\@Alph{\@nameuse{c@#1}}}   
+\def\fnsymbol#1{\@fnsymbol{\@nameuse{c@#1}}}
+
+\def\@arabic#1{\number #1}  %% changed 29 Apr 86
+\def\@roman#1{\romannumeral #1}
+\def\@Roman#1{\expandafter\uppercase\expandafter{\romannumeral #1}}
+\def\@alph#1{\ifcase#1\or a\or b\or c\or d\else\@ialph{#1}\fi}
+\def\@ialph#1{\ifcase#1\or \or \or \or \or e\or f\or g\or h\or i\or j\or
+   k\or l\or m\or n\or o\or p\or q\or r\or s\or t\or u\or v\or w\or x\or y\or
+   z\else\@ctrerr\fi}
+\def\@Alph#1{\ifcase#1\or A\or B\or C\or D\else\@Ialph{#1}\fi}
+\def\@Ialph#1{\ifcase#1\or \or \or \or \or E\or F\or G\or H\or I\or J\or
+   K\or L\or M\or N\or O\or P\or Q\or R\or S\or T\or U\or V\or W\or X\or Y\or
+   Z\else\@ctrerr\fi}
+\def\@fnsymbol#1{\ifcase#1\or *\or \dagger\or \ddagger\or 
+   \mathchar "278\or \mathchar "27B\or \|\or **\or \dagger\dagger
+   \or \ddagger\ddagger \else\@ctrerr\fi\relax}
+
+%% Defining CounterBox macros to wrap specials designed to produce one
+%% and two argument forms of CounterBox.
+%%
+%% Example: \CounterBoxOne{FigureCaption}
+%% Output:  CounterBox["FigureCaption"]
+%%
+\def\CounterBoxOne#1{%
+    \special{TnbPush:CounterBox:CounterBox1}%
+    #1%
+    \special{TnbPop:CounterBox}%
+}
+
+%%
+%% Example: \CounterBoxTwo{Section}{foo}
+%% Output:  CounterBox["Section", "foo"]
+%%
+\def\CounterBoxTwo#1#2{%
+    \special{TnbPush:CounterBox:#2}%
+    #1%
+    \special{TnbPop:CounterBox}%
+}
+
+%% Example: \ref{foo}
+%% Output: CounterBox["Section", "foo"]
+\def\ref#1{%
+    \CounterBoxTwo{Section}{#1}
+}
+
+%%
+%% Let \pageref do the same as \ref until we determine if it should do something else.
+%%
+\let\pageref\ref
+
+%%
+%% Label should put a CellTag in the current cell. I.e., \lebel{foo} should put
+%%
+%% CellTags->"foo"
+%%
+%% at the end of the current cell.
+%%
+\def\label#1{%
+    \special{TnbAddUniqueOption:Cell:CellTags->"#1"}
+}
+
+\def\newlabel#1#2{\@ifundefined{r@#1}{}{\@warning{Label `#1' multiply
+   defined}}\global\@namedef{r@#1}{#2}}
+
+\def\refstepcounter#1{\stepcounter{#1}\let\@tempa\protect
+\def\protect{\noexpand\protect\noexpand}%
+\edef\@currentlabel{\csname p@#1\endcsname\csname the#1\endcsname}%
+\let\protect\@tempa}
+\newif\if@ignore
+\def\@testdef #1#2#3{\def\@tempa{#3}\expandafter \ifx \csname #1@#2\endcsname
+ \@tempa  \else \@tempswatrue \fi} 
+
+\def\@writefile#1#2{\@ifundefined{tf@#1}{}{\expandafter
+   \immediate\write\csname tf@#1\endcsname{#2}}}
+\def\begin#1{\@ifundefined{#1}{\def\@tempa{\@latexerr{Environment #1
+  undefined}\@eha}}{\def\@tempa{\def\@currenvir{#1}%
+  \csname #1\endcsname}}\begingroup\@endpefalse\@tempa}
+
+\def\end#1{\csname end#1\endcsname\@checkend{#1}%
+     \if@endpe\global\let\@gtempa\@doendpe
+     \else\global\let\@gtempa\relax\fi
+    \endgroup
+     \@gtempa
+     \if@ignore \global\@ignorefalse
+                               \ignorespaces\fi}
+
+\def\@checkend#1{\def\@tempa{#1}\ifx
+      \@tempa\@currenvir \else\@badend{#1}\fi}
+\def\({\relax\ifmmode\@badmath\else$%%$BRACE MATCH HACK
+\fi}
+
+\def\){\relax\ifmmode\ifinner$\else\@badmath%%$ BRACE MATCH HACK
+\fi\else \@badmath\fi}
+
+\def\[{\relax\ifmmode\@badmath\else
+    \ifvmode \nointerlineskip \makebox[.6\linewidth]\fi$$%%$$ BRACE MATCH HACK
+\fi}
+
+\def\]{\relax\ifmmode\ifinner\@badmath\else$$\fi%%$$ BRACE MATCH HACK
+        \else \@badmath \fi\ignorespaces}
+
+\let\math=\(
+\let\endmath=\)
+\def\displaymath{\[}
+\def\enddisplaymath{\]\global\@ignoretrue}
+
+\@definecounter{equation}
+\def\equation{$$ % $$ BRACE MATCHING HACK
+\refstepcounter{equation}}
+
+\def\endequation{\eqno \@eqnnum % $$ BRACE MATCHING HACK
+$$\global\@ignoretrue}
+
+\def\@eqnnum{{\rm (\theequation)}} 
+\def\stackrel#1#2{\mathrel{\mathop{#2}\limits^{#1}}}
+\def\frac#1#2{{#1\over #2}}
+
+\let\@@sqrt=\sqrt
+\def\sqrt{\@ifnextchar[{\@sqrt}{\@@sqrt}}
+\def\@sqrt[#1]{\root #1\of}
+
+\let\:=\>
+\newif\if@eqnsw\@eqnswtrue 
+\def\nonumber{\global\@eqnswfalse}
+\newskip\@rightskip \@rightskip \z@
+\def\@gobble#1{}
+\def\@makeother#1{\catcode`#112\relax}
+\newskip\topsep
+\newskip\partopsep
+\newskip\itemsep
+\newskip\parsep
+\newskip\@topsep
+\newskip\@topsepadd
+\newskip\@outerparskip
+
+\newdimen\leftmargin
+\newdimen\rightmargin
+\newdimen\listparindent
+\newdimen\itemindent
+\newdimen\labelwidth
+\newdimen\labelsep
+\newdimen\linewidth 
+\newdimen\@totalleftmargin \@totalleftmargin=\z@
+\newdimen\leftmargini
+\newdimen\leftmarginii
+\newdimen\leftmarginiii
+\newdimen\leftmarginiv
+\newdimen\leftmarginv
+\newdimen\leftmarginvi
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Begin original List processing capeability
+%%
+\newcount\@listdepth \@listdepth=0
+\newcount\@itempenalty
+\newcount\@beginparpenalty
+\newcount\@endparpenalty
+
+\newbox\@labels
+
+\newif\if@inlabel \@inlabelfalse
+\newif\if@newlist   \@newlistfalse
+\newif\if@noparitem \@noparitemfalse
+\newif\if@noparlist \@noparlistfalse
+\newif\if@noitemarg \@noitemargfalse
+\newif\if@nmbrlist  \@nmbrlistfalse
+\def\list#1#2{\ifnum \@listdepth >5\relax \@toodeep 
+     \else \global\advance\@listdepth\@ne \fi
+  \rightmargin \z@ \listparindent\z@ \itemindent\z@
+  \csname @list\romannumeral\the\@listdepth\endcsname 
+  \def\@itemlabel{#1}\let\makelabel\@mklab \@nmbrlistfalse #2\relax
+  \@trivlist
+  \parskip\parsep \parindent\listparindent
+  \advance\linewidth -\rightmargin \advance\linewidth -\leftmargin
+  \advance\@totalleftmargin \leftmargin
+  \ignorespaces}
+
+\def\@trivlist{\@topsepadd\topsep
+  \if@noskipsec \leavevmode \fi
+  \ifvmode \advance\@topsepadd\partopsep \else \unskip\par\fi
+  \if@inlabel \@noparitemtrue \@noparlisttrue 
+    \else \@noparlistfalse \@topsep\@topsepadd \fi
+    \advance\@topsep \parskip
+  \leftskip\z@\rightskip\@rightskip \parfillskip\@flushglue
+  \@setpar{\if@newlist\else{\@@par}\fi}%
+  \global\@newlisttrue \@outerparskip\parskip}
+
+\def\trivlist{\parsep\parskip
+  \@trivlist \labelwidth\z@ \leftmargin\z@
+  \itemindent\z@ \def\makelabel##1{##1}}
+
+\def\endlist{\global\advance\@listdepth\m@ne
+    \endtrivlist}
+\def\usecounter#1{\@nmbrlisttrue\def\@listctr{#1}\setcounter{#1}\z@}
+\newcount\@enumdepth \@enumdepth = 0
+
+\@definecounter{enumi}
+\@definecounter{enumii}
+\@definecounter{enumiii}
+\@definecounter{enumiv}
+
+\newcount\@itemdepth \@itemdepth = 0
+
+%%
+%% End original List processing capeability
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% itemize and enumerate
+%%
+%% \begin{itemize}
+%% \item[a:] Item 1.
+%% \item[b:] Item 2.
+%% \item[c:] Item 3.
+%% \end{itemize} 
+%% 
+%% yields:
+%% 
+%% Cell["Item 1. ", "Item",
+%%   TaggingRules:>{"ItemLabel" -> "a:"}]
+%% Cell["Item 2. ", "Item",
+%%   TaggingRules:>{"ItemLabel" -> "b:"}]
+%% Cell["Item 3. ", "Item",
+%%   TaggingRules:>{"ItemLabel" -> "c:"}]
+%% 
+%% ----------------------------------------------------------------------
+%% 
+%% \begin{itemize}
+%% \item Item 1.
+%% \item Item 2.
+%% \item Item 3.
+%% \end{itemize} 
+%% 
+%% yields:
+%% 
+%% Cell["Item 1. ", "Item"]
+%% Cell["Item 2. ", "Item"]
+%% Cell["Item 3. ", "Item"]
+%% 
+%% ----------------------------------------------------------------------
+%% 
+%% \begin{enumerate}
+%% \item First
+%% \item Second
+%% \end{enumerate} 
+%% 
+%% yields:
+%% 
+%% Cell["First ", "NumberedItem"]
+%% Cell["Second ", "NumberedItem"]
+
+%% list-specific conditionals
+\newif\if@itemize
+\@itemizefalse
+\newif\if@enumerate
+\@enumeratefalse
+\def\@listname{}
+
+%% wrappers
+\def\itemize{%
+  \def\@listname{itemize}
+  \@itemizetrue
+  \@ListLikeEnvironment
+}
+\def\enditemize{%
+  \@endListLikeEnvironment
+  \@itemizefalse
+}
+
+\def\enumerate{%
+  \def\@listname{enumerate}
+  \@enumeratetrue
+  \@ListLikeEnvironment
+}
+\def\endenumerate{%
+  \@endListLikeEnvironment
+  \@enumeratefalse
+}
+
+%% set up the list
+\def\@ListLikeEnvironment{%
+  \begingroup
+  \ifnum \@itemdepth >3 \@toodeep
+  \else 
+    \advance\@itemdepth \@ne
+    \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
+    \list{\csname\@itemitem\endcsname}%
+    {\def\makelabel##1{%
+        \hss\llap{##1}%
+        }%
+    }%
+  \fi
+}
+
+%% \item and friends do the work
+\def\item{\@ifnextchar[{\@@itemarg}{\@@item}}
+
+\def\@@itemarg[#1]{%
+  \TnbPopCell
+  \if@itemize
+    \@PendingCellStyle{Item}%
+  \else\if@enumerate
+    \@PendingCellStyle{NumberedItem}%
+  \fi\fi
+  \@newlistfalse
+  \@@par
+  \if@itemize
+    \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{{"Tex Macro Name"->"\@listname"},{"ItemLabel"->"#1"}}}%  
+  \fi
+}
+
+\def\@@item{%
+  \TnbPopCell
+  \if@itemize
+    \@PendingCellStyle{Item}%
+  \else\if@enumerate
+    \@PendingCellStyle{NumberedItem}%
+  \fi\fi
+  \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:TaggingRules:>{"Tex Macro Name"->"\@listname"}}%
+  \@newlistfalse
+  \@@par
+}
+
+%% clean things up
+\def\@endListLikeEnvironment{%
+  \TnbPopCell
+  \special{TnbSetPushAction:Cell}%  
+  \endlist
+  \endgroup
+}
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\makebox{\@ifnextchar ({\@makepicbox}{\@ifnextchar
+     [{\@makebox}{\mbox}}}
+
+\def\mbox#1{\leavevmode\hbox{#1}}
+
+\def\@makebox[#1]{\leavevmode\@ifnextchar [{\@imakebox[#1]}{\@imakebox[#1][x]}}
+
+\long\def\@imakebox[#1][#2]#3{\hbox to#1{\let\mb@l\hss
+\let\mb@r\hss \expandafter\let\csname mb@#2\endcsname\relax
+\mb@l #3\mb@r}}
+
+\def\@makepicbox(#1,#2){\leavevmode\@ifnextchar 
+   [{\@imakepicbox(#1,#2)}{\@imakepicbox(#1,#2)[]}}
+
+\long\def\@imakepicbox(#1,#2)[#3]#4{\vbox to#2\unitlength
+   {\let\mb@b\vss \let\mb@l\hss\let\mb@r\hss
+    \let\mb@t\vss
+    \@tfor\@tempa :=#3\do{\expandafter\let
+        \csname mb@\@tempa\endcsname\relax}%
+\mb@t\hbox to #1\unitlength{\mb@l #4\mb@r}\mb@b}}
+\newif\if@pboxsw
+\def\extracolsep#1{\tabskip #1\relax}
+
+\def\array{\let\@acol\@arrayacol \let\@classz\@arrayclassz
+ \let\@classiv\@arrayclassiv \let\\\@arraycr\def\@halignto{}\@tabarray}
+
+\def\endarray{\crcr\egroup\egroup}
+\def\endtabular{\crcr\egroup\egroup $\egroup}
+\expandafter \let \csname endtabular*\endcsname = \endtabular
+
+\def\tabular{\def\@halignto{}\@tabular}
+
+\expandafter \def\csname tabular*\endcsname #1{\def\@halignto{to #1}\@tabular}
+
+\def\@tabular{\leavevmode \hbox \bgroup $\let\@acol\@tabacol 
+   \let\@classz\@tabclassz
+   \let\@classiv\@tabclassiv \let\\\@tabularcr\@tabarray}
+
+\def\@tabarray{\@ifnextchar[{\@array}{\@array[c]}}
+
+\def\@array[#1]#2{%\setbox\@arstrutbox=\hbox{\vrule 
+     %height\arraystretch \ht\strutbox
+     %depth\arraystretch \dp\strutbox
+     %width\z@}
+     \@mkpream{#2}\edef\@preamble{\halign \noexpand\@halignto
+\bgroup \tabskip\z@ \@arstrut \@preamble \tabskip\z@ \cr}%
+\let\@startpbox\@@startpbox \let\@endpbox\@@endpbox
+  \if #1t\vtop \else \if#1b\vbox \else \vcenter \fi\fi
+  \bgroup \let\par\relax
+  \let\@sharp##\let\protect\relax \lineskip\z@\baselineskip\z@\@preamble}
+
+\def\@arraycr{${\ifnum0=`}\fi\@ifstar{\@xarraycr}{\@xarraycr}}
+\def\@xarraycr{\@ifnextchar[{\@argarraycr}{\ifnum0=`{\fi}${}\cr}}
+
+\def\@argarraycr[#1]{\ifnum0=`{\fi}${}\ifdim #1>\z@ \@xargarraycr{#1}\else 
+   \@yargarraycr{#1}\fi}
+
+\def\@tabularcr{{\ifnum0=`}\fi\@ifstar{\@xtabularcr}{\@xtabularcr}}
+\def\@xtabularcr{\@ifnextchar[{\@argtabularcr}{\ifnum0=`{\fi}\cr}}
+
+\def\@argtabularcr[#1]{\ifnum0=`{\fi}\ifdim #1>\z@ 
+   \unskip\@xargarraycr{#1}\else \@yargarraycr{#1}\fi}
+
+\def\@xargarraycr#1{\@tempdima #1\advance\@tempdima \dp \@arstrutbox 
+   \vrule \@height\z@ \@depth\@tempdima \@width\z@ \cr}
+
+\def\@yargarraycr#1{\cr\noalign{\vskip #1}}
+\def\multicolumn#1#2#3{\multispan{#1}\begingroup
+\@mkpream{#2}%
+\def\@sharp{#3}\let\protect\relax
+  \let\@startpbox\@@startpbox\let\@endpbox\@@endpbox
+  \@arstrut \@preamble\hbox{}\endgroup\ignorespaces}
+\def\@xexnoop #1\@@{}
+
+\def\@expast#1{\@xexpast #1*0x\@@}
+
+\def\@xexpast#1*#2#3#4\@@{\edef\@tempa{#1}\@tempcnta#2\relax
+    \ifnum\@tempcnta >0 \@whilenum\@tempcnta >0\do
+       {\edef\@tempa{\@tempa#3}\advance\@tempcnta by \m@ne}\let\@tempb\@xexpast
+      \else \let\@tempb\@xexnoop\fi
+    \expandafter\@tempb \@tempa #4\@@}
+
+
+\newif\if@firstamp
+\def\@addamp{\if@firstamp \@firstampfalse \else 
+    \edef\@preamble{\@preamble &}\fi}
+\def\@arrayacol{\edef\@preamble{\@preamble \hskip \arraycolsep}}
+\def\@tabacol{\edef\@preamble{\@preamble \hskip \tabcolsep}}
+\def\@ampacol{\@addamp \@acol}
+\def\@acolampacol{\@acol\@addamp\@acol}
+
+\def\@mkpream#1{\@firstamptrue\@lastchclass6
+\def\@preamble{}\def\protect{\noexpand\protect\noexpand}\let\@sharp\relax 
+\let\@startpbox\relax\let\@endpbox\relax
+\@expast{#1}\expandafter\@tfor \expandafter
+  \@nextchar \expandafter:\expandafter=\@tempa\do{\@testpach\@nextchar
+  \ifcase \@chclass \@classz \or \@classi \or \@classii \or \@classiii
+    \or \@classiv \or\@classv \fi\@lastchclass\@chclass}%
+\ifcase \@lastchclass \@acol
+    \or \or \@preamerr \@ne\or \@preamerr \tw@\or \or \@acol \fi}
+
+\def\@arrayclassz{\ifcase \@lastchclass \@acolampacol \or \@ampacol \or
+   \or \or \@addamp \or
+   \@acolampacol \or \@firstampfalse \@acol \fi
+\edef\@preamble{\@preamble
+  \ifcase \@chnum 
+     \hfil$\relax\@sharp$\hfil \or $\relax\@sharp$\hfil 
+    \or \hfil$\relax\@sharp$\fi}}
+
+\def\@tabclassz{\ifcase \@lastchclass \@acolampacol \or \@ampacol \or
+   \or \or \@addamp \or
+   \@acolampacol \or \@firstampfalse \@acol \fi
+\edef\@preamble{\@preamble
+  \ifcase \@chnum 
+     \hfil\ignorespaces\@sharp\unskip\hfil 
+     \or \ignorespaces\@sharp\unskip\hfil 
+     \or \hfil\hskip\z@ \ignorespaces\@sharp\unskip\fi}}
+
+\def\@classi{\ifcase \@lastchclass \@acol \@arrayrule \or 
+   \@addtopreamble{\hskip \doublerulesep}\@arrayrule\or
+   \or \or \@arrayrule \or
+   \@acol \@arrayrule \or \@arrayrule \fi}
+
+
+\def\@classii{\ifcase \@lastchclass \or 
+   \@addtopreamble{\hskip .5\arrayrulewidth}\fi}
+
+\def\@classiii{\ifcase \@lastchclass \@acolampacol \or 
+   \@addamp\@acol \or
+   \or \or \@addamp \or
+   \@acolampacol \or \@ampacol \fi}
+
+\def\@tabclassiv{\@addtopreamble\@nextchar}
+
+\def\@arrayclassiv{\@addtopreamble{$ \@nextchar$}}
+
+\def\@classv{\@addtopreamble{\@startpbox{\@nextchar}\ignorespaces
+\@sharp\@endpbox}}
+
+\def\@addtopreamble#1{\edef\@preamble{\@preamble #1}}
+
+\newcount\@chclass
+\newcount\@lastchclass
+\newcount\@chnum
+
+\newdimen\arraycolsep
+\newdimen\tabcolsep
+\newdimen\arrayrulewidth
+\newdimen\doublerulesep
+
+\def\arraystretch{1}    % Default value.
+
+\newbox\@arstrutbox
+\def\@arstrut{\relax}
+
+
+\def\@arrayrule{\@addtopreamble{\hskip -.5\arrayrulewidth 
+   \vrule \@width \arrayrulewidth\hskip -.5\arrayrulewidth}}
+
+\def\@testpach#1{\@chclass \ifnum \@lastchclass=\tw@ 4 \else 
+    \ifnum \@lastchclass=3 5 \else
+     \z@ \if #1c\@chnum \z@ \else
+                              \if #1l\@chnum \@ne \else
+                              \if #1r\@chnum \tw@ \else
+          \@chclass \if #1|\@ne \else
+                    \if #1@\tw@ \else
+                    \if #1p3 \else \z@ \@preamerr 0\fi
+  \fi  \fi  \fi  \fi  \fi  \fi  
+\fi}
+
+\def\hline{\noalign{\ifnum0=`}\fi\hrule \@height \arrayrulewidth \futurelet
+   \@tempa\@xhline}
+
+\def\@xhline{\ifx\@tempa\hline\vskip \doublerulesep\fi
+      \ifnum0=`{\fi}}
+
+\def\vline{\vrule \@width \arrayrulewidth}
+
+\newcount\@cla
+\newcount\@clb
+\def\shortstack{\@ifnextchar[{\@shortstack}{\@shortstack[c]}}
+
+\def\@shortstack[#1]{\leavevmode
+\vbox\bgroup\baselineskip-1pt\lineskip 3pt\let\mb@l\hss
+\let\mb@r\hss \expandafter\let\csname mb@#1\endcsname\relax
+\let\\\@stackcr\@ishortstack}
+
+\def\@ishortstack#1{\halign{\mb@l ##\unskip\mb@r\cr #1\crcr}\egroup}
+
+
+\def\@stackcr{\@ifstar{\@ixstackcr}{\@ixstackcr}}
+\def\@ixstackcr{\@ifnextchar[{\@istackcr}{\cr\ignorespaces}}
+
+\def\@istackcr[#1]{\cr\noalign{\vskip #1}\ignorespaces}
+\def\newtheorem#1{\@ifnextchar[{\@othm{#1}}{\@nthm{#1}}}
+
+\def\@nthm#1#2{%
+\@ifnextchar[{\@xnthm{#1}{#2}}{\@ynthm{#1}{#2}}}
+
+\def\@xnthm#1#2[#3]{\expandafter\@ifdefinable\csname #1\endcsname
+{\@definecounter{#1}\@addtoreset{#1}{#3}%
+\expandafter\xdef\csname the#1\endcsname{\expandafter\noexpand
+  \csname the#3\endcsname \@thmcountersep \@thmcounter{#1}}%
+\global\@namedef{#1}{\@thm{#1}{#2}}\global\@namedef{end#1}{\@endtheorem}}}
+
+\def\@ynthm#1#2{\expandafter\@ifdefinable\csname #1\endcsname
+{\@definecounter{#1}%
+\expandafter\xdef\csname the#1\endcsname{\@thmcounter{#1}}%
+\global\@namedef{#1}{\@thm{#1}{#2}}\global\@namedef{end#1}{\@endtheorem}}}
+
+\def\@othm#1[#2]#3{\expandafter\@ifdefinable\csname #1\endcsname
+  {\global\@namedef{the#1}{\@nameuse{the#2}}%
+\global\@namedef{#1}{\@thm{#2}{#3}}%
+\global\@namedef{end#1}{\@endtheorem}}}
+
+\def\@thm#1#2{\refstepcounter
+    {#1}\@ifnextchar[{\@ythm{#1}{#2}}{\@xthm{#1}{#2}}}
+
+\def\@xthm#1#2{\@begintheorem{#2}{\csname the#1\endcsname}\ignorespaces}
+\def\@ythm#1#2[#3]{\@opargbegintheorem{#2}{\csname
+       the#1\endcsname}{#3}\ignorespaces}
+
+\def\@thmcounter#1{\noexpand\arabic{#1}}
+\def\@thmcountersep{.}
+\def\newlength#1{\@ifdefinable#1{\newskip#1}}
+\def\setlength#1#2{#1#2\relax}
+\def\addtolength#1#2{\advance#1 #2\relax}
+\def\settowidth#1#2{\setbox\@tempboxa\hbox{#2}#1\wd\@tempboxa\relax}
+   %% \relax added 24 Mar 86
+\newcount\@secpenalty 
+\@secpenalty = -300
+
+
+\newif\if@noskipsec  \@noskipsecfalse
+
+\def\@startsection#1#2#3#4#5#6{%\if@noskipsec \leavevmode \fi
+   \par \@tempskipa #4\relax
+   \@afterindenttrue
+   \ifdim \@tempskipa <\z@ \@tempskipa -\@tempskipa \@afterindentfalse\fi
+   \if@nobreak %\everypar{}
+   \else
+     \addpenalty{\@secpenalty}\addvspace{\@tempskipa}\fi \@ifstar
+     {\@ssect{#3}{#4}{#5}{#6}}{\@dblarg{\@sect{#1}{#2}{#3}{#4}{#5}{#6}}}}
+
+\def\@sect#1#2#3#4#5#6[#7]#8{\ifnum #2>\c@secnumdepth
+     \def\@svsec{}\else 
+     \refstepcounter{#1}\edef\@svsec{\csname the#1\endcsname\hskip 1em }\fi
+     \@tempskipa #5\relax
+      \ifdim \@tempskipa>\z@ 
+        \begingroup #6\relax
+          \@hangfrom{\hskip #3\relax\@svsec}{\interlinepenalty \@M #8\par}%
+        \endgroup
+       \csname #1mark\endcsname{#7}\addcontentsline
+         {toc}{#1}{\ifnum #2>\c@secnumdepth \else
+                      \protect\numberline{\csname the#1\endcsname}\fi
+                    #7}\else
+        \def\@svsechd{#6\hskip #3\@svsec #8\csname #1mark\endcsname
+                      {#7}\addcontentsline
+                           {toc}{#1}{\ifnum #2>\c@secnumdepth \else
+                             \protect\numberline{\csname the#1\endcsname}\fi
+                       #7}}\fi
+     \@xsect{#5}}
+
+\def\@xsect#1{\@tempskipa #1\relax
+      \ifdim \@tempskipa>\z@
+       \par \nobreak
+       \vskip \@tempskipa
+       \@afterheading
+    \else \global\@nobreakfalse \global\@noskipsectrue
+       \everypar{\if@noskipsec \global\@noskipsecfalse
+                   \clubpenalty\@M \hskip -\parindent
+                   \begingroup \@svsechd \endgroup \unskip
+                   \hskip -#1
+                  \else \clubpenalty \@clubpenalty
+                    \everypar{}\fi}\fi\ignorespaces}
+
+\def\@ssect#1#2#3#4#5{\@tempskipa #3\relax
+   \ifdim \@tempskipa>\z@
+     \begingroup #4\@hangfrom{\hskip #1}{\interlinepenalty \@M #5\par}\endgroup
+   \else \def\@svsechd{#4\hskip #1\relax #5}\fi
+    \@xsect{#3}}
+
+\newif\if@afterindent \@afterindenttrue
+
+\def\@afterheading{\global\@nobreaktrue    
+      \everypar{\if@nobreak
+                   \global\@nobreakfalse      
+                   \clubpenalty \@M
+                   \if@afterindent \else {\setbox0=\lastbox}\fi
+                 \else \clubpenalty \@clubpenalty
+                    \everypar{}\fi}}           
+
+
+\def\@hangfrom#1{\setbox\@tempboxa=\hbox{#1}%
+      \hangindent 1\wd\@tempboxa\noindent\box\@tempboxa}
+
+\newcount\c@secnumdepth
+\newcount\c@tocdepth
+
+
+\def\secdef#1#2{\@ifstar{#2}{\@dblarg{#1}}}
+
+\def\sectionmark#1{}
+\def\subsectionmark#1{}
+\def\subsubsectionmark#1{}
+\def\paragraphmark#1{}
+\def\subparagraphmark#1{}
+\def\@starttoc#1{\begingroup
+  \makeatletter  
+  \@input{\jobname.#1}\if@filesw \expandafter\newwrite\csname tf@#1\endcsname
+             \expandafter\openout \csname tf@#1\endcsname \jobname.#1\relax
+  \fi \global\@nobreakfalse \endgroup}
+
+
+\let\protect=\relax
+
+\def\addcontentsline#1#2#3{\if@filesw \begingroup
+\let\label\@gobble \let\index\@gobble \let\glossary\@gobble
+\def\protect##1{\string\string\string##1\string\space
+   \space}\@temptokena{\csname the#2\endcsname}%
+\edef\@tempa{\write \@auxout{\string\@writefile{#1}{\protect
+     \contentsline{#2}{#3}{\the\@temptokena}}}}\@tempa
+   \if@nobreak \ifvmode\nobreak\fi\fi\endgroup\fi}
+
+\long\def\addtocontents#1#2{\if@filesw \begingroup
+\let\label\@gobble \let\index\@gobble \let\glossary\@gobble
+\def\protect##1{\string\string\string##1\string\space\space}%
+\edef\@tempa{\write \@auxout {\string\@writefile{#1}{#2}}}\@tempa
+  \if@nobreak \ifvmode\nobreak\fi\fi\endgroup\fi}
+
+\def\contentsline#1{\csname l@#1\endcsname}
+\def\documentstyle{\@ifnextchar[{\@documentstyle}{\@documentstyle[]}}
+\def\pagestyle#1{\@nameuse{ps@#1}}
+\def\thispagestyle#1{\global\@specialpagetrue\gdef\@specialstyle{#1}}
+\newdimen\topmargin
+\newdimen\oddsidemargin
+\newdimen\evensidemargin
+\let\@themargin=\oddsidemargin
+\newdimen\headheight
+\newdimen\headsep
+\newdimen\footskip
+\newdimen\footheight % even though it never gets used.
+\newdimen\textheight
+\newdimen\textwidth
+\newdimen\columnwidth
+\newdimen\columnsep
+\newdimen\columnseprule
+\newdimen\@maxdepth    \@maxdepth = \maxdepth
+\newdimen\marginparwidth
+\newdimen\marginparsep
+\newdimen\marginparpush
+\def\makeatletter{\catcode`\@=11\relax}
+\def\makeatother{\catcode`\@=12\relax}
+
+%%
+%% Input the texlink stuff.
+%% Call \makeatletter to ensure that the catcode of \@ is 11 after texlink is done being input.
+%%
+\input texlink.tnc
+\makeatletter
+
+\def\@input#1{\input #1 }
+
+\@ignoretrue	%% KLUDGE?
+
+
+\def\@latexerr#1#2{\errmessage{#1#2}}
+\def\@eha{}
+\def\@ehb{}
+\def\@ehc{}
+\def\@ehd{}
+
+
+\def\@esphack{}
+\def\@bsphack{}
+
+
+\def\@@makefont#1#2#3{%
+    \@ifundefined{@F@#1#3}{%
+        \expandafter\font\csname @F@#1#3\endcsname=#2 at #3
+    }{}%
+}
+
+\def\@makeligs#1{%
+    \@ligdef#1 2 `\` `\` 1 '204
+    \@ligdef#1 2 `\' `\' 1 '205
+    \@ligdef#1 3 `\- `\- `\- 1 '202
+    \@ligdef#1 2 `\- `\- 1 '201
+    \@ligdef#1 1 `\- 1 '200
+    \@ligdef#1 1 `\` 1 '206
+    \@ligdef#1 1 `\' 1 '207
+}
+
+\def\@@newfont#1#2#3#4#5#6#7{%
+    \@@makefont{#1}{#2}{#4}%
+    \textfont#3=\csname @F@#1#4\endcsname
+    \@@makefont{#1}{#2}{#5}%
+    \scriptfont#3=\csname @F@#1#5\endcsname
+    \@@makefont{#1}{#2}{#6}%
+    \scriptscriptfont#3=\csname @F@#1#6\endcsname
+    \expandafter\edef\csname #1\endcsname{\fam=#3\relax\csname @F@#1#4\endcsname}%
+    \def\@ligfont{\csname @F@#1#4\endcsname}#7\@ligfont%
+}
+
+\def\@@makefontsizes#1#2#3{%
+    \@@newfont{rm}{TR}{0}{#1}{#2}{#3}{\@makeligs}%
+    \@@newfont{mit}{TI}{1}{#1}{#2}{#3}{}%
+    \@@newfont{bf}{TB}{2}{#1}{#2}{#3}{\@makeligs}%
+    \@@newfont{bi}{TBI}{3}{#1}{#2}{#3}{\@makeligs}%
+    \@@newfont{tt}{MR}{4}{#1}{#2}{#3}{}%
+    \@@newfont{tto}{MO}{5}{#1}{#2}{#3}{}%
+    \@@newfont{btt}{MB}{6}{#1}{#2}{#3}{}%
+    \@@newfont{btto}{MBO}{7}{#1}{#2}{#3}{}%
+    \@@newfont{hdlt}{SR}{8}{#1}{#2}{#3}{\@makeligs}%
+    \@@newfont{hdlti}{SO}{9}{#1}{#2}{#3}{\@makeligs}%
+    \@@newfont{hd}{SB}{10}{#1}{#2}{#3}{\@makeligs}%
+    \@@newfont{hdi}{SBO}{11}{#1}{#2}{#3}{\@makeligs}%
+    \@@newfont{it}{TI}{12}{#1}{#2}{#3}{\@makeligs}%
+    %\@@newfont{sym}{sym}{12}{#1}{#2}{#3}{}%
+    \@@newfont{uniA}{uniA}{13}{#1}{#2}{#3}{}%
+    \@@newfont{uniB}{uniB}{14}{#1}{#2}{#3}{}%
+    \@@newfont{uniC}{uniC}{15}{#1}{#2}{#3}{}%
+}
+
+\def\@@fontsizes#1#2#3{%
+    \def\@@cmpfont{#1#2#3}%
+    \ifx\@@currentfont\@@cmpfont
+    \else\@@makefontsizes{#1}{#2}{#3}\global\let\@@currentfont=\@@cmpfont\fi
+}
+
+\def\Huge{\@@fontsizes{10pt}{7pt}{5pt}}
+\def\huge{\@@fontsizes{10pt}{7pt}{5pt}}
+\def\LARGE{\@@fontsizes{10pt}{7pt}{5pt}}
+\def\Large{\@@fontsizes{10pt}{7pt}{5pt}}
+\def\large{\@@fontsizes{10pt}{7pt}{5pt}}
+\def\normalsize{\@@fontsizes{10pt}{7pt}{5pt}}
+\def\small{\@@fontsizes{10pt}{7pt}{5pt}}
+\def\scriptsize{\@@fontsizes{10pt}{7pt}{5pt}}
+\def\footnotesize{\@@fontsizes{10pt}{7pt}{5pt}}
+\def\tiny{\@@fontsizes{10pt}{7pt}{5pt}}
+
+\def\sl{\it}
+\def\cal{\it}	% KLUDGE til calligraphic font
+\def\sf{\hd}	% KLUDGE til calligraphic font
+
+\normalsize\rm
+
+
+\def\title#1{\gdef\@title{#1}}
+\def\author#1{\gdef\@author{#1}}
+\def\date#1{\gdef\@date{#1}}
+\def\thanks#1{\gdef\@thanks{#1}}
+\def\em{\it}
+
+\def\typeout#1{\message{#1}}
+\def\@warning#1{\message{LaTeX Warning: #1.}}
+
+\def\@auxinput{%
+    \input \jobname.aux
+}
+
+\def\document{%		%KLUDGE KLUDGE
+    \begingroup
+        \makeatletter\let\@writefile\@gobbletwo
+	\@auxinput
+    \endgroup 
+    \if@filesw
+        \immediate\openout\@mainaux=\jobname.aux
+	\immediate\write\@mainaux{\relax}%
+    \fi
+}
+
+\def\enddocument{%
+    \@enddocument	% KLUDGE
+    \begingroup
+    \if@filesw \immediate\closeout\@mainaux 
+    %\def\global\@namedef##1##2{}\def\newlabel{\@testdef r}%
+    %\def\bibcite{\@testdef b}\@tempswafalse
+    %\makeatletter\input \jobname.aux % KLUDGE?
+    %\if@tempswa \@warning{Label(s) may have changed.  Rerun to get
+    %cross-references right}\fi
+        \makeatletter
+        \def\newlabel##1##2{}%    XXXXXXX
+        \newwrite\tf@toc	% XXXXXXXX
+	\immediate\openout\tf@toc \jobname.toc	% XXXXXXXX
+	\input \jobname.aux 	% XXXXXXXX
+	\immediate\closeout\tf@toc 	% XXXXXXXX
+    \fi
+    \endgroup
+    \TnbPopCell	% KLUDGE???
+}
+\def\@enddocument{}
+
+\def\@normalcr{\@ifstar{\@xnewline}{\@xnewline}}
+\def\@xnewline{\@ifnextchar[{\@newline}{\@newline[]}}
+\def\@newline[#1]{\hbox{\nl}}	%%% HIDEOUS KLUDGE!!!!!
+\let\\=\@normalcr
+
+\def\hspace{\@ifstar{\@hspacer}{\@hspace}}
+\def\@hspacer#1{}
+\def\@hspace#1{}
+
+\def\{{\protect\@lb}
+\def\@lb{\relax\ifmmode\lbrace\else$\char`\{$\fi}
+\def\}{\protect\@rb}
+\def\@rb{\relax\ifmmode\rbrace\else$\char`\}$\fi}
+
+
+\def\array#1{\begingroup
+    \vbox\bgroup
+    \@alignjustify{#1        }% HIDEOUS KLUDGE til correct special thing
+    \let\\=\@arraycr
+    %\halign\bgroup\@qd $##$&&\@qd $##$\cr
+    \halign\bgroup$##$&&$##$\cr
+}
+\def\endarray{\crcr\egroup\egroup\endgroup}
+
+\newif\if@eqnarraynum
+
+\def\@arraycr{\@ifstar{\@xarraycr}{\@xarraycr}}
+\def\@xarraycr{\@ifnextchar[{\@argarraycr}{\@argarraycr[]}}
+\def\@argarraycr[#1]{%
+    \if@eqnarraynum
+    \begingroup
+    \if@eqnsw
+	\edef\@@arnew{(\theequation)}%
+        \stepcounter{equation}%
+    \else
+	\def\@@arnew{}%
+    \fi
+    \xdef\@@arnum{\@@arnum\@@arnumnl\@@arnew}%
+    \gdef\@@arnumnl{\nl}%
+    \endgroup
+    \fi
+    \global\@eqnswtrue
+    \cr
+}
+
+\def\@eqnarray{\relax\[
+    \vbox\bgroup
+    \let\\=\@arraycr
+    \gdef\@@arnum{}%
+    \gdef\@@arnumnl{}%
+    \@alignjustify{RCLR      }\relax
+    \halign\bgroup$##$&&$##$\cr
+}
+\def\eqnarray{%
+    \global\@eqnswtrue
+    \stepcounter{equation}%
+    \let\@currentlabel=\theequation
+    \@eqnarraynumtrue\@eqnarray
+}
+\def\endeqnarray{%
+    \@argarraycr[]\egroup\egroup
+    \if@eqnarraynum\eqno{\@@arnum}\global\advance\c@equation\m@ne\fi
+    \]%
+}
+
+\let\@sarraycr=\@arraycr
+\@namedef{eqnarray*}{\@eqnarraynumfalse\@eqnarray}
+\@namedef{endeqnarray*}{\endeqnarray}
+
+\def\cases#1{\left\{\vcenter{\ialign{$##$&\quad##\crcr#1\crcr}}\right.}
+
+
+\def\[{\relax\ifmmode\@badmath\fi\ifvmode\parskip\z@\fi $$}
+\def\]{\relax\ifmmode\ifinner\@badmath\else$$\fi
+        \else \@badmath \fi\ignorespaces}
+
+\def\displaymath{\[}
+\def\enddisplaymath{\]\global\@ignoretrue}
+
+\@definecounter{equation}
+\def\equation{\ifvmode\parskip\z@\fi $$ \refstepcounter{equation}}
+
+\def\endequation{\eqno \@eqnnum $$\global\@ignoretrue}
+
+\def\@eqnnum{{\rm (\theequation)}} 
+
+\def\sc{}	% KLUDGE
+%%
+%%\def\cite#1{{\it Citation[#1]}}	% KLUDGE
+%%
+\def\cite#1{%
+    \leavevmode%
+    \special{TnbPopToNestable}%
+    \begingroup%
+        \TnbPush{ButtonBox}{}%
+        \special{TnbSetOption:ButtonBox:ButtonStyle->"Citation"}%
+        \special{TnbSetOption:ButtonBox:ButtonData->"#1"}%
+        \special{TnbSetOption:ButtonBox:ButtonNote->"#1"}%
+        #1%
+        \TnbPop{ButtonBox}%
+    \endgroup%
+}
+
+%%
+%%
+\def\bibliographystyle#1{}
+\def\bibliography#1{}
+\let\mbox\hbox	% KLUDGE?
+
+\def\parbox{\@ifnextchar[{\@parbox}{\@parbox[0pt]}}
+\def\@parbox[#1]#2#3{%
+    \vbox{\parindent\z@ \parskip\z@ \everypar{}\let\\=\@normalcr#3}%
+}
+
+\def\bigskip{\par}		%% KLUDGE
+\def\medskip{\par}		%% KLUDGE
+\def\smallskip{\par}		%% KLUDGE
+\def\newpage{} % KLUDGE should do PageBreakBelow->True or something */
+
+\def\minipage{\@ifnextchar [{\@iminipage}{\@iminipage[c]}}
+\def\@iminipage[#1]#2{\begingroup\vbox\bgroup\let\\=\@normalcr}
+\def\endminipage{\egroup\endgroup}
+
+
+\def\hyphenation#1{}
+
+
+\def\list#1#2{\ifnum \@listdepth >5\relax \@toodeep
+    \else \global\advance\@listdepth\@ne \fi
+    \csname @list\romannumeral\the\@listdepth\endcsname 
+    \def\@itemlabel{#1}#2\relax
+    \@trivlist\ignorespaces
+}
+
+\def\@trivlist{%
+    \TnbPopCell
+    \@PendingCellStyle{Item}
+}
+
+\def\endtrivlist{\TnbPopCell}
+
+\def\endlist{%
+    \global\advance\@listdepth\m@ne
+    \endtrivlist
+}
+
+
+\def\raisebox#1{\@eatoptions{\@raisebox}}
+\def\@raisebox#1{#1} % KLUDGE might want to do something here
+
+
+\def\@contexttrue{\iftrue}
+\def\@contextfalse{\iffalse}
+\def\begincontext#1{\@ifundefined{@ctx#1}{\@contextfalse}{\@contexttrue}}
+\let\endcontext=\fi
+\def\definecontext#1{\expandafter\gdef\csname @ctx#1\endcsname{}}
+
+\chardef\$=`\$
+\chardef\_=`\_
+\chardef\&=`\&
+\chardef\^=`\^
+\chardef\#=`\#
+\chardef\%=`\%
+\chardef\~=`\~
+\chardef\backslash=`\\
+\chardef\caret=`\^
+
+\def\gline{}
+\def\hline{}
+\def\namestrue{}
+\def\nobreak{}
+\def\pagebreak{}
+\def\ptt{}
+\let\newrefbox\@newdingbat
+
+\def\flabel#1{\leavevmode{\rm\small #1}}
+\def\wlabel#1#2{%
+    \leavevmode{\rm\small #1\nl\tt\normalsize\ \ \@beginmargin #2\@endmargin}%
+}
+
+\def\@rm#1{%
+    \leavevmode\begingroup
+    \ifcase\fam
+    \rm\or\rm\or\bf\or\bf\or
+    \tt\or\tt\or\btt\or\btt\or
+    \hdlt\or\hdlt\or\hd\or\hd\else\rm\fi
+    #1\endgroup
+}
+
+\def\th{\ifmmode^{\hbox{\@rm th}}\else$^{\hbox{\@rm th}}$\fi}
+\def\TeX{\leavevmode{\@rm TeX}}
+\def\LaTeX{\leavevmode{\@rm LaTeX}}
+
+\def\fheading#1{}
+\def\fletter#1{}
+\def\heading#1{}
+\def\chaptermark#1{\gdef\@thechaptermark{#1}}
+\def\nonumchaptermark#1{}
+
+\def\@dxfix{\relax
+    \catcode`\#=12\catcode`\$=12\catcode`\%=12\relax
+    \catcode`\&=12\catcode`\~=12\catcode`\_=12\relax
+    \catcode`\^=12\catcode`\\=12\relax
+    \let\'=\relax	% Special case KLUDGE for \dx{B\'ezier}
+}
+
+\def\@dx{\begingroup\@dxfix\@@dx}
+\def\@@dx#1{\endgroup}
+
+\def\@dxtwo{\begingroup\@dxfix\@@dxtwo}
+\def\@@dxtwo#1#2{\endgroup}
+
+\let\bdx=\@dx
+\let\bodx=\@dx
+\let\bpdx=\@dxtwo
+\let\dx=\@dx
+\let\odx=\@dx
+\let\cdx=\@dx
+\let\pbdx=\@dxtwo
+\let\pdx=\@dxtwo
+
+\def\dblotabthree#1#2{#2}
+\def\ql#1{\@ql #1}
+\def\qc#1{\@qc #1}
+\def\qr#1{\@qr #1}
+\def\qj#1{\@qj #1}
+
+\newif\if@afterftab	\@afterftabfalse
+\newif\if@table		\@tablefalse
+
+\def\@otab#1#2#3#4{\nl\nl\begingroup\par\parindent=0pt\parskip=0pt\relax
+  \@tabletrue
+  \@alignjustify{#2}\relax
+  %\special{MBSetWidgetName:#1}\relax
+  \halign{##&&##\crcr#3\crcr}\nl\hdlt\small
+  \ignorespaces#4\endgroup
+}
+\def\otabone{\@otab{otabone}{L      }}
+\def\otabtwo{\@otab{otabtwo}{Rl     }}
+\def\otabthree{\@otab{otabthree}{LLL    }}
+\def\ptabone{\@otab{ptabone}{L      }}
+\def\ptabtwo{\@otab{ptabtwo}{Rl     }}
+\def\ptabthree{\@otab{ptabthree}{LLL    }}
+
+\let\deftabone=\otabone
+\let\deftabtwo=\otabtwo
+\let\deftabthree=\otabthree
+
+
+\def\vspace{\@ifstar{\@vspace}{\@vspace}}
+\def\@vspace#1{}
+
+\let\defboxone=\otabone
+\let\defboxtwo=\otabtwo
+\let\defboxthree=\otabthree
+\def\nograybox#1{\ignorespaces#1\ignorespaces}
+\def\lap{\leavevmode{\btt`}}	% KLUDGE
+
+
+\def\break{ }  % Nasty KLUDGE for broken in RefGuide.tex
+\def\endl{ }  % Nasty KLUDGE for broken Algebra`Trigonometry`
+\let\hb\bf	% KLUDGE for Calculus`VectorAnalysis
+
+\def\fnindexfalse{}	% KLUDGE for refguide
+\newdimen\textheight	% KLUDGE for LaTeX?
+\newdimen\firstcolwid	% KLUDGE for WRI
+\newdimen\seccolwid	% KLUDGE for WRI
+\newdimen\lastcolwid	% KLUDGE for WRI
+\newdimen\ftabtwosize
+\newdimen\defboxthreesize	% KLUDGE for WRI
+\newdimen\fontdepth	% KLUDGE for WRI
+\let\gstart=\@sptoken
+\let\gend=\@sptoken
+\let\added=\@sptoken
+\let\modified=\@sptoken
+\let\deleted=\@sptoken
+
+
+
+\newif\if@stareaten
+\newcount\@argcount
+\def\@checkstar{\@ifnextchar*{\@eatstar}{\@eatoptarg}}
+\def\@eatstar*{\@stareatentrue\@eatoptarg}
+\def\@eatoptarg{\@ifnextchar[{\@@eatoptarg}{\@optargmacro}}
+\def\@@eatoptarg[#1]{%
+    \advance\@argcount by 1
+    \expandafter\def\csname\the\@argcount\endcsname{#1}%
+    \@eatoptarg
+}
+\def\@eatoptions#1{%
+    \def\@optargmacro{#1}\@argcount=0 \@stareatenfalse\@checkstar
+}
+
+
+\def\maketitle{\TnbPopCell
+    \@PendingCellStyle{Title}%
+%%    \leavevmode\TnbFont{TB}{TBI}{1}\large\bf\@title\relax
+    \leavevmode\TnbFont{TB}{TBI}{1}{\large\bf\@title}\relax
+    \TnbPopCell
+    \@ifundefined{@author}{}{
+        \@PendingCellStyle{Text}% KLUDGE sb. author
+	\leavevmode\@author
+	\TnbPopCell
+    }\relax
+    \@ifundefined{@thanks}{}{
+        \@PendingCellStyle{Text}% KLUDGE sb. thanks
+	\leavevmode\@thanks
+	\TnbPopCell
+    }\relax
+}
+
+\def\@txcell#1#2#3{%
+    \parskip=0pt\parindent=0pt\relax
+    \@PushTextCell{#1}\leavevmode{#2\ignorespaces#3}\TnbPopCell\@textfont
+    \parskip=0pt\parindent=0pt\relax
+    \gdef\@LastHead{#1}%
+}
+
+\newif\if@num
+
+\def\@secprotect{%
+    \def\Math{\protect\Math}%
+    \def\ML{\protect\ML}%
+    \def\MathLink{\protect\MathLink}%
+    \def\TeX{\protect\TeX}%
+    \def\LaTeX{\protect\LaTeX}%
+    \def\lap{\protect\lap}%
+    \def\k{\protect\k}%
+    \def\'{\protect\'}%
+    \def\`{\protect\`}%
+    \def\"{\protect\"}%
+    \def\^{\protect\"}%
+    \def\c{\protect\c}%
+    \def\,{\protect\,}%
+    %\def\{{\protect\{}%
+    %\def\}{\protect\}}%
+}
+
+\def\chapter{\@ifstar{\@numfalse\@chapter}{\@numtrue\@chapter}}
+\def\@chapter#1{%
+    \TnbPopCell
+    %\stepcounter{chapter}%
+    \begingroup
+    \@secprotect
+    \addcontentsline{toc}{chapter}{\thechapter\space#1}%
+    \endgroup
+    \@txcell{Chapter}{\huge\hd\TnbFont{SB}{SBO}{0}}{%
+    \if@num Part \thechapter. \fi
+    #1}}
+
+\def\@@foosection#1#2#3#4{%
+    \TnbPopCell\@PendingCellStyle{#3}%
+    \@startsection{#1}{#2}{\z@}{\z@}{\z@}{\leavevmode#4\aftergroup\TnbPopCell}%
+}
+
+
+\def\section{\@ifstar{\@numfalse\@section}{\@numtrue\@section}}
+\def\@section#1{%
+    \TnbPopCell
+    %\refstepcounter{section}%
+    %\addtocounter{subsection}{-1}%
+    %\refstepcounter{subsection}%
+    \refstepcounter{section}%
+    \begingroup
+    \@secprotect
+    \addcontentsline{toc}{section}{\if@num\thesection\space\fi#1}%
+    \endgroup
+    \message{Section \thesection}%
+    \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:CellTags->"S\thesection"}%
+    \@txcell{Section}{\Large\hd\TnbFont{SB}{SBO}{0}}{%
+    \if@num\thesection\ \fi
+    #1}}
+
+\def\subsection{\@ifstar{\@numfalse\@subsection}{\@numtrue\@subsection}}
+\def\@subsection#1{%
+    \TnbPopCell
+    %\stepcounter{subsection}%
+    \refstepcounter{subsection}%
+    \begingroup
+    \@secprotect
+    \addcontentsline{toc}{subsection}{\if@num\thesubsection\space\fi#1}%
+    \endgroup
+    \message{Section \thesubsection}%
+    \special{TnbSetPushAction:Cell}%
+    \special{TnbSetPushAction:Cell:TnbAddUniqueOption:^Cell:CellTags->"S\thesubsection"}%
+    \@txcell{Subsection}{\large\hd\TnbFont{SB}{SBO}{1}}{%
+    \if@num\thesubsection\ \fi
+    #1}}
+
+\def\subsubsection{\@ifstar{\@numfalse\@subsubsection}{\@numtrue\@subsubsection}}
+\def\@subsubsection#1{%
+    \TnbPopCell
+    \stepcounter{subsubsection}%
+    \@txcell{Subsubsection}{\normalsize\hd\TnbFont{SB}{SBO}{2}}{#1}%
+}
+
+\newenvironment{abstract}{\relax
+    \TnbPopCell
+    \@PendingCellStyle{Title}% KLUDGE sb abstract
+    Abstract
+    \TnbPopCell
+}{\TnbPopCell}
+
+\newcounter{biblio}
+
+\def\bibitem{\@ifnextchar[{\@argbibitem}{\@bibitem}}
+\def\@bibitem#1{%
+    \par%
+    \TnbPop{Cell}%
+    \@PendingCellStyle{BibItem}%
+    [%
+    \leavevmode%
+    \special{TnbPopToNestable}%
+    \begingroup%
+        \TnbPush{ButtonBox}{}%
+        \special{TnbSetOption:ButtonBox:ButtonData->"#1"}%
+        \special{TnbSetOption:ButtonBox:ButtonStyle->"BibRef"}%
+        \CounterBoxOne{BibItem}%
+        \TnbPop{ButtonBox}{}%
+    \endgroup%
+    ]\ %
+    \label{#1}
+}
+\def\@argbibitem[#1]#2{%
+    \par%
+    \TnbPop{Cell}%
+    \@PendingCellStyle{BibItem}%
+    [%
+    \leavevmode%
+    \special{TnbPopToNestable}%
+    \begingroup%
+        \TnbPush{ButtonBox}{}%
+        \special{TnbSetOption:ButtonBox:ButtonData->"#2"}%
+        \special{TnbSetOption:ButtonBox:ButtonStyle->"BibRef"}%
+        #1%
+        \TnbPop{ButtonBox}{}%
+    \endgroup%
+    ]\ %
+    \label{#2}
+}
+
+\def\caption#1{\gdef\@caption{#1}}
+\def\figure{\@ifnextchar[{\@figure}{\@figure[]}}
+\def\@figure[#1]{\begingroup
+    \gdef\@caption{\relax}\stepcounter{figure}\relax
+}
+\def\endfigure{\TnbPopCell
+    FIGURE \thefigure\ GOES HERE\TnbPopCell
+    \ifx\@caption\relax\else
+    \TnbPopCell\@PendingCellStyle{Caption}\leavevmode
+    {\bf Figure \arabic{figure}. }\@caption\TnbPopCell\fi
+    \endgroup
+}
+
+\def\rule{\@ifnextchar[{\@rule}{\@rule[]}}
+\def\@rule[#1]#2#3{}
+
+
+\def\InFont#1{{\btt #1}}
+\let\newline=\nl
+
+
+\@SetPendingCell
+
+\def\copyright{\@unicode{Copyright}}
+\def\pounds{\@unicode{Sterling}}
+
+\let\@overbrace=\overbrace
+\let\@underbrace=\underbrace
+
+\input nbfont.tex
+
+\def\lfloor{\delimiter"4E61E61 }
+\def\rfloor{\delimiter"5E62E62 }
+\def\lceil{\delimiter"4E63E63 }
+\def\rceil{\delimiter"5E64E64 }
+\def\vert{\delimiter"4D75D75 }
+\def\vert{\delimiter"5D75D75 }
+\def\langle{\delimiter"4E5FE5F}
+\def\rangle{\delimiter"5E60E60}
+
+\let\overbrace=\@overbrace
+\let\underbrace=\@underbrace
+
+%% Output a M-- unicode escape character e.g. \:FFEF
+%% this is used by StringToTeX in Publicon.
+\def\unicode#1{{\backslash:#1}}
+
+%% Special TeX charactesr and symbols. ``The TeXbook'' page 356
+\def\oe{\unicode{0153}}
+\def\OE{\unicode{0152}}
+\def\ae{{\@unicode{AE}}}
+\def\AE{{\@unicode{CapitalAE}}}
+\def\aa{{\@unicode{ARing}}}
+\def\l{{\@unicode{LSlash}}}
+\def\L{{\@unicode{CapitalLSlash}}}
+\def\ss{{\@unicode{SZ}}}
+\def\S{{\@unicode{Section}}}
+\def\P{{\@unicode{Paragraph}}}
+\def\dag{{\@unicode{Dagger}}}
+\def\ddag{{\@unicode{DoubleDagger}}}
+%% override Math mode only macros
+\def\AA{{\@unicode{CapitalARing}}}
+\def\i{{\@unicode{DotlessI}}}
+\def\j{{\@unicode{DotlessJ}}}
+\def\ldots{{\@unicode{Ellipsis}}}
+\def\vdots{{\@unicode{VerticalEllipsis}}}
+
+\def\@makemathclass#1#2{%
+    \@tmpdc=#2\relax
+    \multiply\@tmpdc by "1000
+    \advance\@tmpdc by #1\relax
+    \mathchardef#1\@tmpdc
+}
+
+\let\bigcap=\cap
+\let\bigcup=\cup
+\let\bigsqcup=\sqcup
+\let\bigvee=\vee
+\let\bigwedge=\wedge
+\let\bigodot=\odot
+\let\bigotimes=\otimes
+\let\bigoplus=\oplus
+\let\coprod=\amalg
+\let\intop=\int
+\let\ointop=\oint
+
+\@makemathclass{\sum}{1}
+\@makemathclass{\prod}{1}
+\@makemathclass{\coprod}{1}		% \amalg
+\@makemathclass{\intop}{1}
+\def\int{\intop\nolimits}
+\@makemathclass{\ointop}{1}
+\def\oint{\ointop\nolimits}
+\@makemathclass{\bigcap}{1}
+\@makemathclass{\bigcup}{1}
+\@makemathclass{\bigsqcup}{1}
+\@makemathclass{\bigvee}{1}
+\@makemathclass{\bigwedge}{1}
+\@makemathclass{\bigodot}{1}
+\@makemathclass{\bigotimes}{1}
+\@makemathclass{\bigoplus}{1}
+\@makemathclass{\biguplus}{1}
+
+
+\mathchardef\ast=`\*
+\let\uplus=\biguplus
+\let\bigtriangleup=\triangle
+\let\bigtriangledown=\EmptyDownTriangle
+\let\oslash=\Diameter
+
+\@makemathclass{\pm}{2}
+\@makemathclass{\mp}{2}
+\@makemathclass{\setminus}{2}
+\@makemathclass{\cdot}{2}
+\@makemathclass{\times}{2}
+\@makemathclass{\ast}{2}
+\@makemathclass{\star}{2}
+\@makemathclass{\diamond}{2}
+\@makemathclass{\circ}{2}
+\@makemathclass{\bullet}{2}
+\@makemathclass{\div}{2}
+\@makemathclass{\cap}{2}
+\@makemathclass{\cup}{2}
+\@makemathclass{\uplus}{2}
+\@makemathclass{\sqcap}{2}
+\@makemathclass{\sqcup}{2}
+\@makemathclass{\triangleleft}{2}
+\@makemathclass{\triangleright}{2}
+\@makemathclass{\wr}{2}
+\@makemathclass{\bigcirc}{2}
+\@makemathclass{\bigtriangleup}{2}
+\@makemathclass{\bigtriangledown}{2}
+\@makemathclass{\vee}{2}
+\@makemathclass{\wedge}{2}
+\@makemathclass{\oplus}{2}
+\@makemathclass{\ominus}{2}
+\@makemathclass{\otimes}{2}
+\@makemathclass{\oslash}{2}
+\@makemathclass{\odot}{2}
+\@makemathclass{\dagger}{2}
+\@makemathclass{\ddagger}{2}
+\@makemathclass{\amalg}{2}
+
+
+\let\parallel=\Vert
+\let\sim=\Tilde
+
+\@makemathclass{\leq}{3}
+\@makemathclass{\prec}{3}
+\@makemathclass{\preceq}{3}
+\@makemathclass{\ll}{3}
+\@makemathclass{\subset}{3}
+\@makemathclass{\subseteq}{3}
+\@makemathclass{\sqsubseteq}{3}
+\@makemathclass{\in}{3}
+\@makemathclass{\vdash}{3}
+\@makemathclass{\smile}{3}
+\@makemathclass{\frown}{3}
+\@makemathclass{\geq}{3}
+\@makemathclass{\succ}{3}
+\@makemathclass{\succeq}{3}
+\@makemathclass{\gg}{3}
+\@makemathclass{\supset}{3}
+\@makemathclass{\supseteq}{3}
+\@makemathclass{\sqsupseteq}{3}
+\@makemathclass{\ni}{3}
+\@makemathclass{\dashv}{3}
+\@makemathclass{\parallel}{3}
+\@makemathclass{\equiv}{3}
+\@makemathclass{\sim}{3}
+\@makemathclass{\simeq}{3}
+\@makemathclass{\asymp}{3}
+\@makemathclass{\approx}{3}
+\@makemathclass{\cong}{3}
+\@makemathclass{\propto}{3}
+\@makemathclass{\models}{3}
+\@makemathclass{\doteq}{3}
+\@makemathclass{\perp}{3}
+
+
+\let\leftharpoondown=\DownLeftVector
+\let\rightharpoondown=\DownRightVector
+\let\rightleftharpoons=\Equilibrium
+
+\@makemathclass{\leftarrow}{3}
+\@makemathclass{\Leftarrow}{3}
+\@makemathclass{\rightarrow}{3}
+\@makemathclass{\Rightarrow}{3}
+\@makemathclass{\leftrightarrow}{3}
+\@makemathclass{\Leftrightarrow}{3}
+\@makemathclass{\mapsto}{3}
+\@makemathclass{\leftharpoonup}{3}
+\@makemathclass{\leftharpoondown}{3}
+\@makemathclass{\rightleftharpoons}{3}
+
+\@makemathclass{\longleftarrow}{3}
+\@makemathclass{\Longleftarrow}{3}
+\@makemathclass{\longrightarrow}{3}
+\@makemathclass{\Longrightarrow}{3}
+\@makemathclass{\longleftrightarrow}{3}
+\@makemathclass{\Longleftrightarrow}{3}
+\@makemathclass{\rightharpoonup}{3}
+\@makemathclass{\rightharpoondown}{3}
+
+\@makemathclass{\uparrow}{3}
+\@makemathclass{\Uparrow}{3}
+\@makemathclass{\downarrow}{3}
+\@makemathclass{\Downarrow}{3}
+\@makemathclass{\updownarrow}{3}
+\@makemathclass{\Updownarrow}{3}
+\@makemathclass{\nearrow}{3}
+\@makemathclass{\searrow}{3}
+\@makemathclass{\swarrow}{3}
+\@makemathclass{\nwarrow}{3}
+
+
+\def\not#1{%
+    \@ifundefined{not\string#1}
+        {\@warning{not\string#1 Undefined}}{\@nameuse{not\string#1}}%
+}
+
+\def\@notreldef#1#2{\@namedef{not\string#1}{\mathrel#2}}
+
+\@notreldef{<}{\nless}
+\@notreldef{\leq}{\nleq}
+\@notreldef{\prec}{\nprec}
+\@notreldef{\preceq}{\npreceq}
+\@notreldef{\subset}{\nsubset}
+\@notreldef{\subseteq}{\nsubseteq}
+\@notreldef{\sqsubseteq}{\nsqsubseteq}
+
+\@notreldef{>}{\ngtr}
+\@notreldef{\geq}{\ngeq}
+\@notreldef{\succ}{\nsucc}
+\@notreldef{\succeq}{\nsucceq}
+\@notreldef{\supset}{\nsupset}
+\@notreldef{\supseteq}{\nsupseteq}
+\@notreldef{\sqsupseteq}{\nsqsupseteq}
+
+\@notreldef{=}{\neq}
+\@notreldef{\equiv}{\NotCongruent}
+\@notreldef{\sim}{\nsim}
+\@notreldef{\simeq}{\NotTildeEqual}
+\@notreldef{\approx}{\NotTildeTilde}
+\@notreldef{\cong}{\NotTildeEqual}
+\@notreldef{\asymp}{\NotCupCap}
+
+\@notreldef{\in}{\notin}
+
+
+
+\def\acute{\mathaccent`\'}
+\def\bar{\mathaccent`\_}
+\def\breve{\mathaccent"0306 }	% \[Breve]
+\def\check{\mathaccent"030C } 	% \[Hacek]
+\def\ddot{\mathaccent"0308 }	% \[DoubleDot]
+\def\dot{\mathaccent`\.}
+\def\grave{\mathaccent`\`}
+\def\hat{\mathaccent`\^}
+\def\tilde{\mathaccent`\~}
+\def\vec{\mathaccent"21C0 }	% \[RightVector]
+
+\let\ne=\neq
+\let\le=\leq
+\let\ge=\geq
+\let\to=\rightarrow
+\let\gets=\rightarrow
+\let\owns=\ni
+\let\land=\wedge
+\let\lor=\vee
+\let\lnot=\neg
+\def\iff{\;\Longleftrightarrow\;}
+
+
+\let\setminus=\backslash % KLUDGE this should be Bin, in nbfont
+\let\bigoplus=\oplus	% KLUDGE?
+\let\bigcap=\cap	% KLUDGE?
+\let\bigcup=\cup	% KLUDGE?
+\let\|=\Vert		% KLUDGE?
+\let\sim=\mTilde	% KLUDGE?
+\let\Box=\EmptySquare
+\let\Mathega=\Omega	% KLUDGE for The Mathematica Book
+\let\degree\circ	% KLUDGE
+\chardef\backslash=`\\	% KLUDGE for unicode.mc
+\let\o=\mOSlash		% KLUDGE for unicode.mc
+\let\O=\mCapitalOSlash	% KLUDGE for unicode.mc
+\def\H{\@unicode{DoublePrime}}	% KLUDGE for unicode.mc
+\def\Im{\@unicode{GothicCapitalI}}	% KLUDGE for unicode.mc
+\def\Re{\@unicode{GothicCapitalR}}	% KLUDGE for unicode.mc
+\def\mRawDoubleQuote{"}	% KLUDGE for unicode.mc
+\def\regtm{\@unicode{RegisteredTrademark}}	% KLUDGE for packages
+\def\tmmark{\@unicode{TradeMark}}	% KLUDGE for packages
+\let\uregtm=\tmmark		% KLUDGE for packages
+\chardef\@=`\@		% KLUDGE for chapter 2-08
+\def\break{ }		% KLUDGE for unicode.mc
+\def\c#1{{\accent`\c#1}}% KLUDGE for unicode.mc
+\def\v#1{$\check #1$}	% KLUDGE???
+\chardef\bD=`\-		% KLUDGE for texprep
+
+\def\textbackslash{\backslash}
+
+\ifx\TnbRawMode\TnbUndefined
+    \special{TnbSetOption:^Notebook:StyleDefinitions->"Default.nb"}%
+\fi
+
+\def\@documentstyle[#1]#2{\makeatletter
+   \def\@optionlist{#1}\gdef\@optionfiles{}\input #2.tns\relax
+   \let\@elt\input \@optionfiles \let\@elt\relax \makeatother}
+        
+\def\@options{\let\@elt\relax
+    \@for\@tempa:=\@optionlist\do
+        {\@ifundefined{ds@\@tempa}{\xdef\@optionfiles{\@optionfiles 
+             \@elt \@tempa.tns\relax}}{\csname ds@\@tempa\endcsname}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% %% Adding macros here for handling LaTeX2e specific stuff.  %%
+
+%%
+%% \documentclass and \@documentclass definitions added by davidr on 10 May 2005. Further modified 16 may 2005.
+%%
+%% Note that \@classoptionslist and \@classoptions are hooks to be use when class option handling is added.
+%%
+\def\documentclass{\@ifnextchar[{\@documentclass}{\@documentclass[]}}
+\def\@documentclass[#1]#2{\def\@classoptionslist{#1}\xdef\@classoptions{}\input #2.tns\relax}
+
+%%
+%% \usepackage and \@usepackage definitions added by davidr on 10 May 2005. Further modified 16 May 2005.
+%%
+%% Note that \@pkgoptionslist and \@pkgoptions are hooks to be use when package option handling is added.
+%%
+\def\usepackage{\@ifnextchar[{\@usepackage}{\@usepackage[]}}
+\def\@usepackage[#1]#2{\def\@pkgoptionslist{#1}\def\@pkgfilelist{#2}\xdef\@pkgfiles{}\xdef\@pkgoptions{}
+  \@processpkgfilelist
+  \let\@elt\input \@pkgfiles \let\@elt\relax}
+\def\@processpkgfilelist{\let\@elt\relax
+  \@for\@tempa:=\@pkgfilelist\do
+    {\xdef\@pkgfiles{\@pkgfiles \@elt \@tempa.tns\relax}}}
+
+%%
+%% Adding stubs for LaTeX2e style Fonts selection macros.
+%%
+\let\mdseries\rm
+\let\bfseries\bf
+\let\rmfamily\rm
+\let\sffamily\rm
+\let\ttfamily\tt
+\let\upshape\rm
+\let\itshape\it
+\let\slshape\it
+\let\scshape\rm
+\let\normalfont\rm
+\def\textmd#1{{\mdseries #1}}
+\def\textbf#1{{\bfseries #1}}
+\def\textrm#1{{\rmfamily #1}}
+\def\textsf#1{{\sffamily #1}}
+\def\texttt#1{{\ttfamily #1}}
+\def\textup#1{{\upshape #1}}
+\def\textit#1{{\itshape #1}}
+\def\textsl#1{{\slshape #1}}
+\def\textsc#1{{\scshape #1}}
+\def\textnormal#1{{\normalfont #1}}
+\def\boldmath{\relax}
+\let\emph\textit
+
+\def\@fontslant#1#2{%
+  \leavevmode{%
+    \TnbPush{Generic}{StyleBox}%
+    \special{TnbAddOption:Generic:FontSlant->"#1"}%
+    \special{TnbWriteRaw:"#2"}%
+    \TnbPop{Generic}%
+  }%
+}
+\def\mathrm#1{%
+  \relax\leavevmode
+  \ifmmode\@fontslant{Plain}{#1}\else\@latexerr{Not in math mode!}\fi
+}
+\def\mathit#1{%
+  \relax\leavevmode
+  \ifmmode\@fontslant{Italic}{#1}\else\@latexerr{Not in math mode!}\fi
+}
+\def\mathbf#1{%
+  \relax\leavevmode
+  \ifmmode\@fontslant{Bold}{#1}\else\@latexerr{Not in math mode!}\fi
+}
+\let\mathsf\mathrm
+\let\mathtt\mathrm
+\def\mathcal#1{#1}
+\let\mathbb\mathrm % Note that this will be changed to make the argument a doublestruck capital whatever.
+
+% Adding a definition for \pmb
+\def\pmb#1{%
+  \relax\leavevmode
+  \ifmmode #1\else\@latexerr{Not in math mode!}\fi
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Sandbox for \footnote 
+%%
+%% I will likely change this to use some sort of ButtonBox, but this works for now.
+%%
+
+\def\footnote{\@ifnextchar[{\@footnote}{\@footnote[]}}
+\def\@footnote[#1]#2{%
+  \leavevmode%
+  \special{TnbPopToNestable}%
+  \begingroup%
+  \TnbPush{Cell}{Footnote}%
+  \TnbPush{TextData}{}%
+  #2%
+  \TnbPop{TextData}%
+  \TnbPop{Cell}%
+  \endgroup%
+}
+
+%%
+%% End footnote sandbox
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%
+%% End LaTeX2e stuff
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\tabbing{}
+\def\endtabbing{}
+
+\def\center{\@eatoptions{\@center}}
+\def\@center{%
+    \TnbPopCell
+    \begingroup
+    \let\@centereverycell=\@everycell
+    \def\@everycell{\@centereverycell
+        \special{TnbSetOption:-TextData:TextAlignment->Center}%
+    }%
+}
+\def\endcenter{\endgroup\TnbPopCell}
+
+\def\@@begintheorem#1#2#3{%
+    \TnbPopCell
+    \@PendingCellStyle{Theorem}%
+    \leavevmode{\bf #1\ #2#3}
+}
+\def\@endtheorem{\TnbPopCell}
+\def\@begintheorem#1#2{\@@begintheorem{#1}{#2}{}}
+\def\@opargbegintheorem#1#2#3{\@@begintheorem{#1}{#2}{\ (#3)}}
+
+\def\received#1#2{\TnbPopCell\leavevmode
+    {\it Received #1; final manuscript accepted #2}\TnbPopCell
+}
+
+\let\usesamecounter=\relax	% KLUDGE
+\let\numberbysection=\relax	% KLUDGE
+\def\jvol#1{}			% KLUDGE
+\def\markboth#1#2{}		% KLUDGE
+
+\def\main#1{\TnbPopCell
+    \@PendingCellStyle{Title}%
+    \leavevmode\TnbFont{TB}{TBI}{1}\large\bf
+    #1\TnbPopCell
+}
+
+\def\affil#1{\begingroup\nl\it #1 \endgroup}
+\def\and{\nl\nl and\nl\nl}
+
+\def\submit#1{\TnbPopCell
+    Submitted by #1\relax
+    \TnbPopCell
+}
+
+\def\theorem{\TnbPopCell
+    \begingroup\global\advance\@theoremnum by 1\relax
+    \def\@textfont{\normalsize\it\TnbFont{TR}{TI}{2}}\leavevmode
+    {\rm Theorem \the\@secnum.\the\@theoremnum.\ \ }\ignorespaces
+}
+\def\endtheorem{\endgroup\TnbPopCell}
+
+\def\halmos{\@unicode{FilledSquare}}
+\def\proof{\TnbPopCell\leavevmode{\it Proof.}\ \ }
+\def\endproof{\ \ \halmos\TnbPopCell}
+
+\def\@dingbat{\leavevmode{\rm\@unicode{FilledSmallSquare}}}
+
+\def\thinspace{\leavevmode\@unicode{ThinSpace}}
+\def\negthinspace{\leavevmode\@unicode{NegativeThinSpace}}
+\let\!=\negthinspace
+\def\bigg{}
+
+%%  text and math accents The TeXBook p52
+\def\^#1{\bgroup\let\i=i\let\j=j{\accent`\^#1}\egroup}
+\def\~#1{\bgroup\let\i=i\let\j=j{\accent`\~#1}\egroup}
+\def\'#1{\bgroup\let\i=i\let\j=j{\accent`\'#1}\egroup}
+\def\"#1{\bgroup\let\i=i\let\j=j{\accent`\"#1}\egroup}
+\def\`#1{\bgroup\let\i=i\let\j=j{\accent`\`#1}\egroup}
+\def\c#1{\bgroup\let\i=i\let\j=j{\accent`\c#1}\egroup}
+\def\v#1{\bgroup\let\i=i\let\j=j{\accent`\v#1}\egroup}
+\def\H#1{\bgroup\let\i=i\let\j=j{\accent`\H#1}\egroup}
+\def\.#1{\bgroup\let\i=i\let\j=j{\accent`\.#1}\egroup}
+\def\=#1{\bgroup\let\i=i\let\j=j{\accent`\=#1}\egroup}
+\def\u#1{\bgroup\let\i=i\let\j=j{\accent`\u#1}\egroup}
+\def\d#1{\relax\ifmmode\@@d{#1}\else%
+    \bgroup\let\i=i\let\j=j\accent`\d #1\relax\egroup\fi}
+\def\@@d#1{
+    \relax\bgroup
+    \TnbPush{UnderscriptBox}{}%
+    \special{TnbSetArgument:UnderscriptBox:.}%
+    #1%
+    \TnbPop{UnderscriptBox}%
+    \egroup%
+}
+
+\let\wolframcharacter=\@unicode
+% don't create any extranious files .aux .idx .toc ...
+\nofiles
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% From wri.txs
+%%
+% Each paragraph break should end a cell and begin a new one;
+% i.e. each paragraph should be a separate cell.
+
+% billw 31 Oct 2002 - but this causes problems in the RefGuide (A-10)
+% so save current definition for reuse
+\let\savepardef\par
+
+% then redefine \par
+\def\par{\TnbPopCell\endgraf}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% flushright environment
+%%
+\def\raggedleft{}
+\def\flushright{\trivlist \def\@itemlabel{}\raggedleft\item\relax}
+\def\endflushright{\endtrivlist}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Verbatim Environment 
+%%
+
+\def\verbatim{%
+    \begingroup%
+        \TnbPopCell%
+        \@PendingCellStyle{Verbatim}
+}
+\def\endverbatim{%
+        \TnbPopCell%
+    \endgroup%
+}
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Index sandbox
+%%
+
+\def\makeindex{\relax}
+
+\def\index#1{%
+    \leavevmode%
+    \special{TnbPopToNestable}%
+    \begingroup%
+    \TnbPush{Cell}{IndexEntry}%
+    \TnbPush{TextData}{}%
+    #1%
+    \TnbPop{TextData}%
+    \TnbPop{Cell}%
+    \endgroup%
+}
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input datetime.tnc
+
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% To Do:
+%%        * Proper list implementation.
+%%        * Fix \renewcommand
+%%        * Fix \@starttoc so that table of content and similar information
+%%          can be written out to resource files..
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+

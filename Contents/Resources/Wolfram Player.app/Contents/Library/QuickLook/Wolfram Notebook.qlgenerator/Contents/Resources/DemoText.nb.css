@@ -1,0 +1,201 @@
+div.Title {
+	font-family: Helvetica, sans-serif;
+	color: #ffffff;
+	font-size: 34px;
+	font-weight: bold;
+	background: #000000;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.Subtitle {
+	font-family: Helvetica, sans-serif;
+	color: #ffffff;
+	font-size: 18px;
+	background: #33b3b3;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.Subsubtitle {
+	font-family: Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: italic;
+	margin-left: 10px;
+	margin-right: 4px;
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+div.Section {
+	font-family: Helvetica, sans-serif;
+	color: #000000;
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-bottom: 4px;
+	margin-top: 24px;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 1px;
+}
+div.Subsection {
+	font-family: Helvetica, sans-serif;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 25px;
+	margin-top: 0px;
+}
+div.Subsubsection {
+	font-family: Helvetica, sans-serif;
+	color: #660099;
+	font-size: 12px;
+	font-weight: bold;
+	font-style: italic;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-top: 20px;
+	border-color: #ffffff;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 2px;
+}
+div.Text {
+	font-family: Helvetica, sans-serif;
+	margin-left: 12px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+div.Commentary {
+	font-family: Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: plain;
+	font-style: plain;
+	margin-left: 52px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 10px;
+	border-color: #ffffff;
+}
+div.Input {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	background: #ffffff;
+	margin-left: 52px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 2px;
+	border-color: #ccb399;
+	border-width: 0px;
+	border-style: solid;
+	border-left-width: 4px;
+	border-right-width: 4px;
+	border-top-width: 4px;
+}
+div.InlineInput {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+}
+div.Output {
+	font-family: Courier, monospaced;
+	background: #ffffff;
+	margin-left: 52px;
+	margin-right: 10px;
+	margin-bottom: 12px;
+	margin-top: 0px;
+	border-color: #ccb399;
+	border-width: 0px;
+	border-style: solid;
+	border-left-width: 4px;
+	border-right-width: 4px;
+	border-bottom-width: 4px;
+}
+div.InputOnly {
+	font-family: Courier, monospaced;
+	font-weight: bold;
+	background: #ffffff;
+	margin-left: 52px;
+	margin-right: 10px;
+	margin-bottom: 4px;
+	margin-top: 2px;
+	border-color: #ccb399;
+}
+div.OutputOnly {
+	font-family: Courier, monospaced;
+	background: #ffffff;
+	margin-left: 52px;
+	margin-right: 10px;
+	margin-bottom: 4px;
+	margin-top: 2px;
+	border-color: #ccb399;
+}
+div.SymbolicExpression {
+	font-family: Courier, monospaced;
+	font-weight: plain;
+	font-style: plain;
+	background: #ffffff;
+	margin-left: 52px;
+	margin-right: 10px;
+	margin-bottom: 4px;
+	margin-top: 2px;
+	border-color: #000000;
+}
+div.ImportPict {
+	font-family: Courier, monospaced;
+	background: #000000;
+	margin-left: 52px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.PullQuote {
+	font-family: Helvetica, sans-serif;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: bold;
+	background: #9900cc;
+	margin-left: 0px;
+	margin-right: 250px;
+	margin-bottom: 15px;
+	margin-top: 5px;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 3px;
+}
+div.GrayBox {
+	font-family: Helvetica, sans-serif;
+	color: #000000;
+	font-size: 10px;
+	font-weight: plain;
+	background: #ccb399;
+	margin-left: 62px;
+	margin-right: 36px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+	border-width: 0px;
+	border-style: solid;
+	border-top-width: 3px;
+}
+div.LineSpace {
+	font-size: 9px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+div.PreviousNext {
+	font-family: Helvetica, sans-serif;
+	color: #808080;
+	font-size: 10px;
+	text-align: left;
+	margin-left: 60px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+body {
+	background: #e6dccf;
+}

@@ -1,0 +1,8 @@
+<div 
+	class="reddit-embed"
+	data-embed-media="www.redditmedia.com"
+	data-embed-parent="true" 
+	data-embed-live="true">
+	<a href="https://www.reddit.com/r/`sub`/comments/`id`"/>
+</div>
+<script async src="https://www.redditstatic.com/comment-embed.js"></script>

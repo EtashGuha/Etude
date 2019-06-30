@@ -1,0 +1,36 @@
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "GL0-2t-RST"; */
+"GL0-2t-RST.title" = "文本单元";
+
+/* Class = "NSButtonCell"; title = "Browse..."; ObjectID = "LYL-T3-61F"; */
+"LYL-T3-61F.title" = "浏览...";
+
+/* Class = "NSButtonCell"; title = "Entire notebook"; ObjectID = "Mpb-Qn-pLe"; */
+"Mpb-Qn-pLe.title" = "整个笔记本";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Ti8-5d-Ib8"; */
+"Ti8-5d-Ib8.title" = "取消";
+
+/* Class = "NSTableColumn"; headerCell.title = "All cell tags in the notebook"; ObjectID = "WIJ-Ee-C7R"; */
+"WIJ-Ee-C7R.headerCell.title" = "笔记本中所有单元标签";
+
+/* Class = "NSButtonCell"; title = "Other notebook or URL:"; ObjectID = "X9P-kn-ZCs"; */
+"X9P-kn-ZCs.title" = "其他笔记本或 URL:";
+
+/* Class = "NSButtonCell"; title = "Cells with the tag:"; ObjectID = "XYJ-LV-1Rx"; */
+"XYJ-LV-1Rx.title" = "有标签的单元：";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "bmW-pt-Wav"; */
+"bmW-pt-Wav.title" = "表格视图单元";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "fDM-Xg-ajv"; */
+"fDM-Xg-ajv.title" = "确定";
+
+/* Class = "NSButtonCell"; title = "Current notebook"; ObjectID = "owK-2N-GSB"; */
+"owK-2N-GSB.title" = "当前笔记本";
+
+/* Class = "NSTextFieldCell"; title = "Destination within notebook:"; ObjectID = "tT7-9z-wPI"; */
+"tT7-9z-wPI.title" = "笔记本中的目的地：";
+
+/* Class = "NSTextFieldCell"; title = "Destination notebook:"; ObjectID = "zgm-Pp-amw"; */
+"zgm-Pp-amw.title" = "目的地笔记本：";

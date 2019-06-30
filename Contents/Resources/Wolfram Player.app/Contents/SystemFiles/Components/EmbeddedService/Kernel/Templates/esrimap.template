@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
+<script src="https://js.arcgis.com/3.20/"></script>
+<script>var map;
+require(["esri/map", "dojo/domReady!"], function(Map) {
+  map = new Map("map", {
+    basemap: "topo",
+    center: [`lon`, `lat`],
+    zoom: 13
+  });
+});</script>
+<div id="map"></div>

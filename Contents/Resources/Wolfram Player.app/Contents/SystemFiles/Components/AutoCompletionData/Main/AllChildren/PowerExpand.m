@@ -1,0 +1,10 @@
+{"Assumptions", "Sqrt", "Log", "E", "I", "Sin", "Pi", "Cos", "Exp", 
+ "Derivative", "ExpToTrig", "Subscript", "Abs", "Tan", "Sec", "Quantity", 
+ "Log10", "D", "Sinh", "None", "Infinity", "Floor", "Integrate", "Gamma", 
+ "CharacteristicPolynomial", "ArcTan", "Re", "Plus", "Hypergeometric1F1", 
+ "HeavisideTheta", "Cot", "Cosh", "Binomial", "ArcTanh", "PolyGamma", 
+ "ParabolicCylinderD", "N", "Limit", "LegendreP", "BesselJ", "BesselI", 
+ "Arg", "Tanh", "SquareWave", "Sign", "MatrixForm", "Csc", "Beta", 
+ "BaseForm", "ArcSin", "Union", "TrigToExp", "Sum", "Sech", "Ratios", "Max", 
+ "Log2", "Im", "IdentityMatrix", "FresnelC", "EulerGamma", "Erf", 
+ "EllipticTheta", "Decompose", "ComplexExpand", "Ceiling", "Boole", "ArcCosh"}

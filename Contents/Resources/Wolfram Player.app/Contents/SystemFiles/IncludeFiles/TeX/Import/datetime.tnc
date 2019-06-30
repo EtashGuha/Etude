@@ -1,0 +1,56 @@
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% First Implementaiton of time/date macros. 
+%% They return strings instead of numbers as in TeX 
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\month{%
+    \@MLPutFunction{EvaluatePacket}%
+    \@MLPutFunction{ToString}%
+    \@MLPutFunction{ToExpression}%
+    \@MLPutString{Part[Date[],2]}%
+    \@MLEndPacket%
+    \@MLStringResult}
+\def\year{%
+    \@MLPutFunction{EvaluatePacket}%
+    \@MLPutFunction{ToString}%
+    \@MLPutFunction{ToExpression}%
+    \@MLPutString{Part[Date[],1]}%
+    \@MLEndPacket%
+    \@MLStringResult}
+\def\day{%
+    \@MLPutFunction{EvaluatePacket}%
+    \@MLPutFunction{ToString}%
+    \@MLPutFunction{ToExpression}%
+    \@MLPutString{Part[Date[],3]}%
+    \@MLEndPacket%
+    \@MLStringResult}
+\def\time{%
+    \@MLPutFunction{EvaluatePacket}%
+    \@MLPutFunction{ToString}%
+    \@MLPutFunction{ToExpression}%
+    \@MLPutString{Plus[Times[Part[Date[],4],60],Part[Date[],5]]}%
+    \@MLEndPacket%
+    \@MLStringResult}
+% 
+\def\today{
+    \@MLPutFunction{EvaluatePacket}%
+    \@MLPutFunction{ToString}%
+    \@MLPutFunction{ToExpression}%
+    \@MLPutString{DateString[List["MonthName", " ", "Day", ", ", "Year"]]}%
+    \@MLEndPacket%
+    \@MLStringResult}
+
+%  p406 TeX Book 
+%\def\today{
+%ifcase\month\or 
+%   January\or February\or March\or April\or May\or June\or July\or
+%   August\or September\or October\or November\or December\fi
+%  \space\day, \year}
+%  \space\number\day, \number\year}
+
+\makeatother
+
+

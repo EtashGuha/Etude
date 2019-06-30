@@ -1,0 +1,250 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./ReadMe_files/filelist.xml">
+<title>About SimpleFrontEnd and the MathSessionPane Class</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Todd Gayley</o:Author>
+  <o:LastAuthor>Todd Gayley</o:LastAuthor>
+  <o:Revision>32</o:Revision>
+  <o:TotalTime>1369</o:TotalTime>
+  <o:Created>2002-01-26T20:13:00Z</o:Created>
+  <o:LastSaved>2002-01-27T22:58:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>237</o:Words>
+  <o:Characters>1355</o:Characters>
+  <o:Company>Wolfram Research, Inc.</o:Company>
+  <o:Lines>11</o:Lines>
+  <o:Paragraphs>2</o:Paragraphs>
+  <o:CharactersWithSpaces>1664</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:HELVETICA;
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:18.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:HELVETICA;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:#3366FF;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoBodyText>About SimpleFrontEnd and the MathSessionPane Class</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>SimpleFrontEnd is a small but useful application that
+provides a “front end” to the <i>Mathematica</i> kernel. It is provided mainly
+to demonstrate the capabilities of <i>J/Link</i>’s MathSessionPane class.
+SimpleFrontEnd is little more than a frame and menu bar that host a
+MathSessionPane. Essentially all the features you see are built into
+MathSessionPane, including the keyboard commands and the properties settable
+via the Options menu.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>To run this example, go to the SimpleFrontEnd directory and
+execute the following command line:</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>( Windows )</p>
+
+<p class=MsoNormal>java -classpath SimpleFrontEnd.jar;..\..\..\JLink.jar
+SimpleFrontEnd</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>( Linux, UNIX, Mac OSX )</p>
+
+<p class=MsoNormal>java -classpath SimpleFrontEnd.jar:../../../JLink.jar SimpleFrontEnd</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>MathSessionPane is a visual component that provides a
+scrolling In/Out session interface to the <i>Mathematica</i> kernel. Much more
+sophisticated than the kernel's own &quot;terminal&quot; interface, it provides
+features such as full text editing of input including copy/paste and unlimited
+undo/redo, support for graphics, control of fonts and styles, customizable
+syntax coloring, and bracket matching.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>The following key commands are supported by MathSessionPane
+itself:</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=1 cellspacing=3 cellpadding=0 style='mso-cellspacing:2.0pt;
+ margin-left:2.75pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='height:16.3pt'>
+  <td width=87 valign=top style='width:65.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Shift-Enter</p>
+  </td>
+  <td width=179 valign=top style='width:134.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Evaluate Input</p>
+  </td>
+ </tr>
+ <tr style='height:16.3pt'>
+  <td width=87 valign=top style='width:65.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Ctrl-X</p>
+  </td>
+  <td width=179 valign=top style='width:134.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Cut</p>
+  </td>
+ </tr>
+ <tr style='height:16.3pt'>
+  <td width=87 valign=top style='width:65.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Ctrl-C</p>
+  </td>
+  <td width=179 valign=top style='width:134.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Copy</p>
+  </td>
+ </tr>
+ <tr style='height:16.3pt'>
+  <td width=87 valign=top style='width:65.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Ctrl-V</p>
+  </td>
+  <td width=179 valign=top style='width:134.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Paste</p>
+  </td>
+ </tr>
+ <tr style='height:16.3pt'>
+  <td width=87 valign=top style='width:65.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Ctrl-Z</p>
+  </td>
+  <td width=179 valign=top style='width:134.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Undo</p>
+  </td>
+ </tr>
+ <tr style='height:16.3pt'>
+  <td width=87 valign=top style='width:65.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Ctrl-Y</p>
+  </td>
+  <td width=179 valign=top style='width:134.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Redo</p>
+  </td>
+ </tr>
+ <tr style='height:16.3pt'>
+  <td width=87 valign=top style='width:65.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Ctrl-L</p>
+  </td>
+  <td width=179 valign=top style='width:134.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Copy Input From Above</p>
+  </td>
+ </tr>
+ <tr style='height:16.3pt'>
+  <td width=87 valign=top style='width:65.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Ctrl-B</p>
+  </td>
+  <td width=179 valign=top style='width:134.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Balance Brackets</p>
+  </td>
+ </tr>
+ <tr style='height:16.3pt'>
+  <td width=87 valign=top style='width:65.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Alt-.</p>
+  </td>
+  <td width=179 valign=top style='width:134.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Abort Computation</p>
+  </td>
+ </tr>
+ <tr style='height:16.3pt'>
+  <td width=87 valign=top style='width:65.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Alt-,</p>
+  </td>
+  <td width=179 valign=top style='width:134.15pt;padding:0in 5.4pt 0in 5.4pt;
+  height:16.3pt'>
+  <p class=MsoNormal>Interrupt Computation</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>(These all use the Command key on the Macintosh)</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Although MathSessionPane provides rich text-editing
+facilities, you cannot go back and edit previous inputs or re-evaluate them in place.
+You can only edit the current input.</p>
+
+</div>
+
+</body>
+
+</html>

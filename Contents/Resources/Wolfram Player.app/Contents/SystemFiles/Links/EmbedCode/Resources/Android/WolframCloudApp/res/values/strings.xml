@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wolfram EmbedCode App</string>
+    <string name="prompt">Enter input here...</string>
+    <string name="button">OK</string>
+</resources>

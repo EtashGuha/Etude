@@ -1,0 +1,112 @@
+\message{FILE: This is hyperref.sty}
+
+\makeatletter
+
+%%
+%% Stub out some of the user API of hyperref
+%%
+
+%%
+%% Taken from the mathworld.txs file
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  \url implementation. Should support [~_#%=?&]
+%%
+%% The following just work in TeX and LaTeX using the \url package:
+%%
+%% \url{http://www.blah.com/1=2}\par
+%% \url{http://www.blah.com/1?2}\par
+%% \url{http://www.blah.com/1#2}\par
+%% \url{http://www.blah.com/1_2}\par
+%% \url{http://www.blah.com/1~2}\par
+%% \url{http://www.blah.com/1%2}\par
+%% \url{http://www.blah.com/1&2}\par
+%%
+\begingroup
+\catcode`\~=\active
+\catcode`\&=\active
+\catcode`\#=\active
+\catcode`\_=\active
+\catcode`\%=\active
+\gdef\makeurlchars
+{\catcode`\~=\active
+  \chardef~=`\~\catcode`\#=\active
+  \def#{\#}\catcode`\_=\active
+  \def_{\_}\catcode`\%=\active
+  \def%{\%}\catcode`\&=\active
+  \def&{\&}}
+\endgroup
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% \href{URL}{text} 
+%%
+%% The text is made a hyperlink to the URL; this must be a full URL
+%% (relative to the base URL, if that is defined). The special characters
+%% # and ~ do not need to be escaped in any way.
+%%
+\def\href{\begingroup\makeurlchars\@href}
+\def\@href#1#2{\TnbButtonBox{#2}{Hyperlink}{{URL["#1"], None}}\endgroup}
+
+%% \url{URL}
+%%
+%% Equivalent to \href{URL}{URL}.
+%%
+\def\url{\begingroup\makeurlchars\@url}
+\def\@url#1{\TnbButtonBox{#1}{Hyperlink}{{URL["#1"], None}}\endgroup}
+
+%% \nolinkurl{URL}
+%%
+%% Write URL as plain text, without creating a hyperlink.
+%%
+%% Note: I have chosen to implement this the same as \url for now.
+%%
+\let\nolinkurl\url
+
+%% \hyperbaseurl{URL}
+%%
+%% A base URL is established, which is prepended to other specified URLs,
+%% to make it easier to write portable documents.
+%%
+\def\hyperbaseurl#1{\message{Note: hyperbaseurl not implement yet.}}
+
+%% \hyperimage{imageURL}
+%%
+%% The image referenced by the URL is inserted.
+%%
+%% Note: I have chosen to implement this the same as \url for now.
+%%
+\let\hyperimageurl\url
+
+%% \hyperdef{category}{name}{text}
+%%
+%% A target area of the document (the text) is marked, and given the 
+%% name category.name
+%%
+\def\hyperdef#1#2#3{\message{Note: hyperdef not implement yet.}}
+
+%% \hyperref{URL}{category}{name}{text}
+%%
+%% text is made into a link to URL#category.name
+%%
+\def\hyperref#1#2#3#4{\message{Note: hyperref not implement yet.}}
+
+%% \hyperlink{name}{text}
+%%
+%% \hypertarget{name}{text}
+%%
+%% A simple internal link is created with \hypertarget, with two
+%% parameters of an anchor name, and anchor text. \hyperlink has two
+%% arguments, the name of a hypertext object defined somewhere by
+%% \hypertarget, and the text which be used as the link on the page.
+%%
+%% Note that in HTML parlance, the \hyperlink command inserts a notional
+%% # in front of each link, making it relative to the current
+%% testdocument; \href expects a full URL.
+%%
+\def\hyperlink#1#2{\message{Note: hyperlink not implement yet.}}
+\def\hypertarget#1#2{\message{Note: hypertarget not implement yet.}}
+
+\makeatother
+

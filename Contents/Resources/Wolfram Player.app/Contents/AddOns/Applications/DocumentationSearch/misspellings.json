@@ -1,0 +1,3194 @@
+[
+[
+[
+		"sin", 
+		"sine"
+	], 
+	75
+], 
+[
+[
+		"cos", 
+		"cosine"
+	], 
+	48
+], 
+[
+[
+		"trignometry", 
+		"trigonometry"
+	], 
+	43
+], 
+[
+[
+		"tesselation", 
+		"tessellation"
+	], 
+	35
+], 
+[
+[
+		"numbers", 
+		"number"
+	], 
+	34
+], 
+[
+[
+		"derivitive", 
+		"derivative"
+	], 
+	33
+], 
+[
+[
+		"plain", 
+		"plane"
+	], 
+	31
+], 
+[
+[
+		"funtion", 
+		"function"
+	], 
+	29
+], 
+[
+[
+		"funciton", 
+		"function"
+	], 
+	29
+], 
+[
+[
+		"trapazoid", 
+		"trapezoid"
+	], 
+	27
+], 
+[
+[
+		"cardiod", 
+		"cardioid"
+	], 
+	27
+], 
+[
+[
+		"axislabel", 
+		"axeslabel"
+	], 
+	27
+], 
+[
+[
+		"arcsine", 
+		"arcsin"
+	], 
+	27
+], 
+[
+[
+		"matric", 
+		"matrix"
+	], 
+	26
+], 
+[
+[
+		"intergration", 
+		"integration"
+	], 
+	26
+], 
+[
+[
+		"intergral", 
+		"integral"
+	], 
+	25
+], 
+[
+[
+		"isoceles", 
+		"isosceles"
+	], 
+	24
+], 
+[
+[
+		"sumation", 
+		"summation"
+	], 
+	23
+], 
+[
+[
+		"lenght", 
+		"length"
+	], 
+	23
+], 
+[
+[
+		"reimann", 
+		"riemann"
+	], 
+	21
+], 
+[
+[
+		"kernal", 
+		"kernel"
+	], 
+	21
+], 
+[
+[
+		"intergers", 
+		"integers"
+	], 
+	21
+], 
+[
+[
+		"sin", 
+		"sinus"
+	], 
+	20
+], 
+[
+[
+		"interger", 
+		"integer"
+	], 
+	20
+], 
+[
+[
+		"matrices", 
+		"matrix"
+	], 
+	19
+], 
+[
+[
+		"lable", 
+		"label"
+	], 
+	19
+], 
+[
+[
+		"intergrate", 
+		"integrate"
+	], 
+	19
+], 
+[
+[
+		"exponetial", 
+		"exponential"
+	], 
+	19
+], 
+[
+[
+		"ellips", 
+		"ellipse"
+	], 
+	19
+], 
+[
+[
+		"tesselations", 
+		"tessellations"
+	], 
+	18
+], 
+[
+[
+		"tabel", 
+		"table"
+	], 
+	18
+], 
+[
+[
+		"rombus", 
+		"rhombus"
+	], 
+	18
+], 
+[
+[
+		"number", 
+		"numbers"
+	], 
+	18
+], 
+[
+[
+		"matri", 
+		"matrix"
+	], 
+	18
+], 
+[
+[
+		"logarith", 
+		"logarithm"
+	], 
+	18
+], 
+[
+[
+		"listpointplot", 
+		"listpointplot3d"
+	], 
+	18
+], 
+[
+[
+		"functions", 
+		"function"
+	], 
+	18
+], 
+[
+[
+		"elipse", 
+		"ellipse"
+	], 
+	18
+], 
+[
+[
+		"parabol", 
+		"parabola"
+	], 
+	17
+], 
+[
+[
+		"heavyside", 
+		"heaviside"
+	], 
+	17
+], 
+[
+[
+		"countourplot", 
+		"contourplot"
+	], 
+	17
+], 
+[
+[
+		"colour", 
+		"color"
+	], 
+	17
+], 
+[
+[
+		"matrice", 
+		"matrix"
+	], 
+	16
+], 
+[
+[
+		"gauss", 
+		"gaussian"
+	], 
+	16
+], 
+[
+[
+		"countour", 
+		"contour"
+	], 
+	16
+], 
+[
+[
+		"voigt", 
+		"voight"
+	], 
+	15
+], 
+[
+[
+		"vecotr", 
+		"vector"
+	], 
+	15
+], 
+[
+[
+		"varience", 
+		"variance"
+	], 
+	15
+], 
+[
+[
+		"optimisation", 
+		"optimization"
+	], 
+	15
+], 
+[
+[
+		"functin", 
+		"function"
+	], 
+	15
+], 
+[
+[
+		"colinear", 
+		"collinear"
+	], 
+	15
+], 
+[
+[
+		"lsit", 
+		"list"
+	], 
+	14
+], 
+[
+[
+		"limes", 
+		"lim"
+	], 
+	14
+], 
+[
+[
+		"integral", 
+		"integrate"
+	], 
+	14
+], 
+[
+[
+		"elipsoid", 
+		"ellipsoid"
+	], 
+	14
+], 
+[
+[
+		"binominal", 
+		"binomial"
+	], 
+	14
+], 
+[
+[
+		"sine", 
+		"cosine"
+	], 
+	13
+], 
+[
+[
+		"plo", 
+		"plot"
+	], 
+	13
+], 
+[
+[
+		"outlier", 
+		"outliers"
+	], 
+	13
+], 
+[
+[
+		"matriz", 
+		"matrix"
+	], 
+	13
+], 
+[
+[
+		"matricies", 
+		"matrices"
+	], 
+	13
+], 
+[
+[
+		"l'hopital", 
+		"l'hospital"
+	], 
+	13
+], 
+[
+[
+		"integrals", 
+		"integral"
+	], 
+	13
+], 
+[
+[
+		"diferential", 
+		"differential"
+	], 
+	13
+], 
+[
+[
+		"determinent", 
+		"determinant"
+	], 
+	13
+], 
+[
+[
+		"coplaner", 
+		"coplanar"
+	], 
+	13
+], 
+[
+[
+		"vertice", 
+		"vertices"
+	], 
+	12
+], 
+[
+[
+		"square", 
+		"squares"
+	], 
+	12
+], 
+[
+[
+		"square", 
+		"squared"
+	], 
+	12
+], 
+[
+[
+		"sigma", 
+		"sum"
+	], 
+	12
+], 
+[
+[
+		"rieman", 
+		"riemann"
+	], 
+	12
+], 
+[
+[
+		"ploy", 
+		"plot"
+	], 
+	12
+], 
+[
+[
+		"plot2d", 
+		"plot"
+	], 
+	12
+], 
+[
+[
+		"pentagon", 
+		"hexagon"
+	], 
+	12
+], 
+[
+[
+		"octogon", 
+		"octagon"
+	], 
+	12
+], 
+[
+[
+		"matix", 
+		"matrix"
+	], 
+	12
+], 
+[
+[
+		"invers", 
+		"inverse"
+	], 
+	12
+], 
+[
+[
+		"frustrum", 
+		"frustum"
+	], 
+	12
+], 
+[
+[
+		"exponencial", 
+		"exponential"
+	], 
+	12
+], 
+[
+[
+		"cosinus", 
+		"cosines"
+	], 
+	12
+], 
+[
+[
+		"corelation", 
+		"correlation"
+	], 
+	12
+], 
+[
+[
+		"colourfunction", 
+		"colorfunction"
+	], 
+	12
+], 
+[
+[
+		"triangel", 
+		"triangle"
+	], 
+	11
+], 
+[
+[
+		"symetric", 
+		"symmetric"
+	], 
+	11
+], 
+[
+[
+		"squared", 
+		"square"
+	], 
+	11
+], 
+[
+[
+		"sovle", 
+		"solve"
+	], 
+	11
+], 
+[
+[
+		"matris", 
+		"matrix"
+	], 
+	11
+], 
+[
+[
+		"langrange", 
+		"lagrange"
+	], 
+	11
+], 
+[
+[
+		"guassian", 
+		"gaussian"
+	], 
+	11
+], 
+[
+[
+		"fuction", 
+		"function"
+	], 
+	11
+], 
+[
+[
+		"fourrier", 
+		"fourier"
+	], 
+	11
+], 
+[
+[
+		"disc", 
+		"disk"
+	], 
+	11
+], 
+[
+[
+		"cilinder", 
+		"cylinder"
+	], 
+	11
+], 
+[
+[
+		"zero", 
+		"zeros"
+	], 
+	10
+], 
+[
+[
+		"vektor", 
+		"vector"
+	], 
+	10
+], 
+[
+[
+		"traingle", 
+		"triangle"
+	], 
+	10
+], 
+[
+[
+		"sinus", 
+		"sin"
+	], 
+	10
+], 
+[
+[
+		"pot", 
+		"plot"
+	], 
+	10
+], 
+[
+[
+		"polt", 
+		"plot"
+	], 
+	10
+], 
+[
+[
+		"plot", 
+		"plot3d"
+	], 
+	10
+], 
+[
+[
+		"percentages", 
+		"percentage"
+	], 
+	10
+], 
+[
+[
+		"matrix", 
+		"matrices"
+	], 
+	10
+], 
+[
+[
+		"furier", 
+		"fourier"
+	], 
+	10
+], 
+[
+[
+		"boltzman", 
+		"boltzmann"
+	], 
+	10
+], 
+[
+[
+		"bionomial", 
+		"binomial"
+	], 
+	10
+], 
+[
+[
+		"videos", 
+		"video"
+	], 
+	9
+], 
+[
+[
+		"sqare", 
+		"square"
+	], 
+	9
+], 
+[
+[
+		"simplfy", 
+		"simplify"
+	], 
+	9
+], 
+[
+[
+		"set", 
+		"list"
+	], 
+	9
+], 
+[
+[
+		"rational", 
+		"irrational"
+	], 
+	9
+], 
+[
+[
+		"ration", 
+		"ratio"
+	], 
+	9
+], 
+[
+[
+		"quadralateral", 
+		"quadrilateral"
+	], 
+	9
+], 
+[
+[
+		"paralellogram", 
+		"parallelogram"
+	], 
+	9
+], 
+[
+[
+		"modulo", 
+		"mod"
+	], 
+	9
+], 
+[
+[
+		"Möbius", 
+		"mobius"
+	], 
+	9
+], 
+[
+[
+		"logaritm", 
+		"logarithm"
+	], 
+	9
+], 
+[
+[
+		"limes", 
+		"limit"
+	], 
+	9
+], 
+[
+[
+		"lamda", 
+		"lambda"
+	], 
+	9
+], 
+[
+[
+		"intergrals", 
+		"integrals"
+	], 
+	9
+], 
+[
+[
+		"infinty", 
+		"infinity"
+	], 
+	9
+], 
+[
+[
+		"hiperbola", 
+		"hyperbola"
+	], 
+	9
+], 
+[
+[
+		"fractals", 
+		"fractal"
+	], 
+	9
+], 
+[
+[
+		"fibonachi", 
+		"fibonacci"
+	], 
+	9
+], 
+[
+[
+		"exponet", 
+		"exponent"
+	], 
+	9
+], 
+[
+[
+		"dirivative", 
+		"derivative"
+	], 
+	9
+], 
+[
+[
+		"derivitives", 
+		"derivatives"
+	], 
+	9
+], 
+[
+[
+		"deriviative", 
+		"derivative"
+	], 
+	9
+], 
+[
+[
+		"coordinate", 
+		"coordinates"
+	], 
+	9
+], 
+[
+[
+		"compliment", 
+		"complement"
+	], 
+	9
+], 
+[
+[
+		"circumfrence", 
+		"circumference"
+	], 
+	9
+], 
+[
+[
+		"tranpose", 
+		"transpose"
+	], 
+	8
+], 
+[
+[
+		"trangle", 
+		"triangle"
+	], 
+	8
+], 
+[
+[
+		"squre", 
+		"square"
+	], 
+	8
+], 
+[
+[
+		"simplyfy", 
+		"simplify"
+	], 
+	8
+], 
+[
+[
+		"probabilty", 
+		"probability"
+	], 
+	8
+], 
+[
+[
+		"polynomials", 
+		"polynomial"
+	], 
+	8
+], 
+[
+[
+		"polinomial", 
+		"polynomial"
+	], 
+	8
+], 
+[
+[
+		"plt", 
+		"plot"
+	], 
+	8
+], 
+[
+[
+		"plotsyle", 
+		"plotstyle"
+	], 
+	8
+], 
+[
+[
+		"plots", 
+		"plot"
+	], 
+	8
+], 
+[
+[
+		"octagon", 
+		"nonagon"
+	], 
+	8
+], 
+[
+[
+		"modulo", 
+		"modulus"
+	], 
+	8
+], 
+[
+[
+		"maipulate", 
+		"manipulate"
+	], 
+	8
+], 
+[
+[
+		"integrate", 
+		"integral"
+	], 
+	8
+], 
+[
+[
+		"integrat", 
+		"integrate"
+	], 
+	8
+], 
+[
+[
+		"histgram", 
+		"histogram"
+	], 
+	8
+], 
+[
+[
+		"hexagon", 
+		"heptagon"
+	], 
+	8
+], 
+[
+[
+		"gridlinestyle", 
+		"gridlinesstyle"
+	], 
+	8
+], 
+[
+[
+		"graphs", 
+		"graph"
+	], 
+	8
+], 
+[
+[
+		"graphics", 
+		"graphics3d"
+	], 
+	8
+], 
+[
+[
+		"graphic3d", 
+		"graphics3d"
+	], 
+	8
+], 
+[
+[
+		"funktion", 
+		"function"
+	], 
+	8
+], 
+[
+[
+		"fucntion", 
+		"function"
+	], 
+	8
+], 
+[
+[
+		"fractions", 
+		"fraction"
+	], 
+	8
+], 
+[
+[
+		"flattern", 
+		"flatten"
+	], 
+	8
+], 
+[
+[
+		"equalateral", 
+		"equilateral"
+	], 
+	8
+], 
+[
+[
+		"determinate", 
+		"determinant"
+	], 
+	8
+], 
+[
+[
+		"determinante", 
+		"determinant"
+	], 
+	8
+], 
+[
+[
+		"derivatice", 
+		"derivative"
+	], 
+	8
+], 
+[
+[
+		"derivate", 
+		"derivative"
+	], 
+	8
+], 
+[
+[
+		"countourplot3d", 
+		"contourplot3d"
+	], 
+	8
+], 
+[
+[
+		"coordiantes", 
+		"coordinates"
+	], 
+	8
+], 
+[
+[
+		"coment", 
+		"comment"
+	], 
+	8
+], 
+[
+[
+		"colours", 
+		"colors"
+	], 
+	8
+], 
+[
+[
+		"angles", 
+		"angle"
+	], 
+	8
+], 
+[
+[
+		"angel", 
+		"angle"
+	], 
+	8
+], 
+[
+[
+		"variable", 
+		"variables"
+	], 
+	7
+], 
+[
+[
+		"triangl", 
+		"triangle"
+	], 
+	7
+], 
+[
+[
+		"tickstyle", 
+		"ticksstyle"
+	], 
+	7
+], 
+[
+[
+		"tabke", 
+		"table"
+	], 
+	7
+], 
+[
+[
+		"substitue", 
+		"substitute"
+	], 
+	7
+], 
+[
+[
+		"show", 
+		"plot"
+	], 
+	7
+], 
+[
+[
+		"sets", 
+		"set"
+	], 
+	7
+], 
+[
+[
+		"serie", 
+		"series"
+	], 
+	7
+], 
+[
+[
+		"seperable", 
+		"separable"
+	], 
+	7
+], 
+[
+[
+		"regresion", 
+		"regression"
+	], 
+	7
+], 
+[
+[
+		"reccurence", 
+		"recurrence"
+	], 
+	7
+], 
+[
+[
+		"pythagorus", 
+		"pythagoras"
+	], 
+	7
+], 
+[
+[
+		"poission", 
+		"poisson"
+	], 
+	7
+], 
+[
+[
+		"ploting", 
+		"plotting"
+	], 
+	7
+], 
+[
+[
+		"pitagoras", 
+		"pythagoras"
+	], 
+	7
+], 
+[
+[
+		"piramid", 
+		"pyramid"
+	], 
+	7
+], 
+[
+[
+		"octohedron", 
+		"octahedron"
+	], 
+	7
+], 
+[
+[
+		"nonagon", 
+		"decagon"
+	], 
+	7
+], 
+[
+[
+		"möbius", 
+		"mobius"
+	], 
+	7
+], 
+[
+[
+		"matrx", 
+		"matrix"
+	], 
+	7
+], 
+[
+[
+		"logarythm", 
+		"logarithm"
+	], 
+	7
+], 
+[
+[
+		"logarithim", 
+		"logarithm"
+	], 
+	7
+], 
+[
+[
+		"lebesque", 
+		"lebesgue"
+	], 
+	7
+], 
+[
+[
+		"integrali", 
+		"integral"
+	], 
+	7
+], 
+[
+[
+		"inifinity", 
+		"infinity"
+	], 
+	7
+], 
+[
+[
+		"inflexion", 
+		"inflection"
+	], 
+	7
+], 
+[
+[
+		"Hypergeometric2F1", 
+		"hypergeometric2f1"
+	], 
+	7
+], 
+[
+[
+		"historgram", 
+		"histogram"
+	], 
+	7
+], 
+[
+[
+		"grpah", 
+		"graph"
+	], 
+	7
+], 
+[
+[
+		"grassman", 
+		"grassmann"
+	], 
+	7
+], 
+[
+[
+		"gradiant", 
+		"gradian"
+	], 
+	7
+], 
+[
+[
+		"gausian", 
+		"gaussian"
+	], 
+	7
+], 
+[
+[
+		"function", 
+		"functions"
+	], 
+	7
+], 
+[
+[
+		"funcion", 
+		"function"
+	], 
+	7
+], 
+[
+[
+		"fibonaci", 
+		"fibonacci"
+	], 
+	7
+], 
+[
+[
+		"fibbonaci", 
+		"fibonacci"
+	], 
+	7
+], 
+[
+[
+		"exponential", 
+		"exponent"
+	], 
+	7
+], 
+[
+[
+		"equations", 
+		"equation"
+	], 
+	7
+], 
+[
+[
+		"elseif", 
+		"elsif"
+	], 
+	7
+], 
+[
+[
+		"elipsis", 
+		"ellipsis"
+	], 
+	7
+], 
+[
+[
+		"derrivative", 
+		"derivative"
+	], 
+	7
+], 
+[
+[
+		"deriative", 
+		"derivative"
+	], 
+	7
+], 
+[
+[
+		"cylindar", 
+		"cylinder"
+	], 
+	7
+], 
+[
+[
+		"constant", 
+		"constants"
+	], 
+	7
+], 
+[
+[
+		"comments", 
+		"comment"
+	], 
+	7
+], 
+[
+[
+		"colour", 
+		"colours"
+	], 
+	7
+], 
+[
+[
+		"cirlce", 
+		"circle"
+	], 
+	7
+], 
+[
+[
+		"chebychev", 
+		"chebyshev"
+	], 
+	7
+], 
+[
+[
+		"braket", 
+		"bracket"
+	], 
+	7
+], 
+[
+[
+		"bernouli", 
+		"bernoulli"
+	], 
+	7
+], 
+[
+[
+		"bernouilli", 
+		"bernoulli"
+	], 
+	7
+], 
+[
+[
+		"axis", 
+		"axes"
+	], 
+	7
+], 
+[
+[
+		"asymtote", 
+		"asymptote"
+	], 
+	7
+], 
+[
+[
+		"arry", 
+		"array"
+	], 
+	7
+], 
+[
+[
+		"arithmatic", 
+		"arithmetic"
+	], 
+	7
+], 
+[
+[
+		"AND", 
+		"and"
+	], 
+	7
+], 
+[
+[
+		"ableitung", 
+		"ableitungen"
+	], 
+	7
+], 
+[
+[
+		"zeros", 
+		"zero"
+	], 
+	6
+], 
+[
+[
+		"vectors", 
+		"vector"
+	], 
+	6
+], 
+[
+[
+		"triginometry", 
+		"trigonometry"
+	], 
+	6
+], 
+[
+[
+		"triagle", 
+		"triangle"
+	], 
+	6
+], 
+[
+[
+		"theorum", 
+		"theorem"
+	], 
+	6
+], 
+[
+[
+		"test", 
+		"text"
+	], 
+	6
+], 
+[
+[
+		"tables", 
+		"table"
+	], 
+	6
+], 
+[
+[
+		"symetry", 
+		"symmetry"
+	], 
+	6
+], 
+[
+[
+		"sun", 
+		"sum"
+	], 
+	6
+], 
+[
+[
+		"sumatory", 
+		"summatory"
+	], 
+	6
+], 
+[
+[
+		"sqrt", 
+		"plot"
+	], 
+	6
+], 
+[
+[
+		"sqaure", 
+		"square"
+	], 
+	6
+], 
+[
+[
+		"spere", 
+		"sphere"
+	], 
+	6
+], 
+[
+[
+		"sove", 
+		"solve"
+	], 
+	6
+], 
+[
+[
+		"solce", 
+		"solve"
+	], 
+	6
+], 
+[
+[
+		"sinx", 
+		"sin(x)"
+	], 
+	6
+], 
+[
+[
+		"sine", 
+		"sin"
+	], 
+	6
+], 
+[
+[
+		"simpify", 
+		"simplify"
+	], 
+	6
+], 
+[
+[
+		"seires", 
+		"series"
+	], 
+	6
+], 
+[
+[
+		"sec", 
+		"secant"
+	], 
+	6
+], 
+[
+[
+		"schroedinger", 
+		"schrodinger"
+	], 
+	6
+], 
+[
+[
+		"root", 
+		"sqrt"
+	], 
+	6
+], 
+[
+[
+		"revolutionplot", 
+		"revolutionplot3d"
+	], 
+	6
+], 
+[
+[
+		"produc", 
+		"product"
+	], 
+	6
+], 
+[
+[
+		"polynominal", 
+		"polynomial"
+	], 
+	6
+], 
+[
+[
+		"polynom", 
+		"polynomial"
+	], 
+	6
+], 
+[
+[
+		"polyhedra", 
+		"polyhedron"
+	], 
+	6
+], 
+[
+[
+		"polygons", 
+		"polygon"
+	], 
+	6
+], 
+[
+[
+		"Poincaré", 
+		"Poincare"
+	], 
+	6
+], 
+[
+[
+		"picewise", 
+		"piecewise"
+	], 
+	6
+], 
+[
+[
+		"phasors", 
+		"phasor"
+	], 
+	6
+], 
+[
+[
+		"peicewise", 
+		"piecewise"
+	], 
+	6
+], 
+[
+[
+		"parametricplot", 
+		"parametricplot3d"
+	], 
+	6
+], 
+[
+[
+		"parametric3d", 
+		"parametric"
+	], 
+	6
+], 
+[
+[
+		"paralleogram", 
+		"parallelogram"
+	], 
+	6
+], 
+[
+[
+		"parallellogram", 
+		"parallelogram"
+	], 
+	6
+], 
+[
+[
+		"parabaloid", 
+		"paraboloid"
+	], 
+	6
+], 
+[
+[
+		"numbe", 
+		"number"
+	], 
+	6
+], 
+[
+[
+		"modulus", 
+		"modulo"
+	], 
+	6
+], 
+[
+[
+		"logrithm", 
+		"logarithm"
+	], 
+	6
+], 
+[
+[
+		"logarithmus", 
+		"logarithms"
+	], 
+	6
+], 
+[
+[
+		"linear", 
+		"linearly"
+	], 
+	6
+], 
+[
+[
+		"lim", 
+		"limit"
+	], 
+	6
+], 
+[
+[
+		"legent", 
+		"legend"
+	], 
+	6
+], 
+[
+[
+		"komplex", 
+		"complex"
+	], 
+	6
+], 
+[
+[
+		"integrate", 
+		"nintegrate"
+	], 
+	6
+], 
+[
+[
+		"integrate", 
+		"integration"
+	], 
+	6
+], 
+[
+[
+		"integra", 
+		"integral"
+	], 
+	6
+], 
+[
+[
+		"inport", 
+		"import"
+	], 
+	6
+], 
+[
+[
+		"idempotence", 
+		"idempotent"
+	], 
+	6
+], 
+[
+[
+		"hyperbole", 
+		"hyperbola"
+	], 
+	6
+], 
+[
+[
+		"hospital", 
+		"hospitals"
+	], 
+	6
+], 
+[
+[
+		"histogramm", 
+		"histogram"
+	], 
+	6
+], 
+[
+[
+		"hiperbolic", 
+		"hyperbolic"
+	], 
+	6
+], 
+[
+[
+		"hermit", 
+		"hermite"
+	], 
+	6
+], 
+[
+[
+		"gradiant", 
+		"gradient"
+	], 
+	6
+], 
+[
+[
+		"gaus", 
+		"gauss"
+	], 
+	6
+], 
+[
+[
+		"gama", 
+		"gamma"
+	], 
+	6
+], 
+[
+[
+		"fundemental", 
+		"fundamental"
+	], 
+	6
+], 
+[
+[
+		"functino", 
+		"function"
+	], 
+	6
+], 
+[
+[
+		"from", 
+		"form"
+	], 
+	6
+], 
+[
+[
+		"forier", 
+		"fourier"
+	], 
+	6
+], 
+[
+[
+		"finction", 
+		"function"
+	], 
+	6
+], 
+[
+[
+		"fibonnaci", 
+		"fibonacci"
+	], 
+	6
+], 
+[
+[
+		"fibbonacci", 
+		"fibonacci"
+	], 
+	6
+], 
+[
+[
+		"feild", 
+		"field"
+	], 
+	6
+], 
+[
+[
+		"excentricity", 
+		"eccentricity"
+	], 
+	6
+], 
+[
+[
+		"eular", 
+		"euler"
+	], 
+	6
+], 
+[
+[
+		"erfc", 
+		"erf"
+	], 
+	6
+], 
+[
+[
+		"eqution", 
+		"equation"
+	], 
+	6
+], 
+[
+[
+		"equation", 
+		"equations"
+	], 
+	6
+], 
+[
+[
+		"dom", 
+		"domain"
+	], 
+	6
+], 
+[
+[
+		"diffrential", 
+		"differential"
+	], 
+	6
+], 
+[
+[
+		"differntial", 
+		"differential"
+	], 
+	6
+], 
+[
+[
+		"diagonalisation", 
+		"diagonalization"
+	], 
+	6
+], 
+[
+[
+		"determinat", 
+		"determinant"
+	], 
+	6
+], 
+[
+[
+		"descrete", 
+		"discrete"
+	], 
+	6
+], 
+[
+[
+		"derivativ", 
+		"derivative"
+	], 
+	6
+], 
+[
+[
+		"derivates", 
+		"derivate"
+	], 
+	6
+], 
+[
+[
+		"demostration", 
+		"demonstration"
+	], 
+	6
+], 
+[
+[
+		"curves", 
+		"curve"
+	], 
+	6
+], 
+[
+[
+		"cramers", 
+		"cramer's"
+	], 
+	6
+], 
+[
+[
+		"convergance", 
+		"convergence"
+	], 
+	6
+], 
+[
+[
+		"contourplot", 
+		"contourplot3d"
+	], 
+	6
+], 
+[
+[
+		"continous", 
+		"continuous"
+	], 
+	6
+], 
+[
+[
+		"combinatoria", 
+		"combinatorial"
+	], 
+	6
+], 
+[
+[
+		"bspline", 
+		"spline"
+	], 
+	6
+], 
+[
+[
+		"baysian", 
+		"bayesian"
+	], 
+	6
+], 
+[
+[
+		"axias", 
+		"axis"
+	], 
+	6
+], 
+[
+[
+		"arcos", 
+		"arccos"
+	], 
+	6
+], 
+[
+[
+		"angle", 
+		"angles"
+	], 
+	6
+], 
+[
+[
+		"zeroes", 
+		"zeros"
+	], 
+	5
+], 
+[
+[
+		"vextor", 
+		"vector"
+	], 
+	5
+], 
+[
+[
+		"vecto", 
+		"vector"
+	], 
+	5
+], 
+[
+[
+		"tringle", 
+		"triangle"
+	], 
+	5
+], 
+[
+[
+		"trigonomety", 
+		"trigonometry"
+	], 
+	5
+], 
+[
+[
+		"triganometry", 
+		"trigonometry"
+	], 
+	5
+], 
+[
+[
+		"trig", 
+		"sin"
+	], 
+	5
+], 
+[
+[
+		"traspose", 
+		"transpose"
+	], 
+	5
+], 
+[
+[
+		"trapizoid", 
+		"trapezoid"
+	], 
+	5
+], 
+[
+[
+		"trancendental", 
+		"transcendental"
+	], 
+	5
+], 
+[
+[
+		"time", 
+		"times"
+	], 
+	5
+], 
+[
+[
+		"thorus", 
+		"torus"
+	], 
+	5
+], 
+[
+[
+		"theorme", 
+		"theorem"
+	], 
+	5
+], 
+[
+[
+		"tble", 
+		"table"
+	], 
+	5
+], 
+[
+[
+		"talbe", 
+		"table"
+	], 
+	5
+], 
+[
+[
+		"sums", 
+		"sum"
+	], 
+	5
+], 
+[
+[
+		"substitute", 
+		"substitution"
+	], 
+	5
+], 
+[
+[
+		"suare", 
+		"square"
+	], 
+	5
+], 
+[
+[
+		"stoke's", 
+		"stokes"
+	], 
+	5
+], 
+[
+[
+		"stationarity", 
+		"stationary"
+	], 
+	5
+], 
+[
+[
+		"squar", 
+		"square"
+	], 
+	5
+], 
+[
+[
+		"sqrt", 
+		"root"
+	], 
+	5
+], 
+[
+[
+		"sinus", 
+		"sine"
+	], 
+	5
+], 
+[
+[
+		"shrodinger", 
+		"schrodinger"
+	], 
+	5
+], 
+[
+[
+		"shpere", 
+		"sphere"
+	], 
+	5
+], 
+[
+[
+		"sen", 
+		"sin"
+	], 
+	5
+], 
+[
+[
+		"schrödinger", 
+		"schrodinger"
+	], 
+	5
+], 
+[
+[
+		"rhumbus", 
+		"rhombus"
+	], 
+	5
+], 
+[
+[
+		"reverse", 
+		"inverse"
+	], 
+	5
+], 
+[
+[
+		"quasiconcave", 
+		"quasiconvex"
+	], 
+	5
+], 
+[
+[
+		"principal", 
+		"principle"
+	], 
+	5
+], 
+[
+[
+		"prim", 
+		"prime"
+	], 
+	5
+], 
+[
+[
+		"possion", 
+		"poisson"
+	], 
+	5
+], 
+[
+[
+		"polynomial", 
+		"polynomials"
+	], 
+	5
+], 
+[
+[
+		"point", 
+		"line"
+	], 
+	5
+], 
+[
+[
+		"plotlegent", 
+		"plotlegend"
+	], 
+	5
+], 
+[
+[
+		"ploting", 
+		"plot"
+	], 
+	5
+], 
+[
+[
+		"plot3d", 
+		"plot"
+	], 
+	5
+], 
+[
+[
+		"plot", 
+		"show"
+	], 
+	5
+], 
+[
+[
+		"plot", 
+		"point"
+	], 
+	5
+], 
+[
+[
+		"plot", 
+		"list"
+	], 
+	5
+], 
+[
+[
+		"plo3d", 
+		"plot3d"
+	], 
+	5
+], 
+[
+[
+		"piecwise", 
+		"piecewise"
+	], 
+	5
+], 
+[
+[
+		"phytagoras", 
+		"pythagoras"
+	], 
+	5
+], 
+[
+[
+		"pertubation", 
+		"perturbation"
+	], 
+	5
+], 
+[
+[
+		"perpindicular", 
+		"perpendicular"
+	], 
+	5
+], 
+[
+[
+		"parallogram", 
+		"parallelogram"
+	], 
+	5
+], 
+[
+[
+		"parallegram", 
+		"parallelogram"
+	], 
+	5
+], 
+[
+[
+		"paralelogram", 
+		"parallelogram"
+	], 
+	5
+], 
+[
+[
+		"orthocentre", 
+		"orthocenter"
+	], 
+	5
+], 
+[
+[
+		"numer", 
+		"number"
+	], 
+	5
+], 
+[
+[
+		"normalise", 
+		"normalize"
+	], 
+	5
+], 
+[
+[
+		"monomial", 
+		"binomial"
+	], 
+	5
+], 
+[
+[
+		"mclaurin", 
+		"maclaurin"
+	], 
+	5
+], 
+[
+[
+		"maxium", 
+		"maximum"
+	], 
+	5
+], 
+[
+[
+		"matrics", 
+		"matrices"
+	], 
+	5
+], 
+[
+[
+		"matirx", 
+		"matrix"
+	], 
+	5
+], 
+[
+[
+		"Mahalanobis", 
+		"mahalanobis"
+	], 
+	5
+], 
+[
+[
+		"maclauren", 
+		"maclaurin"
+	], 
+	5
+], 
+[
+[
+		"logistics", 
+		"logistic"
+	], 
+	5
+], 
+[
+[
+		"logaritms", 
+		"logarithms"
+	], 
+	5
+], 
+[
+[
+		"lisplot", 
+		"listplot"
+	], 
+	5
+], 
+[
+[
+		"linear", 
+		"nonlinear"
+	], 
+	5
+], 
+[
+[
+		"line", 
+		"point"
+	], 
+	5
+], 
+[
+[
+		"limits", 
+		"limit"
+	], 
+	5
+], 
+[
+[
+		"lhopital", 
+		"l'hospital"
+	], 
+	5
+], 
+[
+[
+		"legrange", 
+		"lagrange"
+	], 
+	5
+], 
+[
+[
+		"lebegue", 
+		"lebesgue"
+	], 
+	5
+], 
+[
+[
+		"laplasian", 
+		"laplacian"
+	], 
+	5
+], 
+[
+[
+		"laplase", 
+		"laplace"
+	], 
+	5
+], 
+[
+[
+		"knots", 
+		"knot"
+	], 
+	5
+], 
+[
+[
+		"intgral", 
+		"integral"
+	], 
+	5
+], 
+[
+[
+		"Intergrate", 
+		"integrate"
+	], 
+	5
+], 
+[
+[
+		"integratiion", 
+		"integration"
+	], 
+	5
+], 
+[
+[
+		"integrales", 
+		"integralest"
+	], 
+	5
+], 
+[
+[
+		"integrae", 
+		"integrate"
+	], 
+	5
+], 
+[
+[
+		"integer", 
+		"integral"
+	], 
+	5
+], 
+[
+[
+		"integal", 
+		"integral"
+	], 
+	5
+], 
+[
+[
+		"inequations", 
+		"inequation"
+	], 
+	5
+], 
+[
+[
+		"inegral", 
+		"integral"
+	], 
+	5
+], 
+[
+[
+		"hiperboloid", 
+		"hyperboloid"
+	], 
+	5
+], 
+[
+[
+		"heviside", 
+		"heaviside"
+	], 
+	5
+], 
+[
+[
+		"hectagon", 
+		"hectogon"
+	], 
+	5
+], 
+[
+[
+		"heavysidetheta", 
+		"heavisidetheta"
+	], 
+	5
+], 
+[
+[
+		"Heavyside", 
+		"heaviside"
+	], 
+	5
+], 
+[
+[
+		"groups", 
+		"group"
+	], 
+	5
+], 
+[
+[
+		"grah", 
+		"graph"
+	], 
+	5
+], 
+[
+[
+		"googleplex", 
+		"googolplex"
+	], 
+	5
+], 
+[
+[
+		"functio", 
+		"function"
+	], 
+	5
+], 
+[
+[
+		"fourie", 
+		"fourier"
+	], 
+	5
+], 
+[
+[
+		"fibunacci", 
+		"fibonacci"
+	], 
+	5
+], 
+[
+[
+		"fibonnacci", 
+		"fibonacci"
+	], 
+	5
+], 
+[
+[
+		"factorise", 
+		"factorize"
+	], 
+	5
+], 
+[
+[
+		"facotr", 
+		"factor"
+	], 
+	5
+], 
+[
+[
+		"exponets", 
+		"exponents"
+	], 
+	5
+], 
+[
+[
+		"euler", 
+		"euler's"
+	], 
+	5
+], 
+[
+[
+		"erro", 
+		"error"
+	], 
+	5
+], 
+[
+[
+		"erf", 
+		"erfc"
+	], 
+	5
+], 
+[
+[
+		"elements", 
+		"element"
+	], 
+	5
+], 
+[
+[
+		"elementq", 
+		"element"
+	], 
+	5
+], 
+[
+[
+		"dsolve", 
+		"solve"
+	], 
+	5
+], 
+[
+[
+		"divison", 
+		"division"
+	], 
+	5
+], 
+[
+[
+		"distributino", 
+		"distribution"
+	], 
+	5
+], 
+[
+[
+		"directed", 
+		"undirected"
+	], 
+	5
+], 
+[
+[
+		"differntiate", 
+		"differentiate"
+	], 
+	5
+], 
+[
+[
+		"differentation", 
+		"differentiation"
+	], 
+	5
+], 
+[
+[
+		"differenciate", 
+		"differentiate"
+	], 
+	5
+], 
+[
+[
+		"differencial", 
+		"differential"
+	], 
+	5
+], 
+[
+[
+		"diferentiate", 
+		"differentiate"
+	], 
+	5
+], 
+[
+[
+		"diference", 
+		"difference"
+	], 
+	5
+], 
+[
+[
+		"dialation", 
+		"dilation"
+	], 
+	5
+], 
+[
+[
+		"derivtive", 
+		"derivative"
+	], 
+	5
+], 
+[
+[
+		"derivation", 
+		"derivative"
+	], 
+	5
+], 
+[
+[
+		"datalistplot", 
+		"datelistplot"
+	], 
+	5
+], 
+[
+[
+		"covarience", 
+		"covariance"
+	], 
+	5
+], 
+[
+[
+		"coterminal", 
+		"terminal"
+	], 
+	5
+], 
+[
+[
+		"cotangent", 
+		"tangent"
+	], 
+	5
+], 
+[
+[
+		"cotangens", 
+		"cotangents"
+	], 
+	5
+], 
+[
+[
+		"cosine", 
+		"sine"
+	], 
+	5
+], 
+[
+[
+		"cosecent", 
+		"cosecant"
+	], 
+	5
+], 
+[
+[
+		"constants", 
+		"constant"
+	], 
+	5
+], 
+[
+[
+		"combination", 
+		"combinations"
+	], 
+	5
+], 
+[
+[
+		"colorbar", 
+		"colormap"
+	], 
+	5
+], 
+[
+[
+		"circunference", 
+		"circumference"
+	], 
+	5
+], 
+[
+[
+		"circles", 
+		"circle"
+	], 
+	5
+], 
+[
+[
+		"cilindrical", 
+		"cylindrical"
+	], 
+	5
+], 
+[
+[
+		"cicloid", 
+		"cycloid"
+	], 
+	5
+], 
+[
+[
+		"centriod", 
+		"centroid"
+	], 
+	5
+], 
+[
+[
+		"calculas", 
+		"calculus"
+	], 
+	5
+], 
+[
+[
+		"binomial", 
+		"trinomial"
+	], 
+	5
+], 
+[
+[
+		"axix", 
+		"axis"
+	], 
+	5
+], 
+[
+[
+		"axes", 
+		"axis"
+	], 
+	5
+], 
+[
+[
+		"autocorelation", 
+		"autocorrelation"
+	], 
+	5
+], 
+[
+[
+		"assumtions", 
+		"assumptions"
+	], 
+	5
+], 
+[
+[
+		"are", 
+		"area"
+	], 
+	5
+], 
+[
+[
+		"arctan2", 
+		"arctan"
+	], 
+	5
+], 
+[
+[
+		"arcosh", 
+		"arccosh"
+	], 
+	5
+], 
+[
+[
+		"aproximate", 
+		"approximate"
+	], 
+	5
+], 
+[
+[
+		"aply", 
+		"apply"
+	], 
+	5
+], 
+[
+[
+		"antisymetric", 
+		"antisymmetric"
+	], 
+	5
+], 
+[
+[
+		"3dplot", 
+		"plot"
+	], 
+	5
+], 
+[
+[
+		"1-norm", 
+		"l1-norm"
+	], 
+	5
+]
+]

@@ -1,0 +1,12 @@
+{"I", "Sqrt", "Subscript", "Pi", "E", "Sin", "Cos", "Quantity", "Plus", 
+ "MatrixPower", "MatrixForm", "Abs", "None", "Orthogonalize", "Transpose", 
+ "Exp", "Inverse", "Mod", "Ratios", "Log", "Composition", "Beta", "Tan", 
+ "BaseForm", "IdentityMatrix", "GroebnerBasis", "MatrixExp", 
+ "JordanDecomposition", "EulerPhi", "ConstantArray", "Sinh", "Derivative", 
+ "Cosh", "EulerGamma", "D", "Conjugate", "CharacteristicPolynomial", "Cells", 
+ "MinimalPolynomial", "Norm", "Table", "Re", "N", "Gamma", "Eigenvalues", 
+ "BitAnd", "WeierstrassZeta", "RowReduce", "Rational", "RandomReal", 
+ "NullSpace", "Eigenvectors", "DiagonalMatrix", "UnitBox", "Times", 
+ "Rationalize", "Quotient", "QRDecomposition", "PauliMatrix", "Normal", 
+ "KroneckerProduct", "Integrate", "GeneratingFunction", "Expand", "Det", 
+ "DedekindEta", "Cross"}

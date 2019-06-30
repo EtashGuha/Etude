@@ -1,0 +1,74 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>IKernelLink.GetObject Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+						<div id="nsbanner">
+						<div id="bannerrow1">
+						<table class="bannerparthead" cellspacing="0">
+						<tr id="hdr">
+						<td class="runninghead">.NET/Link API Version 1.7</td>
+						<td class="product"></td>
+						<td> <A HREF="index.html?Wolfram.NETLink.IKernelLink.GetObject.html" target="_top"><B>USE FRAMES</B></A> </td>
+						</tr>
+						</table>
+						</div>
+						<div id="TitleRow">
+						<h1 class="dtH1">IKernelLink.GetObject Method </h1>
+						</div>
+						</div></div>
+    <div id="nstext">
+      <p> Reads any single expression off the link and returns an appropriate object. Overrides the IMathLink version to allow you to read NETObject expressions. </p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Function GetObject() As <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemObjectClassTopic.htm">Object</a></div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <br />
+        <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemObjectClassTopic.htm">object</a> GetObject();</div>
+      <h4 class="dtH4">Remarks</h4>
+      <p> This method works to read any expression that has a "natural" mapping into a .NET type. The following table shows how expressions are read: <div class="tablediv"><table class="dtTABLE" cellspacing="0"><tr valign="top"><th width="50%">Incoming <i>Mathematica</i> expression</th><th width="50%">Read as:</th></tr><tr valign="top"><td>Integer</td><td><a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemInt32ClassTopic.htm">Int32</a></td></tr><tr valign="top"><td>Real</td><td><a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDoubleClassTopic.htm">Double</a></td></tr><tr valign="top"><td>True or False</td><td><a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemBooleanClassTopic.htm">Boolean</a></td></tr><tr valign="top"><td>Null</td><td><code>null</code></td></tr><tr valign="top"><td>String or Symbol</td><td><a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemStringClassTopic.htm">String</a></td></tr><tr valign="top"><td>Complex number</td><td>Complex type</td></tr><tr valign="top"><td>Function</td><td><a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemArrayClassTopic.htm">Array</a></td></tr><tr valign="top"><td>NETObject</td><td>the .NET object it refers to</td></tr></table></div> This behavior is exactly like the <a href="Wolfram.NETLink.IMathLink.GetObject.html">version in the IMathLink interface</a> except that it addds the ability to read NETObject expressions as the objects they refer to. In other words, you can read .NET objects sent from <i>Mathematica</i>. <p> You must call <a href="Wolfram.NETLink.IKernelLink.EnableObjectReferences.html">EnableObjectReferences</a> before you can send or receive object references. </p>
+            </p>
+      <h4 class="dtH4">Exceptions</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Exception Type</th>
+            <th width="50%">Condition</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="Wolfram.NETLink.MathLinkException.html">MathLinkException</a>
+            </td>
+            <td width="50%">If the waiting data cannot be read in this format, or on any other MathLink error.</td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Wolfram.NETLink.IKernelLink.html">IKernelLink Interface</a> | <a href="Wolfram.NETLink.html">Wolfram.NETLink Namespace</a> | <a href="Wolfram.NETLink.IKernelLink.EnableObjectReferences.html">EnableObjectReferences</a> | <a href="Wolfram.NETLink.IKernelLink.GetNextExpressionType.html">GetNextExpressionType</a> | <a href="Wolfram.NETLink.IKernelLink.GetExpressionType.html">GetExpressionType</a> | <a href="Wolfram.NETLink.IKernelLink.PutReference_overload_1.html">PutReference</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="GetObject method">
+        </param>
+        <param name="Keyword" value="GetObject method, IKernelLink interface">
+        </param>
+        <param name="Keyword" value="IKernelLink.GetObject method">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://www.wolfram.com">Copyright (c) 2003-2019, Wolfram Research, Inc.</a>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

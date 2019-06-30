@@ -1,0 +1,33 @@
+@@resource DateFormat
+{ ShortYear, "/", Month, "/",  Day}
+@|
+@|
+@@resource LongDateFormat
+{Year, "\:5e74", MonthName, Day ,"\:65e5", DayName }
+@|
+@|
+@@resource ExpirationDateFormat
+{ Year, "\:5e74" , MonthName, Day, "\:65e5" }
+@|
+@|
+@@resource messageTimeStampFormat
+{ShortYear, "/", Month, "/", Day,  " ", Hour, ":", Minute, ":", Second, " "}
+@|
+@|
+@@resource MonthNames
+{ "1\:6708", "2\:6708", "3\:6708", "4\:6708", "5\:6708", 
+	"6\:6708", "7\:6708", "8\:6708", "9\:6708", "10\:6708", "11\:6708", "12\:6708" }
+@|
+@|
+@@resource ShortMonthNames
+{ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }
+@|
+@|
+@@resource DayNames
+{"\:661f\:671f\:65e5", "\:661f\:671f\:4e00", "\:661f\:671f\:4e8c", "\:661f\:671f\:4e09", "\:661f\:671f\:56db", "\:661f\:671f\:4e94", "\:661f\:671f\:516d"}
+@|
+@|
+@@resource ShortDayNames
+{"\:5468\:65e5", "\:5468\:4e00", "\:5468\:4e8c", "\:5468\:4e09", "\:5468\:56db", "\:5468\:4e94", "\:5468\:516d"}
+@|
+@|

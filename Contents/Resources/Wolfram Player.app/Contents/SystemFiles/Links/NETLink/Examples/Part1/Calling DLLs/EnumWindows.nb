@@ -1,0 +1,416 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     12878,        407]
+NotebookOptionsPosition[     11120,        346]
+NotebookOutlinePosition[     11635,        365]
+CellTagsIndexPosition[     11592,        362]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[".NET/Link Example : EnumWindows", "Title",
+ CellID->215114404],
+
+Cell[TextData[{
+ "This example demonstrates calling \"unmanaged\" Windows DLLs (that is, an \
+old C-style DLLs, not .NET assemblies) from ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " using ",
+ Cell[BoxData[
+  ButtonBox["DefineDLLFunction",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineDLLFunction"]], "InlineFormula"],
+ ". It demonstrates the use of ",
+ Cell[BoxData[
+  ButtonBox["DefineNETDelegate",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineNETDelegate"]], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+  ButtonBox["NETNewDelegate",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/NETNewDelegate"]], "InlineFormula"],
+ " to call a C function that takes a callback function pointer as an argument."
+}], "Text",
+ CellChangeTimes->{{3.413024535754089*^9, 3.4130245916036434`*^9}},
+ CellID->169374931],
+
+Cell[TextData[{
+ "The function called is the Windows API function ",
+ Cell[BoxData["EnumWindows"], "InlineFormula"],
+ ". The example demonstrates how to collect a list of the HWNDs of all the \
+windows that exist on your system"
+}], "Text",
+ CellChangeTimes->{3.413024701338721*^9},
+ CellID->80671944],
+
+Cell[TextData[{
+ "To try this example, evaluate all the initialization cells (you can do this \
+using the menu item ",
+ StyleBox[ButtonBox["Evaluation",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/EvaluationMenu"], "MenuName"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter"],
+ StyleBox[ButtonBox["Evaluate Initialization Cells",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/menuitem/EvaluateInitializationCells"], "MenuName"],
+ ") and then go to the Example section."
+}], "Text",
+ CellChangeTimes->{{3.412707566063933*^9, 3.412707597948962*^9}, {
+  3.412707959534474*^9, 3.412707967363954*^9}, {3.412708138927157*^9, 
+  3.412708173015101*^9}, {3.412708230174596*^9, 3.412708252892912*^9}},
+ CellID->1738407360],
+
+Cell[CellGroupData[{
+
+Cell["Code and Explanation", "Section"],
+
+Cell["Needs[\"NETLink`\"]", "Input",
+ PageWidth->Infinity,
+ InitializationCell->True,
+ ShowSpecialCharacters->False],
+
+Cell[TextData[{
+ "Here is the C-language prototype for the ",
+ Cell[BoxData["EnumWindows"], "InlineFormula"],
+ " function, straight out of the Windows API documentation. This function is \
+found in ",
+ Cell[BoxData[
+  RowBox[{"user32", ".", "dll"}]], "InlineFormula"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.413024721713851*^9, 3.413024727698264*^9}, {
+  3.4131305415238037`*^9, 3.413130548043517*^9}}],
+
+Cell[TextData[{
+ StyleBox["BOOL EnumWindows (WNDENUMPROC lpEnumFunc, LPARAM lParam)",
+  FormatType->InputForm],
+ ";"
+}], "Program"],
+
+Cell[TextData[{
+ "The first argument is a function pointer that is used as a callback by the \
+internals of ",
+ Cell[BoxData["EnumWindows"], "InlineFormula"],
+ ". For every window, the callback function is called with two arguments: the \
+",
+ Cell[BoxData["HWND"], "InlineFormula"],
+ " of the window and the ",
+ Cell[BoxData["lParam"], "InlineFormula"],
+ " argument (which can be any data that you want to have passed to your \
+callback). Here is the signature that the callback function must adhere to:"
+}], "Text",
+ CellChangeTimes->{{3.4130247390108366`*^9, 3.4130247466358857`*^9}, {
+  3.4131305787680607`*^9, 3.413130584342888*^9}, {3.4131306623589754`*^9, 
+  3.413130673398393*^9}}],
+
+Cell[TextData[{
+ "BOOL CALLBACK EnumWindowsProc (HWND hWnd",
+ StyleBox[", ",
+  FontSlant->"Italic"],
+ "LPARAM ",
+ StyleBox["lParam",
+  FormatType->InputForm],
+ ");"
+}], "Program"],
+
+Cell[TextData[{
+ ".NET maps delegates to C function pointers, so to supply a .NET function to \
+be called for the ",
+ Cell[BoxData["EnumWindowsProc"], "InlineFormula"],
+ ", you simply need to create an instance of a .NET delegate type that \
+matches the ",
+ Cell[BoxData["EnumWindowsProc"], "InlineFormula"],
+ " signature. Unfortunately, there is no built-in .NET delegate type having \
+the required signature. ",
+ StyleBox[".NET/Link",
+  FontSlant->"Italic"],
+ " provides the ",
+ Cell[BoxData[
+  ButtonBox["DefineNETDelegate",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineNETDelegate"]], "InlineFormula"],
+ " function to allow you to define a new delegate type from ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code. This is how you define the appropriate delegate type:"
+}], "Text",
+ CellChangeTimes->{{3.413024756245322*^9, 3.4130248007768574`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+delegateType = DefineNETDelegate[\"EnumWindowsCallback\", \"BOOL\", \
+{\"HWND\", \"LPARAM\"}]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"NETType", "[", 
+  RowBox[{"\<\"Wolfram.NETLink.DynamicDelegateNamespace.EnumWindowsCallback$1\
+\"\>", ",", "18"}], "]"}]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The first argument is the name given to the type, and it can be any legal \
+type name you like. The second argument is the return type of the delegate, \
+and the third argument is a list of the argument types. These last arguments \
+are interpreted in the same way as the last arguments to ",
+ Cell[BoxData[
+  ButtonBox["DefineDLLFunction",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineDLLFunction"]], "InlineFormula"],
+ ". Note that ",
+ StyleBox[".NET/Link",
+  FontSlant->"Italic"],
+ " understands some common Win32 types like ",
+ Cell[BoxData["BOOL"], "InlineFormula"],
+ " (mapped to ",
+ Cell[BoxData["int"], "InlineFormula"],
+ "), ",
+ Cell[BoxData["LPARAM"], "InlineFormula"],
+ " (mapped to ",
+ Cell[BoxData["int"], "InlineFormula"],
+ "), and ",
+ Cell[BoxData["HWND"], "InlineFormula"],
+ " (mapped to ",
+ Cell[BoxData["IntPtr"], "InlineFormula"],
+ ")."
+}], "Text",
+ CellChangeTimes->{{3.413024811214424*^9, 3.4130248511365547`*^9}, {
+  3.4131507984900026`*^9, 3.413150834055376*^9}}],
+
+Cell[TextData[{
+ "The above call to ",
+ Cell[BoxData[
+  ButtonBox["DefineNETDelegate",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineNETDelegate"]], "InlineFormula"],
+ " does not create a delegate object\[LongDash]it just declares a new type. \
+It is analogous to the following line in a C# program."
+}], "Text",
+ CellChangeTimes->{{3.4130248593241067`*^9, 3.4130248772617216`*^9}}],
+
+Cell["delegate int EnumWindowsCallback(IntPtr hwnd, int lparam);", "Program"],
+
+Cell[TextData[{
+ "Now that you have defined a delegate type with the appropriate signature, \
+you can call ",
+ Cell[BoxData[
+  ButtonBox["DefineDLLFunction",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineDLLFunction"]], "InlineFormula"],
+ " to create a ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " function that calls the ",
+ Cell[BoxData["EnumWindows"], "InlineFormula"],
+ " function. You pass the ",
+ Cell[BoxData["delegateType"], "InlineFormula"],
+ " object returned from ",
+ Cell[BoxData[
+  ButtonBox["DefineNETDelegate",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineNETDelegate"]], "InlineFormula"],
+ " as the type descriptor for the first argument slot of the ",
+ Cell[BoxData["EnumWindows"], "InlineFormula"],
+ " function. ",
+ Cell[BoxData[
+  ButtonBox["DefineDLLFunction",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/DefineDLLFunction"]], "InlineFormula"],
+ " is usually called with strings to specify the types (e.g., \"int\", \"BOOL\
+\", etc.), but you can also pass in a .NET ",
+ StyleBox["Type", "MR"],
+ " object, which is what you are doing here. When .NET sees a delegate type \
+in a DLL function declaration, it knows to marshal the argument as a function \
+pointer."
+}], "Text",
+ CellChangeTimes->{{3.4130248836523876`*^9, 3.4130250062712255`*^9}}],
+
+Cell["\<\
+EnumWindows = DefineDLLFunction[\"EnumWindows\", \"user32.dll\", \"BOOL\", \
+{delegateType, \"LPARAM\"}];\
+\>", "Input",
+ InitializationCell->True],
+
+Cell[TextData[{
+ "It still remains to create an actual instance of the new delegate type. As \
+always, you use ",
+ Cell[BoxData[
+  ButtonBox["NETNewDelegate",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/NETNewDelegate"]], "InlineFormula"],
+ " to create this instance."
+}], "Text",
+ CellChangeTimes->{{3.413025038359019*^9, 3.4130250551527767`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+callbackDelegate = NETNewDelegate[delegateType, EnumWindowsCallbackFunction]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{
+   "\[LeftGuillemet]NETObject", 
+    "[", "\<\"Wolfram.NETLink.DynamicDelegateNamespace.EnumWindowsCallback$1\"\
+\>", "]"}], "\[RightGuillemet]"}],
+  NETLink`Objects`NETObject$1973802334420993]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "All that is left is to define the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " function ",
+ Cell[BoxData["EnumWindowsCallbackFunction"], "InlineFormula"],
+ ". The function should return 0 to stop the enumeration, or 1 to continue. \
+Because all calls to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " defined via ",
+ Cell[BoxData[
+  ButtonBox["NETNewDelegate",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/NETNewDelegate"]], "InlineFormula"],
+ " are implicitly wrapped in ",
+ Cell[BoxData[
+  ButtonBox["NETBlock",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/NETBlock"]], "InlineFormula"],
+ ", if you want an object to persist beyond the bounds of the call, you need \
+to call ",
+ Cell[BoxData[
+  ButtonBox["KeepNETObject",
+   BaseStyle->"Link",
+   ButtonData->"NETLink/ref/KeepNETObject"]], "InlineFormula"],
+ " on it. That is necessary here because you are accumulating the ",
+ Cell[BoxData["HWND"], "InlineFormula"],
+ "s in a persistent list, and each ",
+ Cell[BoxData["HWND"], "InlineFormula"],
+ " is represented in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " as an ",
+ Cell[BoxData["IntPtr"], "InlineFormula"],
+ " object."
+}], "Text",
+ CellChangeTimes->{{3.4130250611360407`*^9, 3.413025066588154*^9}, {
+  3.413041936954817*^9, 3.413041968550017*^9}, {3.413042033611915*^9, 
+  3.4130420669376774`*^9}, {3.413042112997095*^9, 3.41304214940166*^9}, {
+  3.4131509431725044`*^9, 3.413150964086881*^9}}],
+
+Cell["\<\
+EnumWindowsCallbackFunction[hwnd_, lparam_] := (AppendTo[hwnds, hwnd]; \
+KeepNETObject[hwnd]; 1)
+hwnds = {};\
+\>", "Input",
+ InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Section"],
+
+Cell["\<\
+EnumWindows[callbackDelegate, 0];
+hwnds\
+\>", "Input"],
+
+Cell[TextData[{
+ "The list of ",
+ Cell[BoxData["HWND"], "InlineFormula"],
+ "s can be operated on by other Windows API functions, such as those in the \
+companion example file WindowsAPI.nb."
+}], "Text",
+ CellChangeTimes->{{3.4131509686165075`*^9, 3.413150972084014*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{753, 706},
+WindowMargins->{{Automatic, 193}, {Automatic, 8}},
+DockedCells->(None& ),
+PrivateNotebookOptions->{"NotebookAuthor"->""},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (August 15, 2010)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 68, 1, 51, "Title",
+ CellID->215114404],
+Cell[638, 25, 833, 23, 94, "Text",
+ CellID->169374931],
+Cell[1474, 50, 301, 7, 52, "Text",
+ CellID->80671944],
+Cell[1778, 59, 729, 15, 50, "Text",
+ CellID->1738407360],
+Cell[CellGroupData[{
+Cell[2532, 78, 39, 0, 51, "Section"],
+Cell[2574, 80, 116, 3, 28, "Input",
+ InitializationCell->True],
+Cell[2693, 85, 402, 10, 54, "Text"],
+Cell[3098, 97, 131, 4, 43, "Program"],
+Cell[3232, 103, 688, 14, 96, "Text"],
+Cell[3923, 119, 179, 8, 44, "Program"],
+Cell[4105, 129, 873, 21, 116, "Text"],
+Cell[CellGroupData[{
+Cell[5003, 154, 145, 4, 28, "Input",
+ InitializationCell->True],
+Cell[5151, 160, 156, 3, 36, "Output"]
+}, Open  ]],
+Cell[5322, 166, 1015, 27, 85, "Text"],
+Cell[6340, 195, 392, 9, 38, "Text"],
+Cell[6735, 206, 77, 0, 43, "Program"],
+Cell[6815, 208, 1301, 33, 118, "Text"],
+Cell[8119, 243, 157, 4, 27, "Input",
+ InitializationCell->True],
+Cell[8279, 249, 354, 9, 38, "Text"],
+Cell[CellGroupData[{
+Cell[8658, 262, 128, 3, 27, "Input",
+ InitializationCell->True],
+Cell[8789, 267, 262, 7, 25, "Output"]
+}, Open  ]],
+Cell[9066, 277, 1460, 40, 104, "Text"],
+Cell[10529, 319, 160, 5, 44, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10726, 329, 26, 0, 40, "Section"],
+Cell[10755, 331, 64, 3, 44, "Input"],
+Cell[10822, 336, 270, 6, 38, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

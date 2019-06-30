@@ -1,0 +1,11 @@
+{"Sqrt", "I", "Subscript", "E", "Sin", "Cos", "Pi", "Quantity", "None", 
+ "MatrixPower", "Transpose", "MatrixForm", "Plus", "Array", "Derivative", 
+ "Inverse", "Exp", "Beta", "Mod", "IdentityMatrix", "Abs", "Gamma", "Tan", 
+ "Log", "Ratios", "Eigenvectors", "Eigenvalues", "Degree", "D", 
+ "PauliMatrix", "Zeta", "Table", "Det", "Binomial", "WeierstrassSigma", 
+ "Root", "LucasL", "Apart", "MinimalPolynomial", "LiouvilleLambda", 
+ "Infinity", "ConjugateTranspose", "Conjugate", "CharacteristicPolynomial", 
+ "BitAnd", "BesselY", "UnitStep", "RotationMatrix", "PrimeZetaP", "Pattern", 
+ "N", "LaplaceTransform", "JordanDecomposition", "Identity", 
+ "GeneratingFunction", "FresnelS", "EllipticNomeQ", "DiagonalMatrix", "C", 
+ "BitOr", "BaseForm", "AdjacencyMatrix"}

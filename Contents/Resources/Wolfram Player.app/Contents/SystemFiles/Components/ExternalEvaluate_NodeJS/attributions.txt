@@ -1,0 +1,1 @@
+The Node.js icon is a registered trademark of the Node.js Foundation and its use is subject to https://nodejs.org/en/.
