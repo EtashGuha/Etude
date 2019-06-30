@@ -19,7 +19,8 @@ iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${req
 
   // document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[pange_number].click()
 
-
+const etudeFilepath = __dirname.replace("/public/js","")
+const secVersionFilepath = etudeFilepath + "/folderForHighlightedPDF/secVersion.pdf"
 // Add the iframe to our UI.
 // console.log($('#pageNumber').val());
 // console.log("pagenumber is printed ddddddd");
@@ -343,14 +344,13 @@ $('#getRangeButton').click(function(){
 
 
 function checkFlag() {
-    if(!fs.existsSync('/Users/etashguha/Documents/etude/folderForHighlightedPDF/secVersion.pdf')){
+    if(!fs.existsSync('./folderForHighlightedPDF/secVersion.pdf')){
       console.log("checking")
       window.setTimeout(checkFlag, 100); /* this checks the flag every 100 milliseconds*/
     } else {
       viewerEle.innerHTML = "";
-      console.log(`./pdfjsOriginal/web/viewer.html?file=${'../../../../../secVersion.pdf'}`)
-      iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${'/Users/etashguha/Documents/etude/folderForHighlightedPDF/secVersion.pdf'}`);
-      // iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${'/Users/etashguha/Documents/etude/secVersion.pdf'}`);
+      iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${secVersionFilepath}`);
+      console.log(iframe)
       viewerEle.appendChild(iframe);
       console.log("DONE")
     }
