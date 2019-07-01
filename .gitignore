@@ -1,15 +1,10 @@
 # Don't track content of these folders
-<<<<<<< HEAD
-.DS_Store
-node_modules/
-jre-10.0.2.jre/
-=======
 jre-10.0.2.jre/
 .DS_Store
 node_modules/
-
->>>>>>> master
-
+Contents/
+.vs/
+.git.bfg-report/
 # Compiled source #
 ###################
 *.com
@@ -32,8 +27,4 @@ node_modules/
 *.jar
 *.rar
 *.tar
-<<<<<<< HEAD
 *.zip
-=======
-*.zip
->>>>>>> master
