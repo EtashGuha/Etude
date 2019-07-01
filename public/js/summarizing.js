@@ -12,7 +12,6 @@ var bookmarkArray = [];
 
 
 var tools = require('./createFile/coordinates.js')
-const fs = require('fs')
 var bookmarkArray = [];
 var Tokenizer = require('sentence-tokenizer');
 var tokenizer = new Tokenizer('Chuck');
