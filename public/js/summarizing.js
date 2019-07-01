@@ -10,10 +10,19 @@ var mkdirp = require('mkdirp'),
 var textData = null;
 var bookmarkArray = [];
 
+
+var tools = require('./createFile/coordinates.js')
+const fs = require('fs')
+var bookmarkArray = [];
+var Tokenizer = require('sentence-tokenizer');
+var tokenizer = new Tokenizer('Chuck');
 const viewerEle = document.getElementById('viewer');
 viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
 iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}`);
+
+const etudeFilepath = __dirname.replace("/public/js","")
+const secVersionFilepath = etudeFilepath + "/folderForHighlightedPDF/secVersion.pdf"
 
 viewerEle.appendChild(iframe);
 
@@ -45,6 +54,7 @@ $("#bookmark_icon").click(function(){
 })
 
 function showPDF(pdf_url,bookmark_page) {
+  //PDFJS.GlobalWorkerOptions.workerSrc ='../../node_modules/pdfjs-dist/build/pdf.worker.js';
     PDFJS.getDocument({ url: pdf_url }).then(function(pdf_doc) {
       __PDF_DOC = pdf_doc;
       __TOTAL_PAGES = __PDF_DOC.numPages;
@@ -255,10 +265,23 @@ function getTextByPageForSummarization(instance){
       iPagesum++;
       getTextByPageForSummarization(instance)
     }else{
+      // viewerEle.innerHTML = "";
+      // iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${'/Users/etashguha/Downloads/Sparrow2.pdf'}`);
+      // viewerEle.appendChild(iframe);
       deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
       deepai.callStandardApi("summarization", {
-        text: textDsum}).then((resp) => processSummarizationResult(resp));
-      console.log(textDsum);
+        text: textDsum}).then((resp) => {
+          fs.unlinkSync("./folderForHighlightedPDF/secVersion.pdf")
+          processSummarizationResult(resp)
+          noLineBreakText = resp["output"].replace(/(\r\n|\n|\r)/gm, " ");
+
+          tokenizer.setEntry(noLineBreakText);
+          console.log(tokenizer.getSentences());
+
+          tools.extractor(tokenizer.getSentences(),filepath, './folderForHighlightedPDF/secVersion.pdf');
+          checkFlag()
+          
+        });
       return;
     }
   });
@@ -273,6 +296,19 @@ $('#getRangeButton').click(function(){
   $('.su_popup').show();
 })
 
-
 kernel.findTextAnswerSync('foo','bar', 1, "Sentence");
 console.log('hello');
+
+function checkFlag() {
+    if(!fs.existsSync('./folderForHighlightedPDF/secVersion.pdf')){
+      console.log("checking")
+      window.setTimeout(checkFlag, 100); /* this checks the flag every 100 milliseconds*/
+    } else {
+      viewerEle.innerHTML = "";
+      iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${secVersionFilepath}`);
+      console.log(iframe)
+      viewerEle.appendChild(iframe);
+      console.log("DONE")
+    }
+}
+

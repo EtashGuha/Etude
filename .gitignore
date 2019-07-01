@@ -5,6 +5,7 @@ node_modules/
 Contents/
 .vs/
 .git.bfg-report/
+
 # Compiled source #
 ###################
 *.com
@@ -27,4 +28,8 @@ Contents/
 *.jar
 *.rar
 *.tar
+<<<<<<< HEAD
 *.zip
+=======
+*.zip
+>>>>>>> reuploadingSumm

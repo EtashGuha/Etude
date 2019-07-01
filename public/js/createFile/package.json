@@ -1,0 +1,20 @@
+{
+  "name": "pdf-annotation-service",
+  "version": "0.0.1",
+  "description": "Embeds external annotations inside PDF documents",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hummus": "^1.0.104",
+    "node-inspect": "^1.11.6",
+    "pdf-extract": "^1.0.11",
+    "pdf.js-extract": "^0.1.1",
+    "string-similarity": "^3.0.0"
+  }
+}
