@@ -20,6 +20,7 @@
     "electron": "^4.1.4",
     "electron-installer-dmg": "^2.0.0",
     "electron-packager": "^13.1.0",
+    "electron-rebuild": "^1.8.5",
     "electron-react-devtools": "^0.5.3"
   },
   "build": {
@@ -29,6 +30,8 @@
   },
   "dependencies": {
     "deepai": "^1.0.0",
-    "electron-store": "^2.0.0"
+    "electron-build": "0.0.3",
+    "electron-store": "^2.0.0",
+    "java": "^0.11.0"
   }
 }

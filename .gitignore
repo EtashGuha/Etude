@@ -2,8 +2,9 @@
 jre-10.0.2.jre/
 .DS_Store
 node_modules/
-
-
+Contents/
+.vs/
+.git.bfg-report/
 # Compiled source #
 ###################
 *.com
