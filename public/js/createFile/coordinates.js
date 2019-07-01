@@ -10,6 +10,7 @@ var annotations = []
 var tempAnnotations = [];
 var postTempAnnotations = [];
 var highlightThis = "";
+var highlightThisArr = [];
 
 function createPdf(annotationsToHighlight, path, outpath){
     let trying = fs.readFileSync(path);
@@ -23,7 +24,7 @@ function pushToArray(extraction, inputArray) {
     inputArray.forEach((element) => {
         annotations.push({
             "page": parseInt(element.pageFound),
-            "position": [element.x, 800 - element.y - 1 * element.height / 2, element.x + element.width, 800 - element.y + 0 * element.height / 2],
+            "position": [element.x, 800 - element.y, element.x + element.width, 800 - element.y - 2 * element.height / 2],
             "content": element.str,
             "color": [255, 255, 0]
         });
@@ -79,6 +80,7 @@ function checkArray(extraction, arr) {
     return uniquePossibilities[matches.bestMatchIndex];
 }
 
+
 function fillRangeBefore(extraction, theObject) {
     let firstPrevPage = parseInt(theObject.pageFound);
     let firstPrevLine = parseInt(theObject.elementFound) - 1;
@@ -93,12 +95,20 @@ function fillRangeBefore(extraction, theObject) {
             firstPrevLine -= 1;
         }
     }
-    if(stringSimilarity.compareTwoStrings(extraction.pages[firstPrevPage].content[firstPrevLine].str, highlightThis) > 0.35) {
+    if(stringSimilarity.compareTwoStrings(extraction.pages[firstPrevPage].content[firstPrevLine].str, highlightThis) > 0.47) {
         let afterPush = extraction.pages[firstPrevPage].content[firstPrevLine];
         afterPush.pageFound = firstPrevPage;
         afterPush.elementFound = firstPrevLine;
         postTempAnnotations.unshift(afterPush);
         fillRangeBefore(extraction, afterPush);
+    } else {
+        if (postTempAnnotations[0].str.indexOf(highlightThisArr[0]) === -1) {
+            console.log('Mandate of Heaven')
+            let afterPush = extraction.pages[firstPrevPage].content[firstPrevLine];
+            afterPush.pageFound = firstPrevPage;
+            afterPush.elementFound = firstPrevLine;
+            postTempAnnotations.unshift(afterPush);
+        }
     }
 }
 
@@ -117,13 +127,39 @@ function fillRangeAfter(extraction, theObject) {
         }
     }
     console.log(stringSimilarity.compareTwoStrings(extraction.pages[firstAfterPage].content[firstAfterLine].str, highlightThis))
-    if(stringSimilarity.compareTwoStrings(extraction.pages[firstAfterPage].content[firstAfterLine].str, highlightThis) > 0.35) {
+    if(stringSimilarity.compareTwoStrings(extraction.pages[firstAfterPage].content[firstAfterLine].str, highlightThis) > 0.47) {
         let afterPush = extraction.pages[firstAfterPage].content[firstAfterLine];
         afterPush.pageFound = firstAfterPage;
         afterPush.elementFound = firstAfterLine;
         postTempAnnotations.push(afterPush);
         fillRangeAfter(extraction, afterPush);
+    } else {
+        if (postTempAnnotations[postTempAnnotations.length - 1].str.indexOf(highlightThisArr[highlightThisArr.length - 1]) === -1) {
+            console.log('Mandate of Heaven')
+            let afterPush = extraction.pages[firstAfterPage].content[firstAfterLine];
+            afterPush.pageFound = firstAfterPage;
+            afterPush.elementFound = firstAfterLine;
+            postTempAnnotations.push(afterPush);
+        }
     }
+}
+
+function trimAfterPeriod() {
+    const index = annotations[annotations.length - 1].content.indexOf(highlightThisArr[highlightThisArr.length - 1]) + highlightThisArr[highlightThisArr.length - 1].length;
+    const totalIndex = annotations[annotations.length - 1].content.length;
+    const proportion = (index + 0.0) / totalIndex
+    return annotations[annotations.length - 1].position[0] + (proportion * (annotations[annotations.length - 1].position[2] - annotations[annotations.length - 1].position[0]))
+}
+
+function trimBeforePeriod() {
+    const index = annotations[0].content.indexOf(highlightThisArr[0]);
+    const totalIndex = annotations[0].content.length;
+    let proportion = (index + 0.0) / totalIndex
+    console.log(proportion)
+    if (proportion < 0) {
+    proportion = 0;
+    }
+    return (proportion * (annotations[0].position[2] - annotations[0].position[0]));
 }
 
 
@@ -134,7 +170,7 @@ function findTheCoord(arrayToHighlight, extraction, path, outpath) {
 		tempAnnotations = [];
 		postTempAnnotations = [];
 		highlightThis = strToHighlight.replace(/[^a-zA-Z0-9.!?,% ]/g, "");
-		var highlightThisArr = highlightThis.split(" ");
+		highlightThisArr = highlightThis.split(" ");
 		let wordsToSearch = [];
 		highlightThisArr.forEach((word) => {
 			if (word.length > 3) {
@@ -153,6 +189,11 @@ function findTheCoord(arrayToHighlight, extraction, path, outpath) {
 		fillRangeAfter(extraction, originalSeedBlock);
 		pushToArray(extraction, postTempAnnotations);
 		console.log(annotations);
+		const trimBefore = trimBeforePeriod();
+        const trimAfter = trimAfterPeriod();
+        annotations[0].position[0] += trimBefore;
+        annotations[annotations.length - 1].position[2] = trimAfter;
+        console.log(annotations)
 	});
 	createPdf(annotations, path, outpath);
 }
