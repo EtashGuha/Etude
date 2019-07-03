@@ -33,6 +33,7 @@ var capeClicked = false;
 var btnClicked = false;
 var bookmarkOpened = false;
 var java = require('java');
+
 // java.classpath.push("./Kernel.jar");
 // java.classpath.push("./Contents/Resources/Wolfram Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
 //njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
@@ -297,6 +298,7 @@ $('#getRangeButton').click(function(){
 })
 
 // kernel.findTextAnswerSync('foo','bar', 1, "Sentence");
+
 console.log('hello');
 
 function checkFlag() {
