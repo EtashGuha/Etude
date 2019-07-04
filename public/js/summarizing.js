@@ -131,24 +131,17 @@ $(document).on("click",".bookmark-canvas", function(){
 
 
 $("#cape_btn").click(function(){
-  //get the text and question
-  // document.getElementById("myDropdown").classList.toggle("show");
-  if (capeClicked == true)
-  {
+	//get the text and question
 	document.getElementById("myDropdown").classList.toggle("show");
-	capeClicked = false;
-  }
-  else{
 	console.log(numPages);
 	if(htmlForEntireDoc == ""){
 	  htmlForEntireDoc = htmlWholeFileToPartialPlainText(1, numPages);
 	}
 	htmlForEntireDoc.then((x) => {
 	  $("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
+	  document.getElementById("myDropdown").classList.toggle("show");
 	});
 	capeClicked = true;
-  }
-
 })
 
 $("#help").click(function(){
