@@ -20,7 +20,7 @@ viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
 iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}`);
 
-const etudeFilepath = __dirname.replace("/public/js","")
+const etudeFilepath = __dirname.replace("/public/js","").replace("\\public\\js","")
 const secVersionFilepath = etudeFilepath + "/folderForHighlightedPDF/secVersion.pdf"
 
 viewerEle.appendChild(iframe);
@@ -267,10 +267,13 @@ function getTextByPageForSummarization(instance){
       // viewerEle.innerHTML = "";
       // iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${'/Users/etashguha/Downloads/Sparrow2.pdf'}`);
       // viewerEle.appendChild(iframe);
+      console.log(textDsum)
       deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
       deepai.callStandardApi("summarization", {
         text: textDsum}).then((resp) => {
-          fs.unlinkSync("./folderForHighlightedPDF/secVersion.pdf")
+          if(fs.existsSync('./folderForHighlightedPDF/secVersion.pdf')){
+            fs.unlinkSync("./folderForHighlightedPDF/secVersion.pdf");
+          }
           processSummarizationResult(resp)
           noLineBreakText = resp["output"].replace(/(\r\n|\n|\r)/gm, " ");
 
