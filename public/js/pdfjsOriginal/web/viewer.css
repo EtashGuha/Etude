@@ -251,7 +251,10 @@
   padding-top: 0.2em;
 }
 
-.annotationLayer .highlightAnnotation,
+.annotationLayer .highlightAnnotation {
+  background-color: #ff0;
+  opacity:0.5;
+  },
 .annotationLayer .underlineAnnotation,
 .annotationLayer .squigglyAnnotation,
 .annotationLayer .strikeoutAnnotation,
@@ -397,7 +400,6 @@
 }
 
 * {
-  background-color: #f7f8f9;
   padding: 0;
   margin: 0;
 }
@@ -412,7 +414,7 @@ html {
 body {
   height: 100%;
   width: 100%;
-  background-color: #404040;
+  background-color: #f7f8f9;
   background-image: url(images/texture.png);
 }
 

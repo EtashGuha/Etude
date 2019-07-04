@@ -20,7 +20,7 @@ viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
 iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}`);
 
-const etudeFilepath = __dirname.replace("/public/js","")
+const etudeFilepath = __dirname.replace("/public/js","").replace("\\public\\js","")
 const secVersionFilepath = etudeFilepath + "/folderForHighlightedPDF/secVersion.pdf"
 
 viewerEle.appendChild(iframe);
@@ -33,10 +33,10 @@ var capeClicked = false;
 var btnClicked = false;
 var bookmarkOpened = false;
 var java = require('java');
-java.classpath.push("./Kernel.jar");
-java.classpath.push("./Contents/Resources/Wolfram Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
+//java.classpath.push("./Kernel.jar");
+//java.classpath.push("./Contents/Resources/Wolfram Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
 //njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
-var kernel = java.newInstanceSync('p1.Kernel');
+//var kernel = java.newInstanceSync('p1.Kernel');
 
 $("#bookmark_icon").click(function(){
   //get the page number
@@ -199,7 +199,7 @@ function getTextByPage(instance){
     }else{
       console.log("BANANA");
       console.log("succeeded");
-      $("#capeResult").empty().append(kernel.findTextAnswerSync(textD, $("#questionVal").val(), 2, "Sentence"));
+      //$("#capeResult").empty().append(kernel.findTextAnswerSync(textD, $("#questionVal").val(), 2, "Sentence"));
       // $('.hover_bkgr_fricc').show();
       document.getElementById("myDropdown").classList.toggle("show");
        //init for search
@@ -267,10 +267,13 @@ function getTextByPageForSummarization(instance){
       // viewerEle.innerHTML = "";
       // iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${'/Users/etashguha/Downloads/Sparrow2.pdf'}`);
       // viewerEle.appendChild(iframe);
+      console.log(textDsum)
       deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
       deepai.callStandardApi("summarization", {
         text: textDsum}).then((resp) => {
-          fs.unlinkSync("./folderForHighlightedPDF/secVersion.pdf")
+          if(fs.existsSync('./folderForHighlightedPDF/secVersion.pdf')){
+            fs.unlinkSync("./folderForHighlightedPDF/secVersion.pdf");
+          }
           processSummarizationResult(resp)
           noLineBreakText = resp["output"].replace(/(\r\n|\n|\r)/gm, " ");
 
@@ -295,7 +298,7 @@ $('#getRangeButton').click(function(){
   $('.su_popup').show();
 })
 
-kernel.findTextAnswerSync('foo','bar', 1, "Sentence");
+//kernel.findTextAnswerSync('foo','bar', 1, "Sentence");
 console.log('hello');
 
 function checkFlag() {
