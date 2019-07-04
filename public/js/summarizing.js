@@ -26,6 +26,8 @@ const secVersionFilepath = etudeFilepath + "/folderForHighlightedPDF/secVersion.
 viewerEle.appendChild(iframe);
 
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
+
+deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
 //get text from pdf to send to flask backends
 var PDF_URL  = filepath;
 console.log(PDF_URL);
@@ -37,6 +39,8 @@ var java = require('java');
 //java.classpath.push("./Contents/Resources/Wolfram Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
 //njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
 //var kernel = java.newInstanceSync('p1.Kernel');
+
+pdfAllToHTML(PDF_URL);
 
 $("#bookmark_icon").click(function(){
   //get the page number
@@ -140,6 +144,7 @@ function getPageText(pageNum, PDFDocumentInstance) {
   return new Promise(function (resolve, reject) {
       PDFDocumentInstance.getPage(pageNum).then(function (pdfPage) {
           // The main trick to obtain the text of the PDF page, use the getTextContent method
+          console.log(pdfPage);
           pdfPage.getTextContent().then(function (textContent) {
               var textItems = textContent.items;
               var finalString = "";
@@ -216,9 +221,9 @@ function getTextByPage(instance){
 //summarization function
 $('#summarizingButton').click(function(){
   console.log("summarizingButtonClicked");
+  console.log($('#topageRange').val());
   $('.su_popup').hide();
-  getSeletedPageTextForSummarization($('#pageRange').val(),$('#topageRange').val());
-
+  summaryButtonPressed($('#pageRange').val(),$('#topageRange').val());
   // here you can add the loading button
   $('.summarizer_loading').show();
   $('.hover_bkgr_fricc').click(function(){
@@ -229,20 +234,17 @@ $('#summarizingButton').click(function(){
 var textDsum = "";
 var iPagesum = 0;
 var iEndPagesum = 0;
-function getSeletedPageTextForSummarization(fpage,tpage)
-{
-  PDFJS.getDocument(PDF_URL).then(function (PDFDocumentInstanceSummarizing) {
-      iPagesum = parseInt(fpage);
-      iEndPagesum = parseInt(tpage);
-      getTextByPageForSummarization(PDFDocumentInstanceSummarizing);
-    }, function (reason) {
-        // PDF loading error
-        console.error(reason);
-        console.log("eorror");
-    });
-}
-
 function processSummarizationResult(t){
+  if(fs.existsSync('./folderForHighlightedPDF/secVersion.pdf')){
+    fs.unlinkSync("./folderForHighlightedPDF/secVersion.pdf");
+  }
+  noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
+
+  tokenizer.setEntry(noLineBreakText);
+  console.log(tokenizer.getSentences());
+
+  tools.extractor(tokenizer.getSentences(),filepath, './folderForHighlightedPDF/secVersion.pdf');
+  checkFlag();
   console.log("succeeded");
   console.log(t);
   console.log(typeof(t));
@@ -256,36 +258,95 @@ function processSummarizationResult(t){
   textDsum = 0;
 };
 
-function getTextByPageForSummarization(instance){
-  getPageText(iPagesum , instance).then(function(textPage){
-    if(iPagesum != 0)
-      textDsum += textPage
-    if(iPagesum < iEndPagesum){
-      iPagesum++;
-      getTextByPageForSummarization(instance)
-    }else{
-      // viewerEle.innerHTML = "";
-      // iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${'/Users/etashguha/Downloads/Sparrow2.pdf'}`);
-      // viewerEle.appendChild(iframe);
-      console.log(textDsum)
-      deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
-      deepai.callStandardApi("summarization", {
-        text: textDsum}).then((resp) => {
-          if(fs.existsSync('./folderForHighlightedPDF/secVersion.pdf')){
-            fs.unlinkSync("./folderForHighlightedPDF/secVersion.pdf");
-          }
-          processSummarizationResult(resp)
-          noLineBreakText = resp["output"].replace(/(\r\n|\n|\r)/gm, " ");
+function pdfAllToHTML(nameOfFileDir) {
+  var exec = require('child_process').exec, child;
 
-          tokenizer.setEntry(noLineBreakText);
-          console.log(tokenizer.getSentences());
-
-          tools.extractor(tokenizer.getSentences(),filepath, './folderForHighlightedPDF/secVersion.pdf');
-          checkFlag()
-          
-        });
+  var filenamewithextension = path.parse(nameOfFileDir).base;
+  filenamewithextension = filenamewithextension.split('.')[0];
+  console.log(filenamewithextension)
+  //update directory to JAR file
+  var pathOfFile = './tmp/' + filenamewithextension + '.html'
+  try {
+    if (fs.existsSync(pathOfFile)) {
+      console.log("html exists already")
       return;
     }
+  } catch(err) {
+    console.error(err)
+  }
+  let executionstring = 'java -jar PDFToHTML.jar \'' + nameOfFileDir + '\' \'./tmp/' + filenamewithextension + '.html\'';
+  //+ ' -idir=' + imagedir
+  console.log(executionstring);
+  child = exec(executionstring,
+      function (error, stdout, stderr) {
+          console.log('stdout: ' + stdout);
+          console.log('stderr: ' + stderr);
+          if (error !== null) {
+               console.log('exec error: ' + error);
+          }
+      });
+}
+function summaryButtonPressed(firstpage, lastpage) {
+  var htmlStuff = htmlWholeFileToPartialPlainText(firstpage, lastpage);
+  htmlStuff.then((x) => {
+    deepai.callStandardApi("summarization", {text: x}).then((resp) => processSummarizationResult(resp))
+  });
+}
+
+function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
+  return new Promise(function(resolve, reject){
+    console.log("HOs")
+    var filenamewithextension = path.parse(PDF_URL).base;
+    filenamewithextension = filenamewithextension.split('.')[0];
+    var outputfile = './tmp/' + filenamewithextension + '.html';
+    console.log(outputfile)
+    const htmlToJson = require('html-to-json');
+    let bigarray = [];
+    let bigarrayback = [];
+    //the correct html file directory within our project
+    console.log("HOs")
+    fs.readFile(outputfile, "utf8", function(err, data) {
+      console.log("HOs")
+      let datadata = data.split("<div class=\"page\"");
+      let newstring = "";
+      console.log(datadata.length);
+      for (let i = firstpage; i <= lastpage; i++) {
+        if (i <= datadata.length) {
+          newstring += datadata[i];
+        }
+      }
+      console.log("HOs")
+      //console.log(newstring);
+      let newdata = newstring.split("<div class=\"p\"");
+      newdata.shift();
+      newdata.forEach(function(item) {
+        item = item.substring(10 + item.search("font-size"));
+        let valued = item.substring(item.search(">") + 1, item.search("<"));
+        let index = (item.substring(0,item.search("pt")));
+        function checkSize(age) {
+          return age == index;
+        }
+        if(bigarrayback.findIndex(checkSize) == -1) {
+          bigarrayback.push(index);
+          valued += " ";
+          bigarray.push(valued);
+        } else {
+          valued += " ";
+          bigarray[bigarrayback.findIndex(checkSize)] += valued;
+        }
+      });
+      let maxindex = -1;
+      let max = 0;
+      bigarray.forEach(function(thing, index) {
+        if (thing.length > max) {
+          maxindex = index;
+          max = thing.length;
+        }
+      });
+      console.log(bigarray[maxindex]);
+
+      resolve(bigarray[maxindex]);
+    });
   });
 }
 

@@ -2,10 +2,15 @@
 jre-10.0.2.jre/
 .DS_Store
 node_modules/
+.git.bfg-report/
 Contents/
 .vs/
 .git.bfg-report/
 folderForHighlightedPDF/
+tmp/
+
+
+>>>>>>> fixingGrobidProcessing
 # Compiled source #
 ###################
 *.com
@@ -28,8 +33,4 @@ folderForHighlightedPDF/
 *.jar
 *.rar
 *.tar
-<<<<<<< HEAD
 *.zip
-=======
-*.zip
->>>>>>> reuploadingSumm
