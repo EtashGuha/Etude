@@ -25,15 +25,20 @@ function createWindow () {
     width: width,
     minWidth: 600,
     minHeight: 200,
+    frame: false,
     backgroundColor: '#ffffff',
     webPreferences: {
       nodeIntegration: true
     },
     icon: 'assets/images/logo.jpg',})
 
+
+  mainWindow.loadFile('splash.html')
+
+  setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
+
   // and load the index.html of the app.
   ///////////////////////////////////////mainWindow.setMenu(null)
-  mainWindow.loadFile('library.html')
 
   // Open the DevTools.
    // mainWindow.webContents.openDevTools()

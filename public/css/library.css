@@ -87,19 +87,19 @@ input::-webkit-inner-spin-button {
 	}
 	
 .book_section{
-	padding: 26.6px;
+	padding: 12px;
 }
 .pdf-canvas-first{
-	height:400px;
-	width: 250px;
+	height:280px;
+	width: 200px;
 	text-align: center;
 	position: relative;
 	background-color: #ffffff; 
 	border-radius: 5%;
 }
 .pdf-canvas {
-	height:400px;
-	width: 250px;
+	height:280px;
+	width: 200px;
 	text-align: center;
 	position: relative;
 	background-color: #ffffff; 
@@ -112,8 +112,8 @@ input::-webkit-inner-spin-button {
 	width: auto;
 	height: auto;
 	position: absolute;
-	left: 125px;
-	top: 200px;
+	left: 100px;
+	top: 140px;
 	margin: auto;
 	opacity: 0.6;
   }
@@ -131,8 +131,8 @@ input::-webkit-inner-spin-button {
 	width: auto;
 	height: auto;
 	position: absolute;
-	left: 230px;
-	top: 20px;
+	left: 180px;
+	top: 8px;
 	margin: auto;
 	opacity: 0.6;
 }

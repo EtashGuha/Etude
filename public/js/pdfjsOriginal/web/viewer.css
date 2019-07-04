@@ -253,7 +253,7 @@
 
 .annotationLayer .highlightAnnotation {
   background-color: #ff0;
-  opacity:0.5;
+  opacity:0.35;
   },
 .annotationLayer .underlineAnnotation,
 .annotationLayer .squigglyAnnotation,
@@ -650,7 +650,7 @@ html[dir='rtl'] #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentatio
 }
 
 .toolbar {
-  position: relative;
+  position: fixed;
   left: 0;
   right: 0;
   z-index: 9999;

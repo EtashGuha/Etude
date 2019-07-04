@@ -44,14 +44,24 @@
     <img id = "bookmark_icon" src = "./public/images/bookmarkplus.png"></img>
 <!--     <input type="number" placeholder="1" id = "bookmark_select_page" style="background:#1486E7;width:30px;" value="1"> -->
     <div class='summarizer'>
-      <button id='getRangeButton' class = "button">Summarize</button>
+      <button id='getRangeButton' class = "button"><span>Highlight </span></button>
 <!--       <input type="number" placeholder="1" id = "pageRange" style="background:#1486E7;width:30px;" value="1">
       <input type="number" placeholder="1" id = "topageRange" style="background:#1486E7;width:30px;" value="1"> -->
     </div>
 
 <!--     <button id="next">Next</button> -->
     <div class='summarizer_loading'>
-      <button id='summarizingLoadingButton' class = "button">Summarizing</button>
+      <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+      </div>
     </div>
 
     <div class='viewer' id='viewer'>
@@ -71,15 +81,18 @@
     <div class="su_popup">
       <span class="helper"></span>
         <div style="text-align: center;" id = "summarizingPart">
-          <h2 style="margin-top:30px;">Summarize</h2>
-          <div style="margin-top: 50px;">
+          <h2 style="margin-top:30px;">Smart Highlight</h2>
+          <div style="margin-top: 40px;">
+              <div>
 
-              <input type="number" placeholder="1" id = "pageRange" style="background:#1486E7;width:130px;" value="1">
-              <h5>to</h5>
-              <input type="number" placeholder="1" id = "topageRange" style="background:#1486E7;width:130px;" value="1">
+                <input type="number" placeholder="1" id = "pageRange" style="text-align: center;width:130px;margin-bottom:15px;" value="1">
+                <h5>to</h5>
+                <input type="number" placeholder="1" id = "topageRange" style="text-align:center;width:130px;margin-top:5px" value="1">
+
+              </div>
           </div>
 
-          <button id='summarizingButton' class = "button" style="margin-top: 30px;">Summarize</button>
+          <button id='summarizingButton' class = "button" style="margin-top: 30px;"><span> Submit </span></button>
         </div>
     </div>
 

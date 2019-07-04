@@ -222,9 +222,9 @@ $('#summarizingButton').click(function(){
 
   // here you can add the loading button
   $('.summarizer_loading').show();
-  $('.hover_bkgr_fricc').click(function(){
-        $('.hover_bkgr_fricc').hide();
-    });
+  // $('.hover_bkgr_fricc').click(function(){
+  //       $('.hover_bkgr_fricc').hide();
+  //   });
 })
 
 var textDsum = "";
@@ -251,7 +251,7 @@ function processSummarizationResult(t){
   $("#summarizingResult").empty().append(t["output"]);
   //here you can remove the loading button
   $('.summarizer_loading').hide();
-  $('.hover_bkgr_fricc').show();
+  // $('.hover_bkgr_fricc').show();
   iPagesum = 0;
   iEndPagesum = 0;
   textDsum = 0;
@@ -293,7 +293,7 @@ $('#getRangeButton').click(function(){
   $("#bookmark_item").attr("data","true");
   $("#bookmark_item").click();
 
-  $('#getRangeButton').hide();
+  //$('#getRangeButton').hide();
   $('.su_popup').show();
 })
 
