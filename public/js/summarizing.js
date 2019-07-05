@@ -131,18 +131,30 @@ $(document).on("click",".bookmark-canvas", function(){
 
 
 $("#cape_btn").click(function(){
-	//get the text and question
-	document.getElementById("myDropdown").classList.toggle("show");
-	console.log(numPages);
-	if(htmlForEntireDoc == ""){
-	  htmlForEntireDoc = htmlWholeFileToPartialPlainText(1, numPages);
+	if(capeClicked){
+		document.getElementById("myDropdown").classList.toggle("show");
+		console.log("Hiding");
 	}
-	htmlForEntireDoc.then((x) => {
-	  $("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
-	  document.getElementById("myDropdown").classList.toggle("show");
-	});
-	capeClicked = true;
-})
+	setTimeout(function(){ 
+		if(htmlForEntireDoc == ""){
+			htmlForEntireDoc = htmlWholeFileToPartialPlainText(1, numPages);
+		}
+		htmlForEntireDoc.then((x) => {
+			var promiseToAppend = new Promise(function(resolve, reject){
+				$("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
+				console.log("Starting")
+				resolve("GOOD")
+			});
+			//$("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
+			//document.getElementById("myDropdown").classList.toggle("show");
+			promiseToAppend.then((data) => {
+				document.getElementById("myDropdown").classList.toggle("show");
+					console.log("Showing")
+			});
+		});
+		capeClicked = true;
+	}, 1);
+});
 
 $("#help").click(function(){
   // close the bookmark page
