@@ -580,6 +580,8 @@ html[dir='rtl'] #sidebarContainer {
 }
 html[dir='ltr'] #outerContainer.sidebarOpen #sidebarContainer {
   left: 0px;
+  margin-top:-30px;
+  width: 24%;
 }
 html[dir='rtl'] #outerContainer.sidebarOpen #sidebarContainer {
   right: 0px;
@@ -601,7 +603,6 @@ html[dir='rtl'] #outerContainer.sidebarOpen #sidebarContainer {
   -webkit-overflow-scrolling: touch;
   position: absolute;
   width: 100%;
-  background-color: hsla(0,0%,0%,.1);
 }
 html[dir='ltr'] #sidebarContent {
   left: 0;
@@ -1670,6 +1671,7 @@ a:focus > .thumbnail > .thumbnailSelectionRing,
 html[dir='ltr'] .outlineWithDeepNesting > .outlineItem,
 html[dir='ltr'] .outlineItem > .outlineItems {
   margin-left: 20px;
+  font-family: Poppins;
 }
 
 html[dir='rtl'] .outlineWithDeepNesting > .outlineItem,
@@ -1687,7 +1689,7 @@ html[dir='rtl'] .outlineItem > .outlineItems {
   height: auto;
   margin-bottom: 1px;
   border-radius: 2px;
-  color: hsla(0,0%,100%,.8);
+  color: black;
   font-size: 13px;
   line-height: 15px;
   -webkit-user-select: none;
