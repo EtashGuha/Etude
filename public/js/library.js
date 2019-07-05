@@ -173,7 +173,7 @@ var __PDF_DOC,
         });
         // when the user click the minus button
         $(document).on("click",".minusImage", function(){
-                ($(this).parent()).parent().remove();
+                ($(this).parent()).parent().parent().remove();
                 //delete it in the store
                 store.delete($(this).attr("data"));
                 // sort the store
