@@ -97,6 +97,7 @@ input::-webkit-inner-spin-button {
 	.topnav input[type=text] {
 		padding: 6px;
 		margin-top: 8px;
+		margin-right: 2px;
 		font-size: 17px;
 		border: none;
 		border-radius: 20px;
@@ -112,7 +113,7 @@ input::-webkit-inner-spin-button {
 		font-size: 17px;
 		border: none;
 		cursor: pointer;
-		margin-left: -38px;
+		margin-left: -43px;
 		border-radius: 20px;
 	}
 	

@@ -20,3 +20,9 @@ Notes from Etash:
     // throw new Error('No "GlobalWorkerOptions.workerSrc" specified.');
   }
   ```
+6. To debug production:
+  A. In terminal type lldb path/to/build.app
+  B. In the opened debugger type run --remote-debugging-port=8315. It should open a window of your app.
+  C. Open Chrome at http://localhost:8315/
+  D. Click on the name of the app. For example, Webpack App.
+  E. If you don't see anything in the opened tab, focus on the window of your app.
