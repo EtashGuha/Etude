@@ -19,6 +19,25 @@ html, body {
   align-items: center;
 } */
 
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1); 
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  } 
+}
 
 #summarizingPart{
   font-family: Poppins;
@@ -71,8 +90,8 @@ div.summarizer_loading {
   justify-content: center;
   align-items: center;
   position:absolute !important;
-  top: 50%;
-  left: 50%;
+  top: calc(50% - 85px);
+  left: calc(50% - 40px);
   display: none;
 }
 div.viewer iframe {
@@ -80,20 +99,92 @@ div.viewer iframe {
   height: 100%;
 }
 
-.button{
+.sk-cube-grid {
+  width: 80px;
+  height: 80px;
+  margin: 100px auto;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #6600ff;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+
+.button {
+  border-radius: 4px;
   background-image: linear-gradient(to right, #6600ff,#0099ff) ;
   border: none;
-  color: white;
-  padding: 15px 32px;
+  color: #FFFFFF;
   text-align: center;
+  font-size: 16px;
+  padding: 15px 32px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 4px 2px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/*.button{
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 12px;
-  border: 1px solid #6600ff;
-}
+}*/
 
 /* / Popup box BEGIN / */
 .hover_bkgr_fricc{
@@ -255,12 +346,12 @@ div.viewer iframe {
   box-shadow: 10px 10px 60px #555;
   display: inline-block;
   height: auto;
-  max-width: 600px;
+  max-width: 400px;
   min-height: 400px;
   vertical-align: middle;
   width: 60%;
   position: relative;
-  border-radius: 10px;
-  border: 20px solid #6600ff;
+  border-radius: 20px;
+  border: 10px solid #6600ff;
   padding: 15px 5%;
 }

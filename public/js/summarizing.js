@@ -35,6 +35,7 @@ var capeClicked = false;
 var btnClicked = false;
 var bookmarkOpened = false;
 var java = require('java');
+
 java.classpath.push("./Kernel.jar");
 java.classpath.push("./Contents/Resources/Wolfram Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
 //njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
@@ -47,6 +48,7 @@ PDFJS.getDocument({ url: PDF_URL }).then(function(pdf_doc) {
   numPages = __PDF_DOC.numPages;
   console.log(numPages)
 });
+
 
 $("#bookmark_icon").click(function(){
   //get the page number
@@ -175,9 +177,9 @@ $('#summarizingButton').click(function(){
   summaryButtonPressed($('#pageRange').val(),$('#topageRange').val());
   // here you can add the loading button
   $('.summarizer_loading').show();
-  $('.hover_bkgr_fricc').click(function(){
-		$('.hover_bkgr_fricc').hide();
-	});
+  // $('.hover_bkgr_fricc').click(function(){
+  //       $('.hover_bkgr_fricc').hide();
+  //   });
 })
 
 var textDsum = "";
@@ -201,7 +203,7 @@ function processSummarizationResult(t){
   $("#summarizingResult").empty().append(t["output"]);
   //here you can remove the loading button
   $('.summarizer_loading').hide();
-  $('.hover_bkgr_fricc').show();
+  // $('.hover_bkgr_fricc').show();
   iPagesum = 0;
   iEndPagesum = 0;
   textDsum = 0;
@@ -296,6 +298,7 @@ function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
 
 	  resolve(bigarray[maxindex]);
 	});
+
   });
 }
 
@@ -304,7 +307,7 @@ $('#getRangeButton').click(function(){
   $("#bookmark_item").attr("data","true");
   $("#bookmark_item").click();
 
-  $('#getRangeButton').hide();
+  //$('#getRangeButton').hide();
   $('.su_popup').show();
 })
 

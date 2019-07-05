@@ -158,7 +158,7 @@ var __PDF_DOC,
                 var filenamewithextension = path.parse(pdf_path).base;
                 var filename = filenamewithextension.split('.')[0];
                 console.log(filename);
-                var next_text = "<div class='col-md-2 book_section'><div><center><canvas class='pdf-canvas' data ='"+ pdf_path + "' id = 'viewer'></canvas><img class = 'minusImage' data ="+ removeWhich + " id = 'myButton' src='./public/images/cross.png'/><p style = 'width: 250px; word-break: break-all;'>"+filename+"</p></center></div></div>";
+                var next_text = "<div class='col-md-2 book_section'><div><center><canvas class='pdf-canvas' data ='"+ pdf_path + "' id = 'viewer'></canvas><img class = 'minusImage' data ="+ removeWhich + " id = 'myButton' src='./public/images/cross.png'/><p style = 'width: 200px; word-break: break-all;'>"+filename+"</p></center></div></div>";
                 var next_div = document.createElement("div");
                 next_div.innerHTML = next_text;
                 document.getElementById('container').append(next_div);
