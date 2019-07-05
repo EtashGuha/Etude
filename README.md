@@ -21,8 +21,8 @@ Notes from Etash:
   }
   ```
 6. To debug production:
-  1. In terminal type lldb path/to/build.app
-  2. In the opened debugger type run --remote-debugging-port=8315. It should open a window of your app.
-  3. Open Chrome at http://localhost:8315/
-  4. Click on the name of the app. For example, Webpack App.
-  5. If you don't see anything in the opened tab, focus on the window of your app.
+  A. In terminal type lldb path/to/build.app
+  B. In the opened debugger type run --remote-debugging-port=8315. It should open a window of your app.
+  C. Open Chrome at http://localhost:8315/
+  D. Click on the name of the app. For example, Webpack App.
+  E. If you don't see anything in the opened tab, focus on the window of your app.
