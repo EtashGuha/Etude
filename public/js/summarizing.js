@@ -1,15 +1,11 @@
 const { dialog } = require('electron').remote;
 const path = require('path');
-
+const log = require('electron-log');
 const fs = require('fs');
-var mkdirp = require('mkdirp'),
-  request = require('request'),
-  FormData = require('form-data'),
-  async = require('async');
+log.info('Hello, log for the first time');
 
 var textData = null;
 var bookmarkArray = [];
-
 
 var tools = require('./createFile/coordinates.js')
 var bookmarkArray = [];
@@ -35,7 +31,7 @@ var capeClicked = false;
 var btnClicked = false;
 var bookmarkOpened = false;
 var java = require('java');
-
+log.info('Hello, log');
 java.classpath.push("./Kernel.jar");
 java.classpath.push("./Contents/Resources/Wolfram Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
 //njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
@@ -311,8 +307,8 @@ $('#getRangeButton').click(function(){
   $('.su_popup').show();
 })
 
-kernel.findTextAnswerSync('foo','bar', 1, "Sentence");
-console.log('hello');
+// kernel.findTextAnswerSync('foo','bar', 1, "Sentence");
+// console.log('hello');
 
 function checkFlag() {
 	if(!fs.existsSync('./folderForHighlightedPDF/secVersion.pdf')){

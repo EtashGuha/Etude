@@ -20,8 +20,8 @@
     "electron": "^4.1.4",
     "electron-installer-dmg": "^2.0.0",
     "electron-packager": "^13.1.0",
-    "electron-rebuild": "^1.8.5",
-    "electron-react-devtools": "^0.5.3"
+    "electron-react-devtools": "^0.5.3",
+    "electron-rebuild": "^1.8.5"
   },
   "build": {
     "extraResources": [
@@ -31,13 +31,14 @@
   "dependencies": {
     "deepai": "^1.0.0",
     "electron-build": "0.0.3",
+    "electron-log": "^3.0.6",
     "electron-store": "^2.0.0",
     "fs": "0.0.1-security",
+    "html-to-json": "^0.6.0",
     "hummus": "^1.0.104",
     "java": "^0.11.0",
     "pdf.js-extract": "^0.1.1",
     "sentence-tokenizer": "^1.0.1",
-    "string-similarity": "^3.0.0",
-    "html-to-json": "^0.6.0"
+    "string-similarity": "^3.0.0"
   }
 }
