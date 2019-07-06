@@ -1,6 +1,6 @@
 Notes from Etash:
 1. If you get node version problems, use https://www.npmjs.com/package/electron-rebuild
-2. If you get get a problem with the ../build/jvm_dll_path.json, \n
+2. If you get get a problem with the ../build/jvm_dll_path.json,
   A. cd into node_modules/java
   B. run node postInstall.js
 3. If you have files that are too large to commit, use https://github.com/IBM/BluePic/wiki/Using-BFG-Repo-Cleaner-tool-to-remove-sensitive-files-from-your-git-repo
