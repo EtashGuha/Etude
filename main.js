@@ -32,7 +32,7 @@ function createWindow () {
     },
     icon: 'assets/images/logo.jpg',})
 
-
+  mainWindow.webContents.openDevTools()
   mainWindow.loadFile('splash.html')
 
   setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);

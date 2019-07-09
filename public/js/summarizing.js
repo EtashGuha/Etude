@@ -22,7 +22,7 @@ const secVersionFilepath = etudeFilepath + "/folderForHighlightedPDF/secVersion.
 viewerEle.appendChild(iframe);
 
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
-
+console.log("line 25")
 deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
 //get text from pdf to send to flask backends
 var PDF_URL  = filepath;
@@ -32,10 +32,16 @@ var btnClicked = false;
 var bookmarkOpened = false;
 var java = require('java');
 log.info('Hello, log');
-java.classpath.push("./Kernel.jar");
-java.classpath.push("./Contents/Resources/Wolfram Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
+console.log(etudeFilepath)
+console.log("about to add kernel.jar")
+java.classpath.push(etudeFilepath + "/Kernel.jar");
+console.log("added kernel")
+java.classpath.push(etudeFilepath + "/Contents/Resources/Wolfram\ Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
+console.log("added JLINK")
+console.log(etudeFilepath)
 //njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
-var kernel = java.newInstanceSync('p1.Kernel');
+var kernel = java.newInstanceSync('p1.Kernel', etudeFilepath);
+console.log("Just created kernel")
 var htmlForEntireDoc = ""
 pdfAllToHTML(PDF_URL);
 var numPages = 0;
@@ -182,15 +188,15 @@ var textDsum = "";
 var iPagesum = 0;
 var iEndPagesum = 0;
 function processSummarizationResult(t){
-  if(fs.existsSync('./folderForHighlightedPDF/secVersion.pdf')){
-	fs.unlinkSync("./folderForHighlightedPDF/secVersion.pdf");
+  if(fs.existsSync(etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf')){
+	fs.unlinkSync(etudeFilepath + "/folderForHighlightedPDF/secVersion.pdf");
   }
   noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
 
   tokenizer.setEntry(noLineBreakText);
   console.log(tokenizer.getSentences());
 
-  tools.extractor(tokenizer.getSentences(),filepath, './folderForHighlightedPDF/secVersion.pdf');
+  tools.extractor(tokenizer.getSentences(),filepath, etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf');
   checkFlag();
   console.log("succeeded");
   console.log(t);
@@ -212,7 +218,7 @@ function pdfAllToHTML(nameOfFileDir) {
   filenamewithextension = filenamewithextension.split('.')[0];
   console.log(filenamewithextension)
   //update directory to JAR file
-  var pathOfFile = './tmp/' + filenamewithextension + '.html'
+  var pathOfFile = etudeFilepath + '/tmp/' + filenamewithextension + '.html'
   try {
 	if (fs.existsSync(pathOfFile)) {
 	  console.log("html exists already")
@@ -221,7 +227,7 @@ function pdfAllToHTML(nameOfFileDir) {
   } catch(err) {
 	console.error(err)
   }
-  let executionstring = 'java -jar PDFToHTML.jar \'' + nameOfFileDir + '\' \'./tmp/' + filenamewithextension + '.html\'';
+  let executionstring = 'java -jar PDFToHTML.jar \'' + nameOfFileDir + '\' \'' + etudeFilepath +  '/tmp/' + filenamewithextension + '.html\'';
   //+ ' -idir=' + imagedir
   console.log(executionstring);
   child = exec(executionstring,
@@ -245,7 +251,7 @@ function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
 	console.log("HOs")
 	var filenamewithextension = path.parse(PDF_URL).base;
 	filenamewithextension = filenamewithextension.split('.')[0];
-	var outputfile = './tmp/' + filenamewithextension + '.html';
+	var outputfile = etudeFilepath + '/tmp/' + filenamewithextension + '.html';
 	console.log(outputfile)
 	const htmlToJson = require('html-to-json');
 	let bigarray = [];
@@ -311,7 +317,7 @@ $('#getRangeButton').click(function(){
 // console.log('hello');
 
 function checkFlag() {
-	if(!fs.existsSync('./folderForHighlightedPDF/secVersion.pdf')){
+	if(!fs.existsSync(etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf')){
 	  console.log("checking")
 	  window.setTimeout(checkFlag, 100); /* this checks the flag every 100 milliseconds*/
 	} else {
