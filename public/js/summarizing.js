@@ -34,9 +34,9 @@ var java = require('java');
 log.info('Hello, log');
 console.log(etudeFilepath)
 console.log("about to add kernel.jar")
-java.classpath.push(etudeFilepath + "/Kernel.jar");
+java.classpath.push(etudeFilepath + "\\Kernel.jar");
 console.log("added kernel")
-java.classpath.push(etudeFilepath + "/12.0/SystemFiles/Links/JLink/JLink.jar");
+java.classpath.push(etudeFilepath + "\\12.0\\SystemFiles\\Links\\JLink\\JLink.jar");
 console.log("added JLINK")
 console.log(etudeFilepath)
 //njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
