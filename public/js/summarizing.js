@@ -227,7 +227,7 @@ function pdfAllToHTML(nameOfFileDir) {
   } catch(err) {
 	console.error(err)
   }
-  let executionstring = 'java -jar PDFToHTML.jar \'' + nameOfFileDir + '\' \'' + etudeFilepath +  '/tmp/' + filenamewithextension + '.html\'';
+  let executionstring = 'java -jar ' + etudeFilepath + '/PDFToHTML.jar \'' + nameOfFileDir + '\' \'' + etudeFilepath +  '/tmp/' + filenamewithextension + '.html\'';
   //+ ' -idir=' + imagedir
   console.log(executionstring);
   child = exec(executionstring,

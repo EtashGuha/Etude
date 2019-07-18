@@ -3,7 +3,7 @@ const path = require('path');
 const Store = require('electron-store');
 var store = new Store();
 const { ipcRenderer } = require('electron');
-store.clear();
+//store.clear();
 var i = store.size;
 
 var __PDF_DOC,
