@@ -37,6 +37,7 @@ console.log("about to add kernel.jar")
 java.classpath.push(etudeFilepath + "/Kernel.jar");
 console.log("added kernel")
 java.classpath.push(etudeFilepath + "/12.0/SystemFiles/Links/JLink/JLink.jar");
+
 console.log("added JLINK")
 console.log(etudeFilepath)
 //njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
@@ -227,7 +228,8 @@ function pdfAllToHTML(nameOfFileDir) {
   } catch(err) {
 	console.error(err)
   }
-  let executionstring = 'java -jar ' + etudeFilepath + '/PDFToHTML.jar \'' + nameOfFileDir + '\' \'' + etudeFilepath +  '/tmp/' + filenamewithextension + '.html\'';
+  let executionstring = 'java -jar ' + etudeFilepath + '/PDFToHTML.jar \"' + nameOfFileDir + '\" \"' + etudeFilepath +  '/tmp/' + filenamewithextension + '.html\"';
+
   //+ ' -idir=' + imagedir
   console.log(executionstring);
   child = exec(executionstring,
