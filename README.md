@@ -26,3 +26,4 @@ Notes from Etash:
   C. Open Chrome at http://localhost:8315/
   D. Click on the name of the app. For example, Webpack App.
   E. If you don't see anything in the opened tab, focus on the window of your app.
+7. When running the electron-packager, the Wolfram Kernel is messed up. Make sure to fix this by copying and pasting from the old Contents/Macos/WolframKernel into the .app file.
