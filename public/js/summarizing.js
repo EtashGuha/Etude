@@ -320,6 +320,7 @@ $('#getRangeButton').click(function(){
 
 function checkFlag() {
 	if(!fs.existsSync(etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf')){
+	  console.log(etudeFilepath)
 	  console.log("checking")
 	  window.setTimeout(checkFlag, 100); /* this checks the flag every 100 milliseconds*/
 	} else {
