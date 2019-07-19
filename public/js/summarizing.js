@@ -184,6 +184,10 @@ $('#summarizingButton').click(function(){
   //   });
 })
 
+$('#escapeSUPopupButton').click(function(){
+	$('.su_popup').hide();
+})
+
 var textDsum = "";
 var iPagesum = 0;
 var iEndPagesum = 0;
