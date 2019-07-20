@@ -145,7 +145,9 @@ $("#cape_btn").click(function(){
 		}
 		htmlForEntireDoc.then((x) => {
 			var promiseToAppend = new Promise(function(resolve, reject){
-				$("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
+				var answer = kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence");
+				updateHighlights(answer)
+				$("#capeResult").empty().append(answer);
 				console.log("Starting")
 				resolve("GOOD")
 			});
@@ -192,16 +194,12 @@ var textDsum = "";
 var iPagesum = 0;
 var iEndPagesum = 0;
 function processSummarizationResult(t){
-  if(fs.existsSync(etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf')){
-	fs.unlinkSync(etudeFilepath + "/folderForHighlightedPDF/secVersion.pdf");
-  }
   noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
 
   tokenizer.setEntry(noLineBreakText);
   console.log(tokenizer.getSentences());
 
-  tools.extractor(tokenizer.getSentences(),filepath, etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf');
-  checkFlag();
+  updateHighlights(tokenizer.getSentences())
   console.log("succeeded");
   console.log(t);
   console.log(typeof(t));
@@ -319,7 +317,13 @@ $('#getRangeButton').click(function(){
 
 // kernel.findTextAnswerSync('foo','bar', 1, "Sentence");
 // console.log('hello');
-
+function updateHighlights(sentences){
+	if(fs.existsSync(etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf')){
+		fs.unlinkSync(etudeFilepath + "/folderForHighlightedPDF/secVersion.pdf");
+  	}
+  tools.extractor(sentences,filepath, etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf');
+  checkFlag();
+}
 function checkFlag() {
 	if(!fs.existsSync(etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf')){
 	  console.log("checking")
