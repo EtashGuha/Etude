@@ -154,6 +154,9 @@ $("#cape_btn").click(function(){
 			//document.getElementById("myDropdown").classList.toggle("show");
 			promiseToAppend.then((data) => {
 				document.getElementById("myDropdown").classList.toggle("show");
+				document.getElementById('searchloader').style.display = 'none';
+				document.getElementById('searchbuttonthree').style.color = 'black';
+				document.getElementById('cape_btn').style.backgroundColor = '';
 					console.log("Showing")
 			});
 		});
