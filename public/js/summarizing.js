@@ -146,7 +146,8 @@ $("#cape_btn").click(function(){
 		}
 		htmlForEntireDoc.then((x) => {
 			var promiseToAppend = new Promise(function(resolve, reject){
-				$("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
+				var searchResults = kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence");
+				$("#capeResult").empty().append(searchResults[0] + " <br> <br> " + searchResults[1]);
 				console.log("Starting")
 				resolve("GOOD")
 			});
