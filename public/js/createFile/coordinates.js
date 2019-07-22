@@ -11,13 +11,21 @@ var tempAnnotations = [];
 var postTempAnnotations = [];
 var highlightThis = "";
 var highlightThisArr = [];
-
+var etudefilepath = "";
 function createPdf(annotationsToHighlight, path, outpath){
     let trying = fs.readFileSync(path);
     const inStream = new PDFRStreamForBuffer(trying);
     const mystream = new hummus.PDFWStreamForFile(outpath)
 
     work(annotationsToHighlight, inStream, mystream);
+    fs.writeFile(etudefilepath + "/tmp/object.json", JSON.stringify(annotationsToHighlight), (err) => {
+    if (err) {
+        console.error(err);
+        return;
+    };
+    console.log(etudefilepath + "/tmp/object.json")
+    console.log("File has been created");
+});
 }
 
 function pushToArray(extraction, inputArray) {
@@ -155,7 +163,6 @@ function trimBeforePeriod() {
     const index = annotations[0].content.indexOf(highlightThisArr[0]);
     const totalIndex = annotations[0].content.length;
     let proportion = (index + 0.0) / totalIndex
-    console.log(proportion)
     if (proportion < 0) {
     proportion = 0;
     }
@@ -165,7 +172,6 @@ function trimBeforePeriod() {
 
 function findTheCoord(arrayToHighlight, extraction, path, outpath) {
 	arrayToHighlight = Array.from(arrayToHighlight)
-	console.log(typeof(arrayToHighlight))
 	arrayToHighlight.forEach((strToHighlight, strindex) => {
 		tempAnnotations = [];
 		postTempAnnotations = [];
@@ -188,22 +194,20 @@ function findTheCoord(arrayToHighlight, extraction, path, outpath) {
 		fillRangeBefore(extraction, originalSeedBlock);
 		fillRangeAfter(extraction, originalSeedBlock);
 		pushToArray(extraction, postTempAnnotations);
-		console.log(annotations);
 		const trimBefore = trimBeforePeriod();
         const trimAfter = trimAfterPeriod();
         annotations[0].position[0] += trimBefore;
         annotations[annotations.length - 1].position[2] = trimAfter;
-        console.log(annotations)
 	});
 	createPdf(annotations, path, outpath);
 }
 
 module.exports = {
-	extractor: function (highlightThis, path, outpath) {
+	extractor: function (highlightThis, path, outpath, filepathForEtude) {
 		pdfExtract.extract(path, options, (err, data) => {
     		annotations = []
     		if (err) return console.log(err);
-    		console.log(data)
+            etudefilepath = filepathForEtude;
     		findTheCoord(highlightThis, data, path, outpath);
 	   });
 	}

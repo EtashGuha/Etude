@@ -2,7 +2,9 @@ const { dialog } = require('electron').remote;
 const path = require('path');
 const log = require('electron-log');
 const fs = require('fs');
+var jre = require('node-jre')
 log.info('Hello, log for the first time');
+var typeOf = require('typeof');
 
 var textData = null;
 var bookmarkArray = [];
@@ -22,40 +24,30 @@ const secVersionFilepath = etudeFilepath + "/folderForHighlightedPDF/secVersion.
 viewerEle.appendChild(iframe);
 
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
-console.log("line 25")
 deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
 //get text from pdf to send to flask backends
 var PDF_URL  = filepath;
-console.log(PDF_URL);
 var capeClicked = false;
 var btnClicked = false;
 var bookmarkOpened = false;
 var java = require('java');
-log.info('Hello, log');
-console.log(etudeFilepath)
-console.log("about to add kernel.jar")
 java.classpath.push(etudeFilepath + "/Kernel.jar");
-console.log("added kernel")
 java.classpath.push(etudeFilepath + "/Contents/Resources/Wolfram\ Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
-console.log("added JLINK")
-console.log(etudeFilepath)
+//console.log(output.findTextAnswerSync('foo','bar', 1, "Sentence"));
 //njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
 var kernel = java.newInstanceSync('p1.Kernel', etudeFilepath);
-console.log("Just created kernel")
 var htmlForEntireDoc = ""
 pdfAllToHTML(PDF_URL);
 var numPages = 0;
 PDFJS.getDocument({ url: PDF_URL }).then(function(pdf_doc) {
   __PDF_DOC = pdf_doc;
   numPages = __PDF_DOC.numPages;
-  console.log(numPages)
 });
 
 
 $("#bookmark_icon").click(function(){
   //get the page number
   var whichpagetobookmark = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('pageNumber').value;
-  console.log(bookmarkArray.length);
   for (var j = 0; j < bookmarkArray.length; j++){
 	if (bookmarkArray[j] == whichpagetobookmark)
 	  return;
@@ -128,16 +120,15 @@ $(document).on("click",".deleteImage_", function(){
 });
 // when the user click the bookmark
 $(document).on("click",".bookmark-canvas", function(){
-  console.log($(this).attr("data"));
-  console.log("above you clicked sth");
-  document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[$(this).attr("data") - 1].click()
+	console.log(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children)
+	console.log(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[$(this).attr("data") - 1])
+  	document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[$(this).attr("data") - 1].click()
 });
 
 
 $("#cape_btn").click(function(){
 	if(capeClicked){
 		document.getElementById("myDropdown").classList.toggle("show");
-		console.log("Hiding");
 	}
 	setTimeout(function(){ 
 		if(htmlForEntireDoc == ""){
@@ -146,16 +137,14 @@ $("#cape_btn").click(function(){
 		htmlForEntireDoc.then((x) => {
 			var promiseToAppend = new Promise(function(resolve, reject){
 				var answer = kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence");
-				updateHighlights(answer)
+				updateHighlights(answer, true)
 				$("#capeResult").empty().append(answer);
-				console.log("Starting")
 				resolve("GOOD")
 			});
 			//$("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
 			//document.getElementById("myDropdown").classList.toggle("show");
 			promiseToAppend.then((data) => {
 				document.getElementById("myDropdown").classList.toggle("show");
-					console.log("Showing")
 			});
 		});
 		capeClicked = true;
@@ -175,8 +164,6 @@ $("#help").click(function(){
 
 //summarization function
 $('#summarizingButton').click(function(){
-  console.log("summarizingButtonClicked");
-  console.log($('#topageRange').val());
   $('.su_popup').hide();
   summaryButtonPressed($('#pageRange').val(),$('#topageRange').val());
   // here you can add the loading button
@@ -197,13 +184,8 @@ function processSummarizationResult(t){
   noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
 
   tokenizer.setEntry(noLineBreakText);
-  console.log(tokenizer.getSentences());
 
-  updateHighlights(tokenizer.getSentences())
-  console.log("succeeded");
-  console.log(t);
-  console.log(typeof(t));
-  console.log(t["output"])
+  updateHighlights(tokenizer.getSentences(), false)
   $("#summarizingResult").empty().append(t["output"]);
   //here you can remove the loading button
   $('.summarizer_loading').hide();
@@ -231,11 +213,8 @@ function pdfAllToHTML(nameOfFileDir) {
   }
   let executionstring = 'java -jar ' + etudeFilepath + '/PDFToHTML.jar \'' + nameOfFileDir + '\' \'' + etudeFilepath +  '/tmp/' + filenamewithextension + '.html\'';
   //+ ' -idir=' + imagedir
-  console.log(executionstring);
   child = exec(executionstring,
 	  function (error, stdout, stderr) {
-		  console.log('stdout: ' + stdout);
-		  console.log('stderr: ' + stderr);
 		  if (error !== null) {
 			   console.log('exec error: ' + error);
 		  }
@@ -250,27 +229,21 @@ function summaryButtonPressed(firstpage, lastpage) {
 
 function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
   return new Promise(function(resolve, reject){
-	console.log("HOs")
 	var filenamewithextension = path.parse(PDF_URL).base;
 	filenamewithextension = filenamewithextension.split('.')[0];
 	var outputfile = etudeFilepath + '/tmp/' + filenamewithextension + '.html';
-	console.log(outputfile)
 	const htmlToJson = require('html-to-json');
 	let bigarray = [];
 	let bigarrayback = [];
 	//the correct html file directory within our project
-	console.log("HOs")
 	fs.readFile(outputfile, "utf8", function(err, data) {
-	  console.log("HOs")
 	  let datadata = data.split("<div class=\"page\"");
 	  let newstring = "";
-	  console.log(datadata.length);
 	  for (let i = firstpage; i <= lastpage; i++) {
 		if (i <= datadata.length) {
 		  newstring += datadata[i];
 		}
 	  }
-	  console.log("HOs")
 	  //console.log(newstring);
 	  let newdata = newstring.split("<div class=\"p\"");
 	  newdata.shift();
@@ -298,7 +271,6 @@ function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
 		  max = thing.length;
 		}
 	  });
-	  console.log(bigarray[maxindex]);
 
 	  resolve(bigarray[maxindex]);
 	});
@@ -317,23 +289,46 @@ $('#getRangeButton').click(function(){
 
 // kernel.findTextAnswerSync('foo','bar', 1, "Sentence");
 // console.log('hello');
-function updateHighlights(sentences){
+function updateHighlights(sentences, isSearch){
 	if(fs.existsSync(etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf')){
 		fs.unlinkSync(etudeFilepath + "/folderForHighlightedPDF/secVersion.pdf");
   	}
-  tools.extractor(sentences,filepath, etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf');
-  checkFlag();
+  tools.extractor(sentences,filepath, etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf', etudeFilepath);
+  checkFlag(isSearch);
 }
-function checkFlag() {
+function checkForJump(){
+	if(!fs.existsSync(etudeFilepath + "/tmp/object.json")){
+		window.setTimeout(checkForJump, 100);
+	} else {
+		var contents = fs.readFileSync(etudeFilepath + "/tmp/object.json");
+		var jsonContents = JSON.parse(contents)
+		console.log(jsonContents)
+		jumpPage(jsonContents[0]['page'] + 1);
+	}
+}
+
+function jumpPage(pageNumber){
+	if(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView') != null && document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').childNodes[pageNumber - 1] != undefined){
+		document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').childNodes[pageNumber - 1].click()
+	} else {
+		window.setTimeout(jumpPage, 0, pageNumber)
+	}
+}
+function checkFlag(isSearch) {
 	if(!fs.existsSync(etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf')){
 	  console.log("checking")
-	  window.setTimeout(checkFlag, 100); /* this checks the flag every 100 milliseconds*/
+	  window.setTimeout(checkFlag, 100, isSearch); /* this checks the flag every 100 milliseconds*/
 	} else {
 	  viewerEle.innerHTML = "";
 	  iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${secVersionFilepath}`);
 	  console.log(iframe)
 	  viewerEle.appendChild(iframe);
 	  console.log("DONE")
+	  console.log("Whether you want to search: " + isSearch)
+	  if(isSearch){
+	  	console.log("CHECKINGFORJUMP")
+	  	checkForJump()
+	  }
 	}
 }
 

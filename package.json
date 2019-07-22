@@ -40,6 +40,7 @@
     "node-jre": "^0.2.3",
     "pdf.js-extract": "^0.1.1",
     "sentence-tokenizer": "^1.0.1",
-    "string-similarity": "^3.0.0"
+    "string-similarity": "^3.0.0",
+    "typeof": "^1.0.0"
   }
 }
