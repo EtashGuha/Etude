@@ -42,7 +42,6 @@ if(osvers == "darwin"){
 	java.classpath.push(etudeFilepath + "/WindowsKernel.jar");
 	java.classpath.push(etudeFilepath + "/12.0/SystemFiles/Links/JLink/JLink.jar");
 }
-//console.log(output.findTextAnswerSync('foo','bar', 1, "Sentence"));
 //njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
 var kernel = java.newInstanceSync('p1.Kernel', etudeFilepath);
 var htmlForEntireDoc = ""
@@ -145,15 +144,19 @@ $("#cape_btn").click(function(){
 		}
 		htmlForEntireDoc.then((x) => {
 			var promiseToAppend = new Promise(function(resolve, reject){
-				var answer = kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence");
-				updateHighlights(answer, true)
-				$("#capeResult").empty().append(answer);
+				var searchResults = kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence");
+				$("#capeResult").empty().append(searchResults[0] + " <br> <br> " + searchResults[1]);
+				console.log("Starting")
 				resolve("GOOD")
 			});
 			//$("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
 			//document.getElementById("myDropdown").classList.toggle("show");
 			promiseToAppend.then((data) => {
 				document.getElementById("myDropdown").classList.toggle("show");
+				document.getElementById('searchloader').style.display = 'none';
+				document.getElementById('searchbuttonthree').style.color = 'black';
+				document.getElementById('cape_btn').style.backgroundColor = '';
+					console.log("Showing")
 			});
 		});
 		capeClicked = true;
@@ -221,6 +224,7 @@ function pdfAllToHTML(nameOfFileDir) {
 	console.error(err)
   }
   let executionstring = 'java -jar ' + etudeFilepath + '/PDFToHTML.jar \"' + nameOfFileDir + '\" \"' + etudeFilepath +  '/tmp/' + filenamewithextension + '.html\"';
+
   child = exec(executionstring,
 	  function (error, stdout, stderr) {
 		  if (error !== null) {
@@ -324,6 +328,7 @@ function jumpPage(pageNumber){
 }
 function checkFlag(isSearch) {
 	if(!fs.existsSync(etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf')){
+	  console.log(etudeFilepath)
 	  console.log("checking")
 	  window.setTimeout(checkFlag, 100, isSearch); /* this checks the flag every 100 milliseconds*/
 	} else {

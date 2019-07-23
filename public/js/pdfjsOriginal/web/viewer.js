@@ -6543,7 +6543,7 @@ function () {
       var inputContainerHeight = this.bar.firstElementChild.clientHeight;
 
       if (findbarHeight > inputContainerHeight) {
-        this.bar.classList.add('wrapContainers');
+        //this.bar.classList.add('wrapContainers');
       }
     }
   }]);

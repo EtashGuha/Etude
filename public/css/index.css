@@ -39,6 +39,31 @@ html, body {
   } 
 }
 
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(19px, 0);
+  }
+}
+
 #summarizingPart{
   font-family: Poppins;
 }
@@ -260,6 +285,49 @@ div.viewer iframe {
 .dropbtn:hover, .dropbtn:focus {
   background-color: #2980B9;
 }
+.lds-ellipsis {
+  display: none;
+  position: relative;
+  margin-left: 300px;
+  margin-top: -20px;
+  z-index: 100000;
+}
+.lds-ellipsis div {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+
+
+
+.lds-ellipsis div:nth-child(1) {
+  left: 6px;
+  background-color: #a2a2a2;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 6px;
+  background-color: #a2a2a2;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 24px;
+  background-color: #a2a2a2;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 42px;
+  background-color: #a2a2a2;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+
+
+
 
 .dropdown {
   position: relative;
@@ -268,9 +336,10 @@ div.viewer iframe {
 
 .dropdown-content {
   display: none;
+  margin-top: -1px;
   position: absolute;
   background-color: white;
-  width: 350px;
+  width: 370px;
   /* overflow: auto; */
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1000;
@@ -303,7 +372,7 @@ div.viewer iframe {
   border-bottom: 15px solid white;
   border-left: 15px solid transparent;
   margin-top: -15px;
-  margin-left: 335px;
+  margin-left: 355px;
 }
 
 #triangle-bottomleft {
