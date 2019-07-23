@@ -5,7 +5,11 @@ const fs = require('fs');
 var jre = require('node-jre')
 log.info('Hello, log for the first time');
 var typeOf = require('typeof');
+const os = require('os')
 
+var osvers = os.platform()
+
+console.log(osvers)
 var textData = null;
 var bookmarkArray = [];
 
@@ -31,8 +35,13 @@ var capeClicked = false;
 var btnClicked = false;
 var bookmarkOpened = false;
 var java = require('java');
-java.classpath.push(etudeFilepath + "/Kernel.jar");
-java.classpath.push(etudeFilepath + "/Contents/Resources/Wolfram\ Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
+if(osvers == "darwin"){
+	java.classpath.push(etudeFilepath + "/MacKernel.jar");
+	java.classpath.push(etudeFilepath + "/Contents/Resources/Wolfram\ Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
+} else {
+	java.classpath.push(etudeFilepath + "/WindowsKernel.jar");
+	java.classpath.push(etudeFilepath + "/12.0/SystemFiles/Links/JLink/JLink.jar");
+}
 //console.log(output.findTextAnswerSync('foo','bar', 1, "Sentence"));
 //njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
 var kernel = java.newInstanceSync('p1.Kernel', etudeFilepath);
@@ -211,8 +220,7 @@ function pdfAllToHTML(nameOfFileDir) {
   } catch(err) {
 	console.error(err)
   }
-  let executionstring = 'java -jar ' + etudeFilepath + '/PDFToHTML.jar \'' + nameOfFileDir + '\' \'' + etudeFilepath +  '/tmp/' + filenamewithextension + '.html\'';
-  //+ ' -idir=' + imagedir
+  let executionstring = 'java -jar ' + etudeFilepath + '/PDFToHTML.jar \"' + nameOfFileDir + '\" \"' + etudeFilepath +  '/tmp/' + filenamewithextension + '.html\"';
   child = exec(executionstring,
 	  function (error, stdout, stderr) {
 		  if (error !== null) {
