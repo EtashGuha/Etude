@@ -26,3 +26,7 @@ Notes from Etash:
   C. Open Chrome at http://localhost:8315/
   D. Click on the name of the app. For example, Webpack App.
   E. If you don't see anything in the opened tab, focus on the window of your app.
+7. To build on mac:
+ npx electron-packager . --overwrite --icon=/Users/etashguha/Downloads/icon.ico.icns
+ npx electron-installer-dmg Etude-darwin-x64/Etude.app Etude
+ 
