@@ -146,6 +146,7 @@ $("#cape_btn").click(function(){
 			var promiseToAppend = new Promise(function(resolve, reject){
 				var searchResults = kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence");
 				$("#capeResult").empty().append(searchResults[0] + " <br> <br> " + searchResults[1]);
+				updateHighlights(searchResults, true)
 				console.log("Starting")
 				resolve("GOOD")
 			});
@@ -320,15 +321,16 @@ function checkForJump(){
 }
 
 function jumpPage(pageNumber){
-	if(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView') != null && document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').childNodes[pageNumber - 1] != undefined){
+	if(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView') != null 
+		&& typeOf(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').childNodes[pageNumber - 1]) != "text"
+		&& document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').childNodes[pageNumber - 1] != undefined){
 		document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').childNodes[pageNumber - 1].click()
 	} else {
-		window.setTimeout(jumpPage, 0, pageNumber)
+		window.setTimeout(jumpPage, 100, pageNumber)
 	}
 }
 function checkFlag(isSearch) {
 	if(!fs.existsSync(etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf')){
-	  console.log(etudeFilepath)
 	  console.log("checking")
 	  window.setTimeout(checkFlag, 100, isSearch); /* this checks the flag every 100 milliseconds*/
 	} else {
@@ -344,4 +346,3 @@ function checkFlag(isSearch) {
 	  }
 	}
 }
-
