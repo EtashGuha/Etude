@@ -145,7 +145,7 @@ $("#cape_btn").click(function(){
 		htmlForEntireDoc.then((x) => {
 			var promiseToAppend = new Promise(function(resolve, reject){
 				var searchResults = kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence");
-				$("#capeResult").empty().append(searchResults[0] + " <br> <br> " + searchResults[1]);
+				$("#capeResult").empty().append(searchResults[0] + " <hr style=\"margin-top: 15px; margin-bottom: 15px\"> " + searchResults[1]);
 				updateHighlights(searchResults, true)
 				console.log("Starting")
 				resolve("GOOD")
