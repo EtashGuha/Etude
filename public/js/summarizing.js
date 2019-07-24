@@ -197,7 +197,6 @@ function processSummarizationResult(t){
   noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
 
   tokenizer.setEntry(noLineBreakText);
-
   updateHighlights(tokenizer.getSentences(), false)
   $("#summarizingResult").empty().append(t["output"]);
   //here you can remove the loading button
@@ -313,9 +312,7 @@ function checkForJump(){
 	if(!fs.existsSync(etudeFilepath + "/tmp/object.json")){
 		window.setTimeout(checkForJump, 100);
 	} else {
-		var contents = fs.readFileSync(etudeFilepath + "/tmp/object.json");
-		var jsonContents = JSON.parse(contents)
-		console.log(jsonContents)
+		var jsonContents = getJsonContents()
 		jumpPage(jsonContents[0]['page'] + 1);
 	}
 }
@@ -344,5 +341,15 @@ function checkFlag(isSearch) {
 	  	console.log("CHECKINGFORJUMP")
 	  	checkForJump()
 	  }
+	}
+}
+
+function getJsonContents(){
+	try {
+		var contents = fs.readFileSync(etudeFilepath + "/tmp/object.json");
+		var jsonContents = JSON.parse(contents)
+		return jsonContents;
+	} catch (err){
+		window.setTimeout(getJsonContents, 100)
 	}
 }
