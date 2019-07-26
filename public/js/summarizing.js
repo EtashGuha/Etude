@@ -312,8 +312,12 @@ function checkForJump(){
 	if(!fs.existsSync(etudeFilepath + "/tmp/object.json")){
 		window.setTimeout(checkForJump, 100);
 	} else {
-		var jsonContents = getJsonContents()
-		jumpPage(jsonContents[0]['page'] + 1);
+		try {
+			var jsonContents = getJsonContents()
+			jumpPage(jsonContents[0]['page'] + 1);
+		} catch (err){
+			window.setTimeout(checkForJump, 100);
+		}
 	}
 }
 
