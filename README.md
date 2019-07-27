@@ -29,4 +29,9 @@ Notes from Etash:
 7. To build on mac:
  npx electron-packager . --overwrite --icon=/Users/etashguha/Downloads/icon.ico.icns
  npx electron-installer-dmg Etude-darwin-x64/Etude.app Etude
- 
+8. 1.  Install jdk11.0.4
+2. npm install java
+2. Copy java folder into etude nodemodules
+3. Copy Wolfram kernel from original
+4. Fix java issues as noted in GitHub
+4. First time will take a while
