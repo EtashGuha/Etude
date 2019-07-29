@@ -29,10 +29,11 @@ function createPdf(annotationsToHighlight, path, outpath){
 }
 
 function pushToArray(extraction, inputArray) {
+    console.log(extraction.pages[0].pageInfo.height);
     inputArray.forEach((element) => {
         annotations.push({
             "page": parseInt(element.pageFound),
-            "position": [element.x, 800 - element.y, element.x + element.width, 800 - element.y - 2 * element.height / 2],
+            "position": [element.x, extraction.pages[0].pageInfo.height - element.y, element.x + element.width, extraction.pages[0].pageInfo.height - element.y + 2 * element.height / 2],
             "content": element.str,
             "color": [255, 255, 0]
         });
