@@ -40,11 +40,15 @@ function pushToArray(extraction, inputArray) {
 }
 
 function findWord(extraction, word) {
+    //console.log(word);
  extraction.pages.forEach((page, pageindex) => {
+    //console.log(page);
      page.content.forEach((theelement, thelementindex) => {
      theelement.str = theelement.str.replace(/[^a-zA-Z0-9.?!,% ]/g, "");
+     theelement.str = theelement.str.replace(/\s\s+/g, ' ');
         const validelement = (theelement.str.length > 0);
         if (validelement) {
+            //console.log(theelement.str);
             if (theelement.str.indexOf(word) !== -1) {
                 tempAnnotations.push([pageindex, thelementindex]);
             }
@@ -75,17 +79,26 @@ function checkArray(extraction, arr) {
         possibilities.add(item[0] + "." + item[1]);
     });
     let uniquePossibilities = [];
+    //console.log(possibilities);
     possibilities.forEach((element) => {
         const elementToPush = extraction.pages[element.toString().substring(0, element.toString().indexOf("."))].content[element.toString().substring(element.toString().indexOf(".") + 1)]
+        //console.log(elementToPush);
         elementToPush.pageFound = element.toString().substring(0, element.toString().indexOf("."));
         elementToPush.elementFound = element.toString().substring(element.toString().indexOf(".") + 1);
         uniquePossibilities.push(elementToPush);
     });
-    var matches = stringSimilarity.findBestMatch(highlightThis, uniquePossibilities.map(function(ob) {
-        return ob.str;
-    }));
-    postTempAnnotations.push(uniquePossibilities[matches.bestMatchIndex]);
-    return uniquePossibilities[matches.bestMatchIndex];
+    console.log(highlightThis);
+    //console.log(uniquePossibilities);
+    if (uniquePossibilities !== undefined && uniquePossibilities.length !== 0) {
+            var matches = stringSimilarity.findBestMatch(highlightThis, uniquePossibilities.map(function(ob) {
+                return ob.str;
+            }));
+            postTempAnnotations.push(uniquePossibilities[matches.bestMatchIndex]);
+            //console.log(uniquePossibilities[matches.bestMatchIndex]);
+            return uniquePossibilities[matches.bestMatchIndex];
+    } else {
+        return null;
+    }
 }
 
 
@@ -134,7 +147,7 @@ function fillRangeAfter(extraction, theObject) {
             firstAfterLine += 1;
         }
     }
-    console.log(stringSimilarity.compareTwoStrings(extraction.pages[firstAfterPage].content[firstAfterLine].str, highlightThis))
+    //console.log(stringSimilarity.compareTwoStrings(extraction.pages[firstAfterPage].content[firstAfterLine].str, highlightThis))
     if(stringSimilarity.compareTwoStrings(extraction.pages[firstAfterPage].content[firstAfterLine].str, highlightThis) > 0.47) {
         let afterPush = extraction.pages[firstAfterPage].content[firstAfterLine];
         afterPush.pageFound = firstAfterPage;
@@ -169,6 +182,22 @@ function trimBeforePeriod() {
     return (proportion * (annotations[0].position[2] - annotations[0].position[0]));
 }
 
+function postProcess(extraction) {
+    let prevElement = {x: -1, y: -1, str: "", height: 0, width: 0};
+     extraction.pages.forEach((page, pageindex) => {
+     page.content = page.content.filter((element, index) => {
+        if (element.y === prevElement.y) {
+            prevElement.str = prevElement.str + element.str;
+            prevElement.width = prevElement.width + element.width;
+            return false;
+        } else {
+            prevElement = element;
+            return true;
+        }
+    });});
+     console.log(extraction);
+     return extraction;
+}
 
 function findTheCoord(arrayToHighlight, extraction, path, outpath) {
 	arrayToHighlight = Array.from(arrayToHighlight)
@@ -176,6 +205,7 @@ function findTheCoord(arrayToHighlight, extraction, path, outpath) {
 		tempAnnotations = [];
 		postTempAnnotations = [];
 		highlightThis = strToHighlight.replace(/[^a-zA-Z0-9.!?,% ]/g, "");
+        highlightThis = highlightThis.replace(/\s\s+/g, ' ');
 		highlightThisArr = highlightThis.split(" ");
 		let wordsToSearch = [];
 		highlightThisArr.forEach((word) => {
@@ -183,14 +213,19 @@ function findTheCoord(arrayToHighlight, extraction, path, outpath) {
 				wordsToSearch.push(word);
 			}
 		});
+        console.log(extraction);
+        extraction = postProcess(extraction);
 		if (wordsToSearch.length >= 4) {
+            //console.log(wordsToSearch);
 			findWord(extraction, wordsToSearch[0]);
 			findWord(extraction, wordsToSearch[1]);
 			findWord(extraction, wordsToSearch[wordsToSearch.length - 1]);
 			findWord(extraction, wordsToSearch[wordsToSearch.length - 2]);
 		} //need an else clause for very short, simple sentence
+        //console.log(tempAnnotations);
 		sortArray(tempAnnotations);
 		let originalSeedBlock = checkArray(extraction, tempAnnotations);
+        if(originalSeedBlock !== null) {
 		fillRangeBefore(extraction, originalSeedBlock);
 		fillRangeAfter(extraction, originalSeedBlock);
 		pushToArray(extraction, postTempAnnotations);
@@ -198,7 +233,9 @@ function findTheCoord(arrayToHighlight, extraction, path, outpath) {
         const trimAfter = trimAfterPeriod();
         annotations[0].position[0] += trimBefore;
         annotations[annotations.length - 1].position[2] = trimAfter;
+        }
 	});
+    console.log(annotations);
 	createPdf(annotations, path, outpath);
 }
 
