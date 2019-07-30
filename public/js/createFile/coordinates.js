@@ -29,7 +29,7 @@ function createPdf(annotationsToHighlight, path, outpath){
 }
 
 function pushToArray(extraction, inputArray) {
-    console.log(extraction.pages[0].pageInfo.height);
+    //console.log(extraction.pages[0].pageInfo.height);
     inputArray.forEach((element) => {
         annotations.push({
             "page": parseInt(element.pageFound),
@@ -88,7 +88,7 @@ function checkArray(extraction, arr) {
         elementToPush.elementFound = element.toString().substring(element.toString().indexOf(".") + 1);
         uniquePossibilities.push(elementToPush);
     });
-    console.log(highlightThis);
+    //console.log(highlightThis);
     //console.log(uniquePossibilities);
     if (uniquePossibilities !== undefined && uniquePossibilities.length !== 0) {
             var matches = stringSimilarity.findBestMatch(highlightThis, uniquePossibilities.map(function(ob) {
@@ -167,20 +167,44 @@ function fillRangeAfter(extraction, theObject) {
 }
 
 function trimAfterPeriod() {
-    const index = annotations[annotations.length - 1].content.indexOf(highlightThisArr[highlightThisArr.length - 1]) + highlightThisArr[highlightThisArr.length - 1].length;
-    const totalIndex = annotations[annotations.length - 1].content.length;
-    const proportion = (index + 0.0) / totalIndex
-    return annotations[annotations.length - 1].position[0] + (proportion * (annotations[annotations.length - 1].position[2] - annotations[annotations.length - 1].position[0]))
+    console.log(postTempAnnotations[postTempAnnotations.length - 1].str + highlightThisArr[highlightThisArr.length - 1])
+    if (postTempAnnotations[postTempAnnotations.length - 1].str.indexOf(highlightThisArr[highlightThisArr.length - 1]) !== -1){
+        const index = postTempAnnotations[postTempAnnotations.length - 1].str.indexOf(highlightThisArr[highlightThisArr.length - 1]) + highlightThisArr[highlightThisArr.length - 1].length;
+        const totalIndex = postTempAnnotations[postTempAnnotations.length - 1].str.length;
+        const proportion = (index + 0.0) / totalIndex
+        console.log(proportion);
+        postTempAnnotations[postTempAnnotations.length - 1].oldWidth = postTempAnnotations[postTempAnnotations.length - 1].width
+        postTempAnnotations[postTempAnnotations.length - 1].width = (proportion * (postTempAnnotations[postTempAnnotations.length - 1].width))
+        console.log(postTempAnnotations[postTempAnnotations.length - 1].width + postTempAnnotations[postTempAnnotations.length - 1].x)
+    }
 }
 
 function trimBeforePeriod() {
-    const index = annotations[0].content.indexOf(highlightThisArr[0]);
-    const totalIndex = annotations[0].content.length;
+
+    console.log("trimming" + highlightThisArr[0] + postTempAnnotations[0].str);
+    const index = postTempAnnotations[0].str.indexOf(highlightThisArr[0]);
+    const totalIndex = postTempAnnotations[0].str.length;
+    console.log(index);
+    console.log(totalIndex);
     let proportion = (index + 0.0) / totalIndex
+    console.log(proportion)
     if (proportion < 0) {
     proportion = 0;
     }
-    return (proportion * (annotations[0].position[2] - annotations[0].position[0]));
+    console.log(postTempAnnotations[0].x)
+    if (postTempAnnotations[0].oldWidth !== undefined) {
+        postTempAnnotations[0].x = postTempAnnotations[0].x + (proportion * (postTempAnnotations[0].oldWidth));
+        console.log(postTempAnnotations[0].x)
+        if (postTempAnnotations.length !== 1) {
+            postTempAnnotations[0].width = ((1 - proportion) * (postTempAnnotations[0].oldWidth))
+        }        
+    } else {
+        postTempAnnotations[0].x = postTempAnnotations[0].x + (proportion * (postTempAnnotations[0].width));
+        console.log(postTempAnnotations[0].x)
+        if (postTempAnnotations.length !== 1) {
+            postTempAnnotations[0].width = ((1 - proportion) * (postTempAnnotations[0].width))
+        }
+    }
 }
 
 function postProcess(extraction) {
@@ -196,11 +220,12 @@ function postProcess(extraction) {
             return true;
         }
     });});
-     console.log(extraction);
+     //console.log(extraction);
      return extraction;
 }
 
 function findTheCoord(arrayToHighlight, extraction, path, outpath) {
+    console.log(annotations.length)
 	arrayToHighlight = Array.from(arrayToHighlight)
 	arrayToHighlight.forEach((strToHighlight, strindex) => {
 		tempAnnotations = [];
@@ -214,7 +239,6 @@ function findTheCoord(arrayToHighlight, extraction, path, outpath) {
 				wordsToSearch.push(word);
 			}
 		});
-        console.log(extraction);
         extraction = postProcess(extraction);
 		if (wordsToSearch.length >= 4) {
             //console.log(wordsToSearch);
@@ -229,11 +253,16 @@ function findTheCoord(arrayToHighlight, extraction, path, outpath) {
         if(originalSeedBlock !== null) {
 		fillRangeBefore(extraction, originalSeedBlock);
 		fillRangeAfter(extraction, originalSeedBlock);
+        trimBeforePeriod();
+        trimAfterPeriod();
+        
 		pushToArray(extraction, postTempAnnotations);
-		const trimBefore = trimBeforePeriod();
-        const trimAfter = trimAfterPeriod();
-        annotations[0].position[0] += trimBefore;
-        annotations[annotations.length - 1].position[2] = trimAfter;
+        console.log(annotations.length)
+        console.log(postTempAnnotations)
+        
+        // console.log(annotations)
+        // console.log(highlightThisArr);
+        //trimBeforePeriod(annotations);
         }
 	});
     console.log(annotations);
