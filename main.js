@@ -4,6 +4,14 @@ const electron = require('electron')
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 const { ipcMain } = require('electron')
+const rebuild = require('electron-rebuild');
+let childProcess = require('child_process');
+const typeOf = require('typeof')
+var sudo = require('sudo-prompt');
+const os = require('os')
+const firstRun = require('electron-first-run');
+const etudeFilepath = __dirname.replace("/public/js","").replace("\\public\\js","")
+var osvers = os.platform()
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -19,21 +27,57 @@ ipcMain.on('show_pdf_message', (event, arg) => {
 
 function createWindow () {
   // Create the browser window.
-  const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
-  mainWindow = new BrowserWindow({
-    height: height,
-    width: width,
-    minWidth: 600,
-    minHeight: 200,
-    frame: false,
-    backgroundColor: '#ffffff',
-    webPreferences: {
-      nodeIntegration: true
-    },
-    icon: 'assets/images/logo.jpg',})
+const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
+mainWindow = new BrowserWindow({
+	height: height,
+	width: width,
+	minWidth: 600,
+	minHeight: 200,
+	frame: false,
+	backgroundColor: '#ffffff',
+	webPreferences: {
+	  nodeIntegration: true
+	},
+	icon: 'assets/images/logo.jpg',})
 
-  mainWindow.loadFile('splash.html')
+var options = {
+  	name: 'Etude'
+};
+mainWindow.loadFile('splash.html')
+if(osvers == 'darwin'){
+	sudo.exec('mv ' + etudeFilepath + '/jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines', options,
+  		function(error, stdout, stderr) {
+    		if (error) throw error;
+    		console.log('stdout: ' + stdout);
+  		}
+	);
+} else {
+	sudo.exec('setx %JAVA_HOME% \"' + etudeFilepath + '/jdk-11.0.1\"')
+}
 
+ //  var npm = require('npm');
+ //  npm.load(function(err) {
+	// // handle errors
+
+	// // install module ffi
+	// npm.commands.install(['java'], function(er, data) {
+	// 	console.log("DONE")
+	// 	rebuild.rebuild({
+	// 		buildPath: __dirname,
+	// 		electronVersion: '4.0.5'
+	//   	}).then(() => {
+	//   		checkFlag()
+	// 	}).catch((e) => {
+	//   		console.error("Building modules didn't work!");
+	//   		console.error(e);
+	// 	});
+	// });
+
+	// npm.on('log', function(message) {
+	//   // log installation progress
+	//   console.log(message);
+	// });
+ //  });
   setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
 
   // and load the index.html of the app.
@@ -44,10 +88,10 @@ function createWindow () {
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null
+	// Dereference the window object, usually you would store windows
+	// in an array if your app supports multi windows, this is the time
+	// when you should delete the corresponding element.
+	mainWindow = null
   })
 }
 
@@ -62,16 +106,53 @@ app.on('ready', function(){
 app.on('window-all-closed', function () {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
-    app.quit()
+	app.quit()
 })
 
 app.on('activate', function () {
   // On macOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) {
-    createWindow()
+	createWindow()
   }
 })
+
+function runScript(scriptPath, callback) {
+
+	// keep track of whether callback has been invoked to prevent multiple invocations
+	var invoked = false;
+
+	var process = childProcess.fork(scriptPath);
+
+	// listen for errors as they may prevent the exit event from firing
+	process.on('error', function (err) {
+		if (invoked) return;
+		invoked = true;
+		callback(err);
+	});
+
+	// execute the callback once the process has finished running
+	process.on('exit', function (code) {
+		if (invoked) return;
+		invoked = true;
+		var err = code === 0 ? null : new Error('exit code ' + code);
+		callback(err);
+	});
+
+}
+
+function checkFlag(){
+	try {
+		runScript('/Users/etashguha/Documents/etude/node-modules/java/postInstall.js', function (err) {
+		 			console.log("running script")
+			  		if (err) throw err;
+			  		console.log('finished running some-script.js');
+		  		});
+	} catch {
+		console.log("checking")
+		setTimeout(() => checkFlag(), 100)
+	}
+}
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
