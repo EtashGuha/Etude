@@ -31,6 +31,7 @@
   "dependencies": {
     "deepai": "^1.0.0",
     "electron-build": "0.0.3",
+    "electron-first-run": "^2.0.0",
     "electron-log": "^3.0.6",
     "electron-store": "^2.0.0",
     "electron-version": "^2.0.1",
@@ -39,6 +40,7 @@
     "html-to-json": "^0.6.0",
     "hummus": "^1.0.104",
     "java": "^0.11.1",
+    "locate-java-home": "^1.1.2",
     "node-jre": "^0.2.3",
     "npm": "^6.10.2",
     "pdf.js-extract": "^0.1.1",

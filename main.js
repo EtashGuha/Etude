@@ -12,14 +12,20 @@ const os = require('os')
 const firstRun = require('electron-first-run');
 const etudeFilepath = __dirname.replace("/public/js","").replace("\\public\\js","")
 var osvers = os.platform()
-
+var fs = require('fs');
+var isFirstRun = firstRun()
+const locateJavaHome = require('locate-java-home'); 
+var npm = require('npm');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
-
+console.log(Object.values(locateJavaHome))
+console.log(locateJavaHome.default)
+console.log(typeOf(locateJavaHome))
 global.sharedObject = {
   someProperty: ''
 }
+var hasJdk = false;
 
 ipcMain.on('show_pdf_message', (event, arg) => {
   sharedObject.someProperty = arg
@@ -44,42 +50,24 @@ var options = {
   	name: 'Etude'
 };
 mainWindow.loadFile('splash.html')
-if(osvers == 'darwin'){
-	sudo.exec('mv ' + etudeFilepath + '/jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines', options,
-  		function(error, stdout, stderr) {
-    		if (error) throw error;
-    		console.log('stdout: ' + stdout);
-  		}
-	);
-} else {
-	sudo.exec('setx %JAVA_HOME% \"' + etudeFilepath + '/jdk-11.0.1\"')
+isFirstRun = true;
+if(isFirstRun){
+	locateJavaHome.default({
+	    // Uses semver :) Note that Java 6 = Java 1.6, Java 8 = Java 1.8, etc.
+	    version: ">=1.6",
+	    mustBeJDK: true
+	}, function(error, javaHomes) {
+		console.log(javaHomes)
+		console.log(javaHomes.length)
+	    if(javaHomes.length > 0){
+	    	console.log("hasJdk")
+	    	hasJdk = true;
+	    	console.log(hasJdk)
+	    }
+	    console.log(hasJdk);
+	    moveJava()
+	});
 }
-
- //  var npm = require('npm');
- //  npm.load(function(err) {
-	// // handle errors
-
-	// // install module ffi
-	// npm.commands.install(['java'], function(er, data) {
-	// 	console.log("DONE")
-	// 	rebuild.rebuild({
-	// 		buildPath: __dirname,
-	// 		electronVersion: '4.0.5'
-	//   	}).then(() => {
-	//   		checkFlag()
-	// 	}).catch((e) => {
-	//   		console.error("Building modules didn't work!");
-	//   		console.error(e);
-	// 	});
-	// });
-
-	// npm.on('log', function(message) {
-	//   // log installation progress
-	//   console.log(message);
-	// });
- //  });
-  setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
-
   // and load the index.html of the app.
   ///////////////////////////////////////mainWindow.setMenu(null)
 
@@ -143,9 +131,20 @@ function runScript(scriptPath, callback) {
 
 function checkFlag(){
 	try {
-		runScript('/Users/etashguha/Documents/etude/node-modules/java/postInstall.js', function (err) {
+		var testFolder = etudeFilepath;
+		fs.readdir(testFolder, (err, files) => {
+			console.log(err)
+			files.forEach(file => {
+				console.log(file);
+			});
+		});
+		runScript(etudeFilepath + '/node_modules/java/postInstall.js', function (err) {
 		 			console.log("running script")
-			  		if (err) throw err;
+			  		if (err) {
+			  			setTimeout(() => checkFlag(), 100);
+			  		} else {
+			  			setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
+			  		}
 			  		console.log('finished running some-script.js');
 		  		});
 	} catch {
@@ -153,6 +152,60 @@ function checkFlag(){
 		setTimeout(() => checkFlag(), 100)
 	}
 }
+function moveJava(){
+	console.log(hasJdk)
+	if(osvers == 'darwin'){
+		if(!hasJdk){
+			sudo.exec('cp ' + etudeFilepath + '/jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines', options,
+		  		function(error, stdout, stderr) {
+		    		if (error) throw error;
+		    		console.log('stdout: ' + stdout);
+		  		}
+			);
+		} else {
+			reinstallNodeJava()
+		}
 
+	} else {
+		console.log("TRYING ON WINDOWS")
+		sudo.exec('set JAVA_HOME=' + etudeFilepath + '/jdk-11.0.1', options,
+	  		function(error, stdout, stderr) {
+	    		if (error) throw error;
+	    		console.log('stdout: ' + stdout);
+	  		}
+		);
+		console.log('setx JAVA_HOME \"' + etudeFilepath + '/jdk-11.0.1\"')
+		sudo.exec('setx JAVA_HOME \"' + etudeFilepath + '/jdk-11.0.1\"', options,
+	  		function(error, stdout, stderr) {
+	    		if (error) throw error;
+	    		console.log('stdout: ' + stdout);
+	    		reinstallNodeJava()
+	  		}
+		);
+	}
+}
+function reinstallNodeJava(){
+	npm.load(function(err) {
+
+		// install module ffi
+		npm.commands.install(['java'], function(er, data) {
+			console.log("DONE")
+			rebuild.rebuild({
+				buildPath: __dirname,
+				electronVersion: '4.0.5'
+		  	}).then(() => {
+		  		checkFlag()
+			}).catch((e) => {
+		  		console.error("Building modules didn't work!");
+		  		console.error(e);
+			});
+		});
+
+		npm.on('log', function(message) {
+			// log installation progress
+			console.log(message);
+		});
+  	});
+}
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
