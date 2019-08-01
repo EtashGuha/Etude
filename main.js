@@ -50,7 +50,6 @@ var options = {
   	name: 'Etude'
 };
 mainWindow.loadFile('splash.html')
-isFirstRun = true;
 if(isFirstRun){
 	locateJavaHome.default({
 	    // Uses semver :) Note that Java 6 = Java 1.6, Java 8 = Java 1.8, etc.
