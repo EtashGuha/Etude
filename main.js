@@ -46,9 +46,6 @@ mainWindow = new BrowserWindow({
 	},
 	icon: 'assets/images/logo.jpg',})
 
-var options = {
-  	name: 'Etude'
-};
 mainWindow.loadFile('splash.html')
 if(isFirstRun){
 	locateJavaHome.default({
@@ -154,6 +151,9 @@ function checkFlag(){
 	}
 }
 function moveJava(){
+	var options = {
+  		name: 'Etude'
+	};
 	console.log(hasJdk)
 	if(osvers == 'darwin'){
 		if(!hasJdk){
