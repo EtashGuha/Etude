@@ -33,6 +33,7 @@
     "electron-build": "0.0.3",
     "electron-first-run": "^2.0.0",
     "electron-log": "^3.0.6",
+    "electron-rebuild": "^1.8.5",
     "electron-store": "^2.0.0",
     "electron-version": "^2.0.1",
     "ffi": "^2.3.0",
