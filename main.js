@@ -64,6 +64,7 @@ if(isFirstRun){
 	    moveJava()
 	});
 } else {
+	console.log("Is not the first time")
 	setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
 }
   // and load the index.html of the app.

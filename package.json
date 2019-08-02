@@ -42,6 +42,7 @@
     "hummus": "^1.0.104",
     "java": "^0.11.1",
     "locate-java-home": "^1.1.2",
+    "node-gyp": "^5.0.3",
     "node-jre": "^0.2.3",
     "npm": "^6.10.2",
     "pdf.js-extract": "^0.1.1",
