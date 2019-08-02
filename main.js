@@ -66,6 +66,8 @@ if(isFirstRun){
 	    console.log(hasJdk);
 	    moveJava()
 	});
+} else {
+	etTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
 }
   // and load the index.html of the app.
   ///////////////////////////////////////mainWindow.setMenu(null)
