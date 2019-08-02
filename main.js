@@ -67,7 +67,7 @@ if(isFirstRun){
 	    moveJava()
 	});
 } else {
-	etTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
+	setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
 }
   // and load the index.html of the app.
   ///////////////////////////////////////mainWindow.setMenu(null)
