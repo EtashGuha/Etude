@@ -15,10 +15,14 @@ var osvers = os.platform()
 var fs = require('fs');
 var isFirstRun = firstRun()
 const locateJavaHome = require('locate-java-home'); 
-var npm = require('npm');
+var npm = require('npm-programmatic');
+var options = {
+		name: 'Etude'
+};
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+var javadir = ""
 console.log(Object.values(locateJavaHome))
 console.log(locateJavaHome.default)
 console.log(typeOf(locateJavaHome))
@@ -47,31 +51,28 @@ mainWindow = new BrowserWindow({
 	icon: 'assets/images/logo.jpg',})
 
 mainWindow.loadFile('splash.html')
-if(isFirstRun){
-	locateJavaHome.default({
-	    // Uses semver :) Note that Java 6 = Java 1.6, Java 8 = Java 1.8, etc.
-	    version: ">=1.6",
-	    mustBeJDK: true
-	}, function(error, javaHomes) {
-		console.log(javaHomes)
-		console.log(javaHomes.length)
-	    if(javaHomes.length > 0){
-	    	console.log("hasJdk")
-	    	hasJdk = true;
-	    	console.log(hasJdk)
-	    }
-	    console.log(hasJdk);
-	    moveJava()
-	});
-} else {
-	console.log("Is not the first time")
-	setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
-}
+locateJavaHome.default({
+    // Uses semver :) Note that Java 6 = Java 1.6, Java 8 = Java 1.8, etc.
+    version: ">=10",
+    mustBeJDK: true
+}, function(error, javaHomes) {
+	console.log(javaHomes.length)
+    if(javaHomes.length > 0){
+    	console.log("hasJdk")
+    	hasJdk = true;
+    	console.log(hasJdk)
+    	console.log(javaHomes)
+    	javadir = javaHomes[0]["path"].replace("/Contents/Home","");
+    }
+    console.log(hasJdk);
+    moveJava()
+});
+
   // and load the index.html of the app.
   ///////////////////////////////////////mainWindow.setMenu(null)
 
   // Open the DevTools.
-   // mainWindow.webContents.openDevTools()
+ mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -127,87 +128,53 @@ function runScript(scriptPath, callback) {
 	});
 
 }
-
-function checkFlag(){
-	try {
-		var testFolder = etudeFilepath;
-		fs.readdir(testFolder, (err, files) => {
-			console.log(err)
-			files.forEach(file => {
-				console.log(file);
-			});
-		});
-		runScript(etudeFilepath + '/node_modules/java/postInstall.js', function (err) {
-		 			console.log("running script")
-			  		if (err) {
-			  			setTimeout(() => checkFlag(), 100);
-			  		} else {
-			  			setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
-			  		}
-			  		console.log('finished running some-script.js');
-		  		});
-	} catch {
-		console.log("checking")
-		setTimeout(() => checkFlag(), 100)
-	}
-}
 function moveJava(){
-	var options = {
-  		name: 'Etude'
-	};
+
 	console.log(hasJdk)
 	if(osvers == 'darwin'){
 		if(!hasJdk){
-			sudo.exec('cp ' + etudeFilepath + '/jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines', options,
+			sudo.exec('mv ' + etudeFilepath + '/jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines', options,
 		  		function(error, stdout, stderr) {
 		    		if (error) throw error;
 		    		console.log('stdout: ' + stdout);
+		    		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
 		  		}
 			);
 		} else {
-			reinstallNodeJava()
+			renameJava()
 		}
-
 	} else {
-		console.log("TRYING ON WINDOWS")
-		sudo.exec('set JAVA_HOME=' + etudeFilepath + '/jdk-11.0.1', options,
-	  		function(error, stdout, stderr) {
-	    		if (error) throw error;
-	    		console.log('stdout: ' + stdout);
-	  		}
-		);
-		console.log('setx JAVA_HOME \"' + etudeFilepath + '/jdk-11.0.1\"')
-		sudo.exec('setx JAVA_HOME \"' + etudeFilepath + '/jdk-11.0.1\"', options,
-	  		function(error, stdout, stderr) {
-	    		if (error) throw error;
-	    		console.log('stdout: ' + stdout);
-	    		reinstallNodeJava()
-	  		}
-		);
+		if(!hasJdk){
+			sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 C:/Program Files/Java/', options,
+		  		function(error, stdout, stderr) {
+		    		if (error) throw error;
+		    		console.log('stdout: ' + stdout);
+		    		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
+		  		}
+			);
+		} else {
+			renameJava()
+		}
 	}
 }
-function reinstallNodeJava(){
-	npm.load(function(err) {
-
-		// install module ffi
-		npm.commands.install(['java'], function(er, data) {
-			console.log("DONE")
-			rebuild.rebuild({
-				buildPath: __dirname,
-				electronVersion: '4.0.5'
-		  	}).then(() => {
-		  		checkFlag()
-			}).catch((e) => {
-		  		console.error("Building modules didn't work!");
-		  		console.error(e);
-			});
-		});
-
-		npm.on('log', function(message) {
-			// log installation progress
-			console.log(message);
-		});
-  	});
-}
+function renameJava(){
+	if(osvers == 'darwin'){
+		sudo.exec('mv ' + javadir + ' /Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk', options,
+		  		function(error, stdout, stderr) {
+		    		if (error) throw error;
+		    		console.log('stdout: ' + stdout);
+		    		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
+		  		}
+			);
+	} else {
+		sudo.exec('ren ' + javadir + ' C:/Program Files/Java/jdk-11.0.1', options,
+		  		function(error, stdout, stderr) {
+		    		if (error) throw error;
+		    		console.log('stdout: ' + stdout);
+		    		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
+		  		}
+			);
+	}
+}		
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
