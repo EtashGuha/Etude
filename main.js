@@ -145,7 +145,7 @@ function moveJava(){
 		}
 	} else {
 		if(!hasJdk){
-			sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 C:/Program Files/Java/', options,
+			sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 \"C:/Program Files/Java\"', options,
 		  		function(error, stdout, stderr) {
 		    		if (error) throw error;
 		    		console.log('stdout: ' + stdout);
@@ -167,7 +167,7 @@ function renameJava(){
 		  		}
 			);
 	} else {
-		sudo.exec('ren ' + javadir + ' C:/Program Files/Java/jdk-11.0.1', options,
+		sudo.exec('rename \"' + javadir + '\"" \"jdk-11.0.1\"', options,
 		  		function(error, stdout, stderr) {
 		    		if (error) throw error;
 		    		console.log('stdout: ' + stdout);
