@@ -65,7 +65,7 @@ locateJavaHome.default({
     	javadir = javaHomes[0]["path"].replace("/Contents/Home","");
     }
     console.log(hasJdk);
-    moveJava()
+    setupJava()
 });
 
   // and load the index.html of the app.
@@ -128,37 +128,39 @@ function runScript(scriptPath, callback) {
 	});
 
 }
+function setupJava(){
+	if(!hasJdk){
+		moveJava();
+	} else if(fs.existsSync('/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk') || fs.existsSync("C:/Program Files/Java/jdk-11.0.1")){
+		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
+	} else {
+		renameJava();
+	}
+}
 function moveJava(){
-
 	console.log(hasJdk)
 	if(osvers == 'darwin'){
-		if(!hasJdk){
-			sudo.exec('mv ' + etudeFilepath + '/jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines', options,
-		  		function(error, stdout, stderr) {
-		    		if (error) throw error;
-		    		console.log('stdout: ' + stdout);
-		    		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
-		  		}
-			);
-		} else {
-			renameJava()
-		}
+		console.log("trying to move")
+		sudo.exec('mv ' + etudeFilepath + '/jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines', options,
+	  		function(error, stdout, stderr) {
+	    		if (error) throw error;
+	    		console.log('stdout: ' + stdout);
+	    		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
+	  		}
+		);
 	} else {
-		if(!hasJdk){
-			sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 \"C:/Program Files/Java\"', options,
-		  		function(error, stdout, stderr) {
-		    		if (error) throw error;
-		    		console.log('stdout: ' + stdout);
-		    		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
-		  		}
-			);
-		} else {
-			renameJava()
-		}
+		sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 \"C:/Program Files/Java\"', options,
+	  		function(error, stdout, stderr) {
+	    		if (error) throw error;
+	    		console.log('stdout: ' + stdout);
+	  		}
+		);
+		setJavaHome();
 	}
 }
 function renameJava(){
 	if(osvers == 'darwin'){
+		console.log("Trying to rename")
 		sudo.exec('mv ' + javadir + ' /Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk', options,
 		  		function(error, stdout, stderr) {
 		    		if (error) throw error;
@@ -171,10 +173,26 @@ function renameJava(){
 		  		function(error, stdout, stderr) {
 		    		if (error) throw error;
 		    		console.log('stdout: ' + stdout);
-		    		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
 		  		}
 			);
+		setJavaHome();
 	}
 }		
+function setJavaHome(){
+	sudo.exec('set JAVA_HOME=C:/Program Files/Java/jdk-11.0.1', options,
+		  		function(error, stdout, stderr) {
+		    		if (error) throw error;
+		    		console.log('stdout: ' + stdout);
+		  		}
+			);
+	console.log('setx JAVA_HOME \"C:/Program Files/Java/jdk-11.0.1\"')
+	sudo.exec('setx JAVA_HOME \"C:/Program Files/Java/jdk-11.0.1\"', options,
+  		function(error, stdout, stderr) {
+    		if (error) throw error;
+    		console.log('stdout: ' + stdout);
+    		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
+  		}
+	);
+}
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
