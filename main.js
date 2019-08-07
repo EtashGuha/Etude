@@ -160,7 +160,7 @@ function moveJava(){
 	  		function(error, stdout, stderr) {
 	    		if (error) throw error;
 	    		console.log('stdout: ' + stdout);
-	    		conso
+	    		console.log("moving jdk")
 	  		});
 		});
 		setJavaHome();
