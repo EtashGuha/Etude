@@ -167,7 +167,7 @@ function renameJava(){
 		  		}
 			);
 	} else {
-		sudo.exec('rename \"' + javadir + '\"" \"jdk-11.0.1\"', options,
+		sudo.exec('rename \"' + javadir + '\" \"jdk-11.0.1\"', options,
 		  		function(error, stdout, stderr) {
 		    		if (error) throw error;
 		    		console.log('stdout: ' + stdout);
