@@ -164,7 +164,7 @@ function moveJava(){
 		    		console.log("moving jdk")
 		    		setJavaHome();
 		  		});
-			}
+			});
 		});
 		
 	}
