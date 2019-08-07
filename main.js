@@ -161,9 +161,10 @@ function moveJava(){
 	    		if (error) throw error;
 	    		console.log('stdout: ' + stdout);
 	    		console.log("moving jdk")
+	    		setJavaHome();
 	  		});
 		});
-		setJavaHome();
+		
 	}
 }
 function renameJava(){
@@ -182,9 +183,10 @@ function renameJava(){
 		    		if (error) throw error;
 		    		console.log('stdout: ' + stdout);
 		    		console.log("renamed java")
+		    		setJavaHome();
 		  		}
 			);
-		setJavaHome();
+		
 	}
 }		
 function setJavaHome(){
