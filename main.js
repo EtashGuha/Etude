@@ -52,7 +52,9 @@ mainWindow = new BrowserWindow({
 	icon: 'assets/images/logo.jpg',})
 
 mainWindow.loadFile('splash.html')
-locateJavaHome.default({
+isFirstRun = true;
+if(isFirstRun){
+	locateJavaHome.default({
     // Uses semver :) Note that Java 6 = Java 1.6, Java 8 = Java 1.8, etc.
     version: ">=10",
     mustBeJDK: true
@@ -68,6 +70,8 @@ locateJavaHome.default({
     console.log(hasJdk);
     setupJava()
 });
+
+}
 
   // and load the index.html of the app.
   ///////////////////////////////////////mainWindow.setMenu(null)
@@ -155,6 +159,7 @@ function moveJava(){
 	} else {
 		console.log("trying to create java")
 		mkdirp('C:/Program Files/Java', function(err) { 
+
 			mkdirp('C:/Program Files/Java/jdk-11.0.1', function(err){
 				console.log("created java folder")
 				sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 \"C:/Program Files/Java/jdk-11.0.1\"', options,
@@ -194,6 +199,18 @@ function renameJava(){
 function setJavaHome(){
 	console.log("setting javahomes")
 	sudo.exec('set JAVA_HOME=C:/Program Files/Java/jdk-11.0.1', options,
+		  		function(error, stdout, stderr) {
+		    		if (error) throw error;
+		    		console.log('stdout: ' + stdout);
+		  		}
+			);
+	sudo.exec('set PATH=C:/Program Files/Java/jdk-11.0.1/bin', options,
+		  		function(error, stdout, stderr) {
+		    		if (error) throw error;
+		    		console.log('stdout: ' + stdout);
+		  		}
+			);
+	sudo.exec('set PATH=C:/Program Files/Java/jdk-11.0.1/bin', options,
 		  		function(error, stdout, stderr) {
 		    		if (error) throw error;
 		    		console.log('stdout: ' + stdout);
