@@ -14,6 +14,7 @@ const etudeFilepath = __dirname.replace("/public/js","").replace("\\public\\js",
 var osvers = os.platform()
 var fs = require('fs');
 var isFirstRun = firstRun()
+var mkdirp = require('mkdirp');
 const locateJavaHome = require('locate-java-home'); 
 var npm = require('npm-programmatic');
 var options = {
@@ -129,7 +130,7 @@ function runScript(scriptPath, callback) {
 
 }
 function setupJava(){
-	if(!hasJdk){
+	if(!hasJdk || (osvers == "win32" && !fs.existsSync('C:/Program Files/Java')){
 		moveJava();
 	} else if(fs.existsSync('/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk') || fs.existsSync("C:/Program Files/Java/jdk-11.0.1")){
 		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
@@ -149,12 +150,13 @@ function moveJava(){
 	  		}
 		);
 	} else {
-		sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 \"C:/Program Files/Java\"', options,
+		mkdirp('C:/Program Files/Java', function(err) { 
+			sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 \"C:/Program Files/Java\"', options,
 	  		function(error, stdout, stderr) {
 	    		if (error) throw error;
 	    		console.log('stdout: ' + stdout);
-	  		}
-		);
+	  		});
+		});
 		setJavaHome();
 	}
 }
