@@ -158,20 +158,19 @@ function moveJava(){
 		);
 	} else {
 		console.log("trying to create java")
-		mkdirp('C:/Program Files/Java', function(err) { 
-
-			mkdirp('C:/Program Files/Java/jdk-11.0.1', function(err){
-				console.log("created java folder")
-				sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 \"C:/Program Files/Java/jdk-11.0.1\"', options,
+		sudo.exec('mkdir \"C:\\Program Files\\Java\"', options,
 		  		function(error, stdout, stderr) {
 		    		if (error) throw error;
 		    		console.log('stdout: ' + stdout);
-		    		console.log("moving jdk")
-		    		setJavaHome();
-		  		});
-			});
-		});
-		
+		    		sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 \"C:/Program Files/Java\"', options,
+				  		function(error, stdout, stderr) {
+				    		if (error) throw error;
+				    		console.log('stdout: ' + stdout);
+				    		console.log("moving jdk")
+				    		setJavaHome();
+				  		});
+		  		}
+			);
 	}
 }
 function renameJava(){
