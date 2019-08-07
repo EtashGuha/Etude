@@ -130,11 +130,14 @@ function runScript(scriptPath, callback) {
 
 }
 function setupJava(){
-	if(!hasJdk || (osvers == "win32" && !fs.existsSync('C:/Program Files/Java')){
+	if(!hasJdk || (osvers == "win32" && !fs.existsSync('C:/Program Files/Java'))){
+		console.log("moving java")
 		moveJava();
 	} else if(fs.existsSync('/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk') || fs.existsSync("C:/Program Files/Java/jdk-11.0.1")){
+		console.log("going to library")
 		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
 	} else {
+		console.log("rename java")
 		renameJava();
 	}
 }
@@ -150,11 +153,14 @@ function moveJava(){
 	  		}
 		);
 	} else {
+		console.log("trying to create java")
 		mkdirp('C:/Program Files/Java', function(err) { 
+			console.log("created java folder")
 			sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 \"C:/Program Files/Java\"', options,
 	  		function(error, stdout, stderr) {
 	    		if (error) throw error;
 	    		console.log('stdout: ' + stdout);
+	    		conso
 	  		});
 		});
 		setJavaHome();
@@ -175,12 +181,14 @@ function renameJava(){
 		  		function(error, stdout, stderr) {
 		    		if (error) throw error;
 		    		console.log('stdout: ' + stdout);
+		    		console.log("renamed java")
 		  		}
 			);
 		setJavaHome();
 	}
 }		
 function setJavaHome(){
+	console.log("setting javahomes")
 	sudo.exec('set JAVA_HOME=C:/Program Files/Java/jdk-11.0.1', options,
 		  		function(error, stdout, stderr) {
 		    		if (error) throw error;
