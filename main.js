@@ -157,20 +157,31 @@ function moveJava(){
 	  		}
 		);
 	} else {
-		console.log("trying to create java")
-		sudo.exec('mkdir \"C:\\Program Files\\Java\"', options,
-		  		function(error, stdout, stderr) {
-		    		if (error) throw error;
-		    		console.log('stdout: ' + stdout);
-		    		sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 \"C:/Program Files/Java\"', options,
-				  		function(error, stdout, stderr) {
-				    		if (error) throw error;
-				    		console.log('stdout: ' + stdout);
-				    		console.log("moving jdk")
-				    		setJavaHome();
-				  		});
-		  		}
-			);
+		if(!fs.existsSync('C:/Program Files/Java')){
+			console.log("trying to create java")
+			sudo.exec('mkdir \"C:\\Program Files\\Java\"', options,
+			  		function(error, stdout, stderr) {
+			    		if (error) throw error;
+			    		console.log('stdout: ' + stdout);
+			    		sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 \"C:/Program Files/Java\"', options,
+					  		function(error, stdout, stderr) {
+					    		if (error) throw error;
+					    		console.log('stdout: ' + stdout);
+					    		console.log("moving jdk")
+					    		setJavaHome();
+					  		});
+			  		}
+				);
+		} else {
+			sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 \"C:/Program Files/Java\"', options,
+					  		function(error, stdout, stderr) {
+					    		if (error) throw error;
+					    		console.log('stdout: ' + stdout);
+					    		console.log("moving jdk")
+					    		setJavaHome();
+					  		});
+		}
+		
 	}
 }
 function renameJava(){
