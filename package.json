@@ -5,7 +5,10 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . Etude"
+    "build": "electron-packager . Etude",
+    "pack": "electron-builder --dir",
+    "postinstall": "electron-builder install-app-deps",
+    "dist": "electron-builder"
   },
   "keywords": [
     "Electron",
@@ -18,15 +21,20 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^4.1.4",
+    "electron-builder": "^21.2.0",
     "electron-installer-dmg": "^2.0.0",
     "electron-packager": "^13.1.0",
     "electron-react-devtools": "^0.5.3",
     "electron-rebuild": "^1.8.5"
   },
   "build": {
-    "extraResources": [
-      "./public1/**"
-    ]
+    "appId": "Etude",
+    "mac": {
+      "category": "Professional"
+    },
+    "publish": ["github", "bintray"],
+    
+    "nodeGypRebuild": true
   },
   "dependencies": {
     "deepai": "^1.0.0",
