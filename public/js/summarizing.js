@@ -6,12 +6,11 @@ var jre = require('node-jre')
 log.info('Hello, log for the first time');
 var typeOf = require('typeof');
 const os = require('os')
-
 var osvers = os.platform()
-
 console.log(osvers)
 var textData = null;
 var bookmarkArray = [];
+var Worker = require("tiny-worker");
 
 var tools = require('./createFile/coordinates.js')
 var bookmarkArray = [];
@@ -34,18 +33,18 @@ var PDF_URL  = filepath;
 var capeClicked = false;
 var btnClicked = false;
 var bookmarkOpened = false;
-var java = require('java');
-if(osvers == "darwin"){
-	java.classpath.push(etudeFilepath + "/MacKernel.jar");
-	java.classpath.push(etudeFilepath + "/Contents/Resources/Wolfram\ Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
-} else {
-	java.classpath.push(etudeFilepath + "/WindowsKernel.jar");
-	java.classpath.push(etudeFilepath + "/12.0/SystemFiles/Links/JLink/JLink.jar");
-}
-//njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
-var kernel = java.newInstanceSync('p1.Kernel', etudeFilepath);
 var htmlForEntireDoc = ""
-pdfAllToHTML(PDF_URL);
+// pdfAllToHTML(PDF_URL);
+var pdfToHtmlWorker = new Worker("/Users/etashguha/Documents/etude/public/js/pdfToHtml.js");
+var kernelWorker = new Worker("/Users/etashguha/Documents/etude/public/js/kernel.js")
+pdfToHtmlWorker.onmessage = function (ev) {
+    console.log(ev);
+    pdfToHtmlWorker.terminate();
+};
+
+console.log("hello")
+pdfToHtmlWorker.postMessage(PDF_URL);
+console.log("has")
 var numPages = 0;
 PDFJS.getDocument({ url: PDF_URL }).then(function(pdf_doc) {
   __PDF_DOC = pdf_doc;
@@ -144,11 +143,16 @@ $("#cape_btn").click(function(){
 		}
 		htmlForEntireDoc.then((x) => {
 			var promiseToAppend = new Promise(function(resolve, reject){
-				var searchResults = kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence");
-				$("#capeResult").empty().append(searchResults[0] + " <hr style=\"margin-top: 15px; margin-bottom: 15px\"> " + searchResults[1]);
-				updateHighlights(searchResults, true)
-				console.log("Starting")
-				resolve("GOOD")
+				kernelWorker.onmessage = function(ev) {
+					console.log(ev);
+					$("#capeResult").empty().append(ev.data[0] + " <hr style=\"margin-top: 15px; margin-bottom: 15px\"> " + ev.data[1]);
+					updateHighlights(ev.data, true)
+					console.log("Starting")
+					resolve("GOOD")
+				}
+				kernelWorker.postMessage([x, $("#questionVal").val(), 2, "Sentence"])
+				//kernel.findTextAnswerSync();
+				
 			});
 			//$("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
 			//document.getElementById("myDropdown").classList.toggle("show");
@@ -207,31 +211,6 @@ function processSummarizationResult(t){
   textDsum = 0;
 };
 
-function pdfAllToHTML(nameOfFileDir) {
-  var exec = require('child_process').exec, child;
-
-  var filenamewithextension = path.parse(nameOfFileDir).base;
-  filenamewithextension = filenamewithextension.split('.')[0];
-  console.log(filenamewithextension)
-  //update directory to JAR file
-  var pathOfFile = etudeFilepath + '/tmp/' + filenamewithextension + '.html'
-  try {
-	if (fs.existsSync(pathOfFile)) {
-	  console.log("html exists already")
-	  return;
-	}
-  } catch(err) {
-	console.error(err)
-  }
-  let executionstring = 'java -jar ' + etudeFilepath + '/PDFToHTML.jar \"' + nameOfFileDir + '\" \"' + etudeFilepath +  '/tmp/' + filenamewithextension + '.html\"';
-
-  child = exec(executionstring,
-	  function (error, stdout, stderr) {
-		  if (error !== null) {
-			   console.log('exec error: ' + error);
-		  }
-	  });
-}
 function summaryButtonPressed(firstpage, lastpage) {
   var htmlStuff = htmlWholeFileToPartialPlainText(firstpage, lastpage);
   htmlStuff.then((x) => {
