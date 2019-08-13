@@ -35,3 +35,4 @@ C. Copy java folder into etude nodemodules
 D. Copy Wolfram kernel from original
 E. Fix java issues as noted in GitHub
 F. First time will take a while
+9. Server with MathLM: 192.241.159.128
