@@ -52,7 +52,7 @@ mainWindow = new BrowserWindow({
 	icon: 'assets/images/logo.jpg',})
 
 mainWindow.loadFile('splash.html')
-isFirstRun = true;
+// isFirstRun = true;
 if(isFirstRun){
 	locateJavaHome.default({
     // Uses semver :) Note that Java 6 = Java 1.6, Java 8 = Java 1.8, etc.
@@ -71,6 +71,8 @@ if(isFirstRun){
     setupJava()
 });
 
+} else {
+	setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
 }
 
   // and load the index.html of the app.
@@ -134,7 +136,20 @@ function runScript(scriptPath, callback) {
 
 }
 function setupJava(){
-	if(!hasJdk || (osvers == "win32" && !fs.existsSync('C:/Program Files/Java'))){
+	if(osvers == "win32") {
+		//!fs.existsSync('C:/Program Files/Java')
+		sudo.exec(etudeFilepath + '/jdk-11.0.1_windows-x64_bin.exe /s', options,
+			  		function(error, stdout, stderr) {
+			  			// if (fs.existsSync('C:/Program Files/Java')) {
+			  			// 	setJavaHome('Program Files');
+			  			// } else if (fs.existsSync('C:/Program Files (x86)/Java')) {
+			  			// 	setJavaHome('Program Files (x86)');
+			  			// }
+			  			console.log(stdout)
+			  			console.log("Silently installed Java")
+			  		});
+
+	} else if(!hasJdk){
 		console.log("moving java")
 		moveJava();
 	} else if(fs.existsSync('/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk') || fs.existsSync("C:/Program Files/Java/jdk-11.0.1")){
@@ -156,32 +171,6 @@ function moveJava(){
 	    		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
 	  		}
 		);
-	} else {
-		if(!fs.existsSync('C:/Program Files/Java')){
-			console.log("trying to create java")
-			sudo.exec('mkdir \"C:\\Program Files\\Java\"', options,
-			  		function(error, stdout, stderr) {
-			    		if (error) throw error;
-			    		console.log('stdout: ' + stdout);
-			    		sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 \"C:/Program Files/Java\"', options,
-					  		function(error, stdout, stderr) {
-					    		if (error) throw error;
-					    		console.log('stdout: ' + stdout);
-					    		console.log("moving jdk")
-					    		setJavaHome();
-					  		});
-			  		}
-				);
-		} else {
-			sudo.exec('move ' + etudeFilepath + '/jdk-11.0.1 \"C:/Program Files/Java\"', options,
-					  		function(error, stdout, stderr) {
-					    		if (error) throw error;
-					    		console.log('stdout: ' + stdout);
-					    		console.log("moving jdk")
-					    		setJavaHome();
-					  		});
-		}
-		
 	}
 }
 function renameJava(){
@@ -194,46 +183,36 @@ function renameJava(){
 		    		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
 		  		}
 			);
-	} else {
-		sudo.exec('rename \"' + javadir + '\" \"jdk-11.0.1\"', options,
-		  		function(error, stdout, stderr) {
-		    		if (error) throw error;
-		    		console.log('stdout: ' + stdout);
-		    		console.log("renamed java")
-		    		setJavaHome();
-		  		}
-			);
-		
 	}
 }		
-function setJavaHome(){
+function setJavaHome(programFilesFolder){
 	console.log("setting javahomes")
-	sudo.exec('set JAVA_HOME=C:/Program Files/Java/jdk-11.0.1', options,
+	sudo.exec('set JAVA_HOME=C:\\' + programFilesFolder + '\\Java\\jdk-11.0.1', options,
 		  		function(error, stdout, stderr) {
 		    		if (error) throw error;
-		    		console.log('stdout: ' + stdout);
-		  		}
-			);
-	sudo.exec('set PATH=C:/Program Files/Java/jdk-11.0.1/bin', options,
-		  		function(error, stdout, stderr) {
-		    		if (error) throw error;
-		    		console.log('stdout: ' + stdout);
-		  		}
-			);
-	sudo.exec('set PATH=C:/Program Files/Java/jdk-11.0.1/bin', options,
-		  		function(error, stdout, stderr) {
-		    		if (error) throw error;
-		    		console.log('stdout: ' + stdout);
-		  		}
-			);
-	console.log('setx JAVA_HOME \"C:/Program Files/Java/jdk-11.0.1\"')
-	sudo.exec('setx JAVA_HOME \"C:/Program Files/Java/jdk-11.0.1\"', options,
-  		function(error, stdout, stderr) {
-    		if (error) throw error;
-    		console.log('stdout: ' + stdout);
-    		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
-  		}
-	);
+		    		// console.log('stdout: ' + stdout);
+		    		// sudo.exec('set path=\"C:\\' + programFilesFolder + '\\Java\\jdk-11.0.1\\bin\";%path%', options,
+		  				// function(error, stdout, stderr) {
+		    		// 	if (error) throw error;
+		    		// 	console.log('stdout: ' + stdout);
+		    		// 			sudo.exec('setx path \"C:\\' + programFilesFolder + '\\Java\\jdk-11.0.1\\bin\";%path%', options,
+		  				// 		function(error, stdout, stderr) {
+		    		// 			if (error) throw error;
+		    					console.log('stdout: ' + stdout);
+		    						console.log('setx JAVA_HOME \"C:\\' + programFilesFolder + '\\Java\\jdk-11.0.1\"')
+								sudo.exec('setx JAVA_HOME \"C:\\' + programFilesFolder + '\\Java\\jdk-11.0.1\"', options,
+							  		function(error, stdout, stderr) {
+							    		if (error) throw error;
+							    		console.log('stdout: ' + stdout);
+							    		setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
+							  		}
+								);
+							  		}
+								);
+			// 	  		}
+			// 		);
+		 //  		}
+			// );
 }
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

@@ -39,8 +39,10 @@ if(osvers == "darwin"){
 	java.classpath.push(etudeFilepath + "/MacKernel.jar");
 	java.classpath.push(etudeFilepath + "/Contents/Resources/Wolfram\ Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
 } else {
-	java.classpath.push(etudeFilepath + "/WindowsKernel.jar");
-	java.classpath.push(etudeFilepath + "/12.0/SystemFiles/Links/JLink/JLink.jar");
+	java.classpath.push('java -jar ' + etudeFilepath + "/WindowsKernel.jar");
+	java.classpath.push('java -jar ' + etudeFilepath + "/12.0/SystemFiles/Links/JLink/JLink.jar");
+	// java.classpath.push('\"C:/Program Files/Java/jdk-11.0.1/bin/java\" -jar ' + etudeFilepath + "/WindowsKernel.jar");
+	// java.classpath.push('\"C:/Program Files/Java/jdk-11.0.1/bin/java\" -jar ' + etudeFilepath + "/12.0/SystemFiles/Links/JLink/JLink.jar");
 }
 //njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
 var kernel = java.newInstanceSync('p1.Kernel', etudeFilepath);
@@ -223,7 +225,7 @@ function pdfAllToHTML(nameOfFileDir) {
   } catch(err) {
 	console.error(err)
   }
-  let executionstring = 'java -jar ' + etudeFilepath + '/PDFToHTML.jar \"' + nameOfFileDir + '\" \"' + etudeFilepath +  '/tmp/' + filenamewithextension + '.html\"';
+  let executionstring = '\"C:/Program Files/Java/jdk-11.0.1/bin/java\" -jar ' + etudeFilepath + '/PDFToHTML.jar \"' + nameOfFileDir + '\" \"' + etudeFilepath +  '/tmp/' + filenamewithextension + '.html\"';
 
   child = exec(executionstring,
 	  function (error, stdout, stderr) {
