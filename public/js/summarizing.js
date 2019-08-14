@@ -35,8 +35,9 @@ var btnClicked = false;
 var bookmarkOpened = false;
 var htmlForEntireDoc = ""
 // pdfAllToHTML(PDF_URL);
-var pdfToHtmlWorker = new Worker("/Users/etashguha/Documents/etude/public/js/pdfToHtml.js");
-var kernelWorker = new Worker("/Users/etashguha/Documents/etude/public/js/kernel.js")
+var pdfToHtmlWorker = new Worker(etudeFilepath + "/public/js/pdfToHtml.js");
+var kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
+var updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
 pdfToHtmlWorker.onmessage = function (ev) {
     console.log(ev);
     pdfToHtmlWorker.terminate();
@@ -134,6 +135,7 @@ $(document).on("click",".bookmark-canvas", function(){
 
 
 $("#cape_btn").click(function(){
+	console.log("Cape button clicked")
 	if(capeClicked){
 		document.getElementById("myDropdown").classList.toggle("show");
 	}
@@ -143,20 +145,35 @@ $("#cape_btn").click(function(){
 		}
 		htmlForEntireDoc.then((x) => {
 			var promiseToAppend = new Promise(function(resolve, reject){
+				console.log("beginning promise")
 				kernelWorker.onmessage = function(ev) {
 					console.log(ev);
 					$("#capeResult").empty().append(ev.data[0] + " <hr style=\"margin-top: 15px; margin-bottom: 15px\"> " + ev.data[1]);
-					updateHighlights(ev.data, true)
+					updateHighlightsWorker.onmessage = function(ev) {
+						console.log("Worker is done")
+						changePage();
+						console.log(ev.data)
+						jumpPage(ev.data)
+						console.log('done updateHighlightsWorker')
+						updateHighlightsWorker.terminate()
+
+					}
+					updateHighlightsWorker.postMessage([ev.data, true, filepath])
 					console.log("Starting")
+					console.log("Kernel worker terminated")
+					kernelWorker.terminate()
 					resolve("GOOD")
 				}
+				console.log("redefined kernelWorker on message")
 				kernelWorker.postMessage([x, $("#questionVal").val(), 2, "Sentence"])
+				console.log("kernel worker put up")
 				//kernel.findTextAnswerSync();
 				
 			});
 			//$("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
 			//document.getElementById("myDropdown").classList.toggle("show");
 			promiseToAppend.then((data) => {
+				console.log(data)
 				document.getElementById("myDropdown").classList.toggle("show");
 				document.getElementById('searchloader').style.display = 'none';
 				document.getElementById('searchbuttonthree').style.color = 'black';
@@ -325,6 +342,13 @@ function checkFlag(isSearch) {
 	  	checkForJump()
 	  }
 	}
+}
+
+function changePage(){
+	viewerEle.innerHTML = "";
+	iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${secVersionFilepath}`);
+	console.log(iframe)
+	viewerEle.appendChild(iframe);
 }
 
 function getJsonContents(){
