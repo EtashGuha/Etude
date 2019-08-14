@@ -135,6 +135,8 @@ $(document).on("click",".bookmark-canvas", function(){
 
 
 $("#cape_btn").click(function(){
+	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
+	updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
 	console.log("Cape button clicked")
 	if(capeClicked){
 		document.getElementById("myDropdown").classList.toggle("show");
@@ -215,10 +217,19 @@ var textDsum = "";
 var iPagesum = 0;
 var iEndPagesum = 0;
 function processSummarizationResult(t){
-  noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
-
-  tokenizer.setEntry(noLineBreakText);
-  updateHighlights(tokenizer.getSentences(), false)
+	noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
+	updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
+	tokenizer.setEntry(noLineBreakText);
+	updateHighlightsWorker.onmessage = function(ev) {
+		console.log("Worker is done")
+		changePage();
+		console.log(ev.data)
+		console.log('done updateHighlightsWorker')
+		updateHighlightsWorker.terminate()
+	}
+	updateHighlightsWorker.postMessage([tokenizer.getSentences(), false, filepath])
+	console.log("Starting")
+	console.log("Kernel worker terminated")
   $("#summarizingResult").empty().append(t["output"]);
   //here you can remove the loading button
   $('.summarizer_loading').hide();
@@ -295,28 +306,6 @@ $('#getRangeButton').click(function(){
   $('.su_popup').show();
 })
 
-// kernel.findTextAnswerSync('foo','bar', 1, "Sentence");
-// console.log('hello');
-function updateHighlights(sentences, isSearch){
-	if(fs.existsSync(etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf')){
-		fs.unlinkSync(etudeFilepath + "/folderForHighlightedPDF/secVersion.pdf");
-  	}
-  tools.extractor(sentences,filepath, etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf', etudeFilepath);
-  checkFlag(isSearch);
-}
-function checkForJump(){
-	if(!fs.existsSync(etudeFilepath + "/tmp/object.json")){
-		window.setTimeout(checkForJump, 100);
-	} else {
-		try {
-			var jsonContents = getJsonContents()
-			jumpPage(jsonContents[0]['page'] + 1);
-		} catch (err){
-			window.setTimeout(checkForJump, 100);
-		}
-	}
-}
-
 function jumpPage(pageNumber){
 	if(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView') != null 
 		&& typeOf(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').childNodes[pageNumber - 1]) != "text"
@@ -326,37 +315,10 @@ function jumpPage(pageNumber){
 		window.setTimeout(jumpPage, 100, pageNumber)
 	}
 }
-function checkFlag(isSearch) {
-	if(!fs.existsSync(etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf')){
-	  console.log("checking")
-	  window.setTimeout(checkFlag, 100, isSearch); /* this checks the flag every 100 milliseconds*/
-	} else {
-	  viewerEle.innerHTML = "";
-	  iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${secVersionFilepath}`);
-	  console.log(iframe)
-	  viewerEle.appendChild(iframe);
-	  console.log("DONE")
-	  console.log("Whether you want to search: " + isSearch)
-	  if(isSearch){
-	  	console.log("CHECKINGFORJUMP")
-	  	checkForJump()
-	  }
-	}
-}
 
 function changePage(){
 	viewerEle.innerHTML = "";
 	iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${secVersionFilepath}`);
 	console.log(iframe)
 	viewerEle.appendChild(iframe);
-}
-
-function getJsonContents(){
-	try {
-		var contents = fs.readFileSync(etudeFilepath + "/tmp/object.json");
-		var jsonContents = JSON.parse(contents)
-		return jsonContents;
-	} catch (err){
-		window.setTimeout(getJsonContents, 100)
-	}
 }
