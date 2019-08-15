@@ -20,6 +20,8 @@ var npm = require('npm-programmatic');
 var options = {
 		name: 'Etude'
 };
+const userDataPath = (electron.app || electron.remote.app).getPath('userData'); 
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -134,7 +136,21 @@ function runScript(scriptPath, callback) {
 
 }
 function setupJava(){
-	if(!hasJdk || (osvers == "win32" && !fs.existsSync('C:/Program Files/Java'))){
+	console.log(userDataPath)
+	if(!fs.existsSync(userDataPath + "/tmp")){
+		fs.mkdirSync(userDataPath + "/tmp")
+	}
+	console.log(userDataPath)
+	if(!fs.existsSync(userDataPath + "/folderForHighlightedPDF")){
+		fs.mkdirSync(userDataPath + "/folderForHighlightedPDF")
+	}
+	if(osvers == "win32"){
+		sudo.exec(etudeFilepath + '/jdk-11.0.1_windows-x64_bin.exe /s', options,
+			  		function(error, stdout, stderr) {
+			  			console.log(stdout)
+			  			console.log("Silently installed Java")
+			  		});
+	} else if(!hasJdk || (osvers == "win32" && !fs.existsSync('C:/Program Files/Java'))){
 		console.log("moving java")
 		moveJava();
 	} else if(fs.existsSync('/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk') || fs.existsSync("C:/Program Files/Java/jdk-11.0.1")){
@@ -235,5 +251,7 @@ function setJavaHome(){
   		}
 	);
 }
+
+module.exports = userDataPath
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

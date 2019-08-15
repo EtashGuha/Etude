@@ -6,13 +6,13 @@ var jre = require('node-jre')
 log.info('Hello, log for the first time');
 var typeOf = require('typeof');
 const os = require('os')
-
 var osvers = os.platform()
-
 console.log(osvers)
 var textData = null;
 var bookmarkArray = [];
-
+var Worker = require("tiny-worker");
+const electron = require("electron")
+const userDataPath = (electron.app || electron.remote.app).getPath('userData');
 var tools = require('./createFile/coordinates.js')
 var bookmarkArray = [];
 var Tokenizer = require('sentence-tokenizer');
@@ -34,18 +34,19 @@ var PDF_URL  = filepath;
 var capeClicked = false;
 var btnClicked = false;
 var bookmarkOpened = false;
-var java = require('java');
-if(osvers == "darwin"){
-	java.classpath.push(etudeFilepath + "/MacKernel.jar");
-	java.classpath.push(etudeFilepath + "/Contents/Resources/Wolfram\ Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
-} else {
-	java.classpath.push(etudeFilepath + "/WindowsKernel.jar");
-	java.classpath.push(etudeFilepath + "/12.0/SystemFiles/Links/JLink/JLink.jar");
-}
-//njava.classpath.push("/Applications/Wolfram\ Desktop.app/Contents/SystemFiles/Links/JLink/JLink.jar")
-var kernel = java.newInstanceSync('p1.Kernel', etudeFilepath);
 var htmlForEntireDoc = ""
-pdfAllToHTML(PDF_URL);
+// pdfAllToHTML(PDF_URL);
+var pdfToHtmlWorker = new Worker(etudeFilepath + "/public/js/pdfToHtml.js");
+var kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
+var updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
+pdfToHtmlWorker.onmessage = function (ev) {
+    console.log(ev);
+    pdfToHtmlWorker.terminate();
+};
+
+console.log("hello")
+pdfToHtmlWorker.postMessage([PDF_URL, userDataPath]);
+console.log("has")
 var numPages = 0;
 PDFJS.getDocument({ url: PDF_URL }).then(function(pdf_doc) {
   __PDF_DOC = pdf_doc;
@@ -135,6 +136,9 @@ $(document).on("click",".bookmark-canvas", function(){
 
 
 $("#cape_btn").click(function(){
+	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
+	updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
+	console.log("Cape button clicked")
 	if(capeClicked){
 		document.getElementById("myDropdown").classList.toggle("show");
 	}
@@ -144,15 +148,35 @@ $("#cape_btn").click(function(){
 		}
 		htmlForEntireDoc.then((x) => {
 			var promiseToAppend = new Promise(function(resolve, reject){
-				var searchResults = kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence");
-				$("#capeResult").empty().append(searchResults[0] + " <hr style=\"margin-top: 15px; margin-bottom: 15px\"> " + searchResults[1]);
-				updateHighlights(searchResults, true)
-				console.log("Starting")
-				resolve("GOOD")
+				console.log("beginning promise")
+				kernelWorker.onmessage = function(ev) {
+					console.log(ev);
+					$("#capeResult").empty().append(ev.data[0] + " <hr style=\"margin-top: 15px; margin-bottom: 15px\"> " + ev.data[1]);
+					updateHighlightsWorker.onmessage = function(ev) {
+						console.log("Worker is done")
+						changePage();
+						console.log(ev.data)
+						jumpPage(ev.data)
+						console.log('done updateHighlightsWorker')
+						updateHighlightsWorker.terminate()
+
+					}
+					updateHighlightsWorker.postMessage([ev.data, true, filepath, userDataPath])
+					console.log("Starting")
+					console.log("Kernel worker terminated")
+					kernelWorker.terminate()
+					resolve("GOOD")
+				}
+				console.log("redefined kernelWorker on message")
+				kernelWorker.postMessage([x, $("#questionVal").val(), 2, "Sentence"])
+				console.log("kernel worker put up")
+				//kernel.findTextAnswerSync();
+				
 			});
 			//$("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
 			//document.getElementById("myDropdown").classList.toggle("show");
 			promiseToAppend.then((data) => {
+				console.log(data)
 				document.getElementById("myDropdown").classList.toggle("show");
 				document.getElementById('searchloader').style.display = 'none';
 				document.getElementById('searchbuttonthree').style.color = 'black';
@@ -194,10 +218,19 @@ var textDsum = "";
 var iPagesum = 0;
 var iEndPagesum = 0;
 function processSummarizationResult(t){
-  noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
-
-  tokenizer.setEntry(noLineBreakText);
-  updateHighlights(tokenizer.getSentences(), false)
+	noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
+	updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
+	tokenizer.setEntry(noLineBreakText);
+	updateHighlightsWorker.onmessage = function(ev) {
+		console.log("Worker is done")
+		changePage();
+		console.log(ev.data)
+		console.log('done updateHighlightsWorker')
+		updateHighlightsWorker.terminate()
+	}
+	updateHighlightsWorker.postMessage([tokenizer.getSentences(), false, filepath, userDataPath])
+	console.log("Starting")
+	console.log("Kernel worker terminated")
   $("#summarizingResult").empty().append(t["output"]);
   //here you can remove the loading button
   $('.summarizer_loading').hide();
@@ -207,31 +240,6 @@ function processSummarizationResult(t){
   textDsum = 0;
 };
 
-function pdfAllToHTML(nameOfFileDir) {
-  var exec = require('child_process').exec, child;
-
-  var filenamewithextension = path.parse(nameOfFileDir).base;
-  filenamewithextension = filenamewithextension.split('.')[0];
-  console.log(filenamewithextension)
-  //update directory to JAR file
-  var pathOfFile = etudeFilepath + '/tmp/' + filenamewithextension + '.html'
-  try {
-	if (fs.existsSync(pathOfFile)) {
-	  console.log("html exists already")
-	  return;
-	}
-  } catch(err) {
-	console.error(err)
-  }
-  let executionstring = 'java -jar ' + etudeFilepath + '/PDFToHTML.jar \"' + nameOfFileDir + '\" \"' + etudeFilepath +  '/tmp/' + filenamewithextension + '.html\"';
-
-  child = exec(executionstring,
-	  function (error, stdout, stderr) {
-		  if (error !== null) {
-			   console.log('exec error: ' + error);
-		  }
-	  });
-}
 function summaryButtonPressed(firstpage, lastpage) {
   var htmlStuff = htmlWholeFileToPartialPlainText(firstpage, lastpage);
   htmlStuff.then((x) => {
@@ -243,7 +251,7 @@ function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
   return new Promise(function(resolve, reject){
 	var filenamewithextension = path.parse(PDF_URL).base;
 	filenamewithextension = filenamewithextension.split('.')[0];
-	var outputfile = etudeFilepath + '/tmp/' + filenamewithextension + '.html';
+	var outputfile = userDataPath + '/tmp/' + filenamewithextension + '.html';
 	const htmlToJson = require('html-to-json');
 	let bigarray = [];
 	let bigarrayback = [];
@@ -299,28 +307,6 @@ $('#getRangeButton').click(function(){
   $('.su_popup').show();
 })
 
-// kernel.findTextAnswerSync('foo','bar', 1, "Sentence");
-// console.log('hello');
-function updateHighlights(sentences, isSearch){
-	if(fs.existsSync(etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf')){
-		fs.unlinkSync(etudeFilepath + "/folderForHighlightedPDF/secVersion.pdf");
-  	}
-  tools.extractor(sentences,filepath, etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf', etudeFilepath);
-  checkFlag(isSearch);
-}
-function checkForJump(){
-	if(!fs.existsSync(etudeFilepath + "/tmp/object.json")){
-		window.setTimeout(checkForJump, 100);
-	} else {
-		try {
-			var jsonContents = getJsonContents()
-			jumpPage(jsonContents[0]['page'] + 1);
-		} catch (err){
-			window.setTimeout(checkForJump, 100);
-		}
-	}
-}
-
 function jumpPage(pageNumber){
 	if(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView') != null 
 		&& typeOf(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').childNodes[pageNumber - 1]) != "text"
@@ -330,30 +316,10 @@ function jumpPage(pageNumber){
 		window.setTimeout(jumpPage, 100, pageNumber)
 	}
 }
-function checkFlag(isSearch) {
-	if(!fs.existsSync(etudeFilepath + '/folderForHighlightedPDF/secVersion.pdf')){
-	  console.log("checking")
-	  window.setTimeout(checkFlag, 100, isSearch); /* this checks the flag every 100 milliseconds*/
-	} else {
-	  viewerEle.innerHTML = "";
-	  iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${secVersionFilepath}`);
-	  console.log(iframe)
-	  viewerEle.appendChild(iframe);
-	  console.log("DONE")
-	  console.log("Whether you want to search: " + isSearch)
-	  if(isSearch){
-	  	console.log("CHECKINGFORJUMP")
-	  	checkForJump()
-	  }
-	}
-}
 
-function getJsonContents(){
-	try {
-		var contents = fs.readFileSync(etudeFilepath + "/tmp/object.json");
-		var jsonContents = JSON.parse(contents)
-		return jsonContents;
-	} catch (err){
-		window.setTimeout(getJsonContents, 100)
-	}
+function changePage(){
+	viewerEle.innerHTML = "";
+	iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${secVersionFilepath}`);
+	console.log(iframe)
+	viewerEle.appendChild(iframe);
 }

@@ -14,9 +14,12 @@ var __PDF_DOC,
 
         for (var j = 0; j < i; j++){
                 // var j = 0;
+            try {
           show_nextItem(store.get(j.toString()), j.toString());
           console.log(store.get(j.toString()));
-          showPDF_fresh(store.get(j.toString()),j);
+          showPDF_fresh(store.get(j.toString()),j);} catch(err) {
+            console.log("nah")
+          }
 
         }
         document.getElementById('myButton').addEventListener('click', () => {
