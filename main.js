@@ -153,6 +153,11 @@ function setupJava(){
 			  			console.log(stdout)
 			  			console.log("Silently installed Java")
 			  		});
+		sudo.exec(etudeFilepath + '/vc_redist.x86.exe /install /quiet /norestart', options,
+	  		function(error, stdout, stderr) {
+	  			console.log(stdout)
+	  			console.log("Silently installed Microsoft C++")
+	  		});
 	} else if(!hasJdk || (osvers == "win32" && !fs.existsSync('C:/Program Files/Java'))){
 		console.log("moving java")
 		moveJava();
