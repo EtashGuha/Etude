@@ -952,6 +952,7 @@ html[dir='ltr'] #toolbarViewerRight > *,
 html[dir='ltr'] .findbar * {
   position: relative;
   float: left;
+  left:calc(90% - 50px);
   border: 0.4px solid gray;
 }
 html[dir='rtl'] #toolbarViewerLeft > *,
@@ -1258,7 +1259,12 @@ html[dir="rtl"] .secondaryToolbarButton::before {
 }
 
 html[dir='ltr'] .toolbarButton#sidebarToggle::before {
-  content: url(images/toolbarButton-sidebarToggle.png);
+  content: url(images/toolbarButton-pageDown@2x.png);
+  left: 20px;
+  top: 12px;
+  transform: scale(0.5);
+  margin-left: 6px;
+  margin-top: 7px;
 }
 html[dir='rtl'] .toolbarButton#sidebarToggle::before {
   content: url(images/toolbarButton-sidebarToggle-rtl.png);
@@ -1286,39 +1292,64 @@ html[dir='rtl'] .toolbarButton.findNext::before {
 }
 
 html[dir='ltr'] .toolbarButton.pageUp::before {
-  content: url(images/toolbarButton-pageUp.png);
-  margin-top:0px;
+  content: url(images/toolbarButton-pageUp@2x.png);
+  transform: scale(0.5);
+  filter: invert(100%);
+  margin-top:-4px;
   margin-left:0px;
 }
 html[dir='rtl'] .toolbarButton.pageUp::before {
   content: url(images/toolbarButton-pageUp-rtl.png);
+  transform: scale(0.5);
+  margin-top:0px;
+  margin-left:0px;
 }
 
 html[dir='ltr'] .toolbarButton.pageDown::before {
-  content: url(images/toolbarButton-pageDown.png);
-  margin-top:0px;
+  content: url(images/toolbarButton-pageDown@2x.png);
+  transform: scale(0.5);
+  filter: invert(100%);
+  margin-top:-4px;
   margin-left:0px;
 }
 html[dir='rtl'] .toolbarButton.pageDown::before {
   content: url(images/toolbarButton-pageDown-rtl.png);
+  transform: scale(0.5);
+  margin-top:0px;
+  margin-left:0px;
 }
 
 .toolbarButton.zoomOut::before {
-  content: url(images/toolbarButton-zoomOut.png);
+  content: url(images/toolbarButton-zoomOut@2x.png);
+  transform: scale(0.5);
+  animation-delay: inherit;
+  margin-left:6px;
 }
 
 .toolbarButton.zoomIn::before {
-  content: url(images/toolbarButton-zoomIn.png);
+  content: url(images/toolbarButton-zoomIn@2x.png);
+  transform: scale(0.5);
+  animation-delay: inherit;
+  margin-left:6px;
+  margin-top:7px;
 }
 
 .toolbarButton.presentationMode::before,
 .secondaryToolbarButton.presentationMode::before {
-  content: url(images/toolbarButton-presentationMode.png);
+  content: url(images/toolbarButton-presentationMode@2x.png);
+  transform: scale(0.5);
+  animation-delay: inherit;
+  margin-left:6px;
+  margin-top:3px;
 }
 
 .toolbarButton.print::before,
 .secondaryToolbarButton.print::before {
-  content: url(images/toolbarButton-print.png);
+  content: url(images/toolbarButton-print@2x.png);
+  transform: scale(0.5);
+  animation-delay: inherit;
+  margin-left:6px;
+  margin-top:4px;
 }
 
 .toolbarButton.openFile::before,
@@ -2126,6 +2157,7 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   html[dir='ltr'] .toolbarButton.pageUp::before {
     content: url(images/toolbarButton-pageUp@2x.png);
     filter: invert(100%);
+    margin-top:0px;
   }
   html[dir='rtl'] .toolbarButton.pageUp::before {
     content: url(images/toolbarButton-pageUp-rtl@2x.png);
@@ -2134,6 +2166,7 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   html[dir='ltr'] .toolbarButton.pageDown::before {
     content: url(images/toolbarButton-pageDown@2x.png);
     filter: invert(100%);
+    margin-top:0px;
   }
   html[dir='rtl'] .toolbarButton.pageDown::before {
     content: url(images/toolbarButton-pageDown-rtl@2x.png);

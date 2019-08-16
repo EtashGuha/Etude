@@ -181,26 +181,26 @@ function trimAfterPeriod() {
 
 function trimBeforePeriod() {
 
-    console.log("trimming" + highlightThisArr[0] + postTempAnnotations[0].str);
+    //console.log("trimming" + highlightThisArr[0] + postTempAnnotations[0].str);
     const index = postTempAnnotations[0].str.indexOf(highlightThisArr[0]);
     const totalIndex = postTempAnnotations[0].str.length;
-    console.log(index);
-    console.log(totalIndex);
+    //console.log(index);
+    //console.log(totalIndex);
     let proportion = (index + 0.0) / totalIndex
-    console.log(proportion)
+    //console.log(proportion)
     if (proportion < 0) {
     proportion = 0;
     }
-    console.log(postTempAnnotations[0].x)
+    //console.log(postTempAnnotations[0].x)
     if (postTempAnnotations[0].oldWidth !== undefined) {
         postTempAnnotations[0].x = postTempAnnotations[0].x + (proportion * (postTempAnnotations[0].oldWidth));
-        console.log(postTempAnnotations[0].x)
+      //  console.log(postTempAnnotations[0].x)
         if (postTempAnnotations.length !== 1) {
             postTempAnnotations[0].width = ((1 - proportion) * (postTempAnnotations[0].oldWidth))
         }        
     } else {
         postTempAnnotations[0].x = postTempAnnotations[0].x + (proportion * (postTempAnnotations[0].width));
-        console.log(postTempAnnotations[0].x)
+        //console.log(postTempAnnotations[0].x)
         if (postTempAnnotations.length !== 1) {
             postTempAnnotations[0].width = ((1 - proportion) * (postTempAnnotations[0].width))
         }
@@ -258,14 +258,14 @@ function findTheCoord(arrayToHighlight, extraction, path, outpath) {
         
 		pushToArray(extraction, postTempAnnotations);
         console.log(annotations.length)
-        console.log(postTempAnnotations)
+        //console.log(postTempAnnotations)
         
         // console.log(annotations)
         // console.log(highlightThisArr);
         //trimBeforePeriod(annotations);
         }
 	});
-    console.log(annotations);
+    //console.log(annotations);
 	createPdf(annotations, path, outpath);
 }
 
