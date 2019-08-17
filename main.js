@@ -20,6 +20,9 @@ var npm = require('npm-programmatic');
 var options = {
 		name: 'Etude'
 };
+const analytics = require('electron-google-analytics');
+console.log(analytics);
+const analyti = new analytics.default('UA-145681611-1')
 const userDataPath = (electron.app || electron.remote.app).getPath('userData'); 
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -74,7 +77,12 @@ if(isFirstRun){
 });
 
 } else {
-	setTimeout(() => {mainWindow.loadFile('library.html')}, 1000);
+
+		analyti.pageview('http://etudereader.com','/home', 'Example').then((response) => {
+				return response;
+		});
+		setTimeout(() => {
+			mainWindow.loadFile('library.html')}, 1000);
 }
 
   // and load the index.html of the app.
