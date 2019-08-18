@@ -57,6 +57,13 @@ mainWindow = new BrowserWindow({
 	icon: 'assets/images/logo.jpg',})
 
 mainWindow.loadFile('splash.html')
+if(!fs.existsSync(userDataPath + "/tmp")){
+	fs.mkdirSync(userDataPath + "/tmp")
+}
+console.log(userDataPath)
+if(!fs.existsSync(userDataPath + "/folderForHighlightedPDF")){
+	fs.mkdirSync(userDataPath + "/folderForHighlightedPDF")
+}
 // isFirstRun = true;
 if(isFirstRun){
 	locateJavaHome.default({
@@ -146,15 +153,6 @@ function runScript(scriptPath, callback) {
 
 }
 function setupJava(){
-
-	console.log(userDataPath)
-	if(!fs.existsSync(userDataPath + "/tmp")){
-		fs.mkdirSync(userDataPath + "/tmp")
-	}
-	console.log(userDataPath)
-	if(!fs.existsSync(userDataPath + "/folderForHighlightedPDF")){
-		fs.mkdirSync(userDataPath + "/folderForHighlightedPDF")
-	}
 	if(osvers == "win32"){
 		sudo.exec(etudeFilepath + '/jdk-11.0.1_windows-x64_bin.exe /s', options,
 			  		function(error, stdout, stderr) {
