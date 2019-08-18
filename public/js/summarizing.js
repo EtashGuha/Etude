@@ -13,6 +13,7 @@ var bookmarkArray = [];
 var Worker = require("tiny-worker");
 const electron = require("electron")
 const userDataPath = (electron.app || electron.remote.app).getPath('userData');
+console.log("USER DATA PATH: " + userDataPath)
 var tools = require('./createFile/coordinates.js')
 var bookmarkArray = [];
 var Tokenizer = require('sentence-tokenizer');
@@ -23,7 +24,7 @@ const iframe = document.createElement('iframe');
 iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}`);
 
 const etudeFilepath = __dirname.replace("/public/js","").replace("\\public\\js","")
-const secVersionFilepath = etudeFilepath + "/folderForHighlightedPDF/secVersion.pdf"
+const secVersionFilepath =  userDataPath + "/folderForHighlightedPDF/secVersion.pdf"
 
 viewerEle.appendChild(iframe);
 
@@ -319,6 +320,7 @@ function jumpPage(pageNumber){
 
 function changePage(){
 	viewerEle.innerHTML = "";
+	console.log(`./pdfjsOriginal/web/viewer.html?file=${secVersionFilepath}`)
 	iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${secVersionFilepath}`);
 	console.log(iframe)
 	viewerEle.appendChild(iframe);
