@@ -88,6 +88,8 @@ if(isFirstRun){
 		analyti.pageview('http://etudereader.com','/home', 'Example').then((response) => {
 				return response;
 		});
+		 mainWindow.webContents.openDevTools()
+		 console.log("how are you")
 		setTimeout(() => {
 			mainWindow.loadFile('library.html')}, 1000);
 }
@@ -96,7 +98,7 @@ if(isFirstRun){
   ///////////////////////////////////////mainWindow.setMenu(null)
 
   // Open the DevTools.
- //mainWindow.webContents.openDevTools()
+
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {

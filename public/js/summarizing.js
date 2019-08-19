@@ -46,7 +46,7 @@ pdfToHtmlWorker.onmessage = function (ev) {
 };
 
 console.log("hello")
-pdfToHtmlWorker.postMessage([PDF_URL, userDataPath]);
+pdfToHtmlWorker.postMessage([PDF_URL, userDataPath, etudeFilepath]);
 console.log("has")
 var numPages = 0;
 PDFJS.getDocument({ url: PDF_URL }).then(function(pdf_doc) {
@@ -162,14 +162,14 @@ $("#cape_btn").click(function(){
 						updateHighlightsWorker.terminate()
 
 					}
-					updateHighlightsWorker.postMessage([ev.data, true, filepath, userDataPath])
+					updateHighlightsWorker.postMessage([ev.data, true, filepath, userDataPath, etudeFilepath])
 					console.log("Starting")
 					console.log("Kernel worker terminated")
 					kernelWorker.terminate()
 					resolve("GOOD")
 				}
 				console.log("redefined kernelWorker on message")
-				kernelWorker.postMessage([x, $("#questionVal").val(), 2, "Sentence"])
+				kernelWorker.postMessage([x, $("#questionVal").val(), 2, "Sentence", etudeFilepath])
 				console.log("kernel worker put up")
 				//kernel.findTextAnswerSync();
 				
@@ -229,7 +229,7 @@ function processSummarizationResult(t){
 		console.log('done updateHighlightsWorker')
 		updateHighlightsWorker.terminate()
 	}
-	updateHighlightsWorker.postMessage([tokenizer.getSentences(), false, filepath, userDataPath])
+	updateHighlightsWorker.postMessage([tokenizer.getSentences(), false, filepath, userDataPath, etudeFilepath])
 	console.log("Starting")
 	console.log("Kernel worker terminated")
   $("#summarizingResult").empty().append(t["output"]);

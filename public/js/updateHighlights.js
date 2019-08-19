@@ -12,18 +12,20 @@ var osvers = os.platform()
 console.log(osvers)
 var textData = null;
 var bookmarkArray = [];
-const etudeFilepath = __dirname.replace("/public/js","").replace("\\public\\js","")
-var tools = require(etudeFilepath + '/public/js/createFile/coordinates.js')
 var viewerEle;
 var iframe;
 var secVersionFilepath;
 var objectsJsonFilePath;
+var tools;
+var etudeFilepath;
 onmessage = function updateHighlights(input) {
+	console.log(input)
+	etudeFilepath = input.data[4];
+	tools = require(etudeFilepath + '/public/js/createFile/coordinates.js')
 	secVersionFilepath = input.data[3] + "/folderForHighlightedPDF/secVersion.pdf"
 	objectsJsonFilePath = input.data[3] + "/tmp/object.json";
-
 	console.log("running")
-	console.log(input)
+	
 	console.log('asdfasdf')
 	if(fs.existsSync(secVersionFilepath)){
 		fs.unlinkSync(secVersionFilepath);

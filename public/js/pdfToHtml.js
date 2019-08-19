@@ -15,7 +15,8 @@ onmessage = function pdfToHtml(input) {
     console.log("Herar")
     console.log(typeof(input.data[0]))
     var exec = require('child_process').exec, child;
-    const etudeFilepath = __dirname.replace("/public/js","").replace("\\public\\js","")
+    const etudeFilepath = input.data[2];
+    console.log("MY etude file path " +  etudeFilepath)
     var filenamewithextension = path.parse(input.data[0]).base;
     filenamewithextension = filenamewithextension.split('.')[0];
     console.log(filenamewithextension)
