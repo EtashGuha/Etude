@@ -8,6 +8,7 @@
     "build": "electron-packager . Etude",
     "pack": "electron-builder --dir",
     "postinstall": "electron-builder install-app-deps",
+    "publish": "electron-builder -p always",
     "dist": "electron-builder"
   },
   "keywords": [
@@ -28,23 +29,34 @@
     "electron-rebuild": "^1.8.5"
   },
   "build": {
-    "appId": "Etude",
+    "appId": "com.github.EtashGuha.Etude",
     "mac": {
-      "category": "Professional"
+      "category": "public.app-category.utilities",
+      "target": [
+        "zip",
+        "dmg"
+      ]
     },
-    "publish": ["github", "bintray"],
-    
-    "nodeGypRebuild": true
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "EtashGuha",
+        "repo": "Etude"
+      }
+    ],
+    "npmRebuild": false,
+    "nodeGypRebuild": false
   },
   "dependencies": {
     "deepai": "^1.0.0",
     "electron-build": "0.0.3",
     "electron-log": "^3.0.6",
     "electron-store": "^2.0.0",
+    "electron-updater": "^4.1.2",
     "fs": "0.0.1-security",
     "html-to-json": "^0.6.0",
     "hummus": "^1.0.104",
-    "java": "^0.11.0",
+    "java": "^0.11.1",
     "node-jre": "^0.2.3",
     "pdf.js-extract": "^0.1.1",
     "sentence-tokenizer": "^1.0.1",

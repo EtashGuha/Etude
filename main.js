@@ -4,6 +4,7 @@ const electron = require('electron')
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 const { ipcMain } = require('electron')
+const {autoUpdater} = require("electron-updater");
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -55,7 +56,8 @@ function createWindow () {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', function(){
-  createWindow()
+	autoUpdater.checkForUpdatesAndNotify();
+  	createWindow()
 })
 
 // Quit when all windows are closed.
