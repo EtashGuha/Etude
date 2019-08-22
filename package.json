@@ -1,6 +1,6 @@
 {
   "name": "Etude",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
@@ -33,19 +33,26 @@
     "mac": {
       "category": "public.app-category.utilities",
       "target": [
-        "zip",
-        "dmg"
+        "dmg",
+        "zip"
       ]
     },
     "publish": [
       {
         "provider": "github",
         "owner": "EtashGuha",
-        "repo": "Etude"
+        "repo": "Etude",
+        "private": true,
+        "token":"8aa9a02a6f29cdbfb608a3da1a799d0905c32949"
       }
     ],
     "npmRebuild": false,
-    "nodeGypRebuild": false
+    "nodeGypRebuild": false,
+    "asarUnpack" : [
+      "MacKernel.jar",
+      "node_modules/java",
+      "node_modules/async"
+    ]
   },
   "dependencies": {
     "deepai": "^1.0.0",
