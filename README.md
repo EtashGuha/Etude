@@ -36,3 +36,4 @@ D. Copy Wolfram kernel from original
 E. Fix java issues as noted in GitHub
 F. First time will take a while
 9. Server with MathLM: 192.241.159.128
+10. npx electron-builder -p always to publish app
