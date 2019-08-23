@@ -952,7 +952,6 @@ html[dir='ltr'] #toolbarViewerRight > *,
 html[dir='ltr'] .findbar * {
   position: relative;
   float: left;
-  left:calc(90% - 50px);
   border: 0.4px solid gray;
 }
 html[dir='rtl'] #toolbarViewerLeft > *,
@@ -2142,6 +2141,8 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 
   html[dir='ltr'] .toolbarButton.findPrevious::before {
     content: url(images/findbarButton-previous@2x.png);
+    top:-10px;
+    left:-10px;
   }
   html[dir='rtl'] .toolbarButton.findPrevious::before {
     content: url(images/findbarButton-previous-rtl@2x.png);
@@ -2149,6 +2150,8 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 
   html[dir='ltr'] .toolbarButton.findNext::before {
     content: url(images/findbarButton-next@2x.png);
+    top:-10px;
+    left:-10px;
   }
   html[dir='rtl'] .toolbarButton.findNext::before {
     content: url(images/findbarButton-next-rtl@2x.png);
