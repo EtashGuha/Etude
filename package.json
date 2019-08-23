@@ -51,7 +51,8 @@
     "asarUnpack" : [
       "MacKernel.jar",
       "node_modules/java",
-      "node_modules/async"
+      "node_modules/async",
+      "WolframContents"
     ]
   },
   "dependencies": {

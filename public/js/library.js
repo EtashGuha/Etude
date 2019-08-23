@@ -4,6 +4,10 @@ const Store = require('electron-store');
 var store = new Store();
 const { ipcRenderer } = require('electron');
 //store.clear();
+console.log("BANANaNANANNNANNNANANANANN")
+console.log("Geordie")
+console.log("is the truest")
+console.log("in the best land")
 var i = store.size;
 
 var __PDF_DOC,
