@@ -70,15 +70,15 @@ See https://github.com/adobe-type-tools/cmap-resources
       </div>  <!-- sidebarContainer -->
 
       <div id="mainContainer">
-        <div class="findbar hidden doorHanger" id="findbar">
+        <div class="findbar hidden doorHanger" id="findbar" style="top:80px;">
           <div id="findbarInputContainer">
             <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input">
             <div class="splitToolbarButton">
-              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
+              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous" style="width:28px;height:28px;">
                 <span data-l10n-id="find_previous_label">Previous</span>
               </button>
               <div class="splitToolbarButtonSeparator"></div>
-              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
+              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next" style="width:28px;height:28px;">
                 <span data-l10n-id="find_next_label">Next</span>
               </button>
             </div>
@@ -184,18 +184,18 @@ See https://github.com/adobe-type-tools/cmap-resources
 
         <div class="toolbar">
           <div id="toolbarContainer">
-            <div id="toolbarViewer">
-              <div id="toolbarViewerLeft">
-                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar">
+            <div id="toolbarViewer" style="width:100%;">
+              <div id="toolbarViewerLeft" style="width:100%;">
+                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" style="position:absolute;top:450%;left:-24px;margin-left:0px;background-color:white;height:72px;width:54px;">
                   <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
                 </button>
-                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
+                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode" style="position:relative;top:620px;left:90%;">
                   <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
                 </button>
                 <button id="viewFind" class="toolbarButton hidden" title="Find in Document" tabindex="12" data-l10n-id="findbar">
                   <span data-l10n-id="findbar_label">Find</span>
                 </button>
-                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
+                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print" style="position:relative;top:688px;left:calc(90% - 50px);">
                   <span data-l10n-id="print_label">Print</span>
                 </button>
                 <div class="toolbarButtonSpacer"></div>
@@ -220,26 +220,22 @@ See https://github.com/adobe-type-tools/cmap-resources
                 </button>
               </div>
               <div id="toolbarViewerMiddle">
-                <div class="splitToolbarButton hiddenSmallView">
-                  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
+                <div class="splitToolbarButton hiddenSmallView" style="top: 24px;height:48px;border-width:0px;width:100%;margin-left:0px">
+                  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous" style="background-color:transparent;width:32px;height:32px;left:47%;top:26px;position: fixed;">
                     <span data-l10n-id="previous_label">Previous</span>
                   </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
+                <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" style="position: fixed;left:49%;font-family: Poppins;">
+                <span id="numPages" class="toolbarLabel" style="left:51.5%; position:fixed;font-family:Poppins;"></span>
+                  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14" data-l10n-id="next" style="background-color: transparent;top:26px;left:53.8%;width:32px;height:32px;position: fixed;">
                     <span data-l10n-id="next_label">Next</span>
                   </button>
                 </div>
-                <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page">
-                <span id="numPages" class="toolbarLabel"></span>
-                <div class="splitToolbarButton">
-                  <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
-                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
-                    <span data-l10n-id="zoom_in_label">Zoom In</span>
-                   </button>
-                </div>
+                <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out" style="position:relative;top:500px;left:90%;border-radius: 0px 0px 24px 24px">
+                  <span data-l10n-id="zoom_out_label">Zoom Out</span>
+                </button>
+                <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22" data-l10n-id="zoom_in" style="position:relative;top:452px;left:calc(90% - 50px);border-radius: 24px 24px 0px 0px;">
+                  <span data-l10n-id="zoom_in_label">Zoom In</span>
+                 </button>
                 <span id="scaleSelectContainer" class="dropdownToolbarButton hidden">
                   <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
                     <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
@@ -279,7 +275,7 @@ See https://github.com/adobe-type-tools/cmap-resources
                     data-l10n-id="page_rotate_ccw"></menuitem>
         </menu>
 
-        <div id="viewerContainer" tabindex="0">
+        <div id="viewerContainer" tabindex="0" style="margin-top: 80px">
           <div id="viewer" class="pdfViewer" style="margin-top: 30px;"></div>
         </div>
 

@@ -9,16 +9,16 @@
     <link rel="stylesheet" href="./public/fontawesome-free-5.6.3-web/css/all.css">
     <script src='./public/js/jquery.js'></script>
   </head>
-  <header class="library-nav">
+  <header class="library-nav" style="background: transparent; position: absolute;">
     <div class="topnav">
-      <a href="https://www.jadetechnologiesllc.com">Etude</a>
+      <a href="https://www.jadetechnologiesllc.com" style="margin-left:60px;border-bottom:3px white solid;height:10px;width:47px;padding-left:0px;margin-right:20px">Etude</a>
       <a href="library.html">Library</a>
       <a href="#" onclick="openNav()" id = "bookmark_item" data = "true">Bookmarks
 <!--       <a href="#" id = "bookmark_item">Bookmarks -->
           <i class="fa fa-angle-down"></i>
       </a>
       <a id = "help" href = "#">Help</a>
-      <div class="search-container">
+      <div class="search-container" style="position: fixed;left:calc(100% - 450px)">
           <input type="text" placeholder="Search.." name="search" id = "questionVal" style="height: 37.2px;outline-width: 0px;">
           <button id = "cape_btn" class="dropbtn" style="height:37.2px;width:37.2px;outline-width: 0px;" onclick="{document.getElementById('searchloader').style.display = 'block';document.getElementById('searchbuttonthree').style.color = 'white';document.getElementById('cape_btn').style.backgroundColor = 'white';}">
             <i id="searchbuttonthree" class="fa fa-search" style="color:black;"></i></button>
@@ -53,6 +53,10 @@
       <input type="number" placeholder="1" id = "topageRange" style="background:#1486E7;width:30px;" value="1"> -->
     </div>
 
+<!--     <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode" style="z-index: 9999 !important; display: flex; justify-content: center; align-items: center; position: absolute !important; font-family: Poppins; top: 88%; left: 80%;">
+              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+    </button> -->
+
 <!--     <button id="next">Next</button> -->
     <div class='summarizer_loading'>
       <div class="sk-cube-grid">
@@ -84,9 +88,9 @@
 
     <div class="su_popup">
       <span class="helper"></span>
-        <img id="escapeSUPopupButton" class="minusImage" src="./public/images/cross.png" style="margin-left: 375px;z-index: 1000000;margin-top: 135px;width: 60px;position: absolute;">
         <div style="text-align: center;" id = "summarizingPart">
           <h2 style="margin-top:30px;">Smart Highlight</h2>
+                  <img id="escapeSUPopupButton" class="minusImage" src="./public/images/cross.png" style="z-index: 1000000;width: 60px;position: absolute;left:95%;top:5%">
           <div style="margin-top: 40px;">
               <div>
 

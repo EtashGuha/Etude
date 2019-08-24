@@ -13285,7 +13285,7 @@ function () {
           items.pageNumber.type = 'number';
           this.l10n.get('of_pages', {
             pagesCount: pagesCount
-          }, 'of {{pagesCount}}').then(function (msg) {
+          }, '/ {{pagesCount}}').then(function (msg) {
             items.numPages.textContent = msg;
           });
         }

@@ -69,8 +69,10 @@ html, body {
 }
 div.viewer {
   width: 100%;
-  height: calc(100% - 85px);
-  position: relative !important;
+  overflow: hidden;
+  z-index: -1;
+  height: 100%;
+  top: 0px;
 /*  margin-top: 20px;*/
 }
 
