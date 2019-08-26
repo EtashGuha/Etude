@@ -81,6 +81,7 @@ log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.t
 })
 autoUpdater.on('update-downloaded', (info) => {
 	sendStatusToWindow('Update downloaded');
+  autoUpdater.quitAndInstall();
 });
 
 

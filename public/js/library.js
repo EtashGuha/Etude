@@ -8,6 +8,8 @@ console.log("BANANaNANANNNANNNANANANANN")
 console.log("Geordie")
 console.log("is the truest")
 console.log("in the best land")
+console.log(__dirname)
+console.log(require('root-require')('package.json').version);
 var i = store.size;
 
 var __PDF_DOC,

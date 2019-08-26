@@ -1,6 +1,6 @@
 {
   "name": "Etude",
-  "version": "1.0.3",
+  "version": "1.4.8",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
@@ -21,14 +21,15 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^4.1.4",
-    "electron-builder": "^21.2.0",
+    "electron": "^4.0.6",
+    "electron-builder": "^20.34.0",
     "electron-installer-dmg": "^2.0.0",
     "electron-packager": "^13.1.0",
     "electron-react-devtools": "^0.5.3",
     "electron-rebuild": "^1.8.5"
   },
   "build": {
+    "electronVersion": "4.0.6",
     "appId": "com.github.EtashGuha.Etude",
     "mac": {
       "category": "public.app-category.utilities",
@@ -43,12 +44,12 @@
         "owner": "EtashGuha",
         "repo": "Etude",
         "private": true,
-        "token":"8aa9a02a6f29cdbfb608a3da1a799d0905c32949"
+        "token": "8aa9a02a6f29cdbfb608a3da1a799d0905c32949"
       }
     ],
     "npmRebuild": false,
     "nodeGypRebuild": false,
-    "asarUnpack" : [
+    "asarUnpack": [
       "MacKernel.jar",
       "node_modules/java",
       "node_modules/async",
@@ -64,7 +65,7 @@
     "electron-google-analytics": "^0.1.0",
     "electron-log": "^3.0.6",
     "electron-store": "^2.0.0",
-    "electron-updater": "^4.1.2",
+    "electron-updater": "^3.2.3",
     "electron-version": "^2.0.1",
     "ffi": "^2.3.0",
     "fs": "0.0.1-security",
@@ -79,6 +80,7 @@
     "npm": "^6.10.2",
     "npm-programmatic": "0.0.12",
     "pdf.js-extract": "^0.1.1",
+    "root-require": "^0.3.1",
     "sentence-tokenizer": "^1.0.1",
     "string-similarity": "^3.0.0",
     "sudo-prompt": "^9.0.0",
