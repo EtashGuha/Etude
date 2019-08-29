@@ -9,6 +9,8 @@ Contents/
 folderForHighlightedPDF/
 tmp/
 package.json
+dist/
+WolframContents/
 package-lock.json
 # Compiled source #
 ###################
