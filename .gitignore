@@ -8,7 +8,8 @@ Contents/
 .git.bfg-report/
 folderForHighlightedPDF/
 tmp/
-
+package.json
+package-lock.json
 # Compiled source #
 ###################
 *.com
