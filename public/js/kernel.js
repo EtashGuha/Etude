@@ -5,10 +5,10 @@ var Worker = require("tiny-worker");
 
 onmessage = function findTextAnswer(input) {
 	etudeFilepath = input.data[4];
-	var unpackedDirectory = etudeFilepath.replace("app.asar","app.asar.unpacked")
+	var unpackedDirectory = etudeFilepath.replace("app.asar", "app.asar.unpacked")
 	var java = require(unpackedDirectory + '/node_modules/java');
 	console.log(unpackedDirectory + '/node_modules/java')
-	if(osvers == "darwin"){
+	if (osvers == "darwin") {
 		console.log(unpackedDirectory + '/MacKernel.jar')
 		java.classpath.push(unpackedDirectory + '/MacKernel.jar');
 		java.classpath.push(unpackedDirectory + "/WolframContents/Resources/Wolfram\ Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
