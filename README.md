@@ -1,6 +1,6 @@
 Notes from Etash:
 1. If you get node version problems, use https://www.npmjs.com/package/electron-rebuild
-2. If you get get a problem with the ../build/jvm_dll_path.json, 
+2. If you get get a problem with the ../build/jvm_dll_path.json,
   A. cd into node_modules/java
   B. run node postInstall.js
 3. If you have files that are too large to commit, use https://github.com/IBM/BluePic/wiki/Using-BFG-Repo-Cleaner-tool-to-remove-sensitive-files-from-your-git-repo
@@ -27,3 +27,14 @@ Notes from Etash:
   D. Click on the name of the app. For example, Webpack App.
   E. If you don't see anything in the opened tab, focus on the window of your app.
 7. When running the electron-packager, the Wolfram Kernel is messed up. Make sure to fix this by copying and pasting from the old Contents/Macos/WolframKernel into the .app file.
+8. To build on mac:
+ npx electron-packager . --overwrite --icon=/Users/etashguha/Downloads/icon.ico.icns
+ npx electron-installer-dmg Etude-darwin-x64/Etude.app Etude
+9. A.  Install jdk11.0.2
+B. npm install java
+C. Copy java folder into etude nodemodules
+D. Copy Wolfram kernel from original
+E. Fix java issues as noted in GitHub
+F. First time will take a while
+10. Server with MathLM: 192.241.159.128
+11. npx electron-builder -p always to publish app
