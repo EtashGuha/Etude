@@ -26,14 +26,15 @@ Notes from Etash:
   C. Open Chrome at http://localhost:8315/
   D. Click on the name of the app. For example, Webpack App.
   E. If you don't see anything in the opened tab, focus on the window of your app.
-7. To build on mac:
+7. When running the electron-packager, the Wolfram Kernel is messed up. Make sure to fix this by copying and pasting from the old Contents/Macos/WolframKernel into the .app file.
+8. To build on mac:
  npx electron-packager . --overwrite --icon=/Users/etashguha/Downloads/icon.ico.icns
  npx electron-installer-dmg Etude-darwin-x64/Etude.app Etude
-8. A.  Install jdk11.0.4
+9. A.  Install jdk11.0.2
 B. npm install java
 C. Copy java folder into etude nodemodules
 D. Copy Wolfram kernel from original
 E. Fix java issues as noted in GitHub
 F. First time will take a while
-9. Server with MathLM: 192.241.159.128
-10. npx electron-builder -p always to publish app
+10. Server with MathLM: 192.241.159.128
+11. npx electron-builder -p always to publish app

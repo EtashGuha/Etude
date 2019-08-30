@@ -581,7 +581,7 @@ html[dir='rtl'] #sidebarContainer {
 html[dir='ltr'] #outerContainer.sidebarOpen #sidebarContainer {
   left: 0px;
   margin-top:-30px;
-  width: 24%;
+  width: 20%;
 }
 html[dir='rtl'] #outerContainer.sidebarOpen #sidebarContainer {
   right: 0px;
@@ -597,7 +597,7 @@ html[dir='rtl'] #outerContainer.sidebarOpen #sidebarContainer {
 }
 
 #sidebarContent {
-  top: 32px;
+  top: 78px;
   bottom: 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -617,7 +617,7 @@ html[dir='rtl'] #sidebarContent {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   position: absolute;
-  top: 32px;
+  top: 2px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -699,16 +699,13 @@ html[dir='rtl'] #sidebarResizer {
 
 #toolbarContainer, .findbar, .secondaryToolbar {
   position: relative;
-  height: 32px;
-  background-color: #474747; /* fallback */
-  background-image: url(images/texture.png),
-                    linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
-}
+  height: 32px;}
 html[dir='ltr'] #toolbarContainer, .findbar, .secondaryToolbar {
-  box-shadow: inset 0 1px 1px hsla(0,0%,0%,.15),
-              inset 0 -1px 0 hsla(0,0%,100%,.05),
-              0 1px 0 hsla(0,0%,0%,.15),
-              0 1px 1px hsla(0,0%,0%,.1);
+  background-image: linear-gradient( to right, #6600ff,#0099ff);
+  height: 85px;
+  top: -6px;
+  outline-width:0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
   box-shadow: inset 0 1px 1px hsla(0,0%,0%,.15),
@@ -718,8 +715,7 @@ html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
 }
 
 #toolbarViewer {
-  height: 32px;
-  background-color: #f7f8f9;
+  color:transparent;
 }
 
 #loadingBar {
@@ -801,7 +797,9 @@ html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
   height: auto;
 }
 html[dir='ltr'] .findbar {
-  left: 68px;
+  left: 75px;
+  background-color: #f7f8f9;
+  padding-top: 2px;
 }
 html[dir='rtl'] .findbar {
   right: 68px;
@@ -865,8 +863,7 @@ html[dir='rtl'] .secondaryToolbar {
 
 .doorHanger,
 .doorHangerRight {
-  border: 1px solid hsla(0,0%,0%,.5);
-  border-radius: 2px;
+  border-radius: 5px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 .doorHanger:after, .doorHanger:before,
@@ -879,7 +876,7 @@ html[dir='rtl'] .secondaryToolbar {
   position: absolute;
   pointer-events: none;
 }
-.doorHanger:after,
+/*.doorHanger:after,
 .doorHangerRight:after {
   border-bottom-color: hsla(0,0%,32%,.99);
   border-width: 8px;
@@ -888,9 +885,9 @@ html[dir='rtl'] .secondaryToolbar {
 .doorHangerRight:before {
   border-bottom-color: hsla(0,0%,0%,.5);
   border-width: 9px;
-}
+}*/
 
-html[dir='ltr'] .doorHanger:after,
+/*html[dir='ltr'] .doorHanger:after,
 html[dir='rtl'] .doorHangerRight:after {
   left: 13px;
   margin-left: -8px;
@@ -900,7 +897,7 @@ html[dir='ltr'] .doorHanger:before,
 html[dir='rtl'] .doorHangerRight:before {
   left: 13px;
   margin-left: -9px;
-}
+}*/
 
 html[dir='rtl'] .doorHanger:after,
 html[dir='ltr'] .doorHangerRight:after {
@@ -936,6 +933,7 @@ html[dir='ltr'] .doorHangerRight:before {
 #toolbarViewerMiddle {
   position: absolute;
   left: 50%;
+  width:100%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
@@ -954,6 +952,7 @@ html[dir='ltr'] #toolbarViewerRight > *,
 html[dir='ltr'] .findbar * {
   position: relative;
   float: left;
+  border: 0.4px solid gray;
 }
 html[dir='rtl'] #toolbarViewerLeft > *,
 html[dir='rtl'] #toolbarViewerMiddle > *,
@@ -984,9 +983,9 @@ html[dir='rtl'] .splitToolbarButton > .toolbarButton {
 .secondaryToolbarButton,
 .overlayButton {
   border: 0 none;
-  background: none;
-  width: 32px;
-  height: 25px;
+  background: white;
+  width: 48px;
+  height: 48px;
 }
 
 .toolbarButton > span {
@@ -1010,15 +1009,15 @@ html[dir='rtl'] .splitToolbarButton > .toolbarButton {
 .splitToolbarButton:focus > .toolbarButton,
 .splitToolbarButton.toggled > .toolbarButton,
 .toolbarButton.textButton {
-  background-color: hsla(0,0%,0%,.12);
-  background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
+  background-color: transparent;
   background-clip: padding-box;
-  border: 1px solid hsla(0,0%,0%,.35);
+  border: 0px solid hsla(0,0%,0%,.35);
   border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
-  box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset,
-              0 0 1px hsla(0,0%,100%,.15) inset,
-              0 1px 0 hsla(0,0%,100%,.05);
-  transition-property: background-color, border-color, box-shadow;
+  filter: invert(0%);
+  box-shadow: 0 0px 0 hsla(0,0%,100%,.05) inset,
+              0 0 0px hsla(0,0%,100%,.15) inset,
+              0 0px 0 hsla(0,0%,100%,.05);
+  transition-property: background-color, border-color, filter;
   transition-duration: 150ms;
   transition-timing-function: ease;
 
@@ -1031,9 +1030,9 @@ html[dir='rtl'] .splitToolbarButton > .toolbarButton {
 .toolbarButton.textButton:hover,
 .toolbarButton.textButton:focus {
   background-color: hsla(0,0%,0%,.2);
-  box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset,
-              0 0 1px hsla(0,0%,100%,.15) inset,
-              0 0 1px hsla(0,0%,0%,.05);
+  box-shadow: 0 0px 0 hsla(0,0%,100%,.05) inset,
+              0 0 0px hsla(0,0%,100%,.15) inset,
+              0 0 0px hsla(0,0%,0%,.05);
   z-index: 199;
 }
 .splitToolbarButton > .toolbarButton {
@@ -1089,7 +1088,7 @@ html[dir='rtl'] .splitToolbarButtonSeparator {
   min-width: 16px;
   padding: 2px 6px 0;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 24px;
   color: hsla(0,0%,100%,.8);
   font-size: 12px;
   line-height: 14px;
@@ -1165,9 +1164,9 @@ html[dir='rtl'] .dropdownToolbarButton {
 .secondaryToolbarButton.toggled:hover:active {
   background-color: hsla(0,0%,0%,.4);
   border-color: hsla(0,0%,0%,.4) hsla(0,0%,0%,.5) hsla(0,0%,0%,.55);
-  box-shadow: 0 1px 1px hsla(0,0%,0%,.2) inset,
-              0 0 1px hsla(0,0%,0%,.3) inset,
-              0 1px 0 hsla(0,0%,100%,.05);
+  box-shadow: 0 0px 0px hsla(0,0%,0%,.2) inset,
+              0 0 0px hsla(0,0%,0%,.3) inset,
+              0 0px 0 hsla(0,0%,100%,.05);
 }
 
 .dropdownToolbarButton {
@@ -1227,9 +1226,11 @@ html[dir='rtl'] .toolbarButton:first-child {
 
 html[dir='ltr'] #findPrevious {
   margin-left: 3px;
+  background-color: #c2c2c2
 }
 html[dir='ltr'] #findNext {
   margin-right: 3px;
+  background-color: #c2c2c2;
 }
 
 html[dir='rtl'] #findPrevious {
@@ -1246,7 +1247,7 @@ html[dir='rtl'] #findNext {
   position: absolute;
   display: inline-block;
   top: 4px;
-  left: 7px;
+  left: 0px;
 }
 
 html[dir="ltr"] .secondaryToolbarButton::before {
@@ -1257,7 +1258,12 @@ html[dir="rtl"] .secondaryToolbarButton::before {
 }
 
 html[dir='ltr'] .toolbarButton#sidebarToggle::before {
-  content: url(images/toolbarButton-sidebarToggle.png);
+  content: url(images/toolbarButton-pageDown@2x.png);
+  left: 20px;
+  top: 12px;
+  transform: scale(0.5);
+  margin-left: 6px;
+  margin-top: 7px;
 }
 html[dir='rtl'] .toolbarButton#sidebarToggle::before {
   content: url(images/toolbarButton-sidebarToggle-rtl.png);
@@ -1285,35 +1291,64 @@ html[dir='rtl'] .toolbarButton.findNext::before {
 }
 
 html[dir='ltr'] .toolbarButton.pageUp::before {
-  content: url(images/toolbarButton-pageUp.png);
+  content: url(images/toolbarButton-pageUp@2x.png);
+  transform: scale(0.5);
+  filter: invert(100%);
+  margin-top:-4px;
+  margin-left:0px;
 }
 html[dir='rtl'] .toolbarButton.pageUp::before {
   content: url(images/toolbarButton-pageUp-rtl.png);
+  transform: scale(0.5);
+  margin-top:0px;
+  margin-left:0px;
 }
 
 html[dir='ltr'] .toolbarButton.pageDown::before {
-  content: url(images/toolbarButton-pageDown.png);
+  content: url(images/toolbarButton-pageDown@2x.png);
+  transform: scale(0.5);
+  filter: invert(100%);
+  margin-top:-4px;
+  margin-left:0px;
 }
 html[dir='rtl'] .toolbarButton.pageDown::before {
   content: url(images/toolbarButton-pageDown-rtl.png);
+  transform: scale(0.5);
+  margin-top:0px;
+  margin-left:0px;
 }
 
 .toolbarButton.zoomOut::before {
-  content: url(images/toolbarButton-zoomOut.png);
+  content: url(images/toolbarButton-zoomOut@2x.png);
+  transform: scale(0.5);
+  animation-delay: inherit;
+  margin-left:6px;
 }
 
 .toolbarButton.zoomIn::before {
-  content: url(images/toolbarButton-zoomIn.png);
+  content: url(images/toolbarButton-zoomIn@2x.png);
+  transform: scale(0.5);
+  animation-delay: inherit;
+  margin-left:6px;
+  margin-top:7px;
 }
 
 .toolbarButton.presentationMode::before,
 .secondaryToolbarButton.presentationMode::before {
-  content: url(images/toolbarButton-presentationMode.png);
+  content: url(images/toolbarButton-presentationMode@2x.png);
+  transform: scale(0.5);
+  animation-delay: inherit;
+  margin-left:6px;
+  margin-top:3px;
 }
 
 .toolbarButton.print::before,
 .secondaryToolbarButton.print::before {
-  content: url(images/toolbarButton-print.png);
+  content: url(images/toolbarButton-print@2x.png);
+  transform: scale(0.5);
+  animation-delay: inherit;
+  margin-left:6px;
+  margin-top:4px;
 }
 
 .toolbarButton.openFile::before,
@@ -1497,14 +1532,11 @@ html[dir='rtl'] .verticalToolbarSeparator {
   margin: 4px 0 4px 0;
   border: 1px solid transparent;
   border-radius: 2px;
-  background-color: hsla(0,0%,100%,.09);
-  background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
+  background-color: transparent;
   background-clip: padding-box;
-  border: 1px solid hsla(0,0%,0%,.35);
-  border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
   box-shadow: 0 1px 0 hsla(0,0%,0%,.05) inset,
               0 1px 0 hsla(0,0%,100%,.05);
-  color: hsl(0,0%,0%);
+  color: white;
   font-size: 12px;
   line-height: 14px;
   outline-style: none;
@@ -1522,7 +1554,7 @@ html[dir='rtl'] .verticalToolbarSeparator {
   -moz-appearance: textfield; /* hides the spinner in moz */
   min-width: 16px;
   text-align: right;
-  width: 40px;
+  width: 20px;
 }
 
 .toolbarField.pageNumber.visiblePageIsLoading {
@@ -1553,7 +1585,7 @@ html[dir='rtl'] .verticalToolbarSeparator {
   margin: 4px 2px 4px 0;
   border: 1px solid transparent;
   border-radius: 2px;
-  color: hsl(0,0%,0%);
+  color: white;
   font-size: 12px;
   line-height: 14px;
   text-align: left;
@@ -2057,7 +2089,7 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   .toolbarButton::before {
     -webkit-transform: scale(0.5);
             transform: scale(0.5);
-    top: -5px;
+    top: -2px;
   }
 
   .secondaryToolbarButton::before {
@@ -2068,7 +2100,9 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 
   html[dir='ltr'] .toolbarButton::before,
   html[dir='rtl'] .toolbarButton::before {
-    left: -1px;
+    animation-delay: inherit;
+    margin-left:6px;
+    margin-top:7px;
   }
 
   html[dir='ltr'] .secondaryToolbarButton::before {
@@ -2090,7 +2124,9 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   }
 
   html[dir='ltr'] .toolbarButton#sidebarToggle::before {
-    content: url(images/toolbarButton-sidebarToggle@2x.png);
+    content: url(images/toolbarButton-pageDown@2x.png);
+    left: 20px;
+    top: 12px;
   }
   html[dir='rtl'] .toolbarButton#sidebarToggle::before {
     content: url(images/toolbarButton-sidebarToggle-rtl@2x.png);
@@ -2105,6 +2141,8 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 
   html[dir='ltr'] .toolbarButton.findPrevious::before {
     content: url(images/findbarButton-previous@2x.png);
+    top:-10px;
+    left:-10px;
   }
   html[dir='rtl'] .toolbarButton.findPrevious::before {
     content: url(images/findbarButton-previous-rtl@2x.png);
@@ -2112,6 +2150,8 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 
   html[dir='ltr'] .toolbarButton.findNext::before {
     content: url(images/findbarButton-next@2x.png);
+    top:-10px;
+    left:-10px;
   }
   html[dir='rtl'] .toolbarButton.findNext::before {
     content: url(images/findbarButton-next-rtl@2x.png);
@@ -2119,6 +2159,8 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 
   html[dir='ltr'] .toolbarButton.pageUp::before {
     content: url(images/toolbarButton-pageUp@2x.png);
+    filter: invert(100%);
+    margin-top:0px;
   }
   html[dir='rtl'] .toolbarButton.pageUp::before {
     content: url(images/toolbarButton-pageUp-rtl@2x.png);
@@ -2126,6 +2168,8 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 
   html[dir='ltr'] .toolbarButton.pageDown::before {
     content: url(images/toolbarButton-pageDown@2x.png);
+    filter: invert(100%);
+    margin-top:0px;
   }
   html[dir='rtl'] .toolbarButton.pageDown::before {
     content: url(images/toolbarButton-pageDown-rtl@2x.png);

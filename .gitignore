@@ -8,7 +8,10 @@ Contents/
 .git.bfg-report/
 folderForHighlightedPDF/
 tmp/
-
+package.json
+dist/
+WolframContents/
+package-lock.json
 # Compiled source #
 ###################
 *.com
@@ -28,7 +31,6 @@ tmp/
 *.dmg
 *.gz
 *.iso
-*.jar
 *.rar
 *.tar
 *.zip
