@@ -3,7 +3,9 @@ const fs = require('fs');
 var stringSimilarity = require('string-similarity');
 const hummus = require('hummus');
 const PDFRStreamForBuffer = require('./PDFRStreamForBuffer');
-const { work } = require('./workpdf');
+const {
+    work
+} = require('./workpdf');
 const pdfExtract = new PDFExtract();
 const options = {}; /* see below */
 var annotations = []
@@ -12,20 +14,21 @@ var postTempAnnotations = [];
 var highlightThis = "";
 var highlightThisArr = [];
 var etudefilepath = "";
-function createPdf(annotationsToHighlight, path, outpath){
+
+function createPdf(annotationsToHighlight, path, outpath) {
     let trying = fs.readFileSync(path);
     const inStream = new PDFRStreamForBuffer(trying);
     const mystream = new hummus.PDFWStreamForFile(outpath)
 
     work(annotationsToHighlight, inStream, mystream);
     fs.writeFile(etudefilepath + "/tmp/object.json", JSON.stringify(annotationsToHighlight), (err) => {
-    if (err) {
-        console.error(err);
-        return;
-    };
-    console.log(etudefilepath + "/tmp/object.json")
-    console.log("File has been created");
-});
+        if (err) {
+            console.error(err);
+            return;
+        };
+        console.log(etudefilepath + "/tmp/object.json")
+        console.log("File has been created");
+    });
 }
 
 function pushToArray(extraction, inputArray) {
@@ -42,20 +45,20 @@ function pushToArray(extraction, inputArray) {
 
 function findWord(extraction, word) {
     //console.log(word);
- extraction.pages.forEach((page, pageindex) => {
-    //console.log(page);
-     page.content.forEach((theelement, thelementindex) => {
-     theelement.str = theelement.str.replace(/[^a-zA-Z0-9.?!,% ]/g, "");
-     theelement.str = theelement.str.replace(/\s\s+/g, ' ');
-        const validelement = (theelement.str.length > 0);
-        if (validelement) {
-            //console.log(theelement.str);
-            if (theelement.str.indexOf(word) !== -1) {
-                tempAnnotations.push([pageindex, thelementindex]);
+    extraction.pages.forEach((page, pageindex) => {
+        //console.log(page);
+        page.content.forEach((theelement, thelementindex) => {
+            theelement.str = theelement.str.replace(/[^a-zA-Z0-9.?!,% ]/g, "");
+            theelement.str = theelement.str.replace(/\s\s+/g, ' ');
+            const validelement = (theelement.str.length > 0);
+            if (validelement) {
+                //console.log(theelement.str);
+                if (theelement.str.indexOf(word) !== -1) {
+                    tempAnnotations.push([pageindex, thelementindex]);
+                }
             }
-        }
+        });
     });
- });
 }
 
 function sortArray(arr) {
@@ -91,12 +94,12 @@ function checkArray(extraction, arr) {
     //console.log(highlightThis);
     //console.log(uniquePossibilities);
     if (uniquePossibilities !== undefined && uniquePossibilities.length !== 0) {
-            var matches = stringSimilarity.findBestMatch(highlightThis, uniquePossibilities.map(function(ob) {
-                return ob.str;
-            }));
-            postTempAnnotations.push(uniquePossibilities[matches.bestMatchIndex]);
-            //console.log(uniquePossibilities[matches.bestMatchIndex]);
-            return uniquePossibilities[matches.bestMatchIndex];
+        var matches = stringSimilarity.findBestMatch(highlightThis, uniquePossibilities.map(function(ob) {
+            return ob.str;
+        }));
+        postTempAnnotations.push(uniquePossibilities[matches.bestMatchIndex]);
+        //console.log(uniquePossibilities[matches.bestMatchIndex]);
+        return uniquePossibilities[matches.bestMatchIndex];
     } else {
         return null;
     }
@@ -117,7 +120,7 @@ function fillRangeBefore(extraction, theObject) {
             firstPrevLine -= 1;
         }
     }
-    if(stringSimilarity.compareTwoStrings(extraction.pages[firstPrevPage].content[firstPrevLine].str, highlightThis) > 0.47) {
+    if (stringSimilarity.compareTwoStrings(extraction.pages[firstPrevPage].content[firstPrevLine].str, highlightThis) > 0.47) {
         let afterPush = extraction.pages[firstPrevPage].content[firstPrevLine];
         afterPush.pageFound = firstPrevPage;
         afterPush.elementFound = firstPrevLine;
@@ -149,7 +152,7 @@ function fillRangeAfter(extraction, theObject) {
         }
     }
     //console.log(stringSimilarity.compareTwoStrings(extraction.pages[firstAfterPage].content[firstAfterLine].str, highlightThis))
-    if(stringSimilarity.compareTwoStrings(extraction.pages[firstAfterPage].content[firstAfterLine].str, highlightThis) > 0.47) {
+    if (stringSimilarity.compareTwoStrings(extraction.pages[firstAfterPage].content[firstAfterLine].str, highlightThis) > 0.47) {
         let afterPush = extraction.pages[firstAfterPage].content[firstAfterLine];
         afterPush.pageFound = firstAfterPage;
         afterPush.elementFound = firstAfterLine;
@@ -168,7 +171,7 @@ function fillRangeAfter(extraction, theObject) {
 
 function trimAfterPeriod() {
     console.log(postTempAnnotations[postTempAnnotations.length - 1].str + highlightThisArr[highlightThisArr.length - 1])
-    if (postTempAnnotations[postTempAnnotations.length - 1].str.indexOf(highlightThisArr[highlightThisArr.length - 1]) !== -1){
+    if (postTempAnnotations[postTempAnnotations.length - 1].str.indexOf(highlightThisArr[highlightThisArr.length - 1]) !== -1) {
         const index = postTempAnnotations[postTempAnnotations.length - 1].str.indexOf(highlightThisArr[highlightThisArr.length - 1]) + highlightThisArr[highlightThisArr.length - 1].length;
         const totalIndex = postTempAnnotations[postTempAnnotations.length - 1].str.length;
         const proportion = (index + 0.0) / totalIndex
@@ -189,15 +192,15 @@ function trimBeforePeriod() {
     let proportion = (index + 0.0) / totalIndex
     //console.log(proportion)
     if (proportion < 0) {
-    proportion = 0;
+        proportion = 0;
     }
     //console.log(postTempAnnotations[0].x)
     if (postTempAnnotations[0].oldWidth !== undefined) {
         postTempAnnotations[0].x = postTempAnnotations[0].x + (proportion * (postTempAnnotations[0].oldWidth));
-      //  console.log(postTempAnnotations[0].x)
+        //  console.log(postTempAnnotations[0].x)
         if (postTempAnnotations.length !== 1) {
             postTempAnnotations[0].width = ((1 - proportion) * (postTempAnnotations[0].oldWidth))
-        }        
+        }
     } else {
         postTempAnnotations[0].x = postTempAnnotations[0].x + (proportion * (postTempAnnotations[0].width));
         //console.log(postTempAnnotations[0].x)
@@ -208,76 +211,83 @@ function trimBeforePeriod() {
 }
 
 function postProcess(extraction) {
-    let prevElement = {x: -1, y: -1, str: "", height: 0, width: 0};
-     extraction.pages.forEach((page, pageindex) => {
-     page.content = page.content.filter((element, index) => {
-        if (element.y === prevElement.y) {
-            prevElement.str = prevElement.str + element.str;
-            prevElement.width = prevElement.width + element.width;
-            return false;
-        } else {
-            prevElement = element;
-            return true;
-        }
-    });});
-     //console.log(extraction);
-     return extraction;
+    let prevElement = {
+        x: -1,
+        y: -1,
+        str: "",
+        height: 0,
+        width: 0
+    };
+    extraction.pages.forEach((page, pageindex) => {
+        page.content = page.content.filter((element, index) => {
+            if (element.y === prevElement.y) {
+                prevElement.str = prevElement.str + element.str;
+                prevElement.width = prevElement.width + element.width;
+                return false;
+            } else {
+                prevElement = element;
+                return true;
+            }
+        });
+    });
+    //console.log(extraction);
+    return extraction;
 }
 
 function findTheCoord(arrayToHighlight, extraction, path, outpath) {
     console.log(annotations.length)
-	arrayToHighlight = Array.from(arrayToHighlight)
-	arrayToHighlight.forEach((strToHighlight, strindex) => {
-		tempAnnotations = [];
-		postTempAnnotations = [];
-		highlightThis = strToHighlight.replace(/[^a-zA-Z0-9.!?,% ]/g, "");
+    arrayToHighlight = Array.from(arrayToHighlight)
+    arrayToHighlight.forEach((strToHighlight, strindex) => {
+        tempAnnotations = [];
+        postTempAnnotations = [];
+        highlightThis = strToHighlight.replace(/[^a-zA-Z0-9.!?,% ]/g, "");
         highlightThis = highlightThis.replace(/\s\s+/g, ' ');
-		highlightThisArr = highlightThis.split(" ");
-		let wordsToSearch = [];
-		highlightThisArr.forEach((word) => {
-			if (word.length > 3) {
-				wordsToSearch.push(word);
-			}
-		});
+        highlightThisArr = highlightThis.split(" ");
+        let wordsToSearch = [];
+        highlightThisArr.forEach((word) => {
+            if (word.length > 3) {
+                wordsToSearch.push(word);
+            }
+        });
         extraction = postProcess(extraction);
-		if (wordsToSearch.length >= 4) {
+        if (wordsToSearch.length >= 4) {
             //console.log(wordsToSearch);
-			findWord(extraction, wordsToSearch[0]);
-			findWord(extraction, wordsToSearch[1]);
-			findWord(extraction, wordsToSearch[wordsToSearch.length - 1]);
-			findWord(extraction, wordsToSearch[wordsToSearch.length - 2]);
-		} //need an else clause for very short, simple sentence
+            findWord(extraction, wordsToSearch[0]);
+            findWord(extraction, wordsToSearch[1]);
+            findWord(extraction, wordsToSearch[wordsToSearch.length - 1]);
+            findWord(extraction, wordsToSearch[wordsToSearch.length - 2]);
+        } //need an else clause for very short, simple sentence
         //console.log(tempAnnotations);
-		sortArray(tempAnnotations);
-		let originalSeedBlock = checkArray(extraction, tempAnnotations);
-        if(originalSeedBlock !== null) {
-		fillRangeBefore(extraction, originalSeedBlock);
-		fillRangeAfter(extraction, originalSeedBlock);
-        trimBeforePeriod();
-        trimAfterPeriod();
-        
-		pushToArray(extraction, postTempAnnotations);
-        console.log(annotations.length)
-        //console.log(postTempAnnotations)
-        
-        // console.log(annotations)
-        // console.log(highlightThisArr);
-        //trimBeforePeriod(annotations);
+        sortArray(tempAnnotations);
+        let originalSeedBlock = checkArray(extraction, tempAnnotations);
+        if (originalSeedBlock !== null) {
+            fillRangeBefore(extraction, originalSeedBlock);
+            fillRangeAfter(extraction, originalSeedBlock);
+            trimBeforePeriod();
+            trimAfterPeriod();
+
+            pushToArray(extraction, postTempAnnotations);
+            console.log(annotations.length)
+            //console.log(postTempAnnotations)
+
+            // console.log(annotations)
+            // console.log(highlightThisArr);
+            //trimBeforePeriod(annotations);
         }
-	});
+    });
     //console.log(annotations);
-	createPdf(annotations, path, outpath);
+    createPdf(annotations, path, outpath);
 }
 
 module.exports = {
-	extractor: function (highlightThis, path, outpath, filepathForEtude) {
-		pdfExtract.extract(path, options, (err, data) => {
-    		annotations = []
-    		if (err) return console.log(err);
+    extractor: function(highlightThis, path, outpath, filepathForEtude) {
+        pdfExtract.extract(path, options, (err, data) => {
+            annotations = []
+            if (err) return console.log(err);
             etudefilepath = filepathForEtude;
-    		findTheCoord(highlightThis, data, path, outpath);
-	   });
-	}
+            findTheCoord(highlightThis, data, path, outpath);
+        });
+    }
 };
 
 //extractor(["Non-Traditional Narrative Elements in ​Moby Dick","In addition, Pip is a character that Melville uses for dramatization."],'/Users/etashguha/Downloads/Etash.pdf', './mycasdfn.pdf');
