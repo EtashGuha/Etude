@@ -13,8 +13,8 @@ onmessage = function findTextAnswer(input) {
 		java.classpath.push(unpackedDirectory + '/MacKernel.jar');
 		java.classpath.push(unpackedDirectory + "/WolframContents/Resources/Wolfram\ Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
 	} else {
-		java.classpath.push(etudeFilepath + "/WindowsKernel.jar");
-		java.classpath.push(etudeFilepath + "/12.0/SystemFiles/Links/JLink/JLink.jar");
+		java.classpath.push(unpackedDirectory + "/WindowsKernel.jar");
+		java.classpath.push(unpackedDirectory + "/WolframContents/SystemFiles/Links/JLink/JLink.jar");
 	}
 	var kernel = java.newInstanceSync('p1.Kernel', unpackedDirectory);
 	console.log(input)
