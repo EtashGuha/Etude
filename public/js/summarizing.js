@@ -140,6 +140,16 @@ $(document).on("click", ".bookmark-canvas", function() {
 	document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[$(this).attr("data") - 1].click()
 });
 
+var searchbox = document.getElementById("questionVal");
+// Execute a function when the user releases a key on the keyboard
+searchbox.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    // Trigger the button element with a click
+    document.getElementById("cape_btn").click();
+  }
+});
 
 $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")

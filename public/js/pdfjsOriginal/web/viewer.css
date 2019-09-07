@@ -37,7 +37,7 @@
   margin: -1px;
   padding: 1px;
 
-  background-color: rgb(180, 0, 170);
+  background-color: rgb(0, 100, 69);
   border-radius: 4px;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .textLayer .highlight.selected {
-  background-color: rgb(0, 100, 0);
+  background-color: rgb(0, 100, 69);
 }
 
 .textLayer ::-moz-selection { background: rgb(0,0,255); }
@@ -546,8 +546,6 @@ select {
   z-index: 100;
   border-top: 1px solid #333;
 
-  transition-duration: 200ms;
-  transition-timing-function: ease;
 }
 html[dir='ltr'] #sidebarContainer {
   transition-property: left;
@@ -912,7 +910,7 @@ html[dir='ltr'] .doorHangerRight:before {
 }
 
 #findResultsCount {
-  background-color: hsl(0, 0%, 85%);
+  background-color: transparent;
   color: hsl(0, 0%, 32%);
   text-align: center;
   padding: 3px 4px;
@@ -1148,6 +1146,7 @@ html[dir='rtl'] .dropdownToolbarButton {
 .toolbarButton.toggled,
 .splitToolbarButton.toggled > .toolbarButton.toggled,
 .secondaryToolbarButton.toggled {
+  left:210px;
   background-color: hsla(0,0%,0%,.3);
   background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
   border-color: hsla(0,0%,0%,.4) hsla(0,0%,0%,.45) hsla(0,0%,0%,.5);
@@ -1226,11 +1225,11 @@ html[dir='rtl'] .toolbarButton:first-child {
 
 html[dir='ltr'] #findPrevious {
   margin-left: 3px;
-  background-color: #c2c2c2
+  background-color: transparent;
 }
 html[dir='ltr'] #findNext {
   margin-right: 3px;
-  background-color: #c2c2c2;
+  background-color: transparent;
 }
 
 html[dir='rtl'] #findPrevious {
@@ -2125,7 +2124,7 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 
   html[dir='ltr'] .toolbarButton#sidebarToggle::before {
     content: url(images/toolbarButton-pageDown@2x.png);
-    left: 20px;
+    left: -8px;
     top: 12px;
   }
   html[dir='rtl'] .toolbarButton#sidebarToggle::before {
