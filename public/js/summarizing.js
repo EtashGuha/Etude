@@ -184,24 +184,7 @@ $("#cape_btn").click(function() {
 					resolve("GOOD")
 				}
 				console.log("redefined kernelWorker on message")
-				kernelWorker.postMessage([x, $("#questionVal").val(), 2, "Sentence", etudeFilepath])
-
-
-				var request = require("request");
-
-				var options = { method: 'POST',
-				  url: 'http://159.89.39.148:8080',
-				  formData:
-				   { text: x,
-				     question: $("#questionVal").val(),
-				     format: 'Sentence',
-				     number: '3' } };
-
-				request(options, function (error, response, body) {
-				  if (error) throw new Error(error);
-
-				  console.log(body);
-				});
+				kernelWorker.postMessage([x, $("#questionVal").val(), "2", "Sentence"])
 				console.log("kernel worker put up")
 				//kernel.findTextAnswerSync();
 

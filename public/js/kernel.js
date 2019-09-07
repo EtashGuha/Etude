@@ -4,20 +4,21 @@ var osvers = os.platform()
 var Worker = require("tiny-worker");
 
 onmessage = function findTextAnswer(input) {
-	etudeFilepath = input.data[4];
-	var unpackedDirectory = etudeFilepath.replace("app.asar", "app.asar.unpacked")
-	var java = require(unpackedDirectory + '/node_modules/java');
-	console.log(unpackedDirectory + '/node_modules/java')
-	if (osvers == "darwin") {
-		console.log(unpackedDirectory + '/MacKernel.jar')
-		java.classpath.push(unpackedDirectory + '/MacKernel.jar');
-		java.classpath.push(unpackedDirectory + "/WolframContents/Resources/Wolfram\ Player.app/Contents/SystemFiles/Links/JLink/JLink.jar");
-	} else {
-		java.classpath.push(unpackedDirectory + "/WindowsKernel.jar");
-		java.classpath.push(unpackedDirectory + "/WolframContents/SystemFiles/Links/JLink/JLink.jar");
-	}
-	var kernel = java.newInstanceSync('p1.Kernel', unpackedDirectory);
+	var request = require("request");
 	console.log(input)
-	var results = kernel.findTextAnswerSync(input.data[0], input.data[1], input.data[2], input.data[3]);
-	postMessage(results);
+	var options = {
+		method: 'POST',
+		url: 'http://159.89.39.148:8080',
+		formData: {
+			text: input.data[0],
+			question: input.data[1],
+			format: input.data[3],
+			number: input.data[2]
+		}
+	};
+
+	request(options, function(error, response, body) {
+		if (error) throw new Error(error);
+		postMessage(JSON.parse(body).text);
+	});
 }
