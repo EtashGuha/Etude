@@ -23,8 +23,8 @@ var tokenizer = new Tokenizer('Chuck');
 const viewerEle = document.getElementById('viewer');
 viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
-iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#search=and%3Dsubjects the Javascript`);
-
+iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}`);
+console.log(iframe.src)
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.pdf"
 
@@ -166,20 +166,8 @@ $("#cape_btn").click(function() {
 			var promiseToAppend = new Promise(function(resolve, reject) {
 				console.log("beginning promise")
 				kernelWorker.onmessage = function(ev) {
-					console.log(ev);
 					$("#capeResult").empty().append(ev.data[0] + " <hr style=\"margin-top: 15px; margin-bottom: 15px\"> " + ev.data[1]);
-					updateHighlightsWorker.onmessage = function(ev) {
-						console.log("Worker is done")
-						changePage();
-						console.log(ev.data)
-						jumpPage(ev.data)
-						console.log('done updateHighlightsWorker')
-						updateHighlightsWorker.terminate()
-
-					}
-					updateHighlightsWorker.postMessage([ev.data, true, filepath, userDataPath, etudeFilepath])
-					console.log("Starting")
-					console.log("Kernel worker terminated")
+					updateHighlights(ev.data)
 					kernelWorker.terminate()
 					resolve("GOOD")
 				}
@@ -235,26 +223,11 @@ var iPagesum = 0;
 var iEndPagesum = 0;
 
 function processSummarizationResult(t) {
+	console.log(t)
 	noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
-	updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
 	tokenizer.setEntry(noLineBreakText);
-	updateHighlightsWorker.onmessage = function(ev) {
-		console.log("Worker is done")
-		changePage();
-		console.log(ev.data)
-		console.log('done updateHighlightsWorker')
-		updateHighlightsWorker.terminate()
-	}
-	updateHighlightsWorker.postMessage([tokenizer.getSentences(), false, filepath, userDataPath, etudeFilepath])
-	console.log("Starting")
-	console.log("Kernel worker terminated")
-	$("#summarizingResult").empty().append(t["output"]);
-	//here you can remove the loading button
+	updateHighlights(tokenizer.getSentences())
 	$('.summarizer_loading').hide();
-	// $('.hover_bkgr_fricc').show();
-	iPagesum = 0;
-	iEndPagesum = 0;
-	textDsum = 0;
 };
 
 function summaryButtonPressed(firstpage, lastpage) {
@@ -335,6 +308,28 @@ function jumpPage(pageNumber) {
 	} else {
 		window.setTimeout(jumpPage, 100, pageNumber)
 	}
+}
+function updateHighlights(arr){
+	var searchQueries = ""
+	arr.forEach((item, index) => {
+		item = replaceAll(item, " ", "%3D")
+		searchQueries += "%20" + item
+		console.log(searchQueries)
+	})
+
+	searchQueries = searchQueries.substring(3)
+	console.log(searchQueries)
+	iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#search=${searchQueries}`);
+	console.log(iframe.src)
+	viewerEle.appendChild(iframe);
+}
+
+function replaceAll(str, find, replace) {
+    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+
+function escapeRegExp(str) {
+    return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 }
 
 function changePage() {
