@@ -9,18 +9,9 @@ const {
 const {
     autoUpdater
 } = require("electron-updater");
-let childProcess = require('child_process');
-const typeOf = require('typeof')
-var sudo = require('sudo-prompt');
-const os = require('os')
-const firstRun = require('electron-first-run');
+
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
-var osvers = os.platform()
 var fs = require('fs');
-var isFirstRun = firstRun()
-var mkdirp = require('mkdirp');
-const locateJavaHome = require('locate-java-home');
-var npm = require('npm-programmatic');
 var options = {
     name: 'Etude'
 };
@@ -33,10 +24,6 @@ const userDataPath = (electron.app || electron.remote.app).getPath('userData');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
-var javadir = ""
-console.log(Object.values(locateJavaHome))
-console.log(locateJavaHome.default)
-console.log(typeOf(locateJavaHome))
 global.sharedObject = {
     someProperty: ''
 }
@@ -97,18 +84,14 @@ function createWindow() {
     if (!fs.existsSync(userDataPath + "/folderForHighlightedPDF")) {
         fs.mkdirSync(userDataPath + "/folderForHighlightedPDF")
     }
-    if (isFirstRun) {
-        setupJava();
-    } else {
-        //This is google analytics stuff
-        analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
-            return response;
-        });
-        mainWindow.webContents.openDevTools()
-        setTimeout(() => {
-            mainWindow.loadFile('library.html')
-        }, 1000);
-    }
+    //This is google analytics stuff
+    analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
+        return response;
+    });
+    mainWindow.webContents.openDevTools()
+    setTimeout(() => {
+        mainWindow.loadFile('library.html')
+    }, 1000);
 
     mainWindow.webContents.openDevTools()
 
@@ -125,7 +108,6 @@ function createWindow() {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', function() {
-    console.log("1.0.3")
     createWindow()
 })
 
@@ -143,48 +125,6 @@ app.on('activate', function() {
         createWindow()
     }
 })
-
-
-function setupJava() {
-    if (fs.existsSync('/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk') || fs.existsSync("C:/Program Files/Java/jdk-11.0.1")) {
-        console.log("going to library")
-        setTimeout(() => {
-            mainWindow.loadFile('library.html')
-        }, 1000);
-    } else if (osvers == "win32") {
-        sudo.exec(unpackedDirectory + '/jdk-11.0.1_windows-x64_bin.exe /s', options,
-            function(error, stdout, stderr) {
-                console.log(stdout)
-                console.log("Silently installed Java")
-            });
-        sudo.exec(unpackedDirectory + '/vc_redist.x86.exe /install /quiet /norestart', options,
-            function(error, stdout, stderr) {
-                console.log(stdout)
-                console.log("Silently installed Microsoft C++")
-                setTimeout(() => {
-                    mainWindow.loadFile('library.html')
-                }, 1000);
-            });
-    } else {
-        console.log("move java")
-        moveJava();
-    }
-}
-
-function moveJava() {
-    if (osvers == 'darwin') {
-        sudo.exec('mv ' + unpackedDirectory + '/jdk-11.0.2.jdk /Library/Java/JavaVirtualMachines', options,
-            function(error, stdout, stderr) {
-                if (error) throw error;
-                console.log('stdout: ' + stdout);
-                setTimeout(() => {
-                    mainWindow.loadFile('library.html')
-                }, 1000);
-            }
-        );
-    }
-}
-
 
 module.exports = userDataPath
 // In this file you can include the rest of your app's specific main process
