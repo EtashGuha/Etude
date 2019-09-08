@@ -23,7 +23,7 @@ var tokenizer = new Tokenizer('Chuck');
 const viewerEle = document.getElementById('viewer');
 viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
-iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}`);
+iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#search=and%3Dsubjects the Javascript`);
 
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.pdf"
