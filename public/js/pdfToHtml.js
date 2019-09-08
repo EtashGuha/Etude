@@ -12,13 +12,14 @@ var textData = null;
 var bookmarkArray = [];
 var Worker = require("tiny-worker");
 
-var jre = require('node-jre');
+
 
 
 
 onmessage = function pdfToHtml(input) {
 	const etudeFilepath = input.data[2];	
 	var unpackedDirectory = etudeFilepath.replace("app.asar", "app.asar.unpacked")
+	var jre = require(unpackedDirectory + "/node_modules/node-jre");
 	var filenamewithextension = path.parse(input.data[0]).base;
 	filenamewithextension = filenamewithextension.split('.')[0];
 
