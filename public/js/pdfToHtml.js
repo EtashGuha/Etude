@@ -40,7 +40,7 @@ onmessage = function pdfToHtml(input) {
 	var output = jre.spawnSync(  // call synchronously
 	    [unpackedDirectory+'/PDFToHTML.jar'],                // add the relative directory 'java' to the class-path
 	    'org.fit.pdfdom.PDFToHTML',                 // call main routine in class 'Hello'
-	    [input.data[0],input.data[1] + '/tmp/ '+ filenamewithextension + '.html'],               // pass 'World' as only parameter
+	    [input.data[0],input.data[1] + '/tmp/'+ filenamewithextension + '.html'],               // pass 'World' as only parameter
 	    { encoding: 'utf8' }     // encode output as string
   	).stdout.trim();           // take output from stdout as trimmed String
 	postMessage("done")
