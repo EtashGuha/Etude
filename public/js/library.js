@@ -7,7 +7,7 @@ var store = new Store();
 const {
 	ipcRenderer
 } = require('electron');
-store.clear();
+//store.clear();
 console.log("BANANaNANANNNANNNANANANANN")
 console.log("Geordie")
 console.log("is the truest")
