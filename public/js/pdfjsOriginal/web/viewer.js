@@ -19,6 +19,7 @@
  * @licend The above is the entire license notice for the
  * Javascript code in this page
  */
+ var isControlF = true;
  function compareTwoStrings(first, second) {
   first = first.replace(/\s+/g, '')
   second = second.replace(/\s+/g, '')
@@ -2237,6 +2238,7 @@ function webViewerDocumentProperties() {
 }
 
 function webViewerFind(evt) {
+  isControlF = true;
   PDFViewerApplication.findController.executeCommand('find' + evt.type, {
     query: evt.query,
     phraseSearch: evt.phraseSearch,
@@ -2249,6 +2251,7 @@ function webViewerFind(evt) {
 
 function webViewerFindFromUrlHash(evt) {
   console.log("from url hash")
+  isControlF = false;
   PDFViewerApplication.findController.executeCommand('find', {
     query: evt.query,
     phraseSearch: evt.phraseSearch,
@@ -6957,12 +6960,19 @@ function () {
         var matchIdx = -subqueryLen;
         subquery = subquery.replace(/\=/ig, ' ');
         while (true) {
-          let finderMatch = findBestMatch(subquery, pageContent.split(".")).bestMatch
-          matchIdx = pageContent.indexOf(finderMatch.target, matchIdx + subqueryLen);
+          if(isControlF){
+            console.log('checking waht it was before')
+            matchIdx = pageContent.indexOf(subquery, matchIdx + subqueryLen);
+          } else {
+            var bestAnswer = findBestMatch(subquery, pageContent.split(".")).bestMatch
+            matchIdx = pageContent.indexOf(bestAnswer.target, matchIdx + subqueryLen);
+            if(bestAnswer.rating < .4){
+              break;
+            }
+          }
           if (matchIdx === -1) {
             break;
           }
-          if (finderMatch.rating > 0.35) {
             if (entireWord && !this._isEntireWord(pageContent, matchIdx, subqueryLen)) {
               continue;
             }
@@ -6973,7 +6983,6 @@ function () {
               skipped: false
             });
           }
-        }
       }
 
       this._pageMatchesLength[pageIndex] = [];
@@ -7123,34 +7132,34 @@ function () {
         }
       }
 
-      // if (this._query === '') {
-      //   this._updateUIState(FindState.FOUND);
+      if (this._query === '') {
+        this._updateUIState(FindState.FOUND);
 
-      //   return;
-      // }
+        return;
+      }
 
-      // if (this._resumePageIdx) {
-      //   return;
-      // }
+      if (this._resumePageIdx) {
+        return;
+      }
 
-      // var offset = this._offset;
-      // this._pagesToSearch = numPages;
+      var offset = this._offset;
+      this._pagesToSearch = numPages;
 
-      // if (offset.matchIdx !== null) {
-      //   var numPageMatches = this._pageMatches[offset.pageIdx].length;
+      if (offset.matchIdx !== null) {
+        var numPageMatches = this._pageMatches[offset.pageIdx].length;
 
-      //   if (!previous && offset.matchIdx + 1 < numPageMatches || previous && offset.matchIdx > 0) {
-      //     offset.matchIdx = previous ? offset.matchIdx - 1 : offset.matchIdx + 1;
+        if (!previous && offset.matchIdx + 1 < numPageMatches || previous && offset.matchIdx > 0) {
+          offset.matchIdx = previous ? offset.matchIdx - 1 : offset.matchIdx + 1;
 
-      //     this._updateMatch(true);
+          this._updateMatch(true);
 
-      //     return;
-      //   }
+          return;
+        }
 
-      //   this._advanceOffsetPage(previous);
-      // }
+        this._advanceOffsetPage(previous);
+      }
 
-      // this._nextPageMatch();
+      this._nextPageMatch();
     }
   }, {
     key: "_matchesReady",
