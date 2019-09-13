@@ -6958,7 +6958,7 @@ function () {
         subquery = subquery.replace(/\=/ig, ' ');
         while (true) {
           var bestAnswer = findBestMatch(subquery, pageContent.split("."))
-          
+          console.log(bestAnswer.bestMatch.rating)
           if(bestAnswer.bestMatch.rating < .9){
             break;
           }
@@ -6977,9 +6977,6 @@ function () {
             matchLength: subqueryLen,
             skipped: false
           });
-          if(bestAnswer.bestMatch.rating > .9){
-            break;
-          }
         }
       }
 
