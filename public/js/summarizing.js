@@ -317,16 +317,6 @@ function updateHighlights(arr){
 	console.log(arr)
 	var searchQueries = ""
 	arr.forEach((item, index) => {
-		// var item2 = item.split(" ");
-		// console.log(item2);
-		// var item3 = "";
-		// item2.forEach((element) => {
-		// 	if (element !== "") {
-		// 		item3 += element;
-		// 	}
-		// })
-		// console.log(item3);
-		// item = item3;
 		item = replaceAll(item,"\u00A0", "%3D");
 		item = replaceAll(item, " ", "%3D")
 		searchQueries += "%20" + item

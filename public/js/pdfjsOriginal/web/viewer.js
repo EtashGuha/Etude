@@ -19,6 +19,69 @@
  * @licend The above is the entire license notice for the
  * Javascript code in this page
  */
+ function compareTwoStrings(first, second) {
+  first = first.replace(/\s+/g, '')
+  second = second.replace(/\s+/g, '')
+
+  if (!first.length && !second.length) return 1;                   // if both are empty strings
+  if (!first.length || !second.length) return 0;                   // if only one is empty string
+  if (first === second) return 1;                      // identical
+  if (first.length === 1 && second.length === 1) return 0;         // both are 1-letter strings
+  if (first.length < 2 || second.length < 2) return 0;       // if either is a 1-letter string
+
+  let firstBigrams = new Map();
+  for (let i = 0; i < first.length - 1; i++) {
+    const bigram = first.substring(i, i + 2);
+    const count = firstBigrams.has(bigram)
+      ? firstBigrams.get(bigram) + 1
+      : 1;
+
+    firstBigrams.set(bigram, count);
+  };
+
+  let intersectionSize = 0;
+  for (let i = 0; i < second.length - 1; i++) {
+    const bigram = second.substring(i, i + 2);
+    const count = firstBigrams.has(bigram)
+      ? firstBigrams.get(bigram)
+      : 0;
+
+    if (count > 0) {
+      firstBigrams.set(bigram, count - 1);
+      intersectionSize++;
+    }
+  }
+
+  return (2.0 * intersectionSize) / (first.length + second.length - 2);
+}
+function findBestMatch(mainString, targetStrings) {
+  if (!areArgsValid(mainString, targetStrings)) throw new Error('Bad arguments: First argument should be a string, second should be an array of strings');
+  
+  const ratings = [];
+  let bestMatchIndex = 0;
+
+  for (let i = 0; i < targetStrings.length; i++) {
+    const currentTargetString = targetStrings[i];
+    const currentRating = compareTwoStrings(mainString, currentTargetString)
+    ratings.push({target: currentTargetString, rating: currentRating})
+    if (currentRating > ratings[bestMatchIndex].rating) {
+      bestMatchIndex = i
+    }
+  }
+  
+  
+  const bestMatch = ratings[bestMatchIndex]
+  
+  return { ratings, bestMatch, bestMatchIndex };
+}
+
+function areArgsValid(mainString, targetStrings) {
+  if (typeof mainString !== 'string') return false;
+  if (!Array.isArray(targetStrings)) return false;
+  if (!targetStrings.length) return false;
+  if (targetStrings.find(s => typeof s !== 'string')) return false;
+  return true;
+}
 
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -2185,6 +2248,7 @@ function webViewerFind(evt) {
 }
 
 function webViewerFindFromUrlHash(evt) {
+  console.log("from url hash")
   PDFViewerApplication.findController.executeCommand('find', {
     query: evt.query,
     phraseSearch: evt.phraseSearch,
@@ -6683,6 +6747,7 @@ function () {
         }
 
         if (cmd === 'find') {
+          console.log("THIS IS WHERE TO")
           _this._findTimeout = setTimeout(function () {
             _this._nextMatch();
 
@@ -6864,7 +6929,7 @@ function () {
       var matches = [];
       var queryLen = query.length;
       var matchIdx = -queryLen;
-
+      
       while (true) {
         matchIdx = pageContent.indexOf(query, matchIdx + queryLen);
 
@@ -6886,15 +6951,13 @@ function () {
     value: function _calculateWordMatch(query, pageIndex, pageContent, entireWord) {
       var matchesWithLength = [];
       var queryArray = query.match(/\S+/g);
-
       for (var i = 0, len = queryArray.length; i < len; i++) {
         var subquery = queryArray[i];
         var subqueryLen = subquery.length;
         var matchIdx = -subqueryLen;
         subquery = subquery.replace(/\=/ig, ' ');
-
         while (true) {
-          matchIdx = pageContent.indexOf(subquery, matchIdx + subqueryLen);
+          matchIdx = pageContent.indexOf(findBestMatch(subquery, pageContent.split(".")).bestMatch.target, matchIdx + subqueryLen);
 
           if (matchIdx === -1) {
             break;
@@ -7043,7 +7106,7 @@ function () {
         this._matchesCountTotal = 0;
 
         this._updateAllPages();
-
+        console.log(this._pendingFindMatches)
         for (var i = 0; i < numPages; i++) {
           if (this._pendingFindMatches[i] === true) {
             continue;
@@ -7059,34 +7122,34 @@ function () {
         }
       }
 
-      if (this._query === '') {
-        this._updateUIState(FindState.FOUND);
+      // if (this._query === '') {
+      //   this._updateUIState(FindState.FOUND);
 
-        return;
-      }
+      //   return;
+      // }
 
-      if (this._resumePageIdx) {
-        return;
-      }
+      // if (this._resumePageIdx) {
+      //   return;
+      // }
 
-      var offset = this._offset;
-      this._pagesToSearch = numPages;
+      // var offset = this._offset;
+      // this._pagesToSearch = numPages;
 
-      if (offset.matchIdx !== null) {
-        var numPageMatches = this._pageMatches[offset.pageIdx].length;
+      // if (offset.matchIdx !== null) {
+      //   var numPageMatches = this._pageMatches[offset.pageIdx].length;
 
-        if (!previous && offset.matchIdx + 1 < numPageMatches || previous && offset.matchIdx > 0) {
-          offset.matchIdx = previous ? offset.matchIdx - 1 : offset.matchIdx + 1;
+      //   if (!previous && offset.matchIdx + 1 < numPageMatches || previous && offset.matchIdx > 0) {
+      //     offset.matchIdx = previous ? offset.matchIdx - 1 : offset.matchIdx + 1;
 
-          this._updateMatch(true);
+      //     this._updateMatch(true);
 
-          return;
-        }
+      //     return;
+      //   }
 
-        this._advanceOffsetPage(previous);
-      }
+      //   this._advanceOffsetPage(previous);
+      // }
 
-      this._nextPageMatch();
+      // this._nextPageMatch();
     }
   }, {
     key: "_matchesReady",
