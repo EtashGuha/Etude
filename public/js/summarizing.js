@@ -253,7 +253,6 @@ function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
 		//the correct html file directory within our project
 		console.log(outputfile)
 		fs.readFile(outputfile, "utf8", function(err, data) {
-			console.log(data)
 			let datadata = data.split("<div class=\"page\"");
 			let newstring = "";
 			for (let i = firstpage; i <= lastpage; i++) {
@@ -315,6 +314,7 @@ function jumpPage(pageNumber) {
 	}
 }
 function updateHighlights(arr){
+	console.log(arr)
 	var searchQueries = ""
 	arr.forEach((item, index) => {
 		// var item2 = item.split(" ");
@@ -330,13 +330,10 @@ function updateHighlights(arr){
 		item = replaceAll(item,"\u00A0", "%3D");
 		item = replaceAll(item, " ", "%3D")
 		searchQueries += "%20" + item
-		console.log(searchQueries)
 	})
 
 	searchQueries = searchQueries.substring(3)
-	console.log(searchQueries)
 	iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#search=${searchQueries}`);
-	console.log(iframe.src)
 	viewerEle.appendChild(iframe);
 }
 
