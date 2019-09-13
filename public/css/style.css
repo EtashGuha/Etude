@@ -327,6 +327,8 @@ img.minusImage:empty
 	background-color: #f7f8f9;
 	position:absolute !important;
 	transition: 0.5s;
+	top:82px;
+	
 }
 /* #bookmark_close_icon{
 	margin-left: 50%;

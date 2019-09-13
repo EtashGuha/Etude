@@ -6957,21 +6957,22 @@ function () {
         var matchIdx = -subqueryLen;
         subquery = subquery.replace(/\=/ig, ' ');
         while (true) {
-          matchIdx = pageContent.indexOf(findBestMatch(subquery, pageContent.split(".")).bestMatch.target, matchIdx + subqueryLen);
-
+          let finderMatch = findBestMatch(subquery, pageContent.split(".")).bestMatch
+          matchIdx = pageContent.indexOf(finderMatch.target, matchIdx + subqueryLen);
           if (matchIdx === -1) {
             break;
           }
+          if (finderMatch.rating > 0.35) {
+            if (entireWord && !this._isEntireWord(pageContent, matchIdx, subqueryLen)) {
+              continue;
+            }
 
-          if (entireWord && !this._isEntireWord(pageContent, matchIdx, subqueryLen)) {
-            continue;
+            matchesWithLength.push({
+              match: matchIdx,
+              matchLength: subqueryLen,
+              skipped: false
+            });
           }
-
-          matchesWithLength.push({
-            match: matchIdx,
-            matchLength: subqueryLen,
-            skipped: false
-          });
         }
       }
 
