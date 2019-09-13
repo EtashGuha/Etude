@@ -6957,8 +6957,13 @@ function () {
         var matchIdx = -subqueryLen;
         subquery = subquery.replace(/\=/ig, ' ');
         while (true) {
-          matchIdx = pageContent.indexOf(findBestMatch(subquery, pageContent.split(".")).bestMatch.target, matchIdx + subqueryLen);
-
+          var bestAnswer = findBestMatch(subquery, pageContent.split("."))
+          
+          if(bestAnswer.bestMatch.rating < .9){
+            break;
+          }
+          console.log(bestAnswer.bestMatch.rating)
+          matchIdx = pageContent.indexOf(bestAnswer.bestMatch.target, matchIdx + subqueryLen);
           if (matchIdx === -1) {
             break;
           }
@@ -6972,6 +6977,9 @@ function () {
             matchLength: subqueryLen,
             skipped: false
           });
+          if(bestAnswer.bestMatch.rating > .9){
+            break;
+          }
         }
       }
 
