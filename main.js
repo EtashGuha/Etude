@@ -33,6 +33,7 @@ ipcMain.on('show_pdf_message', (event, arg) => {
 })
 
 function createWindow() {
+    
     const {
         width,
         height

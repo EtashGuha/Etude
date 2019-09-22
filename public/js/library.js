@@ -1,6 +1,7 @@
 const {
 	dialog
 } = require('electron').remote;
+const { shell } = require('electron')
 const path = require('path');
 const Store = require('electron-store');
 var store = new Store();
@@ -53,6 +54,16 @@ document.getElementById('myButton').addEventListener('click', () => {
 	})
 
 })
+
+
+
+document.getElementById('etudeButton').addEventListener('click', () => {
+	shell.openExternal('https://www.etudereader.com')
+
+})
+
+
+
 
 function showPDF(pdf_url) {
 	PDFJS.getDocument({

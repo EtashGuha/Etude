@@ -1,6 +1,7 @@
 const {
 	dialog
 } = require('electron').remote;
+const { shell } = require('electron')
 const path = require('path');
 const log = require('electron-log');
 const fs = require('fs');
@@ -206,6 +207,13 @@ $("#help").click(function() {
 	});
 })
 
+$("#etudeButton").click(function() {
+//document.getElementById('etudeButton').addEventListener('click', () => {
+	console.log("Attempting to go to website");
+	goToWebsite();
+
+})
+
 //summarization function
 $('#summarizingButton').click(function() {
 	$('.su_popup').hide();
@@ -225,6 +233,10 @@ var textDsum = "";
 var iPagesum = 0;
 var iEndPagesum = 0;
 
+
+function goToWebsite() {
+	shell.openExternal('https://www.etudereader.com')
+}
 function processSummarizationResult(t) {
 	console.log(t)
 	noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
