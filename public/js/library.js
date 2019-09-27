@@ -8,6 +8,8 @@ var store = new Store();
 const {
 	ipcRenderer
 } = require('electron');
+const remote = require('electron').remote;
+var win = remote.BrowserWindow.getFocusedWindow();
 //store.clear();
 console.log("BANANaNANANNNANNNANANANANN")
 console.log("Geordie")
@@ -55,7 +57,10 @@ document.getElementById('myButton').addEventListener('click', () => {
 
 })
 
+document.getElementById('closeButton').addEventListener('click', () => {
+    win.close();
 
+})
 
 document.getElementById('etudeButton').addEventListener('click', () => {
 	shell.openExternal('https://www.etudereader.com')

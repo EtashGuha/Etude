@@ -2,6 +2,8 @@ const {
 	dialog
 } = require('electron').remote;
 const { shell } = require('electron')
+const remote = require('electron').remote;
+var win = remote.BrowserWindow.getFocusedWindow();
 const path = require('path');
 const log = require('electron-log');
 const fs = require('fs');
@@ -143,6 +145,14 @@ $(document).on("click", ".bookmark-canvas", function() {
 	console.log(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[$(this).attr("data") - 1])
 	document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[$(this).attr("data") - 1].click()
 });
+
+
+document.getElementById('closeButton').addEventListener('click', () => {
+    win.close();
+
+})
+
+
 
 var searchbox = document.getElementById("questionVal");
 // Execute a function when the user releases a key on the keyboard
