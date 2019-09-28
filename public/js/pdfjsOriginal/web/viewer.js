@@ -7464,7 +7464,7 @@ function areArgsValid(mainString, targetStrings) {
 							}
 
 							return false;
-						}
+						}g
 						matchesWithLength.sort(function(a, b) {
 							return a.match === b.match ? a.matchLength - b.matchLength : a.match - b.match;
 						});
