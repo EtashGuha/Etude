@@ -1146,7 +1146,7 @@ html[dir='rtl'] .dropdownToolbarButton {
 .toolbarButton.toggled,
 .splitToolbarButton.toggled > .toolbarButton.toggled,
 .secondaryToolbarButton.toggled {
-  left:210px;
+  left:20%;
   background-color: hsla(0,0%,0%,.3);
   background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
   border-color: hsla(0,0%,0%,.4) hsla(0,0%,0%,.45) hsla(0,0%,0%,.5);
