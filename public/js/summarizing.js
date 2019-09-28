@@ -31,6 +31,7 @@ const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.p
 viewerEle.appendChild(iframe);
 
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
+console.log(deepai)
 deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
 //get text from pdf to send to flask backends
 var PDF_URL = filepath;
@@ -226,6 +227,7 @@ var iPagesum = 0;
 var iEndPagesum = 0;
 
 function processSummarizationResult(t) {
+	console.log("here we are")
 	console.log(t)
 	noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
 	tokenizer.setEntry(noLineBreakText);
@@ -236,6 +238,7 @@ function processSummarizationResult(t) {
 function summaryButtonPressed(firstpage, lastpage) {
 	var htmlStuff = htmlWholeFileToPartialPlainText(firstpage, lastpage);
 	htmlStuff.then((x) => {
+		console.log(x);
 		deepai.callStandardApi("summarization", {
 			text: x
 		}).then((resp) => processSummarizationResult(resp))
