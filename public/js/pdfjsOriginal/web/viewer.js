@@ -7477,7 +7477,6 @@ function areArgsValid(mainString, targetStrings) {
 							matches.push(matchesWithLength[i].match);
 							matchesLength.push(matchesWithLength[i].matchLength);
 						}
-						console.log(matches)
 					}
 				}, {
 					key: "_isEntireWord",
@@ -7587,7 +7586,6 @@ function areArgsValid(mainString, targetStrings) {
 								this._prepareMatches(matchesWithLength, this._pageMatches[currPage], this._pageMatchesLength[currPage]);
 							}
 						}
-						console.log(this._pageMatches)
 					}
 				}, {
 					key: "_calculateMatch",
@@ -13496,7 +13494,8 @@ function areArgsValid(mainString, targetStrings) {
 						this.matches = this._convertMatches(pageMatches, pageMatchesLength);
 						// console.log("look here")
 						// console.log(findController.pageMatches)
-						// console.log(this.matches)
+						//console.log(this.matches)
+						console.log(this.matches)
 						this._renderMatches(this.matches);
 					}
 				}, {
