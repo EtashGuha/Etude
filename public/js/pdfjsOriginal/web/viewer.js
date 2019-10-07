@@ -2392,6 +2392,7 @@ function areArgsValid(mainString, targetStrings) {
 		}
 
 		function webViewerFindFromUrlHash(evt) {
+			console.log(evt.query)
 			console.log("from url hash")
 			isControlF = false;
 			bestPageMatchIndeces = []
@@ -7531,13 +7532,18 @@ function areArgsValid(mainString, targetStrings) {
 					key: "_calculateWordMatch",
 					value: function _calculateWordMatch(query, pageIndex, pageContent, entireWord) {
 						var numPages = this._linkService.pagesCount;
-						var matchesWithLength = [];
+						console.log("PAGE: " + pageIndex)
 						var queryArray = query.match(/\S+/g);
 						for (var i = 0, len = queryArray.length; i < len; i++) {
 							var subquery = queryArray[i];
+							if(subquery === undefined || subquery === null) {
+								continue;
+							}
+
 							var subqueryLen = subquery.length;
 							var matchIdx = -subqueryLen;
 							subquery = subquery.replace(/\=/ig, ' ');
+							console.log(subquery)
 							while (true) {
 								if (isControlF) {
 									console.log('checking waht it was before')
@@ -7560,15 +7566,10 @@ function areArgsValid(mainString, targetStrings) {
 									continue;
 								}
 
-								matchesWithLength.push({
-									match: matchIdx,
-									matchLength: subqueryLen,
-									skipped: false
-								});
 							}
 						}
-
-
+						console.log(correspondingMatchIdx)
+						console.log(bestPageMatchIndeces)
 						if (pageIndex === numPages - 1) {
 							for (var currPage = 0; currPage < numPages; currPage++) {
 								var matchesWithLength = [];
@@ -7713,7 +7714,6 @@ function areArgsValid(mainString, targetStrings) {
 							this._matchesCountTotal = 0;
 
 							this._updateAllPages();
-							console.log(this._pendingFindMatches)
 							for (var i = 0; i < numPages; i++) {
 								if (this._pendingFindMatches[i] === true) {
 									continue;
