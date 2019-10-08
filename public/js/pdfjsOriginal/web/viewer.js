@@ -3910,6 +3910,7 @@ function areArgsValid(mainString, targetStrings) {
 
 		function watchScroll(viewAreaElement, callback) {
 			var debounceScroll = function debounceScroll(evt) {
+				console.log('SCROLL');
 				if (rAF) {
 					return;
 				}
@@ -7585,6 +7586,8 @@ function areArgsValid(mainString, targetStrings) {
 								this._pageMatchesLength[currPage] = [];
 								this._pageMatches[currPage] = [];
 								this._prepareMatches(matchesWithLength, this._pageMatches[currPage], this._pageMatchesLength[currPage]);
+								console.log(`CALCULATION DONE for page ${currPage + 1}`);
+								this._eventBus.dispatch('calculationdone', { id: currPage + 1 });
 							}
 						}
 					}
@@ -12574,6 +12577,19 @@ function areArgsValid(mainString, targetStrings) {
 					div.setAttribute('data-page-number', this.id);
 					this.div = div;
 					container.appendChild(div);
+					
+					if (this.id <= 3) {
+						this.eventBus.on('calculationdone', (evt) => {
+							if (evt.id !== this.id) return;
+							console.log(`RESET rendering state for page ${this.id}`)
+							this.renderingState = _pdf_rendering_queue.RenderingStates.INITIAL;
+							var continueRendering = function continueRendering() {
+								this.renderingQueue.renderHighestPriority();
+							}
+							continueRendering = continueRendering.bind(this);
+							this.draw().then(continueRendering, continueRendering);
+						});	
+					}
 				}
 
 				_createClass(PDFPageView, [{
@@ -13471,6 +13487,8 @@ function areArgsValid(mainString, targetStrings) {
 							textContentItemsStr = this.textContentItemsStr,
 							textDivs = this.textDivs;
 						var clearedUntilDivIdx = -1;
+
+						console.log(`UPDATE MATCHES for page ${pageIdx}`);
 
 						for (var i = 0, ii = matches.length; i < ii; i++) {
 							var match = matches[i];
