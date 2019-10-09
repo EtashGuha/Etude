@@ -275,18 +275,17 @@ img.minusImage:empty
   }
   
   div.viewer iframe {
-	width: 100%;
+	wid	display: none;
+	}th: 100%;
 	height: 100%;
 	}
 	
 	#file-to-upload {
-		display: none;
-	} */
+	 */
 
 	/* pdfview css */
 
-	/* div.picker {
-		width: 50%;
+	/* div.picker		width: 50%;
 		height: 40px;
 	
 		background-color: #222222;

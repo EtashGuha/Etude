@@ -1,0 +1,1257 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"indexOf",
+				"indexOfPreviousMatchIdx"
+			],
+			[
+				"bestMatc",
+				"bestPageMatchIndeces"
+			],
+			[
+				"best",
+				"bestPageMatchIndeces"
+			],
+			[
+				"bestPa",
+				"bestPageMatchArrVals"
+			],
+			[
+				"bestPageMatchArr",
+				"bestPageMatchArrVals"
+			],
+			[
+				"bestPageM",
+				"bestPageMatchArr"
+			],
+			[
+				"engine",
+				"engineerValue"
+			],
+			[
+				"confirm",
+				"confirmButtonListener"
+			],
+			[
+				"engin",
+				"engineerValue"
+			],
+			[
+				"mercha",
+				"merchantValue"
+			],
+			[
+				"diff",
+				"difficultyToggleListener"
+			],
+			[
+				"merch",
+				"merchantPoints"
+			],
+			[
+				"char",
+				"characterName"
+			],
+			[
+				"node",
+				"node-jre"
+			],
+			[
+				"update",
+				"updateHighlights"
+			],
+			[
+				"move",
+				"moveJava"
+			],
+			[
+				"unpa",
+				"unpackedDirectory"
+			],
+			[
+				"unp",
+				"unpackedDirectory"
+			],
+			[
+				"upack",
+				"unpackedDirectory"
+			],
+			[
+				"secv",
+				"secVersionFilepath"
+			],
+			[
+				"path",
+				"pathOfFile"
+			],
+			[
+				"user",
+				"userDataPath"
+			],
+			[
+				"userDa",
+				"userDataPath"
+			],
+			[
+				"view",
+				"viewerEle"
+			],
+			[
+				"vie",
+				"viewerEle"
+			],
+			[
+				"kere",
+				"kernelWorker"
+			],
+			[
+				"updateHighlig",
+				"updateHighlightsWorker"
+			],
+			[
+				"kerne",
+				"kernelWorker"
+			],
+			[
+				"pdfTo",
+				"pdfToHtmlWorker"
+			],
+			[
+				"PDF",
+				"PDF_URL"
+			],
+			[
+				"__",
+				"__dirname"
+			],
+			[
+				"type",
+				"typeOf"
+			],
+			[
+				"etude",
+				"etudeFilepath"
+			],
+			[
+				"highlghtThi",
+				"highlightThisArr"
+			],
+			[
+				"annotati",
+				"annotationsToHighlight"
+			],
+			[
+				"up",
+				"updateHighlights"
+			],
+			[
+				"etud",
+				"etudeFilepath"
+			],
+			[
+				"etu",
+				"etudeFilepath"
+			],
+			[
+				"jav",
+				"javaVersion"
+			],
+			[
+				"secVer",
+				"secVersionFilepath"
+			],
+			[
+				"hi",
+				"folderForHighlightedPDF"
+			],
+			[
+				"file",
+				"filepath"
+			],
+			[
+				"anno",
+				"annotationsToHighlight"
+			],
+			[
+				"ann",
+				"annotationsToHighlight"
+			],
+			[
+				"pdf",
+				"pdfFilePath"
+			],
+			[
+				"my",
+				"mypointer"
+			],
+			[
+				"print",
+				"printerror"
+			],
+			[
+				"cov",
+				"convertback"
+			],
+			[
+				"fi",
+				"filename"
+			],
+			[
+				"prin",
+				"printerror"
+			],
+			[
+				"fil",
+				"file_list"
+			],
+			[
+				"FALSE",
+				"false_negative"
+			],
+			[
+				"fals",
+				"false_positive"
+			],
+			[
+				"fal",
+				"false_negative"
+			],
+			[
+				"gt",
+				"gtpointer"
+			],
+			[
+				"cl",
+				"Clips"
+			],
+			[
+				"Di",
+				"difference_metric"
+			],
+			[
+				"json",
+				"jsonList"
+			],
+			[
+				"pre",
+				"prev_diff_metric_list"
+			],
+			[
+				"aver",
+				"average_diff_metric_list"
+			],
+			[
+				"diffPi",
+				"diff_picture_before"
+			],
+			[
+				"seg",
+				"segmentMeanChange"
+			],
+			[
+				"total",
+				"totalList"
+			],
+			[
+				"gray",
+				"grayCurr"
+			],
+			[
+				"get",
+				"get_data_from_yahoo"
+			],
+			[
+				"ac",
+				"accessToken"
+			],
+			[
+				"acc",
+				"accountId"
+			],
+			[
+				"line",
+				"line_number"
+			],
+			[
+				"lin",
+				"lines_gen"
+			],
+			[
+				"cur",
+				"current_frame"
+			],
+			[
+				"diff_metric",
+				"diff_metric_list"
+			],
+			[
+				"dif",
+				"diff_metric"
+			],
+			[
+				"gra",
+				"grayCurr"
+			],
+			[
+				"data",
+				"dataOne"
+			],
+			[
+				"remove",
+				"removeItem"
+			],
+			[
+				"new",
+				"newEntry"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"first",
+				"firstEntry"
+			],
+			[
+				"firs",
+				"firstEntry"
+			],
+			[
+				"creat",
+				"createHashTableEntry"
+			],
+			[
+				"HashTable",
+				"HashTableEntry"
+			],
+			[
+				"hash",
+				"hashTable"
+			],
+			[
+				"entry",
+				"entryInBucket"
+			],
+			[
+				"cre",
+				"createHashTableEntry"
+			],
+			[
+				"video",
+				"videoId"
+			],
+			[
+				"access",
+				"accessToken"
+			],
+			[
+				"acces",
+				"accessToken"
+			],
+			[
+				"auth",
+				"authBaseUrl"
+			],
+			[
+				"aut",
+				"authBaseUrl"
+			],
+			[
+				"time",
+				"time_stamp"
+			],
+			[
+				"reque",
+				"requests"
+			],
+			[
+				"diff_met",
+				"diff_metric_list"
+			],
+			[
+				"a",
+				"average_diff_metric_list"
+			],
+			[
+				"num",
+				"num_diff_metric"
+			],
+			[
+				"is",
+				"is_first_diff"
+			],
+			[
+				"di",
+				"diff_metric_list"
+			],
+			[
+				"del",
+				"deltaP"
+			],
+			[
+				"m",
+				"mdict"
+			],
+			[
+				"c",
+				"concatenate_videoclips"
+			],
+			[
+				"f",
+				"file_name"
+			],
+			[
+				"D",
+				"diff_metric"
+			],
+			[
+				"li",
+				"li_dif"
+			],
+			[
+				"current",
+				"current_word_list"
+			],
+			[
+				"curre",
+				"current_text"
+			],
+			[
+				"curr",
+				"current_text"
+			],
+			[
+				"HA",
+				"HA_Open"
+			],
+			[
+				"train",
+				"train_test_split"
+			],
+			[
+				"med",
+				"median_age"
+			],
+			[
+				"movi",
+				"movie_key"
+			],
+			[
+				"corr",
+				"correlated_dict"
+			],
+			[
+				"mov",
+				"movie_key"
+			],
+			[
+				"movie",
+				"movie_to_compare"
+			],
+			[
+				"mo",
+				"movie_to_compare_list"
+			],
+			[
+				"movie_for_correlation",
+				"movie_for_correlation_list"
+			],
+			[
+				"image",
+				"imagePath"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 2409,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/js/library.js",
+			"settings":
+			{
+				"buffer_size": 5873,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/js/summarizing.js",
+			"settings":
+			{
+				"buffer_size": 12000,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/js/pdfjsOriginal/web/viewer.js",
+			"settings":
+			{
+				"buffer_size": 552307,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "etude.sublime-project",
+			"settings":
+			{
+				"buffer_size": 145,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "pdf.worker.js",
+			"settings":
+			{
+				"buffer_size": 1423045,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"Format",
+				"Format: Javascript"
+			],
+			[
+				"Cool",
+				"CoolFormat: Quick Format"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"Eclip",
+				"Eclipse: Format Java"
+			],
+			[
+				"Pack",
+				"Package Control: Add Channel"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"j",
+				"Format: Javascript"
+			],
+			[
+				"format",
+				"Format: Javascript"
+			],
+			[
+				"Form",
+				"Format: Javascript"
+			],
+			[
+				"html",
+				"HTMLPrettify"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Lint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"fo",
+				"Format: Javascript"
+			],
+			[
+				"package control",
+				"Package Control: Install Package"
+			],
+			[
+				"Toggle",
+				"SublimeLinter: Toggle Highlights"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"Insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Install P",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/etashguha/Documents/etude",
+		"/Users/etashguha/Documents/etude/public",
+		"/Users/etashguha/Documents/etude/public/js",
+		"/Users/etashguha/Documents/etude/public/js/pdfjsOriginal",
+		"/Users/etashguha/Documents/etude/public/js/pdfjsOriginal/build",
+		"/Users/etashguha/Documents/etude/public/js/pdfjsOriginal/web"
+	],
+	"file_history":
+	[
+		"/Users/etashguha/Documents/SpaceInvaders47/CurrPlayerDispScreen.java",
+		"/Users/etashguha/Downloads/homework02/DoublyLinkedList.java",
+		"/Users/etashguha/Downloads/homework03/LinkedDeque.java",
+		"/Users/etashguha/Downloads/homework03/LinkedNode.java",
+		"/Users/etashguha/Documents/etude/dist/mac/Etude.app/Contents/Resources/app.asar.unpacked/WolframContents/Resources/Wolfram Player.app/Contents/SystemFiles/Links/Databases/Databases/Common/MessageHandling.m",
+		"/Users/etashguha/Documents/etude/dist/mac/Etude.app/Contents/Resources/app.asar.unpacked/node_modules/deepai/dist/deepai.js",
+		"/Users/etashguha/Documents/etude/package.json",
+		"/Users/etashguha/Documents/etude/main.js",
+		"/Users/etashguha/Documents/etude/node_modules/electron-react-devtools/build/backend.js",
+		"/Users/etashguha/Documents/etude/public/js/createFile/coordinates.js",
+		"/Users/etashguha/Documents/etude/public/js/summarizing.js",
+		"/Users/etashguha/Documents/etude/public/js/updateHighlights.js",
+		"/Users/etashguha/Documents/etude/public/js/library.js",
+		"/Users/etashguha/Documents/etude/public/js/pdfToHtml.js",
+		"/Users/etashguha/Documents/etude/.gitignore",
+		"/Users/etashguha/Documents/etude/public/js/kernel.js",
+		"/Users/etashguha/Documents/etude/testme.js",
+		"/Applications/Wolfram Desktop.app/Contents/SystemFiles/Links/JLink/Examples/Part2/Kernel.java",
+		"/Applications/Wolfram Desktop.app/Contents/SystemFiles/Links/JLink/Examples/Part2/MacKernel.java",
+		"/Users/etashguha/Documents/etude/pdf.worker.js",
+		"/Users/etashguha/Documents/etude/node_modules/electron-rebuild/node_modules/node-gyp/bin/node-gyp.js",
+		"/Users/etashguha/Documents/etude/node_modules/java/build/jvm_dll_path.json",
+		"/Users/etashguha/Documents/etude/node_modules/java/build/nodejavabridge_bindings.target.mk",
+		"/Users/etashguha/Documents/etude/node_modules/lodash/sortedUniq.js",
+		"/Users/etashguha/Documents/etude/summarizing.html",
+		"/Users/etashguha/Documents/etude/Kernel.jar",
+		"/Users/etashguha/Documents/etude/public/js/pdfjsOriginal/web/viewer.js",
+		"/Users/etashguha/Documents/etude/library.html",
+		"/Users/etashguha/Documents/etude/node_modules/java/compile-java-code.sh",
+		"/Users/etashguha/Documents/etude/public/css/style.css",
+		"/Users/etashguha/Documents/etude/public/js/jquery.js",
+		"/Users/etashguha/Downloads/M-UNIX-LM.sh",
+		"/Users/etashguha/Documents/etude/Etude-darwin-x64/Etude.app/Contents/Resources/app/node_modules/java/update-commons-lang.sh",
+		"/Users/etashguha/Documents/etude/node_modules/pdf.js-extract/lib/pdfjs/pdf.js",
+		"/Users/etashguha/Documents/etude/node_modules/spawn-rx/COPYING",
+		"/Users/etashguha/Documents/highlightingPDF/app.js",
+		"/Users/etashguha/Documents/highlightingPDF/createFile/ali.js",
+		"/Users/etashguha/Documents/highlightingPDF/testing.js",
+		"/Users/etashguha/Documents/highlightingPDF/server.js",
+		"/Users/etashguha/Documents/highlightingPDF/index.html",
+		"/Users/etashguha/Documents/highlightingPDF/pdf.js",
+		"/Users/etashguha/Documents/highlightingPDF/coordinates.js",
+		"/Applications/Wolfram Desktop.app/Contents/SystemFiles/Links/JLink/Examples/Part2/callwolf.js",
+		"/Applications/Wolfram Desktop.app/Contents/SystemFiles/Links/JLink/Examples/Part2/SampleProgram.java",
+		"/Users/etashguha/Downloads/94-1/pdf.html",
+		"/Users/etashguha/Desktop/bleh.py",
+		"/Users/etashguha/Documents/etude/Calculator.java",
+		"/Users/etashguha/Documents/etude/Main.java",
+		"/Applications/Wolfram Desktop.app/Contents/SystemFiles/Links/JLink/Examples/Part2/SampleProgramTwo.java",
+		"/Users/etashguha/Documents/pdftojson/extractor.js",
+		"/Users/etashguha/Documents/pdftojson/converter.js",
+		"/Applications/Wolfram Desktop.app/Contents/SystemFiles/Links/JLink/Examples/Part2/callcalc.js",
+		"/Users/etashguha/Documents/etude/callcalc.js",
+		"/Users/etashguha/Documents/etude/callwolf.js",
+		"/Users/etashguha/Documents/etude/Kernel.java",
+		"/Users/etashguha/Downloads/SampleProgramTwo.java",
+		"/Users/etashguha/Documents/etude/SampleProgram.java",
+		"/Users/etashguha/Documents/etude/wolfram.js",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/ex.py",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/testvi.py",
+		"/Users/etashguha/Documents/etude/splittopdf.js",
+		"/Users/etashguha/Documents/etude/splitpdf.py",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/original_detector.py",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/pseudo.py",
+		"/Users/etashguha/Documents/Etude/azure_service.py",
+		"/Users/etashguha/Desktop/brian.py",
+		"/Users/etashguha/Documents/Sentdex/First.py",
+		"/Users/etashguha/Documents/Etude/deepai.js",
+		"/Users/etashguha/Documents/Etude/test.js",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/mathem.js",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/callwolfram.html",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/videoindexer.py",
+		"/Users/etashguha/Documents/English Project/engl.py",
+		"/Users/etashguha/Downloads/EnglProj-8589022523dd.json",
+		"/Users/etashguha/Documents/English Project/googlenlp.py",
+		"/Users/etashguha/Documents/English Project/plotter.py",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/testtogo.py",
+		"/Users/etashguha/Documents/ECE2035/p2-1 (1)/hash_table.c",
+		"/Users/etashguha/Documents/ECE2035/p2-1 (1)/hash_table.h",
+		"/Users/etashguha/Documents/ECE2035/p2-1 (1)/ht_tests.cpp",
+		"/Users/etashguha/Documents/ECE2035/p2-1 (1)/ht_tests_shell.cpp",
+		"/Users/etashguha/Documents/ECE2035/p2-1 (1)/hash_table_shell.c",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/1181c81c-0b10-4eee-8e56-4752a2c2ecad.mp4.json",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/test.py",
+		"/Users/etashguha/Downloads/gui/assets/js/pdfjsOriginal/web/viewer.css",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/video_maker.py",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/transition_with_text.py",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/mdictprint.py",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/key_frame.py",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/transition_detecter.py",
+		"/Users/etashguha/Downloads/gui/Etude-win32-x64/resources/app/public/js/library.js",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/test_split.py",
+		"/Users/etashguha/Documents/SlideTransition/SlideTransition/azure_blob_storage_access.py",
+		"/Users/etashguha/Desktop/quantres.py",
+		"/Users/etashguha/Downloads/gui/assets/js/summarizing.js",
+		"/Users/etashguha/Downloads/gui/assets/js/library.js",
+		"/Users/etashguha/Downloads/gui/public/js/library.js",
+		"/anaconda2/pkgs/anaconda-navigator-1.9.6-py27_0/lib/python2.7/site-packages/anaconda_navigator/static/images/vscode-icon-1024x1024.svg",
+		"/Users/etashguha/Documents/Parmonic/transition_detecter.py",
+		"/Users/etashguha/Documents/Parmonic/videoindexer.py",
+		"/Users/etashguha/Documents/Parmonic/original_detector.py",
+		"/Users/etashguha/Documents/Parmonic/video_maker.py",
+		"/Users/etashguha/Documents/Parmonic/transition_with_text.py",
+		"/Users/etashguha/Documents/Parmonic/filetest.py",
+		"/Users/etashguha/Documents/Sentdex/Regression.py",
+		"/Users/etashguha/Documents/ECE2035/test.c",
+		"/Users/etashguha/Documents/Parmonic/speech.py",
+		"/Users/etashguha/Downloads/test.java",
+		"/Users/etashguha/Downloads/test.c",
+		"/Users/etashguha/Downloads/transition_detecter.py",
+		"/Users/etashguha/Downloads/ocr.py",
+		"/Users/etashguha/Downloads/Etude-a91f82ba23ca.json",
+		"/Users/etashguha/Downloads/Primo_BibTeX_Export.bib",
+		"/Users/etashguha/Documents/ECE2035/HW2-1-shell.c",
+		"/Users/etashguha/Downloads/QuantiacsSampleTS/TradingSystemTemplate.py",
+		"/Users/etashguha/Documents/ECE2035/HW1-3r.asm",
+		"/Users/etashguha/Documents/PartialDischargeGuesser/Parmonic.py",
+		"/Users/etashguha/Desktop/hello.java",
+		"/Users/etashguha/Documents/PartialDischargeGuesser/VoltageGuesser.py",
+		"/Users/etashguha/Documents/PartialDischargeGuesser/ml_data1.py",
+		"/Users/etashguha/Documents/PartialDischargeGuesser/opencvinstaller.py",
+		"/Users/etashguha/Downloads/VoltageGuesser.py"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"callback",
+			"bestPageMatchInde",
+			"bestPageMatchIndeces",
+			"calculateWordMatch",
+			"calculateWordMat",
+			"calculateWrodMatch",
+			"calculateMatch",
+			"start",
+			"calculateMatch",
+			"firstPassThrough",
+			"firstpassthrough",
+			"firstPassThrough",
+			"calculateMatch",
+			"calculateWordMatch",
+			"urlhash",
+			"calculateWordMatch",
+			"calculatematch",
+			"bestPageMatchArr",
+			"calculatematch",
+			"calculateWordMatch",
+			"calculateMatch",
+			"pageIdx",
+			"calculatematch",
+			"calculateWordMatch",
+			"calculateMatch",
+			"query",
+			"calculateMatch",
+			"CalculateWord",
+			"isControlF",
+			"_calculateMatch",
+			"console.log",
+			"calculateMatch",
+			"calculateWordMatch",
+			"findBes",
+			"deepai",
+			"process",
+			"summarize",
+			"store",
+			"pdfjs",
+			"store",
+			"findBestMat",
+			"compareTwoString",
+			"string"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2409,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"SL.683.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 205.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public/js/library.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5873,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3710,
+								3710
+							]
+						],
+						"settings":
+						{
+							"SL.684.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 1.0,
+						"translation.y": 2097.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/js/summarizing.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12000,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8692,
+								8699
+							]
+						],
+						"settings":
+						{
+							"SL.685.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3413.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "public/js/pdfjsOriginal/web/viewer.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 552307,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								247610,
+								247611
+							]
+						],
+						"settings":
+						{
+							"SL.686.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 111981.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "etude.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 145,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								142,
+								142
+							]
+						],
+						"settings":
+						{
+							"SL.742.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "pdf.worker.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1423045,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								891004,
+								891009
+							]
+						],
+						"settings":
+						{
+							"SL.739.region_keys":
+							[
+								"SL.annotations.Highlights.|612fc08716e9f4db555f4b51fc0ce1aede038ad54d16333f7e640e7a7807b0af|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|a55c2f6e229116f3692983568841122527406bee32971188eec8294fe2d20603|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|d109d2efb397ec9bf2f06c019c5bd19b39467b3fe63c772cd552d4b61c9b71e3|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|59ce02b3e2b53f447641d6d3317a42f4e6edb6decd17cc2f190588647e3e52b9|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|73cca91675f5d00514a33763c7d64b64f726ef9c68fdaa664f73416696b36683|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|e512a19ad539035c4d7f3006d1a46449fba62165507e2e9867604c024c37e4e6|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|7d25b559c0d7b6db286a3ea9e1037ee75846952a2aecaf814ab25d76e5b43f4b|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|0d08f3249bbd18e1c4d8bac41737e328731894c5ae20e164d1050d0ecef96915|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|b2f5e38b25022858463a67f15bae9f646983ca0cc80ed5330ca2fe6aafd22936|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|19217e356d231c9c88d9e6854bff3ad04dd5a901cb99d18c30e2ae4518c94953|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|70e09b1bb4a2a7b185b15e70c0bb33783033b442b97469a23075409b1fe1d036|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|4b4971e71920f574333d9cf71ce4247bb81f63858fcc960b36569d84f408ec8a|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|4c2ce0ba01c8bc916b36976b2006ca086a72ec27aef82f157f2aecb57523651b|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|48de481ab335fb119732a2dc42511557381f1b71dc13203848d5868477b60db3|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|ec6b489ee2d711e3dc86540c99a1086e95e093e8ed9f92dcc0ab9a4039c7e39c|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|99d652e39b9534a177de29e59f8adce83aa1e2cbef24649f2a5d8fdf89fe69a9|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|60319eb02f5efc1ec700a79ef810e1c297a59649eb5f8d80ab8895f4b2143dfb|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|76d695016edc6b32efd315018f6069e8ec99b99b9404ace005099cffe1a93792|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|66a3ace28d2c71930b86b9c0116f7e21ef3fdd37fb85fadd6478e15a279ea730|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|b6259e38b5c6dae592392c2a0c46b8e9d09fb1b788284be6122ab8bac0c434c7|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.annotations.Highlights.|09bb50918578bf7b5bda723a4617cb657cd376e553a10908d8e5075069b6e168|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|a5d9eecc9f9a60af4ded8961e3a463c37f8ff09f16379736f6884444289356e1|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|309a1009989465cf403bca6044ce80a39e2611503b7ecd926ef6631eee28b9b4|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|9b78a3efae8ac4e556f223027127ab2299e67b15718cdd06b3ce7b1ce19f011e|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|56000dc5e148eadbcf3e51130d4b1be8240744b8369f3375b39bdc25c763b12a|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|c3226a6ffda0ed6b19b51e88f8e833bc77fc43b51aa96c4aa90778b6c6978ed0|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|bc12cb77481808a2f3a422aee64cf977e1acca7f7712cdeb6b3c28af508dbb9b|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|1231b5d86353ea0183f9562b5fc3cfe2e2f5842e9591c13cbf6bf31ec5a2b56b|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|5c0698e008a28aaa60069cb615b92a821dabf7bf8353853f0af26be27605c2c6|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|99e6e1ac28143165ab0e0ed91631e9262e7916464f2c2a2f9f0a709661b5af8c|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|b61904084f2fe425e03ede7ff05389eb21e103e9f31a0d89aaec6ddac37ae7c7|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|d6c7e9c51428b1e47658893375f98f80dcff2edeea841ae7b144c3735df98c78|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|7dc824a74f8f7b3807d1d65e22a9d486e7ad9d81975bdfde7dc1e259f22617cf|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|310b15c0f2bdb18b5c726610b3762d63cc43b746a6b7a43e2498205357709717|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|c07a52acc59d3cb64c998802084ddc4fd339528fc26402546eb605bf532b023a|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|f80e164e73c63d4587eab1a6c103ac4222f0506d1e6710a8febfcedbb13afb1e|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|eb4740a0942d45bf695fe92c7e2cb5d1a97e45717ac0ee997c8a3c06c7a7bfad|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|d6b25546a887c25f3d33e59d558c04825573ce929b91693daaa92bbbe0f5d53c|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|158b87463c52f38a45aca7adf57c9494c49fef5ed4030631527cfaefd11bae2f|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|29b82a18812142f01d135355e9e22ce3ba9ee62fc13b8d87bfb389d1c241aaff|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|757b2877a0f17691f14f694c949848ac17bd78b32c8eb3dbed467ddde64a1915|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|0b0b16bd3326fa15c44391ffe9ab633f98de819d07528ce08847dbc233bb26a1|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|9a4713bc3a2f0d7dbe9f2043f428723fc4f646a921c92e8a7b187ccea4763973|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|3b7065ab32b23aa3148757688ec018e354ca7ed317299cb37bd87064a445af87|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|e1e22ed6c8ba018483e00dc5fb441569116dd8f3ae74e9c9d47e154d8c87387a|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.annotations.Highlights.|d361afb84f361c576095576c8de49785b9ae28936f9466528dc5033288204c7e|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|2ef01872ba7f4ab804dd313225b5e5b55fdf3719ee69cdfbd35cc4daab085b4d|region.yellowish markup.warning.sublime_linter|32",
+								"SL.annotations.Highlights.|7803c696e3a411d5d6bfff3b149e58c5bdc0d86b47386d153cd7250bc2fbd132|region.yellowish markup.warning.sublime_linter|32"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 413868.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "etude.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Con\t",
+				"ConfigScreen.java"
+			],
+			[
+				"St\t",
+				"StartScreen.java"
+			],
+			[
+				"Pla",
+				"Player.java"
+			],
+			[
+				"viewer.js",
+				"public/js/pdfjsOriginal/web/viewer.js"
+			],
+			[
+				"Library.js",
+				"public/js/library.js"
+			],
+			[
+				"nodejavabridge_bindings",
+				"node_modules/java/build/nodejavabridge_bindings.target.mk"
+			],
+			[
+				"setupshe",
+				"setupshell.js"
+			],
+			[
+				"library.js",
+				"public/js/library.js"
+			],
+			[
+				"coordin",
+				"public/js/createFile/coordinates.js"
+			],
+			[
+				"summariz",
+				"public/js/summarizing.js"
+			],
+			[
+				"su",
+				"node_modules/lodash/sortedUniq.js"
+			],
+			[
+				"summarizing.js",
+				"public/js/summarizing.js"
+			],
+			[
+				"work",
+				"public/js/createFile/workpdf.js"
+			],
+			[
+				"coor",
+				"public/js/createFile/coordinates.js"
+			],
+			[
+				"ap",
+				"app.js"
+			],
+			[
+				"coo",
+				"createFile/coordinates.js"
+			],
+			[
+				"app",
+				"app.js"
+			],
+			[
+				"",
+				"~/Downloads/QuantiacsSampleTS/TradingSystemTemplate.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 247.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

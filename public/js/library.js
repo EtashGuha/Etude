@@ -11,10 +11,7 @@ const {
 const remote = require('electron').remote;
 var win = remote.BrowserWindow.getFocusedWindow();
 //store.clear();
-console.log("BANANaNANANNNANNNANANANANN")
-console.log("Geordie")
-console.log("is the truest")
-console.log("in the best land")
+console.log(store)
 console.log(__dirname)
 console.log(require('root-require')('package.json').version);
 var i = store.size;

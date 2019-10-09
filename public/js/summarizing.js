@@ -34,6 +34,7 @@ const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.p
 viewerEle.appendChild(iframe);
 
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
+console.log(deepai)
 deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
 //get text from pdf to send to flask backends
 var PDF_URL = filepath;
@@ -248,6 +249,7 @@ function goToWebsite() {
 	shell.openExternal('https://www.etudereader.com')
 }
 function processSummarizationResult(t) {
+	console.log("here we are")
 	console.log(t)
 	noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
 	tokenizer.setEntry(noLineBreakText);
@@ -258,6 +260,7 @@ function processSummarizationResult(t) {
 function summaryButtonPressed(firstpage, lastpage) {
 	var htmlStuff = htmlWholeFileToPartialPlainText(firstpage, lastpage);
 	htmlStuff.then((x) => {
+		console.log(x);
 		deepai.callStandardApi("summarization", {
 			text: x
 		}).then((resp) => processSummarizationResult(resp))
@@ -339,12 +342,16 @@ function updateHighlights(arr){
 	console.log(arr)
 	var searchQueries = ""
 	arr.forEach((item, index) => {
+		item = item.replace(/[^a-zA-Z ]/g, "")
 		item = replaceAll(item,"\u00A0", "%3D");
 		item = replaceAll(item, " ", "%3D")
 		searchQueries += "%20" + item
 	})
 
 	searchQueries = searchQueries.substring(3)
+	searchQueries = replaceAll(searchQueries, "=", "")
+	searchQueries = replaceAll(searchQueries, "&", "")
+	console.log(searchQueries)
 	iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#search=${searchQueries}`);
 	viewerEle.appendChild(iframe);
 }
