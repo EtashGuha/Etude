@@ -7532,8 +7532,10 @@ function areArgsValid(mainString, targetStrings) {
 				}, {
 					key: "_calculateWordMatch",
 					value: function _calculateWordMatch(query, pageIndex, pageContent, entireWord) {
+						if(pageContent == null || pageContent == undefined || pageContent.length == 0){
+							return;
+						}
 						var numPages = this._linkService.pagesCount;
-						console.log("PAGE: " + pageIndex)
 						var queryArray = query.match(/\S+/g);
 						for (var i = 0, len = queryArray.length; i < len; i++) {
 							var subquery = queryArray[i];
@@ -7544,7 +7546,6 @@ function areArgsValid(mainString, targetStrings) {
 							var subqueryLen = subquery.length;
 							var matchIdx = -subqueryLen;
 							subquery = subquery.replace(/\=/ig, ' ');
-							console.log(subquery)
 							while (true) {
 								if (isControlF) {
 									console.log('checking waht it was before')
@@ -7569,8 +7570,6 @@ function areArgsValid(mainString, targetStrings) {
 
 							}
 						}
-						console.log(correspondingMatchIdx)
-						console.log(bestPageMatchIndeces)
 						if (pageIndex === numPages - 1) {
 							for (var currPage = 0; currPage < numPages; currPage++) {
 								var matchesWithLength = [];

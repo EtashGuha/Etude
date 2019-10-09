@@ -320,6 +320,7 @@ function updateHighlights(arr){
 	console.log(arr)
 	var searchQueries = ""
 	arr.forEach((item, index) => {
+		item = item.replace(/[^a-zA-Z ]/g, "")
 		item = replaceAll(item,"\u00A0", "%3D");
 		item = replaceAll(item, " ", "%3D")
 		searchQueries += "%20" + item
@@ -327,6 +328,7 @@ function updateHighlights(arr){
 
 	searchQueries = searchQueries.substring(3)
 	searchQueries = replaceAll(searchQueries, "=", "")
+	searchQueries = replaceAll(searchQueries, "&", "")
 	console.log(searchQueries)
 	iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#search=${searchQueries}`);
 	viewerEle.appendChild(iframe);
