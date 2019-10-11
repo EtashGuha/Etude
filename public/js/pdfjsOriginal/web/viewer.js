@@ -2408,6 +2408,7 @@ function areArgsValid(mainString, targetStrings) {
 				highlightAll: true,
 				findPrevious: false
 			});
+			PDFViewerApplication.pdfViewer.jumpToPage(7);
 		}
 
 		function webViewerUpdateFindMatchesCount(_ref9) {
@@ -7585,9 +7586,9 @@ function areArgsValid(mainString, targetStrings) {
 								this._pageMatchesLength[currPage] = [];
 								this._pageMatches[currPage] = [];
 								this._prepareMatches(matchesWithLength, this._pageMatches[currPage], this._pageMatchesLength[currPage]);
-								console.log(`CALCULATION DONE for page ${currPage + 1}`);
 								this._eventBus.dispatch('calculationdone', { id: currPage + 1 });
 							}
+							this._eventBus.dispatch('safetojump');
 						}
 					}
 				}, {
@@ -11034,6 +11035,9 @@ function areArgsValid(mainString, targetStrings) {
 							pageSpot = _ref$pageSpot === void 0 ? null : _ref$pageSpot,
 							_ref$pageNumber = _ref.pageNumber,
 							pageNumber = _ref$pageNumber === void 0 ? null : _ref$pageNumber;
+						
+						// This will change once findController finishes its calculation.
+						this._safeToJump = false;
 
 						if (!pageSpot && !this.isInPresentationMode) {
 							var left = pageDiv.offsetLeft + pageDiv.clientLeft;
@@ -11055,6 +11059,19 @@ function areArgsValid(mainString, targetStrings) {
 							pageSpot: pageSpot,
 							pageNumber: pageNumber
 						});
+					}
+				}, {
+					// This is a custom method
+					key: "jumpToPage",
+					value: function jumpToPage(pageIdx) {
+						if (this._safeToJump) {
+							this.currentPageNumber = pageIdx;
+						} else {
+							PDFViewerApplication.eventBus.on('safetojump', () => {
+								this._safeToJump = true;
+								this.currentPageNumber = pageIdx;
+							});	
+						}			
 					}
 				}, {
 					key: "_getVisiblePages",
