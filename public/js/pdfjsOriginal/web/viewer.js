@@ -3911,7 +3911,6 @@ function areArgsValid(mainString, targetStrings) {
 
 		function watchScroll(viewAreaElement, callback) {
 			var debounceScroll = function debounceScroll(evt) {
-				console.log('SCROLL');
 				if (rAF) {
 					return;
 				}
@@ -11024,6 +11023,12 @@ function areArgsValid(mainString, targetStrings) {
 				function PDFViewer() {
 					_classCallCheck(this, PDFViewer);
 
+					// This will change once findController finishes its calculation.
+					this._safeToJump = false;
+					PDFViewerApplication.eventBus.on('safetojump', () => {
+						this._safeToJump = true;
+					});
+
 					return _possibleConstructorReturn(this, _getPrototypeOf(PDFViewer).apply(this, arguments));
 				}
 
@@ -11034,10 +11039,8 @@ function areArgsValid(mainString, targetStrings) {
 							_ref$pageSpot = _ref.pageSpot,
 							pageSpot = _ref$pageSpot === void 0 ? null : _ref$pageSpot,
 							_ref$pageNumber = _ref.pageNumber,
-							pageNumber = _ref$pageNumber === void 0 ? null : _ref$pageNumber;
-						
-						// This will change once findController finishes its calculation.
-						this._safeToJump = false;
+							pageNumber = _ref$pageNumber === void 0 ? null : _ref$pageNumber;	
+
 
 						if (!pageSpot && !this.isInPresentationMode) {
 							var left = pageDiv.offsetLeft + pageDiv.clientLeft;
@@ -11068,7 +11071,6 @@ function areArgsValid(mainString, targetStrings) {
 							this.currentPageNumber = pageIdx;
 						} else {
 							PDFViewerApplication.eventBus.on('safetojump', () => {
-								this._safeToJump = true;
 								this.currentPageNumber = pageIdx;
 							});	
 						}			
