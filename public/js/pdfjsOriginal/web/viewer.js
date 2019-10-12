@@ -402,7 +402,7 @@ function areArgsValid(mainString, targetStrings) {
 			var event = document.createEvent('CustomEvent');
 			event.initCustomEvent('webviewerloaded', true, true, {});
 			document.dispatchEvent(event);
-			pdfjsWebApp.PDFViewerApplication.run(config);
+			pdfjsWebApp.PDFViewerApplication.run(config);			
 		}
 
 		if (document.readyState === 'interactive' || document.readyState === 'complete') {
@@ -11028,6 +11028,15 @@ function areArgsValid(mainString, targetStrings) {
 					PDFViewerApplication.eventBus.on('safetojump', () => {
 						this._safeToJump = true;
 					});
+
+					// Expose this to the global scope
+					var _jumpToPage = this.jumpToPage.bind(this);
+					var _index = 0;
+					window.parent.jumpToNextMatch = function() {
+						if (bestPageMatchIndeces.length === 0) return;
+						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
+						_index = (_index + 1) % bestPageMatchIndeces.length;
+					}
 
 					return _possibleConstructorReturn(this, _getPrototypeOf(PDFViewer).apply(this, arguments));
 				}
