@@ -10,6 +10,10 @@ const {
     autoUpdater
 } = require("electron-updater");
 var currpathtofile = null;
+if (process.platform == 'win32' && process.argv.length >= 2) {
+    currpathtofile = process.argv[1]
+}
+
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 var fs = require('fs');
 var options = {
@@ -46,6 +50,7 @@ app.on('will-finish-launching', function() {
 ipcMain.on('get-file-data', function(event) {
   var data = null
   event.returnValue = currpathtofile
+  currpathtofile = null
 })
 
 
