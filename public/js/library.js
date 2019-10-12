@@ -21,7 +21,7 @@ var __PDF_DOC,
 	__TOTAL_PAGES,
 	__PAGE_RENDERING_IN_PROGRESS = 0,
 	index = 0;
-
+console.log(process.argv)
 var data = ipcRenderer.sendSync('get-file-data')
 if (data ===  null) {
     console.log("There is no file")
