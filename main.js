@@ -27,6 +27,14 @@ let mainWindow
 global.sharedObject = {
     someProperty: ''
 }
+ipcMain.on('get-file-data', function(event) {
+  var data = null
+  if (process.platform == 'win32' && process.argv.length >= 2) {
+    var openFilePath = process.argv[1]
+    data = openFilePath
+  }
+  event.returnValue = data
+})
 
 ipcMain.on('show_pdf_message', (event, arg) => {
     sharedObject.someProperty = arg

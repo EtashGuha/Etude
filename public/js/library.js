@@ -22,6 +22,15 @@ var __PDF_DOC,
 	__PAGE_RENDERING_IN_PROGRESS = 0,
 	index = 0;
 
+var data = ipcRenderer.sendSync('get-file-data')
+if (data ===  null) {
+    console.log("There is no file")
+} else {
+    // Do something with the file.
+    	ipcRenderer.send('show_pdf_message', data);
+		window.location.href = 'summarizing.html';
+}
+
 for (var j = 0; j < i; j++) {
 	// var j = 0;
 	try {
