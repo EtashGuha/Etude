@@ -11036,6 +11036,7 @@ function areArgsValid(mainString, targetStrings) {
 						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
 						_index = (_index + 1) % bestPageMatchIndeces.length;
 					}
+					document.dispatchEvent(new Event('funcready'));
 
 					return _possibleConstructorReturn(this, _getPrototypeOf(PDFViewer).apply(this, arguments));
 				}

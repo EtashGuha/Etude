@@ -371,3 +371,28 @@ function changePage() {
 	console.log(iframe)
 	viewerEle.appendChild(iframe);
 }
+
+
+let jumpToNextMatchPromise = new Promise((resolve, reject) => {
+	if (typeof window.jumpToNextMatch === 'function') {
+		resolve(window.jumpToNextMatch);
+		return;
+	}
+	window.addEventListener('load', () => {
+		const iframe = document.querySelector('iframe');
+		iframe.contentDocument.addEventListener('funcready', () => {
+			if (typeof window.jumpToNextMatch === 'function') {
+				resolve(window.jumpToNextMatch);
+			} else {
+				reject('`window.jumpToNextMatch` not found!');
+			}
+		});
+	
+	})
+});
+
+jumpToNextMatchPromise.then(f => {
+	console.log('jumpToNextMatch =', f);
+}, err => {
+	console.log(err)
+});
