@@ -2408,7 +2408,6 @@ function areArgsValid(mainString, targetStrings) {
 				highlightAll: true,
 				findPrevious: false
 			});
-			PDFViewerApplication.pdfViewer.jumpToPage(7);
 		}
 
 		function webViewerUpdateFindMatchesCount(_ref9) {
