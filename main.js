@@ -9,7 +9,11 @@ const {
 const {
     autoUpdater
 } = require("electron-updater");
-
+var currpathtofile = null;
+if (process.platform == 'win32' && process.argv.length >= 2 && process.argv[1] !== ".") {
+    currpathtofile = process.argv[1]
+}
+console.log(currpathtofile)
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 var fs = require('fs');
 var options = {
@@ -19,7 +23,7 @@ var unpackedDirectory = etudeFilepath.replace("app.asar", "app.asar.unpacked")
 const analytics = require('electron-google-analytics');
 const analyti = new analytics.default('UA-145681611-1')
 const userDataPath = (electron.app || electron.remote.app).getPath('userData');
-
+var ready = false
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -31,6 +35,24 @@ global.sharedObject = {
 ipcMain.on('show_pdf_message', (event, arg) => {
     sharedObject.someProperty = arg
 })
+
+app.on('ready', function() {
+    createWindow()
+});
+
+app.on('will-finish-launching', function() {
+    app.on('open-file', function(ev, path) {
+        ev.preventDefault();
+        currpathtofile = path;
+    });
+});
+
+ipcMain.on('get-file-data', function(event) {
+  var data = null
+  event.returnValue = currpathtofile
+  currpathtofile = null
+})
+
 
 function createWindow() {
     
@@ -108,9 +130,9 @@ function createWindow() {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', function() {
-    createWindow()
-})
+
+
+
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
