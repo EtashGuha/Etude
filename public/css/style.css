@@ -337,6 +337,37 @@ img.minusImage:empty
 } */
 
 
+.nextanswer {
+	background-color: transparent;
+	width: 20px;
+	color: black;
+	content: url(../js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png);
+}
+
+.prevanswer {
+	content: url(../js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png);
+}
+
+.answerarrow {
+	height: 15px;
+	color: rgb(129, 129, 129);
+}
+
+.arrowright {
+	position: absolute;
+	right: 5%;
+	bottom: 8%;
+}
+
+.arrowleft {
+	position: absolute;
+	left: 5%;
+	bottom: 8%;
+}
+
+
+
+
 
 	
 
