@@ -4,7 +4,8 @@ body{
 
 @font-face{
 	font-family: Poppins;
-	src:url("../../public/css/poppins/Poppins-Bold.ttf")
+	src:url("./poppins/Poppins-Bold.ttf");
+	src:url("./poppins/Poppins-Medium.ttf")
 }
 
 .topnav {
