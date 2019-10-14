@@ -101,7 +101,7 @@ input::-webkit-inner-spin-button {
 		font-size: 17px;
 		border: none;
 		border-radius: 20px 0px 0px 20px;
-		width: 85%;
+		width: 86%;
 	}
 	
 	.topnav .search-container button {
@@ -113,7 +113,7 @@ input::-webkit-inner-spin-button {
 		font-size: 17px;
 		border: none;
 		cursor: pointer;
-		margin-left: -23px;
+		margin-left: -24.5px;
 		border-radius: 20px;
 	}
 	

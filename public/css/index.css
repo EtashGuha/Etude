@@ -289,8 +289,8 @@ div.viewer iframe {
 }
 .lds-ellipsis {
   display: none;
-  position: relative;
-  margin-left: 300px;
+  position: absolute;
+  left:calc(86% - 50px);
   margin-top: -20px;
   z-index: 100000;
 }
