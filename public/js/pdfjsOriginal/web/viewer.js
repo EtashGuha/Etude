@@ -11031,10 +11031,11 @@ function areArgsValid(mainString, targetStrings) {
 					// Expose this to the global scope
 					var _jumpToPage = this.jumpToPage.bind(this);
 					var _index = 0;
-					window.parent.jumpToNextMatch = function() {
+					window.jumpToNextMatch = function(backward) {
 						if (bestPageMatchIndeces.length === 0) return;
 						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
-						_index = (_index + 1) % bestPageMatchIndeces.length;
+						let len = bestPageMatchIndeces.length;
+						_index = (_index + (backward ? -1 : 1) + len) % len;
 					}
 					document.dispatchEvent(new Event('funcready'));
 

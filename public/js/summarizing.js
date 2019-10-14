@@ -354,6 +354,14 @@ function updateHighlights(arr){
 	console.log(searchQueries)
 	iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#search=${searchQueries}`);
 	viewerEle.appendChild(iframe);
+	
+	iframe.onload = function() {
+		iframe.contentDocument.addEventListener('funcready', () => {
+			let f = iframe.contentWindow.jumpToNextMatch;
+			$('.answerarrow.arrowleft').off().click(() => f(true));
+			$('.answerarrow.arrowright').off().click(() => f(false));
+		});
+	}	
 }
 
 function replaceAll(str, find, replace) {
@@ -371,28 +379,3 @@ function changePage() {
 	console.log(iframe)
 	viewerEle.appendChild(iframe);
 }
-
-
-let jumpToNextMatchPromise = new Promise((resolve, reject) => {
-	if (typeof window.jumpToNextMatch === 'function') {
-		resolve(window.jumpToNextMatch);
-		return;
-	}
-	window.addEventListener('load', () => {
-		const iframe = document.querySelector('iframe');
-		iframe.contentDocument.addEventListener('funcready', () => {
-			if (typeof window.jumpToNextMatch === 'function') {
-				resolve(window.jumpToNextMatch);
-			} else {
-				reject('`window.jumpToNextMatch` not found!');
-			}
-		});
-	
-	})
-});
-
-jumpToNextMatchPromise.then(f => {
-	console.log('jumpToNextMatch =', f);
-}, err => {
-	console.log(err)
-});
