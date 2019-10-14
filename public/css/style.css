@@ -5,6 +5,12 @@ body{
 	font-family: Poppins;
 	src:url("./poppins/Poppins-Bold.ttf")
 }
+
+@font-face {
+	font-family: Poppins Regular;
+	src: url("./poppins/Poppins-Regular.ttf")
+}
+
 .topnav {
 	/* background-color: #4038ff; */
 	background-color: transparent;
@@ -31,6 +37,8 @@ body{
 	font-size: 14px;
 	margin-top: 5px;
 }
+
+
 	
 .topnav-centered{
 	/* position: fixed; */
