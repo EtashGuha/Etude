@@ -166,6 +166,20 @@ searchbox.addEventListener("keyup", function(event) {
   }
 });
 
+var body = document.getElementsByTagName("BODY")[0];
+var except = document.getElementById("myDropdown");
+body.addEventListener("click", function () {
+	document.getElementById("myDropdown").classList.toggle("show");
+}, false);
+except.addEventListener("click", function (ev) {
+    ev.stopPropagation(); //this is important! If removed, you'll get both alerts
+}, false);
+
+
+$(document).click(function() {
+	console.log("Clicked document");
+})
+
 $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
 	updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
