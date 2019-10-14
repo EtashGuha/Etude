@@ -27,6 +27,11 @@ var correspondingMatchLength = []
 var arrOfMatchesWithLength = []
 var firstPassThrough = true;
 
+// document.addEventListener('mousemove', e => {
+// 	console.log("Moved Mouse document");
+// });
+
+
 function compareTwoStrings(first, second) {
 	first = first.replace(/\s+/g, '')
 	second = second.replace(/\s+/g, '')

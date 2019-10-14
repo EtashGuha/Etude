@@ -78,7 +78,6 @@ $("#bookmark_icon").click(function() {
 	bookmarkArray.push(whichpagetobookmark);
 	showPDF(filepath, parseInt(whichpagetobookmark));
 })
-
 function showPDF(pdf_url, bookmark_page) {
 	//PDFJS.GlobalWorkerOptions.workerSrc ='../../node_modules/pdfjs-dist/build/pdf.worker.js';
 	PDFJS.getDocument({
@@ -176,9 +175,11 @@ except.addEventListener("click", function (ev) {
 }, false);
 
 
-$(document).click(function() {
-	console.log("Clicked document");
-})
+// $(document).mousemove(function() {
+// 	console.log("Moved Mouse document");
+// })
+//let number = 0;
+//function 
 
 $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
