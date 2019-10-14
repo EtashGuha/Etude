@@ -101,7 +101,7 @@ input::-webkit-inner-spin-button {
 		font-size: 17px;
 		border: none;
 		border-radius: 20px 0px 0px 20px;
-		width: 85%;
+		width: 86%;
 	}
 	
 	.topnav .search-container button {
@@ -113,7 +113,7 @@ input::-webkit-inner-spin-button {
 		font-size: 17px;
 		border: none;
 		cursor: pointer;
-		margin-left: -23px;
+		margin-left: -24.5px;
 		border-radius: 20px;
 	}
 	
@@ -335,6 +335,37 @@ img.minusImage:empty
 	/* position: fixed;
 	font-size: 36px;
 } */
+
+
+.nextanswer {
+	background-color: transparent;
+	width: 20px;
+	color: black;
+	content: url(../js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png);
+}
+
+.prevanswer {
+	content: url(../js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png);
+}
+
+.answerarrow {
+	height: 15px;
+	color: rgb(129, 129, 129);
+}
+
+.arrowright {
+	position: absolute;
+	right: 5%;
+	bottom: 8%;
+}
+
+.arrowleft {
+	position: absolute;
+	left: 5%;
+	bottom: 8%;
+}
+
+
 
 
 

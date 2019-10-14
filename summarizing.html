@@ -11,7 +11,7 @@
   </head>
   <header class="library-nav" style="background: transparent; position: absolute;">
     <div class="topnav">
-      <a id = "etudeButton" href="#" style="margin-left:60px;border-bottom:3px white solid;height:10px;width:47px;padding-left:0px;margin-right:20px">Etude</a>
+      <a id = "etudeButton" href="#" style="margin-left:60px;border-bottom:3px white solid;height:10px;width:47px;padding-left:0px;margin-right:20px">Étude</a>
       <a href="library.html">Library</a>
       <a href="#" onclick="openNav()" id = "bookmark_item" data = "true">Bookmarks
 <!--       <a href="#" id = "bookmark_item">Bookmarks -->
@@ -27,6 +27,16 @@
             <div id="triangle-bottomleft"></div>
             <hr style="margin-top: 5px; margin-bottom: 0px">
             <a id = "capeResult">Answer</a>
+            <div class="nextprevcontainer">
+              <!-- <button class="toolbarButton pageDown nextanswer" title="Next Answer">
+                <img src="public/js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png"
+              </button>
+              <button class="toolbarButton pageUp prevanswer" title="Previous Answer">
+                <img src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"
+              </button> -->
+              <a img href=""><img class="answerarrow arrowleft" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png"></a>
+              <a img href=""><img class="answerarrow arrowright" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"></a>
+            </div>
           </div>
           <div id="searchloader" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
           <img class="minusImage" data="2" id="closeButton" style="position: relative;left: 100%;top: -46px;width:30px; filter: invert(100%);" src="./public/images/cross.png">
@@ -93,12 +103,12 @@
         <div style="text-align: center;" id = "summarizingPart">
           <h2 style="margin-top:30px;">Smart Highlight</h2>
                   <img id="escapeSUPopupButton" class="minusImage" src="./public/images/cross.png" style="z-index: 1000000;width: 60px;position: absolute;left:95%;top:5%">
-          <div style="margin-top: 40px;">
+          <div style="margin-top: 20px;">
               <div>
-
+                <h5>Page</h5>
                 <input type="number" placeholder="1" id = "pageRange" style="text-align: center;width:130px;margin-bottom:15px;" value="1">
                 <h5>to</h5>
-                <input type="number" placeholder="1" id = "topageRange" style="text-align:center;width:130px;margin-top:5px" value="1">
+                <input type="number" placeholder="2" id = "topageRange" style="text-align:center;width:130px;margin-top:5px" value="2">
 
               </div>
           </div>

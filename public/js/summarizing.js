@@ -65,7 +65,7 @@ PDFJS.getDocument({
 	numPages = __PDF_DOC.numPages;
 });
 
-
+console.log(process.argv)
 $("#bookmark_icon").click(function() {
 	//get the page number
 	var whichpagetobookmark = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('pageNumber').value;
