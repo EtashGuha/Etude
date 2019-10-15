@@ -202,7 +202,7 @@ $("#cape_btn").click(function() {
 					resolve("GOOD")
 				}
 				console.log("redefined kernelWorker on message")
-				kernelWorker.postMessage([x, $("#questionVal").val(), "2", "Sentence"])
+				kernelWorker.postMessage([x, $("#questionVal").val(), "8", "Sentence"])
 				console.log("kernel worker put up")
 				//kernel.findTextAnswerSync();
 
