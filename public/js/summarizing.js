@@ -359,7 +359,7 @@ function updateHighlights(arr){
 		iframe.contentDocument.addEventListener('funcready', () => {
 			let f = iframe.contentWindow.jumpToNextMatch;
 			$('.answerarrow.arrowleft').off().click(() => f(true));
-			$('.answerarrow.arrowright').off().click(() => f(false));
+			$('.answerarrow.arrowright').off().click(() => f());
 		});
 	}	
 }

@@ -11031,13 +11031,14 @@ function areArgsValid(mainString, targetStrings) {
 					// Expose this to the global scope
 					var _jumpToPage = this.jumpToPage.bind(this);
 					var _index = 0;
-					window.jumpToNextMatch = function(backward) {
+					window.jumpToNextMatch = function(backward = false) {
 						if (bestPageMatchIndeces.length === 0) return;
 						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
 						let len = bestPageMatchIndeces.length;
 						_index = (_index + (backward ? -1 : 1) + len) % len;
 					}
 					document.dispatchEvent(new Event('funcready'));
+					PDFViewerApplication.eventBus.on('safetojump', jumpToNextMatch);
 
 					return _possibleConstructorReturn(this, _getPrototypeOf(PDFViewer).apply(this, arguments));
 				}
@@ -13515,8 +13516,6 @@ function areArgsValid(mainString, targetStrings) {
 							textContentItemsStr = this.textContentItemsStr,
 							textDivs = this.textDivs;
 						var clearedUntilDivIdx = -1;
-
-						console.log(`UPDATE MATCHES for page ${pageIdx}`);
 
 						for (var i = 0, ii = matches.length; i < ii; i++) {
 							var match = matches[i];
