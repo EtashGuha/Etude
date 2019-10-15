@@ -53,6 +53,17 @@ ipcMain.on('get-file-data', function(event) {
   currpathtofile = null
 })
 
+// ipcMain.on('getMouseMove', function(event) {
+//   var data1 = electron.screen.getCursorScreenPoint();
+//   setTimeout(function(){
+//     var data2 = electron.screen.getCursorScreenPoint();
+//     if (data1 === data2) {
+//         event.returnValue = false
+//     } else {
+//         event.returnValue = true
+//     }
+// }, 2000);
+// });
 
 function createWindow() {
     

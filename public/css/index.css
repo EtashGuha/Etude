@@ -6,9 +6,15 @@ html, body {
 }
 
 @font-face{
-  font-family: Poppins;
-  src:url("./poppins/Poppins-Bold.ttf")
+	font-family: Poppins;
+	src:url("./poppins/Poppins-Bold.ttf")
 }
+
+@font-face {
+	font-family: Poppins Regular;
+	src: url("./poppins/Poppins-Regular.ttf")
+}
+
 /* div.picker {
   width: 50%;
   height: 60px;
