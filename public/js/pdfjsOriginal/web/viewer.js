@@ -11030,12 +11030,13 @@ function areArgsValid(mainString, targetStrings) {
 
 					// Expose this to the global scope
 					var _jumpToPage = this.jumpToPage.bind(this);
-					var _index = 0;
+					var _index = bestPageMatchIndeces.length - 1;
 					window.jumpToNextMatch = function(backward = false) {
 						if (bestPageMatchIndeces.length === 0) return;
-						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
 						let len = bestPageMatchIndeces.length;
 						_index = (_index + (backward ? -1 : 1) + len) % len;
+						console.log(_index)
+						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
 					}
 					document.dispatchEvent(new Event('funcready'));
 					PDFViewerApplication.eventBus.on('safetojump', jumpToNextMatch);
