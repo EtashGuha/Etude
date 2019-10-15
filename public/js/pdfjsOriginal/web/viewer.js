@@ -7554,7 +7554,7 @@ function areArgsValid(mainString, targetStrings) {
 									matchIdx = pageContent.indexOf(bestAnswer.target, matchIdx + subqueryLen);
 									if (bestMatchRatings[i] === undefined || bestMatchRatings[i] < bestAnswer.rating) {
 										bestMatchRatings[i] = bestAnswer.rating
-										correspondingMatchLength[i] = subqueryLen
+										correspondingMatchLength[i] = bestAnswer.target.length
 										bestPageMatchIndeces[i] = pageIndex
 										correspondingMatchIdx[i] = matchIdx
 									}
