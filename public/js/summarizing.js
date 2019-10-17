@@ -227,7 +227,7 @@ $("#cape_btn").click(function() {
 			var promiseToAppend = new Promise(function(resolve, reject) {
 				console.log("beginning promise")
 				kernelWorker.onmessage = function(ev) {
-					$("#capeResult").empty().append(ev.data[0] + " <hr style=\"margin-top: 15px; margin-bottom: 15px\"> " + ev.data[1]);
+					$("#capeResult").empty().append(ev.data[0]);
 					updateHighlights(ev.data)
 					kernelWorker.terminate()
 					resolve("GOOD")
