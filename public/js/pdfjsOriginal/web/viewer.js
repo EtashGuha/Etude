@@ -11046,6 +11046,9 @@ function areArgsValid(mainString, targetStrings) {
 						console.log(_index)
 						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
 					}
+					window.getCurrIndex = function(){
+						return _index
+					}
 					document.dispatchEvent(new Event('funcready'));
 					PDFViewerApplication.eventBus.on('safetojump', jumpToNextMatch);
 
