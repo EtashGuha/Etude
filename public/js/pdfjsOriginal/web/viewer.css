@@ -12,6 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@font-face{
+  font-family: Poppins;
+  src:url("./poppins/Poppins-Bold.ttf")
+}
+
+@font-face {
+  font-family: Poppins Regular;
+  src: url("./poppins/Poppins-Regular.ttf")
+}
 
 .textLayer {
   position: absolute;
