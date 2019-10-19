@@ -46,7 +46,18 @@ var htmlForEntireDoc = ""
 var pdfToHtmlWorker = new Worker(etudeFilepath + "/public/js/pdfToHtml.js");
 var kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
 var updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
+document.getElementById("getRangeButton").disabled = true;
+document.getElementById("getRangeButton").style.opacity = 0.5;
+document.getElementById("cape_btn").disabled = true;
+document.getElementById("searchParent").style.opacity = 0.5;
+document.getElementById("questionVal").disabled = true;
+document.getElementById('searchloader').style.display = 'block';
+document.getElementById('searchbuttonthree').style.color = 'white';
+document.getElementById('cape_btn').style.backgroundColor = 'white';
+
+
 pdfToHtmlWorker.onmessage = function(ev) {
+	enableEtude();
 	console.log(ev);
 	pdfToHtmlWorker.terminate();
 };
@@ -65,7 +76,25 @@ PDFJS.getDocument({
 	numPages = __PDF_DOC.numPages;
 });
 
-console.log(process.argv)
+const {
+	ipcRenderer
+} = require('electron');
+
+
+
+function enableEtude() {
+	document.getElementById("getRangeButton").disabled = false;
+	document.getElementById("getRangeButton").style.opacity = 1.0;
+	document.getElementById("cape_btn").disabled = false;
+	document.getElementById("searchParent").style.opacity = 1.0;
+	document.getElementById("questionVal").disabled = false;
+	document.getElementById('searchloader').style.display = 'none';
+	document.getElementById('searchbuttonthree').style.color = 'black';
+	document.getElementById('cape_btn').style.backgroundColor = '';
+
+}
+
+
 $("#bookmark_icon").click(function() {
 	//get the page number
 	var whichpagetobookmark = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('pageNumber').value;
@@ -78,7 +107,6 @@ $("#bookmark_icon").click(function() {
 	bookmarkArray.push(whichpagetobookmark);
 	showPDF(filepath, parseInt(whichpagetobookmark));
 })
-
 function showPDF(pdf_url, bookmark_page) {
 	//PDFJS.GlobalWorkerOptions.workerSrc ='../../node_modules/pdfjs-dist/build/pdf.worker.js';
 	PDFJS.getDocument({
@@ -204,7 +232,7 @@ $("#cape_btn").click(function() {
 					resolve("GOOD")
 				}
 				console.log("redefined kernelWorker on message")
-				kernelWorker.postMessage([x, $("#questionVal").val(), "2", "Sentence"])
+				kernelWorker.postMessage([x, $("#questionVal").val(), "8", "Sentence"])
 				console.log("kernel worker put up")
 				//kernel.findTextAnswerSync();
 

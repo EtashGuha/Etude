@@ -27,6 +27,14 @@ var correspondingMatchLength = []
 var arrOfMatchesWithLength = []
 var firstPassThrough = true;
 
+
+// const {ipcRenderer} = require('electron');
+// document.addEventListener('mousemove', e => {
+// 	console.log("Moved Mouse document");
+// 	console.log(ipcRenderer.sendSync('getMouseMove'));
+// });
+
+
 function compareTwoStrings(first, second) {
 	first = first.replace(/\s+/g, '')
 	second = second.replace(/\s+/g, '')
