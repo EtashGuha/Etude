@@ -247,7 +247,16 @@ input::-webkit-inner-spin-button {
   padding: 15px 5%;
 }
 
+.helpdescription h4 {
+	font-family: Poppins Regular;
+	font-weight: 500;
+	font-size: 1.2rem;
+	margin-top: 20px;
+}
 
+.helpdescription h2 {
+	font-size: 1.5rem;
+}
 
 
 	/* Add a black background color to the top navigation */

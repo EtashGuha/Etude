@@ -166,19 +166,22 @@ searchbox.addEventListener("keyup", function(event) {
   }
 });
 
-var body = document.getElementsByTagName("BODY")[0];
-var except = document.getElementById("myDropdown");
-body.addEventListener("click", function () {
-	document.getElementById("myDropdown").classList.toggle("show");
-}, false);
-except.addEventListener("click", function (ev) {
-    ev.stopPropagation(); //this is important! If removed, you'll get both alerts
-}, false);
+searchbox.addEventListener("click", function() {
+	document.getElementById("myDropdown").classList.add("show");
+});
 
-
-$(document).click(function() {
-	console.log("Clicked document");
+var closeSearch = document.getElementById("closesearchbutton");
+closeSearch.addEventListener("click", function() {
+	document.getElementById("myDropdown").classList.remove("show");
 })
+// var body = document.getElementsByTagName("BODY")[0];
+// var except = document.getElementById("myDropdown");
+// body.addEventListener("click", function () {
+// 	document.getElementById("myDropdown").classList.toggle("show");
+// }, false);
+// except.addEventListener("click", function (ev) {
+//     ev.stopPropagation(); //this is important! If removed, you'll get both alerts
+// }, false);
 
 $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")

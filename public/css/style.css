@@ -367,13 +367,27 @@ img.minusImage:empty
 .arrowright {
 	position: absolute;
 	right: 5%;
-	bottom: 8%;
+	bottom: 10px;
 }
 
 .arrowleft {
 	position: absolute;
 	left: 5%;
-	bottom: 8%;
+	bottom: 10px;
+}
+
+#closesearchbutton {
+	position: absolute;
+    bottom: 7px;
+    color: #3c3c3c;
+    font-weight: 450;
+    font-size: 14px;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
 }
 
 
