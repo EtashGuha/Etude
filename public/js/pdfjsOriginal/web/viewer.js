@@ -41,28 +41,52 @@ function getSelectedText() {
 	if (!anchor || !focus) return '';
 	if (anchor.nodeType === Node.TEXT_NODE) anchor = anchor.parentNode;
 	if (focus.nodeType === Node.TEXT_NODE) focus = focus.parentNode;
+	
+	if (focus === anchor) { // Same Node
+		return selectedNodes[0].textContent.slice(
+			sel.anchorOffset,
+			sel.focusOffset
+		);
+	}
+	
+	let selectedNodes;
 	if (anchor.parentNode === focus.parentNode) {
+		// Same Page
 		let siblings = [...anchor.parentNode.childNodes];
 		let anchorIndex = siblings.indexOf(anchor);
 		let focusIndex= siblings.indexOf(focus);
-		let selectedNodes = siblings.slice(anchorIndex, focusIndex + 1);
-		if (selectedNodes.length === 1) {
-			return selectedNodes[0].textContent.slice(
-				sel.anchorOffset,
-				sel.focusOffset
-			);
-		}
-		return selectedNodes.reduce((text, node, i) => {
-			if (i === 0)
-				return text + node.textContent.slice(sel.anchorOffset);
-			if (i === selectedNodes.length - 1)
-				return text + node.textContent.slice(0, sel.focusOffset);
-			return text + node.textContent;
-		}, '');
+		selectedNodes = siblings.slice(anchorIndex, focusIndex + 1);
 	} else {
-		// TODO: If the selection is across pages
-		console.log('different pages')
+		// Multiple Pages
+		let startPage = anchor.parentNode.parentNode;
+		let endPage = focus.parentNode.parentNode;
+		let pdfViewer = startPage.parentNode;
+		let pages = [...pdfViewer.childNodes];
+		let startPageIndex = pages.indexOf(startPage);
+		let endPageIndex = pages.indexOf(endPage);
+		let selectedPages = pages.slice(startPageIndex, endPageIndex + 1);
+		selectedNodes = selectedPages.flatMap((page, i) => {
+			let textLayer = page.querySelector('.textLayer');
+			let spanNodes = [...textLayer.childNodes];
+			if (i === 0) {
+				let anchorIndex = spanNodes.indexOf(anchor);
+				return spanNodes.slice(anchorIndex);
+			}
+			if (i === selectedPages.length - 1) {
+				let focusIndex = spanNodes.indexOf(focus);
+				return spanNodes.slice(0, focusIndex + 1);
+			}
+			return spanNodes;
+		});
 	}
+	return selectedNodes.reduce((text, node, i) => {
+		if (i === 0)
+			return text + node.textContent.slice(sel.anchorOffset);
+		if (i === selectedNodes.length - 1)
+			return text + node.textContent.slice(0, sel.focusOffset);
+		return text + node.textContent;
+	}, '');
+
 }
 
 function compareTwoStrings(first, second) {
