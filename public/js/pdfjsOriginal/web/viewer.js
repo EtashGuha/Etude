@@ -43,7 +43,7 @@ function getSelectedText() {
 	if (focus.nodeType === Node.TEXT_NODE) focus = focus.parentNode;
 	
 	if (focus === anchor) { // Same Node
-		return selectedNodes[0].textContent.slice(
+		return anchor.textContent.slice(
 			sel.anchorOffset,
 			sel.focusOffset
 		);
