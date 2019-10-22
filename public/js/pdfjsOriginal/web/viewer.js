@@ -34,6 +34,9 @@ var firstPassThrough = true;
 // 	console.log(ipcRenderer.sendSync('getMouseMove'));
 // });
 
+window.addEventListener('mouseup', () => {
+	console.log(getSelectedText());
+});
 function getSelectedText() {
 	let sel = window.getSelection();
 	let anchor = sel.anchorNode;
@@ -86,7 +89,6 @@ function getSelectedText() {
 			return text + node.textContent.slice(0, sel.focusOffset);
 		return text + node.textContent;
 	}, '');
-
 }
 
 function compareTwoStrings(first, second) {
