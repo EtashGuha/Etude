@@ -95,7 +95,11 @@ function enableEtude() {
 }
 
 
+
 $("#bookmark_icon").click(function() {
+	iframe.contentWindow.getPDFJS();
+	console.log(iframe.contentWindow.getHtml())
+	iframe.contentWindow.closeFindBar()
 	//get the page number
 	var whichpagetobookmark = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('pageNumber').value;
 	for (var j = 0; j < bookmarkArray.length; j++) {

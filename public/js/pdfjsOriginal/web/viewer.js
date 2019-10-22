@@ -2388,7 +2388,15 @@ function areArgsValid(mainString, targetStrings) {
 		}
 
 		function webViewerFind(evt) {
+			console.log(evt)
 			isControlF = true;
+			console.log("HEREEEEEEEEEEEEEEE")
+			console.log(evt.type)
+			console.log(evt.query)
+			console.log(evt.phraseSearch)
+			console.log(evt.entireWord)
+			console.log(evt.highlightAll)
+			console.log(evt.findPrevious)
 			PDFViewerApplication.findController.executeCommand('find' + evt.type, {
 				query: evt.query,
 				phraseSearch: evt.phraseSearch,
@@ -2398,10 +2406,32 @@ function areArgsValid(mainString, targetStrings) {
 				findPrevious: evt.findPrevious
 			});
 		}
+		window.exactMatchFind = function(text) {
+			var banana = {
+				"caseSensitive":false,
+				"entireWord":false,
+				"findPrevious":undefined,
+				"highlightAll":false,
+				"query": text,
+				"type": "",
+				"phraseSearch":true
+			}
+
+			webViewerFind(banana)
+		}
+
+		window.openFindBar = function(){
+			PDFViewerApplication.findBar.open();
+		}
+
+		window.closeFindBar = function(){
+			PDFViewerApplication.findBar.close();
+		}
 
 		function webViewerFindFromUrlHash(evt) {
 			console.log(evt.query)
 			console.log("from url hash")
+
 			isControlF = false;
 			bestPageMatchIndeces = []
 			bestMatchRatings = []
@@ -6934,6 +6964,8 @@ function areArgsValid(mainString, targetStrings) {
 					this.findField.addEventListener('input', function() {
 						_this.dispatchEvent('');
 					});
+					console.log(this.findField)
+					
 					this.bar.addEventListener('keydown', function(e) {
 						switch (e.keyCode) {
 							case 13:
@@ -6975,10 +7007,25 @@ function areArgsValid(mainString, targetStrings) {
 				}, {
 					key: "dispatchEvent",
 					value: function dispatchEvent(type, findPrev) {
+						console.log('Looking here')
 						this.eventBus.dispatch('find', {
 							source: this,
 							type: type,
 							query: this.findField.value,
+							phraseSearch: true,
+							caseSensitive: this.caseSensitive.checked,
+							entireWord: this.entireWord.checked,
+							highlightAll: this.highlightAll.checked,
+							findPrevious: findPrev
+						});
+					}
+				}, {
+					key: "dispatchEventWithQuery",
+					value: function dispatchEvent(type, findPrev, text) {
+						this.eventBus.dispatch('find', {
+							source: this,
+							type: type,
+							query: text,
 							phraseSearch: true,
 							caseSensitive: this.caseSensitive.checked,
 							entireWord: this.entireWord.checked,
@@ -7539,6 +7586,7 @@ function areArgsValid(mainString, targetStrings) {
 				}, {
 					key: "_calculateWordMatch",
 					value: function _calculateWordMatch(query, pageIndex, pageContent, entireWord) {
+						console.log(query)
 						if(pageContent == null || pageContent == undefined || pageContent.length == 0){
 							return;
 						}
@@ -7557,6 +7605,7 @@ function areArgsValid(mainString, targetStrings) {
 								if (isControlF) {
 									console.log('checking waht it was before')
 									matchIdx = pageContent.indexOf(subquery, matchIdx + subqueryLen);
+									console.log(matchIdx)
 								} else {
 									var bestAnswer = findBestMatch(subquery, pageContent.split(".")).bestMatch
 									matchIdx = pageContent.indexOf(bestAnswer.target, matchIdx + subqueryLen);
@@ -11046,6 +11095,10 @@ function areArgsValid(mainString, targetStrings) {
 						console.log(_index)
 						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
 					}
+					window.getHtml = function() {
+						return document.getElementsByTagName('html')
+					}
+					document.getElementsByTagName('html')
 					window.getCurrIndex = function(){
 						return _index
 					}
