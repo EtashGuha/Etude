@@ -2418,6 +2418,15 @@ function areArgsValid(mainString, targetStrings) {
 			});
 		}
 
+		window.openFindBar = function(){
+			PDFViewerApplication.findBar.open();
+		}
+
+		window.closeFindBar = function(){
+			PDFViewerApplication.findBar.close();
+		}
+
+
 		function webViewerUpdateFindMatchesCount(_ref9) {
 			var matchesCount = _ref9.matchesCount;
 

@@ -344,7 +344,7 @@ div.viewer iframe {
 
 .dropdown-content {
   display: none;
-  margin-top: -1px;
+  margin-top: 43px;
   position: absolute;
   background-color: white;
   width: 85%;

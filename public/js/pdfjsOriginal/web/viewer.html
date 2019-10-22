@@ -70,36 +70,38 @@ See https://github.com/adobe-type-tools/cmap-resources
       </div>  <!-- sidebarContainer -->
 
       <div id="mainContainer">
-        <div class="findbar hidden doorHanger" id="findbar" style="top:80px;">
-          <div id="findbarInputContainer">
-            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input">
-            <div class="splitToolbarButton">
-              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous" style="width:28px;height:28px;">
-                <span data-l10n-id="find_previous_label">Previous</span>
-              </button>
-              <div class="splitToolbarButtonSeparator"></div>
-              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next" style="width:28px;height:28px;">
-                <span data-l10n-id="find_next_label">Next</span>
-              </button>
+        <div style="position:absolute; left:70%; width:30%;height:56px;padding:13px;">
+          <div class="findbar hidden doorHanger" id="findbar" style="position: absolute;width:80%;padding-right:0px;padding-left:0px;background-image:none;top:15px;height:37.2px;margin-right:13px; border-radius:20px;box-shadow: none;margin-left:0px;">
+            <div id="findbarInputContainer" style="padding-bottom:3px;width:100%;">
+              <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input" style="color: black;height: 32px;top: -2px;margin-top: 0px;font-size: 13px;box-shadow: none;border-radius: 20px;margin-left: 0px; padding-left: 12px;font-family: Poppins">
+              <div class="splitToolbarButton">
+                <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous" style="width:28px;height:28px;">
+                  <span data-l10n-id="find_previous_label">Previous</span>
+                </button>
+                <div class="splitToolbarButtonSeparator"></div>
+                <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next" style="width:28px;height:28px;">
+                  <span data-l10n-id="find_next_label">Next</span>
+                </button>
+              </div>
             </div>
-          </div>
 
-          <div id="findbarOptionsOneContainer">
-            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
-            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
-            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
-            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
-          </div>
-          <div id="findbarOptionsTwoContainer">
-            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="96">
-            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole words</label>
-            <span id="findResultsCount" class="toolbarLabel hidden"></span>
-          </div>
+            <div id="findbarOptionsOneContainer" style="padding-left:10px;">
+              <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
+              <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
+              <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
+              <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
+            </div>
+            <div id="findbarOptionsTwoContainer">
+              <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="96">
+              <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole words</label>
+              <span id="findResultsCount" class="toolbarLabel hidden"></span>
+            </div>
 
-          <div id="findbarMessageContainer">
-            <span id="findMsg" class="toolbarLabel"></span>
-          </div>
-        </div>  <!-- findbar -->
+            <div id="findbarMessageContainer">
+              <span id="findMsg" class="toolbarLabel"></span>
+            </div>
+          </div>  <!-- findbar -->
+        </div>
 
         <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
           <div id="secondaryToolbarButtonContainer">

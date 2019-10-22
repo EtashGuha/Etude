@@ -795,9 +795,7 @@ html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
   height: auto;
 }
 html[dir='ltr'] .findbar {
-  left: 75px;
   background-color: #f7f8f9;
-  padding-top: 2px;
 }
 html[dir='rtl'] .findbar {
   right: 68px;
@@ -811,7 +809,7 @@ html[dir='rtl'] .findbar {
 }
 
 #findInput {
-  width: 200px;
+  width: 72%;
 }
 #findInput::-webkit-input-placeholder {
   color: hsl(0, 0%, 75%);
@@ -950,7 +948,7 @@ html[dir='ltr'] #toolbarViewerRight > *,
 html[dir='ltr'] .findbar * {
   position: relative;
   float: left;
-  border: 0.4px solid gray;
+  font-size:10px;
 }
 html[dir='rtl'] #toolbarViewerLeft > *,
 html[dir='rtl'] #toolbarViewerMiddle > *,
@@ -1008,16 +1006,7 @@ html[dir='rtl'] .splitToolbarButton > .toolbarButton {
 .splitToolbarButton.toggled > .toolbarButton,
 .toolbarButton.textButton {
   background-color: transparent;
-  background-clip: padding-box;
-  border: 0px solid hsla(0,0%,0%,.35);
-  border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
-  filter: invert(0%);
-  box-shadow: 0 0px 0 hsla(0,0%,100%,.05) inset,
-              0 0 0px hsla(0,0%,100%,.15) inset,
-              0 0px 0 hsla(0,0%,100%,.05);
-  transition-property: background-color, border-color, filter;
-  transition-duration: 150ms;
-  transition-timing-function: ease;
+  border:1px solid transparent;
 
 }
 .splitToolbarButton > .toolbarButton:hover,
@@ -1071,11 +1060,7 @@ html[dir='rtl'] .splitToolbarButtonSeparator {
 }
 .splitToolbarButton:hover > .splitToolbarButtonSeparator,
 .splitToolbarButton.toggled > .splitToolbarButtonSeparator {
-  padding: 12px 0;
-  margin: 1px 0;
-  box-shadow: 0 0 0 1px hsla(0,0%,100%,.03);
-  transition-property: padding;
-  transition-duration: 10ms;
+
   transition-timing-function: ease;
 }
 
@@ -1214,7 +1199,7 @@ html[dir='ltr'] .splitToolbarButton:last-child,
 html[dir='ltr'] .toolbarButton:last-child,
 html[dir='rtl'] .splitToolbarButton:first-child,
 html[dir='rtl'] .toolbarButton:first-child {
-  margin-right: 4px;
+  margin-right: 0px;
 }
 
 .toolbarButtonSpacer {
@@ -2142,6 +2127,7 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
     content: url(images/findbarButton-previous@2x.png);
     top:-10px;
     left:-10px;
+    filter:invert(0.5);
   }
   html[dir='rtl'] .toolbarButton.findPrevious::before {
     content: url(images/findbarButton-previous-rtl@2x.png);
@@ -2151,6 +2137,7 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
     content: url(images/findbarButton-next@2x.png);
     top:-10px;
     left:-10px;
+    filter:invert(0.5);
   }
   html[dir='rtl'] .toolbarButton.findNext::before {
     content: url(images/findbarButton-next-rtl@2x.png);

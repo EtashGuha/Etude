@@ -94,6 +94,18 @@ function enableEtude() {
 
 }
 
+$("#searchToggle").click(function() {
+	console.log(document.getElementById('searchParent').style.visibility)
+	if(document.getElementById('searchParent').style.visibility === 'hidden') {
+		document.getElementById('searchParent').style.visibility = 'visible';
+		iframe.contentWindow.closeFindBar()
+	} else {
+		document.getElementById('searchParent').style.visibility = 'hidden';
+		iframe.contentWindow.openFindBar()
+	}
+	
+});
+
 
 $("#bookmark_icon").click(function() {
 	//get the page number

@@ -17,31 +17,36 @@
           <i class="fa fa-angle-down"></i>
       </a>
       <a id = "help" href = "#">Help</a>
-      <div id = "searchParent" class="search-container" style="position: fixed;left:65%;width:35%;">
-          <input type="text" placeholder="Search.." name="search" id = "questionVal" style="height: 37.2px;outline-width: 0px;">
-          <button id = "cape_btn" class="dropbtn" style="width:37.2px;height:37.2px;padding-top:0px;padding-bottom:0px;outline-width: 0px;margin-left:0px;position:absolute;left:80%;" onclick="{document.getElementById('searchloader').style.display = 'block';document.getElementById('searchbuttonthree').style.color = 'white';document.getElementById('cape_btn').style.backgroundColor = 'white';}">
-            <i id="searchbuttonthree" class="fa fa-search" style="color:black;"></i></button>
-          <div id="myDropdown" class="dropdown-content">
-            <div id="triangle-bottomright"></div>
-            <div id="triangle-bottomleft"></div>
-            <hr style="margin-top: 5px; margin-bottom: 0px">
-            <a id = "capeResult">Type in a question to begin</a>
-            <div class="nextprevcontainer text-center">
-              <!-- <button class="toolbarButton pageDown nextanswer" title="Next Answer">
-                <img src="public/js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png"
-              </button>
-              <button class="toolbarButton pageUp prevanswer" title="Previous Answer">
-                <img src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"
-              </button> -->
-              <a img href=""><img class="answerarrow arrowleft" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png"></a>
-              <button id="closesearchbutton">Close</button>
-              <a img href=""><img class="answerarrow arrowright" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"></a>
+      <div style="width: 100px;height: 80px;position: fixed;right: 30%;">
+        <label class="switch">
+          <input id = "searchToggle" type="checkbox" checked>
+          <span class="slider round"></span>
+        </label>
+        <div id = "searchParent" class="search-container" style="position: fixed;left:70%;width:30%;top:0px;">
+            <input type="text" placeholder="Search.." name="search" id = "questionVal" style="height: 37.2px;outline-width: 0px;position:absolute;">
+            <button id = "cape_btn" class="dropbtn" style="width:37.2px;height:37.2px;padding-top:0px;padding-bottom:0px;outline-width: 0px;margin-left:0px;position:absolute;left:78.5%;" onclick="{document.getElementById('searchloader').style.display = 'block';document.getElementById('searchbuttonthree').style.color = 'white';document.getElementById('cape_btn').style.backgroundColor = 'white';}">
+              <i id="searchbuttonthree" class="fa fa-search" style="color:black;"></i></button>
+            <div id="myDropdown" class="dropdown-content">
+              <div id="triangle-bottomright"></div>
+              <div id="triangle-bottomleft"></div>
+              <hr style="margin-top: 5px; margin-bottom: 0px">
+              <a id = "capeResult">Type in a question to begin</a>
+              <div class="nextprevcontainer text-center">
+                <!-- <button class="toolbarButton pageDown nextanswer" title="Next Answer">
+                  <img src="public/js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png"
+                </button>
+                <button class="toolbarButton pageUp prevanswer" title="Previous Answer">
+                  <img src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"
+                </button> -->
+                <a img href=""><img class="answerarrow arrowleft" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png"></a>
+                <button id="closesearchbutton">Close</button>
+                <a img href=""><img class="answerarrow arrowright" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"></a>
+              </div>
             </div>
-          </div>
-          <div id="searchloader" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-          <img class="minusImage" data="2" id="closeButton" style="position: absolute;left: 96%;top: 16%;width:30px; filter: invert(100%);" src="./public/images/cross.png">
+            <div id="searchloader" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        </div>
       </div>
-
+      <img class="minusImage" data="2" id="closeButton" style="position: fixed;left:99%;top: 1%;margin-top: 4px;width: 30px;filter: invert(100%);" src="./public/images/cross.png">
     </div>
   </header>
   <body>
