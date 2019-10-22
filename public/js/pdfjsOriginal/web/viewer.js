@@ -34,6 +34,36 @@ var firstPassThrough = true;
 // 	console.log(ipcRenderer.sendSync('getMouseMove'));
 // });
 
+function getSelectedText() {
+	let sel = window.getSelection();
+	let anchor = sel.anchorNode;
+	let focus = sel.focusNode;
+	if (!anchor || !focus) return '';
+	if (anchor.nodeType === Node.TEXT_NODE) anchor = anchor.parentNode;
+	if (focus.nodeType === Node.TEXT_NODE) focus = focus.parentNode;
+	if (anchor.parentNode === focus.parentNode) {
+		let siblings = [...anchor.parentNode.childNodes];
+		let anchorIndex = siblings.indexOf(anchor);
+		let focusIndex= siblings.indexOf(focus);
+		let selectedNodes = siblings.slice(anchorIndex, focusIndex + 1);
+		if (selectedNodes.length === 1) {
+			return selectedNodes[0].textContent.slice(
+				sel.anchorOffset,
+				sel.focusOffset
+			);
+		}
+		return selectedNodes.reduce((text, node, i) => {
+			if (i === 0)
+				return text + node.textContent.slice(sel.anchorOffset);
+			if (i === selectedNodes.length - 1)
+				return text + node.textContent.slice(0, sel.focusOffset);
+			return text + node.textContent;
+		}, '');
+	} else {
+		// TODO: If the selection is across pages
+		console.log('different pages')
+	}
+}
 
 function compareTwoStrings(first, second) {
 	first = first.replace(/\s+/g, '')
