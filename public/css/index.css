@@ -297,7 +297,7 @@ div.viewer iframe {
   display: none;
   position: absolute;
   left:calc(86% - 50px);
-  margin-top: -20px;
+  margin-top: 22px;
   z-index: 100000;
 }
 .lds-ellipsis div {

@@ -410,7 +410,7 @@ function areArgsValid(mainString, targetStrings) {
 			var event = document.createEvent('CustomEvent');
 			event.initCustomEvent('webviewerloaded', true, true, {});
 			document.dispatchEvent(event);
-			pdfjsWebApp.PDFViewerApplication.run(config);
+			pdfjsWebApp.PDFViewerApplication.run(config);			
 		}
 
 		if (document.readyState === 'interactive' || document.readyState === 'complete') {
@@ -2573,7 +2573,7 @@ function areArgsValid(mainString, targetStrings) {
 				switch (evt.keyCode) {
 					case 70:
 						if (!PDFViewerApplication.supportsIntegratedFind) {
-							PDFViewerApplication.findBar.open();
+							//control f word search used to happen here. disabled
 							handled = true;
 						}
 
@@ -3927,7 +3927,6 @@ function areArgsValid(mainString, targetStrings) {
 
 		function watchScroll(viewAreaElement, callback) {
 			var debounceScroll = function debounceScroll(evt) {
-				console.log('SCROLL');
 				if (rAF) {
 					return;
 				}
@@ -7572,7 +7571,7 @@ function areArgsValid(mainString, targetStrings) {
 									matchIdx = pageContent.indexOf(bestAnswer.target, matchIdx + subqueryLen);
 									if (bestMatchRatings[i] === undefined || bestMatchRatings[i] < bestAnswer.rating) {
 										bestMatchRatings[i] = bestAnswer.rating
-										correspondingMatchLength[i] = subqueryLen
+										correspondingMatchLength[i] = bestAnswer.target.length
 										bestPageMatchIndeces[i] = pageIndex
 										correspondingMatchIdx[i] = matchIdx
 									}
@@ -7602,9 +7601,9 @@ function areArgsValid(mainString, targetStrings) {
 								this._pageMatchesLength[currPage] = [];
 								this._pageMatches[currPage] = [];
 								this._prepareMatches(matchesWithLength, this._pageMatches[currPage], this._pageMatchesLength[currPage]);
-								console.log(`CALCULATION DONE for page ${currPage + 1}`);
 								this._eventBus.dispatch('calculationdone', { id: currPage + 1 });
 							}
+							this._eventBus.dispatch('safetojump');
 						}
 					}
 				}, {
@@ -11040,6 +11039,28 @@ function areArgsValid(mainString, targetStrings) {
 				function PDFViewer() {
 					_classCallCheck(this, PDFViewer);
 
+					// This will change once findController finishes its calculation.
+					this._safeToJump = false;
+					PDFViewerApplication.eventBus.on('safetojump', () => {
+						this._safeToJump = true;
+					});
+
+					// Expose this to the global scope
+					var _jumpToPage = this.jumpToPage.bind(this);
+					var _index = bestPageMatchIndeces.length - 1;
+					window.jumpToNextMatch = function(backward = false) {
+						if (bestPageMatchIndeces.length === 0) return;
+						let len = bestPageMatchIndeces.length;
+						_index = (_index + (backward ? -1 : 1) + len) % len;
+						console.log(_index)
+						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
+					}
+					window.getCurrIndex = function(){
+						return _index
+					}
+					document.dispatchEvent(new Event('funcready'));
+					PDFViewerApplication.eventBus.on('safetojump', jumpToNextMatch);
+
 					return _possibleConstructorReturn(this, _getPrototypeOf(PDFViewer).apply(this, arguments));
 				}
 
@@ -11050,7 +11071,8 @@ function areArgsValid(mainString, targetStrings) {
 							_ref$pageSpot = _ref.pageSpot,
 							pageSpot = _ref$pageSpot === void 0 ? null : _ref$pageSpot,
 							_ref$pageNumber = _ref.pageNumber,
-							pageNumber = _ref$pageNumber === void 0 ? null : _ref$pageNumber;
+							pageNumber = _ref$pageNumber === void 0 ? null : _ref$pageNumber;	
+
 
 						if (!pageSpot && !this.isInPresentationMode) {
 							var left = pageDiv.offsetLeft + pageDiv.clientLeft;
@@ -11072,6 +11094,18 @@ function areArgsValid(mainString, targetStrings) {
 							pageSpot: pageSpot,
 							pageNumber: pageNumber
 						});
+					}
+				}, {
+					// This is a custom method
+					key: "jumpToPage",
+					value: function jumpToPage(pageIdx) {
+						if (this._safeToJump) {
+							this.currentPageNumber = pageIdx;
+						} else {
+							PDFViewerApplication.eventBus.on('safetojump', () => {
+								this.currentPageNumber = pageIdx;
+							});	
+						}			
 					}
 				}, {
 					key: "_getVisiblePages",
@@ -13503,8 +13537,6 @@ function areArgsValid(mainString, targetStrings) {
 							textContentItemsStr = this.textContentItemsStr,
 							textDivs = this.textDivs;
 						var clearedUntilDivIdx = -1;
-
-						console.log(`UPDATE MATCHES for page ${pageIdx}`);
 
 						for (var i = 0, ii = matches.length; i < ii; i++) {
 							var match = matches[i];

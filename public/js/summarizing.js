@@ -32,7 +32,7 @@ const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js"
 const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.pdf"
 
 viewerEle.appendChild(iframe);
-
+var currArr;
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
 console.log(deepai)
 deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
@@ -238,7 +238,7 @@ $("#cape_btn").click(function() {
 			var promiseToAppend = new Promise(function(resolve, reject) {
 				console.log("beginning promise")
 				kernelWorker.onmessage = function(ev) {
-					$("#capeResult").empty().append(ev.data[0] + " <hr style=\"margin-top: 15px; margin-bottom: 15px\"> " + ev.data[1]);
+					$("#capeResult").empty().append(ev.data[0]);
 					updateHighlights(ev.data)
 					kernelWorker.terminate()
 					resolve("GOOD")
@@ -397,6 +397,7 @@ function jumpPage(pageNumber) {
 }
 function updateHighlights(arr){
 	console.log(arr)
+	currArr = arr;
 	var searchQueries = ""
 	arr.forEach((item, index) => {
 		item = item.replace(/[^a-zA-Z ]/g, "")
@@ -411,6 +412,18 @@ function updateHighlights(arr){
 	console.log(searchQueries)
 	iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#search=${searchQueries}`);
 	viewerEle.appendChild(iframe);
+	
+	iframe.onload = function() {
+		iframe.contentDocument.addEventListener('funcready', () => {
+			let f = function(backward = false) {
+				iframe.contentWindow.jumpToNextMatch(backward);
+				$("#capeResult").empty().append(currArr[iframe.contentWindow.getCurrIndex()]);
+				console.log(currArr[iframe.contentWindow.getCurrIndex()])
+			}
+			$('.answerarrow.arrowleft').off().click(() => f(true));
+			$('.answerarrow.arrowright').off().click(() => f());
+		});
+	}	
 }
 
 function replaceAll(str, find, replace) {
