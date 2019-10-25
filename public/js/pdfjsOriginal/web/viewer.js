@@ -1422,6 +1422,7 @@ function areArgsValid(mainString, targetStrings) {
 				this.pdfDocumentProperties.setDocument(pdfDocument, this.url);
 				var pdfViewer = this.pdfViewer;
 				pdfViewer.setDocument(pdfDocument);
+
 				var firstPagePromise = pdfViewer.firstPagePromise;
 				var pagesPromise = pdfViewer.pagesPromise;
 				var onePageRendered = pdfViewer.onePageRendered;
@@ -5060,7 +5061,7 @@ function areArgsValid(mainString, targetStrings) {
 					key: "renderView",
 					value: function renderView(view) {
 						var _this = this;
-
+						console.log("How are you")
 						switch (view.renderingState) {
 							case RenderingStates.FINISHED:
 								return false;
@@ -11096,7 +11097,11 @@ function areArgsValid(mainString, targetStrings) {
 						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
 					}
 					window.getHtml = function() {
-						return document.getElementsByTagName('html')
+						// for(var i = 0; i < PDFViewerApplication.pdfViewer._pages.length; i++) {
+						// 	// console.log(i)
+						// 	PDFViewerApplication.pdfRenderingQueue.renderView(PDFViewerApplication.pdfViewer._pages[i]);		
+						// }
+						return pdfjsLib
 					}
 					document.getElementsByTagName('html')
 					window.getCurrIndex = function(){
@@ -11458,6 +11463,9 @@ function areArgsValid(mainString, targetStrings) {
 						};
 
 						var firstPagePromise = pdfDocument.getPage(1);
+						window.getPdfDocument = function(){
+							return pdfDocument;
+						}
 						this.firstPagePromise = firstPagePromise;
 						firstPagePromise.then(function(pdfPage) {
 							var scale = _this2.currentScale;

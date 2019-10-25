@@ -2,7 +2,11 @@ const {
 	dialog
 } = require('electron').remote;
 const { shell } = require('electron')
+var HashMap = require('hashmap');
+var map = new HashMap();
 const remote = require('electron').remote;
+const Store = require('electron-store');
+const store = new Store();
 var win = remote.BrowserWindow.getFocusedWindow();
 const path = require('path');
 const log = require('electron-log');
@@ -30,7 +34,7 @@ iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${req
 console.log(iframe.src)
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.pdf"
-
+// store.clear();
 viewerEle.appendChild(iframe);
 var currArr;
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
@@ -95,14 +99,10 @@ function enableEtude() {
 }
 
 
-
 $("#bookmark_icon").click(function() {
-	iframe.contentWindow.getPDFJS();
-	console.log(iframe.contentWindow.getHtml())
-	iframe.contentWindow.closeFindBar()
 	//get the page number
 	var whichpagetobookmark = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('pageNumber').value;
-	for (var j = 0; j < bookmarkArray.length; j++) {
+	for (var j = 0; j < bookmarkArray.len; j++) {
 		if (bookmarkArray[j] == whichpagetobookmark)
 			return;
 	}
@@ -308,6 +308,7 @@ function processSummarizationResult(t) {
 };
 
 function summaryButtonPressed(firstpage, lastpage) {
+	console.log(getHtml())
 	var htmlStuff = htmlWholeFileToPartialPlainText(firstpage, lastpage);
 	htmlStuff.then((x) => {
 		console.log(x);
@@ -325,48 +326,53 @@ function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
 		const htmlToJson = require('html-to-json');
 		let bigarray = [];
 		let bigarrayback = [];
-		//the correct html file directory within our project
-		console.log(outputfile)
-		fs.readFile(outputfile, "utf8", function(err, data) {
-			let datadata = data.split("<div class=\"page\"");
-			let newstring = "";
-			for (let i = firstpage; i <= lastpage; i++) {
-				if (i <= datadata.length) {
-					newstring += datadata[i];
-				}
+		// var data = getHtml()
+		var data = "Sdf"
+		// console.log(data)
+		fs.writeFile('mearp.html', data, (err) => { 
+      
+    // In case of a error throw err. 
+    if (err) throw err; 
+		}) 
+		let datadata = data.split("<div class=\"page\"");
+		console.log(datadata)
+		let newstring = "";
+		for (let i = firstpage; i <= lastpage; i++) {
+			if (i <= datadata.length) {
+				newstring += datadata[i];
 			}
-			//console.log(newstring);
-			let newdata = newstring.split("<div class=\"p\"");
-			newdata.shift();
-			newdata.forEach(function(item) {
-				item = item.substring(10 + item.search("font-size"));
-				let valued = item.substring(item.search(">") + 1, item.search("<"));
-				let index = (item.substring(0, item.search("pt")));
+		}
+		//console.log(newstring);
+		let newdata = newstring.split("<div class=\"p\"");
+		console.log(newdata)
+		newdata.shift();
+		newdata.forEach(function(item) {
+			item = item.substring(10 + item.search("font-size"));
+			let valued = item.substring(item.search(">") + 1, item.search("<"));
+			let index = (item.substring(0, item.search("pt")));
 
-				function checkSize(age) {
-					return age == index;
-				}
-				if (bigarrayback.findIndex(checkSize) == -1) {
-					bigarrayback.push(index);
-					valued += " ";
-					bigarray.push(valued);
-				} else {
-					valued += " ";
-					bigarray[bigarrayback.findIndex(checkSize)] += valued;
-				}
-			});
-			let maxindex = -1;
-			let max = 0;
-			bigarray.forEach(function(thing, index) {
-				if (thing.length > max) {
-					maxindex = index;
-					max = thing.length;
-				}
-			});
-
-			resolve(bigarray[maxindex]);
+			function checkSize(age) {
+				return age == index;
+			}
+			if (bigarrayback.findIndex(checkSize) == -1) {
+				bigarrayback.push(index);
+				valued += " ";
+				bigarray.push(valued);
+			} else {
+				valued += " ";
+				bigarray[bigarrayback.findIndex(checkSize)] += valued;
+			}
 		});
-
+		let maxindex = -1;
+		let max = 0;
+		bigarray.forEach(function(thing, index) {
+			if (thing.length > max) {
+				maxindex = index;
+				max = thing.length;
+			}
+		});
+		console.log(bigarray)
+		resolve(bigarray[maxindex]);
 	});
 }
 
@@ -426,7 +432,109 @@ function replaceAll(str, find, replace) {
 function escapeRegExp(str) {
     return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 }
+var pdfdoc
+function getHtml() {
+	map.clear()
+	var pdfdoc = iframe.contentWindow.getPdfDocument()
+	var lastPromise; // will be used to chain promises
+	lastPromise = pdfdoc.getMetadata().then(function(data) {
+	});
 
+	var loadPage = function(pageNum) {
+		return pdfdoc.getPage(pageNum).then(function(page) {
+			return page.getTextContent().then(function(content) {
+				var strings = content.items.map(function(item) {
+					if(map.get(Math.round(item.height))) {
+						map.set(Math.round(item.height), map.get(Math.round(item.height)) + 1);
+					} else {
+						map.set(Math.round(item.height), 1)
+					}
+					return item.str;
+				});
+			}).then(function() {
+				console.log(pageNum)
+				if(pageNum == numPages) {
+					console.log("DONE")
+				}
+			});
+		});
+	};
+	// Loading of the first page will wait on metadata and subsequent loadings
+	// will wait on the previous pages.umP
+	for (var i = 1; i <= numPages; i++) {
+		lastPromise = lastPromise.then(loadPage.bind(null, i));
+	}
+
+	lastPromise = lastPromise.then(console.log("HI"))
+}
+function updateHtml(){
+	var allstrings = ""
+	var maxFont = 0
+	var maxFontFreq = 0
+	console.log(map)
+	map.forEach((value, key) => {
+		if(value > maxFontFreq){
+			maxFontFreq = value;
+			maxFont = key
+		}
+	})
+	console.log("THiS IS THE MAX FONT")
+	console.log(maxFont)
+	var pdfjslib = iframe.contentWindow.getHtml()
+	console.log(pdfjslib.get)
+	console.log(pdfjslib)
+	var pdfdoc = iframe.contentWindow.getPdfDocument()
+	console.log(pdfdoc)
+	console.log(pdfdoc.numPages)
+	var lastPromise; // will be used to chain promises
+	lastPromise = pdfdoc.getMetadata().then(function(data) {
+		// console.log('# Metadata Is Loaded');
+		// console.log('## Info');
+		// console.log(JSON.stringify(data.info, null, 2));
+		// console.log();
+		if (data.metadata) {
+			// console.log('## Metadata');
+			// console.log(JSON.stringify(data.metadata.getAll(), null, 2));
+			// console.log();
+		}
+	});
+
+	var loadPage = function(pageNum) {
+		return pdfdoc.getPage(pageNum).then(function(page) {
+			// console.log('# Page ' + pageNum);
+			var viewport = page.getViewport({
+				scale: 1.0,
+			});
+			// console.log('Size: ' + viewport.width + 'x' + viewport.height);
+			// console.log();
+			return page.getTextContent().then(function(content) {
+				// Content contains lots of information about the text layout and
+				// styles, but we need only strings at the moment
+				// console.log(content)
+				var strings = content.items.map(function(item) {
+					if(Math.round(item.height) == maxFont) {
+						return item.str;
+					}
+					
+				});
+
+				strings = strings.join(' ');
+				allstrings = allstrings.concat(strings)
+
+			}).then(function() {
+				if(numPages === pageNum) {
+					return allstrings;
+				}
+			});
+		});
+	};
+	// Loading of the first page will wait on metadata and subsequent loadings
+	// will wait on the previous pages.umP
+	for (var i = 1; i <= numPages; i++) {
+
+		lastPromise = lastPromise.then(loadPage.bind(null, i));
+	}
+}
 function changePage() {
 	viewerEle.innerHTML = "";
 	console.log(`./pdfjsOriginal/web/viewer.html?file=${secVersionFilepath}`)
