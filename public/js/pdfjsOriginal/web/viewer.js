@@ -2389,15 +2389,15 @@ function areArgsValid(mainString, targetStrings) {
 		}
 
 		function webViewerFind(evt) {
-			console.log(evt)
+			// console.log(evt)
 			isControlF = true;
-			console.log("HEREEEEEEEEEEEEEEE")
-			console.log(evt.type)
-			console.log(evt.query)
-			console.log(evt.phraseSearch)
-			console.log(evt.entireWord)
-			console.log(evt.highlightAll)
-			console.log(evt.findPrevious)
+			// console.log("HEREEEEEEEEEEEEEEE")
+			// console.log(evt.type)
+			// console.log(evt.query)
+			// console.log(evt.phraseSearch)
+			// console.log(evt.entireWord)
+			// console.log(evt.highlightAll)
+			// console.log(evt.findPrevious)
 			PDFViewerApplication.findController.executeCommand('find' + evt.type, {
 				query: evt.query,
 				phraseSearch: evt.phraseSearch,
@@ -2430,7 +2430,7 @@ function areArgsValid(mainString, targetStrings) {
 		}
 
 		function webViewerFindFromUrlHash(evt) {
-			console.log(evt.query)
+			// console.log(evt.query)
 			console.log("from url hash")
 
 			isControlF = false;
@@ -6965,7 +6965,7 @@ function areArgsValid(mainString, targetStrings) {
 					this.findField.addEventListener('input', function() {
 						_this.dispatchEvent('');
 					});
-					console.log(this.findField)
+					// console.log(this.findField)
 					
 					this.bar.addEventListener('keydown', function(e) {
 						switch (e.keyCode) {
@@ -7008,7 +7008,7 @@ function areArgsValid(mainString, targetStrings) {
 				}, {
 					key: "dispatchEvent",
 					value: function dispatchEvent(type, findPrev) {
-						console.log('Looking here')
+						// console.log('Looking here')
 						this.eventBus.dispatch('find', {
 							source: this,
 							type: type,
@@ -7321,7 +7321,7 @@ function areArgsValid(mainString, targetStrings) {
 							}
 
 							if (cmd === 'find') {
-								console.log("THIS IS WHERE TO")
+								// console.log("THIS IS WHERE TO")
 								_this._findTimeout = setTimeout(function() {
 									_this._nextMatch();
 
@@ -7386,7 +7386,7 @@ function areArgsValid(mainString, targetStrings) {
 							}
 
 							if (cmd === 'find') {
-								console.log("THIS IS WHERE TO")
+								// console.log("THIS IS WHERE TO")
 								_this._findTimeout = setTimeout(function() {
 									_this._nextMatch();
 
@@ -7587,7 +7587,7 @@ function areArgsValid(mainString, targetStrings) {
 				}, {
 					key: "_calculateWordMatch",
 					value: function _calculateWordMatch(query, pageIndex, pageContent, entireWord) {
-						console.log(query)
+						// console.log(query)
 						if(pageContent == null || pageContent == undefined || pageContent.length == 0){
 							return;
 						}
@@ -7604,9 +7604,9 @@ function areArgsValid(mainString, targetStrings) {
 							subquery = subquery.replace(/\=/ig, ' ');
 							while (true) {
 								if (isControlF) {
-									console.log('checking waht it was before')
+									// console.log('checking waht it was before')
 									matchIdx = pageContent.indexOf(subquery, matchIdx + subqueryLen);
-									console.log(matchIdx)
+									// console.log(matchIdx)
 								} else {
 									var bestAnswer = findBestMatch(subquery, pageContent.split(".")).bestMatch
 									matchIdx = pageContent.indexOf(bestAnswer.target, matchIdx + subqueryLen);
@@ -11093,7 +11093,7 @@ function areArgsValid(mainString, targetStrings) {
 						if (bestPageMatchIndeces.length === 0) return;
 						let len = bestPageMatchIndeces.length;
 						_index = (_index + (backward ? -1 : 1) + len) % len;
-						console.log(_index)
+						// console.log(_index)
 						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
 					}
 					window.getHtml = function() {
@@ -13613,7 +13613,7 @@ function areArgsValid(mainString, targetStrings) {
 						// console.log("look here")
 						// console.log(findController.pageMatches)
 						//console.log(this.matches)
-						console.log(this.matches)
+						// console.log(this.matches)
 						this._renderMatches(this.matches);
 					}
 				}, {
