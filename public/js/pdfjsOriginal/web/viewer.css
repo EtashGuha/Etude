@@ -603,6 +603,23 @@ html[dir='rtl'] #outerContainer.sidebarOpen #sidebarContainer {
   min-width: 320px;
 }
 
+#searchcontainer {
+  right: 10%;
+}
+
+@media screen and (min-width: 912px) {
+  #searchcontainer {
+    right: 5%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #searchcontainer {
+    right: 0%;
+  }
+}
+
+
 #sidebarContent {
   top: 78px;
   bottom: 0;
