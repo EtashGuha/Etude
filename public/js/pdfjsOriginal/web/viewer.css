@@ -1564,7 +1564,7 @@ html[dir='rtl'] .verticalToolbarSeparator {
   -moz-appearance: textfield; /* hides the spinner in moz */
   min-width: 16px;
   text-align: right;
-  width: 20px;
+  width: 22px;
 }
 
 .toolbarField.pageNumber.visiblePageIsLoading {
@@ -2386,7 +2386,6 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
     display: table;
     margin: auto;
     left: auto;
-    position: inherit;
     -webkit-transform: none;
             transform: none;
   }
