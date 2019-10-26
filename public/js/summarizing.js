@@ -99,6 +99,7 @@ function enableEtude() {
 
 }
 
+enableEtude()
 
 $("#bookmark_icon").click(function() {
 	//get the page number
