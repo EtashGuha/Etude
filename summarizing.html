@@ -11,13 +11,15 @@
   </head>
   <header class="library-nav" style="background: transparent; position: absolute;width:36%;">
     <div class="topnav">
-      <a href="library.html" style="margin-left:8%;border-bottom:3px white solid;height:10px;padding-left:0px;padding-right:0px;margin-right:3%;position:relative;">Étude</a>
-      <a href="#" onclick="openNav()" id = "bookmark_item" data = "true">Bookmarks
-<!--       <a href="#" id = "bookmark_item">Bookmarks -->
-          <i class="fa fa-angle-down"></i>
-      </a>
-      <a id = "help" href = "#">Help</a>
-      <div style="height: 80px;position: fixed;right: 30%;">
+      <div class = "main-nav">
+        <a href="library.html" id="etudenavlink">Étude</a>
+        <a href="#" onclick="openNav()" id = "bookmark_item" data = "true">Bookmarks
+  <!--       <a href="#" id = "bookmark_item">Bookmarks -->
+            <i class="fa fa-angle-down"></i>
+        </a>
+        <a id = "help" href = "#">Help</a>
+      </div>
+      <div style="width: 100px;height: 80px;position: fixed;right: 30%;">
         <label class="switch">
           <input id = "searchToggle" type="checkbox" checked>
           <span class="slider round"></span>
@@ -51,8 +53,8 @@
   </header>
   <body>
     <div id = "bookmark_page">
-      <div id = "bookmark_container" class = "row" style="width: 100%; padding-left:15px;">
-<!--             <div>
+        <div id = "bookmark_container" class = "row" style="width: 100%; padding-left:15px;">
+<!--        <div>
                 <div class="bookmark_section col-md-2 col-lg-2">
                         <div>
                               <canvas class="bookmark-canvas" style="background-color: yellow;"></canvas>
