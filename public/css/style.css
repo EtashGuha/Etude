@@ -17,7 +17,7 @@ body{
   width: 46px;
   height: 25px;
   top:27px;
-  right:0px;
+  left:-70px;
 }
 
 .switch input { 
@@ -168,6 +168,7 @@ input::-webkit-inner-spin-button {
 	.topnav input[type=text] {
 		padding: 6px;
 		margin-top: 8px;
+		left:0px;
 		padding-left: 12px;
 		padding-right: 20px;
 		margin-right: 2px;
@@ -251,7 +252,7 @@ input::-webkit-inner-spin-button {
 	height: auto;
 	position: absolute;
     left: 23px;
-    top: 64px;
+    top: 80px;
 	margin: auto;
 	opacity: 0.6;
   } 
