@@ -2,12 +2,15 @@ const {
 	dialog
 } = require('electron').remote;
 const { shell } = require('electron')
+var HashMap = require('hashmap');
+var map = new HashMap();
 const remote = require('electron').remote;
+const Store = require('electron-store');
+const store = new Store();
 var win = remote.BrowserWindow.getFocusedWindow();
 const path = require('path');
 const log = require('electron-log');
 const fs = require('fs');
-var jre = require('node-jre')
 log.info('Hello, log for the first time');
 var typeOf = require('typeof');
 const os = require('os')
@@ -30,9 +33,8 @@ iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${req
 console.log(iframe.src)
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.pdf"
-
 viewerEle.appendChild(iframe);
-
+var currArr;
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
 console.log(deepai)
 deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
@@ -46,7 +48,19 @@ var htmlForEntireDoc = ""
 var pdfToHtmlWorker = new Worker(etudeFilepath + "/public/js/pdfToHtml.js");
 var kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
 var updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
+document.getElementById("getRangeButton").disabled = true;
+document.getElementById("getRangeButton").style.opacity = 0.5;
+document.getElementById("cape_btn").disabled = true;
+document.getElementById("searchParent").style.opacity = 0.5;
+document.getElementById("questionVal").disabled = true;
+document.getElementById('searchloader').style.display = 'block';
+document.getElementById('searchbuttonthree').style.color = 'white';
+document.getElementById('cape_btn').style.backgroundColor = 'white';
+
+var textForEachPage;
+
 pdfToHtmlWorker.onmessage = function(ev) {
+	enableEtude();
 	console.log(ev);
 	pdfToHtmlWorker.terminate();
 };
@@ -64,12 +78,32 @@ PDFJS.getDocument({
 	__PDF_DOC = pdf_doc;
 	numPages = __PDF_DOC.numPages;
 });
+console.log(numPages)
 
-console.log(process.argv)
+const {
+	ipcRenderer
+} = require('electron');
+
+
+
+function enableEtude() {
+	document.getElementById("getRangeButton").disabled = false;
+	document.getElementById("getRangeButton").style.opacity = 1.0;
+	document.getElementById("cape_btn").disabled = false;
+	document.getElementById("searchParent").style.opacity = 1.0;
+	document.getElementById("questionVal").disabled = false;
+	document.getElementById('searchloader').style.display = 'none';
+	document.getElementById('searchbuttonthree').style.color = 'black';
+	document.getElementById('cape_btn').style.backgroundColor = '';
+
+}
+
+enableEtude()
+
 $("#bookmark_icon").click(function() {
 	//get the page number
 	var whichpagetobookmark = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('pageNumber').value;
-	for (var j = 0; j < bookmarkArray.length; j++) {
+	for (var j = 0; j < bookmarkArray.len; j++) {
 		if (bookmarkArray[j] == whichpagetobookmark)
 			return;
 	}
@@ -78,7 +112,6 @@ $("#bookmark_icon").click(function() {
 	bookmarkArray.push(whichpagetobookmark);
 	showPDF(filepath, parseInt(whichpagetobookmark));
 })
-
 function showPDF(pdf_url, bookmark_page) {
 	//PDFJS.GlobalWorkerOptions.workerSrc ='../../node_modules/pdfjs-dist/build/pdf.worker.js';
 	PDFJS.getDocument({
@@ -166,6 +199,24 @@ searchbox.addEventListener("keyup", function(event) {
   }
 });
 
+var body = document.getElementsByTagName("BODY")[0];
+var except = document.getElementById("myDropdown");
+body.addEventListener("click", function () {
+	document.getElementById("myDropdown").classList.toggle("show");
+}, false);
+except.addEventListener("click", function (ev) {
+    ev.stopPropagation(); //this is important! If removed, you'll get both alerts
+}, false);
+
+
+// $(document).mousemove(function() {
+// 	if(ipcRenderer.sendSync('getMouseMove')){
+// 		console.log("Moved Mouse");
+// 	} else {
+// 		console.log("No Mouse Movement");
+// 	}
+// })
+
 $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
 	updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
@@ -174,14 +225,13 @@ $("#cape_btn").click(function() {
 		document.getElementById("myDropdown").classList.toggle("show");
 	}
 	setTimeout(function() {
-		if (htmlForEntireDoc == "") {
-			htmlForEntireDoc = htmlWholeFileToPartialPlainText(1, numPages);
-		}
-		htmlForEntireDoc.then((x) => {
+		console.log(getNumPages())
+		var getpdftext = getPDFText(1, getNumPages())
+		getpdftext.then((x) => {
 			var promiseToAppend = new Promise(function(resolve, reject) {
 				console.log("beginning promise")
 				kernelWorker.onmessage = function(ev) {
-					$("#capeResult").empty().append(ev.data[0] + " <hr style=\"margin-top: 15px; margin-bottom: 15px\"> " + ev.data[1]);
+					$("#capeResult").empty().append(ev.data[0]);
 					updateHighlights(ev.data)
 					kernelWorker.terminate()
 					resolve("GOOD")
@@ -258,8 +308,8 @@ function processSummarizationResult(t) {
 };
 
 function summaryButtonPressed(firstpage, lastpage) {
-	var htmlStuff = htmlWholeFileToPartialPlainText(firstpage, lastpage);
-	htmlStuff.then((x) => {
+	var getpdftext = getPDFText(firstpage, lastpage)
+	getpdftext.then((x) => {
 		console.log(x);
 		deepai.callStandardApi("summarization", {
 			text: x
@@ -267,58 +317,6 @@ function summaryButtonPressed(firstpage, lastpage) {
 	});
 }
 
-function htmlWholeFileToPartialPlainText(firstpage, lastpage) {
-	return new Promise(function(resolve, reject) {
-		var filenamewithextension = path.parse(PDF_URL).base;
-		filenamewithextension = filenamewithextension.split('.')[0];
-		var outputfile = userDataPath + '/tmp/' + filenamewithextension + '.html';
-		const htmlToJson = require('html-to-json');
-		let bigarray = [];
-		let bigarrayback = [];
-		//the correct html file directory within our project
-		console.log(outputfile)
-		fs.readFile(outputfile, "utf8", function(err, data) {
-			let datadata = data.split("<div class=\"page\"");
-			let newstring = "";
-			for (let i = firstpage; i <= lastpage; i++) {
-				if (i <= datadata.length) {
-					newstring += datadata[i];
-				}
-			}
-			//console.log(newstring);
-			let newdata = newstring.split("<div class=\"p\"");
-			newdata.shift();
-			newdata.forEach(function(item) {
-				item = item.substring(10 + item.search("font-size"));
-				let valued = item.substring(item.search(">") + 1, item.search("<"));
-				let index = (item.substring(0, item.search("pt")));
-
-				function checkSize(age) {
-					return age == index;
-				}
-				if (bigarrayback.findIndex(checkSize) == -1) {
-					bigarrayback.push(index);
-					valued += " ";
-					bigarray.push(valued);
-				} else {
-					valued += " ";
-					bigarray[bigarrayback.findIndex(checkSize)] += valued;
-				}
-			});
-			let maxindex = -1;
-			let max = 0;
-			bigarray.forEach(function(thing, index) {
-				if (thing.length > max) {
-					maxindex = index;
-					max = thing.length;
-				}
-			});
-
-			resolve(bigarray[maxindex]);
-		});
-
-	});
-}
 
 $('#getRangeButton').click(function() {
 	//close the bookmark page
@@ -329,17 +327,9 @@ $('#getRangeButton').click(function() {
 	$('.su_popup').show();
 })
 
-function jumpPage(pageNumber) {
-	if (document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView') != null &&
-		typeOf(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').childNodes[pageNumber - 1]) != "text" &&
-		document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').childNodes[pageNumber - 1] != undefined) {
-		document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').childNodes[pageNumber - 1].click()
-	} else {
-		window.setTimeout(jumpPage, 100, pageNumber)
-	}
-}
 function updateHighlights(arr){
 	console.log(arr)
+	currArr = arr;
 	var searchQueries = ""
 	arr.forEach((item, index) => {
 		item = item.replace(/[^a-zA-Z ]/g, "")
@@ -351,13 +341,16 @@ function updateHighlights(arr){
 	searchQueries = searchQueries.substring(3)
 	searchQueries = replaceAll(searchQueries, "=", "")
 	searchQueries = replaceAll(searchQueries, "&", "")
-	console.log(searchQueries)
 	iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#search=${searchQueries}`);
 	viewerEle.appendChild(iframe);
 	
 	iframe.onload = function() {
 		iframe.contentDocument.addEventListener('funcready', () => {
-			let f = iframe.contentWindow.jumpToNextMatch;
+			let f = function(backward = false) {
+				iframe.contentWindow.jumpToNextMatch(backward);
+				$("#capeResult").empty().append(currArr[iframe.contentWindow.getCurrIndex()]);
+				console.log(currArr[iframe.contentWindow.getCurrIndex()])
+			}
 			$('.answerarrow.arrowleft').off().click(() => f(true));
 			$('.answerarrow.arrowright').off().click(() => f());
 		});
@@ -372,10 +365,126 @@ function escapeRegExp(str) {
     return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 }
 
-function changePage() {
-	viewerEle.innerHTML = "";
-	console.log(`./pdfjsOriginal/web/viewer.html?file=${secVersionFilepath}`)
-	iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${secVersionFilepath}`);
-	console.log(iframe)
-	viewerEle.appendChild(iframe);
+function getPDFText(firstPage, lastPage) {
+	return new Promise(function(resolve, reject) {
+		var key = PDF_URL.concat("textForEachPage").replace(".", "")
+		console.log(key)
+		console.log(store.has(key))
+		if(store.has(key)) {
+			var strings = ""
+			var arrayTextByPage = store.get(key);
+			for(var i = firstPage - 1; i <=  lastPage - 1; i++){
+				strings = strings.concat(arrayTextByPage[i])
+			}
+			resolve(strings)
+		} else {
+			var gethtml = getHtml()	
+			gethtml.then((data) => {
+				console.log(data)
+				store.set(key, data)
+				console.log(store.store)
+				var strings = ""
+				for(var i = firstPage - 1; i <=  lastPage - 1; i++){
+					strings = strings.concat(data[i])
+				}
+				resolve(strings)
+			})
+		}
+		
+	})
+}
+
+function getHtml() {
+	return new Promise(function(resolve, reject) {
+		var getlayered = getLayeredText()
+		getlayered.then((data) => {
+			var gettextaftermap = getTextAfterMap()
+			gettextaftermap.then((data) => {
+				console.log(data);
+				resolve(data);
+			})
+		})
+	})
+}
+
+function getLayeredText() {
+
+	return new Promise(function(resolve, reject) {
+		console.log("Inside of getLayeredText")
+		map.clear()
+		var pdfdoc = iframe.contentWindow.getPdfDocument()
+		var lastPromise; // will be used to chain promises
+		lastPromise = pdfdoc.getMetadata().then(function(data) {
+		});
+
+		var loadPage = function(pageNum) {
+			return pdfdoc.getPage(pageNum).then(function(page) {
+				return page.getTextContent().then(function(content) {
+					var strings = content.items.map(function(item) {
+						if(map.get(Math.round(item.height))) {
+							map.set(Math.round(item.height), map.get(Math.round(item.height)) + 1);
+						} else {
+							map.set(Math.round(item.height), 1)
+						}
+						return item.str;
+					});
+				}).then(function() {
+					console.log(pageNum)
+					if(pageNum == pdfdoc.numPages) {
+						resolve("DONE")
+					}
+				});
+			});
+		};
+		for (var i = 1; i <= pdfdoc.numPages; i++) {
+			lastPromise = lastPromise.then(loadPage.bind(null, i));
+		}
+	})
+}
+
+function getNumPages() {
+	return iframe.contentWindow.getPdfDocument().numPages
+}
+
+function getTextAfterMap(){
+	return new Promise(function(resolve, reject) {
+		var textForEachPage = []
+		var maxFont = 0
+		var maxFontFreq = 0
+		map.forEach((value, key) => {
+			if(value > maxFontFreq){
+				maxFontFreq = value;
+				maxFont = key
+			}
+		})
+		var pdfdoc = iframe.contentWindow.getPdfDocument()
+		var lastPromise; // will be used to chain promises
+		lastPromise = pdfdoc.getMetadata().then(function(data) {
+		});
+
+		var loadPage = function(pageNum) {
+			return pdfdoc.getPage(pageNum).then(function(page) {
+				var viewport = page.getViewport({
+					scale: 1.0,
+				});
+				return page.getTextContent().then(function(content) {
+					var strings = content.items.map(function(item) {
+						if(Math.round(item.height) == maxFont) {
+							return item.str;
+						}
+					});
+					strings = strings.join(' ');
+					textForEachPage.push(strings)
+				}).then(function() {
+					if(pdfdoc.numPages === pageNum) {
+						resolve(textForEachPage)
+					}
+				});
+			});
+		};
+
+		for (var i = 1; i <= pdfdoc.numPages; i++) {
+			lastPromise = lastPromise.then(loadPage.bind(null, i));
+		}
+	})
 }
