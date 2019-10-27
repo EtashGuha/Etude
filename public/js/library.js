@@ -37,12 +37,11 @@ var counter = 0;
 console.log(store)
 console.log(typeOf(currSet))
 currSet.forEach(function(value) {
-	try {
+	
 		show_nextItem(value, counter.toString());
 		showPDF_fresh(value, counter);
-	} catch (err) {
-		console.log("nah")
-	}
+		counter = counter + 1;
+	
 });
 
 
@@ -179,11 +178,23 @@ function show_nextItem(pdf_path, removeWhich) {
 	// var name = pdf_path.split('/');
 	// we get the name of the pdf
 	var filenamewithextension = path.parse(pdf_path).base;
+	console.log(pdf_path)
+	pdf_pathNext = replaceAll(pdf_path, " ", "?*?")
+	console.log(pdf_pathNext)
 	var filename = filenamewithextension.split('.')[0];
-	var next_text = "<div class='col-md-2 book_section'><div><center><canvas class='pdf-canvas' data ='" + pdf_path + "' id = 'viewer'></canvas><img class = 'minusImage' data =" + pdf_path + " id = 'myButton' src='./public/images/cross.png'/><p style = 'width: 200px; word-break: break-all;'>" + filename + "</p></center></div></div>";
+	var next_text = "<div class='col-md-2 book_section'><div><center><canvas class='pdf-canvas' data ='" + pdf_pathNext + "' id = 'viewer'></canvas><img class = 'minusImage' data =" + pdf_pathNext + " id = 'myButton' src='./public/images/cross.png'/><p style = 'width: 200px; word-break: break-all;'>" + filename + "</p></center></div></div>";
 	var next_div = document.createElement("div");
 	next_div.innerHTML = next_text;
+	console.log(next_div.innerHTML)
 	document.getElementById('container').append(next_div);
+}
+
+function replaceAll(str, find, replace) {
+    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+
+function escapeRegExp(str) {
+    return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 }
 
 //when the user select the pdf
@@ -197,8 +208,9 @@ $(document).on("click", ".pdf-canvas", function() {
 $(document).on("click", ".minusImage", function() {
 	($(this).parent()).parent().parent().remove();
 	var pdf_path = ($(this).attr("data"));
-	console.log(pdf_path)
+	pdf_path = replaceAll(pdf_path, "?*?", " ")
 	//delete it in the store
 	currSet.delete(pdf_path)
+	console.log(currSet)
 	store.set("libraryStore", Array.from(currSet))
 });
