@@ -187,10 +187,19 @@ $(document).on("click", ".bookmark-canvas", function() {
 	document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[$(this).attr("data") - 1].click()
 });
 
-
-document.getElementById('closeButton').addEventListener('click', () => {
+var closeButton = document.getElementById("closeButton");
+closeButton.addEventListener('click', () => {
     win.close();
+})
 
+var maxbuttton = document.getElementById("maxbutton");
+maxbuttton.addEventListener('click', () => {
+    win.maximize();
+})
+
+var minbutton = document.getElementById("minbutton");
+minbutton.addEventListener('click', () => {
+    win.minimize();
 })
 
 
@@ -516,3 +525,5 @@ function changePage() {
     }
   
   })(jQuery);
+
+  

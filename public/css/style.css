@@ -425,16 +425,20 @@ img.minusImage:empty
 	color: rgb(129, 129, 129);
 }
 
-.arrowright {
+#arrowrightbutton {
 	position: absolute;
-	right: 5%;
-	bottom: 10px;
+	right: 0;
+	bottom: 5px;
+	background: none;
+	margin: 0;
 }
 
-.arrowleft {
+#arrowleftbutton {
 	position: absolute;
-	left: 5%;
-	bottom: 10px;
+	left: 0;
+	bottom: 5px;
+	background: none;
+	margin: 0;
 }
 
 #closesearchbutton {

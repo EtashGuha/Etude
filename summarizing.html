@@ -40,15 +40,19 @@
                 <button class="toolbarButton pageUp prevanswer" title="Previous Answer">
                   <img src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"
                 </button> -->
-              <a img><img class="answerarrow arrowleft" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png"></a>
+              <button id="arrowleftbutton"><img class="answerarrow arrowleft" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png"></button>
               <button id="closesearchbutton">Close</button>
-              <a img><img class="answerarrow arrowright" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"></a>
+              <button id="arrowrightbutton"><img class="answerarrow arrowright" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"></button>
               </div>
             </div>
             <div id="searchloader" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
         </div>
       </div>
-      <img class="minusImage" data="2" id="closeButton" style="position: fixed;left:99%;top: 1%;margin-top: 4px;width: 30px;filter: invert(100%);" src="./public/images/cross.png">
+      <!-- <img class="minusImage" data="2" id="closeButton" style="position: fixed;right:1%;top: 1%;margin-top: 4px;width: 30px;filter: invert(100%);" src="./public/images/cross.png"> -->
+      <i class="fas fa-times" id="closeButton" aria-hidden="true" style="color:black;position: fixed;right:0;top: 2px;width: 30px;filter: invert(100%);"></i>
+      <i class="far fa-window-maximize" id="maxbutton" aria-hidden="true" style="color:black;position: fixed;right:35px;top: 2px;width: 30px;filter: invert(100%);"></i>
+      <i class="far fa-window-minimize" id="minbutton" aria-hidden="true" style="color:black;position: fixed;right:70px;top: 0px;width: 30px;filter: invert(100%);"></i>
+
     </div>
   </header>
   <body>
