@@ -65,12 +65,14 @@ document.getElementById('myButton').addEventListener('click', () => {
 		}] // limit the picker to just pdfs
 	}, (filepaths) => {
 		var filePath = filepaths[0];
-		currSet.add(filePath)
-		console.log(Array.from(currSet))
-		store.set("libraryStore", Array.from(currSet))
-		console.log(store.store)
-		show_nextItem(filePath, i.toString());
-		showPDF(filePath);
+		if(!currSet.has(filePath)){
+			currSet.add(filePath)
+			console.log(Array.from(currSet))
+			store.set("libraryStore", Array.from(currSet))
+			console.log(store.store)
+			show_nextItem(filePath, i.toString());
+			showPDF(filePath);
+		}
 	})
 
 })
