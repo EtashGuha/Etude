@@ -11,7 +11,6 @@ var win = remote.BrowserWindow.getFocusedWindow();
 const path = require('path');
 const log = require('electron-log');
 const fs = require('fs');
-var jre = require('node-jre')
 log.info('Hello, log for the first time');
 var typeOf = require('typeof');
 const os = require('os')
