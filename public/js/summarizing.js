@@ -254,6 +254,11 @@ $("#cape_btn").click(function() {
 				kernelWorker.onmessage = function(ev) {
 					$("#capeResult").empty().append(ev.data[0]);
 					updateHighlights(ev.data)
+					console.log("refreshed");
+					if(document.getElementById("myDropdown").classList.contains("show")){
+						console.log("Not showing dropdown");
+						document.getElementById("myDropdown").classList.toggle("show");
+					}
 					kernelWorker.terminate()
 					resolve("GOOD")
 				}
