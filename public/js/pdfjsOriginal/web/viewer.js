@@ -2449,6 +2449,15 @@ function areArgsValid(mainString, targetStrings) {
 			});
 		}
 
+		window.openFindBar = function(){
+			PDFViewerApplication.findBar.open();
+		}
+
+		window.closeFindBar = function(){
+			PDFViewerApplication.findBar.close();
+		}
+
+
 		function webViewerUpdateFindMatchesCount(_ref9) {
 			var matchesCount = _ref9.matchesCount;
 
@@ -2595,7 +2604,7 @@ function areArgsValid(mainString, targetStrings) {
 				switch (evt.keyCode) {
 					case 70:
 						if (!PDFViewerApplication.supportsIntegratedFind) {
-							PDFViewerApplication.findBar.open();
+							//control f word search used to happen here. disabled
 							handled = true;
 						}
 

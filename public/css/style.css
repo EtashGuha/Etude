@@ -11,6 +11,68 @@ body{
 	src: url("./poppins/Poppins-Regular.ttf")
 }
 
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 46px;
+  height: 25px;
+  top:27px;
+  left:0px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #00ffbb;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #00ffbb;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(19px);
+  -ms-transform: translateX(19px);
+  transform: translateX(19px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 .topnav {
 	/* background-color: #4038ff; */
 	background-color: transparent;
@@ -106,13 +168,14 @@ input::-webkit-inner-spin-button {
 	.topnav input[type=text] {
 		padding: 6px;
 		margin-top: 8px;
+		left:0px;
 		padding-left: 12px;
 		padding-right: 20px;
 		margin-right: 2px;
 		font-size: 17px;
 		border: none;
 		border-radius: 20px 0px 0px 20px;
-		width: 86%;
+		width: 80%;
 	}
 	
 	.topnav .search-container button {
@@ -189,7 +252,7 @@ input::-webkit-inner-spin-button {
 	height: auto;
 	position: absolute;
     left: 23px;
-    top: 64px;
+    top: 80px;
 	margin: auto;
 	opacity: 0.6;
   } 
@@ -258,8 +321,6 @@ img.minusImage:empty
 @media screen and (orientation: landscape) {
   img.minusImage { max-height: 90%; }
 }
-
-
 
 
 /* html, body {
@@ -364,22 +425,156 @@ img.minusImage:empty
 	color: rgb(129, 129, 129);
 }
 
-.arrowright {
+#arrowrightbutton {
 	position: absolute;
-	right: 5%;
-	bottom: 8%;
+	right: 0;
+	bottom: 5px;
+	background: none;
+	margin: 0;
 }
 
-.arrowleft {
+#arrowleftbutton {
 	position: absolute;
-	left: 5%;
-	bottom: 8%;
+	left: 0;
+	bottom: 5px;
+	background: none;
+	margin: 0;
+}
+
+#closesearchbutton {
+	position: absolute;
+    bottom: 7px;
+    color: #3c3c3c;
+    font-weight: 450;
+    font-size: 14px;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
 }
 
 
+/* Mobile Navigation */
 
+@media screen and (max-width: 991px) {
+	.main-nav {
+		display: none;
+	}
+}
 
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow-y: auto;
+  left: -260px;
+  width: 260px;
+  padding-top: 18px;
+  background: rgba(40, 38, 70, 0.8);
+  transition: 0.4s;
+}
 
-	
+.mobile-nav * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-	
+.mobile-nav a {
+  display: block;
+  position: relative;
+  color: #fff;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+
+.mobile-nav a:hover,
+.mobile-nav .active > a,
+.mobile-nav li:hover > a {
+  color: #8dc2fa;
+  text-decoration: none;
+}
+
+.mobile-nav .drop-down > a:after {
+  content: "\f078";
+  font-family: FontAwesome;
+  padding-left: 10px;
+  position: absolute;
+  right: 15px;
+}
+
+.mobile-nav .active.drop-down > a:after {
+  content: "\f077";
+}
+
+.mobile-nav .drop-down > a {
+  padding-right: 35px;
+}
+
+.mobile-nav .drop-down ul {
+  display: none;
+  overflow: hidden;
+}
+
+.mobile-nav .drop-down li {
+  padding-left: 20px;
+}
+
+.mobile-nav-toggle {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 9998;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  transition: all 0.4s;
+  outline: none !important;
+  line-height: 1;
+  cursor: pointer;
+  text-align: right;
+}
+
+.mobile-nav-toggle i {
+  margin: 18px 18px 0 0;
+  color: white;
+}
+
+.mobile-nav-overly {
+  width: 100%;
+  height: 100%;
+  z-index: 9997;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(40, 38, 70, 0.8);
+  overflow: hidden;
+  display: none;
+}
+
+.mobile-nav-active {
+  overflow: hidden;
+}
+
+.mobile-nav-active .mobile-nav {
+  left: 0;
+}
+
+.mobile-nav-active .mobile-nav-toggle i {
+  color: #fff;
+}
+
+@media screen and (min-width: 991px) {
+	#etudenavlink {
+		margin-left:8%;
+		border-bottom:3px white solid;
+		height:10px;
+		padding-left:0px;
+		padding-right:0px;
+		margin-right:3%;
+		position:relative;
+	}
+}
