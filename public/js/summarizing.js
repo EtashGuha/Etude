@@ -98,20 +98,19 @@ function enableEtude() {
 
 }
 
-// <<<<<<< HEAD
-// $("#searchToggle").click(function() {
-// 	console.log(document.getElementById('searchParent').style.visibility)
-// 	if(document.getElementById('searchParent').style.visibility === 'hidden') {
-// 		document.getElementById('searchParent').style.visibility = 'visible';
-// 		iframe.contentWindow.closeFindBar()
-// 	} else {
-// 		document.getElementById('searchParent').style.visibility = 'hidden';
-// 		iframe.contentWindow.openFindBar()
-// 	}
-	
-// });
 
-// =======
+$("#searchToggle").click(function() {
+	console.log(document.getElementById('searchParent').style.visibility)
+	if(document.getElementById('searchParent').style.visibility === 'hidden') {
+		document.getElementById('searchParent').style.visibility = 'visible';
+		iframe.contentWindow.closeFindBar()
+	} else {
+		document.getElementById('searchParent').style.visibility = 'hidden';
+		iframe.contentWindow.openFindBar()
+	}
+	
+});
+
 enableEtude()
 
 $("#bookmark_icon").click(function() {
