@@ -35,12 +35,14 @@ var firstPassThrough = true;
 // });
 
 
-let ranges = [];
+let ranges = JSON.parse(sessionStorage.getItem('ranges')) || [];
 
 function addRangeToPage(r, pageIdx) {
 	if (!ranges[pageIdx]) ranges[pageIdx] = [];
 	ranges[pageIdx].push(r);
 	ranges[pageIdx] = mergeRanges(ranges[pageIdx]);
+	// Persist changes
+	sessionStorage.setItem('ranges', JSON.stringify(ranges));
 }
 
 function mergeRanges(rs) {
@@ -137,63 +139,67 @@ function updateRanges() {
 	return [start[0], end[0]]; // Return pages that need to update
 }
 
-function highlightSelectedText() {
-	let [pageStart, pageEnd] = updateRanges();
+function highlightSelectedText(i) {
+	if (!Array.isArray(ranges[i])) return;
+	let textLayer = document.querySelector(`.page[data-page-number="${i}"] .textLayer`);
 
-	for (let i = pageStart; i <= pageEnd; i++) {
-		let textLayer = document.querySelector(`.page[data-page-number="${i}"] .textLayer`);
-		
-		// Preprocessing
-		let groupedBySpans = [];
-		for (let r of ranges[i]) {
-			r.anchor[0] = Math.max(r.anchor[0], 0);
-			r.anchor[0] = Math.min(r.anchor[0], textLayer.childNodes.length - 1);
-			r.focus[0] = Math.max(r.focus[0], 0);
-			r.focus[0] = Math.min(r.focus[0], textLayer.childNodes.length - 1);
+	// Preprocessing
+	let groupedBySpans = [];
+	for (let r of ranges[i]) {
+		r.anchor[0] = Math.max(r.anchor[0], 0);
+		r.anchor[0] = Math.min(r.anchor[0], textLayer.childNodes.length - 1);
+		r.focus[0] = Math.max(r.focus[0], 0);
+		r.focus[0] = Math.min(r.focus[0], textLayer.childNodes.length - 1);
 
-			if (r.anchor[0] === r.focus[0]) {
-				if (!groupedBySpans[r.anchor[0]]) groupedBySpans[r.anchor[0]] = [];
-				groupedBySpans[r.anchor[0]].push([r.anchor[1], r.focus[1]]);
-			} else {
-				if (!groupedBySpans[r.anchor[0]]) groupedBySpans[r.anchor[0]] = [];
-				groupedBySpans[r.anchor[0]].push([r.anchor[1], Infinity]);
-				if (!groupedBySpans[r.focus[0]]) groupedBySpans[r.focus[0]] = []; 
-				groupedBySpans[r.focus[0]].push([-Infinity, r.focus[1]]);
-				for (let i = r.anchor[0] + 1; i <= r.focus[0] - 1; i++) {
-					if (!groupedBySpans[i]) groupedBySpans[i] = [];
-					groupedBySpans[i].push([-Infinity, Infinity]);
-				}
+		if (r.anchor[0] === r.focus[0]) {
+			if (!groupedBySpans[r.anchor[0]]) groupedBySpans[r.anchor[0]] = [];
+			groupedBySpans[r.anchor[0]].push([r.anchor[1], r.focus[1]]);
+		} else {
+			if (!groupedBySpans[r.anchor[0]]) groupedBySpans[r.anchor[0]] = [];
+			groupedBySpans[r.anchor[0]].push([r.anchor[1], Infinity]);
+			if (!groupedBySpans[r.focus[0]]) groupedBySpans[r.focus[0]] = []; 
+			groupedBySpans[r.focus[0]].push([-Infinity, r.focus[1]]);
+			for (let i = r.anchor[0] + 1; i <= r.focus[0] - 1; i++) {
+				if (!groupedBySpans[i]) groupedBySpans[i] = [];
+				groupedBySpans[i].push([-Infinity, Infinity]);
 			}
 		}
+	}
 
-		// Actual rendering
-		for (let [j, group] of groupedBySpans.entries()) {
-			if (!group) continue;
-			let lastIndex = 0;
-			let nodes = [];
-			let spanContainer = textLayer.childNodes[j];
-			let text = spanContainer.textContent;
-			for (let range of group) {
-				nodes.push(document.createTextNode(
-					text.slice(lastIndex, range[0])
-				));
-				let span = document.createElement('span');
-				span.classList.add('highlight');
-				span.style.background = 'red'; // Custom color
-				span.textContent = text.slice(...range);
-				nodes.push(span);
-				lastIndex = range[1];
-			}
+	// Actual rendering
+	for (let [j, group] of groupedBySpans.entries()) {
+		if (!group) continue;
+		let lastIndex = 0;
+		let nodes = [];
+		let spanContainer = textLayer.childNodes[j];
+		let text = spanContainer.textContent;
+		for (let range of group) {
 			nodes.push(document.createTextNode(
-				text.slice(lastIndex)
+				text.slice(lastIndex, range[0])
 			));
-			spanContainer.innerHTML = '';
-			spanContainer.append(...nodes);			
+			let span = document.createElement('span');
+			span.classList.add('highlight');
+			span.style.background = 'red'; // Custom color
+			span.textContent = text.slice(...range);
+			nodes.push(span);
+			lastIndex = range[1];
 		}
+		nodes.push(document.createTextNode(
+			text.slice(lastIndex)
+		));
+		spanContainer.innerHTML = '';
+		spanContainer.append(...nodes);			
 	}
 }
 
-document.addEventListener('mouseup', highlightSelectedText);
+function updateCustomHighlight() {
+	let [pageStart, pageEnd] = updateRanges();
+	for (let i = pageStart; i <= pageEnd; i++) {
+		highlightSelectedText(i);
+	}
+}
+
+document.addEventListener('mouseup', updateCustomHighlight);
 
 function compareTwoStrings(first, second) {
 	first = first.replace(/\s+/g, '')
@@ -11211,6 +11217,9 @@ function areArgsValid(mainString, targetStrings) {
 					}
 					document.dispatchEvent(new Event('funcready'));
 					PDFViewerApplication.eventBus.on('safetojump', jumpToNextMatch);
+					PDFViewerApplication.eventBus.on('textlayerrendered', ({ pageNumber }) => {
+						highlightSelectedText(pageNumber);
+					});
 
 					return _possibleConstructorReturn(this, _getPrototypeOf(PDFViewer).apply(this, arguments));
 				}
