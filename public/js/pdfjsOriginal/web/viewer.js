@@ -71,14 +71,13 @@ function mergeRanges(rs) {
 	return merged;
 }
 
-function highlightSelectedText() {
+function updateRanges() {
 	let sel = window.getSelection();
 	let anchor = anchorNode = sel.anchorNode;
 	let anchorOffset = sel.anchorOffset;
 	let focus = focusNode = sel.focusNode;
 	let focusOffset = sel.focusOffset;
-	sel.removeAllRanges(); // Clear browser default highlight
-	
+
 	function calculateIndices(textNode, offset) {
 		let cur = textNode;
 		let pageIndex; let spanIndex; let textIndex;
@@ -99,8 +98,16 @@ function highlightSelectedText() {
 		}
 		return [pageIndex, spanIndex, textIndex];
 	}
+	
 	let start = calculateIndices(anchorNode, anchorOffset);
 	let end = calculateIndices(focusNode, focusOffset);
+	if (
+		start[0] > end[0] ||
+		start[0] === end[0] && start[1] > end[1] ||
+		start[0] === end[0] && start[1] === end[1] && start[2] > end[2]
+	) {
+		[start, end] = [end, start];
+	}
 	if (start[0] === end[0]) {
 		addRangeToPage({
 			anchor: [start[1], start[2]],
@@ -122,9 +129,24 @@ function highlightSelectedText() {
 			}, i);
 		}
 	}
-	console.log(ranges);
+	return [start[0], end[0]]; // Return pages that need to update
+}
 
-	// document.querySelectorAll(`.page[data-page-number="${anchorIndices[0]}"]`).
+function highlightSelectedText() {
+	let [pageStart, pageEnd] = updateRanges();
+	document.getSelection().removeAllRanges(); // Clear browser default highlight
+	for (let i = pageStart; i <= pageEnd; i++) {
+		if (!ranges[i]) continue;
+		let textLayer = document.querySelector(`.page[data-page-number="${i}"] .textLayer`);
+		for (let range of ranges[i]) {
+			let start = Math.max(range.anchor[0], 0);
+			let end = Math.min(range.focus[0], textLayer.childNodes.length - 1);
+			for (let j = start; j <= end; j++) {
+				let n = textLayer.childNodes[j];
+				if (n.tagName === 'SPAN') n.classList.add('highlight');
+			}
+		}
+	}
 }
 
 function compareTwoStrings(first, second) {
