@@ -34,14 +34,15 @@ var firstPassThrough = true;
 // 	console.log(ipcRenderer.sendSync('getMouseMove'));
 // });
 
-document.addEventListener('mouseup', highlightSelectedText);
 
 let ranges = [];
+
 function addRangeToPage(r, pageIdx) {
 	if (!ranges[pageIdx]) ranges[pageIdx] = [];
 	ranges[pageIdx].push(r);
 	ranges[pageIdx] = mergeRanges(ranges[pageIdx]);
 }
+
 function mergeRanges(rs) {
 	rs.sort((a, b) => {
 		if (a.anchor[0] - b.anchor[0] !== 0) return a.anchor[0] - b.anchor[0];
@@ -55,11 +56,11 @@ function mergeRanges(rs) {
 		} else {
 			let prev = merged[merged.length-1];
 			if (
-				r.anchor[0] <= prev.focus[0] ||
-				r.anchor[0] == prev.focus[0] && r.anchor[1] <= prev.focus[1]
+				r.anchor[0] < prev.focus[0] ||
+				r.anchor[0] === prev.focus[0] && r.anchor[1] <= prev.focus[1]
 			) {
 				if (r.focus[0] > prev.focus[0] ||
-					r.focus[0] == prev.focus[0] && r.focus[1] > prev.focus[1]
+					r.focus[0] === prev.focus[0] && r.focus[1] > prev.focus[1]
 				) {
 					prev.focus = r.focus;
 				}
@@ -78,7 +79,10 @@ function updateRanges() {
 	let focus = focusNode = sel.focusNode;
 	let focusOffset = sel.focusOffset;
 
+	document.getSelection().removeAllRanges(); // Clear browser default highlight
+
 	function calculateIndices(textNode, offset) {
+		if (!textNode) return null;
 		let cur = textNode;
 		let pageIndex; let spanIndex; let textIndex;
 		while (cur !== document.body) {
@@ -90,7 +94,7 @@ function updateRanges() {
 				spanIndex = [...cur.parentNode.childNodes].indexOf(cur);
 				textIndex = offset;
 				for (let n of cur.childNodes) {
-					if (n.contains(anchorNode)) break;
+					if (n.contains(textNode)) break;
 					textIndex += n.textContent.length;
 				}
 			} 
@@ -101,6 +105,7 @@ function updateRanges() {
 	
 	let start = calculateIndices(anchorNode, anchorOffset);
 	let end = calculateIndices(focusNode, focusOffset);
+	if (!start || !end) return [0, -1];
 	if (
 		start[0] > end[0] ||
 		start[0] === end[0] && start[1] > end[1] ||
@@ -134,20 +139,61 @@ function updateRanges() {
 
 function highlightSelectedText() {
 	let [pageStart, pageEnd] = updateRanges();
-	document.getSelection().removeAllRanges(); // Clear browser default highlight
+
 	for (let i = pageStart; i <= pageEnd; i++) {
-		if (!ranges[i]) continue;
 		let textLayer = document.querySelector(`.page[data-page-number="${i}"] .textLayer`);
-		for (let range of ranges[i]) {
-			let start = Math.max(range.anchor[0], 0);
-			let end = Math.min(range.focus[0], textLayer.childNodes.length - 1);
-			for (let j = start; j <= end; j++) {
-				let n = textLayer.childNodes[j];
-				if (n.tagName === 'SPAN') n.classList.add('highlight');
+		
+		// Preprocessing
+		let groupedBySpans = [];
+		for (let r of ranges[i]) {
+			r.anchor[0] = Math.max(r.anchor[0], 0);
+			r.anchor[0] = Math.min(r.anchor[0], textLayer.childNodes.length - 1);
+			r.focus[0] = Math.max(r.focus[0], 0);
+			r.focus[0] = Math.min(r.focus[0], textLayer.childNodes.length - 1);
+
+			if (r.anchor[0] === r.focus[0]) {
+				if (!groupedBySpans[r.anchor[0]]) groupedBySpans[r.anchor[0]] = [];
+				groupedBySpans[r.anchor[0]].push([r.anchor[1], r.focus[1]]);
+			} else {
+				if (!groupedBySpans[r.anchor[0]]) groupedBySpans[r.anchor[0]] = [];
+				groupedBySpans[r.anchor[0]].push([r.anchor[1], Infinity]);
+				if (!groupedBySpans[r.focus[0]]) groupedBySpans[r.focus[0]] = []; 
+				groupedBySpans[r.focus[0]].push([-Infinity, r.focus[1]]);
+				for (let i = r.anchor[0] + 1; i <= r.focus[0] - 1; i++) {
+					if (!groupedBySpans[i]) groupedBySpans[i] = [];
+					groupedBySpans[i].push([-Infinity, Infinity]);
+				}
 			}
+		}
+
+		// Actual rendering
+		for (let [j, group] of groupedBySpans.entries()) {
+			if (!group) continue;
+			let lastIndex = 0;
+			let nodes = [];
+			let spanContainer = textLayer.childNodes[j];
+			let text = spanContainer.textContent;
+			for (let range of group) {
+				nodes.push(document.createTextNode(
+					text.slice(lastIndex, range[0])
+				));
+				let span = document.createElement('span');
+				span.classList.add('highlight');
+				span.style.background = 'red'; // Custom color
+				span.textContent = text.slice(...range);
+				nodes.push(span);
+				lastIndex = range[1];
+			}
+			nodes.push(document.createTextNode(
+				text.slice(lastIndex)
+			));
+			spanContainer.innerHTML = '';
+			spanContainer.append(...nodes);			
 		}
 	}
 }
+
+document.addEventListener('mouseup', highlightSelectedText);
 
 function compareTwoStrings(first, second) {
 	first = first.replace(/\s+/g, '')
