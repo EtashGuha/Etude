@@ -36,6 +36,41 @@ var firstPassThrough = true;
 
 document.addEventListener('mouseup', highlightSelectedText);
 
+let ranges = [];
+function addRangeToPage(r, pageIdx) {
+	if (!ranges[pageIdx]) ranges[pageIdx] = [];
+	ranges[pageIdx].push(r);
+	ranges[pageIdx] = mergeRanges(ranges[pageIdx]);
+}
+function mergeRanges(rs) {
+	rs.sort((a, b) => {
+		if (a.anchor[0] - b.anchor[0] !== 0) return a.anchor[0] - b.anchor[0];
+		return a.anchor[1] - b.anchor[1];
+	});
+	let merged = [];
+	for (let r of rs) {
+		if (merged.length === 0) {
+			merged.push(r);
+			continue;
+		} else {
+			let prev = merged[merged.length-1];
+			if (
+				r.anchor[0] <= prev.focus[0] ||
+				r.anchor[0] == prev.focus[0] && r.anchor[1] <= prev.focus[1]
+			) {
+				if (r.focus[0] > prev.focus[0] ||
+					r.focus[0] == prev.focus[0] && r.focus[1] > prev.focus[1]
+				) {
+					prev.focus = r.focus;
+				}
+			} else {
+				merged.push(r);
+			}
+		}
+	}
+	return merged;
+}
+
 function highlightSelectedText() {
 	let sel = window.getSelection();
 	let anchor = anchorNode = sel.anchorNode;
@@ -43,278 +78,53 @@ function highlightSelectedText() {
 	let focus = focusNode = sel.focusNode;
 	let focusOffset = sel.focusOffset;
 	sel.removeAllRanges(); // Clear browser default highlight
-
-	if (!anchor || !focus) return '';
-	while (anchorNode.childNodes.length > 0) anchorNode = anchorNode.childNodes[0];
-	while (focusNode.childNodes.length > 0) focusNode = focusNode.childNodes[0];
-	while (anchor.parentNode.tagName === 'SPAN') anchor = anchor.parentNode;
-	while (focus.parentNode.tagName === 'SPAN') focus = focus.parentNode;
-	if (anchor.tagName !== 'SPAN' || focus.tagName !== 'SPAN') return;
-
-	function reverse() {
-		[anchor, focus] = [focus, anchor];
-		[anchorNode, focusNode] = [focusNode, anchorNode];
-		[anchorOffset, focusOffset] = [focusOffset, anchorOffset];
-	}
-
-	function highlightFirst() {
-		let shouldInclude = false;
-		let textContent = '';
-		for (let i = 0; i < anchor.childNodes.length; i++) {
-			let n = anchor.childNodes[i];
-			if (n === anchorNode || n.childNodes[0] === anchorNode) {
-				let left = anchorNode.textContent.slice(0, anchorOffset);
-				let right = anchorNode.textContent.slice(anchorOffset);
-				if (left.length === 0) {
-					anchor.removeChild(n);
-					let prev;
-					if (prev = anchor.childNodes[i-1] && prev.classList.contains('highlight')) {
-						textContent += prev.textContent;
-						anchor.removeChild(prev);
-					}
-				} else {
-					n.textContent = left;
-				}
-				textContent += right;
-				shouldInclude = true;
-			} else if (shouldInclude) {
-				textContent += n.textContent;
-				anchor.removeChild(n);
-			}
-			console.log(textContent);
-		}	
-
-		let span = document.createElement('span');
-		span.classList.add('highlight', 'begin');
-		span.textContent = textContent;
-		anchor.appendChild(span);
-
-		if ([...anchor.childNodes].every(n => n.classList && n.classList.contains('highlight'))) {
-			anchor.textContent = anchor.textContent;
-			anchor.classList.add('highlight');
-		}
-	}
-
-	function highlightLast() {
-		let textContent = '';
-		let refNode;
-		let childNodes = focus.childNodes;
-		for (let i = 0; i < childNodes.length; i++) {
-			let n = childNodes[i];
-			if (n === focusNode || n.childNodes[0] === focusNode) {
-				let left = focusNode.textContent.slice(0, focusOffset);
-				let right = focusNode.textContent.slice(focusOffset);
-				if (right.length === 0) {
-					focus.removeChild(n);
-					let next;
-					if (next = childNodes[i + 1] && next.classList.contains('highlight')) {
-						textContent += next.textContent;
-						focus.removeChild(next);
-						refNode = childNodes[i + 2];
-					}
-				} else {
-					n.textContent = right;
-					refNode = n;
-				}
-				textContent += left;
-				break;
-			} else {
-				textContent += n.textContent;
-				focus.removeChild(n);
-			}
-			console.log(textContent);
-		}	
-
-		let span = document.createElement('span');
-		span.classList.add('highlight', 'end');
-		span.textContent = textContent;
-		if (refNode) {
-			focus.insertBefore(span, refNode);
-		} else {
-			focus.appendChild(span);
-		}
-
-		if ([...focus.childNodes].every(n => n.classList && n.classList.contains('highlight'))) {
-			focus.textContent = anchor.textContent;
-			focus.classList.add('highlight');
-		}
-	}
-
-	/**
-	 * Same text node
-	 */
-	if (focusNode === anchorNode) {
-		if (anchorOffset > focusOffset) reverse();
-		let text = anchorNode.textContent;
-		if (anchorNode.parentNode.classList.contains('highlight')) return;
-
-		let textContent = '';
-		let textBefore = text.slice(0, anchorOffset);
-		let textAfter = text.slice(focusOffset);
-		let childNodes = anchor.childNodes
-		let index = [...childNodes].indexOf(anchorNode);
-		
-		if (textBefore.length === 0) {
-			if (index > 0) {
-				let prev = childNodes[index - 1];
-				textContent += prev.textContent;
-				anchor.removeChild(prev);
-			}
-		} else {
-			anchor.insertBefore(document.createTextNode(textBefore), anchorNode)
-		}
-		
-		textContent += text.slice(anchorOffset, focusOffset);
-		
-		let refNode;
-		if (textAfter.length === 0) {
-			let next;
-			if (next = childNodes[index + 1]) {
-				textContent += next.textContent;
-				anchor.removeChild(next);
-				refNode = childNodes[index + 2];
-			}
-		} else {
-			anchorNode.textContent = textAfter;
-			refNode = anchorNode;
-		}
-
-		let span = document.createElement('span');
-		span.textContent = textContent;
-		span.classList.add('highlight', 'begin', 'end');
-		if (refNode) {
-			anchor.insertBefore(span,refNode);
-		} else {
-			anchor.appendChild(span);
-		}
-		if (anchor.childNodes.length === 1) {
-			anchor.textContent = anchor.textContent;
-			anchor.classList.add('highlight');
-		}
-		return;
-	}
-
-	/**
-	 * Same span (line)
-	 */
-	if (anchor === focus) {
-		if (anchorOffset > focusOffset) reverse();
-		let textContent = '';
-		let shouldInclude = false;
-		let refNode;
-		let childNodes = anchor.childNodes;
-		for (let i = 0; i < childNodes.length; i++) {
-			let n = childNodes[i];
-			if (n === anchorNode || n.childNodes[0] === anchorNode) {
-				let left = anchorNode.textContent.slice(0, anchorOffset);
-				let right = anchorNode.textContent.slice(anchorOffset);
-				if (left.length === 0) {
-					anchor.removeChild(n);
-					let prev;
-					if (prev = childNodes[i-1] && prev.classList.contains('highlight')) {
-						textContent += prev.textContent;
-						anchor.removeChild(prev);
-						console.log('remove', prev)
-					}
-				} else {
-					n.textContent = left;
-				}
-				textContent += right;
-				console.log(textContent);
-				shouldInclude = true;
-			} else if (n === focusNode || n.childNodes[0] === focusNode) {
-				let left = focusNode.textContent.slice(0, focusOffset);
-				let right = focusNode.textContent.slice(focusOffset);
-				if (right.length === 0) {
-					focus.removeChild(n);
-					let next;
-					if (next = childNodes[i + 1] && next.classList.contains('highlight')) {
-						textContent += next.textContent;
-						focus.removeChild(next);
-						refNode = childNodes[i + 2];
-					}
-				} else {
-					n.textContent = right;
-					refNode = n;
-				}
-				textContent += left;
-				console.log(textContent);
-				break;
-			} else if (shouldInclude) {
-				textContent += n.textContent;
-				console.log(textContent);
-				focus.removeChild(n);
-			}
-		}	
-
-		console.log(textContent);
-		let span = document.createElement('span');
-		span.textContent = textContent;
-		span.classList.add('highlight', 'begin', 'end');
-		if (refNode) {
-			anchor.insertBefore(span,refNode);
-		} else {
-			anchor.appendChild(span);
-		}
-
-		if ([...focus.childNodes].every(n => n.classList && n.classList.contains('highlight'))) {
-			focus.textContent = anchor.textContent;
-			focus.classList.add('highlight');
-		}
-		return;		
-	}
 	
-
-	if (anchor.parentNode === focus.parentNode) {
-		/**
-		 * Same Page
-		 */
-		let textNodes = [...anchor.parentNode.childNodes];
-		let start = textNodes.indexOf(anchor);
-		let end = textNodes.indexOf(focus);
-		if (start > end) {
-			[start, end] = [end, start];
-			reverse();
-		}
-		for (let i = start + 1; i < end; i++) {
-			let node = textNodes[i];
-			if (node.tagName !== 'SPAN') continue;
-			node.textContent = node.textContent;
-			node.classList.add('highlight');		
-		}
-	} else {
-		/**
-		 * Multiple Pages
-		 */
-		let startPage = anchor.parentNode.parentNode;
-		let endPage = focus.parentNode.parentNode;
-		let pdfViewer = startPage.parentNode;
-		let pages = [...pdfViewer.childNodes];
-		let pageStart = pages.indexOf(startPage);
-		let pageEnd = pages.indexOf(endPage);
-		if (pageStart > pageEnd) {
-			[pageStart, pageEnd] = [pageEnd, pageStart];
-			reverse();
-		}
-		for (let i = pageStart; i <= pageEnd; i++) {
-			let page = pdfViewer.childNodes[i];
-			let textNodes = [...page.querySelector('.textLayer').childNodes];
-			let start = i === pageStart 
-				? textNodes.indexOf(anchor) + 1
-				: 0;
-			let end = i === pageEnd
-				? textNodes.indexOf(focus)
-				: textNodes.length;
-			for (let j = start; j < end; j++) {
-				let node = textNodes[j];
-				if (node.tagName !== 'SPAN') continue;
-				node.textContent = node.textContent;
-				node.classList.add('highlight');		
+	function calculateIndices(textNode, offset) {
+		let cur = textNode;
+		let pageIndex; let spanIndex; let textIndex;
+		while (cur !== document.body) {
+			if (cur.classList && cur.classList.contains('page')) {
+				pageIndex = +cur.dataset.pageNumber;
+				break;
 			}
+			if (cur.tagName === 'SPAN' && cur.parentNode.tagName !== 'SPAN') {
+				spanIndex = [...cur.parentNode.childNodes].indexOf(cur);
+				textIndex = offset;
+				for (let n of cur.childNodes) {
+					if (n.contains(anchorNode)) break;
+					textIndex += n.textContent.length;
+				}
+			} 
+			cur = cur.parentNode;
+		}
+		return [pageIndex, spanIndex, textIndex];
+	}
+	let start = calculateIndices(anchorNode, anchorOffset);
+	let end = calculateIndices(focusNode, focusOffset);
+	if (start[0] === end[0]) {
+		addRangeToPage({
+			anchor: [start[1], start[2]],
+			focus: [end[1], end[2]]
+		}, start[0]);
+	} else {
+		addRangeToPage({
+			anchor: [start[1], start[2]],
+			focus: [Infinity, Infinity]
+		}, start[0]);
+		addRangeToPage({
+			anchor: [-1, -1],
+			focus: [end[1], end[2]]
+		}, end[0]);
+		for (let i = start[0] + 1; i <= end[0] - 1; i++) {
+			addRangeToPage({
+				anchor: [-1, -1],
+				focus: [Infinity, Infinity]
+			}, i);
 		}
 	}
-	highlightFirst();
-	highlightLast();
+	console.log(ranges);
+
+	// document.querySelectorAll(`.page[data-page-number="${anchorIndices[0]}"]`).
 }
 
 function compareTwoStrings(first, second) {
