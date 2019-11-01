@@ -16,7 +16,7 @@ body{
   display: inline-block;
   width: 46px;
   height: 25px;
-  top:27px;
+  top:37px;
   left:0px;
 }
 
@@ -85,6 +85,8 @@ input:checked + .slider:before {
 .topnav a {
 	float: left;
 	color: #f2f2f2;
+	position:relative;
+	top:8px;
 	text-align: center;
 	padding-right: 4%;
 	padding-left: 4%;
@@ -569,6 +571,7 @@ img.minusImage:empty
 
 @media screen and (min-width: 991px) {
 	#etudenavlink {
+		top:8px;
 		margin-left:8%;
 		border-bottom:3px white solid;
 		height:10px;

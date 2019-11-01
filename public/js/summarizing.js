@@ -14,6 +14,7 @@ const fs = require('fs');
 log.info('Hello, log for the first time');
 var typeOf = require('typeof');
 const os = require('os')
+const windowFrame = require('electron-titlebar')
 var osvers = os.platform()
 console.log(osvers)
 var textData = null;

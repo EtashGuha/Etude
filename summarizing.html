@@ -10,6 +10,7 @@
     <script src='./public/js/jquery.js'></script>
   </head>
   <header class="library-nav" style="background: transparent; position: absolute;width:36%;">
+    <div id="electron-titlebar" class="drag"></div>
     <div class="topnav">
       <div class = "main-nav">
         <a href="library.html" id="etudenavlink">Étude</a>
@@ -24,7 +25,7 @@
           <input id = "searchToggle" type="checkbox" checked>
           <span class="slider round"></span>
         </label>
-        <div id = "searchParent" class="search-container" style="position: fixed;left:70%;width:30%;top:0px;">
+        <div id = "searchParent" class="search-container" style="position: fixed;left:70%;width:30%;top:10px;">
             <input type="text" placeholder="Search.." name="search" id = "questionVal" style="height: 37.2px;outline-width: 0px;position:absolute;">
             <button id = "cape_btn" class="dropbtn" style="width:37.2px;height:37.2px;padding-top:0px;padding-bottom:0px;outline-width: 0px;margin-left:0px;position:absolute;left:calc(80% - 16px);" onclick="{document.getElementById('searchloader').style.display = 'block';document.getElementById('searchbuttonthree').style.color = 'white';document.getElementById('cape_btn').style.backgroundColor = 'white';}">
               <i id="searchbuttonthree" class="fa fa-search" style="color:black;"></i></button>
@@ -49,10 +50,10 @@
         </div>
       </div>
       <!-- <img class="minusImage" data="2" id="closeButton" style="position: fixed;right:1%;top: 1%;margin-top: 4px;width: 30px;filter: invert(100%);" src="./public/images/cross.png"> -->
-      <i class="fas fa-times" id="closeButton" aria-hidden="true" style="color:black;position: fixed;right:0;top: 2px;width: 30px;filter: invert(100%);"></i>
+<!--       <i class="fas fa-times" id="closeButton" aria-hidden="true" style="color:black;position: fixed;right:0;top: 2px;width: 30px;filter: invert(100%);"></i>
       <i class="far fa-window-maximize" id="maxbutton" aria-hidden="true" style="color:black;position: fixed;right:35px;top: 2px;width: 30px;filter: invert(100%);"></i>
       <i class="far fa-window-minimize" id="minbutton" aria-hidden="true" style="color:black;position: fixed;right:70px;top: 0px;width: 30px;filter: invert(100%);"></i>
-
+ -->
     </div>
   </header>
   <body>
@@ -71,7 +72,7 @@
     <img id = "bookmark_icon" src = "./public/images/bookmarkplus.png" style="position: absolute;left:3%;"></img>
 <!--     <input type="number" placeholder="1" id = "bookmark_select_page" style="background:#1486E7;width:30px;" value="1"> -->
     <div class='summarizer'>
-      <button id='getRangeButton' class = "button"><span>Highlight </span></button>
+      <button id='getRangeButton' class = "buttonHighlight"><span>Highlight </span></button>
 <!--       <input type="number" placeholder="1" id = "pageRange" style="background:#1486E7;width:30px;" value="1">
       <input type="number" placeholder="1" id = "topageRange" style="background:#1486E7;width:30px;" value="1"> -->
     </div>

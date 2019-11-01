@@ -175,7 +175,7 @@ div.viewer iframe {
           animation-delay: 0.2s; }
 
 
-.button {
+.buttonHighlight {
   border-radius: 4px;
   background-image: linear-gradient(to right, #6600ff,#0099ff) ;
   border: none;
@@ -190,14 +190,14 @@ div.viewer iframe {
   display: inline-block;
 }
 
-.button span {
+.buttonHighlight span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.button span:after {
+.buttonHighlight span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -206,11 +206,11 @@ div.viewer iframe {
   transition: 0.5s;
 }
 
-.button:hover span {
+.buttonHighlight:hover span {
   padding-right: 25px;
 }
 
-.button:hover span:after {
+.buttonHighlight:hover span:after {
   opacity: 1;
   right: 0;
 }
