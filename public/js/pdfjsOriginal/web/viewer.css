@@ -973,6 +973,7 @@ html[dir='ltr'] #toolbarViewerMiddle > *,
 html[dir='ltr'] #toolbarViewerRight > *,
 html[dir='ltr'] .findbar * {
   position: relative;
+  border:0.5px solid silver;
   float: left;
   font-size:10px;
 }
@@ -1129,7 +1130,6 @@ html[dir='rtl'] .dropdownToolbarButton {
 .overlayButton,
 .secondaryToolbarButton:hover,
 .secondaryToolbarButton:focus {
-  background-color: hsla(0,0%,0%,.12);
   background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
   background-clip: padding-box;
   border: 1px solid hsla(0,0%,0%,.35);

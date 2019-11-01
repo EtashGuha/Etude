@@ -528,7 +528,7 @@ img.minusImage:empty
 .mobile-nav-toggle {
   position: absolute;
   left: 10px;
-  top: 10px;
+  top: 20px;
   z-index: 9998;
   border: 0;
   background: none;
