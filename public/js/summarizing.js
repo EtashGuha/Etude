@@ -193,20 +193,20 @@ $(document).on("click", ".bookmark-canvas", function() {
 	document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[$(this).attr("data") - 1].click()
 });
 
-var closeButton = document.getElementById("closeButton");
-closeButton.addEventListener('click', () => {
-    win.close();
-})
+// var closeButton = document.getElementById("closeButton");
+// closeButton.addEventListener('click', () => {
+//     win.close();
+// })
 
-var maxbuttton = document.getElementById("maxbutton");
-maxbuttton.addEventListener('click', () => {
-    win.maximize();
-})
+// var maxbuttton = document.getElementById("maxbutton");
+// maxbuttton.addEventListener('click', () => {
+//     win.maximize();
+// })
 
-var minbutton = document.getElementById("minbutton");
-minbutton.addEventListener('click', () => {
-    win.minimize();
-})
+// var minbutton = document.getElementById("minbutton");
+// minbutton.addEventListener('click', () => {
+//     win.minimize();
+// })
 
 
 
@@ -549,6 +549,7 @@ function getTextAfterMap(){
     "use strict";
   
     // Mobile Navigation
+    console.log($('.main-nav').length)
     if ($('.main-nav').length) {
       var $mobile_nav = $('.main-nav').clone().prop({
         class: 'mobile-nav d-lg-none'
