@@ -17,7 +17,7 @@ console.log(currpathtofile)
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 var fs = require('fs');
 var options = {
-    name: 'Etude'
+    name: 'Étude'
 };
 var unpackedDirectory = etudeFilepath.replace("app.asar", "app.asar.unpacked")
 const analytics = require('electron-google-analytics');
