@@ -66,7 +66,10 @@ ipcMain.on('get-file-data', function(event) {
 // });
 
 function createWindow() {
-    
+    let framebool = true;
+    if (process.platform == 'win32') {
+        framebool = false;
+    }
     const {
         width,
         height
@@ -76,7 +79,7 @@ function createWindow() {
         width: width,
         minWidth: 600,
         minHeight: 200,
-        frame: false,
+        frame: framebool,
         backgroundColor: '#ffffff',
         webPreferences: {
             nodeIntegration: true
