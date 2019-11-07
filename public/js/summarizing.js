@@ -242,9 +242,7 @@ $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
 	updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
 	console.log("Cape button clicked")
-	if (capeClicked) {
-		document.getElementById("myDropdown").classList.toggle("show");
-	}
+	document.getElementById("myDropdown").classList.toggle("show");
 	setTimeout(function() {
 		console.log(getNumPages())
 		var getpdftext = getPDFText(1, getNumPages())
