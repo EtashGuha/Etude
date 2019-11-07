@@ -2,14 +2,16 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Summaring PDF</title>
+    <title>Étude</title>
     <link rel='stylesheet' href='./public/css/index.css'>
     <link rel="stylesheet" href="./public/css/bootstrap.min.css">
     <link rel="stylesheet" href="./public/css/style.css">
     <link rel="stylesheet" href="./public/fontawesome-free-5.6.3-web/css/all.css">
     <script src='./public/js/jquery.js'></script>
   </head>
+
   <header class="library-nav" style="background: transparent; position: absolute;width:36%;">
+    <div id="electron-titlebar" class="drag"></div>
     <div class="topnav">
       <div class = "main-nav">
         <a href="library.html" id="etudenavlink">Étude</a>
@@ -21,11 +23,12 @@
       </div>
       <div style="width: 100px;height: 80px;position: fixed;right: 28%;">
         <label class="switch">
-          <input id = "searchToggle" type="checkbox" checked>
+          <input id = "searchToggle" type="checkbox" onclick="(document.getElementById('searchParent').style.visibility === 'hidden') ? alertify.success('Smart Search Enabled', 1000) : alertify.success('Word Search Enabled', 1000) " checked>
           <span class="slider round"></span>
+          <p style="font-size: 12px;color:white;position: fixed;margin-left:-12px;">Smart Search</p>
         </label>
-        <div id = "searchParent" class="search-container" style="position: fixed;left:70%;width:30%;top:0px;">
-            <input type="text" placeholder="Search.." name="search" id = "questionVal" style="height: 37.2px;outline-width: 0px;position:absolute;">
+        <div id = "searchParent" class="search-container" style="position: fixed;left:70%;width:30%;top:10px;">
+            <input type="text" placeholder="Ask any question about the document..." name="search" id = "questionVal" style="height: 37.2px;outline-width: 0px;position:absolute;">
             <button id = "cape_btn" class="dropbtn" style="width:37.2px;height:37.2px;padding-top:0px;padding-bottom:0px;outline-width: 0px;margin-left:0px;position:absolute;left:calc(80% - 16px);" onclick="{document.getElementById('searchloader').style.display = 'block';document.getElementById('searchbuttonthree').style.color = 'white';document.getElementById('cape_btn').style.backgroundColor = 'white';}">
               <i id="searchbuttonthree" class="fa fa-search" style="color:black;"></i></button>
             <div id="myDropdown" class="dropdown-content">
@@ -49,10 +52,10 @@
         </div>
       </div>
       <!-- <img class="minusImage" data="2" id="closeButton" style="position: fixed;right:1%;top: 1%;margin-top: 4px;width: 30px;filter: invert(100%);" src="./public/images/cross.png"> -->
-      <i class="fas fa-times" id="closeButton" aria-hidden="true" style="color:black;position: fixed;right:0;top: 2px;width: 30px;filter: invert(100%);"></i>
+<!--       <i class="fas fa-times" id="closeButton" aria-hidden="true" style="color:black;position: fixed;right:0;top: 2px;width: 30px;filter: invert(100%);"></i>
       <i class="far fa-window-maximize" id="maxbutton" aria-hidden="true" style="color:black;position: fixed;right:35px;top: 2px;width: 30px;filter: invert(100%);"></i>
       <i class="far fa-window-minimize" id="minbutton" aria-hidden="true" style="color:black;position: fixed;right:70px;top: 0px;width: 30px;filter: invert(100%);"></i>
-
+ -->
     </div>
   </header>
   <body>
@@ -71,11 +74,10 @@
     <img id = "bookmark_icon" src = "./public/images/bookmarkplus.png" style="position: absolute;left:3%;"></img>
 <!--     <input type="number" placeholder="1" id = "bookmark_select_page" style="background:#1486E7;width:30px;" value="1"> -->
     <div class='summarizer'>
-      <button id='getRangeButton' class = "button"><span>Highlight </span></button>
+      <button id='getRangeButton' class = "buttonHighlight"><span>Highlight </span></button>
 <!--       <input type="number" placeholder="1" id = "pageRange" style="background:#1486E7;width:30px;" value="1">
       <input type="number" placeholder="1" id = "topageRange" style="background:#1486E7;width:30px;" value="1"> -->
     </div>
-
 <!--     <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode" style="z-index: 9999 !important; display: flex; justify-content: center; align-items: center; position: absolute !important; font-family: Poppins; top: 88%; left: 80%;">
               <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
     </button> -->
@@ -163,9 +165,9 @@
           <h4>Looking for specific information within the document? Type your questions or  keywords into the search bar on the top right of the screen. Etude will then  display what parts of the document best answer or match your questions.  Simply click on one of the answers and it will take you to that portion of the file!  </h4>
           <br>
           <h1>For more information, contact us at:  </h1>
-          <h4>Email: ​contact@jadetechnologiesllc.com </h4>  
+          <h4>Email: ​etudereaderllc@gmail.com </h4>  
           <h4>Phone Number: 336-529-0307 </h4> 
-          <h4>Etude is a copyrighted product of Jade Technologies LLC.  </h4>
+          <h4>Etude is a copyrighted product of Etude LLC.  </h4>
       </div>
   </div>
 

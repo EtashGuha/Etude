@@ -16,7 +16,7 @@ body{
   display: inline-block;
   width: 46px;
   height: 25px;
-  top:27px;
+  top:37px;
   left:0px;
 }
 
@@ -85,6 +85,8 @@ input:checked + .slider:before {
 .topnav a {
 	float: left;
 	color: #f2f2f2;
+	position:relative;
+	top:8px;
 	text-align: center;
 	padding-right: 4%;
 	padding-left: 4%;
@@ -130,7 +132,7 @@ input:checked + .slider:before {
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-	color: white;
+	color: gray;
 	opacity: 1; /* Firefox */
 }
 
@@ -172,7 +174,7 @@ input::-webkit-inner-spin-button {
 		padding-left: 12px;
 		padding-right: 20px;
 		margin-right: 2px;
-		font-size: 17px;
+		font-size: 14px;
 		border: none;
 		border-radius: 20px 0px 0px 20px;
 		width: 80%;
@@ -526,7 +528,7 @@ img.minusImage:empty
 .mobile-nav-toggle {
   position: absolute;
   left: 10px;
-  top: 10px;
+  top: 20px;
   z-index: 9998;
   border: 0;
   background: none;
@@ -569,6 +571,7 @@ img.minusImage:empty
 
 @media screen and (min-width: 991px) {
 	#etudenavlink {
+		top:8px;
 		margin-left:8%;
 		border-bottom:3px white solid;
 		height:10px;
