@@ -277,7 +277,7 @@ html, body {
     .alertify-button-ok,
     .alertify-button-ok:hover,
     .alertify-button-ok:focus {
-      background-color: #5CB811;
+      background-color: #6600FF;
       border: 1px solid #3B7808;
     }
 
@@ -287,6 +287,7 @@ html, body {
   padding: 15px;
   border-radius: 4px;
   color: #FFF;
+  font-family: Poppins regular;
   text-shadow: -1px -1px 0 rgba(0,0,0,.5);
 }
   .alertify-log-error {
@@ -294,8 +295,7 @@ html, body {
     background: rgba(254,26,0,.9);
   }
   .alertify-log-success {
-    background: #5CB811;
-    background: rgba(92,184,17,.9);
+    background: #6600FF;
   }
 
 
