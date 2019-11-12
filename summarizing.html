@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Summaring PDF</title>
+    <title>Étude</title>
     <link rel='stylesheet' href='./public/css/index.css'>
     <link rel="stylesheet" href="./public/css/bootstrap.min.css">
     <link rel="stylesheet" href="./public/css/style.css">
@@ -23,12 +23,12 @@
       </div>
       <div style="width: 100px;height: 80px;position: fixed;right: 28%;">
         <label class="switch">
-          <button class="button large round success">Success notification</button>
-          <input id = "searchToggle" type="checkbox" checked>
+          <input id = "searchToggle" type="checkbox" onclick="(document.getElementById('searchParent').style.visibility === 'hidden') ? alertify.success('Smart Search Enabled', 1000) : alertify.success('Word Search Enabled', 1000) " checked>
           <span class="slider round"></span>
+          <p style="font-size: 12px;color:white;position: fixed;margin-left:-12px;">Smart Search</p>
         </label>
         <div id = "searchParent" class="search-container" style="position: fixed;left:70%;width:30%;top:10px;">
-            <input type="text" placeholder="Search.." name="search" id = "questionVal" style="height: 37.2px;outline-width: 0px;position:absolute;">
+            <input type="text" placeholder="Ask any question about the document..." name="search" id = "questionVal" style="height: 37.2px;outline-width: 0px;position:absolute;">
             <button id = "cape_btn" class="dropbtn" style="width:37.2px;height:37.2px;padding-top:0px;padding-bottom:0px;outline-width: 0px;margin-left:0px;position:absolute;left:calc(80% - 16px);" onclick="{document.getElementById('searchloader').style.display = 'block';document.getElementById('searchbuttonthree').style.color = 'white';document.getElementById('cape_btn').style.backgroundColor = 'white';}">
               <i id="searchbuttonthree" class="fa fa-search" style="color:black;"></i></button>
             <div id="myDropdown" class="dropdown-content">
@@ -43,9 +43,9 @@
                 <button class="toolbarButton pageUp prevanswer" title="Previous Answer">
                   <img src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"
                 </button> -->
-              <button id="arrowleftbutton"><img class="answerarrow arrowleft" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png"></button>
+              <button id="arrowleftbutton"><img class="answerarrow arrowleft" style="padding:5px;width:25px;height:25px;" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png"></button>
               <button id="closesearchbutton">Close</button>
-              <button id="arrowrightbutton"><img class="answerarrow arrowright" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"></button>
+              <button id="arrowrightbutton"><img class="answerarrow arrowright" style="padding:5px;width:25px;height:25px;" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"></button>
               </div>
             </div>
             <div id="searchloader" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
@@ -165,9 +165,9 @@
           <h4>Looking for specific information within the document? Type your questions or  keywords into the search bar on the top right of the screen. Etude will then  display what parts of the document best answer or match your questions.  Simply click on one of the answers and it will take you to that portion of the file!  </h4>
           <br>
           <h1>For more information, contact us at:  </h1>
-          <h4>Email: ​contact@jadetechnologiesllc.com </h4>  
+          <h4>Email: ​etudereaderllc@gmail.com </h4>  
           <h4>Phone Number: 336-529-0307 </h4> 
-          <h4>Etude is a copyrighted product of Jade Technologies LLC.  </h4>
+          <h4>Etude is a copyrighted product of Etude LLC.  </h4>
       </div>
   </div>
 

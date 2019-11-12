@@ -17,7 +17,7 @@ console.log(currpathtofile)
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 var fs = require('fs');
 var options = {
-    name: 'Etude'
+    name: 'Étude'
 };
 var unpackedDirectory = etudeFilepath.replace("app.asar", "app.asar.unpacked")
 const analytics = require('electron-google-analytics');
@@ -66,7 +66,10 @@ ipcMain.on('get-file-data', function(event) {
 // });
 
 function createWindow() {
-    
+    let framebool = true;
+    if (process.platform == 'win32') {
+        framebool = false;
+    }
     const {
         width,
         height
@@ -76,7 +79,7 @@ function createWindow() {
         width: width,
         minWidth: 600,
         minHeight: 200,
-        frame: false,
+        frame: framebool,
         backgroundColor: '#ffffff',
         webPreferences: {
             nodeIntegration: true
@@ -122,12 +125,11 @@ function createWindow() {
     analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
         return response;
     });
-    mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
     setTimeout(() => {
         mainWindow.loadFile('library.html')
     }, 1000);
 
-    mainWindow.webContents.openDevTools()
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {
