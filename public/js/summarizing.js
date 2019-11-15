@@ -30,6 +30,8 @@ var tokenizer = new Tokenizer('Chuck');
 const viewerEle = document.getElementById('viewer');
 viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
+console.log("Entering summarinzg js")
+console.log(require('electron').remote.getGlobal('sharedObject').someProperty)
 iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}`);
 console.log(iframe.src)
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")

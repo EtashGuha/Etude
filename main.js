@@ -35,22 +35,49 @@ global.sharedObject = {
 ipcMain.on('show_pdf_message', (event, arg) => {
     sharedObject.someProperty = arg
 })
+app.on('activate', function() {
+    console.log("ACTIVATING")
+})
+console.log(global)
+// app.requestSingleInstanceLock()
+
+// app.on('second-instance', (event, commandLine, workingDirectory) => {
+//         // Someone tried to run a second instance, we should focus our window.
+//         console.log("HERERERER")
+//         console.log(event)
+
+// })
+
+// app.on('session-created', (event, session) => {
+//         console.log("SESSION CREATED")
+//         console.log(event)
+//         console.log("I WONDER")
+//       console.log(session)
+//     })
 
 app.on('ready', function() {
     createWindow()
 });
 
+console.log("Openning")
+
+
 app.on('will-finish-launching', function() {
     app.on('open-file', function(ev, path) {
+        console.log("AGain!")
+        console.log("new path")
         ev.preventDefault();
+
         currpathtofile = path;
+        sharedObject.someProperty = path;
+        mainWindow.loadFile('summarizing.html')
     });
 });
 
 ipcMain.on('get-file-data', function(event) {
-  var data = null
-  event.returnValue = currpathtofile
-  currpathtofile = null
+    var data = null
+    event.returnValue = currpathtofile
+    currpathtofile = null
 })
 
 // ipcMain.on('getMouseMove', function(event) {
@@ -121,11 +148,14 @@ function createWindow() {
     if (!fs.existsSync(userDataPath + "/folderForHighlightedPDF")) {
         fs.mkdirSync(userDataPath + "/folderForHighlightedPDF")
     }
+    console.log("Printing out window")
+    console.log(mainWindow)
+    console.log(mainWindow.location)
     //This is google analytics stuff
     analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
         return response;
     });
-    // mainWindow.webContents.openDevTools()
+    mainWindow.webContents.openDevTools()
     setTimeout(() => {
         mainWindow.loadFile('library.html')
     }, 1000);
@@ -143,7 +173,6 @@ function createWindow() {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-
 
 
 
@@ -165,4 +194,3 @@ app.on('activate', function() {
 module.exports = userDataPath
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-  

@@ -44,6 +44,7 @@ currSet.forEach(function(value) {
 		counter = counter + 1;
 	
 });
+console.log(window)
 
 
 // for (var j = 0; j < currSet.size; j++) {
