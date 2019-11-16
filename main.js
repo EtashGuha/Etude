@@ -71,24 +71,24 @@ app.on('will-finish-launching', function() {
         currpathtofile = path;
         sharedObject.someProperty = path;
         let framebool = true;
-    if (process.platform == 'win32') {
-        framebool = false;
-    }
-    const {
-        width,
-        height
-    } = electron.screen.getPrimaryDisplay().workAreaSize
-    mainWindow = new BrowserWindow({
-        height: height,
-        width: width,
-        minWidth: 600,
-        minHeight: 200,
-        frame: framebool,
-        backgroundColor: '#ffffff',
-        webPreferences: {
-            nodeIntegration: true
-        },
-        icon: 'assets/images/logo.jpg',
+        if (process.platform == 'win32') {
+            framebool = false;
+        }
+        const {
+            width,
+            height
+        } = electron.screen.getPrimaryDisplay().workAreaSize
+        mainWindow = new BrowserWindow({
+            height: height,
+            width: width,
+            minWidth: 600,
+            minHeight: 200,
+            frame: framebool,
+            backgroundColor: '#ffffff',
+            webPreferences: {
+                nodeIntegration: true
+            },
+            icon: 'assets/images/logo.jpg',
         })
 
         autoUpdater.checkForUpdatesAndNotify();
@@ -133,8 +133,8 @@ app.on('will-finish-launching', function() {
             return response;
         });
         mainWindow.webContents.openDevTools()
-            mainWindow.loadFile('summarizing.html')
-        });
+        mainWindow.loadFile('summarizing.html')
+    });
 });
 
 ipcMain.on('get-file-data', function(event) {
