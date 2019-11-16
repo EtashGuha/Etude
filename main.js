@@ -29,28 +29,98 @@ var ready = false
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 global.sharedObject = {
-    someProperty: ''
+    someProperty: '',
+    newWindow: false
 }
 
 ipcMain.on('show_pdf_message', (event, arg) => {
     sharedObject.someProperty = arg
 })
+app.on('activate', function() {
+    console.log("ACTIVATING")
+})
+console.log(global)
 
 app.on('ready', function() {
     createWindow()
 });
 
+console.log("Openning")
+
+
 app.on('will-finish-launching', function() {
     app.on('open-file', function(ev, path) {
+        console.log("AGain!")
+        console.log("new path")
         ev.preventDefault();
+
         currpathtofile = path;
+        sharedObject.someProperty = path;
+        let framebool = true;
+        if (process.platform == 'win32') {
+            framebool = false;
+        }
+        const {
+            width,
+            height
+        } = electron.screen.getPrimaryDisplay().workAreaSize
+        mainWindow = new BrowserWindow({
+            height: height,
+            width: width,
+            minWidth: 600,
+            minHeight: 200,
+            frame: framebool,
+            backgroundColor: '#ffffff',
+            webPreferences: {
+                nodeIntegration: true
+            },
+            icon: 'assets/images/logo.jpg',
+        })
+
+        autoUpdater.checkForUpdatesAndNotify();
+
+        function sendStatusToWindow(text) {
+            mainWindow.webContents.send('message', text);
+        }
+        autoUpdater.on('checking-for-update', () => {
+            sendStatusToWindow('Checking for update...');
+        })
+        autoUpdater.on('update-available', (info) => {
+            sendStatusToWindow('Update available.');
+        })
+        autoUpdater.on('update-not-available', (info) => {
+            sendStatusToWindow('Update not available.');
+        })
+        autoUpdater.on('error', (err) => {
+            sendStatusToWindow('Error in auto-updater. ' + err);
+        })
+        autoUpdater.on('download-progress', (progressObj) => {
+            let log_message = "Download speed: " + progressObj.bytesPerSecond;
+            log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+            log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+            sendStatusToWindow(log_message);
+        })
+        autoUpdater.on('update-downloaded', (info) => {
+            sendStatusToWindow('Update downloaded');
+            autoUpdater.quitAndInstall();
+        });
+        mainWindow.loadFile('splash.html')
+        console.log("Printing out window")
+        console.log(mainWindow)
+        console.log(mainWindow.location)
+        //This is google analytics stuff
+        analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
+            return response;
+        });
+        // mainWindow.webContents.openDevTools()
+        sharedObject.newWindow = true
+        mainWindow.loadFile('summarizing.html')
     });
 });
-
 ipcMain.on('get-file-data', function(event) {
-  var data = null
-  event.returnValue = currpathtofile
-  currpathtofile = null
+    var data = null
+    event.returnValue = currpathtofile
+    currpathtofile = null
 })
 
 // ipcMain.on('getMouseMove', function(event) {
@@ -121,6 +191,9 @@ function createWindow() {
     if (!fs.existsSync(userDataPath + "/folderForHighlightedPDF")) {
         fs.mkdirSync(userDataPath + "/folderForHighlightedPDF")
     }
+    console.log("Printing out window")
+    console.log(mainWindow)
+    console.log(mainWindow.location)
     //This is google analytics stuff
     analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
         return response;
@@ -146,7 +219,6 @@ function createWindow() {
 
 
 
-
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
     // On macOS it is common for applications and their menu bar
@@ -165,4 +237,3 @@ app.on('activate', function() {
 module.exports = userDataPath
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-  
