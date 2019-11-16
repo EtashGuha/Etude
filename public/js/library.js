@@ -9,7 +9,6 @@ var store = new Store();
 const {
 	ipcRenderer
 } = require('electron');
-var typeOf = require('typeof');
 const remote = require('electron').remote;
 var win = remote.BrowserWindow.getFocusedWindow();
 var currSet;
@@ -27,7 +26,8 @@ var __PDF_DOC,
 	__PAGE_RENDERING_IN_PROGRESS = 0,
 	index = 0;
 var data = ipcRenderer.sendSync('get-file-data')
-if (data ===  null) {
+console.log(remote.getGlobal('sharedObject').newWindow)
+if (data ===  null || remote.getGlobal('sharedObject').newWindow) {
     console.log("There is no file")
 } else {
     // Do something with the file.
@@ -35,8 +35,6 @@ if (data ===  null) {
 		window.location.href = 'summarizing.html';
 }
 var counter = 0;
-console.log(store)
-console.log(typeOf(currSet))
 currSet.forEach(function(value) {
 	
 		show_nextItem(value, counter.toString());

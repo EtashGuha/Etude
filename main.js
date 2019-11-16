@@ -29,7 +29,8 @@ var ready = false
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 global.sharedObject = {
-    someProperty: ''
+    someProperty: '',
+    newWindow: false
 }
 
 ipcMain.on('show_pdf_message', (event, arg) => {
@@ -39,21 +40,6 @@ app.on('activate', function() {
     console.log("ACTIVATING")
 })
 console.log(global)
-// app.requestSingleInstanceLock()
-
-// app.on('second-instance', (event, commandLine, workingDirectory) => {
-//         // Someone tried to run a second instance, we should focus our window.
-//         console.log("HERERERER")
-//         console.log(event)
-
-// })
-
-// app.on('session-created', (event, session) => {
-//         console.log("SESSION CREATED")
-//         console.log(event)
-//         console.log("I WONDER")
-//       console.log(session)
-//     })
 
 app.on('ready', function() {
     createWindow()
@@ -119,12 +105,6 @@ app.on('will-finish-launching', function() {
             autoUpdater.quitAndInstall();
         });
         mainWindow.loadFile('splash.html')
-        if (!fs.existsSync(userDataPath + "/tmp")) {
-            fs.mkdirSync(userDataPath + "/tmp")
-        }
-        if (!fs.existsSync(userDataPath + "/folderForHighlightedPDF")) {
-            fs.mkdirSync(userDataPath + "/folderForHighlightedPDF")
-        }
         console.log("Printing out window")
         console.log(mainWindow)
         console.log(mainWindow.location)
@@ -133,10 +113,10 @@ app.on('will-finish-launching', function() {
             return response;
         });
         mainWindow.webContents.openDevTools()
+        sharedObject.newWindow = true
         mainWindow.loadFile('summarizing.html')
     });
 });
-
 ipcMain.on('get-file-data', function(event) {
     var data = null
     event.returnValue = currpathtofile

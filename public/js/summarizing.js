@@ -9,21 +9,12 @@ const Store = require('electron-store');
 const store = new Store();
 var win = remote.BrowserWindow.getFocusedWindow();
 const path = require('path');
-const log = require('electron-log');
-const fs = require('fs');
-log.info('Hello, log for the first time');
-var typeOf = require('typeof');
-const os = require('os')
-const windowFrame = require('electron-titlebar')
-var osvers = os.platform()
-console.log(osvers)
 var textData = null;
 var bookmarkArray = [];
 var Worker = require("tiny-worker");
 const electron = require("electron")
 const userDataPath = (electron.app || electron.remote.app).getPath('userData');
 console.log("USER DATA PATH: " + userDataPath)
-var tools = require('./createFile/coordinates.js')
 var bookmarkArray = [];
 var Tokenizer = require('sentence-tokenizer');
 var tokenizer = new Tokenizer('Chuck');
@@ -61,7 +52,8 @@ document.getElementById('searchbuttonthree').style.color = 'white';
 document.getElementById('cape_btn').style.backgroundColor = 'white';
 
 var textForEachPage;
-
+console.log("val of item")
+console.log(remote.getGlobal('sharedObject').newWindow)
 pdfToHtmlWorker.onmessage = function(ev) {
 	enableEtude();
 	console.log(ev);
