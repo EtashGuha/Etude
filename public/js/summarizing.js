@@ -15,6 +15,7 @@ var Worker = require("tiny-worker");
 const electron = require("electron")
 const userDataPath = (electron.app || electron.remote.app).getPath('userData');
 console.log("USER DATA PATH: " + userDataPath)
+const windowFrame = require('electron-titlebar')
 var bookmarkArray = [];
 var Tokenizer = require('sentence-tokenizer');
 var tokenizer = new Tokenizer('Chuck');
