@@ -112,7 +112,7 @@ app.on('will-finish-launching', function() {
         analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
             return response;
         });
-        mainWindow.webContents.openDevTools()
+        // mainWindow.webContents.openDevTools()
         sharedObject.newWindow = true
         mainWindow.loadFile('summarizing.html')
     });
@@ -198,7 +198,7 @@ function createWindow() {
     analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
         return response;
     });
-    mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
     setTimeout(() => {
         mainWindow.loadFile('library.html')
     }, 1000);
