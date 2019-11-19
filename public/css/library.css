@@ -257,6 +257,10 @@ input::-webkit-inner-spin-button {
 	font-size: 1.5rem;
 }
 
+#electron-titlebar {
+	position: fixed !important;
+	z-index: 99 !important;
+}
 
 	/* Add a black background color to the top navigation */
 

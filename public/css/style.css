@@ -588,6 +588,6 @@ img.minusImage:empty
 
 
 #electron-titlebar {
-	position: fixed;
-	z-index: 99;
+	position: fixed !important;
+	z-index: 99 !important;
 }
