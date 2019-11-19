@@ -78,12 +78,15 @@ PDFJS.getDocument({
 }).then(function(pdf_doc) {
 	__PDF_DOC = pdf_doc;
 	numPages = __PDF_DOC.numPages;
+	sumrange = document.getElementById("topageRange");
+	sumrange.value = numPages;
 });
 console.log(numPages)
 
 const {
 	ipcRenderer
 } = require('electron');
+
 
 
 
