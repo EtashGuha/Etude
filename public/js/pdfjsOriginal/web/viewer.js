@@ -34,15 +34,19 @@ var firstPassThrough = true;
 // 	console.log(ipcRenderer.sendSync('getMouseMove'));
 // });
 
-
-let ranges = JSON.parse(sessionStorage.getItem('ranges')) || [];
+const filePath = encodeURIComponent(new URLSearchParams(document.location.search).get('file'));
+const store = window.parent.store; let ranges;
+try {
+	ranges = JSON.parse(store.get(`ranges:${filePath}`)) || [];
+} catch (e) {
+	ranges = [];
+}
 
 function addRangeToPage(r, pageIdx) {
 	if (!ranges[pageIdx]) ranges[pageIdx] = [];
 	ranges[pageIdx].push(r);
 	ranges[pageIdx] = mergeRanges(ranges[pageIdx]);
-	// Persist changes
-	sessionStorage.setItem('ranges', JSON.stringify(ranges));
+	store.set(`ranges:${filePath}`, JSON.stringify(ranges));
 }
 
 function mergeRanges(rs) {
@@ -11285,7 +11289,7 @@ function areArgsValid(mainString, targetStrings) {
 					document.dispatchEvent(new Event('funcready'));
 					PDFViewerApplication.eventBus.on('safetojump', jumpToNextMatch);
 					PDFViewerApplication.eventBus.on('textlayerrendered', ({ pageNumber }) => {
-						highlightSelectedText(pageNumber);
+						// highlightSelectedText(pageNumber);
 					});
 
 					return _possibleConstructorReturn(this, _getPrototypeOf(PDFViewer).apply(this, arguments));
