@@ -4,44 +4,58 @@ const {
 const { shell } = require('electron')
 const path = require('path');
 const Store = require('electron-store');
+const windowFrame = require('electron-titlebar')
 var store = new Store();
 const {
 	ipcRenderer
 } = require('electron');
 const remote = require('electron').remote;
 var win = remote.BrowserWindow.getFocusedWindow();
-//store.clear();
-console.log(store)
-console.log(__dirname)
+var currSet;
+console.log(store.store)
+if(store.has("libraryStore")){
+	currSet = new Set(store.get("libraryStore"))
+} else {
+	currSet = new Set();
+}
 console.log(require('root-require')('package.json').version);
 var i = store.size;
-
 var __PDF_DOC,
 	__CURRENT_PAGE,
 	__TOTAL_PAGES,
 	__PAGE_RENDERING_IN_PROGRESS = 0,
 	index = 0;
-console.log(process.argv)
 var data = ipcRenderer.sendSync('get-file-data')
-if (data ===  null) {
+console.log(remote.getGlobal('sharedObject').newWindow)
+if (data ===  null || remote.getGlobal('sharedObject').newWindow) {
     console.log("There is no file")
 } else {
     // Do something with the file.
     	ipcRenderer.send('show_pdf_message', data);
 		window.location.href = 'summarizing.html';
 }
+var counter = 0;
+currSet.forEach(function(value) {
+	
+		show_nextItem(value, counter.toString());
+		showPDF_fresh(value, counter);
+		counter = counter + 1;
+	
+});
+console.log(window)
 
-for (var j = 0; j < i; j++) {
-	// var j = 0;
-	try {
-		show_nextItem(store.get(j.toString()), j.toString());
-		console.log(store.get(j.toString()));
-		showPDF_fresh(store.get(j.toString()), j);
-	} catch (err) {
-		console.log("nah")
-	}
 
-}
+// for (var j = 0; j < currSet.size; j++) {
+// 	// var j = 0;
+// 	try {
+// 		show_nextItem(store.get(j.toString()), j.toString());
+	 
+// 		showPDF_fresh(store.get(j.toString()), j);
+// 	} catch (err) {
+// 		console.log("nah")
+// 	}
+
+// }
 document.getElementById('myButton').addEventListener('click', () => {
 	dialog.showOpenDialog({
 		properties: ['openFile'], // set to use openFileDialog
@@ -51,14 +65,14 @@ document.getElementById('myButton').addEventListener('click', () => {
 		}] // limit the picker to just pdfs
 	}, (filepaths) => {
 		var filePath = filepaths[0];
-		console.log(filePath);
-		// var sssss = filePath.replace(/\s/g, "");
-		// filePath = sssss;
-		// console.log(sssss);
-		// console.log("I printed sssssss above");
-		console.log(filePath);
-		show_nextItem(filePath, i.toString());
-		showPDF(filePath);
+		if(!currSet.has(filePath)){
+			currSet.add(filePath)
+			console.log(Array.from(currSet))
+			store.set("libraryStore", Array.from(currSet))
+			console.log(store.store)
+			show_nextItem(filePath, i.toString());
+			showPDF(filePath);
+		}
 	})
 
 })
@@ -82,10 +96,7 @@ function showPDF(pdf_url) {
 	}).then(function(pdf_doc) {
 		__PDF_DOC = pdf_doc;
 		__TOTAL_PAGES = __PDF_DOC.numPages;
-		// Show the first page
 		showPage(1);
-		store.set(i.toString(), pdf_url);
-		i++;
 	}).catch(function(error) {
 		alert(error.message);
 	});;
@@ -97,10 +108,7 @@ function showPDF_fresh(pdf_url, num) {
 	}).then(function(pdf_doc) {
 		__PDF_DOC = pdf_doc;
 		__TOTAL_PAGES = __PDF_DOC.numPages;
-		// Show the first page
 		showPage_fresh(1, num);
-		//  store.set(i.toString(),pdf_url);
-		// i++; 
 	}).catch(function(error) {
 		alert(error.message);
 	});;
@@ -114,8 +122,6 @@ function showPage(page_no) {
 	__PDF_DOC.getPage(page_no).then(function(page) {
 		var __CANVAS = $('.pdf-canvas').get($(".pdf-canvas").length - 1),
 			__CANVAS_CTX = __CANVAS.getContext('2d');
-		// const viewerEle = document.getElementsByClassName('pdf-canvas')[$(".pdf-canvas").length-1];
-		// As the canvas is of a fixed width we need to set the scale of the viewport accordingly
 		var scale_required = __CANVAS.width / page.getViewport(1).width;
 
 		// Get viewport of the page at required scale
@@ -132,18 +138,7 @@ function showPage(page_no) {
 		// Render the page contents in the canvas
 		page.render(renderContext).then(function() {
 			__PAGE_RENDERING_IN_PROGRESS = 0;
-
-			// Re-enable Prev & Next buttons
-			// $("#pdf-next, #pdf-prev").removeAttr('disabled');
-
-			// Show the canvas and hide the page loader
 			$(".pdf-canvas").show();
-			// $("#page-loader").hide();
-			//$(".book_section").children("img").last().remove();
-
-			// $('.plusImage').hide();
-			// $('.plusImage').removeClass("plusImage");
-			// show_nextItem();
 
 		});
 		// index++;
@@ -154,12 +149,11 @@ function showPage_fresh(page_no, num) {
 	__PAGE_RENDERING_IN_PROGRESS = 1;
 	__CURRENT_PAGE = page_no;
 
+
 	// Fetch the page
 	__PDF_DOC.getPage(page_no).then(function(page) {
 		var __CANVAS = $('.pdf-canvas').get(num),
 			__CANVAS_CTX = __CANVAS.getContext('2d');
-		// const viewerEle = document.getElementsByClassName('pdf-canvas')[$(".pdf-canvas").length-1];
-		// As the canvas is of a fixed width we need to set the scale of the viewport accordingly
 		var scale_required = __CANVAS.width / page.getViewport(1).width;
 
 		// Get viewport of the page at required scale
@@ -177,53 +171,49 @@ function showPage_fresh(page_no, num) {
 		page.render(renderContext).then(function() {
 			__PAGE_RENDERING_IN_PROGRESS = 0;
 
-			// Re-enable Prev & Next buttons
-			// $("#pdf-next, #pdf-prev").removeAttr('disabled');
-
-			// Show the canvas and hide the page loader
 			$(".pdf-canvas").show();
-			// $("#page-loader").hide();
-			//$(".book_section").children("img").last().remove();
-
-			// $('.plusImage').hide();
-			// $('.plusImage').removeClass("plusImage");
-			// show_nextItem();
-
 		});
-		// index++;
 	});
 }
 
 function show_nextItem(pdf_path, removeWhich) {
 	// var name = pdf_path.split('/');
-	console.log(pdf_path);
-	console.log("inside insde the show_nextItem");
 	// we get the name of the pdf
 	var filenamewithextension = path.parse(pdf_path).base;
+	console.log(pdf_path)
+	pdf_pathNext = replaceAll(pdf_path, " ", "?*?")
+	console.log(pdf_pathNext)
 	var filename = filenamewithextension.split('.')[0];
-	console.log(filename);
-	var next_text = "<div class='col-md-2 book_section'><div><center><canvas class='pdf-canvas' data ='" + pdf_path + "' id = 'viewer'></canvas><img class = 'minusImage' data =" + removeWhich + " id = 'myButton' src='./public/images/cross.png'/><p style = 'width: 200px; word-break: break-all;'>" + filename + "</p></center></div></div>";
+	var next_text = "<div class='col-md-2 book_section'><div><center><canvas class='pdf-canvas' data ='" + pdf_pathNext + "' id = 'viewer'></canvas><img class = 'minusImage' data =" + pdf_pathNext + " id = 'myButton' src='./public/images/cross.png'/><p style = 'width: 200px; word-break: break-all;'>" + filename + "</p></center></div></div>";
 	var next_div = document.createElement("div");
 	next_div.innerHTML = next_text;
+	console.log(next_div.innerHTML)
 	document.getElementById('container').append(next_div);
+}
+
+function replaceAll(str, find, replace) {
+    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+
+function escapeRegExp(str) {
+    return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 }
 
 //when the user select the pdf
 $(document).on("click", ".pdf-canvas", function() {
 	console.log($(this).attr("data"));
 	console.log("above you clicked sth");
-	ipcRenderer.send('show_pdf_message', $(this).attr("data"));
+	var realPDFPath = replaceAll($(this).attr("data"), "?*?", " ")
+	ipcRenderer.send('show_pdf_message', realPDFPath);
 	window.location.href = 'summarizing.html';
 });
 // when the user click the minus button
 $(document).on("click", ".minusImage", function() {
 	($(this).parent()).parent().parent().remove();
+	var pdf_path = ($(this).attr("data"));
+	pdf_path = replaceAll(pdf_path, "?*?", " ")
 	//delete it in the store
-	store.delete($(this).attr("data"));
-	// sort the store
-	for (var k = parseInt($(this).attr("data")); k < store.size; k++) {
-		store.set(k.toString(), store.get((k + 1).toString()));
-		store.delete((k + 1).toString());
-	}
-
+	currSet.delete(pdf_path)
+	console.log(currSet)
+	store.set("libraryStore", Array.from(currSet))
 });
