@@ -34,13 +34,11 @@ var firstPassThrough = true;
 // 	console.log(ipcRenderer.sendSync('getMouseMove'));
 // });
 
+const store = window.parent.store;
 const filePath = encodeURIComponent(new URLSearchParams(document.location.search).get('file'));
-const store = window.parent.store; let ranges;
-try {
-	ranges = JSON.parse(store.get(`ranges:${filePath}`)) || [];
-} catch (e) {
-	ranges = [];
-}
+let ranges = store.get(`ranges:${filePath}`) || '[]';
+ranges = JSON.parse(ranges);
+console.log(ranges);
 
 function addRangeToPage(r, pageIdx) {
 	if (!ranges[pageIdx]) ranges[pageIdx] = [];
@@ -198,9 +196,10 @@ function highlightSelectedText(i) {
 
 function updateCustomHighlight() {
 	let [pageStart, pageEnd] = updateRanges();
-	for (let i = pageStart; i <= pageEnd; i++) {
-		highlightSelectedText(i);
-	}
+	// Update affected pages immediately
+	// for (let i = pageStart; i <= pageEnd; i++) {
+	// 	highlightSelectedText(i);
+	// }
 }
 
 document.addEventListener('mouseup', updateCustomHighlight);
