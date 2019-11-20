@@ -7,7 +7,6 @@ var map = new HashMap();
 const remote = require('electron').remote;
 const Store = require('electron-store');
 const store = new Store();
-window.store = store;
 var win = remote.BrowserWindow.getFocusedWindow();
 const path = require('path');
 var textData = null;

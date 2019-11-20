@@ -34,17 +34,16 @@ var firstPassThrough = true;
 // 	console.log(ipcRenderer.sendSync('getMouseMove'));
 // });
 
-const store = window.parent.store;
-const filePath = encodeURIComponent(new URLSearchParams(document.location.search).get('file'));
-let ranges = store.get(`ranges:${filePath}`) || '[]';
-ranges = JSON.parse(ranges);
-console.log(ranges);
+const Store = window.parent.require('electron-store');
+const store = new Store();
+const filePath = btoa(new URLSearchParams(document.location.search).get('file'));
+let ranges = store.get(`ranges.${filePath}`) || [];
 
 function addRangeToPage(r, pageIdx) {
 	if (!ranges[pageIdx]) ranges[pageIdx] = [];
 	ranges[pageIdx].push(r);
 	ranges[pageIdx] = mergeRanges(ranges[pageIdx]);
-	store.set(`ranges:${filePath}`, JSON.stringify(ranges));
+	store.set(`ranges.${filePath}`, ranges);
 }
 
 function mergeRanges(rs) {
