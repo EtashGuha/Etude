@@ -2,7 +2,6 @@ const {
 	dialog
 } = require('electron').remote;
 const { shell } = require('electron')
-const path = require('path');
 const Store = require('electron-store');
 const windowFrame = require('electron-titlebar')
 var store = new Store();
@@ -42,7 +41,7 @@ currSet.forEach(function(value) {
 		counter = counter + 1;
 	
 });
-console.log(window)
+
 
 
 // for (var j = 0; j < currSet.size; j++) {
