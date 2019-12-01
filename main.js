@@ -13,7 +13,6 @@ var currpathtofile = null;
 if (process.platform == 'win32' && process.argv.length >= 2 && process.argv[1] !== ".") {
     currpathtofile = process.argv[1]
 }
-console.log(currpathtofile)
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 var fs = require('fs');
 var options = {
@@ -36,22 +35,16 @@ global.sharedObject = {
 ipcMain.on('show_pdf_message', (event, arg) => {
     sharedObject.someProperty = arg
 })
-app.on('activate', function() {
-    console.log("ACTIVATING")
-})
-console.log(global)
+
 
 app.on('ready', function() {
     createWindow()
 });
 
-console.log("Openning")
 
 
 app.on('will-finish-launching', function() {
     app.on('open-file', function(ev, path) {
-        console.log("AGain!")
-        console.log("new path")
         ev.preventDefault();
 
         currpathtofile = path;
@@ -105,9 +98,6 @@ app.on('will-finish-launching', function() {
             autoUpdater.quitAndInstall();
         });
         mainWindow.loadFile('splash.html')
-        console.log("Printing out window")
-        console.log(mainWindow)
-        console.log(mainWindow.location)
         //This is google analytics stuff
         analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
             return response;
@@ -185,15 +175,6 @@ function createWindow() {
         autoUpdater.quitAndInstall();
     });
     mainWindow.loadFile('splash.html')
-    if (!fs.existsSync(userDataPath + "/tmp")) {
-        fs.mkdirSync(userDataPath + "/tmp")
-    }
-    if (!fs.existsSync(userDataPath + "/folderForHighlightedPDF")) {
-        fs.mkdirSync(userDataPath + "/folderForHighlightedPDF")
-    }
-    console.log("Printing out window")
-    console.log(mainWindow)
-    console.log(mainWindow.location)
     //This is google analytics stuff
     analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
         return response;
