@@ -11107,6 +11107,10 @@ function areArgsValid(mainString, targetStrings) {
 						// console.log(_index)
 						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
 					}
+
+					window.jumpToPage = function(idx) {
+						PDFViewerApplication.pdfViewer.currentPageNumber = idx
+					}
 					window.getHtml = function() {
 						// for(var i = 0; i < PDFViewerApplication.pdfViewer._pages.length; i++) {
 						// 	// console.log(i)
