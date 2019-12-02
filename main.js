@@ -10,8 +10,12 @@ const {
     autoUpdater
 } = require("electron-updater");
 var currpathtofile = null;
+var fileOpen = false;
+
 if (process.platform == 'win32' && process.argv.length >= 2 && process.argv[1] !== ".") {
     currpathtofile = process.argv[1]
+    fileOpen = true;
+
 }
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 var fs = require('fs');
@@ -32,7 +36,6 @@ global.sharedObject = {
     newWindow: false
 }
 
-var fileOpen = false;
 
 ipcMain.on('show_pdf_message', (event, arg) => {
     console.log("OPENNING A PDF")
