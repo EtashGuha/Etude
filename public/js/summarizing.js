@@ -301,7 +301,6 @@ function processSummarizationResult(t) {
 function summaryButtonPressed(firstpage, lastpage) {
 	var getpdftext = getPDFText(firstpage, lastpage)
 	getpdftext.then((x) => {
-		console.log(x);
 		deepai.callStandardApi("summarization", {
 			text: x
 		}).then((resp) => processSummarizationResult(resp))

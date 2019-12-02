@@ -5,6 +5,7 @@ const { shell } = require('electron')
 const Store = require('electron-store');
 const windowFrame = require('electron-titlebar')
 var store = new Store();
+var path = require("path")
 const {
 	ipcRenderer
 } = require('electron');
