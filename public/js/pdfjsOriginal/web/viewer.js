@@ -7617,7 +7617,9 @@ function areArgsValid(mainString, targetStrings) {
 									matchIdx = pageContent.indexOf(subquery, matchIdx + subqueryLen);
 									// console.log(matchIdx)
 								} else {
-									var bestAnswer = findBestMatch(subquery, pageContent.split(".")).bestMatch
+									var bestAnswer = findBestMatch(subquery, pageContent.split(". ").filter(function (el) {
+												  return (el != null && el != undefined && el.length >5);
+												})).bestMatch
 									matchIdx = pageContent.indexOf(bestAnswer.target, matchIdx + subqueryLen);
 									if (bestMatchRatings[i] === undefined || bestMatchRatings[i] < bestAnswer.rating) {
 										bestMatchRatings[i] = bestAnswer.rating

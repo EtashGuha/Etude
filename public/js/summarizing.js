@@ -4,6 +4,7 @@ const {
 const { shell } = require('electron')
 var HashMap = require('hashmap');
 var map = new HashMap();
+var outline = {};
 const remote = require('electron').remote;
 const Store = require('electron-store');
 const store = new Store();
@@ -431,26 +432,122 @@ function getLayeredText() {
 	return new Promise(function(resolve, reject) {
 		console.log("Inside of getLayeredText")
 		map.clear()
+		outline = {};
 		var pdfdoc = iframe.contentWindow.getPdfDocument()
 		var lastPromise; // will be used to chain promises
 		lastPromise = pdfdoc.getMetadata().then(function(data) {
 		});
 
+
+
+		variousTOC = ["Contents", "Table of Content", "CONTENTS", "TABLE OF CONTENT", "CONTENT", "Content", "Table Of Content"]
+		var foundTOC = -1;
+		var foundTOCsize = -1;
+		var foundTOCLowSize = -1;
+		var foundTOCendpage = -1;
+
 		var loadPage = function(pageNum) {
 			return pdfdoc.getPage(pageNum).then(function(page) {
 				return page.getTextContent().then(function(content) {
+
+
 					var strings = content.items.map(function(item) {
 						if(map.get(Math.round(item.height))) {
-							map.set(Math.round(item.height), map.get(Math.round(item.height)) + item.str.length);
+							map.set(Math.round(item.height), map.get(Math.round(item.height)) + item.str);
 						} else {
-							map.set(Math.round(item.height), item.str.length)
+							map.set(Math.round(item.height), item.str)
 						}
+						var newKey = pageNum.toString();
+						//console.log(pageNum.toString());
+						
+
+						if(foundTOC === -1 && pageNum < 50) {
+							variousTOC.forEach((tocTry) => {
+								if(item.str.indexOf(tocTry) !== -1) {
+									foundTOC = pageNum
+									foundTOCsize = Math.round(item.height)
+									console.log("WOOOOOOOOOOOOOOOOOOOOOOOOOOOOO" + pageNum.toString())
+								}
+							});
+						}
+						//console.log(pageNum + " IS PGNUM " + foundTOC + "is 1 more" + newKey)
+						// if(foundTOCLowSize === -1 && foundTOC + 1 <= pageNum && outline[newKey] !== undefined) {
+						// 	console.log("Looking for next lowest size")
+						// 	outline[newKey].forEach((blockThing)=> {
+						// 		if (blockThing.fontSize > foundTOCLowSize) {
+						// 			console.log(blockThing.fontSize + "IS BIGGER" + pageNum)
+						// 			foundTOCLowSize = blockThing.fontSize;
+						// 		}
+						// 	});
+						// }
+						if(foundTOCendpage === -1 && foundTOCsize !== -1 && foundTOC + 1 <= pageNum) {
+							if(Math.round(item.height) === foundTOCsize) {
+								foundTOCendpage = pageNum;
+								//console.log(item.str + " " + pageNum)
+							}
+						}
+
+
+
+
+						if(foundTOC !== -1 && pageNum >= foundTOC && (foundTOCendpage === -1 || pageNum < foundTOCendpage)) {
+							if(outline[newKey] !== undefined && outline[newKey] !== null) {
+								var newobject = {};
+								newobject.str = item.str
+								newobject.fontSize = Math.round(item.height)
+								outline[newKey].push(newobject)
+							} else {
+								outline[newKey] = [];
+								var newobject = {};
+								newobject.str = item.str
+								newobject.fontSize = Math.round(item.height)
+								outline[newKey].push(newobject)
+							}
+						}
+						
 						return item.str;
 					});
 				}).then(function() {
-					console.log(pageNum)
+					//console.log(pageNum)
 					if(pageNum == pdfdoc.numPages) {
+						console.log(outline)
+						let num = 0;
+						console.log(foundTOCendpage)
+						console.log(foundTOC)
+						while(num <= pageNum) {
+							var strSoFar = "";
+							var strSize = -1;
+							if(outline[num] !== undefined && num < foundTOCendpage && num >= foundTOC) {
+								outline[num].forEach((element) => {
+									if(element.fontSize > 10) {
+									if(element.fontSize === strSize) {
+										//console.log(strSoFar)
+										strSoFar += element.str
+									} else {
+										//console.log(strSoFar);
+										strSize = element.fontSize
+										if (strSoFar.length > 1) {
+										document.getElementById("outline_ali").innerHTML += "<p style=\"font-size:" + (strSize / 2) + "px;\">" +  strSoFar + "</p>";
+										}
+										strSoFar = element.str;
+									}
+									}
+									//console.log(document.getElementById("outline_ali").innerHTML)
+								});
+							}
+							num+=1;
+						}
+						console.log(outline);
 						resolve("DONE")
+
+
+						//example outline object: {fontSize: 72, str: "Woah there", page: 23}
+						//72: {fontSize: 72, totalIndeces: [{str: "Woah there", page: 23}, {str: "holdup", page: 22}]}
+						//72: [{str: "Woah there", page: 23}, {str: "holdup", page: 22}]
+						//23: [{str: "Woah there", fontSize: 72}]
+
+
+
 					}
 				});
 			});
@@ -471,8 +568,8 @@ function getTextAfterMap(){
 		var maxFont = 0
 		var maxFontFreq = 0
 		map.forEach((value, key) => {
-			if(value > maxFontFreq){
-				maxFontFreq = value;
+			if(value.length > maxFontFreq){
+				maxFontFreq = value.length;
 				maxFont = key
 			}
 		})

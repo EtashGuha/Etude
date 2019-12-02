@@ -44,7 +44,7 @@ currSet.forEach(function(value) {
 });
 console.log(window)
 
-
+store.clear();
 // for (var j = 0; j < currSet.size; j++) {
 // 	// var j = 0;
 // 	try {
