@@ -458,45 +458,41 @@ function getLayeredText() {
 							map.set(Math.round(item.height), item.str)
 						}
 						var newKey = pageNum.toString();
-						//console.log(pageNum.toString());
 						
 
+
+
+						//Beginning of TOC hacking. This block checks the first 50 pages for anything like Table of Contents
 						if(foundTOC === -1 && pageNum < 50) {
 							variousTOC.forEach((tocTry) => {
 								if(item.str.indexOf(tocTry) !== -1) {
 									foundTOC = pageNum
 									foundTOCsize = Math.round(item.height)
-									console.log("WOOOOOOOOOOOOOOOOOOOOOOOOOOOOO" + pageNum.toString())
+									//save the page number and font size of the Table of Contents header found
 								}
 							});
 						}
-						//console.log(pageNum + " IS PGNUM " + foundTOC + "is 1 more" + newKey)
-						// if(foundTOCLowSize === -1 && foundTOC + 1 <= pageNum && outline[newKey] !== undefined) {
-						// 	console.log("Looking for next lowest size")
-						// 	outline[newKey].forEach((blockThing)=> {
-						// 		if (blockThing.fontSize > foundTOCLowSize) {
-						// 			console.log(blockThing.fontSize + "IS BIGGER" + pageNum)
-						// 			foundTOCLowSize = blockThing.fontSize;
-						// 		}
-						// 	});
-						// }
+
+						//Trying to find the end of table of contents. looks for a header the same size as the TOC header, and stores that page
 						if(foundTOCendpage === -1 && foundTOCsize !== -1 && foundTOC + 1 <= pageNum) {
 							if(Math.round(item.height) === foundTOCsize) {
 								foundTOCendpage = pageNum;
-								//console.log(item.str + " " + pageNum)
 							}
 						}
 
 
 
-
+						//While table of content is found and end of table of content isn't found, keep adding every element to outline object
 						if(foundTOC !== -1 && pageNum >= foundTOC && (foundTOCendpage === -1 || pageNum < foundTOCendpage)) {
 							if(outline[newKey] !== undefined && outline[newKey] !== null) {
+								//each page is added individually to the TOC and the page contains all elements in order as array
+								//the elements are each an object with str and fontSize properties. feel free to add PageNum as property as well
 								var newobject = {};
 								newobject.str = item.str
 								newobject.fontSize = Math.round(item.height)
 								outline[newKey].push(newobject)
 							} else {
+								//this is how a new page array is added. 
 								outline[newKey] = [];
 								var newobject = {};
 								newobject.str = item.str
@@ -508,7 +504,7 @@ function getLayeredText() {
 						return item.str;
 					});
 				}).then(function() {
-					//console.log(pageNum)
+					//once it reaches the end
 					if(pageNum == pdfdoc.numPages) {
 						console.log(outline)
 						let num = 0;
@@ -517,14 +513,15 @@ function getLayeredText() {
 						while(num <= pageNum) {
 							var strSoFar = "";
 							var strSize = -1;
+							//looks within the range of pages we found
 							if(outline[num] !== undefined && num < foundTOCendpage && num >= foundTOC) {
-								outline[num].forEach((element) => {
+								outline[num].forEach((element) => { //concatenates all text greater that font size 10 to string YOU MIGHT WANT TO CHANGE THIS
 									if(element.fontSize > 10) {
+										//putting together all elements of the same size
 									if(element.fontSize === strSize) {
-										//console.log(strSoFar)
 										strSoFar += element.str
 									} else {
-										//console.log(strSoFar);
+										//once all elements that size are contactonated, it adds to html on left side of page in very basic way
 										strSize = element.fontSize
 										if (strSoFar.length > 1) {
 										document.getElementById("outline_ali").innerHTML += "<p style=\"font-size:" + (strSize / 2) + "px;\">" +  strSoFar + "</p>";
@@ -532,19 +529,12 @@ function getLayeredText() {
 										strSoFar = element.str;
 									}
 									}
-									//console.log(document.getElementById("outline_ali").innerHTML)
 								});
 							}
 							num+=1;
 						}
 						console.log(outline);
 						resolve("DONE")
-
-
-						//example outline object: {fontSize: 72, str: "Woah there", page: 23}
-						//72: {fontSize: 72, totalIndeces: [{str: "Woah there", page: 23}, {str: "holdup", page: 22}]}
-						//72: [{str: "Woah there", page: 23}, {str: "holdup", page: 22}]
-						//23: [{str: "Woah there", fontSize: 72}]
 
 
 
