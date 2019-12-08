@@ -1808,6 +1808,32 @@ function areArgsValid(mainString, targetStrings) {
 					_boundEvents = this._boundEvents;
 				_boundEvents.beforePrint = this.beforePrint.bind(this);
 				_boundEvents.afterPrint = this.afterPrint.bind(this);
+
+				// // Only for debugging
+				// let on = eventBus.on.bind(eventBus);
+				// eventBus.on = function(evt, handler) {
+				// 	on(evt, () => {
+				// 		// debugger;
+				// 		console.log('internal events', evt)
+				// 	});
+				// 	on(evt, handler);
+				// }
+				{
+					let timer;
+					eventBus.on('textlayerrendered', () => {
+						if (timer) {
+							window.clearTimeout(timer);
+						}
+						timer = window.setTimeout(() => {
+							if (window.PDFViewerApplication.pdfSidebar.isOutlineViewVisible) {
+								window.parent.dispatchEvent(new Event('outlineViewVisible'))
+							} else {
+								window.parent.dispatchEvent(new Event('outlineViewInvisible'))
+							}
+						}, 800);
+					});
+				}
+
 				eventBus.on('resize', webViewerResize);
 				eventBus.on('hashchange', webViewerHashchange);
 				eventBus.on('beforeprint', _boundEvents.beforePrint);

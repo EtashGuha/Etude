@@ -25,7 +25,7 @@ viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
 console.log("Entering summarinzg js")
 console.log(require('electron').remote.getGlobal('sharedObject').someProperty)
-iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}`);
+iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#pagemode=bookmarks`);
 console.log(iframe.src)
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.pdf"
@@ -427,29 +427,169 @@ function getHtml() {
 	})
 }
 
+window.extractTOC = extractTOC;
+async function extractTOC(startPage, endPage) {
+	variousTOC = ["Contents", "Table of Content", "CONTENTS", "TABLE OF CONTENT", "CONTENT", "Content", "Table Of Content"]
+	var foundTOC = startPage ? startPage : -1;
+	var foundTOCsize = -1;
+	var foundTOCendpage = endPage ? endPage : -1;
+	outline = [];
+	// var startPage = 1;
+	// var endPage = 10;
+
+	for (let pageNum = 1; pageNum <= 50; pageNum++) {
+		const pdfdoc = iframe.contentWindow.getPdfDocument()
+		const page = await pdfdoc.getPage(pageNum);
+		const content = await page.getTextContent();
+		content.items.forEach(item => {
+
+			//Beginning of TOC hacking. This block checks the first 50 pages for anything like Table of Contents
+			if(foundTOC === -1) {
+				variousTOC.forEach((tocTry) => {
+					if(item.str.indexOf(tocTry) !== -1) {
+						foundTOC = pageNum;
+						foundTOCsize = Math.round(item.height);
+						//save the page number and font size of the Table of Contents header found
+					}
+				});
+			}
+
+			//Trying to find the end of table of contents. looks for a header the same size as the TOC header, and stores that page
+			if(foundTOCendpage === -1 && foundTOCsize !== -1 && foundTOC + 1 <= pageNum) {
+				if(Math.round(item.height) === foundTOCsize) {
+					foundTOCendpage = pageNum;
+				}
+			}
+
+			//While table of content is found and end of table of content isn't found, keep adding every element to outline object
+			if(foundTOC !== -1 && pageNum >= foundTOC && (foundTOCendpage === -1 || pageNum < foundTOCendpage)) {
+					if (item.str.match(/(?<=[^0-9,.]+)[0-9]+$/)) {
+						let str = item.str.match(/.*[^0-9,.]+(?=[0-9]+$)/)[0].replace(/\./g, '');
+						var newobject = {};
+						newobject.str = str;
+						newobject.fontSize = Math.round(item.height);
+						outline.push(newobject);
+
+						str = item.str.match(/[0-9]+$/)[0];
+						newobject = {};
+						newobject.str = str;
+						newobject.fontSize = Math.round(item.height)
+						outline.push(newobject);
+					} else {
+						var newobject = {};
+						newobject.str = item.str.replace(/\./g, '');
+						newobject.fontSize = Math.round(item.height)
+						outline.push(newobject);
+					}
+			}
+		})
+	}
+
+	//once it reaches the end
+	let lastPage = 0;
+	let toc = [];
+	let cur = { title: '' };
+	let isPrevNum = false;
+	let offset = -1;
+	for (let segment of outline) {
+		if (segment.str.length === 0) continue;
+		let n = Number(segment.str);
+		if (isPrevNum || isNaN(n) || n > 1000) {
+			cur.title = cur.title + segment.str;
+			isPrevNum = false;
+		} else if (n === Math.round(n) && n >= lastPage) {
+			cur.title = cur.title.trim().replace(/\s+/g, ' ');
+			cur.page = n;
+			lastPage = n;
+			toc.push(cur);
+			cur = { title: '' };
+			isPrevNum = true;
+		}
+	}
+
+	console.log('toc', toc);
+
+	iframe.contentDocument.querySelector('#thumbnailView').classList.add('hidden')
+	const outlineView = iframe.contentDocument.querySelector('#outlineView');
+	while (outlineView.firstChild) {
+		outlineView.firstChild.remove();
+	}
+	outlineView.classList.remove('hidden');
+	outlineView.classList.add('outlineWithDeepNesting');
+
+	for (let [i, item] of toc.entries()) {
+		// Create DOM nodes manually
+		let link = document.createElement('div');
+		link.classList.add('outlineItem');
+		let anchor = document.createElement('a');
+		anchor.innerText = item.title.slice(0, 30);
+		link.append(anchor);
+		link.onclick = async () => {
+			console.log('toc:', 'jump to', item.page, 'with offset', offset);
+			iframe.contentWindow.jumpToPage(item.page + (offset > 0 ? offset : 0));
+			
+			// Determin offset (Don't do this for the first several ones, because their page numbers are usually wrong)
+			if (offset < 0 && i > 5) {
+
+				const pdfdoc = iframe.contentWindow.getPdfDocument()
+
+				const regex1 = (item.title.match(/^[0-9,.]+(?=[^0-9,.])/g)||[]).join('').replace(/\./g, '\\.');
+				const regex2 = (item.title.match(/([A-Z][a-z]+(?=[^a-z])|[A-Z][a-z]+$|(?<=\s+)[A-Z,a-z]+(?=\s+))/g)||[]).join('.*')
+				const pattern = new RegExp(regex1 + '.*' + regex2, 'i');
+				console.log('toc:', pattern);
+
+				offset = 0;
+				const MAX_OFFSET = Math.round(pdfdoc.numPages / 10);
+				while (offset < MAX_OFFSET && item.page + offset <= pdfdoc.numPages) {
+					console.log('toc:', 'try', item.page, offset);
+					const page = await pdfdoc.getPage(item.page + offset);
+					const content = await page.getTextContent();
+					const text = content.items.reduce((a, c) => a + c.str, '');
+					if (pattern.test(text)) {
+						console.log('toc:', 'set offset', offset);
+						break;
+					}
+					offset++;
+				}
+				if (offset === MAX_OFFSET || item.page + offset > pdfdoc.numPages) {
+					// Couldn't find the correct offset, reset to -1
+          alert(`Couldn't determine offset`)
+					offset = -1;
+				}
+				alert(`Offset set to ${offset}`);
+				iframe.contentWindow.jumpToPage(item.page + offset);
+			}
+		}
+		outlineView.append(link);
+	}
+}
+
+new Promise((resolve, reject) => {
+	window.addEventListener('outlineViewVisible', () => resolve(true));
+	window.addEventListener('outlineViewInvisible', () => resolve(false));
+}).then(async (isOutlineVisible) => {
+	// If there are pre-programmed bookmarks, there is no need to extract TOC manually
+	if (isOutlineVisible) {
+		console.log('toc', 'bookmarks found!');
+		return;
+	}
+	extractTOC();
+});
+
+
 function getLayeredText() {
 
 	return new Promise(function(resolve, reject) {
 		console.log("Inside of getLayeredText")
 		map.clear()
-		outline = {};
 		var pdfdoc = iframe.contentWindow.getPdfDocument()
 		var lastPromise; // will be used to chain promises
 		lastPromise = pdfdoc.getMetadata().then(function(data) {
 		});
 
-
-
-		variousTOC = ["Contents", "Table of Content", "CONTENTS", "TABLE OF CONTENT", "CONTENT", "Content", "Table Of Content"]
-		var foundTOC = -1;
-		var foundTOCsize = -1;
-		var foundTOCLowSize = -1;
-		var foundTOCendpage = -1;
-
 		var loadPage = function(pageNum) {
 			return pdfdoc.getPage(pageNum).then(function(page) {
 				return page.getTextContent().then(function(content) {
-
 
 					var strings = content.items.map(function(item) {
 						if(map.get(Math.round(item.height))) {
@@ -457,91 +597,15 @@ function getLayeredText() {
 						} else {
 							map.set(Math.round(item.height), item.str)
 						}
-						var newKey = pageNum.toString();
-						
-
-
-
-						//Beginning of TOC hacking. This block checks the first 50 pages for anything like Table of Contents
-						if(foundTOC === -1 && pageNum < 50) {
-							variousTOC.forEach((tocTry) => {
-								if(item.str.indexOf(tocTry) !== -1) {
-									foundTOC = pageNum
-									foundTOCsize = Math.round(item.height)
-									//save the page number and font size of the Table of Contents header found
-								}
-							});
-						}
-
-						//Trying to find the end of table of contents. looks for a header the same size as the TOC header, and stores that page
-						if(foundTOCendpage === -1 && foundTOCsize !== -1 && foundTOC + 1 <= pageNum) {
-							if(Math.round(item.height) === foundTOCsize) {
-								foundTOCendpage = pageNum;
-							}
-						}
-
-
-
-						//While table of content is found and end of table of content isn't found, keep adding every element to outline object
-						if(foundTOC !== -1 && pageNum >= foundTOC && (foundTOCendpage === -1 || pageNum < foundTOCendpage)) {
-							if(outline[newKey] !== undefined && outline[newKey] !== null) {
-								//each page is added individually to the TOC and the page contains all elements in order as array
-								//the elements are each an object with str and fontSize properties. feel free to add PageNum as property as well
-								var newobject = {};
-								newobject.str = item.str
-								newobject.fontSize = Math.round(item.height)
-								outline[newKey].push(newobject)
-							} else {
-								//this is how a new page array is added. 
-								outline[newKey] = [];
-								var newobject = {};
-								newobject.str = item.str
-								newobject.fontSize = Math.round(item.height)
-								outline[newKey].push(newobject)
-							}
-						}
-						
 						return item.str;
-					});
-				}).then(function() {
-					//once it reaches the end
-					if(pageNum == pdfdoc.numPages) {
-						console.log(outline)
-						let num = 0;
-						console.log(foundTOCendpage)
-						console.log(foundTOC)
-						while(num <= pageNum) {
-							var strSoFar = "";
-							var strSize = -1;
-							//looks within the range of pages we found
-							if(outline[num] !== undefined && num < foundTOCendpage && num >= foundTOC) {
-								outline[num].forEach((element) => { //concatenates all text greater that font size 10 to string YOU MIGHT WANT TO CHANGE THIS
-									if(element.fontSize > 10) {
-										//putting together all elements of the same size
-									if(element.fontSize === strSize) {
-										strSoFar += element.str
-									} else {
-										//once all elements that size are contactonated, it adds to html on left side of page in very basic way
-										strSize = element.fontSize
-										if (strSoFar.length > 1) {
-										document.getElementById("outline_ali").innerHTML += "<p style=\"font-size:" + (strSize / 2) + "px;\">" +  strSoFar + "</p>";
-										}
-										strSoFar = element.str;
-									}
-									}
-								});
-							}
-							num+=1;
+					}).then(function() {
+						if(pageNum == pdfdoc.numPages) {
+							resolve("DONE")
 						}
-						console.log(outline);
-						resolve("DONE")
-
-
-
-					}
+					});
 				});
 			});
-		};
+		}
 		for (var i = 1; i <= pdfdoc.numPages; i++) {
 			lastPromise = lastPromise.then(loadPage.bind(null, i));
 		}
