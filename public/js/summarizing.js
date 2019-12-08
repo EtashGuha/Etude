@@ -14,7 +14,6 @@ var bookmarkArray = [];
 var Worker = require("tiny-worker");
 const electron = require("electron")
 const userDataPath = (electron.app || electron.remote.app).getPath('userData');
-console.log("USER DATA PATH: " + userDataPath)
 const windowFrame = require('electron-titlebar')
 var bookmarkArray = [];
 var Tokenizer = require('sentence-tokenizer');
@@ -22,16 +21,15 @@ var tokenizer = new Tokenizer('Chuck');
 const viewerEle = document.getElementById('viewer');
 viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
-console.log("Entering summarinzg js")
-console.log(require('electron').remote.getGlobal('sharedObject').someProperty)
 iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}`);
-console.log(iframe.src)
+
+viewerEle.appendChild(iframe);
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.pdf"
-viewerEle.appendChild(iframe);
+
 var currArr;
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
-console.log(deepai)
+
 deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
 //get text from pdf to send to flask backends
 var PDF_URL = filepath;
@@ -40,33 +38,9 @@ var btnClicked = false;
 var bookmarkOpened = false;
 var htmlForEntireDoc = ""
 // pdfAllToHTML(PDF_URL);
-var pdfToHtmlWorker = new Worker(etudeFilepath + "/public/js/pdfToHtml.js");
 var kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
-var updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
-document.getElementById("getRangeButton").disabled = true;
-document.getElementById("getRangeButton").style.opacity = 0.5;
-document.getElementById("cape_btn").disabled = true;
-document.getElementById("searchParent").style.opacity = 0.5;
-document.getElementById("questionVal").disabled = true;
-document.getElementById('searchloader').style.display = 'block';
-document.getElementById('searchbuttonthree').style.color = 'white';
-document.getElementById('cape_btn').style.backgroundColor = 'white';
-
 var textForEachPage;
-console.log("val of item")
-console.log(remote.getGlobal('sharedObject').newWindow)
-pdfToHtmlWorker.onmessage = function(ev) {
-	enableEtude();
-	console.log(ev);
-	pdfToHtmlWorker.terminate();
-};
 
-console.log("hello")
-console.log(userDataPath)
-console.log(etudeFilepath)
-console.log(PDF_URL);
-pdfToHtmlWorker.postMessage([PDF_URL, userDataPath, etudeFilepath]);
-console.log("has")
 var numPages = 0;
 PDFJS.getDocument({
 	url: PDF_URL
@@ -74,7 +48,6 @@ PDFJS.getDocument({
 	__PDF_DOC = pdf_doc;
 	numPages = __PDF_DOC.numPages;
 });
-console.log(numPages)
 
 const {
 	ipcRenderer
@@ -235,7 +208,6 @@ closeSearch.addEventListener("click", function() {
 
 $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
-	updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
 	console.log("Cape button clicked")
 	document.getElementById("myDropdown").classList.toggle("show");
 	setTimeout(function() {
@@ -329,7 +301,6 @@ function processSummarizationResult(t) {
 function summaryButtonPressed(firstpage, lastpage) {
 	var getpdftext = getPDFText(firstpage, lastpage)
 	getpdftext.then((x) => {
-		console.log(x);
 		deepai.callStandardApi("summarization", {
 			text: x
 		}).then((resp) => processSummarizationResult(resp))
