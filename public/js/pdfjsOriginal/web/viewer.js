@@ -46,6 +46,28 @@ function addRangeToPage(r, pageIdx) {
 	store.set(`ranges.${filePath}`, ranges);
 }
 
+function deleteRangeContaining(start, end) {
+	function compareRange(a, b) {
+		if (a[0] === b[0]) {
+			if (a[1] === b[1]) return 0;
+			return a[1] < b[1] ? -1 : 1;
+		} else {
+			return a[0] < b[0] ? -1 : 1;
+		}
+	}
+	const pageIdx = start[0];
+	start = start.slice(1);
+	end = end.slice(1);
+	for (let r of ranges[pageIdx]) {
+		if (compareRange(r.anchor, start) <= 0 && compareRange(r.focus, end) >= 0) {
+			// r will be removed
+			ranges[pageIdx] = ranges[pageIdx].filter(s => s !== r);
+			// Save changes
+			store.set(`ranges.${filePath}`, ranges);
+		}
+	}
+}
+
 function mergeRanges(rs) {
 	rs.sort((a, b) => {
 		if (a.anchor[0] - b.anchor[0] !== 0) return a.anchor[0] - b.anchor[0];
@@ -108,6 +130,8 @@ function updateRanges() {
 	
 	let start = calculateIndices(anchorNode, anchorOffset);
 	let end = calculateIndices(focusNode, focusOffset);
+
+
 	if (!start || !end) return [0, -1];
 	if (
 		start[0] > end[0] ||
@@ -167,6 +191,11 @@ function highlightSelectedText(i) {
 		}
 	}
 
+	// First remove all highlights
+	for (let span of textLayer.children) {
+		span.innerHTML = span.textContent;
+	}
+
 	// Actual rendering
 	for (let [j, group] of groupedBySpans.entries()) {
 		if (!group) continue;
@@ -180,9 +209,17 @@ function highlightSelectedText(i) {
 			));
 			let span = document.createElement('span');
 			span.classList.add('highlight');
+			span.style = "cursor: default;"
 			span.style.background = 'red'; // Custom color
 			span.textContent = text.slice(...range);
 			nodes.push(span);
+
+			span.onmousedown = (e) => {
+				deleteRangeContaining([i, j, range[0]], [i, j, range[1]]);
+				highlightSelectedText(i);
+				e.stopPropagation();
+			}
+
 			lastIndex = range[1];
 		}
 		nodes.push(document.createTextNode(
@@ -193,12 +230,13 @@ function highlightSelectedText(i) {
 	}
 }
 
+
 function updateCustomHighlight() {
 	let [pageStart, pageEnd] = updateRanges();
 	// Update affected pages immediately
-	// for (let i = pageStart; i <= pageEnd; i++) {
-	// 	highlightSelectedText(i);
-	// }
+	for (let i = pageStart; i <= pageEnd; i++) {
+		highlightSelectedText(i);
+	}
 }
 
 document.addEventListener('mouseup', updateCustomHighlight);
@@ -12869,8 +12907,14 @@ function areArgsValid(mainString, targetStrings) {
 							}
 							continueRendering = continueRendering.bind(this);
 							this.draw().then(continueRendering, continueRendering);
-						});	
+						});
 					}
+
+					this.eventBus.on('textlayerrendered', (evt) => {
+						if (evt.pageNumber === this.id) {
+							highlightSelectedText(this.id);
+						}
+					})
 				}
 
 				_createClass(PDFPageView, [{
