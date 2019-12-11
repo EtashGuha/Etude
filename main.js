@@ -10,10 +10,13 @@ const {
     autoUpdater
 } = require("electron-updater");
 var currpathtofile = null;
+var fileOpen = false;
+
 if (process.platform == 'win32' && process.argv.length >= 2 && process.argv[1] !== ".") {
     currpathtofile = process.argv[1]
+    fileOpen = true;
+
 }
-console.log(currpathtofile)
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 var fs = require('fs');
 var options = {
@@ -29,28 +32,95 @@ var ready = false
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 global.sharedObject = {
-    someProperty: ''
+    someProperty: '',
+    newWindow: false
 }
 
+
 ipcMain.on('show_pdf_message', (event, arg) => {
+    console.log("OPENNING A PDF")
+
     sharedObject.someProperty = arg
+    fileOpen = true;
 })
+
 
 app.on('ready', function() {
     createWindow()
 });
 
+
+
 app.on('will-finish-launching', function() {
     app.on('open-file', function(ev, path) {
+        fileOpen = true;
         ev.preventDefault();
+
         currpathtofile = path;
+        sharedObject.someProperty = path;
+        let framebool = true;
+        if (process.platform == 'win32') {
+            framebool = false;
+        }
+        const {
+            width,
+            height
+        } = electron.screen.getPrimaryDisplay().workAreaSize
+        mainWindow = new BrowserWindow({
+            height: height,
+            width: width,
+            minWidth: 600,
+            minHeight: 200,
+            frame: framebool,
+            backgroundColor: '#ffffff',
+            webPreferences: {
+                nodeIntegration: true
+            },
+            icon: 'assets/images/logo.jpg',
+        })
+
+        autoUpdater.checkForUpdatesAndNotify();
+
+        function sendStatusToWindow(text) {
+            mainWindow.webContents.send('message', text);
+        }
+        autoUpdater.on('checking-for-update', () => {
+            sendStatusToWindow('Checking for update...');
+        })
+        autoUpdater.on('update-available', (info) => {
+            sendStatusToWindow('Update available.');
+        })
+        autoUpdater.on('update-not-available', (info) => {
+            sendStatusToWindow('Update not available.');
+        })
+        autoUpdater.on('error', (err) => {
+            sendStatusToWindow('Error in auto-updater. ' + err);
+        })
+        autoUpdater.on('download-progress', (progressObj) => {
+            let log_message = "Download speed: " + progressObj.bytesPerSecond;
+            log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+            log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+            sendStatusToWindow(log_message);
+        })
+        autoUpdater.on('update-downloaded', (info) => {
+            sendStatusToWindow('Update downloaded');
+            autoUpdater.quitAndInstall();
+        });
+        mainWindow.loadFile('splash.html')
+        //This is google analytics stuff
+        analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
+            return response;
+        });
+        // mainWindow.webContents.openDevTools()
+        sharedObject.newWindow = true
+        mainWindow.loadFile('summarizing.html')
     });
 });
-
 ipcMain.on('get-file-data', function(event) {
-  var data = null
-  event.returnValue = currpathtofile
-  currpathtofile = null
+    fileOpen = true;
+    var data = null
+    event.returnValue = currpathtofile
+    currpathtofile = null
 })
 
 // ipcMain.on('getMouseMove', function(event) {
@@ -66,84 +136,138 @@ ipcMain.on('get-file-data', function(event) {
 // });
 
 function createWindow() {
-    let framebool = true;
-    if (process.platform == 'win32') {
-        framebool = false;
-    }
-    const {
-        width,
-        height
-    } = electron.screen.getPrimaryDisplay().workAreaSize
-    mainWindow = new BrowserWindow({
-        height: height,
-        width: width,
-        minWidth: 600,
-        minHeight: 200,
-        frame: framebool,
-        backgroundColor: '#ffffff',
-        webPreferences: {
-            nodeIntegration: true
-        },
-        icon: 'assets/images/logo.jpg',
-    })
+    if(fileOpen) {
+        sharedObject.someProperty = currpathtofile;
+        let framebool = true;
+        if (process.platform == 'win32') {
+            framebool = false;
+        }
+        const {
+            width,
+            height
+        } = electron.screen.getPrimaryDisplay().workAreaSize
+        mainWindow = new BrowserWindow({
+            height: height,
+            width: width,
+            minWidth: 600,
+            minHeight: 200,
+            frame: framebool,
+            backgroundColor: '#ffffff',
+            webPreferences: {
+                nodeIntegration: true
+            },
+            icon: 'assets/images/logo.jpg',
+        })
 
-    autoUpdater.checkForUpdatesAndNotify();
+        autoUpdater.checkForUpdatesAndNotify();
 
-    function sendStatusToWindow(text) {
-        mainWindow.webContents.send('message', text);
-    }
-    autoUpdater.on('checking-for-update', () => {
-        sendStatusToWindow('Checking for update...');
-    })
-    autoUpdater.on('update-available', (info) => {
-        sendStatusToWindow('Update available.');
-    })
-    autoUpdater.on('update-not-available', (info) => {
-        sendStatusToWindow('Update not available.');
-    })
-    autoUpdater.on('error', (err) => {
-        sendStatusToWindow('Error in auto-updater. ' + err);
-    })
-    autoUpdater.on('download-progress', (progressObj) => {
-        let log_message = "Download speed: " + progressObj.bytesPerSecond;
-        log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
-        log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
-        sendStatusToWindow(log_message);
-    })
-    autoUpdater.on('update-downloaded', (info) => {
-        sendStatusToWindow('Update downloaded');
-        autoUpdater.quitAndInstall();
-    });
-    mainWindow.loadFile('splash.html')
-    if (!fs.existsSync(userDataPath + "/tmp")) {
-        fs.mkdirSync(userDataPath + "/tmp")
-    }
-    if (!fs.existsSync(userDataPath + "/folderForHighlightedPDF")) {
-        fs.mkdirSync(userDataPath + "/folderForHighlightedPDF")
-    }
-    //This is google analytics stuff
-    analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
-        return response;
-    });
-    // mainWindow.webContents.openDevTools()
-    setTimeout(() => {
-        mainWindow.loadFile('library.html')
-    }, 1000);
+        function sendStatusToWindow(text) {
+            mainWindow.webContents.send('message', text);
+        }
+        autoUpdater.on('checking-for-update', () => {
+            sendStatusToWindow('Checking for update...');
+        })
+        autoUpdater.on('update-available', (info) => {
+            sendStatusToWindow('Update available.');
+        })
+        autoUpdater.on('update-not-available', (info) => {
+            sendStatusToWindow('Update not available.');
+        })
+        autoUpdater.on('error', (err) => {
+            sendStatusToWindow('Error in auto-updater. ' + err);
+        })
+        autoUpdater.on('download-progress', (progressObj) => {
+            let log_message = "Download speed: " + progressObj.bytesPerSecond;
+            log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+            log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+            sendStatusToWindow(log_message);
+        })
+        autoUpdater.on('update-downloaded', (info) => {
+            sendStatusToWindow('Update downloaded');
+            autoUpdater.quitAndInstall();
+        });
+        mainWindow.loadFile('splash.html')
+        //This is google analytics stuff
+        analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
+            return response;
+        });
+        // mainWindow.webContents.openDevTools()
+        sharedObject.newWindow = true
+        mainWindow.loadFile('summarizing.html')
+    } else {
+      let framebool = true;
+        if (process.platform == 'win32') {
+            framebool = false;
+        }
+        const {
+            width,
+            height
+        } = electron.screen.getPrimaryDisplay().workAreaSize
+        mainWindow = new BrowserWindow({
+            height: height,
+            width: width,
+            minWidth: 600,
+            minHeight: 200,
+            frame: framebool,
+            backgroundColor: '#ffffff',
+            webPreferences: {
+                nodeIntegration: true
+            },
+            icon: 'assets/images/logo.jpg',
+        })
+
+        autoUpdater.checkForUpdatesAndNotify();
+
+        function sendStatusToWindow(text) {
+            mainWindow.webContents.send('message', text);
+        }
+        autoUpdater.on('checking-for-update', () => {
+            sendStatusToWindow('Checking for update...');
+        })
+        autoUpdater.on('update-available', (info) => {
+            sendStatusToWindow('Update available.');
+        })
+        autoUpdater.on('update-not-available', (info) => {
+            sendStatusToWindow('Update not available.');
+        })
+        autoUpdater.on('error', (err) => {
+            sendStatusToWindow('Error in auto-updater. ' + err);
+        })
+        autoUpdater.on('download-progress', (progressObj) => {
+            let log_message = "Download speed: " + progressObj.bytesPerSecond;
+            log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+            log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+            sendStatusToWindow(log_message);
+        })
+        autoUpdater.on('update-downloaded', (info) => {
+            sendStatusToWindow('Update downloaded');
+            autoUpdater.quitAndInstall();
+        });
+        mainWindow.loadFile('splash.html')
+        //This is google analytics stuff
+        analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
+            return response;
+        });
+        // mainWindow.webContents.openDevTools()
+        setTimeout(() => {
+            console.log(currpathtofile)
+            mainWindow.loadFile('library.html')
+        }, 1000);
 
 
-    // Emitted when the window is closed.
-    mainWindow.on('closed', function() {
-        // Dereference the window object, usually you would store windows
-        // in an array if your app supports multi windows, this is the time
-        // when you should delete the corresponding element.
-        mainWindow = null
-    })
+        // Emitted when the window is closed.
+        mainWindow.on('closed', function() {
+            // Dereference the window object, usually you would store windows
+            // in an array if your app supports multi windows, this is the time
+            // when you should delete the corresponding element.
+            mainWindow = null
+        })  
+    }
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-
 
 
 
@@ -165,4 +289,3 @@ app.on('activate', function() {
 module.exports = userDataPath
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-  
