@@ -113,13 +113,15 @@ input::-webkit-inner-spin-button {
 
 .plusImage {
 	max-height: 100%;
-	max-width: 100%;
-	width: 37px;
+	max-width: 200px;
+	width: auto;
 	height: auto;
 	position: absolute;
-	left: 100px;
-	top: 140px;
-	margin: auto;
+	left: 12px;
+	top: 20px;
+	padding:80px;
+	padding-top:115px;
+	padding-bottom:115px;
 	opacity: 0.6;
   }
 .plusImage:hover {

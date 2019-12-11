@@ -1305,7 +1305,7 @@ html[dir='ltr'] .toolbarButton.pageUp::before {
   transform: scale(0.5);
   filter: invert(100%);
   margin-top:-4px;
-  margin-left:0px;
+  margin-left:-4px;
 }
 html[dir='rtl'] .toolbarButton.pageUp::before {
   content: url(images/toolbarButton-pageUp-rtl.png);
@@ -1319,7 +1319,7 @@ html[dir='ltr'] .toolbarButton.pageDown::before {
   transform: scale(0.5);
   filter: invert(100%);
   margin-top:-4px;
-  margin-left:0px;
+  margin-left:-1px;
 }
 html[dir='rtl'] .toolbarButton.pageDown::before {
   content: url(images/toolbarButton-pageDown-rtl.png);
@@ -2110,8 +2110,8 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   html[dir='ltr'] .toolbarButton::before,
   html[dir='rtl'] .toolbarButton::before {
     animation-delay: inherit;
-    margin-left:6px;
-    margin-top:7px;
+    padding-left:2px;
+    margin-top:9px;
   }
 
   html[dir='ltr'] .secondaryToolbarButton::before {
