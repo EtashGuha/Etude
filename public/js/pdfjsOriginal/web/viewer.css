@@ -839,9 +839,26 @@ html[dir='rtl'] .findbar {
   width: 72%;
   font-family: Poppins Regular;
 }
-#findInput::-webkit-input-placeholder {
-  color: hsl(0, 0%, 75%);
+
+
+.sliderhidden {
+  height: 0px;
+  overflow: hidden;
+
+  transition:         height 0.5s ease;
+  -moz-transition:    height 0.5s ease;
+  -ms-transition:     height 0.5s ease;
+  -o-transition:      height 0.5s ease;
+  -webkit-transition: height 0.5s ease;
 }
+
+.slidershow {
+  height: auto;
+}
+
+/*#findInput::-webkit-input-placeholder {
+  color: hsl(0, 0%, 75%);
+}*/
 /*#findInput:-ms-input-placeholder {
   font-style: italic;
 }
