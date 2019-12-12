@@ -810,7 +810,7 @@ html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
 }
 
 .findbar {
-  min-width: 250px;
+  min-width: 100px;
 }
 .findbar > div {
   height: 32px;
@@ -836,8 +836,8 @@ html[dir='rtl'] .findbar {
 }
 
 #findInput {
-  width: 72%;
   font-family: Poppins Regular;
+  width: calc(100% - 72px);
 }
 
 
