@@ -169,10 +169,11 @@ $(document).on("click", ".bookmark-canvas", function() {
 //     win.close();
 // })
 
-// var maxbuttton = document.getElementById("maxbutton");
-// maxbuttton.addEventListener('click', () => {
-//     win.maximize();
-// })
+
+var stopLoadButton = document.getElementById("stopLoadButton");
+stopLoadButton.addEventListener('click', () => {
+    win.reload();
+})
 
 // var minbutton = document.getElementById("minbutton");
 // minbutton.addEventListener('click', () => {
@@ -212,6 +213,7 @@ closeSearch.addEventListener("click", function() {
 $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
 	console.log("Cape button clicked")
+	document.getElementById("stopLoadButton").style.display = 'block';
 	document.getElementById("myDropdown").classList.toggle("show");
 	setTimeout(function() {
 		console.log(getNumPages())
@@ -245,6 +247,7 @@ $("#cape_btn").click(function() {
 				document.getElementById('searchbuttonthree').style.color = 'black';
 				document.getElementById('cape_btn').style.backgroundColor = '';
 				console.log("Showing")
+				document.getElementById("stopLoadButton").style.display = 'none';
 			});
 		});
 		capeClicked = true;
@@ -275,6 +278,7 @@ $('#summarizingButton').click(function() {
 	summaryButtonPressed($('#pageRange').val(), $('#topageRange').val());
 	// here you can add the loading button
 	$('.summarizer_loading').show();
+	document.getElementById("stopLoadButton").style.display = 'block';
 	// $('.hover_bkgr_fricc').click(function(){
 	//       $('.hover_bkgr_fricc').hide();
 	//   });
@@ -299,6 +303,7 @@ function processSummarizationResult(t) {
 	tokenizer.setEntry(noLineBreakText);
 	updateHighlights(tokenizer.getSentences())
 	$('.summarizer_loading').hide();
+	document.getElementById("stopLoadButton").style.display = 'none';
 };
 
 function summaryButtonPressed(firstpage, lastpage) {
@@ -319,6 +324,10 @@ $('#getRangeButton').click(function() {
 	//$('#getRangeButton').hide();
 	$('.su_popup').show();
 })
+
+
+
+
 
 function updateHighlights(arr){
 	console.log(arr)
