@@ -12,7 +12,8 @@ exports.default = async function notarizing(context) {
   return await notarize({
     appBundleId: 'com.github.EtashGuha.Etude',
     appPath: `${appOutDir}/${appName}.app`,
-    appleId: "etashguha@icloud.com",
+    appleId: "etashguhaetashguha@icloud.com",
     appleIdPassword: "szwu-efkb-vhal-tdvo",
   });
-};
+};    
+

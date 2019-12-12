@@ -525,35 +525,44 @@ async function extractTOC(startPage, endPage) {
 		anchor.innerText = item.title.slice(0, 30);
 		link.append(anchor);
 		link.onclick = async () => {
-			console.log('toc:', 'jump to', item.page, 'with offset', offset);
+
 			iframe.contentWindow.jumpToPage(item.page + (offset > 0 ? offset : 0));
-			
-			// Determin offset (Don't do this for the first several ones, because their page numbers are usually wrong)
-			if (offset < 0 && i > 5) {
 
+			// Determine offset
+			if (offset < 0) {
+				const pdfViewer = iframe.contentWindow.PDFViewerApplication.pdfViewer;
+				const pageNumber = pdfViewer.currentPageNumber;
+				const pageLabel = pdfViewer.currentPageLabel;
 				const pdfdoc = iframe.contentWindow.getPdfDocument()
-
-				const regex1 = (item.title.match(/^[0-9,.]+(?=[^0-9,.])/g)||[]).join('').replace(/\./g, '\\.');
-				const regex2 = (item.title.match(/([A-Z][a-z]+(?=[^a-z])|[A-Z][a-z]+$|(?<=\s+)[A-Z,a-z]+(?=\s+))/g)||[]).join('.*')
-				const pattern = new RegExp(regex1 + '.*' + regex2, 'i');
-				console.log('toc:', pattern);
-
-				offset = 0;
 				const MAX_OFFSET = Math.round(pdfdoc.numPages / 10);
-				while (offset < MAX_OFFSET && item.page + offset <= pdfdoc.numPages) {
-					console.log('toc:', 'try', item.page, offset);
-					const page = await pdfdoc.getPage(item.page + offset);
-					const content = await page.getTextContent();
-					const text = content.items.reduce((a, c) => a + c.str, '');
-					if (pattern.test(text)) {
-						console.log('toc:', 'set offset', offset);
-						break;
+				// const regex1 = (item.title.match(/^[0-9,.]+(?=[^0-9,.])/g)||[]).join('').replace(/\./g, '\\.');
+				const regex2 = (item.title.match(/([A-Z][a-z]+(?=[^a-z])|[A-Z][a-z]+$|(?<=\s+)[A-Z,a-z]+(?=\s+))/g)||[]).join('.*')
+				// const pattern = new RegExp(regex1 + '.*' + regex2, 'i');
+				const pattern = new RegExp(regex2, 'i');
+				
+				if (pageLabel && pageNumber !== +pageLabel) {
+					// Try to determine offset from the difference between page number and page label
+					alert(`label: ${pageLabel}, number: ${pageNumber}`);
+					offset = pageNumber - (+pageLabel);
+					if (isNaN(offset)) offset = MAX_OFFSET;
+				} else if (i > 4) {
+					offset = 0;
+					alert(pattern);
+					while (offset < MAX_OFFSET && item.page + offset <= pdfdoc.numPages) {
+						console.log('toc:', 'try', item.page, offset);
+						const page = await pdfdoc.getPage(item.page + offset);
+						const content = await page.getTextContent();
+						const text = content.items.reduce((a, c) => a + c.str, '');
+						if (pattern.test(text)) {
+							console.log('toc:', 'set offset', offset);
+							break;
+						}
+						offset++;
 					}
-					offset++;
 				}
 				if (offset === MAX_OFFSET || item.page + offset > pdfdoc.numPages) {
 					// Couldn't find the correct offset, reset to -1
-          alert(`Couldn't determine offset`)
+         	alert(`Couldn't determine offset`)
 					offset = -1;
 				}
 				alert(`Offset set to ${offset}`);
