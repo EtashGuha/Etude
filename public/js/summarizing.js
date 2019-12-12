@@ -15,7 +15,6 @@ var bookmarkArray = [];
 var Worker = require("tiny-worker");
 const electron = require("electron")
 const userDataPath = (electron.app || electron.remote.app).getPath('userData');
-console.log("USER DATA PATH: " + userDataPath)
 const windowFrame = require('electron-titlebar')
 var bookmarkArray = [];
 var Tokenizer = require('sentence-tokenizer');
@@ -23,16 +22,22 @@ var tokenizer = new Tokenizer('Chuck');
 const viewerEle = document.getElementById('viewer');
 viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
+// <<<<<<< HEAD
 console.log("Entering summarinzg js")
 console.log(require('electron').remote.getGlobal('sharedObject').someProperty)
 iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#pagemode=bookmarks`);
 console.log(iframe.src)
+// =======
+// iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}`);
+
+viewerEle.appendChild(iframe);
+// >>>>>>> 0e10501b36973dc4baf1f7072faeb8f7cfb4c00c
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.pdf"
-viewerEle.appendChild(iframe);
+
 var currArr;
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
-console.log(deepai)
+
 deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
 //get text from pdf to send to flask backends
 var PDF_URL = filepath;
@@ -41,45 +46,23 @@ var btnClicked = false;
 var bookmarkOpened = false;
 var htmlForEntireDoc = ""
 // pdfAllToHTML(PDF_URL);
-var pdfToHtmlWorker = new Worker(etudeFilepath + "/public/js/pdfToHtml.js");
 var kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
-var updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
-document.getElementById("getRangeButton").disabled = true;
-document.getElementById("getRangeButton").style.opacity = 0.5;
-document.getElementById("cape_btn").disabled = true;
-document.getElementById("searchParent").style.opacity = 0.5;
-document.getElementById("questionVal").disabled = true;
-document.getElementById('searchloader').style.display = 'block';
-document.getElementById('searchbuttonthree').style.color = 'white';
-document.getElementById('cape_btn').style.backgroundColor = 'white';
-
 var textForEachPage;
-console.log("val of item")
-console.log(remote.getGlobal('sharedObject').newWindow)
-pdfToHtmlWorker.onmessage = function(ev) {
-	enableEtude();
-	console.log(ev);
-	pdfToHtmlWorker.terminate();
-};
 
-console.log("hello")
-console.log(userDataPath)
-console.log(etudeFilepath)
-console.log(PDF_URL);
-pdfToHtmlWorker.postMessage([PDF_URL, userDataPath, etudeFilepath]);
-console.log("has")
 var numPages = 0;
 PDFJS.getDocument({
 	url: PDF_URL
 }).then(function(pdf_doc) {
 	__PDF_DOC = pdf_doc;
 	numPages = __PDF_DOC.numPages;
+	sumrange = document.getElementById("topageRange");
+	sumrange.value = numPages;
 });
-console.log(numPages)
 
 const {
 	ipcRenderer
 } = require('electron');
+
 
 
 
@@ -95,10 +78,13 @@ function enableEtude() {
 
 }
 
+//The slider for switching between smart search and word search
+
 $("#searchToggle").click(function() {
 	console.log(document.getElementById('searchParent').style.visibility)
 	if(document.getElementById('searchParent').style.visibility === 'hidden') {
 		document.getElementById('searchParent').style.visibility = 'visible';
+		// document.getElementById('searchChildInput').focus();
 		iframe.contentWindow.closeFindBar()
 	} else {
 		document.getElementById('searchParent').style.visibility = 'hidden';
@@ -194,10 +180,11 @@ $(document).on("click", ".bookmark-canvas", function() {
 //     win.close();
 // })
 
-// var maxbuttton = document.getElementById("maxbutton");
-// maxbuttton.addEventListener('click', () => {
-//     win.maximize();
-// })
+
+var stopLoadButton = document.getElementById("stopLoadButton");
+stopLoadButton.addEventListener('click', () => {
+    win.reload();
+})
 
 // var minbutton = document.getElementById("minbutton");
 // minbutton.addEventListener('click', () => {
@@ -236,8 +223,8 @@ closeSearch.addEventListener("click", function() {
 
 $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
-	updateHighlightsWorker = new Worker(etudeFilepath + "/public/js/updateHighlights.js")
 	console.log("Cape button clicked")
+	document.getElementById("stopLoadButton").style.display = 'block';
 	document.getElementById("myDropdown").classList.toggle("show");
 	setTimeout(function() {
 		console.log(getNumPages())
@@ -271,6 +258,7 @@ $("#cape_btn").click(function() {
 				document.getElementById('searchbuttonthree').style.color = 'black';
 				document.getElementById('cape_btn').style.backgroundColor = '';
 				console.log("Showing")
+				document.getElementById("stopLoadButton").style.display = 'none';
 			});
 		});
 		capeClicked = true;
@@ -301,6 +289,7 @@ $('#summarizingButton').click(function() {
 	summaryButtonPressed($('#pageRange').val(), $('#topageRange').val());
 	// here you can add the loading button
 	$('.summarizer_loading').show();
+	document.getElementById("stopLoadButton").style.display = 'block';
 	// $('.hover_bkgr_fricc').click(function(){
 	//       $('.hover_bkgr_fricc').hide();
 	//   });
@@ -325,12 +314,12 @@ function processSummarizationResult(t) {
 	tokenizer.setEntry(noLineBreakText);
 	updateHighlights(tokenizer.getSentences())
 	$('.summarizer_loading').hide();
+	document.getElementById("stopLoadButton").style.display = 'none';
 };
 
 function summaryButtonPressed(firstpage, lastpage) {
 	var getpdftext = getPDFText(firstpage, lastpage)
 	getpdftext.then((x) => {
-		console.log(x);
 		deepai.callStandardApi("summarization", {
 			text: x
 		}).then((resp) => processSummarizationResult(resp))
@@ -346,6 +335,10 @@ $('#getRangeButton').click(function() {
 	//$('#getRangeButton').hide();
 	$('.su_popup').show();
 })
+
+
+
+
 
 function updateHighlights(arr){
 	console.log(arr)
@@ -365,6 +358,9 @@ function updateHighlights(arr){
 	viewerEle.appendChild(iframe);
 	
 	iframe.onload = function() {
+		//add toggle smart search here
+		// document.getElementById("searchToggle").click();
+		// document.getElementById("searchToggle").click();
 		iframe.contentDocument.addEventListener('funcready', () => {
 			let f = function(backward = false) {
 				iframe.contentWindow.jumpToNextMatch(backward);
@@ -374,6 +370,9 @@ function updateHighlights(arr){
 			$('.answerarrow.arrowleft').off().click(() => f(true));
 			$('.answerarrow.arrowright').off().click(() => f());
 		});
+		if(document.getElementById('searchParent').style.visibility === 'hidden') {
+			document.getElementById("searchToggle").click();
+		}
 	}	
 }
 

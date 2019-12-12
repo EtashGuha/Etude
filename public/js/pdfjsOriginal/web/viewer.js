@@ -5096,7 +5096,6 @@ function areArgsValid(mainString, targetStrings) {
 					key: "renderView",
 					value: function renderView(view) {
 						var _this = this;
-						console.log("How are you")
 						switch (view.renderingState) {
 							case RenderingStates.FINISHED:
 								return false;
