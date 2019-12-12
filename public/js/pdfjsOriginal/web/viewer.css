@@ -810,7 +810,7 @@ html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
 }
 
 .findbar {
-  min-width: 250px;
+  min-width: 100px;
 }
 .findbar > div {
   height: 32px;
@@ -836,21 +836,21 @@ html[dir='rtl'] .findbar {
 }
 
 #findInput {
-  width: 72%;
   font-family: Poppins Regular;
+  width: calc(100% - 72px);
 }
 #findInput::-webkit-input-placeholder {
   color: hsl(0, 0%, 75%);
 }
-/*#findInput:-ms-input-placeholder {
-  font-style: italic;
+#findInput:-ms-input-placeholder {
+  font-style: normal;
 }
 #findInput::-ms-input-placeholder {
-  font-style: italic;
+  font-style: normal;
 }
 #findInput::placeholder {
-  font-style: italic;
-}*/
+  font-style: normal;
+}
 #findInput[data-status="pending"] {
   background-image: url(images/loading-small.png);
   background-repeat: no-repeat;

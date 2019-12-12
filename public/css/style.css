@@ -17,7 +17,7 @@ body{
   width: 46px;
   height: 25px;
   top:37px;
-  left:0px;
+  left:32px;
 }
 
 .switch input { 
@@ -132,7 +132,7 @@ input:checked + .slider:before {
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-	color: gray;
+	color: hsl(0, 0%, 75%);
 	opacity: 1; /* Firefox */
 }
 
@@ -177,7 +177,7 @@ input::-webkit-inner-spin-button {
 		font-size: 14px;
 		border: none;
 		border-radius: 20px 0px 0px 20px;
-		width: 80%;
+		width: calc(88% + 1px);
 	}
 	
 	.topnav .search-container button {
