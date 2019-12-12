@@ -809,7 +809,7 @@ html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
 }
 
 .findbar {
-  min-width: 250px;
+  min-width: 100px;
 }
 .findbar > div {
   height: 32px;
@@ -835,19 +835,19 @@ html[dir='rtl'] .findbar {
 }
 
 #findInput {
-  width: 72%;
+  width: calc(100% - 72px);
 }
 #findInput::-webkit-input-placeholder {
   color: hsl(0, 0%, 75%);
 }
 #findInput:-ms-input-placeholder {
-  font-style: italic;
+  font-style: normal;
 }
 #findInput::-ms-input-placeholder {
-  font-style: italic;
+  font-style: normal;
 }
 #findInput::placeholder {
-  font-style: italic;
+  font-style: normal;
 }
 #findInput[data-status="pending"] {
   background-image: url(images/loading-small.png);
@@ -1080,6 +1080,7 @@ html[dir='rtl'] .splitToolbarButton > .toolbarButton:first-child {
   margin: 5px 0;
 }
 html[dir='ltr'] .splitToolbarButtonSeparator {
+  top:2px;
   float: left;
 }
 html[dir='rtl'] .splitToolbarButtonSeparator {
@@ -1305,7 +1306,7 @@ html[dir='ltr'] .toolbarButton.pageUp::before {
   transform: scale(0.5);
   filter: invert(100%);
   margin-top:-4px;
-  margin-left:0px;
+  margin-left:-4px;
 }
 html[dir='rtl'] .toolbarButton.pageUp::before {
   content: url(images/toolbarButton-pageUp-rtl.png);
@@ -1319,7 +1320,7 @@ html[dir='ltr'] .toolbarButton.pageDown::before {
   transform: scale(0.5);
   filter: invert(100%);
   margin-top:-4px;
-  margin-left:0px;
+  margin-left:-1px;
 }
 html[dir='rtl'] .toolbarButton.pageDown::before {
   content: url(images/toolbarButton-pageDown-rtl.png);
@@ -2110,8 +2111,8 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   html[dir='ltr'] .toolbarButton::before,
   html[dir='rtl'] .toolbarButton::before {
     animation-delay: inherit;
-    margin-left:6px;
-    margin-top:7px;
+    padding-left:2px;
+    margin-top:9px;
   }
 
   html[dir='ltr'] .secondaryToolbarButton::before {
@@ -2151,7 +2152,7 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   html[dir='ltr'] .toolbarButton.findPrevious::before {
     content: url(images/findbarButton-previous@2x.png);
     top:-10px;
-    left:-10px;
+    left:-4px;
     filter:invert(0.5);
   }
   html[dir='rtl'] .toolbarButton.findPrevious::before {
@@ -2161,7 +2162,7 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   html[dir='ltr'] .toolbarButton.findNext::before {
     content: url(images/findbarButton-next@2x.png);
     top:-10px;
-    left:-10px;
+    left:-4px;
     filter:invert(0.5);
   }
   html[dir='rtl'] .toolbarButton.findNext::before {
