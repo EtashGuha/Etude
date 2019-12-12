@@ -16,11 +16,12 @@
   font-family: Poppins;
   src:url("./poppins/Poppins-Bold.ttf")
 }
+*/
 
 @font-face {
   font-family: Poppins Regular;
   src: url("./poppins/Poppins-Regular.ttf")
-}*/
+}
 
 .textLayer {
   position: absolute;
