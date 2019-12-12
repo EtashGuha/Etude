@@ -578,7 +578,7 @@ div.viewer iframe {
   left:0px;
   position: absolute;
   background-color: white;
-  width: calc(80% + 21px);
+  width: calc(88% + 21.9px);
   /* overflow: auto; */
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1000;
