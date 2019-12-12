@@ -841,13 +841,13 @@ html[dir='rtl'] .findbar {
   color: hsl(0, 0%, 75%);
 }
 #findInput:-ms-input-placeholder {
-  font-style: italic;
+  font-style: normal;
 }
 #findInput::-ms-input-placeholder {
-  font-style: italic;
+  font-style: normal;
 }
 #findInput::placeholder {
-  font-style: italic;
+  font-style: normal;
 }
 #findInput[data-status="pending"] {
   background-image: url(images/loading-small.png);

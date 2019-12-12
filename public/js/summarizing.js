@@ -70,10 +70,13 @@ function enableEtude() {
 
 }
 
+//The slider for switching between smart search and word search
+
 $("#searchToggle").click(function() {
 	console.log(document.getElementById('searchParent').style.visibility)
 	if(document.getElementById('searchParent').style.visibility === 'hidden') {
 		document.getElementById('searchParent').style.visibility = 'visible';
+		// document.getElementById('searchChildInput').focus();
 		iframe.contentWindow.closeFindBar()
 	} else {
 		document.getElementById('searchParent').style.visibility = 'hidden';
@@ -347,6 +350,9 @@ function updateHighlights(arr){
 	viewerEle.appendChild(iframe);
 	
 	iframe.onload = function() {
+		//add toggle smart search here
+		// document.getElementById("searchToggle").click();
+		// document.getElementById("searchToggle").click();
 		iframe.contentDocument.addEventListener('funcready', () => {
 			let f = function(backward = false) {
 				iframe.contentWindow.jumpToNextMatch(backward);
@@ -356,6 +362,9 @@ function updateHighlights(arr){
 			$('.answerarrow.arrowleft').off().click(() => f(true));
 			$('.answerarrow.arrowright').off().click(() => f());
 		});
+		if(document.getElementById('searchParent').style.visibility === 'hidden') {
+			document.getElementById("searchToggle").click();
+		}
 	}	
 }
 
