@@ -837,11 +837,12 @@ html[dir='rtl'] .findbar {
 
 #findInput {
   width: 72%;
+  font-family: Poppins Regular;
 }
 #findInput::-webkit-input-placeholder {
   color: hsl(0, 0%, 75%);
 }
-#findInput:-ms-input-placeholder {
+/*#findInput:-ms-input-placeholder {
   font-style: italic;
 }
 #findInput::-ms-input-placeholder {
@@ -849,7 +850,7 @@ html[dir='rtl'] .findbar {
 }
 #findInput::placeholder {
   font-style: italic;
-}
+}*/
 #findInput[data-status="pending"] {
   background-image: url(images/loading-small.png);
   background-repeat: no-repeat;
