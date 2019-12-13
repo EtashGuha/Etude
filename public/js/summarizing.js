@@ -197,12 +197,22 @@ searchbox.addEventListener("keyup", function(event) {
 });
 
 searchbox.addEventListener("click", function() {
-	document.getElementById("myDropdown").classList.add("dropdownactive");
+	document.getElementById("myDropdown").classList.add("show");
+	setTimeout(
+		function() 
+		{
+			document.getElementById("myDropdown").classList.add("dropdownactive");
+		}, 0.1);
 });
 
 var closeSearch = document.getElementById("closesearchbutton");
 closeSearch.addEventListener("click", function() {
 	document.getElementById("myDropdown").classList.remove("dropdownactive");
+	setTimeout(
+		function() 
+		{
+			document.getElementById("myDropdown").classList.remove("show");
+		}, 300);
 })
 // var body = document.getElementsByTagName("BODY")[0];
 // var except = document.getElementById("myDropdown");

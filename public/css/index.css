@@ -574,6 +574,7 @@ div.viewer iframe {
 
 
 .dropdown-content {
+  display: none;
   opacity: 0;
   margin-top: 15px;
   padding-top: 28px;
@@ -592,10 +593,40 @@ div.viewer iframe {
 .dropdownactive {
   opacity: 1;
   transform: translateY(12px);
+  -webkit-animation: showContent 0s ease-in 0s forwards;
+  animation: showContent 0s ease-in 0s forwards;
+  animation-fill-mode: forwards;
 }
 
 .dropdownhide {
   height: 0px;
+  -webkit-animation: hideContent 0s ease-in 0.3s forwards;
+  animation: hideContent 0s ease-in 0.3s forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hideContent {
+  to {
+    display: none;
+  }
+}
+
+@-webkit-keyframes hideContent {
+  to {
+    display: none;
+  }
+}
+
+@keyframes showContent {
+  to {
+    display: block;
+  }
+}
+
+@-webkit-keyframes showContent {
+  to {
+    display: block;
+  }
 }
 
 .dropdownshow {
