@@ -38,6 +38,12 @@ const Store = window.parent.require('electron-store');
 const store = new Store();
 const filePath = btoa(new URLSearchParams(document.location.search).get('file'));
 let ranges = store.get(`ranges.${filePath}`) || [];
+/**
+ * 0 - Disabled
+ * 1 - Enabled
+ * 2 - Deletion Enabled
+ */
+let customHighlightState = 0;
 
 function addRangeToPage(r, pageIdx) {
 	if (!ranges[pageIdx]) ranges[pageIdx] = [];
@@ -215,9 +221,11 @@ function highlightSelectedText(i) {
 			nodes.push(span);
 
 			span.onmousedown = (e) => {
-				deleteRangeContaining([i, j, range[0]], [i, j, range[1]]);
-				highlightSelectedText(i);
-				e.stopPropagation();
+				if (customHighlightState === 2) {
+					deleteRangeContaining([i, j, range[0]], [i, j, range[1]]);
+					highlightSelectedText(i);
+					e.stopPropagation();
+				}
 			}
 
 			lastIndex = range[1];
@@ -239,7 +247,11 @@ function updateCustomHighlight() {
 	}
 }
 
-document.addEventListener('mouseup', updateCustomHighlight);
+document.addEventListener('mouseup', () => {
+	if (customHighlightState === 1) {
+		updateCustomHighlight();
+	}
+});
 
 function compareTwoStrings(first, second) {
 	first = first.replace(/\s+/g, '')
@@ -506,6 +518,8 @@ function areArgsValid(mainString, targetStrings) {
 					viewFind: document.getElementById('viewFind'),
 					openFile: document.getElementById('openFile'),
 					print: document.getElementById('print'),
+					// Custome Highlight
+					customHighlightButton: document.getElementById('customHighlight'),
 					presentationModeButton: document.getElementById('presentationMode'),
 					download: document.getElementById('download'),
 					viewBookmark: document.getElementById('viewBookmark')
@@ -14727,6 +14741,24 @@ function areArgsValid(mainString, targetStrings) {
 							eventBus.dispatch('presentationmode', {
 								source: self
 							});
+						});
+						// Custom Highlight
+						items.customHighlightButton.addEventListener('click', function() {
+							customHighlightState = (customHighlightState + 1) % 3;
+							switch (customHighlightState) {
+								case 0:
+									items.customHighlightButton.classList.remove('customHighlightDelete');
+									items.customHighlightButton.classList.add('customHighlightDefault');
+									break;
+								case 1:
+									items.customHighlightButton.classList.remove('customHighlightDefault');
+									items.customHighlightButton.classList.add('customHighlightActive');
+									break;
+								case 2:
+									items.customHighlightButton.classList.remove('customHighlightActive');
+									items.customHighlightButton.classList.add('customHighlightDelete');
+									break;
+							}
 						});
 						items.openFile.addEventListener('click', function() {
 							eventBus.dispatch('openfile', {
