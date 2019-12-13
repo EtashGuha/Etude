@@ -263,7 +263,7 @@
 .annotationLayer .highlightAnnotation {
   background-color: #ff0;
   opacity:0.35;
-  },
+  }
 .annotationLayer .underlineAnnotation,
 .annotationLayer .squigglyAnnotation,
 .annotationLayer .strikeoutAnnotation,
@@ -2396,9 +2396,9 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 }
 
 @media all and (max-width: 840px) {
-  #sidebarContent {
+  /* #sidebarContent { */
     /* background-color: hsla(0,0%,0%,.7); */
-  }
+  /* } */
 
   html[dir='ltr'] #outerContainer.sidebarOpen #viewerContainer {
     left: 0px !important;
