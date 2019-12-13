@@ -485,7 +485,7 @@ async function extractTOC(startPage, endPage) {
 	}
 
 	//once it reaches the end
-	let lastPage = 0;
+	let lastPage = 1;
 	let toc = [];
 	let cur = { title: '' };
 	let isPrevNum = false;
@@ -534,19 +534,16 @@ async function extractTOC(startPage, endPage) {
 				const pageLabel = pdfViewer.currentPageLabel;
 				const pdfdoc = iframe.contentWindow.getPdfDocument()
 				const MAX_OFFSET = Math.round(pdfdoc.numPages / 10);
-				// const regex1 = (item.title.match(/^[0-9,.]+(?=[^0-9,.])/g)||[]).join('').replace(/\./g, '\\.');
 				const regex2 = (item.title.match(/([A-Z][a-z]+(?=[^a-z])|[A-Z][a-z]+$|(?<=\s+)[A-Z,a-z]+(?=\s+))/g)||[]).join('.*')
-				// const pattern = new RegExp(regex1 + '.*' + regex2, 'i');
 				const pattern = new RegExp(regex2, 'i');
 				
 				if (pageLabel && pageNumber !== +pageLabel) {
 					// Try to determine offset from the difference between page number and page label
-					alert(`label: ${pageLabel}, number: ${pageNumber}`);
+					console.log('use page label');
 					offset = pageNumber - (+pageLabel);
 					if (isNaN(offset)) offset = MAX_OFFSET;
 				} else if (i > 4) {
 					offset = 0;
-					alert(pattern);
 					while (offset < MAX_OFFSET && item.page + offset <= pdfdoc.numPages) {
 						console.log('toc:', 'try', item.page, offset);
 						const page = await pdfdoc.getPage(item.page + offset);
@@ -561,11 +558,14 @@ async function extractTOC(startPage, endPage) {
 				}
 				if (offset === MAX_OFFSET || item.page + offset > pdfdoc.numPages) {
 					// Couldn't find the correct offset, reset to -1
-         	alert(`Couldn't determine offset`)
 					offset = -1;
 				}
-				alert(`Offset set to ${offset}`);
-				iframe.contentWindow.jumpToPage(item.page + offset);
+				if (offset < 0) {
+					alert('Couldn\'t determine the offset.');
+				} else {
+					alert('Offset set to ' + offset);
+					iframe.contentWindow.jumpToPage(item.page + offset);
+				}
 			}
 		}
 		outlineView.append(link);
