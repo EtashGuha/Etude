@@ -11324,7 +11324,7 @@ function areArgsValid(mainString, targetStrings) {
 					document.dispatchEvent(new Event('funcready'));
 					PDFViewerApplication.eventBus.on('safetojump', jumpToNextMatch);
 					PDFViewerApplication.eventBus.on('textlayerrendered', ({ pageNumber }) => {
-						// highlightSelectedText(pageNumber);
+						highlightSelectedText(pageNumber);
 					});
 
 					return _possibleConstructorReturn(this, _getPrototypeOf(PDFViewer).apply(this, arguments));
@@ -12897,18 +12897,10 @@ function areArgsValid(mainString, targetStrings) {
 					this.div = div;
 					container.appendChild(div);
 					
-					if (this.id <= 3) {
-						this.eventBus.on('calculationdone', (evt) => {
-							if (evt.id !== this.id) return;
-							console.log(`RESET rendering state for page ${this.id}`)
-							this.renderingState = _pdf_rendering_queue.RenderingStates.INITIAL;
-							var continueRendering = function continueRendering() {
-								this.renderingQueue.renderHighestPriority();
-							}
-							continueRendering = continueRendering.bind(this);
-							this.draw().then(continueRendering, continueRendering);
-						});
-					}
+					this.eventBus.on('calculationdone', (evt) => {
+						if (evt.id !== this.id) return;
+						this.renderingState = _pdf_rendering_queue.RenderingStates.INITIAL;
+					});
 
 					this.eventBus.on('textlayerrendered', (evt) => {
 						if (evt.pageNumber === this.id) {
@@ -13838,6 +13830,8 @@ function areArgsValid(mainString, targetStrings) {
 						//console.log(this.matches)
 						// console.log(this.matches)
 						this._renderMatches(this.matches);
+						// Re-apply custom highlight
+						highlightSelectedText(this.pageIdx + 1);
 					}
 				}, {
 					key: "_bindEvents",
