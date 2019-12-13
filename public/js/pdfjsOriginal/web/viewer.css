@@ -264,7 +264,7 @@
 .annotationLayer .highlightAnnotation {
   background-color: #ff0;
   opacity:0.35;
-  },
+  }
 .annotationLayer .underlineAnnotation,
 .annotationLayer .squigglyAnnotation,
 .annotationLayer .strikeoutAnnotation,
@@ -590,7 +590,7 @@ html[dir='ltr'] #outerContainer.sidebarOpen #sidebarContainer {
   left: 0px;
   margin-top:-30px;
   /* width: 20%; */
-  width: 250px;
+  width: 280px;
 }
 html[dir='rtl'] #outerContainer.sidebarOpen #sidebarContainer {
   right: 0px;
@@ -1179,7 +1179,7 @@ html[dir='rtl'] .dropdownToolbarButton {
 .splitToolbarButton.toggled > .toolbarButton.toggled,
 .secondaryToolbarButton.toggled {
   /* left:20%; */
-  left: 250px;
+  left: 280px;
   background-color: hsla(0,0%,0%,.3);
   background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
   border-color: hsla(0,0%,0%,.4) hsla(0,0%,0%,.45) hsla(0,0%,0%,.5);
@@ -2413,9 +2413,9 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 }
 
 @media all and (max-width: 840px) {
-  #sidebarContent {
+  /* #sidebarContent { */
     /* background-color: hsla(0,0%,0%,.7); */
-  }
+  /* } */
 
   html[dir='ltr'] #outerContainer.sidebarOpen #viewerContainer {
     left: 0px !important;
