@@ -197,12 +197,12 @@ searchbox.addEventListener("keyup", function(event) {
 });
 
 searchbox.addEventListener("click", function() {
-	document.getElementById("myDropdown").classList.add("show");
+	document.getElementById("myDropdown").classList.add("dropdownactive");
 });
 
 var closeSearch = document.getElementById("closesearchbutton");
 closeSearch.addEventListener("click", function() {
-	document.getElementById("myDropdown").classList.remove("show");
+	document.getElementById("myDropdown").classList.remove("dropdownactive");
 })
 // var body = document.getElementsByTagName("BODY")[0];
 // var except = document.getElementById("myDropdown");
@@ -217,7 +217,7 @@ $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
 	console.log("Cape button clicked")
 	document.getElementById("stopLoadButton").style.display = 'block';
-	document.getElementById("myDropdown").classList.toggle("show");
+	document.getElementById("myDropdown").classList.toggle("dropdownactive");
 	setTimeout(function() {
 		console.log(getNumPages())
 		var getpdftext = getPDFText(1, getNumPages())
