@@ -347,6 +347,7 @@ $('#getRangeButton').click(function() {
 
 	//$('#getRangeButton').hide();
 	$('.su_popup').show();
+	document.getElementById('topageRange').focus();
 })
 
 
