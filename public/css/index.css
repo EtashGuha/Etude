@@ -584,7 +584,7 @@ div.viewer iframe {
   width: calc(88% + 21.8px);
   /* overflow: auto; */
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: -2;
+  z-index: -99999;
   /* overflow: scroll; */
   border-radius:0px 0px 20px 20px;
   transition: all .25s ease-in-out;
@@ -593,44 +593,6 @@ div.viewer iframe {
 .dropdownactive {
   opacity: 1;
   transform: translateY(12px);
-  -webkit-animation: showContent 0s ease-in 0s forwards;
-  animation: showContent 0s ease-in 0s forwards;
-  animation-fill-mode: forwards;
-}
-
-.dropdownhide {
-  height: 0px;
-  -webkit-animation: hideContent 0s ease-in 0.3s forwards;
-  animation: hideContent 0s ease-in 0.3s forwards;
-  animation-fill-mode: forwards;
-}
-
-@keyframes hideContent {
-  to {
-    display: none;
-  }
-}
-
-@-webkit-keyframes hideContent {
-  to {
-    display: none;
-  }
-}
-
-@keyframes showContent {
-  to {
-    display: block;
-  }
-}
-
-@-webkit-keyframes showContent {
-  to {
-    display: block;
-  }
-}
-
-.dropdownshow {
-  height: auto;
 }
 
 .dropdown-content a {

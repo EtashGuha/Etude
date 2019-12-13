@@ -73,6 +73,10 @@ function enableEtude() {
 //The slider for switching between smart search and word search
 
 $("#searchToggle").click(function() {
+	// Hides the search bar instantly. Would be nice to make this fade like usual without bugs in the future.
+	document.getElementById("myDropdown").classList.remove("show");
+	closeSearch.click();
+	
 	console.log(document.getElementById('searchParent').style.visibility)
 	if(document.getElementById('searchParent').style.visibility === 'hidden') {
 		document.getElementById('searchParent').style.visibility = 'visible';
@@ -82,7 +86,6 @@ $("#searchToggle").click(function() {
 		document.getElementById('searchParent').style.visibility = 'hidden';
 		iframe.contentWindow.openFindBar()
 	}
-	
 });
 
 enableEtude()
