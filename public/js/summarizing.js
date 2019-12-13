@@ -81,6 +81,10 @@ function enableEtude() {
 //The slider for switching between smart search and word search
 
 $("#searchToggle").click(function() {
+	// Hides the search bar instantly. Would be nice to make this fade like usual without bugs in the future.
+	document.getElementById("myDropdown").classList.remove("show");
+	closeSearch.click();
+	
 	console.log(document.getElementById('searchParent').style.visibility)
 	if(document.getElementById('searchParent').style.visibility === 'hidden') {
 		document.getElementById('searchParent').style.visibility = 'visible';
@@ -90,7 +94,6 @@ $("#searchToggle").click(function() {
 		document.getElementById('searchParent').style.visibility = 'hidden';
 		iframe.contentWindow.openFindBar()
 	}
-	
 });
 
 enableEtude()
@@ -205,12 +208,22 @@ searchbox.addEventListener("keyup", function(event) {
 });
 
 searchbox.addEventListener("click", function() {
-	document.getElementById("myDropdown").classList.add("dropdownactive");
+	document.getElementById("myDropdown").classList.add("show");
+	setTimeout(
+		function() 
+		{
+			document.getElementById("myDropdown").classList.add("dropdownactive");
+		}, 0.1);
 });
 
 var closeSearch = document.getElementById("closesearchbutton");
 closeSearch.addEventListener("click", function() {
 	document.getElementById("myDropdown").classList.remove("dropdownactive");
+	setTimeout(
+		function() 
+		{
+			document.getElementById("myDropdown").classList.remove("show");
+		}, 300);
 })
 // var body = document.getElementsByTagName("BODY")[0];
 // var except = document.getElementById("myDropdown");
