@@ -1808,6 +1808,32 @@ function areArgsValid(mainString, targetStrings) {
 					_boundEvents = this._boundEvents;
 				_boundEvents.beforePrint = this.beforePrint.bind(this);
 				_boundEvents.afterPrint = this.afterPrint.bind(this);
+
+				// // Only for debugging
+				// let on = eventBus.on.bind(eventBus);
+				// eventBus.on = function(evt, handler) {
+				// 	on(evt, () => {
+				// 		// debugger;
+				// 		console.log('internal events', evt)
+				// 	});
+				// 	on(evt, handler);
+				// }
+				{
+					let timer;
+					eventBus.on('textlayerrendered', () => {
+						if (timer) {
+							window.clearTimeout(timer);
+						}
+						timer = window.setTimeout(() => {
+							if (window.PDFViewerApplication.pdfSidebar.isOutlineViewVisible) {
+								window.parent.dispatchEvent(new Event('outlineViewVisible'))
+							} else {
+								window.parent.dispatchEvent(new Event('outlineViewInvisible'))
+							}
+						}, 800);
+					});
+				}
+
 				eventBus.on('resize', webViewerResize);
 				eventBus.on('hashchange', webViewerHashchange);
 				eventBus.on('beforeprint', _boundEvents.beforePrint);
@@ -7616,7 +7642,9 @@ function areArgsValid(mainString, targetStrings) {
 									matchIdx = pageContent.indexOf(subquery, matchIdx + subqueryLen);
 									// console.log(matchIdx)
 								} else {
-									var bestAnswer = findBestMatch(subquery, pageContent.split(".")).bestMatch
+									var bestAnswer = findBestMatch(subquery, pageContent.split(". ").filter(function (el) {
+												  return (el != null && el != undefined && el.length >5);
+												})).bestMatch
 									matchIdx = pageContent.indexOf(bestAnswer.target, matchIdx + subqueryLen);
 									if (bestMatchRatings[i] === undefined || bestMatchRatings[i] < bestAnswer.rating) {
 										bestMatchRatings[i] = bestAnswer.rating
@@ -11103,6 +11131,10 @@ function areArgsValid(mainString, targetStrings) {
 						_index = (_index + (backward ? -1 : 1) + len) % len;
 						// console.log(_index)
 						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
+					}
+
+					window.jumpToPage = function(idx) {
+						PDFViewerApplication.pdfViewer.currentPageNumber = idx
 					}
 					window.getHtml = function() {
 						// for(var i = 0; i < PDFViewerApplication.pdfViewer._pages.length; i++) {
