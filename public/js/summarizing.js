@@ -84,7 +84,7 @@ $("#searchToggle").click(function() {
 	document.getElementById("myDropdown").classList.remove("show");
 	closeSearch.click();
 	
-	console.log(document.getElementById('searchParent').style.visibility)
+	//console.log(document.getElementById('searchParent').style.visibility)
 	if(document.getElementById('searchParent').style.visibility === 'hidden') {
 		document.getElementById('searchParent').style.visibility = 'visible';
 		// document.getElementById('searchChildInput').focus();
