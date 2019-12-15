@@ -16,11 +16,12 @@
   font-family: Poppins;
   src:url("./poppins/Poppins-Bold.ttf")
 }
+*/
 
 @font-face {
   font-family: Poppins Regular;
   src: url("./poppins/Poppins-Regular.ttf")
-}*/
+}
 
 .textLayer {
   position: absolute;
@@ -838,14 +839,30 @@ html[dir='rtl'] .findbar {
 }
 
 #findInput {
+  font-family: Poppins Regular;
   width: calc(100% - 72px);
 }
-#findInput::-webkit-input-placeholder {
-  color: hsl(0, 0%, 75%);
+
+
+.sliderhidden {
+  height: 0px;
+  overflow: hidden;
+
+  transition:         height 0.5s ease;
+  -moz-transition:    height 0.5s ease;
+  -ms-transition:     height 0.5s ease;
+  -o-transition:      height 0.5s ease;
+  -webkit-transition: height 0.5s ease;
 }
+
 #findInput:-ms-input-placeholder {
   font-style: normal;
 }
+
+.slidershow {
+  height: auto;
+}
+
 #findInput::-ms-input-placeholder {
   font-style: normal;
 }

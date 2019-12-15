@@ -81,6 +81,10 @@ function enableEtude() {
 //The slider for switching between smart search and word search
 
 $("#searchToggle").click(function() {
+	// Hides the search bar instantly. Would be nice to make this fade like usual without bugs in the future.
+	document.getElementById("myDropdown").classList.remove("show");
+	closeSearch.click();
+	
 	//console.log(document.getElementById('searchParent').style.visibility)
 	if(document.getElementById('searchParent').style.visibility === 'hidden') {
 		document.getElementById('searchParent').style.visibility = 'visible';
@@ -90,7 +94,6 @@ $("#searchToggle").click(function() {
 		document.getElementById('searchParent').style.visibility = 'hidden';
 		iframe.contentWindow.openFindBar()
 	}
-	
 });
 
 enableEtude()
@@ -206,11 +209,21 @@ searchbox.addEventListener("keyup", function(event) {
 
 searchbox.addEventListener("click", function() {
 	document.getElementById("myDropdown").classList.add("show");
+	setTimeout(
+		function() 
+		{
+			document.getElementById("myDropdown").classList.add("dropdownactive");
+		}, 0.1);
 });
 
 var closeSearch = document.getElementById("closesearchbutton");
 closeSearch.addEventListener("click", function() {
-	document.getElementById("myDropdown").classList.remove("show");
+	document.getElementById("myDropdown").classList.remove("dropdownactive");
+	setTimeout(
+		function() 
+		{
+			document.getElementById("myDropdown").classList.remove("show");
+		}, 300);
 })
 // var body = document.getElementsByTagName("BODY")[0];
 // var except = document.getElementById("myDropdown");
@@ -225,7 +238,7 @@ $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
 	//console.log("Cape button clicked")
 	document.getElementById("stopLoadButton").style.display = 'block';
-	document.getElementById("myDropdown").classList.toggle("show");
+	document.getElementById("myDropdown").classList.toggle("dropdownactive");
 	setTimeout(function() {
 		//console.log(getNumPages())
 		var getpdftext = getPDFText(1, getNumPages())
@@ -283,6 +296,17 @@ $("#etudeButton").click(function() {
 
 })
 
+var searchbox = document.getElementById("topageRange");
+// Execute a function when the user releases a key on the keyboard
+searchbox.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    // Trigger the button element with a click
+    document.getElementById("summarizingButton").click();
+  }
+});
+
 //summarization function
 $('#summarizingButton').click(function() {
 	$('.su_popup').hide();
@@ -334,6 +358,7 @@ $('#getRangeButton').click(function() {
 
 	//$('#getRangeButton').hide();
 	$('.su_popup').show();
+	document.getElementById('topageRange').focus();
 })
 
 

@@ -563,27 +563,36 @@ div.viewer iframe {
   animation: lds-ellipsis3 0.6s infinite;
 }
 
-
-
-
+/*****************************
+  Dropdown for search bar
+*****************************/
 
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
+
 .dropdown-content {
   display: none;
-  margin-top: 43px;
+  opacity: 0;
+  margin-top: 15px;
+  padding-top: 28px;
   left:0px;
   position: absolute;
   background-color: white;
-  width: calc(88% + 21.9px);
+  width: calc(88% + 21.8px);
   /* overflow: auto; */
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1000;
+  z-index: -99999;
   /* overflow: scroll; */
   border-radius:0px 0px 20px 20px;
+  transition: all .25s ease-in-out;
+}
+
+.dropdownactive {
+  opacity: 1;
+  transform: translateY(12px);
 }
 
 .dropdown-content a {
