@@ -34,6 +34,224 @@ var firstPassThrough = true;
 // 	console.log(ipcRenderer.sendSync('getMouseMove'));
 // });
 
+const Store = window.parent.require('electron-store');
+const store = new Store();
+const filePath = btoa(new URLSearchParams(document.location.search).get('file'));
+let ranges = store.get(`ranges.${filePath}`) || [];
+/**
+ * 0 - Disabled
+ * 1 - Enabled
+ * 2 - Deletion Enabled
+ */
+let customHighlightState = 0;
+
+function addRangeToPage(r, pageIdx) {
+	if (!ranges[pageIdx]) ranges[pageIdx] = [];
+	ranges[pageIdx].push(r);
+	ranges[pageIdx] = mergeRanges(ranges[pageIdx]);
+	store.set(`ranges.${filePath}`, ranges);
+}
+
+function deleteRangeContaining(start, end) {
+	function compareRange(a, b) {
+		if (a[0] === b[0]) {
+			if (a[1] === b[1]) return 0;
+			return a[1] < b[1] ? -1 : 1;
+		} else {
+			return a[0] < b[0] ? -1 : 1;
+		}
+	}
+	const pageIdx = start[0];
+	start = start.slice(1);
+	end = end.slice(1);
+	for (let r of ranges[pageIdx]) {
+		if (compareRange(r.anchor, start) <= 0 && compareRange(r.focus, end) >= 0) {
+			// r will be removed
+			ranges[pageIdx] = ranges[pageIdx].filter(s => s !== r);
+			// Save changes
+			store.set(`ranges.${filePath}`, ranges);
+		}
+	}
+}
+
+function mergeRanges(rs) {
+	rs.sort((a, b) => {
+		if (a.anchor[0] - b.anchor[0] !== 0) return a.anchor[0] - b.anchor[0];
+		return a.anchor[1] - b.anchor[1];
+	});
+	let merged = [];
+	for (let r of rs) {
+		if (merged.length === 0) {
+			merged.push(r);
+			continue;
+		} else {
+			let prev = merged[merged.length-1];
+			if (
+				r.anchor[0] < prev.focus[0] ||
+				r.anchor[0] === prev.focus[0] && r.anchor[1] <= prev.focus[1]
+			) {
+				if (r.focus[0] > prev.focus[0] ||
+					r.focus[0] === prev.focus[0] && r.focus[1] > prev.focus[1]
+				) {
+					prev.focus = r.focus;
+				}
+			} else {
+				merged.push(r);
+			}
+		}
+	}
+	return merged;
+}
+
+function updateRanges() {
+	let sel = window.getSelection();
+	let anchor = anchorNode = sel.anchorNode;
+	let anchorOffset = sel.anchorOffset;
+	let focus = focusNode = sel.focusNode;
+	let focusOffset = sel.focusOffset;
+
+	document.getSelection().removeAllRanges(); // Clear browser default highlight
+
+	function calculateIndices(textNode, offset) {
+		if (!textNode) return null;
+		let cur = textNode;
+		let pageIndex; let spanIndex; let textIndex;
+		while (cur !== document.body) {
+			if (cur.classList && cur.classList.contains('page')) {
+				pageIndex = +cur.dataset.pageNumber;
+				break;
+			}
+			if (cur.tagName === 'SPAN' && cur.parentNode.tagName !== 'SPAN') {
+				spanIndex = [...cur.parentNode.childNodes].indexOf(cur);
+				textIndex = offset;
+				for (let n of cur.childNodes) {
+					if (n.contains(textNode)) break;
+					textIndex += n.textContent.length;
+				}
+			} 
+			cur = cur.parentNode;
+		}
+		return [pageIndex, spanIndex, textIndex];
+	}
+	
+	let start = calculateIndices(anchorNode, anchorOffset);
+	let end = calculateIndices(focusNode, focusOffset);
+
+
+	if (!start || !end) return [0, -1];
+	if (
+		start[0] > end[0] ||
+		start[0] === end[0] && start[1] > end[1] ||
+		start[0] === end[0] && start[1] === end[1] && start[2] > end[2]
+	) {
+		[start, end] = [end, start];
+	}
+	if (start[0] === end[0]) {
+		addRangeToPage({
+			anchor: [start[1], start[2]],
+			focus: [end[1], end[2]]
+		}, start[0]);
+	} else {
+		addRangeToPage({
+			anchor: [start[1], start[2]],
+			focus: [Infinity, Infinity]
+		}, start[0]);
+		addRangeToPage({
+			anchor: [-1, -1],
+			focus: [end[1], end[2]]
+		}, end[0]);
+		for (let i = start[0] + 1; i <= end[0] - 1; i++) {
+			addRangeToPage({
+				anchor: [-1, -1],
+				focus: [Infinity, Infinity]
+			}, i);
+		}
+	}
+	return [start[0], end[0]]; // Return pages that need to update
+}
+
+function highlightSelectedText(i) {
+	if (!Array.isArray(ranges[i])) return;
+	let textLayer = document.querySelector(`.page[data-page-number="${i}"] .textLayer`);
+
+	// Preprocessing
+	let groupedBySpans = [];
+	for (let r of ranges[i]) {
+		r.anchor[0] = Math.max(r.anchor[0], 0);
+		r.anchor[0] = Math.min(r.anchor[0], textLayer.childNodes.length - 1);
+		r.focus[0] = Math.max(r.focus[0], 0);
+		r.focus[0] = Math.min(r.focus[0], textLayer.childNodes.length - 1);
+
+		if (r.anchor[0] === r.focus[0]) {
+			if (!groupedBySpans[r.anchor[0]]) groupedBySpans[r.anchor[0]] = [];
+			groupedBySpans[r.anchor[0]].push([r.anchor[1], r.focus[1]]);
+		} else {
+			if (!groupedBySpans[r.anchor[0]]) groupedBySpans[r.anchor[0]] = [];
+			groupedBySpans[r.anchor[0]].push([r.anchor[1], Infinity]);
+			if (!groupedBySpans[r.focus[0]]) groupedBySpans[r.focus[0]] = []; 
+			groupedBySpans[r.focus[0]].push([-Infinity, r.focus[1]]);
+			for (let i = r.anchor[0] + 1; i <= r.focus[0] - 1; i++) {
+				if (!groupedBySpans[i]) groupedBySpans[i] = [];
+				groupedBySpans[i].push([-Infinity, Infinity]);
+			}
+		}
+	}
+
+	// First remove all highlights
+	for (let span of textLayer.children) {
+		span.innerHTML = span.textContent;
+	}
+
+	// Actual rendering
+	for (let [j, group] of groupedBySpans.entries()) {
+		if (!group) continue;
+		let lastIndex = 0;
+		let nodes = [];
+		let spanContainer = textLayer.childNodes[j];
+		let text = spanContainer.textContent;
+		for (let range of group) {
+			nodes.push(document.createTextNode(
+				text.slice(lastIndex, range[0])
+			));
+			let span = document.createElement('span');
+			span.classList.add('highlight');
+			span.style = "cursor: default;"
+			span.style.background = 'red'; // Custom color
+			span.textContent = text.slice(...range);
+			nodes.push(span);
+
+			span.onmousedown = (e) => {
+				if (customHighlightState === 2) {
+					deleteRangeContaining([i, j, range[0]], [i, j, range[1]]);
+					highlightSelectedText(i);
+					e.stopPropagation();
+				}
+			}
+
+			lastIndex = range[1];
+		}
+		nodes.push(document.createTextNode(
+			text.slice(lastIndex)
+		));
+		spanContainer.innerHTML = '';
+		spanContainer.append(...nodes);			
+	}
+}
+
+
+function updateCustomHighlight() {
+	let [pageStart, pageEnd] = updateRanges();
+	// Update affected pages immediately
+	for (let i = pageStart; i <= pageEnd; i++) {
+		highlightSelectedText(i);
+	}
+}
+
+document.addEventListener('mouseup', () => {
+	if (customHighlightState === 1) {
+		updateCustomHighlight();
+	}
+});
 
 function compareTwoStrings(first, second) {
 	first = first.replace(/\s+/g, '')
@@ -300,6 +518,8 @@ function areArgsValid(mainString, targetStrings) {
 					viewFind: document.getElementById('viewFind'),
 					openFile: document.getElementById('openFile'),
 					print: document.getElementById('print'),
+					// Custome Highlight
+					customHighlightButton: document.getElementById('customHighlight'),
 					presentationModeButton: document.getElementById('presentationMode'),
 					download: document.getElementById('download'),
 					viewBookmark: document.getElementById('viewBookmark')
@@ -1808,6 +2028,32 @@ function areArgsValid(mainString, targetStrings) {
 					_boundEvents = this._boundEvents;
 				_boundEvents.beforePrint = this.beforePrint.bind(this);
 				_boundEvents.afterPrint = this.afterPrint.bind(this);
+
+				// // Only for debugging
+				// let on = eventBus.on.bind(eventBus);
+				// eventBus.on = function(evt, handler) {
+				// 	on(evt, () => {
+				// 		// debugger;
+				// 		console.log('internal events', evt)
+				// 	});
+				// 	on(evt, handler);
+				// }
+				{
+					let timer;
+					eventBus.on('textlayerrendered', () => {
+						if (timer) {
+							window.clearTimeout(timer);
+						}
+						timer = window.setTimeout(() => {
+							if (window.PDFViewerApplication.pdfSidebar.isOutlineViewVisible) {
+								window.parent.dispatchEvent(new Event('outlineViewVisible'))
+							} else {
+								window.parent.dispatchEvent(new Event('outlineViewInvisible'))
+							}
+						}, 800);
+					});
+				}
+
 				eventBus.on('resize', webViewerResize);
 				eventBus.on('hashchange', webViewerHashchange);
 				eventBus.on('beforeprint', _boundEvents.beforePrint);
@@ -7616,7 +7862,9 @@ function areArgsValid(mainString, targetStrings) {
 									matchIdx = pageContent.indexOf(subquery, matchIdx + subqueryLen);
 									// console.log(matchIdx)
 								} else {
-									var bestAnswer = findBestMatch(subquery, pageContent.split(".")).bestMatch
+									var bestAnswer = findBestMatch(subquery, pageContent.split(". ").filter(function (el) {
+												  return (el != null && el != undefined && el.length >5);
+												})).bestMatch
 									matchIdx = pageContent.indexOf(bestAnswer.target, matchIdx + subqueryLen);
 									if (bestMatchRatings[i] === undefined || bestMatchRatings[i] < bestAnswer.rating) {
 										bestMatchRatings[i] = bestAnswer.rating
@@ -11104,6 +11352,10 @@ function areArgsValid(mainString, targetStrings) {
 						// console.log(_index)
 						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
 					}
+
+					window.jumpToPage = function(idx) {
+						PDFViewerApplication.pdfViewer.currentPageNumber = idx
+					}
 					window.getHtml = function() {
 						// for(var i = 0; i < PDFViewerApplication.pdfViewer._pages.length; i++) {
 						// 	// console.log(i)
@@ -11117,6 +11369,9 @@ function areArgsValid(mainString, targetStrings) {
 					}
 					document.dispatchEvent(new Event('funcready'));
 					PDFViewerApplication.eventBus.on('safetojump', jumpToNextMatch);
+					PDFViewerApplication.eventBus.on('textlayerrendered', ({ pageNumber }) => {
+						highlightSelectedText(pageNumber);
+					});
 
 					return _possibleConstructorReturn(this, _getPrototypeOf(PDFViewer).apply(this, arguments));
 				}
@@ -12688,18 +12943,16 @@ function areArgsValid(mainString, targetStrings) {
 					this.div = div;
 					container.appendChild(div);
 					
-					if (this.id <= 3) {
-						this.eventBus.on('calculationdone', (evt) => {
-							if (evt.id !== this.id) return;
-							console.log(`RESET rendering state for page ${this.id}`)
-							this.renderingState = _pdf_rendering_queue.RenderingStates.INITIAL;
-							var continueRendering = function continueRendering() {
-								this.renderingQueue.renderHighestPriority();
-							}
-							continueRendering = continueRendering.bind(this);
-							this.draw().then(continueRendering, continueRendering);
-						});	
-					}
+					this.eventBus.on('calculationdone', (evt) => {
+						if (evt.id !== this.id) return;
+						this.renderingState = _pdf_rendering_queue.RenderingStates.INITIAL;
+					});
+
+					this.eventBus.on('textlayerrendered', (evt) => {
+						if (evt.pageNumber === this.id) {
+							highlightSelectedText(this.id);
+						}
+					})
 				}
 
 				_createClass(PDFPageView, [{
@@ -13623,6 +13876,8 @@ function areArgsValid(mainString, targetStrings) {
 						//console.log(this.matches)
 						// console.log(this.matches)
 						this._renderMatches(this.matches);
+						// Re-apply custom highlight
+						highlightSelectedText(this.pageIdx + 1);
 					}
 				}, {
 					key: "_bindEvents",
@@ -14518,6 +14773,24 @@ function areArgsValid(mainString, targetStrings) {
 							eventBus.dispatch('presentationmode', {
 								source: self
 							});
+						});
+						// Custom Highlight
+						items.customHighlightButton.addEventListener('click', function() {
+							customHighlightState = (customHighlightState + 1) % 3;
+							switch (customHighlightState) {
+								case 0:
+									items.customHighlightButton.classList.remove('customHighlightDelete');
+									items.customHighlightButton.classList.add('customHighlightDefault');
+									break;
+								case 1:
+									items.customHighlightButton.classList.remove('customHighlightDefault');
+									items.customHighlightButton.classList.add('customHighlightActive');
+									break;
+								case 2:
+									items.customHighlightButton.classList.remove('customHighlightActive');
+									items.customHighlightButton.classList.add('customHighlightDelete');
+									break;
+							}
 						});
 						items.openFile.addEventListener('click', function() {
 							eventBus.dispatch('openfile', {
