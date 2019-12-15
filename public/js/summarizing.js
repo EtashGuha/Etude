@@ -600,13 +600,14 @@ function getLayeredText() {
 				return page.getTextContent().then(function(content) {
 					var strings = content.items.map(function(item) {
 						if(map.get(Math.round(item.height))) {
-							map.set(Math.round(item.height), map.get(Math.round(item.height)) + item.str);
+							map.set(Math.round(item.height), map.get(Math.round(item.height)) + item.str.length);
 						} else {
-							map.set(Math.round(item.height), item.str)
+							map.set(Math.round(item.height), item.str.length)
 						}
 						return item.str;
 					});
 				}).then(function() {
+					console.log(pageNum)
 					if(pageNum == pdfdoc.numPages) {
 						resolve("DONE")
 					}
