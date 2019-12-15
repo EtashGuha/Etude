@@ -436,8 +436,10 @@ async function extractTOC(startPage, endPage) {
 	// var startPage = 1;
 	// var endPage = 10;
 
+	const pdfdoc = iframe.contentWindow.getPdfDocument()
+	if (pdfdoc.numPages < 50) return;
+
 	for (let pageNum = 1; pageNum <= 50; pageNum++) {
-		const pdfdoc = iframe.contentWindow.getPdfDocument()
 		const page = await pdfdoc.getPage(pageNum);
 		const content = await page.getTextContent();
 		content.items.forEach(item => {
