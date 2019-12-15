@@ -598,7 +598,6 @@ function getLayeredText() {
 		var loadPage = function(pageNum) {
 			return pdfdoc.getPage(pageNum).then(function(page) {
 				return page.getTextContent().then(function(content) {
-
 					var strings = content.items.map(function(item) {
 						if(map.get(Math.round(item.height))) {
 							map.set(Math.round(item.height), map.get(Math.round(item.height)) + item.str);
@@ -606,14 +605,14 @@ function getLayeredText() {
 							map.set(Math.round(item.height), item.str)
 						}
 						return item.str;
-					}).then(function() {
-						if(pageNum == pdfdoc.numPages) {
-							resolve("DONE")
-						}
 					});
+				}).then(function() {
+					if(pageNum == pdfdoc.numPages) {
+						resolve("DONE")
+					}
 				});
 			});
-		}
+		};
 		for (var i = 1; i <= pdfdoc.numPages; i++) {
 			lastPromise = lastPromise.then(loadPage.bind(null, i));
 		}
