@@ -28,6 +28,9 @@ const analyti = new analytics.default('UA-145681611-1')
 const userDataPath = (electron.app || electron.remote.app).getPath('userData');
 var ready = false
 
+const Store = require('electron-store');
+var store = new Store();
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -36,7 +39,21 @@ global.sharedObject = {
     newWindow: false
 }
 
+var firstRun = !store.has("stripeID");
+var activeRun = false;
 
+if(!firstRun){
+var stripe = require('stripe')('rk_live_pVDuyAoclBtFPPIWIZ8rHCl200kbPvuYWk');
+
+stripe.subscriptions.retrieve(
+  store.get("stripeID"),
+  function(err, subscription) {
+    if(subscription.status === "trialing" || subscription.status === "active") {
+        activeRun = true;
+    }
+  }
+);
+}
 ipcMain.on('show_pdf_message', (event, arg) => {
     console.log("OPENNING A PDF")
 
@@ -136,6 +153,7 @@ ipcMain.on('get-file-data', function(event) {
 // });
 
 function createWindow() {
+
     if(fileOpen) {
         sharedObject.someProperty = currpathtofile;
         let framebool = true;
@@ -161,6 +179,9 @@ function createWindow() {
 
         autoUpdater.checkForUpdatesAndNotify();
 
+        if(firstRun && activeRun) {
+            mainWindow.loadFile('verify.html')
+        } else {
         function sendStatusToWindow(text) {
             mainWindow.webContents.send('message', text);
         }
@@ -194,6 +215,7 @@ function createWindow() {
         // mainWindow.webContents.openDevTools()
         sharedObject.newWindow = true
         mainWindow.loadFile('summarizing.html')
+        }
     } else {
       let framebool = true;
         if (process.platform == 'win32') {
@@ -217,6 +239,12 @@ function createWindow() {
         })
 
         autoUpdater.checkForUpdatesAndNotify();
+
+
+
+        if(firstRun && activeRun) {
+            mainWindow.loadFile('verify.html')
+        } else {
 
         function sendStatusToWindow(text) {
             mainWindow.webContents.send('message', text);
@@ -254,7 +282,7 @@ function createWindow() {
             mainWindow.loadFile('library.html')
         }, 1000);
 
-
+     }
         // Emitted when the window is closed.
         mainWindow.on('closed', function() {
             // Dereference the window object, usually you would store windows

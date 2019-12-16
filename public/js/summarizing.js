@@ -64,7 +64,7 @@ const {
 } = require('electron');
 
 
-
+document.getElementById('stripeIDBlock').innerHTML = store.get("stripeID");
 
 function enableEtude() {
 	document.getElementById("getRangeButton").disabled = false;
