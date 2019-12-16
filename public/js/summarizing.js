@@ -243,6 +243,7 @@ $("#cape_btn").click(function() {
 		//console.log(getNumPages())
 		var getpdftext = getPDFText(1, getNumPages())
 		getpdftext.then((x) => {
+			console.log(x)
 			var promiseToAppend = new Promise(function(resolve, reject) {
 				//console.log("beginning promise")
 				kernelWorker.onmessage = function(ev) {
@@ -344,9 +345,12 @@ function processSummarizationResult(t) {
 function summaryButtonPressed(firstpage, lastpage) {
 	var getpdftext = getPDFText(firstpage, lastpage)
 	getpdftext.then((x) => {
+		//console.log(x);
 		deepai.callStandardApi("summarization", {
 			text: x
-		}).then((resp) => processSummarizationResult(resp))
+		}).then((resp) => {
+			//console.log(resp);
+			processSummarizationResult(resp)});
 	});
 }
 
@@ -425,13 +429,13 @@ function getPDFText(firstPage, lastPage) {
 			var gethtml = getHtml()	
 			gethtml.then((data) => {
 				//console.log(data)
-				store.set(key, data)
-				//console.log(store.store)
-				var strings = ""
-				for(var i = firstPage - 1; i <=  lastPage - 1; i++){
-					strings = strings.concat(data[i])
-				}
-				resolve(strings)
+				// store.set(key, data)
+				// //console.log(store.store)
+				// var strings = ""
+				// for(var i = firstPage - 1; i <=  lastPage - 1; i++){
+				// 	strings = strings.concat(data[i])
+				// }
+				resolve(data)
 			})
 		}
 		
@@ -444,7 +448,6 @@ function getHtml() {
 		getlayered.then((data) => {
 			var gettextaftermap = getTextAfterMap()
 			gettextaftermap.then((data) => {
-				//console.log(data);
 				resolve(data);
 			})
 		})
@@ -626,16 +629,18 @@ function getLayeredText() {
 		var loadPage = function(pageNum) {
 			return pdfdoc.getPage(pageNum).then(function(page) {
 				return page.getTextContent().then(function(content) {
-					var strings = content.items.map(function(item) {
+					var strings = content.items.map(function(item, index) {
 						if(map.get(Math.round(item.height))) {
 							map.set(Math.round(item.height), map.get(Math.round(item.height)) + item.str);
 						} else {
 							map.set(Math.round(item.height), item.str)
 						}
+						if(content.items.length === index + 1) {
+							map.set(Math.round(item.height), map.get(Math.round(item.height)) + " (---" + pageNum + "---) ");
+						}
 						return item.str;
 					});
 				}).then(function() {
-					//console.log(pageNum)
 					if(pageNum == pdfdoc.numPages) {
 						resolve("DONE")
 					}
@@ -663,35 +668,42 @@ function getTextAfterMap(){
 				maxFont = key
 			}
 		})
-		var pdfdoc = iframe.contentWindow.getPdfDocument()
-		var lastPromise; // will be used to chain promises
-		lastPromise = pdfdoc.getMetadata().then(function(data) {
-		});
+		//console.log(map.get(maxFont));
+		resolve(map.get(maxFont));
 
-		var loadPage = function(pageNum) {
-			return pdfdoc.getPage(pageNum).then(function(page) {
-				var viewport = page.getViewport({
-					scale: 1.0,
-				});
-				return page.getTextContent().then(function(content) {
-					var strings = content.items.map(function(item) {
-						if(Math.round(item.height) == maxFont) {
-							return item.str;
-						}
-					});
-					strings = strings.join(' ');
-					textForEachPage.push(strings)
-				}).then(function() {
-					if(pdfdoc.numPages === pageNum) {
-						resolve(textForEachPage)
-					}
-				});
-			});
-		};
 
-		for (var i = 1; i <= pdfdoc.numPages; i++) {
-			lastPromise = lastPromise.then(loadPage.bind(null, i));
-		}
+
+		// var pdfdoc = iframe.contentWindow.getPdfDocument()
+		// var lastPromise; // will be used to chain promises
+		// lastPromise = pdfdoc.getMetadata().then(function(data) {
+		// });
+
+		// var loadPage = function(pageNum) {
+		// 	return pdfdoc.getPage(pageNum).then(function(page) {
+		// 		var viewport = page.getViewport({
+		// 			scale: 1.0,
+		// 		});
+		// 		return page.getTextContent().then(function(content) {
+		// 			var strings = content.items.map(function(item) {
+		// 				if(Math.round(item.height) == maxFont) {
+		// 					return item.str;
+		// 				}
+		// 			});
+		// 			strings = strings.join(' ');
+		// 			textForEachPage.push(strings)
+		// 		}).then(function() {
+		// 			if(pdfdoc.numPages === pageNum) {
+		// 				resolve(textForEachPage)
+		// 			}
+		// 		});
+		// 	});
+		// };
+
+		// for (var i = 1; i <= pdfdoc.numPages; i++) {
+		// 	lastPromise = lastPromise.then(loadPage.bind(null, i));
+		// }
+
+
 	})
 }
 
