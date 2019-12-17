@@ -32,6 +32,7 @@ var ready = false
 
 const Store = require('electron-store');
 var store = new Store();
+//store.clear();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
