@@ -43,7 +43,7 @@ currSet.forEach(function(value) {
 	
 });
 
-
+document.getElementById('stripeIDBlock').innerHTML = store.get("stripeID");
 //store.clear();
 // for (var j = 0; j < currSet.size; j++) {
 // 	// var j = 0;
