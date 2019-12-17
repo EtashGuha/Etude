@@ -99,7 +99,6 @@ $("#searchToggle").click(function() {
 enableEtude()
 
 $("#bookmark_icon").click(function() {
-	store.clear()
 	//get the page number
 	var whichpagetobookmark = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('pageNumber').value;
 	for (var j = 0; j < bookmarkArray.len; j++) {
