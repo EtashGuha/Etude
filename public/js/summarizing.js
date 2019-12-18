@@ -23,15 +23,14 @@ const viewerEle = document.getElementById('viewer');
 viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
 // <<<<<<< HEAD
-console.log("Entering summarinzg js")
-console.log(require('electron').remote.getGlobal('sharedObject').someProperty)
+//console.log("Entering summarinzg js")
+//console.log(require('electron').remote.getGlobal('sharedObject').someProperty)
 iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#pagemode=bookmarks`);
-console.log(iframe.src)
+//console.log(iframe.src)
 // =======
 // iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}`);
 
 viewerEle.appendChild(iframe);
-// >>>>>>> 0e10501b36973dc4baf1f7072faeb8f7cfb4c00c
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.pdf"
 
@@ -85,7 +84,7 @@ $("#searchToggle").click(function() {
 	document.getElementById("myDropdown").classList.remove("show");
 	closeSearch.click();
 	
-	console.log(document.getElementById('searchParent').style.visibility)
+	//console.log(document.getElementById('searchParent').style.visibility)
 	if(document.getElementById('searchParent').style.visibility === 'hidden') {
 		document.getElementById('searchParent').style.visibility = 'visible';
 		// document.getElementById('searchChildInput').focus();
@@ -173,8 +172,8 @@ $(document).on("click", ".deleteImage_", function() {
 });
 // when the user click the bookmark
 $(document).on("click", ".bookmark-canvas", function() {
-	console.log(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children)
-	console.log(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[$(this).attr("data") - 1])
+	//console.log(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children)
+	//console.log(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[$(this).attr("data") - 1])
 	document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('thumbnailView').children[$(this).attr("data") - 1].click()
 });
 
@@ -236,29 +235,29 @@ closeSearch.addEventListener("click", function() {
 
 $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
-	console.log("Cape button clicked")
+	//console.log("Cape button clicked")
 	document.getElementById("stopLoadButton").style.display = 'block';
 	document.getElementById("myDropdown").classList.toggle("dropdownactive");
 	setTimeout(function() {
-		console.log(getNumPages())
+		//console.log(getNumPages())
 		var getpdftext = getPDFText(1, getNumPages())
 		getpdftext.then((x) => {
 			var promiseToAppend = new Promise(function(resolve, reject) {
-				console.log("beginning promise")
+				//console.log("beginning promise")
 				kernelWorker.onmessage = function(ev) {
 					$("#capeResult").empty().append(ev.data[0]);
 					updateHighlights(ev.data)
-					console.log("refreshed");
+					//console.log("refreshed");
 					if(document.getElementById("myDropdown").classList.contains("show")){
-						console.log("Not showing dropdown");
+						//console.log("Not showing dropdown");
 						document.getElementById("myDropdown").classList.toggle("show");
 					}
 					kernelWorker.terminate()
 					resolve("GOOD")
 				}
-				console.log("redefined kernelWorker on message")
+				//console.log("redefined kernelWorker on message")
 				kernelWorker.postMessage([x, $("#questionVal").val(), "8", "Sentence"])
-				console.log("kernel worker put up")
+				//console.log("kernel worker put up")
 				//kernel.findTextAnswerSync();
 
 			});
@@ -270,7 +269,7 @@ $("#cape_btn").click(function() {
 				document.getElementById('searchloader').style.display = 'none';
 				document.getElementById('searchbuttonthree').style.color = 'black';
 				document.getElementById('cape_btn').style.backgroundColor = '';
-				console.log("Showing")
+				//console.log("Showing")
 				document.getElementById("stopLoadButton").style.display = 'none';
 			});
 		});
@@ -291,7 +290,7 @@ $("#help").click(function() {
 
 $("#etudeButton").click(function() {
 //document.getElementById('etudeButton').addEventListener('click', () => {
-	console.log("Attempting to go to website");
+	//console.log("Attempting to go to website");
 	goToWebsite();
 
 })
@@ -332,8 +331,8 @@ function goToWebsite() {
 	shell.openExternal('https://www.etudereader.com')
 }
 function processSummarizationResult(t) {
-	console.log("here we are")
-	console.log(t)
+	//console.log("here we are")
+	//console.log(t)
 	noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
 	tokenizer.setEntry(noLineBreakText);
 	updateHighlights(tokenizer.getSentences())
@@ -366,7 +365,7 @@ $('#getRangeButton').click(function() {
 
 
 function updateHighlights(arr){
-	console.log(arr)
+	//console.log(arr)
 	currArr = arr;
 	var searchQueries = ""
 	arr.forEach((item, index) => {
@@ -390,7 +389,7 @@ function updateHighlights(arr){
 			let f = function(backward = false) {
 				iframe.contentWindow.jumpToNextMatch(backward);
 				$("#capeResult").empty().append(currArr[iframe.contentWindow.getCurrIndex()]);
-				console.log(currArr[iframe.contentWindow.getCurrIndex()])
+				//console.log(currArr[iframe.contentWindow.getCurrIndex()])
 			}
 			$('.answerarrow.arrowleft').off().click(() => f(true));
 			$('.answerarrow.arrowright').off().click(() => f());
@@ -412,8 +411,8 @@ function escapeRegExp(str) {
 function getPDFText(firstPage, lastPage) {
 	return new Promise(function(resolve, reject) {
 		var key = PDF_URL.concat("textForEachPage").replace(".", "")
-		console.log(key)
-		console.log(store.has(key))
+		//console.log(key)
+		//console.log(store.has(key))
 		if(store.has(key)) {
 			var strings = ""
 			var arrayTextByPage = store.get(key);
@@ -424,9 +423,9 @@ function getPDFText(firstPage, lastPage) {
 		} else {
 			var gethtml = getHtml()	
 			gethtml.then((data) => {
-				console.log(data)
+				//console.log(data)
 				store.set(key, data)
-				console.log(store.store)
+				//console.log(store.store)
 				var strings = ""
 				for(var i = firstPage - 1; i <=  lastPage - 1; i++){
 					strings = strings.concat(data[i])
@@ -444,7 +443,7 @@ function getHtml() {
 		getlayered.then((data) => {
 			var gettextaftermap = getTextAfterMap()
 			gettextaftermap.then((data) => {
-				console.log(data);
+				//console.log(data);
 				resolve(data);
 			})
 		})
@@ -461,8 +460,10 @@ async function extractTOC(startPage, endPage) {
 	// var startPage = 1;
 	// var endPage = 10;
 
+	const pdfdoc = iframe.contentWindow.getPdfDocument()
+	if (pdfdoc.numPages < 50) return;
+
 	for (let pageNum = 1; pageNum <= 50; pageNum++) {
-		const pdfdoc = iframe.contentWindow.getPdfDocument()
 		const page = await pdfdoc.getPage(pageNum);
 		const content = await page.getTextContent();
 		content.items.forEach(item => {
@@ -531,7 +532,7 @@ async function extractTOC(startPage, endPage) {
 		}
 	}
 
-	console.log('toc', toc);
+	//console.log('toc', toc);
 
 	iframe.contentDocument.querySelector('#thumbnailView').classList.add('hidden')
 	const outlineView = iframe.contentDocument.querySelector('#outlineView');
@@ -564,18 +565,18 @@ async function extractTOC(startPage, endPage) {
 				
 				if (pageLabel && pageNumber !== +pageLabel) {
 					// Try to determine offset from the difference between page number and page label
-					console.log('use page label');
+					//console.log('use page label');
 					offset = pageNumber - (+pageLabel);
 					if (isNaN(offset)) offset = MAX_OFFSET;
 				} else if (i > 4) {
 					offset = 0;
 					while (offset < MAX_OFFSET && item.page + offset <= pdfdoc.numPages) {
-						console.log('toc:', 'try', item.page, offset);
+						//console.log('toc:', 'try', item.page, offset);
 						const page = await pdfdoc.getPage(item.page + offset);
 						const content = await page.getTextContent();
 						const text = content.items.reduce((a, c) => a + c.str, '');
 						if (pattern.test(text)) {
-							console.log('toc:', 'set offset', offset);
+							//console.log('toc:', 'set offset', offset);
 							break;
 						}
 						offset++;
@@ -586,9 +587,10 @@ async function extractTOC(startPage, endPage) {
 					offset = -1;
 				}
 				if (offset < 0) {
-					alert('Couldn\'t determine the offset.');
+					//alert('Couldn\'t determine the offset.');
+					console.log("Couldn't determine offset");
 				} else {
-					alert('Offset set to ' + offset);
+					//alert('Offset set to ' + offset);
 					iframe.contentWindow.jumpToPage(item.page + offset);
 				}
 			}
@@ -613,7 +615,7 @@ new Promise((resolve, reject) => {
 function getLayeredText() {
 
 	return new Promise(function(resolve, reject) {
-		console.log("Inside of getLayeredText")
+		//console.log("Inside of getLayeredText")
 		map.clear()
 		var pdfdoc = iframe.contentWindow.getPdfDocument()
 		var lastPromise; // will be used to chain promises
@@ -623,7 +625,6 @@ function getLayeredText() {
 		var loadPage = function(pageNum) {
 			return pdfdoc.getPage(pageNum).then(function(page) {
 				return page.getTextContent().then(function(content) {
-
 					var strings = content.items.map(function(item) {
 						if(map.get(Math.round(item.height))) {
 							map.set(Math.round(item.height), map.get(Math.round(item.height)) + item.str);
@@ -631,14 +632,15 @@ function getLayeredText() {
 							map.set(Math.round(item.height), item.str)
 						}
 						return item.str;
-					}).then(function() {
-						if(pageNum == pdfdoc.numPages) {
-							resolve("DONE")
-						}
 					});
+				}).then(function() {
+					//console.log(pageNum)
+					if(pageNum == pdfdoc.numPages) {
+						resolve("DONE")
+					}
 				});
 			});
-		}
+		};
 		for (var i = 1; i <= pdfdoc.numPages; i++) {
 			lastPromise = lastPromise.then(loadPage.bind(null, i));
 		}
@@ -1313,13 +1315,13 @@ if (typeof define === "function") {
 }
 
 $('button.success').click(function() {
-	console.log('clicked!')
+	//console.log('clicked!')
   alertify.set({ delay: 1700 });
   							alertify.success("Success notification");  
 });
 
 $('button.alert').click(function() {
-	console.log('clicked!')
+	//console.log('clicked!')
     alertify.set({ delay: 1700 });
 	    							alertify.error("Error notification");  
 });
@@ -1363,7 +1365,7 @@ $('button.alert').click(function() {
     "use strict";
   
     // Mobile Navigation
-    console.log($('.main-nav').length)
+    //console.log($('.main-nav').length)
     if ($('.main-nav').length) {
       var $mobile_nav = $('.main-nav').clone().prop({
         class: 'mobile-nav d-lg-none'
