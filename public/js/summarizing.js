@@ -218,6 +218,7 @@ searchbox.addEventListener("click", function() {
 
 var closeSearch = document.getElementById("closesearchbutton");
 closeSearch.addEventListener("click", function() {
+	console.log("clidked it")
 	document.getElementById("myDropdown").classList.remove("dropdownactive");
 	setTimeout(
 		function() 
@@ -238,22 +239,25 @@ $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
 	//console.log("Cape button clicked")
 	document.getElementById("stopLoadButton").style.display = 'block';
-	document.getElementById("myDropdown").classList.toggle("dropdownactive");
+	console.log(document.getElementById("myDropdown").classList.value)
+
+	//document.getElementById("myDropdown").classList.toggle("dropdownactive");
 	setTimeout(function() {
 		//console.log(getNumPages())
 		var getpdftext = getPDFText(1, getNumPages())
 		getpdftext.then((x) => {
-			console.log(x)
+			//console.log(x)
 			var promiseToAppend = new Promise(function(resolve, reject) {
 				//console.log("beginning promise")
 				kernelWorker.onmessage = function(ev) {
 					$("#capeResult").empty().append(ev.data[0]);
 					updateHighlights(ev.data)
 					//console.log("refreshed");
-					if(document.getElementById("myDropdown").classList.contains("show")){
-						//console.log("Not showing dropdown");
-						document.getElementById("myDropdown").classList.toggle("show");
-					}
+					// if(document.getElementById("myDropdown").classList.contains("show")){
+					// 	//console.log("Not showing dropdown");
+					// 	document.getElementById("myDropdown").classList.toggle("show");
+					// }
+
 					kernelWorker.terminate()
 					resolve("GOOD")
 				}
@@ -267,7 +271,10 @@ $("#cape_btn").click(function() {
 			//document.getElementById("myDropdown").classList.toggle("show");
 			promiseToAppend.then((data) => {
 				console.log(data)
-				document.getElementById("myDropdown").classList.toggle("show");
+				//document.getElementById("myDropdown").classList.toggle("show");
+				if(document.getElementById("myDropdown").classList.value === "dropdown-content") {
+						document.getElementById("questionVal").click();
+					}
 				document.getElementById('searchloader').style.display = 'none';
 				document.getElementById('searchbuttonthree').style.color = 'black';
 				document.getElementById('cape_btn').style.backgroundColor = '';
@@ -338,8 +345,6 @@ function processSummarizationResult(t) {
 	noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
 	tokenizer.setEntry(noLineBreakText);
 	updateHighlights(tokenizer.getSentences())
-	$('.summarizer_loading').hide();
-	document.getElementById("stopLoadButton").style.display = 'none';
 };
 
 function summaryButtonPressed(firstpage, lastpage) {
@@ -390,9 +395,15 @@ function updateHighlights(arr){
 		//add toggle smart search here
 		// document.getElementById("searchToggle").click();
 		// document.getElementById("searchToggle").click();
+
+		iframe.contentDocument.addEventListener('funkready', () => {
+			$('.summarizer_loading').hide();
+			document.getElementById("stopLoadButton").style.display = 'none';
+		});
 		iframe.contentDocument.addEventListener('funcready', () => {
 			let f = function(backward = false) {
 				iframe.contentWindow.jumpToNextMatch(backward);
+				
 				$("#capeResult").empty().append(currArr[iframe.contentWindow.getCurrIndex()]);
 				//console.log(currArr[iframe.contentWindow.getCurrIndex()])
 			}
