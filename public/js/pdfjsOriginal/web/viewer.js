@@ -11367,6 +11367,7 @@ function areArgsValid(mainString, targetStrings) {
 					window.getCurrIndex = function(){
 						return _index
 					}
+					console.log("dispachingggg")
 					document.dispatchEvent(new Event('funcready'));
 					PDFViewerApplication.eventBus.on('safetojump', jumpToNextMatch);
 					PDFViewerApplication.eventBus.on('textlayerrendered', ({ pageNumber }) => {

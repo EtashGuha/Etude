@@ -386,6 +386,7 @@ function updateHighlights(arr){
 		// document.getElementById("searchToggle").click();
 		// document.getElementById("searchToggle").click();
 		iframe.contentDocument.addEventListener('funcready', () => {
+			console.log("here");
 			let f = function(backward = false) {
 				iframe.contentWindow.jumpToNextMatch(backward);
 				$("#capeResult").empty().append(currArr[iframe.contentWindow.getCurrIndex()]);
