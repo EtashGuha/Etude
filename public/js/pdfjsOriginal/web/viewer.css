@@ -12,15 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*@font-face{
+@font-face{
   font-family: Poppins;
-  src:url("./poppins/Poppins-Bold.ttf")
+  src:url("./poppins/poppins-bold.woff")
 }
-*/
+
 
 @font-face {
   font-family: Poppins Regular;
-  src: url("./poppins/Poppins-Regular.ttf")
+  src: url("./poppins/poppins-regular.woff")
 }
 
 .textLayer {
