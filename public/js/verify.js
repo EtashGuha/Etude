@@ -3,7 +3,7 @@ const uri = "mongodb+srv://normalUser:etudereader@etude-zno3q.mongodb.net/test?r
 const client = new MongoClient(uri, {
 	useNewUrlParser: true
 });
-const stripe = require('stripe')("sk_live_AM3jYMiKut3IvS8FAzsE7G7q00nfl0xbAv")
+const stripe = require('stripe')("rk_live_pVDuyAoclBtFPPIWIZ8rHCl200kbPvuYWk")
 const Store = require('electron-store');
 const windowFrame = require('electron-titlebar')
 var store = new Store();
