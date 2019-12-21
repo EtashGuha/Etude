@@ -14,12 +14,13 @@
  */
 @font-face{
   font-family: Poppins;
-  src:url("./poppins/poppins-bold.woff") format('woff');
+  src:url("./poppins/poppins-bold.woff")
 }
+
 
 @font-face {
   font-family: Poppins Regular;
-  src: url("./poppins/poppins-regular.woff") format('woff');
+  src: url("./poppins/poppins-regular.woff")
 }
 
 .textLayer {

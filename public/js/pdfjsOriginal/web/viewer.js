@@ -11351,6 +11351,7 @@ function areArgsValid(mainString, targetStrings) {
 						_index = (_index + (backward ? -1 : 1) + len) % len;
 						// console.log(_index)
 						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
+						document.dispatchEvent(new Event('funkready'));
 					}
 
 					window.jumpToPage = function(idx) {

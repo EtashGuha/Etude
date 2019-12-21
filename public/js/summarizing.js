@@ -63,7 +63,7 @@ const {
 } = require('electron');
 
 
-
+document.getElementById('stripeIDBlock').innerHTML = store.get("stripeID");
 
 function enableEtude() {
 	document.getElementById("getRangeButton").disabled = false;
@@ -217,6 +217,7 @@ searchbox.addEventListener("click", function() {
 
 var closeSearch = document.getElementById("closesearchbutton");
 closeSearch.addEventListener("click", function() {
+	console.log("clidked it")
 	document.getElementById("myDropdown").classList.remove("dropdownactive");
 	setTimeout(
 		function() 
@@ -237,21 +238,25 @@ $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
 	//console.log("Cape button clicked")
 	document.getElementById("stopLoadButton").style.display = 'block';
-	document.getElementById("myDropdown").classList.toggle("dropdownactive");
+	console.log(document.getElementById("myDropdown").classList.value)
+
+	//document.getElementById("myDropdown").classList.toggle("dropdownactive");
 	setTimeout(function() {
 		//console.log(getNumPages())
 		var getpdftext = getPDFText(1, getNumPages())
 		getpdftext.then((x) => {
+			//console.log(x)
 			var promiseToAppend = new Promise(function(resolve, reject) {
 				//console.log("beginning promise")
 				kernelWorker.onmessage = function(ev) {
 					$("#capeResult").empty().append(ev.data[0]);
 					updateHighlights(ev.data)
 					//console.log("refreshed");
-					if(document.getElementById("myDropdown").classList.contains("show")){
-						//console.log("Not showing dropdown");
-						document.getElementById("myDropdown").classList.toggle("show");
-					}
+					// if(document.getElementById("myDropdown").classList.contains("show")){
+					// 	//console.log("Not showing dropdown");
+					// 	document.getElementById("myDropdown").classList.toggle("show");
+					// }
+
 					kernelWorker.terminate()
 					resolve("GOOD")
 				}
@@ -265,7 +270,10 @@ $("#cape_btn").click(function() {
 			//document.getElementById("myDropdown").classList.toggle("show");
 			promiseToAppend.then((data) => {
 				console.log(data)
-				document.getElementById("myDropdown").classList.toggle("show");
+				//document.getElementById("myDropdown").classList.toggle("show");
+				if(document.getElementById("myDropdown").classList.value === "dropdown-content") {
+						document.getElementById("questionVal").click();
+					}
 				document.getElementById('searchloader').style.display = 'none';
 				document.getElementById('searchbuttonthree').style.color = 'black';
 				document.getElementById('cape_btn').style.backgroundColor = '';
@@ -336,16 +344,17 @@ function processSummarizationResult(t) {
 	noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
 	tokenizer.setEntry(noLineBreakText);
 	updateHighlights(tokenizer.getSentences())
-	$('.summarizer_loading').hide();
-	document.getElementById("stopLoadButton").style.display = 'none';
 };
 
 function summaryButtonPressed(firstpage, lastpage) {
 	var getpdftext = getPDFText(firstpage, lastpage)
 	getpdftext.then((x) => {
+		console.log(x);
 		deepai.callStandardApi("summarization", {
 			text: x
-		}).then((resp) => processSummarizationResult(resp))
+		}).then((resp) => {
+			console.log(resp);
+			processSummarizationResult(resp)});
 	});
 }
 
@@ -385,10 +394,16 @@ function updateHighlights(arr){
 		//add toggle smart search here
 		// document.getElementById("searchToggle").click();
 		// document.getElementById("searchToggle").click();
+
+		iframe.contentDocument.addEventListener('funkready', () => {
+			$('.summarizer_loading').hide();
+			document.getElementById("stopLoadButton").style.display = 'none';
+		});
 		iframe.contentDocument.addEventListener('funcready', () => {
 			console.log("here");
 			let f = function(backward = false) {
 				iframe.contentWindow.jumpToNextMatch(backward);
+				
 				$("#capeResult").empty().append(currArr[iframe.contentWindow.getCurrIndex()]);
 				//console.log(currArr[iframe.contentWindow.getCurrIndex()])
 			}
@@ -444,7 +459,6 @@ function getHtml() {
 		getlayered.then((data) => {
 			var gettextaftermap = getTextAfterMap()
 			gettextaftermap.then((data) => {
-				//console.log(data);
 				resolve(data);
 			})
 		})
@@ -612,6 +626,48 @@ new Promise((resolve, reject) => {
 	extractTOC();
 });
 
+function getTextAfterMap(){
+	return new Promise(function(resolve, reject) {
+		var textForEachPage = []
+		var maxFont = 0
+		var maxFontFreq = 0
+		map.forEach((value, key) => {
+			if(value.length > maxFontFreq){
+				maxFontFreq = value.length;
+				maxFont = key
+			}
+		})
+		var pdfdoc = iframe.contentWindow.getPdfDocument()
+		var lastPromise; // will be used to chain promises
+		lastPromise = pdfdoc.getMetadata().then(function(data) {
+		});
+
+		var loadPage = function(pageNum) {
+			return pdfdoc.getPage(pageNum).then(function(page) {
+				var viewport = page.getViewport({
+					scale: 1.0,
+				});
+				return page.getTextContent().then(function(content) {
+					var strings = content.items.map(function(item) {
+						if(Math.round(item.height) == maxFont) {
+							return item.str;
+						}
+					});
+					strings = strings.join(' ');
+					textForEachPage.push(strings)
+				}).then(function() {
+					if(pdfdoc.numPages === pageNum) {
+						resolve(textForEachPage)
+					}
+				});
+			});
+		};
+
+		for (var i = 1; i <= pdfdoc.numPages; i++) {
+			lastPromise = lastPromise.then(loadPage.bind(null, i));
+		}
+	})
+}
 
 function getLayeredText() {
 
@@ -647,6 +703,7 @@ function getLayeredText() {
 		}
 	})
 }
+
 
 function getNumPages() {
 	return iframe.contentWindow.getPdfDocument().numPages
