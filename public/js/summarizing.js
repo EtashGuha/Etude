@@ -350,11 +350,11 @@ function processSummarizationResult(t) {
 function summaryButtonPressed(firstpage, lastpage) {
 	var getpdftext = getPDFText(firstpage, lastpage)
 	getpdftext.then((x) => {
-		//console.log(x);
+		console.log(x);
 		deepai.callStandardApi("summarization", {
 			text: x
 		}).then((resp) => {
-			//console.log(resp);
+			console.log(resp);
 			processSummarizationResult(resp)});
 	});
 }
@@ -440,13 +440,13 @@ function getPDFText(firstPage, lastPage) {
 			var gethtml = getHtml()	
 			gethtml.then((data) => {
 				//console.log(data)
-				// store.set(key, data)
-				// //console.log(store.store)
-				// var strings = ""
-				// for(var i = firstPage - 1; i <=  lastPage - 1; i++){
-				// 	strings = strings.concat(data[i])
-				// }
-				resolve(data)
+				store.set(key, data)
+				//console.log(store.store)
+				var strings = ""
+				for(var i = firstPage - 1; i <=  lastPage - 1; i++){
+					strings = strings.concat(data[i])
+				}
+				resolve(strings)
 			})
 		}
 		
@@ -626,6 +626,48 @@ new Promise((resolve, reject) => {
 	extractTOC();
 });
 
+function getTextAfterMap(){
+	return new Promise(function(resolve, reject) {
+		var textForEachPage = []
+		var maxFont = 0
+		var maxFontFreq = 0
+		map.forEach((value, key) => {
+			if(value.length > maxFontFreq){
+				maxFontFreq = value.length;
+				maxFont = key
+			}
+		})
+		var pdfdoc = iframe.contentWindow.getPdfDocument()
+		var lastPromise; // will be used to chain promises
+		lastPromise = pdfdoc.getMetadata().then(function(data) {
+		});
+
+		var loadPage = function(pageNum) {
+			return pdfdoc.getPage(pageNum).then(function(page) {
+				var viewport = page.getViewport({
+					scale: 1.0,
+				});
+				return page.getTextContent().then(function(content) {
+					var strings = content.items.map(function(item) {
+						if(Math.round(item.height) == maxFont) {
+							return item.str;
+						}
+					});
+					strings = strings.join(' ');
+					textForEachPage.push(strings)
+				}).then(function() {
+					if(pdfdoc.numPages === pageNum) {
+						resolve(textForEachPage)
+					}
+				});
+			});
+		};
+
+		for (var i = 1; i <= pdfdoc.numPages; i++) {
+			lastPromise = lastPromise.then(loadPage.bind(null, i));
+		}
+	})
+}
 
 function getLayeredText() {
 
@@ -640,18 +682,16 @@ function getLayeredText() {
 		var loadPage = function(pageNum) {
 			return pdfdoc.getPage(pageNum).then(function(page) {
 				return page.getTextContent().then(function(content) {
-					var strings = content.items.map(function(item, index) {
+					var strings = content.items.map(function(item) {
 						if(map.get(Math.round(item.height))) {
 							map.set(Math.round(item.height), map.get(Math.round(item.height)) + item.str);
 						} else {
 							map.set(Math.round(item.height), item.str)
 						}
-						if(content.items.length === index + 1) {
-							map.set(Math.round(item.height), map.get(Math.round(item.height)) + " (---" + pageNum + "---) ");
-						}
 						return item.str;
 					});
 				}).then(function() {
+					//console.log(pageNum)
 					if(pageNum == pdfdoc.numPages) {
 						resolve("DONE")
 					}
@@ -663,6 +703,7 @@ function getLayeredText() {
 		}
 	})
 }
+
 
 function getNumPages() {
 	return iframe.contentWindow.getPdfDocument().numPages
@@ -679,42 +720,35 @@ function getTextAfterMap(){
 				maxFont = key
 			}
 		})
-		//console.log(map.get(maxFont));
-		resolve(map.get(maxFont));
+		var pdfdoc = iframe.contentWindow.getPdfDocument()
+		var lastPromise; // will be used to chain promises
+		lastPromise = pdfdoc.getMetadata().then(function(data) {
+		});
 
+		var loadPage = function(pageNum) {
+			return pdfdoc.getPage(pageNum).then(function(page) {
+				var viewport = page.getViewport({
+					scale: 1.0,
+				});
+				return page.getTextContent().then(function(content) {
+					var strings = content.items.map(function(item) {
+						if(Math.round(item.height) == maxFont) {
+							return item.str;
+						}
+					});
+					strings = strings.join(' ');
+					textForEachPage.push(strings)
+				}).then(function() {
+					if(pdfdoc.numPages === pageNum) {
+						resolve(textForEachPage)
+					}
+				});
+			});
+		};
 
-
-		// var pdfdoc = iframe.contentWindow.getPdfDocument()
-		// var lastPromise; // will be used to chain promises
-		// lastPromise = pdfdoc.getMetadata().then(function(data) {
-		// });
-
-		// var loadPage = function(pageNum) {
-		// 	return pdfdoc.getPage(pageNum).then(function(page) {
-		// 		var viewport = page.getViewport({
-		// 			scale: 1.0,
-		// 		});
-		// 		return page.getTextContent().then(function(content) {
-		// 			var strings = content.items.map(function(item) {
-		// 				if(Math.round(item.height) == maxFont) {
-		// 					return item.str;
-		// 				}
-		// 			});
-		// 			strings = strings.join(' ');
-		// 			textForEachPage.push(strings)
-		// 		}).then(function() {
-		// 			if(pdfdoc.numPages === pageNum) {
-		// 				resolve(textForEachPage)
-		// 			}
-		// 		});
-		// 	});
-		// };
-
-		// for (var i = 1; i <= pdfdoc.numPages; i++) {
-		// 	lastPromise = lastPromise.then(loadPage.bind(null, i));
-		// }
-
-
+		for (var i = 1; i <= pdfdoc.numPages; i++) {
+			lastPromise = lastPromise.then(loadPage.bind(null, i));
+		}
 	})
 }
 
