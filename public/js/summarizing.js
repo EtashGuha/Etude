@@ -226,14 +226,7 @@ closeSearch.addEventListener("click", function() {
 			document.getElementById("myDropdown").classList.remove("show");
 		}, 300);
 })
-// var body = document.getElementsByTagName("BODY")[0];
-// var except = document.getElementById("myDropdown");
-// body.addEventListener("click", function () {
-// 	document.getElementById("myDropdown").classList.toggle("show");
-// }, false);
-// except.addEventListener("click", function (ev) {
-//     ev.stopPropagation(); //this is important! If removed, you'll get both alerts
-// }, false);
+
 
 $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
@@ -303,20 +296,6 @@ $("#etudeButton").click(function() {
 	goToWebsite();
 
 })
-
-// function limitSumRange() {
-// 	startsum = document.getElementById("pageRange");
-// 	endsum = document.getElementById("topageRange");
-// 	if (endsum.value - startsum.value > 30) {
-// 		submitbutton.disabled = true;
-// 	} else {
-// 		submitbutton.disabled = false;
-// 	}
-// }
-
-
-// $("pageRange").click(limitSumRange());
-// $("topageRange").click(limitSumRange());
 
 var searchbox = document.getElementById("topageRange");
 // Execute a function when the user releases a key on the keyboard
