@@ -264,7 +264,8 @@
 .annotationLayer .highlightAnnotation {
   background-color: #ff0;
   opacity:0.35;
-  },
+}
+
 .annotationLayer .underlineAnnotation,
 .annotationLayer .squigglyAnnotation,
 .annotationLayer .strikeoutAnnotation,

@@ -55,8 +55,9 @@ PDFJS.getDocument({
 	__PDF_DOC = pdf_doc;
 	numPages = __PDF_DOC.numPages;
 	sumrange = document.getElementById("topageRange");
-	sumrange.value = numPages;
+	sumrange.value = numPages % 5; // encourages users to keep range small
 });
+
 
 const {
 	ipcRenderer
@@ -303,6 +304,20 @@ $("#etudeButton").click(function() {
 
 })
 
+// function limitSumRange() {
+// 	startsum = document.getElementById("pageRange");
+// 	endsum = document.getElementById("topageRange");
+// 	if (endsum.value - startsum.value > 30) {
+// 		submitbutton.disabled = true;
+// 	} else {
+// 		submitbutton.disabled = false;
+// 	}
+// }
+
+
+// $("pageRange").click(limitSumRange());
+// $("topageRange").click(limitSumRange());
+
 var searchbox = document.getElementById("topageRange");
 // Execute a function when the user releases a key on the keyboard
 searchbox.addEventListener("keyup", function(event) {
@@ -316,18 +331,26 @@ searchbox.addEventListener("keyup", function(event) {
 
 //summarization function
 $('#summarizingButton').click(function() {
-	$('.su_popup').hide();
-	summaryButtonPressed($('#pageRange').val(), $('#topageRange').val());
-	// here you can add the loading button
-	$('.summarizer_loading').show();
-	document.getElementById("stopLoadButton").style.display = 'block';
-	// $('.hover_bkgr_fricc').click(function(){
-	//       $('.hover_bkgr_fricc').hide();
-	//   });
+	startsum = document.getElementById("pageRange");
+	endsum = document.getElementById("topageRange");
+	if (endsum.value - startsum.value > 30) {
+		document.getElementById("summarizemessage").innerHTML = "Please limit summarization to 30 pages at a time";
+	} else {
+		$('.su_popup').hide();
+		summaryButtonPressed($('#pageRange').val(), $('#topageRange').val());
+		// here you can add the loading button
+		$('.summarizer_loading').show();
+		document.getElementById("stopLoadButton").style.display = 'block';
+		// $('.hover_bkgr_fricc').click(function(){
+		//       $('.hover_bkgr_fricc').hide();
+		//   });
+		document.getElementById("summarizemessage").innerHTML = "Summary limited to 30 pages at a time";
+	}
 })
 
 $('#escapeSUPopupButton').click(function() {
 	$('.su_popup').hide();
+	document.getElementById("summarizemessage").innerHTML = "Summary limited to 30 pages at a time";
 })
 
 var textDsum = "";
