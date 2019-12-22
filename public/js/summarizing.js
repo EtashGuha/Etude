@@ -333,7 +333,7 @@ searchbox.addEventListener("keyup", function(event) {
 $('#summarizingButton').click(function() {
 	startsum = document.getElementById("pageRange");
 	endsum = document.getElementById("topageRange");
-	if (endsum.value - startsum.value > 30) {
+	if (endsum.value - startsum.value >= 30) {
 		document.getElementById("summarizemessage").innerHTML = "Please limit summarization to 30 pages at a time";
 	} else {
 		$('.su_popup').hide();
