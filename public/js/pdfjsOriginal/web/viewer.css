@@ -264,7 +264,8 @@
 .annotationLayer .highlightAnnotation {
   background-color: #ff0;
   opacity:0.35;
-  }
+}
+
 .annotationLayer .underlineAnnotation,
 .annotationLayer .squigglyAnnotation,
 .annotationLayer .strikeoutAnnotation,
@@ -589,8 +590,7 @@ html[dir='rtl'] #sidebarContainer {
 html[dir='ltr'] #outerContainer.sidebarOpen #sidebarContainer {
   left: 0px;
   margin-top:-30px;
-  /* width: 20%; */
-  width: 280px;
+  width: 20%;
 }
 html[dir='rtl'] #outerContainer.sidebarOpen #sidebarContainer {
   right: 0px;
@@ -629,8 +629,6 @@ html[dir='rtl'] #outerContainer.sidebarOpen #sidebarContainer {
   -webkit-overflow-scrolling: touch;
   position: absolute;
   width: 100%;
-  /* customization */
-  background-color: white;
 }
 html[dir='ltr'] #sidebarContent {
   left: 0;
@@ -839,30 +837,14 @@ html[dir='rtl'] .findbar {
 }
 
 #findInput {
-  font-family: Poppins Regular;
   width: calc(100% - 72px);
 }
-
-
-.sliderhidden {
-  height: 0px;
-  overflow: hidden;
-
-  transition:         height 0.5s ease;
-  -moz-transition:    height 0.5s ease;
-  -ms-transition:     height 0.5s ease;
-  -o-transition:      height 0.5s ease;
-  -webkit-transition: height 0.5s ease;
+#findInput::-webkit-input-placeholder {
+  color: hsl(0, 0%, 75%);
 }
-
 #findInput:-ms-input-placeholder {
   font-style: normal;
 }
-
-.slidershow {
-  height: auto;
-}
-
 #findInput::-ms-input-placeholder {
   font-style: normal;
 }
@@ -1178,8 +1160,7 @@ html[dir='rtl'] .dropdownToolbarButton {
 .toolbarButton.toggled,
 .splitToolbarButton.toggled > .toolbarButton.toggled,
 .secondaryToolbarButton.toggled {
-  /* left:20%; */
-  left: 280px;
+  left:20%;
   background-color: hsla(0,0%,0%,.3);
   background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
   border-color: hsla(0,0%,0%,.4) hsla(0,0%,0%,.45) hsla(0,0%,0%,.5);
@@ -1363,25 +1344,6 @@ html[dir='rtl'] .toolbarButton.pageDown::before {
   animation-delay: inherit;
   margin-left:6px;
   margin-top:7px;
-}
-
-.toolbarButton.customHighlightDefault::before,
-.secondaryToolbarButton.customHighlightDefault::before {
-  content: url(images/highlighter.png);
-  margin-left:6px;
-  margin-top:3px;
-}
-.toolbarButton.customHighlightActive::before,
-.secondaryToolbarButton.customHighlightActive::before {
-  content: url(images/highlighter-filled-in2.png);
-  margin-left:6px;
-  margin-top:3px;
-}
-.toolbarButton.customHighlightDelete::before,
-.secondaryToolbarButton.customHighlightDelete::before {
-  content: url(images/highlighter-slash.png);
-  margin-left:6px;
-  margin-top:3px;
 }
 
 .toolbarButton.presentationMode::before,
@@ -2432,9 +2394,9 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 }
 
 @media all and (max-width: 840px) {
-  /* #sidebarContent { */
-    /* background-color: hsla(0,0%,0%,.7); */
-  /* } */
+  #sidebarContent {
+    background-color: hsla(0,0%,0%,.7);
+  }
 
   html[dir='ltr'] #outerContainer.sidebarOpen #viewerContainer {
     left: 0px !important;

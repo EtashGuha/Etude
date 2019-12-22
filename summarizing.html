@@ -19,7 +19,7 @@
   <!--       <a href="#" id = "bookmark_item">Bookmarks -->
             <i class="fa fa-angle-down"></i>
         </a>
-        <a id = "help" href = "#">Help</a>
+        <a id="help" href="#">Help</a>
       </div>
       <div style="width: 100px;height: 80px;position: fixed;right: 28%;z-index:69;">
         <label class="switch">
@@ -27,7 +27,7 @@
           <span class="slider round"></span>
           <p style="font-size: 12px;color:white;position: fixed;margin-left:-12px;">Smart Search</p>
         </label>
-        <div id = "searchParent" class="search-container" style="position: fixed;left:calc(76% - 27px);height:50px;width:24%;top:-6px;margin:13px;">
+        <div id="searchParent" class="search-container" style="position: fixed;left:calc(76% - 27px);height:50px;width:24%;top:-6px;margin:13px;">
             <input type="text" placeholder="Ask any question about the document..." name="search" id = "questionVal" style="height: 37.2px;outline-width: 0px;position:absolute;">
             <button id = "cape_btn" class="dropbtn" style="width:37.2px;height:37.2px;z-index:1001;padding-top:0px;padding-bottom:0px;outline-width: 0px;margin-left:0px;position:absolute;left:calc(88% - 15.5px);" onclick="{document.getElementById('searchloader').style.display = 'block';document.getElementById('searchbuttonthree').style.color = 'white';document.getElementById('cape_btn').style.backgroundColor = 'white';}">
               <i id="searchbuttonthree" class="fa fa-search" style="color:black;"></i></button>
@@ -42,7 +42,7 @@
                 <button class="toolbarButton pageUp prevanswer" title="Previous Answer">
                   <img src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"
                 </button> -->
-              <button id="arrowleftbutton" style="padding:0px;"><img class="answerarrow arrowleft" style="padding:5px;width:25px;height:25px;" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png"></button>
+              <button id="arrowleftbutton" style="padding:0px;" onclick="console.log('mamacita')"><img class="answerarrow arrowleft" style="padding:5px;width:25px;height:25px;" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageUp@2x.png"></button>
               <button id="closesearchbutton">Close</button>
               <button id="arrowrightbutton" style="padding:0px;"><img class="answerarrow arrowright" style="padding:5px;width:25px;height:25px;" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"></button>
               </div>
@@ -126,11 +126,13 @@
                 <input type="number" placeholder="1" id = "pageRange" style="text-align: center;width:130px;margin-bottom:15px;" value="1">
                 <h5>to</h5>
                 <input type="number" placeholder="2" id = "topageRange" style="text-align:center;width:130px;margin-top:5px" value="2">
-
               </div>
           </div>
 
           <button id='summarizingButton' class = "button" style="margin-top: 30px;"><span> Submit </span></button>
+          
+          <p id="summarizemessage" class="mt-2">Summary limited to 30 pages at a time</p>
+
         </div>
     </div>
 

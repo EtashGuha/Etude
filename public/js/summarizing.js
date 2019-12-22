@@ -31,7 +31,6 @@ iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${req
 // iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}`);
 
 viewerEle.appendChild(iframe);
-// >>>>>>> 0e10501b36973dc4baf1f7072faeb8f7cfb4c00c
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.pdf"
 
@@ -56,8 +55,9 @@ PDFJS.getDocument({
 	__PDF_DOC = pdf_doc;
 	numPages = __PDF_DOC.numPages;
 	sumrange = document.getElementById("topageRange");
-	sumrange.value = numPages;
+	sumrange.value = numPages % 5; // encourages users to keep range small
 });
+
 
 const {
 	ipcRenderer
@@ -226,14 +226,7 @@ closeSearch.addEventListener("click", function() {
 			document.getElementById("myDropdown").classList.remove("show");
 		}, 300);
 })
-// var body = document.getElementsByTagName("BODY")[0];
-// var except = document.getElementById("myDropdown");
-// body.addEventListener("click", function () {
-// 	document.getElementById("myDropdown").classList.toggle("show");
-// }, false);
-// except.addEventListener("click", function (ev) {
-//     ev.stopPropagation(); //this is important! If removed, you'll get both alerts
-// }, false);
+
 
 $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
@@ -317,18 +310,26 @@ searchbox.addEventListener("keyup", function(event) {
 
 //summarization function
 $('#summarizingButton').click(function() {
-	$('.su_popup').hide();
-	summaryButtonPressed($('#pageRange').val(), $('#topageRange').val());
-	// here you can add the loading button
-	$('.summarizer_loading').show();
-	document.getElementById("stopLoadButton").style.display = 'block';
-	// $('.hover_bkgr_fricc').click(function(){
-	//       $('.hover_bkgr_fricc').hide();
-	//   });
+	startsum = document.getElementById("pageRange");
+	endsum = document.getElementById("topageRange");
+	if (endsum.value - startsum.value >= 30) {
+		document.getElementById("summarizemessage").innerHTML = "Please limit summarization to 30 pages at a time";
+	} else {
+		$('.su_popup').hide();
+		summaryButtonPressed($('#pageRange').val(), $('#topageRange').val());
+		// here you can add the loading button
+		$('.summarizer_loading').show();
+		document.getElementById("stopLoadButton").style.display = 'block';
+		// $('.hover_bkgr_fricc').click(function(){
+		//       $('.hover_bkgr_fricc').hide();
+		//   });
+		document.getElementById("summarizemessage").innerHTML = "Summary limited to 30 pages at a time";
+	}
 })
 
 $('#escapeSUPopupButton').click(function() {
 	$('.su_popup').hide();
+	document.getElementById("summarizemessage").innerHTML = "Summary limited to 30 pages at a time";
 })
 
 var textDsum = "";
@@ -401,6 +402,7 @@ function updateHighlights(arr){
 			document.getElementById("stopLoadButton").style.display = 'none';
 		});
 		iframe.contentDocument.addEventListener('funcready', () => {
+			console.log("here");
 			let f = function(backward = false) {
 				iframe.contentWindow.jumpToNextMatch(backward);
 				
