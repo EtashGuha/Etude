@@ -1364,6 +1364,25 @@ html[dir='rtl'] .toolbarButton.pageDown::before {
   margin-top:4px;
 }
 
+.toolbarButton.customHighlightDefault::before,  
+.secondaryToolbarButton.customHighlightDefault::before {  
+  content: url(images/highlighter.png); 
+  margin-left:6px;  
+  margin-top:3px; 
+} 
+.toolbarButton.customHighlightActive::before, 
+.secondaryToolbarButton.customHighlightActive::before { 
+  content: url(images/highlighter-filled-in2.png);  
+  margin-left:6px;  
+  margin-top:3px; 
+} 
+.toolbarButton.customHighlightDelete::before, 
+.secondaryToolbarButton.customHighlightDelete::before { 
+  content: url(images/highlighter-slash.png); 
+  margin-left:6px;  
+  margin-top:3px; 
+}
+
 .toolbarButton.openFile::before,
 .secondaryToolbarButton.openFile::before {
   content: url(images/toolbarButton-openFile.png);
