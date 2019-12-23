@@ -35,8 +35,10 @@ var numDaysPassed = date.subtract(now, new Date(store.get("startDate"))).toDays(
 console.log(numDaysPassed)
 if (numDaysPassed >= 30) {
 	document.getElementById("trialbar").style.display = "none";
+	document.getElementById('stripeIDBlock').innerHTML = store.get("stripeID");
 } else {
 	document.getElementById("trialdaysleft").innerHTML = 30 - numDaysPassed;
+	document.getElementById('stripeIDBlock').innerHTML = "Free Trial";
 }
 
 if (data ===  null || remote.getGlobal('sharedObject').newWindow) {
@@ -56,7 +58,6 @@ currSet.forEach(function(value) {
 });
 
 
-document.getElementById('stripeIDBlock').innerHTML = store.get("stripeID");
 document.getElementById('myButton').addEventListener('click', () => {
 	dialog.showOpenDialog({
 		properties: ['openFile'], // set to use openFileDialog
