@@ -9,6 +9,8 @@ var path = require("path")
 const {
 	ipcRenderer
 } = require('electron');
+const date = require('date-and-time');
+const now = new Date();
 const remote = require('electron').remote;
 var win = remote.BrowserWindow.getFocusedWindow();
 var currSet;
@@ -27,6 +29,16 @@ var __PDF_DOC,
 	index = 0;
 var data = ipcRenderer.sendSync('get-file-data')
 console.log(remote.getGlobal('sharedObject').newWindow)
+
+// Number of days left in trial controls trial period
+var numDaysPassed = date.subtract(now, new Date(store.get("startDate"))).toDays()
+console.log(numDaysPassed)
+if (numDaysPassed >= 30) {
+	document.getElementById("trialbar").style.display = "none";
+} else {
+	document.getElementById("trialdaysleft").innerHTML = 30 - numDaysPassed;
+}
+
 if (data ===  null || remote.getGlobal('sharedObject').newWindow) {
     console.log("There is no file")
 } else {
@@ -42,19 +54,9 @@ currSet.forEach(function(value) {
 		counter = counter + 1;
 	
 });
-document.getElementById('stripeIDBlock').innerHTML = store.get("stripeID");
-//store.clear();
-// for (var j = 0; j < currSet.size; j++) {
-// 	// var j = 0;
-// 	try {
-// 		show_nextItem(store.get(j.toString()), j.toString());
-	 
-// 		showPDF_fresh(store.get(j.toString()), j);
-// 	} catch (err) {
-// 		console.log("nah")
-// 	}
 
-// }
+
+document.getElementById('stripeIDBlock').innerHTML = store.get("stripeID");
 document.getElementById('myButton').addEventListener('click', () => {
 	dialog.showOpenDialog({
 		properties: ['openFile'], // set to use openFileDialog

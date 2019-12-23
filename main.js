@@ -32,7 +32,6 @@ var ready = false
 
 const Store = require('electron-store');
 var store = new Store();
-//store.clear();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -50,6 +49,16 @@ ipcMain.on('show_pdf_message', (event, arg) => {
     sharedObject.someProperty = arg
     fileOpen = true;
 })
+var hasFirstTime = store.has("isFirstTime");
+var needsToLicencse = false
+var isFreeTrial = false
+if(!hasFirstTime){
+    store.set("isFirstTime", true)
+    store.set("startDate", now)
+}
+
+isFreeTrial = (date.subtract(now, new Date(store.get("startDate"))).toDays() < 30);
+needsToLicense = (!isFreeTrial && !isLicensed)
 
 
 app.on('ready', function() {
@@ -112,9 +121,9 @@ app.on('will-finish-launching', function() {
             return response;
         });
         // mainWindow.webContents.openDevTools()
-        if (!isLicensed) {
+        if (needsToLicense) {
             mainWindow.loadFile('verify.html')
-        } else if(!store.has("LastCheckDate") || date.subtract(now, new Date(store.get("LastCheckDate"))).toDays() > 30) {
+        } else if(!isFreeTrial && (!store.has("LastCheckDate") || date.subtract(now, new Date(store.get("LastCheckDate"))).toDays() > 30)) {
             store.set("LastCheckDate", now)
             console.log(store.get("LastCheckDate"))
             stripe.subscriptions.retrieve(
@@ -141,18 +150,6 @@ ipcMain.on('get-file-data', function(event) {
     currpathtofile = null
 })
 
-// ipcMain.on('getMouseMove', function(event) {
-//   var data1 = electron.screen.getCursorScreenPoint();
-//   setTimeout(function(){
-//     var data2 = electron.screen.getCursorScreenPoint();
-//     if (data1 === data2) {
-//         event.returnValue = false
-//     } else {
-//         event.returnValue = true
-//     }
-// }, 2000);
-// });
-
 function createWindow() {
     checkForUpdates();
 
@@ -160,9 +157,9 @@ function createWindow() {
         return response;
     });
 
-    if (!isLicensed) {
+    if (needsToLicense) {
         mainWindow.loadFile('verify.html')
-    } else if(!store.has("LastCheckDate") || date.subtract(now, new Date(store.get("LastCheckDate"))).toDays() > 30) {
+    } else if(!isFreeTrial && (!store.has("LastCheckDate") || date.subtract(now, new Date(store.get("LastCheckDate"))).toDays() > 30)){
         store.set("LastCheckDate", now)
         console.log(store.get("LastCheckDate"))
         stripe.subscriptions.retrieve(
