@@ -29,8 +29,16 @@ var __PDF_DOC,
 	index = 0;
 var data = ipcRenderer.sendSync('get-file-data')
 console.log(remote.getGlobal('sharedObject').newWindow)
-var numDaysLeft = date.subtract(now, new Date(store.get("startDate"))).toDays()
-console.log(numDaysLeft)
+
+// Number of days left in trial controls trial period
+var numDaysPassed = date.subtract(now, new Date(store.get("startDate"))).toDays()
+console.log(numDaysPassed)
+if (numDaysPassed >= 30) {
+	document.getElementById("trialbar").style.display = "none";
+} else {
+	document.getElementById("trialdaysleft").innerHTML = 30 - numDaysPassed;
+}
+
 if (data ===  null || remote.getGlobal('sharedObject').newWindow) {
     console.log("There is no file")
 } else {
