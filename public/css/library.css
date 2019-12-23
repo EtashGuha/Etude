@@ -264,6 +264,19 @@ input::-webkit-inner-spin-button {
 	z-index: 99 !important;
 }
 
+#trialbar {
+	text-align: center;
+	width: 100%;
+}
+
+#trialbar h2 {
+	font-size: 24px;
+}
+
+#trialbar p {
+	font-size: 1rem;
+}
+
 	/* Add a black background color to the top navigation */
 
 	
