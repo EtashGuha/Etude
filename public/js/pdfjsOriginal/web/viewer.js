@@ -19,6 +19,7 @@
  * @licend The above is the entire license notice for the
  * Javascript code in this page
  */
+
 var isControlF = true;
 var bestPageMatchIndeces = []
 var bestMatchRatings = []
@@ -26,7 +27,7 @@ var correspondingMatchIdx = []
 var correspondingMatchLength = []
 var arrOfMatchesWithLength = []
 var firstPassThrough = true;
-
+var pageIndexArray = []
 
 // const {ipcRenderer} = require('electron');
 // document.addEventListener('mousemove', e => {
@@ -7847,16 +7848,7 @@ function areArgsValid(mainString, targetStrings) {
 						}
 						var numPages = this._linkService.pagesCount;
 						var queryArray = query.match(/\S+/g);
-						var pageIndexArray = [];
-						for (var i = queryArray.length - 1; i >= 0; i--) {
-							var subquery = queryArray[i].replace(/\=/ig, ' ');
-							if(subquery.slice(-7) != "pagenum"){
-								pageIndexArray[i] = -1
-							} else {
-								var lastSpace = subquery.lastIndexOf(" ");
-								pageIndexArray[i] = parseInt(subquery.substring((lastSpace + 1), subquery.length - 7)) - 1
-							}
-						}
+						
 						for (var i = 0, len = queryArray.length; i < len; i++) {
 							var subquery = queryArray[i];
 							if(subquery === undefined || subquery === null) {
@@ -7937,6 +7929,7 @@ function areArgsValid(mainString, targetStrings) {
 						if (phraseSearch) {
 							this._calculatePhraseMatch(query, pageIndex, pageContent, entireWord);
 						} else {
+
 							this._calculateWordMatch(query, pageIndex, pageContent, entireWord);
 						}
 
@@ -8041,6 +8034,19 @@ function areArgsValid(mainString, targetStrings) {
 							this._matchesCountTotal = 0;
 
 							this._updateAllPages();
+							console.log("THIS IS ME BEFORE THE PAGE NUMBER")
+							console.log(this._query)
+							var queryArray = this._query.match(/\S+/g);
+							pageIndexArray = [];
+							for (var i = queryArray.length - 1; i >= 0; i--) {
+								var subquery = queryArray[i].replace(/\=/ig, ' ');
+								if(subquery.slice(-7) != "pagenum"){
+									pageIndexArray[i] = -1
+								} else {
+									var lastSpace = subquery.lastIndexOf(" ");
+									pageIndexArray[i] = parseInt(subquery.substring((lastSpace + 1), subquery.length - 7)) - 1
+								}
+							}
 							for (var i = 0; i < numPages; i++) {
 								if (this._pendingFindMatches[i] === true) {
 									continue;
