@@ -22,6 +22,7 @@ var tokenizer = new Tokenizer('Chuck');
 const viewerEle = document.getElementById('viewer');
 viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
+var sentenceToPage = new Object()
 // <<<<<<< HEAD
 //console.log("Entering summarinzg js")
 //console.log(require('electron').remote.getGlobal('sharedObject').someProperty)
@@ -376,13 +377,19 @@ $('#getRangeButton').click(function() {
 
 
 function updateHighlights(arr){
+
 	//console.log(arr)
 	currArr = arr;
 	var searchQueries = ""
 	arr.forEach((item, index) => {
+		var pageNumForSentence = sentenceToPage[item.replace(/[^a-z]/gi, '')]
 		item = item.replace(/[^a-zA-Z ]/g, "")
 		item = replaceAll(item,"\u00A0", "%3D");
 		item = replaceAll(item, " ", "%3D")
+		if(pageNumForSentence != undefined){
+			item = item + "%3D" + pageNumForSentence + "PAGENUM"
+		} 
+		console.log(item)
 		searchQueries += "%20" + item
 	})
 
@@ -437,12 +444,14 @@ function getPDFText(firstPage, lastPage) {
 			for(var i = firstPage - 1; i <=  lastPage - 1; i++){
 				strings = strings.concat(arrayTextByPage[i])
 			}
+			sentenceToPage = store.get(key + "sentenceToPage")
 			resolve(strings)
 		} else {
 			var gethtml = getHtml()	
 			gethtml.then((data) => {
 				//console.log(data)
 				store.set(key, data)
+				store.set(key + "sentenceToPage", sentenceToPage)
 				//console.log(store.store)
 				var strings = ""
 				for(var i = firstPage - 1; i <=  lastPage - 1; i++){
@@ -740,6 +749,11 @@ function getTextAfterMap(){
 					});
 					strings = strings.join(' ');
 					textForEachPage.push(strings)
+					tokenizer.setEntry(strings)
+					var stringArr = tokenizer.getSentences();
+					for (var i = stringArr.length - 1; i >= 0; i--) {
+						sentenceToPage[(stringArr[i].replace(/[^a-z]/gi, ''))] = pageNum
+					}
 				}).then(function() {
 					if(pdfdoc.numPages === pageNum) {
 						resolve(textForEachPage)

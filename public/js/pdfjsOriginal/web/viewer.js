@@ -7847,12 +7847,24 @@ function areArgsValid(mainString, targetStrings) {
 						}
 						var numPages = this._linkService.pagesCount;
 						var queryArray = query.match(/\S+/g);
+						var pageIndexArray = [];
+						for (var i = queryArray.length - 1; i >= 0; i--) {
+							var subquery = queryArray[i].replace(/\=/ig, ' ');
+							if(subquery.slice(-7) != "pagenum"){
+								pageIndexArray[i] = -1
+							} else {
+								var lastSpace = subquery.lastIndexOf(" ");
+								pageIndexArray[i] = parseInt(subquery.substring((lastSpace + 1), subquery.length - 7)) - 1
+							}
+						}
 						for (var i = 0, len = queryArray.length; i < len; i++) {
 							var subquery = queryArray[i];
 							if(subquery === undefined || subquery === null) {
 								continue;
 							}
-
+							if(pageIndexArray[i] != -1 && pageIndexArray[i] != pageIndex){
+								continue;
+							}
 							var subqueryLen = subquery.length;
 							var matchIdx = -subqueryLen;
 							subquery = subquery.replace(/\=/ig, ' ');
