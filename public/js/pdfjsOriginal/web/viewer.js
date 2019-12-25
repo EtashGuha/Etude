@@ -8040,13 +8040,15 @@ function areArgsValid(mainString, targetStrings) {
 							pageIndexArray = [];
 							for (var i = queryArray.length - 1; i >= 0; i--) {
 								var subquery = queryArray[i].replace(/\=/ig, ' ');
-								if(subquery.slice(-7) != "pagenum"){
+								if(subquery.slice(-7) != "pagenum" && subquery.slice(-7) != "PAGENUM"){
 									pageIndexArray[i] = -1
+									console.log(subquery)
 								} else {
 									var lastSpace = subquery.lastIndexOf(" ");
 									pageIndexArray[i] = parseInt(subquery.substring((lastSpace + 1), subquery.length - 7)) - 1
 								}
 							}
+							console.log(pageIndexArray)
 							for (var i = 0; i < numPages; i++) {
 								if (this._pendingFindMatches[i] === true) {
 									continue;

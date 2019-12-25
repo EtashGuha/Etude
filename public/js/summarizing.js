@@ -438,14 +438,20 @@ function getPDFText(firstPage, lastPage) {
 		var key = PDF_URL.concat("textForEachPage").replace(".", "")
 		//console.log(key)
 		//console.log(store.has(key))
+		console.log("ENTERING HERE")
 		if(store.has(key) && store.has(key + "sentenceToPage")) {
 			var strings = ""
+			console.log("before arraytextbypage")
 			var arrayTextByPage = store.get(key);
+			console.log("after arraytextbypage")
+
 			for(var i = firstPage - 1; i <=  lastPage - 1; i++){
+				console.log(i)
 				strings = strings.concat(arrayTextByPage[i])
 			}
-			sentenceToPage = store.get(key + "sentenceToPage")
+			console.log("DONE")
 			resolve(strings)
+			sentenceToPage = store.get(key + "sentenceToPage")
 		} else {
 			var gethtml = getHtml()	
 			gethtml.then((data) => {
