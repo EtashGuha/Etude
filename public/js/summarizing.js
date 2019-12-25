@@ -438,7 +438,7 @@ function getPDFText(firstPage, lastPage) {
 		var key = PDF_URL.concat("textForEachPage").replace(".", "")
 		//console.log(key)
 		//console.log(store.has(key))
-		if(store.has(key)) {
+		if(store.has(key) && store.has(key + "sentenceToPage")) {
 			var strings = ""
 			var arrayTextByPage = store.get(key);
 			for(var i = firstPage - 1; i <=  lastPage - 1; i++){
