@@ -29,7 +29,7 @@ var arrOfMatchesWithLength = []
 var firstPassThrough = true;
 var pageIndexArray = []
 var queryArray = []
-
+var minPageRange = -1;
 // const {ipcRenderer} = require('electron');
 // document.addEventListener('mousemove', e => {
 // 	console.log("Moved Mouse document");
@@ -7843,6 +7843,7 @@ function areArgsValid(mainString, targetStrings) {
 				}, {
 					key: "_calculateWordMatch",
 					value: function _calculateWordMatch(queryArray, pageIndex, pageContent, entireWord) {
+						var matchesWithLength = [];
 						console.log("CURR PAGE INDEX: " + pageIndex)
 						// console.log(query)
 						if(pageContent == null || pageContent == undefined || pageContent.length == 0){
@@ -7887,29 +7888,44 @@ function areArgsValid(mainString, targetStrings) {
 									continue;
 								}
 
-							}
-						}
+								matchesWithLength.push({
+						            match: matchIdx,
+						            matchLength: bestAnswer.target.length,
+						            skipped: false
+						        });
 
-						if (pageIndex === numPages - 1) {
-							console.log("WE ARE DONE")
-							for (var currPage = 0; currPage < numPages; currPage++) {
-								var matchesWithLength = [];
-								for (var i = 0; i < bestPageMatchIndeces.length; i++) {
-									if (bestPageMatchIndeces[i] === currPage) {
-										matchesWithLength.push({
-											match: correspondingMatchIdx[i],
-											matchLength: correspondingMatchLength[i],
-											skipped: false
-										})
-									}
-								}
-								this._pageMatchesLength[currPage] = [];
-								this._pageMatches[currPage] = [];
-								this._prepareMatches(matchesWithLength, this._pageMatches[currPage], this._pageMatchesLength[currPage]);
-								this._eventBus.dispatch('calculationdone', { id: currPage + 1 });
 							}
-							this._eventBus.dispatch('safetojump');
 						}
+						this._pageMatchesLength[pageIndex] = [];
+      					this._pageMatches[pageIndex] = [];
+
+      					this._prepareMatches(matchesWithLength, this._pageMatches[pageIndex], this._pageMatchesLength[pageIndex]);
+      					if(pageIndex == minPageRange){
+      						this._eventBus.dispatch('safetojump');
+      						this._eventBus.dispatch('calculationdone', { id: pageIndex});
+      					}
+      					
+
+						// if (pageIndex === numPages - 1) {
+						// 	console.log("WE ARE DONE")
+						// 	for (var currPage = 0; currPage < numPages; currPage++) {
+						// 		var matchesWithLength = [];
+						// 		for (var i = 0; i < bestPageMatchIndeces.length; i++) {
+						// 			if (bestPageMatchIndeces[i] === currPage) {
+						// 				matchesWithLength.push({
+						// 					match: correspondingMatchIdx[i],
+						// 					matchLength: correspondingMatchLength[i],
+						// 					skipped: false
+						// 				})
+						// 			}
+						// 		}
+						// 		this._pageMatchesLength[currPage] = [];
+						// 		this._pageMatches[currPage] = [];
+						// 		this._prepareMatches(matchesWithLength, this._pageMatches[currPage], this._pageMatchesLength[currPage]);
+						// 		this._eventBus.dispatch('calculationdone', { id: currPage + 1 });
+						// 	}
+						// 	this._eventBus.dispatch('safetojump');
+						// }
 					}
 				}, {
 					key: "_calculateMatch",
@@ -8055,9 +8071,9 @@ function areArgsValid(mainString, targetStrings) {
 									setOfDifferentPageNumbers.add(pageIndexArray[i])
 								}
 							}
-							setOfDifferentPageNumbers.add(numPages - 1)
 
-							console.log(setOfDifferentPageNumbers)
+							minPageRange = pageIndexArray[0];
+							console.log(minPageRange)
 							for (var i of setOfDifferentPageNumbers) {
 								console.log(i)
 								if (this._pendingFindMatches[i] === true) {
