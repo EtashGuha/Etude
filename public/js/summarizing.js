@@ -382,15 +382,14 @@ function updateHighlights(arr){
 	currArr = arr;
 	var searchQueries = ""
 	arr.forEach((item, index) => {
-		var pageNumForSentence = sentenceToPage[item.replace(/[^a-z]/gi, '')]
-		item = item.replace(/[^a-zA-Z ]/g, "")
-		item = replaceAll(item,"\u00A0", "%3D");
-		item = replaceAll(item, " ", "%3D")
-		if(pageNumForSentence != undefined){
+		var pageNumForSentence = sentenceToPage[replaceAll(item, " ", "")]
+		if(pageNumForSentence != undefined) {
+			item = item.replace(/[^a-zA-Z ]/g, "")
+			item = replaceAll(item,"\u00A0", "%3D");
+			item = replaceAll(item, " ", "%3D")
 			item = item + "%3D" + pageNumForSentence + "PAGENUM"
-		} 
-		console.log(item)
-		searchQueries += "%20" + item
+			searchQueries += "%20" + item
+		}
 	})
 
 	searchQueries = searchQueries.substring(3)
@@ -446,10 +445,8 @@ function getPDFText(firstPage, lastPage) {
 			console.log("after arraytextbypage")
 
 			for(var i = firstPage - 1; i <=  lastPage - 1; i++){
-				console.log(i)
 				strings = strings.concat(arrayTextByPage[i])
 			}
-			console.log("DONE")
 			resolve(strings)
 			sentenceToPage = store.get(key + "sentenceToPage")
 		} else {
@@ -643,49 +640,6 @@ new Promise((resolve, reject) => {
 	extractTOC();
 });
 
-function getTextAfterMap(){
-	return new Promise(function(resolve, reject) {
-		var textForEachPage = []
-		var maxFont = 0
-		var maxFontFreq = 0
-		map.forEach((value, key) => {
-			if(value.length > maxFontFreq){
-				maxFontFreq = value.length;
-				maxFont = key
-			}
-		})
-		var pdfdoc = iframe.contentWindow.getPdfDocument()
-		var lastPromise; // will be used to chain promises
-		lastPromise = pdfdoc.getMetadata().then(function(data) {
-		});
-
-		var loadPage = function(pageNum) {
-			return pdfdoc.getPage(pageNum).then(function(page) {
-				var viewport = page.getViewport({
-					scale: 1.0,
-				});
-				return page.getTextContent().then(function(content) {
-					var strings = content.items.map(function(item) {
-						if(Math.round(item.height) == maxFont) {
-							return item.str;
-						}
-					});
-					strings = strings.join(' ');
-					textForEachPage.push(strings)
-				}).then(function() {
-					if(pdfdoc.numPages === pageNum) {
-						resolve(textForEachPage)
-					}
-				});
-			});
-		};
-
-		for (var i = 1; i <= pdfdoc.numPages; i++) {
-			lastPromise = lastPromise.then(loadPage.bind(null, i));
-		}
-	})
-}
-
 function getLayeredText() {
 
 	return new Promise(function(resolve, reject) {
@@ -754,12 +708,14 @@ function getTextAfterMap(){
 						}
 					});
 					strings = strings.join(' ');
+					strings = strings.replace(/[^a-zA-Z.?! ]/g, '')
+
 					textForEachPage.push(strings)
 					tokenizer.setEntry(strings)
 					var stringArr = tokenizer.getSentences();
 					for (var i = stringArr.length - 1; i >= 0; i--) {
-						sentenceToPage[(stringArr[i].replace(/[^a-z]/gi, ''))] = pageNum
-					}
+						sentenceToPage[replaceAll(stringArr[i], " ","")] = pageNum
+					} 
 				}).then(function() {
 					if(pdfdoc.numPages === pageNum) {
 						resolve(textForEachPage)

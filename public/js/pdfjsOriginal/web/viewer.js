@@ -28,6 +28,7 @@ var correspondingMatchLength = []
 var arrOfMatchesWithLength = []
 var firstPassThrough = true;
 var pageIndexArray = []
+var queryArray = []
 
 // const {ipcRenderer} = require('electron');
 // document.addEventListener('mousemove', e => {
@@ -7841,14 +7842,14 @@ function areArgsValid(mainString, targetStrings) {
 					}
 				}, {
 					key: "_calculateWordMatch",
-					value: function _calculateWordMatch(query, pageIndex, pageContent, entireWord) {
+					value: function _calculateWordMatch(queryArray, pageIndex, pageContent, entireWord) {
+						console.log("CURR PAGE INDEX: " + pageIndex)
 						// console.log(query)
 						if(pageContent == null || pageContent == undefined || pageContent.length == 0){
 							return;
 						}
 						var numPages = this._linkService.pagesCount;
-						var queryArray = query.match(/\S+/g);
-						
+						var seenSoFar = []
 						for (var i = 0, len = queryArray.length; i < len; i++) {
 							var subquery = queryArray[i];
 							if(subquery === undefined || subquery === null) {
@@ -7857,6 +7858,7 @@ function areArgsValid(mainString, targetStrings) {
 							if(pageIndexArray[i] != -1 && pageIndexArray[i] != pageIndex){
 								continue;
 							}
+							seenSoFar.push(i)
 							var subqueryLen = subquery.length;
 							var matchIdx = -subqueryLen;
 							subquery = subquery.replace(/\=/ig, ' ');
@@ -7887,7 +7889,9 @@ function areArgsValid(mainString, targetStrings) {
 
 							}
 						}
+
 						if (pageIndex === numPages - 1) {
+							console.log("WE ARE DONE")
 							for (var currPage = 0; currPage < numPages; currPage++) {
 								var matchesWithLength = [];
 								for (var i = 0; i < bestPageMatchIndeces.length; i++) {
@@ -7926,11 +7930,12 @@ function areArgsValid(mainString, targetStrings) {
 							query = query.toLowerCase();
 						}
 
+
 						if (phraseSearch) {
 							this._calculatePhraseMatch(query, pageIndex, pageContent, entireWord);
 						} else {
 
-							this._calculateWordMatch(query, pageIndex, pageContent, entireWord);
+							this._calculateWordMatch(queryArray, pageIndex, pageContent, entireWord);
 						}
 
 						if (this._state.highlightAll) {
@@ -8036,8 +8041,9 @@ function areArgsValid(mainString, targetStrings) {
 							this._updateAllPages();
 							console.log("THIS IS ME BEFORE THE PAGE NUMBER")
 							console.log(this._query)
-							var queryArray = this._query.match(/\S+/g);
+							queryArray = this._query.match(/\S+/g);
 							pageIndexArray = [];
+							var setOfDifferentPageNumbers = new Set()
 							for (var i = queryArray.length - 1; i >= 0; i--) {
 								var subquery = queryArray[i].replace(/\=/ig, ' ');
 								if(subquery.slice(-7) != "pagenum" && subquery.slice(-7) != "PAGENUM"){
@@ -8046,10 +8052,14 @@ function areArgsValid(mainString, targetStrings) {
 								} else {
 									var lastSpace = subquery.lastIndexOf(" ");
 									pageIndexArray[i] = parseInt(subquery.substring((lastSpace + 1), subquery.length - 7)) - 1
+									setOfDifferentPageNumbers.add(pageIndexArray[i])
 								}
 							}
-							console.log(pageIndexArray)
-							for (var i = 0; i < numPages; i++) {
+							setOfDifferentPageNumbers.add(numPages - 1)
+
+							console.log(setOfDifferentPageNumbers)
+							for (var i of setOfDifferentPageNumbers) {
+								console.log(i)
 								if (this._pendingFindMatches[i] === true) {
 									continue;
 								}
