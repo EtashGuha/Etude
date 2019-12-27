@@ -20,7 +20,7 @@ if(store.has("libraryStore")){
 } else {
 	currSet = new Set();
 }
-store.clear()
+
 console.log(require('root-require')('package.json').version);
 var i = store.size;
 var __PDF_DOC,
