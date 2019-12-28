@@ -120,10 +120,10 @@ app.on('will-finish-launching', function() {
         icon: 'assets/images/logo.jpg',
     })
         //This is google analytics stuff
-        // analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
-        //     return response;
-        // });
-        trackEvent("Open", "HomePage");
+        analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
+            return response;
+        });
+        // trackEvent("Open", "HomePage");
         // mainWindow.webContents.openDevTools()
         if (needsToLicense) {
             mainWindow.loadFile('verify.html')
@@ -157,10 +157,10 @@ ipcMain.on('get-file-data', function(event) {
 function createWindow() {
     checkForUpdates();
 
-    // analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
-    //     return response;
-    // });
-    trackEvent("Open", "HomePage");
+    analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
+        return response;
+    });
+    // trackEvent("Open", "HomePage");
 
     if (needsToLicense) {
         mainWindow.loadFile('verify.html')
