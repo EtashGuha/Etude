@@ -7883,13 +7883,11 @@ function areArgsValid(mainString, targetStrings) {
 								if (pageIndexArray[i] != -1 && pageIndexArray[i] != pageIndex) {
 									continue;
 								}
-								console.log(subquery)
 								var lastIndex = subquery.lastIndexOf(" ");
 
 								subquery = subquery.substring(0, lastIndex);
 								var alteredPageContent = String(pageContent).match( /[^\.!\?]+[\.!\?]+/g )
 								var bestAnswer = findBestMatch(subquery, alteredPageContent).bestMatch
-								console.log(bestAnswer)
 								matchIdx = pageContent.indexOf(bestAnswer.target, matchIdx + subqueryLen);
 
 								matchesWithLength.push({
