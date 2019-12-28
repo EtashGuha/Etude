@@ -7883,11 +7883,13 @@ function areArgsValid(mainString, targetStrings) {
 								if (pageIndexArray[i] != -1 && pageIndexArray[i] != pageIndex) {
 									continue;
 								}
-								seenSoFar.push(i)
+								console.log(subquery)
+								var lastIndex = subquery.lastIndexOf(" ");
 
-								var bestAnswer = findBestMatch(subquery, pageContent.split(". ").filter(function(el) {
-									return (el != null && el != undefined && el.length > 5);
-								})).bestMatch
+								subquery = subquery.substring(0, lastIndex);
+								var alteredPageContent = String(pageContent).match( /[^\.!\?]+[\.!\?]+/g )
+								var bestAnswer = findBestMatch(subquery, alteredPageContent).bestMatch
+								console.log(bestAnswer)
 								matchIdx = pageContent.indexOf(bestAnswer.target, matchIdx + subqueryLen);
 
 								matchesWithLength.push({
@@ -11415,7 +11417,6 @@ function areArgsValid(mainString, targetStrings) {
 						if (pageIndexArray.length === 0) return;
 						let len = pageIndexArray.length;
 						_index = (_index + (backward ? -1 : 1) + len) % len;
-						// console.log(_index)
 						_jumpToPage(pageIndexArray[_index] + 1); // currentPageNumber is 1-based
 						document.dispatchEvent(new Event('funkready'));
 					}
