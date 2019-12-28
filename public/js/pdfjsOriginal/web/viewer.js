@@ -7886,7 +7886,9 @@ function areArgsValid(mainString, targetStrings) {
 								var lastIndex = subquery.lastIndexOf(" ");
 
 								subquery = subquery.substring(0, lastIndex);
+								console.log(subquery)
 								var alteredPageContent = String(pageContent).match( /[^\.!\?]+[\.!\?]+/g )
+								console.log(alteredPageContent)
 								var bestAnswer = findBestMatch(subquery, alteredPageContent).bestMatch
 								matchIdx = pageContent.indexOf(bestAnswer.target, matchIdx + subqueryLen);
 
@@ -8062,6 +8064,7 @@ function areArgsValid(mainString, targetStrings) {
 
 							this._updateAllPages();
 							queryArray = this._query.match(/\S+/g);
+							console.log(queryArray)
 							pageIndexArray = [];
 							if (isControlF) {
 								for (var i = 0; i < numPages; i++) {

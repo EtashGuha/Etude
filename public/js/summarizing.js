@@ -35,7 +35,7 @@ viewerEle.appendChild(iframe);
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.pdf"
 
-var currArr;
+var currArr = [];
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
 
 deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
@@ -244,7 +244,8 @@ $("#cape_btn").click(function() {
 			var promiseToAppend = new Promise(function(resolve, reject) {
 				//console.log("beginning promise")
 				kernelWorker.onmessage = function(ev) {
-					$("#capeResult").empty().append(ev.data[0]);
+
+					$("#capeResult").empty().append(ev.data[0].match( /[^\.!\?]+[\.!\?]+/g )[0]);
 					updateHighlights(ev.data)
 					//console.log("refreshed");
 					// if(document.getElementById("myDropdown").classList.contains("show")){
@@ -377,21 +378,26 @@ $('#getRangeButton').click(function() {
 
 
 function updateHighlights(arr){
-
+	console.log(sentenceToPage)
 	console.log(arr)
-	currArr = arr;
 	var searchQueries = ""
 	arr.forEach((item, index) => {
-		var pageNumForSentence = sentenceToPage[replaceAll(item, " ", "")]
-		if(pageNumForSentence != undefined) {
-			item = item.replace(/[^a-zA-Z ]/g, "")
-			item = replaceAll(item,"\u00A0", "%3D");
-			item = replaceAll(item, " ", "%3D")
-			item = item + "%3D" + pageNumForSentence + "PAGENUM"
-			searchQueries += "%20" + item
+
+		var splitWolframAnswers = item.match( /[^\.!\?]+[\.!\?]+/g )
+		for (var i = splitWolframAnswers.length - 1; i >= 0; i--) {
+			var realItem = splitWolframAnswers[i]
+			var pageNumForSentence = sentenceToPage[replaceAll(realItem, " ", "")]
+			if(pageNumForSentence != undefined) {
+				currArr.push(realItem)
+				realItem = realItem.replace(/[^a-zA-Z ]/g, "")
+				realItem = replaceAll(realItem,"\u00A0", "%3D");
+				realItem = replaceAll(realItem, " ", "%3D")
+				realItem = realItem + "%3D" + pageNumForSentence + "PAGENUM"
+				searchQueries += "%20" + realItem
+			}
 		}
 	})
-
+	console.log(searchQueries)
 	searchQueries = searchQueries.substring(3)
 	searchQueries = replaceAll(searchQueries, "=", "")
 	searchQueries = replaceAll(searchQueries, "&", "")
