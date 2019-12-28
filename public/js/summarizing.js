@@ -316,6 +316,10 @@ $('#summarizingButton').click(function() {
 	endsum = document.getElementById("topageRange");
 	if (endsum.value - startsum.value >= 30) {
 		document.getElementById("summarizemessage").innerHTML = "Please limit summarization to 30 pages at a time";
+	} else if(endsum.value - startsum.value < 0) {
+		document.getElementById("summarizemessage").innerHTML = "Invalid Page Range. Start Page must be before End Page";
+	} else if(startsum.value - iframe.contentWindow.getPdfDocument().numPages > 0) {
+		document.getElementById("summarizemessage").innerHTML = "Invalid Page Range. Start Page is outside PDF page range";
 	} else {
 		$('.su_popup').hide();
 		summaryButtonPressed($('#pageRange').val(), $('#topageRange').val());
@@ -344,7 +348,7 @@ function goToWebsite() {
 }
 function processSummarizationResult(t) {
 	//console.log("here we are")
-	//console.log(t)
+	console.log(t)
 	noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
 	tokenizer.setEntry(noLineBreakText);
 	updateHighlights(tokenizer.getSentences())
@@ -357,8 +361,12 @@ function summaryButtonPressed(firstpage, lastpage) {
 		deepai.callStandardApi("summarization", {
 			text: x
 		}).then((resp) => {
-			//console.log(resp);
-			processSummarizationResult(resp)});
+			if(resp.output !== "") {
+				processSummarizationResult(resp)
+			} else {
+				win.reload();
+			}
+			});
 	});
 }
 
