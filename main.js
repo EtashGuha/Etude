@@ -4,6 +4,8 @@ const electron = require('electron')
 var stripe = require('stripe')('rk_live_pVDuyAoclBtFPPIWIZ8rHCl200kbPvuYWk');
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
+const { trackEvent } = require('./analytics');
+global.trackEvent = trackEvent;
 const {
     ipcMain
 } = require('electron')

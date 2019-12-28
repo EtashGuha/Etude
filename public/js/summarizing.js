@@ -22,8 +22,11 @@ var tokenizer = new Tokenizer('Chuck');
 const viewerEle = document.getElementById('viewer');
 viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
-var sentenceToPage = new Object()
-// <<<<<<< HEAD
+var sentenceToPage = new Object();
+// Google Analytics
+const { getGlobal } = require('electron').remote;
+const trackEvent = getGlobal('trackEvent');
+
 //console.log("Entering summarinzg js")
 //console.log(require('electron').remote.getGlobal('sharedObject').someProperty)
 iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#pagemode=bookmarks`);
@@ -187,6 +190,7 @@ $(document).on("click", ".bookmark-canvas", function() {
 
 var stopLoadButton = document.getElementById("stopLoadButton");
 stopLoadButton.addEventListener('click', () => {
+	trackEvent("Click", "CancelJob");
     win.reload();
 })
 
@@ -230,6 +234,7 @@ closeSearch.addEventListener("click", function() {
 
 
 $("#cape_btn").click(function() {
+	trackEvent("Click", "SmartSearch");
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
 	//console.log("Cape button clicked")
 	document.getElementById("stopLoadButton").style.display = 'block';
@@ -311,6 +316,7 @@ searchbox.addEventListener("keyup", function(event) {
 
 //summarization function
 $('#summarizingButton').click(function() {
+	trackEvent("Click", "Summarize");
 	startsum = document.getElementById("pageRange");
 	endsum = document.getElementById("topageRange");
 	if (endsum.value - startsum.value >= 30) {
