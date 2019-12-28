@@ -87,7 +87,7 @@ function mergeRanges(rs) {
 			merged.push(r);
 			continue;
 		} else {
-			let prev = merged[merged.length-1];
+			let prev = merged[merged.length - 1];
 			if (
 				r.anchor[0] < prev.focus[0] ||
 				r.anchor[0] === prev.focus[0] && r.anchor[1] <= prev.focus[1]
@@ -117,7 +117,9 @@ function updateRanges() {
 	function calculateIndices(textNode, offset) {
 		if (!textNode) return null;
 		let cur = textNode;
-		let pageIndex; let spanIndex; let textIndex;
+		let pageIndex;
+		let spanIndex;
+		let textIndex;
 		while (cur !== document.body) {
 			if (cur.classList && cur.classList.contains('page')) {
 				pageIndex = +cur.dataset.pageNumber;
@@ -130,12 +132,12 @@ function updateRanges() {
 					if (n.contains(textNode)) break;
 					textIndex += n.textContent.length;
 				}
-			} 
+			}
 			cur = cur.parentNode;
 		}
 		return [pageIndex, spanIndex, textIndex];
 	}
-	
+
 	let start = calculateIndices(anchorNode, anchorOffset);
 	let end = calculateIndices(focusNode, focusOffset);
 
@@ -190,7 +192,7 @@ function highlightSelectedText(i) {
 		} else {
 			if (!groupedBySpans[r.anchor[0]]) groupedBySpans[r.anchor[0]] = [];
 			groupedBySpans[r.anchor[0]].push([r.anchor[1], Infinity]);
-			if (!groupedBySpans[r.focus[0]]) groupedBySpans[r.focus[0]] = []; 
+			if (!groupedBySpans[r.focus[0]]) groupedBySpans[r.focus[0]] = [];
 			groupedBySpans[r.focus[0]].push([-Infinity, r.focus[1]]);
 			for (let i = r.anchor[0] + 1; i <= r.focus[0] - 1; i++) {
 				if (!groupedBySpans[i]) groupedBySpans[i] = [];
@@ -236,7 +238,7 @@ function highlightSelectedText(i) {
 			text.slice(lastIndex)
 		));
 		spanContainer.innerHTML = '';
-		spanContainer.append(...nodes);			
+		spanContainer.append(...nodes);
 	}
 }
 
@@ -632,7 +634,7 @@ function areArgsValid(mainString, targetStrings) {
 			var event = document.createEvent('CustomEvent');
 			event.initCustomEvent('webviewerloaded', true, true, {});
 			document.dispatchEvent(event);
-			pdfjsWebApp.PDFViewerApplication.run(config);			
+			pdfjsWebApp.PDFViewerApplication.run(config);
 		}
 
 		if (document.readyState === 'interactive' || document.readyState === 'complete') {
@@ -2657,23 +2659,23 @@ function areArgsValid(mainString, targetStrings) {
 		}
 		window.exactMatchFind = function(text) {
 			var banana = {
-				"caseSensitive":false,
-				"entireWord":false,
-				"findPrevious":undefined,
-				"highlightAll":false,
+				"caseSensitive": false,
+				"entireWord": false,
+				"findPrevious": undefined,
+				"highlightAll": false,
 				"query": text,
 				"type": "",
-				"phraseSearch":true
+				"phraseSearch": true
 			}
 
 			webViewerFind(banana)
 		}
 
-		window.openFindBar = function(){
+		window.openFindBar = function() {
 			PDFViewerApplication.findBar.open();
 		}
 
-		window.closeFindBar = function(){
+		window.closeFindBar = function() {
 			PDFViewerApplication.findBar.close();
 		}
 
@@ -2697,11 +2699,11 @@ function areArgsValid(mainString, targetStrings) {
 			});
 		}
 
-		window.openFindBar = function(){
+		window.openFindBar = function() {
 			PDFViewerApplication.findBar.open();
 		}
 
-		window.closeFindBar = function(){
+		window.closeFindBar = function() {
 			PDFViewerApplication.findBar.close();
 		}
 
@@ -7222,7 +7224,7 @@ function areArgsValid(mainString, targetStrings) {
 						_this.dispatchEvent('');
 					});
 					// console.log(this.findField)
-					
+
 					this.bar.addEventListener('keydown', function(e) {
 						switch (e.keyCode) {
 							case 13:
@@ -7844,67 +7846,71 @@ function areArgsValid(mainString, targetStrings) {
 					key: "_calculateWordMatch",
 					value: function _calculateWordMatch(queryArray, pageIndex, pageContent, entireWord) {
 						var matchesWithLength = [];
-						console.log("CURR PAGE INDEX: " + pageIndex)
 						// console.log(query)
-						if(pageContent == null || pageContent == undefined || pageContent.length == 0){
+						if (pageContent == null || pageContent == undefined || pageContent.length == 0) {
 							return;
 						}
 						var numPages = this._linkService.pagesCount;
 						var seenSoFar = []
 						for (var i = 0, len = queryArray.length; i < len; i++) {
 							var subquery = queryArray[i];
-							if(subquery === undefined || subquery === null) {
+							if (subquery === undefined || subquery === null) {
 								continue;
 							}
-							if(pageIndexArray[i] != -1 && pageIndexArray[i] != pageIndex){
-								continue;
-							}
-							seenSoFar.push(i)
+
 							var subqueryLen = subquery.length;
 							var matchIdx = -subqueryLen;
 							subquery = subquery.replace(/\=/ig, ' ');
-							while (true) {
-								if (isControlF) {
-									// console.log('checking waht it was before')
+
+							if (isControlF) {
+								while (true) {
 									matchIdx = pageContent.indexOf(subquery, matchIdx + subqueryLen);
-									// console.log(matchIdx)
-								} else {
-									var bestAnswer = findBestMatch(subquery, pageContent.split(". ").filter(function (el) {
-												  return (el != null && el != undefined && el.length >5);
-												})).bestMatch
-									matchIdx = pageContent.indexOf(bestAnswer.target, matchIdx + subqueryLen);
-									if (bestMatchRatings[i] === undefined || bestMatchRatings[i] < bestAnswer.rating) {
-										bestMatchRatings[i] = bestAnswer.rating
-										correspondingMatchLength[i] = bestAnswer.target.length
-										bestPageMatchIndeces[i] = pageIndex
-										correspondingMatchIdx[i] = matchIdx
+									if (matchIdx === -1) {
+										break;
 									}
 
+									if (entireWord && !this._isEntireWord(pageContent, matchIdx, subqueryLen)) {
+										continue;
+									}
+
+									matchesWithLength.push({
+										match: matchIdx,
+										matchLength: bestAnswer.target.length,
+										skipped: false
+									});
 								}
-								if (matchIdx === -1) {
-									break;
-								}
-								if (entireWord && !this._isEntireWord(pageContent, matchIdx, subqueryLen)) {
+							} else {
+								if (pageIndexArray[i] != -1 && pageIndexArray[i] != pageIndex) {
 									continue;
 								}
+								seenSoFar.push(i)
+
+								var bestAnswer = findBestMatch(subquery, pageContent.split(". ").filter(function(el) {
+									return (el != null && el != undefined && el.length > 5);
+								})).bestMatch
+								matchIdx = pageContent.indexOf(bestAnswer.target, matchIdx + subqueryLen);
 
 								matchesWithLength.push({
-						            match: matchIdx,
-						            matchLength: bestAnswer.target.length,
-						            skipped: false
-						        });
-
+									match: matchIdx,
+									matchLength: bestAnswer.target.length,
+									skipped: false
+								});
 							}
 						}
-						this._pageMatchesLength[pageIndex] = [];
-      					this._pageMatches[pageIndex] = [];
 
-      					this._prepareMatches(matchesWithLength, this._pageMatches[pageIndex], this._pageMatchesLength[pageIndex]);
-      					if(pageIndex == minPageRange){
-      						this._eventBus.dispatch('safetojump');
-      						this._eventBus.dispatch('calculationdone', { id: pageIndex});
-      					}
-      					
+
+
+						this._pageMatchesLength[pageIndex] = [];
+						this._pageMatches[pageIndex] = [];
+
+						this._prepareMatches(matchesWithLength, this._pageMatches[pageIndex], this._pageMatchesLength[pageIndex]);
+						if (pageIndex == minPageRange) {
+							this._eventBus.dispatch('safetojump');
+							this._eventBus.dispatch('calculationdone', {
+								id: pageIndex
+							});
+						}
+
 
 						// if (pageIndex === numPages - 1) {
 						// 	console.log("WE ARE DONE")
@@ -8055,39 +8061,53 @@ function areArgsValid(mainString, targetStrings) {
 							this._matchesCountTotal = 0;
 
 							this._updateAllPages();
-							console.log("THIS IS ME BEFORE THE PAGE NUMBER")
-							console.log(this._query)
 							queryArray = this._query.match(/\S+/g);
 							pageIndexArray = [];
-							var setOfDifferentPageNumbers = new Set()
-							for (var i = queryArray.length - 1; i >= 0; i--) {
-								var subquery = queryArray[i].replace(/\=/ig, ' ');
-								if(subquery.slice(-7) != "pagenum" && subquery.slice(-7) != "PAGENUM"){
-									pageIndexArray[i] = -1
-									console.log(subquery)
-								} else {
-									var lastSpace = subquery.lastIndexOf(" ");
-									pageIndexArray[i] = parseInt(subquery.substring((lastSpace + 1), subquery.length - 7)) - 1
-									setOfDifferentPageNumbers.add(pageIndexArray[i])
+							if (isControlF) {
+								for (var i = 0; i < numPages; i++) {
+									if (this._pendingFindMatches[i] === true) {
+										continue;
+									}
+
+									this._pendingFindMatches[i] = true;
+
+									this._extractTextPromises[i].then(function(pageIdx) {
+										delete _this3._pendingFindMatches[pageIdx];
+
+										_this3._calculateMatch(pageIdx);
+									});
+								}
+							} else {
+								var setOfDifferentPageNumbers = new Set()
+								for (var i = queryArray.length - 1; i >= 0; i--) {
+									var subquery = queryArray[i].replace(/\=/ig, ' ');
+									if (subquery.slice(-7) != "pagenum" && subquery.slice(-7) != "PAGENUM") {
+										pageIndexArray[i] = -1
+									} else {
+										var lastSpace = subquery.lastIndexOf(" ");
+										pageIndexArray[i] = parseInt(subquery.substring((lastSpace + 1), subquery.length - 7)) - 1
+										setOfDifferentPageNumbers.add(pageIndexArray[i])
+									}
+								}
+
+								minPageRange = pageIndexArray[0];
+								console.log(minPageRange)
+								for (var i of setOfDifferentPageNumbers) {
+									console.log(i)
+									if (this._pendingFindMatches[i] === true) {
+										continue;
+									}
+
+									this._pendingFindMatches[i] = true;
+
+									this._extractTextPromises[i].then(function(pageIdx) {
+										delete _this3._pendingFindMatches[pageIdx];
+
+										_this3._calculateMatch(pageIdx);
+									});
 								}
 							}
 
-							minPageRange = pageIndexArray[0];
-							console.log(minPageRange)
-							for (var i of setOfDifferentPageNumbers) {
-								console.log(i)
-								if (this._pendingFindMatches[i] === true) {
-									continue;
-								}
-
-								this._pendingFindMatches[i] = true;
-
-								this._extractTextPromises[i].then(function(pageIdx) {
-									delete _this3._pendingFindMatches[pageIdx];
-
-									_this3._calculateMatch(pageIdx);
-								});
-							}
 						}
 
 						if (this._query === '') {
@@ -11390,13 +11410,13 @@ function areArgsValid(mainString, targetStrings) {
 
 					// Expose this to the global scope
 					var _jumpToPage = this.jumpToPage.bind(this);
-					var _index = bestPageMatchIndeces.length - 1;
+					var _index = pageIndexArray.length - 1;
 					window.jumpToNextMatch = function(backward = false) {
-						if (bestPageMatchIndeces.length === 0) return;
-						let len = bestPageMatchIndeces.length;
+						if (pageIndexArray.length === 0) return;
+						let len = pageIndexArray.length;
 						_index = (_index + (backward ? -1 : 1) + len) % len;
 						// console.log(_index)
-						_jumpToPage(bestPageMatchIndeces[_index] + 1); // currentPageNumber is 1-based
+						_jumpToPage(pageIndexArray[_index] + 1); // currentPageNumber is 1-based
 						document.dispatchEvent(new Event('funkready'));
 					}
 
@@ -11411,13 +11431,15 @@ function areArgsValid(mainString, targetStrings) {
 						return pdfjsLib
 					}
 					document.getElementsByTagName('html')
-					window.getCurrIndex = function(){
+					window.getCurrIndex = function() {
 						return _index
 					}
 					console.log("dispachingggg")
 					document.dispatchEvent(new Event('funcready'));
 					PDFViewerApplication.eventBus.on('safetojump', jumpToNextMatch);
-					PDFViewerApplication.eventBus.on('textlayerrendered', ({ pageNumber }) => {
+					PDFViewerApplication.eventBus.on('textlayerrendered', ({
+						pageNumber
+					}) => {
 						highlightSelectedText(pageNumber);
 					});
 
@@ -11431,7 +11453,7 @@ function areArgsValid(mainString, targetStrings) {
 							_ref$pageSpot = _ref.pageSpot,
 							pageSpot = _ref$pageSpot === void 0 ? null : _ref$pageSpot,
 							_ref$pageNumber = _ref.pageNumber,
-							pageNumber = _ref$pageNumber === void 0 ? null : _ref$pageNumber;	
+							pageNumber = _ref$pageNumber === void 0 ? null : _ref$pageNumber;
 
 
 						if (!pageSpot && !this.isInPresentationMode) {
@@ -11464,8 +11486,8 @@ function areArgsValid(mainString, targetStrings) {
 						} else {
 							PDFViewerApplication.eventBus.on('safetojump', () => {
 								this.currentPageNumber = pageIdx;
-							});	
-						}			
+							});
+						}
 					}
 				}, {
 					key: "_getVisiblePages",
@@ -11774,7 +11796,7 @@ function areArgsValid(mainString, targetStrings) {
 						};
 
 						var firstPagePromise = pdfDocument.getPage(1);
-						window.getPdfDocument = function(){
+						window.getPdfDocument = function() {
 							return pdfDocument;
 						}
 						this.firstPagePromise = firstPagePromise;
@@ -12990,7 +13012,7 @@ function areArgsValid(mainString, targetStrings) {
 					div.setAttribute('data-page-number', this.id);
 					this.div = div;
 					container.appendChild(div);
-					
+
 					this.eventBus.on('calculationdone', (evt) => {
 						if (evt.id !== this.id) return;
 						this.renderingState = _pdf_rendering_queue.RenderingStates.INITIAL;

@@ -378,7 +378,7 @@ $('#getRangeButton').click(function() {
 
 function updateHighlights(arr){
 
-	//console.log(arr)
+	console.log(arr)
 	currArr = arr;
 	var searchQueries = ""
 	arr.forEach((item, index) => {
