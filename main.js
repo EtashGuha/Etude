@@ -4,6 +4,7 @@ const electron = require('electron')
 var stripe = require('stripe')('rk_live_pVDuyAoclBtFPPIWIZ8rHCl200kbPvuYWk');
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
+// Google analytics
 const { trackEvent } = require('./analytics');
 global.trackEvent = trackEvent;
 const {
@@ -119,9 +120,10 @@ app.on('will-finish-launching', function() {
         icon: 'assets/images/logo.jpg',
     })
         //This is google analytics stuff
-        analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
-            return response;
-        });
+        // analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
+        //     return response;
+        // });
+        trackEvent("Open", "HomePage");
         // mainWindow.webContents.openDevTools()
         if (needsToLicense) {
             mainWindow.loadFile('verify.html')
@@ -155,9 +157,10 @@ ipcMain.on('get-file-data', function(event) {
 function createWindow() {
     checkForUpdates();
 
-    analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
-        return response;
-    });
+    // analyti.pageview('http://etudereader.com', '/home', 'Example').then((response) => {
+    //     return response;
+    // });
+    trackEvent("Open", "HomePage");
 
     if (needsToLicense) {
         mainWindow.loadFile('verify.html')
