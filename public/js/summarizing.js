@@ -22,6 +22,7 @@ var tokenizer = new Tokenizer('Chuck');
 const viewerEle = document.getElementById('viewer');
 viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
+var sentenceToPage = new Object()
 // <<<<<<< HEAD
 //console.log("Entering summarinzg js")
 //console.log(require('electron').remote.getGlobal('sharedObject').someProperty)
@@ -34,7 +35,7 @@ viewerEle.appendChild(iframe);
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.pdf"
 
-var currArr;
+var currArr = [];
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
 
 deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
@@ -232,7 +233,7 @@ $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
 	//console.log("Cape button clicked")
 	document.getElementById("stopLoadButton").style.display = 'block';
-	console.log(document.getElementById("myDropdown").classList.value)
+	//console.log(document.getElementById("myDropdown").classList.value)
 
 	//document.getElementById("myDropdown").classList.toggle("dropdownactive");
 	setTimeout(function() {
@@ -243,7 +244,8 @@ $("#cape_btn").click(function() {
 			var promiseToAppend = new Promise(function(resolve, reject) {
 				//console.log("beginning promise")
 				kernelWorker.onmessage = function(ev) {
-					$("#capeResult").empty().append(ev.data[0]);
+
+					$("#capeResult").empty().append(ev.data[0].match( /[^\.!\?]+[\.!\?]+/g )[0]);
 					updateHighlights(ev.data)
 					//console.log("refreshed");
 					// if(document.getElementById("myDropdown").classList.contains("show")){
@@ -263,7 +265,7 @@ $("#cape_btn").click(function() {
 			//$("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
 			//document.getElementById("myDropdown").classList.toggle("show");
 			promiseToAppend.then((data) => {
-				console.log(data)
+				//console.log(data)
 				//document.getElementById("myDropdown").classList.toggle("show");
 				if(document.getElementById("myDropdown").classList.value === "dropdown-content") {
 						document.getElementById("questionVal").click();
@@ -351,11 +353,11 @@ function processSummarizationResult(t) {
 function summaryButtonPressed(firstpage, lastpage) {
 	var getpdftext = getPDFText(firstpage, lastpage)
 	getpdftext.then((x) => {
-		console.log(x);
+		//console.log(x);
 		deepai.callStandardApi("summarization", {
 			text: x
 		}).then((resp) => {
-			console.log(resp);
+			//console.log(resp);
 			processSummarizationResult(resp)});
 	});
 }
@@ -376,16 +378,27 @@ $('#getRangeButton').click(function() {
 
 
 function updateHighlights(arr){
+	//console.log(sentenceToPage)
 	//console.log(arr)
-	currArr = arr;
 	var searchQueries = ""
+	currArr = []
 	arr.forEach((item, index) => {
-		item = item.replace(/[^a-zA-Z ]/g, "")
-		item = replaceAll(item,"\u00A0", "%3D");
-		item = replaceAll(item, " ", "%3D")
-		searchQueries += "%20" + item
-	})
 
+		var splitWolframAnswers = item.match( /[^\.!\?]+[\.!\?]+/g )
+		for (var i = splitWolframAnswers.length - 1; i >= 0; i--) {
+			var realItem = splitWolframAnswers[i]
+			var pageNumForSentence = sentenceToPage[replaceAll(realItem, " ", "")]
+			if(pageNumForSentence != undefined) {
+				currArr.push(realItem)
+				realItem = realItem.replace(/[^a-zA-Z ]/g, "")
+				realItem = replaceAll(realItem,"\u00A0", "%3D");
+				realItem = replaceAll(realItem, " ", "%3D")
+				realItem = realItem + "%3D" + pageNumForSentence + "PAGENUM"
+				searchQueries += "%20" + realItem
+			}
+		}
+	})
+	//console.log(searchQueries)
 	searchQueries = searchQueries.substring(3)
 	searchQueries = replaceAll(searchQueries, "=", "")
 	searchQueries = replaceAll(searchQueries, "&", "")
@@ -431,18 +444,24 @@ function getPDFText(firstPage, lastPage) {
 		var key = PDF_URL.concat("textForEachPage").replace(".", "")
 		//console.log(key)
 		//console.log(store.has(key))
-		if(store.has(key)) {
+		console.log("ENTERING HERE")
+		if(store.has(key) && store.has(key + "sentenceToPage")) {
 			var strings = ""
+			console.log("before arraytextbypage")
 			var arrayTextByPage = store.get(key);
+			console.log("after arraytextbypage")
+
 			for(var i = firstPage - 1; i <=  lastPage - 1; i++){
 				strings = strings.concat(arrayTextByPage[i])
 			}
 			resolve(strings)
+			sentenceToPage = store.get(key + "sentenceToPage")
 		} else {
 			var gethtml = getHtml()	
 			gethtml.then((data) => {
 				//console.log(data)
 				store.set(key, data)
+				store.set(key + "sentenceToPage", sentenceToPage)
 				//console.log(store.store)
 				var strings = ""
 				for(var i = firstPage - 1; i <=  lastPage - 1; i++){
@@ -628,49 +647,6 @@ new Promise((resolve, reject) => {
 	extractTOC();
 });
 
-function getTextAfterMap(){
-	return new Promise(function(resolve, reject) {
-		var textForEachPage = []
-		var maxFont = 0
-		var maxFontFreq = 0
-		map.forEach((value, key) => {
-			if(value.length > maxFontFreq){
-				maxFontFreq = value.length;
-				maxFont = key
-			}
-		})
-		var pdfdoc = iframe.contentWindow.getPdfDocument()
-		var lastPromise; // will be used to chain promises
-		lastPromise = pdfdoc.getMetadata().then(function(data) {
-		});
-
-		var loadPage = function(pageNum) {
-			return pdfdoc.getPage(pageNum).then(function(page) {
-				var viewport = page.getViewport({
-					scale: 1.0,
-				});
-				return page.getTextContent().then(function(content) {
-					var strings = content.items.map(function(item) {
-						if(Math.round(item.height) == maxFont) {
-							return item.str;
-						}
-					});
-					strings = strings.join(' ');
-					textForEachPage.push(strings)
-				}).then(function() {
-					if(pdfdoc.numPages === pageNum) {
-						resolve(textForEachPage)
-					}
-				});
-			});
-		};
-
-		for (var i = 1; i <= pdfdoc.numPages; i++) {
-			lastPromise = lastPromise.then(loadPage.bind(null, i));
-		}
-	})
-}
-
 function getLayeredText() {
 
 	return new Promise(function(resolve, reject) {
@@ -739,7 +715,14 @@ function getTextAfterMap(){
 						}
 					});
 					strings = strings.join(' ');
+					strings = strings.replace(/[^a-zA-Z.?! ]/g, '')
+
 					textForEachPage.push(strings)
+					tokenizer.setEntry(strings)
+					var stringArr = tokenizer.getSentences();
+					for (var i = stringArr.length - 1; i >= 0; i--) {
+						sentenceToPage[replaceAll(stringArr[i], " ","")] = pageNum
+					} 
 				}).then(function() {
 					if(pdfdoc.numPages === pageNum) {
 						resolve(textForEachPage)
