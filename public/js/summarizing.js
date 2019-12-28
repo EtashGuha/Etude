@@ -233,7 +233,7 @@ $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
 	//console.log("Cape button clicked")
 	document.getElementById("stopLoadButton").style.display = 'block';
-	console.log(document.getElementById("myDropdown").classList.value)
+	//console.log(document.getElementById("myDropdown").classList.value)
 
 	//document.getElementById("myDropdown").classList.toggle("dropdownactive");
 	setTimeout(function() {
@@ -265,7 +265,7 @@ $("#cape_btn").click(function() {
 			//$("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
 			//document.getElementById("myDropdown").classList.toggle("show");
 			promiseToAppend.then((data) => {
-				console.log(data)
+				//console.log(data)
 				//document.getElementById("myDropdown").classList.toggle("show");
 				if(document.getElementById("myDropdown").classList.value === "dropdown-content") {
 						document.getElementById("questionVal").click();
@@ -353,11 +353,11 @@ function processSummarizationResult(t) {
 function summaryButtonPressed(firstpage, lastpage) {
 	var getpdftext = getPDFText(firstpage, lastpage)
 	getpdftext.then((x) => {
-		console.log(x);
+		//console.log(x);
 		deepai.callStandardApi("summarization", {
 			text: x
 		}).then((resp) => {
-			console.log(resp);
+			//console.log(resp);
 			processSummarizationResult(resp)});
 	});
 }
@@ -378,8 +378,8 @@ $('#getRangeButton').click(function() {
 
 
 function updateHighlights(arr){
-	console.log(sentenceToPage)
-	console.log(arr)
+	//console.log(sentenceToPage)
+	//console.log(arr)
 	var searchQueries = ""
 	currArr = []
 	arr.forEach((item, index) => {
@@ -398,7 +398,7 @@ function updateHighlights(arr){
 			}
 		}
 	})
-	console.log(searchQueries)
+	//console.log(searchQueries)
 	searchQueries = searchQueries.substring(3)
 	searchQueries = replaceAll(searchQueries, "=", "")
 	searchQueries = replaceAll(searchQueries, "&", "")
