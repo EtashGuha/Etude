@@ -381,6 +381,7 @@ function updateHighlights(arr){
 	console.log(sentenceToPage)
 	console.log(arr)
 	var searchQueries = ""
+	currArr = []
 	arr.forEach((item, index) => {
 
 		var splitWolframAnswers = item.match( /[^\.!\?]+[\.!\?]+/g )
