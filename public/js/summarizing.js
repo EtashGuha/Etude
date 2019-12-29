@@ -388,11 +388,14 @@ $('#getRangeButton').click(function() {
 function updateHighlights(arr){
 	//console.log(sentenceToPage)
 	//console.log(arr)
+	console.log(sentenceToPage)
 	var searchQueries = ""
 	currArr = []
 	arr.forEach((item, index) => {
-
 		var splitWolframAnswers = item.match( /[^\.!\?]+[\.!\?]+/g )
+		if(splitWolframAnswers == null){
+			splitWolframAnswers = {item}
+		}
 		for (var i = splitWolframAnswers.length - 1; i >= 0; i--) {
 			var realItem = splitWolframAnswers[i]
 			var pageNumForSentence = sentenceToPage[replaceAll(realItem, " ", "")]
@@ -403,6 +406,8 @@ function updateHighlights(arr){
 				realItem = replaceAll(realItem, " ", "%3D")
 				realItem = realItem + "%3D" + pageNumForSentence + "PAGENUM"
 				searchQueries += "%20" + realItem
+			} else {
+				console.log(item)
 			}
 		}
 	})
@@ -729,7 +734,14 @@ function getTextAfterMap(){
 					tokenizer.setEntry(strings)
 					var stringArr = tokenizer.getSentences();
 					for (var i = stringArr.length - 1; i >= 0; i--) {
-						sentenceToPage[replaceAll(stringArr[i], " ","")] = pageNum
+						var item = stringArr[i]
+						var splitStringArr = (stringArr[i]).match( /[^\.!\?]+[\.!\?]+/g )
+						if(splitStringArr == null){
+							splitStringArr = {item}
+						}
+						for (var j = splitStringArr.length - 1; j >= 0; j--) {
+							sentenceToPage[replaceAll(splitStringArr[j], " ","")] = pageNum
+						}
 					} 
 				}).then(function() {
 					if(pdfdoc.numPages === pageNum) {
