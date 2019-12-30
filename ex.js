@@ -37,7 +37,16 @@ function lemmatizeSet(inSet) {
 	})
 	return lemmatized;
 }
-
+async function cleanText(inSet) {
+	var outSet = new Set()
+	inSet.forEach((item) => {
+		if(spellChecker.isMisspelled(item)){
+			require('google-autosuggest')(item).then(resp => {
+  				console.log(resp)
+			})
+		}
+	})
+}
 async function getAnswer(question, text){
 	var textArray = text.toLowerCase().match(/[^\.!\?]+[\.!\?]+/g)
 	question = tokenize(question)
@@ -47,16 +56,7 @@ async function getAnswer(question, text){
 		map.set(item, thesaurus.find(item))
 	})
 
-	async function cleanText(inSet) {
-		var outSet = new Set()
-		inSet.forEach((item) => {
-			if(spellChecker.isMisspelled(item)){
-				require('google-autosuggest')(item).then(resp => {
-	  				console.log(resp)
-				})
-			}
-		})
-	}
+
 	for (var i = textArray.length - 1; i >= 0; i--) {
 
 		var currSentence = tokenize(textArray[i])
