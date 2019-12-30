@@ -240,7 +240,7 @@ $("#cape_btn").click(function() {
 		//console.log(getNumPages())
 		var getpdftext = getPDFText(1, getNumPages())
 		getpdftext.then((x) => {
-			//console.log(x)
+			console.log(x)
 			var promiseToAppend = new Promise(function(resolve, reject) {
 				//console.log("beginning promise")
 				kernelWorker.onmessage = function(ev) {
