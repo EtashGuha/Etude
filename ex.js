@@ -39,6 +39,18 @@ function lemmatizeSet(inSet) {
 	return lemmatized;
 }
 
+function includes(stringToSearch, substr) {
+	var substrLength = substr.length
+	var strToSearLength = stringToSearch.length
+	for(var i = 0; i < strToSearLength - substrLength; i++){
+		if(stringToSearch.substring(i, i + substrLength) == substr){
+			return true;
+		}
+	}
+
+	return false;
+}
+
 
 async function getAnswer(question, text){
 	var textArray = text.toLowerCase().match(/[^\.!\?]+[\.!\?]+/g)
@@ -49,10 +61,20 @@ async function getAnswer(question, text){
 		map.set(lemmatizer.lemmatizer(item), thesaurus.find(lemmatizer.lemmatizer(item)))
 		map.set(item, thesaurus.find(item))
 	})
-
+ 	var pastSentences = new Set()
 	for (var i = textArray.length - 1; i >= 0; i--) {
 		console.log(i)
 		var currSentence = tokenize(keyword(textArray[i]))
+		// console.log(currSentence)
+		if(currSentence.size < 1){
+			console.log("dont care")
+			continue
+		}
+		if(pastSentences.has(currSentence)){
+			console.log("seen already")
+			continue
+		}
+		pastSentences.add(currSentence)
 
 		var matchList = new Set(
 			[...question].filter(x => currSentence.has(x)));
@@ -67,7 +89,7 @@ async function getAnswer(question, text){
 		clessq = lemmatizeSet(clessq)
 		var sharedSize = matchList.size
 		var noMatchList = []
-	
+		
 		qlessc.forEach((item) => {
 			var synonymList = map.get(item)
 			synonymList.push(item)
@@ -97,28 +119,37 @@ async function getAnswer(question, text){
 				noMatchList.push(synonymList)
 			}
 		});
+		clessq.forEach((item) => {
+			if(!spellChecker.isMisspelled(item)){
+				clessq.delete(item)
+			}
+		})
+
 		var sumOfMatches = 0;
 
 		var numTermsMatching = 0
-		for (var m = noMatchList.length - 1; m >= 0; m--) {
-			var bestMatchForEachTerm = 0
-			for (var j = noMatchList[m].length - 1; j >= 0; j--) {
-				clessq.forEach((item) => {
-					if(item.includes(noMatchList[m][j])) {
-						bestMatchForEachTerm = 1
+		if(clessq.size > 0){
+			console.log(clessq)
+			for (var m = noMatchList.length - 1; m >= 0; m--) {
+				var bestMatchForEachTerm = 0
+				for (var j = noMatchList[m].length - 1; j >= 0; j--) {
+					clessq.forEach((item) => {
+						if(includes(item, noMatchList[m][j])) {
+							bestMatchForEachTerm = 1
+						}
+					})
+					if(bestMatchForEachTerm == 1){
+						break;
 					}
-				})
-				if(bestMatchForEachTerm == 1){
-					break;
 				}
+				numTermsMatching += bestMatchForEachTerm
 			}
-			numTermsMatching += bestMatchForEachTerm
+		} else {
+			console.log('none isMisspelled')
 		}
-		console.log(textArray[i])
+		
 
-
-		var rating = (sharedSize) / (question.size)
-		console.log(rating)
+		var rating = (sharedSize + numTermsMatching) / (question.size)
 
 		if(isNaN(rating)){
 			continue;
