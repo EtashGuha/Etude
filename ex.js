@@ -43,7 +43,8 @@ async function cleanText(inSet) {
 	inSet.forEach((item) => {
 		if(spellChecker.isMisspelled(item)){
 			require('google-autosuggest')(item).then(resp => {
-  				console.log(resp)
+				console.log(resp)
+  				console.log(resp.set[0].value)
   				return resp
 			})
 		}
@@ -73,10 +74,11 @@ async function getAnswer(question, text){
 
 		qlessc = lemmatizeSet(qlessc)
 		clessq = lemmatizeSet(clessq)
-		await cleanText(clessq)
+		// await cleanText(clessq)
 		// console.log(clessq)
 		var sharedSize = matchList.size
 		var noMatchList = []
+		var numElements = 0;
 		qlessc.forEach((item) => {
 			// console.log(item)
 			var synonymList = map.get(item)
@@ -97,17 +99,24 @@ async function getAnswer(question, text){
 			} else {
 				noMatchList = noMatchList.concat(synonymList)
 				noMatchList.push(item)
+				numElements += 1
 			}
 		});
 		var sumOfMatches = 0;
-		if (noMatchList.length != 0) {
-			clessq.forEach((item) => {
-				var bestMatch = stringSimilarity.findBestMatch(item, noMatchList).bestMatch
-				sumOfMatches += bestMatch.rating
-			})
-		}
 
-		var rating = sharedSize + (sumOfMatches/clessq.size) / (question.size)
+		if (clessq.size != 0) {
+			for (var f = noMatchList.length - 1; f >= 0; f--) {
+				var bestMatch = stringSimilarity.findBestMatch(noMatchList[f], Array.from(clessq)).bestMatch
+				sumOfMatches += bestMatch.rating
+			}
+		}
+		// console.log(numElements)
+		sumOfMatches *= (1 / numElements)
+		console.log(noMatchList.length)
+		console.log(numElements)
+		console.log(sumOfMatches)
+		// console.log(sharedSize/question.size)
+		var rating = (sharedSize + sumOfMatches) / (question.size)
 
 		if(isNaN(rating)){
 			console.log("NOPEE")
@@ -120,9 +129,7 @@ async function getAnswer(question, text){
 			minHeap.insert(rating, textArray[i])
 			minHeap.extractRoot()
 		}
-
 	}
-
 	console.log(minHeap.serialize())
 }
 
