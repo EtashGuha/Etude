@@ -37,12 +37,14 @@ function lemmatizeSet(inSet) {
 	})
 	return lemmatized;
 }
+
 async function cleanText(inSet) {
 	var outSet = new Set()
 	inSet.forEach((item) => {
 		if(spellChecker.isMisspelled(item)){
 			require('google-autosuggest')(item).then(resp => {
   				console.log(resp)
+  				return resp
 			})
 		}
 	})
