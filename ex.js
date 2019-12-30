@@ -39,22 +39,11 @@ function lemmatizeSet(inSet) {
 	return lemmatized;
 }
 
-async function cleanText(inSet) {
-	var outSet = new Set()
-	inSet.forEach((item) => {
-		if(spellChecker.isMisspelled(item)){
-			require('google-autosuggest')(item).then(resp => {
-				console.log(resp)
-  				console.log(resp.set[0].value)
-  				return resp
-			})
-		}
-	})
-}
+
 async function getAnswer(question, text){
 	var textArray = text.toLowerCase().match(/[^\.!\?]+[\.!\?]+/g)
 	// console.log(textArray)
-	question = tokenize(question.toLowerCase())
+	question = tokenize(keyword(question.toLowerCase()))
 
 	question.forEach((item) => {
 		map.set(lemmatizer.lemmatizer(item), thesaurus.find(lemmatizer.lemmatizer(item)))
@@ -63,7 +52,7 @@ async function getAnswer(question, text){
 
 	for (var i = textArray.length - 1; i >= 0; i--) {
 		console.log(i)
-		var currSentence = tokenize(textArray[i])
+		var currSentence = tokenize(keyword(textArray[i]))
 
 		var matchList = new Set(
 			[...question].filter(x => currSentence.has(x)));
@@ -78,7 +67,7 @@ async function getAnswer(question, text){
 		clessq = lemmatizeSet(clessq)
 		var sharedSize = matchList.size
 		var noMatchList = []
-		var numElements = 0;
+	
 		qlessc.forEach((item) => {
 			var synonymList = map.get(item)
 			synonymList.push(item)
@@ -106,7 +95,6 @@ async function getAnswer(question, text){
 				sharedSize += 1;
 			} else {
 				noMatchList.push(synonymList)
-				numElements += 1
 			}
 		});
 		var sumOfMatches = 0;
@@ -129,7 +117,7 @@ async function getAnswer(question, text){
 		console.log(textArray[i])
 
 
-		var rating = (sharedSize + numTermsMatching) / (question.size)
+		var rating = (sharedSize) / (question.size)
 		console.log(rating)
 
 		if(isNaN(rating)){
