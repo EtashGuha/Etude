@@ -182,7 +182,12 @@ async function getAnswer(question, text){
 		}
 		densityCoefficient = Math.max(densityCoefficient + (rating - .5)/textArray.length, 0)
 	}
-	return minHeap.serialize().map(x => x.value);
+	var result = []
+	for (var i = 7; i >= 0; i--) {
+		result[i] = minHeap.extractRoot().getValue()
+	}
+	console.log(result)
+	return result
 
 }
 
@@ -190,7 +195,7 @@ async function getAnswer(question, text){
 onmessage = function findTextAnswer(input) {
 	console.log("at least here dawg")
 	const result = getAnswer(input.data[1], input.data[0])
-	console.log(result)
+	//console.log(result)
 	result.then((data)=> {
 		console.log("data")
 		console.log(data)
