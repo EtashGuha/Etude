@@ -62,19 +62,16 @@ async function getAnswer(question, text){
 		map.set(item, thesaurus.find(item))
 	})
  	var pastSentences = new Set()
+
+ 	var densityCoefficient = 0
 	for (var i = textArray.length - 1; i >= 0; i--) {
 		console.log(i)
 		var currSentence = tokenize(keyword(textArray[i]))
-		// console.log(currSentence)
+
 		if(currSentence.size < 1){
 			console.log("dont care")
 			continue
 		}
-		if(pastSentences.has(currSentence)){
-			console.log("seen already")
-			continue
-		}
-		pastSentences.add(currSentence)
 
 		var matchList = new Set(
 			[...question].filter(x => currSentence.has(x)));
@@ -88,8 +85,8 @@ async function getAnswer(question, text){
 		qlessc = lemmatizeSet(qlessc)
 		clessq = lemmatizeSet(clessq)
 		var sharedSize = matchList.size
-		var noMatchList = []
 		
+		noMatchList = []
 		qlessc.forEach((item) => {
 			var synonymList = map.get(item)
 			synonymList.push(item)
@@ -107,6 +104,8 @@ async function getAnswer(question, text){
 				}
 				if(hasThisSynonym){
 					for (var g = splitSynonym.length - 1; g >= 0; g--) {
+						console.log(synonym)
+						console.log(item)
 						clessq.delete(splitSynonym[g])
 					}
 					included = true;
@@ -116,51 +115,46 @@ async function getAnswer(question, text){
 			if (included) {
 				sharedSize += 1;
 			} else {
-				noMatchList.push(synonymList)
+				noMatchList.push(new Set(synonymList))
 			}
 		});
-		clessq.forEach((item) => {
-			if(!spellChecker.isMisspelled(item)){
-				clessq.delete(item)
-			}
-		})
-
-		var sumOfMatches = 0;
 
 		var numTermsMatching = 0
-		if(clessq.size > 0){
-			console.log(clessq)
-			for (var m = noMatchList.length - 1; m >= 0; m--) {
+		if(clessq.size > 0) {
+ 			for (var m = noMatchList.length - 1; m >= 0; m--) {
 				var bestMatchForEachTerm = 0
-				for (var j = noMatchList[m].length - 1; j >= 0; j--) {
+				var currArray = Array.from(noMatchList[m])
+				for (var j = currArray.length - 1; j >= 0; j--) {
 					clessq.forEach((item) => {
-						if(includes(item, noMatchList[m][j])) {
-							bestMatchForEachTerm = 1
+						if (item.includes(currArray[j]) && spellChecker.isMisspelled(item)) {
+							console.log(item)
+							console.log(currArray[j])
+							bestMatchForEachTerm = 1;
 						}
 					})
-					if(bestMatchForEachTerm == 1){
-						break;
-					}
 				}
-				numTermsMatching += bestMatchForEachTerm
+				if (bestMatchForEachTerm == 1) {
+					break;
+				}
 			}
+			numTermsMatching += bestMatchForEachTerm;
 		} else {
 			console.log('none isMisspelled')
 		}
-		
 
-		var rating = (sharedSize + numTermsMatching) / (question.size)
+		var rating = (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
 
 		if(isNaN(rating)){
 			continue;
 		}
 		
-		if(minHeap.size() <= 8) {
+		if(minHeap.size() <= 100) {
 			minHeap.insert(rating, textArray[i])
 		} else if(rating > minHeap.root().getKey()) {
 			minHeap.insert(rating, textArray[i])
 			minHeap.extractRoot()
 		}
+		densityCoefficient = Math.max(densityCoefficient + (rating - .5)/textArray.length, 0)
 	}
 	console.log(minHeap.serialize())
 }
