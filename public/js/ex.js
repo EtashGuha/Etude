@@ -18,7 +18,7 @@ const minHeap = new MinHeap();
 
 var map = new HashMap();
 
-//var text = fs.readFileSync("/Users/etashguha/Documents/etude/example.txt", 'utf8')
+var text = fs.readFileSync("/Users/etashguha/Documents/etude/example.txt", 'utf8')
 stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
 var question = "question view banana split"
 
@@ -129,8 +129,6 @@ async function getAnswer(question, text){
 				}
 				if(hasThisSynonym){
 					for (var g = splitSynonym.length - 1; g >= 0; g--) {
-						// console.log(synonym)
-						// console.log(item)
 						clessq.delete(splitSynonym[g])
 					}
 					included = true;
@@ -178,10 +176,11 @@ async function getAnswer(question, text){
 		}
 		densityCoefficient = Math.max(densityCoefficient + (rating - .5)/textArray.length, 0)
 	}
-	return minHeap.serialize().map(x => x.value);
-
+	var result = []
+	for (var i = 7; i > 0; i--) {
+		result[i] = minHeap.extractRoot().getValue()
+	}
+	return result
 }
-
-
 
 module.exports.getAnswer = getAnswer
