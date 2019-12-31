@@ -4,17 +4,23 @@ var stringSimilarity = require('string-similarity');
 var HashMap = require('hashmap');
 const fs = require('fs');
 var spellChecker = require('spellchecker')
+var WordNet = require("node-wordnet")
+// var natural = require('natural');
+// var wordnet = new natural.WordNet();
+var wordnet = new WordNet()
 const {
 	MinHeap,
 	MaxHeap
 } = require('@datastructures-js/heap');
 const minHeap = new MinHeap();
 
+// var wordnet = new natural.WordNet();
+
 var map = new HashMap();
 
 var text = fs.readFileSync("/Users/etashguha/Documents/etude/example.txt", 'utf8')
 stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
-var question = "What is the point of view of the narrative?"
+var question = "question view banana split"
 
 function keyword(s) {
 	var re = new RegExp('\\b(' + stopwords.join('|') + ')\\b', 'g');
@@ -56,20 +62,41 @@ async function getAnswer(question, text){
 	var textArray = text.toLowerCase().match(/[^\.!\?]+[\.!\?]+/g)
 	// console.log(textArray)
 	question = tokenize(keyword(question.toLowerCase()))
+	var questionArray = Array.from(question)
 
-	question.forEach((item) => {
-		map.set(lemmatizer.lemmatizer(item), thesaurus.find(lemmatizer.lemmatizer(item)))
-		map.set(item, thesaurus.find(item))
-	})
- 	var pastSentences = new Set()
+	for (var k = questionArray.length - 1; k >= 0; k--) {
+		var item = questionArray[k]
+		var lemmatizedWord = lemmatizer.lemmatizer(item)
+		var result = await wordnet.lookupAsync(lemmatizedWord)
+		var synonymList = new Set()
+		for(var i = result.length - 1; i >= 0; i--){
+			for (var m = result[i].synonyms.length - 1; m >= 0; m--) {
+				if (result[i].synonyms[m]) {
+					synonymList.add(result[i].synonyms[m])
+				}
+			}
+		}
+		map.set(lemmatizedWord, Array.from(synonymList))
 
+		result = await wordnet.lookupAsync(item)
+		var nextSynonymList = new Set()
+		for(var i = result.length - 1; i >= 0; i--){
+			for (var m = result[i].synonyms.length - 1; m >= 0; m--) {
+				if (result[i].synonyms[m] != item) {
+					nextSynonymList.add(result[i].synonyms[m])
+				}
+			}
+		}
+
+		map.set(item, Array.from(nextSynonymList))
+	}
  	var densityCoefficient = 0
 	for (var i = textArray.length - 1; i >= 0; i--) {
-		console.log(i)
+		// console.log(i)
 		var currSentence = tokenize(keyword(textArray[i]))
 
 		if(currSentence.size < 1){
-			console.log("dont care")
+			// console.log("dont care")
 			continue
 		}
 
@@ -89,13 +116,11 @@ async function getAnswer(question, text){
 		noMatchList = []
 		qlessc.forEach((item) => {
 			var synonymList = map.get(item)
-			synonymList.push(item)
 			var included = false
 			for (var m = synonymList.length - 1; m >= 0; m--) {
 				var hasThisSynonym = true
 				var synonym = synonymList[m]
-
-				var splitSynonym = synonym.split(" ")
+				var splitSynonym = synonym.split("_")
 				for (var j = splitSynonym.length - 1; j >= 0; j--) {
 					if (!clessq.has(splitSynonym[j])) {
 						hasThisSynonym = false;
@@ -104,8 +129,8 @@ async function getAnswer(question, text){
 				}
 				if(hasThisSynonym){
 					for (var g = splitSynonym.length - 1; g >= 0; g--) {
-						console.log(synonym)
-						console.log(item)
+						// console.log(synonym)
+						// console.log(item)
 						clessq.delete(splitSynonym[g])
 					}
 					included = true;
@@ -127,8 +152,6 @@ async function getAnswer(question, text){
 				for (var j = currArray.length - 1; j >= 0; j--) {
 					clessq.forEach((item) => {
 						if (item.includes(currArray[j]) && spellChecker.isMisspelled(item)) {
-							console.log(item)
-							console.log(currArray[j])
 							bestMatchForEachTerm = 1;
 						}
 					})
@@ -138,9 +161,8 @@ async function getAnswer(question, text){
 				}
 			}
 			numTermsMatching += bestMatchForEachTerm;
-		} else {
-			console.log('none isMisspelled')
-		}
+		} 
+
 
 		var rating = (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
 
@@ -148,7 +170,7 @@ async function getAnswer(question, text){
 			continue;
 		}
 		
-		if(minHeap.size() <= 100) {
+		if(minHeap.size() <= 8) {
 			minHeap.insert(rating, textArray[i])
 		} else if(rating > minHeap.root().getKey()) {
 			minHeap.insert(rating, textArray[i])
