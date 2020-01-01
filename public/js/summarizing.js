@@ -259,6 +259,12 @@ $("#cape_btn").click(function() {
 						didyoumean.style.display = "block"
 						didyoumean.innerHTML = "Did you mean: " + ev.data + "?";
 						didyoumean.onclick = function() { //shlok change this to event listener for click did you mean
+							document.getElementById('searchloader').style.display = 'block';
+							document.getElementById('searchbuttonthree').style.color = 'white';
+							document.getElementById('cape_btn').style.backgroundColor = 'white';
+							document.getElementById("stopLoadButton").style.display = 'block';
+							closeSearch.click();
+							didyoumean.style.display = "none"
 							console.log("didyoumean clicked")
 							document.getElementById("questionVal").value = ev.data
 							kernelWorker.terminate()
@@ -269,6 +275,12 @@ $("#cape_btn").click(function() {
 								console.log(ev.data)
 								$("#capeResult").empty().append(ev.data[0].match( /[^\.!\?]+[\.!\?]+/g )[0]);
 								updateHighlights(ev.data)
+								document.getElementById('searchloader').style.display = 'none';
+								document.getElementById('searchbuttonthree').style.color = 'black';
+								document.getElementById('cape_btn').style.backgroundColor = '';
+								//console.log("Showing")
+								document.getElementById("stopLoadButton").style.display = 'none';
+								document.getElementById("questionVal").click();
 								//console.log("refreshed");
 								// if(document.getElementById("myDropdown").classList.contains("show")){
 								// 	//console.log("Not showing dropdown");
