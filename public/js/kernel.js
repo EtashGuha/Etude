@@ -7,10 +7,9 @@ var thesaurus = require("thesaurus");
 var stringSimilarity = require('string-similarity');
 var HashMap = require('hashmap');
 const fs = require('fs');
-var spellChecker = require('spellchecker')
+const spell = require('spell-checker-js')
 var WordNet = require("node-wordnet")
-// var natural = require('natural');
-// var wordnet = new natural.WordNet();
+spell.load('en')
 var wordnet = new WordNet()
 const {
 	MinHeap,
@@ -24,7 +23,7 @@ var map = new HashMap();
 
 //var text = fs.readFileSync("/Users/etashguha/Documents/etude/example.txt", 'utf8')
 stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
-var question = "question view banana split"
+// var question = "question view banana split"
 
 function keyword(s) {
 	var re = new RegExp('\\b(' + stopwords.join('|') + ')\\b', 'g');
@@ -155,7 +154,7 @@ async function getAnswer(question, text){
 				var currArray = Array.from(noMatchList[m])
 				for (var j = currArray.length - 1; j >= 0; j--) {
 					clessq.forEach((item) => {
-						if (item.includes(currArray[j]) && spellChecker.isMisspelled(item)) {
+						if (item.includes(currArray[j]) && spell.check(item).length > 0) {
 							bestMatchForEachTerm = 1;
 						}
 					})
