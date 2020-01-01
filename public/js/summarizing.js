@@ -240,11 +240,52 @@ $("#cape_btn").click(function() {
 		//console.log(getNumPages())
 		var getpdftext = getPDFText(1, getNumPages())
 		getpdftext.then((x) => {
-			console.log(x)
+			//console.log(x)
+
+			kernelWorkerBing = new Worker(etudeFilepath + "/public/js/bingspellcheck.js")
+
 			var promiseToAppend = new Promise(function(resolve, reject) {
 				//console.log("beginning promise")
+
+				kernelWorkerBing.onmessage = function(ev) {
+					console.log("binging")
+					console.log(ev.data)
+					
+					if(ev.data === $("#questionVal").val()) {
+						console.log("identical")
+					} else {
+						console.log("changed")
+						if(true) { //shlok change this to event listener for click did you mean
+							document.getElementById("questionVal").value = ev.data
+							kernelWorker.terminate()
+							kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
+							//document.getElementById('cape_btn').click();
+							kernelWorker.onmessage = function(ev) {
+								console.log("kernel worker starting")
+								console.log(ev.data)
+								$("#capeResult").empty().append(ev.data[0].match( /[^\.!\?]+[\.!\?]+/g )[0]);
+								updateHighlights(ev.data)
+								//console.log("refreshed");
+								// if(document.getElementById("myDropdown").classList.contains("show")){
+								// 	//console.log("Not showing dropdown");
+								// 	document.getElementById("myDropdown").classList.toggle("show");
+								// }
+
+								kernelWorker.terminate()
+								resolve("GOOD")
+							}
+							kernelWorker.postMessage([x, $("#questionVal").val()])
+						}
+					}
+
+					kernelWorkerBing.terminate()
+					resolve("GOOD")
+				}
+
+
+
 				kernelWorker.onmessage = function(ev) {
-					console.log("got it back")
+					console.log("kernel worker starting")
 					console.log(ev.data)
 					$("#capeResult").empty().append(ev.data[0].match( /[^\.!\?]+[\.!\?]+/g )[0]);
 					updateHighlights(ev.data)
@@ -259,6 +300,7 @@ $("#cape_btn").click(function() {
 				}
 				console.log("redefined kernelWorker on message")
 				kernelWorker.postMessage([x, $("#questionVal").val()])
+				kernelWorkerBing.postMessage([$("#questionVal").val()])
 				//console.log("kernel worker put up")
 				//kernel.findTextAnswerSync();
 
@@ -349,7 +391,7 @@ function goToWebsite() {
 }
 function processSummarizationResult(t) {
 	//console.log("here we are")
-	console.log(t)
+	//console.log(t)
 	noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
 	tokenizer.setEntry(noLineBreakText);
 	updateHighlights(tokenizer.getSentences())
@@ -388,19 +430,19 @@ $('#getRangeButton').click(function() {
 
 function updateHighlights(arr){
 	//console.log(sentenceToPage)
-	console.log(arr)
+	//console.log(arr)
 	var searchQueries = ""
 	currArr = []
 	arr.forEach((item, index) => {
-		console.log(item)
+		//console.log(item)
 		item = item.toLowerCase()
 		var splitWolframAnswers = item.match( /[^\.!\?]+[\.!\?]+/g )
 		for (var i = splitWolframAnswers.length - 1; i >= 0; i--) {
 			var realItem = splitWolframAnswers[i]
-			console.log(realItem)
-			console.log(sentenceToPage)
+			//console.log(realItem)
+			//console.log(sentenceToPage)
 			var pageNumForSentence = sentenceToPage[replaceAll(realItem, " ", "")]
-			console.log(pageNumForSentence)
+			//console.log(pageNumForSentence)
 			if(pageNumForSentence != undefined) {
 				console.log("banana")
 				currArr.push(realItem)
@@ -409,11 +451,11 @@ function updateHighlights(arr){
 				realItem = replaceAll(realItem, " ", "%3D")
 				realItem = realItem + "%3D" + pageNumForSentence + "PAGENUM"
 				searchQueries += "%20" + realItem
-				console.log(searchQueries)
+				//console.log(searchQueries)
 			}
 		}
 	})
-	console.log(searchQueries)
+	//console.log(searchQueries)
 	searchQueries = searchQueries.substring(3)
 	searchQueries = replaceAll(searchQueries, "=", "")
 	searchQueries = replaceAll(searchQueries, "&", "")

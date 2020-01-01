@@ -6,6 +6,7 @@ let mkt = "en-US";
 let mode = "spell";
 let query_string = "?mkt=" + mkt + "&mode=" + mode;
 let https = require('https');
+let text = "";
 
 let response_handler = function(response) {
 	let body = '';
@@ -26,7 +27,7 @@ let response_handler = function(response) {
 };
 
 onmessage = function findBingSpellCheck(input) {
-	let text = input.data[0];
+	text = input.data[0];
 	let request_params = {
 		method: 'POST',
 		hostname: host,
@@ -36,9 +37,9 @@ onmessage = function findBingSpellCheck(input) {
 			'Content-Length': text.length + 5,
 			'Ocp-Apim-Subscription-Key': key,
 		}
-
+    };
 		let req = https.request(request_params, response_handler);
 		req.write("text=" + text);
 		req.end();
-	};
+	
 }
