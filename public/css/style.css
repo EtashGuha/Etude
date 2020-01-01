@@ -589,8 +589,17 @@ img.minusImage:empty
 	}
 }
 
-
 #electron-titlebar {
 	position: fixed !important;
 	z-index: 99 !important;
+}
+
+#didyoumean {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	font-weight: 600;
+	text-align: center;
+	color: navy;
+	font-size: 1.02rem;
+	display: none;
 }
