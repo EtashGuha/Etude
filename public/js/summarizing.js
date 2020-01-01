@@ -38,7 +38,7 @@ viewerEle.appendChild(iframe);
 const etudeFilepath = __dirname.replace("/public/js", "").replace("\\public\\js", "")
 const secVersionFilepath = userDataPath + "/folderForHighlightedPDF/secVersion.pdf"
 
-var currArr;
+var currArr = [];
 filepath = require('electron').remote.getGlobal('sharedObject').someProperty;
 
 deepai.setApiKey('a5c8170e-046a-4c56-acb1-27c37049b193');
@@ -238,7 +238,7 @@ $("#cape_btn").click(function() {
 	kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
 	//console.log("Cape button clicked")
 	document.getElementById("stopLoadButton").style.display = 'block';
-	console.log(document.getElementById("myDropdown").classList.value)
+	//console.log(document.getElementById("myDropdown").classList.value)
 
 	//document.getElementById("myDropdown").classList.toggle("dropdownactive");
 	setTimeout(function() {
@@ -249,7 +249,8 @@ $("#cape_btn").click(function() {
 			var promiseToAppend = new Promise(function(resolve, reject) {
 				//console.log("beginning promise")
 				kernelWorker.onmessage = function(ev) {
-					$("#capeResult").empty().append(ev.data[0]);
+
+					$("#capeResult").empty().append(ev.data[0].match( /[^\.!\?]+[\.!\?]+/g )[0]);
 					updateHighlights(ev.data)
 					//console.log("refreshed");
 					// if(document.getElementById("myDropdown").classList.contains("show")){
@@ -269,7 +270,7 @@ $("#cape_btn").click(function() {
 			//$("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
 			//document.getElementById("myDropdown").classList.toggle("show");
 			promiseToAppend.then((data) => {
-				console.log(data)
+				//console.log(data)
 				//document.getElementById("myDropdown").classList.toggle("show");
 				if(document.getElementById("myDropdown").classList.value === "dropdown-content") {
 						document.getElementById("questionVal").click();
@@ -321,6 +322,10 @@ $('#summarizingButton').click(function() {
 	endsum = document.getElementById("topageRange");
 	if (endsum.value - startsum.value >= 30) {
 		document.getElementById("summarizemessage").innerHTML = "Please limit summarization to 30 pages at a time";
+	} else if(endsum.value - startsum.value < 0) {
+		document.getElementById("summarizemessage").innerHTML = "Invalid Page Range. Start Page must be before End Page";
+	} else if(startsum.value - iframe.contentWindow.getPdfDocument().numPages > 0) {
+		document.getElementById("summarizemessage").innerHTML = "Invalid Page Range. Start Page is outside PDF page range";
 	} else {
 		$('.su_popup').hide();
 		summaryButtonPressed($('#pageRange').val(), $('#topageRange').val());
@@ -349,7 +354,7 @@ function goToWebsite() {
 }
 function processSummarizationResult(t) {
 	//console.log("here we are")
-	//console.log(t)
+	console.log(t)
 	noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
 	tokenizer.setEntry(noLineBreakText);
 	updateHighlights(tokenizer.getSentences())
@@ -358,12 +363,16 @@ function processSummarizationResult(t) {
 function summaryButtonPressed(firstpage, lastpage) {
 	var getpdftext = getPDFText(firstpage, lastpage)
 	getpdftext.then((x) => {
-		console.log(x);
+		//console.log(x);
 		deepai.callStandardApi("summarization", {
 			text: x
 		}).then((resp) => {
-			console.log(resp);
-			processSummarizationResult(resp)});
+			if(resp.output !== "") {
+				processSummarizationResult(resp)
+			} else {
+				win.reload();
+			}
+			});
 	});
 }
 
@@ -383,21 +392,27 @@ $('#getRangeButton').click(function() {
 
 
 function updateHighlights(arr){
-
+	//console.log(sentenceToPage)
 	//console.log(arr)
-	currArr = arr;
 	var searchQueries = ""
+	currArr = []
 	arr.forEach((item, index) => {
-		var pageNumForSentence = sentenceToPage[replaceAll(item, " ", "")]
-		if(pageNumForSentence != undefined) {
-			item = item.replace(/[^a-zA-Z ]/g, "")
-			item = replaceAll(item,"\u00A0", "%3D");
-			item = replaceAll(item, " ", "%3D")
-			item = item + "%3D" + pageNumForSentence + "PAGENUM"
-			searchQueries += "%20" + item
+
+		var splitWolframAnswers = item.match( /[^\.!\?]+[\.!\?]+/g )
+		for (var i = splitWolframAnswers.length - 1; i >= 0; i--) {
+			var realItem = splitWolframAnswers[i]
+			var pageNumForSentence = sentenceToPage[replaceAll(realItem, " ", "")]
+			if(pageNumForSentence != undefined) {
+				currArr.push(realItem)
+				realItem = realItem.replace(/[^a-zA-Z ]/g, "")
+				realItem = replaceAll(realItem,"\u00A0", "%3D");
+				realItem = replaceAll(realItem, " ", "%3D")
+				realItem = realItem + "%3D" + pageNumForSentence + "PAGENUM"
+				searchQueries += "%20" + realItem
+			}
 		}
 	})
-
+	//console.log(searchQueries)
 	searchQueries = searchQueries.substring(3)
 	searchQueries = replaceAll(searchQueries, "=", "")
 	searchQueries = replaceAll(searchQueries, "&", "")
