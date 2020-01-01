@@ -250,12 +250,16 @@ $("#cape_btn").click(function() {
 				kernelWorkerBing.onmessage = function(ev) {
 					console.log("binging")
 					console.log(ev.data)
-					
+					didyoumean = document.getElementById("didyoumean");
 					if(ev.data === $("#questionVal").val()) {
 						console.log("identical")
+						didyoumean.style.display = "none";
 					} else {
 						console.log("changed")
-						if(true) { //shlok change this to event listener for click did you mean
+						didyoumean.style.display = "block"
+						didyoumean.innerHTML = "Did you mean: " + ev.data + "?";
+						didyoumean.onclick = function() { //shlok change this to event listener for click did you mean
+							console.log("didyoumean clicked")
 							document.getElementById("questionVal").value = ev.data
 							kernelWorker.terminate()
 							kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")

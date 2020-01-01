@@ -602,4 +602,5 @@ img.minusImage:empty
 	color: navy;
 	font-size: 1.02rem;
 	display: none;
+	cursor: pointer;
 }
