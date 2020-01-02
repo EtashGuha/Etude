@@ -33,11 +33,12 @@ console.log(remote.getGlobal('sharedObject').newWindow)
 // Number of days left in trial controls trial period
 var numDaysPassed = date.subtract(now, new Date(store.get("startDate"))).toDays()
 console.log(numDaysPassed)
-if (numDaysPassed >= 30) {
+var freeTrialLength = 14
+if (numDaysPassed >= 14) {
 	document.getElementById("trialbar").style.display = "none";
 	document.getElementById('stripeIDBlock').innerHTML = store.get("stripeID");
 } else {
-	document.getElementById("trialdaysleft").innerHTML = 30 - numDaysPassed;
+	document.getElementById("trialdaysleft").innerHTML = 14 - numDaysPassed;
 	document.getElementById('stripeIDBlock').innerHTML = "Free Trial";
 }
 
