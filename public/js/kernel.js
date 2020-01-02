@@ -3,7 +3,6 @@ var osvers = os.platform()
 
 var Worker = require("tiny-worker");
 const lemmatizer = require("lemmatizer")
-var thesaurus = require("thesaurus");
 var stringSimilarity = require('string-similarity');
 var HashMap = require('hashmap');
 const fs = require('fs');
