@@ -7886,9 +7886,8 @@ function areArgsValid(mainString, targetStrings) {
 								var lastIndex = subquery.lastIndexOf(" ");
 
 								subquery = subquery.substring(0, lastIndex);
-								//console.log(subquery)
+
 								var alteredPageContent = String(pageContent).match( /[^\.!\?]+[\.!\?]+/g )
-								//console.log(alteredPageContent)
 								var bestAnswer = findBestMatch(subquery, alteredPageContent).bestMatch
 								matchIdx = pageContent.indexOf(bestAnswer.target, matchIdx + subqueryLen);
 
