@@ -11,7 +11,7 @@ if (store.has("userID")) {
     userID = uuid();
     store.set("userID", userID);
 }
-console.log(userID)
+
 const usr = ua('UA-145681611-1', userID);
 
 function trackEvent(category, action, label, value) {
