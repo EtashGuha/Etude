@@ -241,10 +241,68 @@ $("#cape_btn").click(function() {
 		var getpdftext = getPDFText(1, getNumPages())
 		getpdftext.then((x) => {
 			//console.log(x)
+
+			kernelWorkerBing = new Worker(etudeFilepath + "/public/js/bingspellcheck.js")
+
 			var promiseToAppend = new Promise(function(resolve, reject) {
 				//console.log("beginning promise")
-				kernelWorker.onmessage = function(ev) {
 
+				kernelWorkerBing.onmessage = function(ev) {
+					console.log("binging")
+					console.log(ev.data)
+					didyoumean = document.getElementById("didyoumean");
+					if(ev.data === $("#questionVal").val()) {
+						console.log("identical")
+						didyoumean.style.display = "none";
+					} else {
+						console.log("changed")
+						didyoumean.style.display = "block"
+						didyoumean.innerHTML = "Did you mean: " + ev.data + "?";
+						didyoumean.onclick = function() { //shlok change this to event listener for click did you mean
+							document.getElementById('searchloader').style.display = 'block';
+							document.getElementById('searchbuttonthree').style.color = 'white';
+							document.getElementById('cape_btn').style.backgroundColor = 'white';
+							document.getElementById("stopLoadButton").style.display = 'block';
+							closeSearch.click();
+							didyoumean.style.display = "none"
+							console.log("didyoumean clicked")
+							document.getElementById("questionVal").value = ev.data
+							kernelWorker.terminate()
+							kernelWorker = new Worker(etudeFilepath + "/public/js/kernel.js")
+							//document.getElementById('cape_btn').click();
+							kernelWorker.onmessage = function(ev) {
+								console.log("kernel worker starting")
+								console.log(ev.data)
+								$("#capeResult").empty().append(ev.data[0].match( /[^\.!\?]+[\.!\?]+/g )[0]);
+								updateHighlights(ev.data)
+								document.getElementById('searchloader').style.display = 'none';
+								document.getElementById('searchbuttonthree').style.color = 'black';
+								document.getElementById('cape_btn').style.backgroundColor = '';
+								//console.log("Showing")
+								document.getElementById("stopLoadButton").style.display = 'none';
+								document.getElementById("questionVal").click();
+								//console.log("refreshed");
+								// if(document.getElementById("myDropdown").classList.contains("show")){
+								// 	//console.log("Not showing dropdown");
+								// 	document.getElementById("myDropdown").classList.toggle("show");
+								// }
+
+								kernelWorker.terminate()
+								resolve("GOOD")
+							}
+							kernelWorker.postMessage([x, $("#questionVal").val()])
+						}
+					}
+
+					kernelWorkerBing.terminate()
+					resolve("GOOD")
+				}
+
+
+
+				kernelWorker.onmessage = function(ev) {
+					console.log("kernel worker starting")
+					console.log(ev.data)
 					$("#capeResult").empty().append(ev.data[0].match( /[^\.!\?]+[\.!\?]+/g )[0]);
 					updateHighlights(ev.data)
 					//console.log("refreshed");
@@ -256,8 +314,9 @@ $("#cape_btn").click(function() {
 					kernelWorker.terminate()
 					resolve("GOOD")
 				}
-				//console.log("redefined kernelWorker on message")
-				kernelWorker.postMessage([x, $("#questionVal").val(), "8", "Sentence"])
+				console.log("redefined kernelWorker on message")
+				kernelWorker.postMessage([x, $("#questionVal").val()])
+				kernelWorkerBing.postMessage([$("#questionVal").val()])
 				//console.log("kernel worker put up")
 				//kernel.findTextAnswerSync();
 
@@ -348,7 +407,7 @@ function goToWebsite() {
 }
 function processSummarizationResult(t) {
 	//console.log("here we are")
-	console.log(t)
+	//console.log(t)
 	noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
 	tokenizer.setEntry(noLineBreakText);
 	updateHighlights(tokenizer.getSentences())
@@ -392,14 +451,20 @@ function updateHighlights(arr){
 	var searchQueries = ""
 	currArr = []
 	arr.forEach((item, index) => {
+		item = item.toLowerCase()
+
 		var splitWolframAnswers = item.match( /[^\.!\?]+[\.!\?]+/g )
 		if(splitWolframAnswers == null){
 			splitWolframAnswers = {item}
 		}
 		for (var i = splitWolframAnswers.length - 1; i >= 0; i--) {
 			var realItem = splitWolframAnswers[i]
+			//console.log(realItem)
+			//console.log(sentenceToPage)
 			var pageNumForSentence = sentenceToPage[replaceAll(realItem, " ", "")]
+			//console.log(pageNumForSentence)
 			if(pageNumForSentence != undefined) {
+				console.log("banana")
 				currArr.push(realItem)
 				realItem = realItem.replace(/[^a-zA-Z ]/g, "")
 				realItem = replaceAll(realItem,"\u00A0", "%3D");
@@ -740,7 +805,7 @@ function getTextAfterMap(){
 							splitStringArr = {item}
 						}
 						for (var j = splitStringArr.length - 1; j >= 0; j--) {
-							sentenceToPage[replaceAll(splitStringArr[j], " ","")] = pageNum
+							sentenceToPage[replaceAll(splitStringArr[j], " ","").toLowerCase()] = pageNum
 						}
 					} 
 				}).then(function() {

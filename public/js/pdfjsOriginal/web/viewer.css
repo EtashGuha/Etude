@@ -1726,6 +1726,8 @@ a:focus > .thumbnail > .thumbnailSelectionRing,
 
 #outlineView {
   padding: 4px 4px 0;
+  background-color: rgb(240,240,240);
+  font-family: Poppins regular;
 }
 #attachmentsView {
   padding: 3px 4px 0;
@@ -1733,8 +1735,7 @@ a:focus > .thumbnail > .thumbnailSelectionRing,
 
 html[dir='ltr'] .outlineWithDeepNesting > .outlineItem,
 html[dir='ltr'] .outlineItem > .outlineItems {
-  margin-left: 20px;
-  font-family: Poppins;
+  margin-left: 15px;
 }
 
 html[dir='rtl'] .outlineWithDeepNesting > .outlineItem,
@@ -1750,7 +1751,7 @@ html[dir='rtl'] .outlineItem > .outlineItems {
   min-width: calc(100% - 4px); /* Subtract the right padding (left, in RTL mode)
                                   of the container. */
   height: auto;
-  margin-bottom: 1px;
+  margin-bottom: 4px;
   border-radius: 2px;
   color: black;
   font-size: 13px;
@@ -1830,7 +1831,7 @@ html[dir='rtl'] .outlineItemToggler::before {
               0 0 1px hsla(0,0%,100%,.2) inset,
               0 0 1px hsla(0,0%,0%,.2);
   border-radius: 2px;
-  color: hsla(0,0%,100%,.9);
+  color: gray;
 }
 
 .outlineItem.selected {
