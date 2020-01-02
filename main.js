@@ -45,6 +45,7 @@ global.sharedObject = {
     newWindow: false
 }
 
+const freeTrialLength = 14
 var isLicensed = store.has("stripeID");
 
 ipcMain.on('show_pdf_message', (event, arg) => {
@@ -61,7 +62,7 @@ if(!hasFirstTime){
     store.set("startDate", now)
 }
 
-isFreeTrial = (date.subtract(now, new Date(store.get("startDate"))).toDays() < 30);
+isFreeTrial = (date.subtract(now, new Date(store.get("startDate"))).toDays() < freeTrialLength);
 needsToLicense = (!isFreeTrial && !isLicensed)
 
 
@@ -128,7 +129,7 @@ app.on('will-finish-launching', function() {
         // mainWindow.webContents.openDevTools()
         if (needsToLicense) {
             mainWindow.loadFile('verify.html')
-        } else if(!isFreeTrial && (!store.has("LastCheckDate") || date.subtract(now, new Date(store.get("LastCheckDate"))).toDays() > 30)) {
+        } else if(!isFreeTrial && (!store.has("LastCheckDate") || date.subtract(now, new Date(store.get("LastCheckDate"))).toDays() > freeTrialLength)) {
             store.set("LastCheckDate", now)
             console.log(store.get("LastCheckDate"))
             stripe.subscriptions.retrieve(
@@ -165,7 +166,7 @@ function createWindow() {
 
     if (needsToLicense) {
         mainWindow.loadFile('verify.html')
-    } else if(!isFreeTrial && (!store.has("LastCheckDate") || date.subtract(now, new Date(store.get("LastCheckDate"))).toDays() > 30)){
+    } else if(!isFreeTrial && (!store.has("LastCheckDate") || date.subtract(now, new Date(store.get("LastCheckDate"))).toDays() > freeTrialLength)){
         store.set("LastCheckDate", now)
         console.log(store.get("LastCheckDate"))
         stripe.subscriptions.retrieve(
