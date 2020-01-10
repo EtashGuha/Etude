@@ -20,7 +20,15 @@ if(store.has("libraryStore")){
 } else {
 	currSet = new Set();
 }
-console.log(require('root-require')('package.json').version);
+const versionEtude = require('root-require')('package.json').version;
+console.log(versionEtude)
+
+if(!store.has(versionEtude)) {
+	alert("Etude successfully updated. What's new in this version: \n -Improved Smart Search Speed and Quality \n -major bug fixes")
+	store.set(versionEtude, "True")
+}
+
+
 var i = store.size;
 var __PDF_DOC,
 	__CURRENT_PAGE,
