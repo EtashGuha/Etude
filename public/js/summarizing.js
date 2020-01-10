@@ -328,18 +328,18 @@ $("#cape_btn").click(function() {
 			});
 			//$("#capeResult").empty().append(kernel.findTextAnswerSync(x, $("#questionVal").val(), 2, "Sentence"));
 			//document.getElementById("myDropdown").classList.toggle("show");
-			promiseToAppend.then((data) => {
-				//console.log(data)
-				//document.getElementById("myDropdown").classList.toggle("show");
-				if(document.getElementById("myDropdown").classList.value === "dropdown-content") {
-						document.getElementById("questionVal").click();
-					}
-				document.getElementById('searchloader').style.display = 'none';
-				document.getElementById('searchbuttonthree').style.color = 'black';
-				document.getElementById('cape_btn').style.backgroundColor = '';
-				//console.log("Showing")
-				document.getElementById("stopLoadButton").style.display = 'none';
-			});
+			// promiseToAppend.then((data) => {
+			// 	//console.log(data)
+			// 	//document.getElementById("myDropdown").classList.toggle("show");
+			// 	if(document.getElementById("myDropdown").classList.value === "dropdown-content") {
+			// 			document.getElementById("questionVal").click();
+			// 		}
+			// 	document.getElementById('searchloader').style.display = 'none';
+			// 	document.getElementById('searchbuttonthree').style.color = 'black';
+			// 	document.getElementById('cape_btn').style.backgroundColor = '';
+			// 	//console.log("Showing")
+			// 	document.getElementById("stopLoadButton").style.display = 'none';
+			// });
 		});
 		capeClicked = true;
 	}, 1);
@@ -497,6 +497,16 @@ function updateHighlights(arr){
 		iframe.contentDocument.addEventListener('funkready', () => {
 			$('.summarizer_loading').hide();
 			document.getElementById("stopLoadButton").style.display = 'none';
+		});
+		iframe.contentDocument.addEventListener('funkkready', () => {
+				if(document.getElementById("myDropdown").classList.value === "dropdown-content") {
+						document.getElementById("questionVal").click();
+					}
+				document.getElementById('searchloader').style.display = 'none';
+				document.getElementById('searchbuttonthree').style.color = 'black';
+				document.getElementById('cape_btn').style.backgroundColor = '';
+				//console.log("Showing")
+				document.getElementById("stopLoadButton").style.display = 'none';
 		});
 		iframe.contentDocument.addEventListener('funcready', () => {
 			console.log("here");
