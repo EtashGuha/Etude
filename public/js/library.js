@@ -61,7 +61,11 @@ currSet.forEach(function(value) {
 
 document.getElementById('myButton').addEventListener('click', () => {
 	dialog.showOpenDialog({
+<<<<<<< Updated upstream
 		properties: ['openFile'], // set to use openFileDialog
+=======
+		properties: ['openFile'],
+>>>>>>> Stashed changes
 		filters: [{
 			name: "PDFs",
 			extensions: ['pdf']
