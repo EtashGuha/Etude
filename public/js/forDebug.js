@@ -20,9 +20,9 @@ const minHeap = new MinHeap();
 
 var map = new HashMap();
 
-var text = "Who is where your dick penis question thebanana see split is sally. "
+var text = "Who is where your dick penis question hard hard hard hard hard hard hard hard hard thebanana hard hard hard hard hard hhard hard hard see split is sally. "
 stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
-var question = "the of banana split chicken question"
+var question = "the of banana easy easy easy easy easy easy easy split easy easy easy easy easy easy easy easy easy chicken easy easy easy easy easy easy easy easy question"
 
 function keyword(s) {
 	var re = new RegExp('\\b(' + stopwords.join('|') + ')\\b', 'g');
@@ -92,7 +92,6 @@ async function getAnswer(question, text){
 	
 	var questionVector = []
 	for(var i = 0; i < questionArray.length; i++){
-		console.log(questionArray[i])
 		questionVector.push(originalQuestionArr.indexOf(questionArray[i]))
 	}
 
@@ -169,7 +168,6 @@ async function getAnswer(question, text){
 					}
 				}
 				if(hasThisSynonym){
-					console.log(item)
 					questionToSentenceMap[item] = synonym
 					for (var g = splitSynonym.length - 1; g >= 0; g--) {
 						clessq.delete(splitSynonym[g])
@@ -185,7 +183,6 @@ async function getAnswer(question, text){
 			}
 		});
 
-		console.log(sharedSize)
 		var numTermsMatching = 0
 		if(clessq.size > 0) {
  			for (var m = noMatchList.length - 1; m >= 0; m--) {
@@ -206,11 +203,7 @@ async function getAnswer(question, text){
 				numTermsMatching += bestMatchForEachTerm;
 			}
 		} 
-		console.log(questionToSentenceMap)
-		console.log(questionToSentenceMap["banan"])
-		console.log(questionArray)
 		for(var wordIndex = 0; wordIndex < questionArray.length; wordIndex++){
-			console.log(questionArray[wordIndex])
 			if(questionToSentenceMap[questionArray[wordIndex]] != undefined){
 				sentenceVector.push(originalSentenceArr.indexOf(questionToSentenceMap[questionArray[wordIndex]]))
 			} else {
@@ -219,12 +212,8 @@ async function getAnswer(question, text){
 		}
 
 		questionVector = questionVector.filter(num => num != -1)
-
-		console.log(questionVector)
-		console.log(sentenceVector)
 		questionDifferenceArr = arrDifference(questionVector)
 		sentenceDifferenceArr = arrDifference(sentenceVector)
-
 		var total = 0;
 		for (var elem = questionDifferenceArr.length - 1; elem >= 0; elem--) {
 			var raw = Math.abs(questionDifferenceArr[elem] - sentenceDifferenceArr[elem])
@@ -232,18 +221,18 @@ async function getAnswer(question, text){
 			raw = raw/(Math.pow(questionDifferenceArr[elem],2))
 			total += raw
 		}
-
 		var orderScore = alteredSigmoid(total)
 
-		console.log(orderScore)
+		console.log("Order: " + orderScore)
 
 		var rating = (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
 		if(isNaN(rating)){
 			continue;
 		}
 		
-		console.log(rating)
-
+		console.log("Similarity Rating: " + rating)
+		var realRating = orderScore * (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
+		console.log("Total Rating: " + realRating)
 		if(minHeap.size() <= 8) {
 			minHeap.insert(rating, textArray[i])
 		} else if(rating > minHeap.root().getKey()) {
