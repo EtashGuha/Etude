@@ -20,10 +20,9 @@ const minHeap = new MinHeap();
 
 var map = new HashMap();
 
-var text = "Who is where your dick penis question hard hard hard hard hard hard hard hard hard thebanana hard hard hard hard hard hhard hard hard see split is sally. "
 stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
-var question = "the of banana easy easy easy easy easy easy easy split easy easy easy easy easy easy easy easy easy chicken easy easy easy easy easy easy easy easy question"
-
+var text = "The Nazis did a lot of terrible things, but they also killed Jews."
+var question = "Jews killed Nazis"
 function keyword(s) {
 	var re = new RegExp('\\b(' + stopwords.join('|') + ')\\b', 'g');
 	return (s || '').replace(re, '').replace(/[ ]{2,}/, ' ');
@@ -85,7 +84,7 @@ function includes(stringToSearch, substr) {
 
 
 async function getAnswer(question, text){
-	originalQuestionArr = tokenizeArr(question)
+	originalQuestionArr = tokenizeArr(question.toLowerCase())
 	var textArray = text.toLowerCase().match(/[^\.!\?]+[\.!\?]+/g)
 	question = tokenize(keyword(question.toLowerCase()))
 	var questionArray = Array.from(question)
@@ -203,6 +202,7 @@ async function getAnswer(question, text){
 				numTermsMatching += bestMatchForEachTerm;
 			}
 		} 
+		console.log(questionVector)
 		for(var wordIndex = 0; wordIndex < questionArray.length; wordIndex++){
 			if(questionToSentenceMap[questionArray[wordIndex]] != undefined){
 				sentenceVector.push(originalSentenceArr.indexOf(questionToSentenceMap[questionArray[wordIndex]]))
@@ -212,6 +212,8 @@ async function getAnswer(question, text){
 		}
 
 		questionVector = questionVector.filter(num => num != -1)
+		console.log(sentenceVector)
+		console.log(questionVector)
 		questionDifferenceArr = arrDifference(questionVector)
 		sentenceDifferenceArr = arrDifference(sentenceVector)
 		var total = 0;
