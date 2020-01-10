@@ -20,7 +20,7 @@ const minHeap = new MinHeap();
 
 var map = new HashMap();
 
-var text = "The name of the cat is sally. "
+var text = "Who is question view thebanana split is sally. "
 stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
 var question = "question view banana split"
 
@@ -78,6 +78,7 @@ async function getAnswer(question, text){
 				}
 			}
 		}
+		synonymList.add(lemmatizedWord)
 		map.set(lemmatizedWord, Array.from(synonymList))
 
 		result = await wordnet.lookupAsync(item)
@@ -89,7 +90,7 @@ async function getAnswer(question, text){
 				}
 			}
 		}
-
+		nextSynonymList.add(item)
 		map.set(item, Array.from(nextSynonymList))
 	}
  	var densityCoefficient = 0
@@ -100,7 +101,7 @@ async function getAnswer(question, text){
 			// console.log("dont care")
 			continue
 		}
-
+		console.log(Array.from(currSentence))
 		var matchList = new Set(
 			[...question].filter(x => currSentence.has(x)));
 
@@ -145,28 +146,29 @@ async function getAnswer(question, text){
 			}
 		});
 
+		console.log(Array.from(noMatchList[0]))
 		var numTermsMatching = 0
 		if(clessq.size > 0) {
  			for (var m = noMatchList.length - 1; m >= 0; m--) {
-				var bestMatchForEachTerm = 0
+				bestMatchForEachTerm = 0
 				var currArray = Array.from(noMatchList[m])
 				for (var j = currArray.length - 1; j >= 0; j--) {
+					console.log("Word im checking: " + currArray[j])
 					clessq.forEach((item) => {
 						if (item.includes(currArray[j]) && spell.check(item).length > 0) {
 							bestMatchForEachTerm = 1;
 						}
 					})
+					if (bestMatchForEachTerm == 1) {
+						console.log("breaking")
+						break;
+					}
 				}
-				if (bestMatchForEachTerm == 1) {
-					break;
-				}
+				numTermsMatching += bestMatchForEachTerm;
 			}
-			numTermsMatching += bestMatchForEachTerm;
 		} 
-
-
+		console.log(numTermsMatching)
 		var rating = (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
-		// console.log(rating)
 		if(isNaN(rating)){
 			continue;
 		}
