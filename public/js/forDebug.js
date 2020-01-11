@@ -88,12 +88,10 @@ async function getAnswer(question, text){
 	var textArray = text.toLowerCase().match(/[^\.!\?]+[\.!\?]+/g)
 	question = tokenize(keyword(question.toLowerCase()))
 	var questionArray = Array.from(question)
-	console.log(questionArray)
 	var questionVector = []
 	for(var i = 0; i < questionArray.length; i++){
 		questionVector.push(originalQuestionArr.indexOf(questionArray[i]))
 	}
-	console.log(questionVector)
 	for (var k = questionArray.length - 1; k >= 0; k--) {
 		var item = questionArray[k]
 		var lemmatizedWord = lemmatizer.lemmatizer(item)
@@ -224,18 +222,17 @@ async function getAnswer(question, text){
 		}
 		var orderScore = alteredSigmoid(total)
 
-		console.log("Order: " + orderScore)
 
-		var rating = (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
-		if(isNaN(rating)){
+		
+		
+		var realRating = (orderScore + 1) * (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
+
+		if(isNaN(realRating)){
 			continue;
 		}
 		
-		console.log("Similarity Rating: " + rating)
-		var realRating = (orderScore + 1) * (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
-		console.log("Total Rating: " + realRating)
 		if(minHeap.size() <= 8) {
-			minHeap.insert(rating, textArray[i])
+			minHeap.insert(realRating, textArray[i])
 		} else if(rating > minHeap.root().getKey()) {
 			minHeap.insert(rating, textArray[i])
 			minHeap.extractRoot()
