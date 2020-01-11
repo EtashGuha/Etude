@@ -198,6 +198,9 @@ async function getAnswer(question, text){
 				numTermsMatching += bestMatchForEachTerm;
 			}
 		} 
+		if(sharedSize + numTermsMatching == 0){
+			continue;
+		}
 		var copyQuestionVector = questionVector
 		for(var wordIndex = 0; wordIndex < questionArray.length; wordIndex++){
 			if(questionToSentenceMap[questionArray[wordIndex]] != undefined){
@@ -221,12 +224,15 @@ async function getAnswer(question, text){
 		var orderScore = alteredSigmoid(total)
 		
 		var realRating = (orderScore + 1) * (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
-
+		if(realRating > 1.6) {
+		console.log("")
+		console.log(realRating, "os", orderScore, "stuff", (sharedSize + numTermsMatching) / (question.size) , "answer: ", textArray[i])
+		}
 		if(isNaN(realRating)){
 			continue;
 		}
 
-		if(minHeap.size() <= 8) {
+		if(minHeap.size() < 8) {
 			minHeap.insert(realRating, textArray[i])
 		} else if(realRating > minHeap.root().getKey()) {
 			minHeap.insert(realRating, textArray[i])

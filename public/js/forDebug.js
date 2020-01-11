@@ -21,8 +21,8 @@ const minHeap = new MinHeap();
 var map = new HashMap();
 
 stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
-var question = "progressive ideology humanism"
-var text = "Almost all Americans share some elements of a common political culture. Why, then, is there so much cultural conflict in American politics? For many years, the most explosive political issues have included abortion, gay rights, drug use, school prayer, and pornography. Viewed from a Marxist perspective, politics in the United States is utterly baffling: instead of two economic classes engaged in a bitter struggle over wealth, we have two cultural classes locked in a war over values. As first formulated by sociologist James Davison Hunter, the idea is that there are, broadly defined, two cultural classes in the United States: the orthodox and the progressive. On the orthodox side are people who believe that morality is as important as, or more important than, self-expression and that moral rules derive from the commands of God or the laws of nature—commands and laws that are relatively clear, unchanging, and independent of individual preferences. On the progressive side are people who think that personal freedom is as important as, or more important than, certain traditional moral rules and that those rules must be evaluated in light of the circumstances of modern life—circumstances that are quite complex, changeable, and dependent on individual preferences.31 Most conspicuous among the orthodox are fundamentalist Protestants and evangelical Christians, and so critics who dislike orthodox views often dismiss them as the fanatical expressions of “the Religious Right.” But many people who hold orthodox views are not fanatical or deeply religious or rightwing on most issues: they simply have strong views about drugs, pornography, and sexual morality. Similarly, the progressive side often includes members of liberal Protestant denominations (for example, Episcopalians and Unitarians) and people with no strong religious beliefs, and so their critics often denounce them as immoral, anti-Christian radicals who have embraced the ideology of secular humanism, the belief that moral standards do not require religious justification. But in all likelihood few progressives are immoral or anti-Christian, and most do not regard secular humanism as their defining ideology."
+var question = "how is political power actually distributed in America"
+var text = "How is political power actually distributed in America? there are at least four different schools of thought about  political  elites  and  how  power  has  actually been distributed in americas representative democ racy marxist power elite bureaucratic and  pluralist. thus the actual distribution of political power even in a democracy will depend im portantly  on  the  composition  of  the  political  elites who are actually involved in the struggles over policy.  the second question asks how political power has ac tually  been  distributed  in  americas  representative democracy.  in  this  view  political  power  in america  is  distributed  more  or  less  widely. short of attempting to reconcile these competing his torical interpretations let us step back now for a mo ment  to  our  definition  of  representative  democracy and four competing views about how political power has been distributed in america.   of  the  four  views  of  how  political  power  has  been distributed  in  the  united  states  the  pluralist  view does the most to reassure one that america has been and continues to be a democracy in more than name only. the  special  protection  that  subnational  govern ments enjoy in a federal system derives in part from the  constitution  of  the  country  but  also  from  the habits  preferences  and  dispositions  of  the  citizens and the actual distribution of political power in soci ety. some  believe  that  political  power  in  america  is monopolized   by   wealthy   business   leaders   by other  powerful  elites  or  by  entrenched  govern ment  bureaucrats."
 function keyword(s) {
 	var re = new RegExp('\\b(' + stopwords.join('|') + ')\\b', 'g');
 	return (s || '').replace(re, '').replace(/[ ]{2,}/, ' ');
@@ -222,18 +222,23 @@ async function getAnswer(question, text){
 		}
 		var orderScore = alteredSigmoid(total)
 		
-		var realRating = (orderScore + 1) * (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
-
+		var realRating = (orderScore + 1) * (sharedSize + numTermsMatching) / (question.size) 
+		console.log(realRating)
 		if(isNaN(realRating)){
 			continue;
 		}
 
-		if(minHeap.size() <= 8) {
+		if(minHeap.size() < 8) {
 			minHeap.insert(realRating, textArray[i])
 		} else if(realRating > minHeap.root().getKey()) {
 			minHeap.insert(realRating, textArray[i])
 			minHeap.extractRoot()
 		}
+
+		console.log(realRating)
+		console.log(textArray[i])
+		console.log(minHeap)
+
 		densityCoefficient = Math.max(densityCoefficient + (realRating - .5)/textArray.length, 0)
 	}
 	var result = []
