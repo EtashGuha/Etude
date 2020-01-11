@@ -221,23 +221,20 @@ async function getAnswer(question, text){
 			total += raw
 		}
 		var orderScore = alteredSigmoid(total)
-
-
-		
 		
 		var realRating = (orderScore + 1) * (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
 
 		if(isNaN(realRating)){
 			continue;
 		}
-		
+
 		if(minHeap.size() <= 8) {
 			minHeap.insert(realRating, textArray[i])
-		} else if(rating > minHeap.root().getKey()) {
-			minHeap.insert(rating, textArray[i])
+		} else if(realRating > minHeap.root().getKey()) {
+			minHeap.insert(realRating, textArray[i])
 			minHeap.extractRoot()
 		}
-		densityCoefficient = Math.max(densityCoefficient + (rating - .5)/textArray.length, 0)
+		densityCoefficient = Math.max(densityCoefficient + (realRating - .5)/textArray.length, 0)
 	}
 	var result = []
 	for (var i = 7; i >= 0; i--) {
