@@ -244,7 +244,6 @@ async function getAnswer(question, text){
 		result[i] = minHeap.extractRoot().getValue()
 	}
 	return result
-
 }
 
 getAnswer(question, text).then((data)=> {
