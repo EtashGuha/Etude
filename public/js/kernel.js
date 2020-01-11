@@ -36,6 +36,7 @@ function arrDifference(arr) {
 	return differences
 }
 
+var texttoprintfor = ' thus the actual distribution of political power even in a democracy will depend im portantly  on  the  composition  of  the  political  elites who are actually involved in the struggles over policy.'
 function alteredSigmoid(x) {
 	var exponent = -1.0/3 * x
 	var eterm = Math.exp(exponent)
@@ -83,6 +84,7 @@ function includes(stringToSearch, substr) {
 
 async function getAnswer(question, text){
 	originalQuestionArr = tokenizeArr(question.toLowerCase())
+	console.log(originalQuestionArr)
 	var textArray = text.toLowerCase().match(/[^\.!\?]+[\.!\?]+/g)
 	question = tokenize(keyword(question.toLowerCase()))
 	var questionArray = Array.from(question)
@@ -90,6 +92,8 @@ async function getAnswer(question, text){
 	for(var i = 0; i < questionArray.length; i++){
 		questionVector.push(originalQuestionArr.indexOf(questionArray[i]))
 	}
+
+	console.log(questionVector)
 	for (var k = questionArray.length - 1; k >= 0; k--) {
 		var item = questionArray[k]
 		var lemmatizedWord = lemmatizer.lemmatizer(item)
@@ -121,6 +125,7 @@ async function getAnswer(question, text){
 	}
  	var densityCoefficient = 0
 	for (var i = textArray.length - 1; i >= 0; i--) {
+		var toPrint = textArray[i] == texttoprintfor
 		var originalSentenceArr = tokenizeArr(textArray[i])
 
 		var currSentence = tokenize(keyword(textArray[i]))
@@ -201,15 +206,30 @@ async function getAnswer(question, text){
 		if(sharedSize + numTermsMatching == 0){
 			continue;
 		}
-		var copyQuestionVector = questionVector
+		var copyQuestionVector = [...questionVector]
+		if(toPrint){
+			console.log(questionToSentenceMap)
+			console.log(questionVector)
+			console.log(copyQuestionVector)
+		}
 		for(var wordIndex = 0; wordIndex < questionArray.length; wordIndex++){
+			if(toPrint){
+				console.log(questionArray[wordIndex])
+				console.log(questionToSentenceMap[questionArray[wordIndex]])
+			}
+			var lemmatized = ""
 			if(questionToSentenceMap[questionArray[wordIndex]] != undefined){
 				sentenceVector.push(originalSentenceArr.indexOf(questionToSentenceMap[questionArray[wordIndex]]))
+			} else if((lemmatized = questionToSentenceMap[lemmatizer.lemmatizer(questionArray[wordIndex])]) != undefined){
+				sentenceVector.push(originalSentenceArr.indexOf(lemmatized))
 			} else {
 				copyQuestionVector[wordIndex] = -1
 			}
 		}
 
+		if(toPrint){
+			console.log(copyQuestionVector)
+		}
 		copyQuestionVector = copyQuestionVector.filter(num => num != -1)
 		questionDifferenceArr = arrDifference(copyQuestionVector)
 		sentenceDifferenceArr = arrDifference(sentenceVector)
@@ -224,9 +244,9 @@ async function getAnswer(question, text){
 		var orderScore = alteredSigmoid(total)
 		
 		var realRating = (orderScore + 1) * (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
-		if(realRating > 1.6) {
-		console.log("")
-		console.log(realRating, "os", orderScore, "stuff", (sharedSize + numTermsMatching) / (question.size) , "answer: ", textArray[i])
+		if(realRating > 1.2 && toPrint) {
+			console.log("")
+			console.log(realRating, "os", orderScore, "stuff", (sharedSize + numTermsMatching) / (question.size) , "answer: ", textArray[i])
 		}
 		if(isNaN(realRating)){
 			continue;

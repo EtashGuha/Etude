@@ -22,7 +22,7 @@ var map = new HashMap();
 
 stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
 var question = "how is political power actually distributed in America"
-var text = "How is political power actually distributed in America? there are at least four different schools of thought about  political  elites  and  how  power  has  actually been distributed in americas representative democ racy marxist power elite bureaucratic and  pluralist. thus the actual distribution of political power even in a democracy will depend im portantly  on  the  composition  of  the  political  elites who are actually involved in the struggles over policy.  the second question asks how political power has ac tually  been  distributed  in  americas  representative democracy.  in  this  view  political  power  in america  is  distributed  more  or  less  widely. short of attempting to reconcile these competing his torical interpretations let us step back now for a mo ment  to  our  definition  of  representative  democracy and four competing views about how political power has been distributed in america.   of  the  four  views  of  how  political  power  has  been distributed  in  the  united  states  the  pluralist  view does the most to reassure one that america has been and continues to be a democracy in more than name only. the  special  protection  that  subnational  govern ments enjoy in a federal system derives in part from the  constitution  of  the  country  but  also  from  the habits  preferences  and  dispositions  of  the  citizens and the actual distribution of political power in soci ety. some  believe  that  political  power  in  america  is monopolized   by   wealthy   business   leaders   by other  powerful  elites  or  by  entrenched  govern ment  bureaucrats."
+var text = "thus the actual distribution of political power even in a democracy will depend im portantly  on  the  composition  of  the  political  elites who are actually involved in the struggles over policy."
 function keyword(s) {
 	var re = new RegExp('\\b(' + stopwords.join('|') + ')\\b', 'g');
 	return (s || '').replace(re, '').replace(/[ ]{2,}/, ' ');
@@ -213,6 +213,7 @@ async function getAnswer(question, text){
 		questionDifferenceArr = arrDifference(copyQuestionVector)
 		sentenceDifferenceArr = arrDifference(sentenceVector)
 
+		console.log(copyQuestionVector)
 		var total = 0;
 		for (var elem = questionDifferenceArr.length - 1; elem >= 0; elem--) {
 			var raw = Math.abs(questionDifferenceArr[elem] - sentenceDifferenceArr[elem])
@@ -221,7 +222,7 @@ async function getAnswer(question, text){
 			total += raw
 		}
 		var orderScore = alteredSigmoid(total)
-		
+		console.log(orderScore)
 		var realRating = (orderScore + 1) * (sharedSize + numTermsMatching) / (question.size) 
 		console.log(realRating)
 		if(isNaN(realRating)){
