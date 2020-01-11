@@ -21,8 +21,8 @@ const minHeap = new MinHeap();
 var map = new HashMap();
 
 stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
-var question = "The Nazis killed not Aryans, although unbelievable number of Jews"
-var text = "The Nazis did a lot of terrible things, but they also killed Jews. Etash is Aryan, but not Jewish."
+var question = "progressive ideology humanism"
+var text = "Almost all Americans share some elements of a common political culture. Why, then, is there so much cultural conflict in American politics? For many years, the most explosive political issues have included abortion, gay rights, drug use, school prayer, and pornography. Viewed from a Marxist perspective, politics in the United States is utterly baffling: instead of two economic classes engaged in a bitter struggle over wealth, we have two cultural classes locked in a war over values. As first formulated by sociologist James Davison Hunter, the idea is that there are, broadly defined, two cultural classes in the United States: the orthodox and the progressive. On the orthodox side are people who believe that morality is as important as, or more important than, self-expression and that moral rules derive from the commands of God or the laws of nature—commands and laws that are relatively clear, unchanging, and independent of individual preferences. On the progressive side are people who think that personal freedom is as important as, or more important than, certain traditional moral rules and that those rules must be evaluated in light of the circumstances of modern life—circumstances that are quite complex, changeable, and dependent on individual preferences.31 Most conspicuous among the orthodox are fundamentalist Protestants and evangelical Christians, and so critics who dislike orthodox views often dismiss them as the fanatical expressions of “the Religious Right.” But many people who hold orthodox views are not fanatical or deeply religious or rightwing on most issues: they simply have strong views about drugs, pornography, and sexual morality. Similarly, the progressive side often includes members of liberal Protestant denominations (for example, Episcopalians and Unitarians) and people with no strong religious beliefs, and so their critics often denounce them as immoral, anti-Christian radicals who have embraced the ideology of secular humanism, the belief that moral standards do not require religious justification. But in all likelihood few progressives are immoral or anti-Christian, and most do not regard secular humanism as their defining ideology."
 function keyword(s) {
 	var re = new RegExp('\\b(' + stopwords.join('|') + ')\\b', 'g');
 	return (s || '').replace(re, '').replace(/[ ]{2,}/, ' ');
@@ -232,7 +232,7 @@ async function getAnswer(question, text){
 		}
 		
 		console.log("Similarity Rating: " + rating)
-		var realRating = orderScore * (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
+		var realRating = (orderScore + 1) * (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
 		console.log("Total Rating: " + realRating)
 		if(minHeap.size() <= 8) {
 			minHeap.insert(rating, textArray[i])
@@ -253,4 +253,6 @@ async function getAnswer(question, text){
 
 }
 
-getAnswer(question, text)
+getAnswer(question, text).then((data)=> {
+	console.log(data)
+})
