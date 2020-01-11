@@ -21,8 +21,8 @@ const minHeap = new MinHeap();
 var map = new HashMap();
 
 stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
-var text = "The Nazis did a lot of terrible things, but they also killed Jews."
-var question = "Jews killed Nazis"
+var question = "The Nazis killed not Aryans, although unbelievable number of Jews"
+var text = "The Nazis did a lot of terrible things, but they also killed Jews. Etash is Aryan, but not Jewish."
 function keyword(s) {
 	var re = new RegExp('\\b(' + stopwords.join('|') + ')\\b', 'g');
 	return (s || '').replace(re, '').replace(/[ ]{2,}/, ' ');
@@ -88,12 +88,12 @@ async function getAnswer(question, text){
 	var textArray = text.toLowerCase().match(/[^\.!\?]+[\.!\?]+/g)
 	question = tokenize(keyword(question.toLowerCase()))
 	var questionArray = Array.from(question)
-	
+	console.log(questionArray)
 	var questionVector = []
 	for(var i = 0; i < questionArray.length; i++){
 		questionVector.push(originalQuestionArr.indexOf(questionArray[i]))
 	}
-
+	console.log(questionVector)
 	for (var k = questionArray.length - 1; k >= 0; k--) {
 		var item = questionArray[k]
 		var lemmatizedWord = lemmatizer.lemmatizer(item)
@@ -202,20 +202,19 @@ async function getAnswer(question, text){
 				numTermsMatching += bestMatchForEachTerm;
 			}
 		} 
-		console.log(questionVector)
+		var copyQuestionVector = questionVector
 		for(var wordIndex = 0; wordIndex < questionArray.length; wordIndex++){
 			if(questionToSentenceMap[questionArray[wordIndex]] != undefined){
 				sentenceVector.push(originalSentenceArr.indexOf(questionToSentenceMap[questionArray[wordIndex]]))
 			} else {
-				questionVector[wordIndex] = -1
+				copyQuestionVector[wordIndex] = -1
 			}
 		}
 
-		questionVector = questionVector.filter(num => num != -1)
-		console.log(sentenceVector)
-		console.log(questionVector)
-		questionDifferenceArr = arrDifference(questionVector)
+		copyQuestionVector = copyQuestionVector.filter(num => num != -1)
+		questionDifferenceArr = arrDifference(copyQuestionVector)
 		sentenceDifferenceArr = arrDifference(sentenceVector)
+
 		var total = 0;
 		for (var elem = questionDifferenceArr.length - 1; elem >= 0; elem--) {
 			var raw = Math.abs(questionDifferenceArr[elem] - sentenceDifferenceArr[elem])
