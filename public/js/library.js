@@ -1,7 +1,9 @@
 const {
 	dialog
 } = require('electron').remote;
-const { shell } = require('electron')
+const {
+	shell
+} = require('electron')
 const Store = require('electron-store');
 const windowFrame = require('electron-titlebar')
 var store = new Store();
@@ -14,8 +16,7 @@ const now = new Date();
 const remote = require('electron').remote;
 var win = remote.BrowserWindow.getFocusedWindow();
 var currSet;
-console.log(store.store)
-if(store.has("libraryStore")){
+if (store.has("libraryStore")) {
 	currSet = new Set(store.get("libraryStore"))
 } else {
 	currSet = new Set();
@@ -37,7 +38,6 @@ var __PDF_DOC,
 	index = 0;
 var data = ipcRenderer.sendSync('get-file-data')
 console.log(remote.getGlobal('sharedObject').newWindow)
-
 // Number of days left in trial controls trial period
 var numDaysPassed = date.subtract(now, new Date(store.get("startDate"))).toDays()
 console.log(numDaysPassed)
@@ -50,46 +50,54 @@ if (numDaysPassed >= 14) {
 	document.getElementById('stripeIDBlock').innerHTML = "Free Trial";
 }
 
-if (data ===  null || remote.getGlobal('sharedObject').newWindow) {
-    console.log("There is no file")
+if (data === null || remote.getGlobal('sharedObject').newWindow) {
+	console.log("There is no file")
 } else {
-    // Do something with the file.
-    	ipcRenderer.send('show_pdf_message', data);
-		window.location.href = 'summarizing.html';
+	// Do something with the file.
+	ipcRenderer.send('show_pdf_message', data);
+	window.location.href = 'summarizing.html';
 }
 var counter = 0;
 currSet.forEach(function(value) {
-	
-		show_nextItem(value, counter.toString());
-		showPDF_fresh(value, counter);
-		counter = counter + 1;
-	
+
+	show_nextItem(value, counter.toString());
+	showPDF_fresh(value, counter);
+	counter = counter + 1;
+
 });
 
 
 document.getElementById('myButton').addEventListener('click', () => {
 	dialog.showOpenDialog({
-		properties: ['openFile'], // set to use openFileDialog
+		properties: ['openFile', 'openDirectory'],
 		filters: [{
 			name: "PDFs",
 			extensions: ['pdf']
-		}] // limit the picker to just pdfs
-	}, (filepaths) => {
-		var filePath = filepaths[0];
-		if(!currSet.has(filePath)){
-			currSet.add(filePath)
-			console.log(Array.from(currSet))
-			store.set("libraryStore", Array.from(currSet))
-			console.log(store.store)
-			show_nextItem(filePath, i.toString());
-			showPDF(filePath);
+		}]
+
+	}).then(result => {
+		console.log(result.canceled)
+		console.log(result.filePaths)
+		console.log("HELLO")
+		if (!result.canceled) {
+			var filePath = result.filePaths[0];
+			if (!currSet.has(filePath)) {
+				currSet.add(filePath)
+				console.log(Array.from(currSet))
+				store.set("libraryStore", Array.from(currSet))
+				console.log(store.store)
+				show_nextItem(filePath, i.toString());
+				showPDF(filePath);
+			}
 		}
+	}).catch(err => {
+		console.log(err)
 	})
 
 })
 
 document.getElementById('closeButton').addEventListener('click', () => {
-    win.close();
+	win.close();
 
 })
 
@@ -97,7 +105,6 @@ document.getElementById('etudeButton').addEventListener('click', () => {
 	shell.openExternal('https://www.etudereader.com')
 
 })
-
 
 
 
@@ -203,11 +210,11 @@ function show_nextItem(pdf_path, removeWhich) {
 }
 
 function replaceAll(str, find, replace) {
-    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+	return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
 }
 
 function escapeRegExp(str) {
-    return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+	return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 }
 
 //when the user select the pdf
