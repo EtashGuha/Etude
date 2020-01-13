@@ -20,13 +20,27 @@ const minHeap = new MinHeap();
 
 var map = new HashMap();
 
-//var text = fs.readFileSync("/Users/etashguha/Documents/etude/example.txt", 'utf8')
 stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
-// var question = "question view banana split"
-
 function keyword(s) {
 	var re = new RegExp('\\b(' + stopwords.join('|') + ')\\b', 'g');
 	return (s || '').replace(re, '').replace(/[ ]{2,}/, ' ');
+}
+
+function arrDifference(arr) {
+	var differences = []
+	for(var i = 0; i <= arr.length - 2; i++){
+		for (var j = i + 1; j <= arr.length - 1; j++) {
+			differences.push(arr[i] - arr[j])
+		}
+	}
+	return differences
+}
+
+var texttoprintfor = ' thus the actual distribution of political power even in a democracy will depend im portantly  on  the  composition  of  the  political  elites who are actually involved in the struggles over policy.'
+function alteredSigmoid(x) {
+	var exponent = -1.0/3 * x
+	var eterm = Math.exp(exponent)
+	return 2 * eterm/(1 + eterm)
 }
 
 function tokenize(str) {
@@ -38,6 +52,14 @@ function tokenize(str) {
 	return new Set(words)
 }
 
+function tokenizeArr(str){
+	var words = str.split(/\W+/).filter(function(token) {
+		token = token.toLowerCase();
+		token = token.replace(/[^a-z ]/gi, '')
+		return token;
+	});
+	return words
+}
 function lemmatizeSet(inSet) {
 	var lemmatized = new Set()
 	inSet.forEach((item) => {
@@ -61,16 +83,22 @@ function includes(stringToSearch, substr) {
 
 
 async function getAnswer(question, text){
+	originalQuestionArr = tokenizeArr(question.toLowerCase())
 	var textArray = text.toLowerCase().match(/[^\.!\?]+[\.!\?]+/g)
-	// console.log(textArray)
 	question = tokenize(keyword(question.toLowerCase()))
 	var questionArray = Array.from(question)
+	var questionVector = []
+	for(var i = 0; i < questionArray.length; i++){
+		questionVector.push(originalQuestionArr.indexOf(questionArray[i]))
+	}
 
 	for (var k = questionArray.length - 1; k >= 0; k--) {
 		var item = questionArray[k]
 		var lemmatizedWord = lemmatizer.lemmatizer(item)
 		var result = await wordnet.lookupAsync(lemmatizedWord)
 		var synonymList = new Set()
+		synonymList.add(lemmatizedWord)
+
 		for(var i = result.length - 1; i >= 0; i--){
 			for (var m = result[i].synonyms.length - 1; m >= 0; m--) {
 				if (result[i].synonyms[m]) {
@@ -82,6 +110,8 @@ async function getAnswer(question, text){
 
 		result = await wordnet.lookupAsync(item)
 		var nextSynonymList = new Set()
+		nextSynonymList.add(item)
+
 		for(var i = result.length - 1; i >= 0; i--){
 			for (var m = result[i].synonyms.length - 1; m >= 0; m--) {
 				if (result[i].synonyms[m] != item) {
@@ -89,18 +119,20 @@ async function getAnswer(question, text){
 				}
 			}
 		}
-
 		map.set(item, Array.from(nextSynonymList))
 	}
  	var densityCoefficient = 0
 	for (var i = textArray.length - 1; i >= 0; i--) {
-		// console.log(i)
-		var currSentence = tokenize(keyword(textArray[i]))
+		var originalSentenceArr = tokenizeArr(textArray[i])
 
+		var currSentence = tokenize(keyword(textArray[i]))
 		if(currSentence.size < 1){
-			// console.log("dont care")
 			continue
 		}
+
+		var sentenceVector = []
+		
+		var questionToSentenceMap = []
 
 		var matchList = new Set(
 			[...question].filter(x => currSentence.has(x)));
@@ -111,6 +143,9 @@ async function getAnswer(question, text){
 		var clessq = new Set(
 			[...currSentence].filter(x => !question.has(x)));
 
+		matchList.forEach((item) => {
+			questionToSentenceMap[item] = item
+		})
 		qlessc = lemmatizeSet(qlessc)
 		clessq = lemmatizeSet(clessq)
 		var sharedSize = matchList.size
@@ -130,9 +165,8 @@ async function getAnswer(question, text){
 					}
 				}
 				if(hasThisSynonym){
+					questionToSentenceMap[item] = synonym
 					for (var g = splitSynonym.length - 1; g >= 0; g--) {
-						// console.log(synonym)
-						// console.log(item)
 						clessq.delete(splitSynonym[g])
 					}
 					included = true;
@@ -149,44 +183,74 @@ async function getAnswer(question, text){
 		var numTermsMatching = 0
 		if(clessq.size > 0) {
  			for (var m = noMatchList.length - 1; m >= 0; m--) {
-				var bestMatchForEachTerm = 0
+				bestMatchForEachTerm = 0
 				var currArray = Array.from(noMatchList[m])
 				for (var j = currArray.length - 1; j >= 0; j--) {
 					clessq.forEach((item) => {
 						if (item.includes(currArray[j]) && spell.check(item).length > 0) {
 							bestMatchForEachTerm = 1;
+							questionToSentenceMap[currArray[0]] = item
+
 						}
 					})
+					if (bestMatchForEachTerm == 1) {
+						break;
+					}
 				}
-				if (bestMatchForEachTerm == 1) {
-					break;
-				}
+				numTermsMatching += bestMatchForEachTerm;
 			}
-			numTermsMatching += bestMatchForEachTerm;
 		} 
-
-
-		var rating = (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
-
-		if(isNaN(rating)){
+		if(sharedSize + numTermsMatching == 0){
 			continue;
 		}
+		var copyQuestionVector = [...questionVector]
+
+		for(var wordIndex = 0; wordIndex < questionArray.length; wordIndex++){
+			var lemmatized = ""
+			if(questionToSentenceMap[questionArray[wordIndex]] != undefined){
+				sentenceVector.push(originalSentenceArr.indexOf(questionToSentenceMap[questionArray[wordIndex]]))
+			} else if((lemmatized = questionToSentenceMap[lemmatizer.lemmatizer(questionArray[wordIndex])]) != undefined){
+				sentenceVector.push(originalSentenceArr.indexOf(lemmatized))
+			} else {
+				copyQuestionVector[wordIndex] = -1
+			}
+		}
+
+		copyQuestionVector = copyQuestionVector.filter(num => num != -1)
+		questionDifferenceArr = arrDifference(copyQuestionVector)
+		sentenceDifferenceArr = arrDifference(sentenceVector)
+
+		var total = 0;
+		for (var elem = questionDifferenceArr.length - 1; elem >= 0; elem--) {
+			var raw = Math.abs(questionDifferenceArr[elem] - sentenceDifferenceArr[elem])
+			raw = Math.sqrt(raw)
+			raw = raw/(Math.pow(questionDifferenceArr[elem],2))
+			total += raw
+		}
+		var orderScore = alteredSigmoid(total)
 		
-		if(minHeap.size() <= 8) {
-			minHeap.insert(rating, textArray[i])
-		} else if(rating > minHeap.root().getKey()) {
-			minHeap.insert(rating, textArray[i])
+		var realRating = (orderScore + 1) * (sharedSize + numTermsMatching) / (question.size) + densityCoefficient
+
+		if(isNaN(realRating)){
+			continue;
+		}
+
+		if(minHeap.size() < 8) {
+			minHeap.insert(realRating, textArray[i])
+		} else if(realRating > minHeap.root().getKey()) {
+			minHeap.insert(realRating, textArray[i])
 			minHeap.extractRoot()
 		}
-		densityCoefficient = Math.max(densityCoefficient + (rating - .5)/textArray.length, 0)
+		densityCoefficient = Math.max(densityCoefficient + (realRating - .5)/textArray.length, 0)
 	}
 	var result = []
 	for (var i = 7; i >= 0; i--) {
+		if(minHeap.size() <= 0){
+			break
+		}
 		result[i] = minHeap.extractRoot().getValue()
 	}
-	console.log(result)
 	return result
-
 }
 
 
