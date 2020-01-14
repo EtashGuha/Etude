@@ -26,7 +26,6 @@ var sentenceToPage = new Object();
 // Google Analytics
 const { getGlobal } = require('electron').remote;
 const trackEvent = getGlobal('trackEvent');
-
 //console.log("Entering summarinzg js")
 //console.log(require('electron').remote.getGlobal('sharedObject').someProperty)
 iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#pagemode=bookmarks`);
@@ -523,6 +522,14 @@ function updateHighlights(arr){
 			document.getElementById("searchToggle").click();
 		}
 	}	
+}
+
+var key = PDF_URL.concat("textForEachPage").replace(".", "")
+if(!store.has(key) || !store.has(key + "sentenceToPage")) {		
+	var getpdftext = getPDFText(1,1)
+	getpdftext.then((x) => {
+
+	})
 }
 
 function replaceAll(str, find, replace) {
