@@ -101,6 +101,38 @@ $("#searchToggle").click(function() {
 
 enableEtude()
 
+
+var key = PDF_URL.concat("textForEachPage").replace(".", "")
+if(!store.has(key) || !store.has(key + "sentenceToPage")) {	
+	setTimeout(function(){
+
+		getPDFText(1,1).then((x) => {
+		document.getElementById('searchParent').style.opacity = 1
+		document.getElementById('questionVal').disabled = false
+		document.getElementById('cape_btn').disabled = false
+		document.getElementById('searchloader').style.display = 'none';
+		document.getElementById('searchbuttonthree').style.color = 'black';
+		document.getElementById('cape_btn').style.background = 'white';
+		document.getElementById("getRangeButton").style.opacity = 1.0;
+		document.getElementById("getRangeButton").disabled = false;
+		document.getElementById("questionVal").placeholder = "Ask any question about the document...";
+		})
+
+
+
+	 }, 3000);
+	document.getElementById('searchParent').style.opacity = 0.5
+	document.getElementById('questionVal').disabled = true
+	document.getElementById('cape_btn').disabled = true
+	document.getElementById('searchloader').style.display = 'block';
+	document.getElementById('searchbuttonthree').style.color = 'rgb(235, 235, 228)';
+	document.getElementById('cape_btn').style.background = 'rgb(235, 235, 228)';
+	document.getElementById("getRangeButton").style.opacity = 0.5;
+	document.getElementById("getRangeButton").disabled = true;
+	document.getElementById("questionVal").placeholder = "Smart Search processing. Please wait...";
+}
+
+
 $("#bookmark_icon").click(function() {
 	//get the page number
 	var whichpagetobookmark = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('pageNumber').value;
@@ -524,13 +556,6 @@ function updateHighlights(arr){
 	}	
 }
 
-var key = PDF_URL.concat("textForEachPage").replace(".", "")
-if(!store.has(key) || !store.has(key + "sentenceToPage")) {		
-	var getpdftext = getPDFText(1,1)
-	getpdftext.then((x) => {
-
-	})
-}
 
 function replaceAll(str, find, replace) {
     return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
