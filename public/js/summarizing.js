@@ -551,6 +551,8 @@ function getPDFText(firstPage, lastPage) {
 			resolve(strings)
 			sentenceToPage = store.get(key + "sentenceToPage")
 		} else {
+			console.log("First time searching document")
+			alert("First time searching document, so this will take longer than normal. Please be patient while Etude loads.")
 			var gethtml = getHtml()	
 			gethtml.then((data) => {
 				//console.log(data)
