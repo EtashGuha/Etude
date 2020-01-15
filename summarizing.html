@@ -28,7 +28,7 @@
           <p style="font-size: 12px;color:white;position: fixed;margin-left:-12px;">Smart Search</p>
         </label>
         <div id="searchParent" class="search-container" style="position: fixed;left:calc(76% - 27px);height:50px;width:24%;top:-6px;margin:13px;">
-            <input type="text" placeholder="Ask any question about the document..." name="search" id = "questionVal" style="height: 37.2px;outline-width: 0px;position:absolute;">
+            <input type="text" placeholder="" name="search" id = "questionVal" style="height: 37.2px;outline-width: 0px;position:absolute;">
             <button id = "cape_btn" class="dropbtn" style="width:37.2px;height:37.2px;z-index:1001;padding-top:0px;padding-bottom:0px;outline-width: 0px;margin-left:0px;position:absolute;left:calc(88% - 15.5px);" onclick="{document.getElementById('searchloader').style.display = 'block';document.getElementById('searchbuttonthree').style.color = 'white';document.getElementById('cape_btn').style.backgroundColor = 'white';}">
               <i id="searchbuttonthree" class="fa fa-search" style="color:black;"></i></button>
             <div id="myDropdown" class="dropdown-content">
@@ -47,7 +47,7 @@
               <button id="arrowrightbutton" style="padding:0px;"><img class="answerarrow arrowright" style="padding:5px;width:25px;height:25px;" src="public/js/pdfjsOriginal/web/images/toolbarButton-pageDown@2x.png"></button>
               </div>
               <a id="didyoumean">Did you mean: What is etash?</a>
-              <a id = "capeResult">Type in a question to begin</a>
+              <a id = "capeResult">Type in a couple search terms to begin</a>
             </div>
             <div id="searchloader" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
         </div>
@@ -140,50 +140,50 @@
     <div class="help_popup">
       <span class="helper"></span>
       <div style="margin-top: 50px;overflow: auto;height: 400px;">
-          <h3>Welcome to ​Étude! Here are some quick instructions to get you started with  using Étude to its fullest potential. </h3>
-          <br>
-          <h3> User License Key: </h3>
-          <h3 id="stripeIDBlock"></h3>
-          <br>
-          <h1>Library Page</h1>
-          <br>
-          <img src="./public/images/library.png" style = "width: 80%;">
-          <br>
-          <h4>This is the Library page. If you want to add a PDF, simply click the plus sign and it will  take you to your file finder. Then, select the PDF you wish to upload. Once loaded, you  can access your PDF simply by clicking on it.  </h4>
-          <br>
-          <h1>Main Reading Page</h1>
-          <br>
-          <img src="./public/images/summaring.png" style = "width: 80%;">
-          <br>
-          <h4>This is the main reading page. Here are the main functionalities: </h4>
-          <br>
-          <h1>Smart Outline</h1>
-          <br>
-          <img src="./public/images/search.png" style = "width: 60%;">
-          <br>
-          <h4>If you're dealing with a larger PDF, Etude automatically creates an outline for easy navigation. Click on any section to jump right to it.</h4>
-          <br>
-          <h1>Smart Highlight</h1>
-          <img src="./public/images/summarizing.png" style = "width: 50%;">
-          <br>
-          <h4>In order to smart highlight a section of the PDF, click this button. A pop-up will then come up where you can specify what pages you want to be highlighted. For  example, if you want pages 10 to 16 highlighted, enter 10 as the starting page  and 16 as the ending page. Etude will then do the rest, and take you to the highlights. </h4>
-          <br>
-          <h1>Smart Search</h1>
-          <br>
-          <img src="./public/images/search.png" style = "width: 60%;">
-          <br>
-          <h4>Looking for specific information within the document? Type your questions or keywords into the search bar on the top right of the screen as you would a Google search. Etude will then  display the parts of the document that best answer your questions. Flip through the top answers by clicking the right and left arrows to find exactly what you're looking for.</h4>
-          <br>
-          <h1>Bookmark</h1>
-          <br>
-          <img src="./public/images/bookmarkshow.png" style = "width: 50%;">
-          <br>
-          <h4>To bookmark the page, you can click this button. It will save the page and put  it into your bookmarks page. To access them, click the bookmarks button at  the top of the page.  </h4>
-          <br>
-          <h1>For more information, contact us at:  </h1>
-          <h4>Email: ​etudereaderllc@gmail.com </h4>  
-          <h4>Phone Number: 336-529-0307 </h4> 
-          <h4>Etude is a copyrighted product of Etude LLC.  </h4>
+        <h3>Welcome to ​Étude! Here are some quick instructions to get you started with  using Étude to its fullest potential. </h3>
+        <br>
+        <h3> User License Key: </h3>
+        <h3 id="stripeIDBlock"></h3>
+        <br>
+        <h1>Library Page</h1>
+        <br>
+        <img src="./public/images/library.png" style = "width: 80%;">
+        <br>
+        <h4>This is the Library page. If you want to add a PDF, simply click the plus sign and it will  take you to your file finder. Then, select the PDF you wish to upload. Once loaded, you  can access your PDF simply by clicking on it.  </h4>
+        <br>
+        <h1>Main Reading Page</h1>
+        <br>
+        <img src="./public/images/summaring.png" style = "width: 80%;">
+        <br>
+        <h4>This is the main reading page. Here are the main functionalities: </h4>
+        <br>
+        <h1>Smart Outline</h1>
+        <br>
+        <img src="./public/images/outlineshot2.png" style = "width: 60%;">
+        <br>
+        <h4>If you're dealing with a larger PDF, Etude automatically creates an outline for easy navigation. Click on any section to jump right to it.</h4>
+        <br>
+        <h1>Smart Highlight</h1>
+        <img src="./public/images/summarizing.png" style = "width: 50%;">
+        <br>
+        <h4>In order to smart highlight a section of the PDF, click this button. A pop-up will then come up where you can specify what pages you want to be highlighted. For  example, if you want pages 10 to 16 highlighted, enter 10 as the starting page  and 16 as the ending page. Etude will then do the rest, and take you to the highlights. </h4>
+        <br>
+        <h1>Smart Search</h1>
+        <br>
+        <img src="./public/images/searchshot.png" style = "width: 60%;">
+        <br>
+        <h4>Looking for specific information within the document? Type your questions or keywords into the search bar on the top right of the screen as you would a Google search. Etude will then  display the parts of the document that best answer your questions. Flip through the top answers by clicking the right and left arrows to find exactly what you're looking for.</h4>
+        <br>
+        <h1>Bookmark</h1>
+        <br>
+        <img src="./public/images/bookmarkshot.png" style = "width: 50%;">
+        <br>
+        <h4>To bookmark the page, you can click this button. It will save the page and put  it into your bookmarks page. To access them, click the bookmarks button at  the top of the page.  </h4>
+        <br>
+        <h1>For more information, contact us at:  </h1>
+        <h4>Email: ​etudereaderllc@gmail.com </h4>  
+        <h4>Phone Number: 336-529-0307 </h4> 
+        <h4>Etude is a copyrighted product of Etude LLC.  </h4>
       </div>
   </div>
 
