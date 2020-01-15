@@ -503,8 +503,8 @@ function updateHighlights(arr){
 		});
 		iframe.contentDocument.addEventListener('funkkready', () => {
 				if(document.getElementById("myDropdown").classList.value === "dropdown-content") {
-						document.getElementById("questionVal").click();
-					}
+					document.getElementById("questionVal").click();
+				}
 				document.getElementById('searchloader').style.display = 'none';
 				document.getElementById('searchbuttonthree').style.color = 'black';
 				document.getElementById('cape_btn').style.backgroundColor = '';
@@ -766,7 +766,7 @@ function preProcess(){
 			document.getElementById("questionVal").placeholder = "Ask any question about the document...";
 		}).catch((err) => {
 			console.log(err)
-			setTimeout(preProcess, 1000)
+			setTimeout(preProcess, 3000)
 
 		})
 	} catch {
