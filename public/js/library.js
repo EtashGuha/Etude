@@ -28,6 +28,9 @@ if(!store.has(versionEtude)) {
 	store.set(versionEtude, "True")
 }
 
+function openFeedbackLink(){
+	require("shell").openExternal("https://etashguha.typeform.com/to/V8gBni")
+}
 
 var i = store.size;
 var __PDF_DOC,
