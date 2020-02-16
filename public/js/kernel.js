@@ -250,7 +250,10 @@ async function getAnswer(question, text){
 		}
 		result[i] = minHeap.extractRoot().getValue()
 	}
-	return result
+	var filtered = result.filter(function (el) {
+  		return el != null;
+	});
+	return filtered
 }
 
 
