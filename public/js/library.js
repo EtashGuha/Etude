@@ -102,6 +102,9 @@ document.getElementById('etudeButton').addEventListener('click', () => {
 })
 
 
+document.getElementById('feedback').addEventListener('click', () => {
+	shell.openExternal('https://etudefeedback.typeform.com/to/V8gBni')
+})
 
 
 function showPDF(pdf_url) {
