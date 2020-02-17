@@ -197,6 +197,12 @@ stopLoadButton.addEventListener('click', () => {
     win.reload();
 })
 
+
+document.getElementById('feedback').addEventListener('click', () => {
+	shell.openExternal('https://etudefeedback.typeform.com/to/V8gBni')
+})
+
+
 // var minbutton = document.getElementById("minbutton");
 // minbutton.addEventListener('click', () => {
 //     win.minimize();
