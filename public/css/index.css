@@ -664,7 +664,7 @@ div.viewer iframe {
 }
 
 /*summarizing input popup*/
-.su_popup{
+.genericpopup{
   background:rgba(0,0,0,.4);
   cursor:pointer;
   display:none;
@@ -676,12 +676,12 @@ div.viewer iframe {
   z-index:10000;
   overflow: scroll;
 }
-.su_popup .helper{
+.genericpopup .helper{
   display:inline-block;
   height:100%;
   vertical-align:middle;
 }
-.su_popup > div {
+.genericpopup > div {
   background-color: #fff;
   box-shadow: 10px 10px 60px #555;
   display: inline-block;
@@ -693,5 +693,9 @@ div.viewer iframe {
   position: relative;
   border-radius: 20px;
   border: 10px solid #6600ff;
+  padding: 15px 2%;
+}
+
+.su_popup {
   padding: 15px 5%;
 }

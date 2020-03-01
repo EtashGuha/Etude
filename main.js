@@ -47,7 +47,8 @@ global.sharedObject = {
 
 const freeTrialLength = 14
 var isLicensed = store.has("stripeID");
-
+var yesterday = date.addDays(now, -30);
+store.set("startDate", yesterday);
 ipcMain.on('show_pdf_message', (event, arg) => {
     console.log("OPENNING A PDF")
 

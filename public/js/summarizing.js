@@ -412,6 +412,15 @@ $('#escapeSUPopupButton').click(function() {
 	document.getElementById("summarizemessage").innerHTML = "Summary limited to 30 pages at a time";
 })
 
+// OCR Button
+$('#ocrbutton').click(function() {
+	$('#ocrpopup').show();
+});
+
+$('#ocrclosebutton').click(function() {
+	$('#ocrpopup').hide();
+});
+
 var textDsum = "";
 var iPagesum = 0;
 var iEndPagesum = 0;
