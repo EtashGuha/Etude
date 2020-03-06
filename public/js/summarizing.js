@@ -22,11 +22,15 @@ var tokenizer = new Tokenizer('Chuck');
 const viewerEle = document.getElementById('viewer');
 viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
 const iframe = document.createElement('iframe');
+var fs = require("fs");
+var request = require("request");
 var sentenceToPage = new Object();
 // Google Analytics
 const { getGlobal } = require('electron').remote;
+const app = remote.app;
 const trackEvent = getGlobal('trackEvent');
 //console.log("Entering summarinzg js")
+
 //console.log(require('electron').remote.getGlobal('sharedObject').someProperty)
 iframe.src = path.resolve(__dirname, `./pdfjsOriginal/web/viewer.html?file=${require('electron').remote.getGlobal('sharedObject').someProperty}#pagemode=bookmarks`);
 //console.log(iframe.src)
@@ -433,8 +437,6 @@ function goToWebsite() {
 	shell.openExternal('https://www.etudereader.com')
 }
 function processSummarizationResult(t) {
-	//console.log("here we are")
-	//console.log(t)
 	noLineBreakText = t["output"].replace(/(\r\n|\n|\r)/gm, " ");
 	tokenizer.setEntry(noLineBreakText);
 	updateHighlights(tokenizer.getSentences())
@@ -442,12 +444,15 @@ function processSummarizationResult(t) {
 
 function summaryButtonPressed(firstpage, lastpage) {
 	var getpdftext = getPDFText(firstpage, lastpage)
+	console.log("Entering get pdf text")
 	getpdftext.then((x) => {
-		//console.log(x);
+		console.log("HERE is the text from before summaru:")
+		console.log(x);
 		deepai.callStandardApi("summarization", {
 			text: x
 		}).then((resp) => {
 			if(resp.output !== "") {
+				console.log(resp.output)
 				processSummarizationResult(resp)
 			} else {
 				win.reload();
@@ -472,9 +477,6 @@ $('#getRangeButton').click(function() {
 
 
 function updateHighlights(arr){
-	//console.log(sentenceToPage)
-	//console.log(arr)
-	// console.log(sentenceToPage)
 	var searchQueries = ""
 	currArr = []
 	arr.forEach((item, index) => {
@@ -486,12 +488,8 @@ function updateHighlights(arr){
 		}
 		for (var i = splitWolframAnswers.length - 1; i >= 0; i--) {
 			var realItem = splitWolframAnswers[i]
-			//console.log(realItem)
-			//console.log(sentenceToPage)
 			var pageNumForSentence = sentenceToPage[replaceAll(realItem, " ", "")]
-			//console.log(pageNumForSentence)
 			if(pageNumForSentence != undefined) {
-				console.log("banana")
 				currArr.push(realItem)
 				realItem = realItem.replace(/[^a-zA-Z ]/g, "")
 				realItem = replaceAll(realItem,"\u00A0", "%3D");
@@ -503,7 +501,6 @@ function updateHighlights(arr){
 			}
 		}
 	})
-	//console.log(searchQueries)
 	searchQueries = searchQueries.substring(3)
 	searchQueries = replaceAll(searchQueries, "=", "")
 	searchQueries = replaceAll(searchQueries, "&", "")
@@ -511,10 +508,6 @@ function updateHighlights(arr){
 	viewerEle.appendChild(iframe);
 	
 	iframe.onload = function() {
-		//add toggle smart search here
-		// document.getElementById("searchToggle").click();
-		// document.getElementById("searchToggle").click();
-
 		iframe.contentDocument.addEventListener('funkready', () => {
 			$('.summarizer_loading').hide();
 			document.getElementById("stopLoadButton").style.display = 'none';
@@ -526,16 +519,13 @@ function updateHighlights(arr){
 				document.getElementById('searchloader').style.display = 'none';
 				document.getElementById('searchbuttonthree').style.color = 'black';
 				document.getElementById('cape_btn').style.backgroundColor = '';
-				//console.log("Showing")
 				document.getElementById("stopLoadButton").style.display = 'none';
 		});
 		iframe.contentDocument.addEventListener('funcready', () => {
-			console.log("here");
 			let f = function(backward = false) {
 				iframe.contentWindow.jumpToNextMatch(backward);
 				
 				$("#capeResult").empty().append(currArr[iframe.contentWindow.getCurrIndex()]);
-				//console.log(currArr[iframe.contentWindow.getCurrIndex()])
 			}
 			$('.answerarrow.arrowleft').off().click(() => f(true));
 			$('.answerarrow.arrowright').off().click(() => f());
@@ -771,30 +761,83 @@ new Promise((resolve, reject) => {
 
 function preProcess(){
 	try {
-		console.log("GOing for it")
-		var getpdftext = getPDFText(1, 1)
-		getpdftext.then((x)=>{
-			console.log("donerererere")
-			document.getElementById('searchParent').style.opacity = 1
-			document.getElementById('questionVal').disabled = false
-			document.getElementById('cape_btn').disabled = false
-			document.getElementById('searchloader').style.display = 'none';
-			document.getElementById('searchbuttonthree').style.color = 'black';
-			document.getElementById('cape_btn').style.background = 'white';
-			document.getElementById("getRangeButton").style.opacity = 1.0;
-			document.getElementById("getRangeButton").disabled = false;
-			document.getElementById("questionVal").placeholder = "Ask any question about the document...";
-		}).catch((err) => {
-			console.log(err)
+		var scanned = isScanned()
+		scanned.then((data) => {
+			console.log("HERE IS THE DATA")
+			console.log(data)
+			if(!data){
+				console.log("GOing for it")
+				var getpdftext = getPDFText(1, 1)
+				getpdftext.then((x)=>{
+					console.log("donerererere")
+					document.getElementById('searchParent').style.opacity = 1
+					document.getElementById('questionVal').disabled = false
+					document.getElementById('cape_btn').disabled = false
+					document.getElementById('searchloader').style.display = 'none';
+					document.getElementById('searchbuttonthree').style.color = 'black';
+					document.getElementById('cape_btn').style.background = 'white';
+					document.getElementById("getRangeButton").style.opacity = 1.0;
+					document.getElementById("getRangeButton").disabled = false;
+					document.getElementById("questionVal").placeholder = "Ask any question about the document...";
+				}).catch((err) => {
+					console.log(err)
+					setTimeout(preProcess, 3000)
+				})
+			} else {
+				console.log("POSTING")
+				var options = {
+					method: 'POST',
+					encoding: null,
+					url: 'http://68.183.114.170:5000/file-upload',
+					formData: {
+						file: {
+							value: fs.createReadStream(filepath),
+							options: {
+								filename: path.basename(filepath),
+								contentType: null
+							}
+						}
+					}
+				};
+				console.log("BEGINNGING REQUEST")
+				request(options, function(error, response, body) {
+					if (error) throw new Error(error);
+					console.log(response)
+					fs.writeFileSync(app.getPath('userData') + path.basename(filepath), body)
+					store.set(filepath + "searchableVersion", app.getPath('userData') + path.basename(filepath))
+					console.log(app.getPath('userData') + path.basename(filepath))
+					ipcRenderer.send('show_pdf_message', app.getPath('userData') + path.basename(filepath));
+					window.location.href = 'summarizing.html';
+					var getpdftext = getPDFText(1, 1)
+					getpdftext.then((x)=>{
+						console.log("Carpal")
+						console.log("donerererere")
+						document.getElementById('searchParent').style.opacity = 1
+						document.getElementById('questionVal').disabled = false
+						document.getElementById('cape_btn').disabled = false
+						document.getElementById('searchloader').style.display = 'none';
+						document.getElementById('searchbuttonthree').style.color = 'black';
+						document.getElementById('cape_btn').style.background = 'white';
+						document.getElementById("getRangeButton").style.opacity = 1.0;
+						document.getElementById("getRangeButton").disabled = false;
+						document.getElementById("questionVal").placeholder = "Ask any question about the document...";
+					}).catch((err) => {
+						console.log(err)
+						setTimeout(preProcess, 3000)
+					})
+				});
+			}
+		}).catch(() => {
 			setTimeout(preProcess, 3000)
-
 		})
+		
 	} catch {
 		console.log("TRYING AGAIN")
 		setTimeout(preProcess, 1000)
 	}
 }
-
+console.log("HERER")
+console.log(store.get(key + "sentenceToPage"))
 if(!store.has(key) || !store.has(key + "sentenceToPage")) {
 	console.log("TRYING")
 	document.getElementById('searchParent').style.opacity = 0.5
@@ -807,6 +850,40 @@ if(!store.has(key) || !store.has(key + "sentenceToPage")) {
 	document.getElementById("getRangeButton").disabled = true;
 	document.getElementById("questionVal").placeholder = "Smart Search processing. Please wait...";
 	preProcess()
+}
+
+function isScanned() {
+	return new Promise(function(resolve, reject) {
+		var lastPromise; // will be used to chain promises
+		try {
+			var pdfdoc = iframe.contentWindow.getPdfDocument()
+		} catch {
+			reject();
+		}
+			lastPromise = pdfdoc.getMetadata().then(function(data) {
+		});
+		window.hasText = false;
+		var loadPage = function(pageNum) {
+			return pdfdoc.getPage(pageNum).then(function(page) {
+				return page.getTextContent().then(function(content) {
+					console.log(content.items.length)
+					if(content.items.length > 0){
+						console.log("Setting to true")
+						window.hasText = true
+					}
+				}).then(function() {
+					//console.log(pageNum)
+					if(pageNum == pdfdoc.numPages || window.hasText) {
+						console.log("LEAVING HERE")
+						resolve(!window.hasText)
+					}
+				});
+			});
+		};
+		for (var i = 1; i <= pdfdoc.numPages; i++) {
+			lastPromise = lastPromise.then(loadPage.bind(null, i));
+		}
+	})
 }
 
 function getLayeredText() {
