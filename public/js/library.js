@@ -221,7 +221,11 @@ $(document).on("click", ".pdf-canvas", function() {
 	console.log($(this).attr("data"));
 	console.log("above you clicked sth");
 	var realPDFPath = replaceAll($(this).attr("data"), "?*?", " ")
-	ipcRenderer.send('show_pdf_message', realPDFPath);
+	if(store.has(realPDFPath + "searchableVersion")){
+		ipcRenderer.send('show_pdf_message', store.get(realPDFPath + "searchableVersion"));
+	} else {
+		ipcRenderer.send('show_pdf_message', realPDFPath);
+	}
 	window.location.href = 'summarizing.html';
 });
 // when the user click the minus button
