@@ -415,6 +415,9 @@ $('#escapeSUPopupButton').click(function() {
 // OCR Button
 $('#ocrbutton').click(function() {
 	$('#ocrpopup').show();
+	$('#ocrSubmitButton').click(function() {
+		// Etash put click code in here
+	});
 });
 
 $('#ocrclosebutton').click(function() {
@@ -591,6 +594,8 @@ function getPDFText(firstPage, lastPage) {
 
 function getHtml() {
 	return new Promise(function(resolve, reject) {
+		var checkIfScanned = checkIfScanned()
+
 		var getlayered = getLayeredText()
 		getlayered.then((data) => {
 			var gettextaftermap = getTextAfterMap()
@@ -829,6 +834,36 @@ function getLayeredText() {
 						}
 						return item.str;
 					});
+				}).then(function() {
+					//console.log(pageNum)
+					if(pageNum == pdfdoc.numPages) {
+						resolve("DONE")
+					}
+				});
+			});
+		};
+		for (var i = 1; i <= pdfdoc.numPages; i++) {
+			lastPromise = lastPromise.then(loadPage.bind(null, i));
+		}
+	})
+}
+
+function checkIfScanned() {
+	return new Promise(function(resolve, reject) {
+		console.log("Inside of checkifscanned")
+		var lastPromise; // will be used to chain promises
+		try {
+			var pdfdoc = iframe.contentWindow.getPdfDocument()
+		} catch {
+			reject();
+		}
+		lastPromise = pdfdoc.getMetadata().then(function(data) {
+		});
+
+		var loadPage = function(pageNum) {
+			return pdfdoc.getPage(pageNum).then(function(page) {
+				return page.getTextContent().then(function(content) {
+					console.log("Checking empty pdfs: " + content.length + "\n");
 				}).then(function() {
 					//console.log(pageNum)
 					if(pageNum == pdfdoc.numPages) {
