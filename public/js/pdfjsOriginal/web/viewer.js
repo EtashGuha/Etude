@@ -2647,9 +2647,16 @@ function areArgsValid(mainString, targetStrings) {
 			// console.log(evt.phraseSearch)
 			// console.log(evt.entireWord)
 			// console.log(evt.highlightAll)
+			var myQuery;
+			if(window.scanned){
+				myQuery = evt.query.replace(/ /g,'')
+			} else {
+				myQuery = evt.query
+			}
+			console.log(myQuery)
 			// console.log(evt.findPrevious)
 			PDFViewerApplication.findController.executeCommand('find' + evt.type, {
-				query: evt.query,
+				query: myQuery,
 				phraseSearch: evt.phraseSearch,
 				caseSensitive: evt.caseSensitive,
 				entireWord: evt.entireWord,
