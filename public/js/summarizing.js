@@ -563,8 +563,10 @@ function getPDFText(firstPage, lastPage) {
 			resolve(strings)
 			sentenceToPage = store.get(key + "sentenceToPage")
 		} else {
+			console.log("GETTING HTML")
 			var gethtml = getHtml()	
 			gethtml.then((data) => {
+				console.log("GET html")
 				//console.log(data)
 				store.set(key, data)
 				store.set(key + "sentenceToPage", sentenceToPage)
@@ -584,7 +586,6 @@ function getPDFText(firstPage, lastPage) {
 
 function getHtml() {
 	return new Promise(function(resolve, reject) {
-		var checkIfScanned = checkIfScanned()
 
 		var getlayered = getLayeredText()
 		getlayered.then((data) => {
