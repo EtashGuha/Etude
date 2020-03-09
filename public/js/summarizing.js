@@ -420,7 +420,8 @@ $('#escapeSUPopupButton').click(function() {
 $('#ocrbutton').click(function() {
 	$('#ocrpopup').show();
 	$('#ocrSubmitButton').click(function() {
-		// Etash put click code in here
+		window.location.href = 'summarizing.html';
+		trackEvent("Click", "OCR");	
 	});
 });
 
@@ -586,7 +587,6 @@ function getPDFText(firstPage, lastPage) {
 
 function getHtml() {
 	return new Promise(function(resolve, reject) {
-
 		var getlayered = getLayeredText()
 		getlayered.then((data) => {
 			var gettextaftermap = getTextAfterMap()
@@ -599,10 +599,6 @@ function getHtml() {
 	})
 }
 
-iframe.contentWindow.scanned = checkIfScanned()
-window.isScanned = new function(){
-	return checkIfScanned();
-} 
 window.extractTOC = extractTOC;
 async function extractTOC(startPage, endPage) {
 	variousTOC = ["Contents", "Table of Content", "CONTENTS", "TABLE OF CONTENT", "CONTENT", "Content", "Table Of Content"]
@@ -790,6 +786,7 @@ function preProcess(){
 				})
 			} else {
 				console.log("POSTING")
+				trackEvent("Click", "automaticOCR");
 				var options = {
 					method: 'POST',
 					encoding: null,
@@ -811,15 +808,6 @@ function preProcess(){
 					fs.writeFileSync(app.getPath('userData') + path.basename(filepath), body)
 					store.set(filepath + "searchableVersion", app.getPath('userData') + path.basename(filepath))
 					console.log(app.getPath('userData') + path.basename(filepath))
-					if(store.has("setOfScanned") == false){
-						var setOfScanned = new Array()
-						setOfScanned.push(app.getPath('userData') + path.basename(filepath))
-						store.set("setOfScanned", setOfScanned);
-					} else {
-						var setOfScanned = new Set(store.get("setOfScanned"))
-						setOfScanned.push(app.getPath('userData') + path.basename(filepath))
-						store.set("setOfScanned", Array.from(setOfScanned));
-					}
 					ipcRenderer.send('show_pdf_message', app.getPath('userData') + path.basename(filepath));
 					window.location.href = 'summarizing.html';
 					var getpdftext = getPDFText(1, 1)
@@ -940,12 +928,33 @@ function getLayeredText() {
 }
 
 function checkIfScanned() {
-	if(store.has("setOfScanned")){
-		var setOfScanned = new Set(store.get("setOfScanned"))
-		return setOfScanned.has(filepath)
-	} else {
-		return false;
-	}
+	return new Promise(function(resolve, reject) {
+		console.log("Inside of checkifscanned")
+		var lastPromise; // will be used to chain promises
+		try {
+			var pdfdoc = iframe.contentWindow.getPdfDocument()
+		} catch {
+			reject();
+		}
+		lastPromise = pdfdoc.getMetadata().then(function(data) {
+		});
+
+		var loadPage = function(pageNum) {
+			return pdfdoc.getPage(pageNum).then(function(page) {
+				return page.getTextContent().then(function(content) {
+					console.log("Checking empty pdfs: " + content.length + "\n");
+				}).then(function() {
+					//console.log(pageNum)
+					if(pageNum == pdfdoc.numPages) {
+						resolve("DONE")
+					}
+				});
+			});
+		};
+		for (var i = 1; i <= pdfdoc.numPages; i++) {
+			lastPromise = lastPromise.then(loadPage.bind(null, i));
+		}
+	})
 }
 
 
